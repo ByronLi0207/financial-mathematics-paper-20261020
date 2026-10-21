@@ -42,7 +42,7 @@
         },
         {
           "type": "p",
-          "html": "The transferred operations are also mature. Hull and White (1998) update historical shocks using predicted volatility; Barone-Adesi, Giannopoulos and Vosper (1999) propagate standardized innovations through conditional dynamics and portfolio revaluation. S instead translates raw observed net-position increments, without a fitted volatility filter or dynamics model. Biau and Patra (2011) construct nearest-neighbor empirical-response quantiles within a stationary-ergodic sequential strategy. We use the finite retrieval operation with a fixed window, one signed state and delayed, overlapping labels; its use does not transfer their consistency theorem or a coverage guarantee."
+          "html": "The transferred operations are also mature. Hull and White (1998) update historical shocks using predicted volatility; Barone-Adesi, Giannopoulos and Vosper (1999) propagate standardized innovations through conditional dynamics and portfolio revaluation. S instead translates raw observed net-position increments, without a fitted volatility filter or dynamics model. Biau and Patra (2011) aggregate truncated nearest-neighbor quantile experts using growing samples. Their stated long-run average-loss guarantee assumes stationary and ergodic data with moment and distributional regularity. Our fixed-window, one-state rule with delayed overlapping labels defines a different procedure; it inherits neither that consistency result nor coverage."
         },
         {
           "type": "p",
@@ -218,11 +218,11 @@
         },
         {
           "type": "p",
-          "html": "The underprediction weight is nineteen times the overprediction weight. These are stipulated forecast preferences, not estimated funding prices, shortage costs or regulatory coefficients. Quantile-consistent scoring targets the corresponding functional under suitable finite expected-loss conditions (Gneiting, 2011); it does not establish conditional correctness of an empirical historical rule. Original rows with different τ express different objectives and are not pooled into an across-preference winner."
+          "html": "The underprediction weight is nineteen times the overprediction weight. These are stipulated forecast preferences, not estimated funding prices, shortage costs or regulatory coefficients. For an outcome law with a finite first absolute moment, expected pinball loss is minimized by its possibly nonunique τ-quantiles (Gneiting, 2011). This score property permits atoms and does not make a finite historical report conditionally correct. Original rows with different τ express different objectives and are not pooled into an across-preference winner."
         },
         {
           "type": "p",
-          "html": "The original primary contrast is mean loss(F) minus mean loss(S) in its primary setting. The extension's separate primary contrast is mean loss(nearest360 K) minus mean loss(recent360 K), at H=6; a nonnegative mean would fail its finite-record improvement criterion. H=24 repeats retrieval in a context adverse to the original F/S comparison, and m=180 is fixed sensitivity. Neither may replace an unfavorable primary contrast. All 12 nearest-minus-recent and 10 same-set F-minus-S contrasts are reported without a score-sign acceptance gate."
+          "html": "Reported means and paired differences are equal-weight averages over the 6,625 listed origins. The original primary contrast is mean loss(F) minus mean loss(S) in its primary setting. The extension's separate primary contrast is mean loss(nearest360 K) minus mean loss(recent360 K), at H=6; a nonnegative mean would fail its finite-record improvement criterion. H=24 repeats retrieval in a context adverse to the original F/S comparison, and m=180 is fixed sensitivity. Neither may replace an unfavorable primary contrast. All 12 nearest-minus-recent and 10 same-set F-minus-S contrasts are reported without a score-sign acceptance gate."
         },
         {
           "type": "p",
@@ -480,7 +480,11 @@
         },
         {
           "type": "p",
-          "html": "The evidence comes from one aggregate 2014–2017 record. Reexecution, an identical-hash download and a same-source thesis support reproducibility, not transfer across dealers or regimes. Independent inventory data require an audit of aggregation, units, sampling and release timing; price returns and weekly position reports measure different objects. Overlapping maxima, shared episodes and persistent positions also create dependence. Stationarity, mixing, conditional-law and tail-information conditions for broader inference remain unestablished. Fixed neighbor counts do not count independent tail observations, and geometry, empirical ranks and breach frequencies do not establish coverage. The extension remains exploratory because its interval had already been inspected."
+          "html": "The evidence comes from one aggregate 2014–2017 record. Reexecution, an identical-hash download and a same-source thesis support reproducibility, not transfer across dealers or regimes. Independent inventory data require an audit of aggregation, units, sampling and release timing; price returns and weekly position reports measure different objects."
+        },
+        {
+          "type": "p",
+          "html": "Overlapping maxima, shared histories and persistent positions create dependence. The reported averages summarize the listed origins; they do not establish expected performance on another record. No argument establishes that the selected historical responses estimate the future peak's conditional law given the signed state, or that this state captures all relevant issue-time information. The fixed-pool rule differs from the growing-sample strategy behind the cited nearest-neighbor guarantee. Selected row counts are not independent tail-observation counts; geometry, empirical ranks and breach frequencies do not establish coverage. The original resampling has its own unverified inferential premises (Appendix B) and supplies no uncertainty for the extension. The extension remains exploratory because its interval had already been inspected."
         }
       ]
     },
@@ -1107,7 +1111,7 @@
         },
         {
           "type": "p",
-          "html": "Politis and Romano (1994) supply the stationary-bootstrap lineage, whose formal results impose conditions on the stochastic process and block-length asymptotics. Here no relevant stationarity/mixing conditions have been established, and large fixed ℓ/M leaves few blocks. The profiles therefore describe a fixed resampling mechanism's sensitivity on this record. They are not applied to any added nearest-state contrast, and their endpoints are neither null-test cutoffs nor superiority probabilities."
+          "html": "The block mechanism follows Politis and Romano (1994). Their Theorem 2 gives a scalar-mean sampling-distribution result under strict stationarity, specified moment and dependence restrictions, positive long-run variance and block-length asymptotics. Those premises have not been established for the process generating this forecast-loss sequence. Large fixed ℓ/M also leaves few blocks. Here the profiles describe a fixed resampling mechanism's sensitivity on this record. They are not applied to any added nearest-state contrast, and their endpoints are neither null-test cutoffs nor superiority probabilities."
         }
       ]
     },
