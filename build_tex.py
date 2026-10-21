@@ -27,6 +27,7 @@ def esc(value):
         "~": r"\textasciitilde{}", "^": r"\textasciicircum{}",
         "<": r"\( < \)", ">": r"\( > \)", "τ": r"\(\tau\)", "ρ": r"\(\rho\)",
         "ε": r"\(\epsilon\)", "ℓ": r"\(\ell\)", "≤": r"\(\le\)", "≥": r"\(\ge\)",
+        "Δ": r"\(\Delta\)", "μ": r"\(\mu\)", "φ": r"\(\phi\)", "∈": r"\(\in\)",
         "−": r"\(-\)", "…": r"\ldots{}", "©": r"\copyright{}", "\u00a0": " ",
     }
     result = "".join(special.get(char, char) for char in value)
@@ -97,7 +98,7 @@ def build_source(content):
 \setlength{\parskip}{6pt}
 \setlength{\emergencystretch}{2em}
 \setlength{\tabcolsep}{3pt}
-\hypersetup{pdftitle={Historical Headrooms versus Current-State Scenarios for Sampled Inventory Peaks},pdfauthor={}}
+\hypersetup{pdftitle={''' + esc(content["title"]) + r'''},pdfauthor={}}
 \begin{document}
 \fontsize{10.5}{14}\selectfont
 \begin{center}

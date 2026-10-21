@@ -1,8 +1,10 @@
-"""Typeset the supplied paper text and append its three original vector figures.
+"""Typeset supplied paper text and append one approved three-figure inventory.
 
 This is a document builder only. It never opens source observations, scientific
-result tables, or any PDF other than its own text body and the three fixed
-canonical figure PDFs. The caller runs and visually verifies the final output.
+result tables, or any PDF other than its own text body and the original or
+revision canonical figure inventory selected by validated content. Each approved
+inventory has exactly three figures in a fixed order. The caller runs and
+visually verifies the final output.
 
 Text typesetting requires the four existing macOS Supplemental Times New Roman
 TTF files listed in MACOS_TIMES_FONTS. They are read in place, never copied or
@@ -31,6 +33,12 @@ FIGURE_PATHS = (
     "figures/primary-monthly-paired-means.pdf",
     "figures/primary-resampling-ranges.pdf",
 )
+REVISION_FIGURE_PATHS = (
+    "figures/within-cell-paired-means.pdf",
+    "figures/revision-retrieval-contrasts.pdf",
+    "figures/revision-retrieval-monthly.pdf",
+)
+APPROVED_FIGURE_INVENTORIES = (FIGURE_PATHS, REVISION_FIGURE_PATHS)
 MACOS_TIMES_FONTS = {
     "PaperTimes": Path("/System/Library/Fonts/Supplemental/Times New Roman.ttf"),
     "PaperTimes-Bold": Path("/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf"),
@@ -108,6 +116,7 @@ def markup(value, *, links=False):
 
 
 def load_content(path):
+    """Validate paper text and one complete, ordered canonical figure inventory."""
     with open(path, "r", encoding="utf-8") as source:
         content = json.load(source)
     mapping(content, ("title", "subtitle", "date", "abstract", "sections", "references", "figures"))
@@ -163,10 +172,11 @@ def load_content(path):
         markup(reference["html"], links=True)
     if type(content["figures"]) is not list or len(content["figures"]) != 3:
         fail("INVALID_FIGURES")
-    for figure, expected in zip(content["figures"], FIGURE_PATHS):
+    for figure in content["figures"]:
         mapping(figure, ("path", "caption"))
-        if figure["path"] != expected:
-            fail("NONCANONICAL_FIGURE")
+    if tuple(figure["path"] for figure in content["figures"]) not in APPROVED_FIGURE_INVENTORIES:
+        fail("NONCANONICAL_FIGURE")
+    for figure in content["figures"]:
         text(figure["caption"])
     return content
 
@@ -283,11 +293,13 @@ def make_story(content, styles, layout):
 
 
 def check_output(path):
+    """Require a new output distinct from every approved canonical figure input."""
     if path.exists() or path.is_symlink():
         fail("OUTPUT_ALREADY_EXISTS")
     if not path.parent.is_dir() or any(parent.is_symlink() for parent in path.parents):
         fail("INVALID_OUTPUT_DIRECTORY")
-    if path.absolute() in {(PAPER_ROOT / figure).absolute() for figure in FIGURE_PATHS}:
+    if Path(os.path.abspath(path)) in {Path(os.path.abspath(PAPER_ROOT / figure))
+                           for inventory in APPROVED_FIGURE_INVENTORIES for figure in inventory}:
         fail("OUTPUT_IS_SOURCE_FIGURE")
 
 
@@ -313,7 +325,7 @@ def build_paper(content_path, output_path):
 
     content = load_content(content_path)
     check_output(output_path)
-    figure_files = [PAPER_ROOT / figure for figure in FIGURE_PATHS]
+    figure_files = [PAPER_ROOT / figure["path"] for figure in content["figures"]]
     for figure in figure_files:
         if not figure.is_file() or figure.is_symlink():
             fail("MISSING_CANONICAL_FIGURE")
