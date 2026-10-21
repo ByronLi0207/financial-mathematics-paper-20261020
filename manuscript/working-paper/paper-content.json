@@ -9,7 +9,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "A sampled net position can reach a large magnitude and finish near its starting level. We study the largest absolute source-reported USD net position at issue and over the next H records, using sampled aggregate client flow from one foreign-exchange market maker. H counts source records, including those separated by 49-hour gaps. The object is recorded net-position scale, rather than a complete hedged book or a funding requirement."
+          "html": "A sampled net position can reach a large magnitude and finish near its starting level. We study the largest absolute source-reported USD net position at issue and over the next H records, using sampled aggregate client flow from one foreign-exchange market maker. A forecast level is breached when at least one of those recorded positions has a greater absolute value. H counts source records, including those separated by 49-hour gaps. The object is recorded net-position scale, rather than a complete hedged book or a funding requirement."
         },
         {
           "type": "p",
@@ -72,7 +72,7 @@
         },
         {
           "type": "p",
-          "html": "At issue t the extension's eligible pool is I<sub>t</sub>={t−H−719,...,t−H}. Each of its 720 historical origins i has a response ending at i+H≤t. The latest completed label may therefore include the already observed issue record. Earlier evaluation outcomes enter later pools only after completion. Adjacent peaks and rolling pools overlap; completed-label eligibility does not make them independent."
+          "html": "At issue t the extension's eligible pool is I<sub>t</sub>={t−H−719,...,t−H}. Each of its 720 historical origins i has a response ending at i+H≤t. The latest eligible response window ends at t and includes the already observed issue record. Earlier evaluation outcomes enter later pools only after completion. Adjacent peaks and rolling pools overlap; completed-label eligibility does not make them independent."
         },
         {
           "type": "p",
@@ -98,7 +98,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "The extension uses five fixed sets at each issue. Recent sets take the last m eligible origins. Nearest sets take the m smallest signed-state distances |N<sub>i</sub>−N<sub>t</sub>|, preferring the most recent origin when distances tie. Historical response values and future query outcomes never resolve distance ties. Selected paired rows retain chronological order."
+          "html": "The extension uses five fixed sets at each issue. The reduced counts, 360 and 180, retain half and a quarter of the candidate pool and were fixed before the extension's losses were calculated. Recent sets take the last m eligible origins. Nearest sets take the m smallest signed-state distances |N<sub>i</sub>−N<sub>t</sub>|, preferring the most recent origin when distances tie. Historical response values and future query outcomes never resolve distance ties. Selected paired rows retain chronological order."
         },
         {
           "type": "table",
@@ -144,7 +144,7 @@
         },
         {
           "type": "p",
-          "html": "For a selected set J of m rows, Q<sub>k</sub> denotes the kth unweighted order statistic with duplicates retained. There is no interpolation or jitter; all configured corrected ranks are available. At these particular counts and τ=.95 the selected order statistic is the upper endpoint of the empirical pinball-minimizer interval (Appendix C). This numerical rank convention establishes no coverage theorem for the dependent historical pool."
+          "html": "For a selected set J of m rows, Q<sub>k</sub> denotes the kth unweighted order statistic with duplicates retained and no interpolation or jitter. We use the available ranks in Table 1. Appendix C gives their empirical quantile interpretation; the rank convention does not establish coverage for the dependent historical pool."
         },
         {
           "type": "p",
@@ -222,7 +222,7 @@
         },
         {
           "type": "p",
-          "html": "Reported means and paired differences are equal-weight averages over the 6,625 listed origins. The original primary contrast is mean loss(F) minus mean loss(S) in its primary setting. The extension's separate primary contrast is mean loss(nearest360 K) minus mean loss(recent360 K), at H=6; a nonnegative mean would fail its finite-record improvement criterion. H=24 repeats retrieval in a context adverse to the original F/S comparison, and m=180 is fixed sensitivity. Neither may replace an unfavorable primary contrast. All 12 nearest-minus-recent and 10 same-set F-minus-S contrasts are reported without a score-sign acceptance gate."
+          "html": "Reported means and paired differences are equal-weight averages over the 6,625 listed origins. The original primary contrast is mean loss(F) minus mean loss(S) in its primary setting. The extension's separate primary contrast is mean loss(nearest360 K) minus mean loss(recent360 K), at H=6; a nonnegative mean would fail its finite-record improvement criterion. H=24 repeats retrieval in a context adverse to the original F/S comparison, and m=180 is fixed sensitivity. Neither may replace an unfavorable primary contrast. All 12 nearest-minus-recent and 10 same-set F-minus-S contrasts are reported regardless of sign."
         },
         {
           "type": "p",
