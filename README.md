@@ -2,7 +2,9 @@
 
 An ongoing working-paper project in financial engineering and financial mathematics.
 
-**Current stage: literature review.** The research question has not yet been fixed. No analysis results or completed manuscript are being claimed.
+**Current stage: research design.** Six hours (21,600 seconds) of active literature reading and scientific synthesis were audited as completed on 21 October 2026 at 02:38:58 UTC. The requested approximately two-hour design phase is in progress; the topic and specifications remain provisional. No forecasting results or completed manuscript are being claimed.
+
+The current proposal compares historical headroom quantiles and current-anchor historical extrema for a future sampled net-inventory peak. See the [design progress note](notes/design-progress-01.md) for the target, strong simple references, chronology and established financial precedents. This is a limited application study using mature methods, not a claim of a new calibration algorithm or a coverage guarantee.
 
 The research compares recent methods with established foundations, checks their assumptions and closest applications, and investigates whether a method can answer a distinct, well-defined financial question using modest public data and reproducible computations.
 
