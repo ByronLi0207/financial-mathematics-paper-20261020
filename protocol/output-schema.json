@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_source_evaluation",
+  "purpose": "Explicit data dictionary and field allowlists; no validator framework or scientific implementation.",
+  "csv": {
+    "encoding": "UTF-8 LF",
+    "index_column": false,
+    "finite_float_format": "round-trippable; no additional decimal rounding",
+    "null": "empty field",
+    "nonfinite_tokens_allowed": false,
+    "boolean_text": [
+      "true",
+      "false"
+    ],
+    "metadata_prefix": [
+      "cell_id",
+      "horizon",
+      "window",
+      "tau_numerator",
+      "tau_denominator",
+      "rank",
+      "origin_count"
+    ],
+    "metadata_types": {
+      "cell_id": "string; fixed cell enum",
+      "other_prefix_fields": "integer; nonnull"
+    },
+    "method_metric_dictionary": {
+      "mean_pinball": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": false
+      },
+      "mean_capacity": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": false
+      },
+      "mean_extra_allowance": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": false,
+        "definition": "equal-origin mean of stored C-B, distinct from private selected cF/cS when rounding differs"
+      },
+      "strict_breach_count": {
+        "type": "integer",
+        "unit": "origins",
+        "nullable": false
+      },
+      "strict_breach_rate": {
+        "type": "finite_float",
+        "unit": "fraction",
+        "nullable": false
+      },
+      "mean_positive_overrun": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": false
+      },
+      "conditional_mean_overrun": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": true
+      },
+      "conditional_overrun_denominator": {
+        "type": "integer",
+        "unit": "origins",
+        "nullable": false
+      },
+      "mean_unused_allowance": {
+        "type": "finite_float",
+        "unit": "source_reported_USD",
+        "nullable": false
+      },
+      "aux_breach_count": {
+        "type": "integer",
+        "unit": "origins",
+        "nullable": false
+      },
+      "strict_aux_disagreement_count": {
+        "type": "integer",
+        "unit": "origins",
+        "nullable": false
+      },
+      "near_event_boundary_count": {
+        "type": "integer",
+        "unit": "origins",
+        "nullable": false
+      }
+    },
+    "scalar_boundary": "only permitted Python built-in str/int/finite float/bool/None; reject NumPy scalars, arrays, mappings and arbitrary objects instead of str coercion"
+  },
+  "tables": {
+    "results/summary.csv": {
+      "columns": [
+        "cell_id",
+        "horizon",
+        "window",
+        "tau_numerator",
+        "tau_denominator",
+        "rank",
+        "origin_count",
+        "method_id",
+        "mean_pinball",
+        "mean_capacity",
+        "mean_extra_allowance",
+        "strict_breach_count",
+        "strict_breach_rate",
+        "mean_positive_overrun",
+        "conditional_mean_overrun",
+        "conditional_overrun_denominator",
+        "mean_unused_allowance",
+        "aux_breach_count",
+        "strict_aux_disagreement_count",
+        "near_event_boundary_count",
+        "conditional_overrun_undefined_reason"
+      ],
+      "rows_complete": 35,
+      "order": "cells in study spec, then F,S,R,L,P0",
+      "unique_key": [
+        "cell_id",
+        "method_id"
+      ],
+      "null_rules": {
+        "conditional_mean_overrun": "null iff strict_breach_count==0; reason NO_STRICT_BREACHES",
+        "conditional_overrun_denominator": "exactly strict_breach_count; numeric even when zero",
+        "other_metrics": "finite nonnull"
+      }
+    },
+    "results/paired-comparison.csv": {
+      "columns": [
+        "cell_id",
+        "horizon",
+        "window",
+        "tau_numerator",
+        "tau_denominator",
+        "rank",
+        "origin_count",
+        "mean_pinball_difference",
+        "relative_difference_to_S",
+        "relative_difference_undefined_reason",
+        "f_lower_count",
+        "equal_capacity_count",
+        "f_higher_count",
+        "f_lower_fraction",
+        "equal_capacity_fraction",
+        "f_higher_fraction",
+        "near_fs_capacity_count",
+        "near_fs_capacity_fraction",
+        "paired_scores_equal_count",
+        "scores_changed_allowances_equal_count",
+        "allowances_changed_capacities_equal_count",
+        "capacities_different_count"
+      ],
+      "rows_complete": 7,
+      "order": "cells in study spec",
+      "unique_key": [
+        "cell_id"
+      ],
+      "null_rules": {
+        "relative_difference_to_S": "null iff same-cell S mean_pinball==0; reason ZERO_MEAN_LOSS_S",
+        "other_metrics": "finite nonnull"
+      },
+      "monetary_fields": [
+        "mean_pinball_difference"
+      ],
+      "ratio_fields": [
+        "relative_difference_to_S"
+      ],
+      "partition_rules": [
+        "f_lower_count + equal_capacity_count + f_higher_count == origin_count",
+        "four mechanism counts sum to origin_count",
+        "equal_capacity_count == first three mechanism counts combined",
+        "capacity-different mechanism count == f_lower_count + f_higher_count"
+      ],
+      "fractions": "corresponding count/origin_count; near count overlaps partition"
+    },
+    "results/stability.csv": {
+      "columns": [
+        "cell_id",
+        "horizon",
+        "window",
+        "tau_numerator",
+        "tau_denominator",
+        "rank",
+        "origin_count",
+        "ell",
+        "ell_over_origin_count",
+        "replicates",
+        "expected_used_blocks",
+        "observed_mean_d",
+        "resampled_mean_average",
+        "resampled_mean_sd_ddof1",
+        "resampled_mean_order25",
+        "resampled_mean_order975",
+        "lower_rank",
+        "upper_rank",
+        "generator",
+        "seed_base",
+        "seed_length",
+        "constant_input",
+        "constant_shortcut_used"
+      ],
+      "rows_complete": 4,
+      "order": "ell120,240,720,1440",
+      "unique_key": [
+        "cell_id",
+        "ell"
+      ],
+      "nullable_fields": [],
+      "integer_fields": [
+        "ell",
+        "replicates",
+        "lower_rank",
+        "upper_rank",
+        "seed_base",
+        "seed_length"
+      ],
+      "boolean_fields": [
+        "constant_input",
+        "constant_shortcut_used"
+      ],
+      "string_fields": [
+        "generator"
+      ],
+      "monetary_fields": [
+        "observed_mean_d",
+        "resampled_mean_average",
+        "resampled_mean_sd_ddof1",
+        "resampled_mean_order25",
+        "resampled_mean_order975"
+      ],
+      "fixed_values": {
+        "replicates": 999,
+        "lower_rank": 25,
+        "upper_rank": 975,
+        "generator": "PCG64",
+        "seed_base": 20261020
+      },
+      "constant_rule": "all stored d identical c => constant_input/constant_shortcut_used true, observed and resampled means/endpoints c, SD0; 999 analytic identities rather than actual block draws"
+    },
+    "results/diagnostics.csv": {
+      "columns": [
+        "cell_id",
+        "panel",
+        "group",
+        "method_or_comparison",
+        "metric",
+        "origin_count",
+        "display_status",
+        "value",
+        "undefined_reason"
+      ],
+      "cell_id": "main",
+      "rows_complete": "61*(14+inclusive calendar-month count)",
+      "panel_group_order": {
+        "current_sign": [
+          "negative",
+          "zero",
+          "positive"
+        ],
+        "development_magnitude_tercile": [
+          "low",
+          "middle",
+          "high"
+        ],
+        "source_index_modulo_6": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "naive_origin_month": "all YYYY-MM, first through last common-origin month, ascending",
+        "retrospective_gap_free_path": [
+          "gap_free",
+          "has_gap"
+        ]
+      },
+      "methods": "F,S,R,L,P0 then F_MINUS_S",
+      "method_metrics": [
+        "mean_pinball",
+        "mean_capacity",
+        "mean_extra_allowance",
+        "strict_breach_count",
+        "strict_breach_rate",
+        "mean_positive_overrun",
+        "conditional_mean_overrun",
+        "conditional_overrun_denominator",
+        "mean_unused_allowance",
+        "aux_breach_count",
+        "strict_aux_disagreement_count",
+        "near_event_boundary_count"
+      ],
+      "comparison_metrics": [
+        "mean_pinball_difference"
+      ],
+      "display_rules": {
+        "origin_count>=30": "DISPLAYED; retain numerical values, conditional mean null at zero breach with NO_STRICT_BREACHES",
+        "1<=origin_count<30": "BELOW_DISPLAY_MIN; all metric values null; GROUP_BELOW_DISPLAY_MIN",
+        "origin_count==0": "NO_ORIGINS; all metric values null; NO_ORIGINS"
+      },
+      "missing_intentional_groups_allowed": false
+    }
+  },
+  "figures": {
+    "exact_public_paths": [
+      "manuscript/working-paper/figures/within-cell-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-monthly-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-resampling-ranges.pdf"
+    ],
+    "kind": "figure",
+    "format": "PDF vector",
+    "units": "USD millions, factor1000000 from public CSV",
+    "inputs": "public aggregate CSV and sanitized provenance only",
+    "origin_trace_or_private_thresholds": false,
+    "monthly_gaps": "retain missing/suppressed months; never join across a missing month",
+    "degeneracy": "do not jitter, widen endpoints or suppress zero values; retain numeric annotations"
+  },
+  "run_manifest": {
+    "path": "results/run-manifest.json",
+    "schema_version": 1,
+    "top_level_fields": [
+      "manifest_schema_version",
+      "declared_scope",
+      "study_id",
+      "attempt_id",
+      "run_status",
+      "stop_code",
+      "planned_cell_ids",
+      "completed_cell_ids",
+      "method_ids",
+      "source",
+      "specification",
+      "code",
+      "environment",
+      "resources",
+      "checks",
+      "outputs",
+      "undefined_conventions"
+    ],
+    "nested_fields": {
+      "source": [
+        "dataset",
+        "version",
+        "public_url",
+        "requested_member",
+        "expected_csv_bytes",
+        "expected_csv_sha256",
+        "accepted_csv_bytes",
+        "accepted_csv_sha256",
+        "source_verified",
+        "acquisition_mode",
+        "request_performed_this_attempt",
+        "historical_access_utc",
+        "local_validation_utc",
+        "timestamp_timezone",
+        "observed_rights_label",
+        "raw_redistribution_verified",
+        "download"
+      ],
+      "source.download": [
+        "endpoint",
+        "http_status",
+        "redirect_hosts",
+        "redirect_statuses",
+        "query_present",
+        "archive_bytes",
+        "archive_sha256"
+      ],
+      "specification": [
+        "relative_path",
+        "sha256",
+        "schema_version",
+        "primary_cell_id",
+        "amends_sha256",
+        "common_origin_reference_sha256",
+        "cells",
+        "evaluation_bounds"
+      ],
+      "specification.cells[]": [
+        "cell_id",
+        "horizon",
+        "window",
+        "tau_numerator",
+        "tau_denominator",
+        "expected_rank"
+      ],
+      "specification.evaluation_bounds": [
+        "origin_count",
+        "first_source_index",
+        "last_source_index"
+      ],
+      "code": [
+        "revision",
+        "files"
+      ],
+      "code.files[]": [
+        "relative_path",
+        "sha256"
+      ],
+      "environment": [
+        "python_implementation",
+        "python_version",
+        "os_family",
+        "os_version",
+        "architecture",
+        "numpy_version",
+        "reportlab_version",
+        "thread_requests"
+      ],
+      "environment.thread_requests": [
+        "OMP_NUM_THREADS",
+        "OPENBLAS_NUM_THREADS",
+        "VECLIB_MAXIMUM_THREADS",
+        "MKL_NUM_THREADS",
+        "NUMEXPR_NUM_THREADS"
+      ],
+      "resources": [
+        "started_utc",
+        "checkpoint_utc",
+        "measurement_point",
+        "requested_numerical_threads",
+        "elapsed_seconds",
+        "peak_rss_bytes",
+        "maximum_observed_os_threads",
+        "thread_probe_status",
+        "thread_snapshot_count",
+        "completed_stability_lengths",
+        "current_stage",
+        "current_cell_id",
+        "current_length",
+        "completed_origins_current_cell",
+        "completed_replicates_current_length",
+        "new_output_bytes_at_checkpoint",
+        "private_numeric_output_bytes_at_checkpoint",
+        "public_analysis_output_bytes_at_checkpoint"
+      ],
+      "checks": [
+        "source_identity",
+        "schema",
+        "chronology",
+        "common_origins",
+        "label_maturity",
+        "finite_results",
+        "floors_and_geometry",
+        "cross_cell_invariants",
+        "mechanism_partitions",
+        "aggregate_reconciliation",
+        "same_block_equivalence",
+        "resources",
+        "public_serialization"
+      ],
+      "outputs": [
+        "artifacts"
+      ],
+      "outputs.artifacts[]": [
+        "relative_path",
+        "kind",
+        "bytes",
+        "sha256",
+        "row_count"
+      ],
+      "undefined_conventions": [
+        "csv_empty_is_null",
+        "json_nonfinite_allowed",
+        "zero_breach_reason",
+        "zero_s_loss_reason",
+        "display_min_origins",
+        "below_display_reason",
+        "empty_group_reason"
+      ]
+    },
+    "unknown_fields_allowed": false,
+    "build_from": "safe scalar metadata and AggregateBundle, never generic RunResult/SourceData/dataclass/exception serialization",
+    "run_status": [
+      "COMPLETE",
+      "INCOMPLETE"
+    ],
+    "stop_code": [
+      "NONE",
+      "SOURCE_IDENTITY_OR_SCHEMA",
+      "SOURCE_FETCH_OR_ARCHIVE",
+      "SPECIFICATION",
+      "RUNTIME_UNAVAILABLE",
+      "RESOURCE_UNVERIFIED",
+      "RESOURCE_WALL",
+      "RESOURCE_RSS",
+      "RESOURCE_THREADS",
+      "RESOURCE_STORAGE",
+      "STRUCTURAL_OR_NUMERIC",
+      "OUTPUT_INTEGRITY",
+      "INTERNAL"
+    ],
+    "checks_status": [
+      "PASS",
+      "FAIL",
+      "UNVERIFIED",
+      "NOT_RUN"
+    ],
+    "complete_requires": "all seven cells, four profiles, exact table rows, all required checks PASS and actual required resource observations",
+    "run_complete_is_not_whole_paper_delivered": true,
+    "nullable_rules": [
+      "accepted source identity/time null before accepted; never publish wrong-input hash",
+      "download null if request_performed_this_attempt false",
+      "unobserved runtime/resource metadata null; required unavailable measurement forces INCOMPLETE",
+      "code revision null unless known actual revision",
+      "amends_sha256 null for original",
+      "evaluation bounds all null until accepted common origins",
+      "artifact row_count null for figures only"
+    ],
+    "code_file_allowlist": [
+      "study_data.py",
+      "study_core.py",
+      "study_report.py",
+      "run_study.py",
+      "test_data.py",
+      "test_core.py",
+      "test_report.py",
+      "test_runner.py"
+    ],
+    "artifact_allowlist": [
+      "results/summary.csv",
+      "results/paired-comparison.csv",
+      "results/stability.csv",
+      "results/diagnostics.csv",
+      "manuscript/working-paper/figures/within-cell-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-monthly-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-resampling-ranges.pdf"
+    ],
+    "write_order": "verified scientific artifacts then final manifest; no manifest self-hash",
+    "forbidden": [
+      "caller local absolute source/access paths or source/access basenames; fixed allowed repository-relative code/artifact paths and dataset member are exempt",
+      "identity, hostname, cwd, argv, executable or environment dump",
+      "ps stdout or exception/traceback",
+      "credentials, response bodies or signed URL values",
+      "source observations, per-origin quantities, development thresholds or full replicates"
+    ],
+    "schema_binding": "freeze this file first; place its SHA256 into study-spec.json; the manifest specification SHA256 binds it transitively with no reverse/self hash",
+    "artifact_record_type": "plain dict with exactly relative_path/kind/bytes/sha256/row_count; built-in scalar values only"
+  },
+  "frozen_at_utc": "2026-10-21T05:46:37Z"
+}

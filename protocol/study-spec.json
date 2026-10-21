@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_source_evaluation",
+  "scope": "seven_cell_sampled_inventory_peak_study",
+  "question": "Historical own-anchor headroom pooling versus current-anchor revaluation of completed increment envelopes.",
+  "primary_cell_id": "main",
+  "cells": [
+    {
+      "cell_id": "main",
+      "horizon": 6,
+      "window": 720,
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "tau_label": "0.95",
+      "expected_rank": 685
+    },
+    {
+      "cell_id": "h12",
+      "horizon": 12,
+      "window": 720,
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "tau_label": "0.95",
+      "expected_rank": 685
+    },
+    {
+      "cell_id": "h24",
+      "horizon": 24,
+      "window": 720,
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "tau_label": "0.95",
+      "expected_rank": 685
+    },
+    {
+      "cell_id": "n480",
+      "horizon": 6,
+      "window": 480,
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "tau_label": "0.95",
+      "expected_rank": 457
+    },
+    {
+      "cell_id": "n1440",
+      "horizon": 6,
+      "window": 1440,
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "tau_label": "0.95",
+      "expected_rank": 1369
+    },
+    {
+      "cell_id": "tau90",
+      "horizon": 6,
+      "window": 720,
+      "tau_numerator": 9,
+      "tau_denominator": 10,
+      "tau_label": "0.90",
+      "expected_rank": 649
+    },
+    {
+      "cell_id": "tau99",
+      "horizon": 6,
+      "window": 720,
+      "tau_numerator": 99,
+      "tau_denominator": 100,
+      "tau_label": "0.99",
+      "expected_rank": 714
+    }
+  ],
+  "source": {
+    "dataset": "davidlindsay1979/net-position-time-series-dataset",
+    "version": 2,
+    "public_url": "https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset",
+    "requested_member": "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv",
+    "accepted_zip_members": [
+      "1hourNetPositionsKaggle.csv",
+      "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv"
+    ],
+    "expected_csv_bytes": 1286391,
+    "expected_csv_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "expected_rows": 18576,
+    "expected_header": [
+      "datetime",
+      "NetPosUsd",
+      "NetUsdPnL",
+      "AbsVolume",
+      "Mid"
+    ],
+    "used_fields": [
+      "datetime",
+      "NetPosUsd"
+    ],
+    "timestamp_format": "%Y.%m.%dT%H:%M:%S.%f",
+    "timestamp_timezone": "unspecified_naive",
+    "position_dtype": "float64",
+    "time_dtype": "datetime64[us]",
+    "position_unit": "source_reported_USD",
+    "observed_rights_label": "Data files \u00a9 Original Authors",
+    "raw_redistribution_verified": false,
+    "parse_same_immutable_snapshot_as_hashed": true,
+    "row_sort_drop_impute_interpolate": false,
+    "existing_mismatch_action": "STOP_NO_REDOWNLOAD_OR_REPLACEMENT",
+    "fetch_only_explicit_and_cache_absent": true,
+    "fetch_endpoint": "https://api.kaggle.com/v1/datasets.DatasetApiService/DownloadDataset",
+    "fetch_method": "POST",
+    "fetch_request": {
+      "ownerSlug": "davidlindsay1979",
+      "datasetSlug": "net-position-time-series-dataset",
+      "datasetVersionNumber": 2,
+      "fileName": "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv"
+    },
+    "fetch_credentials_agreement_retries_mirrors": false,
+    "signed_url_logging": false,
+    "row_count_excludes_header": true,
+    "opened_input_must_be_regular_file": true,
+    "local_symlink_policy": "an explicitly supplied local symlink may resolve to a regular opened file; validate that same bounded snapshot; no output symlinks",
+    "required_input_checks": [
+      "exact byte count and SHA256",
+      "exact header and row width",
+      "exact data row count",
+      "finite used position",
+      "valid naive timestamps",
+      "no duplicates",
+      "strict increasing order"
+    ],
+    "calendar_gap_imputation_or_completeness_requirement": false,
+    "https_only": true,
+    "initial_host": "api.kaggle.com",
+    "allowed_redirect_hosts": [
+      "storage.googleapis.com"
+    ],
+    "allowed_https_ports": [
+      443
+    ],
+    "max_redirects": 1,
+    "allowed_redirect_statuses": [
+      302
+    ],
+    "final_status": 200,
+    "accepted_final_media_types": [
+      "application/zip"
+    ],
+    "declared_length_precheck_and_stream_cap": true,
+    "fetch_uses_remaining_global_wall_budget": true,
+    "zip_policy": {
+      "exactly_one_non_directory_member": true,
+      "preinflate_size_equals_expected_csv_bytes": true,
+      "extracted_byte_cap": 1286391,
+      "reject": [
+        "extra members",
+        "absolute or traversal path",
+        "symlink",
+        "encrypted entry",
+        "unsupported container"
+      ],
+      "verify_crc_and_raw_sha256": true,
+      "extract_all": false,
+      "atomic_accept_no_overwrite": true
+    },
+    "public_download_metadata": "fixed endpoint, status, HTTPS host and query-presence only; no actual signed storage path/query, response body or exception text",
+    "redirect_handling": "manual single302; both openers disable automatic redirects; close redirect/error bodies without reading",
+    "implicit_proxy_cookie_authentication": false,
+    "proxy_policy": "direct ProxyHandler({}); no implicit proxy credentials",
+    "redirect_request": "GET without forwarded POST body/headers; exact HTTPS storage.googleapis.com:443; reject userinfo/fragment; transient signed query memory only",
+    "error_body_policy": "close without reading/logging; fixed sanitized error codes",
+    "stream_deadline_check": "remaining global wall budget and bounded socket timeouts; resource checkpoint during chunks"
+  },
+  "target_and_issuance": {
+    "issue_after_current_record_observed": true,
+    "horizon_unit": "subsequent_recorded_observations",
+    "peak": "max(abs(N[t+h])) for h=0,...,H",
+    "headroom": "peak - abs(N[t])",
+    "lower_increment": "min(N[i+h]-N[i]) for h=0,...,H",
+    "upper_increment": "max(N[i+h]-N[i]) for h=0,...,H",
+    "radius": "max(upper_increment,-lower_increment)",
+    "calibration_origins": "t-H-n+1,...,t-H inclusive",
+    "minimum_issue_index": "H+n-1",
+    "label_end": "i+H",
+    "maturity_requirement": "all label_end <= actual issue index t",
+    "issuer_arguments": [
+      "t",
+      "current",
+      "labels",
+      "origins",
+      "CellSpec"
+    ],
+    "issuer_future_peak_access": false,
+    "rank": "exact ceil((n+1)*tau)",
+    "generic_rank_above_n": "positive_infinity",
+    "configured_rank_above_n": "STRUCTURAL_STOP",
+    "quantile_interpolation": false,
+    "score_jitter": false,
+    "additional_deliberate_decimal_or_capacity_rounding": false,
+    "arithmetic_representation": "ordinary float64 rounding still applies",
+    "extrema_symbols": {
+      "a_i": "lower_increment",
+      "b_i": "upper_increment"
+    },
+    "expected_rank_role": "assert equals exact integer ceiling; never override it",
+    "issuer_calibration_view": "exactly the n selected completed historical rows; future target and full raw/source arrays are not issuer inputs; independent actual t remains mandatory"
+  },
+  "methods": {
+    "order": [
+      "F",
+      "S",
+      "R",
+      "L",
+      "P0"
+    ],
+    "current_floor": "B=abs(N[t])",
+    "F": "cF=Qk(completed own-anchor headrooms); CF=B+cF",
+    "S": "s_i=max(N[t]+b_i,-N[t]-a_i)-B; cS=Qk(s_i); CS=B+cS",
+    "R": "CR=B+Qk(completed radii)",
+    "L": "CL=max(B,Qk(completed peaks))",
+    "P0": "CP0=B",
+    "S_canonical_float_operation": "stored headroom scores, selected allowance, common B addition",
+    "calibration_objects_immutable": true,
+    "fitted_forecaster_or_parameter_search": false,
+    "selected_vs_issued_extra": "private selected cF/cS drive mechanism categories; public extra is stored C-B. Distinct selected allowances can yield equal stored capacities."
+  },
+  "evaluation": {
+    "cutoff_naive": "2016-01-01T00:00:00.000000",
+    "common_origins_all_cells": true,
+    "first_index_rule": "max(first date-eligible index, max_cell(H+n-1))",
+    "max_menu_warmup": 1445,
+    "last_index_rule": "T-1-max_cell(H)",
+    "max_menu_horizon": 24,
+    "expected_last_index_for_pinned_rows": 18551,
+    "origin_weight": "one_equal_weight_per_record",
+    "matured_evaluation_labels_may_enter_later_pools": true,
+    "holdout_description": "retrospective specification holdout with prequential completed-label feedback",
+    "permanently_unseen_external_preregistered_or_live": false,
+    "primary_error": "stored peak minus stored issued capacity",
+    "pinball": "float(tau)*max(error,0)+float(1-tau)*max(-error,0), weights converted separately from exact fractions",
+    "aggregate_sum": "math.fsum",
+    "primary_contrast": "untrimmed mean(loss_F-loss_S), all zeros retained",
+    "negative_contrast_favors": "F",
+    "relative_contrast": "mean_d / mean_loss_S if mean_loss_S>0 else undefined",
+    "strict_breach": "error>0",
+    "unconditional_positive_overrun": "mean(max(error,0))",
+    "conditional_overrun": "sum(max(error,0))/strict_breach_count if count>0 else undefined",
+    "unused_allowance": "max(-error,0)",
+    "population_superiority_test_or_CI": false,
+    "reported_extra_allowance": "stored issued capacity minus stored current absolute inventory; not the private selected order-statistic allowance when rounding differs",
+    "aggregate_mean": "finite nonempty vector: return sole stored constant if all entries exactly equal; otherwise math.fsum(values)/length; reject empty required means",
+    "falsifiable_record_comparison": "A claim that F improves on S on the primary fixed record requires mean_d<0; mean_d>=0 fails that claim. This is a descriptive finite-record criterion, not a population hypothesis test."
+  },
+  "numerical_diagnostics": {
+    "epsilon": "numpy float64 machine epsilon",
+    "tolerance_multiplier": 32,
+    "event_scale": "max(1,peak,all five capacities) per evaluated origin",
+    "aux_breach": "error>32*eps*event_scale",
+    "near_event_boundary": "abs(error)<=32*eps*event_scale",
+    "capacity_geometry_scale": "max(1,all five capacities)",
+    "near_FS_capacity": "abs(CF-CS)<=32*eps*max(1,CF,CS)",
+    "raw_events_scores_or_signs_overwritten_by_tolerance": false,
+    "raw_FS_capacity_partition": [
+      "F_lower",
+      "equal",
+      "F_higher"
+    ],
+    "mechanism_partition": [
+      "paired_scores_equal",
+      "scores_changed_allowances_equal",
+      "allowances_changed_capacities_equal",
+      "capacities_different"
+    ],
+    "mechanism_categories_use": "ordinary computed equality, no learned tolerance",
+    "any_maturity_or_pool_index_violation": "EXACT_STOP_NO_TOLERANCE",
+    "any_finite_construction_capacity_below_current_floor": "EXACT_STOP_NO_CLIPPING",
+    "cache_sign_checks": "headroom>=0, lower_increment<=0<=upper_increment, radius>=0",
+    "tolerated_upper_geometry_only": [
+      "historical headroom<=radius",
+      "F capacity<=R capacity",
+      "S capacity<=R capacity"
+    ],
+    "material_upper_geometry_violation": "STOP; retain smaller within-tolerance discrepancies without clipping",
+    "realized_future_peak_above_any_forecast": "scientific breach outcome, never a geometry-stop condition",
+    "mechanism_operands": "paired completed calibration headroom arrays, then selected extra allowances, then stored capacities",
+    "mechanism_decision_order": [
+      "if all paired stored headrooms equal",
+      "else if selected stored allowances equal",
+      "else if stored capacities equal",
+      "else different stored capacities"
+    ],
+    "canonical_equality_implication_failure": "STRUCTURAL_STOP",
+    "raw_FS_partition_operands": "stored capacities using ordinary <,==,>",
+    "aggregate_arithmetic_tolerance": {
+      "gamma": "gamma(q)=q*eps/(1-q*eps), require q*eps<1 and finite inputs",
+      "mean_equivalence": "8*gamma(2*M+2)*max(1,max_abs_relevant_input)",
+      "bootstrap_same_explicit_blocks_scale": "maximum absolute original d",
+      "grouped_paired_mean_scale": "maximum absolute original d",
+      "paired_mean_vs_subtracted_method_means_scale": "maximum absolute of original F/S pinball losses",
+      "role": "fixed arithmetic consistency tolerance only; no inferential meaning or modification of scores/events"
+    },
+    "cross_cell_invariants": [
+      "same original t and shared common origin vector required for every comparison",
+      "H6 n720 capacities nondecreasing across tau90/main/tau99 for all methods; P0 equal",
+      "same H targets identical across window/tau cells",
+      "future peaks/headrooms nondecreasing H6/H12/H24 at fixed t",
+      "L capacities nondecreasing H6/H12/H24 at n720 tau95 after alignment by historical label ends",
+      "no universal cross-H ordering imposed on F/S/R, nor cross-window ordering on F/S/R/L",
+      "P0 capacity same across all cells, issued extra/unused zero",
+      "P0 raw breach/overrun same at same H regardless of n/tau, and nondecreasing across H at fixed tau",
+      "P0 raw pinball same for same H/tau regardless of n and nondecreasing H at fixed tau",
+      "conditional severity and auxiliary tolerance flags do not inherit all raw-event horizon/menu orderings"
+    ],
+    "cache_geometry_scale": "per historical cache row max(1,headroom,radius) for the tolerated headroom<=radius check"
+  },
+  "diagnostics": {
+    "cell_id": "main",
+    "panels": [
+      "current_sign",
+      "development_magnitude_tercile",
+      "source_index_modulo_6",
+      "naive_origin_month",
+      "retrospective_gap_free_path"
+    ],
+    "sign_rule": "negative, exactly zero, positive",
+    "development_states": "all raw states with naive timestamp before cutoff",
+    "tercile_ranks": "ordinary ceil(m/3) and ceil(2m/3)",
+    "tercile_groups": "x<=q1; q1<x<=q2; x>q2 for x=abs(current)",
+    "coincident_threshold_empty_groups": "retain, do not adjust",
+    "phase_rule": "original zero-based source index t modulo 6, not compressed loss-vector position",
+    "month_rule": "forecast-origin naive YYYY-MM, all calendar months first through last eligible issue",
+    "gap_free_rule": "all H subsequent adjacent timestamp gaps exactly one hour; evaluation grouping only",
+    "public_group_min_origins": 30,
+    "sparse_groups_remain_in_global_analysis_and_calibration": true,
+    "additional_minimum_breach_count": null,
+    "interactions_smoothing_or_fitted_state_association": false,
+    "dense_rolling_plot_public": false,
+    "long_csv_fields": [
+      "cell_id",
+      "panel",
+      "group",
+      "method_or_comparison",
+      "metric",
+      "origin_count",
+      "display_status",
+      "value",
+      "undefined_reason"
+    ],
+    "public_display_statuses": [
+      "DISPLAYED",
+      "BELOW_DISPLAY_MIN",
+      "NO_ORIGINS"
+    ],
+    "sparse_metric_values": "null/empty for every method and F_MINUS_S at 1..29 origins; retain origin_count/status",
+    "zero_origin_groups": "retain intentional empty rows; never numeric zero mean",
+    "display_rule_filters_primary_or_calibration_or_stability": false
+  },
+  "stability": {
+    "cell_id": "main",
+    "input": "original ordered raw paired d vector on common origins",
+    "lengths": [
+      120,
+      240,
+      720,
+      1440
+    ],
+    "replicates_per_length": 999,
+    "generator": "numpy.random.PCG64",
+    "seed_sequence": "[20261020,ell], one stream per length for all replicates",
+    "block_draw_order": [
+      "uniform integer start 0..M-1",
+      "positive-support geometric length p=1/ell"
+    ],
+    "circular_continuation": true,
+    "last_block_truncation": "only remaining draws to reach M",
+    "long_block_rejection_or_redraw": false,
+    "block_sum": "one or two float64 slice sums, stable combine, divide by M; no prefix differencing or R-by-M tensor",
+    "constant_input": "999 copies of the input constant, sd zero; mean zero alone does not qualify",
+    "expected_used_blocks": "1+(M-1)/ell",
+    "reported_means_distinct": [
+      "observed_mean_d",
+      "resampled_mean_average"
+    ],
+    "sd_center": "resampled_mean_average",
+    "sd_ddof": 1,
+    "percentile_rule": "ordinary ceil(R*p), p=1/40 and 39/40",
+    "endpoint_one_based_ranks": [
+      25,
+      975
+    ],
+    "null_centering_basic_interval_or_SD_bar": false,
+    "interpretation": "descriptive paired resampling-stability profile, not population confidence or superiority probability",
+    "same_block_equivalence_check_required": true,
+    "same_block_equivalence_inputs": "wholly artificial explicit starts and lengths, shared by slice and direct-index routes",
+    "same_block_equivalence_tolerance": "numerical_diagnostics.aggregate_arithmetic_tolerance",
+    "reported_endpoint_fields": [
+      "resampled_mean_order25",
+      "resampled_mean_order975"
+    ],
+    "reported_sd_field": "resampled_mean_sd_ddof1",
+    "constant_input_outputs": "all stored input entries identical c: observed mean, resampled average and both endpoints return that stored c exactly, SD0; generic sum/division does not replace this branch",
+    "constant_flags": [
+      "constant_input",
+      "constant_shortcut_used"
+    ],
+    "constant_shortcut_draws": "999 analytically identical replicate values per length; no claim of actual block draws; expected_used_blocks still describes declared random mechanism"
+  },
+  "resources": {
+    "analysis_processes": 1,
+    "requested_numerical_threads": 1,
+    "maximum_numerical_threads": 2,
+    "conservative_observed_OS_thread_stop_above": 2,
+    "thread_env_names": [
+      "OMP_NUM_THREADS",
+      "OPENBLAS_NUM_THREADS",
+      "VECLIB_MAXIMUM_THREADS",
+      "MKL_NUM_THREADS",
+      "NUMEXPR_NUM_THREADS"
+    ],
+    "thread_probe": "Darwin own-PID ps -M -p PID -o pid=, strict known-header and final own-PID validation",
+    "thread_measurement": "maximum observed snapshot count, not continuously measured peak",
+    "wall_start": "before numerical imports",
+    "wall_warning_seconds": 480,
+    "wall_orderly_stop_seconds": 540,
+    "wall_deadline_seconds": 600,
+    "rss_unit_Darwin": "bytes",
+    "early_rss_stop_bytes": 1610612736,
+    "maximum_rss_bytes": 2147483648,
+    "max_raw_bytes": 104857600,
+    "max_single_download_bytes": 26214400,
+    "max_explicit_buffer_bytes": 67108864,
+    "max_named_live_arrays_bytes": 134217728,
+    "max_new_output_bytes": 83886080,
+    "max_private_numeric_output_bytes": 67108864,
+    "max_public_analysis_output_bytes": 10485760,
+    "forecast_checkpoint_every_origins": 100,
+    "resampling_checkpoint_every_replicates": 50,
+    "gpu_training_installation_persistent_service": false,
+    "resource_scope_reduction": "separately versioned primary-only amendment, all five methods, original common origins and four 999-replicate lengths; omit all six sensitivities together; preserve/disclose original attempts",
+    "global_wall_scope": "retrieval if requested, imports/input checks, caches, all seven cells, all four profiles, aggregate/figure writes and final manifest checkpoint",
+    "stage_checkpoints": [
+      "after numerical imports",
+      "after source validation",
+      "after each horizon cache",
+      "after each cell",
+      "after each resampling length",
+      "before and after aggregate/figure output writes",
+      "final manifest checkpoint"
+    ],
+    "measurements_point": "in-process elapsed/RSS high-water at final checkpoint; final metadata tail not separately measured",
+    "unavailable_required_resource_observation": "STOP_UNVERIFIED_NOT_ZERO",
+    "bytecode_policy": "invoke with -B and set sys.dont_write_bytecode before local imports; no new Python cache tree outside task scratch",
+    "required_in_run_artificial_preflight": "same-explicit-block direct-index versus segment arithmetic check and independent exact cancellation oracle; not a financial performance run",
+    "private_progress": "save completed scalar cell/profile records locally at stage boundaries; preserve produced partial artifacts on stop, no filler scientific zeros",
+    "storage_scope": "new attempt public/private output trees; canonical input source has separate raw/download limits; final metadata tail unmeasured explicitly"
+  },
+  "outputs": {
+    "public_scientific_tables": [
+      "results/summary.csv",
+      "results/paired-comparison.csv",
+      "results/stability.csv",
+      "results/diagnostics.csv"
+    ],
+    "public_run_manifest": "results/run-manifest.json",
+    "expected_success_rows": {
+      "summary": 35,
+      "paired_comparison": 7,
+      "stability": 4
+    },
+    "original_aggregate_figures": [
+      "within-cell-paired-means",
+      "primary-monthly-paired-means",
+      "primary-resampling-ranges"
+    ],
+    "figure_source_only": "public aggregate CSV and sanitized provenance",
+    "paper_table_1": "five primary methods in fixed order",
+    "paper_table_2": "four fixed resampling lengths",
+    "paper_display_unit": "USD millions, fixed factor 1000000; scientific notation preserves small nonzero signs",
+    "public_writer_accepts": "AggregateBundle plus whitelisted manifest fields only",
+    "private_only": [
+      "raw CSV and ZIP",
+      "source PDFs and renders",
+      "origin-level forecasts targets errors signs",
+      "calibration extrema",
+      "actual development thresholds",
+      "full paired d",
+      "replicate means and indices",
+      "dense rolling diagnostics",
+      "local access paths"
+    ],
+    "undefined_json": "null plus reason, never NaN or Infinity",
+    "text_encoding": "UTF-8 LF",
+    "numeric_csv_format": "round-trippable finite float",
+    "overwrite_complete_attempt": false,
+    "manifest_self_hash": false,
+    "private_path_or_signed_query_logging": false,
+    "monetary_csv_unit": "source-reported USD, no additional decimal rounding of stored floats",
+    "other_units": {
+      "rates": "fractions",
+      "counts": "integer indexed origins/events/replicates as named",
+      "ell": "ordered primary origins",
+      "wall_time": "seconds",
+      "RSS": "bytes"
+    },
+    "manifest_top_level_whitelist": [
+      "manifest_schema_version",
+      "declared_scope",
+      "study_id",
+      "attempt_id",
+      "run_status",
+      "stop_code",
+      "planned_cell_ids",
+      "completed_cell_ids",
+      "method_ids",
+      "source",
+      "specification",
+      "code",
+      "environment",
+      "resources",
+      "checks",
+      "outputs",
+      "undefined_conventions"
+    ],
+    "manifest_reject_unknown_fields": true,
+    "manifest_excluded_fields": [
+      "absolute source/output paths or local basenames",
+      "cwd",
+      "argv",
+      "sys.executable",
+      "username",
+      "hostname",
+      "unrelated/full environment",
+      "ps stdout",
+      "exception repr or traceback",
+      "cookies or auth headers",
+      "response bodies",
+      "signed URL query/path"
+    ],
+    "private_storage": {
+      "root": "task-owned scratch/attempt_id",
+      "exclusive_new_attempt": true,
+      "directory_mode_octal": "0700",
+      "file_mode_octal": "0600",
+      "output_symlink_or_traversal": false,
+      "public_private_tree_overlap": false
+    },
+    "final_manifest_written_last": true,
+    "primary_only_amendment_success_rows": {
+      "summary": 5,
+      "paired_comparison": 1,
+      "stability": 4
+    },
+    "primary_only_amendment_sample": "original seven-cell common origins and bounds, never recompute from reduced menu",
+    "figure_paths": [
+      "manuscript/working-paper/figures/within-cell-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-monthly-paired-means.pdf",
+      "manuscript/working-paper/figures/primary-resampling-ranges.pdf"
+    ],
+    "output_schema_path": "protocol/output-schema.json",
+    "code_file_allowlist": [
+      "study_data.py",
+      "study_core.py",
+      "study_report.py",
+      "run_study.py",
+      "test_data.py",
+      "test_core.py",
+      "test_report.py",
+      "test_runner.py"
+    ],
+    "analysis_run_status_scope": "COMPLETE refers only to the accepted scientific run; it never asserts that the manuscript/PDF/GitHub delivery or 24-hour project is complete",
+    "output_schema_sha256": "3bef13d68c65160b9642d715344e10a4e40ddb52c6439d09a9b5573b54e6b752",
+    "scalar_boundary": "Python built-in str/int/finite float/bool/None only as allowed per field; reject arrays, containers, arbitrary objects and NumPy scalars; no generic string fallback",
+    "artifact_record_fields": [
+      "relative_path",
+      "kind",
+      "bytes",
+      "sha256",
+      "row_count"
+    ],
+    "staging_handoff": "do not promote the entire public staging tree before create_latex_project; hand over results separately; create the new real project first, copy exactly three allowed figure files, verify destination bytes/hash against staged artifacts",
+    "forbidden_local_basename_scope": "caller local source/access basename only; explicit fixed public repository-relative code/artifact paths and requested dataset member remain allowed"
+  },
+  "claim_limits": [
+    "Recorded net inventory, not cash, margin, P&L, gross FX exposure or controlled-policy effect.",
+    "Sampled future maximum, not a continuous-time or clock-hour protection guarantee.",
+    "Existing empirical quantile and historical-scenario constructions, no new conformal theorem or first financial peak-quantile claim.",
+    "No actual augmented-score exchangeability, stationarity or inferential bootstrap premises established.",
+    "One old retrospective source, no current-market, cross-dealer or real-time-vintage validation.",
+    "All adverse and degenerate results remain; no post-result model, parameter, group or favorable-block selection.",
+    "No established nominal finite-sample marginal, current-state-conditional, full-history-conditional, simultaneous or anytime coverage for the actual sequence; lack of exchangeability proof does not imply universal undercoverage.",
+    "Fixed-envelope Lipschitz statements are neither full raw-to-output pipeline stability nor the descriptive resampling profile.",
+    "F/S changes retained historical information and anchor handling together; it does not separately identify a pure dimension-reduction benefit or a causal state effect. F also uses the current floor.",
+    "Observed paths include existing risk management; a retrospective allowance does not reveal paths after changed quoting, hedging or limits.",
+    "The upper prediction rank is not generically a unique empirical pinball ERM; proper population scoring does not establish actual F/S conditional optimality."
+  ],
+  "runtime_reference": {
+    "tested_metadata_python": "3.12.14",
+    "required_numpy": "2.3.5",
+    "required_reportlab": "4.4.9",
+    "actual_versions_must_be_observed": true,
+    "metadata_does_not_prove_import_health": true,
+    "resource_probe_platform": "Darwin; unavailable or unsupported required observations stop UNVERIFIED",
+    "installation_allowed": false
+  },
+  "study_id": "sampled-inventory-peaks-v1",
+  "frozen_at_utc": "2026-10-21T05:46:37Z"
+}
