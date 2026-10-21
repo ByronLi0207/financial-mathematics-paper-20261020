@@ -1,218 +1,257 @@
 {
-  "title": "Historical Headrooms versus Current-State Scenarios for Sampled Inventory Peaks",
-  "subtitle": "A fixed-design comparison of mature empirical quantile rules",
-  "date": "Working paper — 21 October 2026",
-  "abstract": "Historical scenario revaluation is a mature financial-risk practice, but reanchoring historical inventory changes at today's position need not improve a forecast of a future inventory peak. We compare a historical own-anchor headroom quantile with a current-anchor scenario quantile and three simple references. The response is the maximum absolute source-reported USD net position over the current and next H recorded observations. A seven-cell specification was frozen before target-specific evaluation on one public market-maker series. The common evaluation sample contains 6,625 origins. At H=6, a 720-label window and the 0.95 quantile, historical headrooms reduce mean pinball loss by USD9,374.86, or 2.08%, relative to current-anchor scenarios. This accompanies more strict breaches and larger overruns. The direction reverses at H=24 and at the 0.90 quantile; four fixed geometric-block resampling ranges all cross zero. These are descriptive finite-record results, without a population superiority test or coverage guarantee. The study clarifies the target, mature-label timing, state-revaluation geometry and floating-point equality mechanisms, and supplies bounded replication code and aggregate evidence. It does not estimate cash needs, profits or the causal effect of changing a dealer's risk policy.",
+  "title": "Historical Response Selection for Sampled FX Net-Position Peaks",
+  "subtitle": "A fixed comparison and an exploratory state-retrieval extension",
+  "date": "Working paper - 21 October 2026",
+  "abstract": "Historical peak forecasts depend on which episodes are retained and how their responses are transferred to the current state. We compare empirical quantile constructions for the maximum absolute source-reported USD net position over the current and next H records, using an aggregate client-flow proxy from one foreign-exchange market maker. An original fixed comparison is extended by signed-state nearest-neighbor retrieval after the evaluation interval had been inspected. The primary comparisons use 6,625 common issue origins, a .95 quantile preference and fully completed labels; the extension selects 360 or 180 episodes from a rolling pool of 720. At H=6, historical headrooms have 2.08% lower mean pinball loss than raw current-anchor scenarios, with more breaches and larger overruns; the ranking reverses at H=24. In the extension's fixed primary comparison, nearest360 retrieval reduces floored native-peak-quantile loss by 31.83% relative to recent360 retrieval, but remains worse than the original full-window headroom and scenario rules. All 12 matched retrieval loss contrasts are negative, while every matched scenario contrast has more breaches and greater mean positive overrun. Elementary common-set bounds explain how nearby starting positions can make representations agree without certifying accuracy. The findings identify finite-record forecast tradeoffs, with exploratory retrieval evidence and no population superiority inference. The recorded proxy and passive forecasts do not establish conditional coverage, independent external validity or policy, profit and funding effects.",
   "sections": [
     {
-      "title": "1. Financial question and contribution",
+      "title": "1. Introduction",
       "blocks": [
         {
           "type": "p",
-          "html": "An inventory capacity forecast must trade the loss from a sampled peak exceeding an issued level against the cost assigned to unused allowance. The choice of historical representation matters even before a forecasting model is fitted. A dealer can pool the extra absolute exposure observed from each historical starting position, or apply historical signed inventory changes to the current position and then calculate a peak. The second construction follows an established scenario-revaluation principle; the first is a simpler empirical summary. They answer the same forecast question under different uses of historical state."
+          "html": "A forecast of a future position peak depends on how past episodes are made comparable with the present. One can retain each episode's original peak, retain its increase above its own starting magnitude, or translate its signed increments to the current position before calculating a peak. A further choice is which episodes to retain. Pooling recent episodes and retrieving episodes with nearby starting positions need not produce the same tail forecast, even when both use an unweighted empirical quantile."
         },
         {
           "type": "p",
-          "html": "The question here is deliberately narrow: does own-anchor historical headroom pooling improve a prespecified asymmetric forecast score relative to current-anchor revaluation on this recorded series? Both methods use the current absolute inventory as a known lower floor. Their comparison changes historical representation and anchor treatment together. It cannot identify a pure dimension-reduction benefit or an isolated causal inventory-state effect."
+          "html": "We study these choices for a recorded scalar USD net position formed from a sample of a foreign-exchange market maker's client flow. The outcome is the largest absolute reported position over the current and next H records. This is a measure of the scale of the recorded net-position proxy. It cannot reconstruct the dealer's gross currency exposures, hedged book, settlement cash or funding requirement. Our issued levels are passive forecasts under the policy that generated the observations; their scores do not estimate the profit or capital effect of changing quotes, hedges or risk limits. Inventory-sensitive quoting affects future fills and inventory in stated dealer models (Avellaneda and Stoikov, 2008); the policies behind this recorded proxy are not observed here."
         },
         {
           "type": "p",
-          "html": "The primary finite-record answer favors headroom pooling by 2.08% of the scenario rule's mean loss. That conclusion has material boundaries. The pooling rule has 332 strict breaches against 254 for the scenario rule; the primary direction reverses in two fixed sensitivities and in five of thirteen calendar months. All four descriptive resampling ranges contain zero. The contribution is an auditable application comparison and clarification of construction effects, rather than a new quantile algorithm, a first financial peak-risk application or a general superiority result."
+          "html": "The study has two distinct design histories. The original, fixed comparison evaluated historical headrooms, reanchored increment envelopes and three simple references on 6,625 common issue origins. The present extension was formulated after those results had been inspected. It crosses three response representations with five fixed historical selection sets, comparing nearby signed starting positions with an equal number of recent episodes. We published the extension's complete menu and primary contrast before calculating the added forecasts. Every new comparison nevertheless remains exploratory on the already inspected interval."
         },
         {
           "type": "p",
-          "html": "The source records net inventory under an existing business and risk-management policy. An issued level in this study is a passive forecast, not an intervention. If actual quoting, hedging or limits changed, the path could change as well. Lower forecast loss therefore cannot be translated into trading profit, capital savings or the welfare effect of a new risk limit."
+          "html": "The extension addresses a specific weakness of the original comparison: applying every representation to a single rolling pool does not show whether a result survives a simple, mature form of state-based historical retrieval. Its primary comparison uses the floored empirical quantile of native peaks, with the 360 nearest starting signed positions versus the 360 most recent origins, both drawn from the same 720 fully completed candidate episodes. The response horizon is six subsequent records. A second, fixed count and a 24-record horizon provide sensitivity evidence. They cannot replace an unfavorable primary result."
+        },
+        {
+          "type": "p",
+          "html": "The contribution is a bounded application comparison with an explicit construction mechanism. For a common selected set and rank, elementary bounds relate differences between the three issued levels to the historical starting-position distances. Exact signed-anchor matches make all three constructions agree in real arithmetic. This explains why state matching can reduce a representation difference; it does not establish which forecast is accurate. The empirical analysis therefore reports loss together with capacity, breaches, overrun, unused allowance, selected age and anchor distances. The question is whether a transparent finite retrieval rule changes the observed tradeoff, rather than whether geometric agreement certifies a financial tail model."
+        },
+        {
+          "type": "p",
+          "html": "The original primary comparison favors headrooms by 2.08% of scenario loss, with more breaches and larger overruns. The extension's primary nearest-state comparison reduces native-peak loss by 31.83% relative to an equal-count recent reference, but does not beat the original full-window leaders. All matched scenario-retrieval score gains coexist with more breaches and greater mean positive overrun. These distinctions are central to the interpretation: a useful retrieval comparison is not a new best-performing risk model or a policy benefit."
         }
       ]
     },
     {
-      "title": "2. Closest applications and mature method transfer",
+      "title": "2. Closest work and mature method transfer",
       "blocks": [
         {
           "type": "p",
-          "html": "Wisniewski, Lindsay and Lindsay (2020), hereafter W20, already study conformal interval estimation for market makers' net positions on this data source, with rolling calibration, several engines and pinball evaluation. Their experimental response is a scalar hourly signed position and their benchmark forecasts the next time epoch. The present response is a multi-record maximum absolute position including the issue record. Published W20 scores are consequently not directly comparable benchmark numbers. Financial conformal forecasting and use of this source do not originate here."
+          "html": "The closest empirical lineage is Wisniewski, Lindsay and Lindsay (2020), who use this public source for next-hour signed-position interval forecasts. Their methods combine rolling calibration with several regression engines, lagged positions and calendar or trading-session features. Chapter 6 of Wisniewski's doctoral thesis continues endpoint prediction on the same source and evaluates scale-normalized and regularized constructions. These works establish prior financial forecasting on these observations. The response here is instead a multi-record absolute maximum, including the issue record; their published interval scores consequently cannot be used as numerical benchmarks for this target. Our one-state retrieval rule also does not reproduce or displace their richer information sets."
         },
         {
           "type": "p",
-          "html": "Peak-risk quantiles also have financial precedents. Van den Hoogen (2017) estimates a maximum cumulative payment-cash deficit using transaction data; Liao and Theodosopoulos (2005) study maximum collateral-adjusted contingent exposure and marking decisions. Payment liquidity, collateral exposure and netted inventory are distinct objects. These sources rule out a broad first-financial-peak claim while not supplying interchangeable empirical benchmarks."
+          "html": "Financial path extrema have a separate established literature. MaxVaR, by Boudoukh, Richardson, Stanton and Whitelaw (2004), studies the worst mark-to-market loss relative to initial wealth over a monitoring horizon. Van den Hoogen (2017) studies maximum cumulative payment-cash deficits, while Liao and Theodosopoulos (2005) consider maximum collateral-adjusted contingent exposure and marking decisions. Their states, units and financial uses differ from a two-sided absolute net-position maximum. They make a broad claim of a first financial peak forecast untenable, while leaving a legitimate, narrower application question about the particular recorded response."
         },
         {
           "type": "p",
-          "html": "Barone-Adesi, Giannopoulos and Vosper (1999) provide a mature scenario-revaluation precedent. The March 1999 working-paper body consulted uses filtered returns, historical standardized innovation vectors, recursive volatility and price propagation, and portfolio revaluation. Our scenario rule uses complete observed inventory-increment envelopes. It does not estimate a volatility filter, draw fitted innovations, propagate fitted dynamics or price derivatives. Only the current-state scenario-revaluation principle is transferred; filtered historical simulation and its assumptions are not implemented or imported as guarantees."
+          "html": "The method components are mature. Hull and White (1998) update historical shocks using predicted volatility; Barone-Adesi, Giannopoulos and Vosper (1999) propagate standardized historical innovations through stated conditional dynamics and portfolio revaluation. The scenario representation here performs only raw translation of observed net-position increments. It fits neither a volatility filter nor a dynamics model. Biau and Patra (2011) provide a directly relevant nearest-neighbor empirical-response-quantile construction within a stationary-ergodic sequential prediction strategy. Our fixed rolling window, one current signed level and delayed, overlapping peak labels do not implement that complete strategy or satisfy its assumptions merely by using neighbors. We transfer the finite retrieval operation and assess it on a common response; no consistency or coverage theorem is inherited."
         },
         {
           "type": "p",
-          "html": "Quantile scoring follows the established expected-score perspective of Gneiting (2011). Nonexchangeable conformal theory in Barber et al. (2023) and recent financial calibration in Schmitt (2026) supply context, not a theorem for the rules evaluated here. Schmitt's version 3, revised 3 August 2026, is a relevant recent preprint; recency is not treated as evidence of popularity. The geometric-block mechanism follows Politis and Romano (1994), whose inferential premises are separated from the descriptive mechanism used below."
+          "html": "The resulting difference from the nearest papers is thus substantive but limited: a different financial response, explicit completed-label timing, a fixed crossing of historical selection and response representation, and an elementary explanation of when those representations approach one another. It is not a new quantile estimator, a new filtered historical simulation method, an independent market-maker validation or a demonstrated improvement over the strongest conditional risk models."
         }
       ]
     },
     {
-      "title": "3. Recorded peak target and completed information",
+      "title": "3. Data, recorded response and completed information",
       "blocks": [
         {
           "type": "p",
-          "html": "Let N<sub>t</sub> be the signed source-reported USD net position at zero-based recorded index t. H denotes subsequent recorded observations. Define the known current floor B<sub>t</sub>, future sampled peak P<sub>t,H</sub> and extra headroom G<sub>t,H</sub> by"
+          "html": "The input is the one-hour member of version 2 of the Net Position Time Series Dataset, with 18,576 records from 5 February 2014 01:00 through 24 January 2017 00:00. Wisniewski et al. (2020) describe sampled aggregate client-flow positions across five liquid FX pairs. Only datetime and NetPosUsd are used. A netted USD scalar does not reconstruct currency-level gross positions, hedge transactions, collateral or cash movements. The source's timezone and historical publication/vintage convention are unverified."
+        },
+        {
+          "type": "p",
+          "html": "There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We retain the file's chronology without sorting, deleting paths across gaps or interpolating missing intervals. Consequently H counts subsequent records, rather than elapsed hours. Let N<sub>t</sub> be the signed source-reported position, observed before issue. Define"
         },
         {
           "type": "equation",
-          "html": "B<sub>t</sub> = |N<sub>t</sub>|; &nbsp; P<sub>t,H</sub> = max<sub>0≤h≤H</sub>|N<sub>t+h</sub>|; &nbsp; G<sub>t,H</sub> = P<sub>t,H</sub> − B<sub>t</sub>.",
+          "html": "B<sub>t</sub>=|N<sub>t</sub>|; &nbsp; P<sub>t,H</sub>=max<sub>0≤h≤H</sub>|N<sub>t+h</sub>|; &nbsp; G<sub>t,H</sub>=P<sub>t,H</sub>−B<sub>t</sub>.",
           "latex": "B_t=|N_t|,\\qquad P_{t,H}=\\max_{0\\le h\\le H}|N_{t+h}|,\\qquad G_{t,H}=P_{t,H}-B_t."
         },
         {
           "type": "p",
-          "html": "The maximum includes the current record, so P<sub>t,H</sub> ≥ B<sub>t</sub> and G<sub>t,H</sub> ≥ 0. An interior spike counts even if the endpoint returns to its starting level. This sampled maximum does not bound an unobserved continuous-time maximum."
+          "html": "Including h=0 gives the known floor B<sub>t</sub> and nonnegative headroom G. The peak includes an interior recorded spike even if the final position returns to its starting value. It does not bound an unobserved excursion between records. The retrospective issue convention treats N<sub>t</sub> as available immediately before issue, rather than establishing historical live-publication availability."
         },
         {
           "type": "p",
-          "html": "For a completed historical origin i retain the directional increment extrema and absolute increment radius:"
+          "html": "At issue t the extension's eligible pool is I<sub>t</sub>={t−H−719,...,t−H}. Each of its 720 historical origins i has a response ending at i+H≤t. The latest completed label may therefore include the already observed issue record. Earlier evaluation outcomes enter later pools only after completion. Adjacent peaks and rolling pools overlap; completed-label eligibility does not make them independent."
+        },
+        {
+          "type": "p",
+          "html": "For each eligible origin retain its native peak P<sub>i,H</sub>, headroom G<sub>i,H</sub> and directional increment extrema"
         },
         {
           "type": "equation",
-          "html": "a<sub>i,H</sub> = min<sub>0≤h≤H</sub>(N<sub>i+h</sub> − N<sub>i</sub>); &nbsp; b<sub>i,H</sub> = max<sub>0≤h≤H</sub>(N<sub>i+h</sub> − N<sub>i</sub>).",
-          "latex": "a_{i,H}=\\min_{0\\le h\\le H}(N_{i+h}-N_i),\\qquad b_{i,H}=\\max_{0\\le h\\le H}(N_{i+h}-N_i)."
-        },
-        {
-          "type": "equation",
-          "html": "D<sub>i,H</sub> = max(b<sub>i,H</sub>, −a<sub>i,H</sub>); &nbsp; a<sub>i,H</sub> ≤ 0 ≤ b<sub>i,H</sub>.",
-          "latex": "D_{i,H}=\\max(b_{i,H},-a_{i,H}),\\qquad a_{i,H}\\le0\\le b_{i,H}."
+          "html": "a<sub>i,H</sub>=min<sub>0≤h≤H</sub>(N<sub>i+h</sub>−N<sub>i</sub>); &nbsp; b<sub>i,H</sub>=max<sub>0≤h≤H</sub>(N<sub>i+h</sub>−N<sub>i</sub>); &nbsp; a<sub>i,H</sub>≤0≤b<sub>i,H</sub>.",
+          "latex": "\\begin{aligned}a_{i,H}&=\\min_{0\\le h\\le H}(N_{i+h}-N_i),\\\\b_{i,H}&=\\max_{0\\le h\\le H}(N_{i+h}-N_i),\\qquad a_{i,H}\\le0\\le b_{i,H}.\\end{aligned}"
         },
         {
           "type": "p",
-          "html": "At actual issue index t the exact calibration pool is I<sub>t</sub> = {t−H−n+1, …, t−H}. It contains n fully completed labels, each ending at i+H ≤ t. The most recent label may end at the already observed issue record. Actual issue time is checked independently against the supplied pool; a later or incomplete label is rejected. The retrospective information convention treats record t as available immediately before issue. The file's historical release and vintage convention is unverified, so this is not evidence of an executable live information set."
-        },
-        {
-          "type": "p",
-          "html": "Write Q<sub>k</sub>(z) for the kth smallest of n entries, keeping duplicates, with k = ceil((n+1)τ). The exact rational τ determines the integer rank. No interpolation, jitter or additional decimal rounding is used. An unavailable generic rank is positive infinity; an unavailable configured rank stops the run. The configured ranks below are all available. This corrected prediction rank is not generically the unique empirical pinball minimizer."
+          "html": "These extrema determine the absolute peak after raw translation of the sampled increment path. They are not merely its two endpoints, and their deterministic sufficiency does not specify the next path's conditional law."
         }
       ]
     },
     {
-      "title": "4. Five empirical capacity rules",
+      "title": "4. Historical selection and response representation",
       "blocks": [
         {
           "type": "p",
-          "html": "The five methods have fixed reporting order F, S, R, L and P0. Own-anchor pooling F uses historical extra headrooms. Current-anchor scenarios S revalue each completed increment envelope at N<sub>t</sub>. The remaining methods are an increment-radius reference, a floored historical peak-level quantile and the current-floor reference:"
+          "html": "The extension uses five fixed sets at each issue. Recent sets take the last m eligible origins. Nearest sets take the m smallest signed-state distances |N<sub>i</sub>−N<sub>t</sub>|, preferring the most recent origin when distances tie. Historical response values and future query outcomes never resolve distance ties. Selected paired rows retain chronological order."
         },
         {
-          "type": "equation",
-          "html": "F: &nbsp; c<sub>F</sub>(t) = Q<sub>k</sub>({G<sub>i,H</sub>: i in I<sub>t</sub>}); &nbsp; C<sub>F</sub>(t) = B<sub>t</sub> + c<sub>F</sub>(t).",
-          "latex": "c_F(t)=Q_k\\{G_{i,H}:i\\in I_t\\},\\qquad C_F(t)=B_t+c_F(t)."
-        },
-        {
-          "type": "equation",
-          "html": "s<sub>i</sub>(t) = max(N<sub>t</sub>+b<sub>i,H</sub>, −N<sub>t</sub>−a<sub>i,H</sub>) − B<sub>t</sub>.",
-          "latex": "s_i(t)=\\max(N_t+b_{i,H},-N_t-a_{i,H})-B_t."
-        },
-        {
-          "type": "equation",
-          "html": "S: &nbsp; c<sub>S</sub>(t) = Q<sub>k</sub>({s<sub>i</sub>(t): i in I<sub>t</sub>}); &nbsp; C<sub>S</sub>(t) = B<sub>t</sub> + c<sub>S</sub>(t).",
-          "latex": "c_S(t)=Q_k\\{s_i(t):i\\in I_t\\},\\qquad C_S(t)=B_t+c_S(t)."
-        },
-        {
-          "type": "equation",
-          "html": "R: &nbsp; C<sub>R</sub>(t) = B<sub>t</sub> + Q<sub>k</sub>({D<sub>i,H</sub>: i in I<sub>t</sub>}).",
-          "latex": "C_R(t)=B_t+Q_k\\{D_{i,H}:i\\in I_t\\}."
-        },
-        {
-          "type": "equation",
-          "html": "L: &nbsp; C<sub>L</sub>(t) = max(B<sub>t</sub>, Q<sub>k</sub>({P<sub>i,H</sub>: i in I<sub>t</sub>})); &nbsp; C<sub>P0</sub>(t) = B<sub>t</sub>.",
-          "latex": "C_L(t)=\\max\\{B_t,Q_k\\{P_{i,H}:i\\in I_t\\}\\},\\qquad C_{P0}(t)=B_t."
+          "type": "table",
+          "caption": "Table 1. Fixed historical sets drawn from the same 720 completed candidate episodes. The rank is k=ceil((m+1)19/20).",
+          "headers": [
+            "Set",
+            "Membership",
+            "m",
+            "k"
+          ],
+          "rows": [
+            [
+              "full720",
+              "All eligible",
+              "720",
+              "685"
+            ],
+            [
+              "recent360",
+              "Most recent",
+              "360",
+              "343"
+            ],
+            [
+              "nearest360",
+              "Nearest signed state",
+              "360",
+              "343"
+            ],
+            [
+              "recent180",
+              "Most recent",
+              "180",
+              "172"
+            ],
+            [
+              "nearest180",
+              "Nearest signed state",
+              "180",
+              "172"
+            ]
+          ]
         },
         {
           "type": "p",
-          "html": "Directional extrema are sufficient for this target because the maximum of |N<sub>t</sub>+increment| over an observed path occurs at an increment extremum. S is therefore exact for the revalued historical sampled envelope; it does not retain only the two path endpoints or fit a high-dimensional path model. F also uses the current state, through B<sub>t</sub>."
+          "html": "For a selected set J of m rows, Q<sub>k</sub> denotes the kth unweighted order statistic with duplicates retained. There is no interpolation or jitter; all configured corrected ranks are available. At these particular counts and τ=.95 the selected order statistic is the upper endpoint of the empirical pinball-minimizer interval (Appendix C). This numerical rank convention establishes no coverage theorem for the dependent historical pool."
         },
         {
           "type": "p",
-          "html": "In exact arithmetic both historical and revalued headrooms lie between zero and D<sub>i,H</sub>. Order-statistic monotonicity gives C<sub>F</sub> ≤ C<sub>R</sub> and C<sub>S</sub> ≤ C<sub>R</sub>, and all capacities are at least B<sub>t</sub>. There is no universal F/S order or general order between L and the other historical rules. Elementary derivations and coherent counterexamples appear in Appendix A. Geometric upper bounds are not future coverage or financial adequacy guarantees."
+          "html": "The three response representations issue the following levels, with H suppressed on historical labels:"
+        },
+        {
+          "type": "equation",
+          "html": "F<sub>J</sub>=B<sub>t</sub>+Q<sub>k</sub>{P<sub>i</sub>−|N<sub>i</sub>|: i in J}.",
+          "latex": "F_J=B_t+Q_k\\{P_i-|N_i|:i\\in J\\}."
+        },
+        {
+          "type": "equation",
+          "html": "S<sub>J</sub>=B<sub>t</sub>+Q<sub>k</sub>{max(N<sub>t</sub>+b<sub>i</sub>,−N<sub>t</sub>−a<sub>i</sub>)−B<sub>t</sub>: i in J}.",
+          "latex": "S_J=B_t+Q_k\\{\\max(N_t+b_i,-N_t-a_i)-B_t:i\\in J\\}."
+        },
+        {
+          "type": "equation",
+          "html": "K<sub>J</sub>=max{B<sub>t</sub>,Q<sub>k</sub>{P<sub>i</sub>: i in J}}.",
+          "latex": "K_J=\\max\\{B_t,Q_k\\{P_i:i\\in J\\}\\}."
         },
         {
           "type": "p",
-          "html": "Stored float64 arithmetic is part of the declared calculation. S ranks headrooms and then adds B, matching F's order of operations. The private selected c<sub>F</sub>/c<sub>S</sub> values differ from the public issued extras C<sub>F</sub>−B and C<sub>S</sub>−B when addition rounds. Four categories distinguish equal complete paired candidate arrays; changed arrays with equal selected allowances; changed selected allowances with equal stored capacities; and different stored capacities. These are computed equality categories, not measures of economic equivalence."
+          "html": "F retains headroom relative to historical starting magnitude; S translates signed increments to the current position; K retains native peaks subject to the current floor. K is the method labeled L in the original artifacts. The files call an issued forecast level C its 'capacity'; throughout the paper this is a passive reported level. All three already use current information: F/K use B<sub>t</sub>, and S also uses signed N<sub>t</sub>. Retrieval changes historical membership. Equal-count recent and nearest sets may differ in age, scale, regimes and dependence."
+        },
+        {
+          "type": "p",
+          "html": "The original five-rule comparison also includes the radius reference R=B<sub>t</sub>+Q<sub>k</sub>{max(b<sub>i</sub>,−a<sub>i</sub>)} and the known-floor reference P0=B<sub>t</sub>, on its full n-row pool. The extension implements only F/S/K. Stored float64 S subtracts the floor before ranking and adds it afterward, preserving the original operation order and its rounded decisions."
+        },
+        {
+          "type": "p",
+          "html": "An elementary construction bound explains what matching can control. For one common nonempty set J and the same valid rank, put r<sub>abs</sub>=max<sub>i in J</sub>||N<sub>i</sub>|−B<sub>t</sub>| and r<sub>signed</sub>=max<sub>i in J</sub>|N<sub>i</sub>−N<sub>t</sub>|. In real arithmetic,"
+        },
+        {
+          "type": "equation",
+          "html": "|F<sub>J</sub>−K<sub>J</sub>|≤r<sub>abs</sub>; &nbsp; |S<sub>J</sub>−K<sub>J</sub>|≤r<sub>signed</sub>; &nbsp; |F<sub>J</sub>−S<sub>J</sub>|≤r<sub>abs</sub>+r<sub>signed</sub>≤2r<sub>signed</sub>.",
+          "latex": "\\begin{aligned}|F_J-K_J|&\\le r_{\\rm abs},\\qquad |S_J-K_J|\\le r_{\\rm signed},\\\\|F_J-S_J|&\\le r_{\\rm abs}+r_{\\rm signed}\\le2r_{\\rm signed}.\\end{aligned}"
+        },
+        {
+          "type": "p",
+          "html": "Appendix A proves the bounds using floor projection and order-statistic stability. If every selected signed anchor equals the query, all three reports agree; if only every selected magnitude equals the query magnitude, F=K while S can differ. Plateaus can also give equal F/S reports at distant anchors. Nearest retrieval minimizes the largest selected signed distance among equally sized subsets, but need not minimize actual report differences or loss. These common-set bounds do not compare forecasts built from different selected histories, and they contain no statement about future calibration."
         }
       ]
     },
     {
-      "title": "5. Source, frozen design and score",
+      "title": "5. Design histories, score and reporting",
       "blocks": [
         {
           "type": "p",
-          "html": "The pinned source is version 2 of davidlindsay1979/net-position-time-series-dataset, using the one-hour member named in the replication README. The accepted CSV has 1,286,391 bytes and 18,576 observations from 5 February 2014 01:00 to 24 January 2017 00:00, in a naive, unverified timezone. Only datetime and NetPosUsd enter the analysis. W20 describes aggregate client-flow positions in five liquid currency pairs. A netted USD scalar cannot reconstruct gross currency exposure, collateral, settlement cash or profit."
+          "html": "The original specification was recorded at 05:46:37 UTC on 21 October 2026 and publicly committed before its target-specific forecasts and losses were calculated. It fixes H=6, n=720, τ=19/20 as primary, with six one-factor changes: H=12 or 24, n=480 or 1440, and τ=.90 or .99. The five rules and seven settings yield 35 original summary rows. This is a retrospective specification exercise with prior source-literature knowledge, not external preregistration or prospective collection."
         },
         {
           "type": "p",
-          "html": "There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. Records are neither sorted nor dropped, and missing calendar intervals are not filled or interpolated. Thus H counts recorded steps, not clock hours. A future path crossing a long gap remains in the primary evaluation."
+          "html": "The extension was conceived after those results had been inspected. Its human-readable protocol and hash-pinned machine specification were publicly recorded in commits 63703b9 and 69d5bb6 before the added forecasts. They fix H=6 and 24, the five sets in Table 1 and F/S/K: 15 configurations per horizon, 30 in total. The six full720 F/S/K rows repeat original F/S/L references. Recording the extension before execution limits further discretion but cannot turn the old interval into an unseen holdout."
         },
         {
           "type": "p",
-          "html": "Six hours of active primary-source reading and scientific synthesis were completed before two hours of active design. The specification was frozen at 2026-10-21 05:46:37 UTC and published in repository commit 6dd404d6e700ff031793d68be209e8f783b22582 before this study's target-specific labels, forecasts or losses were computed. Scheduling gaps and overlapping work were excluded from those active durations. This is a retrospective specification holdout with completed-label feedback, not external preregistration, an external validation dataset or a prospective test. Prior source-paper knowledge and source selection remain limitations."
+          "html": "Both designs use the same 6,625 issue origins: indices 11927 through 18551 inclusive, from naive source timestamp 1 January 2016 00:00 through 23 January 2017 00:00. The common original full-menu rule retains the future records required by H=24. Earlier evaluation labels become usable later only when completed. Changing H alters both the future peak and the end of the eligible historical archive, so cross-horizon comparisons do not isolate the maximum operator alone."
         },
         {
           "type": "p",
-          "html": "The primary cell is H=6, n=720, τ=19/20, rank 685. Six one-factor sensitivities use H=12 or 24; n=480 or 1440; and τ=9/10 or 99/100, changing only the indicated primary parameter. They have ranks 685, 685, 457, 1369, 649, 714 respectively. This is seven fixed cells, not a Cartesian search. Every cell uses the same origins: naive timestamp at least 1 January 2016, t≥1445 for full-menu warmup, and t≤T−1−24. The accepted common sample is indices 11927 through 18551 inclusive, from 1 January 2016 00:00 through 23 January 2017 00:00, with M=6,625. Earlier evaluation labels enter later pools only after completion."
-        },
-        {
-          "type": "p",
-          "html": "Stored error is calculated directly as e<sub>t,j</sub> = P<sub>t,H</sub>−C<sub>j</sub>(t), and the score is"
+          "html": "For stored error e=P−C, pinball loss is"
         },
         {
           "type": "equation",
-          "html": "ρ<sub>τ</sub>(e) = τ max(e,0) + (1−τ) max(−e,0); &nbsp; d<sub>t</sub> = ρ<sub>τ</sub>(e<sub>t,F</sub>) − ρ<sub>τ</sub>(e<sub>t,S</sub>).",
-          "latex": "\\rho_\\tau(e)=\\tau\\max(e,0)+(1-\\tau)\\max(-e,0),\\qquad d_t=\\rho_\\tau(e_{t,F})-\\rho_\\tau(e_{t,S})."
+          "html": "ρ<sub>τ</sub>(e)=τ max(e,0)+(1−τ)max(−e,0); &nbsp; τ=19/20 in the extension.",
+          "latex": "\\rho_\\tau(e)=\\tau\\max(e,0)+(1-\\tau)\\max(-e,0),\\qquad \\tau=19/20\\ \\text{in the extension}."
         },
         {
           "type": "p",
-          "html": "The two score weights are converted separately from exact fractions. At τ=0.95 underprediction has nineteen times the weight of overprediction. These are declared forecast preferences, not estimated dealer costs. Under appropriate finite expected-score conditions pinball targets a quantile, but this does not prove conditional optimality of either rolling rule. The primary contrast is the untrimmed equal-origin mean of all d<sub>t</sub>, retaining zeros; negative values favor F within that cell. A nonnegative primary mean would fail the specified finite-record improvement criterion. No population test is attached to it."
+          "html": "The underprediction weight is nineteen times the overprediction weight. These are stipulated forecast preferences, not estimated funding prices, shortage costs or regulatory coefficients. Quantile-consistent scoring targets the corresponding functional under suitable finite expected-loss conditions (Gneiting, 2011); it does not establish conditional correctness of an empirical historical rule. Original rows with different τ express different objectives and are not pooled into an across-preference winner."
         },
         {
           "type": "p",
-          "html": "Additional metrics are mean issued capacity and extra allowance, strict breach count/rate, mean positive overrun, conditional overrun with its breach denominator, and mean unused allowance. A strict breach means e&gt;0. Conditional severity with no strict breach is undefined with an explicit reason, not zero. Ordinary means use a compensated finite sum; an exactly constant stored vector retains its constant. Required nonfinite values stop the run."
+          "html": "The original primary contrast is mean loss(F) minus mean loss(S) in its primary setting. The extension's separate primary contrast is mean loss(nearest360K) minus mean loss(recent360K), at H=6; a nonnegative mean would fail its finite-record improvement criterion. H=24 repeats retrieval in a context adverse to the original F/S comparison, and m=180 is fixed sensitivity. Neither may replace an unfavorable primary contrast. All 12 nearest-minus-recent and 10 same-set F-minus-S contrasts are reported without a score-sign acceptance gate."
+        },
+        {
+          "type": "p",
+          "html": "For an issued level C≥B, extra allowance is C−B. Positive overrun and unused allowance give the score decomposition"
+        },
+        {
+          "type": "equation",
+          "html": "O=(P−C)<super>+</super>; &nbsp; U=(C−P)<super>+</super>; &nbsp; ρ<sub>τ</sub>(P−C)=τO+(1−τ)U, where z<super>+</super>=max(z,0).",
+          "latex": "O=(P-C)^+,\\qquad U=(C-P)^+,\\qquad \\rho_\\tau(P-C)=\\tau O+(1-\\tau)U,\\quad z^+=\\max(z,0)."
+        },
+        {
+          "type": "p",
+          "html": "Every configuration reports mean loss, level and extra allowance; strict breach count/rate; mean O; conditional overrun with its own breach denominator; and mean U. Strict breach is P&gt;C, with no tolerance changing its sign. Conditional overrun averages O only over that rule's breach events; zero breaches make it undefined. The target can have an atom at B, so even a true quantile's strict exceedance need not equal 1−τ. Nominal breach proximity is not a calibration certificate."
+        },
+        {
+          "type": "p",
+          "html": "Geometry reports both anchor radii, mean selected age in records, the mean absolute F/S gap and exact equal-capacity counts. Primary monthly retrieval contrasts retain all 13 inclusive calendar months at both H; groups below 30 origins retain counts/status while suppressing metrics. These are descriptive groups, not independent replications or an adaptive strategy. No new population test, confidence interval or bootstrap is attached to the extension. Original block-resampling profiles concern only the original full720 F/S contrast; Appendix B preserves their descriptive status."
         }
       ]
     },
     {
-      "title": "6. Dependence, diagnostics and descriptive stability",
-      "blocks": [
-        {
-          "type": "p",
-          "html": "Overlapping peaks, rolling windows and persistent inventory induce dependence. No exchangeability, stationarity, mixing rate or inferential-bootstrap premise has been established for the actual loss sequence. Reanchoring at current inventory does not create conditional exchangeability of historical and future scores. The corrected rank alone supplies no coverage theorem here."
-        },
-        {
-          "type": "p",
-          "html": "Primary diagnostic panels use current sign, pre-cutoff absolute-inventory terciles, original t modulo6, every inclusive naive calendar month, and whether all H subsequent adjacent gaps equal one hour. The last panel uses retrospective outcome-path information and is neither a predictor nor an inclusion filter. Tercile cut points use ordinary ranks ceil(m/3) and ceil(2m/3), retaining tied or empty groups. Every intentional group retains sixty method-metric rows and one paired-mean row. Groups below 30 origins retain counts/statuses but withhold all metric values uniformly. Display suppression never changes calibration, global scoring or resampling; it is not a minimum-breach rule."
-        },
-        {
-          "type": "p",
-          "html": "Raw error signs remain unchanged. Auxiliary breaches use e&gt;32ε max(1,P,all five capacities), where ε is float64 machine precision; separate near-event and near-F/S-capacity flags are retained. Exact current-floor and maturity violations stop without clipping. Fixed upper-geometry tolerances are arithmetic checks, not permission to remove realized future breaches."
-        },
-        {
-          "type": "p",
-          "html": "The complete ordered primary contrast is resampled by circular geometric blocks, with fixed expected lengths ℓ=120,240,720,1440 and 999 means per length. Each length uses PCG64 with SeedSequence([20261020,ℓ]), one continuous stream. A block draws a uniform starting index then a positive geometric length with probability 1/ℓ. It continues circularly and only the final used block is truncated, until exactly M positions have been consumed. Long blocks are not rejected, forecasts are not refitted, and d is not centered on a null."
-        },
-        {
-          "type": "p",
-          "html": "The observed mean is distinct from the replicate average. Replicate SD is centered on that average with divisor 998; range endpoints are ordinary one-based order statistics 25 and 975, without interpolation or widening. We also report ℓ/M and expected used blocks 1+(M−1)/ℓ; the latter is not an effective sample size. An exactly constant d would use analytic identical replicates with flags; mean zero alone does not trigger that branch. In the actual run neither constant flag is true."
-        },
-        {
-          "type": "p",
-          "html": "These ranges describe sensitivity of the empirical paired mean to the declared resampling mechanism. They are not population confidence intervals, superiority probabilities or certified standard errors. Executing the Politis–Romano mechanism does not establish its inferential assumptions for this record. A range crossing zero changes neither the observed finite-record mean nor the estimand."
-        }
-      ]
-    },
-    {
-      "title": "7. Results: loss improvement and risk tradeoffs",
+      "title": "6. Original comparison: score advantage with adverse tradeoffs",
       "blocks": [
         {
           "type": "table",
-          "caption": "Table 1. Primary results. All monetary columns are source-reported USD millions; breach is a percentage. Conditional overrun uses only strict breaches. Full-precision USD values remain in summary.csv.",
+          "caption": "Table 2. Original primary H=6, n=720, τ=.95 results. Monetary columns are source-reported USD millions; breach is a percentage. K is the original L. Every rule has 6,625 origins.",
           "headers": [
-            "Method",
+            "Rule",
             "Loss",
-            "Capacity",
-            "Extra",
+            "Level",
+            "Breaches",
             "Breach %",
             "Overrun",
-            "Cond. overrun",
             "Unused"
           ],
           "rows": [
@@ -220,138 +259,389 @@
               "F",
               "0.441774",
               "22.645674",
-              "7.413933",
+              "332",
               "5.011",
               "0.166531",
-              "3.323097",
               "5.671391"
             ],
             [
               "S",
               "0.451149",
               "23.829232",
-              "8.597491",
+              "254",
               "3.834",
               "0.116728",
-              "3.044580",
               "6.805145"
             ],
             [
               "R",
               "0.527544",
               "26.400452",
-              "11.168710",
+              "122",
               "1.842",
               "0.064562",
-              "3.505941",
               "9.324199"
             ],
             [
-              "L",
+              "K (old L)",
               "0.925885",
               "31.731323",
-              "16.499582",
+              "489",
               "7.381",
               "0.196359",
-              "2.660285",
               "14.786868"
             ],
             [
               "P0",
               "1.813620",
               "15.231741",
-              "0.000000",
+              "5102",
               "77.011",
               "1.909073",
-              "2.478952",
               "0.000000"
             ]
           ]
         },
         {
           "type": "p",
-          "html": "F has the lowest primary mean pinball score, USD0.441774 million versus S's USD0.451149 million. The unrounded paired mean is −USD9,374.860250076379, or −0.009374860250076379 million; relative to S loss it is −0.02077996933256255. Monetary tables use a fixed 1e−6 display factor. Rounded displayed method means are not used to reconstruct the paired contrast."
+          "html": "Historical headrooms F have mean loss USD 441,774.04 versus USD 451,148.90 for raw reanchored scenarios S. The paired mean is −USD 9,374.86, or −2.08% of S loss. It is aggregated from per-origin loss differences before display rounding. All original sensitivities and methods are retained in Appendix B and the public aggregates."
         },
         {
           "type": "p",
-          "html": "The loss improvement is accompanied by lower mean capacity, extra allowance and unused allowance, but more strict breaches: 332/6625 for F versus 254/6625 for S. F's unconditional positive overrun is USD0.166531 million against 0.116728 million, and conditional overrun is 3.323097 million against 3.044580 million. It is therefore a score tradeoff, not safety dominance."
+          "html": "The lower score accompanies 332 strict breaches for F versus 254 for S, and greater mean positive overrun (USD 166,531.06 versus USD 116,728.04). Conditional overrun is USD 3.323097 million over 332 events for F and USD 3.044580 million over 254 for S. Lower unused allowance offsets the larger overrun at the stipulated weights. It is a score tradeoff rather than safety dominance or a measured financial saving."
         },
         {
           "type": "p",
-          "html": "R has the fewest primary breaches (122) and lowest mean positive overrun, but larger capacity and pinball loss. Its conditional severity,3.505941 million over 122 breaches, exceeds F/S. L has the greatest mean capacity yet 489 breaches, showing why aggregate mean capacity cannot establish pathwise dominance. P0 has zero extra and unused allowance, but 5102 breaches and the largest loss. Its lower conditional severity,2.478952 million over 5102 events, must be read with that different denominator."
+          "html": "R has fewer breaches and smaller unconditional overrun, but larger mean capacity and score. K has the greatest mean capacity yet 489 breaches, illustrating why an average capacity ordering does not imply pathwise dominance. P0 has zero extra and unused allowance, but 5,102 breaches and the largest loss. Conditional means must be read with these different event sets, rather than ranked as if they describe the same tail observations."
+        },
+        {
+          "type": "p",
+          "html": "The F/S direction reverses at H=24: F loss is USD 777,068.84 and S loss USD 748,383.54, with paired mean +USD 28,685.30. The τ=.90 difference is also positive but small (+USD 144.23), retained without rounding it to zero or declaring equivalence. Original monthly means favor F eight times and S five times. Low and middle pre-cutoff magnitude groups favor S, while the high group favors F and accounts for 5,445 of 6,625 origins. Those descriptive composition patterns do not identify a causal state effect or constitute a formal stationarity test."
+        },
+        {
+          "type": "p",
+          "html": "All four original geometric-block resampled-mean ranges cross zero. They are descriptive profiles, not population confidence intervals, superiority probabilities or proof of equality. The original H24 reversal and these limits remain unchanged by a later favorable retrieval contrast, which asks a different question."
+        }
+      ]
+    },
+    {
+      "title": "7. Exploratory historical selection",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "The fixed primary retrieval criterion is met on this inspected interval. At H=6, m=360, nearest360K loss is USD 594,811.09 versus USD 872,515.55 for recent360K; the direct paired difference is −USD 277,704.47, a 31.83% reduction relative to recent360K. Both original full720 F and S remain lower. At H=24, nearest360K improves over recent360K from USD 1,246,630.42 to USD 960,696.45, while original full720 S remains lower at USD 748,383.54. The large relative gain therefore improves a weak native-level baseline, without establishing a new best forecast."
         },
         {
           "type": "table",
-          "caption": "Table 2. Event denominators and numerical boundary counts for the primary cell. Strict/auxiliary breach disagreements are zero for all five methods.",
+          "caption": "Table 3. Complete extension loss menu and same-set F-minus-S paired mean, in source-reported USD millions. Full720 rows repeat original references. Differences are computed before display rounding.",
           "headers": [
-            "Method",
-            "Strict breaches",
-            "Conditional denominator",
-            "Near-event count"
+            "H",
+            "Historical set",
+            "F loss",
+            "S loss",
+            "K loss",
+            "F−S mean"
           ],
           "rows": [
             [
-              "F",
-              "332",
-              "332",
-              "0"
+              "6",
+              "full720",
+              "0.441774",
+              "0.451149",
+              "0.925885",
+              "-0.009375"
             ],
             [
-              "S",
-              "254",
-              "254",
-              "0"
+              "6",
+              "recent360",
+              "0.454089",
+              "0.467678",
+              "0.872516",
+              "-0.013589"
             ],
             [
-              "R",
-              "122",
-              "122",
-              "0"
+              "6",
+              "nearest360",
+              "0.448664",
+              "0.448731",
+              "0.594811",
+              "-0.000067"
             ],
             [
-              "L",
-              "489",
-              "489",
-              "95"
+              "6",
+              "recent180",
+              "0.485866",
+              "0.478940",
+              "0.785878",
+              "+0.006926"
             ],
             [
-              "P0",
-              "5102",
-              "5102",
-              "1523"
+              "6",
+              "nearest180",
+              "0.468133",
+              "0.459592",
+              "0.525471",
+              "+0.008541"
+            ],
+            [
+              "24",
+              "full720",
+              "0.777069",
+              "0.748384",
+              "1.197833",
+              "+0.028685"
+            ],
+            [
+              "24",
+              "recent360",
+              "0.807496",
+              "0.824047",
+              "1.246630",
+              "-0.016551"
+            ],
+            [
+              "24",
+              "nearest360",
+              "0.791192",
+              "0.770354",
+              "0.960696",
+              "+0.020838"
+            ],
+            [
+              "24",
+              "recent180",
+              "0.858214",
+              "0.895718",
+              "1.284092",
+              "-0.037504"
+            ],
+            [
+              "24",
+              "nearest180",
+              "0.847734",
+              "0.827305",
+              "0.963931",
+              "+0.020429"
             ]
           ]
         },
         {
           "type": "p",
-          "html": "F capacity is lower than S at 5509 origins, equal at 809, and higher at 307. The mechanism partition is 0 equal paired candidate arrays, 558 changed arrays with equal selected allowances, 251 different selected allowances collapsing to equal stored capacities, and 5816 different capacities. The 251 rounding cases must not be described as equality of selected allowances. The near-F/S capacity count is 809; categories themselves use exact computed equality, not a tolerance. These results do not isolate a causal state effect."
+          "html": "All 12 fixed nearest-minus-recent score contrasts are negative (Figure 2). Absolute reductions are largest for K in each horizon/count pair: about USD 260,407–320,161, compared with USD 18,947–68,413 for S and USD 5,425–17,733 for F. These are correlated comparisons sharing outcomes and historical pools, not 12 independent confirmations. Nearest360S at H=6 slightly improves its full720S counterpart. Nevertheless, no added configuration beats the better original full720 F/S rule at the corresponding H: F at H=6 and S at H=24. This observed menu comparison is not a new prespecified model-selection criterion."
+        },
+        {
+          "type": "p",
+          "html": "For the primary K pair, mean capacity falls from USD 29.854484 million to USD 25.224925 million; mean unused allowance falls from USD 12.950501 million to USD 8.274716 million. Breaches fall from 637 to 507 (9.615% to 7.653%), and mean positive overrun falls from USD 236,832.10 to USD 190,605.57. Conditional overrun nevertheless rises from USD 2.463128 million over 637 events to USD 2.490655 million over 507. The denominators and breach sets differ. None of these quantities is an observed funding payment or conditional-calibration result."
+        },
+        {
+          "type": "p",
+          "html": "Every matched S retrieval comparison has the opposite breach/overrun tradeoff: lower loss but more strict breaches and greater mean positive overrun. At H=24, m=360, nearest S loss falls from USD 824,046.89 to USD 770,353.74, while breaches rise from 320 to 430 and mean positive overrun from USD 190,842.79 to USD 283,299.56. Lower capacity and unused allowance offset the overrun increase under the score. The same adverse direction holds for both counts at both horizons. Describing all 12 score gains as uniform risk reduction would be inaccurate."
+        },
+        {
+          "type": "p",
+          "html": "For F, nearest retrieval reduces breach counts and mean positive overrun in all four matched comparisons, but conditional mean overrun rises in all four. At H=24, m=180, it rises from USD 4.650289 million over 588 breaches to USD 5.349645 million over 454. These conditional means summarize different breach sets; they do not identify an increase in severity on the same events."
+        },
+        {
+          "type": "p",
+          "html": "State matching also changes the construction geometry. At H=6, m=360, mean signed radius falls from USD 30.399817 million for recent retrieval to USD 12.365836 million for nearest retrieval, mean absolute F/S gap from USD 1.256683 million to USD 0.477250 million, and exact equal-capacity count rises from 1,804 to 4,297. The paired F−S loss mean becomes −USD 66.78, rather than recent360's −USD 13,589.40. Its small magnitude is an observed difference, not statistical equivalence."
+        },
+        {
+          "type": "p",
+          "html": "At H=24, m=360, the smaller nearest F/S report gap coexists with a loss-order reversal: recent360 favors F by USD 16,550.54, whereas nearest360 favors S by USD 20,837.78. Reducing nearest count from 360 to 180 makes radii and F/S gaps smaller at both H but makes both F and S losses larger. Thus geometric agreement cannot select a predictive optimum. The complete geometry and age table is retained in Appendix B."
+        },
+        {
+          "type": "p",
+          "html": "Nearest rows are older on average than equal-count recent rows. At m=360, mean age is 328.35 versus 185.50 records for H=6, and 352.09 versus 203.50 for H=24; at m=180 the nearest ages are 301.27 and 331.82 versus 95.50 and 113.50. State proximity, age and potentially regime/scale/dependence composition change together. The comparison does not identify a pure causal contribution of state information."
+        },
+        {
+          "type": "p",
+          "html": "The primary monthly K contrast favors nearest retrieval in 12 of 13 months at each H (Figure 3). January 2016 is adverse at both: +USD 3,379.20 for H=6 and +USD 520,447.46 for H=24. All month counts exceed the fixed display threshold. Origin-count-weighted monthly means reconcile to the global paired means; months remain descriptive groups within the same record, and the adverse month is not excluded."
         }
       ]
     },
     {
-      "title": "8. Prespecified sensitivities and diagnostics",
+      "title": "8. Interpretation and limits",
       "blocks": [
         {
+          "type": "p",
+          "html": "The added comparison supports a narrow application result: a mature one-dimensional retrieval operation improves these equal-count recent historical rules on this interval, particularly the native-level baseline in absolute score units. It also reduces representation differences, consistent with finite geometry. It does not displace the original full-window leaders or establish that one signed position is a sufficient forecasting state. Wisniewski et al. (2020) and the thesis already use richer lag/calendar/scale information; the present extension does not benchmark the strongest conditional regressions or fitted filtered historical simulation."
+        },
+        {
+          "type": "p",
+          "html": "Raw historical translation and conditional path generation are different operations. Appendix A gives a known-linear-dynamics illustration: innovation replay adjusts an anchor difference by a horizon-dependent factor, whereas raw translation keeps the whole difference at every step. The identity is deterministic and no coefficient is fitted here. It explains why exact revaluation of a historical increment envelope is weaker than having its correct future conditional law; it does not establish the source's inventory-control mechanism."
+        },
+        {
+          "type": "p",
+          "html": "The score preference is part of the decision problem. At the declared 19:1 ratio, less unused allowance can compensate for greater overrun. A different loss or origin weighting would ask a different question, rather than repair missing financial-cost observations. Conditional severity compares method-specific breach sets, and sampled net position remains a proxy. Strong forecast performance on that proxy would still not measure cash adequacy, gross exposure, P&amp;L or the causal effect of a changed policy."
+        },
+        {
+          "type": "p",
+          "html": "External validity is the principal empirical limitation. One aggregate 2014–2017 source cannot establish robustness across dealers, subsequent regimes or interventions. Reexecutions, a fresh identical-hash download and a same-source thesis are reproducibility evidence rather than independent records. A legitimate additional inventory record would need its own aggregation, units, sampling and release-time audit. Price returns and weekly position reports are not interchangeable inventory measurements."
+        },
+        {
+          "type": "p",
+          "html": "Overlapping future maxima, shared historical episodes and persistent positions create dependence. The stationarity, mixing, conditional-law and tail-information conditions needed for broader inference have not been established. Fixed neighbor counts are not counts of independent tail observations, and more favorable cells do not supply independent confirmations. Neither an elementary construction bound, a corrected empirical rank nor an observed breach frequency yields coverage. The extension remains exploratory despite its before-execution freeze."
+        }
+      ]
+    },
+    {
+      "title": "9. Conclusion",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Historical row selection and response representation lead to distinct, observable forecast tradeoffs for sampled client-flow net-position peaks. Original headroom pooling improves the primary score over raw scenario reanchoring by 2.08%, with greater breaches/overrun and an adverse H24 reversal. Exploratory signed-state retrieval improves equal-count recent rules, including a 31.83% primary reduction for the native-peak baseline, while leaving the original full-window leaders ahead and increasing scenario breaches/overrun in every matched case. Finite geometry explains when constructions approach one another without deciding which predicts better. The evidence provides a reproducible, limited application comparison; stronger scientific claims require genuinely independent validation and more informative financial/conditional benchmarks."
+        }
+      ]
+    },
+    {
+      "title": "Appendix A. Finite geometry and its predictive limits",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "A.1. Common-set projection bounds"
+        },
+        {
+          "type": "p",
+          "html": "These are elementary finite-array arguments, rather than new asymptotic or coverage results. Fix a nonempty common selected set J, an available rank 1≤k≤|J|, query x=N<sub>t</sub>, floor B=|x| and completed historical windows. All identities in this appendix concern real arithmetic. Write B<sub>i</sub>=|N<sub>i</sub>|, d<sub>i,h</sub>=N<sub>i+h</sub>−N<sub>i</sub>, with d<sub>i,0</sub>=0, and define"
+        },
+        {
+          "type": "equation",
+          "html": "A<sub>i</sub>=B+P<sub>i</sub>−B<sub>i</sub>; &nbsp; T<sub>i</sub>=max<sub>0≤h≤H</sub>|x+d<sub>i,h</sub>|; &nbsp; C<sub>B</sub>(z)=max(B,z).",
+          "latex": "A_i=B+P_i-B_i,\\qquad T_i=\\max_{0\\le h\\le H}|x+d_{i,h}|,\\qquad C_B(z)=\\max(B,z)."
+        },
+        {
+          "type": "p",
+          "html": "Both A<sub>i</sub> and T<sub>i</sub> are at least B. The projection C<sub>B</sub> is nondecreasing and 1-Lipschitz. It commutes with a finite order statistic, as does a common translation. Hence F<sub>J</sub>=Q<sub>k</sub>(A), S<sub>J</sub>=Q<sub>k</sub>(T) and K<sub>J</sub>=Q<sub>k</sub>(C<sub>B</sub>(P)). Since C<sub>B</sub>(A<sub>i</sub>)=A<sub>i</sub>,"
+        },
+        {
+          "type": "equation",
+          "html": "|A<sub>i</sub>−C<sub>B</sub>(P<sub>i</sub>)|≤|A<sub>i</sub>−P<sub>i</sub>|=|B−B<sub>i</sub>|.",
+          "latex": "|A_i-C_B(P_i)|\\le |A_i-P_i|=|B-B_i|."
+        },
+        {
+          "type": "p",
+          "html": "The reverse triangle inequality bounds each path value's change under a starting-position translation by |x−N<sub>i</sub>|. Taking a maximum gives |T<sub>i</sub>−P<sub>i</sub>|≤|x−N<sub>i</sub>|. Applying the same floor projection preserves that bound because T<sub>i</sub>≥B. Finally, paired order statistics are nonexpansive in the maximum coordinate difference: if |u<sub>i</sub>−v<sub>i</sub>|≤r for every i, then u<sub>i</sub>≤v<sub>i</sub>+r and conversely; monotonicity and common translation give |Q<sub>k</sub>(u)−Q<sub>k</sub>(v)|≤r. These observations prove the two K bounds in Section 4. The triangle inequality and ||N<sub>i</sub>|−|x||≤|N<sub>i</sub>−x| prove the stated F/S bound. Keeping the rank fixed while changing one side's historical rows does not by itself justify these common-set comparison bounds."
+        },
+        {
+          "type": "p",
+          "html": "Among all size-m subsets, selecting the m smallest signed distances minimizes the largest selected distance: any alternative must include an element at least as far away as the mth ordered distance. This finite minimax fact, with the declared tie convention, concerns the signed radius. It does not minimize the absolute-anchor radius, the sum of the two radii, the actual report gap or a forecast loss. For every fixed realized y, pinball loss is max(τ,1−τ)-Lipschitz in its report, so a report-gap bound also bounds the absolute loss difference. Such stability supplies no sign for the realized or expected loss difference."
+        },
+        {
+          "type": "subheading",
+          "text": "A.2. Envelope plateaus and the role of signed anchors"
+        },
+        {
+          "type": "p",
+          "html": "Put u<sub>i</sub>=b<sub>i</sub>≥0 and v<sub>i</sub>=−a<sub>i</sub>≥0. The headroom of an increment envelope at any anchor z is"
+        },
+        {
+          "type": "equation",
+          "html": "g<sub>i</sub>(z)=max(z+u<sub>i</sub>,−z+v<sub>i</sub>)−|z|; for z≥0 it equals max(u<sub>i</sub>,v<sub>i</sub>−2z), and for z≤0 it equals max(u<sub>i</sub>+2z,v<sub>i</sub>).",
+          "latex": "g_i(z)=\\max(z+u_i,-z+v_i)-|z|=\\begin{cases}\\max(u_i,v_i-2z),&z\\ge0,\\\\\\max(u_i+2z,v_i),&z\\le0.\\end{cases}"
+        },
+        {
+          "type": "p",
+          "html": "The branches agree at zero. Each is 2-Lipschitz on its half-line, so the whole function is 2-Lipschitz; its range lies in [min(u<sub>i</sub>,v<sub>i</sub>),max(u<sub>i</sub>,v<sub>i</sub>)]. Applying these two bounds to g<sub>i</sub>(N<sub>i</sub>) and g<sub>i</sub>(x), and then order-statistic stability, gives"
+        },
+        {
+          "type": "equation",
+          "html": "|F<sub>J</sub>−S<sub>J</sub>|≤max<sub>i in J</sub>min{2|x−N<sub>i</sub>|,|u<sub>i</sub>−v<sub>i</sub>|}.",
+          "latex": "|F_J-S_J|\\le\\max_{i\\in J}\\min\\{2|x-N_i|,|u_i-v_i|\\}."
+        },
+        {
+          "type": "p",
+          "html": "For example, u<sub>i</sub>=v<sub>i</sub> in every row makes F<sub>J</sub>=S<sub>J</sub> at arbitrary anchors. Nonnegative query/source anchors together with u<sub>i</sub>≥v<sub>i</sub> in every row also suffice; the nonpositive analogue uses v<sub>i</sub>≥u<sub>i</sub>. These are sufficient conditions, not a characterization: pooled order statistics can coincide even when paired rows differ. The range bound also gives F<sub>J</sub>,S<sub>J</sub>≤R<sub>J</sub>, where R<sub>J</sub>=B+Q<sub>k</sub>{max(u<sub>i</sub>,v<sub>i</sub>):i in J}. This is a theoretical same-set ordering; no R retrieval configuration is evaluated in the extension, and the ordering does not make R<sub>J</sub> preferable under a given loss."
+        },
+        {
+          "type": "p",
+          "html": "If every B<sub>i</sub>≤B, then A<sub>i</sub>≥C<sub>B</sub>(P<sub>i</sub>) and F<sub>J</sub>≥K<sub>J</sub>. If every B<sub>i</sub>≥B, then C<sub>B</sub>(P<sub>i</sub>)=P<sub>i</sub>≥A<sub>i</sub> and F<sub>J</sub>≤K<sub>J</sub>. Equal absolute anchors force F=K but leave signs relevant to S. A coherent full-pool example uses c&gt;0, H=1, n=720, τ=19/20, t=721 and N<sub>s</sub>=(−1)<super>s+1</super>c for 0≤s≤721. The mature pool is J={1,...,720}, with 360 anchors of each sign and current N<sub>t</sub>=c. All native peaks equal c and headrooms equal zero, so F=K=c. Raw reanchoring gives 360 peaks c and 360 peaks 3c; rank 685 gives S=3c. Thus r<sub>abs</sub>=0 while r<sub>signed</sub>=2c and |S−K|=2c. This artificial path respects maturity and an available corrected rank; it is not an empirical claim or a claim about which rows nearest retrieval selects."
+        },
+        {
+          "type": "subheading",
+          "text": "A.3. The same observed history allows opposite loss rankings"
+        },
+        {
+          "type": "p",
+          "html": "Choose d&gt;0, H≥1, 0&lt;τ&lt;1 and n large enough that k=ceil((n+1)τ)≤n. Set t=H+n−1 and N<sub>s</sub>=d(t−s) for 0≤s≤t, using J={0,...,n−1}. Every selected response ends by t. Each historical peak is its own positive starting value, so G<sub>i</sub>=0 and F=0. Each increment path equals −dh; reanchoring at N<sub>t</sub>=0 gives S=Hd. Two continuations of this identical observed history yield:"
+        },
+        {
           "type": "table",
-          "caption": "Table 3. Complete fixed menu: mean loss for every method and F-minus-S paired mean d. Monetary values are USD millions. Rows are in frozen order; different τ rows express different preferences.",
+          "caption": "Table A1. Artificial coherent continuations. Symbols are constructed quantities, not source-record estimates.",
           "headers": [
-            "Cell",
-            "H",
-            "n",
-            "τ",
+            "Future N(t+h), 1≤h≤H",
+            "Actual peak",
+            "F loss",
+            "S loss"
+          ],
+          "rows": [
+            [
+              "0",
+              "0",
+              "0",
+              "(1−τ)Hd"
+            ],
+            [
+              "−dh",
+              "Hd",
+              "τHd",
+              "0"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "html": "Either report can therefore have strictly smaller realized loss under a compatible future. Even a capacity ordering need not hold universally: the artificial history (0,−4,−1,2), with H=1, n=3, τ=3/4 and issue t=3, has rank 3, F=6 and S=5. These constructions establish logical limits, not the conditional law of the recorded series or a population ranking. A deterministic construction can refute an unconditional mathematical assertion while supplying no empirical validation for either rule."
+        },
+        {
+          "type": "subheading",
+          "text": "A.4. Raw translation versus replay under known dynamics"
+        },
+        {
+          "type": "p",
+          "html": "For interpretation only, suppose N<sub>s+1</sub>=μ+φ(N<sub>s</sub>−μ)+ε<sub>s+1</sub>, with a common known center and coefficient. Replay a historical window's ordered innovations from query x. Subtracting the two recursions and using induction gives"
+        },
+        {
+          "type": "equation",
+          "html": "M<sub>i,h</sub>(x)=N<sub>i+h</sub>+φ<super>h</super>(x−N<sub>i</sub>); &nbsp; W<sub>i,h</sub>(x)=N<sub>i+h</sub>+(x−N<sub>i</sub>).",
+          "latex": "M_{i,h}(x)=N_{i+h}+\\phi^h(x-N_i),\\qquad W_{i,h}(x)=N_{i+h}+(x-N_i)."
+        },
+        {
+          "type": "p",
+          "html": "Taking the maximum absolute path value yields"
+        },
+        {
+          "type": "equation",
+          "html": "|max<sub>h</sub>|W<sub>i,h</sub>(x)|−max<sub>h</sub>|M<sub>i,h</sub>(x)||≤max<sub>0≤h≤H</sub>|1−φ<super>h</super>| |x−N<sub>i</sub>|.",
+          "latex": "\\left|\\max_h|W_{i,h}(x)|-\\max_h|M_{i,h}(x)|\\right|\\le\\max_{0\\le h\\le H}|1-\\phi^h|\\,|x-N_i|."
+        },
+        {
+          "type": "p",
+          "html": "For 0≤φ≤1 the coefficient is 1−φ<super>H</super>; at φ=1 the paths coincide. The identity needs no innovation law, while treating past innovations as representative of future conditional innovations is a separate assumption. Neither the recursion nor that assumption is fitted or validated here. Except in special cases such as φ=1, evaluating the horizon-dependent correction generally requires ordered path information that increment extrema discard. Thus the extrema are sufficient for exact raw translation, not for arbitrary filtered simulation or correct conditional path generation."
+        }
+      ]
+    },
+    {
+      "title": "Appendix B. Complete settings and descriptive diagnostics",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "The following tables retain favorable, adverse and small differences. Monetary entries are source-reported USD millions, rounded only for display. Paired means come directly from their accepted aggregate columns; the tables do not recompute forecasts, select settings or create new tests. K denotes original L. Original settings change one factor from H=6, n=720, τ=.95: h12/h24 change H, n480/n1440 change n, and tau90/tau99 change τ. All use the same 6,625 issue origins. Different τ values express different score preferences."
+        },
+        {
+          "type": "table",
+          "caption": "Table B1. Complete original score grid. Δ is the stored paired mean F minus S; negative favors F within that setting.",
+          "headers": [
+            "Setting",
             "F",
             "S",
             "R",
-            "L",
+            "K",
             "P0",
-            "d"
+            "Δ F−S"
           ],
           "rows": [
             [
               "main",
-              "6",
-              "720",
-              "0.95",
               "0.441774",
               "0.451149",
               "0.527544",
@@ -361,9 +651,6 @@
             ],
             [
               "h12",
-              "12",
-              "720",
-              "0.95",
               "0.592518",
               "0.604781",
               "0.689604",
@@ -373,9 +660,6 @@
             ],
             [
               "h24",
-              "24",
-              "720",
-              "0.95",
               "0.777069",
               "0.748384",
               "0.803106",
@@ -385,9 +669,6 @@
             ],
             [
               "n480",
-              "6",
-              "480",
-              "0.95",
               "0.449843",
               "0.460816",
               "0.532515",
@@ -397,9 +678,6 @@
             ],
             [
               "n1440",
-              "6",
-              "1440",
-              "0.95",
               "0.443793",
               "0.448275",
               "0.526979",
@@ -409,9 +687,6 @@
             ],
             [
               "tau90",
-              "6",
-              "720",
-              "0.90",
               "0.659643",
               "0.659499",
               "0.763481",
@@ -421,9 +696,6 @@
             ],
             [
               "tau99",
-              "6",
-              "720",
-              "0.99",
               "0.154991",
               "0.158998",
               "0.175486",
@@ -435,124 +707,16 @@
         },
         {
           "type": "p",
-          "html": "The primary direction persists at H=12 and at windows 480 and 1440, and at τ=0.99. It reverses at H=24, with paired mean +USD28,685.304974 (+3.833% of S), and at τ=0.90, with +USD144.225522 (+0.02187%). The latter small positive is retained rather than rounded to zero. Five negative and two positive cells are correlated results from the fixed menu, not independent replications or a post-result majority-vote criterion. Figure 1 displays all seven within-cell contrasts. The primary cell remains unchanged."
+          "html": "The original groups were fixed using issue-time information except the explicitly retrospective future-gap panel. Magnitude cutoffs use absolute positions strictly before the evaluation interval; neither cutoff is reestimated within an evaluation group. Sign and magnitude panels have unequal membership. The index-modulo-six panel is a mechanical phase diagnostic rather than a six-hour sampling experiment. A group below 30 origins retains its count and suppression status; an empty current-zero group does not have a zero mean loss."
         },
         {
           "type": "table",
-          "caption": "Table 4. All primary calendar-month contrasts, in USD millions, with strict breach counts. Calendar groups use the naive source timestamps.",
-          "headers": [
-            "Month",
-            "Origins",
-            "F−S mean",
-            "F breaches",
-            "S breaches"
-          ],
-          "rows": [
-            [
-              "2016-01",
-              "504",
-              "-0.017183",
-              "29",
-              "18"
-            ],
-            [
-              "2016-02",
-              "504",
-              "-0.015726",
-              "21",
-              "18"
-            ],
-            [
-              "2016-03",
-              "552",
-              "+0.040380",
-              "42",
-              "31"
-            ],
-            [
-              "2016-04",
-              "502",
-              "+0.020270",
-              "37",
-              "24"
-            ],
-            [
-              "2016-05",
-              "530",
-              "-0.031114",
-              "10",
-              "7"
-            ],
-            [
-              "2016-06",
-              "528",
-              "-0.035273",
-              "16",
-              "7"
-            ],
-            [
-              "2016-07",
-              "504",
-              "+0.006976",
-              "34",
-              "27"
-            ],
-            [
-              "2016-08",
-              "552",
-              "-0.047937",
-              "14",
-              "12"
-            ],
-            [
-              "2016-09",
-              "526",
-              "+0.002870",
-              "31",
-              "29"
-            ],
-            [
-              "2016-10",
-              "506",
-              "-0.007725",
-              "39",
-              "36"
-            ],
-            [
-              "2016-11",
-              "528",
-              "+0.007843",
-              "25",
-              "24"
-            ],
-            [
-              "2016-12",
-              "526",
-              "-0.032346",
-              "15",
-              "11"
-            ],
-            [
-              "2017-01",
-              "363",
-              "-0.012823",
-              "19",
-              "10"
-            ]
-          ]
-        },
-        {
-          "type": "p",
-          "html": "Eight monthly means favor F and five favor S. March 2016 has the largest adverse displayed value (+USD40,379.69), while August 2016 is most negative (−USD47,937.36). F has more strict breaches and larger unconditional positive overrun than S in every month, including months where its pinball loss is lower. Figure 2 retains all thirteen months. None is an independent episode or a proposed switching regime."
-        },
-        {
-          "type": "table",
-          "caption": "Table 5. Complete remaining primary paired-mean panels. Monetary values are USD millions. Undefined means correspond to an intentional empty group.",
+          "caption": "Table B2. All original noncalendar paired diagnostic groups. Δ is F minus S at the original primary setting. 'Not displayed' denotes insufficient membership, not an estimated zero.",
           "headers": [
             "Panel",
             "Group",
             "Origins",
-            "F−S mean"
+            "Δ F−S"
           ],
           "rows": [
             [
@@ -565,7 +729,7 @@
               "Sign",
               "zero",
               "0",
-              "undefined"
+              "Not displayed"
             ],
             [
               "Sign",
@@ -574,67 +738,67 @@
               "-0.001618"
             ],
             [
-              "Dev. magnitude",
+              "Magnitude",
               "low",
               "420",
               "+0.023570"
             ],
             [
-              "Dev. magnitude",
+              "Magnitude",
               "middle",
               "760",
               "+0.016090"
             ],
             [
-              "Dev. magnitude",
+              "Magnitude",
               "high",
               "5445",
               "-0.015470"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "0",
               "1104",
               "-0.012793"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "1",
               "1104",
               "-0.016473"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "2",
               "1104",
               "-0.005393"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "3",
               "1104",
               "-0.005242"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "4",
               "1104",
               "-0.005957"
             ],
             [
-              "Index modulo6",
+              "Index mod 6",
               "5",
               "1105",
               "-0.010390"
             ],
             [
-              "Future gap",
+              "Future gaps",
               "gap_free",
               "6289",
               "-0.006642"
             ],
             [
-              "Future gap",
+              "Future gaps",
               "has_gap",
               "336",
               "-0.060535"
@@ -643,24 +807,264 @@
         },
         {
           "type": "p",
-          "html": "Both nonempty sign groups favor F, whereas the low and middle development-magnitude groups favor S and the high group favors F. All six source-index phases have negative paired means; phase partitioning does not remove rolling-window or financial dependence. Both future-gap groups favor F, but the has-gap group has 336 origins and only one strict F breach and one strict S breach. Its conditional severity comparison consequently rests on one event per method. The zero-current group has no origins and retains 61 null/status rows. There are no below 30 nonempty groups in this run. These predetermined panels qualify the global result without creating new training regimes."
-        }
-      ]
-    },
-    {
-      "title": "9. All four resampling profiles",
-      "blocks": [
+          "html": "Gap-crossing groups classify the realized future path and cannot be used as an issue-time filter. The 336 gap-crossing origins contain only one F breach and one S breach; their conditional severities rest on one event each. Calendar panels use naive source timestamps. Table B3 retains the original F/S month contrast and breach counts alongside the extension's two primary K month contrasts; they are separate contrasts, not interchangeable strategies."
+        },
         {
           "type": "table",
-          "caption": "Table 6. Descriptive primary resampling profiles. Average, SD and endpoints are USD millions. Every row has 999 replicate identities and observed mean −0.009374860250076379 million.",
+          "caption": "Table B3. All months. Old Δ is original H6 F minus S; new Δ is nearest360K minus recent360K. Breach counts belong to old F and S. Every month meets the display threshold.",
+          "headers": [
+            "Month",
+            "Origins",
+            "Old Δ",
+            "F breaches",
+            "S breaches",
+            "New Δ H6",
+            "New Δ H24"
+          ],
+          "rows": [
+            [
+              "2016-01",
+              "504",
+              "-0.017183",
+              "29",
+              "18",
+              "+0.003379",
+              "+0.520447"
+            ],
+            [
+              "2016-02",
+              "504",
+              "-0.015726",
+              "21",
+              "18",
+              "-0.366978",
+              "-0.406803"
+            ],
+            [
+              "2016-03",
+              "552",
+              "+0.040380",
+              "42",
+              "31",
+              "-0.211499",
+              "-0.086232"
+            ],
+            [
+              "2016-04",
+              "502",
+              "+0.020270",
+              "37",
+              "24",
+              "-0.522837",
+              "-0.589971"
+            ],
+            [
+              "2016-05",
+              "530",
+              "-0.031114",
+              "10",
+              "7",
+              "-0.432595",
+              "-0.352734"
+            ],
+            [
+              "2016-06",
+              "528",
+              "-0.035273",
+              "16",
+              "7",
+              "-0.236362",
+              "-0.105785"
+            ],
+            [
+              "2016-07",
+              "504",
+              "+0.006976",
+              "34",
+              "27",
+              "-0.213175",
+              "-0.494943"
+            ],
+            [
+              "2016-08",
+              "552",
+              "-0.047937",
+              "14",
+              "12",
+              "-0.494498",
+              "-0.685697"
+            ],
+            [
+              "2016-09",
+              "526",
+              "+0.002870",
+              "31",
+              "29",
+              "-0.236850",
+              "-0.338212"
+            ],
+            [
+              "2016-10",
+              "506",
+              "-0.007725",
+              "39",
+              "36",
+              "-0.230552",
+              "-0.135516"
+            ],
+            [
+              "2016-11",
+              "528",
+              "+0.007843",
+              "25",
+              "24",
+              "-0.220045",
+              "-0.310768"
+            ],
+            [
+              "2016-12",
+              "526",
+              "-0.032346",
+              "15",
+              "11",
+              "-0.323571",
+              "-0.422938"
+            ],
+            [
+              "2017-01",
+              "363",
+              "-0.012823",
+              "19",
+              "10",
+              "-0.041940",
+              "-0.286619"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Table B4. All extension geometry rows. Mean per-origin anchor radii and mean absolute report gaps are in USD millions; age is mean t−i in records, not hours; equality counts are exact stored F=S comparisons.",
+          "headers": [
+            "H",
+            "Set",
+            "Abs radius",
+            "Signed radius",
+            "|F−S|",
+            "Equal",
+            "Age"
+          ],
+          "rows": [
+            [
+              "6",
+              "full720",
+              "28.439284",
+              "36.604661",
+              "1.212343",
+              "809",
+              "365.50"
+            ],
+            [
+              "6",
+              "recent360",
+              "24.262721",
+              "30.399817",
+              "1.256683",
+              "1804",
+              "185.50"
+            ],
+            [
+              "6",
+              "nearest360",
+              "11.346111",
+              "12.365836",
+              "0.477250",
+              "4297",
+              "328.35"
+            ],
+            [
+              "6",
+              "recent180",
+              "20.063962",
+              "24.372598",
+              "1.249574",
+              "2914",
+              "95.50"
+            ],
+            [
+              "6",
+              "nearest180",
+              "6.506279",
+              "7.065549",
+              "0.313294",
+              "5100",
+              "301.27"
+            ],
+            [
+              "24",
+              "full720",
+              "28.603627",
+              "36.864344",
+              "1.836659",
+              "1234",
+              "383.50"
+            ],
+            [
+              "24",
+              "recent360",
+              "24.420571",
+              "30.694525",
+              "2.824054",
+              "2412",
+              "203.50"
+            ],
+            [
+              "24",
+              "nearest360",
+              "11.566355",
+              "12.627357",
+              "0.703643",
+              "4350",
+              "352.09"
+            ],
+            [
+              "24",
+              "recent180",
+              "20.576841",
+              "25.146348",
+              "3.169128",
+              "3342",
+              "113.50"
+            ],
+            [
+              "24",
+              "nearest180",
+              "6.782036",
+              "7.387771",
+              "0.680282",
+              "5062",
+              "331.82"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "html": "All ten geometry rows pass the per-origin declared tolerance checks. Nine aggregate maximum excesses are zero; H24/nearest180 records a maximum excess of 1.862645149230957e−9 USD, reflecting floating-point arithmetic rather than an exact-real violation. Its maximum recorded arithmetic tolerance is 1.041112061415106e−6 USD. Comparing these two aggregate maxima alone is not the per-origin verification; the issuer checks every origin and the accepted run records that check. Tolerances do not change breach flags, exact-capacity equality or loss signs."
+        },
+        {
+          "type": "p",
+          "html": "The original descriptive resampling operates on the single already realized primary F-minus-S loss-difference sequence. For each length ℓ in {120,240,720,1440}, it uses 999 circular resamples: start uniformly at an origin, draw a positive geometric block length with mean ℓ, continue circularly, and truncate only the final block to length M=6,625. Each length uses NumPy PCG64 with SeedSequence([20261020,ℓ]). The table reports ddof=1 resampled standard deviation and noninterpolated order statistics 25 and 975. Constant input is preserved exactly; no recentering or model refitting is performed."
+        },
+        {
+          "type": "table",
+          "caption": "Table B5. All four original resampled-mean profiles, in USD millions where monetary. Expected block counts include the final truncated block. The displayed ranges are not population confidence intervals.",
           "headers": [
             "ℓ",
             "ℓ/M",
-            "Expected blocks",
-            "Rep. average",
+            "E blocks",
+            "Rep. mean",
             "Rep. SD",
-            "Order25",
-            "Order975"
+            "Order 25",
+            "Order 975"
           ],
           "rows": [
             [
@@ -670,7 +1074,7 @@
               "-0.009774",
               "0.009310",
               "-0.028186",
-              "0.008559"
+              "+0.008559"
             ],
             [
               "240",
@@ -679,7 +1083,7 @@
               "-0.009835",
               "0.008948",
               "-0.028279",
-              "0.008127"
+              "+0.008127"
             ],
             [
               "720",
@@ -688,7 +1092,7 @@
               "-0.009471",
               "0.007557",
               "-0.025106",
-              "0.004780"
+              "+0.004780"
             ],
             [
               "1440",
@@ -697,208 +1101,108 @@
               "-0.009475",
               "0.006679",
               "-0.023037",
-              "0.003596"
+              "+0.003596"
             ]
           ]
         },
         {
           "type": "p",
-          "html": "All four actual ranges have negative lower endpoints and positive upper endpoints. The observed mean lies within each. For ℓ=120 the endpoints are −USD28,186.30 and +USD8, 558.86; for ℓ=1440 they are −USD23,036.77 and +USD3,595.62. Replicate SD declines across these four declared lengths, but that empirical pattern is not a basis for selecting a favorable length or claiming general uncertainty monotonicity. Figure 3 shows all endpoints, the separate observed point and replicate averages. The observed primary advantage remains a finite-record score result."
+          "html": "Politis and Romano (1994) supply the stationary-bootstrap lineage, whose formal results impose conditions on the stochastic process and block-length asymptotics. Here no relevant stationarity/mixing conditions have been established, and large fixed ℓ/M leaves few blocks. The profiles therefore describe a fixed resampling mechanism's sensitivity on this record. They are not applied to any added nearest-state contrast, and their endpoints are neither null-test cutoffs nor superiority probabilities."
         }
       ]
     },
     {
-      "title": "10. Replication evidence and practical limits",
+      "title": "Appendix C. Rank, arithmetic and replication conventions",
       "blocks": [
         {
           "type": "p",
-          "html": "Seventy-four artificial tests passed before the final replication. They include independent hand-valued path examples, mature-label and spike checks, exact fractional ranks, score complement weights, chronological alignment, explicit circular-block arithmetic, constant profiles, public scalar/type/null boundaries, corrupted sources, bounded transport and safe failure behavior. Independent reviews checked core, report and orchestration interfaces. Two early attempts stopped before source loading because a macOS thread-table format was not recognized; the format was reproduced, covered by regression fixtures and repaired. Those attempts did not produce financial outcomes."
+          "html": "For m sorted responses z<sub>(1)</sub>≤...≤z<sub>(m)</sub>, the corrected rank is k=ceil((m+1)τ). If k&gt;m, this implementation stops rather than inserting an infinite report or changing the rank. All declared cells have an available rank. The original seven ranks are 685,685,685,457,1369,649,714 in the Table B1 order. In the extension τ=19/20 and m in {720,360,180}, so mτ in {684,342,171} is an integer. The empirical pinball-minimizer interval is [z<sub>(mτ)</sub>,z<sub>(mτ+1)</sub>], including ties; the configured corrected rank chooses its upper endpoint. This particular relationship is not asserted for the original τ=.99 cell, nor does any empirical-minimizer identity establish future coverage."
         },
         {
           "type": "p",
-          "html": "The published run manifest identifies attempt 20261021T060715Z-de1704c9, the frozen specification hash, the exact source and all eight scientific code/test hashes. All thirteen checks are PASS. The four tables contain 35, 7, 4 and 1647 data rows. Three original vector figures are generated solely from public aggregates. A second complete execution, after replacing account/path text in an artificial operating-system fixture with invented text, produced byte-identical scientific tables and figures; the scientific formulas were unchanged."
+          "html": "All forecasts use stored float64 values, duplicate-preserving order statistics and the original operation order. For S, the translated peak is computed first, B is subtracted before ranking, and B is added afterward. Replacing this with a mathematically equivalent differently rounded expression can alter stored capacity ties, strict flags and scores. The scientific tables use direct error P−C; the paired summary uses compensated aggregation of per-origin loss differences, rather than subtracting displayed or independently rounded global means. Empty CSV values and JSON nulls have documented undefined reasons. Finite numerical reconciliation tolerances are kept separate from event definitions."
         },
         {
           "type": "p",
-          "html": "The final run recorded 8.02145 seconds from its global start to the final pre-manifest checkpoint, process peak RSS 80,936,960 bytes (77.19MiB), and maximum observed OS thread count 1 across 565 snapshots. The earlier complete run used 6.88405 seconds and82.95MiB. Five numerical thread requests were set to 1 before NumPy import. A snapshot maximum is not a continuous thread-peak observation; the reported resource checkpoint precedes the metadata-write tail. The monitor is macOS-specific and rejects unsupported measurement rather than reporting zero usage. These observed runs remain far below the declared 2GiB and ten-minute budgets."
+          "html": "The extension's per-origin geometry tolerance is 64ε times the maximum of one, current floor, historical anchor magnitudes, native peaks, all three reports and the two anchor radii. The input source, specification and code identities are checked before accepting a run and rechecked after computation. Membership is computed from signed source positions at the completed historical origins; absolute magnitude alone cannot authenticate their signs. Selected age and radii are descriptive properties of that membership, not extra tuned predictors."
         },
         {
           "type": "p",
-          "html": "The dataset was anonymously accessible through a one-file route, historically verified at 02:42 UTC on 21 October 2026. The two analysis runs reported above reused a verified local snapshot and made no download request. The observed rights label is Data files © Original Authors, and raw redistribution permission is unverified. The repository therefore distributes acquisition code, member/version/hash information and aggregate evidence, excluding raw CSV/ZIP files, third-party papers, origin traces, private development thresholds and complete replicates."
+          "html": "The input is version 2's one-hour member, 1hourNetPositionsKaggle.csv, with 18,576 records and 1,286,391 bytes. Its accepted SHA-256 is b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa. The public Net Position Time Series Dataset is identified by the Kaggle owner/slug davidlindsay1979/net-position-time-series-dataset. The source fingerprint, member/version, acquisition checks and result/code manifests allow identity verification. Public availability is not taken as permission to redistribute the raw observations; this repository supplies acquisition instructions and analysis code."
         },
         {
           "type": "p",
-          "html": "A separate missing-cache acquisition and reproduction check at 06:24 UTC on 21 October 2026 exercised the published anonymous one-file route. It accepted the same CSV identity and produced byte-identical copies of all four scientific tables and three figures, with unchanged code identities. This additional check recorded 8.91694 seconds, peak RSS 86,654,976 bytes (82.64MiB), and one observed OS thread. Its sanitized source and resource evidence is supplied separately as results/acquisition-verification.json. The primary published run remains the local-reuse attempt identified above; this check changed no scientific specification."
+          "html": "The original accepted computation took 8.02145 seconds, with peak sampled process RSS 80,936,960 bytes and one observed OS thread. The extension's sole accepted calculation took 10.307238 seconds on its internal process clock, with peak sampled RSS 64,602,112 bytes and one observed thread over 675 snapshots. A process-completion measurement reported 10.35 seconds and maximum RSS 64,634,880 bytes; its scope and precision differ from the internal measurement. These are execution observations under the single-process CPU budget, not general runtime benchmarks. The extension reused the exact accepted local input and did not download or redistribute observations."
         },
         {
           "type": "p",
-          "html": "External validity is limited by one old aggregate inventory record, uncertain timezone and publication timing, netting across currencies, sampled rather than continuous extrema, and the business policy that generated the record. No live forecast, causal policy effect or profit was measured. Fixed diagnostics do not establish conditional calibration; few conditional events can give unstable severity. The methods are cheap and transparent, but changing financial laws and dependence remain unresolved. Further validation would require separately specified later records or additional dealers with legitimate access, preserving issue-time information and costs; those data are not part of this study."
-        }
-      ]
-    },
-    {
-      "title": "11. Conclusion",
-      "blocks": [
-        {
-          "type": "p",
-          "html": "Applying a mature historical-scenario principle to a sampled inventory-peak target produces a transparent comparison with own-anchor headroom pooling. In the primary fixed setting, pooling has 2.08% lower mean pinball loss, with more breaches and larger overruns. Adverse horizon and preference sensitivities, monthly and magnitude-group reversals, and four resampling ranges crossing zero prevent a general superiority conclusion. The useful finding is the limited and reproducible score tradeoff, together with the distinction between known-floor geometry, state revaluation, computed equality and unproved coverage. The evidence supports further targeted validation, rather than a new risk-control guarantee."
-        }
-      ]
-    },
-    {
-      "title": "Appendix A. Elementary geometry and coherent examples",
-      "blocks": [
-        {
-          "type": "p",
-          "html": "These observations are direct consequences of maxima, absolute values and order statistics, not new theoretical results. First, if C&lt;B≤P and 0&lt;τ&lt;1, both C and B underpredict P and ρ<sub>τ</sub>(P−C)−ρ<sub>τ</sub>(P−B)=τ(B−C)&gt;0. Raising a subfloor capacity to B strictly improves the real-arithmetic score. Since all five stored rules obey C≥B, strict breach indicators and raw overruns cannot exceed P0 at the same origin. This mechanical bound orders neither pinball loss nor conditional severity. Exact mathematical strictness does not require distinct rounded stored losses."
-        },
-        {
-          "type": "p",
-          "html": "For one fixed completed increment envelope write u=b≥0, v=−a≥0, l=min(u,v), r=max(u,v), and g(x)=max(x+u,−x+v)−|x|. Splitting at x=0 shows 0≤l≤g(x)≤r. More explicitly, when u&gt;v, g(x)=v+clip(u−v+2x,0,u−v); when v&gt;u, g(x)=u+clip(v−u−2x,0,v−u); when u=v, g(x)=u. Therefore historical own-anchor and current-anchor scores both lie between the same paired l<sub>i</sub> and r<sub>i</sub>. Monotonicity gives the fixed-pool bound"
-        },
-        {
-          "type": "equation",
-          "html": "Q<sub>k</sub>(l) ≤ c<sub>F</sub>, c<sub>S</sub> ≤ Q<sub>k</sub>(r); &nbsp; |c<sub>F</sub>−c<sub>S</sub>| ≤ Q<sub>k</sub>(r)−Q<sub>k</sub>(l).",
-          "latex": "Q_k(l)\\le c_F,c_S\\le Q_k(r),\\qquad |c_F-c_S|\\le Q_k(r)-Q_k(l)."
-        },
-        {
-          "type": "p",
-          "html": "This is a bound on fixed historical scores, not on a future distribution, full forecasting performance, a causal effect or general convexity. The same reasoning with r=D gives the F/S≤R capacity relations."
-        },
-        {
-          "type": "table",
-          "caption": "Table A1. Artificial H=1,n=3,τ=3/4 examples at issue t=3 (rank3). Units are invented. Both complete histories and subsequent peaks are coherent.",
-          "headers": [
-            "History N0…N3",
-            "CF",
-            "CS",
-            "CR",
-            "CL",
-            "CP0",
-            "Next N4",
-            "LF−LS"
-          ],
-          "rows": [
-            [
-              "6,4,2,0",
-              "0",
-              "2",
-              "2",
-              "6",
-              "0",
-              "1",
-              "+0.50"
-            ],
-            [
-              "6,4,2,0",
-              "0",
-              "2",
-              "2",
-              "6",
-              "0",
-              "0",
-              "−0.50"
-            ],
-            [
-              "0,−4,−1,2",
-              "6",
-              "5",
-              "6",
-              "4",
-              "2",
-              "7",
-              "−0.75"
-            ],
-            [
-              "0,−4,−1,2",
-              "6",
-              "5",
-              "6",
-              "4",
-              "2",
-              "2",
-              "+0.25"
-            ]
-          ]
-        },
-        {
-          "type": "p",
-          "html": "The first history has smaller F capacity but either sign of realized loss difference, depending on the next observation. The second history has larger F capacity and again either sign. Neither an F/S capacity order nor a score order follows universally. These invented examples verify interpretation and were not used to select a favorable empirical specification."
-        },
-        {
-          "type": "p",
-          "html": "Finally, the target has a known floor and can have an atom there. For a fixed conditional target distribution, a quantile C satisfies F(C−)≤τ≤F(C); strict exceedance need not equal 1−τ. An empirical breach rate near 5% is consequently neither a proof of calibration nor a reason to replace the score criterion. This statement about ideal quantiles does not assume that either historical rule estimates the true conditional distribution."
-        }
-      ]
-    },
-    {
-      "title": "Appendix B. Output and numerical conventions",
-      "blocks": [
-        {
-          "type": "p",
-          "html": "The machine-readable results/run-manifest.json records the frozen scientific specification and its schema binding, the ordered common-origin fingerprint, the accepted source identity and exact code identities. Each origin in that fingerprint is encoded as an unsigned eight-byte little-endian integer. The root README gives the full accepted CSV SHA-256 and member/version. Full artifact paths, byte counts and SHA-256 values are retained in the manifest, allowing an independent check without redistributing the source observations."
-        },
-        {
-          "type": "p",
-          "html": "The public tables contain builtin finite scalar leaves only. CSV empty values represent documented undefined quantities, not numerical zeros; JSON forbids nonfinite values. Mean loss reconciliation and weighted diagnostic reconciliation use the declared arithmetic tolerance, separately from event flags. Constant-input resampling preserves exact stored constants. The production bootstrap uses at most two float64 slice sums per circular block, combining segment totals with a compensated sum, without a replicate-by-origin matrix or unstable global-prefix subtraction."
-        },
-        {
-          "type": "p",
-          "html": "Source validation hashes and parses the same immutable opened-file snapshot. Explicit acquisition is missing-source-only, anonymous and capped at 25MiB, with a fixed single allowed302, no implicit proxy, no reading of redirect/error bodies, exact ZIP member/CRC/size/hash checks and exclusive acceptance into a task cache. Existing wrong inputs are never overwritten. Output attempts are exclusive, partial completed cells/lengths are retained privately, and a sanitized manifest is written last. COMPLETE identifies the scientific scope, not manuscript delivery or external validation."
+          "html": "The original results remain in results/summary.csv, paired-comparison.csv, stability.csv and diagnostics.csv with their original manifest. The separately frozen extension has summary.csv (30 rows), geometry.csv (10), comparisons.csv (22), monthly.csv (26) and manifest.json under results/revision-20261021/. Six shared reference rows reproduce the original F/S/L numeric columns exactly, with K mapped to L. Reproducing these values on the same hash-identified source verifies execution, not external validation. The root README documents separate acquisition, scientific execution, aggregate-only figure construction and manuscript rebuilding. Document rendering reads approved text and figure assets rather than running financial experiments."
         }
       ]
     }
   ],
   "references": [
     {
-      "id": "barber2023",
-      "html": "Barber, R.F., E.J. Candès, A. Ramdas and R.J. Tibshirani (2023). Conformal Prediction Beyond Exchangeability. <i>The Annals of Statistics</i> 51(2),816–845. DOI:10.1214/23-AOS2276. Consulted body: <a href='https://arxiv.org/abs/2202.13415v5'>arXiv:2202.13415v5</a>; the final journal body was not version-compared."
+      "id": "avellaneda2008",
+      "html": "Avellaneda, M. and S. Stoikov (2008). High-frequency trading in a limit order book. <i>Quantitative Finance</i> 8(3), 217–224. <a href='https://doi.org/10.1080/14697680701381228'>DOI:10.1080/14697680701381228</a>."
     },
     {
       "id": "barone1999",
-      "html": "Barone-Adesi, G., K. Giannopoulos and L. Vosper (1999). VaR without correlations for portfolios of derivative securities. <i>Journal of Futures Markets</i> 19(5),583–602. DOI:10.1002/(SICI)1096-9934(199908)19:5&lt;583::AID-FUT5&gt;3.0.CO;2-S. Consulted body: <a href='https://folia.unifr.ch/documents/318043/files/wp9904.pdf'>USI Quaderno 99-04, revised March 1999</a>; equivalence to the final body is unverified."
+      "html": "Barone-Adesi, G., K. Giannopoulos and L. Vosper (1999). VaR without correlations for portfolios of derivative securities. <i>Journal of Futures Markets</i> 19(5), 583–602. DOI:10.1002/(SICI)1096-9934(199908)19:5&lt;583::AID-FUT5&gt;3.0.CO;2-S. Consulted body: <a href='https://folia.unifr.ch/documents/318043/files/wp9904.pdf'>USI Quaderno 99-04, revised March 1999</a>; final-body equivalence is unverified."
+    },
+    {
+      "id": "biau2011",
+      "html": "Biau, G. and B. Patra (2011). Sequential Quantile Prediction of Time Series. <i>IEEE Transactions on Information Theory</i> 57(3), 1664–1674. <a href='https://doi.org/10.1109/TIT.2011.2104610'>DOI:10.1109/TIT.2011.2104610</a>. Consulted body: <a href='https://arxiv.org/abs/0908.2503v2'>arXiv:0908.2503v2</a>, 31 May 2010; final-body equivalence is unverified."
+    },
+    {
+      "id": "boudoukh2004",
+      "html": "Boudoukh, J., M. Richardson, R. Stanton and R.F. Whitelaw (2004). MaxVaR: Long-Horizon Value at Risk in a Mark-to-Market Environment. <i>Journal of Investment Management</i> 2(3), 14–19. <a href='https://pages.stern.nyu.edu/~rwhitela/papers/maxvar.pdf'>Consulted author manuscript</a>; its cover is undated and final-body equivalence is unverified."
     },
     {
       "id": "gneiting2011",
-      "html": "Gneiting, T. (2011). Making and Evaluating Point Forecasts. <i>Journal of the American Statistical Association</i> 106(494),746–762. <a href='https://doi.org/10.1198/jasa.2011.r10138'>DOI:10.1198/jasa.2011.r10138</a>."
-    },
-    {
-      "id": "liao2005",
-      "html": "Liao, J. and T.V. Theodosopoulos (2005). Study on optimal timing of mark-to-market for contingent credit risk control. <a href='https://arxiv.org/abs/math/0506077v1'>arXiv:math/0506077v1</a>. The PDF uses Theodore V. Theodosopoulos; arXiv metadata uses Ted Theodosopoulos. No separate journal edition is asserted."
-    },
-    {
-      "id": "politis1994",
-      "html": "Politis, D.N. and J.P. Romano (1994). The Stationary Bootstrap. <i>Journal of the American Statistical Association</i> 89(428),1303–1313. <a href='https://doi.org/10.1080/01621459.1994.10476870'>DOI:10.1080/01621459.1994.10476870</a>."
-    },
-    {
-      "id": "schmitt2026",
-      "html": "Schmitt, M. (2026). Taming Tail Risk in Financial Markets: Conformal Calibration for Nonstationary Portfolio VaR. <a href='https://arxiv.org/abs/2602.03903v3'>arXiv:2602.03903v3</a>, revised 3 August 2026. Preprint."
+      "html": "Gneiting, T. (2011). Making and Evaluating Point Forecasts. <i>Journal of the American Statistical Association</i> 106(494), 746–762. <a href='https://doi.org/10.1198/jasa.2011.r10138'>DOI:10.1198/jasa.2011.r10138</a>."
     },
     {
       "id": "hoogen2017",
-      "html": "van den Hoogen, S. (2017). Intraday liquidity risk estimation using transaction data: an extreme value theory approach. MSc Applied Mathematics thesis, Delft University of Technology, August 2017. <a href='https://repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f?preview=1'>Repository source</a>."
+      "html": "van den Hoogen, S. (2017). Intraday liquidity risk estimation using transaction data: an extreme value theory approach. MSc Applied Mathematics thesis, Delft University of Technology, August 2017. <a href='https://repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f?preview=1'>Institutional source</a>."
+    },
+    {
+      "id": "hull1998",
+      "html": "Hull, J. and A. White (1998). Incorporating volatility updating into the historical simulation method for value-at-risk. <i>Journal of Risk</i> 1(1), 5–19. <a href='https://doi.org/10.21314/jor.1998.001'>DOI:10.21314/jor.1998.001</a>. Consulted body: the author's October 1998 manuscript; final-body equivalence is unverified."
+    },
+    {
+      "id": "liao2005",
+      "html": "Liao, J. and T.V. Theodosopoulos (2005). Study on optimal timing of mark-to-market for contingent credit risk control. <a href='https://arxiv.org/abs/math/0506077v1'>arXiv:math/0506077v1</a>, 4 June 2005. The PDF names Theodore V. Theodosopoulos; arXiv metadata uses Ted Theodosopoulos."
+    },
+    {
+      "id": "politis1994",
+      "html": "Politis, D.N. and J.P. Romano (1994). The Stationary Bootstrap. <i>Journal of the American Statistical Association</i> 89(428), 1303–1313. <a href='https://doi.org/10.1080/01621459.1994.10476870'>DOI:10.1080/01621459.1994.10476870</a>."
     },
     {
       "id": "wisniewski2020",
-      "html": "Wisniewski, W., D. Lindsay and S. Lindsay (2020). Application of Conformal Prediction Interval Estimations to Market Makers' Net Positions. Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction and Applications, <i>Proceedings of Machine Learning Research</i> 128,285–301. <a href='https://proceedings.mlr.press/v128/wisniewski20a.html'>Official proceedings</a>."
+      "html": "Wisniewski, W., D. Lindsay and S. Lindsay (2020). Application of Conformal Prediction Interval Estimations to Market Makers' Net Positions. Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction and Applications, <i>Proceedings of Machine Learning Research</i> 128, 285–301. <a href='https://proceedings.mlr.press/v128/wisniewski20a.html'>Official proceedings</a>."
+    },
+    {
+      "id": "wisniewski2024",
+      "html": "Wisniewski, W.J. (2024). Net Position and Retail Trader Behaviour: Implications for Market Makers' Risk Management Strategies. Doctoral thesis, Royal Holloway, University of London. <a href='https://pure.royalholloway.ac.uk/ws/portalfiles/portal/63018039/2024WisniewskiWJWphd.pdf'>Institutional original</a>. The institutional award year is 2024; the inspected cover is dated 2023."
     },
     {
       "id": "dataset",
-      "html": "davidlindsay1979. <i>Net Position Time Series Dataset</i>, version 2. Kaggle. <a href='https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset'>Dataset record</a>. One-file access and identity verified 21 October 2026; raw redistribution permission remains unverified."
+      "html": "davidlindsay1979. <i>Net Position Time Series Dataset</i>, version 2. Kaggle. <a href='https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset'>Dataset record</a>. Source identity verified 21 October 2026; raw redistribution permission remains unverified."
     }
   ],
   "figures": [
     {
       "path": "figures/within-cell-paired-means.pdf",
-      "caption": "Figure 1. All seven within-cell paired means. Negative values favor F for that fixed objective; different preferences are not pooled into an across-cell ranking."
+      "caption": "Figure 1. Original seven-cell F-minus-S paired means. Negative values favor F for that fixed preference. Different quantile preferences are not pooled into an overall winner."
     },
     {
-      "path": "figures/primary-monthly-paired-means.pdf",
-      "caption": "Figure 2. All primary naive-calendar monthly paired means and origin counts. Calendar groups do not constitute independent episodes or a switching strategy."
+      "path": "figures/revision-retrieval-contrasts.pdf",
+      "caption": "Figure 2. All 12 fixed exploratory nearest-minus-recent loss contrasts. Negative values favor nearest retrieval at the same horizon, count and representation. The marked primary is H6, m360, K; none of these contrasts establishes superiority over the original full-window leaders."
     },
     {
-      "path": "figures/primary-resampling-ranges.pdf",
-      "caption": "Figure 3. Four fixed descriptive geometric-block resampling ranges, separate observed mean and replicate averages. These are not confidence intervals or superiority probabilities."
+      "path": "figures/revision-retrieval-monthly.pdf",
+      "caption": "Figure 3. Every monthly primary K retrieval contrast at both horizons, including adverse January 2016. Counts are source-record origins. Calendar groups are descriptive, not independent validations or switching regimes."
     }
   ]
 }
