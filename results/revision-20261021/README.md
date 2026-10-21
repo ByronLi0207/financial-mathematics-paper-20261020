@@ -38,6 +38,19 @@ An empty CSV field encodes null, not an observed zero. A defined conditional mea
 
 The fixed primary H6 nearest360K-minus-recent360K mean is **−USD277,704.4657473585**, a **31.8280%** reduction relative to recent360K loss. All 12 matched retrieval score contrasts are negative. The reference matters: no added configuration beats the better original full720 F/S rule at either horizon. S has more strict breaches and greater mean positive overrun in all four matched retrieval comparisons. All four matched F comparisons reduce breach counts and mean positive overrun, while increasing conditional mean overrun on their own breach sets. Primary K reduces breaches and unconditional overrun but has a larger conditional mean overrun on a different event set. January 2016 is adverse for the primary monthly contrast at both horizons. The complete tables preserve these tradeoffs.
 
+### Components of the two fixed primary score differences
+
+At the existing weights, `Delta mean score = 0.95 Delta mean O + 0.05 Delta mean U`, where `Delta` is the named left side minus the right side. The components use all-origin means, not conditional overrun means. The following entries are **source-reported USD millions, rounded to six decimals**, over the same 6,625 H6 origins. This explains the existing primary contrasts; it does not calculate new forecasts or change their weights.
+
+| Fixed primary contrast | `0.95 Delta mean O` | `0.05 Delta mean U` | Direct paired mean |
+|---|---:|---:|---:|
+| Original full720 F minus S | +0.047313 | −0.056688 | −0.009375 |
+| nearest360 K minus recent360 K | −0.043915 | −0.233789 | −0.277704 |
+
+The original F score advantage combines a greater overrun contribution with a larger reduction in unused allowance. In the primary K retrieval pair, both components fall, with unused allowance accounting for the larger reduction. These are stipulated forecast-score components, rather than observed financial payments or savings, and the interpretation is specific to these two contrasts.
+
+Sources are the accepted [original summary](../summary.csv) and [paired comparison](../paired-comparison.csv), and the extension's [summary](summary.csv) and [comparisons](comparisons.csv). The last column preserves the stored direct per-origin paired mean. Components calculated from serialized aggregate means can differ at tiny floating-point precision; independently rounded displays need not sum exactly. No CSV or scientific manifest is changed.
+
 All 11 recorded checks pass. The six shared full720 rows match original F/S/L metrics exactly; they are repeated references rather than new discoveries. The original 35 method rows and other original evidence remain unchanged in the parent results directory. New contrasts have no attached confidence interval, bootstrap or population-superiority test. Construction bounds and nominal breach frequencies are not conditional-coverage certificates.
 
 The run began at `2026-10-21T20:43:44Z`. Its final pre-manifest checkpoint recorded **10.3072380419 seconds**, process high-water RSS **64,602,112 bytes (61.609375 MiB)**, and maximum observed process threads **1 across 675 snapshots**. Five numerical thread requests were set to one. A separate operating-system measurement of the completed process displayed **10.35 real seconds** and peak RSS **64,634,880 bytes**; the displayed wall time has two-decimal precision. Snapshot counts do not prove a continuous thread maximum, and the internal checkpoint precedes the final metadata write. The manifest records local source reuse and no download.
