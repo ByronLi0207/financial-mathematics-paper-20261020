@@ -342,8 +342,8 @@ def _render_contrasts(canvas, layout):
         _marker(canvas, x, 111, 3.4, METHOD_COLORS[method],
                 {"F": "circle", "S": "square", "K": "diamond"}[method])
         _text(canvas, x + 10, 108, method, 9, METHOD_COLORS[method], bold=True)
-    _text(canvas, 42, 80, "PRIMARY marks the prespecified H=6, m=360, K contrast; it does not imply an overall ranking.", 9, MUTED)
-    _text(canvas, 42, 64, "All 12 frozen nearest-minus-recent aggregate means are shown. No uncertainty intervals are displayed.", 9, MUTED)
+    _text(canvas, 42, 80, "PRIMARY marks H=6, m=360, K, fixed before extension execution; it does not imply an overall ranking.", 9, MUTED)
+    _text(canvas, 42, 64, "All 12 contrasts use the already inspected interval. No uncertainty intervals are displayed.", 9, MUTED)
     _text(canvas, 42, 41, "Source: accepted public comparisons.csv | exploratory-state-selection-20261021", 8, MUTED)
 
 

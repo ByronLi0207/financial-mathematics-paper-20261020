@@ -17,7 +17,7 @@ The extension was designed **after the original evaluation interval had been ins
 
 All **12** fixed nearest-minus-recent score contrasts are negative. No added configuration beats the better original full720 F/S rule at the same horizon. This precise claim retains the exception that nearest360S at H=6 slightly improves its own full720S counterpart. Every matched S retrieval comparison has more breaches and greater mean positive overrun. Every matched F comparison has a larger conditional mean overrun, even with fewer breaches and smaller unconditional overrun. Primary K also has a larger conditional overrun despite fewer breaches; these conditional means describe different event sets. January 2016 is adverse for the primary K retrieval contrast at both horizons.
 
-The paper reports these tradeoffs alongside selected age and anchor radii. Matching starting positions reduces representation differences, but does not isolate a causal state effect: matched rows are older than the equal-count recent rows, and their regime, scale and dependence composition can differ. No population test, confidence interval or bootstrap is attached to the new contrasts. The four original resampled-mean profiles remain descriptive and concern only original full720 F/S.
+The paper reports these tradeoffs alongside selected age and anchor radii. Nearest membership guarantees a weakly smaller maximum signed-anchor distance at a fixed count; the observed representation gaps and score changes are separate results. The contrast compares two complete membership rules, without separating proximity from accompanying changes in age, regime, scale and dependence composition. No population test, confidence interval or bootstrap is attached to the new contrasts. The four original resampled-mean profiles remain descriptive and concern only original full720 F/S.
 
 ## What is being transferred
 
@@ -25,7 +25,7 @@ F retains a historical peak's headroom above its own starting magnitude. S trans
 
 For a common selected set and available rank, elementary finite-array bounds relate F/K and S/K report differences to absolute and signed starting-position distances. Exact signed-anchor matches make all three reports agree in real arithmetic. Coherent counterexamples and a known-dynamics replay identity explain why construction agreement and exact raw revaluation do not establish forecast accuracy or the right conditional path law.
 
-The closest empirical lineage is [Wisniewski, Lindsay and Lindsay (2020)](https://proceedings.mlr.press/v128/wisniewski20a.html) and the same-source doctoral thesis, which study signed endpoint forecasts with richer features. Their reported interval scores are not benchmarks for this absolute multi-record peak. Financial peak-risk, filtered historical simulation and nearest-neighbor quantile methods also have established precedents. The [12-reference source evidence map](notes/revision-20261021/paper-evidence-map.md) identifies exact consulted editions, actual reading scopes and claim boundaries. The [original nine-reference map](notes/paper-evidence-map.md) remains a historical record.
+The closest empirical lineage is [Wisniewski, Lindsay and Lindsay (2020)](https://proceedings.mlr.press/v128/wisniewski20a.html) and the same-source doctoral thesis, which study signed endpoint forecasts with richer features. The 2020 paper already evaluates nearest-neighbor quantile, conformal and normalized-conformal variants on these observations; this revision does not introduce nearest neighbors to that financial source. Their reported interval scores are not benchmarks for this absolute multi-record peak. Financial peak-risk, filtered historical simulation and nearest-neighbor quantile methods also have established precedents. The [12-reference source evidence map](notes/revision-20261021/paper-evidence-map.md) identifies exact consulted editions, actual reading scopes and claim boundaries. The [original nine-reference map](notes/paper-evidence-map.md) remains a historical record.
 
 ## Files
 
@@ -58,7 +58,7 @@ The observed rights label is “Data files © Original Authors”; raw redistrib
 
 The recorded environment is CPython 3.12.14, NumPy 2.3.5 and ReportLab 4.4.9 on macOS arm64. Document assembly additionally uses pypdf 6.10.0. The two requirement files record the existing versions. Use an environment where these are available; the resource monitor is macOS-specific and stops on unsupported platforms. No software was installed for this study.
 
-The final combined suite passed **160 tests**, including synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 8.164 seconds by unittest's clock; the separate process measurement was 8.356 seconds with child maximum RSS 106,053,632 bytes. These are validation measurements, not financial experiment measurements.
+The combined suite passed **160 tests** before the final figure-footer wording edit; the **12 targeted figure tests** passed again afterward. The combined suite included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 8.164 seconds by unittest's clock; the separate process measurement was 8.356 seconds with child maximum RSS 106,053,632 bytes. These are validation measurements, not financial experiment measurements.
 
 From the repository root:
 
@@ -69,14 +69,16 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREAD
 The explicit anonymous source route also executes the **original** analysis:
 
 ```
-python3 -B run_study.py --fetch
+python3 -B run_study.py --fetch --attempt-dir .scratch/original-replication-01
 ```
 
 It acquires only the fixed cache `.scratch/data/1hourNetPositionsKaggle.csv`, if absent, with bounded anonymous requests and exact archive/member/hash validation. Existing mismatched input is rejected, never replaced. To run the original study on an independently obtained matching file:
 
 ```
-python3 -B run_study.py --input /path/to/1hourNetPositionsKaggle.csv
+python3 -B run_study.py --input /path/to/1hourNetPositionsKaggle.csv --attempt-dir .scratch/original-replication-manual-01
 ```
+
+The two original commands are alternative source routes; each attempt directory must be new. The `--input` route validates and reads its selected file but does not populate the fixed cache. If you obtained the CSV independently, place the matching snapshot at `.scratch/data/1hourNetPositionsKaggle.csv` before running the extension. Verify the documented 1,286,391-byte size and SHA-256; preserve and investigate an existing mismatched cache rather than replace it.
 
 The extension expects that exact fixed cache, the frozen protocol/specification and the public-freeze receipt. It does not fetch, accept an alternate file or override the frozen menu. Use a new output path:
 
@@ -84,7 +86,7 @@ The extension expects that exact fixed cache, the frozen protocol/specification 
 python3 -B run_revision_selection.py --output .scratch/revision-replication-01
 ```
 
-Both scientific runners write exclusive attempt directories. Inspect each manifest, its scope and every check before accepting a reproduction. Private diagnostic output is not automatically publication material. The original eight scientific code/test files and original result tables remain unchanged by this revision.
+Both scientific runners write exclusive attempt directories. For the anonymous original example, inspect `.scratch/original-replication-01/public/results/run-manifest.json`; the manual example uses the analogous `original-replication-manual-01` attempt. Original tables and figures are inside that attempt’s `public/` tree. The extension example writes its four CSVs and `manifest.json` directly in `.scratch/revision-replication-01/public/`. These attempt outputs do not overwrite the accepted root `results/` or manuscript figures. Inspect each manifest, its scope and every check before accepting a reproduction. Private diagnostic output is not automatically publication material. The original eight scientific code/test files and original result tables remain unchanged by this revision.
 
 The extension's sole accepted computation recorded **10.307238 seconds**, sampled process high-water RSS **64,602,112 bytes (61.61 MiB)** and a maximum observed **one OS thread over 675 snapshots**. The completed-process measurement displayed **10.35 real seconds** and RSS **64,634,880 bytes**. The original primary calculation recorded 8.02145 seconds and RSS 80,936,960 bytes (77.19 MiB). Different checkpoint scopes and displayed precision are retained in their receipts.
 
@@ -94,7 +96,7 @@ The implementation requests one numerical thread, stops early at 540 seconds or 
 
 The current TeX source compiled successfully with the desktop editor's built-in compiler. That interface supplied diagnostics without exporting a standalone PDF. The supplied PDF is independently typeset from the same structured content using ReportLab, then appends the three approved vector pages through pypdf. It is **not an export of that TeX compiler**. Pagination and fonts can differ in an external TeX build. The shared scientific text, explicit equations and approved figure files remain available.
 
-All 16 supplied PDF pages were rendered and inspected. The document audit checked 605 source text/table/caption blocks, font coverage, page character bounds, metadata, reference links and exact embedded figure streams. Two unsupported collection symbols were replaced by explicit English before the accepted build. See the [manuscript README](manuscript/working-paper/README.md) and [verification receipt](manuscript/working-paper/rendering-verification.json).
+All 16 supplied PDF pages were rendered and inspected. The document audit checked 603 source text/table/caption blocks, font coverage, page character bounds, metadata, reference links and exact embedded figure streams. Two unsupported collection symbols were replaced by explicit English before the accepted build. See the [manuscript README](manuscript/working-paper/README.md) and [verification receipt](manuscript/working-paper/rendering-verification.json).
 
 Document-only commands refuse to overwrite existing outputs:
 
