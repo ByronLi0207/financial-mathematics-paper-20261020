@@ -42,7 +42,7 @@ The contribution is a bounded application comparison: a multi-record peak respon
 \section*{3. Data, recorded response and completed information}
 The input is the one-hour member of version 2 of the Net Position Time Series Dataset, with 18,576 records from 5 February 2014 01:00 through 24 January 2017 00:00. Wisniewski et al. (2020) describe sampled aggregate client-flow positions across five liquid FX pairs. Only datetime and NetPosUsd are used. A netted USD scalar does not reconstruct currency-level gross positions, hedge transactions, collateral or cash movements. The source's timezone and historical publication/vintage convention are unverified.
 
-There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We retain the file's chronology without sorting, deleting paths across gaps or interpolating missing intervals. Consequently H counts subsequent records, rather than elapsed hours. Let N\textsubscript{t} be the signed source-reported position, observed before issue. Define
+There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We retain the file's chronology without sorting, deleting paths across gaps or interpolating missing intervals. Consequently H counts subsequent records, rather than elapsed hours. Using zero-based observation indices, let N\textsubscript{t} be the signed source-reported position, observed before issue. Define
 
 \[
 B_t=|N_t|,\qquad P_{t,H}=\max_{0\le h\le H}|N_{t+h}|,\qquad G_{t,H}=P_{t,H}-B_t.
@@ -50,6 +50,8 @@ B_t=|N_t|,\qquad P_{t,H}=\max_{0\le h\le H}|N_{t+h}|,\qquad G_{t,H}=P_{t,H}-B_t.
 Including h=0 gives the known floor B\textsubscript{t} and nonnegative headroom G. The peak includes an interior recorded spike even if the final position returns to its starting value. It does not bound an unobserved excursion between records. The retrospective issue convention treats N\textsubscript{t} as available immediately before issue, rather than establishing historical live-publication availability.
 
 At issue t the extension's eligible pool is I\textsubscript{t}=\{t\(-\)H\(-\)719,...,t\(-\)H\}. Each of its 720 historical origins i has a response ending at i+H\(\le\)t. The latest completed label may therefore include the already observed issue record. Earlier evaluation outcomes enter later pools only after completion. Adjacent peaks and rolling pools overlap; completed-label eligibility does not make them independent.
+
+The 720 response-end indices i+H range from t\(-\)719 through t at both horizons, although their starting origins differ. For example, at the first issue t=11927, candidate origins are 11202–11921 for H=6 and 11184–11903 for H=24; both sets of historical responses end at indices 11208–11927. The new response ends at 11933 or 11951, respectively. These indices illustrate the fixed timing rule, not additional data or forecast results.
 
 For each eligible origin retain its native peak P\textsubscript{i,H}, headroom G\textsubscript{i,H} and directional increment extrema
 
@@ -93,7 +95,9 @@ K_J=\max\{B_t,Q_k\{P_i:i\in J\}\}.
 \]
 F retains headroom relative to historical starting magnitude; S translates signed increments to the current position; K retains native peaks subject to the current floor. K is the method labeled L in the original artifacts. The files call an issued forecast level C its 'capacity'; throughout the paper this is a passive reported level. All three already use current information: F/K use B\textsubscript{t}, and S also uses signed N\textsubscript{t}. Retrieval changes historical membership. Equal-count recent and nearest sets may differ in age, scale, regimes and dependence.
 
-The original five-rule comparison also includes the radius reference R=B\textsubscript{t}+Q\textsubscript{k}\{max(b\textsubscript{i},\(-\)a\textsubscript{i})\} and the known-floor reference P0=B\textsubscript{t}, on its full n-row pool. The extension implements only F/S/K. Stored float64 S subtracts the floor before ranking and adds it afterward, preserving the original operation order and its rounded decisions.
+F has the algebraic form of an upper residual-quantile endpoint around the fixed baseline f(N)=|N|. Because P\textsubscript{i,H}\(\ge\)|N\textsubscript{i}|, its residual G\textsubscript{i,H} is also the absolute prediction error of that baseline. This identity does not implement the fitted, split-calibration and symmetric-interval procedure of Wisniewski et al. (2020), nor establish conformal validity for the overlapping archive.
+
+The original five-rule comparison also includes the radius reference R=B\textsubscript{t}+Q\textsubscript{k}\{max(b\textsubscript{i},\(-\)a\textsubscript{i})\} and the known-floor reference P0=B\textsubscript{t}, on its full n-row pool. The extension implements only F/S/K. Appendix C specifies the stored arithmetic and operation order.
 
 An elementary construction bound explains what matching can control. For one common nonempty set J and the same valid rank, put r\textsubscript{abs}=max\textsubscript{i in J}||N\textsubscript{i}|\(-\)B\textsubscript{t}| and r\textsubscript{signed}=max\textsubscript{i in J}|N\textsubscript{i}\(-\)N\textsubscript{t}|. In real arithmetic,
 
@@ -107,7 +111,7 @@ The original specification was recorded at 05:46:37 UTC on 21 October 2026 and p
 
 The extension was conceived after those results had been inspected. Its human-readable protocol and hash-pinned machine specification were publicly recorded in commits 63703b9 and 69d5bb6 before the added forecasts. They fix H=6 and 24, the five sets in Table 1 and F/S/K: 15 configurations per horizon, 30 in total. The six full720 F/S/K rows repeat original F/S/L references. Recording the extension before execution limits further discretion but cannot turn the old interval into an unseen holdout.
 
-Both designs use the same 6,625 issue origins: indices 11927 through 18551 inclusive, from naive source timestamp 1 January 2016 00:00 through 23 January 2017 00:00. The common original full-menu rule retains the future records required by H=24. Earlier evaluation labels become usable later only when completed. Changing H alters both the future peak and the end of the eligible historical archive, so cross-horizon comparisons do not isolate the maximum operator alone.
+Both designs use the same 6,625 issue origins: zero-based observation indices 11927 through 18551 inclusive, from naive source timestamp 1 January 2016 00:00 through 23 January 2017 00:00. The common original full-menu rule retains the future records required by H=24. Earlier evaluation labels become usable later only when completed. Changing H alters both the future peak and the eligible historical origin indices, so cross-horizon comparisons do not isolate the maximum operator alone.
 
 For stored error e=P\(-\)C, pinball loss is
 

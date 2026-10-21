@@ -59,7 +59,7 @@
         },
         {
           "type": "p",
-          "html": "There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We retain the file's chronology without sorting, deleting paths across gaps or interpolating missing intervals. Consequently H counts subsequent records, rather than elapsed hours. Let N<sub>t</sub> be the signed source-reported position, observed before issue. Define"
+          "html": "There are 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We retain the file's chronology without sorting, deleting paths across gaps or interpolating missing intervals. Consequently H counts subsequent records, rather than elapsed hours. Using zero-based observation indices, let N<sub>t</sub> be the signed source-reported position, observed before issue. Define"
         },
         {
           "type": "equation",
@@ -73,6 +73,10 @@
         {
           "type": "p",
           "html": "At issue t the extension's eligible pool is I<sub>t</sub>={t−H−719,...,t−H}. Each of its 720 historical origins i has a response ending at i+H≤t. The latest completed label may therefore include the already observed issue record. Earlier evaluation outcomes enter later pools only after completion. Adjacent peaks and rolling pools overlap; completed-label eligibility does not make them independent."
+        },
+        {
+          "type": "p",
+          "html": "The 720 response-end indices i+H range from t−719 through t at both horizons, although their starting origins differ. For example, at the first issue t=11927, candidate origins are 11202–11921 for H=6 and 11184–11903 for H=24; both sets of historical responses end at indices 11208–11927. The new response ends at 11933 or 11951, respectively. These indices illustrate the fixed timing rule, not additional data or forecast results."
         },
         {
           "type": "p",
@@ -167,7 +171,11 @@
         },
         {
           "type": "p",
-          "html": "The original five-rule comparison also includes the radius reference R=B<sub>t</sub>+Q<sub>k</sub>{max(b<sub>i</sub>,−a<sub>i</sub>)} and the known-floor reference P0=B<sub>t</sub>, on its full n-row pool. The extension implements only F/S/K. Stored float64 S subtracts the floor before ranking and adds it afterward, preserving the original operation order and its rounded decisions."
+          "html": "F has the algebraic form of an upper residual-quantile endpoint around the fixed baseline f(N)=|N|. Because P<sub>i,H</sub>≥|N<sub>i</sub>|, its residual G<sub>i,H</sub> is also the absolute prediction error of that baseline. This identity does not implement the fitted, split-calibration and symmetric-interval procedure of Wisniewski et al. (2020), nor establish conformal validity for the overlapping archive."
+        },
+        {
+          "type": "p",
+          "html": "The original five-rule comparison also includes the radius reference R=B<sub>t</sub>+Q<sub>k</sub>{max(b<sub>i</sub>,−a<sub>i</sub>)} and the known-floor reference P0=B<sub>t</sub>, on its full n-row pool. The extension implements only F/S/K. Appendix C specifies the stored arithmetic and operation order."
         },
         {
           "type": "p",
@@ -197,7 +205,7 @@
         },
         {
           "type": "p",
-          "html": "Both designs use the same 6,625 issue origins: indices 11927 through 18551 inclusive, from naive source timestamp 1 January 2016 00:00 through 23 January 2017 00:00. The common original full-menu rule retains the future records required by H=24. Earlier evaluation labels become usable later only when completed. Changing H alters both the future peak and the end of the eligible historical archive, so cross-horizon comparisons do not isolate the maximum operator alone."
+          "html": "Both designs use the same 6,625 issue origins: zero-based observation indices 11927 through 18551 inclusive, from naive source timestamp 1 January 2016 00:00 through 23 January 2017 00:00. The common original full-menu rule retains the future records required by H=24. Earlier evaluation labels become usable later only when completed. Changing H alters both the future peak and the eligible historical origin indices, so cross-horizon comparisons do not isolate the maximum operator alone."
         },
         {
           "type": "p",

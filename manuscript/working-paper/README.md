@@ -10,7 +10,7 @@
 
 The source passed the desktop editor's built-in LaTeX compiler. That interface supplies diagnostics without a standalone export. The delivered PDF is independently typeset from the same structured content using ReportLab 4.4.9, with approved vector pages appended through pypdf 6.10.0. It is **not an export of the TeX compiler**. Compiling the source elsewhere can give different pagination and fonts; the scientific content and referenced figure assets are shared.
 
-All 16 PDF pages were rasterized and inspected. The audit found no unsupported body-font characters, replacement/box/NUL glyphs or characters outside the page bounds. It reconciled 603 source text, table and caption blocks to the actual PDF text, excluding only the 13 observed page-number footers. Each appended figure stream matches its approved standalone source. Source regeneration is byte-identical to the successfully compiled `main.tex`. These checks concern document fidelity; scientific output identities are recorded in their separate run manifests.
+All 16 PDF pages were rasterized and inspected. The audit found no unsupported body-font characters, replacement/box/NUL glyphs or characters outside the page bounds. It reconciled 605 source text, table and caption blocks to the actual PDF text, excluding only the 13 observed page-number footers. Each appended figure stream matches its approved standalone source. Source regeneration is byte-identical to the successfully compiled `main.tex`. These checks concern document fidelity; scientific output identities are recorded in their separate run manifests.
 
 From the repository root, in the documented existing environment:
 
