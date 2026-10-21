@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "revision_id": "exploratory-state-selection-20261021",
+  "status": "post_initial_exploratory",
+  "original_evaluation_already_inspected": true,
+  "protocol_path": "protocol/revision-20261021-exploratory-protocol.md",
+  "protocol_sha256": "55e2359666068b799f64bca6c0b23edc32f891fbd47b2430b22786dd8a363e36",
+  "original_spec_path": "protocol/study-spec.json",
+  "original_spec_sha256": "0b8eda7bfd858c038bae22a96a7caa5ff21838317de58bc56eef98ca696c54ff",
+  "source_csv_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+  "source_csv_bytes": 1286391,
+  "expected_source_rows": 18576,
+  "fetch_new_data": false,
+  "horizons": [
+    6,
+    24
+  ],
+  "eligible_count": 720,
+  "tau_numerator": 19,
+  "tau_denominator": 20,
+  "first_origin": 11927,
+  "last_origin": 18551,
+  "expected_origin_count": 6625,
+  "representations": [
+    "F",
+    "S",
+    "K"
+  ],
+  "sets": [
+    {
+      "set_id": "full720",
+      "selection": "full",
+      "count": 720,
+      "rank": 685
+    },
+    {
+      "set_id": "recent360",
+      "selection": "recent",
+      "count": 360,
+      "rank": 343
+    },
+    {
+      "set_id": "nearest360",
+      "selection": "nearest",
+      "count": 360,
+      "rank": 343
+    },
+    {
+      "set_id": "recent180",
+      "selection": "recent",
+      "count": 180,
+      "rank": 172
+    },
+    {
+      "set_id": "nearest180",
+      "selection": "nearest",
+      "count": 180,
+      "rank": 172
+    }
+  ],
+  "nearest_distance": "absolute_signed_position_difference",
+  "distance_tie_break": "descending_origin_most_recent_first",
+  "selected_array_order": "chronological",
+  "s_operation_order": "headroom_then_order_statistic_then_add_current_floor",
+  "primary_contrast": {
+    "horizon": 6,
+    "left_set": "nearest360",
+    "right_set": "recent360",
+    "representation": "K",
+    "criterion": "mean_pinball_left_minus_right < 0"
+  },
+  "geometry_tolerance_epsilon_multiplier": 64,
+  "monthly_display_min_origins": 30,
+  "no_new_bootstrap_or_inference": true,
+  "resources": {
+    "numerical_thread_request": 1,
+    "maximum_observed_threads": 2,
+    "maximum_rss_bytes": 2147483648,
+    "maximum_raw_bytes": 104857600,
+    "maximum_download_bytes": 26214400,
+    "maximum_run_seconds": 600
+  },
+  "public_tables": {
+    "summary_rows": 30,
+    "geometry_rows": 10,
+    "comparison_rows": 22,
+    "monthly_primary_rows": 26
+  },
+  "summary_metrics": [
+    "mean_pinball",
+    "mean_capacity",
+    "mean_extra_allowance",
+    "strict_breach_count",
+    "strict_breach_rate",
+    "mean_positive_overrun",
+    "conditional_mean_overrun",
+    "conditional_overrun_denominator",
+    "mean_unused_allowance"
+  ],
+  "calendar_months_inclusive": [
+    "2016-01",
+    "2017-01"
+  ]
+}
