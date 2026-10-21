@@ -1,0 +1,278 @@
+{
+  "manifest_schema_version": 1,
+  "declared_scope": "seven_cell_sampled_inventory_peak_study",
+  "study_id": "sampled-inventory-peaks-v1",
+  "attempt_id": "20261021T060715Z-de1704c9",
+  "run_status": "COMPLETE",
+  "stop_code": "NONE",
+  "planned_cell_ids": [
+    "main",
+    "h12",
+    "h24",
+    "n480",
+    "n1440",
+    "tau90",
+    "tau99"
+  ],
+  "completed_cell_ids": [
+    "main",
+    "h12",
+    "h24",
+    "n480",
+    "n1440",
+    "tau90",
+    "tau99"
+  ],
+  "method_ids": [
+    "F",
+    "S",
+    "R",
+    "L",
+    "P0"
+  ],
+  "source": {
+    "dataset": "davidlindsay1979/net-position-time-series-dataset",
+    "version": 2,
+    "public_url": "https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset",
+    "requested_member": "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv",
+    "expected_csv_bytes": 1286391,
+    "expected_csv_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "timestamp_timezone": "unspecified_naive",
+    "observed_rights_label": "Data files © Original Authors",
+    "raw_redistribution_verified": false,
+    "accepted_csv_bytes": 1286391,
+    "accepted_csv_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "source_verified": true,
+    "acquisition_mode": "local_reuse",
+    "request_performed_this_attempt": false,
+    "historical_access_utc": "2026-10-21T02:42:07Z",
+    "local_validation_utc": "2026-10-21T06:07:15Z",
+    "download": null
+  },
+  "specification": {
+    "relative_path": "protocol/study-spec.json",
+    "sha256": "0b8eda7bfd858c038bae22a96a7caa5ff21838317de58bc56eef98ca696c54ff",
+    "schema_version": 1,
+    "primary_cell_id": "main",
+    "amends_sha256": null,
+    "common_origin_reference_sha256": "1aa05a5dda2d5ae7f4bc60610a764636e2c9c01eaae0a9f3525eee15f3806790",
+    "cells": [
+      {
+        "cell_id": "main",
+        "horizon": 6,
+        "window": 720,
+        "tau_numerator": 19,
+        "tau_denominator": 20,
+        "expected_rank": 685
+      },
+      {
+        "cell_id": "h12",
+        "horizon": 12,
+        "window": 720,
+        "tau_numerator": 19,
+        "tau_denominator": 20,
+        "expected_rank": 685
+      },
+      {
+        "cell_id": "h24",
+        "horizon": 24,
+        "window": 720,
+        "tau_numerator": 19,
+        "tau_denominator": 20,
+        "expected_rank": 685
+      },
+      {
+        "cell_id": "n480",
+        "horizon": 6,
+        "window": 480,
+        "tau_numerator": 19,
+        "tau_denominator": 20,
+        "expected_rank": 457
+      },
+      {
+        "cell_id": "n1440",
+        "horizon": 6,
+        "window": 1440,
+        "tau_numerator": 19,
+        "tau_denominator": 20,
+        "expected_rank": 1369
+      },
+      {
+        "cell_id": "tau90",
+        "horizon": 6,
+        "window": 720,
+        "tau_numerator": 9,
+        "tau_denominator": 10,
+        "expected_rank": 649
+      },
+      {
+        "cell_id": "tau99",
+        "horizon": 6,
+        "window": 720,
+        "tau_numerator": 99,
+        "tau_denominator": 100,
+        "expected_rank": 714
+      }
+    ],
+    "evaluation_bounds": {
+      "origin_count": 6625,
+      "first_source_index": 11927,
+      "last_source_index": 18551
+    }
+  },
+  "code": {
+    "revision": null,
+    "files": [
+      {
+        "relative_path": "study_data.py",
+        "sha256": "5238c4282839e99538bd0d1f221e48a3a0e2ebd537dd7722ae148224f4302687"
+      },
+      {
+        "relative_path": "study_core.py",
+        "sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf"
+      },
+      {
+        "relative_path": "study_report.py",
+        "sha256": "5e254d2f32005f32aeb151662bd8a88ea2f7a0f4f305cefd1db1a59ab4a6c3dd"
+      },
+      {
+        "relative_path": "run_study.py",
+        "sha256": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f"
+      },
+      {
+        "relative_path": "test_data.py",
+        "sha256": "cec250a3abfcd6f0f2c7b06213506c35197d1ca7b058fa1301f60987a73f0df9"
+      },
+      {
+        "relative_path": "test_core.py",
+        "sha256": "7f905532442c07a11927c8d904d626dc67b9c7c0eb5080b7f7f646e68140d7c1"
+      },
+      {
+        "relative_path": "test_report.py",
+        "sha256": "09cc5093c33a361e3ef3cab4dcd7afe3b50bc2d6be1f15d9593e953065c965a0"
+      },
+      {
+        "relative_path": "test_runner.py",
+        "sha256": "effbe83b1a483075729e667c049728f2442334355ef677774ddef741f3eac86e"
+      }
+    ]
+  },
+  "environment": {
+    "python_implementation": "CPython",
+    "python_version": "3.12.14",
+    "os_family": "Darwin",
+    "os_version": "27.0.0",
+    "architecture": "arm64",
+    "numpy_version": "2.3.5",
+    "reportlab_version": "4.4.9",
+    "thread_requests": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "resources": {
+    "started_utc": "2026-10-21T06:07:15Z",
+    "checkpoint_utc": "2026-10-21T06:07:23Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 8.021447541890666,
+    "peak_rss_bytes": 80936960,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 565,
+    "completed_stability_lengths": [
+      120,
+      240,
+      720,
+      1440
+    ],
+    "current_stage": "final_manifest_checkpoint",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 6625,
+    "completed_replicates_current_length": 999,
+    "new_output_bytes_at_checkpoint": 202224,
+    "private_numeric_output_bytes_at_checkpoint": 36084,
+    "public_analysis_output_bytes_at_checkpoint": 166140
+  },
+  "checks": {
+    "source_identity": "PASS",
+    "schema": "PASS",
+    "chronology": "PASS",
+    "common_origins": "PASS",
+    "label_maturity": "PASS",
+    "finite_results": "PASS",
+    "floors_and_geometry": "PASS",
+    "cross_cell_invariants": "PASS",
+    "mechanism_partitions": "PASS",
+    "aggregate_reconciliation": "PASS",
+    "same_block_equivalence": "PASS",
+    "resources": "PASS",
+    "public_serialization": "PASS"
+  },
+  "outputs": {
+    "artifacts": [
+      {
+        "relative_path": "results/summary.csv",
+        "kind": "table",
+        "bytes": 6396,
+        "sha256": "748a62ca0fcde49a7b326f79e3b58ecae84847f5229141a2ff33f7082b5f1d2c",
+        "row_count": 35
+      },
+      {
+        "relative_path": "results/paired-comparison.csv",
+        "kind": "table",
+        "bytes": 1657,
+        "sha256": "f41325d5090b81c0251ed7dfe290bca42dc5e2bc690ff753b3673b72c7cd9adf",
+        "row_count": 7
+      },
+      {
+        "relative_path": "results/stability.csv",
+        "kind": "table",
+        "bytes": 1096,
+        "sha256": "a4de9cb3956d90061e74d2ca9e1bdad692bc0c7601d55e6dd3b7a25b9aeebcfb",
+        "row_count": 4
+      },
+      {
+        "relative_path": "results/diagnostics.csv",
+        "kind": "table",
+        "bytes": 137133,
+        "sha256": "65038edb3834240da12b75fdf26f42a6194d3c0c8801ffa7c8ad9d40cdb2ebbf",
+        "row_count": 1647
+      },
+      {
+        "relative_path": "manuscript/working-paper/figures/within-cell-paired-means.pdf",
+        "kind": "figure",
+        "bytes": 4998,
+        "sha256": "4ada53d86dad20d55bb2c19fe4b62b7e019269f246327f899234a82f5b0e0eb1",
+        "row_count": null
+      },
+      {
+        "relative_path": "manuscript/working-paper/figures/primary-monthly-paired-means.pdf",
+        "kind": "figure",
+        "bytes": 9664,
+        "sha256": "863be2c48677302252f6f8435ffe65449d283ee784ca811cd7801ac177087ec3",
+        "row_count": null
+      },
+      {
+        "relative_path": "manuscript/working-paper/figures/primary-resampling-ranges.pdf",
+        "kind": "figure",
+        "bytes": 5196,
+        "sha256": "275de897d7c26b38b0fa24a28c753424bb055ce9a4d206cbb2f566aec5433437",
+        "row_count": null
+      }
+    ]
+  },
+  "undefined_conventions": {
+    "csv_empty_is_null": true,
+    "json_nonfinite_allowed": false,
+    "zero_breach_reason": "NO_STRICT_BREACHES",
+    "zero_s_loss_reason": "ZERO_MEAN_LOSS_S",
+    "display_min_origins": 30,
+    "below_display_reason": "GROUP_BELOW_DISPLAY_MIN",
+    "empty_group_reason": "NO_ORIGINS"
+  }
+}
