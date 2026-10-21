@@ -8,14 +8,14 @@ The three original PDFs remain unchanged. `study_report.py` produces them from o
 
 The revision adds two figures from the separately accepted extension aggregates:
 
-4. `revision-retrieval-contrasts.pdf`: every one of the 12 nearest-minus-recent loss means, in fixed H/count/method order. Only H6/m360/K is marked primary. Common axes and direct signed USD-million values retain all comparisons.
+4. `revision-retrieval-contrasts.pdf`: every one of the 12 nearest-minus-recent loss means, in fixed H/count/method order. Only H6/m360/K is marked primary. Its footer states that the contrast was fixed before extension execution and that all 12 comparisons use the already inspected interval. Common axes and direct signed USD-million values retain all comparisons.
 5. `revision-retrieval-monthly.pdf`: all 13 monthly primary K contrasts at both horizons, all origin counts and the adverse positive January 2016 means. Calendar groups remain descriptive.
 
 `build_revision_figures.py` constructs only the two new figures. It pins the accepted manifest and aggregate table identities, validates every row and writes to a new direct `.scratch/revision-figure-*` directory. It reads no source observations, private paths or per-origin forecasts. The new PDFs are standalone one-page A4 landscape vectors, using Helvetica / Helvetica-Bold without image objects. Their approved SHA-256 hashes are:
 
 ```
 revision-retrieval-contrasts.pdf
-41e068e629688413bf385e7192ed97af29b5f4fb8f490fa49b848127e2a6507c
+955a66245f7feae559c5232d79e2244881969d169a808a6f059d7665c99637f4
 
 revision-retrieval-monthly.pdf
 cfcb2f8f84edcd804844b57357242cd31ae67a67f9ca9fd49e73377c5c54f798
