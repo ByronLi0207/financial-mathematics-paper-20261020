@@ -96,7 +96,7 @@ The implementation requests one numerical thread, stops early at 540 seconds or 
 
 The current TeX source compiled successfully with the desktop editor's built-in compiler. That interface supplied diagnostics without exporting a standalone PDF. The supplied PDF is independently typeset from the same structured content using ReportLab, then appends the three approved vector pages through pypdf. It is **not an export of that TeX compiler**. Pagination and fonts can differ in an external TeX build. The shared scientific text, explicit equations and approved figure files remain available.
 
-All 16 supplied PDF pages were rendered and inspected. The document audit checked 603 source text/table/caption blocks, font coverage, page character bounds, metadata, reference links and exact embedded figure streams. Two unsupported collection symbols were replaced by explicit English before the accepted build. See the [manuscript README](manuscript/working-paper/README.md) and [verification receipt](manuscript/working-paper/rendering-verification.json).
+All 16 supplied PDF pages were rendered and inspected. The document audit checked 605 source text/table/caption blocks, font coverage, page character bounds, metadata, reference links and exact embedded figure streams. Two unsupported collection symbols were replaced by explicit English before the accepted build. See the [manuscript README](manuscript/working-paper/README.md) and [verification receipt](manuscript/working-paper/rendering-verification.json).
 
 Document-only commands refuse to overwrite existing outputs:
 
