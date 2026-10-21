@@ -5,8 +5,11 @@
 - [paper.pdf](paper.pdf): reviewed standalone paper.
 - [main.tex](main.tex): complete LaTeX text, tables and references, with relative figure paths.
 - [paper-content.json](paper-content.json): shared manuscript content and explicit equation representations.
+- [references.bib](references.bib): reusable BibTeX records for the same 12 cited sources, with matching reference keys and notes on consulted editions.
 - [rendering-verification.json](rendering-verification.json): actual content/source/PDF identities and verification scope.
 - [figures/](figures/): all three original figures and two added aggregate-only figures. The revised paper uses original within-cell paired means and the two new retrieval figures.
+
+The delivered paper takes its reference text from `paper-content.json`; `references.bib` is a companion catalog rather than a build dependency. Keep the catalog consistent when revising the structured references. Publication years and consulted manuscript dates are kept distinct. Actual reading scopes remain in the [source evidence map](../../notes/revision-20261021/paper-evidence-map.md).
 
 The source passed the desktop editor's built-in LaTeX compiler. That interface supplies diagnostics without a standalone export. The delivered PDF is independently typeset from the same structured content using ReportLab 4.4.9, with approved vector pages appended through pypdf 6.10.0. It is **not an export of the TeX compiler**. Compiling the source elsewhere can give different pagination and fonts; the scientific content and referenced figure assets are shared.
 
