@@ -21,7 +21,7 @@ The direct comparison is AR minus matching frozen S; F and the originally select
 | Treasury | 24 | 52 | +35.125% | +32.823% | -59.432% | 56 / 33 |
 | Treasury | 24 | 260 | -24.118% | -24.162% | -63.860% | 59 / 12 |
 
-AR lowers mean loss in five of eight cells against each of S, F and QR. It loses to QR in three of four FX cells and improves on QR in all four Treasury cells. The original adverse Treasury QR primary therefore does not establish failure of every conditional family. The addition supplies another bounded comparison, not a new estimator or a replacement primary.
+AR has lower loss in five of eight cells against S, five against F and five against QR; these sets differ. It loses to QR in three of four FX cells and improves on QR in all four Treasury cells. The original adverse Treasury QR primary therefore does not establish failure of every conditional family. The addition supplies another bounded comparison, not a new estimator or a replacement primary.
 
 Against S, mean report and mean unused allowance fall in all eight cells, but strict breach occasions rise in all eight and all-origin mean positive overrun rises in seven. In Treasury H24 W260, S loss 2478.871300 falls to AR 1881.016326 (−24.118%), while breaches increase 12→59 of 277. Mean positive overrun increases 306.848375→892.436616 USD millions; mean unused allowance falls 43747.306859→20664.030821. Under the stipulated score, `.05*23083.276039` of reduced unused-allowance loss exceeds `.95*585.588240` of added overrun loss. This arithmetic is not an observed funding saving, safer policy or conditional95% coverage.
 
