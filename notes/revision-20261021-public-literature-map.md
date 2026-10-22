@@ -1,5 +1,7 @@
 # Literature map: forecasting a sampled market-maker inventory peak
 
+**Historical research snapshot.** The thesis-access limitation recorded below describes an early retrieval attempt on 21 October 2026. The official PDF was subsequently obtained and Chapter 6 was read; see the [source update, Section 3](revision-20261021-public-source-update.md#3-the-thesis-chapter-is-now-available-and-strengthens-the-direct-lineage). Use the [current paper evidence map](revision-20261021/paper-evidence-map.md) for the manuscript's consulted editions and cumulative reading scopes. The earlier account is retained to preserve the research chronology.
+
 Research note, 21 October 2026. This is a source comparison for ongoing research, rather than a final research design or an exhaustive novelty claim. Reading scope describes the text consulted; it does not certify independent proof verification, numerical reproduction or implementation equivalence between editions.
 
 The financial target under discussion is the future sampled absolute peak of a passive net-position record,
