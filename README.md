@@ -31,6 +31,8 @@ The closest empirical lineage is [Wisniewski, Lindsay and Lindsay (2020)](https:
 
 The [additional method comparison](notes/revision-20261021/method-transfer-comparison.md) explains how mature conditional-quantile models, residual calibration, historical scenario models, active hedging and forecast-evaluation theory relate to this response. It records eight consulted works and their actual reading scopes, including CAViaR and SPCI now cited in the paper and six other neighbors, including two 2026 preprints. These are method and evaluation neighbors; their published outcomes are not extra same-target benchmark results.
 
+A [financial-target comparison](notes/revision-20261021/direction-endpoint-peak-comparison.md) distinguishes trader-resolved flow/VWAP direction forecasts, signed-position intervals and the present peak response. It explains why similar inventory terminology does not make their published scores interchangeable.
+
 ## Files
 
 - [Original results](results/README.md): all 35 method/setting rows, seven paired comparisons, four resampling profiles, complete diagnostics and the original manifest. These original scientific outputs are preserved.
