@@ -35,6 +35,12 @@ The six CSVs contain 8 summary, 32 annual, 8 sparse, 24 paired, 96 annual-paired
 
 The new forecast attempt took 10.692 seconds at its final internal checkpoint (10.75 seconds externally), 104,251,392 bytes internal peak RSS (104,284,160 externally), one observed OS thread across 1465 snapshots and zero swaps. Its largest scenario matrix is 2880x25. The separate readback took 1.332 seconds with 94,126,080 bytes peak RSS and one observed thread. Its resource probe counts files in the existing read-only attempt directories; those byte counts are inputs, not new audit-generated files. No source download, installation, GPU, Monte Carlo randomness, new tuning menu or original-model refit was performed.
 
+## Refined inventory readback
+
+The first receipt remains unchanged with its original checker preserved at [fb1315e3](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/fb1315e333d166531c900bea4e15bbfc603ba5f4/verify_ar1_output.py). A later review found that numerical row checks plus total counts did not strictly rule out a repeated key replacing an omitted row. The [integrity addendum](../../../notes/revision-20261022/ar1-auditor-integrity-addendum.md) records the defect,22 targeted synthetic tests and correction without changing any forecast or result row.
+
+The updated checker and its [tests](../../../test_verify_ar1_output.py) now enforce exact CSV key/label and consumed-file inventories, same-byte parsing, complete refit-record metadata and receipt bindings. One new [inventory-readback.json](inventory-readback.json) passed all192 aggregate rows and1196 fit-record metadata checks, retaining the original24 independent Fraction refits and24 scalar issued-report checks. Its numerical discrepancies were unchanged. It took1.291seconds internally (1.35externally),94,273,536bytes peak RSS and one observed thread in106snapshots. All-fit metadata checks do not independently recompute every fit or every forecast. The existing command below executes this refined checker and requires a fresh output filename.
+
 ## Reproduce with exact local inputs
 
 First follow the [root guide](../../../README.md) to obtain the two hash-matching private inputs and generate a successful fresh conditional replication with a new ID. This AR runner reuses its audited references and refuses existing output IDs. From the root, in the documented NumPy/macOS environment, replace `REPLAY_ID` and `AR_ID` with your fresh identifiers:
