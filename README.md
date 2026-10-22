@@ -18,7 +18,11 @@ The earlier historical-selection comparison omitted mature conditional competito
 
 Every selected Treasury QR cell loses to its own frozen F reference. Both short-window Treasury plain KNN fits select k=W and equal that historical reference exactly; their feature distances no longer change membership. A secondary long-horizon Treasury KNN gain reverses on the fixed sparse grid of only 12 origins. Calendar groups and sparse grids remain descriptive, not independent replications or confidence intervals.
 
+The [complete QR validation-loss profiles](results/revision-20261022/SELECTION_DIAGNOSTICS.md) expose another limitation: five of eight selections occur at penalty-menu endpoints, including all four Treasury cells. The 52 Treasury validation origins also have overlapping responses. This post-result inspection does not expand the menu, change selections or establish that an untested penalty would help; it restricts conclusions to the tested specifications. The same supplement lists the fixed and source-adapted elements: FX coefficients and transforms were not moved directly to Treasury.
+
 The score uses stipulated .95/.05 underprediction/overprediction weights. It is not an observed financing cost. Mean positive overrun averages max(P−C,0) over all origins; conditional severity instead uses each method's own event set. Unused allowance and extra allowance above the known issue floor are different quantities. Lower score or lower unused allowance does not by itself establish safer or cheaper operation.
+
+The [financial measurement and decision-scope note](notes/revision-20261022/financial-measurement-and-decision-scope.md) uses selected primary-source reading and elementary counterexamples to distinguish a sampled absolute position peak from individual dealer exposures, between-record peaks and directional settlement deficits. It also states the finite-expected-loss condition for the simplified quantile decision problem. These are scope checks, not observed funding benefits or new financial validation.
 
 ## Design, complete evidence and provenance
 
@@ -45,6 +49,10 @@ b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa
 ```
 
 It is a signed client-flow aggregate from one market maker, not the complete hedged book, gross exposure, cash flow or funding requirement. Recorded gaps are retained; H counts records rather than uninterrupted calendar hours. The historical timezone/public-release vintage is unverified. Same-source files at another frequency are not independent dealers. Raw redistribution permission is unverified.
+
+To obtain the FX input manually, open the linked dataset record, select version2 and download only `1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv`. Do not request the complete collection, whose recorded metadata size is about274 MB. If the selected download is a ZIP, inspect its member list and extract only the requested CSV; the observed single-file wrapper used the basename `1hourNetPositionsKaggle.csv`. Require the byte count and SHA-256 above before placing it at `.scratch/data/1hourNetPositionsKaggle.csv`. Preserve an existing mismatching file for investigation; do not replace it or substitute a derived-feature member. Source access or account requirements can change, and the fingerprint is not a promise of permanent access.
+
+The existing [bounded original runner](run_study.py) also supports explicit missing-source-only `--fetch`, using the source's single-member/version request and refusing a mismatching existing cache. **That option continues into the original historical analysis after acquisition; it is not a download-only command and is not required when the exact CSV is already available.** It uses the original study's separate owned attempt and recorded resource rules. No Kaggle Python package is required by that route. A manually supplied `--input` elsewhere does not populate the new replay's fixed cache path.
 
 The separate [New York Fed Primary Dealer Statistics](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics) snapshot uses series `PDPOSGS-B`:706 weekly Treasury-bill long-minus-short market-value records in USD millions,3 April 2013–7 October 2026. The 23,315-byte CSV has SHA-256:
 
@@ -73,6 +81,8 @@ The explicit full replay requires macOS, an already available compatible NumPy e
 .scratch/revision-20261022/nyfed-PDPOSGS-B.csv
 ```
 
+Use regular local files and regular parent directories. The replay rejects symlinked inputs or ancestor paths, including a shared cache linked into the repository, even when the target's bytes match.
+
 ```bash
 python3 -B reproduce_conditional.py replicate --attempt-id NEW_UNIQUE_ID
 ```
@@ -92,12 +102,13 @@ It writes inside that successful attempt, preserving all earlier files. The [act
 Document rebuilding is separate:
 
 ```bash
+mkdir -p .scratch
 python3 -B build_conditional_figures.py --output .scratch/conditional-figure-rebuild-01
 python3 -B build_tex.py --output .scratch/main-rebuilt.tex
 python3 -B build_paper.py --output .scratch/paper-rebuilt.pdf
 ```
 
-All outputs must be new. Figures use only pinned aggregates; document rendering uses the supplied content and approved assets. The [document guide](manuscript/working-paper/README.md) records dependencies, fonts, source compilation, the supplied PDF route and actual visual/text checks.
+All outputs must be new. Figures use only pinned aggregates; document rendering uses the supplied content and approved assets. The scratch TeX command regenerates source for byte comparison; its relative figure paths are not a standalone scratch compilation package. Compile the supplied `main.tex` from `manuscript/working-paper/` with its adjacent `figures/`, or copy the entire document folder into a new build location. The [document guide](manuscript/working-paper/README.md) records dependencies, fonts, source compilation, the supplied PDF route and actual visual/text checks.
 
 ## Preserved earlier studies
 
