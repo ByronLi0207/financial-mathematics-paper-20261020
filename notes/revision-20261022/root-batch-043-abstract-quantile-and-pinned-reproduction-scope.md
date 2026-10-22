@@ -1,0 +1,13 @@
+# Explicit abstract target and document-version custody
+
+Observed intervals22October2026:18:27:22–18:32:36UTC,314elapsed/80credited/234excluded;18:32:36–18:36:21UTC,225elapsed/190credited/35excluded. New-round authorial credit20,778seconds(5h46m18s);822seconds remain before21,600. Browser publication, verification commands/compile/render waits, helper work and uncertain administration are not reading or authorial credit.
+
+The off-policy companion/owning guides and actual-work notes are now public at e94824a0aafe023fb4608eee4a7dddb14287166f. All394public blobs match local bytes;7changed files were freshly downloaded;387other files and61closed executable/input files are unchanged. Both new note equations render as nonemptyMathMLwithoutmerror. This admission adds no executed policy estimator, CDF or financial sample. Remotecheck3.46seconds/RSS46,727,168bytes; no OSthreadmaximum is borrowed.
+
+An integrated reader pass found an abstract specification omission: it reports pinball loss and hits without directly naming its0.95quantile target. Root changed only its first sentence to make that target explicit, using targeting rather than a claim of established calibration. A same-model wording check agreed and supplies no root time. All remaining abstract sentences, all14sections,11tables,19equations,26references and3figures remain unchanged.
+
+The staged/saved document has22pages and725ordered source units. All21pages exceptpage1have exactly the same content streams as the accepted22-page precursor-restoration PDF. Page1was rendered110dpi and viewed in full; no all22page rerender claim is made. Font coverage/extraction has no unsupported/replacement/box/NUL character; reference IDs/order and all three appended figure streams match. Generated TeX equals saved source and built-in compilation succeeds. All24existing metadata/caption/figure-inventory tests pass in0.029seconds. No test is substituted for the actual visual/fidelity checks.
+
+Current contentSHA10144b8fea9bc30eec8972e769eba0d6e4ae3c8090e974487b2a0939ac0bb8d1; suppliedPDFSHAee43452e968babc5e49a8787eb1e74559a4ff762abd396153531d2f1a3959fb5. The independentReportLab/pypdf PDF build used57,966,592bytes peakRSS/0.24seconds externally; OSthreadmaximum was not measured. It is not an export from the TeX compiler.
+
+The owning guide and revision record now describe the earlier clean public checkout honestly as the pinned248eda2version before this abstract clarification. That earlier reproducibility result remains valid for its actual bytes; it is not silently relabeled as a fresh public rebuild of the new PDF. Main prose/results and scientific positioning remain unchanged. The latest local manuscript/guide corrections await grouped publication; the six-hour goal remains active.
