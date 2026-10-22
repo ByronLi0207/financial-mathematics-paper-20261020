@@ -35,3 +35,5 @@ This map identifies the editions and actual reading scopes behind the revision's
 ## Scope of the record
 
 These12 entries support the draft citation choices; they are not a claim that only12 works were read during the wider project. The broader dated research notes retain additional conformal, conditional-forecasting, inventory, score and dependence readings, including recent preprints. Relevance and recency do not establish popularity or priority. The absence of a listed same-target benchmark is not an exhaustive proof of novelty.
+
+The [additional method comparison](method-transfer-comparison.md) gives a separate synthesis of eight further consulted works, including their actual versions and reading scopes. It distinguishes transferable modeling components, financial decisions and evaluation assumptions from evidence actually obtained for this peak response. Those additional works are not added to the manuscript's reference list or treated as executed benchmarks.
