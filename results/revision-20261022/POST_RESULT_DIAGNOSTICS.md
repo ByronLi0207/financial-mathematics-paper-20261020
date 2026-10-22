@@ -1,0 +1,21 @@
+# Explicitly post-result report diagnostics
+
+These derived checks were designed after viewing and publicly preserving the complete conditional-study primary results. They are not members of the original 98 before-execution paired contrasts and change no fit, parameter, forecast, primary comparison or horizon report. They describe the already accepted predictions.
+
+- `post-result-floor.csv`: all 90 source/H/W/procedure report configurations. Stored floor equality, strict breaches on/away from that floor and zero-headroom outcomes are distinct fields. Empty conditional event denominators are null with explicit reasons.
+- `post-result-horizon.csv`: all 45 same-source/W/procedure pairs at the common H6/H24 issue origins. It retains strict crossing count/rate, maximum and all-origin mean positive crossing, both parameter labels and realized-target order checks. No tolerance redefines a crossing.
+- `post-result-diagnostics-audit.json`: original run's plan/builder/source-receipt/private-array/export identities, actual resources and complete 90/45 inventory.
+- `post-result-builder-v01.py`: exact original diagnostic source, retained only as a provenance snapshot matching that audit's builder hash. Its old task paths are not a portable entry point.
+- `post-result-integrity-addendum.json`: later snapshot-integrity review. The current parameter-label parser consumes the exact checked summary bytes rather than reopening a path. All 90 labels and 45 paired labels matched; the two original diagnostic CSVs and original audit were preserved unchanged. The addendum binds the accepted core audit, summary and shared auditor separately.
+
+The original diagnostic process took about 0.201 seconds, with 55,377,920 bytes peak RSS and one observed thread in 34 snapshots. It fitted no model. Runtime is computational evidence, not research time.
+
+Every realized common target obeys P(H6)<=P(H24), yet some estimated reports cross. QR crossings are 640/6625 and 140/6625 for FX W720/2880, and 91/277 and 80/277 for Treasury W52/260. Some short Treasury historical controls cross as well: their H-specific completed pools differ. A same-set construction monotonicity argument therefore gives no automatic cross-horizon guarantee across these fitted procedures. Zero observed crossings in other configurations is not a theorem.
+
+For Treasury H24 QR W52,65 reports equal their issue floor,58 of which breach; another 74 breaches occur away from the floor. Hence floor binding alone does not account for the poor score. The stored report does not reveal whether a latent unprojected headroom was negative, exactly zero or rounded to the floor. There are 14/277 zero-headroom realized outcomes at that horizon. These event partitions do not identify the causal source of misspecification.
+
+Projecting a report below an issue-known lower response bound to that bound weakly reduces pinball loss. A separately estimated H6 report is not a known bound on the H24 outcome. Raising the latter to the former can increase its realized loss; the manuscript supplies a small artificial example. No post-result monotone repair, regime switching or favorable parameter search was executed.
+
+`build_conditional_diagnostics.py` supplies the event calculations and original-task audit route; `test_conditional_diagnostics.py` checks known events, empty denominators, impossible floors/order and exact snapshot parsing. A separate fresh-replication diagnostic adapter is being checked during the ongoing refinement. Original private forecasts/raw data are not redistributed, and a current downloaded vintage is not silently substituted for the accepted source snapshots.
+
+The core 69-file conditional-study archive remains the immutable set identified at commit b5fa5db8d67341240ae99dda4b88b33dddeb71e3. These supplementary files have separate identities; they are not retroactively included in its earlier evaluation-audit-02 export list.

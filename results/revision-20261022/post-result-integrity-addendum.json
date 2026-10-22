@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "status": "SNAPSHOT_LABEL_REVIEW_VERIFIED",
+  "scope": "No new financial forecast, diagnostic event computation or tuning. Accepted CSV snapshot bytes parsed once; all90parameter labels and45paired-horizon labels checked.",
+  "original_diagnostic_audit": {
+    "path": "results/revision-20261022/post-result-diagnostics-audit.json",
+    "bytes": 10453,
+    "sha256": "af898abaa70e9f047b252c9ed28fd86b896670731f9a366bf8a8f7331bd63606"
+  },
+  "original_builder": {
+    "path": "results/revision-20261022/post-result-builder-v01.py",
+    "bytes": 7728,
+    "sha256": "d491761af3c79a2cbda18589b07b516f44a73be9f06342cecded948042e60e1c"
+  },
+  "current_builder": {
+    "path": "build_conditional_diagnostics.py",
+    "bytes": 7992,
+    "sha256": "175f18df69989af096bfe0df32f7b4cc43065c89c59a55dd39141197b9b53b04"
+  },
+  "accepted_audit": {
+    "path": "results/revision-20261022/evaluation-audit-02.json",
+    "bytes": 19755,
+    "sha256": "0f44825f200e364bd0df3cecc9dc9175a45755fe17fd048e6ad9d238bd31288b"
+  },
+  "accepted_summary": {
+    "path": "evaluation-summary.csv",
+    "bytes": 17416,
+    "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15"
+  },
+  "current_shared_auditor": {
+    "path": "build_conditional_results.py",
+    "bytes": 22422,
+    "sha256": "9f87c689dd20027e223a423f427380cba7179f78565c0cf4fc896274be1776ab"
+  },
+  "verified_floor_rows": 90,
+  "verified_horizon_rows": 45,
+  "all_parameter_labels_match": true,
+  "snapshot_test": {
+    "status": "PASS",
+    "tests": 5,
+    "changed_path_after_read_does_not_affect_parser": true
+  },
+  "change": "Summary label loader now parses the same checked bytes rather than reopening a mutable path. The original input/current labels agreed; prior diagnostic export bytes are unchanged."
+}
