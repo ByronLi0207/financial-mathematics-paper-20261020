@@ -65,6 +65,8 @@ The recorded environment is CPython 3.12.14, NumPy 2.3.5 and ReportLab 4.4.9 on 
 
 After the original comparison was restyled, its exact figure inventory added, caption pagination corrected and monthly horizon labels clarified, the combined suite passed **173 tests**. It included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 7.940 seconds by unittest's clock; the separate process measurement was 8.241 seconds with child maximum RSS 114,884,608 bytes. These are validation measurements, not financial experiment measurements.
 
+The figure tests use the active Python interpreter for their command-line subprocess, with no machine-specific interpreter path. After this portability correction, all 12 existing figure tests passed, including the real CLI case. This was a targeted check; the 173-test result above is the earlier full-suite run.
+
 From the repository root:
 
 ```

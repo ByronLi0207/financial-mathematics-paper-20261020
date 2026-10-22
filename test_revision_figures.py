@@ -8,12 +8,13 @@ import io
 import json
 import math
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parent
 PUBLIC = ROOT / "results" / "revision-20261021"
-PYTHON = "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+PYTHON = sys.executable
 
 try:
     figures = importlib.import_module("build_revision_figures")
