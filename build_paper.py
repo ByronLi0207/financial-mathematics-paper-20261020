@@ -264,7 +264,7 @@ def make_table(block, styles, available_width):
 
 
 def make_story(content, styles, layout):
-    from reportlab.platypus import Paragraph, Spacer
+    from reportlab.platypus import KeepTogether, Paragraph, Spacer
 
     story = [Paragraph(escape(content["title"]), styles["title"])]
     if content["subtitle"]:
@@ -291,9 +291,10 @@ def make_story(content, styles, layout):
     story.append(Paragraph("References", styles["section"]))
     for reference in content["references"]:
         story.append(Paragraph(reference["html"], styles["reference"]))
-    story.append(Paragraph("Figure captions", styles["section"]))
-    for number, figure in enumerate(content["figures"], start=1):
-        story.append(Paragraph(escape(figure["caption"]), styles["caption"]))
+    captions = [Paragraph("Figure captions", styles["section"])]
+    for figure in content["figures"]:
+        captions.append(Paragraph(escape(figure["caption"]), styles["caption"]))
+    story.append(KeepTogether(captions))
     return story
 
 
