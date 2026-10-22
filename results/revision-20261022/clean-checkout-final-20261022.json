@@ -1,0 +1,114 @@
+{
+  "status": "CURRENT_22_PAGE_PUBLIC_CHECKOUT_DOCUMENT_REBUILD_VERIFIED",
+  "started_utc": "2026-10-22T18:54:56.190027+00:00",
+  "verified_utc": "2026-10-22T18:54:57.680976+00:00",
+  "repository": "ByronLi0207/financial-mathematics-paper-20261020",
+  "commit": "71ada833293798deb1340645fb983a6ea5e66f71",
+  "zip_url": "https://codeload.github.com/ByronLi0207/financial-mathematics-paper-20261020/zip/71ada833293798deb1340645fb983a6ea5e66f71",
+  "zip_bytes": 2263084,
+  "zip_sha256": "1a7563699c79e42b489922f3facce34e065e530ca73d6cd8a2b1d0d8558f987f",
+  "verified_tree_files": 396,
+  "verified_tree_bytes": 7990478,
+  "all_pinned_public_blobs_match_accepted_inventory": true,
+  "all_original_checkout_files_unchanged_after_commands": true,
+  "initial_historical_scratch_present": false,
+  "archived_public_nyfed_snapshot_present": true,
+  "private_fixed_path_source_inputs_present": false,
+  "raw_sources_read_by_document_or_default_archive_commands": false,
+  "financial_models_refitted": false,
+  "financial_scores_recomputed": false,
+  "archive_verification": {
+    "status": "ARCHIVE_VERIFIED",
+    "accuracy_recomputed": false,
+    "raw_sources_read": false,
+    "published_result_commit": "b5fa5db8d67341240ae99dda4b88b33dddeb71e3",
+    "verified_result_files": 69,
+    "executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+    "selection_freeze_sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7"
+  },
+  "document_commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "reproduce_conditional.py"
+      ],
+      "returncode": 0,
+      "external_elapsed_seconds": 0.05187120917253196,
+      "external_peak_rss_bytes": 31490048,
+      "requested_numerical_threads": 1,
+      "maximum_os_threads_separately_measured": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "build_conditional_figures.py",
+        "--output",
+        ".scratch/conditional-figure-rebuild-01"
+      ],
+      "returncode": 0,
+      "external_elapsed_seconds": 0.10157237481325865,
+      "external_peak_rss_bytes": 35913728,
+      "requested_numerical_threads": 1,
+      "maximum_os_threads_separately_measured": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "build_tex.py",
+        "--output",
+        ".scratch/main-rebuilt.tex"
+      ],
+      "returncode": 0,
+      "external_elapsed_seconds": 0.027408167021349072,
+      "external_peak_rss_bytes": 21118976,
+      "requested_numerical_threads": 1,
+      "maximum_os_threads_separately_measured": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "build_paper.py",
+        "--output",
+        ".scratch/paper-rebuilt.pdf"
+      ],
+      "returncode": 0,
+      "external_elapsed_seconds": 0.20334541704505682,
+      "external_peak_rss_bytes": 57851904,
+      "requested_numerical_threads": 1,
+      "maximum_os_threads_separately_measured": false
+    }
+  ],
+  "tex_regeneration_byte_identical": true,
+  "pdf_regeneration_byte_identical": true,
+  "paper_pages": 22,
+  "references": 26,
+  "pdf_sha256": "6a862837555975bef1c31236cd56130951253aeebf18506b3fa90500ea1f430e",
+  "content_sha256": "97fdd4aec1125dfa8b3098a78c821600d57b741ef3cc42ed49a67a63f193d3e3",
+  "figure_checks": [
+    {
+      "path": "manuscript/working-paper/figures/conditional-common-history.pdf",
+      "sha256": "e0db8635c2b3b38c7bdcc22808fa3a5b84ae74cd21f15ec01c3dd5f2e0326bcf",
+      "byte_identical": true
+    },
+    {
+      "path": "manuscript/working-paper/figures/conditional-primary-tradeoffs.pdf",
+      "sha256": "adb27aa81113ac47d1bfb8aaaa1b19a5b5d37bd47693f2f38056d1e885f641c6",
+      "byte_identical": true
+    },
+    {
+      "path": "manuscript/working-paper/figures/conditional-annual-primary.pdf",
+      "sha256": "a77090ef7af98f2376c186f8f837cd44a76c8871aca0d526be3b613376534644",
+      "byte_identical": true
+    }
+  ],
+  "visual_scope": "Rebuilt PDF is byte-identical to the already inspected supplied PDF; no new rendering claimed.",
+  "source_compiler_scope": "These commands regenerate TeX and the independently typeset supplied PDF. They do not run a terminal TeX compiler. Existing saved-source compilation is a separate receipt.",
+  "environment_scope": "Same macOS machine and already available Python/reportlab/pypdf/macOS fonts; no installation, second-machine execution or new financial sample.",
+  "maximum_document_command_rss_bytes": 57851904,
+  "whole_workflow_os_thread_maximum_measured": false,
+  "numerical_thread_request": 1
+}
