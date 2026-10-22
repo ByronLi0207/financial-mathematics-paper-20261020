@@ -2,14 +2,14 @@
   "title": "Historical and Conditional Forecasts of Sampled Net-Position Peaks",
   "subtitle": "Comparisons on an FX record and Treasury position aggregates",
   "date": "Working paper - 22 October 2026",
-  "abstract": "We evaluate established conditional methods for forecasting the maximum absolute source-reported position over the current and next H records. Historical headrooms, reanchored increment scenarios and native peaks are compared with ridge quantile regression and multivariate local quantiles. Chronological validation selects parameters from small fixed menus before the added evaluations; the previously inspected FX interval remains exploratory. On 6,625 FX origins, six-record regression with longer history lowers mean pinball loss by 12.66% relative to the original historical-headroom rule and 14.77% relative to a reference with the same history and update schedule. Breaches nevertheless increase from 332 to 376. In a separately specified weekly Treasury-bill position aggregate, the declared six-week regression comparison raises loss by 50.79% and breaches from 28 to 54 over 277 origins. Short-history regression performs poorly at the longer horizon in both sources. A favorable secondary Treasury neighbor comparison reverses on a fixed sparse grid containing only 12 origins. A later, separately frozen exploratory AR residual replay lowers loss in five of eight cells against matched increment translation and raises it in three; breaches increase in all eight. The largest Treasury H24 gain is 24.12%, with breaches rising from 12 to 59. Performance varies with model family, source, horizon and estimation history. The contribution is an application and model-validation comparison using mature estimators. Aggregation, calendar horizons, estimated-forecast incoherence and downloaded vintages limit transfer. The results establish neither conditional coverage nor gains from changing quotes, hedges, capital or funding decisions.",
+  "abstract": "We evaluate established conditional methods for forecasting the maximum absolute source-reported position over the current and next H records. Historical headrooms, reanchored increment scenarios and native peaks are compared with ridge quantile regression and multivariate local quantiles. Chronological validation selects parameters from small fixed menus before the added evaluations; the previously inspected FX interval remains exploratory. On 6,625 FX origins, six-record regression with longer history lowers mean pinball loss by 12.66% relative to the original historical-headroom rule and 14.77% relative to a reference with the same completed-label pool and update schedule. Breaches nevertheless increase from 332 to 376. In a separately specified weekly Treasury-bill position aggregate, the declared six-week regression comparison raises loss by 50.79% and breaches from 28 to 54 over 277 origins. Short-history regression performs poorly at the longer horizon in both sources. A favorable secondary Treasury neighbor comparison reverses on a fixed sparse grid containing only 12 origins. A later, separately frozen exploratory AR residual replay lowers loss in five of eight cells against matched increment translation and raises it in three; breaches increase in all eight. The largest Treasury H24 gain is 24.12%, with breaches rising from 12 to 59. Observed rankings differ across the studied model-family, source, horizon and history cells. The contribution is an application and model-validation comparison using mature estimators. Aggregation, calendar horizons, estimated-forecast incoherence and downloaded vintages limit transfer. The results establish neither conditional coverage nor gains from changing quotes, hedges, capital or funding decisions.",
   "sections": [
     {
       "title": "1. Introduction",
       "blocks": [
         {
           "type": "p",
-          "html": "A recorded net position can reach a large magnitude and return toward its starting value before a horizon ends. A forecast of the terminal signed position leaves this intervening exposure unmeasured. We study an upper-quantile report for the largest absolute source-reported position at issue and over the next H records. It answers a passive monitoring question: does any recorded future position exceed the issued level in magnitude? The financial interpretation depends on the measurement process; a sampled netted position does not reconstruct a complete hedged book or a funding requirement."
+          "html": "A recorded net position can reach a large magnitude and return toward its starting value before a horizon ends. A forecast of the terminal signed position leaves the intervening recorded magnitudes unmeasured. We study an upper-quantile report for the largest absolute source-reported position at issue and over the next H records. It answers a passive monitoring question: does any recorded future position exceed the issued level in magnitude? The financial interpretation depends on the measurement process; a sampled netted position does not reconstruct a complete hedged book or a funding requirement."
         },
         {
           "type": "p",
@@ -17,7 +17,7 @@
         },
         {
           "type": "p",
-          "html": "All direct training responses must have ended by the actual refit time. Historical controls with matching eligible history and update schedules distinguish part of the estimation-budget difference. Validation selects a small menu separately by source, horizon, history and family; all candidates and references are retained. The original FX evaluation archive had already been inspected. Publicly freezing the added procedures before their execution does not restore an unseen holdout."
+          "html": "All direct training responses must have ended by the actual refit time. Historical controls with matching completed-label pools and update schedules distinguish part of the estimation-budget difference. Validation selects a small menu separately by source, horizon, history and family; all candidates and references are retained. The original FX evaluation archive had already been inspected. Publicly freezing the added procedures before their execution does not restore an unseen holdout."
         },
         {
           "type": "p",
@@ -25,11 +25,11 @@
         },
         {
           "type": "p",
-          "html": "The separate application uses an official weekly compilation of primary dealers' aggregate Treasury-bill market-value positions. It is a different financial measurement process, not a second individual FX dealer or a known-disjoint institutional panel. Its declared H=6, W=260 QR comparison has 50.79% higher loss than equal-history F, with 54 versus 28 breaches over 277 origins. All four Treasury QR specifications lose to their own F controls. A secondary H=24 neighbor gain reverses on the fixed sparse grid. Units, histories, horizons, release conventions and revised snapshots remain source specific."
+          "html": "The separate application uses an official weekly compilation of primary dealers' aggregate Treasury-bill market-value positions. It is a different financial measurement process, not a second individual FX dealer or a known-disjoint institutional panel. Its declared H=6, W=260 QR comparison has 50.79% higher loss than matched-pool F, with 54 versus 28 breaches over 277 origins. All four Treasury QR specifications lose to their own F controls. A secondary H=24 neighbor gain reverses on the fixed sparse grid. Units, histories, horizons, release conventions and revised snapshots remain source specific."
         },
         {
           "type": "p",
-          "html": "The contribution is a comparison that challenges historical peak constructions with credible conditional competitors and records the limits of transfer. The direct competitors change the original FX ranking, while the chosen QR procedure has substantial limitations on another measured position series. The later AR comparison improves on QR in all four Treasury cells and loses in three of four FX cells, requiring a family-specific interpretation. Eligible-history matching does not isolate a causal information effect from regularization, function class, local response count or validation selection. Elementary geometry explains construction relationships, not predictive optimality. We claim no new calibration theorem, universal forecasting improvement or operational intervention."
+          "html": "The contribution is a comparison that challenges historical peak constructions with credible conditional competitors and records the limits of transfer. The direct competitors change the original FX ranking, while the chosen QR procedure has substantial limitations on another measured position series. The later AR comparison improves on QR in all four Treasury cells and loses in three of four FX cells, requiring a family-specific interpretation. Completed-label matching does not isolate a causal information effect from regularization, function class, local response count or validation selection. Elementary geometry explains construction relationships, not predictive optimality. We claim no new calibration theorem, universal forecasting improvement or operational intervention."
         }
       ]
     },
@@ -150,7 +150,7 @@
         },
         {
           "type": "p",
-          "html": "Rolling controls take the latest W completed labels at each issue. Frozen controls use T(r,H,W), matching conditional history and refit schedule, while reanchoring S at current t. One-state controls select the nearest starting signed positions from the rolling eligible pool, resolving ties by recency: k=360 for FX W720, k=40 for Treasury W52 and k=80 for Treasury W260. No FX W2880 one-state reference was declared. The original construction and earlier recent/nearest menus remain historical evidence in Appendix B."
+          "html": "Rolling controls take the latest W completed labels at each issue. Frozen controls use T(r,H,W), matching the conditional completed-label pool and refit schedule, while reanchoring S at current t. One-state controls select the nearest starting signed positions from the rolling eligible pool, resolving ties by recency: k=360 for FX W720, k=40 for Treasury W52 and k=80 for Treasury W260. No FX W2880 one-state reference was declared. The original construction and earlier recent/nearest menus remain historical evidence in Appendix B."
         },
         {
           "type": "p",
@@ -168,6 +168,10 @@
           "type": "equation",
           "html": "v<sub>L</sub>(t)=[L<super>−1</super> sum<sub>j=t−L+1</sub><super>t</super>(N<sub>j</sub>−N<sub>j−1</sub>)<super>2</super>]<super>1/2</super>; &nbsp; z<sub>i,r,j</sub>=(x<sub>ij</sub>−μ<sub>rj</sub>)/s<sub>rj</sub>.",
           "latex": "v_L(t)=\\left[\\frac1L\\sum_{j=t-L+1}^{t}(N_j-N_{j-1})^2\\right]^{1/2},\\qquad z_{i,r,j}=\\frac{x_{ij}-\\mu_{rj}}{s_{rj}}."
+        },
+        {
+          "type": "p",
+          "html": "Matching controls means the same W completed-response origins and refit schedule. Rich predictors can use earlier observations: at the oldest training origin i=r−H−W+1, long RMS reads N(i−168) for FX and N(i−26) for Treasury. This past-only lookback is not equalized across procedures."
         },
         {
           "type": "p",
@@ -425,7 +429,7 @@
         },
         {
           "type": "p",
-          "html": "The H6 primary QR W2880 loss is USD 385,844.89, against USD 441,774.04 for original rolling F W720. The direct paired mean is −USD 55,929.15, or −12.660%. Against W2880 frozen F it is −14.767%; against frozen S at that same window it is also favorable. Thus the added conditional benchmark changes the older FX ranking. The cross-window primary changes history length and update frequency as well as the estimator; the same-history controls address part, but not all, of this procedural difference."
+          "html": "The H6 primary QR W2880 loss is USD 385,844.89, against USD 441,774.04 for original rolling F W720. The direct paired mean is −USD 55,929.15, or −12.660%. Against W2880 frozen F it is −14.767%; against frozen S at that same window it is also favorable. Thus the added conditional benchmark changes the older FX ranking. The cross-window primary changes history length and update frequency as well as the estimator; the matched-pool controls address part, but not all, of this procedural difference."
         },
         {
           "type": "p",
@@ -631,11 +635,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "The central finding is that rankings depend on method family, source, horizon and estimation history. Long-history QR improves on the inspected FX record and loses on the separately measured Treasury aggregate. The later exploratory AR replay lowers loss in five of eight cells against matched S and raises it in three, while strict breach occasions increase in all eight. It improves on QR in all four Treasury cells and loses in three of four FX cells. The Treasury QR failure therefore remains family-specific, and average-score gains need not mean fewer tail events. None of these later results replaces either declared primary. The contribution is a bounded application/model-validation finding; elementary common-set bounds and implementation checks remain supporting evidence rather than methodological novelty."
+          "html": "Observed rankings differ across the studied method-family, source, horizon and history cells. Long-history QR improves on the inspected FX record and loses on the separately measured Treasury aggregate. The later exploratory AR replay lowers loss in five of eight cells against matched S and raises it in three, while strict breach occasions increase in all eight. It improves on QR in all four Treasury cells and loses in three of four FX cells. The Treasury QR failure therefore remains family-specific, and average-score gains need not mean fewer tail events. None of these later results replaces either declared primary. The contribution is a bounded application/model-validation finding; elementary common-set bounds and implementation checks remain supporting evidence rather than methodological novelty."
         },
         {
           "type": "p",
-          "html": "Matching eligible history and update schedules improves within-source interpretability, without isolating a causal value of additional features. F/K already use current magnitude and S uses the signed current anchor; the added procedures also change function class, regularization, local count, scaling and validation selection. The two source primaries have different references, histories, refit frequencies, score units and calendar horizons, so their percentages are not estimates of one common replicated effect. No FX-fitted coefficients or transforms are moved to Treasury: each source is fitted and validated separately. Portability concerns a source-adapted procedure family."
+          "html": "Matching completed-label pools and update schedules improves within-source interpretability, without isolating a causal value of additional features. F/K already use current magnitude and S uses the signed current anchor; the added procedures also change function class, regularization, local count, scaling and validation selection. The two source primaries have different references, histories, refit frequencies, score units and calendar horizons, so their percentages are not estimates of one common replicated effect. No FX-fitted coefficients or transforms are moved to Treasury: each source is fitted and validated separately. Portability concerns a source-adapted procedure family."
         },
         {
           "type": "p",
@@ -668,7 +672,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Established conditional methods materially change an earlier comparison of sampled net-position peak forecasts, but their benefits depend on model family, source, horizon and estimation history. The FX six-record QR primary lowers loss by 12.66% with more breach occasions; its matched-history improvement is 14.77%. The separately specified Treasury six-week QR primary raises loss by 50.79% and increases breaches. Short-history regressions, a secondary neighbor sensitivity reversal and post-result horizon incoherence limit a general success narrative. The later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S it lowers loss in five cells and raises it in three, while breaches increase in all eight. Its long-history Treasury H24 gain accompanies 59 rather than 12 breaches. Complete adverse and favorable comparisons are retained; this supplement does not replace either original primary. The evidence supports a bounded comparison of mature forecasting procedures on two measured financial position series, not a new estimator, conditional-coverage theorem or operational risk-policy gain."
+          "html": "Established conditional methods materially change an earlier sampled-peak comparison; observed rankings differ across the studied model-family, source, horizon and history cells. The FX six-record QR primary lowers loss by 12.66% with more breach occasions; its matched-pool improvement is 14.77%. The separately specified Treasury six-week QR primary raises loss by 50.79% and increases breaches. Short-history regressions, a secondary neighbor sensitivity reversal and post-result horizon incoherence limit a general success narrative. The later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S it lowers loss in five cells and raises it in three, while breaches increase in all eight. Its long-history Treasury H24 gain accompanies 59 rather than 12 breaches. Complete adverse and favorable comparisons are retained; this supplement does not replace either original primary. The evidence supports a bounded comparison of mature forecasting procedures on two measured financial position series, not a new estimator, conditional-coverage theorem or operational risk-policy gain."
         }
       ]
     },
