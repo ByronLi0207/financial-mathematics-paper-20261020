@@ -1,0 +1,9 @@
+# Public mathematics rendering: diagnosis, exact fidelity and live verification
+
+Observed interval22October2026,18:08:02–18:17:31UTC:569elapsed seconds. Conservative root scientific/content credit240seconds;329seconds excluded for browser upload, source/network/verification administration and context uncertainty. New-round credit19,968seconds(5h32m48s);1,632remain before21,600. Browser wait time and helper time are not reading credit.
+
+Actual GitHub screenshots and accessibility text reproduced bare display delimiters as ordinary text in seven public research notes. The correction changes only the delimiter lines to GitHub-supported fenced math; all30ordered formula bodies and every other line retain exact bytes. Root semantically checked the formula collection, including the positive beta-mixture recurrence, the two pinball slopes, finite-rank allocations and issue-time feature-memory scope. No accepted financial expression, source input, forecast, score, main PDF or result is recomputed or changed.
+
+Immutablec12ea7ebe36f7cb7c4c2df9373c4d84550044a69is now accepted against all390public blobs: seven downloaded changes match local bytes,383other public files are unchanged and61closed executable/input files retain identities. The later live check observes all30MathML expressions with no merror and nonempty displayed elements. Both finite-family formulas were also visually inspected in a screenshot; this is not a claim to screenshot-inspect all30. An initial zero-MathML count reflected asynchronous hydration; waiting for the observed last MathML element resolved it without another content change.
+
+The remote and live receipts are separate:state/revision-20261022/web-math-publication-verification-01.jsonandstate/revision-20261022/web-math-live-render-01.json. This is a real public readability repair with exact scientific fidelity, not new financial evidence or a completion of the requested time window.
