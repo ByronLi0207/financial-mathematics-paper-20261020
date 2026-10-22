@@ -1,4 +1,4 @@
-# Evidence map for the 22 manuscript references
+# Evidence map for the 23 manuscript references
 
 Updated 22 October 2026. This map identifies the consulted editions, documented reading ranges and limited roles of the manuscript's references. Physical PDF pages are distinguished from printed journal pages. Selected passages or extracted text do not imply a complete visual audit, verification of every cited theorem, code audit or numerical reproduction. The ranges below summarize reading relevant to each citation; repeated visits do not create additional distinct papers. No third-party paper text or raw observations are reproduced here.
 
@@ -47,6 +47,8 @@ Updated 22 October 2026. This map identifies the consulted editions, documented 
 21. **`xu2023` — Xu and Xie (2023), _Sequential Predictive Conformal Inference for Time Series_.** [Official ICML/PMLR 202:38707–38727](https://proceedings.mlr.press/v202/xu23r.html), consulted 21-page proceedings body rather than substituting an arXiv version; no DOI assigned here. **Read:** main text physical pp.1–9, selected assumptions/proofs pp.12–17 and experiment/delayed-multistep passages pp.18–21; code README-level only. **Boundary:** the analyzed quantile-forest theorem gives asymptotic conditional coverage under specific dependence, weight and conditional-CDF assumptions. The exchangeable special case has a different finite marginal guarantee. Neither is established by chronology here. SPCI is an **unexecuted same-target competitor**, requiring completed-label feedback and separate adequacy checks.
 
 22. **`zhou2024` — Zhou, Lindemann and Sesia (2024), _Conformalized Adaptive Forecasting of Heterogeneous Trajectories_.** [arXiv:2402.09623v2](https://arxiv.org/abs/2402.09623v2), revised 15 May 2024; [DOI:10.48550/arXiv.2402.09623](https://doi.org/10.48550/arXiv.2402.09623). No unverified journal venue assigned. **Read:** version-2 HTML §§1–2 and selected §3, Theorem 1 and Appendix A6/Theorem A1; not the whole article, all experiments or code. **Boundary:** simultaneous marginal trajectory coverage uses exchangeability between calibration and future trajectories with the stated parameters; dependence within each trajectory is allowed. Overlapping windows of one position archive do not automatically meet that premise. CAFHT is **not implemented**, and no simultaneous or conditional-coverage guarantee is imported.
+
+23. **`arjani2020` — Arjani, Li and Sabetti (2020).** Payments Canada discussion paper, cover23April2020. **Read:** selected abstract/introduction, physical pp.8–15 and21–24; cover and pp.9–10 rendered. Its remaining-payment ratio differs from this target. [Source identity, exact functional and limits](remaining-payment-ratio-and-path-timing.md). Not a full36-page read, model reproduction or public payment-data verification.
 
 ## What the evidence does and does not establish
 
