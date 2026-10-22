@@ -1,6 +1,6 @@
 # Historical and Conditional Forecasts of Sampled Net-Position Peaks
 
-An English working paper comparing historical peak constructions with established conditional forecasts on a common response: the largest absolute source-reported position at issue and over the next H records. The 22 October revision adds ridge quantile regression (QR), multivariate local quantiles (KNN), a scale-adjusted local variant and a separately measured Treasury-bill position aggregate. It retains favorable and adverse results together.
+An English working paper comparing historical peak constructions with established conditional procedures targeting the 0.95 quantile of a common response: the largest absolute source-reported position at issue and over the next H records. The 22 October revision adds ridge quantile regression (QR), multivariate local quantiles (KNN), a scale-adjusted local variant and a separately measured Treasury-bill position aggregate. It retains favorable and adverse results together.
 
 **The current substantive refinement remains in progress.** The replacement manuscript and complete fixed conditional results are available; the requested approximately six hours of actual direction-first research, writing and issue-finding have not yet been audited as complete. Earlier completed research windows are separate historical records, not hours credited to this round. [Current revision record](REVISION_20261022.md).
 
