@@ -1,23 +1,23 @@
 {
-  "reviewed_at_utc": "2026-10-22T01:12:12Z",
+  "reviewed_at_utc": "2026-10-22T01:23:22Z",
   "source_compilation": {
     "main_relative_path": "manuscript/working-paper/main.tex",
-    "main_sha256": "0acba5662c5e42395a0e99c09436c76f8e523001dfda6f71b994b72670f49696",
+    "main_sha256": "d347e5b301d97e7e9a41df57ba91286e99cc59dc2bfc50f8b21a288e5118541d",
     "compiler": "desktop built-in LaTeX compiler",
     "status": "success",
-    "observed_at_utc": "2026-10-22T01:12:12Z"
+    "observed_at_utc": "2026-10-22T01:23:22Z"
   },
   "standalone_pdf": {
     "relative_path": "manuscript/working-paper/paper.pdf",
-    "sha256": "915853639d3568cd3bc8c7d3e6d643b6865ac68bb3107bfc35756461b3c1dbd5",
-    "bytes": 185777,
+    "sha256": "911684a1a570cddf96c690f517ac3da92db3ccc6096df763cc8f78e9359e3f69",
+    "bytes": 185900,
     "pages": 17,
     "body_pages": 14,
     "vector_figure_pages": 3,
     "typesetting": "ReportLab4.4.9 shared structured content; approved vector pages appended by pypdf6.10.0",
     "is_export_of_latex_compiler": false
   },
-  "shared_content_sha256": "c2d856dbc268a48ad2df1b2e18648dfcdf504bf243b7ea44a21ef00ae8c7e378",
+  "shared_content_sha256": "2bbbd517966bd2032cddd595aaee95085e03ebd43e44429ef06d3fd960dfdf0d",
   "visual_review": {
     "all_current_pages_rendered_and_inspected": true,
     "pages": 17,
@@ -37,16 +37,35 @@
       "before_fix": "Three expected subtest assertion failures in pressure case; no errors",
       "after_fix": "Both physical-PDF tests pass"
     },
-    "discussion_raster_comparison": {
+    "opening_and_monthly_scope_raster_comparison": {
       "all_seventeen_pages_rendered": true,
-      "changed_pages_reinspected": [
+      "changed_pages_reviewed": [
+        1,
+        5,
+        6,
         7,
-        8,
-        9
+        10,
+        14,
+        17
       ],
-      "other_fourteen_page_rasters_byte_identical_to_previously_reviewed_version": true,
-      "no_added_page": true,
-      "scope": "Current discussion prose and resulting flow into the existing conclusion/Appendix A; all three changed pages inspected at full raster size."
+      "full_size_pages": [
+        1,
+        5,
+        6,
+        10,
+        17
+      ],
+      "changed_page_contact_sheets_reviewed": [
+        1,
+        5,
+        6,
+        7,
+        10,
+        14,
+        17
+      ],
+      "other_ten_page_rasters_byte_identical_to_previously_reviewed_version": true,
+      "no_added_page": true
     }
   },
   "source_regeneration": {
@@ -56,19 +75,22 @@
   "builders": {
     "build_paper.py": "eee19791c50a178069824e667e2ab4724c1732e4b544399bc2258f5354ee0680",
     "build_tex.py": "ef32d8ee2148e314f7afef9831bace7382a8600dbfd75d51dc91eaacd7ecf8c2",
-    "build_revision_figures.py": "2ecd49e8b17025d24b16d3b2dc3a915e4fe11234dd67a2b19d839cd4f0544cb8",
+    "build_revision_figures.py": "be1a91ff046ebcee704252922d73416d8f59e10e32a6d4d157231ebc133ee30f",
     "build_original_comparison_figure.py": "0e8dc8d27629f19223c561504e89fa5681466af17800d8b3c1919a81f4fae5a6"
   },
   "document_tests": {
     "tests": 173,
-    "unittest_elapsed_seconds": 8.087,
-    "external_process_wall_seconds": 8.368975749937817,
-    "child_maxrss_bytes_darwin": 115621888,
+    "unittest_elapsed_seconds": 7.94,
+    "external_process_wall_seconds": 8.24080495792441,
+    "child_maxrss_bytes_darwin": 114884608,
     "requested_numerical_threads": 1,
-    "scope": "Full synthetic scientific/runner/document suite after physical caption-pagination regression fix; no financial experiment reexecution.",
-    "last_executed_at_utc": "2026-10-22T00:43:46.195104Z",
+    "scope": "Full existing synthetic scientific/runner/document suite after four monthly-figure display/metadata string corrections. No financial experiment reexecution.",
+    "last_executed_at_utc": "2026-10-22T01:20:45.524483Z",
+    "observed_os_threads": null,
+    "thread_measurement_note": "Suite environment requested1numericalthread; the wrapper did not measure actual OS threads.",
     "rerun_for_current_prose_change": false,
-    "applicability": "All code and builders retain the same tested identities. Only Section8 prose changed; current source/display fidelity and the three changed page rasters were checked. No test or financial experiment rerun for prose alone."
+    "run_reason": "The aggregate figure renderer identity changed. Existing suite executed once; no added test mirrors literal labels.",
+    "applicability": "The verified renderer hash is current; other financial and document code retains identity. Current manuscript prose was separately source-audited and rendered."
   },
   "figures": [
     {
@@ -81,7 +103,7 @@
     },
     {
       "relative_path": "manuscript/working-paper/figures/revision-retrieval-monthly.pdf",
-      "sha256": "cfcb2f8f84edcd804844b57357242cd31ae67a67f9ca9fd49e73377c5c54f798"
+      "sha256": "cdb44a4c23ba3c513f65aeb13573bfcec088a21c94e55873bb5e1c67f2e3dc15"
     }
   ],
   "original_comparison_display": {
@@ -108,7 +130,7 @@
     "scope": "Restyled display of all seven original stored paired means; single USD-to-million conversion, six-decimal labels, no added empirical statistic or inference. Original three figure files remain unchanged."
   },
   "reference_entries": 14,
-  "scope": "Current document fidelity and actual source compilation after compressing only Section8 from428to360 words while retaining adverse representation-specific tradeoffs and all five limitation categories. Every other section, table, equation, reference, figure, accepted empirical output and financial/document code retains identity. The unchanged code still has the accurately dated173-test run; no new finance or test rerun.",
+  "scope": "Current shared-source/PDF fidelity and actual source compilation after clarifying the Introduction comparison axes, expanding one abstract phrase, and distinguishing monthly H6 primary from H24 sensitivity throughout the active presentation. Score interpretation no longer suggests capacity is a third component. All ten tables,fourteen equations,references,accepted financial outputs and original figures retain identity. The monthly display changes only labels; all data-region pixels remain identical. Existing173tests executed once because the figure-renderer code identity changed; no new financial experiment.",
   "tables": 10,
   "worked_example": {
     "location": "Appendix A.3, Table A2",
@@ -146,5 +168,33 @@
     },
     "units": "Arbitrary constructed position units",
     "scope": "Explanation of an existing finite counterexample; no source-record observations, future query realization, empirical score or changed financial specification."
+  },
+  "monthly_display_label_correction": {
+    "source_aggregate_values_unchanged": true,
+    "h6_primary_h24_sensitivity": true,
+    "contrast_figure_byte_identical": true,
+    "monthly_data_region_pixel_identity": {
+      "dpi": 120,
+      "old_and_new_size": [
+        1404,
+        993
+      ],
+      "crop_box": [
+        0,
+        150,
+        1404,
+        843
+      ],
+      "byte_identical": true,
+      "scope": "Legend,month names,counts,markers,axes and all displayed numeric data; title and lower explanatory/footer text excluded."
+    },
+    "resources": {
+      "elapsed_seconds": 0.06004783301614225,
+      "peak_rss_bytes": 33882112,
+      "maximum_observed_os_threads": 1,
+      "thread_snapshot_count": 4,
+      "requested_numerical_threads": 1
+    },
+    "scope": "Display/metadata wording only; no axes,counts,markers,numeric labels,source aggregates or financial specifications changed."
   }
 }

@@ -2,18 +2,18 @@
   "title": "Historical Response Selection for Sampled FX Net-Position Peaks",
   "subtitle": "A fixed comparison and an exploratory state-retrieval extension",
   "date": "Working paper - 21 October 2026",
-  "abstract": "Using one foreign-exchange market maker's sampled aggregate client-flow positions from 2014–2017, we compare empirical quantile forecasts for the maximum absolute source-reported USD net position over the current and next H records. We vary historical episode selection and response representation. An original fixed comparison is extended by signed-state nearest-neighbor retrieval after the evaluation interval had been inspected. The primary comparisons use 6,625 common issue origins, a .95 quantile preference and fully completed labels; the extension selects 360 or 180 episodes from a rolling pool of 720. At H=6, historical headrooms have 2.08% lower mean pinball loss than raw current-anchor scenarios, with more breaches and larger overruns; the ranking reverses at H=24. In the extension's fixed primary comparison, nearest360 retrieval reduces floored native-peak-quantile loss by 31.83% relative to recent360 retrieval, but remains worse than the original full-window headroom and scenario rules. All 12 matched retrieval loss contrasts are negative, while every matched scenario contrast has more breaches and greater mean positive overrun. Elementary common-set bounds explain how nearby starting positions can make representations agree without certifying accuracy. The findings identify finite-record forecast tradeoffs, with exploratory retrieval evidence and no population superiority inference. The recorded proxy and passive forecasts do not establish conditional coverage, independent external validity or policy, profit and funding effects.",
+  "abstract": "Using one foreign-exchange market maker's sampled aggregate client-flow positions from 2014–2017, we compare empirical quantile forecasts for the maximum absolute source-reported USD net position over the current and next H records. We vary historical episode selection and response representation. An original fixed comparison is extended by signed-state nearest-neighbor retrieval after the evaluation interval had been inspected. The primary comparisons use 6,625 common issue origins, a .95 quantile preference and fully completed labels; the extension selects 360 or 180 episodes from a rolling pool of 720. At H=6, historical headrooms have 2.08% lower mean pinball loss than raw current-anchor scenarios, with more breaches and larger overruns; the ranking reverses at H=24. For native-peak quantiles floored at the current magnitude, the extension's fixed primary nearest360 rule lowers loss by 31.83% against recent360, but remains worse than the original full-window headroom and scenario rules. All 12 matched retrieval loss contrasts are negative, while every matched scenario contrast has more breaches and greater mean positive overrun. Elementary common-set bounds explain how nearby starting positions can make representations agree without certifying accuracy. The findings identify finite-record forecast tradeoffs, with exploratory retrieval evidence and no population superiority inference. The recorded proxy and passive forecasts do not establish conditional coverage, independent external validity or policy, profit and funding effects.",
   "sections": [
     {
       "title": "1. Introduction",
       "blocks": [
         {
           "type": "p",
-          "html": "A sampled net position can reach a large magnitude and finish near its starting level. We study the largest absolute source-reported USD net position at issue and over the next H records, using sampled aggregate client flow from one foreign-exchange market maker. A forecast level is breached when at least one of those recorded positions has a greater absolute value. H counts source records, including those separated by 49-hour gaps. The object is recorded net-position scale, rather than a complete hedged book or a funding requirement."
+          "html": "A sampled net position can reach a large magnitude and finish near its starting level. We study the largest absolute source-reported USD net position at issue and over the next H records, using sampled aggregate client flow from one foreign-exchange market maker. A forecast level is breached when at least one recorded position exceeds it in magnitude. H counts subsequent records rather than elapsed hours. The object is recorded net-position scale, rather than a complete hedged book or a funding requirement."
         },
         {
           "type": "p",
-          "html": "For this passive forecasting task, we ask how replacing recent completed episodes with equally many episodes whose signed starting positions are closest to the current position changes realized losses and the balance between overruns and unused allowance. We compare native peaks (K), headrooms above each episode's starting magnitude (F), and signed increments reanchored at the current position (S), under a stipulated .95 quantile preference. Signed distance distinguishes positive and negative starts of equal magnitude; matching magnitude alone need not make native and reanchored peak reports agree."
+          "html": "We compare two choices in this passive forecasting task: which completed historical episodes to use and how to represent their responses. We ask how replacing recent episodes with equally many episodes closest to the current signed position changes realized losses, overruns and unused allowance. The representations use native peaks (K), headrooms above each episode's starting magnitude (F), or signed increments reanchored at the current position (S), under a stipulated .95 quantile preference. Signed distance distinguishes opposite starts of equal magnitude; magnitude matching alone need not align native and reanchored reports."
         },
         {
           "type": "p",
@@ -243,7 +243,7 @@
         },
         {
           "type": "p",
-          "html": "Geometry reports both anchor radii, mean selected age in records, the mean absolute F/S gap and exact equal-capacity counts. Primary monthly retrieval contrasts retain all 13 inclusive calendar months at both H; groups below 30 origins retain counts/status while suppressing metrics. These are descriptive groups, not independent replications or an adaptive strategy. No new population test, confidence interval or bootstrap is attached to the extension. Original block-resampling profiles concern only the original full720 F/S contrast; Appendix B preserves their descriptive status."
+          "html": "Geometry reports both anchor radii, mean selected age in records, the mean absolute F/S gap and exact equal-capacity counts. Monthly nearest360 K-minus-recent360 K contrasts retain all 13 inclusive calendar months at H=6 and 24; groups below 30 origins retain counts/status while suppressing metrics. These are descriptive groups, not independent replications or an adaptive strategy. No new population test, confidence interval or bootstrap is attached to the extension. Original block-resampling profiles concern only the original full720 F/S contrast; Appendix B preserves their descriptive status."
         }
       ]
     },
@@ -443,7 +443,7 @@
         },
         {
           "type": "p",
-          "html": "Every matched S retrieval comparison has the opposite breach/overrun tradeoff: lower loss but more strict breaches and greater mean positive overrun. At H=24, m=360, nearest S loss falls from USD 824,046.89 to USD 770,353.74, while breaches rise from 320 to 430 and mean positive overrun from USD 190,842.79 to USD 283,299.56. Lower capacity and unused allowance offset the overrun increase under the score. The same adverse direction holds for both counts at both horizons. Describing all 12 score gains as uniform risk reduction would be inaccurate."
+          "html": "Every matched S retrieval comparison has the opposite breach/overrun tradeoff: lower loss but more strict breaches and greater mean positive overrun. At H=24, m=360, nearest S loss falls from USD 824,046.89 to USD 770,353.74, while breaches rise from 320 to 430 and mean positive overrun from USD 190,842.79 to USD 283,299.56. The reduction in mean unused allowance outweighs the increase in mean positive overrun under the stipulated score. The same adverse direction holds for both counts at both horizons. Describing all 12 score gains as uniform risk reduction would be inaccurate."
         },
         {
           "type": "p",
@@ -463,7 +463,7 @@
         },
         {
           "type": "p",
-          "html": "The primary monthly K contrast favors nearest retrieval in 12 of 13 months at each H (Figure 3). January 2016 is adverse at both: +USD 3,379.20 for H=6 and +USD 520,447.46 for H=24. All month counts exceed the fixed display threshold. Origin-count-weighted monthly means reconcile to the global paired means; months remain descriptive groups within the same record, and the adverse month is not excluded."
+          "html": "The monthly nearest360 K-minus-recent360 K contrast favors nearest retrieval in 12 of 13 months at each H (Figure 3). January 2016 is adverse at both: +USD 3,379.20 for H=6 and +USD 520,447.46 for H=24. All month counts exceed the fixed display threshold. Origin-count-weighted monthly means reconcile to the global paired means; months remain descriptive groups within the same record, and the adverse month is not excluded."
         }
       ]
     },
@@ -472,7 +472,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Nearest-state selection lowers scores against equal-count recent history throughout the fixed menu, while the better original full-window reference at each horizon remains ahead. Every matched S gain accompanies more breaches and greater mean positive overrun. All matched F comparisons and primary K reduce both, but conditional mean overrun rises on method-specific breach sets. Selection changes age and membership together with proximity, so the comparison does not isolate a state-information effect. Richer-feature inventory models, conditional quantile methods and fitted filtered historical simulation remain unrun same-target comparators."
+          "html": "Nearest-state selection lowers scores against equal-count recent history throughout the fixed menu, while the better original full-window reference at each horizon remains ahead. Every matched S gain accompanies more breaches and greater mean positive overrun. All matched F comparisons and primary K reduce both, but conditional mean overrun rises on method-specific breach sets. Selection changes age and membership together with proximity, so the comparison does not isolate a state-information effect. Richer-feature quantile models, conditional quantile methods and fitted filtered historical simulation remain unrun same-target comparators."
         },
         {
           "type": "p",
@@ -857,7 +857,7 @@
         },
         {
           "type": "p",
-          "html": "Gap-crossing groups classify the realized future path and cannot be used as an issue-time filter. The 336 gap-crossing origins contain only one F breach and one S breach; their conditional severities rest on one event each. Calendar panels use naive source timestamps. Table B3 retains the original F/S month contrast and breach counts alongside the extension's two primary K month contrasts; they are separate contrasts, not interchangeable strategies."
+          "html": "Gap-crossing groups classify the realized future path and cannot be used as an issue-time filter. The 336 gap-crossing origins contain only one F breach and one S breach; their conditional severities rest on one event each. Calendar panels use naive source timestamps. Table B3 retains the original F/S month contrast and breach counts alongside the extension's nearest360 K-minus-recent360 K month contrasts at H=6 and 24; they are separate contrasts, not interchangeable strategies."
         },
         {
           "type": "table",
@@ -1260,7 +1260,7 @@
     },
     {
       "path": "figures/revision-retrieval-monthly.pdf",
-      "caption": "Figure 3. Every monthly primary K retrieval contrast at both horizons, including adverse January 2016. Counts are source-record origins. Calendar groups are descriptive, not independent validations or switching regimes."
+      "caption": "Figure 3. Monthly nearest360 K-minus-recent360 K contrasts at H=6 and 24, including adverse January 2016. H=6 is primary; H=24 is sensitivity. Counts are source-record origins. Calendar groups are descriptive, not independent validations or switching regimes."
     }
   ]
 }
