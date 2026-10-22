@@ -1,129 +1,98 @@
-# Historical Response Selection for Sampled FX Net-Position Peaks
+# Historical and Conditional Forecasts of Sampled Net-Position Peaks
 
-> **22 October substantive revision is in progress.** The [complete conditional and cross-source results](results/revision-20261022/README.md) now retain 72 validation candidates, 90 evaluated procedures and all 98 declared paired comparisons. The FX H6 primary QR comparison lowers mean loss by 12.66%, with more breach occasions; the Treasury H6 primary raises loss by 50.79%. The new evidence changes the manuscript's central interpretation. The linked 17-page paper below is the completed **21 October historical baseline**, pending replacement after the current scientific rewrite and document checks. [Current revision status](REVISION_20261022.md).
+An English working paper comparing historical peak constructions with established conditional forecasts on a common response: the largest absolute source-reported position at issue and over the next H records. The 22 October revision adds ridge quantile regression (QR), multivariate local quantiles (KNN), a scale-adjusted local variant and a separately measured Treasury-bill position aggregate. It retains favorable and adverse results together.
 
-The following overview documents that completed historical baseline and its earlier historical-selection menu. It does not summarize the additional conditional results linked above.
+**The current substantive refinement remains in progress.** The replacement manuscript and complete fixed conditional results are available; the requested approximately six hours of actual direction-first research, writing and issue-finding have not yet been audited as complete. Earlier completed research windows are separate historical records, not hours credited to this round. [Current revision record](REVISION_20261022.md).
 
-An English working paper comparing mature empirical-quantile constructions and historical episode selection for a sampled FX net-position peak. The response is the largest absolute source-reported USD net position over the current and next H records. It is an aggregate client-flow proxy from one market maker; a recorded netted position does not reconstruct its complete hedged book, gross currency exposures or funding needs.
+Read the [18-page paper](manuscript/working-paper/paper.pdf), [compilable TeX source](manuscript/working-paper/main.tex), [shared structured content](manuscript/working-paper/paper-content.json), [22-reference companion](manuscript/working-paper/references.bib) and [document verification](manuscript/working-paper/rendering-verification.json). The [working-paper guide](manuscript/working-paper/README.md) explains the independent PDF-rendering route and actual document checks.
 
-Read the [17-page paper](manuscript/working-paper/paper.pdf), [compilable TeX source](manuscript/working-paper/main.tex), [shared structured content](manuscript/working-paper/paper-content.json) and [document verification](manuscript/working-paper/rendering-verification.json). The current revision adds an explicitly exploratory historical-selection comparison and finite construction bounds. It reports an application result, without claiming a new quantile estimator, first financial peak forecast or coverage theorem.
+## What changed scientifically
 
-The paper's Sections 3–5 define the response, completed information, methods and design history; Sections 6–7 report the comparisons. Appendices A–C give the finite arguments, complete diagnostics and arithmetic/replication conventions. The linked literature notes record source editions and reading scopes separately from the executed results. The [six-hour revision audit](REVISION_20261021_AUDIT.md) records the additional two-hour research and four-hour writing phases, design history, evidence scopes and unresolved limits.
+The earlier historical-selection comparison omitted mature conditional competitors fitted directly to the peak response. That omission is now addressed by a small, frozen QR/KNN/scaled-KNN menu with training-only transforms, completed labels and source-specific chronological selection. The added procedures change the earlier FX ranking. A separate official aggregate application supplies adverse transfer evidence; it is not compatible individual-dealer replication.
 
-## Two design histories and their results
+| Fixed comparison | Mean pinball loss change | Strict breaches | Interpretation |
+|---|---:|---:|---|
+| FX H6 primary: QR W2880 minus original rolling F W720 | −12.660% | 376 vs 332, of 6625 | Lower score with more breach occasions; mean positive overrun falls. |
+| FX H24 legacy sensitivity: QR W2880 minus original rolling S W720 | −1.829% | 531 vs 287, of 6625 | Modest lower score, with more than doubled mean positive overrun; most net improvement comes from the partial 2017 tail. |
+| Treasury H6 primary: QR W260 minus matched frozen F W260 | +50.786% | 54 vs 28, of 277 | Adverse loss, breach and mean-overrun results. No favorable secondary model replaces this primary. |
 
-The original specification was frozen at **2026-10-21 05:46:37 UTC**, before its target-specific forecasts and losses, and published in commit `6dd404d6e700ff031793d68be209e8f783b22582`. It fixes seven one-factor settings and five methods, with **6,625 common issue origins**. The original 24-hour window and completed reading/design gates are documented in the [historical research-window audit](RESEARCH_WINDOW_AUDIT.md). This is a retrospective specification exercise with prior source-literature knowledge, rather than external preregistration or prospective collection.
+Every selected Treasury QR cell loses to its own frozen F reference. Both short-window Treasury plain KNN fits select k=W and equal that historical reference exactly; their feature distances no longer change membership. A secondary long-horizon Treasury KNN gain reverses on the fixed sparse grid of only 12 origins. Calendar groups and sparse grids remain descriptive, not independent replications or confidence intervals.
 
-The extension was designed **after the original evaluation interval had been inspected**. Its [protocol](protocol/revision-20261021-exploratory-protocol.md) and [machine specification](protocol/revision-20261021-exploratory-spec.json) were publicly recorded in commits `63703b911ee165a6057b0e80c36fd39c72cbcc4a` and `69d5bb67c6ca1e3c1509e29c14400462ce2a1130` before the added forecasts. It retains the same issue origins and evaluates all three response representations on five fixed historical sets at H=6 and 24. This before-execution freeze does **not** make the inspected interval an unseen holdout.
+The score uses stipulated .95/.05 underprediction/overprediction weights. It is not an observed financing cost. Mean positive overrun averages max(P−C,0) over all origins; conditional severity instead uses each method's own event set. Unused allowance and extra allowance above the known issue floor are different quantities. Lower score or lower unused allowance does not by itself establish safer or cheaper operation.
 
-F retains a historical peak's headroom above its own starting magnitude. S translates each historical increment envelope to the current signed position. K takes a native-peak quantile subject to the current known floor; K is original method L, relabeled.
+## Design, complete evidence and provenance
 
-The primary rows use a .95 pinball score: a dollar of underprediction receives nineteen times the weight of a dollar of overprediction. The score retains the source's USD units but does not measure an observed funding payment or financial saving. Other consistent scores can target the same quantile while valuing errors differently; the reported rankings concern the chosen pinball score.
+The [design](protocol/revision-20261022/conditional-baseline-design.md) and [machine specification](protocol/revision-20261022/study-spec.json) fixed sources, features, menus, completed-label timing, histories, update schedules, comparisons and resource/failure rules. The [16-file executable freeze](protocol/revision-20261022/executable-freeze.json) was publicly recorded at [1bd5b69](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/commit/1bd5b692fd9cb240763c032fb4e1c203871fad55) before new validation. All 24 source/H/W/family selections were then publicly fixed at [8ce6e39](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/commit/8ce6e398a17e4c12cb36a9a76785e78fd21a1da0) before evaluation. Public selection binds the exact validation receipt bytes; ties prefer the larger numeric candidate.
 
-Mean positive overrun averages each peak's excess above its issued level, floored at zero, over all origins. Conditional overrun averages only over that rule's breach events, so its denominator and event set can differ between rules. Unused allowance is the report's excess above the realized peak, floored at zero. It differs from extra allowance above the already known current floor.
+The immutable [core conditional result archive](results/revision-20261022/README.md) contains 72 validation candidates,90 procedure summaries,372 annual rows,98 declared paired comparisons,388 annual paired rows,98 sparse paired rows and 56 phase receipts. Its tightened [second audit](results/revision-20261022/evaluation-audit-02.json) reconciles source-window targets, trace identities, timing, scores, labels and aggregates. Failures would have been retained without shortened means or favorable replacement parameters; every declared original phase completed.
 
-| Analysis | Fixed primary comparison | Paired mean loss difference | Interpretation |
-|---|---|---:|---|
-| Original | F minus S; H=6, n=720, tau=.95 | −USD 9,374.86; −2.08% of S loss | F has lower score, with 332 versus 254 breaches and greater mean positive overrun. H=24 favors S; tau=.90 also favors S, by only USD 144.23, without establishing equivalence. |
-| Exploratory extension | nearest360K minus recent360K; H=6, tau=.95 | −USD 277,704.47; −31.83% of recent360K loss | Matching signed starting positions improves this weaker native-peak reference. Its loss remains above the original full720 F and S. |
+[Post-result diagnostics](results/revision-20261022/POST_RESULT_DIAGNOSTICS.md) separately retain all 90 floor-binding configurations and 45 paired-horizon reports, the original audit and a later snapshot-integrity addendum. They were designed after seeing results, outside the original 98 comparisons, and change no forecasts. Some estimated H6 reports exceed their H24 counterparts even though every realized target is ordered. A learned short-horizon report is not a known long-horizon lower bound; no retrospective monotone repair or regime switch was executed.
 
-All **12** fixed nearest-minus-recent score contrasts in the prior one-state retrieval menu are negative. Within that prior menu, no added configuration beats the better original full720 F/S rule at the same horizon. This precise claim retains the exception that nearest360S at H=6 slightly improves its own full720S counterpart. Every matched S retrieval comparison has more breaches and greater mean positive overrun. Every matched F comparison has a larger conditional mean overrun, even with fewer breaches and smaller unconditional overrun. Most of the primary K score reduction comes from lower unused allowance under the stipulated weights. It still has a larger conditional overrun despite fewer breaches; these conditional means describe different event sets. January 2016 is adverse for nearest360K-minus-recent360K at both horizons.
+## Closest work and the actual contribution
 
-The paper reports these tradeoffs alongside selected age and anchor radii. Nearest membership guarantees a weakly smaller maximum signed-anchor distance at a fixed count; the observed representation gaps and score changes are separate results. The contrast compares two complete membership rules, without separating proximity from accompanying changes in age, regime, scale and dependence composition. No population test, confidence interval or bootstrap is attached to the new contrasts. The four original resampled-mean profiles remain descriptive and concern only original full720 F/S.
+[Wisniewski, Lindsay and Lindsay (2020)](https://proceedings.mlr.press/v128/wisniewski20a.html) and Chapter 6 of Wisniewski's thesis already apply richer features, neighbors, quantile and normalized/conformal forecasts to signed endpoints in this FX source family. Their two-endpoint interval scores are not benchmarks for the single absolute multi-record peak. Exact equality of their raw bytes to this accepted CSV is not established.
 
-## What is being transferred
+Financial path extrema, regression quantiles, nearest-neighbor prediction, volatility/residual scaling and constrained/calibrated horizon curves all have mature antecedents. The supported contribution is a bounded application/model-validation comparison: fit credible competitors to the same completed response, match histories/update schedules within sources, retain adverse results and record qualified source transfer. A changed target or dataset alone does not create a new estimator. The elementary finite construction bounds are supporting arguments, not new statistical guarantees.
 
-Every representation already uses current information. The extension adds fixed one-dimensional signed-state nearest-neighbor membership, compared with an equal number of recent episodes from the same 720 completed candidates. There is no fitted volatility filter, dynamics model, adaptive neighbor-count search or new conditional-coverage method.
+The [22-reference evidence map](notes/revision-20261022/paper-evidence-map.md) records actual consulted versions and reading ranges. A [bounded priority follow-up](notes/revision-20261022/targeted-priority-followup-agent.md) distinguishes inspected original targets from metadata-only screening and unresolved access. These checks do not prove absence of an exact predecessor. QRF, CAViaR, SPCI and fitted historical simulation remain distinct unexecuted competitors; the tested menu is not claimed to exhaust the strongest conditional methods.
 
-For a common selected set and available rank, elementary finite-array bounds relate F/K and S/K report differences to absolute and signed starting-position distances. Exact signed-anchor matches make all three reports agree in real arithmetic. Coherent counterexamples and a known-dynamics replay identity explain why construction agreement and exact raw revaluation do not establish forecast accuracy or the appropriate conditional envelope law.
+## Sources, identities and limits
 
-The closest empirical lineage is [Wisniewski, Lindsay and Lindsay (2020)](https://proceedings.mlr.press/v128/wisniewski20a.html) and Chapter 6 of Wisniewski's doctoral thesis, which study signed endpoint forecasts with richer features on the same public source. The 2020 paper already evaluates nearest-neighbor quantile, conformal and normalized-conformal variants; exact equality of its input bytes to this version-2 CSV has not been established. This revision does not introduce nearest neighbors to that financial source. Their reported interval scores are not benchmarks for this absolute multi-record peak. Chapter 5 also uses trader net-position correlations for expert clustering and evaluates investment portfolios by returns and drawdown; that investment-decision task is distinct from this passive peak forecast. Financial peak-risk, filtered historical simulation and nearest-neighbor quantile methods also have established precedents. The [14-reference source evidence map](notes/revision-20261021/paper-evidence-map.md) identifies exact consulted editions, actual reading scopes and claim boundaries, with a [case-level comparison](notes/revision-20261021/thesis-financial-task-comparison.md) of the thesis. The [original nine-reference map](notes/paper-evidence-map.md) remains a historical record.
-
-The [additional method comparison](notes/revision-20261021/method-transfer-comparison.md) explains how mature conditional-quantile models, residual calibration, historical scenario models, active hedging and forecast-evaluation theory relate to this response. It records nine consulted works and their actual reading scopes. CAViaR and SPCI also appear in the paper; the seven other neighbors include two 2026 preprints. Its unimplemented aggregation illustration checks explicit report-range and delayed-feedback conditions; it adds no fitted benchmark or empirical result. These are method and evaluation neighbors; their published outcomes are not extra same-target benchmark results.
-
-A [financial-target comparison](notes/revision-20261021/direction-endpoint-peak-comparison.md) distinguishes trader-resolved directions, signed-position intervals, worst mark-to-market losses, payment deficits, collateral-adjusted exposure and the present sampled peak. It explains why shared peak or inventory terminology does not make their responses, economic interpretations or published scores interchangeable.
-
-## Files
-
-- [Original results](results/README.md): all 35 method/setting rows, seven paired comparisons, four resampling profiles, complete diagnostics and the original manifest. These original scientific outputs are preserved.
-- [Extension results](results/revision-20261021/README.md): 30 summary, 10 geometry, 22 comparison and 26 monthly rows, plus the accepted manifest.
-- `study_data.py`, `study_core.py`, `study_report.py`, `run_study.py`: original bounded acquisition, issue-time construction, reporting and execution.
-- `revision_selection.py`, `run_revision_selection.py`: fixed historical selection and the separately frozen extension runner.
-- `test_data.py`, `test_core.py`, `test_report.py`, `test_runner.py`, `test_revision_selection.py`, `test_revision_runner.py`: scientific and runner checks using synthetic cases.
-- `build_revision_figures.py`, `test_revision_figures.py`: aggregate-only construction and validation of the two new vector figures.
-- `build_original_comparison_figure.py`, `test_original_comparison_figure.py`: aggregate-only restyling and checks for all seven original paired means.
-- `build_paper.py`, `build_tex.py`, `test_paper_figure_inventory.py`, `test_paper_metadata.py`, `test_paper_caption_layout.py`: document rebuilding and bounded figure-inventory/metadata checks.
-- [Working-paper folder](manuscript/working-paper/): paper, source, structured text, approved figures and document verification.
-
-A scientific `COMPLETE` manifest is separate from source compilation, PDF inspection and remote-file verification. The only published operational-state file required for extension replication is the [sanitized public-freeze receipt](state/revision-20261021-protocol-publication.json), containing public repository metadata. Private operational state, raw observations and origin-level traces are excluded.
-
-## Data identity and access
-
-Use version 2 of the [Net Position Time Series Dataset](https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset), one-hour member `1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv`; the accepted one-file archive has a flat CSV member. The CSV has **1,286,391 bytes**, **18,576 records** and SHA-256:
+The FX input is version 2 of the [Net Position Time Series Dataset](https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset), accepted member `1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv`. It has 18,576 records,1,286,391 bytes and SHA-256:
 
 ```
 b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa
 ```
 
-Only `datetime` and `NetPosUsd` enter the calculation. Source timestamps span 5 February 2014 to 24 January 2017. The 18,420 one-hour and 155 forty-nine-hour adjacent gaps remain intact; H counts records, rather than elapsed hours. The timezone and historical field-release convention are unverified. Completed-label timing uses an explicit retrospective issue convention; it does not make overlapping labels independent.
+It is a signed client-flow aggregate from one market maker, not the complete hedged book, gross exposure, cash flow or funding requirement. Recorded gaps are retained; H counts records rather than uninterrupted calendar hours. The historical timezone/public-release vintage is unverified. Same-source files at another frequency are not independent dealers. Raw redistribution permission is unverified.
 
-The anonymous one-file route was exercised on 21 October 2026. A separate fresh-cache acquisition accepted the identical CSV and reproduced the original tables/figures byte for byte; see [acquisition verification](results/acquisition-verification.json). This establishes reproducibility on the same source, not another independent market record. The extension used the accepted local cache and made no download.
-
-The observed rights label is “Data files © Original Authors”; raw redistribution permission remains unverified. The repository supplies original code, aggregates, source fingerprints and acquisition instructions, without the source CSV/ZIP or third-party paper PDFs. Access availability and reuse conditions can change.
-
-## Reproduction in the recorded environment
-
-The recorded environment is CPython 3.12.14, NumPy 2.3.5 and ReportLab 4.4.9 on macOS arm64. Document assembly additionally uses pypdf 6.10.0. The two requirement files record the existing versions. Use an environment where these are available; the resource monitor is macOS-specific and stops on unsupported platforms. No software was installed for this study.
-
-After the original comparison was restyled, its exact figure inventory added, caption pagination corrected and monthly horizon labels clarified, the combined suite passed **173 tests**. It included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 7.940 seconds by unittest's clock; the separate process measurement was 8.241 seconds with child maximum RSS 114,884,608 bytes. These are validation measurements, not financial experiment measurements.
-
-The figure tests use the active Python interpreter for their command-line subprocess, with no machine-specific interpreter path. After this portability correction, all 12 existing figure tests passed, including the real CLI case. This was a targeted check; the 173-test result above is the earlier full-suite run.
-
-From the repository root:
+The separate [New York Fed Primary Dealer Statistics](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics) snapshot uses series `PDPOSGS-B`:706 weekly Treasury-bill long-minus-short market-value records in USD millions,3 April 2013–7 October 2026. The 23,315-byte CSV has SHA-256:
 
 ```
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python3 -B -m unittest discover -v
+9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb
 ```
 
-The explicit anonymous source route also executes the **original** analysis:
+[Source definitions, acquisition routes, reporting/release dates, reuse terms and attribution](results/revision-20261022/EXTERNAL_DATA.md) are retained. An absolute signed sum permits cross-dealer cancellation and changes meaning with valuation, composition and weekly measurement. Original release times and historical unrevised vintages were not reconstructed: this is a downloaded-vintage economic-date replay, not a live public-information backtest. Sources are analyzed in native units and are not pooled. The [independent-source feasibility record](notes/revision-20261022/independent-source-feasibility.md) distinguishes acquired data, inaccessible/confidential alternatives, metadata-only candidates and the still unresolved compatible-dealer question.
 
-```
-python3 -B run_study.py --fetch --attempt-dir .scratch/original-replication-01
-```
+Raw observations, private per-origin traces, credentials and third-party paper PDFs are excluded from public delivery. Free reading/downloading does not establish redistribution rights. A current source route may expand or revise its bytes; a mismatching snapshot is rejected rather than truncated, spliced or silently substituted.
 
-It acquires only the fixed cache `.scratch/data/1hourNetPositionsKaggle.csv`, if absent, with bounded anonymous requests and exact archive/member/hash validation. Existing mismatched input is rejected, never replaced. To run the original study on an independently obtained matching file:
+## Reproduction and resource limits
 
-```
-python3 -B run_study.py --input /path/to/1hourNetPositionsKaggle.csv --attempt-dir .scratch/original-replication-manual-01
-```
+In the existing Python environment, the default entry is read-only and requires only the standard library:
 
-The two original commands are alternative source routes; each attempt directory must be new. The `--input` route validates and reads its selected file but does not populate the fixed cache. If you obtained the CSV independently, place the matching snapshot at `.scratch/data/1hourNetPositionsKaggle.csv` before running the extension. Verify the documented 1,286,391-byte size and SHA-256; preserve and investigate an existing mismatched cache rather than replace it.
-
-The extension expects that exact fixed cache, the frozen protocol/specification and the public-freeze receipt. It does not fetch, accept an alternate file or override the frozen menu. Use a new output path:
-
-```
-python3 -B run_revision_selection.py --output .scratch/revision-replication-01
+```bash
+python3 -B reproduce_conditional.py
 ```
 
-Both scientific runners write exclusive attempt directories. For the anonymous original example, inspect `.scratch/original-replication-01/public/results/run-manifest.json`; the manual example uses the analogous `original-replication-manual-01` attempt. Original tables and figures are inside that attempt’s `public/` tree. The extension example writes its four CSVs and `manifest.json` directly in `.scratch/revision-replication-01/public/`. These attempt outputs do not overwrite the accepted root `results/` or manuscript figures. Inspect each manifest, its scope and every check before accepting a reproduction. Private diagnostic output is not automatically publication material. The original eight scientific code/test files and original result tables remain unchanged by this revision.
+It checks the executable and selection freezes and all 69 core archived files. Historical temporary-path references in the selection are matched to their exact public validation receipt bytes in memory; a fresh checkout does not need the original temporary directory. Its successful status is `ARCHIVE_VERIFIED`, explicitly with `accuracy_recomputed=false` and `raw_sources_read=false`.
 
-The extension's sole accepted computation recorded **10.307238 seconds**, sampled process high-water RSS **64,602,112 bytes (61.61 MiB)** and a maximum observed **one OS thread over 675 snapshots**. The completed-process measurement displayed **10.35 real seconds** and RSS **64,634,880 bytes**. The original primary calculation recorded 8.02145 seconds and RSS 80,936,960 bytes (77.19 MiB). Different checkpoint scopes and displayed precision are retained in their receipts.
-
-The implementation requests one numerical thread, stops early at 540 seconds or 1.5 GiB, has a 600-second alarm and rejects more than two observed OS threads. Source/download/array sizes are bounded. RSS/thread snapshots are observations with limits, rather than an OS hard memory sandbox or a continuously observed thread maximum.
-
-## Document and figure rebuilding
-
-The current TeX source compiled successfully with the desktop editor's built-in compiler. That interface supplied diagnostics without exporting a standalone PDF. The supplied PDF is independently typeset from the same structured content using ReportLab, then appends the three approved vector pages through pypdf. It is **not an export of that TeX compiler**. Pagination and fonts can differ in an external TeX build. The shared scientific text, explicit equations and approved figure files remain available.
-
-All 17 supplied PDF pages were rendered and inspected. The document audit checked 635 source text/table/caption blocks, font coverage, page character bounds, metadata, reference links and exact embedded figure streams. Two unsupported collection symbols were replaced by explicit English before the accepted build. See the [manuscript README](manuscript/working-paper/README.md) and [verification receipt](manuscript/working-paper/rendering-verification.json).
-
-Document-only commands refuse to overwrite existing outputs:
+The explicit full replay requires macOS, an already available compatible NumPy environment, and the exact accepted snapshots at:
 
 ```
+.scratch/data/1hourNetPositionsKaggle.csv
+.scratch/revision-20261022/nyfed-PDPOSGS-B.csv
+```
+
+```bash
+python3 -B reproduce_conditional.py replicate --attempt-id NEW_UNIQUE_ID
+```
+
+This creates a new owned attempt and executes 24 validation,24 evaluation and 8 reference phases serially under one total 540-second deadline. A new selection binds new receipt paths/hashes; all statuses and chosen parameters must match the archived 24-cell matrix before evaluation proceeds. The adapter independently reconciles new source-window peaks, exact stored arrays/scores,90 summaries and 98 contrasts, exporting only inside the new attempt. It records every aggregate CSV scalar difference, including tiny floating differences, without a tolerance that conceals disagreement. New timestamps/resources need not match old receipt hashes. A numerical audit and agreement with old outputs are separate statuses. Existing attempts, old receipts, all original results and the scientific freeze are preserved.
+
+The original accepted financial workers requested one numerical thread, observed at most one OS thread in their recorded snapshots and used less than 70 MB process RSS, with maximum phase duration 15.83 seconds. Internal phase stops are 540 seconds/1.5 GiB, with a 600-second alarm; the standing upper resource limits are 2 GiB RSS,2 observed threads,100 MiBraw sources and 25 MiBper download. These are process observations and budgets, not an OS memory sandbox or research hours. No installation, GPU, broad parameter search or persistent service is needed. A full replay completed in 129.50 seconds: all 56 phases passed, the 24 selected status/parameter cells matched and all six exported aggregate CSVs were byte-identical to the archive. Maximum worker RSS was 68,911,104 bytes and one thread was observed. The [compact replay verification](results/revision-20261022/reproduction-check-20261022.json) retains all six table comparisons and the 56 new phase identities/resources; all 72 validation candidate scalar rows also matched. This is a computation replay, not independent scientific replication.
+
+Document rebuilding is separate:
+
+```bash
+python3 -B build_conditional_figures.py --output .scratch/conditional-figure-rebuild-01
 python3 -B build_tex.py --output .scratch/main-rebuilt.tex
 python3 -B build_paper.py --output .scratch/paper-rebuilt.pdf
-python3 -B build_revision_figures.py --output .scratch/revision-figure-rebuild-01
-python3 -B build_original_comparison_figure.py --output .scratch/revision-figure-original-rebuild-01
 ```
 
-The PDF builder reads only approved text and one of three exact three-figure inventories: original, earlier revision, or current restyled revision. Its body requires the four existing macOS Times New Roman files under `/System/Library/Fonts/Supplemental/`; missing fonts stop the build, and font files are not distributed. All three current standalone vector figures use built-in Helvetica and read only fixed accepted aggregates. The original-comparison renderer pins the original run manifest and paired table; the retrieval renderer pins the separately accepted extension aggregates. These document commands do not recalculate financial experiments. The three original scientific figure files remain unchanged and available. The current first figure restyles all seven original paired means, including the small positive tau=.90 difference, with direct signed values rounded to six decimal USD millions for display.
+All outputs must be new. Figures use only pinned aggregates; document rendering uses the supplied content and approved assets. The [document guide](manuscript/working-paper/README.md) records dependencies, fonts, source compilation, the supplied PDF route and actual visual/text checks.
+
+## Preserved earlier studies
+
+[Original results](results/README.md) retain all 35 method/setting rows, seven paired comparisons, original diagnostics and four descriptive resampling profiles. The [earlier one-state retrieval extension](results/revision-20261021/README.md) retains 30 summary,10 geometry,22 comparison and 26 monthly rows. Their adverse horizon/preference/monthly evidence remains in Appendix B, existing files and repository history. The old statement that no added model beats the original leader applies only to that earlier one-state menu; it does not extend to the new QR/KNN results.
+
+The [24-hour research-window audit](RESEARCH_WINDOW_AUDIT.md) and [prior six-hour revision audit](REVISION_20261021_AUDIT.md) are historical records. The current paper still lacks compatible unseen dealer data, a reconstructed public-release vintage, established population/conditional coverage and observed quote/hedge/funding decision costs. Better numerical reproducibility and presentation do not supply those scientific gaps or promise a journal tier. No journal submission is represented.
