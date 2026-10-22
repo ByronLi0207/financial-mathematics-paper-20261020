@@ -50,6 +50,10 @@
         },
         {
           "type": "p",
+          "html": "Prospective payment-system liquidity forecasting also has established precedents. Arjani, Li and Sabetti (2020) predict a remaining-day payment-demand/resource ratio and its threshold exceedance using payments and credit information. That ratio is a different functional from an absolute position peak or a directional timing peak. We neither reproduce their models nor observe the settlement inputs required to validate funding adequacy. The distinction further limits broad financial-target novelty claims."
+        },
+        {
+          "type": "p",
           "html": "Regression-quantile loss minimization is classical (Koenker and Bassett, 1978). Biau and Patra (2011) develop sequential quantile prediction with lag-neighbor experts, growing history, truncation and loss-weighted aggregation under stated stationarity, ergodicity and regularity conditions. Our fixed pools and delayed overlapping labels do not inherit that consistency theorem. The ridge and local estimators here constitute a bounded challenge, not the strongest possible conditional-model universe. Quantile forests (Meinshausen, 2006), autoregressive quantiles such as CAViaR (Engle and Manganelli, 2004), sequential predictive conformal inference (Xu and Xie, 2023) and full volatility-updated or filtered historical simulation (Hull and White, 1998; Barone-Adesi et al., 1999) remain distinct unexecuted alternatives."
         },
         {
@@ -618,7 +622,7 @@
         },
         {
           "type": "p",
-          "html": "AR lowers loss in five of eight cells against each of matched S, F and QR. Relative to QR it loses in three of four FX cells and improves in all four Treasury cells. The original adverse Treasury QR primary therefore does not establish failure of every conditional family. Against S, the FX H6 changes are −1.536%/−0.546% at W720/W2880, while H24 changes are +2.386%/+5.147%. Treasury changes are −13.444%/−18.887% at H6 and +35.125%/−24.118% at H24 for W52/W260. No additional model is selected from this table."
+          "html": "AR has lower loss in five of eight cells against S, five against F and five against QR; these sets differ. Relative to QR it loses in three of four FX cells and improves in all four Treasury cells. The original adverse Treasury QR primary therefore does not establish failure of every conditional family. Against S, the FX H6 changes are −1.536%/−0.546% at W720/W2880, while H24 changes are +2.386%/+5.147%. Treasury changes are −13.444%/−18.887% at H6 and +35.125%/−24.118% at H24 for W52/W260. No additional model is selected from this table."
         },
         {
           "type": "p",
@@ -647,7 +651,7 @@
         },
         {
           "type": "p",
-          "html": "Post-result diagnostics clarify the issued reports rather than changing their rankings. Every common realized target satisfies P(H6)≤P(H24), yet the separately fitted reports can cross: FX W720 QR crosses on 640/6,625 issues, and Treasury W52 QR on 91/277. Some short Treasury historical F/S controls also cross because the horizons use different mature episode sets; zero observed crossings supply no general guarantee. Appendix D retains all 45 source/window/method pairs and their detailed counts. The later AR addition is outside that existing floor/coherence audit."
+          "html": "Post-result diagnostics clarify the issued reports rather than changing their rankings. Every common realized target satisfies P(H6)≤P(H24), yet the separately fitted reports can cross: FX W720 QR crosses on 640/6,625 issues, and Treasury W52 QR on 91/277. Some short Treasury historical F/S controls also cross because the horizons use different mature episode sets; zero observed crossings supply no general guarantee. Appendix D retains all 45 original pairs and a separately frozen addition covering all four AR pairs. AR has zero observed FX crossings, but Treasury W52/W260 cross on 59/26 of 277 issues. The horizon-specific fits and mature scenario sets differ; numerical acceptance does not establish an ordered report curve."
         },
         {
           "type": "p",
@@ -1097,7 +1101,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "After viewing and publishing the complete primary results, we recorded a descriptive floor-binding/horizon-coherence plan and evaluated the already accepted forecasts. These checks are not part of the 98 before-execution contrast menu, and they modify no forecast or tuning choice. The original 90 configurations and 45 source/window/method pairs are retained in post-result-floor.csv and post-result-horizon.csv, with hashes and process resources in their separate audit. Every common realized target satisfies P(H6)≤P(H24). These diagnostics cover the original QR/KNN/scaled-KNN study and its historical controls; AR is not included."
+          "html": "After viewing and publishing the complete primary results, we recorded a descriptive floor-binding/horizon-coherence plan and evaluated the already accepted forecasts. These checks are not part of the 98 before-execution contrast menu, and they modify no forecast or tuning choice. The original 90 configurations and 45 source/window/method pairs are retained in post-result-floor.csv and post-result-horizon.csv, with hashes and process resources in their separate audit. Every common realized target satisfies P(H6)≤P(H24). Those files cover the original QR/KNN/scaled-KNN study and its historical controls. The later AR diagnostics are separate files; the original tables and forecasts are unchanged."
         },
         {
           "type": "table",
@@ -1232,12 +1236,24 @@
         },
         {
           "type": "p",
+          "html": "The separate AR addition retains all eight floor configurations and four same-source/window horizon pairs. FX W720/W2880 have no observed crossings over 6,625 origins each; Treasury W52/W260 have 59/26 over 277 (21.300%/9.386%), with maximum positive gaps 11784.473/5347.870 USD millions. Every realized target is ordered. Treasury W52 AR binds its floor on seven issues at each horizon, with five H6 and seven H24 breaches. The other six AR configurations never bind. Those empty-group breach rates are undefined, not zero. These inspected-sample diagnostics establish neither a cause nor a coverage guarantee."
+        },
+        {
+          "type": "p",
           "html": "The report-order problem does not by itself justify a particular repair. For example, B=0, P(H6)=P(H24)=1, C(H6)=10 and C(H24)=1 satisfy the target order. Raising the long report to the short one changes its .95 loss from zero to .45. This artificial real-arithmetic example is not source data; it distinguishes a learned report from a known lower bound. No isotonic reconciliation, horizon switching or post-result parameter search was run."
+        },
+        {
+          "type": "p",
+          "html": "The AR diagnostic plan and 46-file executable closure were publicly verified before these new counts, after the financial samples and earlier AR scores had been inspected. A separate scalar calculation checks all 236 exported fields without importing the diagnostic kernels. Production used 0.345 seconds internally, 55,115,776 bytes peak RSS and one observed thread; it loaded no raw source and refitted no model. Its exact command audits the retained manifest-bound private attempt. New replay timestamps require a separately bound plan/readback; the command is not a one-step reconstruction of undistributed private artifacts."
         }
       ]
     }
   ],
   "references": [
+    {
+      "id": "arjani2020",
+      "html": "Arjani, N., F. Li and L. Sabetti (2020). Monitoring Intraday Liquidity Risks in a Real Time Gross Settlement System. Payments Canada discussion paper, 23 April. <a href='https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf'>Consulted official report</a>; no separate journal edition or DOI is asserted."
+    },
     {
       "id": "avellaneda2008",
       "html": "Avellaneda, M. and S. Stoikov (2008). High-frequency trading in a limit order book. <i>Quantitative Finance</i> 8(3), 217–224. <a href='https://doi.org/10.1080/14697680701381228'>DOI:10.1080/14697680701381228</a>."
