@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "status": "POST_RESULT_DESIGN_FIXED_BEFORE_NEW_DIAGNOSTIC_COUNTS",
+  "created_utc": "2026-10-22T13:04:10+00:00",
+  "purpose": "Append complete AR floor and paired-horizon diagnostics without forecast repair/refit, changed primaries or altered original archives",
+  "design_note": {
+    "path": "notes/revision-20261022/ar1-diagnostic-design-agent.md",
+    "sha256": "ca95faa0d1fd71de51eb81b70c7033d989e63a904b95b55ef55de83b9cf2b9a9"
+  },
+  "accepted_v2_readback": {
+    "path": "results/revision-20261022/ar1-replay/inventory-readback.json",
+    "bytes": 2007,
+    "sha256": "d28cac5d9fd95480db54c03d61c954706689f7789f5e22acb4d037aa46eed922",
+    "code_sha256": "c74461cc2d06455cc7504547cfc02824e6e80235dc8e9e7127bd39678f4bbf92"
+  },
+  "ar1_manifest_sha256": "9a175d1191e2ee91f17da71e1e6930e4c8a95748e8b7b278a6a4071721450609",
+  "ar1_spec_sha256": "e9f40722e4b012b57a0eb0158d101b5bf6cd327586ced6e270d822adf4f8a9a2",
+  "ar1_freeze_sha256": "57a880384d1a978f4f37b18eeaed1716b21db1f48b88c1375a7b5348c5421261",
+  "original_executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+  "original_selection_sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+  "method": "AR1_REPLAY",
+  "floor_rows": 8,
+  "paired_horizon_rows": 4,
+  "horizons": [
+    6,
+    24
+  ],
+  "sources": {
+    "fx_hourly": {
+      "evaluation_first": 11927,
+      "evaluation_last": 18551,
+      "windows": [
+        720,
+        2880
+      ],
+      "refit_step": 24,
+      "native_unit": "USD"
+    },
+    "nyfed_weekly": {
+      "evaluation_first": 405,
+      "evaluation_last": 681,
+      "windows": [
+        52,
+        260
+      ],
+      "refit_step": 13,
+      "native_unit": "USD millions"
+    }
+  },
+  "definitions": {
+    "binding": "C==B exactly in stored floating values",
+    "zero_headroom_outcome": "P==B",
+    "breach": "P>C strictly",
+    "horizon_crossing": "C6>C24 strictly",
+    "target_integrity": "P6<=P24 at every complete paired issue",
+    "crossing_mean_denominator": "all declared paired origins, not crossing subset",
+    "empty_groups": "null rate plus existing fixed undefined reason"
+  },
+  "pairing": "exact origin,source,W,method,floor and refit vectors; no intersection/truncation/reorder",
+  "output": "fresh explicit replica/ar1-diagnostics-ID directory, only8floor/4horizon CSVs and sanitized audit may be publicly copied after verification",
+  "failure": "any identity,missing cell,alignment,target/floor or resource failure stops whole supplement; adverse/zero forecast events retained as normal",
+  "resources": {
+    "processes": 1,
+    "requested_numerical_threads": 1,
+    "maximum_observed_os_threads": 2,
+    "wall_seconds": 540,
+    "hard_seconds": 600,
+    "rss_bytes": 1610612736
+  },
+  "no_source_loading": true,
+  "no_new_model_selection": true,
+  "no_refitting": true,
+  "no_forecast_repair": true,
+  "no_new_population_inference": true,
+  "legacy_artifacts_modified": false,
+  "execution_freeze": "Root must bind new implementation/tests plus actual helper import closure before real diagnostic execution",
+  "pre_execution_correction": "Before new code freeze or diagnostic counts, corrected the Treasury native-unit token from USD_millions to the existing exact contract value USD millions. No source, forecast or numerical definition changed."
+}
