@@ -1,8 +1,8 @@
 """Typeset supplied paper text and append one approved three-figure inventory.
 
 This is a document builder only. It never opens source observations, scientific
-result tables, or any PDF other than its own text body and the original or
-revision canonical figure inventory selected by validated content. Each approved
+result tables, or any PDF other than its own text body and the original,
+revision or restyled canonical figure inventory selected by validated content. Each approved
 inventory has exactly three figures in a fixed order. The caller runs and
 visually verifies the final output.
 
@@ -38,7 +38,12 @@ REVISION_FIGURE_PATHS = (
     "figures/revision-retrieval-contrasts.pdf",
     "figures/revision-retrieval-monthly.pdf",
 )
-APPROVED_FIGURE_INVENTORIES = (FIGURE_PATHS, REVISION_FIGURE_PATHS)
+RESTYLED_FIGURE_PATHS = (
+    "figures/revision-original-contrasts.pdf",
+    "figures/revision-retrieval-contrasts.pdf",
+    "figures/revision-retrieval-monthly.pdf",
+)
+APPROVED_FIGURE_INVENTORIES = (FIGURE_PATHS, REVISION_FIGURE_PATHS, RESTYLED_FIGURE_PATHS)
 MACOS_TIMES_FONTS = {
     "PaperTimes": Path("/System/Library/Fonts/Supplemental/Times New Roman.ttf"),
     "PaperTimes-Bold": Path("/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf"),

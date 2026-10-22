@@ -22,6 +22,11 @@ REVISION = (
     "figures/revision-retrieval-contrasts.pdf",
     "figures/revision-retrieval-monthly.pdf",
 )
+RESTYLED = (
+    "figures/revision-original-contrasts.pdf",
+    "figures/revision-retrieval-contrasts.pdf",
+    "figures/revision-retrieval-monthly.pdf",
+)
 
 
 def content_fixture(paths=ORIGINAL):
@@ -108,17 +113,26 @@ class PaperFigureInventoryTests(unittest.TestCase):
         content = content_fixture(REVISION)
         self.assertEqual(self.load(content), content)
 
+    def test_complete_restyled_inventory_is_accepted_without_replacing_archived_inventory(self):
+        # Catches refusal of the restyled figure or accidental removal of old inventories.
+        for paths in (ORIGINAL, REVISION, RESTYLED):
+            with self.subTest(paths=paths):
+                content = content_fixture(paths)
+                self.assertEqual(self.load(content), content)
+
     def test_mixed_original_and_revision_paths_are_rejected(self):
         # Catches position-wise allowlists that permit unapproved mixed inventories.
         for paths in ((ORIGINAL[0], ORIGINAL[1], REVISION[2]),
-                      (ORIGINAL[0], REVISION[1], ORIGINAL[2])):
+                      (ORIGINAL[0], REVISION[1], ORIGINAL[2]),
+                      (RESTYLED[0], ORIGINAL[1], ORIGINAL[2]),
+                      (RESTYLED[0], ORIGINAL[1], REVISION[2])):
             with self.subTest(paths=paths), self.assertRaisesRegex(
                     build_paper.PaperBuildError, "^NONCANONICAL_FIGURE$"):
                 self.load(content_fixture(paths))
 
     def test_reordered_approved_figures_are_rejected(self):
         # Catches set membership replacing the required complete ordered tuple.
-        for paths in (ORIGINAL, REVISION):
+        for paths in (ORIGINAL, REVISION, RESTYLED):
             for reordered in ((paths[1], paths[0], paths[2]),
                               (paths[0], paths[2], paths[1])):
                 with self.subTest(paths=reordered), self.assertRaisesRegex(
@@ -163,7 +177,7 @@ class PaperFigureInventoryTests(unittest.TestCase):
 
     def test_invalid_captions_are_rejected_for_both_approved_inventories(self):
         # Catches bypassing existing caption validation for the added inventory.
-        for paths in (ORIGINAL, REVISION):
+        for paths in (ORIGINAL, REVISION, RESTYLED):
             for value in ("", " ", None, 12, []):
                 content = content_fixture(paths)
                 content["figures"][1]["caption"] = value
@@ -187,7 +201,7 @@ class PaperFigureInventoryTests(unittest.TestCase):
         with patch.object(build_paper, "PAPER_ROOT", paper_root):
             for name in ("within-cell-paired-means.pdf", "primary-monthly-paired-means.pdf",
                          "primary-resampling-ranges.pdf", "revision-retrieval-contrasts.pdf",
-                         "revision-retrieval-monthly.pdf"):
+                         "revision-retrieval-monthly.pdf", "revision-original-contrasts.pdf"):
                 path = paper_root / "figures" / name
                 with self.subTest(path=name), self.assertRaisesRegex(
                         build_paper.PaperBuildError, "^OUTPUT_IS_SOURCE_FIGURE$"):
@@ -201,7 +215,7 @@ class PaperFigureInventoryTests(unittest.TestCase):
         with patch.object(build_paper, "PAPER_ROOT", paper_root):
             for name in ("within-cell-paired-means.pdf", "primary-monthly-paired-means.pdf",
                          "primary-resampling-ranges.pdf", "revision-retrieval-contrasts.pdf",
-                         "revision-retrieval-monthly.pdf"):
+                         "revision-retrieval-monthly.pdf", "revision-original-contrasts.pdf"):
                 alias = paper_root / "figures" / ".." / "figures" / name
                 with self.subTest(path=name), self.assertRaisesRegex(
                         build_paper.PaperBuildError, "^OUTPUT_IS_SOURCE_FIGURE$"):
@@ -225,7 +239,8 @@ class PaperFigureInventoryTests(unittest.TestCase):
                 ("primary-monthly-paired-means.pdf", b"OLDMONTH"),
                 ("primary-resampling-ranges.pdf", b"OLDRANGE"),
                 ("revision-retrieval-contrasts.pdf", b"NEWCONTRAST"),
-                ("revision-retrieval-monthly.pdf", b"NEWMONTH")):
+                ("revision-retrieval-monthly.pdf", b"NEWMONTH"),
+                ("revision-original-contrasts.pdf", b"RESTYLED")):
             (paper_root / "figures" / name).write_bytes(sentinel)
         self.content_path.write_text(json.dumps(content_fixture(paths)), encoding="utf-8")
         output = self.folder / "synthetic-assembled-output.bin"
@@ -248,6 +263,10 @@ class PaperFigureInventoryTests(unittest.TestCase):
     def test_builder_appends_the_revision_inventory_in_order(self):
         # Catches retaining the old hardcoded append paths after accepting revisions.
         self.assertEqual(self.run_synthetic_build(REVISION), b"BODY\nWITHIN\nNEWCONTRAST\nNEWMONTH")
+
+    def test_builder_appends_restyled_inventory_in_order(self):
+        # Catches accepting a new path while silently appending the old first figure.
+        self.assertEqual(self.run_synthetic_build(RESTYLED), b"BODY\nRESTYLED\nNEWCONTRAST\nNEWMONTH")
 
 
 if __name__ == "__main__":

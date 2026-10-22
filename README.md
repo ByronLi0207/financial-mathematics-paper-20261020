@@ -37,6 +37,7 @@ The closest empirical lineage is [Wisniewski, Lindsay and Lindsay (2020)](https:
 - `revision_selection.py`, `run_revision_selection.py`: fixed historical selection and the separately frozen extension runner.
 - `test_data.py`, `test_core.py`, `test_report.py`, `test_runner.py`, `test_revision_selection.py`, `test_revision_runner.py`: scientific and runner checks using synthetic cases.
 - `build_revision_figures.py`, `test_revision_figures.py`: aggregate-only construction and validation of the two new vector figures.
+- `build_original_comparison_figure.py`, `test_original_comparison_figure.py`: aggregate-only restyling and checks for all seven original paired means.
 - `build_paper.py`, `build_tex.py`, `test_paper_figure_inventory.py`, `test_paper_metadata.py`: document rebuilding and bounded figure-inventory/metadata checks.
 - [Working-paper folder](manuscript/working-paper/): paper, source, structured text, approved figures and document verification.
 
@@ -60,7 +61,7 @@ The observed rights label is “Data files © Original Authors”; raw redistrib
 
 The recorded environment is CPython 3.12.14, NumPy 2.3.5 and ReportLab 4.4.9 on macOS arm64. Document assembly additionally uses pypdf 6.10.0. The two requirement files record the existing versions. Use an environment where these are available; the resource monitor is macOS-specific and stops on unsupported platforms. No software was installed for this study.
 
-The combined suite passed **160 tests** before the final figure-footer wording edit; the **12 targeted figure tests** passed again afterward. The combined suite included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 8.164 seconds by unittest's clock; the separate process measurement was 8.356 seconds with child maximum RSS 106,053,632 bytes. These are validation measurements, not financial experiment measurements.
+After the original comparison was restyled and its exact figure inventory added, the combined suite passed **171 tests**. It included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 8.467 seconds by unittest's clock; the separate process measurement was 8.729 seconds with child maximum RSS 113,852,416 bytes. These are validation measurements, not financial experiment measurements.
 
 From the repository root:
 
@@ -106,6 +107,7 @@ Document-only commands refuse to overwrite existing outputs:
 python3 -B build_tex.py --output .scratch/main-rebuilt.tex
 python3 -B build_paper.py --output .scratch/paper-rebuilt.pdf
 python3 -B build_revision_figures.py --output .scratch/revision-figure-rebuild-01
+python3 -B build_original_comparison_figure.py --output .scratch/revision-figure-original-rebuild-01
 ```
 
-The PDF builder reads only approved text and one of two exact three-figure inventories. Its body requires the four existing macOS Times New Roman files under `/System/Library/Fonts/Supplemental/`; missing fonts stop the build, and font files are not distributed. The two new standalone vector figures use built-in Helvetica and read only fixed accepted aggregates. These document commands do not recalculate financial experiments. The three original scientific figures remain available, with the first retained in the revised paper alongside the two new exploratory figures.
+The PDF builder reads only approved text and one of three exact three-figure inventories: original, earlier revision, or current restyled revision. Its body requires the four existing macOS Times New Roman files under `/System/Library/Fonts/Supplemental/`; missing fonts stop the build, and font files are not distributed. All three current standalone vector figures use built-in Helvetica and read only fixed accepted aggregates. The original-comparison renderer pins the original run manifest and paired table; the retrieval renderer pins the separately accepted extension aggregates. These document commands do not recalculate financial experiments. The three original scientific figure files remain unchanged and available. The current first figure restyles all seven original paired means, including the small positive tau=.90 difference, with direct signed values rounded to six decimal USD millions for display.
