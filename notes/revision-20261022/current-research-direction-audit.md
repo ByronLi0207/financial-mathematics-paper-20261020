@@ -1,6 +1,6 @@
 # Current scientific direction and contribution audit
 
-22 October 2026. This review concerns the current 22-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `10144b8fea9bc30eec8972e769eba0d6e4ae3c8090e974487b2a0939ac0bb8d1`; supplied PDF SHA-256: `ee43452e968babc5e49a8787eb1e74559a4ff762abd396153531d2f1a3959fb5`. The source has 26 references. Its latest first-abstract-sentence clarification explicitly names the0.95target quantile; all fourteen sections, references and results are unchanged. This is a scientific assessment of the existing evidence, not a journal decision or an additional forecast fit. Earlier reviews identify their older manuscript hashes and remain historical records.
+22 October 2026. This review concerns the current 22-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `97fdd4aec1125dfa8b3098a78c821600d57b741ef3cc42ed49a67a63f193d3e3`; supplied PDF SHA-256: `6a862837555975bef1c31236cd56130951253aeebf18506b3fa90500ea1f430e`. The source has 26 references. The final wording clarifications name the0.95abstract target and the KNN coordinate-division-before-squared-distance operation. All scientific specifications, references and results are unchanged. This is a scientific assessment of the existing evidence, not a journal decision or an additional forecast fit. Earlier reviews identify their older manuscript hashes and remain historical records.
 
 ## Overall direction
 
