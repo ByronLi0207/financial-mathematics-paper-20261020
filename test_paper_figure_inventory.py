@@ -27,6 +27,11 @@ RESTYLED = (
     "figures/revision-retrieval-contrasts.pdf",
     "figures/revision-retrieval-monthly.pdf",
 )
+CONDITIONAL = (
+    "figures/conditional-common-history.pdf",
+    "figures/conditional-primary-tradeoffs.pdf",
+    "figures/conditional-annual-primary.pdf",
+)
 
 
 def content_fixture(paths=ORIGINAL):
@@ -120,6 +125,11 @@ class PaperFigureInventoryTests(unittest.TestCase):
                 content = content_fixture(paths)
                 self.assertEqual(self.load(content), content)
 
+    def test_complete_conditional_inventory_is_accepted_and_archives_still_work(self):
+        for paths in (ORIGINAL, REVISION, RESTYLED, CONDITIONAL):
+            with self.subTest(paths=paths):
+                self.assertEqual(self.load(content_fixture(paths)), content_fixture(paths))
+
     def test_mixed_original_and_revision_paths_are_rejected(self):
         # Catches position-wise allowlists that permit unapproved mixed inventories.
         for paths in ((ORIGINAL[0], ORIGINAL[1], REVISION[2]),
@@ -132,7 +142,7 @@ class PaperFigureInventoryTests(unittest.TestCase):
 
     def test_reordered_approved_figures_are_rejected(self):
         # Catches set membership replacing the required complete ordered tuple.
-        for paths in (ORIGINAL, REVISION, RESTYLED):
+        for paths in (ORIGINAL, REVISION, RESTYLED, CONDITIONAL):
             for reordered in ((paths[1], paths[0], paths[2]),
                               (paths[0], paths[2], paths[1])):
                 with self.subTest(paths=reordered), self.assertRaisesRegex(
@@ -177,7 +187,7 @@ class PaperFigureInventoryTests(unittest.TestCase):
 
     def test_invalid_captions_are_rejected_for_both_approved_inventories(self):
         # Catches bypassing existing caption validation for the added inventory.
-        for paths in (ORIGINAL, REVISION, RESTYLED):
+        for paths in (ORIGINAL, REVISION, RESTYLED, CONDITIONAL):
             for value in ("", " ", None, 12, []):
                 content = content_fixture(paths)
                 content["figures"][1]["caption"] = value
@@ -207,6 +217,14 @@ class PaperFigureInventoryTests(unittest.TestCase):
                         build_paper.PaperBuildError, "^OUTPUT_IS_SOURCE_FIGURE$"):
                     build_paper.check_output(path)
                 self.assertFalse(path.exists())
+
+    def test_absent_conditional_figure_outputs_and_aliases_are_protected(self):
+        paper_root=self.folder/"paper"; (paper_root/"figures").mkdir(parents=True)
+        with patch.object(build_paper,"PAPER_ROOT",paper_root):
+            for relative in CONDITIONAL:
+                for path in (paper_root/relative,paper_root/"figures"/".."/relative):
+                    with self.subTest(path=path),self.assertRaisesRegex(build_paper.PaperBuildError,"^OUTPUT_IS_SOURCE_FIGURE$"):
+                        build_paper.check_output(path)
 
     def test_absent_canonical_input_aliases_are_protected_as_outputs(self):
         # Lexical parent segments must not bypass protection of missing inputs.
@@ -240,7 +258,10 @@ class PaperFigureInventoryTests(unittest.TestCase):
                 ("primary-resampling-ranges.pdf", b"OLDRANGE"),
                 ("revision-retrieval-contrasts.pdf", b"NEWCONTRAST"),
                 ("revision-retrieval-monthly.pdf", b"NEWMONTH"),
-                ("revision-original-contrasts.pdf", b"RESTYLED")):
+                ("revision-original-contrasts.pdf", b"RESTYLED"),
+                ("conditional-common-history.pdf", b"CONDITIONAL"),
+                ("conditional-primary-tradeoffs.pdf", b"TRADEOFFS"),
+                ("conditional-annual-primary.pdf", b"ANNUAL")):
             (paper_root / "figures" / name).write_bytes(sentinel)
         self.content_path.write_text(json.dumps(content_fixture(paths)), encoding="utf-8")
         output = self.folder / "synthetic-assembled-output.bin"
@@ -267,6 +288,9 @@ class PaperFigureInventoryTests(unittest.TestCase):
     def test_builder_appends_restyled_inventory_in_order(self):
         # Catches accepting a new path while silently appending the old first figure.
         self.assertEqual(self.run_synthetic_build(RESTYLED), b"BODY\nRESTYLED\nNEWCONTRAST\nNEWMONTH")
+
+    def test_builder_appends_conditional_inventory_in_order(self):
+        self.assertEqual(self.run_synthetic_build(CONDITIONAL),b"BODY\nCONDITIONAL\nTRADEOFFS\nANNUAL")
 
 
 if __name__ == "__main__":
