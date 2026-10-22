@@ -1,6 +1,6 @@
 # Current scientific direction and contribution audit
 
-22 October 2026. This review concerns the current 21-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `3be50d2ee13f1a74bb290480cfc971fde1ca75b50952134cd3e6e0403d02c95c`; supplied PDF SHA-256: `f9762a7fdf3a8728456b3173557506a21a837276fe47e966adc2be0c2d4237d0`. The source has 25 references. This is a scientific assessment of the existing evidence, not a journal decision or an additional forecast fit. Earlier reviews identify their older manuscript hashes and remain historical records.
+22 October 2026. This review concerns the current 21-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `3ef15251b0febd71e28584316d632d471c477c37abb531bd3f4d9c05b32583a6`; supplied PDF SHA-256: `b6216fb472ec1a38f0071df9a16c69b7201694e3c14cdedb8198335d99d88de4`. The source has 25 references. This is a scientific assessment of the existing evidence, not a journal decision or an additional forecast fit. Earlier reviews identify their older manuscript hashes and remain historical records.
 
 ## Overall direction
 
