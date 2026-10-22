@@ -1,8 +1,7 @@
-% Reusable companion for the fourteen references in paper-content.json.
-% Keys match the structured manuscript's reference IDs.
-% The supplied manuscript build uses its embedded reference text, not this file.
-% Consulted editions and actual reading scopes are recorded in paper-evidence-map.md.
-% Journal issue years are retained separately from draft and platform dates.
+% Companion records for the22references in paper-content.json.
+% Keys and order match the structured manuscript.
+% The supplied paper build uses embedded reference text, not this catalog.
+% Actual selected reading scopes and consulted editions remain distinct.
 
 @article{avellaneda2008,
   author = {Avellaneda, M. and Stoikov, S.},
@@ -45,6 +44,13 @@
   note = {Consulted body: arXiv version 2, 31 May 2010; final-body equivalence is unverified}
 }
 
+@misc{fr2004,
+  author = {{Board of Governors of the Federal Reserve System}},
+  title = {{FR 2004: Government Securities Dealer Reports}},
+  url = {https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2004},
+  note = {Official reporting framework consulted 22 October 2026; historical as-released series was not reconstructed}
+}
+
 @article{boudoukh2004,
   author = {Boudoukh, J. and Richardson, M. and Stanton, R. and Whitelaw, R. F.},
   title = {{MaxVaR: Long-Horizon Value at Risk in a Mark-to-Market Environment}},
@@ -55,6 +61,39 @@
   pages = {14--19},
   url = {https://pages.stern.nyu.edu/~rwhitela/papers/maxvar.pdf},
   note = {Consulted nine-page author manuscript; cover undated and final-body equivalence unverified. Journal pagination follows the coauthor's institutional publication list}
+}
+
+@article{boyd2011,
+  author = {Boyd, Stephen and Parikh, Neal and Chu, Eric and Peleato, Borja and Eckstein, Jonathan},
+  title = {{Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers}},
+  journal = {Foundations and Trends in Machine Learning},
+  year = {2011},
+  volume = {3},
+  number = {1},
+  pages = {1--122},
+  doi = {10.1561/2200000016},
+  url = {https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf},
+  note = {Selected passages of the author-hosted PDF consulted; not a complete proof audit}
+}
+
+@misc{dataset,
+  author = {{davidlindsay1979}},
+  title = {{Net Position Time Series Dataset}},
+  howpublished = {Kaggle, version 2},
+  url = {https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset},
+  note = {Accepted one-hour source snapshot identified in the manuscript and replication manifests; raw redistribution permission remains unverified. No publication year is assigned here}
+}
+
+@techreport{duffie2023,
+  author = {Duffie, Darrell and Fleming, Michael and Keane, Frank and Nelson, Claire and Shachar, Or and Van Tassel, Peter},
+  title = {{Dealer Capacity and U.S. Treasury Market Functionality}},
+  institution = {Federal Reserve Bank of New York},
+  type = {Staff Report},
+  number = {1070},
+  year = {2023},
+  doi = {10.59576/sr.1070},
+  url = {https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1070.pdf},
+  note = {August 2023, revised October 2023. Selected passages consulted}
 }
 
 @article{engle2004,
@@ -70,6 +109,14 @@
   note = {Author-hosted published journal-layout PDF consulted}
 }
 
+@misc{nyfeddata,
+  author = {{Federal Reserve Bank of New York}},
+  title = {{Primary Dealer Statistics: PDPOSGS-B}},
+  year = {2026},
+  url = {https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics},
+  note = {Source route https://markets.newyorkfed.org/api/pd/get/PDPOSGS-B.csv; accepted downloaded snapshot checked 22 October 2026. Copyright 2026 Federal Reserve Bank of New York; content subject to the Terms of Use at newyorkfed.org. Raw observations are not redistributed}
+}
+
 @article{gneiting2011,
   author = {Gneiting, T.},
   title = {{Making and Evaluating Point Forecasts}},
@@ -80,16 +127,6 @@
   pages = {746--762},
   doi = {10.1198/jasa.2011.r10138},
   url = {https://doi.org/10.1198/jasa.2011.r10138}
-}
-
-@mastersthesis{hoogen2017,
-  author = {van den Hoogen, S.},
-  title = {{Intraday liquidity risk estimation using transaction data: an extreme value theory approach}},
-  school = {Delft University of Technology},
-  type = {MSc Applied Mathematics thesis},
-  year = {2017},
-  month = {August},
-  url = {https://repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f?preview=1}
 }
 
 @article{hull1998,
@@ -105,6 +142,19 @@
   note = {Consulted body: the author's October 1998 manuscript; final-body equivalence is unverified}
 }
 
+@article{koenker1978,
+  author = {Koenker, Roger and Bassett, Jr., Gilbert},
+  title = {{Regression Quantiles}},
+  journal = {Econometrica},
+  year = {1978},
+  volume = {46},
+  number = {1},
+  pages = {33--50},
+  doi = {10.2307/1913643},
+  url = {https://people.eecs.berkeley.edu/~jordan/sail/readings/koenker-bassett.pdf},
+  note = {Scanned original reading copy consulted, selected printed pages33--38; no complete asymptotic proof audit}
+}
+
 @misc{liao2005,
   author = {Liao, J. and Theodosopoulos, T. V.},
   title = {{Study on optimal timing of mark-to-market for contingent credit risk control}},
@@ -113,6 +163,29 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/math/0506077v1},
   note = {Version 1, 4 June 2005. The PDF names Theodore V. Theodosopoulos; arXiv metadata uses Ted Theodosopoulos. No journal edition is asserted}
+}
+
+@article{meinshausen2006,
+  author = {Meinshausen, Nicolai},
+  title = {{Quantile Regression Forests}},
+  journal = {Journal of Machine Learning Research},
+  year = {2006},
+  volume = {7},
+  pages = {983--999},
+  url = {https://www.jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf},
+  note = {Selected original article passages consulted; not implemented as a baseline in this study}
+}
+
+@techreport{petrunia2019,
+  author = {Petrunia, Robert and Sabetti, Leonard and Voia, Marcel},
+  title = {{Tail Risk in the Automated Clearing Settlement System (ACSS)}},
+  institution = {Payments Canada},
+  type = {Discussion Paper},
+  number = {7},
+  year = {2019},
+  month = {January},
+  url = {https://www.paiements.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf},
+  note = {January 2019 update of September 2018 original; exact unverified journal edition is not substituted}
 }
 
 @article{politis1994,
@@ -125,6 +198,19 @@
   pages = {1303--1313},
   doi = {10.1080/01621459.1994.10476870},
   url = {https://doi.org/10.1080/01621459.1994.10476870}
+}
+
+@article{sozen2026,
+  author = {S{\"o}zen, {\c C}a{\u g}lar},
+  title = {{Monotone forward expected shortfall paths with joint conformal calibration}},
+  journal = {AIMS Mathematics},
+  year = {2026},
+  volume = {11},
+  number = {9},
+  pages = {27665--27688},
+  doi = {10.3934/math.20261106},
+  url = {https://www.aimspress.com/article/doi/10.3934/math.20261106},
+  note = {Published 1 September 2026; selected original passages consulted}
 }
 
 @inproceedings{wisniewski2020,
@@ -161,10 +247,13 @@
   note = {Official proceedings body consulted; no DOI assigned here}
 }
 
-@misc{dataset,
-  author = {{davidlindsay1979}},
-  title = {{Net Position Time Series Dataset}},
-  howpublished = {Kaggle, version 2},
-  url = {https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset},
-  note = {Accepted one-hour source snapshot identified in the manuscript and replication manifests; raw redistribution permission remains unverified. No publication year is assigned here}
+@misc{zhou2024,
+  author = {Zhou, Yanfei and Lindemann, Lars and Sesia, Matteo},
+  title = {{Conformalized Adaptive Forecasting of Heterogeneous Trajectories}},
+  year = {2024},
+  eprint = {2402.09623v2},
+  archivePrefix = {arXiv},
+  doi = {10.48550/arXiv.2402.09623},
+  url = {https://arxiv.org/abs/2402.09623v2},
+  note = {Version2,15May2024; this fixed preprint is the consulted edition; no journal venue is asserted}
 }
