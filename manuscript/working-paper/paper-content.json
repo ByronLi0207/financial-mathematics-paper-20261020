@@ -219,7 +219,7 @@
         },
         {
           "type": "p",
-          "html": "For KNN, distances are squared Euclidean distances between training-standardized coordinates. Each of 25 level coordinates has weight 1/5; each coordinate of the RMS, hour and weekday pairs has weight 1/sqrt(2); magnitude and gap have weight one. Exact distance ties favor more recent training origins, and selected paired rows retain chronological order. Plain KNN reports B+Q(k selected G). Scaled KNN divides each selected historical G by its own past short RMS, stabilized below by 10<super>−6</super> a(r), and multiplies the resulting quantile by the correspondingly stabilized query RMS. The stabilizer is fixed within the refit block; no future query outcome or scale is used. This is response normalization, not a fitted dynamic path simulation."
+          "html": "For KNN, first divide each of the 25 training-standardized level coordinates by 5 and each coordinate of the RMS, hour and weekday pairs by sqrt(2); leave magnitude and gap unchanged. Compute squared Euclidean distances between the resulting coordinates. Exact distance ties favor more recent training origins, and selected paired rows retain chronological order. Plain KNN reports B+Q(k selected G). Scaled KNN divides each selected historical G by its own past short RMS, stabilized below by 10<super>−6</super> a(r), and multiplies the resulting quantile by the correspondingly stabilized query RMS. The stabilizer is fixed within the refit block; no future query outcome or scale is used. This is response normalization, not a fitted dynamic path simulation."
         },
         {
           "type": "equation",
