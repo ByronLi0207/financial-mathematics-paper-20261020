@@ -9,7 +9,7 @@ The comparison uses H=6 and 24 subsequent records, tau=19/20, 720 fully complete
 | [summary.csv](summary.csv) | 30 | Every horizon, historical set and representation; loss, capacity, allowance, strict breaches, overrun, conditional denominator and unused allowance |
 | [geometry.csv](geometry.csv) | 10 | Both anchor radii, exact F/S equality, mean absolute gap, selected age and arithmetic diagnostics |
 | [comparisons.csv](comparisons.csv) | 22 | All 12 nearest-minus-recent and 10 same-set F-minus-S paired means |
-| [monthly.csv](monthly.csv) | 26 | All 13 months at both horizons for the primary nearest360K-minus-recent360K comparison |
+| [monthly.csv](monthly.csv) | 26 | All 13 months for nearest360K-minus-recent360K at H6 (primary) and H24 (sensitivity) |
 | [manifest.json](manifest.json) | — | Accepted source/code/specification/output identities, checks and measured resources |
 
 ## Units and column meanings
@@ -36,7 +36,7 @@ An empty CSV field encodes null, not an observed zero. A defined conditional mea
 
 ## Observed results and execution
 
-The fixed primary H6 nearest360K-minus-recent360K mean is **−USD277,704.4657473585**, a **31.8280%** reduction relative to recent360K loss. All 12 matched retrieval score contrasts are negative. The reference matters: no added configuration beats the better original full720 F/S rule at either horizon. S has more strict breaches and greater mean positive overrun in all four matched retrieval comparisons. All four matched F comparisons reduce breach counts and mean positive overrun, while increasing conditional mean overrun on their own breach sets. Primary K reduces breaches and unconditional overrun but has a larger conditional mean overrun on a different event set. January 2016 is adverse for the primary monthly contrast at both horizons. The complete tables preserve these tradeoffs.
+The fixed primary H6 nearest360K-minus-recent360K mean is **−USD277,704.4657473585**, a **31.8280%** reduction relative to recent360K loss. All 12 matched retrieval score contrasts are negative. The reference matters: no added configuration beats the better original full720 F/S rule at either horizon. S has more strict breaches and greater mean positive overrun in all four matched retrieval comparisons. All four matched F comparisons reduce breach counts and mean positive overrun, while increasing conditional mean overrun on their own breach sets. Primary K reduces breaches and unconditional overrun but has a larger conditional mean overrun on a different event set. January 2016 is adverse for nearest360K-minus-recent360K at both horizons. The complete tables preserve these tradeoffs. Only H6 is the fixed primary comparison; H24 is the specified sensitivity comparison. The frozen specification's `monthly_primary_rows` field names the 26-row display inventory across both horizons, rather than 26 primary comparisons.
 
 ### Components of the two fixed primary score differences
 
