@@ -2,7 +2,7 @@
 
 The working paper applies established quantile and historical-response constructions to the largest absolute sampled net position over the current and next H records. Its closest same-source predecessor already forecasts signed position endpoints with nearest-neighbor and other conditional regression engines. The substantive application change is the peak response, its known current floor and the completion time of its labels. Those changes create a different comparison; they do not create a new quantile estimator or establish predictive superiority.
 
-The [paper source evidence map](paper-evidence-map.md) identifies the twelve entries actually cited in the manuscript. This companion compares additional method routes examined during the revision. It records what could be transferred and what would still require a new implementation, an applicable stochastic assumption or independent financial evidence. The 2026 items are recent preprints; no popularity or priority ranking is inferred from their dates.
+The [paper source evidence map](paper-evidence-map.md) identifies the fourteen entries actually cited in the manuscript. This companion compares eight method and evaluation works examined during the revision, including the CAViaR and SPCI routes now cited in the manuscript and six other neighbors. It records what could be transferred and what would still require a new implementation, an applicable stochastic assumption or independent financial evidence. The 2026 items are recent preprints; no popularity or priority ranking is inferred from their dates.
 
 ## The common financial target and information rule
 
