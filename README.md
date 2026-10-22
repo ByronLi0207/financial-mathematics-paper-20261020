@@ -81,6 +81,14 @@ This creates a new owned attempt and executes 24 validation,24 evaluation and 8 
 
 The original accepted financial workers requested one numerical thread, observed at most one OS thread in their recorded snapshots and used less than 70 MB process RSS, with maximum phase duration 15.83 seconds. Internal phase stops are 540 seconds/1.5 GiB, with a 600-second alarm; the standing upper resource limits are 2 GiB RSS,2 observed threads,100 MiBraw sources and 25 MiBper download. These are process observations and budgets, not an OS memory sandbox or research hours. No installation, GPU, broad parameter search or persistent service is needed. A full replay completed in 129.50 seconds: all 56 phases passed, the 24 selected status/parameter cells matched and all six exported aggregate CSVs were byte-identical to the archive. Maximum worker RSS was 68,911,104 bytes and one thread was observed. The [compact replay verification](results/revision-20261022/reproduction-check-20261022.json) retains all six table comparisons and the 56 new phase identities/resources; all 72 validation candidate scalar rows also matched. This is a computation replay, not independent scientific replication.
 
+The supplementary diagnostic replay then uses:
+
+```bash
+python3 -B reproduce_conditional_diagnostics.py --replication-dir .scratch/revision-20261022/replication-NEW_UNIQUE_ID
+```
+
+It writes inside that successful attempt, preserving all earlier files. The [actual diagnostic replay](results/revision-20261022/diagnostic-reproduction-check-20261022.json) reproduced both 90/45-row diagnostic tables byte-for-byte without reading raw sources or refitting models; peak RSS was 78.32 MB. These checks remain descriptive and change no forecasts.
+
 Document rebuilding is separate:
 
 ```bash
