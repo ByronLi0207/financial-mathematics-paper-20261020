@@ -1,4 +1,4 @@
-# Mature methods for sampled inventory peak forecasting
+# Mature methods for sampled net-position peak forecasting
 
 The working paper applies established quantile and historical-response constructions to the largest absolute sampled net position over the current and next H records. Its closest same-source predecessor already forecasts signed position endpoints with nearest-neighbor and other conditional regression engines. The substantive application change is the peak response, its known current floor and the completion time of its labels. Those changes create a different comparison; they do not create a new quantile estimator or establish predictive superiority.
 
@@ -10,7 +10,7 @@ Let N_t be the observed signed source-reported position, B_t=abs(N_t), P_t the m
 
 Any transferred fitted model would therefore need historical features formed with the information available at their own issue origins, completed training and calibration responses, and a declared update schedule. A previously issued forecast is known before its horizon finishes; its final residual or successful nonbreach generally is not. The current rule also does not verify historical public-release timing or a live data vintage.
 
-The existing F rule has the mature residual-quantile form B_t plus a historical quantile of G. S instead reanchors raw observed increment paths at the current signed position. The extension changes membership of historical episodes using one signed starting position, then compares three response constructions. Conditional regression, residual calibration, scenario transformation and historical membership are distinct operations. None can be represented by another operation's name alone.
+The existing F rule has the mature residual-quantile form B_t plus a historical quantile of G. S instead reanchors raw observed increment paths at the current signed position. The third evaluated rule, K, reports the larger of B_t and a historical quantile of native peaks P_i. The extension changes membership of historical episodes using one signed starting position, then compares three response constructions. Conditional regression, residual calibration, scenario transformation and historical membership are distinct operations. None can be represented by another operation's name alone.
 
 ## Conditional modeling and calibration routes
 
