@@ -1,0 +1,19 @@
+# Trajectory envelopes, sampled peaks and distinct coverage events
+
+22 October2026, direction-first selected reading and an elementary scope check. No new financial fit, calibration, result or coverage assertion is made here.
+
+Root revisited Zhou, Lindemann and Sesia, *Conformalized Adaptive Forecasting of Heterogeneous Trajectories*, [arXiv2402.09623v2](https://arxiv.org/html/2402.09623v2),15May2024: §§2.1/3.3–3.4 and AppendixA6.1–A6.3, equationsA15–A21 and TheoremA1/proof. The result assumes exchangeable calibration/new trajectories; internal temporal dependence is allowed. Its multi-step construction uses delayed observed errors. Separate tuning/calibration prevents unrestricted reuse of calibration outcomes for choosing a learning rate. This is selected HTML reading, not full-article or code replication. CAFHT is unexecuted in this repository.
+
+The following implications are our own elementary checks, not a new forecasting method or a claimed extension of that theorem. Suppose that, at one issue t, intervals [l_h,u_h] have already been constructed for h=1,...,H. Define a scalar report
+
+`C_t=max(|N_t|, max_h max(|l_h|,|u_h|))`.
+
+If every future sampled N_(t+h) belongs to its corresponding interval, then its absolute value is no larger than the largest absolute endpoint. Hence the whole-path inclusion event implies `P_t,H<=C_t`. Any established lower probability bound on that path-inclusion event therefore also lower-bounds the peak-report coverage event, under exactly the assumptions and randomness used for the original probability statement. This deterministic transformation does not manufacture the premise.
+
+The converse fails even at H1. With N_t=0, interval[1,2] and future value−1, the sampled peak1 is below C_t=2, although the future value is outside its interval. A scalar peak report discards sign and coordinate information. Its empirical breach fraction cannot validate a full trajectory band, a directional cash balance, or the original calibration theorem.
+
+An additional distinction concerns the issue index. Simultaneous validity within one issued H-step path differs from simultaneous validity across every issued forecast over an evaluation archive. Individual95% statements do not imply a95% bound for their intersection; for example, two independent artificial95% events intersect with probability90.25%. This example is logical, not an assumption about our overlapping financial labels. Neither taking a maximum over horizons nor taking an H+1 sparse issue grid proves joint exchangeability, independence or conditional validity across issues.
+
+For the actual archive, removing overlap of outcome observations can simplify one mechanical source of dependence but does not remove common regimes, parameter estimation, refitting or serial dependence. Our sparse-grid tables therefore remain descriptive. Their lower origin counts also do not identify an effective sample size. The current downloaded-vintage Treasury aggregate and the already inspected FX archive do not supply exchangeable independent trajectories by declaration.
+
+This explains why another modern path-calibration citation cannot by itself upgrade the present working paper. A future implementation would need a declared training/calibration/selection unit, label-availability timing and a defensible population or dependent-data theorem. Applying a familiar maximum transformation to familiar envelopes would also remain an application unless an additional substantive contribution were established. The present closed AR replay question changes path propagation and measures realized loss; it supplies none of those probabilistic premises.
