@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "status": "AR1_FRESH_DIAGNOSTIC_INDEPENDENT_READBACK_PASS",
+  "started_utc": "2026-10-22T14:10:49.068419+00:00",
+  "created_utc": "2026-10-22T14:10:49.210913+00:00",
+  "scope": "Independent Python scalar loops over all eight private trace vectors and all twelve diagnostic CSV rows; NumPy only decodes typed NPZ arrays",
+  "replication_dir": ".scratch/revision-20261022/replication-root-check-20261022-01",
+  "ar1_attempt_id": "financial-fresh-20261022-02",
+  "reproduction_freeze_sha256": "5396b96307c49a8f578244c8fdc50ba813eae3ce54f8b0d66aefa83fc7a8b633",
+  "reproduction_audit_sha256": "21c05250a78790009d57188258025e710e7df907c4ffb18f5352cac2c46a8592",
+  "retained_diagnostic_freeze_sha256": "505024752bb38194132ce7d06db0ee781f19846cd622037bc8ca8de5c0e8e9dd",
+  "ar1_manifest_sha256": "709b5418f37f0abca7e4d9834aa2f3a865b6e37bb79969209aaf577a74139876",
+  "accepted_fresh_v2_readback": {
+    "path": "state/revision-20261022/ar1-fresh-output-inventory-verification.json",
+    "bytes": 2008,
+    "sha256": "9cfe4a471d27378d973dc83cef4e27b816a09825a13aa8c93b076ee87256b9ae"
+  },
+  "input_binding_sha256": "24fab33a00266683ba6e03499ac2096831b401d829aec353de75a386c240be52",
+  "new_selection_sha256": "05b9714aa689875e3b946210075bb8bbf5f23e795e28f9410b6b259b5230b1eb",
+  "frozen_files_checked": 54,
+  "consumed_file_snapshots_checked": 94,
+  "all_consumed_snapshots_unchanged": true,
+  "exact_manifest_readback_context_chain_checked": true,
+  "exact_inventory_labels_headers_checked": true,
+  "floor_rows_checked": 8,
+  "horizon_rows_checked": 4,
+  "floor_fields_checked": 168,
+  "horizon_fields_checked": 68,
+  "total_public_fields_checked": 236,
+  "floor_field_names": [
+    "source",
+    "native_unit",
+    "horizon",
+    "window",
+    "method",
+    "parameter",
+    "status",
+    "first_source_index",
+    "last_source_index",
+    "origin_count",
+    "zero_headroom_outcome_count",
+    "floor_binding_count",
+    "floor_binding_rate",
+    "floor_binding_breach_count",
+    "floor_binding_breach_denominator",
+    "floor_binding_breach_rate",
+    "floor_binding_undefined_reason",
+    "other_issue_breach_count",
+    "other_issue_breach_denominator",
+    "other_issue_breach_rate",
+    "other_issue_undefined_reason"
+  ],
+  "horizon_field_names": [
+    "source",
+    "native_unit",
+    "window",
+    "method",
+    "parameter_h6",
+    "parameter_h24",
+    "status",
+    "first_source_index",
+    "last_source_index",
+    "origin_count",
+    "short_horizon",
+    "long_horizon",
+    "strict_crossing_count",
+    "strict_crossing_rate",
+    "maximum_positive_crossing",
+    "mean_positive_crossing",
+    "target_order_violation_count"
+  ],
+  "vector_rows_checked": 27608,
+  "paired_origin_rows_checked": 13804,
+  "per_row_scope": [
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 720,
+      "fields_checked": 21,
+      "origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 2880,
+      "fields_checked": 21,
+      "origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 720,
+      "fields_checked": 21,
+      "origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 2880,
+      "fields_checked": 21,
+      "origin_count": 6625
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 52,
+      "fields_checked": 21,
+      "origin_count": 277
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 260,
+      "fields_checked": 21,
+      "origin_count": 277
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 52,
+      "fields_checked": 21,
+      "origin_count": 277
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 260,
+      "fields_checked": 21,
+      "origin_count": 277
+    },
+    {
+      "source": "fx_hourly",
+      "window": 720,
+      "fields_checked": 17,
+      "origin_count": 6625,
+      "short_horizon": 6,
+      "long_horizon": 24
+    },
+    {
+      "source": "fx_hourly",
+      "window": 2880,
+      "fields_checked": 17,
+      "origin_count": 6625,
+      "short_horizon": 6,
+      "long_horizon": 24
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 52,
+      "fields_checked": 17,
+      "origin_count": 277,
+      "short_horizon": 6,
+      "long_horizon": 24
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 260,
+      "fields_checked": 17,
+      "origin_count": 277,
+      "short_horizon": 6,
+      "long_horizon": 24
+    }
+  ],
+  "all_complete_origin_refit_vectors_checked": true,
+  "all_summary_breach_counts_reconciled": true,
+  "all_paired_origins_floor_refit_vectors_equal": true,
+  "nested_target_order_violations": 0,
+  "exact_reference_csv_byte_agreement": true,
+  "comparison_receipt_checked_independently": true,
+  "mean_algorithm": "math.fsum of scalar max(C6-C24,0) divided by every origin; only this mean permits at most eight ULP for independent rounding",
+  "maximum_mean_absolute_rounding_difference": 0.0,
+  "exports": [
+    {
+      "path": "ar1-floor.csv",
+      "bytes": 1455,
+      "sha256": "805472de341ad2f632047387c271fe71a9b57b74417efaaedbaca9a5a973b661"
+    },
+    {
+      "path": "ar1-horizon.csv",
+      "bytes": 689,
+      "sha256": "eaa990221f464b8f52e612ddb6a504573c0f479ef725a769e6f04065c09ac07b"
+    }
+  ],
+  "prior_uncompleted_readback_attempt": {
+    "status": "STOPPED_BEFORE_RECEIPT",
+    "reason": "Independent script used other_issue_denominator instead of the actual public header other_issue_breach_denominator",
+    "correction": "Corrected the checking-script field name only and repeated the complete readback; no numerical outputs, forecasts or frozen files changed",
+    "prior_pass_receipt_written": false
+  },
+  "resource_observations": {
+    "elapsed_seconds": 0.1431683748960495,
+    "peak_rss_bytes": 42467328,
+    "requested_numerical_threads": 1,
+    "numerical_thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "maximum_observed_os_threads": null,
+    "os_thread_snapshot_count": 0,
+    "os_thread_probe_failures": 14,
+    "os_thread_measurement": "Intermittent ps -M snapshots, not continuous; one Python worker plus transient measurement subprocesses",
+    "measurement_boundary": "This independent inline readback including imports, identity checks, scalar work and final rereads, ending before exclusive receipt serialization/write; not model or prior-run resource usage",
+    "python_version": "3.12.14",
+    "numpy_version": "2.3.5"
+  },
+  "raw_sources_loaded": false,
+  "models_fitted": false,
+  "predictions_repaired": false,
+  "upstream_auditor_rerun": false,
+  "source_label_ols_replay_oracles_repeated": false,
+  "individual_vectors_public": false,
+  "implementation_scope": "Standalone inline Python in task execution transcript; no repository builder/adapter/kernel statistics imports"
+}
