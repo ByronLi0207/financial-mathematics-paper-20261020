@@ -21,6 +21,8 @@ The two headline signs persist under this particular control: matched long-histo
 
 ## Complete outputs and independent arithmetic
 
+The [pre-execution public-byte receipt](pre-execution-public-verification.json) records the actual17file comparisons and time before the added calculation.
+
 - [summary.csv](summary.csv): all16 I/F summaries, including loss, capacity, extra allowance, breaches, overrun and unused allowance.
 - [annual.csv](annual.csv): all64 issue-year summaries, with partial years preserved.
 - [nonoverlap.csv](nonoverlap.csv): all16 globally anchored H+1 grid summaries; disjoint windows do not imply independent observations.
