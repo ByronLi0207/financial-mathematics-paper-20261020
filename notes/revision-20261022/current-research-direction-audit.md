@@ -32,9 +32,9 @@ The original new conditional study preserves 72 validation candidates, 24 select
 
 The later AR comparison adds a genuinely dynamic scenario construction in eight fixed cells. With fitted coefficients fixed, its identity is
 
-\[
+```math
 M_{i,h}(x)=N_{i+h}+\phi^h(x-N_i),
-\]
+```
 
 with the issue value explicit at h0 and exact unit propagation reproducing the matched S arithmetic. It changes propagation of the starting difference without supplying new residual observations. It therefore isolates a well-defined construction question, but does not isolate the value of volatility filtering or identify a true mean-reverting law. The separately fitted horizon pools are not nested scenario sets; observed crossings are a report property, not a violation of the realized targets' ordering.
 

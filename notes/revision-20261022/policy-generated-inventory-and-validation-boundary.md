@@ -16,9 +16,9 @@ The current paper measures a passive historical response P from a source-reporte
 
 As conceptual notation only, let N^pi be the inventory resulting from policy pi in a specified market environment, and let
 
-\[
+```math
 P^\pi_{t,H}=\max_{0\le h\le H}|N^\pi_{t+h}|.
-\]
+```
 
 A forecast evaluated on one recorded measurement process does not by itself identify the distribution of P^pi after a new cap, quote or hedge rule is installed. This is not a new theorem or a claim that every policy change affects every market. It identifies the missing invariance/counterfactual assumption. A sufficiently justified exogenous-flow model, a defensible off-policy identification design, or a controlled prospective intervention could each support a specific further analysis; none has been established here.
 

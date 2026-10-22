@@ -10,27 +10,27 @@ No blocking mathematical or count-level implementation defect was found in the t
 
 The normalized uniform mixture is
 
-\[
+```math
 E_{n,k}=\frac1{1-\alpha}\int_\alpha^1
  (u/\alpha)^k\{(1-u)/(1-\alpha)\}^{n-k}\,du
 =\int_0^1(1+rv)^k(1-v)^{n-k}\,dv,
 \quad r=(1-\alpha)/\alpha.
-\]
+```
 
 Its positive expansion terms are
 
-\[
+```math
 a_j={k\choose j}r^j B(j+1,n-k+1),
 \quad a_0=\frac1{n-k+1},
 \quad \frac{a_{j+1}}{a_j}=\frac{(k-j)r}{n-k+j+2}.
-\]
+```
 
 This matches `mixture_evalue` lines 35–41 and the design recurrence exactly, including zero breaches, all breaches, and the empty product. At alpha 1/20, the stated positive integer formula
 
-\[
+```math
 E_{n,k}=\frac{\sum_{j=0}^k{n+1\choose j}19^{k-j}}
 {(n+1){n\choose k}}
-\]
+```
 
 is equivalent. The test file contains distinct signed-polynomial and integer-formula checks, as well as null-expectation fixtures; reading those tests is not a fresh execution result. Display rounding is correctly separated from exact comparisons.
 
@@ -38,9 +38,9 @@ is equivalent. The test file contains distinct signed-polynomial and integer-for
 
 Under the stated full issue-information null, the conditional expectation of a single factor is
 
-\[
+```math
 1+\frac{(u-\alpha)(q_t-\alpha)}{\alpha(1-\alpha)}\le1.
-\]
+```
 
 Actual-index residues modulo H+1 ensure that earlier factors within a phase have matured before the next issue. The production kernel uses actual origin indices, rejects non-increasing origins, retains every phase, and averages phase values rather than multiplying them. The kernel deliberately does not certify label maturity or completeness; those are caller obligations expressly retained by the design.
 

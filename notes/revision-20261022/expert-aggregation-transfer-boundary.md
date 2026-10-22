@@ -15,28 +15,28 @@ No original PDF, source figure, trader identifier or observation file is part of
 
 Use pinball loss in report/outcome notation,
 
-\[
+```math
 S_\tau(c,y)=\tau(y-c)_+ +(1-\tau)(c-y)_+,\qquad0<\tau<1.
-\]
+```
 
 Ordinary unit-factor mixability would require, for any expert reports and weights, a report whose loss is bounded for every outcome by the negative log mixture of exponentiated expert losses. Consider equal weights on the two artificial expert reports0 and1, possible outcomes0 and1, and an issue-known floor0. These are feasible nonnegative peak/report values; no financial observations enter the example.
 
 For any positive learning rate eta, the mixture bounds at the two outcomes are
 
-\[
+```math
 g(0)=-\eta^{-1}\log\{(1+e^{-\eta(1-\tau)})/2\}<(1-\tau)/2,
-\]
-\[
+```
+```math
 g(1)=-\eta^{-1}\log\{(1+e^{-\eta\tau})/2\}<\tau/2.
-\]
+```
 
 Strict Jensen inequalities give the strict signs. For a candidate report in[0,1], the first requirement forces c<1/2 and the second forces c>1/2. A report above1 already fails at outcome0; even allowing a negative report would fail at outcome1. Thus no substitution satisfies both bounds. Pinball is not ordinarily eta-mixable with multiplicative constant1, already on these two outcomes.
 
 This standard elementary check was independently reviewed; it is not a new theorem, an allegation about the cited investment results, or a claim that all quantile aggregation is impossible. It prevents transferring the corresponding unit-factor, fixed-eta logarithmic-expert-count guarantee merely because both applications use exponential expert weights. Convex averaging still satisfies
 
-\[
+```math
 S_\tau\!\left(\sum_jw_jc_j,y\right)\le\sum_jw_jS_\tau(c_j,y).
-\]
+```
 
 That weighted-mean inequality is different from the stronger log-mixture inequality. It does not promise superiority over the best expert or calibrated tails. Same-floor reports retain the floor under such averaging, but that deterministic feasibility is also distinct from predictive adequacy.
 
@@ -44,9 +44,9 @@ That weighted-mean inequality is different from the stronger log-mixture inequal
 
 For fixed finite H, let `Z_s=max_(s-H<=j<=s)|N_j|`. If the primitive process N is strictly stationary and ergodic, the measurable shift-equivariant finite-window process Z has those properties. If `E[N_0^2]` is finite, then
 
-\[
+```math
 E[Z_s^2]\le(H+1)E[N_0^2].
-\]
+```
 
 These elementary implications were independently checked. They do not verify those assumptions for the present records. Nor do they supply conditional-CDF regularity, the source algorithm or its growing-history conditions. An atom is not by itself equivalent to failure of strict increase or uniqueness; the relevant quantile/distribution and theorem premises have to be examined.
 
@@ -58,9 +58,9 @@ For two artificial records, take `(y,A,B)=(0,1,0)` and `(10,10,9)`, all with kno
 
 Now use the strictly increasing function `q(c)=c+19min(c,1)` on nonnegative values and the generalized quantile score
 
-\[
+```math
 S_{\tau,q}(c,y)=(1\{c\ge y\}-\tau)\{q(c)-q(y)\}.
-\]
+```
 
 Here q(0),q(1),q(9),q(10) are0,20,28,29. The mean scores become1/2 for A and19/40 for B, reversing the difference to1/40. Both scores are consistent for the same quantile functional under their integrability conditions; an ideal quantile does not lose that property. The example only shows that two imperfect methods need not have the same ranking across all consistent scores. It uses no present forecast and selects no alternative evaluation loss.
 

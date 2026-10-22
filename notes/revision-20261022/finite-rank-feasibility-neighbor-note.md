@@ -18,25 +18,25 @@ The author's implementation has **not** been inspected or executed in this audit
 
 The paper defines its order-statistic calibration rule using
 
-\[
+```math
 k_0=\left\lceil(1-\alpha)(n+1)\right\rceil,
 \qquad
 Q_{1-\alpha}^{\mathrm{OS}}=u_{(k)},
 \qquad
 k=\min\{n,\max\{1,k_0\}\}.
-\]
+```
 
 Theorem 4.1 then states the nominal path-coverage guarantee under exchangeability of the calibration and future path scores, with the predictor and postprocessing fixed before calibration. The displayed theorem does not additionally restrict \(n\) and \(\alpha\) to make the required rank available.
 
 For \(0<\alpha<1\), the required finite rank is available precisely when
 
-\[
+```math
 k_0\le n
 \quad\Longleftrightarrow\quad
 (1-\alpha)(n+1)\le n
 \quad\Longleftrightarrow\quad
 \alpha\ge\frac{1}{n+1}.
-\]
+```
 
 When this condition fails, \(k_0=n+1\). Replacing that rank by the largest available finite calibration score does not, in general, preserve coverage at least \(1-\alpha\). This is a missing feasibility condition for the stated combination of rule and general guarantee.
 
@@ -44,17 +44,17 @@ When this condition fails, \(k_0=n+1\). Replacing that rank by the largest avail
 
 Suppose \(R_1,\ldots,R_n,R_{n+1}\) are exchangeable and almost surely distinct. The rank of \(R_{n+1}\) among all \(n+1\) scores is uniform on \(\{1,\ldots,n+1\}\). For a calibration order statistic \(R_{(k)}\) with \(1\le k\le n\),
 
-\[
+```math
 \Pr\{R_{n+1}\le R_{(k)}\}=\frac{k}{n+1}.
-\]
+```
 
 In particular, for an available rank \(k_0\), rounding upward gives \(k_0/(n+1)\ge1-\alpha\). With ties, an auxiliary random tie-breaking order yields the same uniform-rank argument, while the non-strict score comparison can only increase coverage relative to that randomized rank event.
 
 If an unavailable rank \(n+1\) is clipped to \(n\), the continuous case instead gives exactly
 
-\[
+```math
 \Pr\{R_{n+1}\le R_{(n)}\}=\frac{n}{n+1}<1-\alpha.
-\]
+```
 
 This argument is a simple check of the finite-sample statement. It is not a new conformal method or a new methodological contribution of the present project.
 
@@ -62,15 +62,15 @@ This argument is a simple check of the finite-sample statement. It is not a new 
 
 Let \(n=2\), \(\alpha=0.1\), and let the calibration and future scores be independent \(U(0,1)\) variables. The predictor and scale can be fixed in advance. The required rank is
 
-\[
+```math
 k_0=\lceil0.9\times3\rceil=3,
-\]
+```
 
 but the clipping rule uses \(k=2\). Thus
 
-\[
+```math
 \Pr\{R_3\le\max(R_1,R_2)\}=\frac23<0.9.
-\]
+```
 
 This construction can also be embedded in the paper's nonnegative path-score representation: take a fixed zero predictor, unit scales, and the same nonnegative uniform label at every horizon. Such a path is monotone, so a monotonicity requirement does not exclude the example. This is a mathematical counterexample to the unqualified general guarantee with clipping; it is not an empirical claim about financial ES labels.
 
@@ -80,12 +80,12 @@ The main settings reported on physical page 14 are \(H=20\), \(\alpha_{\mathrm{c
 
 For the horizon allocations,
 
-\[
+```math
 \alpha_B=\frac{0.1}{20}=\frac1{200},
 \qquad
 \alpha_S=1-0.9^{1/20}
 \approx0.00525417406947.
-\]
+```
 
 | Calibration unit count \(n\) | Rule | Required rank \(k_0\) | Rank after clipping | Required rank available? |
 |---:|---|---:|---:|---|
@@ -106,27 +106,27 @@ For the two allocated rules in these settings, both required ranks exceed the av
 
 For Bonferroni, rank feasibility requires
 
-\[
+```math
 \frac1{200}\ge\frac1{n+1},
-\]
+```
 
 so the smallest feasible count is **199**.
 
 For Šidák, the equivalent exact condition is
 
-\[
+```math
 \frac{n}{n+1}\ge0.9^{1/20}
 \quad\Longleftrightarrow\quad
 \left(\frac{n}{n+1}\right)^{20}\ge\frac9{10}.
-\]
+```
 
 Exact rational arithmetic gives
 
-\[
+```math
 \left(\frac{189}{190}\right)^{20}<\frac9{10},
 \qquad
 \left(\frac{190}{191}\right)^{20}>\frac9{10}.
-\]
+```
 
 Since \(n/(n+1)\) increases with \(n\), the smallest feasible count is therefore **190**. These counts refer to the units entering the corresponding quantile. When calibrating block maxima, they are counts of complete calibration blocks, rather than counts of raw daily observations. They establish rank feasibility only; they do not establish exchangeability, appropriate future-score comparability, independence across horizons, or empirical performance.
 

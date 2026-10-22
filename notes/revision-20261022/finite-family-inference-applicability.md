@@ -19,11 +19,11 @@ Hansen's original Table 6 and following discussion make the family issue concret
 
 Within a declared source, target, issue-origin set and scoring contract, one possible relative-loss vector is
 
-\[
+```math
 d_{k,t}=\rho_{.95}(P_{t,H}-C^{\rm ref}_{t,H})
        -\rho_{.95}(P_{t,H}-C^k_{t,H}),
 \qquad k=1,\ldots,m.
-\]
+```
 
 Positive mean relative performance favors the alternative. Rewriting that expectation as the difference of two separate expected losses requires those expectations to be well defined; finite relative-loss moments alone do not resolve an infinity-minus-infinity expression. A finite-family null would be that every component's expected improvement is nonpositive. Rejecting that null would support the existence of an improvement within the specified universe and population model. It would not say every candidate improves, identify a universally best family, establish conditional coverage, show a causal feature effect, or price an actual financing intervention.
 
@@ -35,10 +35,10 @@ Restricting one test to a single source/H is a convenient scientific contract, n
 
 1. **Floor atoms and nonsmooth loss are not an automatic rejection.** A loss-series comparison is different from a test of estimated quantile coefficients. For any fixed target P and reports a,b, the classical pinball loss obeys
 
-   \[
+   ```math
    |\rho_\tau(P-a)-\rho_\tau(P-b)|
    \le \max(\tau,1-\tau)|a-b|.
-   \]
+   ```
 
    This follows by integrating its two report-wise slopes, −tau and 1−tau, including the kink by continuity. Thus suitable report-difference moments are one sufficient route to relative-loss moments, even with atoms. The inequality proves no actual population moment bound, mixing rate or variance condition. White's growing-estimation parameter-expansion branch additionally invokes local differentiability and derivative domination in Assumption A.1; Lipschitz loss alone does not verify those premises. Treating a fixed finite-window predictor as part of the relative-loss process is a distinct route. A conditional-quantile parameter theorem's positive-density assumption should likewise not be imported indiscriminately into every loss-based comparison.
 

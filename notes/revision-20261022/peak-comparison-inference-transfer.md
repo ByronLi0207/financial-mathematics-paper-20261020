@@ -12,18 +12,18 @@ Root actually reread selected original physical pp.4–14 and 28–31, including
 
 For fixed record horizon H, define the resolved backward-window target
 
-\[
+```math
 Y_s^{(H)}=\max_{s-H\le j\le s}|N_j|.
-\]
+```
 
 The current issue-t forecast concerns `Y_(t+H)^(H)=P_(t,H)`. Under the stated economic-date replay, the report is issue-information measurable and its loss resolves at t+H. This maps the peak into fixed-horizon forecasting notation without replacing it with a signed endpoint. A known-floor atom and overlapping outcomes do not themselves invalidate such a representation. Nothing in this indexing establishes a mixing rate, moment bound, appropriate public-release information set or valid variance estimate.
 
 Let
 
-\[
+```math
 D_{t,H}=\rho_{.95}(P_{t,H}-C^A_{t,H})
        -\rho_{.95}(P_{t,H}-C^B_{t,H}).
-\]
+```
 
 Mean loss comparison concerns an unconditional expectation or a separately defined expected-average estimand. A full-information conditional null instead states `E[D_(t,H)|F_t]=0`. These are different questions. Rejection of conditional equality need not mean that one method has a uniformly lower average loss; nonrejection using finitely many instruments is not proof of conditional equality or calibrated forecasts. The heterogeneity and centering of any proposed expected-average confidence interval must be addressed explicitly rather than inferred from a fixed-pair test's name.
 
@@ -33,10 +33,10 @@ An issue-s difference `D_(s,H)` generally needs its full target, which resolves 
 
 The same timing explains the conditional-null covariance cutoff. For an issue-known instrument `h_t`, put `Z_t=h_t D_(t,H)`. If j>=H, the old `Z_(t-j)` has resolved by t and is F_t-measurable. Provided the products are integrable, the full conditional null gives
 
-\[
+```math
 E[Z_tZ_{t-j}' ]
 =E\{h_tZ_{t-j}'E[D_{t,H}\mid F_t]\}=0.
-\]
+```
 
 This is an elementary tower-property check, not a new theorem. It remains true even when the two target windows share a now-known issue observation. Conversely, mechanically spacing origins H+1 apart does not create the full conditional null or remove all dependence. Under unconditional equal expected loss, the source calls for a general long-run variance rather than a covariance cutoff justified solely by H.
 
@@ -46,18 +46,18 @@ Take an abstract constant path `N_t=0`, so every sampled peak and known floor is
 
 Since both reports exceed the zero target, pinball loss gives
 
-\[
+```math
 D_t=2(1-\tau)X_t,
 \qquad E[D_t]=0,
 \qquad \gamma_j=[2(1-\tau)]^2r^{|j|}.
-\]
+```
 
 At tau=19/20, `gamma_j=(1/100)*(9/10)^|j|`, which is nonzero at every finite lag. Its long-run variance is
 
-\[
+```math
 \gamma_0+2\sum_{j=1}^{\infty}\gamma_j
 =\gamma_0\frac{1+r}{1-r}=\frac{19}{100}.
-\]
+```
 
 The two methods have equal unconditional expected loss, but the horizon alone does not truncate their covariance sequence. In fact D_t is already known at issue, so `E[D_t|F_t]=D_t`, not zero. Thus this example does not contradict the full conditional-null result and does not obey the generic need to wait H records for its loss. It is an elementary counterexample to deriving a covariance cutoff from unconditional equality and the horizon alone. It establishes neither the actual archive's dependence nor the superiority of any variance estimator.
 
@@ -65,9 +65,9 @@ The two methods have equal unconditional expected loss, but the horizon alone do
 
 Conditional on fixed tuning choices, the oldest rich training feature at refit r reads `N_(r-H-W+1-L)`, where L is the longest raw-position lag and `0<=t-r<=d-1`. Thus an inclusive upper bound on raw-position memory through issue t is
 
-\[
+```math
 M_N=W+H+L+d-1.
-\]
+```
 
 For the mean-only AR replay, L=0. For the rich QR/local feature procedures, L=168 FX records or 26 Treasury records. Deterministic refit/calendar phase need not itself violate the source's allowance for heterogeneous finite-block transformations. The table is computational bookkeeping from the unchanged specification, not a fitted statistical result, effective sample size or degrees-of-freedom calculation.
 
