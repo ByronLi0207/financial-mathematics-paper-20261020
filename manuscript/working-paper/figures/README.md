@@ -9,7 +9,7 @@ The three original PDFs remain unchanged. `study_report.py` produces them from o
 The revision adds three figures while preserving those original files:
 
 4. `revision-retrieval-contrasts.pdf`: every one of the 12 nearest-minus-recent loss means, in fixed H/count/method order. Only H6/m360/K is marked primary. Its footer states that the contrast was fixed before extension execution and that all 12 comparisons use the already inspected interval. Common axes and direct signed USD-million values retain all comparisons.
-5. `revision-retrieval-monthly.pdf`: all 13 monthly primary K contrasts at both horizons, all origin counts and the adverse positive January 2016 means. Calendar groups remain descriptive.
+5. `revision-retrieval-monthly.pdf`: all 13 monthly nearest360 K-minus-recent360 K contrasts at each horizon, all origin counts and the adverse positive January 2016 means. H=6 is the primary comparison; H=24 is sensitivity evidence. Calendar groups remain descriptive.
 
 6. `revision-original-contrasts.pdf`: the current Figure 1, restyling all seven original direct paired means in their fixed setting order. It uses the original accepted manifest and paired table, not extension forecasts. Explicit H/n/tau columns, the common 6,625 issue origins, a signed zero axis, three-decimal tick labels and six-decimal direct USD-million values replace the original display's long decimal strings. The small positive tau=.90 value remains +0.000144. Neither point jitter nor numerical aggregation is introduced. F/S and the score units are explained on the standalone page.
 
@@ -20,7 +20,7 @@ revision-retrieval-contrasts.pdf
 955a66245f7feae559c5232d79e2244881969d169a808a6f059d7665c99637f4
 
 revision-retrieval-monthly.pdf
-cfcb2f8f84edcd804844b57357242cd31ae67a67f9ca9fd49e73377c5c54f798
+cdb44a4c23ba3c513f65aeb13573bfcec088a21c94e55873bb5e1c67f2e3dc15
 
 revision-original-contrasts.pdf
 3aebc5716ca2c15b5c74cc61feec0b7461dbeef1e886767a34a279c1e531cc8f
