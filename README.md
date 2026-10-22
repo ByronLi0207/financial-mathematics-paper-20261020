@@ -2,7 +2,7 @@
 
 An English working paper comparing mature empirical-quantile constructions and historical episode selection for a sampled FX net-position peak. The response is the largest absolute source-reported USD net position over the current and next H records. It is an aggregate client-flow proxy from one market maker; a recorded netted position does not reconstruct its complete hedged book, gross currency exposures or funding needs.
 
-Read the [16-page paper](manuscript/working-paper/paper.pdf), [compilable TeX source](manuscript/working-paper/main.tex), [shared structured content](manuscript/working-paper/paper-content.json) and [document verification](manuscript/working-paper/rendering-verification.json). The current revision adds an explicitly exploratory historical-selection comparison and finite construction bounds. It reports an application result, without claiming a new quantile estimator, first financial peak forecast or coverage theorem.
+Read the [17-page paper](manuscript/working-paper/paper.pdf), [compilable TeX source](manuscript/working-paper/main.tex), [shared structured content](manuscript/working-paper/paper-content.json) and [document verification](manuscript/working-paper/rendering-verification.json). The current revision adds an explicitly exploratory historical-selection comparison and finite construction bounds. It reports an application result, without claiming a new quantile estimator, first financial peak forecast or coverage theorem.
 
 ## Two design histories and their results
 
@@ -63,7 +63,7 @@ The observed rights label is “Data files © Original Authors”; raw redistrib
 
 The recorded environment is CPython 3.12.14, NumPy 2.3.5 and ReportLab 4.4.9 on macOS arm64. Document assembly additionally uses pypdf 6.10.0. The two requirement files record the existing versions. Use an environment where these are available; the resource monitor is macOS-specific and stops on unsupported platforms. No software was installed for this study.
 
-After the original comparison was restyled, its exact figure inventory added and caption pagination corrected, the combined suite passed **173 tests**. It included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 8.087 seconds by unittest's clock; the separate process measurement was 8.369 seconds with child maximum RSS 115,621,888 bytes. These are validation measurements, not financial experiment measurements.
+After the original comparison was restyled, its exact figure inventory added, caption pagination corrected and monthly horizon labels clarified, the combined suite passed **173 tests**. It included synthetic scientific cases, runner boundaries, aggregate figure checks and document inventory/metadata checks. It ran in 7.940 seconds by unittest's clock; the separate process measurement was 8.241 seconds with child maximum RSS 114,884,608 bytes. These are validation measurements, not financial experiment measurements.
 
 From the repository root:
 

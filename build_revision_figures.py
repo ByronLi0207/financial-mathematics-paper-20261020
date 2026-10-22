@@ -348,7 +348,7 @@ def _render_contrasts(canvas, layout):
 
 
 def _render_monthly(canvas, layout):
-    _text(canvas, 42, 551, "Monthly primary contrasts: descriptive / exploratory", 19, bold=True)
+    _text(canvas, 42, 551, "Monthly K retrieval contrasts: descriptive / exploratory", 19, bold=True)
     _text(canvas, 42, 529, "Exploratory paired means | nearest360 K minus recent360 K | negative favors nearest", 10.5, MUTED)
     _line(canvas, 42, 513, 802, 513, INK, 1.0)
     for x, horizon in ((48, 6), (168, 24)):
@@ -375,8 +375,8 @@ def _render_monthly(canvas, layout):
               9.2, color, align="right", max_width=78)
     _text(canvas, 393, 100, "Monthly mean pinball loss difference (USD million)", 9, MUTED, align="center")
     _text(canvas, 42, 78, "All 13 calendar months are retained, including positive January 2016 at both horizons.", 9, MUTED)
-    _text(canvas, 42, 62, "Descriptive summaries of the inspected evaluation record. Zero marks equal average pinball loss.", 9, MUTED)
-    _text(canvas, 42, 41, "Source: accepted public monthly.csv | primary nearest360 K minus recent360 K", 8, MUTED)
+    _text(canvas, 42, 62, "Descriptive summaries of inspected records: H=6 primary; H=24 sensitivity. Zero marks equal mean pinball loss.", 9, MUTED)
+    _text(canvas, 42, 41, "Source: accepted public monthly.csv | nearest360 K minus recent360 K", 8, MUTED)
 
 
 def _new_output_directory(output):
@@ -442,7 +442,7 @@ def build_figures(output):
         with (directory / name).open("xb") as stream:
             canvas = Canvas(stream, pagesize=(PAGE_WIDTH, PAGE_HEIGHT), invariant=1, pageCompression=1)
             canvas.setTitle("Frozen exploratory retrieval contrasts" if layout["kind"] == "contrasts"
-                            else "Descriptive exploratory monthly primary contrasts")
+                            else "Descriptive exploratory monthly K retrieval contrasts")
             canvas.setAuthor("")
             canvas.setSubject("Frozen public aggregate display; USD million units")
             render(canvas, layout)
