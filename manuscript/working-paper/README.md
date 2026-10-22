@@ -7,7 +7,7 @@
 - [paper-content.json](paper-content.json): shared manuscript content and explicit equation representations.
 - [references.bib](references.bib): reusable BibTeX records for the same 12 cited sources, with matching reference keys and notes on consulted editions.
 - [rendering-verification.json](rendering-verification.json): actual content/source/PDF identities and verification scope.
-- [figures/](figures/): all three original figures and two added aggregate-only figures. The revised paper uses original within-cell paired means and the two new retrieval figures.
+- [figures/](figures/): all three original figures and three added aggregate-only figures. The current paper uses a restyled display of all seven original paired means and the two retrieval figures; the original figure files remain unchanged.
 
 The delivered paper takes its reference text from `paper-content.json`; `references.bib` is a companion catalog rather than a build dependency. Keep the catalog consistent when revising the structured references. Publication years and consulted manuscript dates are kept distinct. Actual reading scopes remain in the [source evidence map](../../notes/revision-20261021/paper-evidence-map.md).
 
@@ -21,10 +21,11 @@ From the repository root, in the documented existing environment:
 python3 -B build_tex.py --output .scratch/main-rebuilt.tex
 python3 -B build_paper.py --output .scratch/paper-rebuilt.pdf
 python3 -B build_revision_figures.py --output .scratch/revision-figure-rebuild-01
+python3 -B build_original_comparison_figure.py --output .scratch/revision-figure-original-rebuild-01
 ```
 
-Each output must be new. The PDF builder accepts exactly the original or revised ordered three-figure inventory and protects the union of their input paths, including equivalent output path spellings. Text rendering requires the four existing macOS Times New Roman files in `/System/Library/Fonts/Supplemental/`; missing fonts stop it. Font files are not redistributed. The new standalone figures use built-in Helvetica. The builders do not open raw financial observations or execute new forecasts. `requirements-paper.txt` records the document dependencies.
+Each output must be new. The PDF builder accepts exactly the original, earlier revision or restyled revision ordered three-figure inventory and protects the union of their input paths, including equivalent output path spellings. Text rendering requires the four existing macOS Times New Roman files in `/System/Library/Fonts/Supplemental/`; missing fonts stop it. Font files are not redistributed. All three current standalone figures use built-in Helvetica. The original-comparison renderer pins the original manifest and seven-row paired table; its sole numerical transformation is USD to USD million for display. The builders do not open raw financial observations or execute new forecasts. `requirements-paper.txt` records the document dependencies.
 
-The combined code/test suite passed 160 tests before the final figure-footer wording edit; the 12 targeted figure tests passed again after that edit. This includes synthetic scientific validation, artifact checks and meaningful original/revised inventory selection tests; it does not establish population superiority, external validity or publication readiness.
+After the original comparison was restyled, the combined code/test suite passed 171 tests in 8.467 seconds by unittest's clock. This includes synthetic scientific validation, aggregate artifact checks, preservation of the original figures and meaningful selection/protection checks for all three approved inventories. It does not establish population superiority, external validity or publication readiness.
 
 The original 12-page manuscript is preserved in [repository history at the pre-revision baseline](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/f6dca510c137c0634845885c4d70828e37b99aea/manuscript/working-paper). Original scientific outputs and code remain unchanged. Data access, mature method lineage and interpretation are documented in the [root README](../../README.md), [extension results README](../../results/revision-20261021/README.md) and [source evidence map](../../notes/revision-20261021/paper-evidence-map.md). Raw source data and third-party papers are excluded.
