@@ -52,6 +52,8 @@ The [22-reference evidence map](notes/revision-20261022/paper-evidence-map.md) r
 
 The [known-floor inference note](notes/revision-20261022/quantile-inference-and-floor-atoms.md) revisits an original conditional-quantile encompassing test and distinguishes its density, dependence and noncollinearity requirements from this response. It explains why a familiar p-value cannot simply be appended to the current descriptive comparisons. No new significance test or forecast combination was run.
 
+The [horizon-sorting note](notes/revision-20261022/horizon-rearrangement-and-score-scope.md) derives an elementary consequence of mature rearrangement methods. With common ordered targets, units, origins and equal horizon weights, sorting crossed reports cannot increase their total pinball score, while an individual horizon and the number of breaches can worsen. Sorting inherits a valid pre-existing joint upper-coverage event; it creates no new 95% guarantee for these fits. A peak report can also define a constant symmetric sampled-path band, without recovering the original asymmetric intervals or unobserved paths. No sorted financial forecast or revised primary is executed.
+
 ## Sources, identities and limits
 
 The FX input is version 2 of the [Net Position Time Series Dataset](https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset), accepted member `1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv`. It has 18,576 records,1,286,391 bytes and SHA-256:
