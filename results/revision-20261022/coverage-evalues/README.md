@@ -19,7 +19,7 @@ E(n,k) = sum(comb(n+1,j)*19**(k-j), j=0..k)
 
 All averages and `>=1120` crossings use exact rationals. Display rounding never defines a crossing. We average dependent phases rather than multiplying them or selecting a favorable one. This is a **fixed-terminal** construction; there is no full-filtration supermartingale, arbitrary-stopping, running-maximum or anytime p-value claim.
 
-For a genuinely fixed procedure family, Markov's inequality and a union bound give the formal reference threshold `56/(1/20)=1120` without cell independence. **These inspected-sample diagnostics do not obtain retrospective empirical5% familywise error control from that threshold.** Correcting over98current reports would not automatically cover the wider research search. The output label is `adjusted_reference_threshold_crossed`, not a significance or coverage-PASS verdict.
+For a genuinely fixed procedure family, Markov's inequality and a union bound give the formal reference threshold `56/(1/20)=1120` without cell independence. **These inspected-sample diagnostics do not obtain retrospective empirical5% familywise error control from that threshold.** The fixed-procedure proof also does not establish individually calibrated e-values or p-values for this same-sample, post-selected analysis: selection need not be measurable at the original issue times. Correcting over98current reports would not automatically cover the wider research search. The output label is `adjusted_reference_threshold_crossed`, not a significance or coverage-PASS verdict.
 
 ## Complete outcome and interpretation
 
