@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "status": "COMPLETE",
+  "phase": "validation",
+  "source": "nyfed_weekly",
+  "horizon": 24,
+  "window": 52,
+  "family": "SCALED_KNN",
+  "executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+  "selection_freeze_sha256": null,
+  "started_utc": "2026-10-22T09:28:46Z",
+  "ended_utc": "2026-10-22T09:28:46Z",
+  "source_identity": {
+    "sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+    "bytes": 23315,
+    "record_count": 706,
+    "native_unit": "USD millions",
+    "first_date": "2013-04-03T00:00:00.000000",
+    "last_date": "2026-10-07T00:00:00.000000",
+    "irregular_gap_count": 0
+  },
+  "resources": {
+    "started_utc": "2026-10-22T09:28:46Z",
+    "checkpoint_utc": "2026-10-22T09:28:46Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 0.09974037483334541,
+    "peak_rss_bytes": 38567936,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 23,
+    "completed_stability_lengths": [],
+    "current_stage": "final_manifest_checkpoint",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 52,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 12729,
+    "private_numeric_output_bytes_at_checkpoint": 12382,
+    "public_analysis_output_bytes_at_checkpoint": 347
+  },
+  "result": {
+    "phase": "validation",
+    "source": "nyfed_weekly",
+    "horizon": 24,
+    "window": 52,
+    "family": "SCALED_KNN",
+    "native_unit": "USD millions",
+    "status": "COMPLETE",
+    "candidate_rows": [
+      {
+        "parameter": 20,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 13651.676826864548,
+        "failure": null
+      },
+      {
+        "parameter": 40,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 9236.401131316812,
+        "failure": null
+      },
+      {
+        "parameter": 52,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 9442.530683569868,
+        "failure": null
+      }
+    ],
+    "summary_rows": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 20,
+        "origin_count": 52,
+        "mean_pinball": 13651.676826864548,
+        "mean_capacity": 105884.56343969339,
+        "mean_extra_allowance": 65949.04420892417,
+        "strict_breach_count": 24,
+        "strict_breach_rate": 0.46153846153846156,
+        "mean_positive_overrun": 12719.91884718757,
+        "conditional_mean_overrun": 27559.8241689064,
+        "conditional_overrun_denominator": 24,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 31355.07844072712
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "origin_count": 52,
+        "mean_pinball": 9236.401131316812,
+        "mean_capacity": 121797.4272127485,
+        "mean_extra_allowance": 81861.90798197927,
+        "strict_breach_count": 14,
+        "strict_breach_rate": 0.2692307692307692,
+        "mean_positive_overrun": 7508.999962987081,
+        "conditional_mean_overrun": 27890.57129109487,
+        "conditional_overrun_denominator": 14,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 42057.023329581745
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 52,
+        "origin_count": 52,
+        "mean_pinball": 9442.530683569868,
+        "mean_capacity": 134048.67421468056,
+        "mean_extra_allowance": 94113.15498391134,
+        "strict_breach_count": 13,
+        "strict_breach_rate": 0.25,
+        "mean_positive_overrun": 7102.567165143531,
+        "conditional_mean_overrun": 28410.268660574126,
+        "conditional_overrun_denominator": 13,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 53901.83753367026
+      }
+    ],
+    "year_rows": [],
+    "nonoverlap_rows": [],
+    "fit_diagnostics": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 20,
+        "refit_index": 329,
+        "training_first_origin": 254,
+        "training_last_origin": 305,
+        "training_count": 52,
+        "latest_label_end": 329,
+        "response_scale": 19335.48076923077
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 20,
+        "refit_index": 342,
+        "training_first_origin": 267,
+        "training_last_origin": 318,
+        "training_count": 52,
+        "latest_label_end": 342,
+        "response_scale": 19061.326923076922
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 20,
+        "refit_index": 355,
+        "training_first_origin": 280,
+        "training_last_origin": 331,
+        "training_count": 52,
+        "latest_label_end": 355,
+        "response_scale": 20721.51923076923
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 20,
+        "refit_index": 368,
+        "training_first_origin": 293,
+        "training_last_origin": 344,
+        "training_count": 52,
+        "latest_label_end": 368,
+        "response_scale": 21807.01923076923
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 329,
+        "training_first_origin": 254,
+        "training_last_origin": 305,
+        "training_count": 52,
+        "latest_label_end": 329,
+        "response_scale": 19335.48076923077
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 342,
+        "training_first_origin": 267,
+        "training_last_origin": 318,
+        "training_count": 52,
+        "latest_label_end": 342,
+        "response_scale": 19061.326923076922
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 355,
+        "training_first_origin": 280,
+        "training_last_origin": 331,
+        "training_count": 52,
+        "latest_label_end": 355,
+        "response_scale": 20721.51923076923
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 368,
+        "training_first_origin": 293,
+        "training_last_origin": 344,
+        "training_count": 52,
+        "latest_label_end": 368,
+        "response_scale": 21807.01923076923
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 52,
+        "refit_index": 329,
+        "training_first_origin": 254,
+        "training_last_origin": 305,
+        "training_count": 52,
+        "latest_label_end": 329,
+        "response_scale": 19335.48076923077
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 52,
+        "refit_index": 342,
+        "training_first_origin": 267,
+        "training_last_origin": 318,
+        "training_count": 52,
+        "latest_label_end": 342,
+        "response_scale": 19061.326923076922
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 52,
+        "refit_index": 355,
+        "training_first_origin": 280,
+        "training_last_origin": 331,
+        "training_count": 52,
+        "latest_label_end": 355,
+        "response_scale": 20721.51923076923
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 52,
+        "refit_index": 368,
+        "training_first_origin": 293,
+        "training_last_origin": 344,
+        "training_count": 52,
+        "latest_label_end": 368,
+        "response_scale": 21807.01923076923
+      }
+    ],
+    "selection": {
+      "status": "SELECTED",
+      "parameter": 40,
+      "mean_validation_pinball": 9236.401131316812
+    },
+    "failure": null,
+    "origin_identity": {
+      "count": 52,
+      "first": 329,
+      "last": 380,
+      "sha256": "4ebde6844ef2f6065329f5f51438a85c11e82d8080dc5eb5bfb4494663a34ef5"
+    }
+  },
+  "stop_code": null,
+  "artifacts": [
+    {
+      "area": "private",
+      "name": "numeric-traces.npz",
+      "bytes": 12382,
+      "sha256": "82fa0d0e0b4a507850ef89d096cc1fd57e4e2355222ea23e09e0836eb072d45c"
+    }
+  ]
+}

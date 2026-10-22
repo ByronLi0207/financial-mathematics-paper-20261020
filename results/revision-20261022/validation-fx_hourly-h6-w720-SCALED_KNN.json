@@ -1,0 +1,1946 @@
+{
+  "version": 1,
+  "status": "COMPLETE",
+  "phase": "validation",
+  "source": "fx_hourly",
+  "horizon": 6,
+  "window": 720,
+  "family": "SCALED_KNN",
+  "executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+  "selection_freeze_sha256": null,
+  "started_utc": "2026-10-22T09:28:08Z",
+  "ended_utc": "2026-10-22T09:28:10Z",
+  "source_identity": {
+    "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "bytes": 1286391,
+    "record_count": 18576,
+    "native_unit": "USD",
+    "first_date": "2014-02-05T01:00:00.000000",
+    "last_date": "2017-01-24T00:00:00.000000",
+    "irregular_gap_count": 155
+  },
+  "resources": {
+    "started_utc": "2026-10-22T09:28:08Z",
+    "checkpoint_utc": "2026-10-22T09:28:10Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 1.3536162078380585,
+    "peak_rss_bytes": 57933824,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 320,
+    "completed_stability_lengths": [],
+    "current_stage": "final_manifest_checkpoint",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 1440,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 212598,
+    "private_numeric_output_bytes_at_checkpoint": 212254,
+    "public_analysis_output_bytes_at_checkpoint": 344
+  },
+  "result": {
+    "phase": "validation",
+    "source": "fx_hourly",
+    "horizon": 6,
+    "window": 720,
+    "family": "SCALED_KNN",
+    "native_unit": "USD",
+    "status": "COMPLETE",
+    "candidate_rows": [
+      {
+        "parameter": 180,
+        "status": "COMPLETE",
+        "origin_count": 1440,
+        "mean_pinball": 484126.0615074921,
+        "failure": null
+      },
+      {
+        "parameter": 360,
+        "status": "COMPLETE",
+        "origin_count": 1440,
+        "mean_pinball": 479641.61408719816,
+        "failure": null
+      },
+      {
+        "parameter": 720,
+        "status": "COMPLETE",
+        "origin_count": 1440,
+        "mean_pinball": 510190.80525695265,
+        "failure": null
+      }
+    ],
+    "summary_rows": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "origin_count": 1440,
+        "mean_pinball": 484126.0615074921,
+        "mean_capacity": 14614871.773963068,
+        "mean_extra_allowance": 8924988.010768622,
+        "strict_breach_count": 72,
+        "strict_breach_rate": 0.05,
+        "mean_positive_overrun": 130785.48359805398,
+        "conditional_mean_overrun": 2615709.6719610794,
+        "conditional_overrun_denominator": 72,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 7197597.041786816
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "origin_count": 1440,
+        "mean_pinball": 479641.61408719816,
+        "mean_capacity": 14254699.966240514,
+        "mean_extra_allowance": 8564816.203046069,
+        "strict_breach_count": 70,
+        "strict_breach_rate": 0.04861111111111111,
+        "mean_positive_overrun": 144309.62656388778,
+        "conditional_mean_overrun": 2968655.175028549,
+        "conditional_overrun_denominator": 70,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 6850949.377030096
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "origin_count": 1440,
+        "mean_pinball": 510190.80525695265,
+        "mean_capacity": 14145050.87470167,
+        "mean_extra_allowance": 8455167.111507226,
+        "strict_breach_count": 90,
+        "strict_breach_rate": 0.0625,
+        "mean_positive_overrun": 180341.27231058446,
+        "conditional_mean_overrun": 2885460.3569693514,
+        "conditional_overrun_denominator": 90,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 6777331.931237949
+      }
+    ],
+    "year_rows": [],
+    "nonoverlap_rows": [],
+    "fit_diagnostics": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10463,
+        "training_first_origin": 9738,
+        "training_last_origin": 10457,
+        "training_count": 720,
+        "latest_label_end": 10463,
+        "response_scale": 1084866.4238958333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10487,
+        "training_first_origin": 9762,
+        "training_last_origin": 10481,
+        "training_count": 720,
+        "latest_label_end": 10487,
+        "response_scale": 1138009.4927013891
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10511,
+        "training_first_origin": 9786,
+        "training_last_origin": 10505,
+        "training_count": 720,
+        "latest_label_end": 10511,
+        "response_scale": 1144018.3399652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10535,
+        "training_first_origin": 9810,
+        "training_last_origin": 10529,
+        "training_count": 720,
+        "latest_label_end": 10535,
+        "response_scale": 1127128.0681111112
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10559,
+        "training_first_origin": 9834,
+        "training_last_origin": 10553,
+        "training_count": 720,
+        "latest_label_end": 10559,
+        "response_scale": 1221071.1582847224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10583,
+        "training_first_origin": 9858,
+        "training_last_origin": 10577,
+        "training_count": 720,
+        "latest_label_end": 10583,
+        "response_scale": 1274425.528576389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10607,
+        "training_first_origin": 9882,
+        "training_last_origin": 10601,
+        "training_count": 720,
+        "latest_label_end": 10607,
+        "response_scale": 1353722.7005833334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10631,
+        "training_first_origin": 9906,
+        "training_last_origin": 10625,
+        "training_count": 720,
+        "latest_label_end": 10631,
+        "response_scale": 1355400.2009097221
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10655,
+        "training_first_origin": 9930,
+        "training_last_origin": 10649,
+        "training_count": 720,
+        "latest_label_end": 10655,
+        "response_scale": 1551765.7601875002
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10679,
+        "training_first_origin": 9954,
+        "training_last_origin": 10673,
+        "training_count": 720,
+        "latest_label_end": 10679,
+        "response_scale": 1584002.615701389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10703,
+        "training_first_origin": 9978,
+        "training_last_origin": 10697,
+        "training_count": 720,
+        "latest_label_end": 10703,
+        "response_scale": 1689755.8530208336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10727,
+        "training_first_origin": 10002,
+        "training_last_origin": 10721,
+        "training_count": 720,
+        "latest_label_end": 10727,
+        "response_scale": 1693541.6126319445
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10751,
+        "training_first_origin": 10026,
+        "training_last_origin": 10745,
+        "training_count": 720,
+        "latest_label_end": 10751,
+        "response_scale": 1785767.5273680554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10775,
+        "training_first_origin": 10050,
+        "training_last_origin": 10769,
+        "training_count": 720,
+        "latest_label_end": 10775,
+        "response_scale": 1804380.4119652777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10799,
+        "training_first_origin": 10074,
+        "training_last_origin": 10793,
+        "training_count": 720,
+        "latest_label_end": 10799,
+        "response_scale": 1835927.70725
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10823,
+        "training_first_origin": 10098,
+        "training_last_origin": 10817,
+        "training_count": 720,
+        "latest_label_end": 10823,
+        "response_scale": 1859712.8726944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10847,
+        "training_first_origin": 10122,
+        "training_last_origin": 10841,
+        "training_count": 720,
+        "latest_label_end": 10847,
+        "response_scale": 1849280.3890208334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10871,
+        "training_first_origin": 10146,
+        "training_last_origin": 10865,
+        "training_count": 720,
+        "latest_label_end": 10871,
+        "response_scale": 1864181.4081944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10895,
+        "training_first_origin": 10170,
+        "training_last_origin": 10889,
+        "training_count": 720,
+        "latest_label_end": 10895,
+        "response_scale": 1900671.0559305556
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10919,
+        "training_first_origin": 10194,
+        "training_last_origin": 10913,
+        "training_count": 720,
+        "latest_label_end": 10919,
+        "response_scale": 1906174.0644652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10943,
+        "training_first_origin": 10218,
+        "training_last_origin": 10937,
+        "training_count": 720,
+        "latest_label_end": 10943,
+        "response_scale": 1989646.8228263892
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10967,
+        "training_first_origin": 10242,
+        "training_last_origin": 10961,
+        "training_count": 720,
+        "latest_label_end": 10967,
+        "response_scale": 1965497.390291667
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 10991,
+        "training_first_origin": 10266,
+        "training_last_origin": 10985,
+        "training_count": 720,
+        "latest_label_end": 10991,
+        "response_scale": 2003662.6718541668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11015,
+        "training_first_origin": 10290,
+        "training_last_origin": 11009,
+        "training_count": 720,
+        "latest_label_end": 11015,
+        "response_scale": 2039091.0487152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11039,
+        "training_first_origin": 10314,
+        "training_last_origin": 11033,
+        "training_count": 720,
+        "latest_label_end": 11039,
+        "response_scale": 2034459.1801805557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11063,
+        "training_first_origin": 10338,
+        "training_last_origin": 11057,
+        "training_count": 720,
+        "latest_label_end": 11063,
+        "response_scale": 2043944.2796875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11087,
+        "training_first_origin": 10362,
+        "training_last_origin": 11081,
+        "training_count": 720,
+        "latest_label_end": 11087,
+        "response_scale": 2039808.0980208335
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11111,
+        "training_first_origin": 10386,
+        "training_last_origin": 11105,
+        "training_count": 720,
+        "latest_label_end": 11111,
+        "response_scale": 2077004.5427777776
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11135,
+        "training_first_origin": 10410,
+        "training_last_origin": 11129,
+        "training_count": 720,
+        "latest_label_end": 11135,
+        "response_scale": 2090965.1743472225
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11159,
+        "training_first_origin": 10434,
+        "training_last_origin": 11153,
+        "training_count": 720,
+        "latest_label_end": 11159,
+        "response_scale": 2185096.012152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11183,
+        "training_first_origin": 10458,
+        "training_last_origin": 11177,
+        "training_count": 720,
+        "latest_label_end": 11183,
+        "response_scale": 2185053.2696458334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11207,
+        "training_first_origin": 10482,
+        "training_last_origin": 11201,
+        "training_count": 720,
+        "latest_label_end": 11207,
+        "response_scale": 2105248.627090278
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11231,
+        "training_first_origin": 10506,
+        "training_last_origin": 11225,
+        "training_count": 720,
+        "latest_label_end": 11231,
+        "response_scale": 2121423.129548611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11255,
+        "training_first_origin": 10530,
+        "training_last_origin": 11249,
+        "training_count": 720,
+        "latest_label_end": 11255,
+        "response_scale": 2129072.975722222
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11279,
+        "training_first_origin": 10554,
+        "training_last_origin": 11273,
+        "training_count": 720,
+        "latest_label_end": 11279,
+        "response_scale": 2054171.935027778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11303,
+        "training_first_origin": 10578,
+        "training_last_origin": 11297,
+        "training_count": 720,
+        "latest_label_end": 11303,
+        "response_scale": 1999613.3815416668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11327,
+        "training_first_origin": 10602,
+        "training_last_origin": 11321,
+        "training_count": 720,
+        "latest_label_end": 11327,
+        "response_scale": 1961678.151777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11351,
+        "training_first_origin": 10626,
+        "training_last_origin": 11345,
+        "training_count": 720,
+        "latest_label_end": 11351,
+        "response_scale": 2018162.6627777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11375,
+        "training_first_origin": 10650,
+        "training_last_origin": 11369,
+        "training_count": 720,
+        "latest_label_end": 11375,
+        "response_scale": 1824761.1933819447
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11399,
+        "training_first_origin": 10674,
+        "training_last_origin": 11393,
+        "training_count": 720,
+        "latest_label_end": 11399,
+        "response_scale": 1817949.1833055555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11423,
+        "training_first_origin": 10698,
+        "training_last_origin": 11417,
+        "training_count": 720,
+        "latest_label_end": 11423,
+        "response_scale": 1737299.241875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11447,
+        "training_first_origin": 10722,
+        "training_last_origin": 11441,
+        "training_count": 720,
+        "latest_label_end": 11447,
+        "response_scale": 1738001.999777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11471,
+        "training_first_origin": 10746,
+        "training_last_origin": 11465,
+        "training_count": 720,
+        "latest_label_end": 11471,
+        "response_scale": 1648668.5770555555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11495,
+        "training_first_origin": 10770,
+        "training_last_origin": 11489,
+        "training_count": 720,
+        "latest_label_end": 11495,
+        "response_scale": 1622003.5516944444
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11519,
+        "training_first_origin": 10794,
+        "training_last_origin": 11513,
+        "training_count": 720,
+        "latest_label_end": 11519,
+        "response_scale": 1641089.8699027777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11543,
+        "training_first_origin": 10818,
+        "training_last_origin": 11537,
+        "training_count": 720,
+        "latest_label_end": 11543,
+        "response_scale": 1584676.430951389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11567,
+        "training_first_origin": 10842,
+        "training_last_origin": 11561,
+        "training_count": 720,
+        "latest_label_end": 11567,
+        "response_scale": 1591883.5208333333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11591,
+        "training_first_origin": 10866,
+        "training_last_origin": 11585,
+        "training_count": 720,
+        "latest_label_end": 11591,
+        "response_scale": 1610696.8648055557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11615,
+        "training_first_origin": 10890,
+        "training_last_origin": 11609,
+        "training_count": 720,
+        "latest_label_end": 11615,
+        "response_scale": 1616085.342298611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11639,
+        "training_first_origin": 10914,
+        "training_last_origin": 11633,
+        "training_count": 720,
+        "latest_label_end": 11639,
+        "response_scale": 1634896.5472638889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11663,
+        "training_first_origin": 10938,
+        "training_last_origin": 11657,
+        "training_count": 720,
+        "latest_label_end": 11663,
+        "response_scale": 1608260.241763889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11687,
+        "training_first_origin": 10962,
+        "training_last_origin": 11681,
+        "training_count": 720,
+        "latest_label_end": 11687,
+        "response_scale": 1601930.964923611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11711,
+        "training_first_origin": 10986,
+        "training_last_origin": 11705,
+        "training_count": 720,
+        "latest_label_end": 11711,
+        "response_scale": 1576437.1463472224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11735,
+        "training_first_origin": 11010,
+        "training_last_origin": 11729,
+        "training_count": 720,
+        "latest_label_end": 11735,
+        "response_scale": 1534261.8314930554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11759,
+        "training_first_origin": 11034,
+        "training_last_origin": 11753,
+        "training_count": 720,
+        "latest_label_end": 11759,
+        "response_scale": 1458035.656652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11783,
+        "training_first_origin": 11058,
+        "training_last_origin": 11777,
+        "training_count": 720,
+        "latest_label_end": 11783,
+        "response_scale": 1449217.1182916665
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11807,
+        "training_first_origin": 11082,
+        "training_last_origin": 11801,
+        "training_count": 720,
+        "latest_label_end": 11807,
+        "response_scale": 1491988.1134166664
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11831,
+        "training_first_origin": 11106,
+        "training_last_origin": 11825,
+        "training_count": 720,
+        "latest_label_end": 11831,
+        "response_scale": 1535456.3867708333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11855,
+        "training_first_origin": 11130,
+        "training_last_origin": 11849,
+        "training_count": 720,
+        "latest_label_end": 11855,
+        "response_scale": 1649562.2548958336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 180,
+        "refit_index": 11879,
+        "training_first_origin": 11154,
+        "training_last_origin": 11873,
+        "training_count": 720,
+        "latest_label_end": 11879,
+        "response_scale": 1522252.5683263885
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10463,
+        "training_first_origin": 9738,
+        "training_last_origin": 10457,
+        "training_count": 720,
+        "latest_label_end": 10463,
+        "response_scale": 1084866.4238958333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10487,
+        "training_first_origin": 9762,
+        "training_last_origin": 10481,
+        "training_count": 720,
+        "latest_label_end": 10487,
+        "response_scale": 1138009.4927013891
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10511,
+        "training_first_origin": 9786,
+        "training_last_origin": 10505,
+        "training_count": 720,
+        "latest_label_end": 10511,
+        "response_scale": 1144018.3399652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10535,
+        "training_first_origin": 9810,
+        "training_last_origin": 10529,
+        "training_count": 720,
+        "latest_label_end": 10535,
+        "response_scale": 1127128.0681111112
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10559,
+        "training_first_origin": 9834,
+        "training_last_origin": 10553,
+        "training_count": 720,
+        "latest_label_end": 10559,
+        "response_scale": 1221071.1582847224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10583,
+        "training_first_origin": 9858,
+        "training_last_origin": 10577,
+        "training_count": 720,
+        "latest_label_end": 10583,
+        "response_scale": 1274425.528576389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10607,
+        "training_first_origin": 9882,
+        "training_last_origin": 10601,
+        "training_count": 720,
+        "latest_label_end": 10607,
+        "response_scale": 1353722.7005833334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10631,
+        "training_first_origin": 9906,
+        "training_last_origin": 10625,
+        "training_count": 720,
+        "latest_label_end": 10631,
+        "response_scale": 1355400.2009097221
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10655,
+        "training_first_origin": 9930,
+        "training_last_origin": 10649,
+        "training_count": 720,
+        "latest_label_end": 10655,
+        "response_scale": 1551765.7601875002
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10679,
+        "training_first_origin": 9954,
+        "training_last_origin": 10673,
+        "training_count": 720,
+        "latest_label_end": 10679,
+        "response_scale": 1584002.615701389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10703,
+        "training_first_origin": 9978,
+        "training_last_origin": 10697,
+        "training_count": 720,
+        "latest_label_end": 10703,
+        "response_scale": 1689755.8530208336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10727,
+        "training_first_origin": 10002,
+        "training_last_origin": 10721,
+        "training_count": 720,
+        "latest_label_end": 10727,
+        "response_scale": 1693541.6126319445
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10751,
+        "training_first_origin": 10026,
+        "training_last_origin": 10745,
+        "training_count": 720,
+        "latest_label_end": 10751,
+        "response_scale": 1785767.5273680554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10775,
+        "training_first_origin": 10050,
+        "training_last_origin": 10769,
+        "training_count": 720,
+        "latest_label_end": 10775,
+        "response_scale": 1804380.4119652777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10799,
+        "training_first_origin": 10074,
+        "training_last_origin": 10793,
+        "training_count": 720,
+        "latest_label_end": 10799,
+        "response_scale": 1835927.70725
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10823,
+        "training_first_origin": 10098,
+        "training_last_origin": 10817,
+        "training_count": 720,
+        "latest_label_end": 10823,
+        "response_scale": 1859712.8726944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10847,
+        "training_first_origin": 10122,
+        "training_last_origin": 10841,
+        "training_count": 720,
+        "latest_label_end": 10847,
+        "response_scale": 1849280.3890208334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10871,
+        "training_first_origin": 10146,
+        "training_last_origin": 10865,
+        "training_count": 720,
+        "latest_label_end": 10871,
+        "response_scale": 1864181.4081944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10895,
+        "training_first_origin": 10170,
+        "training_last_origin": 10889,
+        "training_count": 720,
+        "latest_label_end": 10895,
+        "response_scale": 1900671.0559305556
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10919,
+        "training_first_origin": 10194,
+        "training_last_origin": 10913,
+        "training_count": 720,
+        "latest_label_end": 10919,
+        "response_scale": 1906174.0644652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10943,
+        "training_first_origin": 10218,
+        "training_last_origin": 10937,
+        "training_count": 720,
+        "latest_label_end": 10943,
+        "response_scale": 1989646.8228263892
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10967,
+        "training_first_origin": 10242,
+        "training_last_origin": 10961,
+        "training_count": 720,
+        "latest_label_end": 10967,
+        "response_scale": 1965497.390291667
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 10991,
+        "training_first_origin": 10266,
+        "training_last_origin": 10985,
+        "training_count": 720,
+        "latest_label_end": 10991,
+        "response_scale": 2003662.6718541668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11015,
+        "training_first_origin": 10290,
+        "training_last_origin": 11009,
+        "training_count": 720,
+        "latest_label_end": 11015,
+        "response_scale": 2039091.0487152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11039,
+        "training_first_origin": 10314,
+        "training_last_origin": 11033,
+        "training_count": 720,
+        "latest_label_end": 11039,
+        "response_scale": 2034459.1801805557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11063,
+        "training_first_origin": 10338,
+        "training_last_origin": 11057,
+        "training_count": 720,
+        "latest_label_end": 11063,
+        "response_scale": 2043944.2796875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11087,
+        "training_first_origin": 10362,
+        "training_last_origin": 11081,
+        "training_count": 720,
+        "latest_label_end": 11087,
+        "response_scale": 2039808.0980208335
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11111,
+        "training_first_origin": 10386,
+        "training_last_origin": 11105,
+        "training_count": 720,
+        "latest_label_end": 11111,
+        "response_scale": 2077004.5427777776
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11135,
+        "training_first_origin": 10410,
+        "training_last_origin": 11129,
+        "training_count": 720,
+        "latest_label_end": 11135,
+        "response_scale": 2090965.1743472225
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11159,
+        "training_first_origin": 10434,
+        "training_last_origin": 11153,
+        "training_count": 720,
+        "latest_label_end": 11159,
+        "response_scale": 2185096.012152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11183,
+        "training_first_origin": 10458,
+        "training_last_origin": 11177,
+        "training_count": 720,
+        "latest_label_end": 11183,
+        "response_scale": 2185053.2696458334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11207,
+        "training_first_origin": 10482,
+        "training_last_origin": 11201,
+        "training_count": 720,
+        "latest_label_end": 11207,
+        "response_scale": 2105248.627090278
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11231,
+        "training_first_origin": 10506,
+        "training_last_origin": 11225,
+        "training_count": 720,
+        "latest_label_end": 11231,
+        "response_scale": 2121423.129548611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11255,
+        "training_first_origin": 10530,
+        "training_last_origin": 11249,
+        "training_count": 720,
+        "latest_label_end": 11255,
+        "response_scale": 2129072.975722222
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11279,
+        "training_first_origin": 10554,
+        "training_last_origin": 11273,
+        "training_count": 720,
+        "latest_label_end": 11279,
+        "response_scale": 2054171.935027778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11303,
+        "training_first_origin": 10578,
+        "training_last_origin": 11297,
+        "training_count": 720,
+        "latest_label_end": 11303,
+        "response_scale": 1999613.3815416668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11327,
+        "training_first_origin": 10602,
+        "training_last_origin": 11321,
+        "training_count": 720,
+        "latest_label_end": 11327,
+        "response_scale": 1961678.151777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11351,
+        "training_first_origin": 10626,
+        "training_last_origin": 11345,
+        "training_count": 720,
+        "latest_label_end": 11351,
+        "response_scale": 2018162.6627777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11375,
+        "training_first_origin": 10650,
+        "training_last_origin": 11369,
+        "training_count": 720,
+        "latest_label_end": 11375,
+        "response_scale": 1824761.1933819447
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11399,
+        "training_first_origin": 10674,
+        "training_last_origin": 11393,
+        "training_count": 720,
+        "latest_label_end": 11399,
+        "response_scale": 1817949.1833055555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11423,
+        "training_first_origin": 10698,
+        "training_last_origin": 11417,
+        "training_count": 720,
+        "latest_label_end": 11423,
+        "response_scale": 1737299.241875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11447,
+        "training_first_origin": 10722,
+        "training_last_origin": 11441,
+        "training_count": 720,
+        "latest_label_end": 11447,
+        "response_scale": 1738001.999777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11471,
+        "training_first_origin": 10746,
+        "training_last_origin": 11465,
+        "training_count": 720,
+        "latest_label_end": 11471,
+        "response_scale": 1648668.5770555555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11495,
+        "training_first_origin": 10770,
+        "training_last_origin": 11489,
+        "training_count": 720,
+        "latest_label_end": 11495,
+        "response_scale": 1622003.5516944444
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11519,
+        "training_first_origin": 10794,
+        "training_last_origin": 11513,
+        "training_count": 720,
+        "latest_label_end": 11519,
+        "response_scale": 1641089.8699027777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11543,
+        "training_first_origin": 10818,
+        "training_last_origin": 11537,
+        "training_count": 720,
+        "latest_label_end": 11543,
+        "response_scale": 1584676.430951389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11567,
+        "training_first_origin": 10842,
+        "training_last_origin": 11561,
+        "training_count": 720,
+        "latest_label_end": 11567,
+        "response_scale": 1591883.5208333333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11591,
+        "training_first_origin": 10866,
+        "training_last_origin": 11585,
+        "training_count": 720,
+        "latest_label_end": 11591,
+        "response_scale": 1610696.8648055557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11615,
+        "training_first_origin": 10890,
+        "training_last_origin": 11609,
+        "training_count": 720,
+        "latest_label_end": 11615,
+        "response_scale": 1616085.342298611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11639,
+        "training_first_origin": 10914,
+        "training_last_origin": 11633,
+        "training_count": 720,
+        "latest_label_end": 11639,
+        "response_scale": 1634896.5472638889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11663,
+        "training_first_origin": 10938,
+        "training_last_origin": 11657,
+        "training_count": 720,
+        "latest_label_end": 11663,
+        "response_scale": 1608260.241763889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11687,
+        "training_first_origin": 10962,
+        "training_last_origin": 11681,
+        "training_count": 720,
+        "latest_label_end": 11687,
+        "response_scale": 1601930.964923611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11711,
+        "training_first_origin": 10986,
+        "training_last_origin": 11705,
+        "training_count": 720,
+        "latest_label_end": 11711,
+        "response_scale": 1576437.1463472224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11735,
+        "training_first_origin": 11010,
+        "training_last_origin": 11729,
+        "training_count": 720,
+        "latest_label_end": 11735,
+        "response_scale": 1534261.8314930554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11759,
+        "training_first_origin": 11034,
+        "training_last_origin": 11753,
+        "training_count": 720,
+        "latest_label_end": 11759,
+        "response_scale": 1458035.656652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11783,
+        "training_first_origin": 11058,
+        "training_last_origin": 11777,
+        "training_count": 720,
+        "latest_label_end": 11783,
+        "response_scale": 1449217.1182916665
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11807,
+        "training_first_origin": 11082,
+        "training_last_origin": 11801,
+        "training_count": 720,
+        "latest_label_end": 11807,
+        "response_scale": 1491988.1134166664
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11831,
+        "training_first_origin": 11106,
+        "training_last_origin": 11825,
+        "training_count": 720,
+        "latest_label_end": 11831,
+        "response_scale": 1535456.3867708333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11855,
+        "training_first_origin": 11130,
+        "training_last_origin": 11849,
+        "training_count": 720,
+        "latest_label_end": 11855,
+        "response_scale": 1649562.2548958336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 360,
+        "refit_index": 11879,
+        "training_first_origin": 11154,
+        "training_last_origin": 11873,
+        "training_count": 720,
+        "latest_label_end": 11879,
+        "response_scale": 1522252.5683263885
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10463,
+        "training_first_origin": 9738,
+        "training_last_origin": 10457,
+        "training_count": 720,
+        "latest_label_end": 10463,
+        "response_scale": 1084866.4238958333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10487,
+        "training_first_origin": 9762,
+        "training_last_origin": 10481,
+        "training_count": 720,
+        "latest_label_end": 10487,
+        "response_scale": 1138009.4927013891
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10511,
+        "training_first_origin": 9786,
+        "training_last_origin": 10505,
+        "training_count": 720,
+        "latest_label_end": 10511,
+        "response_scale": 1144018.3399652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10535,
+        "training_first_origin": 9810,
+        "training_last_origin": 10529,
+        "training_count": 720,
+        "latest_label_end": 10535,
+        "response_scale": 1127128.0681111112
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10559,
+        "training_first_origin": 9834,
+        "training_last_origin": 10553,
+        "training_count": 720,
+        "latest_label_end": 10559,
+        "response_scale": 1221071.1582847224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10583,
+        "training_first_origin": 9858,
+        "training_last_origin": 10577,
+        "training_count": 720,
+        "latest_label_end": 10583,
+        "response_scale": 1274425.528576389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10607,
+        "training_first_origin": 9882,
+        "training_last_origin": 10601,
+        "training_count": 720,
+        "latest_label_end": 10607,
+        "response_scale": 1353722.7005833334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10631,
+        "training_first_origin": 9906,
+        "training_last_origin": 10625,
+        "training_count": 720,
+        "latest_label_end": 10631,
+        "response_scale": 1355400.2009097221
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10655,
+        "training_first_origin": 9930,
+        "training_last_origin": 10649,
+        "training_count": 720,
+        "latest_label_end": 10655,
+        "response_scale": 1551765.7601875002
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10679,
+        "training_first_origin": 9954,
+        "training_last_origin": 10673,
+        "training_count": 720,
+        "latest_label_end": 10679,
+        "response_scale": 1584002.615701389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10703,
+        "training_first_origin": 9978,
+        "training_last_origin": 10697,
+        "training_count": 720,
+        "latest_label_end": 10703,
+        "response_scale": 1689755.8530208336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10727,
+        "training_first_origin": 10002,
+        "training_last_origin": 10721,
+        "training_count": 720,
+        "latest_label_end": 10727,
+        "response_scale": 1693541.6126319445
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10751,
+        "training_first_origin": 10026,
+        "training_last_origin": 10745,
+        "training_count": 720,
+        "latest_label_end": 10751,
+        "response_scale": 1785767.5273680554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10775,
+        "training_first_origin": 10050,
+        "training_last_origin": 10769,
+        "training_count": 720,
+        "latest_label_end": 10775,
+        "response_scale": 1804380.4119652777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10799,
+        "training_first_origin": 10074,
+        "training_last_origin": 10793,
+        "training_count": 720,
+        "latest_label_end": 10799,
+        "response_scale": 1835927.70725
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10823,
+        "training_first_origin": 10098,
+        "training_last_origin": 10817,
+        "training_count": 720,
+        "latest_label_end": 10823,
+        "response_scale": 1859712.8726944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10847,
+        "training_first_origin": 10122,
+        "training_last_origin": 10841,
+        "training_count": 720,
+        "latest_label_end": 10847,
+        "response_scale": 1849280.3890208334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10871,
+        "training_first_origin": 10146,
+        "training_last_origin": 10865,
+        "training_count": 720,
+        "latest_label_end": 10871,
+        "response_scale": 1864181.4081944446
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10895,
+        "training_first_origin": 10170,
+        "training_last_origin": 10889,
+        "training_count": 720,
+        "latest_label_end": 10895,
+        "response_scale": 1900671.0559305556
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10919,
+        "training_first_origin": 10194,
+        "training_last_origin": 10913,
+        "training_count": 720,
+        "latest_label_end": 10919,
+        "response_scale": 1906174.0644652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10943,
+        "training_first_origin": 10218,
+        "training_last_origin": 10937,
+        "training_count": 720,
+        "latest_label_end": 10943,
+        "response_scale": 1989646.8228263892
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10967,
+        "training_first_origin": 10242,
+        "training_last_origin": 10961,
+        "training_count": 720,
+        "latest_label_end": 10967,
+        "response_scale": 1965497.390291667
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 10991,
+        "training_first_origin": 10266,
+        "training_last_origin": 10985,
+        "training_count": 720,
+        "latest_label_end": 10991,
+        "response_scale": 2003662.6718541668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11015,
+        "training_first_origin": 10290,
+        "training_last_origin": 11009,
+        "training_count": 720,
+        "latest_label_end": 11015,
+        "response_scale": 2039091.0487152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11039,
+        "training_first_origin": 10314,
+        "training_last_origin": 11033,
+        "training_count": 720,
+        "latest_label_end": 11039,
+        "response_scale": 2034459.1801805557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11063,
+        "training_first_origin": 10338,
+        "training_last_origin": 11057,
+        "training_count": 720,
+        "latest_label_end": 11063,
+        "response_scale": 2043944.2796875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11087,
+        "training_first_origin": 10362,
+        "training_last_origin": 11081,
+        "training_count": 720,
+        "latest_label_end": 11087,
+        "response_scale": 2039808.0980208335
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11111,
+        "training_first_origin": 10386,
+        "training_last_origin": 11105,
+        "training_count": 720,
+        "latest_label_end": 11111,
+        "response_scale": 2077004.5427777776
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11135,
+        "training_first_origin": 10410,
+        "training_last_origin": 11129,
+        "training_count": 720,
+        "latest_label_end": 11135,
+        "response_scale": 2090965.1743472225
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11159,
+        "training_first_origin": 10434,
+        "training_last_origin": 11153,
+        "training_count": 720,
+        "latest_label_end": 11159,
+        "response_scale": 2185096.012152778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11183,
+        "training_first_origin": 10458,
+        "training_last_origin": 11177,
+        "training_count": 720,
+        "latest_label_end": 11183,
+        "response_scale": 2185053.2696458334
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11207,
+        "training_first_origin": 10482,
+        "training_last_origin": 11201,
+        "training_count": 720,
+        "latest_label_end": 11207,
+        "response_scale": 2105248.627090278
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11231,
+        "training_first_origin": 10506,
+        "training_last_origin": 11225,
+        "training_count": 720,
+        "latest_label_end": 11231,
+        "response_scale": 2121423.129548611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11255,
+        "training_first_origin": 10530,
+        "training_last_origin": 11249,
+        "training_count": 720,
+        "latest_label_end": 11255,
+        "response_scale": 2129072.975722222
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11279,
+        "training_first_origin": 10554,
+        "training_last_origin": 11273,
+        "training_count": 720,
+        "latest_label_end": 11279,
+        "response_scale": 2054171.935027778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11303,
+        "training_first_origin": 10578,
+        "training_last_origin": 11297,
+        "training_count": 720,
+        "latest_label_end": 11303,
+        "response_scale": 1999613.3815416668
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11327,
+        "training_first_origin": 10602,
+        "training_last_origin": 11321,
+        "training_count": 720,
+        "latest_label_end": 11327,
+        "response_scale": 1961678.151777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11351,
+        "training_first_origin": 10626,
+        "training_last_origin": 11345,
+        "training_count": 720,
+        "latest_label_end": 11351,
+        "response_scale": 2018162.6627777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11375,
+        "training_first_origin": 10650,
+        "training_last_origin": 11369,
+        "training_count": 720,
+        "latest_label_end": 11375,
+        "response_scale": 1824761.1933819447
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11399,
+        "training_first_origin": 10674,
+        "training_last_origin": 11393,
+        "training_count": 720,
+        "latest_label_end": 11399,
+        "response_scale": 1817949.1833055555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11423,
+        "training_first_origin": 10698,
+        "training_last_origin": 11417,
+        "training_count": 720,
+        "latest_label_end": 11423,
+        "response_scale": 1737299.241875
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11447,
+        "training_first_origin": 10722,
+        "training_last_origin": 11441,
+        "training_count": 720,
+        "latest_label_end": 11447,
+        "response_scale": 1738001.999777778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11471,
+        "training_first_origin": 10746,
+        "training_last_origin": 11465,
+        "training_count": 720,
+        "latest_label_end": 11471,
+        "response_scale": 1648668.5770555555
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11495,
+        "training_first_origin": 10770,
+        "training_last_origin": 11489,
+        "training_count": 720,
+        "latest_label_end": 11495,
+        "response_scale": 1622003.5516944444
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11519,
+        "training_first_origin": 10794,
+        "training_last_origin": 11513,
+        "training_count": 720,
+        "latest_label_end": 11519,
+        "response_scale": 1641089.8699027777
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11543,
+        "training_first_origin": 10818,
+        "training_last_origin": 11537,
+        "training_count": 720,
+        "latest_label_end": 11543,
+        "response_scale": 1584676.430951389
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11567,
+        "training_first_origin": 10842,
+        "training_last_origin": 11561,
+        "training_count": 720,
+        "latest_label_end": 11567,
+        "response_scale": 1591883.5208333333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11591,
+        "training_first_origin": 10866,
+        "training_last_origin": 11585,
+        "training_count": 720,
+        "latest_label_end": 11591,
+        "response_scale": 1610696.8648055557
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11615,
+        "training_first_origin": 10890,
+        "training_last_origin": 11609,
+        "training_count": 720,
+        "latest_label_end": 11615,
+        "response_scale": 1616085.342298611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11639,
+        "training_first_origin": 10914,
+        "training_last_origin": 11633,
+        "training_count": 720,
+        "latest_label_end": 11639,
+        "response_scale": 1634896.5472638889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11663,
+        "training_first_origin": 10938,
+        "training_last_origin": 11657,
+        "training_count": 720,
+        "latest_label_end": 11663,
+        "response_scale": 1608260.241763889
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11687,
+        "training_first_origin": 10962,
+        "training_last_origin": 11681,
+        "training_count": 720,
+        "latest_label_end": 11687,
+        "response_scale": 1601930.964923611
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11711,
+        "training_first_origin": 10986,
+        "training_last_origin": 11705,
+        "training_count": 720,
+        "latest_label_end": 11711,
+        "response_scale": 1576437.1463472224
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11735,
+        "training_first_origin": 11010,
+        "training_last_origin": 11729,
+        "training_count": 720,
+        "latest_label_end": 11735,
+        "response_scale": 1534261.8314930554
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11759,
+        "training_first_origin": 11034,
+        "training_last_origin": 11753,
+        "training_count": 720,
+        "latest_label_end": 11759,
+        "response_scale": 1458035.656652778
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11783,
+        "training_first_origin": 11058,
+        "training_last_origin": 11777,
+        "training_count": 720,
+        "latest_label_end": 11783,
+        "response_scale": 1449217.1182916665
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11807,
+        "training_first_origin": 11082,
+        "training_last_origin": 11801,
+        "training_count": 720,
+        "latest_label_end": 11807,
+        "response_scale": 1491988.1134166664
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11831,
+        "training_first_origin": 11106,
+        "training_last_origin": 11825,
+        "training_count": 720,
+        "latest_label_end": 11831,
+        "response_scale": 1535456.3867708333
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11855,
+        "training_first_origin": 11130,
+        "training_last_origin": 11849,
+        "training_count": 720,
+        "latest_label_end": 11855,
+        "response_scale": 1649562.2548958336
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 720,
+        "refit_index": 11879,
+        "training_first_origin": 11154,
+        "training_last_origin": 11873,
+        "training_count": 720,
+        "latest_label_end": 11879,
+        "response_scale": 1522252.5683263885
+      }
+    ],
+    "selection": {
+      "status": "SELECTED",
+      "parameter": 360,
+      "mean_validation_pinball": 479641.61408719816
+    },
+    "failure": null,
+    "origin_identity": {
+      "count": 1440,
+      "first": 10463,
+      "last": 11902,
+      "sha256": "72eb4dd7dee136ab4639d5044e89796531040364779b6b3e8dcb064bf8c88f85"
+    }
+  },
+  "stop_code": null,
+  "artifacts": [
+    {
+      "area": "private",
+      "name": "numeric-traces.npz",
+      "bytes": 212254,
+      "sha256": "f9ed7b1a323e87b4302f6f23e3be07af06a75cacaaab8a07b0bc0969ec947f66"
+    }
+  ]
+}

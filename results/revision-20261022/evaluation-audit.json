@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "status": "VERIFIED",
+  "created_utc": "2026-10-22T09:46:11Z",
+  "scope": "All accepted fixed-selection evaluation and declared references; descriptive paired comparisons; no model refit",
+  "executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+  "selection_freeze_sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+  "evaluation_cell_count": 24,
+  "reference_cell_count": 8,
+  "summary_rows": 90,
+  "annual_rows": 372,
+  "nonoverlap_method_rows": 90,
+  "paired_rows": 98,
+  "paired_annual_rows": 388,
+  "paired_nonoverlap_rows": 98,
+  "historical_exact_checks": [
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "rolling_F",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "rolling_S",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "rolling_K",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "one_state_F",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "one_state_S",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "one_state_K",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "rolling_F",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "rolling_S",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "rolling_K",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "one_state_F",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "one_state_S",
+      "status": "EXACT_ALL_AGGREGATES"
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "one_state_K",
+      "status": "EXACT_ALL_AGGREGATES"
+    }
+  ],
+  "full_pool_identity_checks": 2,
+  "independent_peak_checks": "direct Python max(abs(position[t:t+H+1])) at every declared source/H/origin",
+  "maximum_worker_peak_rss_bytes": 67584000,
+  "maximum_observed_worker_threads": 1,
+  "total_reported_worker_seconds": 73.83784366468899,
+  "fit_counts": {
+    "QR": 1196,
+    "KNN": 1196,
+    "SCALED_KNN": 1196,
+    "references": 0
+  },
+  "receipts": [
+    {
+      "public_file": "evaluation-fx_hourly-h6-w720-QR.json",
+      "sha256": "fbf8135953f3a17d1d09b8318945ae45ab322f464a191c4936de8f7cc2fb25b1",
+      "bytes": 301891,
+      "status": "COMPLETE",
+      "elapsed_seconds": 8.924161750124767,
+      "peak_rss_bytes": 58146816
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h6-w720-KNN.json",
+      "sha256": "3108d2183d17b6b468853ca8953a25869d7ff08d569925c731158d217ce578d8",
+      "bytes": 84355,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.918534374795854,
+      "peak_rss_bytes": 56459264
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h6-w720-SCALED_KNN.json",
+      "sha256": "396fdc133f53bbb5701023f02a0f55492ba51ad319b61e84d07440c4e6bc9200",
+      "bytes": 86342,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.9813252498861402,
+      "peak_rss_bytes": 56967168
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h6-w2880-QR.json",
+      "sha256": "30f872660f7b6eabbcec884d0a8fabca0f2071f52eb861414c5750f0b053f49f",
+      "bytes": 302089,
+      "status": "COMPLETE",
+      "elapsed_seconds": 15.82655741693452,
+      "peak_rss_bytes": 67584000
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h6-w2880-KNN.json",
+      "sha256": "6f991b068b1de4fcfc9009d735303c9c191eb79e3e77622f8305ef7d37728d0d",
+      "bytes": 84636,
+      "status": "COMPLETE",
+      "elapsed_seconds": 2.9653679160401225,
+      "peak_rss_bytes": 63848448
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h6-w2880-SCALED_KNN.json",
+      "sha256": "48a25a8b299be55d78520439d711e4849af687dfd49804c4e3d855c0699de88c",
+      "bytes": 86617,
+      "status": "COMPLETE",
+      "elapsed_seconds": 3.320348541950807,
+      "peak_rss_bytes": 64012288
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w720-QR.json",
+      "sha256": "126fe854b210246668c05025ecc650fb6a83066607bdf5bdacb5e51062dc5087",
+      "bytes": 301693,
+      "status": "COMPLETE",
+      "elapsed_seconds": 5.77418154082261,
+      "peak_rss_bytes": 59097088
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w720-KNN.json",
+      "sha256": "fd67e4331fb296cb3ebf1d027fbc28760114b7ce195818d12c610d3f1467a4e8",
+      "bytes": 84205,
+      "status": "COMPLETE",
+      "elapsed_seconds": 2.0973329581320286,
+      "peak_rss_bytes": 56836096
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w720-SCALED_KNN.json",
+      "sha256": "1e880209362273a3c747e43aca6ed718857549f26a7c8f52ef6ad0e7cfd33f67",
+      "bytes": 86189,
+      "status": "COMPLETE",
+      "elapsed_seconds": 2.0402814170811325,
+      "peak_rss_bytes": 59064320
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w2880-QR.json",
+      "sha256": "5e13a67a74c0e79735e47365811cce6c5044bb4e2c16b225e6eb409cef4385cf",
+      "bytes": 302188,
+      "status": "COMPLETE",
+      "elapsed_seconds": 13.328106041997671,
+      "peak_rss_bytes": 67452928
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w2880-KNN.json",
+      "sha256": "9f1f2557796cd4d0a056478f8fd76c732e9789e499c61d9d212a89d98a6952ba",
+      "bytes": 84468,
+      "status": "COMPLETE",
+      "elapsed_seconds": 2.9467997080646455,
+      "peak_rss_bytes": 63963136
+    },
+    {
+      "public_file": "evaluation-fx_hourly-h24-w2880-SCALED_KNN.json",
+      "sha256": "f49954f34f7213959384c77ddbe7acbd5d93850b78f6fcab68a243ff538392ae",
+      "bytes": 86455,
+      "status": "COMPLETE",
+      "elapsed_seconds": 2.977239416912198,
+      "peak_rss_bytes": 64208896
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w52-QR.json",
+      "sha256": "960c8d57b47ac7fdd0cc4bb973b63c9aed422d8de02f1995a03aa7ef617e870f",
+      "bytes": 30474,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.24646212486550212,
+      "peak_rss_bytes": 40714240
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w52-KNN.json",
+      "sha256": "c907be7e0ca0f6805c824dacfdd3eb8da39a307fc2eb24502591d0a7ba96b927",
+      "bytes": 12967,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.1608756249770522,
+      "peak_rss_bytes": 40697856
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w52-SCALED_KNN.json",
+      "sha256": "d0420f55205d459345c973148a2d24d23ec463435988c7cf199fdc88ea10ba80",
+      "bytes": 13350,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16538708307780325,
+      "peak_rss_bytes": 40894464
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w260-QR.json",
+      "sha256": "a5e6c92b42707fbf8e854fd3ba17f3506a80204a5671a13d7d4a71eee8b6574b",
+      "bytes": 30552,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.9878964170347899,
+      "peak_rss_bytes": 40812544
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w260-KNN.json",
+      "sha256": "cd52fa2955c160765e8f657216c214612060ca451fc8ed503b38fdbc9edda892",
+      "bytes": 13003,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16802016622386873,
+      "peak_rss_bytes": 40747008
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h6-w260-SCALED_KNN.json",
+      "sha256": "daa947c09d30fd5e62f313c61203149b87d9e822961ceece260786f10c7b1d88",
+      "bytes": 13369,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16150204092264175,
+      "peak_rss_bytes": 40812544
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w52-QR.json",
+      "sha256": "e70dd9b200836a320fd014fe1db7e354e710c07f7bb978790da899cd27bb8aeb",
+      "bytes": 30526,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.6218431249726564,
+      "peak_rss_bytes": 40468480
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w52-KNN.json",
+      "sha256": "b2010ab68a2a7cef10d9d1904fbac7e14d334ac1cf90e034610455526072fec8",
+      "bytes": 12995,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16202566702850163,
+      "peak_rss_bytes": 40615936
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w52-SCALED_KNN.json",
+      "sha256": "80ad837bbad3aa7177e5b90d5403a11e25d1053452e7e6a1ef021b3702ef5030",
+      "bytes": 13344,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.15737820882350206,
+      "peak_rss_bytes": 40648704
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w260-QR.json",
+      "sha256": "1c332b3a40a99cc1c4769ef5603067e1d594c809f95f38d335381df5700d74bf",
+      "bytes": 30442,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.3507031670305878,
+      "peak_rss_bytes": 40599552
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w260-KNN.json",
+      "sha256": "6f4140bc5796c1f1266a6d3b01e223d5ed1324503e0524a88b8b0b8f7f923343",
+      "bytes": 13106,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16649637487716973,
+      "peak_rss_bytes": 41025536
+    },
+    {
+      "public_file": "evaluation-nyfed_weekly-h24-w260-SCALED_KNN.json",
+      "sha256": "3132d219581ee2660cc73bc16a0ab1de70ea5db30214388368ba25ea7e401aab",
+      "bytes": 13400,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.16578499996103346,
+      "peak_rss_bytes": 41009152
+    },
+    {
+      "public_file": "references-fx_hourly-h6-w720.json",
+      "sha256": "586141d8fee61af891085dc6716ab2b7b46c1d4b61c25dd52f74bc2b06cccbeb",
+      "bytes": 23895,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.4710638332180679,
+      "peak_rss_bytes": 57950208
+    },
+    {
+      "public_file": "references-fx_hourly-h6-w2880.json",
+      "sha256": "020ed4ba49c58ed6186031c821e2d7cf3d3d8187731e435fddb25b0d4637c6f2",
+      "bytes": 16585,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.4780552920419723,
+      "peak_rss_bytes": 53002240
+    },
+    {
+      "public_file": "references-fx_hourly-h24-w720.json",
+      "sha256": "fc1fcacfac56f91c2bdd18eed8e480faa2e15a73db418305100fb0fff9839149",
+      "bytes": 23907,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.472759166965261,
+      "peak_rss_bytes": 55394304
+    },
+    {
+      "public_file": "references-fx_hourly-h24-w2880.json",
+      "sha256": "9e4b399bb8c9b371481873d9c80c49d553cc7285bb3f72fb0b816e642cf2e25f",
+      "bytes": 16664,
+      "status": "COMPLETE",
+      "elapsed_seconds": 1.4015054579358548,
+      "peak_rss_bytes": 52658176
+    },
+    {
+      "public_file": "references-nyfed_weekly-h6-w52.json",
+      "sha256": "90eaf4c29eef6cf09c1e8e295f1c26b12ee12b37dc5f4022c89d5c16dff8d9fd",
+      "bytes": 43691,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.09690745803527534,
+      "peak_rss_bytes": 39944192
+    },
+    {
+      "public_file": "references-nyfed_weekly-h6-w260.json",
+      "sha256": "1f1e88b506649444726f0fccfafa5acad077c9a054120f759a8ed42bbd97e53d",
+      "bytes": 43990,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.10229095793329179,
+      "peak_rss_bytes": 40157184
+    },
+    {
+      "public_file": "references-nyfed_weekly-h24-w52.json",
+      "sha256": "bfdc62f144bebf6e240b5f4c6479416db1771430d722e52631f4ffa400488931",
+      "bytes": 44264,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.09602833283133805,
+      "peak_rss_bytes": 40140800
+    },
+    {
+      "public_file": "references-nyfed_weekly-h24-w260.json",
+      "sha256": "cb958d2e3570be6b48f7a2ee067b26b4e2801890cbaea3f26426e0ca5cb3c113",
+      "bytes": 44209,
+      "status": "COMPLETE",
+      "elapsed_seconds": 0.10462183319032192,
+      "peak_rss_bytes": 40140800
+    }
+  ],
+  "audit_resources": {
+    "started_utc": "2026-10-22T09:46:10Z",
+    "checkpoint_utc": "2026-10-22T09:46:11Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 0.6766870410647243,
+    "peak_rss_bytes": 76054528,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 34,
+    "completed_stability_lengths": [],
+    "current_stage": "evaluation_audit_final",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 0,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 0,
+    "private_numeric_output_bytes_at_checkpoint": 0,
+    "public_analysis_output_bytes_at_checkpoint": 0
+  },
+  "exports": [
+    {
+      "path": "evaluation-summary.csv",
+      "bytes": 17416,
+      "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15"
+    },
+    {
+      "path": "evaluation-annual.csv",
+      "bytes": 66777,
+      "sha256": "649619c41f4f92740bf3ebf9ee58f43781ad3439751be6faed101e1be65105cf"
+    },
+    {
+      "path": "evaluation-nonoverlap.csv",
+      "bytes": 15512,
+      "sha256": "571485073b7136cbb66ca70799706a6ed50598d3a940933c0180a0bfe2938a8b"
+    },
+    {
+      "path": "paired-comparisons.csv",
+      "bytes": 26918,
+      "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    {
+      "path": "paired-annual.csv",
+      "bytes": 102217,
+      "sha256": "5b0727af566cbfa935fba95c25cf2a7918dc073baa2daf8558d84984161bce40"
+    },
+    {
+      "path": "paired-nonoverlap.csv",
+      "bytes": 25807,
+      "sha256": "b050007b8ddffc5ba5865ccad90960740d94f55d7dd7a814e88665aa3d55677d"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w720-QR.json",
+      "bytes": 301891,
+      "sha256": "fbf8135953f3a17d1d09b8318945ae45ab322f464a191c4936de8f7cc2fb25b1"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w720-KNN.json",
+      "bytes": 84355,
+      "sha256": "3108d2183d17b6b468853ca8953a25869d7ff08d569925c731158d217ce578d8"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w720-SCALED_KNN.json",
+      "bytes": 86342,
+      "sha256": "396fdc133f53bbb5701023f02a0f55492ba51ad319b61e84d07440c4e6bc9200"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w2880-QR.json",
+      "bytes": 302089,
+      "sha256": "30f872660f7b6eabbcec884d0a8fabca0f2071f52eb861414c5750f0b053f49f"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w2880-KNN.json",
+      "bytes": 84636,
+      "sha256": "6f991b068b1de4fcfc9009d735303c9c191eb79e3e77622f8305ef7d37728d0d"
+    },
+    {
+      "path": "evaluation-fx_hourly-h6-w2880-SCALED_KNN.json",
+      "bytes": 86617,
+      "sha256": "48a25a8b299be55d78520439d711e4849af687dfd49804c4e3d855c0699de88c"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w720-QR.json",
+      "bytes": 301693,
+      "sha256": "126fe854b210246668c05025ecc650fb6a83066607bdf5bdacb5e51062dc5087"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w720-KNN.json",
+      "bytes": 84205,
+      "sha256": "fd67e4331fb296cb3ebf1d027fbc28760114b7ce195818d12c610d3f1467a4e8"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w720-SCALED_KNN.json",
+      "bytes": 86189,
+      "sha256": "1e880209362273a3c747e43aca6ed718857549f26a7c8f52ef6ad0e7cfd33f67"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w2880-QR.json",
+      "bytes": 302188,
+      "sha256": "5e13a67a74c0e79735e47365811cce6c5044bb4e2c16b225e6eb409cef4385cf"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w2880-KNN.json",
+      "bytes": 84468,
+      "sha256": "9f1f2557796cd4d0a056478f8fd76c732e9789e499c61d9d212a89d98a6952ba"
+    },
+    {
+      "path": "evaluation-fx_hourly-h24-w2880-SCALED_KNN.json",
+      "bytes": 86455,
+      "sha256": "f49954f34f7213959384c77ddbe7acbd5d93850b78f6fcab68a243ff538392ae"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w52-QR.json",
+      "bytes": 30474,
+      "sha256": "960c8d57b47ac7fdd0cc4bb973b63c9aed422d8de02f1995a03aa7ef617e870f"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w52-KNN.json",
+      "bytes": 12967,
+      "sha256": "c907be7e0ca0f6805c824dacfdd3eb8da39a307fc2eb24502591d0a7ba96b927"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w52-SCALED_KNN.json",
+      "bytes": 13350,
+      "sha256": "d0420f55205d459345c973148a2d24d23ec463435988c7cf199fdc88ea10ba80"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w260-QR.json",
+      "bytes": 30552,
+      "sha256": "a5e6c92b42707fbf8e854fd3ba17f3506a80204a5671a13d7d4a71eee8b6574b"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w260-KNN.json",
+      "bytes": 13003,
+      "sha256": "cd52fa2955c160765e8f657216c214612060ca451fc8ed503b38fdbc9edda892"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h6-w260-SCALED_KNN.json",
+      "bytes": 13369,
+      "sha256": "daa947c09d30fd5e62f313c61203149b87d9e822961ceece260786f10c7b1d88"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w52-QR.json",
+      "bytes": 30526,
+      "sha256": "e70dd9b200836a320fd014fe1db7e354e710c07f7bb978790da899cd27bb8aeb"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w52-KNN.json",
+      "bytes": 12995,
+      "sha256": "b2010ab68a2a7cef10d9d1904fbac7e14d334ac1cf90e034610455526072fec8"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w52-SCALED_KNN.json",
+      "bytes": 13344,
+      "sha256": "80ad837bbad3aa7177e5b90d5403a11e25d1053452e7e6a1ef021b3702ef5030"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w260-QR.json",
+      "bytes": 30442,
+      "sha256": "1c332b3a40a99cc1c4769ef5603067e1d594c809f95f38d335381df5700d74bf"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w260-KNN.json",
+      "bytes": 13106,
+      "sha256": "6f4140bc5796c1f1266a6d3b01e223d5ed1324503e0524a88b8b0b8f7f923343"
+    },
+    {
+      "path": "evaluation-nyfed_weekly-h24-w260-SCALED_KNN.json",
+      "bytes": 13400,
+      "sha256": "3132d219581ee2660cc73bc16a0ab1de70ea5db30214388368ba25ea7e401aab"
+    },
+    {
+      "path": "references-fx_hourly-h6-w720.json",
+      "bytes": 23895,
+      "sha256": "586141d8fee61af891085dc6716ab2b7b46c1d4b61c25dd52f74bc2b06cccbeb"
+    },
+    {
+      "path": "references-fx_hourly-h6-w2880.json",
+      "bytes": 16585,
+      "sha256": "020ed4ba49c58ed6186031c821e2d7cf3d3d8187731e435fddb25b0d4637c6f2"
+    },
+    {
+      "path": "references-fx_hourly-h24-w720.json",
+      "bytes": 23907,
+      "sha256": "fc1fcacfac56f91c2bdd18eed8e480faa2e15a73db418305100fb0fff9839149"
+    },
+    {
+      "path": "references-fx_hourly-h24-w2880.json",
+      "bytes": 16664,
+      "sha256": "9e4b399bb8c9b371481873d9c80c49d553cc7285bb3f72fb0b816e642cf2e25f"
+    },
+    {
+      "path": "references-nyfed_weekly-h6-w52.json",
+      "bytes": 43691,
+      "sha256": "90eaf4c29eef6cf09c1e8e295f1c26b12ee12b37dc5f4022c89d5c16dff8d9fd"
+    },
+    {
+      "path": "references-nyfed_weekly-h6-w260.json",
+      "bytes": 43990,
+      "sha256": "1f1e88b506649444726f0fccfafa5acad077c9a054120f759a8ed42bbd97e53d"
+    },
+    {
+      "path": "references-nyfed_weekly-h24-w52.json",
+      "bytes": 44264,
+      "sha256": "bfdc62f144bebf6e240b5f4c6479416db1771430d722e52631f4ffa400488931"
+    },
+    {
+      "path": "references-nyfed_weekly-h24-w260.json",
+      "bytes": 44209,
+      "sha256": "cb958d2e3570be6b48f7a2ee067b26b4e2801890cbaea3f26426e0ca5cb3c113"
+    }
+  ],
+  "actual_export_bytes": 2630508,
+  "output_counter_scope": "RunGuard tree counters cover the audit attempt only; actual_export_bytes separately covers the listed public exports",
+  "builder_sha256": "c896b4f901f9188ff727ff112eb074674404869815564f1679c0b4f6caf93c27"
+}

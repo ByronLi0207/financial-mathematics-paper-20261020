@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "status": "COMPLETE",
+  "phase": "validation",
+  "source": "nyfed_weekly",
+  "horizon": 24,
+  "window": 260,
+  "family": "SCALED_KNN",
+  "executable_freeze_sha256": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+  "selection_freeze_sha256": null,
+  "started_utc": "2026-10-22T09:28:47Z",
+  "ended_utc": "2026-10-22T09:28:47Z",
+  "source_identity": {
+    "sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+    "bytes": 23315,
+    "record_count": 706,
+    "native_unit": "USD millions",
+    "first_date": "2013-04-03T00:00:00.000000",
+    "last_date": "2026-10-07T00:00:00.000000",
+    "irregular_gap_count": 0
+  },
+  "resources": {
+    "started_utc": "2026-10-22T09:28:47Z",
+    "checkpoint_utc": "2026-10-22T09:28:47Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 0.10626783315092325,
+    "peak_rss_bytes": 39174144,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 23,
+    "completed_stability_lengths": [],
+    "current_stage": "final_manifest_checkpoint",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 52,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 12730,
+    "private_numeric_output_bytes_at_checkpoint": 12382,
+    "public_analysis_output_bytes_at_checkpoint": 348
+  },
+  "result": {
+    "phase": "validation",
+    "source": "nyfed_weekly",
+    "horizon": 24,
+    "window": 260,
+    "family": "SCALED_KNN",
+    "native_unit": "USD millions",
+    "status": "COMPLETE",
+    "candidate_rows": [
+      {
+        "parameter": 40,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 19406.13867673314,
+        "failure": null
+      },
+      {
+        "parameter": 80,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 18414.62016630452,
+        "failure": null
+      },
+      {
+        "parameter": 160,
+        "status": "COMPLETE",
+        "origin_count": 52,
+        "mean_pinball": 15890.85205735365,
+        "failure": null
+      }
+    ],
+    "summary_rows": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "origin_count": 52,
+        "mean_pinball": 19406.13867673314,
+        "mean_capacity": 78930.21520040407,
+        "mean_extra_allowance": 38994.69596963484,
+        "strict_breach_count": 30,
+        "strict_breach_rate": 0.5769230769230769,
+        "mean_positive_overrun": 19822.098109020626,
+        "conditional_mean_overrun": 34358.303388969085,
+        "conditional_overrun_denominator": 30,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 11502.909463270857
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 80,
+        "origin_count": 52,
+        "mean_pinball": 18414.62016630452,
+        "mean_capacity": 84383.84963518818,
+        "mean_extra_allowance": 44448.33040441895,
+        "strict_breach_count": 29,
+        "strict_breach_rate": 0.5576923076923077,
+        "mean_positive_overrun": 18557.897876852807,
+        "conditional_mean_overrun": 33276.230675736064,
+        "conditional_overrun_denominator": 29,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 15692.343665887138
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 160,
+        "origin_count": 52,
+        "mean_pinball": 15890.85205735365,
+        "mean_capacity": 98107.26377759415,
+        "mean_extra_allowance": 58171.74454682491,
+        "strict_breach_count": 25,
+        "strict_breach_rate": 0.4807692307692308,
+        "mean_positive_overrun": 15347.959060781635,
+        "conditional_mean_overrun": 31923.7548464258,
+        "conditional_overrun_denominator": 25,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 26205.818992221935
+      }
+    ],
+    "year_rows": [],
+    "nonoverlap_rows": [],
+    "fit_diagnostics": [
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 329,
+        "training_first_origin": 46,
+        "training_last_origin": 305,
+        "training_count": 260,
+        "latest_label_end": 329,
+        "response_scale": 15643.315384615385
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 342,
+        "training_first_origin": 59,
+        "training_last_origin": 318,
+        "training_count": 260,
+        "latest_label_end": 342,
+        "response_scale": 15650.896153846154
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 355,
+        "training_first_origin": 72,
+        "training_last_origin": 331,
+        "training_count": 260,
+        "latest_label_end": 355,
+        "response_scale": 16163.953846153847
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 40,
+        "refit_index": 368,
+        "training_first_origin": 85,
+        "training_last_origin": 344,
+        "training_count": 260,
+        "latest_label_end": 368,
+        "response_scale": 17289.13076923077
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 80,
+        "refit_index": 329,
+        "training_first_origin": 46,
+        "training_last_origin": 305,
+        "training_count": 260,
+        "latest_label_end": 329,
+        "response_scale": 15643.315384615385
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 80,
+        "refit_index": 342,
+        "training_first_origin": 59,
+        "training_last_origin": 318,
+        "training_count": 260,
+        "latest_label_end": 342,
+        "response_scale": 15650.896153846154
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 80,
+        "refit_index": 355,
+        "training_first_origin": 72,
+        "training_last_origin": 331,
+        "training_count": 260,
+        "latest_label_end": 355,
+        "response_scale": 16163.953846153847
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 80,
+        "refit_index": 368,
+        "training_first_origin": 85,
+        "training_last_origin": 344,
+        "training_count": 260,
+        "latest_label_end": 368,
+        "response_scale": 17289.13076923077
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 160,
+        "refit_index": 329,
+        "training_first_origin": 46,
+        "training_last_origin": 305,
+        "training_count": 260,
+        "latest_label_end": 329,
+        "response_scale": 15643.315384615385
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 160,
+        "refit_index": 342,
+        "training_first_origin": 59,
+        "training_last_origin": 318,
+        "training_count": 260,
+        "latest_label_end": 342,
+        "response_scale": 15650.896153846154
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 160,
+        "refit_index": 355,
+        "training_first_origin": 72,
+        "training_last_origin": 331,
+        "training_count": 260,
+        "latest_label_end": 355,
+        "response_scale": 16163.953846153847
+      },
+      {
+        "method": "SCALED_KNN",
+        "parameter": 160,
+        "refit_index": 368,
+        "training_first_origin": 85,
+        "training_last_origin": 344,
+        "training_count": 260,
+        "latest_label_end": 368,
+        "response_scale": 17289.13076923077
+      }
+    ],
+    "selection": {
+      "status": "SELECTED",
+      "parameter": 160,
+      "mean_validation_pinball": 15890.85205735365
+    },
+    "failure": null,
+    "origin_identity": {
+      "count": 52,
+      "first": 329,
+      "last": 380,
+      "sha256": "4ebde6844ef2f6065329f5f51438a85c11e82d8080dc5eb5bfb4494663a34ef5"
+    }
+  },
+  "stop_code": null,
+  "artifacts": [
+    {
+      "area": "private",
+      "name": "numeric-traces.npz",
+      "bytes": 12382,
+      "sha256": "5c44e5ed64174ea77eeee106305ee226d44d8c63bf3b7ec4de164fe5713d6971"
+    }
+  ]
+}
