@@ -1,6 +1,6 @@
 # Current scientific direction and contribution audit
 
-22 October 2026. This review concerns the current 22-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `97fdd4aec1125dfa8b3098a78c821600d57b741ef3cc42ed49a67a63f193d3e3`; supplied PDF SHA-256: `6a862837555975bef1c31236cd56130951253aeebf18506b3fa90500ea1f430e`. The source has 26 references. The final wording clarifications name the0.95abstract target and the KNN coordinate-division-before-squared-distance operation. All scientific specifications, references and results are unchanged. This is a scientific assessment of the existing evidence, not a journal decision or an additional forecast fit. Earlier reviews identify their older manuscript hashes and remain historical records.
+22 October 2026. This review concerns the current23-page working paper, *Historical and Conditional Forecasts of Sampled Net-Position Peaks*. Content SHA-256: `4154dc6d9ff6b0a646de8e577b2496c87897c7faea3a99fd962469dad1cc4cde`; supplied PDF SHA-256: `c2cc461d96ab24896b87eabf478d3486ab7706e9c38bd08a6077456394607e8e`. It has26references,12tables and20equation blocks. A separately frozen eight-cell empirical-rank supplement now quantifies the lower ordinary headroom quantile against the original corrected-rank reference and unchanged QR aggregates. The previous22-page candidate remains preserved in repository history; no original primary, QR fit, prior table or adverse result is replaced. This is a scientific assessment, not a journal decision or publication guarantee.
 
 ## Overall direction
 
@@ -40,6 +40,14 @@ with the issue value explicit at h0 and exact unit propagation reproducing the m
 
 AR's five favorable cells against each reference have different membership. Its improvement against QR in all four Treasury cells defeats an overly broad interpretation of the original adverse QR result. Its all-eight increase in breach occasions against S defeats interpreting lower average score as universally safer reporting. No favorable AR cell replaces a declared original primary, restores an unseen holdout or supplies a new independent replication count.
 
+## Later empirical-rank ablation and what it resolves
+
+The [completed supplement](../../results/revision-20261022/rank-ablation/README.md) isolates one comparator convention with the same mature headroom pool, refit schedule and issue floor. The lower ordinary empirical quantile I and corrected F are both minimizer-interval endpoints at W720/W2880/W260; W52 alone has the noninteger W-tau rank50/51 distinction. Thus treating every original F as a non-ERM forecast would be incorrect.
+
+Matched FX H6 W2880 QR remains14.773% lower-loss than I (376/365 breaches); Treasury H6 W260 remains46.058% higher-loss (54/32). All four Treasury QR-minus-I comparisons are adverse. I itself loses against F in five of eight cells and increases breach counts and mean overrun in all eight, including a +6.213% H24 W52 loss change in Treasury. These complete negative findings are preserved.
+
+The two headline signs persist under this specific control. It does not exclude all endpoint/interpolation choices, isolate a causal conditioning effect, add an untested QRF/CAViaR/full-FHS competitor, or supply compatible unseen financial evidence. The distinct scalar reconstruction of all55,216new I/F reports and361,487exact checks establishes arithmetic on the same bytes; QR comparisons use unchanged stored aggregate means rather than a new independent reconstruction of QR originwise traces. The research identity remains a modest mature-method benchmark.
+
 ## Validation axes that must remain distinct
 
 | Axis | Current evidence | What would be required to strengthen the claim |
@@ -78,4 +86,4 @@ The later [whole-procedure selection](whole-procedure-selection-and-unseen-evide
 
 The [off-policy admission memo](off-policy-admission-and-peak-estimand.md) makes one such route concrete through selected original Jiang–Li2016 reading. It distinguishes expected return from a peak CDF/quantile, missing support from missing propensity fields, and logged-policy evaluation from a justified known-transition model. Its elementary examples show both N-only nonidentification and the fact that pointwise unbiased corrections need not form a valid CDF. An exact known model need not use separate policy-evaluation logs; fitted/selected models need safeguards appropriate to their uncertainty. These are future admissibility checks, not an added model, financial result, empirical decision value or main-paper novelty claim.
 
-The [new 22-page public-checkout rebuild](../../results/revision-20261022/clean-checkout-current-20261022.json) closes a current delivery question rather than a scientific evidence gap: all 381 files at pinned248eda2 match the accepted inventory, and the documented commands exactly reproduce current TeX/PDF/figures without private scratch or financial fitting. This does not upgrade numerical reproduction into independent population validation or originality.
+The [earlier 22-page public-checkout rebuild](../../results/revision-20261022/clean-checkout-current-20261022.json) closed that delivery question rather than a scientific evidence gap: all 381 files at pinned248eda2 match the accepted inventory, and the documented commands exactly reproduced that earlier TeX/PDF/figures without private scratch or financial fitting. This does not upgrade numerical reproduction into independent population validation or originality.
