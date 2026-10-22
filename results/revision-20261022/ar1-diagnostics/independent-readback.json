@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "status": "AR1_DIAGNOSTIC_INDEPENDENT_READBACK_PASS",
+  "created_utc": "2026-10-22T13:32:06.902372+00:00",
+  "started_utc": "2026-10-22T13:32:06.846570+00:00",
+  "scope": "Independent scalar comparisons of all retained AR vectors and all eight floor/four horizon table rows; NumPy used only to decode NPZ arrays; no builder/kernels imported",
+  "diagnostic_freeze_sha256": "505024752bb38194132ce7d06db0ee781f19846cd622037bc8ca8de5c0e8e9dd",
+  "diagnostic_audit_sha256": "00d304f051095362961cfb8db5381ce6f5d7cfcdae60aae6e8952eb7b2f466d6",
+  "ar1_manifest_sha256": "9a175d1191e2ee91f17da71e1e6930e4c8a95748e8b7b278a6a4071721450609",
+  "accepted_v2_readback_sha256": "d28cac5d9fd95480db54c03d61c954706689f7789f5e22acb4d037aa46eed922",
+  "freeze_files_checked": 46,
+  "all_input_and_output_snapshots_unchanged": true,
+  "floor_rows_checked": 8,
+  "horizon_rows_checked": 4,
+  "fields_checked": 236,
+  "exact_inventory_and_labels_checked": true,
+  "all_summary_breach_counts_reconciled": true,
+  "all_paired_origins_floor_refit_vectors_equal": true,
+  "target_order_violations": 0,
+  "mean_algorithm": "math.fsum of scalar max(C6-C24,0) divided by all origins; at most eight ULP allowed for independent arithmetic",
+  "maximum_mean_absolute_rounding_difference": 0.0,
+  "floor_counts": [
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 720,
+      "origin_count": 6625,
+      "zero_headroom_outcome_count": 1523,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 282
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 2880,
+      "origin_count": 6625,
+      "zero_headroom_outcome_count": 1523,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 338
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 720,
+      "origin_count": 6625,
+      "zero_headroom_outcome_count": 662,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 401
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 2880,
+      "origin_count": 6625,
+      "zero_headroom_outcome_count": 662,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 444
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 52,
+      "origin_count": 277,
+      "zero_headroom_outcome_count": 50,
+      "floor_binding_count": 7,
+      "floor_binding_breach_count": 5,
+      "other_issue_breach_count": 17
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 260,
+      "origin_count": 277,
+      "zero_headroom_outcome_count": 50,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 31
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 52,
+      "origin_count": 277,
+      "zero_headroom_outcome_count": 14,
+      "floor_binding_count": 7,
+      "floor_binding_breach_count": 7,
+      "other_issue_breach_count": 49
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 260,
+      "origin_count": 277,
+      "zero_headroom_outcome_count": 14,
+      "floor_binding_count": 0,
+      "floor_binding_breach_count": 0,
+      "other_issue_breach_count": 59
+    }
+  ],
+  "horizon_summary": [
+    {
+      "source": "fx_hourly",
+      "window": 720,
+      "origin_count": 6625,
+      "strict_crossing_count": 0,
+      "strict_crossing_rate": 0.0,
+      "maximum_positive_crossing": 0.0,
+      "mean_positive_crossing": 0.0,
+      "native_unit": "USD"
+    },
+    {
+      "source": "fx_hourly",
+      "window": 2880,
+      "origin_count": 6625,
+      "strict_crossing_count": 0,
+      "strict_crossing_rate": 0.0,
+      "maximum_positive_crossing": 0.0,
+      "mean_positive_crossing": 0.0,
+      "native_unit": "USD"
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 52,
+      "origin_count": 277,
+      "strict_crossing_count": 59,
+      "strict_crossing_rate": 0.21299638989169675,
+      "maximum_positive_crossing": 11784.473494711478,
+      "mean_positive_crossing": 655.6840483656023,
+      "native_unit": "USD millions"
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 260,
+      "origin_count": 277,
+      "strict_crossing_count": 26,
+      "strict_crossing_rate": 0.09386281588447654,
+      "maximum_positive_crossing": 5347.8696356543805,
+      "mean_positive_crossing": 139.73749985768097,
+      "native_unit": "USD millions"
+    }
+  ],
+  "exports": [
+    {
+      "path": "ar1-floor.csv",
+      "bytes": 1455,
+      "sha256": "805472de341ad2f632047387c271fe71a9b57b74417efaaedbaca9a5a973b661"
+    },
+    {
+      "path": "ar1-horizon.csv",
+      "bytes": 689,
+      "sha256": "eaa990221f464b8f52e612ddb6a504573c0f479ef725a769e6f04065c09ac07b"
+    }
+  ],
+  "raw_sources_loaded": false,
+  "models_fitted": false,
+  "predictions_repaired": false,
+  "individual_vectors_public": false,
+  "resource_observations": {
+    "elapsed_seconds": 0.05580108403228223,
+    "peak_rss_bytes": 39436288,
+    "requested_numerical_threads": 1,
+    "os_threads_observed": null,
+    "os_thread_measurement": "not measured for this bounded scalar readback",
+    "python_version": "3.12.14"
+  }
+}
