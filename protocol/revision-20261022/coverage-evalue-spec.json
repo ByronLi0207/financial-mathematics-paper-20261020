@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "id": "fixed-terminal-coverage-20261022",
+  "status": "FIXED_TERMINAL_COVERAGE_SPECIFICATION",
+  "empirical_status": "late exploratory diagnostic on already inspected records",
+  "nominal_quantile": {
+    "numerator": 19,
+    "denominator": 20
+  },
+  "alpha": {
+    "numerator": 1,
+    "denominator": 20
+  },
+  "family_error_budget_delta": {
+    "numerator": 1,
+    "denominator": 20
+  },
+  "family_size": 56,
+  "per_cell_threshold": {
+    "numerator": 1120,
+    "denominator": 1
+  },
+  "method_labels": [
+    "QR",
+    "KNN",
+    "SCALED_KNN",
+    "frozen_F",
+    "frozen_S",
+    "frozen_K",
+    "AR1_REPLAY"
+  ],
+  "configurations": [
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 720,
+      "origin_count": 6625,
+      "first_origin": 11927,
+      "last_origin": 18551,
+      "units": "USD",
+      "refit_step": 24
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 2880,
+      "origin_count": 6625,
+      "first_origin": 11927,
+      "last_origin": 18551,
+      "units": "USD",
+      "refit_step": 24
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 720,
+      "origin_count": 6625,
+      "first_origin": 11927,
+      "last_origin": 18551,
+      "units": "USD",
+      "refit_step": 24
+    },
+    {
+      "source": "fx_hourly",
+      "horizon": 24,
+      "window": 2880,
+      "origin_count": 6625,
+      "first_origin": 11927,
+      "last_origin": 18551,
+      "units": "USD",
+      "refit_step": 24
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 52,
+      "origin_count": 277,
+      "first_origin": 405,
+      "last_origin": 681,
+      "units": "USD millions",
+      "refit_step": 13
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 260,
+      "origin_count": 277,
+      "first_origin": 405,
+      "last_origin": 681,
+      "units": "USD millions",
+      "refit_step": 13
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 52,
+      "origin_count": 277,
+      "first_origin": 405,
+      "last_origin": 681,
+      "units": "USD millions",
+      "refit_step": 13
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 24,
+      "window": 260,
+      "origin_count": 277,
+      "first_origin": 405,
+      "last_origin": 681,
+      "units": "USD millions",
+      "refit_step": 13
+    }
+  ],
+  "phase_spacing": "H+1 recorded indices",
+  "phase_anchor": "first existing evaluation origin; never reset by year",
+  "phase_weights": "equal over all H+1 phases; empty phase value1",
+  "alternative_prior": "uniform probability measure on [alpha,1]",
+  "event": "strict stored_float64_peak > stored_float64_capacity; equality is nonbreach",
+  "terminal": "fixed whole existing evaluation issue set, with all labels complete by last_origin+H",
+  "expected_summary_rows": 56,
+  "expected_phase_rows": 896,
+  "exact_arithmetic": "positive Fraction beta-integral recurrence; exact phase average and threshold; hex numerator/denominator identities",
+  "uncertainty_scope": "one-sided datewise full-issue-information conditional breach upper bound",
+  "full_filtration_anytime_claim": false,
+  "new_forecast_fit": false,
+  "new_scoring_rule": false,
+  "new_raw_download": false,
+  "mutable_old_freezes": false,
+  "failures": "Any missing/duplicate/altered/nonfinite/incomplete eligible cell stops whole-family acceptance; no M reduction or report repair",
+  "maximum_origin_count": 10000,
+  "maximum_horizon": 1000,
+  "resources": {
+    "worker_processes": 1,
+    "requested_numerical_threads": 1,
+    "max_observed_threads": 2,
+    "internal_stop_seconds": 540,
+    "hard_stop_seconds": 600,
+    "internal_stop_rss_bytes": 1610612736,
+    "max_rss_bytes": 2147483648
+  }
+}
