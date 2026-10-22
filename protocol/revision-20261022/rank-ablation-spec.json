@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "experiment": "ORDINARY_EMPIRICAL_HEADROOM_RANK_ABLATION_V1",
+  "status": "POST_INSPECTION_EXPLORATORY",
+  "original_spec": "protocol/revision-20261022/study-spec.json",
+  "original_spec_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+  "original_summary": "results/revision-20261022/evaluation-summary.csv",
+  "design": "protocol/revision-20261022/rank-ablation-design.md",
+  "tau": [19, 20],
+  "methods": ["I", "frozen_F", "QR"],
+  "new_predictions": ["I", "frozen_F"],
+  "qr_source": "unchanged accepted aggregate rows, no refit",
+  "selection": "none; all eight original source/horizon/window cells",
+  "rank_I": "ceil(19W/20), lower endpoint when W*tau integer",
+  "rank_F": "ceil(19(W+1)/20)",
+  "comparisons": ["QR-minus-I difference of stored/new unrounded means", "I-minus-frozen_F direct paired mean", "QR-minus-frozen_F difference of archived means"],
+  "failure": "stop addition; retain failure; no shortened complete mean or replacement",
+  "resources": {"requested_numerical_threads": 1, "maximum_observed_threads": 2, "maximum_rss_bytes": 2147483648, "maximum_wall_seconds": 600}
+}
