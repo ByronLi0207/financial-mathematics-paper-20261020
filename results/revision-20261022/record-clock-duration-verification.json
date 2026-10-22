@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "status": "RECORD_CLOCK_DURATION_VERIFIED",
+  "verified_utc": "2026-10-22T12:42:29.858742+00:00",
+  "plan": "notes/revision-20261022/record-clock-duration-check-plan.md",
+  "spec_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+  "code_sha256": "ba93b5f37b9347d499ad584eeac46cd8a78679f0727775252bc23560e12bcb92",
+  "inputs": {
+    "fx_hourly": {
+      "bytes": 1286391,
+      "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "record_count": 18576,
+      "first_record": "2014-02-05T01:00:00",
+      "last_record": "2017-01-24T00:00:00"
+    },
+    "nyfed_weekly": {
+      "bytes": 23315,
+      "sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+      "record_count": 706,
+      "first_record": "2013-04-03T00:00:00",
+      "last_record": "2026-10-07T00:00:00"
+    }
+  },
+  "rows": [
+    {
+      "source": "fx_hourly",
+      "segment": "validation",
+      "horizon_records": 6,
+      "duration": 6,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 1368,
+      "segment_origin_count": 1440
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "validation",
+      "horizon_records": 6,
+      "duration": 54,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 72,
+      "segment_origin_count": 1440
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "validation",
+      "horizon_records": 24,
+      "duration": 24,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 1152,
+      "segment_origin_count": 1440
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "validation",
+      "horizon_records": 24,
+      "duration": 72,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 288,
+      "segment_origin_count": 1440
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "evaluation",
+      "horizon_records": 6,
+      "duration": 6,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 6289,
+      "segment_origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "evaluation",
+      "horizon_records": 6,
+      "duration": 54,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 336,
+      "segment_origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "evaluation",
+      "horizon_records": 24,
+      "duration": 24,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 5283,
+      "segment_origin_count": 6625
+    },
+    {
+      "source": "fx_hourly",
+      "segment": "evaluation",
+      "horizon_records": 24,
+      "duration": 72,
+      "duration_unit": "stored_naive_clock_hours",
+      "origin_count": 1342,
+      "segment_origin_count": 6625
+    },
+    {
+      "source": "nyfed_weekly",
+      "segment": "validation",
+      "horizon_records": 6,
+      "duration": 42,
+      "duration_unit": "as_of_calendar_days",
+      "origin_count": 52,
+      "segment_origin_count": 52
+    },
+    {
+      "source": "nyfed_weekly",
+      "segment": "validation",
+      "horizon_records": 24,
+      "duration": 168,
+      "duration_unit": "as_of_calendar_days",
+      "origin_count": 52,
+      "segment_origin_count": 52
+    },
+    {
+      "source": "nyfed_weekly",
+      "segment": "evaluation",
+      "horizon_records": 6,
+      "duration": 42,
+      "duration_unit": "as_of_calendar_days",
+      "origin_count": 277,
+      "segment_origin_count": 277
+    },
+    {
+      "source": "nyfed_weekly",
+      "segment": "evaluation",
+      "horizon_records": 24,
+      "duration": 168,
+      "duration_unit": "as_of_calendar_days",
+      "origin_count": 277,
+      "segment_origin_count": 277
+    }
+  ],
+  "all_direct_windows_equal_adjacent_sums": true,
+  "windows_checked": 16788,
+  "financial_values_used": false,
+  "forecast_results_read": false,
+  "models_fitted": false,
+  "origins_removed": false,
+  "resources": {
+    "started_utc": "2026-10-22T12:42:29.782764+00:00",
+    "elapsed_seconds": 0.07604633294977248,
+    "peak_rss_bytes": 37781504,
+    "os_thread_snapshots": [
+      1,
+      1
+    ],
+    "maximum_observed_os_threads": 1,
+    "thread_scope": "before and after only; not a continuous bound"
+  },
+  "interpretation": "FX units are naive stored-clock differences, not verified UTC elapsed time; Treasury units are economic as-of calendar dates. No cross-source pooling, forecast selection or operational inference."
+}
