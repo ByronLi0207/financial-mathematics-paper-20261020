@@ -22,6 +22,13 @@ import reproduce_conditional as rep
 import reproduce_conditional_diagnostics as diag
 import reconcile_conditional_replication as adapter
 
+TABLE_NAMES=('ar1-summary.csv','ar1-annual.csv','ar1-nonoverlap.csv',
+    'ar1-paired.csv','ar1-paired-annual.csv','ar1-paired-nonoverlap.csv')
+
+
+def cell_stem(cell):
+    return f'{cell["source"]}-h{cell["horizon"]}-w{cell["window"]}'
+
 
 def require(value, code):
     if not value:
@@ -32,6 +39,139 @@ def near(got, wanted, *, absolute=1e-6):
     require(math.isfinite(float(got)) and math.isfinite(float(wanted))
         and math.isclose(float(got), float(wanted), rel_tol=2e-12, abs_tol=absolute),
         'AR1_INDEPENDENT_NUMERIC_MISMATCH')
+
+
+def verify_export_inventory(public, private, cells):
+    """Manifest hashes must bind every file actually consumed, exactly once."""
+    expected_public=set(TABLE_NAMES)|{cell_stem(c)+'-receipt.json' for c in cells}
+    expected_private={cell_stem(c)+suffix for c in cells for suffix in ('-fits.json','-traces.npz')}
+    for entries,wanted in ((public,expected_public),(private,expected_private)):
+        require(type(entries) is list and len(entries)==len(wanted),'AR1_INDEPENDENT_EXPORT_INVENTORY')
+        names=[]
+        for e in entries:
+            require(type(e) is dict and set(e)=={'path','bytes','sha256'}
+                and type(e['path']) is str and e['path'] in wanted
+                and type(e['bytes']) is int and 0<e['bytes']<=64*1024*1024
+                and type(e['sha256']) is str and runner.re.fullmatch('[0-9a-f]{64}',e['sha256']) is not None,
+                'AR1_INDEPENDENT_EXPORT_INVENTORY')
+            names.append(e['path'])
+        require(len(set(names))==len(names) and set(names)==wanted,'AR1_INDEPENDENT_EXPORT_INVENTORY')
+
+
+def verified_bytes(root,destination,entry,*,area):
+    require(area in ('public','private'),'AR1_INDEPENDENT_EXPORT_AREA')
+    raw=rep.read_bytes(root,Path(destination)/area/entry['path'],within=destination,cap=64*1024*1024)
+    require(entry==dict(path=entry['path'],**diag.file_identity(raw)),'AR1_INDEPENDENT_EXPORT_IDENTITY')
+    return raw
+
+
+def load_verified_csv(root,destination,entry):
+    # Parse the same bytes whose size/hash were checked, never re-open a path.
+    return diag._rows(verified_bytes(root,destination,entry,area='public'))
+
+
+def verify_table_inventory(tables,cells,configs,selected,years_by_source):
+    """Exact semantic key sets, independent of numerical score coincidence."""
+    require(set(tables)==set(TABLE_NAMES),'AR1_INDEPENDENT_TABLE_INVENTORY')
+    for name in TABLE_NAMES:
+        expected={};paired='paired' in name;annual='annual' in name;sparse='nonoverlap' in name
+        for cell in cells:
+            s,h,w=(cell[k] for k in ('source','horizon','window'));cfg=configs[s]
+            n=cfg['evaluation_origin_last']-cfg['evaluation_origin_first']+1
+            base=dict(source=s,native_unit=cfg['native_unit'],horizon=str(h),window=str(w),
+                refit_step=str(cfg['refit_step']),status='COMPLETE',stop_code='')
+            for method in (runner.COMPARATORS if paired else (None,)):
+                for year in (years_by_source[s] if annual else (None,)):
+                    key=(s,str(h),str(w),method,year);meta=base.copy()
+                    if paired:
+                        parameter=selected[s,h,w,'QR']['parameter'] if method=='QR' else None
+                        meta.update(left_method=runner.METHOD,right_method=method,
+                            right_parameter='' if parameter is None else str(parameter),
+                            contrast_role='DIRECT_S' if method=='frozen_S' else 'CONTEXT')
+                    else:meta['method']=runner.METHOD
+                    if annual:meta['calendar_year']=str(year)
+                    if sparse:meta['stride_records']=str(h+1)
+                    if name=='ar1-summary.csv':meta.update(expected_origin_count=str(n),completed_origin_count=str(n))
+                    require(key not in expected,'AR1_INDEPENDENT_EXPECTED_DUPLICATE')
+                    expected[key]=meta
+        rows=tables[name]
+        require(type(rows) is list and len(rows)==len(expected),'AR1_INDEPENDENT_TABLE_INVENTORY')
+        seen=set()
+        for row in rows:
+            key=(row.get('source'),row.get('horizon'),row.get('window'),
+                row.get('right_method') if paired else None,row.get('calendar_year') if annual else None)
+            require(key in expected and key not in seen,'AR1_INDEPENDENT_TABLE_INVENTORY')
+            require(all(row.get(k)==v for k,v in expected[key].items()),'AR1_INDEPENDENT_TABLE_LABELS')
+            seen.add(key)
+        require(seen==set(expected),'AR1_INDEPENDENT_TABLE_INVENTORY')
+
+
+def verify_fit_inventory(data,cell,cfg,expected_refits):
+    """Check every retained refit label/acceptance scalar; do not refit it."""
+    require(type(data.get('version')) is int and data['version']==1 and data.get('cell')==cell
+        and data.get('status')=='COMPLETE' and data.get('failure') is None
+        and type(data.get('fit_records')) is list,'AR1_INDEPENDENT_FIT_METADATA')
+    rows=data['fit_records'];h,w=cell['horizon'],cell['window']
+    schedule=sorted(set(expected_refits))
+    require([r.get('refit_index') for r in rows]==schedule,'AR1_INDEPENDENT_FIT_INVENTORY')
+    for f in rows:
+        r=f['refit_index']
+        integer_fields=('refit_index','first_origin','last_origin','horizon','window','rank','transition_count')
+        require(all(type(f.get(k)) is int for k in integer_fields)
+            and (f['first_origin'],f['last_origin'],f['horizon'],f['window'],f['rank'],f['transition_count'])==
+                (r-h-w+1,r-h,h,w,(19*(w+1)+19)//20,w+h-1)
+            and cfg['evaluation_origin_first']<=r<=cfg['evaluation_origin_last'],
+            'AR1_INDEPENDENT_FIT_HISTORY')
+        numerical=('phi','c','scale','scaled_mean_residual','scaled_regressor_residual',
+            'normal_tolerance','scaled_x_mean','scaled_y_mean','scaled_x_variance')
+        require(all(type(f.get(k)) in (int,float) and math.isfinite(f[k]) for k in numerical)
+            and f['scale']>0 and f['scaled_x_variance']>0 and f['normal_tolerance']>0
+            and 0<=f['scaled_mean_residual']<=f['normal_tolerance']
+            and 0<=f['scaled_regressor_residual']<=f['normal_tolerance'],
+            'AR1_INDEPENDENT_FIT_ACCEPTANCE')
+    return {f['refit_index']:f for f in rows}
+
+
+def verify_manifest_context(manifest,execution,inputs,attempt_id,years_by_source):
+    cells=execution['spec']['cells'];annual=sum(len(years_by_source[c['source']]) for c in cells)
+    expected=dict(version=1,status='AR1_REPLAY_COMPLETE',analysis_status='POST_RESULT_EXPLORATORY',
+        method=runner.METHOD,original_primaries_changed=False,original_models_refitted=False,
+        new_parameter_selection=False,all_cells_complete=True,complete_cells=len(cells),failed_cells=0,
+        summary_rows=len(cells),paired_rows=3*len(cells),annual_rows=annual,paired_annual_rows=3*annual,
+        nonoverlap_rows=len(cells),paired_nonoverlap_rows=3*len(cells),audited_original_cells=32,
+        source_snapshots_read=len(inputs['spec']['sources']),
+        replication_dir=str(inputs['attempt'].relative_to(inputs['root'])),attempt_id=attempt_id,
+        ar1_spec_sha256=execution['spec_sha256'],ar1_freeze_sha256=execution['freeze_sha256'],
+        original_executable_freeze_sha256=inputs['archive']['executable_freeze_sha256'],
+        archived_selection_sha256=inputs['archive']['selection_freeze_sha256'],new_selection_sha256=inputs['selection_hash'])
+    require(all(type(manifest.get(k)) is type(v) and manifest.get(k)==v for k,v in expected.items()),
+        'AR1_INDEPENDENT_MANIFEST_CONTEXT')
+
+
+def verify_cell_receipt(receipt,cell,inputs,execution,artifacts,fit_count):
+    cfg=inputs['spec']['sources'][cell['source']]
+    n=cfg['evaluation_origin_last']-cfg['evaluation_origin_first']+1
+    expected=dict(version=1,cell=cell,method=runner.METHOD,status='COMPLETE',stop_code=None,
+        expected_origin_count=n,completed_origin_count=n,fit_count=fit_count,
+        source_identity={k:cfg[k] for k in ('sha256','bytes','record_count','native_unit')},
+        new_selection_sha256=inputs['selection_hash'],ar1_spec_sha256=execution['spec_sha256'],
+        ar1_freeze_sha256=execution['freeze_sha256'],private_artifacts=artifacts)
+    require(receipt==expected and all(type(receipt.get(k)) is int for k in
+        ('version','expected_origin_count','completed_origin_count','fit_count')),
+        'AR1_INDEPENDENT_CELL_RECEIPT')
+
+
+def check_fit_summary(row,fits):
+    values=[f['phi'] for f in fits]
+    require(bool(values),'AR1_INDEPENDENT_FIT_SUMMARY')
+    expected=dict(completed_refit_count=len(values),phi_below_zero=sum(v<0 for v in values),
+        phi_exactly_one=sum(v==1 for v in values),phi_above_one=sum(v>1 for v in values))
+    require(all(row.get(k)==str(v) for k,v in expected.items()),'AR1_INDEPENDENT_FIT_SUMMARY')
+    near(row['phi_min'],min(values),absolute=2e-13);near(row['phi_max'],max(values),absolute=2e-13)
+    try:mean=math.fsum(v/len(values) for v in values)
+    except OverflowError:mean=None
+    if mean is None:require(row['phi_mean']=='','AR1_INDEPENDENT_FIT_SUMMARY')
+    else:near(row['phi_mean'],mean,absolute=2e-13)
 
 
 def exact_ols(levels):
@@ -69,6 +209,7 @@ def check_summary(row, scores, indices):
     near(row['strict_breach_rate'],count/len(indices))
     if count:
         near(row['conditional_mean_overrun'],math.fsum(scores['over'][j] for j in indices)/count)
+        require(row['conditional_overrun_undefined_reason']=='','AR1_INDEPENDENT_EMPTY_EVENT')
     else:
         require(row['conditional_mean_overrun'] == ''
             and row['conditional_overrun_undefined_reason'] == 'NO_STRICT_BREACHES',
@@ -84,10 +225,13 @@ def check_pair(row, left, right, indices, origins):
     for field,want in (('mean_pinball_left',a),('mean_pinball_right',b),
             ('mean_pinball_difference',difference)):
         near(row[field],want)
-    if b > 0:
-        near(row['relative_mean_loss_difference_percent'],100*difference/b)
-    else:
-        require(row['relative_mean_loss_difference_percent'] == '', 'AR1_INDEPENDENT_ZERO_REFERENCE')
+    relative=100*(difference/b) if b>0 else None
+    reason='' if relative is not None and math.isfinite(relative) else (
+        'ZERO_REFERENCE_MEAN_LOSS' if b<=0 else 'RELATIVE_DIFFERENCE_NOT_FINITE')
+    require(row['relative_difference_undefined_reason']==reason,'AR1_INDEPENDENT_RELATIVE_REASON')
+    if reason:
+        require(row['relative_mean_loss_difference_percent']=='','AR1_INDEPENDENT_ZERO_REFERENCE')
+    else:near(row['relative_mean_loss_difference_percent'],relative)
     for field,key in (('mean_capacity_difference','capacity'),
             ('mean_positive_overrun_difference','over'),('mean_unused_allowance_difference','unused')):
         near(row[field],math.fsum(left[key][j]-right[key][j] for j in indices)/len(indices))
@@ -151,27 +295,37 @@ def main(argv=None):
     require(manifest['status']=='AR1_REPLAY_COMPLETE' and manifest['complete_cells']==8
         and manifest['failed_cells']==0 and manifest['ar1_spec_sha256']==execution['spec_sha256']
         and manifest['ar1_freeze_sha256']==execution['freeze_sha256'],'AR1_COMPLETE_ATTEMPT_REQUIRED')
-    diag.verify_exports(root,destination,manifest['exports'])
-    runner.verify_private_exports(root,destination,manifest['private_exports'])
+    cells=execution['spec']['cells']
+    verify_export_inventory(manifest['exports'],manifest['private_exports'],cells)
+    public_entries={e['path']:e for e in manifest['exports']}
+    private_entries={e['path']:e for e in manifest['private_exports']}
+    adapter.verify_resource(manifest['resources'])
     import numpy as np
     from run_study import RunGuard
     # Reuse existing owned directories only for read-only resource measurement.
     guard=RunGuard(started,rep.utc_now(),destination,destination/'public',destination/'private')
     guard(stage='independent_ar1_readback_start')
     sources=runner.load_sources(inputs)
-    refs,_=runner.audit_references(inputs,sources,np,adapter._load_helpers(root),checkpoint=guard,arrays=guard.arrays)
-    tables={name:list(csv.DictReader(io.StringIO((destination/'public'/name).read_text())))
-        for name in ('ar1-summary.csv','ar1-annual.csv','ar1-nonoverlap.csv',
-            'ar1-paired.csv','ar1-paired-annual.csv','ar1-paired-nonoverlap.csv')}
-    counts={k:len(v) for k,v in tables.items()}
-    require(list(counts.values())==[8,32,8,24,96,24],'AR1_INDEPENDENT_TABLE_COUNTS')
+    refs,reference_receipts=runner.audit_references(inputs,sources,np,adapter._load_helpers(root),
+        checkpoint=guard,arrays=guard.arrays)
+    years_by_source={s:sorted({str(source.dates[t])[:4] for t in
+        range(inputs['spec']['sources'][s]['evaluation_origin_first'],
+              inputs['spec']['sources'][s]['evaluation_origin_last']+1)}) for s,source in sources.items()}
+    verify_manifest_context(manifest,execution,inputs,args.attempt_id,years_by_source)
+    require(manifest['original_receipts']==reference_receipts
+        and manifest['input_file_identities']=={k:v['identity'] for k,v in sorted(inputs['snapshots'].items())},
+        'AR1_INDEPENDENT_INPUT_CHAIN')
+    tables={name:load_verified_csv(root,destination,public_entries[name]) for name in TABLE_NAMES}
+    verify_table_inventory(tables,cells,inputs['spec']['sources'],inputs['selected'],years_by_source)
+    expected_receipts=[dict(cell=c,status='COMPLETE',receipt=public_entries[cell_stem(c)+'-receipt.json']) for c in cells]
+    require(manifest['cell_receipts']==expected_receipts,'AR1_INDEPENDENT_CELL_INVENTORY')
     checks=0;exact_fits=0;recursive_reports=0
     maximum_slope_error=0.;maximum_replay_relative_error=0.
-    for cell in execution['spec']['cells']:
+    all_fit_count=0
+    for cell in cells:
         s,h,w=cell['source'],cell['horizon'],cell['window'];cfg=inputs['spec']['sources'][s]
         source=sources[s];stem=f'{s}-h{h}-w{w}';n=cfg['evaluation_origin_last']-cfg['evaluation_origin_first']+1
-        trace_path=destination/'private'/(stem+'-traces.npz')
-        raw=rep.read_bytes(root,trace_path,within=destination,cap=64*1024*1024)
+        raw=verified_bytes(root,destination,private_entries[stem+'-traces.npz'],area='private')
         check_output_headers(raw,np,n)
         with np.load(io.BytesIO(raw),allow_pickle=False) as trace:
             origins=list(map(int,trace['origins']));capacities=list(map(float,trace['capacity']))
@@ -185,14 +339,15 @@ def main(argv=None):
             require(list(map(int,trace['refit_indices']))==expected_refit,'AR1_INDEPENDENT_REFITS')
             score=scalar_scores(peaks,capacities,floors)
             for got,want in zip(trace['pinball'],score['loss']):near(got,want)
-        fit_data=rep.strict_json(rep.read_bytes(root,destination/'private'/(stem+'-fits.json'),within=destination))
-        fits={f['refit_index']:f for f in fit_data['fit_records']}
-        require(sorted(fits)==sorted(set(expected_refit)),'AR1_INDEPENDENT_FIT_INVENTORY')
+        fit_data=rep.strict_json(verified_bytes(root,destination,private_entries[stem+'-fits.json'],area='private'))
+        fits=verify_fit_inventory(fit_data,cell,cfg,expected_refit)
+        all_fit_count+=len(fits)
+        cell_receipt=rep.strict_json(verified_bytes(root,destination,public_entries[stem+'-receipt.json'],area='public'))
+        verify_cell_receipt(cell_receipt,cell,inputs,execution,
+            [private_entries[stem+'-fits.json'],private_entries[stem+'-traces.npz']],len(fits))
         checked_refits=set()
         for j in (0,n//2,n-1):
             t,r=origins[j],expected_refit[j];fit=fits[r]
-            require((fit['first_origin'],fit['last_origin'],fit['transition_count'])==
-                (r-h-w+1,r-h,w+h-1),'AR1_INDEPENDENT_FIT_HISTORY')
             if r not in checked_refits:
                 phi,c=exact_ols(source.position[r-h-w+1:r+1])
                 near(fit['phi'],phi,absolute=2e-13);near(fit['c'],c)
@@ -215,19 +370,26 @@ def main(argv=None):
                     require(list(map(int,reference.origins))==origins,'AR1_INDEPENDENT_REFERENCE_ORIGINS')
                     right=scalar_scores(peaks,list(map(float,reference.capacities)),floors)
                     check_pair(row,score,right,groups[key],origins)
-                else:check_summary(row,score,groups[key])
+                else:
+                    check_summary(row,score,groups[key])
+                    if name=='ar1-summary.csv':check_fit_summary(row,fit_data['fit_records'])
                 checks+=1
         guard(stage='independent_ar1_cell_checked',cell_id=stem)
-    require(checks==192 and exact_fits==24 and recursive_reports==24,'AR1_INDEPENDENT_CHECK_INVENTORY')
+    require(checks==sum(len(rows) for rows in tables.values()) and exact_fits==24
+        and recursive_reports==24,'AR1_INDEPENDENT_CHECK_INVENTORY')
     runner.verify_inputs(inputs);diag.verify_exports(root,destination,manifest['exports'])
     runner.verify_private_exports(root,destination,manifest['private_exports'])
     require(rep.read_bytes(root,destination/'public/ar1-replay-manifest.json',within=destination)==manifest_raw,
         'AR1_INDEPENDENT_MANIFEST_CHANGED')
     guard(stage='independent_ar1_readback_complete')
-    receipt=dict(version=1,status='AR1_INDEPENDENT_READBACK_PASS',verified_utc=rep.utc_now(),
+    receipt=dict(version=2,status='AR1_INDEPENDENT_READBACK_PASS',verified_utc=rep.utc_now(),
         ar1_manifest_sha256=rep.sha(manifest_raw),ar1_spec_sha256=execution['spec_sha256'],
         ar1_freeze_sha256=execution['freeze_sha256'],cells=8,aggregate_rows_independently_checked=checks,
         exact_fraction_fits=exact_fits,scalar_recursive_reports=recursive_reports,
+        fit_records_metadata_checked=all_fit_count,exact_unique_csv_keys_checked=True,
+        all_consumed_exports_bound_to_manifest=True,
+        independent_refit_oracle_scope='first, integer midpoint and last issue per cell; 24 distinct refits',
+        independent_replay_scope='first, integer midpoint and last issue per cell; 24 issued reports',
         maximum_slope_absolute_error=maximum_slope_error,
         maximum_replay_relative_error=maximum_replay_relative_error,
         new_model_selection=False,original_models_refitted=False,source_values_public=False,
