@@ -1,0 +1,1812 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                      [100%]
+=================================== FAILURES ===================================
+_ test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls[fx_hourly] _
+
+source = 'fx_hourly'
+
+    @pytest.mark.parametrize('source',['fx_hourly','nyfed_weekly'])
+    def test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls(source):
+        # Catches rejecting the real control schema or imposing a QR window field
+        # absent from the writer's original exact-identity receipt entries.
+        receipt,cfg=control_fixture(source)
+>       assert helper('validate_control_receipt')(receipt,source,cfg,EXECUTION) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls[nyfed_weekly] _
+
+source = 'nyfed_weekly'
+
+    @pytest.mark.parametrize('source',['fx_hourly','nyfed_weekly'])
+    def test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls(source):
+        # Catches rejecting the real control schema or imposing a QR window field
+        # absent from the writer's original exact-identity receipt entries.
+        receipt,cfg=control_fixture(source)
+>       assert helper('validate_control_receipt')(receipt,source,cfg,EXECUTION) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_wrong_header_cannot_admit_new_tau_finance[source-wrong-source] __
+
+field = 'source', bad = 'wrong-source'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','wrong-source'),('tau',.9),('status','COMPLETE'),
+        ('executable_freeze_sha256','e'*64)])
+    def test_control_wrong_header_cannot_admit_new_tau_finance(field,bad):
+        # Catches trusting a status while source, level or execution provenance differs.
+        receipt,cfg=control_fixture();receipt[field]=bad
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_______ test_control_wrong_header_cannot_admit_new_tau_finance[tau-0.9] ________
+
+field = 'tau', bad = 0.9
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','wrong-source'),('tau',.9),('status','COMPLETE'),
+        ('executable_freeze_sha256','e'*64)])
+    def test_control_wrong_header_cannot_admit_new_tau_finance(field,bad):
+        # Catches trusting a status while source, level or execution provenance differs.
+        receipt,cfg=control_fixture();receipt[field]=bad
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+___ test_control_wrong_header_cannot_admit_new_tau_finance[status-COMPLETE] ____
+
+field = 'status', bad = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','wrong-source'),('tau',.9),('status','COMPLETE'),
+        ('executable_freeze_sha256','e'*64)])
+    def test_control_wrong_header_cannot_admit_new_tau_finance(field,bad):
+        # Catches trusting a status while source, level or execution provenance differs.
+        receipt,cfg=control_fixture();receipt[field]=bad
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_wrong_header_cannot_admit_new_tau_finance[executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee] _
+
+field = 'executable_freeze_sha256'
+bad = 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','wrong-source'),('tau',.9),('status','COMPLETE'),
+        ('executable_freeze_sha256','e'*64)])
+    def test_control_wrong_header_cannot_admit_new_tau_finance(field,bad):
+        # Catches trusting a status while source, level or execution provenance differs.
+        receipt,cfg=control_fixture();receipt[field]=bad
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+__ test_control_requires_exact_nondeduplicated_full_segment_inventory[empty] ___
+
+mutation = 'empty'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[missing_validation] _
+
+mutation = 'missing_validation'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[duplicate] _
+
+mutation = 'duplicate'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_window] _
+
+mutation = 'wrong_window'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_phase] _
+
+mutation = 'wrong_phase'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_count] _
+
+mutation = 'wrong_count'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[short_validation] _
+
+mutation = 'short_validation'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[not_exact] _
+
+mutation = 'not_exact'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[bad_capacity_hash] _
+
+mutation = 'bad_capacity_hash'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_control_requires_exact_nondeduplicated_full_segment_inventory[bad_original_hash] _
+
+mutation = 'bad_original_hash'
+
+    @pytest.mark.parametrize('mutation',[
+        'empty','missing_validation','duplicate','wrong_window','wrong_phase',
+        'wrong_count','short_validation','not_exact','bad_capacity_hash','bad_original_hash'])
+    def test_control_requires_exact_nondeduplicated_full_segment_inventory(mutation):
+        # Catches shortened evidence, silent set-deduplication, altered named F
+        # histories, and missing/invalid cryptographic evidence.
+        receipt,cfg=control_fixture()
+        if mutation=='empty':receipt['checks']=[]
+        elif mutation=='missing_validation':receipt['checks'].pop(0)
+        elif mutation=='duplicate':receipt['checks'].append(copy.deepcopy(receipt['checks'][0]))
+        elif mutation=='wrong_window':receipt['checks'][2]['window']=720
+        elif mutation=='wrong_phase':receipt['checks'][0]['phase']='evaluation'
+        elif mutation=='wrong_count':receipt['checks'][1]['n']=7
+        elif mutation=='short_validation':receipt['checks'][0]['n']=4
+        elif mutation=='not_exact':receipt['checks'][0]['status']='FAILED'
+        elif mutation=='bad_capacity_hash':receipt['checks'][0]['capacity_sha256']='g'*64
+        elif mutation=='bad_original_hash':receipt['checks'][0]['original_trace_sha256']=''
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'fx_hourly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_treasury_control_cannot_add_a_second_independent_primary_matched_history _
+
+    def test_treasury_control_cannot_add_a_second_independent_primary_matched_history():
+        # Catches adding a fourth named F control to the declared Treasury three checks.
+        receipt,cfg=control_fixture('nyfed_weekly')
+        receipt['checks'].append({'method':'rolling_F','window':720,'phase':'evaluation','n':8,
+            'status':'EXACT_IDENTITY','capacity_sha256':'a'*64,'original_trace_sha256':'b'*64})
+>       with pytest.raises(ValueError):helper('validate_control_receipt')(receipt,'nyfed_weekly',cfg,EXECUTION)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_control_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_control_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[COMPLETE-validation] _
+
+phase = 'validation', status = 'COMPLETE'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na(phase,status):
+        # Catches requiring numerical arrays for declared NA, or skipping its provenance.
+        receipt=phase_fixture(phase,status)
+        selection=SELECTION if phase=='evaluation' else None
+>       assert helper('validate_phase_receipt')(receipt,'fx_hourly','90',phase,CONTROLS,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                               EXECUTION,selection_freeze=selection) is None
+
+test_v6_tau_admission.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[COMPLETE-evaluation] _
+
+phase = 'evaluation', status = 'COMPLETE'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na(phase,status):
+        # Catches requiring numerical arrays for declared NA, or skipping its provenance.
+        receipt=phase_fixture(phase,status)
+        selection=SELECTION if phase=='evaluation' else None
+>       assert helper('validate_phase_receipt')(receipt,'fx_hourly','90',phase,CONTROLS,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                               EXECUTION,selection_freeze=selection) is None
+
+test_v6_tau_admission.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[NA-validation] _
+
+phase = 'validation', status = 'NA'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na(phase,status):
+        # Catches requiring numerical arrays for declared NA, or skipping its provenance.
+        receipt=phase_fixture(phase,status)
+        selection=SELECTION if phase=='evaluation' else None
+>       assert helper('validate_phase_receipt')(receipt,'fx_hourly','90',phase,CONTROLS,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                               EXECUTION,selection_freeze=selection) is None
+
+test_v6_tau_admission.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[NA-evaluation] _
+
+phase = 'evaluation', status = 'NA'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na(phase,status):
+        # Catches requiring numerical arrays for declared NA, or skipping its provenance.
+        receipt=phase_fixture(phase,status)
+        selection=SELECTION if phase=='evaluation' else None
+>       assert helper('validate_phase_receipt')(receipt,'fx_hourly','90',phase,CONTROLS,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                               EXECUTION,selection_freeze=selection) is None
+
+test_v6_tau_admission.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-source-nyfed_weekly] _
+
+field = 'source', bad = 'nyfed_weekly', status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-level-99] _
+
+field = 'level', bad = '99', status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-tau-0.99] _
+
+field = 'tau', bad = 0.99, status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-phase-validation] _
+
+field = 'phase', bad = 'validation', status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee] _
+
+field = 'executable_freeze_sha256'
+bad = 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-selection_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee] _
+
+field = 'selection_freeze_sha256'
+bad = 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+status = 'COMPLETE'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-source-nyfed_weekly] _
+
+field = 'source', bad = 'nyfed_weekly', status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-level-99] _
+
+field = 'level', bad = '99', status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-tau-0.99] _
+
+field = 'tau', bad = 0.99, status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-phase-validation] _
+
+field = 'phase', bad = 'validation', status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee] _
+
+field = 'executable_freeze_sha256'
+bad = 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-selection_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee] _
+
+field = 'selection_freeze_sha256'
+bad = 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+status = 'NA'
+
+    @pytest.mark.parametrize('field,bad',[
+        ('source','nyfed_weekly'),('level','99'),('tau',.99),('phase','validation'),
+        ('executable_freeze_sha256','e'*64),('selection_freeze_sha256','e'*64)])
+    @pytest.mark.parametrize('status',['COMPLETE','NA'])
+    def test_phase_wrong_identity_stops_even_when_scores_are_unavailable(field,bad,status):
+        # Catches accepting a receipt for a different source/tau/phase/freeze.
+        receipt=phase_fixture('evaluation',status);receipt[field]=bad
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','evaluation',CONTROLS,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                             EXECUTION,selection_freeze=SELECTION)
+
+test_v6_tau_admission.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+____ test_phase_control_digest_inventory_is_exact_and_cannot_drift[missing] ____
+
+mutation = 'missing'
+
+    @pytest.mark.parametrize('mutation',['missing','changed','extra'])
+    def test_phase_control_digest_inventory_is_exact_and_cannot_drift(mutation):
+        # Catches a point95 control overwritten or swapped after validation was issued.
+        receipt=phase_fixture()
+        if mutation=='missing':receipt['point95_controls'].pop('nyfed_weekly')
+        elif mutation=='changed':receipt['point95_controls']['fx_hourly']='f'*64
+        else:receipt['point95_controls']['other_source']='f'*64
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','validation',CONTROLS,EXECUTION)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+____ test_phase_control_digest_inventory_is_exact_and_cannot_drift[changed] ____
+
+mutation = 'changed'
+
+    @pytest.mark.parametrize('mutation',['missing','changed','extra'])
+    def test_phase_control_digest_inventory_is_exact_and_cannot_drift(mutation):
+        # Catches a point95 control overwritten or swapped after validation was issued.
+        receipt=phase_fixture()
+        if mutation=='missing':receipt['point95_controls'].pop('nyfed_weekly')
+        elif mutation=='changed':receipt['point95_controls']['fx_hourly']='f'*64
+        else:receipt['point95_controls']['other_source']='f'*64
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','validation',CONTROLS,EXECUTION)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_____ test_phase_control_digest_inventory_is_exact_and_cannot_drift[extra] _____
+
+mutation = 'extra'
+
+    @pytest.mark.parametrize('mutation',['missing','changed','extra'])
+    def test_phase_control_digest_inventory_is_exact_and_cannot_drift(mutation):
+        # Catches a point95 control overwritten or swapped after validation was issued.
+        receipt=phase_fixture()
+        if mutation=='missing':receipt['point95_controls'].pop('nyfed_weekly')
+        elif mutation=='changed':receipt['point95_controls']['fx_hourly']='f'*64
+        else:receipt['point95_controls']['other_source']='f'*64
+        with pytest.raises(ValueError):
+>           helper('validate_phase_receipt')(receipt,'fx_hourly','90','validation',CONTROLS,EXECUTION)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_phase_receipt'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_phase_receipt is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+__ test_evaluation_arrays_admit_exact_axis_target_and_feasible_named_reports ___
+
+    def test_evaluation_arrays_admit_exact_axis_target_and_feasible_named_reports():
+        # Catches interpreting primary_F and matched_F as required-identical FX controls.
+        arrays,ids,peak,floor=arrays_fixture()
+>       assert helper('validate_evaluation_arrays')(arrays,ids,peak,floor) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[shortened] _
+
+mutation = 'shortened'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[shifted] _
+
+mutation = 'shifted'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[gapped] _
+
+mutation = 'gapped'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[target] _
+
+mutation = 'target'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[floor] _
+
+mutation = 'floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[nonfinite_peak] _
+
+mutation = 'nonfinite_peak'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[negative_floor] _
+
+mutation = 'negative_floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[peak_below_floor] _
+
+mutation = 'peak_below_floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[missing_report] _
+
+mutation = 'missing_report'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[qr_below_floor] _
+
+mutation = 'qr_below_floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[matched_below_floor] _
+
+mutation = 'matched_below_floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[primary_below_floor] _
+
+mutation = 'primary_below_floor'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[nonfinite_report] _
+
+mutation = 'nonfinite_report'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+_ test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[wrong_shape] _
+
+mutation = 'wrong_shape'
+
+    @pytest.mark.parametrize('mutation',[
+        'shortened','shifted','gapped','target','floor','nonfinite_peak','negative_floor','peak_below_floor',
+        'missing_report','qr_below_floor','matched_below_floor','primary_below_floor','nonfinite_report','wrong_shape'])
+    def test_evaluation_identity_or_geometry_failure_stops_without_row_deletion(mutation):
+        # Catches favorable shortened origins, self-consistent wrong targets, altered
+        # floors, a missing constituent, and reports that violate the feasible bound.
+        arrays,ids,peak,floor=arrays_fixture()
+        if mutation=='shortened':
+            for key in arrays:arrays[key]=arrays[key][1:]
+        elif mutation=='shifted':arrays['origins']+=1
+        elif mutation=='gapped':arrays['origins'][2]+=10
+        elif mutation=='target':arrays['peak'][0]+=1.
+        elif mutation=='floor':arrays['floor'][0]+=.5
+        elif mutation=='nonfinite_peak':arrays['peak'][0]=np.nan
+        elif mutation=='negative_floor':arrays['floor'][0]=-1.;floor[0]=-1.
+        elif mutation=='peak_below_floor':arrays['peak'][0]=0.;peak[0]=0.
+        elif mutation=='missing_report':arrays.pop('matched_F')
+        elif mutation=='qr_below_floor':arrays['QR'][0]=.5
+        elif mutation=='matched_below_floor':arrays['matched_F'][0]=.5
+        elif mutation=='primary_below_floor':arrays['primary_F'][0]=.5
+        elif mutation=='nonfinite_report':arrays['primary_F'][0]=np.inf
+        elif mutation=='wrong_shape':arrays['QR']=np.array([[6.,5.,8.,9.]])
+>       with pytest.raises(ValueError):helper('validate_evaluation_arrays')(arrays,ids,peak,floor)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_tau_admission.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'validate_evaluation_arrays'
+
+    def helper(name):
+        module=importlib.import_module('v6_tau_worker')
+        function=getattr(module,name,None)
+>       assert callable(function), name+' is not implemented'
+E       AssertionError: validate_evaluation_arrays is not implemented
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_admission.py:17: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_tau_admission.py::test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls[fx_hourly]
+FAILED test_v6_tau_admission.py::test_control_admits_only_both_complete_qr_segments_and_named_full_f_controls[nyfed_weekly]
+FAILED test_v6_tau_admission.py::test_control_wrong_header_cannot_admit_new_tau_finance[source-wrong-source]
+FAILED test_v6_tau_admission.py::test_control_wrong_header_cannot_admit_new_tau_finance[tau-0.9]
+FAILED test_v6_tau_admission.py::test_control_wrong_header_cannot_admit_new_tau_finance[status-COMPLETE]
+FAILED test_v6_tau_admission.py::test_control_wrong_header_cannot_admit_new_tau_finance[executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[empty]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[missing_validation]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[duplicate]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_window]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_phase]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[wrong_count]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[short_validation]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[not_exact]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[bad_capacity_hash]
+FAILED test_v6_tau_admission.py::test_control_requires_exact_nondeduplicated_full_segment_inventory[bad_original_hash]
+FAILED test_v6_tau_admission.py::test_treasury_control_cannot_add_a_second_independent_primary_matched_history
+FAILED test_v6_tau_admission.py::test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[COMPLETE-validation]
+FAILED test_v6_tau_admission.py::test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[COMPLETE-evaluation]
+FAILED test_v6_tau_admission.py::test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[NA-validation]
+FAILED test_v6_tau_admission.py::test_phase_headers_and_immutable_control_hashes_are_checked_for_complete_and_na[NA-evaluation]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-source-nyfed_weekly]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-level-99]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-tau-0.99]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-phase-validation]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[COMPLETE-selection_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-source-nyfed_weekly]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-level-99]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-tau-0.99]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-phase-validation]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-executable_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+FAILED test_v6_tau_admission.py::test_phase_wrong_identity_stops_even_when_scores_are_unavailable[NA-selection_freeze_sha256-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+FAILED test_v6_tau_admission.py::test_phase_control_digest_inventory_is_exact_and_cannot_drift[missing]
+FAILED test_v6_tau_admission.py::test_phase_control_digest_inventory_is_exact_and_cannot_drift[changed]
+FAILED test_v6_tau_admission.py::test_phase_control_digest_inventory_is_exact_and_cannot_drift[extra]
+FAILED test_v6_tau_admission.py::test_evaluation_arrays_admit_exact_axis_target_and_feasible_named_reports
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[shortened]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[shifted]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[gapped]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[target]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[nonfinite_peak]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[negative_floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[peak_below_floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[missing_report]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[qr_below_floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[matched_below_floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[primary_below_floor]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[nonfinite_report]
+FAILED test_v6_tau_admission.py::test_evaluation_identity_or_geometry_failure_stops_without_row_deletion[wrong_shape]
+51 failed in 0.25s

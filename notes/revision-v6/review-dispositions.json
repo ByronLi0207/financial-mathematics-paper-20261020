@@ -1,0 +1,332 @@
+[
+  {
+    "id": "A01",
+    "severity": "major",
+    "heading": "A01 — major：贡献段的统计措辞应与工作参考检验的证据等级一致",
+    "source": "review-A.md",
+    "route": "WP6",
+    "decision": "把统计有利措辞限定为DM working-reference diagnostic，近接事后且非选择校正的说明；保留全部数字。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Main §1 contribution paragraph and §5; matching is limited to a retrospective DM working-reference diagnostic, not selection-adjusted confirmation."
+  },
+  {
+    "id": "A02",
+    "severity": "major",
+    "heading": "A02 — major：重叠标签与共享估计产生的长期依赖没有被短带宽或 HLN 修正验证",
+    "source": "review-A.md",
+    "route": "limitation / WP2–5",
+    "decision": "保留依赖、矩条件、HLN适用性与短带宽限制；新表按冻结带宽报告n/秩/失败，不额外做事后bootstrap。",
+    "closure_status": "LIMITATION_RETAINED",
+    "closure_evidence": "Main §5 and §10; Supplement S16 reference definitions and Tables S50/S56/S60/S61/S68 retain dependence, bandwidth, rank and failure limits. No validity proof is supplied for the observed financial processes."
+  },
+  {
+    "id": "A03",
+    "severity": "major",
+    "heading": "A03 — major：稀疏覆盖诊断和 CC 变体不能作为“通过校准”的证书",
+    "source": "review-A.md",
+    "route": "WP2 / WP6",
+    "decision": "覆盖表区分全origin频率、固定H+1网格和CC初始化。新v6采用显式transition-conditional CC，旧表原数保留。非拒绝不叫通过校准。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Main §5 and §7; Supplement S16 and Tables S41/S55/S66 explicitly separate full-origin frequency, sparse-grid UC and transition-conditional CC. Nonrejection is not called calibration certification."
+  },
+  {
+    "id": "A04",
+    "severity": "major",
+    "heading": "A04 — major：v6 新比较必须有自己的完整检验清单与多重性边界",
+    "source": "review-A.md",
+    "route": "WP2–5 design",
+    "decision": "每WP冻结完整comparison slots及独立工作family，NA调整记账p=1与实测p分开；不继承旧72或48 family。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "protocol/revision-v6/wp2-aci-sav.md, wp3-combinations.md, wp4-state-gw.md, wp5-quantile-levels.md; complete families and raw NA inventories appear in S38/S50/S56/S60/S68."
+  },
+  {
+    "id": "A05",
+    "severity": "major",
+    "heading": "A05 — major：延迟 ACI 需要完整的单侧校准与反馈定义，不能直接继承即时反馈保证",
+    "source": "review-A.md",
+    "route": "WP2 design",
+    "decision": "采用明确命名的有限延迟ACI-style适配，所有issue scores/一次成熟反馈/Fraction rank/状态carry/预定m>=19门槛；不宣称原算法保证。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "v6_aci.py and frozen WP2 definition; Supplement S16 defines projected alpha, finite rank, once-only mature feedback and carry across the split. No inherited canonical guarantee is claimed."
+  },
+  {
+    "id": "A06",
+    "severity": "major",
+    "heading": "A06 — major：headroom SAV 是需要重新定义时钟的 CAViaR 适配",
+    "source": "review-A.md",
+    "route": "WP2 design",
+    "decision": "SAV以G_(t-H)为已成熟冲击，训练和预测递推同一时钟，固定多起点与失败条件；是headroom适配而非收益VaR逐字复现。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "v6_sav.py; Supplement S16 normalized recursion explicitly reports B+a_kappa max(0,q_tilde), mature G_(t-H) and the fixed multi-start menu. S48 retains refit status; this is a headroom adaptation."
+  },
+  {
+    "id": "A07",
+    "severity": "major",
+    "heading": "A07 — major：GW 联合拒绝与“波动状态改变优势”是不同问题，分组 HAC 不能压缩时间轴",
+    "source": "review-A.md",
+    "route": "WP4 design",
+    "decision": "原时轴indicator影响序列HAC，成熟lag和训练阈值冻结；GW联合矩检验与三状态差异分开，不推出部署策略。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "v6_states.py and wp4-states.json; S58–S61 retain the full evaluation-axis influence covariance, separately named GW and heterogeneity nulls, burn-in and reference diagnostics. No switching policy is inferred."
+  },
+  {
+    "id": "A08",
+    "severity": "minor",
+    "heading": "A08 — minor：组合基准需固定组件身份，并标出已知的精确退化情形",
+    "source": "review-A.md",
+    "route": "WP3 design",
+    "decision": "固定matched frozen F/原选QR/plain KNN，同池原网格；保留KNN=F导致的精确身份与面板缺KNN NA，Murphy用全部断点。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "S51–S57 and Figures S6/S7; plain KNN identity is fixed, missing panel KNN medians remain NA, exact-F cases retain undefined DM reference and all unique Murphy breakpoints are used."
+  },
+  {
+    "id": "A09",
+    "severity": "major",
+    "heading": "A09 — major：τ 稳健性不能只改评分权重；现有辅助函数含 .95/5% 固定常数",
+    "source": "review-A.md",
+    "route": "WP5 design",
+    "decision": "tau贯通QR/历史rank/损失/coverage零假设；旧.95函数不改，新增tau函数回归验证；预定名义尾部信息不足NA。",
+    "closure_status": "IMPLEMENTED_WITH_DECLARED_NA",
+    "closure_evidence": "v6_tau.py and v6_tau_worker_v2.py; S62–S68 keep target-specific fits, ranks, scores and nulls. Full .95 controls match old vectors. Failed .99 FX menu and inadequate Treasury tails remain NA."
+  },
+  {
+    "id": "A10",
+    "severity": "minor",
+    "heading": "A10 — minor：新增 matched 基准不能悄悄改变 primary 或解释成纯特征收益",
+    "source": "review-A.md",
+    "route": "WP2–6",
+    "decision": "各比较输出source/H/W/update/tau/contrast ID，原primary身份不变；整程序差别不是纯特征因果效果。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "S38–S68 retain source/H/W/tau/control identities; main §7 and decision map distinguish the original FX primary from its matched-history wrapper comparison. No pure feature causal effect is claimed."
+  },
+  {
+    "id": "B1",
+    "severity": "major",
+    "heading": "B1 — Major: The stipulated score does not identify economic value",
+    "source": "review-B.md",
+    "route": "retained limitation / WP6",
+    "decision": "保留规定分位目标与真实资金成本的边界，新结果和cover letter不作融资收益断言。",
+    "closure_status": "LIMITATION_RETAINED",
+    "closure_evidence": "Main §4/§10 and cover letter: stipulated asymmetric score, not identified real funding cost, regulatory capital saving or profit. Actual decision-cost mapping remains unavailable."
+  },
+  {
+    "id": "B2",
+    "severity": "major",
+    "heading": "B2 — Major: Aggregate cancellation changes the exposure being forecast",
+    "source": "review-B.md",
+    "route": "WP6",
+    "decision": "明确signed aggregate的绝对峰值不同于交易商绝对库存的加总，相关任务不是独立dealer复现。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Main §3 states absolute signed aggregate differs from sum of absolute dealer exposures; Treasury remains a related aggregate task rather than unseen-dealer validation."
+  },
+  {
+    "id": "B3",
+    "severity": "major",
+    "heading": "B3 — Major: The FX source is an attributed sample of client flow, not a verified complete dealer book",
+    "source": "review-B.md",
+    "route": "WP6",
+    "decision": "恢复FX数据是来源归属的client-flow样本这一限定，不写成经过验证的完整做市商账簿。",
+    "closure_status": "LIMITATION_RETAINED",
+    "closure_evidence": "Main §3 attributes the FX client-flow sample to its source without independent verification of a complete dealer book; no new dealer observations were obtained."
+  },
+  {
+    "id": "B4",
+    "severity": "major",
+    "heading": "B4 — Major: The Treasury known floor belongs to the replay information convention",
+    "source": "review-B.md",
+    "route": "WP6",
+    "decision": "首次新Treasury结果说明downloaded-vintage economic-date replay，不能把经济日期anchor当成当日公众已知。",
+    "closure_status": "LIMITATION_RETAINED",
+    "closure_evidence": "Main §3 and §10; S16 states downloaded-vintage economic-date replay. Historical publication vintages have not been reconstructed, and record maturity does not prove public availability."
+  },
+  {
+    "id": "B5",
+    "severity": "minor",
+    "heading": "B5 — Minor: Keep recorded sampling and operational monitoring horizons distinct",
+    "source": "review-B.md",
+    "route": "WP6",
+    "decision": "新增结果/decision map保留H按source records计数且between-record peaks未观察。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Main §3 and §4 retain source-record horizons and unobserved between-record peaks; S16 keeps H in source records."
+  },
+  {
+    "id": "B6",
+    "severity": "major",
+    "heading": "B6 — Major: Explain how the dealer-inventory literature motivates this passive forecast without identifying a control policy",
+    "source": "review-B.md",
+    "route": "WP6",
+    "decision": "一语说明库存控制文献只提供监测动机，本文没有识别改变报价或对冲的效果。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Main §1 first paragraph now separates inventory-literature monitoring motivation from identification of optimal quote, hedge or funding policies."
+  },
+  {
+    "id": "B7",
+    "severity": "major",
+    "heading": "B7 — Major: Separate a score–breach coexistence finding from a claim about a calibrated model advantage",
+    "source": "review-B.md",
+    "route": "WP2",
+    "decision": "报告真实wrapper/SAV覆盖及损失结果，不预设校准成功、QR胜出或原保证适用。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Main §7 new paragraph and S39–S50 report the complete ACI-style/SAV score and breach evidence. Empirical near-target frequency is separated from conditional coverage guarantees."
+  },
+  {
+    "id": "B8",
+    "severity": "minor",
+    "heading": "B8 — Minor: Simple combinations are necessary context for practical model comparison",
+    "source": "review-B.md",
+    "route": "WP3",
+    "decision": "两种不调权组合完整报告F/QR两侧比较，NA/身份/不利结果全部保留。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "S51–S57 retain both fixed combinations, all constituent comparisons and absent-KNN/identity outcomes. No result-based weight selection was added."
+  },
+  {
+    "id": "B9",
+    "severity": "minor",
+    "heading": "B9 — Minor: WP4 states measure position-change volatility, not Treasury yield or FX price volatility",
+    "source": "review-B.md",
+    "route": "WP4",
+    "decision": "状态准确命名position-change volatility，切点由训练段决定，不误称价格/收益率波动状态。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Main §7/§9 and S16 explicitly use training-defined position-change RMS, not price/yield volatility."
+  },
+  {
+    "id": "B10",
+    "severity": "major",
+    "heading": "B10 — Major: Quantile-level robustness tests a forecast target, not observed economic preferences",
+    "source": "review-B.md",
+    "route": "WP5",
+    "decision": "分位水平重拟合与固定报告损失重加权分开，保留反转与NA，不解释成真实经济偏好稳健性。",
+    "closure_status": "IMPLEMENTED_WITH_DECLARED_NA",
+    "closure_evidence": "S62–S68 separate refitted target-level objectives from the older fixed-report preference envelope. Available directions and unavailable upper-level outcomes are retained without economic-preference claims."
+  },
+  {
+    "id": "B11",
+    "severity": "minor",
+    "heading": "B11 — Minor: Preserve the correct boundary between a known floor, an atom and fitted coverage",
+    "source": "review-B.md",
+    "route": "retained limitation",
+    "decision": "保留floor并不必然产生原子及总体真分位数/拟合报告区别；新方法同样floor投影。",
+    "closure_status": "LIMITATION_RETAINED",
+    "closure_evidence": "Main §4 and Supplement geometry distinguish a deterministic known floor from an atom and fitted coverage; floor projection remains in each new reporting rule."
+  },
+  {
+    "id": "E01",
+    "severity": "major",
+    "heading": "E01 — Major: the title/abstract/contribution hierarchy obscures the primary empirical question",
+    "source": "review-editor.md",
+    "route": "WP6",
+    "decision": "摘要按原两primary→明确匹配控制的层级组织；title个人选择保留，既有数字与不利方向不变。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Abstract now leads with the original FX primary, then names the matched-history control and adverse Treasury primary; old empirical values are preserved."
+  },
+  {
+    "id": "E02",
+    "severity": "major",
+    "heading": "E02 — Major: the benchmark menu remains incomplete at exactly the points the positioning discussion makes salient",
+    "source": "review-editor.md",
+    "route": "WP2–3 / WP6",
+    "decision": "先执行且保留NA，再更新未执行方法句与cover letter，不把一次attempt写成完整方法类胜负。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "S16 and cover letter name finite delayed ACI-style, headroom SAV and fixed combinations. Main §10 updates the unexecuted-menu boundary without claiming full method-class coverage."
+  },
+  {
+    "id": "E03",
+    "severity": "major",
+    "heading": "E03 — Major: matched-history score claims route to original-primary score diagrams",
+    "source": "review-editor.md",
+    "route": "WP6",
+    "decision": "匹配分数比较仅指自身表；原primary Murphy图单独指Figure3/S24，Treasury原primary指Figure4，decision map一致。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Main §1/§7/decision map route matched-history score evidence to Tables 3/5, original FX Murphy to Figure 3, Treasury original primary to Figure 4; new matched diagrams are Figures S6/S7."
+  },
+  {
+    "id": "E04",
+    "severity": "major",
+    "heading": "E04 — Major: increased hit frequency must remain distinct from demonstrated calibration deterioration",
+    "source": "review-editor.md",
+    "route": "WP2 / WP6",
+    "decision": "更多超界与校准变差分开表述，ACI结果根据实际覆盖报告，不用nonrejection证明校准。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Main §7 states more breaches and near-target frequency descriptively. New ACI results do not establish universal calibration improvement or conditional validity."
+  },
+  {
+    "id": "E05",
+    "severity": "major",
+    "heading": "E05 — Major: the decision map lacks evidence on issue-known states and quantile-level sensitivity",
+    "source": "review-editor.md",
+    "route": "WP4–5 / WP6",
+    "decision": "仅用预定状态/tau结果补决策图，缺独立dealer与前瞻证据继续明说。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Decision map uses S58–S68 and the original-primary state scope; high-state-only FX claim is not made. Independent unseen-dealer and prospective release evidence remain missing."
+  },
+  {
+    "id": "E06",
+    "severity": "minor",
+    "heading": "E06 — Minor: the evaluation sample and refit budget are too remote from the core design",
+    "source": "review-editor.md",
+    "route": "WP6",
+    "decision": "用原S36数值在方法处简列原验证/评估数量、W和refit节奏，原数字不重算替换。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Main §3 lists the archived source-specific validation/evaluation origin counts, histories and scheduled refit frequencies; Supplement S36 remains the full original budget."
+  },
+  {
+    "id": "E07",
+    "severity": "minor",
+    "heading": "E07 — Minor: main-table numbering is out of reading order",
+    "source": "review-editor.md",
+    "route": "WP6–7",
+    "decision": "统一正文表格阅读顺序与所有跨文档引用；旧归档表号/数值不改。",
+    "closure_status": "IMPLEMENTED_AND_VISUALLY_VERIFIED",
+    "closure_evidence": "Final source audit and complete18/94/1page image-view records verify physical table numbering and semantic SectionS16 routing; all original empirical cells are unchanged."
+  },
+  {
+    "id": "E08",
+    "severity": "minor",
+    "heading": "E08 — Minor: repeated qualifications and archival detail displace the main forecast narrative",
+    "source": "review-editor.md",
+    "route": "WP6–7",
+    "decision": "合并重复句和内部历史细节，新增完整结果放补充；字数上限未核得数字，9000/6表/4图仅项目预算。",
+    "closure_status": "IMPLEMENTED_WITH_LIMITATION",
+    "closure_evidence": "Final main7093prosewords/6tables/4figures passes project budget. New complete results are inS16. Numerical journal cap remains unverified; no submission-ready guarantee is made."
+  },
+  {
+    "id": "E09",
+    "severity": "minor",
+    "heading": "E09 — Minor: the supplement contains machine pointers and revision labels that are weak reader-facing locators",
+    "source": "review-editor.md",
+    "route": "WP6–7",
+    "decision": "印刷稿JSON指针换成读者可用节/命题/表号，机器绑定仍保留在notes。",
+    "closure_status": "IMPLEMENTED",
+    "closure_evidence": "Supplement S15 reader-facing title and locators replace selected bare JSON/revision pointers; machine-readable source bindings remain in notes."
+  },
+  {
+    "id": "E10",
+    "severity": "minor",
+    "heading": "E10 — Minor: bibliography inclusion and citation routing are not fully consistent",
+    "source": "review-editor.md",
+    "route": "WP6–7",
+    "decision": "在Levy处明确实际Sussman来源引用并排序；逐文档引用/参考文献双向核对，未核实元数据不勾完。",
+    "closure_status": "IMPLEMENTED_AND_SOURCE_VERIFIED",
+    "closure_evidence": "wp7-final-source-audit.md verifies37main/25suppdisplayed entries all used,41unique IDs,21sharedidenticalentries and all internal labels/routes. Formal metadata audit remains source-specific, not inferred from this structural pass."
+  },
+  {
+    "id": "E11",
+    "severity": "minor",
+    "heading": "E11 — Minor: availability wording blurs access restrictions with local trace handling",
+    "source": "review-editor.md",
+    "route": "WP6",
+    "decision": "原数据获取/再分发与本地逐期轨迹再生成说明分开，准确链接既有复现路线。",
+    "closure_status": "IMPLEMENTED_WITH_REPLAY_LIMITATION",
+    "closure_evidence": "Exact historical metadata supplied; byte-only setup helper synthetic tests and actualcheck/prepare pass withoutfinancialexecution. Exact private source/NPZ/runtime requirements remain; public aggregate consistency is not independent validation."
+  },
+  {
+    "id": "E12",
+    "severity": "major",
+    "heading": "E12 — Major for submission readiness: preview PDFs and personal declarations are still preparatory artifacts",
+    "source": "review-editor.md",
+    "route": "WP7 / author decision",
+    "decision": "用内置编译器核最终源并实看所有提供PDF；正式TeX PDF若无导出能力如实保留边界，个人作者/披露由作者完成，不投稿。",
+    "closure_status": "AUTHOR_DECISIONS_REMAIN",
+    "closure_evidence": "All3 saved TeX targets compile in the desktop compiler; every18/94/1providedpreviewpage has actualimage-view coverage and exactfinalversionbinding. FormalTeX PDFexport and authoridentity/approval/funding/conflicts remain unfilled author decisions, not completed submission."
+  }
+]

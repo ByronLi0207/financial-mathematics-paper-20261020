@@ -1,0 +1,428 @@
+WARN `--no-project` was provided, but no project was found
+Installed 7 packages in 72ms
+FFFFFFFFFFFFFFFFFFF                                                      [100%]
+=================================== FAILURES ===================================
+_________ test_recurrence_matches_independently_hand_calculated_values _________
+
+    def test_recurrence_matches_independently_hand_calculated_values():
+        # Catches a misplaced intercept, recurrence state or shock coefficient.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_ test_constant_training_response_has_analytic_zero_loss_without_numeric_claim _
+
+    def test_constant_training_response_has_analytic_zero_loss_without_numeric_claim():
+        # Catches fictitious optimizer convergence and omitted original normalization.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_training_pool_initialization_and_shocks_all_obey_h_maturity _______
+
+    def test_training_pool_initialization_and_shocks_all_obey_h_maturity():
+        # Catches G_(i-1) training leakage and q_init consuming a label ending later.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_____ test_initialization_uses_uncorrected_inverse_empirical_cdf_quantile ______
+
+    def test_initialization_uses_uncorrected_inverse_empirical_cdf_quantile():
+        # Catches corrected-rank +inf/NA at initialization when a finite empirical q exists.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_ test_no_pretraining_mature_labels_is_terminal_na_even_for_constant_response __
+
+    def test_no_pretraining_mature_labels_is_terminal_na_even_for_constant_response():
+        # Catches a zero/constant substitute used to bypass absent causal initialization.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_ test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue _
+
+    def test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue():
+        # Catches G_(t-1) query leakage and failure to advance recursion through actual t.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_ test_original_segment_grid_applies_when_first_requested_issue_is_between_refits _
+
+    def test_original_segment_grid_applies_when_first_requested_issue_is_between_refits():
+        # Catches anchoring refits at origins[0] or using the refit anchor as the floor.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_ test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients _
+
+    def test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients():
+        # Catches hidden starts and accepting an unbounded or nonfinite numerical fit.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+__ test_all_start_nonconvergence_is_explicit_and_never_substitutes_a_forecast __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b5efec0>
+
+    def test_all_start_nonconvergence_is_explicit_and_never_substitutes_a_forecast(monkeypatch):
+        # The optimizer is the external numerical boundary: forcing its documented failure
+        # exercises real selection/error handling, and asserts no mock-owned result.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+___________ test_later_refit_failure_returns_no_partial_cell_metrics ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b5f06e0>
+
+    def test_later_refit_failure_returns_no_partial_cell_metrics(monkeypatch):
+        # Catches silently returning the successful prefix after a later fit fails.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+__________ test_guard_checkpoint_abort_propagates_without_a_fallback ___________
+
+    def test_guard_checkpoint_abort_propagates_without_a_fallback():
+        # Catches swallowing the root worker's hard resource failure as a failed start.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+____ test_normalization_preserves_forecasts_under_a_change_of_source_units _____
+
+    def test_normalization_preserves_forecasts_under_a_change_of_source_units():
+        # Catches fitting original-unit responses with normalized coefficients/bounds.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins0] ________
+
+origins = []
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins1] ________
+
+origins = [13, 14]
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins2] ________
+
+origins = [14, 16]
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins3] ________
+
+origins = [14.0, 15.0]
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins4] ________
+
+origins = [15, 14]
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_______ test_invalid_or_incomplete_issue_vectors_are_rejected[origins5] ________
+
+origins = [True]
+
+    @pytest.mark.parametrize('origins', [[], [13, 14], [14, 16], [14., 15.], [15, 14], [True]])
+    def test_invalid_or_incomplete_issue_vectors_are_rejected(origins):
+        # Catches favorable row deletion, silent origin rounding or pre-segment queries.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+_________ test_only_mature_read_slices_must_be_finite_and_nonnegative __________
+
+    def test_only_mature_read_slices_must_be_finite_and_nonnegative():
+        # Catches full-future validation leakage while retaining malformed mature-data rejection.
+>       sav = _sav()
+              ^^^^^^
+
+test_v6_sav.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _sav():
+        # Keep RED an assertion about the absent API, rather than a collection error.
+>       assert importlib.util.find_spec('v6_sav') is not None, 'headroom SAV API is not implemented'
+E       AssertionError: headroom SAV API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105e1fba0>('v6_sav')
+E        +    where <function find_spec at 0x105e1fba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_sav.py:12: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_sav.py::test_recurrence_matches_independently_hand_calculated_values
+FAILED test_v6_sav.py::test_constant_training_response_has_analytic_zero_loss_without_numeric_claim
+FAILED test_v6_sav.py::test_training_pool_initialization_and_shocks_all_obey_h_maturity
+FAILED test_v6_sav.py::test_initialization_uses_uncorrected_inverse_empirical_cdf_quantile
+FAILED test_v6_sav.py::test_no_pretraining_mature_labels_is_terminal_na_even_for_constant_response
+FAILED test_v6_sav.py::test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue
+FAILED test_v6_sav.py::test_original_segment_grid_applies_when_first_requested_issue_is_between_refits
+FAILED test_v6_sav.py::test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients
+FAILED test_v6_sav.py::test_all_start_nonconvergence_is_explicit_and_never_substitutes_a_forecast
+FAILED test_v6_sav.py::test_later_refit_failure_returns_no_partial_cell_metrics
+FAILED test_v6_sav.py::test_guard_checkpoint_abort_propagates_without_a_fallback
+FAILED test_v6_sav.py::test_normalization_preserves_forecasts_under_a_change_of_source_units
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins0]
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins1]
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins2]
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins3]
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins4]
+FAILED test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins5]
+FAILED test_v6_sav.py::test_only_mature_read_slices_must_be_finite_and_nonnegative
+19 failed in 0.46s
