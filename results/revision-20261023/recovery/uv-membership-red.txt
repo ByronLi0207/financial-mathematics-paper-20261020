@@ -1,0 +1,23 @@
+WARN `--no-project` was provided, but no project was found
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache/builds-v0/.tmpJaNe7R/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 7 items / 6 deselected / 1 selected
+
+test_v3_math_format.py::MathematicalTypesetting::test_membership_does_not_consume_english_phi FAILED [100%]
+
+=================================== FAILURES ===================================
+_____ MathematicalTypesetting.test_membership_does_not_consume_english_phi _____
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_membership_does_not_consume_english_phi>
+
+    def test_membership_does_not_consume_english_phi(self):
+        # A partial-token replacement changed a recursion into a set relation.
+        source='fix common coefficients c and phi in N<sub>s+1</sub>=c+phi N<sub>s</sub>+epsilon<sub>s</sub>.'
+>       self.assertIn('φ in N<sub>s+1</sub>',text_math(source))
+E       AssertionError: 'φ in N<sub>s+1</sub>' not found in 'fix common coefficients c and φ∈N<sub>s+1</sub>=c+φ N<sub>s</sub>+ε<sub>s</sub>.'
+
+test_v3_math_format.py:25: AssertionError
+=========================== short test summary info ============================
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_membership_does_not_consume_english_phi
+======================= 1 failed, 6 deselected in 0.02s ========================
