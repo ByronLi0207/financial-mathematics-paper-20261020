@@ -56,10 +56,19 @@ def numerical_facts():
     add("FXPrimaryGain",ppath,fx,"relative_mean_loss_difference_percent",1,True)
     add("FXPrimaryBreaches",ppath,fx,"strict_breach_count_left")
     add("FXReferenceBreaches",ppath,fx,"strict_breach_count_right")
+    dpath=NEW/"w3/dm-family.csv"; dm=rows(dpath)
+    fxp=next(r for r in dm if r["contrast_id"]==fx["contrast_id"])
+    tp=next(r for r in dm if r["contrast_id"]=="nyfed_weekly-h6-QR260-minus-frozen_F260")
+    add("FXPrimaryP",dpath,fxp,"dm_p",3)
+    facts["FXPrimaryP"]["display"]=pval(fxp["dm_p"])
+    add("TreasuryPrimaryP",dpath,tp,"dm_p",3)
+    add("TreasuryPrimaryBonferroni",dpath,tp,"primary_bonferroni_p",3)
     epath=NEW/"e3/summary.csv"; e3=rows(epath)
     treasury=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
     for name,field,digits in [("TreasuryOriginalExcess","original33_percent_vs_frozen_F",1),("TreasuryExpandedExcess","extended33_percent_vs_frozen_F",1),("TreasuryExpandedExcessFine","extended33_percent_vs_frozen_F",2),("TreasuryFeatureChange","common_menu_feature_change_percent",2)]:
         add(name,epath,treasury,field,digits)
+    add("TreasuryOriginalBreaches",epath,treasury,"original33_breaches")
+    add("TreasuryReferenceBreaches",epath,treasury,"frozen_F_breaches")
     fxlong=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["window"]=="2880")
     add("FXFeaturesGain",epath,fxlong,"common_menu_feature_change_percent",1,True)
     jpath=NEW/"e5/descriptive-summary.json"; panel=json.loads(jpath.read_text())
@@ -109,16 +118,20 @@ def build_tables():
            ["Treasury", "2013-04-03 to 2026-10-07", "2019-07-24 to 2020-07-15", "2021-01-06 to 2026-04-22", "52 or 260 / 13"]],
           align="lp{.20\\linewidth}p{.20\\linewidth}p{.20\\linewidth}p{.17\\linewidth}",
           note="FX has 1,440 validation and 6,625 evaluation issues; Treasury has 52 and 277. The longest validation response completes before evaluation starts. $H$ counts records, preserving recorded FX gaps.", fontsize="footnotesize")
-    ready = rows(NEW / "inference/tables3-4-ready.csv")
+    ready = rows(NEW / "w3/tables3-4-ready.csv")
     assert len(ready) == 48
     names = {"frozen_F": "$F$", "frozen_S": "$S$", "frozen_K": "$K$", "QR": "QR", "KNN": "KNN", "SCALED_KNN": "Scaled KNN"}
     for source, name, label, title in [("fx_hourly", "fx", "tab:fx", "FX"), ("nyfed_weekly", "treasury", "tab:treasury", "Treasury")]:
         subset = [r for r in ready if r["source"] == source]
         assert len(subset) == 24
         data = [[r["horizon"], r["window"], names[r["method"]], r["loss_display"], r["relative_display"], r["breach_rate_display"], r["holm_display"].replace("<", "$<").replace(".001", ".001$") if r["holm_display"].startswith("<") else r["holm_display"]] for r in subset]
+        for r, display in zip(subset,data):
+            if (r["source"],r["horizon"],r["window"],r["method"]) == ("nyfed_weekly","6","260","QR"):
+                primary=next(q for q in rows(NEW/"inference/dm-verified.csv") if q["contrast_id"]=="nyfed_weekly-h6-QR260-minus-frozen_F260")
+                display[-1]=pval(primary["dm_p"])+"$^{*}$"
         table(name + "-table.tex", title + " original reports, matched by horizon and history. Loss is in source-reported USD millions.", label,
-              ["$H$", "$W$", "Report", "Mean loss", "$\\Delta_F$ (\\%)", "Breach (\\%)", "$p_{\\rm Holm}$"], data,
-              align="rrlrrrr", note="Every relative change uses its own frozen $F$. Holm adjustment covers the original 72 matched conditional-versus-$F/S/K$ contrasts. Dashes mark self-references, historical contrasts outside that family, or the exact full-pool KNN identity. Identical-loss cells receive input one solely for conservative family bookkeeping. Percentages and loss are computed before display rounding.")
+              ["$H$", "$W$", "Report", "Mean loss", "$\\Delta_F$ (\\%)", "Breach (\\%)", "$p$"], data,
+              align="rrlrrrr", note="Every relative change uses its own frozen $F$. $^{*}$Primary, unadjusted HAC p-value (Treasury QR at the main setting). Other conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts. The FX cross-window primary is reported separately. This reporting division was chosen after results; the original 72-member adjustment remains archived. Dashes mark self-references, historical contrasts or the exact full-pool KNN identity. Identical-loss cells receive input one for conservative bookkeeping. Values are rounded only for display.")
     cov = rows(NEW / "inference/coverage-verified.csv")
     covkeys = [("fx_hourly", "6", "2880", "QR"), ("nyfed_weekly", "6", "260", "QR"), ("nyfed_weekly", "6", "260", "frozen_F")]
     data = []
