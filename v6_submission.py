@@ -81,6 +81,12 @@ def _documents(_signature):
     related['html']=related['html'].replace('sequential conformal prediction (Xu and Xie, 2023)',
         'adaptive conformal inference (ACI) of Gibbs and Candès (2021), sequential conformal prediction (Xu and Xie, 2023)')
     d['sections'][3]['blocks'][25]['html']=d['sections'][3]['blocks'][25]['html'].replace('classical Lévy maximal inequality,','classical Lévy maximal inequality (Sussman, 2023),')
+    # Keep strict-improvement language within the nonzero nonnegative-weight domain.
+    weight_old='their sample-average improvement persists under every constant nonnegative linear weighting of those components.'
+    weight_new='their sample-average loss is lower under every constant nonnegative linear weighting of those components with at least one positive weight.'
+    weight_blocks=[b for b in d['sections'][6]['blocks'] if weight_old in b.get('html','')]
+    if len(weight_blocks)!=1:raise ValueError('WEIGHT_LANGUAGE_ANCHOR_NOT_UNIQUE')
+    weight_blocks[0]['html']=weight_blocks[0]['html'].replace(weight_old,weight_new)
     # Explicit old/new diagnostic definition distinction preserves old reported CC.
     control_horizon=read('protocol/revision-20261022/study-spec.json')['horizons'][0]
     for old,new in [
