@@ -1,0 +1,35 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{FX original reports, matched by horizon and history. Loss is in source-reported USD millions.}\label{tab:fx}
+\begin{tabular}{rrlrrrr}
+\toprule
+$H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p_{\rm Holm}$ \\
+\midrule
+6 & 720 & $F$ & 0.443 & +0.000 & 5.011 & -- \\
+6 & 720 & $S$ & 0.451 & +1.843 & 3.849 & -- \\
+6 & 720 & $K$ & 0.932 & +110.664 & 7.758 & -- \\
+6 & 720 & QR & 0.433 & -2.117 & 8.015 & 1.000 \\
+6 & 720 & KNN & 0.436 & -1.394 & 4.815 & 1.000 \\
+6 & 720 & Scaled KNN & 0.466 & +5.349 & 4.060 & 1.000 \\
+6 & 2880 & $F$ & 0.453 & +0.000 & 5.434 & -- \\
+6 & 2880 & $S$ & 0.451 & -0.418 & 4.045 & -- \\
+6 & 2880 & $K$ & 0.972 & +114.751 & 8.091 & -- \\
+6 & 2880 & QR & 0.386 & -14.767 & 5.675 & $<0.001$ \\
+6 & 2880 & KNN & 0.411 & -9.302 & 4.815 & 0.016 \\
+6 & 2880 & Scaled KNN & 0.426 & -5.795 & 4.121 & 1.000 \\
+24 & 720 & $F$ & 0.787 & +0.000 & 6.445 & -- \\
+24 & 720 & $S$ & 0.755 & -4.078 & 4.362 & -- \\
+24 & 720 & $K$ & 1.206 & +53.135 & 11.049 & -- \\
+24 & 720 & QR & 1.035 & +31.504 & 13.947 & 0.067 \\
+24 & 720 & KNN & 0.836 & +6.197 & 7.592 & 1.000 \\
+24 & 720 & Scaled KNN & 0.897 & +13.886 & 6.642 & 1.000 \\
+24 & 2880 & $F$ & 0.763 & +0.000 & 5.389 & -- \\
+24 & 2880 & $S$ & 0.759 & -0.525 & 4.408 & -- \\
+24 & 2880 & $K$ & 1.240 & +62.440 & 8.936 & -- \\
+24 & 2880 & QR & 0.735 & -3.758 & 8.015 & 1.000 \\
+24 & 2880 & KNN & 0.770 & +0.837 & 6.883 & 1.000 \\
+24 & 2880 & Scaled KNN & 0.848 & +11.085 & 5.962 & 1.000 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Every relative change uses its own frozen $F$. Holm adjustment covers the original 72 matched conditional-versus-$F/S/K$ contrasts. Dashes mark self-references, historical contrasts outside that family, or the exact full-pool KNN identity. Identical-loss cells receive input one solely for conservative family bookkeeping. Percentages and loss are computed before display rounding.\end{minipage}
+\end{table}
