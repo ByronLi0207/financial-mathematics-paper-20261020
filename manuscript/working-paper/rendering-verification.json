@@ -1,23 +1,24 @@
 {
-  "schema_version": 3,
-  "revision": "20261022-fixed-report-preference-robustness",
+  "schema_version": 4,
+  "revision": "20261023-critical-review",
   "status": "DOCUMENT_VERIFIED",
+  "baseline_commit": "cbce3986276e994add53b0f5c6bdeec5191f4412",
   "files": {
     "paper-content.json": {
-      "bytes": 125964,
-      "sha256": "3b26809607b19d816d4c6c75c7daafffe8431e5c59f76ccb5738542c0e952996"
+      "bytes": 119358,
+      "sha256": "6d06f8cb3fa429601967d7ab847da975f04d262b97e5091b4ec72d01faa2927f"
     },
     "main.tex": {
-      "bytes": 100355,
-      "sha256": "da6d36d046a9fc53dd64c2dd03c8477f5e502a3a70c2ca1d833e104ea32b5825"
+      "bytes": 94007,
+      "sha256": "b4b5812b8780c165a086ff643ff61fb1173f2c5a4999024c118b9c3da8f3d784"
     },
     "paper.pdf": {
-      "bytes": 226059,
-      "sha256": "618fd7e5c7693178180536a74a3cd30f3e6caadfb7ab86d57603903cd6a0b735"
+      "bytes": 220510,
+      "sha256": "c1177a8e0fb1a785cdcde286305480d25f9e0ab3ad07a4a99f015cf98934facf"
     },
     "references.bib": {
-      "bytes": 12163,
-      "sha256": "a930a588d45142bdebd5061ebc52be9e9ed6417e0d709235ac7fdb4911719086"
+      "bytes": 11933,
+      "sha256": "5ffc1bcc244547ef492293dd0449bd09ecfe19ee9039c1de634f95c00d558767"
     }
   },
   "figures": {
@@ -35,27 +36,31 @@
     }
   },
   "pages": {
-    "body": 22,
+    "body": 21,
     "figures": 3,
-    "total": 25
+    "total": 24
   },
   "structured_inventory": {
     "sections": 16,
-    "references": 26,
+    "references": 25,
     "tables": 15,
     "equation_blocks": 21
   },
   "supplied_pdf": {
-    "engine": "Existing ReportLab/pypdf route, not a TeX export",
-    "source_units": 940,
-    "source_units_matched": 940,
-    "matching_normalization": "Strip markup and observed leading page footers; normalize NFKC/whitespace/minus; require every full unit contiguous in extracted body text",
+    "engine": "Existing ReportLab/pypdf route; separate from TeX compiler export",
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "source_units": 931,
+    "source_units_matched": 931,
     "missing_units": [],
-    "replacement_box_nul_count": 0,
-    "original_12_tables_retained": true,
-    "original_26_references_unchanged": true,
-    "original_3_figure_streams_exact": true,
-    "tex_regeneration_byte_equal": true,
+    "matching_normalization": "Full units contiguous after markup stripping, observed leading page-footer removal, NFKC/whitespace/minus normalization.",
+    "all_15_baseline_tables_unchanged": true,
+    "all_21_baseline_equation_blocks_unchanged": true,
+    "current_reference_ids_and_bib_order_match": true,
+    "removed_unused_reference_id": "liao2005",
+    "all_3_vector_inputs_unchanged": true,
+    "all_3_appended_figure_streams_exact": true,
+    "bad_body_characters": {},
     "visual_review": {
       "body_pages_contact_reviewed": [
         1,
@@ -78,39 +83,64 @@
         18,
         19,
         20,
-        21,
-        22
+        21
       ],
-      "contact_page_long_edge_pixels": 1000,
-      "detailed_pages_reviewed": [
+      "contact_source_page_long_edge_pixels": 1300,
+      "final_detail_pages_reviewed": [
+        3,
+        6,
         9,
         10,
-        19,
-        20
+        14,
+        19
       ],
-      "final_provenance_revision_changed_pages": [
+      "detail_dpi": 140,
+      "figure_pages_reviewed": [
+        22,
+        23,
+        24
+      ],
+      "final_changed_pages_since_contact_review": [
+        6,
         10
-      ],
-      "final_page_10_reviewed_dpi": 110,
-      "supplement_figure_rendered_reviewed": true
+      ]
     }
   },
   "latex_compilation": {
     "status": "success",
     "compiler": "Codex desktop built-in compiler",
-    "scope": "Final 25-page preference-revision source; supplied PDF independently built"
+    "scope": "Final current critical-review source, independently typeset supplied PDF"
   },
-  "tests": {
-    "status": "PASS",
-    "whole_repository_count": 563,
-    "new_scoped_count": 37,
-    "whole_repository_seconds": 87.152
+  "verification": {
+    "document_unittest_count": 24,
+    "document_unittest_status": "PASS",
+    "archive_result": "ARCHIVE_VERIFIED",
+    "archive_result_files": 69,
+    "raw_sources_read": false,
+    "accuracy_recomputed": false,
+    "all_relative_document_links_resolve": true,
+    "relative_document_link_count": 65,
+    "annual_helper": {
+      "status": "PASS",
+      "accepted_input_tables": 3,
+      "named_comparisons": 3,
+      "relocated_checkout_json_byte_equal": true,
+      "checked_python_versions": [
+        "3.12.14",
+        "3.9.6"
+      ],
+      "changed_input_rejected": true,
+      "existing_output_refused_and_preserved": true
+    }
   },
-  "previous_23page_pdf_sha256": "c2cc461d96ab24896b87eabf478d3486ab7706e9c38bd08a6077456394607e8e",
-  "limitations": "Document/source fidelity and saved-summary arithmetic; not new samples, financial-policy benefit, new methods or a journal-tier guarantee.",
-  "document_resources": {
-    "elapsed_seconds": 0.29,
-    "peak_rss_bytes": 58851328,
-    "os_thread_maximum": null
-  }
+  "independent_scientific_review": {
+    "status": "no_remaining_blocking_finding",
+    "found_and_corrected": "Unsupported specificity in original-stage inspection chronology; preserve explicit post-result one-state extension status",
+    "scope": "Current manuscript, reference order, all preserved tables/equations, aggregate-only new contribution arithmetic; no raw observations, refits or PDF visual claim by reviewer"
+  },
+  "previous_document": {
+    "bytes": 226059,
+    "sha256": "618fd7e5c7693178180536a74a3cd30f3e6caadfb7ab86d57603903cd6a0b735"
+  },
+  "limitations": "Document/source fidelity and saved-summary arithmetic. No new financial sample, model fit, live release-vintage replay, coverage guarantee, decision benefit or journal-tier claim."
 }

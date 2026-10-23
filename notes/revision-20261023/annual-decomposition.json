@@ -1,0 +1,685 @@
+{
+  "status": "PASS",
+  "schema_version": 1,
+  "audit_id": "annual-decomposition-20261023",
+  "scope": "Readback of three comparisons from frozen public aggregates only; no new forecast or raw-observation analysis.",
+  "arithmetic": "Exact Fraction of saved decimal tokens. Decimal is used only for 30-place display; integer numerator/denominator is authoritative.",
+  "tolerance": {
+    "absolute_per_origin_native_USD": {
+      "numerator": "1",
+      "denominator": "10000000",
+      "decimal_30_places": "0.000000100000000000000000000000"
+    },
+    "explanation": "Weighted annual saved means and independently saved all-origin means have separate float64 rounding histories. Each mean and pinball-component reconciliation must differ by at most 1e-7 USD. Equivalently, sum-level discrepancy is at most n*1e-7 USD. Exact decimal-token algebra is not infinite-precision raw-loss truth."
+  },
+  "interpretation": "Contribution = (-n_2017*d_2017)/sum_years(-n_year*d_year). Issue-year groups, sparse grids and configurations are dependent parts of the same inspected FX archive, not independent replications.",
+  "inputs": {
+    "paired-annual.csv": {
+      "path": "results/revision-20261022/paired-annual.csv",
+      "bytes": 102217,
+      "sha256": "5b0727af566cbfa935fba95c25cf2a7918dc073baa2daf8558d84984161bce40",
+      "row_count": 388,
+      "unique_keys_verified": true
+    },
+    "paired-comparisons.csv": {
+      "path": "results/revision-20261022/paired-comparisons.csv",
+      "bytes": 26918,
+      "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+      "row_count": 98,
+      "unique_keys_verified": true
+    },
+    "paired-nonoverlap.csv": {
+      "path": "results/revision-20261022/paired-nonoverlap.csv",
+      "bytes": 25807,
+      "sha256": "b050007b8ddffc5ba5865ccad90960740d94f55d7dd7a814e88665aa3d55677d",
+      "row_count": 98,
+      "unique_keys_verified": true
+    }
+  },
+  "complete_public_contrast_count": 98,
+  "audited_comparison_count": 3,
+  "comparisons": [
+    {
+      "name": "FX H6 primary",
+      "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+      "native_unit": "USD",
+      "annual_net_gains_from_saved_means": {
+        "2016": {
+          "numerator": "16926144030161052221",
+          "denominator": "50000000000",
+          "decimal_30_places": "338522880.603221044420000000000000000000"
+        },
+        "2017": {
+          "numerator": "64015496814576087",
+          "denominator": "2000000000",
+          "decimal_30_places": "32007748.407288043500000000000000000000"
+        }
+      },
+      "total_net_gain_from_saved_annual_means": {
+        "numerator": "4631632862631363599",
+        "denominator": "12500000000",
+        "decimal_30_places": "370530629.010509087920000000000000000000"
+      },
+      "partial_2017_origin_share_percent": {
+        "numerator": "1452",
+        "denominator": "265",
+        "decimal_30_places": "5.479245283018867924528301886792"
+      },
+      "partial_2017_net_gain_contribution_percent": {
+        "numerator": "40009685509110054375",
+        "denominator": "4631632862631363599",
+        "decimal_30_places": "8.638354268515877874992243492766"
+      },
+      "reconciliation": {
+        "mean_pinball_left": {
+          "annual_weighted_mean": {
+            "numerator": "4823061068622009607",
+            "denominator": "12500000000000",
+            "decimal_30_places": "385844.885489760768560000000000000000"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "3858448854897607",
+            "denominator": "10000000000",
+            "decimal_30_places": "385844.885489760700000000000000000000"
+          },
+          "difference": {
+            "numerator": "857",
+            "denominator": "12500000000000",
+            "decimal_30_places": "0.000000000068560000000000000000"
+          },
+          "pass": true
+        },
+        "mean_pinball_right": {
+          "annual_weighted_mean": {
+            "numerator": "292675299538017410249",
+            "denominator": "662500000000000",
+            "decimal_30_places": "441774.037038516845658867924528301887"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "11044350925962921",
+            "denominator": "25000000000",
+            "decimal_30_places": "441774.037038516840000000000000000000"
+          },
+          "difference": {
+            "numerator": "3749",
+            "denominator": "662500000000000",
+            "decimal_30_places": "0.000000000005658867924528301887"
+          },
+          "pass": true
+        },
+        "mean_pinball_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-4631632862631363599",
+            "denominator": "82812500000000",
+            "decimal_30_places": "-55929.151548756088742641509433962264"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-5592915154875609",
+            "denominator": "100000000000",
+            "decimal_30_places": "-55929.151548756090000000000000000000"
+          },
+          "difference": {
+            "numerator": "833",
+            "denominator": "662500000000000",
+            "decimal_30_places": "0.000000000001257358490566037736"
+          },
+          "pass": true
+        },
+        "mean_positive_overrun_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-17238304213589628453",
+            "denominator": "1656250000000000",
+            "decimal_30_places": "-10408.032732733360575396226415094340"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-130100409159167",
+            "denominator": "12500000000",
+            "decimal_30_places": "-10408.032732733360000000000000000000"
+          },
+          "difference": {
+            "numerator": "-953",
+            "denominator": "1656250000000000",
+            "decimal_30_places": "-0.000000000000575396226415094340"
+          },
+          "pass": true
+        },
+        "mean_unused_allowance_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-15251253649943425723",
+            "denominator": "16562500000000",
+            "decimal_30_places": "-920830.409053187968181132075471698113"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-9208304090531879",
+            "denominator": "10000000000",
+            "decimal_30_places": "-920830.409053187900000000000000000000"
+          },
+          "difference": {
+            "numerator": "-4517",
+            "denominator": "66250000000000",
+            "decimal_30_places": "-0.000000000068181132075471698113"
+          },
+          "pass": true
+        }
+      },
+      "component_checks": {
+        "all_origins": {
+          "origin_count": 6625,
+          "delta_mean_overrun": {
+            "numerator": "-130100409159167",
+            "denominator": "12500000000",
+            "decimal_30_places": "-10408.032732733360000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-9208304090531879",
+            "denominator": "10000000000",
+            "decimal_30_places": "-920830.409053187900000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-3",
+            "denominator": "1000000000000",
+            "decimal_30_places": "-0.000000000003000000000000000000"
+          }
+        },
+        "2016": {
+          "origin_count": 6262,
+          "delta_mean_overrun": {
+            "numerator": "-9199988794136361",
+            "denominator": "1000000000000",
+            "decimal_30_places": "-9199.988794136361000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-4531987659945437",
+            "denominator": "5000000000",
+            "decimal_30_places": "-906397.531989087400000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "59",
+            "denominator": "20000000000000",
+            "decimal_30_places": "0.000000000002950000000000000000"
+          }
+        },
+        "partial_2017": {
+          "origin_count": 363,
+          "delta_mean_overrun": {
+            "numerator": "-3124762265971521",
+            "denominator": "100000000000",
+            "decimal_30_places": "-31247.622659715210000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-731129674004313",
+            "denominator": "625000000",
+            "decimal_30_places": "-1169807.478406900800000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-21",
+            "denominator": "2000000000000",
+            "decimal_30_places": "-0.000000000010500000000000000000"
+          }
+        },
+        "fixed_sparse_grid": {
+          "origin_count": 947,
+          "delta_mean_overrun": {
+            "numerator": "-26891861488493603",
+            "denominator": "1000000000000",
+            "decimal_30_places": "-26891.861488493603000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-2333758080513799",
+            "denominator": "2500000000",
+            "decimal_30_places": "-933503.232205519600000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "57",
+            "denominator": "20000000000000",
+            "decimal_30_places": "0.000000000002850000000000000000"
+          }
+        }
+      }
+    },
+    {
+      "name": "FX H6 matched",
+      "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880",
+      "native_unit": "USD",
+      "annual_net_gains_from_saved_means": {
+        "2016": {
+          "numerator": "1288950154037237677",
+          "denominator": "3125000000",
+          "decimal_30_places": "412464049.291916056640000000000000000000"
+        },
+        "2017": {
+          "numerator": "1520229984020653587",
+          "denominator": "50000000000",
+          "decimal_30_places": "30404599.680413071740000000000000000000"
+        }
+      },
+      "total_net_gain_from_saved_annual_means": {
+        "numerator": "22143432448616456419",
+        "denominator": "50000000000",
+        "decimal_30_places": "442868648.972329128380000000000000000000"
+      },
+      "partial_2017_origin_share_percent": {
+        "numerator": "1452",
+        "denominator": "265",
+        "decimal_30_places": "5.479245283018867924528301886792"
+      },
+      "partial_2017_net_gain_contribution_percent": {
+        "numerator": "152022998402065358700",
+        "denominator": "22143432448616456419",
+        "decimal_30_places": "6.865376393421964991713282928216"
+      },
+      "reconciliation": {
+        "mean_pinball_left": {
+          "annual_weighted_mean": {
+            "numerator": "4823061068622009607",
+            "denominator": "12500000000000",
+            "decimal_30_places": "385844.885489760768560000000000000000"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "3858448854897607",
+            "denominator": "10000000000",
+            "decimal_30_places": "385844.885489760700000000000000000000"
+          },
+          "difference": {
+            "numerator": "857",
+            "denominator": "12500000000000",
+            "decimal_30_places": "0.000000000068560000000000000000"
+          },
+          "pass": true
+        },
+        "mean_pinball_right": {
+          "annual_weighted_mean": {
+            "numerator": "29990910153419940767",
+            "denominator": "66250000000000",
+            "decimal_30_places": "452692.983447848162520754716981132075"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "4526929834478481",
+            "denominator": "10000000000",
+            "decimal_30_places": "452692.983447848100000000000000000000"
+          },
+          "difference": {
+            "numerator": "2071",
+            "denominator": "33125000000000",
+            "decimal_30_places": "0.000000000062520754716981132075"
+          },
+          "pass": true
+        },
+        "mean_pinball_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-22143432448616456419",
+            "denominator": "331250000000000",
+            "decimal_30_places": "-66848.097958087415604528301886792453"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-6684809795808741",
+            "denominator": "100000000000",
+            "decimal_30_places": "-66848.097958087410000000000000000000"
+          },
+          "difference": {
+            "numerator": "-3713",
+            "denominator": "662500000000000",
+            "decimal_30_places": "-0.000000000005604528301886792453"
+          },
+          "pass": true
+        },
+        "mean_positive_overrun_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-97881735575029325449",
+            "denominator": "3312500000000000",
+            "decimal_30_places": "-29549.203192461683154415094339622642"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-14774601596230843",
+            "denominator": "500000000000",
+            "decimal_30_places": "-29549.203192461686000000000000000000"
+          },
+          "difference": {
+            "numerator": "4713",
+            "denominator": "1656250000000000",
+            "decimal_30_places": "0.000000000002845584905660377358"
+          },
+          "pass": true
+        },
+        "mean_unused_allowance_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-2568933513797734391",
+            "denominator": "3312500000000",
+            "decimal_30_places": "-775527.098504976419924528301886792453"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-1938817746262441",
+            "denominator": "2500000000",
+            "decimal_30_places": "-775527.098504976400000000000000000000"
+          },
+          "difference": {
+            "numerator": "-33",
+            "denominator": "1656250000000",
+            "decimal_30_places": "-0.000000000019924528301886792453"
+          },
+          "pass": true
+        }
+      },
+      "component_checks": {
+        "all_origins": {
+          "origin_count": 6625,
+          "delta_mean_overrun": {
+            "numerator": "-14774601596230843",
+            "denominator": "500000000000",
+            "decimal_30_places": "-29549.203192461686000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-1938817746262441",
+            "denominator": "2500000000",
+            "decimal_30_places": "-775527.098504976400000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "117",
+            "denominator": "10000000000000",
+            "decimal_30_places": "0.000000000011700000000000000000"
+          }
+        },
+        "2016": {
+          "origin_count": 6262,
+          "delta_mean_overrun": {
+            "numerator": "-30793963227065153",
+            "denominator": "1000000000000",
+            "decimal_30_places": "-30793.963227065153000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-3661351668004283",
+            "denominator": "5000000000",
+            "decimal_30_places": "-732270.333600856600000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "107",
+            "denominator": "20000000000000",
+            "decimal_30_places": "0.000000000005350000000000000000"
+          }
+        },
+        "partial_2017": {
+          "origin_count": 363,
+          "delta_mean_overrun": {
+            "numerator": "-2019058830700181",
+            "denominator": "250000000000",
+            "decimal_30_places": "-8076.235322800724000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-1902170105326807",
+            "denominator": "1250000000",
+            "decimal_30_places": "-1521736.084261445600000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-61",
+            "denominator": "5000000000000",
+            "decimal_30_places": "-0.000000000012200000000000000000"
+          }
+        },
+        "fixed_sparse_grid": {
+          "origin_count": 947,
+          "delta_mean_overrun": {
+            "numerator": "-2146656683717183",
+            "denominator": "50000000000",
+            "decimal_30_places": "-42933.133674343660000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-785475352806681",
+            "denominator": "1000000000",
+            "decimal_30_places": "-785475.352806681000000000000000000000"
+          },
+          "signs": [
+            "negative",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "17",
+            "denominator": "1000000000000",
+            "decimal_30_places": "0.000000000017000000000000000000"
+          }
+        }
+      }
+    },
+    {
+      "name": "FX H24 legacy",
+      "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720",
+      "native_unit": "USD",
+      "annual_net_gains_from_saved_means": {
+        "2016": {
+          "numerator": "264532554943665727",
+          "denominator": "10000000000",
+          "decimal_30_places": "26453255.494366572700000000000000000000"
+        },
+        "2017": {
+          "numerator": "6423285616835357391",
+          "denominator": "100000000000",
+          "decimal_30_places": "64232856.168353573910000000000000000000"
+        }
+      },
+      "total_net_gain_from_saved_annual_means": {
+        "numerator": "9068611166272014661",
+        "denominator": "100000000000",
+        "decimal_30_places": "90686111.662720146610000000000000000000"
+      },
+      "partial_2017_origin_share_percent": {
+        "numerator": "1452",
+        "denominator": "265",
+        "decimal_30_places": "5.479245283018867924528301886792"
+      },
+      "partial_2017_net_gain_contribution_percent": {
+        "numerator": "642328561683535739100",
+        "denominator": "9068611166272014661",
+        "decimal_30_places": "70.829871289716842146990122742836"
+      },
+      "reconciliation": {
+        "mean_pinball_left": {
+          "annual_weighted_mean": {
+            "numerator": "973470965859545011",
+            "denominator": "1325000000000",
+            "decimal_30_places": "734695.068573241517735849056603773585"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "1469390137146483",
+            "denominator": "2000000000",
+            "decimal_30_places": "734695.068573241500000000000000000000"
+          },
+          "difference": {
+            "numerator": "47",
+            "denominator": "2650000000000",
+            "decimal_30_places": "0.000000000017735849056603773585"
+          },
+          "pass": true
+        },
+        "mean_pinball_right": {
+          "annual_weighted_mean": {
+            "numerator": "49580409409604454893",
+            "denominator": "66250000000000",
+            "decimal_30_places": "748383.538258180451215094339622641509"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "1496767076516361",
+            "denominator": "2000000000",
+            "decimal_30_places": "748383.538258180500000000000000000000"
+          },
+          "difference": {
+            "numerator": "-101",
+            "denominator": "2070312500000",
+            "decimal_30_places": "-0.000000000048784905660377358491"
+          },
+          "pass": true
+        },
+        "mean_pinball_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-9068611166272014661",
+            "denominator": "662500000000000",
+            "decimal_30_places": "-13688.469684938890054339622641509434"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-1368846968493889",
+            "denominator": "100000000000",
+            "decimal_30_places": "-13688.469684938890000000000000000000"
+          },
+          "difference": {
+            "numerator": "-9",
+            "denominator": "165625000000000",
+            "decimal_30_places": "-0.000000000000054339622641509434"
+          },
+          "pass": true
+        },
+        "mean_positive_overrun_difference": {
+          "annual_weighted_mean": {
+            "numerator": "22242010691848801309",
+            "denominator": "132500000000000",
+            "decimal_30_places": "167864.231636594726860377358490566038"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "671456926546379",
+            "denominator": "4000000000",
+            "decimal_30_places": "167864.231636594750000000000000000000"
+          },
+          "difference": {
+            "numerator": "-1533",
+            "denominator": "66250000000000",
+            "decimal_30_places": "-0.000000000023139622641509433962"
+          },
+          "pass": true
+        },
+        "mean_unused_allowance_difference": {
+          "annual_weighted_mean": {
+            "numerator": "-229436323905107623389",
+            "denominator": "66250000000000",
+            "decimal_30_places": "-3463189.794794077334173584905660377358"
+          },
+          "saved_all_origin_mean": {
+            "numerator": "-3463189794794077",
+            "denominator": "1000000000",
+            "decimal_30_places": "-3463189.794794077000000000000000000000"
+          },
+          "difference": {
+            "numerator": "-22139",
+            "denominator": "66250000000000",
+            "decimal_30_places": "-0.000000000334173584905660377358"
+          },
+          "pass": true
+        }
+      },
+      "component_checks": {
+        "all_origins": {
+          "origin_count": 6625,
+          "delta_mean_overrun": {
+            "numerator": "671456926546379",
+            "denominator": "4000000000",
+            "decimal_30_places": "167864.231636594750000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-3463189794794077",
+            "denominator": "1000000000",
+            "decimal_30_places": "-3463189.794794077000000000000000000000"
+          },
+          "signs": [
+            "positive",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-21",
+            "denominator": "400000000000",
+            "decimal_30_places": "-0.000000000052500000000000000000"
+          }
+        },
+        "2016": {
+          "origin_count": 6262,
+          "delta_mean_overrun": {
+            "numerator": "4400956277059103",
+            "denominator": "25000000000",
+            "decimal_30_places": "176038.251082364120000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-685842994160487",
+            "denominator": "200000000",
+            "decimal_30_places": "-3429214.970802435000000000000000000000"
+          },
+          "signs": [
+            "positive",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-7",
+            "denominator": "500000000000",
+            "decimal_30_places": "-0.000000000014000000000000000000"
+          }
+        },
+        "partial_2017": {
+          "origin_count": 363,
+          "delta_mean_overrun": {
+            "numerator": "2685676670709627",
+            "denominator": "100000000000",
+            "decimal_30_places": "26856.766707096270000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-40492789072890203",
+            "denominator": "10000000000",
+            "decimal_30_places": "-4049278.907289020300000000000000000000"
+          },
+          "signs": [
+            "positive",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-23",
+            "denominator": "2000000000000",
+            "decimal_30_places": "-0.000000000011500000000000000000"
+          }
+        },
+        "fixed_sparse_grid": {
+          "origin_count": 265,
+          "delta_mean_overrun": {
+            "numerator": "6048592494805249",
+            "denominator": "50000000000",
+            "decimal_30_places": "120971.849896104980000000000000000000"
+          },
+          "delta_mean_unused": {
+            "numerator": "-6978994904306407",
+            "denominator": "2000000000",
+            "decimal_30_places": "-3489497.452153203500000000000000000000"
+          },
+          "signs": [
+            "positive",
+            "negative"
+          ],
+          "pinball_identity_residual": {
+            "numerator": "-13",
+            "denominator": "500000000000",
+            "decimal_30_places": "-0.000000000026000000000000000000"
+          }
+        }
+      }
+    }
+  ]
+}
