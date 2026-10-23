@@ -98,15 +98,23 @@ def build_tables():
           align="lrrrrrr", note="POF uses every retained hit. IND and CC condition on the first hit; their likelihoods therefore use the subsequent transitions consistently. Values are asymptotic reference p-values for equality/independence nulls. Complete grids and the preserved earlier initialization convention are in the inference supplement.")
     e3 = rows(NEW / "e3/summary.csv")
     pairs = rows(NEW / "e3/paired-dm.csv")
+    e6 = rows(NEW / "e6/table6.csv")
     data = []
-    for r in sorted(e3, key=lambda r: (r["source"] != "fx_hourly", int(r["horizon"]), int(r["window"]))):
-        dm = next(d for d in pairs if d["source"] == r["source"] and d["horizon"] == r["horizon"] and d["new_window"] == r["window"] and d["old_method"] == "four_predictor_extended_menu" and d["new_method"] == "33_predictor_extended_menu")
-        data.append(["FX" if r["source"] == "fx_hourly" else "Treasury", r["horizon"], r["window"], f"{float(r['extended33_selected_penalty']):g}", *[f"{float(r[k]):+.3f}" for k in ["original33_percent_vs_frozen_F", "four_percent_vs_frozen_F", "extended33_percent_vs_frozen_F"]], pval(dm["dm_p"])])
-    table("e3-table.tex", "E3: the full predictor set under a shared wider ridge menu. Score changes are relative to frozen $F$ (percent).", "tab:e3",
-          ["Source", "$H$", "$W$", "$\\lambda_{33+}$", "Original 33", "Four+", "33+", "$p_{4+\\to33+}$"], data,
-          align="lrrrrrrr", fontsize="footnotesize", note="Plus denotes the common menu $\\{.001,.01,.1,1,10\\}$. Original 33 retains its published smaller menu. Each feature set selects its own penalty by the same validation rule; the comparison is between tuning procedures, not a fixed-penalty feature effect. The last column is an unadjusted exploratory HAC p-value. All eight cells and all 40 candidates completed. The separate 28-comparison E3 adjustment, HLN and doubled-bandwidth results are retained in the supplement.")
+    for r in sorted(e6, key=lambda r: (r["source"] != "fx_hourly", int(r["horizon"]), int(r["window"]))):
+        data.append(["FX" if r["source"] == "fx_hourly" else "Treasury", r["horizon"], r["window"], f"{float(r['extended33_selected_penalty']):g}", *[f"{float(r[k]):+.2f}" for k in ["original33_percent_vs_frozen_F", "four_percent_vs_frozen_F", "extended33_percent_vs_frozen_F", "I_percent_vs_frozen_F"]], r["extended33_breaches"]])
+    table("e3-table.tex", "Penalty-menu expansion and the intercept-only reference. Loss changes relative to frozen $F$ (percent); the final column counts strict breaches.", "tab:e3",
+          ["Source", "$H$", "$W$", "$\\lambda$ (33+)", "Original 33", "Four+", "33+", "$I$", "Breaches (33+)"], data,
+          align="lrrrrrrrr", fontsize="footnotesize", note="Plus denotes the common menu $\\{.001,.01,.1,1,10\\}$. Original 33 retains its smaller menu. $I$ uses the ordinary empirical headroom quantile at $\\lceil .95W\\rceil$; it is a $\\lambda\\to\\infty$ reference, with a minimizer interval when $.95W$ is integral. $F$ instead uses $\\lceil .95(W+1)\\rceil$. Each predictor set selects its own penalty by the same validation rule. All eight cells and all 40 candidates completed. Common-menu paired tests, the separate 28-comparison E3 adjustment, HLN and doubled-bandwidth results remain in the supplement.")
+    treasury = [r for r in e6 if r["source"] == "nyfed_weekly"]
+    primary = next(r for r in treasury if r["horizon"] == "6" and r["window"] == "260")
+    endpoint_count = sum(r["selected_at_extended_menu_upper_endpoint"] == "True" for r in treasury)
+    i_changes = ", ".join(f"${float(r['I_percent_vs_frozen_F']):+.1f}$\\%" for r in treasury)
+    (GEN / "e6-summary.tex").write_text(
+        f"The intercept-only reference helps locate the remaining Treasury differences. In the displayed Treasury order, $I$ changes loss by {i_changes} relative to $F$. The expanded full regression selects the menu's upper endpoint in {endpoint_count} of {len(treasury)} Treasury cells. At the main Treasury setting, expanded QR has {primary['extended33_breaches']} strict breaches, compared with {primary['frozen_F_breaches']} for $F$ and {primary['original33_breaches']} for original QR. Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.\\n".replace("\\n", "\n"))
     decomp = rows(NEW / "e3/primary-decomposition.csv")
-    (NEW / "document-inputs.json").write_text(json.dumps({"table3_4_rows": len(ready), "e3_cells": len(e3), "decomposition_rows": len(decomp), "original_archives_read_only": True}, indent=2) + "\n")
+    round2 = NEW / "round2"
+    round2.mkdir(exist_ok=True)
+    (round2 / "document-inputs.json").write_text(json.dumps({"table3_4_rows": len(ready), "e3_cells": len(e3), "e6_cells": len(e6), "decomposition_rows": len(decomp), "original_archives_read_only": True}, indent=2) + "\n")
     # Direct columns are intentionally selected by schema, never reconstructed from rounded paper values.
     method_names = {"rolling_F": "Rolling $F_{720}$", "frozen_F": "Frozen $F$", "four_predictor_extended_menu": "Four+", "33_predictor_extended_menu": "33+", "33_predictor_original_menu": "Original 33"}
     data = []
@@ -272,10 +280,44 @@ def murphy():
     c.save()
 
 
+def lambda_path():
+    path = rows(NEW / "e6/lambda-path.csv")
+    refs = rows(NEW / "e6/lambda-path-I.csv")
+    c = start_pdf("lambda-path.pdf", 600, 235)
+    for panel, source in enumerate(["fx_hourly", "nyfed_weekly"]):
+        subset = [r for r in path if r["source"] == source]
+        baseline = [r for r in refs if r["source"] == source]
+        scale = 1e6 if source == "fx_hourly" else 1
+        values = [float(r["mean_pinball"])/scale for r in subset + baseline if r["status"] == "COMPLETE"]
+        lower, upper = min(values), max(values)
+        pad = (upper-lower)*.12
+        x0, x1, y0, y1 = 49+panel*300, 282+panel*300, 48, 187
+        px = lambda v: x0+(math.log10(v)+3)/5*(x1-x0)
+        py = lambda v: y0+(v-lower+pad)/(upper-lower+2*pad)*(y1-y0)
+        label(c, x0, 216, "FX: original six-step long history" if panel == 0 else "Treasury: original six-step long history", 9)
+        for j in range(4):
+            val = lower-pad+(upper-lower+2*pad)*j/3
+            c.setStrokeColor(LIGHT); c.line(x0,py(val),x1,py(val))
+            label(c,x0-5,py(val)-3,f"{val:.2f}" if scale == 1e6 else f"{val:.0f}",8,GREY,"right")
+        for phase, color in [("validation", BLUE), ("evaluation", RED)]:
+            rr = sorted([r for r in subset if r["phase"] == phase and r["status"] == "COMPLETE"], key=lambda r:float(r["parameter"]))
+            c.setStrokeColor(color); c.setFillColor(color); c.setLineWidth(1.2)
+            for a,b in zip(rr,rr[1:]):
+                c.line(px(float(a["parameter"])),py(float(a["mean_pinball"])/scale),px(float(b["parameter"])),py(float(b["mean_pinball"])/scale))
+            for r in rr: c.circle(px(float(r["parameter"])),py(float(r["mean_pinball"])/scale),2.2,fill=1,stroke=0)
+            ref = next(r for r in baseline if r["phase"] == phase)
+            c.setDash(4,3); c.line(x0,py(float(ref["mean_pinball"])/scale),x1,py(float(ref["mean_pinball"])/scale)); c.setDash()
+        for val in sorted({float(r["parameter"]) for r in subset}): label(c,px(val),y0-15,f"{val:g}",8,GREY,"center")
+        label(c,x0,199,"Mean pinball loss (USD millions)",8,GREY)
+        label(c,(x0+x1)/2,15,"Ridge penalty (log scale)",8,GREY,"center")
+    label(c,300,3,"Blue: validation; red: evaluation; dashed: phase-specific intercept-only I",8,GREY,"center")
+    c.save()
+
+
 def main():
     GEN.mkdir(parents=True,exist_ok=True);FIG.mkdir(parents=True,exist_ok=True)
-    build_tables();path_figure();waterfall();error_figure();murphy()
-    print("Built revision-specific aggregate tables and four vector figures; manuscript PDF requires Tectonic.")
+    build_tables();path_figure();waterfall();error_figure();murphy();lambda_path()
+    print("Built revision-specific aggregate tables and vector figures; manuscript PDF requires Tectonic.")
 
 
 if __name__=="__main__":main()
