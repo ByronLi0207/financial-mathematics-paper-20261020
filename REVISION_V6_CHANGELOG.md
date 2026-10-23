@@ -4150,3 +4150,48 @@ test_verify_rank_ablation.py::CompleteSyntheticAttemptTests::test_complete_synth
 
 
 Fresh `git show --format= --check 9811ad4` returns2 with286 literal-stdout whitespace findings, confined to the original test log and its exact ledger duplicate. Both original outputs are preserved as required. This is an explicit evidence-format exception, not a claim of a clean whitespace check. See loop20-whitespace-check/output receipts.
+
+
+## Verification loop21 — five limitations-section traces
+
+Seed2026102321 froze22semantic claims before lookup and drew[0,16,4,15,3]. Existing scalar/static rules support lag span25/24, projected capacity-change mean range136.8–832.3, dimension upper bound28/29, normalized slope-norm endpoints0.001497–0.01937, and nominal33predictors/34coefficients. No means/norms/models/statistics were recomputed; saved scalar endpoints and existing formatting only. Fifteen consulted sources unchanged. Exact pointers/units/noncausal bounds and current pending-candidate hashes are in `verification-loop-021-limitations-numbers.md`. Section10 itself remained unchanged across the root's separate Section7 wording edit.
+
+
+## Verification loop22 — three official/registered metadata checks
+
+Seed2026102322 selected HullWhite1998, Wisniewski2020 and BiauPatra2011 before lookup. Exact publisher-deposited Crossref DOI title/author/date/volume/issue/page fields confirm both journal records; official PMLR128 confirms the proceedings entry. Direct DOI/IEEE access limits retained; contrary third-party dates were not used. No full-text reading, new method guarantee, scientific result or source edit claimed. Source routes/scope: `verification-loop-022-references.md`.
+
+
+## Loop20 verified language candidate published
+
+The exact f193fbf source snapshot was uploaded via native UI commits c729bf0,88148f8,0e87792. Fresh fetched-commit readback at22:09:04UTC verifies all26file lengths/SHA-256 with0mismatches and an empty whole-tree diff; source/remote treec39a32d33adef6289c9bb353b665cabf74c48ed2. Actual same-head PR search at22:08:54UTC still returns no PR in any state. Remote main remains65feeee; no main merge or other-task PR modification. Static gate: `loop20-publication-snapshot-audit.md`; actual remote proof: `loop20-remote-publication-readback.json`. The current18-page PDFc1c55699 and unchanged94-page Supplement now have exact remote-byte verification. Goal remains active until00:31:50UTC; further loops are textual/numeric/reference verification only.
+
+
+## Verification loop23 — internal referee B, Introduction
+
+All ten Introduction blocks, corresponding caption and bounded existing original/matched identity and literature-evidence routes were checked. Three contributions remain target/application/model-validation statements acknowledging endpoint/financial-path-peak/payment and scoring/calibration predecessors. Inspected sample, related aggregates, working-reference diagnostics and nonpolicy boundaries remain explicit. No new literature search or theorem/model/score execution. Twelve source fingerprints match; no necessary conclusion problem. Optional MaxVaR terminology precision is recorded without changing the correctly bounded contribution/Table1. Exact scope and incidental public-illustration disclosure: `verification-loop-023-referee-B-introduction.md`.
+
+
+## Verification loop24 — front-matter claim boundaries
+
+Current title/abstract, complete draft cover letter and explicitly limited internal-review response-status passages were checked for overstatement and self-deprecation. Existing target/classical-bound/reference identities, adverse Treasury/panel findings, finite adaptations, upper-target NA and missing validation/cost evidence remain explicit; no real external-review, journal acceptance or signed/submitted declaration is invented. PASS for bounded wording check; no source/result/conclusion change. See `verification-loop-024-frontmatter-claims.md`. Scheduled self-check22 preserves1413protected paths and reports no unauthorized change; actual timestamp/delay retained in its JSON. The six-hour window remains active.
+
+
+## Verification loop25
+
+Five seeded accuracy-prose traces preserve exact source/control, issue-calendar and raw-DM identity; saved display precision agrees. See verification-loop-025-accuracy-numbers.md and its frozen selection JSON. No new financial calculation, inference or conclusion change.
+
+
+## Verification loop26
+
+Seed2026102326 selected three records before lookup. Publisher-deposited DOI fields agree; exact Ehm arXivv2 date is distinguished from final journal year. Limited metadata checks, not fullbody reading or novelty validation. See verification-loop-026-references.md and saved selected metadata.
+
+
+## Verification loop27
+
+All six related-literature blocks and the full eight-row table/caption agree with existing limited passage maps. No absence/priority, canonical-method or independent-dealer claim was imported. Optional selected-mature-procedures wording recorded, not needed or implemented; no conclusion-changing issue. Internal same-model self-review only.
+
+
+## Verification loop28
+
+Section9 and its full descriptive decision map retain noncausal/nonpolicy scope and the relevant proposition, state, finite-method and unavailable-tau qualifications. No necessary author issue in this bounded wording check; existing independent-data, release-vintage, costs and inference gaps remain unresolved. No new analysis/conclusion edit.
