@@ -5,12 +5,12 @@
 \toprule
 Study & Target & Data & Method & Evaluation \\
 \midrule
-Boudoukh et al. (2004) & Worst intermediate portfolio-value loss & Modeled portfolio paths & First-passage formula; discrete simulation & MaxVaR/VaR ratios and parameter illustrations \\
-Petrunia et al. (2019) & Largest daily endpoint debit across ACSS participants & ACSS settlement balances & GEV blocks; GPD exceedances & Quantile diagnostics; monthly collateral shortfalls \\
-van den Hoogen (2017) & Maximum cumulative negative payment balance & Confidential bank transactions & Modeled transaction paths; EVT & UC and independence procedures; outcomes confidential \\
+Boudoukh et al. (2004) & Worst intermediate portfolio-value loss & Modeled portfolio paths & First-passage formula; discrete simulation & Model-implied MaxVaR/VaR ratios; discrete-monitoring simulation \\
+Petrunia et al. (2019) & Largest daily endpoint debit across ACSS participants & ACSS settlement balances & GEV blocks; GPD exceedances & Fitted-versus-empirical quantiles; monthly-updated collateral shortfalls \\
+van den Hoogen (2017) & Maximum cumulative negative payment balance & Confidential bank transactions & Modeled transaction paths; EVT & Backtesting outcomes withheld (confidential) \\
 Wisniewski et al. (2020) & Next-hour signed-position interval & Same FX source family & Quantile/conformal intervals; KNN and other regressions & Two endpoint pinball scores; interval and coverage diagnostics \\
 This paper & Two-sided absolute sampled peak quantile & FX record; Treasury aggregate & Historical rules; QR/KNN on matched histories & Pinball, paired DM, U/V, breaches and coverage diagnostics \\
 \bottomrule
 \end{tabular}
-\par\smallskip\begin{minipage}{\linewidth}\footnotesize The FX relationship concerns the source family. The public thesis specifies backtests but withholds its application outcomes.\end{minipage}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Van den Hoogen (2017) specifies unconditional-coverage and independence tests in Section 5.4; its numerical application results are confidential (Section 5.5).\end{minipage}
 \end{table}
