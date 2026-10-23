@@ -1,0 +1,16 @@
+{
+  "step": "E10",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import hashlib,json;from pathlib import Path\np=Path('\"'\"'results/revision-20261023/round2/final-verification-binding-seven-hour-closeout.json'\"'\"');j=json.loads(p.read_text());bad=[s for s,h in j['\"'\"'sha256'\"'\"'].items() if hashlib.sha256(Path(s).read_bytes()).hexdigest()!=h];assert not bad,bad\nprint('\"'\"'Final delivery binding:'\"'\"',len(j['\"'\"'sha256'\"'\"']),'\"'\"'files; mismatches:'\"'\"',len(bad));print('\"'\"'PDF SHA256 f8964fae698de121d6d723ea8d852801cf054863372c9d1c49d10b6553a6c803;40pages=15main includingreferences+25appendices.'\"'\"');print('\"'\"'Last selected safe pytest:125passed,15subtests,3.41s; complete stdout/stderr retained.'\"'\"');print('\"'\"'Window elapsed; actual cadence gaps/wait retained. No strict600second cadence or uninterrupted7hour active-research claim.'\"'\"');print('\"'\"'No push/install/delete; future publication/TeX/cleanup/prospective execution remain user decisions.'\"'\"')'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import hashlib,json;from pathlib import Path\np=Path('results/revision-20261023/round2/final-verification-binding-seven-hour-closeout.json');j=json.loads(p.read_text());bad=[s for s,h in j['sha256'].items() if hashlib.sha256(Path(s).read_bytes()).hexdigest()!=h];assert not bad,bad\nprint('Final delivery binding:',len(j['sha256']),'files; mismatches:',len(bad));print('PDF SHA256 f8964fae698de121d6d723ea8d852801cf054863372c9d1c49d10b6553a6c803;40pages=15main includingreferences+25appendices.');print('Last selected safe pytest:125passed,15subtests,3.41s; complete stdout/stderr retained.');print('Window elapsed; actual cadence gaps/wait retained. No strict600second cadence or uninterrupted7hour active-research claim.');print('No push/install/delete; future publication/TeX/cleanup/prospective execution remain user decisions.')"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T15:14:31.793617+00:00",
+  "ended_utc": "2026-10-23T15:14:31.842000+00:00",
+  "returncode": 0,
+  "stdout": "Final delivery binding: 128 files; mismatches: 0\nPDF SHA256 f8964fae698de121d6d723ea8d852801cf054863372c9d1c49d10b6553a6c803;40pages=15main includingreferences+25appendices.\nLast selected safe pytest:125passed,15subtests,3.41s; complete stdout/stderr retained.\nWindow elapsed; actual cadence gaps/wait retained. No strict600second cadence or uninterrupted7hour active-research claim.\nNo push/install/delete; future publication/TeX/cleanup/prospective execution remain user decisions.\n",
+  "stderr": ""
+}
