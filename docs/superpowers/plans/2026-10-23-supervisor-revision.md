@@ -36,7 +36,7 @@
 - [x] Verify closest-literature table from primary originals and inventory motivation sources.
 - [x] Author nine-section TeX paper and compact appendices, with inline figures, conventional references, clear notation, and centralized limitations.
 - [x] Compile actual PDF; check page budgets, word/sentence counts, numerical cross-links, archived file preservation, and rendered pages.
-- [ ] Complete independent scientific/document review, fix verified defects, and publish branch/PR with the PDF, outputs, and a Chinese change inventory.
+- [x] Complete independent scientific/document review, fix verified defects, and publish branch/PR with the PDF, outputs, and a Chinese change inventory. Delivered as PR #3; keep main unchanged.
 
 ## File ownership
 
