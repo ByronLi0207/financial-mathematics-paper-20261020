@@ -93,6 +93,8 @@ Ridge quantile regression fits normalized headroom with an unpenalized intercept
 \end{equation}
 and issues $C_t^{QR}=B_t+\max\{0,s_\kappa(\widehat\beta_0+z_{t,\kappa}^{\mathsf T}\widehat\beta)\}$. The original penalty menu is $\{.001,.01,.1\}$. Projection acts on issued reports; the training objective uses the affine headroom prediction. Appendix~\ref{app:ridge} derives the equivalent peak parameterization and its shifted penalty.
 
+As $\lambda\to\infty$, penalized slopes vanish and the unpenalized intercept approaches the set of empirical headroom-quantile minimizers. Write $I_t=B_t+G_{(\lceil W\tau\rceil)}$ for its lower-endpoint reference on the frozen pool. If $W\tau$ is integral, the entire interval between the adjacent order statistics minimizes the intercept-only objective. Thus $I$ is the unique empirical quantile at the shorter Treasury history, while the longer Treasury and both FX histories admit an interval with endpoints $I$ and corrected-rank $F$ (possibly coincident). The two rank conventions need not issue the same report.
+
 Nearest-neighbour quantiles select standardized predictor rows by a group-balanced Euclidean distance and resolve equal distances by recency. Before computing distance, each of the lagged-level coordinates is divided by five; each coordinate in the RMS, hour and weekday pairs is divided by $\sqrt{2}$. Magnitude and gap retain their standardized scales. Plain KNN applies the corrected order statistic to selected headrooms. Scaled KNN first divides each selected headroom by a short-run RMS scale and multiplies the resulting quantile by the current scale. The RMS floor is $10^{-6}s_\kappa$. The supplement records the fixed neighbourhood menus for each source and history. At $k=W$, plain KNN equals frozen $F$ because membership is the full pool.
 
 Validation selects the lowest native-unit mean pinball loss and resolves an exact parameter tie toward the larger candidate. Every declared candidate must complete for the cell to be eligible. The full validation and evaluation inventories retain all numerical failures and adverse outcomes. Appendix~\ref{app:repro} gives the reproduction route and numerical acceptance scope.
@@ -141,6 +143,7 @@ The exploratory sequence asks which procedural changes accompany the score diffe
 The original sequence combines two changes at its last step. The four-predictor fit used the extended penalty menu $\{.001,.01,.1,1,10\}$, while the published full specification used the smaller original menu. Every Treasury parsimonious cell selected the strongest available penalty. E3 therefore fits the full specification using the same extended menu and preserves the original splits, refit schedule, tie rule and numerical conditions. It is a post-result comparison and leaves both published primaries in place.
 
 \input{generated/e3-summary.tex}
+\input{generated/e6-summary.tex}
 \input{generated/e3-table.tex}
 \input{generated/decomposition-table.tex}
 
