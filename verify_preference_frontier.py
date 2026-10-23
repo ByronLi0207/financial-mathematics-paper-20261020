@@ -252,13 +252,36 @@ def verify_result(result,selected,all_rows):
         for name,value in checked.items():counts[name]+=value
     require(seen=={key[:4] for key in selected},'result group inventory mismatch')
     headlines=result['headline_comparisons'];seen_headlines=set()
+    require(isinstance(headlines,list),'invalid headline list')
+    headline_fields={'id','source','horizon','left_method','right_method',
+                     'left_window','right_window','left','right','relation','equality_alpha'}
+    statistic_fields={'u_token','v_token','mean_pinball','strict_breach_count'}
     for row in headlines:
-        name=row['id'];require(name in HEADLINES and name not in seen_headlines,'headline inventory mismatch')
+        require(isinstance(row,dict) and headline_fields<=row.keys(),'incomplete headline record')
+        name=row['id']
+        require(isinstance(name,str) and name in HEADLINES and name not in seen_headlines,
+                'headline inventory mismatch')
         seen_headlines.add(name)
+        left_key,right_key=HEADLINES[name]
+        require(all(isinstance(row[field],str) for field in ('source','left_method','right_method'))
+                and all(type(row[field]) is int for field in ('horizon','left_window','right_window')),
+                'headline identity type mismatch')
+        require(row['source']==left_key[0]==right_key[0]
+                and row['horizon']==left_key[1]==right_key[1]
+                and row['left_window']==left_key[2] and row['right_window']==right_key[2]
+                and row['left_method']==left_key[3] and row['right_method']==right_key[3],
+                'headline identity mismatch')
         for side,key in zip(('left','right'),HEADLINES[name]):
             source=all_rows[('full',)+key]
-            require(row[side]['u_token']==source['mean_positive_overrun']
-                    and row[side]['v_token']==source['mean_unused_allowance'],'headline source token mismatch')
+            saved=row[side]
+            require(isinstance(saved,dict) and statistic_fields<=saved.keys(),'incomplete headline side record')
+            require(all(isinstance(saved[field],str) for field in ('u_token','v_token','mean_pinball'))
+                    and type(saved['strict_breach_count']) is int,'headline statistic type mismatch')
+            require(saved['u_token']==source['mean_positive_overrun']
+                    and saved['v_token']==source['mean_unused_allowance']
+                    and saved['mean_pinball']==source['mean_pinball'],'headline source token mismatch')
+            require(saved['strict_breach_count']==int(source['strict_breach_count']),
+                    'headline source strict breach mismatch')
         relation,equality=pair_relation((row['left']['u_token'],row['left']['v_token']),
                                         (row['right']['u_token'],row['right']['v_token']))
         require(row['relation']==relation and row['equality_alpha']==equality,'headline relation mismatch')

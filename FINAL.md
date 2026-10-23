@@ -1,10 +1,10 @@
-# Final working-paper version — 22 October 2026
+# Historical closure snapshot - before the preference-robustness revision
 
 **Historical and Conditional Forecasts of Sampled Net-Position Peaks**
 
-[Open the final 23-page PDF](manuscript/working-paper/paper.pdf) · [Download the PDF](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/raw/5688e22ef2bba2472f0a2590c54541d901147cea/manuscript/working-paper/paper.pdf) · [Source and bibliography](manuscript/working-paper/)
+[Open the earlier 23-page PDF](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/5688e22ef2bba2472f0a2590c54541d901147cea/manuscript/working-paper/paper.pdf) · [Download the PDF](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/raw/5688e22ef2bba2472f0a2590c54541d901147cea/manuscript/working-paper/paper.pdf) · [Source and bibliography](manuscript/working-paper/)
 
-This is the final working-paper snapshot for the present project. Finalization preserves the existing manuscript, all reported favorable and adverse results, source code, reference records and documented limitations. It introduces no new financial experiment or revised scientific claim.
+This records the earlier closed working-paper snapshot. The project was subsequently reopened at the user's request; the current 25-page revision and its complete fixed-report preference analysis are linked in [the repository guide](README.md). The immutable links and identities below refer only to that earlier snapshot. Finalization preserves the existing manuscript, all reported favorable and adverse results, source code, reference records and documented limitations. It introduces no new financial experiment or revised scientific claim.
 
 ## Exact version
 

@@ -127,10 +127,18 @@ class IndependentFrontierTests(unittest.TestCase):
                 writer=csv.writer(stream);writer.writerow(header);writer.writerows(rows_by_kind[kind])
                 raw=stream.getvalue().encode();target=root/path;target.parent.mkdir(parents=True,exist_ok=True)
                 target.write_bytes(raw);entries.append(dict(path=path,bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest()))
+        headline_specs=[
+            ('fx_h6_primary','fx_hourly',6,'QR',2880,'rolling_F',720),
+            ('fx_h6_matched','fx_hourly',6,'QR',2880,'frozen_F',2880),
+            ('fx_h24_legacy','fx_hourly',24,'QR',2880,'rolling_S',720),
+            ('treasury_h6_primary','nyfed_weekly',6,'QR',260,'frozen_F',260)]
         result=dict(schema_version=1,groups=groups,headline_comparisons=[
-            dict(id=name,left=dict(u_token='1.0',v_token='2.0'),right=dict(u_token='1.0',v_token='2.0'),
+            dict(id=name,source=source,horizon=horizon,left_method=left_method,left_window=left_window,
+                 right_method=right_method,right_window=right_window,
+                 left=dict(u_token='1.0',v_token='2.0',mean_pinball='1.05',strict_breach_count=1),
+                 right=dict(u_token='1.0',v_token='2.0',mean_pinball='1.05',strict_breach_count=1),
                  relation='identical',equality_alpha=None)
-            for name in ('fx_h6_primary','fx_h6_matched','fx_h24_legacy','treasury_h6_primary')])
+            for name,source,horizon,left_method,left_window,right_method,right_window in headline_specs])
         return dict(input_files=entries),result
 
     def test_complete_source_inventory_and_decimal_custody(self):
@@ -158,6 +166,64 @@ class IndependentFrontierTests(unittest.TestCase):
             duplicate=raw+raw.splitlines(keepends=True)[1];path.write_bytes(duplicate)
             entry.update(bytes=len(duplicate),sha256=hashlib.sha256(duplicate).hexdigest())
             with self.assertRaises(ValueError):v.read_sources(root,freeze)
+
+    def test_headline_metadata_corruptions_and_types_are_rejected(self):
+        v=self.verifier()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);freeze,result=self.complete_fixture(root)
+            selected,all_rows,_=v.read_sources(root,freeze)
+            corruptions={
+                'source':('invented',False), 'horizon':(25,6.0),
+                'left_method':('KNN',False),'right_method':('QR',False),
+                'left_window':(-1,2880.0),'right_window':(-1,720.0)}
+            for index in range(4):
+                for field,values in corruptions.items():
+                    for value in values:
+                        with self.subTest(headline=index,field=field,value=value):
+                            changed=copy.deepcopy(result)
+                            changed['headline_comparisons'][index][field]=value
+                            with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+
+    def test_headline_copied_statistics_and_types_are_rejected(self):
+        v=self.verifier()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);freeze,result=self.complete_fixture(root)
+            selected,all_rows,_=v.read_sources(root,freeze)
+            for index in range(4):
+                for side in ('left','right'):
+                    for field,values in {
+                            'mean_pinball':('9.99','1.050',1.05),
+                            'strict_breach_count':(999,True,1.0,'1')}.items():
+                        for value in values:
+                            with self.subTest(headline=index,side=side,field=field,value=value):
+                                changed=copy.deepcopy(result)
+                                changed['headline_comparisons'][index][side][field]=value
+                                with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+
+    def test_missing_headline_fields_and_invalid_record_shapes_are_rejected(self):
+        v=self.verifier()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);freeze,result=self.complete_fixture(root)
+            selected,all_rows,_=v.read_sources(root,freeze)
+            fields=('id','source','horizon','left_method','right_method','left_window',
+                    'right_window','left','right','relation','equality_alpha')
+            for field in fields:
+                with self.subTest(missing=field):
+                    changed=copy.deepcopy(result);del changed['headline_comparisons'][0][field]
+                    with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+            for side in ('left','right'):
+                for field in ('u_token','v_token','mean_pinball','strict_breach_count'):
+                    with self.subTest(side=side,missing=field):
+                        changed=copy.deepcopy(result);del changed['headline_comparisons'][0][side][field]
+                        with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+                for value in (None,[],False):
+                    changed=copy.deepcopy(result);changed['headline_comparisons'][0][side]=value
+                    with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+            for value in (None,[],False):
+                changed=copy.deepcopy(result);changed['headline_comparisons'][0]=value
+                with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
+            changed=copy.deepcopy(result);changed['headline_comparisons']={}
+            with self.assertRaises(ValueError):v.verify_result(changed,selected,all_rows)
 
     def test_existing_output_is_preserved_without_source_reads(self):
         v=self.verifier()
