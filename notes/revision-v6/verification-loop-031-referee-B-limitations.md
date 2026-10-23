@@ -1,0 +1,70 @@
+# Verification loop 031 — internal financial-referee B — Section 10
+
+This is one same-model internal self-review of the current manuscript, not external peer review, cross-model review, independent replication, or completion of the six-hour revision goal. Only this note is written. No manuscript, conclusion, source code, state, ledger, other note, or result is changed.
+
+## Task, timing and identity
+
+- Task restatement: read all nine current blocks of main Section 10, “Interpretation and limitations,” and assess their economic meaning, causal restraint, passive-forecast versus policy boundary, retrospective and method-class qualifications, and remaining dealer/vintage/prospective evidence gaps against bounded existing published definitions and scalar tables.
+- Checkout: `/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023`.
+- Observed branch: `revision-v4-jof`.
+- Goal start supplied by the parent: `2026-10-23T18:31:50Z`; deadline: `2026-10-24T00:31:50Z`. This review neither advances nor claims a final goal-completion status.
+- First recorded current-clock observation for this read: `2026-10-23 22:21:18 UTC`.
+- Final pre-write source-hash observation: `2026-10-23 22:22:47 UTC`.
+- Note written at: `2026-10-23T22:23:57.531367+00:00`.
+
+The exact primary JSON, article TeX and PDF fingerprints supplied with the task all match the files read here. The article is `manuscript.tex`; `main.tex` is a distinct wrapper and was only hashed. The PDF was only hashed; this pass does not claim rendered-PDF inspection.
+
+| File | Observed SHA-256 |
+| --- | --- |
+| `submission-jof/manuscript-content.json` | `324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186` |
+| `submission-jof/manuscript.tex` | `57b2915d29c0ec84334097bca5ddfd125f46b9429fe07fabf0b168d9391c2ade` |
+| `submission-jof/manuscript-preview.pdf` | `c1c55699b53bb1a7ab3f1c4e131b4d45bc88965c6f22571ebc02c2ab7cd351d6` |
+| `submission-jof/main.tex` | `f67dee42ce85e43ee99337e09a1550892006b57b52017f6044edcb85068e0407` |
+| `submission-jof/supplement-content.json` | `738bb71afab319e52b5296328858f890bf692692c97a3ab2a35a78f4d3ae6e28` |
+| `protocol/revision-20261023/prospective-public-release-protocol.md` | `cb5b654a7c21467b126352408b141ece781cd547b6b15b03447a5a2ef9b1c3f1` |
+| `protocol/revision-20261023/prospective-vintage-amendment-20261023.md` | `299dbdd29401628cacff36186c1584c5e92d621dabe3367a7472aac0f45fd29a` |
+
+## Diagnosis and comparison standard
+
+The interpretive problem is whether poor weekly-task results are being promoted into an identified economic mechanism, a statement about a whole method class, or an operational financing benefit. Those promotions would require evidence beyond the executed retrospective comparisons. This reading uses established evaluation distinctions already stated in the current paper: define the measured estimand and units; retain the same target and timing when comparing procedures; preserve failures and adverse cells; separate score, breach frequency and conditional coverage; separate fitted empirical results from population assumptions; and distinguish data fingerprints, local protocol bindings and genuine prospective issuance. It does not claim a new literature search or fresh verification of the cited external publications.
+
+## Exact substantive read scope
+
+All JSON section and block indices below are zero-based; the nine reviewed Section 10 blocks are numbered 1–9 in the findings below.
+
+- Main JSON: `sections[9].blocks[0:9]`, all nine complete payloads and their provenance metadata. Context read in full: section 2 blocks 0, 1, 3, 4, 5; section 3 blocks 0, 2, 9, 13, 16, 17; section 4 blocks 0, 2, 3, 4, 6; section 7 blocks 0–3; section 8 blocks 1–2. Main section 5 tables at blocks 0 and 2 were read with all rows. Section 6 block 0 and section 8 block 3 table captions/headers were routed without their rows. Top-level keys, section titles and block-field metadata were inspected for routing.
+- Article TeX: the targeted Section 10 search returned lines 337–415. Section 10 is lines 340–357 and all nine paragraph texts were read. The returned context also exposed the immediately following conclusion, declarations and beginning of references; those were context only and no conclusion edit was made or proposed.
+- Supplement JSON: section 0 complete paragraphs 1, 12, 14 and complete tables 5 (Table S2) and 17 (Table S7); section 3 complete paragraphs 1, 3, 9, 11; section 6 complete paragraphs 10, 13; section 8 complete tables 3–4 (Tables S24–S25); section 9 all four blocks (S10, Tables S26–S27); section 11 paragraphs 0, 2, 3; section 12 paragraphs 0, 2, 5, 8, 10, 12, 17–23, 26; section 15 paragraphs 0, 1, 3, 6, 17, 25, 26, 31, 39, 40.
+- Supplement routing only: section titles/counts; block keys/types/lengths/short starts for sections 8, 9, 11, 12, 15; table captions/row counts in sections 0, 3, 6; selected source/binding metadata for section 11 blocks 2–3, section 0 block 17, section 9 block 0 and section 15 block 3. Binding paths printed in metadata were not thereby opened.
+- Both protocol Markdown files listed in the hash table were read completely: 27 lines in the prospective-public-release protocol and 64 lines in the dated vintage amendment.
+- Local directory listings and the current branch were read to locate these files. The initial `python` executable was unavailable; subsequent local Python 3 use was restricted to reading/printing JSON, computing identity hashes, and writing this note.
+
+No `.scratch`, raw-data directory, private origin-level vector or forecast trace was opened. No model, statistical analysis, numerical experiment, proof check, regression test, build, network request, browser/UI action, Claude/Cloud review, package installation, deletion, source edit, commit, or nested agent was run. Prior internal verdicts were not used as evidence.
+
+## Nine-block financial-referee findings
+
+1. **Weekly features and competing explanations — acceptable.** Main Section 4 defines the 33 raw coordinates as 25 signed levels, magnitude, two RMS summaries, four calendar coordinates and a gap indicator. The weekly-source account and the exact-centering convention support the distinction between five constant columns and the remaining potentially varying design. Section 10 correctly says these five columns provide no predictive variation and are not a demonstrated overfitting mechanism. Its nominal 34 coefficients and at-most-29 potentially predictive coefficients are explicitly qualified before other collinearity. Table S2 publishes Treasury penalties `0.1, 0.001, 0.001, 0.1` against the original `{0.001,0.01,0.1}` menu, consistent with the four endpoint selections. The “at most 3 disjoint H24 label paths” statement is expressly a path count, not an effective-sample-size estimate. The paragraph leaves lag correlation, overlap, tuning, target dynamics and composition as competing explanations rather than asserting a causal diagnosis. Feature constancy and source chronology were read at the published-definition level, not re-estimated from raw records.
+
+2. **Parsimonious sensitivity — acceptable.** Table S7 retains all eight four-predictor cells. Its favorable/adverse signs agree with the stated 5/8 improvements against original QR and 3/8 against matched F; the Treasury H6/W260 row is `-32.2%` versus QR and `+2.17%` versus F. The larger penalty menu and altered feature set change jointly. Calling this specification sensitivity, rather than identifying a feature-only mechanism or replacing the original primary, is the supported interpretation.
+
+3. **Between-source comparison — acceptable.** The paper defines source-specific estimation, transforms, temporal scales and selection. The S1 AR summary states a different Treasury loss pattern, with AR improving relative to QR in all four Treasury cells, while retaining mixed overall outcomes. Section 10 restricts the failure to the executed QR specifications and refers to different observed family rankings. It does not identify a frequency effect, a structural Treasury mechanism, or the failure of all conditional forecasting methods.
+
+4. **Generalization, atoms, numerical acceptance and coherence — acceptable within this reading.** The distinction between a known floor and an atom at the true quantile is explicit; the floor alone is not asserted to explain under-breaching. Numerical acceptance is not promoted into conditional coverage. The current S4 solver discussion separately states that numerical checks do not certify a statistical forecasting law. S1 retains observed cross-horizon crossings and explains differing mature scenario sets. Thus zero crossings in a finite executed comparison do not become a population-coherence claim. No theorem or coverage result was re-proved in this pass.
+
+5. **Forecast versus financing or inventory policy — acceptable.** Main Section 4 calls the headroom/peak objects forecasting definitions; Section 5 says the 19:1 pinball weights are stipulated and not observed financial costs. Main Section 3 specifies a signed aggregate measured at market/fair value with trade-date and reporting qualifications, rather than settled cash. Section 10 correspondingly requires quotes, fills, hedges, book decomposition, collateral and cash flows before mapping a passive envelope to inventory, margin or funding decisions. Its reference to the distinct active quoting framework of Avellaneda–Stoikov does not claim to execute that policy or establish realized financing savings.
+
+6. **Executed versions versus method classes — acceptable.** S16 explicitly describes delayed, finite-memory and projected ACI-style modifications without importing the original ACI guarantee, and a bounded headroom SAV adaptation rather than a literal return-VaR CAViaR replication. Its fixed combinations have no selected weights and no guarantee of a quantile, calibration or loss below the best constituent. S13 describes resource-bounded FHS/QRF/peak-POT configurations, the same-target adaptations, and preserved failed or structurally ineligible cells. It also distinguishes peak-headroom POT from canonical innovation-tail conditional EVT. Section 10 faithfully retains these limits. Matching mature pools and update schedules is not presented as making the features, assumptions or estimators identical. The independent-dealer, historical-vintage and decision-input gaps remain open.
+
+7. **Boundary-penalty selected-fit readback — acceptable.** Table S26 publishes the slope-norm endpoints `0.001497` and `0.01937`, the mean absolute effects from `136.8` to `832.3` in source USD millions, and the descriptive loss changes versus I from `-0.2432%` to `-2.192%`. Its F contrasts have one favorable and three adverse rows. S10 distinguishes the fixed-fitted-intercept slope-removal comparison from the re-estimated empirical-quantile I. Table S27 has nonzero capacity differences and strong, imperfect headroom correlations. Section 10 therefore properly refuses to infer zero feature value, identity to I/F, statistical equivalence, or a selection-adjusted feature effect from the menu boundary and high correlation.
+
+8. **Related aggregate tasks and prospective evidence — acceptable.** Main Section 8 and S12 identify shared dealers, reporting systems, complete-grid selection and reporting-era limitations, with no pooled independent-institution claim. Section 10 states that the aggregate extension does not isolate a mechanism. The directly read protocol says October 14 was already public and plans the first new release after the freeze; its calendar examples are conditional plans, not verified future receipts. The amendment defines an immutable first-actually-captured path joined to the accepted historical prefix, not reconstructed publisher first-release truth. It explicitly states that release capture, prefix-only issuance, missing-week continuation and separately bound adapter checks are unimplemented. Section 10 preserves that implementation boundary and states no live prospective validation. Nothing in this reading verifies actual release calendars, captures, issued reports or future outcomes.
+
+9. **Dealer provenance, aggregation and retrospective FX selection — acceptable.** Main Section 3 uses the single attributed FX scalar and expressly declines independent verification of a complete dealer book. It identifies cancellation in the signed Treasury aggregate and valuation/composition changes; absolute aggregate position is not gross individual exposure. Main Section 5 discloses that the FX interval was already inspected and later work is post-result/exploratory. Section 10 correctly treats documentation and fingerprints as partial reproducibility support, not commercial completeness or measurement accuracy, and does not claim that time-respecting labels and preserved primaries create a fresh holdout.
+
+## Verdict, author-pending items and limits
+
+**Verdict: no necessary Section 10 correction or conclusion-level problem identified in this bounded internal financial reading.** The nine paragraphs are consistent with the inspected current definitions, published scalar tables and protocol-only execution boundary. No optional wording change is needed for the economic distinctions reviewed here, and none is applied.
+
+**Conclusion-related author-pending finding: none identified by this pass.** If a later review identifies a necessary conclusion change, it must remain author-pending under the instruction barring conclusion changes after the work packages; this note grants no editing authorization.
+
+This verdict is limited to interpretation and cross-document consistency. It does not establish raw-data accuracy, independent dealer validation, first-release historical reconstruction, actual prospective issuance, financial decision value, validity of all dependence-based reference tests, robustness of entire method classes, or publication/submission readiness. No source values, primaries or adverse outcomes were altered or recomputed. The six-hour goal remains for the parent to manage through its stated deadline.
