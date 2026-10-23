@@ -1,0 +1,16 @@
+{
+  "step": "D2",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import json,hashlib;from v3_revision import ROOT;p=ROOT/'\"'\"'results/revision-20261023/round2'\"'\"';b=json.loads((p/'\"'\"'final-verification-binding-ar-g12.json'\"'\"').read_text());assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==sha for f,sha in b['\"'\"'sha256'\"'\"'].items());v=json.loads((p/'\"'\"'visual-ar-g12-all-pages.json'\"'\"').read_text());assert v['\"'\"'blocking_defects'\"'\"']==0 and len(v['\"'\"'pages'\"'\"'])==40;assert v['\"'\"'pdf_sha256'\"'\"']==hashlib.sha256((ROOT/'\"'\"'manuscript/revision-v3/paper.pdf'\"'\"').read_bytes()).hexdigest();assert all(hashlib.sha256((ROOT/f\".scratch/round2/pdf-ar-correction-g12/page-{r['\"'\"'page'\"'\"']:02}.png\").read_bytes()).hexdigest()==r['\"'\"'png_sha256'\"'\"'] for r in v['\"'\"'pages'\"'\"']);t=json.loads((p/'\"'\"'pytest-ar-correction-g12.json'\"'\"').read_text());assert t['\"'\"'returncode'\"'\"']==0 and '\"'\"'116 passed in 3.90s'\"'\"' in t['\"'\"'stdout'\"'\"'];print(json.dumps(dict(bound_files=len(b['\"'\"'sha256'\"'\"']),all_hashes_match=True,total_pages=40,main_pages_including_references=15,visual_pages=40,blocking_visual_defects=0,pytest=t['\"'\"'stdout'\"'\"'].splitlines()[-1],current_TeX_compiled=False),indent=2))'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import json,hashlib;from v3_revision import ROOT;p=ROOT/'results/revision-20261023/round2';b=json.loads((p/'final-verification-binding-ar-g12.json').read_text());assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==sha for f,sha in b['sha256'].items());v=json.loads((p/'visual-ar-g12-all-pages.json').read_text());assert v['blocking_defects']==0 and len(v['pages'])==40;assert v['pdf_sha256']==hashlib.sha256((ROOT/'manuscript/revision-v3/paper.pdf').read_bytes()).hexdigest();assert all(hashlib.sha256((ROOT/f\".scratch/round2/pdf-ar-correction-g12/page-{r['page']:02}.png\").read_bytes()).hexdigest()==r['png_sha256'] for r in v['pages']);t=json.loads((p/'pytest-ar-correction-g12.json').read_text());assert t['returncode']==0 and '116 passed in 3.90s' in t['stdout'];print(json.dumps(dict(bound_files=len(b['sha256']),all_hashes_match=True,total_pages=40,main_pages_including_references=15,visual_pages=40,blocking_visual_defects=0,pytest=t['stdout'].splitlines()[-1],current_TeX_compiled=False),indent=2))"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T11:56:48.114847+00:00",
+  "ended_utc": "2026-10-23T11:56:48.167008+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"bound_files\": 41,\n  \"all_hashes_match\": true,\n  \"total_pages\": 40,\n  \"main_pages_including_references\": 15,\n  \"visual_pages\": 40,\n  \"blocking_visual_defects\": 0,\n  \"pytest\": \"============================= 116 passed in 3.90s ==============================\",\n  \"current_TeX_compiled\": false\n}\n",
+  "stderr": ""
+}
