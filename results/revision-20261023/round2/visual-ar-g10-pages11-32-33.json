@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "generation": "g10",
+  "status": "LOCAL_TABLE_LABEL_WRAP_DEFECT_FOUND",
+  "scope": "Actual original-detail image viewing of PDF pages 11, 32 and 33 only. No experiment, source modification, or approval of other pages.",
+  "pdf": {
+    "path": "manuscript/revision-v3/paper.pdf",
+    "bytes": 522368,
+    "sha256": "43378dec9cf0c2eff8140b6fb97ac93bc8289940d13d645fc04f18faa8f6a841",
+    "reported_total_pages": 40,
+    "reported_main_pages": 15
+  },
+  "method": "Each assigned PNG was separately opened with functions.view_image using detail original and examined as pixels at the returned resolution; no contact-sheet or text-extraction substitution.",
+  "pages": [
+    {
+      "page": 11,
+      "png": ".scratch/round2/pdf-ar-correction-g10/page-11.png",
+      "bytes": 330516,
+      "sha256": "0ecbf01995684d5e6087022512dc105064e4fe82a816b03ad1bee4a3aa3f21eb",
+      "actual_viewed": true,
+      "detail": "original",
+      "findings": [],
+      "observations": [
+        "Corrected main paragraph distinguishes level-AR sensitivity from negative-increment AR and displays the 5.032 percent observation, 0.032 percentage-point excess, and 0.06913 percentage-point Monte Carlo SE without clipping or missing symbols.",
+        "Tables 9 and 10 have captions on the same page as their bodies; all displayed rows and the panel qualification are visible.",
+        "No orphan heading, missing glyph, clipped paragraph, or isolated final paragraph line observed."
+      ]
+    },
+    {
+      "page": 32,
+      "png": ".scratch/round2/pdf-ar-correction-g10/page-32.png",
+      "bytes": 357582,
+      "sha256": "f55a472ae99529e1649a8c1d67594e463fe48b06e362db15dd6d2b050ba0518a",
+      "actual_viewed": true,
+      "detail": "original",
+      "findings": [],
+      "observations": [
+        "Appendix J heading, strict-event proof, dependent counterexample and retained positive-increment simulation description are readable.",
+        "Subscripts, powers, inequality signs, phi and the variance summation render as visible mathematical glyphs.",
+        "Original Table J1 remains explicitly labeled positive-increment AR and retained unchanged; all eight rows are on this page, with a caption attached to the table.",
+        "All sixteen Table J2 rows are visible on the page; no clipped bottom row, orphan caption, or paragraph widow observed."
+      ]
+    },
+    {
+      "page": 33,
+      "png": ".scratch/round2/pdf-ar-correction-g10/page-33.png",
+      "bytes": 352409,
+      "sha256": "dd43b4026625c6f15090a7ced93887cf3ba1af8e7ba9ade746d90a83a972217f",
+      "actual_viewed": true,
+      "detail": "original",
+      "findings": [
+        {
+          "severity": "local layout defect",
+          "region": "Table J3, first Process/start column, every Level/stationary row",
+          "observation": "Level/stationary wraps within the final word as Level/stationar followed by a lone y on the next line. Numerical cells remain visible and correctly associated, but the repeated single-character continuation impairs readability.",
+          "suggested_resolution": "Widen the first column or use an explicitly defined shorter display label such as Level/stat.; preserve every numerical value.",
+          "parent_notified": true
+        }
+      ],
+      "observations": [
+        "Corrected level-versus-increment premise, unit stationary variance, differenced-increment correlation, unconditional and conditional endpoint distributions, and the marginal-threshold formula are visible without missing mathematical glyphs or lost exponents.",
+        "Text explicitly distinguishes the absolute-level 95th percentile from the signed-level 95th percentile, and the conditional-endpoint oracle from the marginal endpoint rule and path-maximum oracle.",
+        "The section heading is followed by its text; Table J3 caption and full sixteen-row body remain together. No clipped numeric column or paragraph widow observed."
+      ]
+    }
+  ],
+  "limitations": [
+    "Only the three assigned page images were viewed; no claim is made about the remaining pages.",
+    "This receipt concerns the retained g10 PDF and PNG hashes. A later layout rebuild requires verification of changed pages.",
+    "This is visual QA, not a rerun of the new AR simulation or a verification of every numerical simulation result."
+  ],
+  "mutations": "Only this new JSON receipt is created. No source, PDF, experiment, archive, changelog or registry file is changed."
+}
