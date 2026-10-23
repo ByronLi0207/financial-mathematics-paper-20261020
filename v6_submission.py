@@ -96,8 +96,16 @@ def _documents(_signature):
         if len(matches)!=1:raise ValueError('EVALUATION_CLARITY_ANCHOR_NOT_UNIQUE')
         matches[0]['html']=matches[0]['html'].replace(old,new)
     d['sections'][4]['blocks'][10]['html'] += ' The additional benchmarks in Supplement S16 use a separately stated transition-conditional CC likelihood on adjacent sparse-grid pairs, conditioning on the initial hit; their values do not replace this archived convention. Their ranking families are frozen separately, and NA adjustment bookkeeping is kept distinct from an observed p-value.'
+    # Name each comparator without changing its saved score or grid identity.
+    grid_old='H6/H24 legacy-reference'
+    grid_blocks=[b for b in d['sections'][5]['blocks'] if grid_old in b.get('html','')]
+    if len(grid_blocks)!=1:raise ValueError('GRID_COMPARATOR_LABEL_ANCHOR_NOT_UNIQUE')
+    grid_blocks[0]['html']=grid_blocks[0]['html'].replace(grid_old,'H6 original-primary and H24 legacy-reference')
     wrapped=next(r for r in read(RES+'wp2-findings.json')['wrapped_pairs'] if (r['source'],r['horizon'],r['window'])==('fx_hourly',6,2880))
     extra=p('Additional post-result / exploratory benchmarks sharpen this distinction. In the long-history short-horizon FX matched context, finite projected delayed ACI-style wrappers leave QR with '+fmt(wrapped['qr_minus_f_loss_percent'])+'% lower mean loss than the wrapped historical rule while both observed breach frequencies are close to the nominal tail target. This is an empirical joint score–frequency result, not a conditional-coverage or canonical ACI guarantee. Headroom SAV does not beat matched F in either primary context. The fixed median improves on matched F and QR in the Treasury primary context, but its breach frequency still exceeds the nominal tail target; neither fixed combination beats QR in the FX primary context. For the original FX primary, observed mean loss favors QR in every training-defined position-change state; the evidence does not support an advantage confined to the high state or significance in every group. The original Treasury primary remains adverse across states. The lower target-level check retains the available comparison directions; the upper level remains unevaluable because of failed validation or insufficient tail information. Supplement S16 retains every menu, adverse cell, NA and working-reference diagnostic.',_v6_role='new_evidence_paragraph')
+    for old,new in [('leave QR with','leave wrapped QR (ACI-QR) with'),('than the wrapped historical rule','than wrapped F (ACI-F)')]:
+        if extra['html'].count(old)!=1:raise ValueError('ACI_COMPARATOR_LABEL_ANCHOR_NOT_UNIQUE')
+        extra['html']=extra['html'].replace(old,new)
     d['sections'][6]['blocks'].append(extra)
     decision=d['sections'][8]['blocks'][3]
     decision['rows'][0]=['FX, longer history, short horizon','Matched score evidence, finite ACI-style and fixed combinations; Tables 3 and 5; Supplement S16','Original-primary score crossing is Figure 3; matched wrappers have separate diagnostics. Check actual frequency and the named control.']
