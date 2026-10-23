@@ -1,0 +1,397 @@
+{
+  "status": "NO_MATERIAL_ECONOMIC_INTERPRETATION_MISMATCH_FOUND_IN_REQUESTED_SCOPE",
+  "created_utc": "2026-10-23T12:27:07.672686+00:00",
+  "reviewer_role": "Same-model bounded receipt/source-scope audit. Actual work here is reading the current manuscript excerpts and existing research-source summaries, matching claims to their stated measurement/decision boundaries. This is not a fresh review of every original cited paper, full FR2004 instruction books, live Kaggle metadata, financial observations or publisher versions.",
+  "document_snapshot": {
+    "main_tex_sha256": "aa03b7b13e476847cddfb6cf80466d585a21d7a731022e9ab931d87fa7f67d1f",
+    "PDF_sha256": "b58f4bd66fa36c31556de7844b4d607d9cd2ee0d9ec4d7434143373beffd5cf0",
+    "generation": "g13 snapshot named by parent; no PDF rendering or visual review performed in this task"
+  },
+  "findings": [],
+  "checks": [
+    {
+      "topic": "Sampled absolute position peak versus funding, liquidity and dealer capital capacity",
+      "status": "EXPLICIT_SCOPE_BOUNDARY_PRESENT",
+      "assessment": "The stated estimand is the maximum absolute sampled source-reported position including the issue anchor. Main introduction presents monitoring motivation and requires contractual/balance-sheet inputs for financing or margin use. Main limitations do not treat C or the sampled target as measured reserves, dealer capital capacity, a settlement deficit, or a validated quoting/hedging intervention. The variable name capacity and the implementable L report do not alone establish such a claim in context.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            20,
+            23
+          ],
+          "exact_text": "How well can a dealer forecast the largest absolute recorded net position before a reporting horizon ends? Such forecasts motivate evaluating a monitoring input for the measured position series. We compare historical peak constructions with ridge quantile regression and local quantiles on a market maker's FX client-flow series and a weekly Treasury-dealer aggregate. The common target includes the observed issue position and uses completed training labels. First, six-record FX regression lowers matched-history pinball loss by 14.77\\%, while breaches rise from 360 to 376. Second, the Treasury primary deteriorates by 50.79\\%, with breaches rising from 28 to 54. Third, lower pinball loss often accompanies more breach occasions. The evidence is specific to the inspected records, stipulated score and source-measurement conventions.\n\\end{abstract}\n\\section*{1. Introduction}\nDealers absorb customer order imbalances while managing inventory risk and scarce balance-sheet capacity. Inventory affects optimal dealer pricing (Ho and Stoll, 1981), FX dealing (Lyons, 1995), and observed inventory adjustment in dealership markets (Hansch, Naik and Viswanathan, 1998). Treasury intermediation likewise depends on dealer capacity (Duffie et al., 2023). A forecast of the maximum recorded position magnitude over a future horizon may support monitoring of the measured position: an endpoint can return toward its starting value after an intervening large position. Translating that monitoring signal into a particular margin or financing decision requires the corresponding contractual and balance-sheet inputs."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            87,
+            90
+          ],
+          "exact_text": "Let N denote the signed source-reported net position. The issue magnitude B is observed when the report is issued. Define the sampled peak P and its nonnegative headroom G by\n\n\\[\nB_t=|N_t|,\\qquad P_{t,H}=\\max_{0\\le h\\le H}|N_{t+h}|,\\qquad G_{t,H}=P_{t,H}-B_t\\ge0."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            448,
+            452
+          ],
+          "exact_text": "The FX evaluation interval was previously inspected, and the subsequent robustness analyses are post-result / exploratory. These records do not restore a compatible unseen dealer sample. Treasury is a downloaded-vintage, economic-date aggregate replay rather than an original-release public-information backtest; cross-dealer netting, valuation and composition distinguish it from an individual dealer's book.\n\nShared histories, overlapping labels, finite validation and investigator selection limit statistical generalization. The known floor can create an outcome atom: a valid upper quantile need not have exactly the nominal strict-breach probability. Numerical acceptance supplies no conditional-coverage guarantee. The horizon-specific mature scenario sets differ, so a zero observed crossing count cannot establish general coherence.\n\nStipulated shortfall/excess weights are not observed financing prices. Quotes, fills, hedges, book decomposition, collateral and cash flows would be required to map this passive envelope into an operational inventory, margin or funding policy. This study evaluates forecasts, not such interventions; Avellaneda and Stoikov (2008) provide a distinct active inventory-sensitive quoting framework."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            461,
+            465
+          ],
+          "exact_text": "Mature conditional estimators change the historical ranking on the sampled FX peak task, while the Treasury regression primary deteriorates. Matched-history FX H6 QR lowers mean loss by 14.77\\% and raises breaches from 360 to 376; the Treasury primary raises loss by 50.79\\% and breaches from 28 to 54. Short-history QR deterioration and the sparse-grid Treasury neighbor reversal remain central adverse findings. The exploratory AR, rank, preference and coherence comparisons show why score improvements, breach frequency and report shape should be evaluated together. The study contributes a controlled application and model-validation benchmark for measured position peaks. Its next evidential step is compatible new financial observations and an explicit decision mapping.\n\nThe exploratory 12-series extension also finds higher loss than F in 45/48 QR33 cells and 37/48 parsimonious cells, further limiting general performance claims.\n\nFixed FHS, peak-POT and leaf-distribution QRF add adverse outcomes and explicit numerical exclusions rather than a universal accuracy ranking. Compatible unseen-dealer evidence remains an open requirement."
+        },
+        {
+          "file": "notes/revision-20261022/financial-measurement-and-decision-scope.md",
+          "lines": [
+            19,
+            31
+          ],
+          "exact_text": "## Three elementary measurement failures\n\n**A net aggregate cannot bound an individual dealer's absolute peak.** For finite dealer paths `N(d,h)` over the same recorded horizon, the triangle inequality gives\n\n```\nmax_h |sum_d N(d,h)| <= sum_d max_h |N(d,h)|.\n```\n\nThere is no converse bound with a finite multiplicative constant, even for two dealers: take constant paths `N(1,h)=M` and `N(2,h)=-M`, for any `M>0`. The aggregate peak is zero and the two dealer peaks sum to `2M`. An accurate zero aggregate forecast therefore need not be an accurate report for either dealer. The same arithmetic distinguishes a signed netted book from its gross long-plus-short amount. It does not show that gross exposure is necessarily risky when hedges, prices and contractual netting are unobserved.\n\n**Sampled peaks need not equal peaks between records.** Two continuous paths can agree at every observed timestamp, while one stays zero and the other makes a triangular excursion of arbitrary height between two adjacent records. Both sampled targets are zero. Without an additional rate-of-change or within-record-path restriction, the data impose no finite upper bound on the second path's continuous-time peak. Therefore the H-record response is a sampled measurement; an hourly label or a weekly maximum cannot be promoted to a transaction-time maximum. Keeping the observed gaps is preferable to inventing missing observations, but does not recover unobserved excursions.\n\n**Absolute position and directional funding are different functionals.** As an illustration only, a cumulative cash path `[0,10,0]` has absolute peak10 and no negative net balance; `[0,-10,0]` has the same absolute peak and a negative balance of10. Applying an absolute-peak report to either path gives identical target values while a directional deficit measure differs. The FX `N` is not established to be a cumulative settlement cash balance in the first place. No funding inference follows from this example or from the paper's score."
+        },
+        {
+          "file": "notes/revision-20261022/financial-measurement-and-decision-scope.md",
+          "lines": [
+            42,
+            50
+          ],
+          "exact_text": "With `tau=c_short/(c_short+c_excess)`, this equals `(c_short+c_excess)*rho_tau(P-C)`. Under a specified conditional distribution with finite conditional expected loss (for example, a finite conditional first absolute moment of P), minimizing expected loss over reports gives an appropriate tau-quantile, including the usual possibly nonunique quantile set when atoms occur. The known constraint `C>=B` is coherent when `P>=B` is genuinely known at issue. Thus tau=.95 expresses a stipulated19:1 relative penalty in this simplified report problem.\n\nThe interpretation does not establish that a dealer actually faces those prices, that one dollar of overrun costs nineteen dollars of unused allowance, or that current position value equals reserve capital. Financing charges may depend on secured rates, haircuts, direction, duration and available credit. A reserve cost paid on all committed capacity would have to be modeled in its own objective rather than casually identified with `max(C-P,0)`. Nor does a fixed loss ratio establish conditional coverage.\n\nIf the report changes quotes, hedges or risk limits, subsequent positions may change too. A passive comparison observes outcomes under the recorded behavior; it does not observe positions under every alternative policy. Fitting a better conditional quantile does not by itself identify that policy effect. A dynamic decision study would require an explicit intervention, additional data or defensible structural assumptions; no such study has been executed here.\n\n## Direction decision\n\nRetain the current peak-response application, the adverse Treasury primary and the inspected-FX qualification. Do not rename the response liquidity usage, economic capacity or optimal funding. Do not add a funding backtest on price data that lack the source's cash flows and financing terms. New compatible dealer records, original-release vintages and measured decisions would answer substantial remaining questions; they cannot be fabricated by adding more algorithms to the existing two measurement processes."
+        }
+      ]
+    },
+    {
+      "topic": "FX client-flow proxy and Treasury long-minus-short aggregate are different economic measurements",
+      "status": "DISTINCTION_PRESENT",
+      "assessment": "Main data description separates the signed NetPosUsd client-flow scalar across five pairs at one market maker from weekly Treasury-dealer market/fair-value aggregates in USD millions. It does not claim complete actively hedged FX inventory, security transaction volume, gross exposures or settlement cash. Source-specific transforms, horizons and native-unit scores cannot identify one common operational effect. The same mathematical functional does not equate the underlying financial measurements.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            43,
+            45
+          ],
+          "exact_text": "The FX input is the one-hour member of the Net Position Time Series Dataset, version 2: 18,576 records from 5 February 2014 01:00 through 24 January 2017 00:00. Wisniewski et al. (2020) describe aggregate client-flow positions across five liquid currency pairs for one market maker. We use datetime and the signed NetPosUsd scalar, rather than reconstructing raw currency positions, hedge transactions or cash movements. The source has 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We preserve chronology without sorting, removing gap-crossing windows or interpolation. Recorded-clock and vintage limits are collected in Section 9.\n\nThe Treasury application uses the New York Fed Primary Dealer Statistics series PDPOSGS-B: Treasury-bill long positions less short positions, measured at weekly Wednesday close in market/fair-value USD millions. The accepted snapshot contains 706 records. It combines dealer inventories, valuation and reporting composition. This supplies an aggregate financial measurement task alongside the individual market-maker client-flow series."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            63,
+            63
+          ],
+          "exact_text": "All horizons share the source-specific evaluation issue origins. Horizon H counts subsequent source records, so the response uses \\(H+1\\) observed positions including issue time. FX gaps are retained in chronological order. Treasury transitions follow the weekly economic-date clock. Exact data identities, access routes and reproduction commands are retained in the repository guide."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            445,
+            448
+          ],
+          "exact_text": "The contrast between the sources concerns a separately fitted procedure family: each source receives its own transforms, coefficient estimates, temporal scales and validation selection. The Treasury deterioration is an accuracy failure of the executed QR specifications. The exploratory AR comparison shows that the observed Treasury loss ranking differs across the executed families.\n\n\\subsection*{Limitations}\nThe FX evaluation interval was previously inspected, and the subsequent robustness analyses are post-result / exploratory. These records do not restore a compatible unseen dealer sample. Treasury is a downloaded-vintage, economic-date aggregate replay rather than an original-release public-information backtest; cross-dealer netting, valuation and composition distinguish it from an individual dealer's book."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            840,
+            840
+          ],
+          "exact_text": "\\small\\textbf{Table F4. Preference sensitivity of the four named fixed comparisons. Differences are left minus right. FX amounts are divided by \\(10^6\\); Treasury amounts already have USD-million source units. The sources and economic horizons are not pooled. \\(\\omega\\) is the stipulated shortfall/excess weight ratio; equality holds at a finite displayed crossing, before rounding. Reference definitions remain those of Section 5.}\\par\\medskip"
+        },
+        {
+          "file": "notes/revision-20261021-public-source-update.md",
+          "lines": [
+            33,
+            35
+          ],
+          "exact_text": "The target is the next-hour signed position, with two-sided prediction intervals. Position lags, calendar/session features, fitted regression engines, normalized conformal prediction and quantile variants precede the present comparison. A simple reanchoring rule therefore cannot represent the entire class of conditional exposure forecasters. Published endpoint scores cannot be inserted into a peak-forecast comparison: the response, forecast windows and scoring problem differ.\n\nCrucially, §3.1 describes a sample of client flow, with market-maker-side changes equal and opposite to client fills. This supports a client-flow exposure proxy. It does not establish observation of external hedge execution, all desks and accounts, or the complete actively controlled dealer book. Reusing that source does not create independent validation."
+        },
+        {
+          "file": "notes/revision-20261021-public-source-update.md",
+          "lines": [
+            43,
+            45
+          ],
+          "exact_text": "Chapter 6 retains the signed next-hour endpoint. It develops normalized conformal prediction using a fitted error scale with additive regularization, a mature conditional-scale precedent. Its tables differ from W20 and are not independent replications. Table 6.2 reports proportions of tests passed across nominal levels, not empirical coverage percentages; most conditional-coverage tests reject. Its preliminary CQR finding concerns that endpoint study and supplies no result for the present peak response.\n\nThe data chapter describes the January 2014–January 2017, five-currency-pair hourly USD client-flow sample. It does not supply the missing external hedge records. Applying an established conditional method to the peak label would be a method transfer, with target-specific performance still to establish."
+        },
+        {
+          "file": "notes/revision-20261022/paper-evidence-map.md",
+          "lines": [
+            13,
+            13
+          ],
+          "exact_text": "4. **`fr2004` — Board of Governors of the Federal Reserve System, _FR 2004: Government Securities Dealer Reports_.** [Official reporting register](https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2004), consulted 22 October 2026; no DOI/arXiv applies. **Read:** register description/history; selected current general/FR 2004A instructions, physical pp.7–10 and 12–13 of 56; selected March 2013 instructions, including physical pp.5–8, 11–13 and 17; January 2013 forms pp.1–2 and July 2024 form p.1. Not complete instruction books. **Boundary:** supports weekly Wednesday-close securities positions, valuation and reporting-unit distinctions. Form dates do not prove every historical observation uses one unchanged definition. Reporting time is not public-release time, and FR 2004A positions are not FR 2004B transaction volumes or FR 2004SI par-value slots."
+        },
+        {
+          "file": "notes/revision-20261022/paper-evidence-map.md",
+          "lines": [
+            19,
+            19
+          ],
+          "exact_text": "7. **`dataset` — davidlindsay1979, _Net Position Time Series Dataset_, version 2.** [Dataset record](https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset); publication year and DOI unverified. This is provenance, **not another paper read**. **Inspected:** source record, acquisition/schema identity and the accepted one-hour member; measurement context is read in W20 and the thesis. **Boundary:** signed aggregate client-flow positions do not supply hedge transactions, gross exposures, cash movements, financing prices or verified historical public vintages/timezone. Exact byte identity to W20's input is unproved. Public access does not establish raw redistribution rights; the repository supplies retrieval/version checks rather than reproducing the source observations."
+        },
+        {
+          "file": "results/revision-20261022/EXTERNAL_DATA.md",
+          "lines": [
+            7,
+            11
+          ],
+          "exact_text": "The Federal Reserve Bank of New York's [Primary Dealer Statistics](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics) provide the series `PDPOSGS-B`. The [official series definitions](https://markets.newyorkfed.org/api/pd/list/timeseries.json) identify it as the Treasury-bills dealer long-position amount less the corresponding short-position amount. The result is a **signed aggregate position across reporting primary dealers**, measured in **millions of U.S. dollars**. The [FR 2004 reporting register and forms](https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2004) establish the weekly Wednesday-close basis and market/fair-value accounting.\n\nThis is a security-position measurement, rather than trading volume, pure customer order flow or a complete hedged book. Changes may reflect trades, valuation and reporting composition. Taking an absolute value after summing signed dealer positions permits cancellation between institutions; it does not recover the sum of their individual absolute exposures or peaks. The sampled aggregate peak therefore does not identify individual-dealer risk, gross exposure, capital, cash funding needs or unobserved within-week maxima.\n\nThe independently compiled official series supplies another financial measurement process for the mathematical peak application. Its publication lineage is separate from the original anonymous FX client-position dataset. This does not establish a disjoint set of underlying institutions, a fixed reporting panel or probabilistic independence, and it does not supply a second hourly individual-dealer record."
+        },
+        {
+          "file": "notes/revision-20261022/independent-source-feasibility.md",
+          "lines": [
+            27,
+            39
+          ],
+          "exact_text": "This compilation has a reporting and publication lineage distinct from the anonymous FX client-position record. That is the basis for calling it an independently sourced application. It does **not** establish probabilistic independence, a disjoint set of underlying institutions, an unchanged reporting panel or a second individual dealer's hourly client-flow history. Publisher differences cannot resolve unknown institutional overlap.\n\nTreasury-bills net market value is also a different financial measurement. Changes can reflect trades, valuation, reporting composition and accounting events. Netting signed positions across dealers and instruments can conceal offsetting exposures. The absolute value of an aggregate is not the sum of individual absolute positions; its sampled peak is not gross dealer risk, cash funding need, capital need or an unobserved within-week maximum.\n\n### Release timing and the information convention\n\nThe [current owning page](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics) describes Thursday updates at approximately 4:15 p.m. for the preceding week's statistics. The [15 January 2004 announcement](https://www.newyorkfed.org/newsevents/news/markets/2004/an040115.html) establishes a one-week publication lag. Measurement at Wednesday close, submission by reporting institutions and public availability are separate events. About eight calendar days between Wednesday measurement and the following week's Thursday release is an ordinary-calendar implication of that schedule, rather than an independently reconstructed release calendar. Holiday adjustments and precise historical release times were not obtained.\n\nThe data can be revised. The inspected [API documentation](https://markets.newyorkfed.org/static/docs/markets-api.html) and [OpenAPI schema](https://markets.newyorkfed.org/static/docs/markets-api.yml) supplied economic as-of dates but no verified historical release-vintage selector in the audited routes. This is an evidence limitation, not proof that an as-released archive exists nowhere.\n\nThe study therefore declares a retrospective downloaded-vintage replay indexed by economic as-of date. Its sampled peak includes the current record, whose absolute value is a lower bound under that stipulated replay convention. The public release schedule does not establish that a public observer knew the current physical position at Wednesday measurement time. This application does not supply a live public-information backtest or validate the original dealer's operational capacity decision.\n\nThe same mathematical functional can be applied to both paths while the economic task changes. Six or twenty-four Treasury records are weekly records; the original FX application uses nominally hourly records with its recorded gaps retained. Histories, neighbor menus and refit schedules are source-adapted. Raw monetary losses in USD and USD millions are not pooled. A second source can test the behavior of the declared procedure families on another measured process without becoming replication of one common operational effect."
+        }
+      ]
+    },
+    {
+      "topic": "Net aggregate magnitude versus institution-level peaks and gross risk",
+      "status": "NETTING_BOUNDARY_PRESENT",
+      "assessment": "Cross-dealer cancellation is explicitly disclosed. Existing constructed examples show why a small aggregate absolute peak does not bound each dealer or the sum of dealer peaks; these are illustrative logical checks, not new observations. Main panel prose does not infer independent institution-level risk from aggregate accuracy.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            371,
+            375
+          ],
+          "exact_text": "A metadata/calendar rule selected 12 additional NYFed net-position series before model evaluation: five nominal-coupon maturity buckets, four TIPS buckets, agency/GSE debt, MBS and corporate totals. The two longer-maturity coupon keys lack the required complete history and are retained as skips. Every included series uses the original 706-date economic grid and the same validation/evaluation/refit indices. The QR33 and C2 structures retain their penalty menus; a common strict complete-menu policy and larger-penalty exact tie rule apply to this new panel. All 192 procedure-cell outputs complete. These series share dealers, reporting regimes and related balance-sheet components; they are additional aggregate tasks rather than independent institutions.\n\n\\begin{center}\n\\begin{minipage}{\\linewidth}\n\\small\\textbf{Table 10. Complete panel summary: number of four H/W cells with lower pinball loss than matched F. These are descriptive counts, not independent trials or evidence selected after screening losses. Appendix K retains every loss change and breach count.}\\par\\medskip"
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            448,
+            448
+          ],
+          "exact_text": "The FX evaluation interval was previously inspected, and the subsequent robustness analyses are post-result / exploratory. These records do not restore a compatible unseen dealer sample. Treasury is a downloaded-vintage, economic-date aggregate replay rather than an original-release public-information backtest; cross-dealer netting, valuation and composition distinguish it from an individual dealer's book."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            1169,
+            1169
+          ],
+          "exact_text": "The fourteen candidate keys were fixed from current official net-position metadata before financial outcomes. Twelve supply the complete original 706-date grid; PDPOSGSC-G11L21 and PDPOSGSC-G21 lack 457 required dates each. No series was spliced, interpolated or chosen by forecast performance. Each provenance file records actual URL, acquisition time, response hash and reporting-era metadata; raw input access code is supplied. The labels and reporting structure can change across eras, so continuity of a key and a complete calendar alone do not establish economic measurement invariance. There is no pooled independence-based significance claim across these related aggregate series."
+        },
+        {
+          "file": "results/revision-20261022/EXTERNAL_DATA.md",
+          "lines": [
+            9,
+            11
+          ],
+          "exact_text": "This is a security-position measurement, rather than trading volume, pure customer order flow or a complete hedged book. Changes may reflect trades, valuation and reporting composition. Taking an absolute value after summing signed dealer positions permits cancellation between institutions; it does not recover the sum of their individual absolute exposures or peaks. The sampled aggregate peak therefore does not identify individual-dealer risk, gross exposure, capital, cash funding needs or unobserved within-week maxima.\n\nThe independently compiled official series supplies another financial measurement process for the mathematical peak application. Its publication lineage is separate from the original anonymous FX client-position dataset. This does not establish a disjoint set of underlying institutions, a fixed reporting panel or probabilistic independence, and it does not supply a second hourly individual-dealer record."
+        },
+        {
+          "file": "notes/revision-20261022/financial-measurement-and-decision-scope.md",
+          "lines": [
+            21,
+            27
+          ],
+          "exact_text": "**A net aggregate cannot bound an individual dealer's absolute peak.** For finite dealer paths `N(d,h)` over the same recorded horizon, the triangle inequality gives\n\n```\nmax_h |sum_d N(d,h)| <= sum_d max_h |N(d,h)|.\n```\n\nThere is no converse bound with a finite multiplicative constant, even for two dealers: take constant paths `N(1,h)=M` and `N(2,h)=-M`, for any `M>0`. The aggregate peak is zero and the two dealer peaks sum to `2M`. An accurate zero aggregate forecast therefore need not be an accurate report for either dealer. The same arithmetic distinguishes a signed netted book from its gross long-plus-short amount. It does not show that gross exposure is necessarily risky when hedges, prices and contractual netting are unobserved."
+        }
+      ]
+    },
+    {
+      "topic": "Pinball preference versus actual financing costs or savings",
+      "status": "STIPULATED_SCORE_BOUNDARY_PRESENT",
+      "assessment": "The paper labels the evaluation preference as stipulated, interprets negative paired loss as score advantage, and separately reports breaches/overrun/unused allowance. Section9 explicitly says the weights are not observed financing prices. Preference reweighting evaluates fixed reports rather than refitting quantiles or discovering an operational cost model. No claim of measured profit, financing savings, liquidity provision or intervention utility was found in the requested sections.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            144,
+            149
+          ],
+          "exact_text": "Forecasts are scored in native source units using the stipulated upper-quantile pinball preference. The paired loss difference is left minus right, so a negative difference favors the left procedure:\n\n\\[\ne=P-C,\\qquad L_{.95}=.95(e)_+ +.05(-e)_+,\\qquad D=\\frac1M\\sum_t\\{L(P_t,C_t^{\\rm left})-L(P_t,C_t^{\\rm right})\\}.\n\\]\nMean positive overrun averages \\((P-C)_+\\) over all issue origins; mean unused allowance averages \\((C-P)_+\\). Breaches use strict \\(P>C\\). Conditional event severity uses each forecast's own breach occasions. Annual groups and the globally anchored \\(H+1\\) grid supply the original sensitivity views."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            452,
+            452
+          ],
+          "exact_text": "Stipulated shortfall/excess weights are not observed financing prices. Quotes, fills, hedges, book decomposition, collateral and cash flows would be required to map this passive envelope into an operational inventory, margin or funding policy. This study evaluates forecasts, not such interventions; Avellaneda and Stoikov (2008) provide a distinct active inventory-sensitive quoting framework."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            736,
+            741
+          ],
+          "exact_text": "\\[\nJ_m(a)=aU_m+(1-a)V_m,\\qquad \\omega=\\frac{a}{1-a},\\qquad J_m(.95)=\\overline L_{m,.95}.\n\\]\nHere \\(a=0\\) and \\(a=1\\) are limiting single-component objectives; finite positive \\(\\omega\\) corresponds to \\(0<a<1\\). For two reports A and B, the difference is \\(a(U_A-U_B)+(1-a)(V_A-V_B)\\). A coefficientwise reduction in both components is preferable for every nonnegative linear weighting. With opposing component differences, a unique crossing can reverse the ordering. This elementary affine geometry is not a new forecasting method. Changing a evaluates fixed actions under other hypothetical preferences; it neither refits them as other quantiles nor establishes dominance over all consistent scores for the .95 quantile (Gneiting, 2011).\n\nEach row follows a from 0 to 1 through its maximal open intervals. NN=KNN; Sc=scaled KNN; F/S/K=matched frozen historical controls; AR=AR residual replay; I=ordinary empirical headroom quantile. A slash separates consecutive intervals. Adjacent displayed intervals tie at their common exact boundary; equals joins identical minimizing lines. Breakpoints are rounded for display. The public results.json retains exact rational boundaries and every endpoint/tie set, all 128 input summaries, 448 pair relations and coefficientwise dominance. Endpoints are evaluated separately and are not inferred from rounded interior thresholds. Ratios \\(\\omega=a/(1-a)\\) should be converted from the exact fractions, especially near 1."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            840,
+            840
+          ],
+          "exact_text": "\\small\\textbf{Table F4. Preference sensitivity of the four named fixed comparisons. Differences are left minus right. FX amounts are divided by \\(10^6\\); Treasury amounts already have USD-million source units. The sources and economic horizons are not pooled. \\(\\omega\\) is the stipulated shortfall/excess weight ratio; equality holds at a finite displayed crossing, before rounding. Reference definitions remain those of Section 5.}\\par\\medskip"
+        },
+        {
+          "file": "notes/revision-20261022/financial-measurement-and-decision-scope.md",
+          "lines": [
+            33,
+            46
+          ],
+          "exact_text": "## What the .95 score does and does not price\n\nFor a specified fixed realized path, let a passive allowance `C` have stipulated shortfall and excess losses\n\n```\nL(C,P) = c_short * max(P-C,0) + c_excess * max(C-P,0),\nc_short > 0, c_excess > 0.\n```\n\nWith `tau=c_short/(c_short+c_excess)`, this equals `(c_short+c_excess)*rho_tau(P-C)`. Under a specified conditional distribution with finite conditional expected loss (for example, a finite conditional first absolute moment of P), minimizing expected loss over reports gives an appropriate tau-quantile, including the usual possibly nonunique quantile set when atoms occur. The known constraint `C>=B` is coherent when `P>=B` is genuinely known at issue. Thus tau=.95 expresses a stipulated19:1 relative penalty in this simplified report problem.\n\nThe interpretation does not establish that a dealer actually faces those prices, that one dollar of overrun costs nineteen dollars of unused allowance, or that current position value equals reserve capital. Financing charges may depend on secured rates, haircuts, direction, duration and available credit. A reserve cost paid on all committed capacity would have to be modeled in its own objective rather than casually identified with `max(C-P,0)`. Nor does a fixed loss ratio establish conditional coverage.\n\nIf the report changes quotes, hedges or risk limits, subsequent positions may change too. A passive comparison observes outcomes under the recorded behavior; it does not observe positions under every alternative policy. Fitting a better conditional quantile does not by itself identify that policy effect. A dynamic decision study would require an explicit intervention, additional data or defensible structural assumptions; no such study has been executed here."
+        },
+        {
+          "file": "notes/revision-20261022/policy-generated-inventory-and-validation-boundary.md",
+          "lines": [
+            15,
+            30
+          ],
+          "exact_text": "The current paper measures a passive historical response P from a source-reported N. It asks whether an issued report C predicts that recorded peak more accurately under a stipulated score. An active execution study instead evaluates actions that can change fills, inventory, cash and later information. Its inventory is generated jointly by a policy and an environment. More books or episodes are not automatically more compatible dealer/client-flow observations.\n\nAs conceptual notation only, let N^pi be the inventory resulting from policy pi in a specified market environment, and let\n\n```math\nP^\\pi_{t,H}=\\max_{0\\le h\\le H}|N^\\pi_{t+h}|.\n```\n\nA forecast evaluated on one recorded measurement process does not by itself identify the distribution of P^pi after a new cap, quote or hedge rule is installed. This is not a new theorem or a claim that every policy change affects every market. It identifies the missing invariance/counterfactual assumption. A sufficiently justified exogenous-flow model, a defensible off-policy identification design, or a controlled prospective intervention could each support a specific further analysis; none has been established here.\n\nThis also distinguishes two possible later questions:\n\n| Later question | Evidence object needed | What the current benchmark supplies |\n|---|---|---|\n| Forecast a peak under one fixed quoting/control policy | Issue-known state and genuinely resolved inventory labels generated under the declared policy/environment | Definitions, mature forecasting constructions and timing checks; no policy-specific labels or execution model |\n| Change policy using a peak report and compare decisions | A fully specified report-to-action map, response/counterfactual model, execution/cost accounting and an appropriate evaluation contract | Realized passive score/tail comparisons; no identified response to the proposed action |"
+        }
+      ]
+    },
+    {
+      "topic": "Aggregate panel versus independent-dealer validation",
+      "status": "RELATED_PANEL_BOUNDARY_PRESENT",
+      "assessment": "The panel is described as related published-aggregate tasks sharing reporting regimes, dealers and balance-sheet components, with reporting-era continuity limitations. The conclusion retains compatible unseen-dealer evidence as open. No independent-trials or disjoint-institutions inference was identified in the requested main/panel passages.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            370,
+            375
+          ],
+          "exact_text": "\\subsection*{Post-result / exploratory published-aggregate panel}\nA metadata/calendar rule selected 12 additional NYFed net-position series before model evaluation: five nominal-coupon maturity buckets, four TIPS buckets, agency/GSE debt, MBS and corporate totals. The two longer-maturity coupon keys lack the required complete history and are retained as skips. Every included series uses the original 706-date economic grid and the same validation/evaluation/refit indices. The QR33 and C2 structures retain their penalty menus; a common strict complete-menu policy and larger-penalty exact tie rule apply to this new panel. All 192 procedure-cell outputs complete. These series share dealers, reporting regimes and related balance-sheet components; they are additional aggregate tasks rather than independent institutions.\n\n\\begin{center}\n\\begin{minipage}{\\linewidth}\n\\small\\textbf{Table 10. Complete panel summary: number of four H/W cells with lower pinball loss than matched F. These are descriptive counts, not independent trials or evidence selected after screening losses. Appendix K retains every loss change and breach count.}\\par\\medskip"
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            397,
+            397
+          ],
+          "exact_text": "QR33 lowers loss against F in 3 of 48 cells; C2 does so in 11 and L in 19. The remaining adverse cells are retained, including QR33 loss changes as high as 544.3\\% and C2 changes as high as 299.1\\%. This extension does not support a general conditional-model advantage, and simplification alone does not resolve the weekly-task failures."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            448,
+            448
+          ],
+          "exact_text": "The FX evaluation interval was previously inspected, and the subsequent robustness analyses are post-result / exploratory. These records do not restore a compatible unseen dealer sample. Treasury is a downloaded-vintage, economic-date aggregate replay rather than an original-release public-information backtest; cross-dealer netting, valuation and composition distinguish it from an individual dealer's book."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            463,
+            465
+          ],
+          "exact_text": "The exploratory 12-series extension also finds higher loss than F in 45/48 QR33 cells and 37/48 parsimonious cells, further limiting general performance claims.\n\nFixed FHS, peak-POT and leaf-distribution QRF add adverse outcomes and explicit numerical exclusions rather than a universal accuracy ranking. Compatible unseen-dealer evidence remains an open requirement."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            1168,
+            1173
+          ],
+          "exact_text": "\\section*{Appendix K. Complete exploratory aggregate-panel outputs and prospective protocol}\nThe fourteen candidate keys were fixed from current official net-position metadata before financial outcomes. Twelve supply the complete original 706-date grid; PDPOSGSC-G11L21 and PDPOSGSC-G21 lack 457 required dates each. No series was spliced, interpolated or chosen by forecast performance. Each provenance file records actual URL, acquisition time, response hash and reporting-era metadata; raw input access code is supplied. The labels and reporting structure can change across eras, so continuity of a key and a complete calendar alone do not establish economic measurement invariance. There is no pooled independence-based significance claim across these related aggregate series.\n\n\\begin{center}\n\\begin{minipage}{\\linewidth}\n\\small\\textbf{Table K1. All 48 panel H/W cells, no favorable selection. F loss is in source USD millions; the next columns are percentage loss changes relative to F. Hits list F/QR33/C2/L, respectively. All methods complete on277 evaluation origins in every cell.}\\par\\medskip"
+        },
+        {
+          "file": "results/revision-20261022/EXTERNAL_DATA.md",
+          "lines": [
+            11,
+            11
+          ],
+          "exact_text": "The independently compiled official series supplies another financial measurement process for the mathematical peak application. Its publication lineage is separate from the original anonymous FX client-position dataset. This does not establish a disjoint set of underlying institutions, a fixed reporting panel or probabilistic independence, and it does not supply a second hourly individual-dealer record."
+        },
+        {
+          "file": "results/revision-20261022/EXTERNAL_DATA.md",
+          "lines": [
+            78,
+            80
+          ],
+          "exact_text": "This is a **source-adapted procedure-family comparison**. Training windows, refit schedules and neighbor menus differ between the FX and Treasury applications. The source-specific primary references also differ. A matching sign in their primary comparisons would not identify one common replicated effect. Within-source matched-history comparisons must accompany any transfer interpretation; shared histories and overlapping labels remain dependent.\n\nTreasury scores retain USD-million units, while the original FX scores retain USD units. Raw monetary losses are not pooled across sources. A second measurement process and successful numerical validation do not create a new estimator, prove conditional coverage, validate individual-dealer operations or establish funding, hedging, quoting or profit benefits. Forecast conclusions must follow the complete prespecified evaluation, including adverse outcomes and failures."
+        }
+      ]
+    },
+    {
+      "topic": "Prospective protocol versus operating service or completed live validation",
+      "status": "PROTOCOL_ONLY_BOUNDARY_PRESENT",
+      "assessment": "AppendixK and Section9 explicitly say future results depend on actual prior issuance and target publication. They distinguish downloaded-vintage economic dates from release-time information, explain the nowcast/forecast mixture, and state that capture, prefix-only issuance and missing-week continuation require an adapter not implemented here. No claim that the future service has already run or produced validation was identified in this text audit; the runtime process list was not inspected.",
+      "evidence": [
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            458,
+            458
+          ],
+          "exact_text": "The expanded aggregate panel strengthens the negative transport finding but does not isolate its mechanism. Features and tuning menus, finite sample size, target behavior and reporting-regime changes can all matter. Downloaded cross-era histories are not original-release vintages; metadata/provenance for each key are retained. A prospective public-release protocol freezes the four procedures and selected historical-validation penalties before future issue artifacts. The first planned new release is after the protocol freeze, rather than retroactively labeling the already published October 14 observation as unseen. Because the release clock lags economic dates, the target includes prediction of unpublished measurements, with a nowcast/forecast mixture. A dated local amendment fixes future path values at their first actual capture and logs later revisions separately; operational capture and missing-week handling still require a bound adapter (Appendix K). Results await prior timestamped report issuance and target publication; no live prospective validation is claimed."
+        },
+        {
+          "file": "manuscript/revision-v3/main.tex",
+          "lines": [
+            1231,
+            1233
+          ],
+          "exact_text": "The companion prospective-public-release-protocol.md and parameter-binding JSON freeze the four procedures, selected penalties, causal mature-pool schedule and code identities. They separate economic issue dates, actual public-information/forecast creation times and final target-publication times. At ordinary eight-day publication lag, the already published economic October 14 origin would mature for H6 economically November 25 and publicly December 3. The first planned post-freeze origin, economic October 21 released ordinarily October 29, instead has H6 economic completion December 2/public completion December 10; H24 completion April 7 2027/public completion April 15. Holiday and revision schedules require actual future receipts. Fifty-two consecutive future issue origins are planned, with no significance-based stopping; results remain pending and no automated future service is started here.\n\nThe separately dated prospective-vintage amendment preserves the accepted historical prefix, identifies the already-public bridge and freezes every future value at its first actual retained capture. This is an explicit join across acquisition vintages, not a reconstructed publisher first-release history. Later revisions are logged without rewriting the main path, mature labels or scores. Capture and forecast artifacts must both meet the recorded deadline and information boundary. Missing or late weeks consume their calendar origins; they cannot shorten the horizon, shift the refit phase, extend the plan or acquire hindsight forecasts. Every target includes the same captured issue anchor and requires all calendar components. The retrospective batch interface requires a full finite series with H outcome records beyond its last query, although its fitted pools and query slices do not use those future values. It is not a prefix-only live forecast interface. Batch functions abort failed cells. Capture, prefix-only issuance and missing-week continuation need a new adapter with its own prior timestamped binding, complete-data preservation, causal and missing-data fixture checks. That adapter is not implemented here. The amendment changes no retrospective result."
+        },
+        {
+          "file": "results/revision-20261022/EXTERNAL_DATA.md",
+          "lines": [
+            51,
+            57
+          ],
+          "exact_text": "## Public release and downloaded vintage\n\nThe [owning page](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics) describes Thursday updates at approximately 4:15 p.m. for the previous week's statistics. The [15 January 2004 announcement](https://www.newyorkfed.org/newsevents/news/markets/2004/an040115.html) established a one-week publication lag. Economic measurement at Wednesday close and subsequent public release are distinct events. The ordinary-calendar implication is about eight days between measurement and the following week's Thursday publication; precise historical release times and holiday adjustments have not been reconstructed.\n\nThe source can be revised. The audited [API documentation](https://markets.newyorkfed.org/static/docs/markets-api.html) and [OpenAPI schema](https://markets.newyorkfed.org/static/docs/markets-api.yml) provide economic as-of dates, but the inspected routes supplied no verified historical release-vintage selector. This does not establish that an as-released archive is unavailable everywhere.\n\nThe experiment consequently uses a **retrospective downloaded-vintage replay indexed by economic as-of date**. Its information convention treats the current and earlier recorded values as available at the index of issue. This is a stipulated replay convention, not evidence that a public observer knew the current physical position on its measurement date. “Final vintage,” where used in earlier materials, means the frozen downloaded snapshot; the publisher has not certified permanent finality. This application cannot support a live public-information or original-release backtest claim."
+        },
+        {
+          "file": "data/nyfed-pdposgs-b-20261022/README.md",
+          "lines": [
+            23,
+            27
+          ],
+          "exact_text": "For a fresh full replay, follow the root guide: copy this exact CSV to `.scratch/revision-20261022/nyfed-PDPOSGS-B.csv` using regular files and parent directories. Verify and preserve an already existing destination rather than overwriting different bytes. The replay uses its fixed input paths and strict SHA/schema checks. The full paired-source study still requires the separately obtained FX input; archiving this file does not settle that input's redistribution rights or turn the entire experiment into a data-independent download.\n\nThis is one **downloaded vintage**, not an archive of original publication releases or all revisions. Economic dates do not establish contemporaneous public availability. Later online responses can grow or be revised; a mismatching response should not be truncated or spliced to imitate this file. No new forecast, diagnostic, parameter choice or financial comparison was run to create the archive. See the [source measurement record](../../notes/revision-20261022/nyfed-data-source-draft.md), [issue-clock analysis](../../notes/revision-20261022/issue-clock-target-and-known-floor.md) and [main replication guide](../../README.md).\n\nThe [dated delivery addendum](../../notes/revision-20261022/nyfed-source-archive-delivery-addendum.md) records this later NYFed-only exception to the original no-raw delivery plan. The original frozen specification retains its historical `public_raw_source_redistribution: false` field; its bytes, source identity and experiment are unchanged."
+        }
+      ]
+    }
+  ],
+  "actual_read_scope": {
+    "manuscript/revision-v3/main.tex": "Abstract, sections1/3, target and score definitions, sections9/10, main panel summary/caption, AppendixK opening/caption and prospective paragraphs; selected fixed-preference paragraphs and TableF4 caption. Keyword searches were only locators, not a claim to read all40pages.",
+    "notes/revision-20261022/financial-measurement-and-decision-scope.md": "1-52, including existing selected Basel/Duffie reading summaries, cancellation/sample-path/funding counterexamples and the stipulated quantile-loss argument.",
+    "results/revision-20261022/EXTERNAL_DATA.md": "5-11 and51-80; used for financial measurement, economic-date/publication distinction and source-adapted interpretation, without repeating the previous timeline-maturity readback.",
+    "notes/revision-20261022/paper-evidence-map.md": "1-25 selected entries, especially FR2004(13), Kaggle(19), Duffie(21), NYFed(25). These historical summaries do not represent new original-PDF reading by this reviewer.",
+    "notes/revision-20261021-public-source-update.md": "1-55; source-family client-flow/hedge distinction and the historical neighboring-target context.",
+    "notes/revision-20261022/independent-source-feasibility.md": "7-39 and selected unresolved-source/provenance descriptions; no new data search or acquisition.",
+    "notes/revision-20261022/remaining-payment-ratio-and-path-timing.md": "1-22; constructed payment-order example and its explicit planned-versus-settled-path limits.",
+    "notes/revision-20261022/policy-generated-inventory-and-validation-boundary.md": "13-40, passive forecasts versus policy-generated inventory and the missing report-to-action/counterfactual map.",
+    "data/nyfed-pdposgs-b-20261022/README.md": "1-27, archived downloaded-vintage scope and source attribution.",
+    "notes/revision-20261022/root-batch-029-delivered-source-and-economic-readback.md": "Historical readback and selected economic interpretation notes; its earlier paper version is not promoted to current proof."
+  },
+  "not_covered_or_claimed": [
+    "No original FR2004 instruction PDF or Kaggle website was reopened; the current audit checks consistency against the existing dated source register and summaries, not fresh verification of every financial-source definition across all eras.",
+    "No full40page text reading or page-by-page PDF visual inspection is claimed. No new result, statistical calculation, financial fitting or pytest was run.",
+    "No measured financing-price, liquidity-resource, institution-level book, netting-contract, hedge execution or payment-system data were supplied or authenticated in this audit. The manuscript makes those absent-data boundaries explicit.",
+    "No new proof of economic value, causally identified policy effect, methodological novelty, continuous-time peak coverage, independent dealer validation or venue level follows from this semantic consistency check.",
+    "No timeline/refit/selection audit was repeated. Existing timing limitations are cited only where necessary to distinguish the measured estimand and a protocol from operational information.",
+    "No live-service process inspection was performed. The conclusion here is that the examined text does not claim such a service has run, not a standalone operating-system attestation."
+  ],
+  "historical_record_handling": "Older source-evidence maps preserve their stated October22 scope and earlier unexecuted-method descriptions. This audit uses their FR2004/Kaggle measurement entries, not those historical competitor statuses as the current D1 execution state. No archive text is rewritten.",
+  "source_sha256": {
+    "manuscript/revision-v3/main.tex": "aa03b7b13e476847cddfb6cf80466d585a21d7a731022e9ab931d87fa7f67d1f",
+    "manuscript/revision-v3/paper.pdf": "b58f4bd66fa36c31556de7844b4d607d9cd2ee0d9ec4d7434143373beffd5cf0",
+    "notes/revision-20261022/financial-measurement-and-decision-scope.md": "d0f839f015593b2fc9074bc7531860dfb1157db3e25a4f8e4150b7adfd1779f9",
+    "results/revision-20261022/EXTERNAL_DATA.md": "6c38c769951a309575ff793726b53dce85fc8095ca1fc30db2ae3c24bb15dac7",
+    "notes/revision-20261022/paper-evidence-map.md": "c400b8aaa2f5a0051c5b96f82efe765913d7e413bcc758b457e41d43c112a549",
+    "notes/revision-20261021-public-source-update.md": "1172b2e6a5726ddb73a666f77f734dfd4e3b3ed16890c18caad4e5f47297d4c4",
+    "notes/revision-20261022/independent-source-feasibility.md": "a3c3a15b43206d5f50978059e7e9e5fed5361a5d482d0298caf75b3a328729b1",
+    "notes/revision-20261022/policy-generated-inventory-and-validation-boundary.md": "688cdf337f8fc2a2c17d43f753aa58e2e80ce99e4332b5a108885586ad859bf6",
+    "data/nyfed-pdposgs-b-20261022/README.md": "bea93f1facf30f70daf5ec42ce089b7f5ff360b38acd99c4000a7ee7518369b8",
+    "notes/revision-20261022/remaining-payment-ratio-and-path-timing.md": "7e9fc5e832862430e915b33888a95429d0d96f0114c41b16fa935df38dc1bf95"
+  },
+  "no_existing_file_modified": true,
+  "financial_fits_run": false,
+  "pytest_run": false,
+  "external_search_or_download": false,
+  "PDF_changed": false
+}
