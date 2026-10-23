@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_wp3.py", line 96, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_wp3.py", line 70, in main
+    freeze=w.read_json(w.ROOT/'protocol/revision-v6/wp3-executable-freeze.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_worker.py", line 26, in read_json
+    def read_json(p): return json.loads(Path(p).read_text())
+                                        ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/protocol/revision-v6/wp3-executable-freeze.json'

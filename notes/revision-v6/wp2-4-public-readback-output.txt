@@ -1,0 +1,367 @@
+COMMAND: /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B notes/revision-v6/wp2-4-public-readback.py
+WORKING_DIRECTORY: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+STARTED_UTC: 2026-10-23T19:30:30.456977+00:00
+--- LITERAL STDOUT ---
+{
+  "scope": "Public aggregate scalars and immutable public paired aggregate CSV only; no raw source, private NPZ, model workers or new inferential analyses.",
+  "input_sha256": {
+    "wp2-summary.json": "44beea32857e5f13233178e014c4ed4737918f523b61790e42d2c94ee763f98c",
+    "wp2-comparisons.json": "37df0e0f87340cac9c0526484e123dba08fb914a795761f9ae9828fdfc6983fd",
+    "wp3-combinations.json": "1526d8aa656077445988271c76988c0a950cd95631946add3d8b8642629c7aaa",
+    "wp3-findings.json": "abe27d8f1ef08ba50680b6f3e1a9207f7271cdb4270f92437fbaa1746ad523e9",
+    "wp4-states.json": "63a89756ba5a97e9a4454701708ff12972e2d23cfd24c238b25b490a531e833d"
+  },
+  "paired_aggregate_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+  "families": {
+    "WP2": {
+      "family_n": 56,
+      "raw_na_count": 5,
+      "raw_p_below_05": 18,
+      "holm_p_below_05": 6,
+      "status": "ALL_SCALAR_BOOKKEEPING_IDENTITIES_PASS"
+    },
+    "WP3": {
+      "family_n": 224,
+      "raw_na_count": 98,
+      "raw_p_below_05": 60,
+      "holm_p_below_05": 18,
+      "status": "ALL_SCALAR_BOOKKEEPING_IDENTITIES_PASS"
+    },
+    "WP4": {
+      "family_n": 4,
+      "raw_na_count": 0,
+      "raw_p_below_05": 3,
+      "holm_p_below_05": 2,
+      "status": "ALL_SCALAR_BOOKKEEPING_IDENTITIES_PASS"
+    }
+  },
+  "wp4": [
+    {
+      "source": "fx_hourly",
+      "unit": "USD",
+      "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+      "group_n": [
+        1593,
+        1816,
+        3216
+      ],
+      "group_mean_difference": [
+        -58761.26651484724,
+        -27839.43372761798,
+        -70387.91038650597
+      ],
+      "group_hac_se": [
+        16492.94369217626,
+        16257.69788113348,
+        17895.89187185643
+      ],
+      "full_n": 6625,
+      "weighted_group_mean": -55929.1515487561,
+      "public_primary_mean": -55929.15154875609,
+      "archived_primary_mean": -55929.15154875609,
+      "weighted_minus_archived_primary": -7.275957614183426e-12,
+      "gw_suffix_n": 6619,
+      "gw_burn_in": 6,
+      "all_groups_negative": true,
+      "all_groups_positive": false,
+      "ranking": [
+        {
+          "test": "joint_GW",
+          "raw_p": 1.4629751215136517e-06,
+          "bookkeeping_p": 1.4629751215136517e-06,
+          "holm_p": 5.851900486054607e-06
+        },
+        {
+          "test": "group_heterogeneity",
+          "raw_p": 0.15938333671965318,
+          "bookkeeping_p": 0.15938333671965318,
+          "holm_p": 0.15938333671965318
+        }
+      ]
+    },
+    {
+      "source": "nyfed_weekly",
+      "unit": "USD millions",
+      "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260",
+      "group_n": [
+        9,
+        25,
+        243
+      ],
+      "group_mean_difference": [
+        6696.660916770632,
+        5230.592580279634,
+        810.882354665394
+      ],
+      "group_hac_se": [
+        1705.2072540448075,
+        2608.1547506502725,
+        466.4751442994694
+      ],
+      "full_n": 277,
+      "weighted_group_mean": 1401.0078517747918,
+      "public_primary_mean": 1401.0078517747918,
+      "archived_primary_mean": 1401.0078517747918,
+      "weighted_minus_archived_primary": 0.0,
+      "gw_suffix_n": 271,
+      "gw_burn_in": 6,
+      "all_groups_negative": false,
+      "all_groups_positive": true,
+      "ranking": [
+        {
+          "test": "joint_GW",
+          "raw_p": 0.04848777759558611,
+          "bookkeeping_p": 0.04848777759558611,
+          "holm_p": 0.09697555519117222
+        },
+        {
+          "test": "group_heterogeneity",
+          "raw_p": 0.00042677175456407837,
+          "bookkeeping_p": 0.00042677175456407837,
+          "holm_p": 0.0012803152636922351
+        }
+      ]
+    }
+  ],
+  "wp2": {
+    "complete_method_count": 22,
+    "na_method_count": 2,
+    "method_status_counts": {
+      "ACI_F": {
+        "complete": 7,
+        "na": 1
+      },
+      "ACI_QR": {
+        "complete": 7,
+        "na": 1
+      },
+      "SAV": {
+        "complete": 8,
+        "na": 0
+      }
+    },
+    "aci_pairs": [
+      {
+        "source": "fx_hourly",
+        "horizon": 6,
+        "window": 720,
+        "status": "COMPLETE",
+        "n": 6625,
+        "ACI_QR_mean_loss": 439672.91206129093,
+        "ACI_F_mean_loss": 472677.77269068744,
+        "ACI_QR_hits": 352,
+        "ACI_F_hits": 331,
+        "wrapped_qr_minus_f_mean_loss": -33004.86062939651,
+        "wrapped_qr_minus_f_coverage_distance": 0.0030943396226415024
+      },
+      {
+        "source": "fx_hourly",
+        "horizon": 6,
+        "window": 2880,
+        "status": "COMPLETE",
+        "n": 6625,
+        "ACI_QR_mean_loss": 393795.05776986334,
+        "ACI_F_mean_loss": 463271.4662733057,
+        "ACI_QR_hits": 329,
+        "ACI_F_hits": 328,
+        "wrapped_qr_minus_f_mean_loss": -69476.40850344236,
+        "wrapped_qr_minus_f_coverage_distance": -0.00015094339622642033
+      },
+      {
+        "source": "fx_hourly",
+        "horizon": 24,
+        "window": 720,
+        "status": "COMPLETE",
+        "n": 6625,
+        "ACI_QR_mean_loss": 1020220.0873449822,
+        "ACI_F_mean_loss": 921402.0819726406,
+        "ACI_QR_hits": 393,
+        "ACI_F_hits": 322,
+        "wrapped_qr_minus_f_mean_loss": 98818.0053723416,
+        "wrapped_qr_minus_f_coverage_distance": 0.007924528301886787
+      },
+      {
+        "source": "fx_hourly",
+        "horizon": 24,
+        "window": 2880,
+        "status": "COMPLETE",
+        "n": 6625,
+        "ACI_QR_mean_loss": 755982.7014517846,
+        "ACI_F_mean_loss": 791441.1828781047,
+        "ACI_QR_hits": 294,
+        "ACI_F_hits": 323,
+        "wrapped_qr_minus_f_mean_loss": -35458.481426320155,
+        "wrapped_qr_minus_f_coverage_distance": 0.004377358490566037
+      },
+      {
+        "source": "nyfed_weekly",
+        "horizon": 6,
+        "window": 52,
+        "status": "COMPLETE",
+        "n": 277,
+        "ACI_QR_mean_loss": 3489.822365525974,
+        "ACI_F_mean_loss": 3818.403249097473,
+        "ACI_QR_hits": 29,
+        "ACI_F_hits": 18,
+        "wrapped_qr_minus_f_mean_loss": -328.5808835714988,
+        "wrapped_qr_minus_f_coverage_distance": 0.03971119133574008
+      },
+      {
+        "source": "nyfed_weekly",
+        "horizon": 6,
+        "window": 260,
+        "status": "COMPLETE",
+        "n": 277,
+        "ACI_QR_mean_loss": 3013.1596582143893,
+        "ACI_F_mean_loss": 2792.912815884477,
+        "ACI_QR_hits": 6,
+        "ACI_F_hits": 7,
+        "wrapped_qr_minus_f_mean_loss": 220.2468423299124,
+        "wrapped_qr_minus_f_coverage_distance": 0.0036101083032490967
+      },
+      {
+        "source": "nyfed_weekly",
+        "horizon": 24,
+        "window": 52,
+        "status": "COMPLETE",
+        "n": 277,
+        "ACI_QR_mean_loss": 6250.532003028425,
+        "ACI_F_mean_loss": 4368.100902527076,
+        "ACI_QR_hits": 47,
+        "ACI_F_hits": 38,
+        "wrapped_qr_minus_f_mean_loss": 1882.4311005013487,
+        "wrapped_qr_minus_f_coverage_distance": 0.03249097472924187
+      },
+      {
+        "source": "nyfed_weekly",
+        "horizon": 24,
+        "window": 260,
+        "status": "NA",
+        "reason": "WRAPPED_PAIR_UNAVAILABLE"
+      }
+    ]
+  },
+  "wp3": {
+    "counts": {
+      "MEAN_F_QR": {
+        "total": 56,
+        "complete": 56,
+        "na": 0,
+        "lower_than_both": 14,
+        "lower_than_F": 16,
+        "lower_than_QR": 54,
+        "exactly_F": 0
+      },
+      "MEDIAN_F_QR_KNN": {
+        "total": 56,
+        "complete": 8,
+        "na": 48,
+        "lower_than_both": 3,
+        "lower_than_F": 5,
+        "lower_than_QR": 6,
+        "exactly_F": 2
+      }
+    },
+    "algebraic_identity_rows": [
+      {
+        "cell_id": "nyfed_weekly:H6:W52",
+        "method": "MEDIAN_F_QR_KNN",
+        "identity": "EXACTLY_F"
+      },
+      {
+        "cell_id": "nyfed_weekly:H24:W52",
+        "method": "MEDIAN_F_QR_KNN",
+        "identity": "EXACTLY_F"
+      }
+    ],
+    "primary_contexts": [
+      {
+        "cell_id": "fx_hourly:H6:W2880",
+        "method": "MEAN_F_QR",
+        "mean_loss": 404645.1971609172,
+        "hits": 330,
+        "n": 6625,
+        "coverage_distance": 0.00018867924528302021,
+        "percent_vs_F": -10.613768722674754,
+        "percent_vs_QR": 4.872505086413903
+      },
+      {
+        "cell_id": "fx_hourly:H6:W2880",
+        "method": "MEDIAN_F_QR_KNN",
+        "mean_loss": 402130.19238434895,
+        "hits": 327,
+        "n": 6625,
+        "coverage_distance": 0.0006415094339622673,
+        "percent_vs_F": -11.169333944254555,
+        "percent_vs_QR": 4.22068751123057
+      },
+      {
+        "cell_id": "nyfed_weekly:H6:W260",
+        "method": "MEAN_F_QR",
+        "mean_loss": 2835.1646609087857,
+        "hits": 40,
+        "n": 277,
+        "coverage_distance": 0.0944043321299639,
+        "percent_vs_F": 2.7730553886759823,
+        "percent_vs_QR": -31.84164889450287
+      },
+      {
+        "cell_id": "nyfed_weekly:H6:W260",
+        "method": "MEDIAN_F_QR_KNN",
+        "mean_loss": 2648.8346454740417,
+        "hits": 28,
+        "n": 277,
+        "coverage_distance": 0.05108303249097472,
+        "percent_vs_F": -3.9812983393045176,
+        "percent_vs_QR": -36.32108770403683
+      }
+    ],
+    "murphy": [
+      {
+        "slot_id": "fx_hourly:H6:W2880:MEAN_F_QR-minus-F",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": 0.0
+      },
+      {
+        "slot_id": "fx_hourly:H6:W2880:MEAN_F_QR-minus-QR",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": 0.0
+      },
+      {
+        "slot_id": "fx_hourly:H6:W2880:MEDIAN_F_QR_KNN-minus-F",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": -7.275957614183426e-12
+      },
+      {
+        "slot_id": "fx_hourly:H6:W2880:MEDIAN_F_QR_KNN-minus-QR",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": 0.0
+      },
+      {
+        "slot_id": "nyfed_weekly:H6:W260:MEAN_F_QR-minus-F",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": 2.842170943040401e-14
+      },
+      {
+        "slot_id": "nyfed_weekly:H6:W260:MEAN_F_QR-minus-QR",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": -2.2737367544323206e-13
+      },
+      {
+        "slot_id": "nyfed_weekly:H6:W260:MEDIAN_F_QR_KNN-minus-F",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": -2.842170943040401e-14
+      },
+      {
+        "slot_id": "nyfed_weekly:H6:W260:MEDIAN_F_QR_KNN-minus-QR",
+        "ranking": "CROSSING",
+        "integral_minus_pinball": 0.0
+      }
+    ]
+  },
+  "status": "PASS_PUBLIC_SCALAR_READBACK"
+}
+--- LITERAL STDERR ---
+--- END CHILD OUTPUT ---
+RETURN_CODE: 0
+ELAPSED_SECONDS: 0.09447983299999999

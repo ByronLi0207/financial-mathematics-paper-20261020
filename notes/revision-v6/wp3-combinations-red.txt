@@ -1,0 +1,101 @@
+test_arithmetic_and_median_have_independent_known_answers (test_v6_combinations.CombinationTests.test_arithmetic_and_median_have_independent_known_answers) ... FAIL
+test_curve_integral_equals_explicit_pinball_difference (test_v6_combinations.CombinationTests.test_curve_integral_equals_explicit_pinball_difference) ... FAIL
+test_exact_murphy_matches_hand_threshold_scores (test_v6_combinations.CombinationTests.test_exact_murphy_matches_hand_threshold_scores) ... FAIL
+test_knn_equal_f_median_is_exactly_f_for_any_qr (test_v6_combinations.CombinationTests.test_knn_equal_f_median_is_exactly_f_for_any_qr) ... FAIL
+test_mean_does_not_claim_to_beat_best_constituent (test_v6_combinations.CombinationTests.test_mean_does_not_claim_to_beat_best_constituent) ... FAIL
+test_misalignment_and_floor_breach_rejected (test_v6_combinations.CombinationTests.test_misalignment_and_floor_breach_rejected) ... FAIL
+test_missing_knn_is_na_without_substitution (test_v6_combinations.CombinationTests.test_missing_knn_is_na_without_substitution) ... FAIL
+test_murphy_known_dominance_equal_and_crossing (test_v6_combinations.CombinationTests.test_murphy_known_dominance_equal_and_crossing) ... FAIL
+
+======================================================================
+FAIL: test_arithmetic_and_median_have_independent_known_answers (test_v6_combinations.CombinationTests.test_arithmetic_and_median_have_independent_known_answers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 9, in test_arithmetic_and_median_have_independent_known_answers
+    r=self.api().combine_reports([10,11,12],[0,0,0],[2.,8.,4.],[4.,2.,9.],[3.,5.,6.])
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_curve_integral_equals_explicit_pinball_difference (test_v6_combinations.CombinationTests.test_curve_integral_equals_explicit_pinball_difference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 41, in test_curve_integral_equals_explicit_pinball_difference
+    a=self.api();z=a.murphy_exact([0,3,2],[2,1,4],[1,2,3],tau=.9)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_exact_murphy_matches_hand_threshold_scores (test_v6_combinations.CombinationTests.test_exact_murphy_matches_hand_threshold_scores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 30, in test_exact_murphy_matches_hand_threshold_scores
+    a=self.api();left=np.array([0.,3.,2.]);right=np.array([2.,1.,4.]);y=np.array([1.,2.,3.]);z=a.murphy_exact(left,right,y,tau=.95)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_knn_equal_f_median_is_exactly_f_for_any_qr (test_v6_combinations.CombinationTests.test_knn_equal_f_median_is_exactly_f_for_any_qr)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 13, in test_knn_equal_f_median_is_exactly_f_for_any_qr
+    a=self.api();f=np.array([1.,10.,3.]);r=a.combine_reports([10,11,12],[0,0,0],f,[30.,2.,.1],f)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_mean_does_not_claim_to_beat_best_constituent (test_v6_combinations.CombinationTests.test_mean_does_not_claim_to_beat_best_constituent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 25, in test_mean_does_not_claim_to_beat_best_constituent
+    a=self.api();r=a.combine_reports([1],[0],[0.],[10.],None)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_misalignment_and_floor_breach_rejected (test_v6_combinations.CombinationTests.test_misalignment_and_floor_breach_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 21, in test_misalignment_and_floor_breach_rejected
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_missing_knn_is_na_without_substitution (test_v6_combinations.CombinationTests.test_missing_knn_is_na_without_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 17, in test_missing_knn_is_na_without_substitution
+    r=self.api().combine_reports([10,11],[0,0],[2.,8.],[4.,2.],None)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+======================================================================
+FAIL: test_murphy_known_dominance_equal_and_crossing (test_v6_combinations.CombinationTests.test_murphy_known_dominance_equal_and_crossing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 36, in test_murphy_known_dominance_equal_and_crossing
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_combinations.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_combinations'),'fixed combination API not implemented')
+AssertionError: unexpectedly None : fixed combination API not implemented
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=8)

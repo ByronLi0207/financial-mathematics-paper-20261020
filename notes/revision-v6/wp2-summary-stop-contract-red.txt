@@ -1,0 +1,359 @@
+WARN `--no-project` was provided, but no project was found
+..FFFFFFFFFF...F.                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_missing_and_declared_na_keep_their_slots_with_holm_one __________
+
+    def test_missing_and_declared_na_keep_their_slots_with_holm_one():
+        # Catches favorable row removal without conflating a declared NA with bad data.
+        parts = fixture()
+        del parts[2]['fx_hourly-h6-w720-ACI_F']
+        parts[2]['fx_hourly-h6-w720-ACI_QR']['receipt'].update(status='NA',reason='VALIDATION_INELIGIBLE')
+        parts[2]['fx_hourly-h6-w720-SAV']['receipt'].update(status='NA',reason='NO_CONVERGED_START')
+        summary, comparisons = run_fixture(parts)
+        assert len(comparisons['rows']) == 56
+>       assert summary['status'] == 'INCOMPLETE_EVALUATION_INVENTORY'
+E       AssertionError: assert 'COMPLETE_WITH_NA' == 'INCOMPLETE_E...ION_INVENTORY'
+E         
+E         - INCOMPLETE_EVALUATION_INVENTORY
+E         + COMPLETE_WITH_NA
+
+test_v6_wp2_summary.py:113: AssertionError
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[private_hash-PRIVATE_ARTIFACT_IDENTITY] _
+
+change = 'private_hash', code = 'PRIVATE_ARTIFACT_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[receipt_score-RECEIPT_SCORE_IDENTITY] _
+
+change = 'receipt_score', code = 'RECEIPT_SCORE_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[short_origins-ORIGIN_IDENTITY] _
+
+change = 'short_origins', code = 'ORIGIN_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[target-TARGET_FLOOR_IDENTITY] _
+
+change = 'target', code = 'TARGET_FLOOR_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[floor-TARGET_FLOOR_IDENTITY] _
+
+change = 'floor', code = 'TARGET_FLOOR_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[validation-VALIDATION_INELIGIBLE] _
+
+change = 'validation', code = 'VALIDATION_INELIGIBLE'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[gamma-SELECTED_GAMMA_IDENTITY] _
+
+change = 'gamma', code = 'SELECTED_GAMMA_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_ test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[execution-EXECUTABLE_FREEZE_IDENTITY] _
+
+change = 'execution', code = 'EXECUTABLE_FREEZE_IDENTITY'
+
+    @pytest.mark.parametrize('change,code',[
+        ('private_hash','PRIVATE_ARTIFACT_IDENTITY'),
+        ('receipt_score','RECEIPT_SCORE_IDENTITY'),
+        ('short_origins','ORIGIN_IDENTITY'),
+        ('target','TARGET_FLOOR_IDENTITY'),
+        ('floor','TARGET_FLOOR_IDENTITY'),
+        ('validation','VALIDATION_INELIGIBLE'),
+        ('gamma','SELECTED_GAMMA_IDENTITY'),
+        ('execution','EXECUTABLE_FREEZE_IDENTITY'),
+    ])
+    def test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na(change,code):
+        # Catches publishing a scientific summary after a required admission discrepancy.
+        parts = fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        if change=='private_hash': parts[4][key]['provenance']['sha256']=OTHER
+        elif change=='receipt_score': parts[2][key]['receipt']['scores']['full_hits']+=1
+        elif change=='short_origins':
+            trace=parts[4][key]['trace']
+            for name in tuple(trace): trace[name]=trace[name][1:]
+        elif change=='target': parts[4][key]['trace']['peak'][0]+=1.
+        elif change=='floor': parts[4][key]['trace']['floor'][0]+=.5
+        elif change=='validation': parts[3]['validation'][key]['status']='NA'
+        elif change=='gamma': parts[2][key]['receipt']['selected_gamma']=.05
+        elif change=='execution': parts[2][key]['receipt']['executable_freeze_sha256']=OTHER
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match=code): run_fixture(parts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:146: Failed
+_____ test_control_discrepancy_stops_wp_and_cannot_create_a_reduced_family _____
+
+    def test_control_discrepancy_stops_wp_and_cannot_create_a_reduced_family():
+        # Catches demoting changed original control outcomes to unavailable comparisons.
+        parts=fixture()
+        parts[5]['fx_hourly-h6-w720-QR']['trace']['peak'][0]+=1.
+>       with pytest.raises(getattr(api(),'DataIdentityError',ValueError),match='CONTROL_TARGET_FLOOR_IDENTITY'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v6_wp2_summary.py:153: Failed
+____ test_public_provenance_and_diagnostics_cannot_forward_private_vectors _____
+
+    def test_public_provenance_and_diagnostics_cannot_forward_private_vectors():
+        # Catches accidental publication when a loader adds private fields to metadata.
+        parts=fixture()
+        parts[3]['private_arrays']={'peak':np.arange(10)}
+        parts[2]['fx_hourly-h6-w720-ACI_F']['receipt']['diagnostics']['capacities']=np.arange(10)
+        summary,comparisons=run_fixture(parts)
+>       encoded=json.dumps([summary,comparisons],allow_nan=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:238: in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py:200: in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py:258: in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.encoder.JSONEncoder object at 0x10aa0d2b0>
+o = array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+    def default(self, o):
+        """Implement this method in a subclass such that it returns
+        a serializable object for ``o``, or calls the base implementation
+        (to raise a ``TypeError``).
+    
+        For example, to support arbitrary iterators, you could
+        implement default like this::
+    
+            def default(self, o):
+                try:
+                    iterable = iter(o)
+                except TypeError:
+                    pass
+                else:
+                    return list(iterable)
+                # Let the base class default method raise the TypeError
+                return super().default(o)
+    
+        """
+>       raise TypeError(f'Object of type {o.__class__.__name__} '
+                        f'is not JSON serializable')
+E       TypeError: Object of type ndarray is not JSON serializable
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py:180: TypeError
+=========================== short test summary info ============================
+FAILED test_v6_wp2_summary.py::test_missing_and_declared_na_keep_their_slots_with_holm_one
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[private_hash-PRIVATE_ARTIFACT_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[receipt_score-RECEIPT_SCORE_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[short_origins-ORIGIN_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[target-TARGET_FLOOR_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[floor-TARGET_FLOOR_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[validation-VALIDATION_INELIGIBLE]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[gamma-SELECTED_GAMMA_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_complete_input_identity_discrepancy_stops_wp_instead_of_becoming_method_na[execution-EXECUTABLE_FREEZE_IDENTITY]
+FAILED test_v6_wp2_summary.py::test_control_discrepancy_stops_wp_and_cannot_create_a_reduced_family
+FAILED test_v6_wp2_summary.py::test_public_provenance_and_diagnostics_cannot_forward_private_vectors
+11 failed, 6 passed in 0.35s
