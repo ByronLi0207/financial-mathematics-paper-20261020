@@ -2,7 +2,7 @@
 
 This is a research and submission-preparation package, not a journal submission or acceptance claim. Both original source-specific primaries and all archived adverse results are retained. All additional analyses are post-result / exploratory on previously inspected records.
 
-- manuscript.tex / manuscript-preview.pdf: 18 independently typeset preview pages; 7093 prose words excluding abstract, references, tables and captions; 6 tables and 4 figures.
+- manuscript.tex / manuscript-preview.pdf: 18 independently typeset preview pages; 7096 prose words excluding abstract, references, tables and captions; 6 tables and 4 figures.
 - supplement.tex / supplement-preview.pdf: 94 preview pages. Section S16 reports all finite delayed ACI-style, headroom SAV, fixed-combination, state and target-level inventories, including raw NA and adverse outcomes.
 - title-page.tex / title-page-preview.pdf: author-completion sheet, 1 page.
 - main.tex is the default article target. Select supplement.tex and title-page.tex separately.
