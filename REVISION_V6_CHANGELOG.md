@@ -1675,3 +1675,37 @@ Invocation/resource receipt:
 All950tests and1062subtestspass on the retained isolated currentcandidatecopy; no rawfinancialreplay is part of this verification. The final numeric audit has0mismatches. No system package was installed or source/oldfile removed. The scientific workers and archival inputs remain frozen.
 
 Live same-head PR search again returnednone. Branch publication is proceeding through the signed-in nativeGitHubUI, with remote byte verification still pending. No other PR or main is modified. The six-hour goal is stillactive and has not reached its deadline.
+
+
+## WP7 actual branch publication and verification
+
+At 2026-10-23T20:56:34.350100Z the complete 366-file v6 snapshot was read back from actual public commit `9afff7ebe1e015907cdf22caf46c480ab8bcab5a`. Every file matched SHA-256 and byte length. The complete Git tree also matched source commit `b895c67fcb719fcb5eef93b180d4e7757e2a3804`: both trees are `1a9ec87a4f88f70047be09bbee6bddcc4e0ae8f6`. Distinct UI/native commit histories were preserved; no force push, main merge or credential/permission change was used.
+
+Publication used the signed-in native GitHub UI in 13 whitelisted batches; exact public file/commit validation used Git fetch. See `publication-snapshot-verification.json` for all file hashes and `publication-batches.json` for actually observed batch commits. Public material consists of aggregate results, fitted optimization diagnostics, code, tests, manuscript sources/previews and input/code fingerprints; private per-origin vectors, raw FX, screenshots, user account/UI records and third-party paper PDFs were excluded.
+
+Literal complete-snapshot output:
+
+```text
+remote_commit 9afff7ebe1e015907cdf22caf46c480ab8bcab5a
+files_checked 366
+total_bytes 15428425
+mismatches []
+full_tree_diff_from_source ""
+source_tree 1a9ec87a4f88f70047be09bbee6bddcc4e0ae8f6
+remote_tree 1a9ec87a4f88f70047be09bbee6bddcc4e0ae8f6
+```
+
+Live all-state GitHub PR query `repo:ByronLi0207/financial-mathematics-paper-20261020 head:revision-v4-jof` returned `issues: []`. The authorized branch is published; no same-head PR was found and no new PR or unrelated PR update is claimed. Whether to open a new PR is retained in AUTHOR-TODO. Remote main remained `65feeee801b6b228a608ca3200e0678bb5f62b1c`.
+
+This completes WP7's content/validation/branch publication scope, with the PR-absence decision explicitly outstanding. It does not complete the six-hour goal before 2026-10-24T00:31:50Z. Later ten-minute self-checks and authorized audit-loop notes are supplemental records and are not falsely included in the earlier frozen snapshot identity. The current manuscript/PDF/result bytes remain unchanged.
+
+
+## Authorized verification loop, first cycle
+
+Rounds 1–4 added only scoped audit notes. Round1 traced five randomly selected main Table3 cells to their raw archived CSV fields with exact formatter equality. Round2 checked three original references against publisher/conference metadata, with failed retrievals distinguished from successful original-source reads. Round3 reread only main Section5 as an internal refereeA; two optional clarity suggestions were recorded and existing adequate prose retained. Round4 read the title/abstract, selected interpretation/evaluation sections and cover-letter draft for overclaim or self-deprecation; no required conclusion change was found. The numeric results, primary definitions, manuscript sources and PDFs remain unchanged. Each note records its actual scope; none is external peer review or independent data validation.
+
+The narrow live Journal of Forecasting author-guidance readback found no publicly stated numeric article word/page/table/figure cap in the inspected sources. This does not establish unlimited length or portal compliance. A root standard-library check measured the current running title at26 characters and six semicolon-separated keywords, meeting the explicitly stated <40 and <=6 requirements. The9,000-word/6-table/4-figure targets remain local budgets.
+
+Commit routing: round1 is a4b65ac; round2 is b31931d. Separate round3 and round4 notes share audit commit a629353 alongside the journal-guidance/self-check records; this is a minor grouping deviation from one immediate commit per loop, recorded rather than represented as four separate audit commits. Subsequent rounds should be committed individually. No history rewrite, deletion or scientific correction was used.
+
+The six-hour goal remains active through2026-10-24T00:31:50Z. The next ten-minute check is owned by state.json. Waiting, upload processing, parallel overlap and scheduled gaps are not claimed as active reading. No new financial experiments are authorized after WP7.
