@@ -4245,3 +4245,77 @@ Two complete non-table paragraphs in the bounded firstS16adaptation subsection w
 ## Verification loop36
 
 All33response rows and fullauthorchecklist retain21major/12minor individualdispositions and unresolvedscientificgaps. E08now identifies its unchanged wordcount as the original integration snapshot and routes currentcandidate metrics, verified directly against b895c67/current boundmetrics. Only this historical-status language changed. Numeric tokens identical; manuscript/results/code unchanged. First convenience rowparser omittedA10 and failed assertion before note write; corrected exactID regex verifiedallrows, as retained in loop036.
+
+
+## Scheduled self-check24
+
+Actual22:31:51.237342UTC,1.237342seconds afterdue;1413protectedoldpaths have no missing/unauthorized modification. Samebranch/currentcandidate; no idle or parallel time credited asreading. Deadline00:31:50UTC notelapsed. Exactreceipt: self-check-024.json.
+
+
+## Verification loop37
+
+The root initially defined the method-number frame too broadly. Its complete47proposition/seed/draw/timestamp record remains preserved, explicitly not counted asfive empiricalnumbertraces. A separatelyfrozen Table3fallback then tracesfive actualresultcells to exactsavedfields/staticdisplay rules, without result-driven selection or freshstatistics. Allfive match; scopecorrection and prior-exposure limits are explicit.
+
+
+## Verification loop38
+
+Three seededmetadata checks preserve thesisaward versuspublicationstatus, HoStollregistration versus inaccessiblebody, and FR2004formidentifier/officialattachmentedition/printedlocator versus retainedcomponentfooters. No fullpaper/guidebody reading, regulatoryinterpretation or publication-vintage proof is claimed.
+
+
+## Verification loop39
+
+The complete non-table state subsection matches staticdefinitions/protocol. Groupheterogeneity and GWjointnull, fullaxis groupSE and HrowGWburnin remain distinct. Intercept rejection is not a stateeffect or switchinggain. Caller-supplied privateinputs were not reopened; optionallocalworking-reference wording onlyrecorded.
+
+
+## Verification loop40
+
+Currentbenchmark disclosure preserves matchedversusoriginal controls, finiteadaptation labels, adverseSAV/combination/state outcomes, separatefamilies/rawNA and unavailableuppertarget evidence. Currentwording consistency is not a new tableaudit, inferencevalidity proof or independentreplication.
+
+
+## Verification loop41
+
+Seed2026102341 drewfive from30eligible actualresultcells afterknownprior exclusions. Exactpof_p/dq_p orhit/nstrings match actual3significantfigure/countformatting. No rate/test/statistic recomputation; transitionboundary and legacyCC versusnewCC distinctions remainexplicit.
+
+
+## Verification loop42
+
+Three selectedpublisher-depositedmetadata records read. Kupiec1995 and HLN1997 statedfields match. KoenkerBassett1978 has onlystartpage33 and malformedregisteredauthorsuffix; originalbody inaccessible, secondarycitations notpromoted toprimaryproof. Endingpage50/Jr notfreshverified inthisloop; currentcitationunchanged and notdeclaredwrong. Limitedaccessgap retained, not a scientificconclusionerror.
+
+
+## Scheduled self-check25
+
+Actual fresh protected-file/branch check in self-check-025.json; lateness preserved rather than backfilled. All1413 paths have no missing/unauthorized changes; goal remains active until00:31:50UTC.
+
+## Verification loop43
+
+All24 non-table S13 blocks were read against bounded static mature-baseline definitions. FHS moving-variance/refit-residual conventions, genuine query-leaf QRF, peak-headroom POT versus canonical innovation EVT and full-cell failure rules agree; optional matching-leaf phrase recorded only. No financial analysis, count/statistic recomputation, source or conclusion change.
+
+
+## Verification loop44
+
+Full current rootREADME routing/claim read retains current18page versus dated24page scope, publicdocument versus privatefinancialreplay distinctions, preview/formalexport and remaining scientificgaps. Historical counts are not changed to currentcounts. No new source/result/code/conclusion change.
+
+
+## Loop36 remote publication proof
+
+Immutable local4c0ea516 snapshot published by two native UI commits5cc996d/2840ec7. Fresh FETCH_HEAD blob readback confirms20files/835726B and entire tree d6c87b7 match. Remote main65feeee unchanged; live all-state sameheadPR search empty. Laterlocal37+notes are outside this publishedsnapshot. Initial chooser property error was rejected before upload; actualabsolute_path corrected, no duplicatecommit. Private screenshots/chooser record notpublicpayload.
+
+
+## Verification loop45
+
+Five seeded actual Table5 p-value cells trace to saved exactfields and formatter; sparse/fullgrid, original/matched/control/boundary identities retained. No financial statistic/model reexecution.
+
+
+## Verification loop46
+
+Three seeded original registrations: Gneiting2011 and AvellanedaStoikov2008 statedfields match; Christoffersen1998 lacksregisteredendingpage and originalroute inaccessible. No establishedcitationconflict; gapretained.
+
+
+## Verification loop47
+
+Full23non-table S15 financial-text read retains local invalidoracle/mixeddirections, denominatorbridge/noncausality/artificialfunctional/novelty/access/relatedaggregate limits. Requested themes absentfromthissection explicitly unaudited, notmanuscriptdefects.
+
+
+## Verification loop48
+
+All27non-table S2 blocks retain commonset/fixedrank/real-arithmetic and finite/artificial/dynamicreplay limits; no claim of optimizedforecastloss/conditionalcoverage/newtheorem. No edits or newproof.
