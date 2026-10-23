@@ -1,0 +1,105 @@
+{
+  "audit_type": "independent same-model read-only command-receipt, preservation and scientific-crossreference audit",
+  "auditor": "round2_receipt_audit",
+  "snapshot_utc": "2026-10-23T10:54:31Z",
+  "scope_latest_D1_receipt": "D1-048.json",
+  "git_HEAD_at_snapshot": "393e51a3cf3c16f78a9861d16a51c7379c6286e8",
+  "status": "NO_SCIENTIFIC_OR_RECEIPT_DISCREPANCY_FOUND_CURRENT_README_UPDATE_PENDING",
+  "command_receipts": {
+    "comparison": "Every receipt command, complete stdout and complete stderr checked as literal substrings of its matching Round2 CHANGELOG section; failure receipts included.",
+    "E1": {"count": 3, "ledger_status": "COMPLETE"},
+    "E2": {"count": 1, "ledger_status": "COMPLETE"},
+    "E3": {"count": 4, "ledger_status": "COMPLETE"},
+    "E4": {"count": 2, "ledger_status": "COMPLETE"},
+    "E5": {"count": 2, "ledger_status": "COMPLETE"},
+    "E6": {"count": 2, "ledger_status": "COMPLETE"},
+    "E7": {"count": 1, "ledger_status": "COMPLETE"},
+    "E8": {"count": 3, "ledger_status": "COMPLETE", "nonzero_return_receipts_preserved": 1},
+    "E9": {"count": 13, "ledger_status": "COMPLETE", "nonzero_return_receipts_preserved": 3},
+    "E10": {"count": 3, "ledger_status": "COMPLETE"},
+    "D2": {"count": 19, "ledger_status": "COMPLETE", "nonzero_return_receipts_preserved": 2},
+    "D3": {"count": 69, "ledger_status": "COMPLETE", "nonzero_return_receipts_preserved": 4},
+    "D1": {"count": 48, "ledger_status": "IN PROGRESS", "nonzero_return_receipts_preserved": 3},
+    "total_checked": 170,
+    "missing_command_or_stream_items": [],
+    "evidence_manifest_sha256_at_snapshot": "4923529e94bc8e5915067e72a2d589edc7928c2ff7a4ed086e48a0fa78060df8",
+    "manifest_construction": "SHA256 of sorted-key JSON mapping all evidence-directory receipt filenames to SHA256(file bytes), using json.dumps(..., sort_keys=True) with default separators.",
+    "CHANGELOG_sha256_at_snapshot": "467f960d87c2d1a9443c323e486217a88d89417c1ee7e89a6db862d3dc9df99e"
+  },
+  "preservation": {
+    "original_tracked_file_count": 440,
+    "original_hash_mismatches": [],
+    "baseline_hash_mismatches_against_cbce398_git_bytes": [],
+    "protected_old_final_file_count": 3,
+    "protected_old_final_mismatches": [],
+    "branch": "revision-v3-readability",
+    "main_ref": "cbce3986276e994add53b0f5c6bdeec5191f4412",
+    "original_two_primaries": "Their archived result/source files are within the440-file byte-identical protection; exploratory tables retain their identities and do not replace either primary.",
+    "archive_rewritten": false
+  },
+  "D1_binding_and_outputs": {
+    "execution_binding": "protocol/revision-20261023/round2-D1-execution-binding-v2.json",
+    "binding_frozen_utc": "2026-10-23T10:28:16.908908+00:00",
+    "first_actual_worker_started_utc": "2026-10-23T10:28:44.748115+00:00",
+    "current_bound_code_and_protocol_hash_mismatches": [],
+    "all24_cell_code_hashes_match_single_v2_binding": true,
+    "planned_cells": 24,
+    "complete_cells": 18,
+    "NA_cells": 6,
+    "paired_slots": 48,
+    "CSV_vs_individual_cell_numerical_mismatches": [],
+    "failed_cell_scores_and_component_p_values_empty": true,
+    "complete_vs_F_counts": {
+      "FHS": {"complete": 6, "lower_loss": 3, "higher_loss": 3},
+      "PEAK_POT": {"complete": 4, "lower_loss": 1, "higher_loss": 3},
+      "QRF": {"complete": 8, "lower_loss": 2, "higher_loss": 6}
+    },
+    "manuscript_table_rows": {"Table11": 8, "TableL1": 24, "TableL2": 48, "TableL3": 6},
+    "NA_interpretation": "Four successful-optimizer filter fits are retained as frozen persistence-tolerance exclusions, not optimizer nonconvergence or measured predictive inferiority; two W52 POT cells are structurally excluded by the20-strict-excess rule.",
+    "maximum_recorded_worker_RSS_bytes": 229376000,
+    "maximum_recorded_worker_elapsed_seconds": 239.0302985419985,
+    "maximum_recorded_worker_OS_threads": 1
+  },
+  "scientific_crossreferences": {
+    "original_Holm_family_rows": 72,
+    "original_Holm_below_point05": 19,
+    "original_Holm_favorable": 15,
+    "original_Holm_adverse": 4,
+    "both_original_primary_Murphy_rankings": "CROSSING",
+    "D2_table9_rows": 8,
+    "D2_tableJ2_rows": 16,
+    "D3_tableK1_cells": 48,
+    "D3_procedure_outputs": 192,
+    "D3_QR33_lower_higher_vs_F": [3, 45],
+    "D3_C2_lower_higher_vs_F": [11, 37],
+    "D3_L_lower_higher_vs_F": [19, 29],
+    "E9_conclusion_boundary": "Small normalized slopes and high correlation are not claimed to establish zero feature value or identity with I/F; all four selected penalties remain upper endpoints, and three cells remain adverse againstF.",
+    "weekly_mechanism_boundary": "Current Section9 correctly states exact-zero calendar columns provide no predictive variation and do not demonstrate an overfitting mechanism; panel/C2 do not separate competing causes.",
+    "independent_validation_boundary": "The related NYFed aggregate panel is not described as a second independent dealer. Compatible unseen-dealer data remain an unmet evidential requirement.",
+    "prospective_parameter_entries": 52,
+    "prospective_code_and_design_hash_mismatches": [],
+    "prospective_results_claimed_complete": false
+  },
+  "latest_test_and_render_receipts": {
+    "test_receipt": "results/revision-20261023/round2/evidence/D1-048.json",
+    "observed_test_output": "100 passed in 3.52s",
+    "test_suite_scope": "The actual14 explicitly named safe revision modules in the recorded command, not every historical repository test.",
+    "complete_stdout_and_stderr_present_in_D1_CHANGELOG": true,
+    "render_receipt": "results/revision-20261023/round2/evidence/D1-047.json",
+    "Fontconfig_warning_retained": true,
+    "this_audit_is_not_visual_acceptance_of_g3": true
+  },
+  "actionable_pending_metadata": [
+    {
+      "file": "manuscript/revision-v3/README.md",
+      "location": "Current Round2 checkpoint block, lines34–36 at snapshot",
+      "issue": "It still calls current PDF33pages/14main and says D1pending, whereas current generated rendering summary is38pages/15main and all24 D1 outcomes are retained. Before final handoff update this current block and its test-output references to actual g3/100-test/current visual-QA state. Historical dated checkpoint text can remain clearly historical.",
+      "root_notified": true
+    }
+  ],
+  "limitations": [
+    "Snapshot audit does not declare D1 finalized, whole-paper final visual acceptance or the seven-hour goal complete.",
+    "Later CHANGELOG entries, receipts, README changes or PDF regenerations are outside this exact snapshot until separately reconciled.",
+    "Auditor performed only source/result reads, hashes, scalar CSV/JSON comparisons and Git readback; no estimator fitting, tests, Claude, Git mutations, deletion or edits outside this newly authorized audit file."
+  ]
+}
