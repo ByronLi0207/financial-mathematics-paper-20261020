@@ -2873,3 +2873,52 @@ test_verify_rank_ablation.py::CompleteSyntheticAttemptTests::test_complete_synth
 {"status": "PACKAGE_EXACT_BYTE_VERIFIED", "source_file_count": 16, "title_pages": 1, "zip_sha256": "d13834058a9f97fd2fc5b613ace9f0a4d7c802f0dd85c3480d15669b5172f73f"}
 
 ```
+
+
+## Loop 12 remote byte readback and check 18
+
+2026-10-23T21:38:16.268886+00:00
+
+The exact 34-file candidate `d1888c0` was published through three native GitHub upload commits: `354940c`, `aa49870`, and `eba48ed`. `git fetch origin revision-v4-jof` fetched the actual branch head into FETCH_HEAD. Fresh per-file SHA-256/length checks report 34 files, 0 mismatches; `git diff --name-status d1888c0 eba48ed` is empty, with both complete trees `38885fb15ea427e13e6da2c44c902f04cbdeca8b`. Main remains `65feeee` remotely and was not modified. See `loop12-remote-publication-readback.json` and `loop12-publication-snapshot-audit.md`. The initial readback accidentally used stale origin/revision-v4-jof (this clone fetches only main); it failed before receipt generation. The corrected check uses the exact FETCH_HEAD. No fetch setting or credentials were changed.
+
+Actual same-head PR query at this publication returned no issues; no other workflow PR was modified or new PR invented. Self-check 18 passed with 1,413 protected paths and no unauthorized modification/missing file, performed 198.38 seconds after its scheduled grid point; the actual delay is retained. Goal remains active until 00:31:50 UTC.
+
+
+## Verification loop 13 — five abstract result traces
+
+Seed 2026102313 fixed indices [5,4,2,3,0] before tracing. Exact original outputs support 3/48, adverse Treasury +50.79%, matched FX 360→376, W720 horizon crossings640/6625, and original unequal-window FX loss reduction12.660%. All five displays and directions PASS; twelve abstract source bindings and twenty file fingerprints match. No model, diagnostic, inference or conclusion change. Details, exact selectors, hash table and limits are in `verification-loop-013-abstract-number-trace.md`; this verifies output transcription rather than independent replication.
+
+
+## Verification loop 14 — three reference metadata checks
+
+Seed2026102314 selected Holm1979, NYFed statistics and van den Hoogen2017 before relevant source lookup. Holm author/year/volume/issue/pages match official JSTOR issue. NYFed exact metadata key agrees and its official release paragraph preserves the economic-date/public-release distinction. Delft official indexed title-page metadata agrees; direct resolver/PDF access timed out, so no full-record/body verification is claimed. No changed citation or conclusion. Source links, actual access outcomes and scope are in `verification-loop-014-references.md`.
+
+
+## Verification loop 15 — internal referee B, transport section
+
+All six main Section8 paragraphs and limited owning frozen output/protocol fields were read. Related aggregate tasks are not independent dealers; adverse loss directions, complete/failed baseline denominators and oracle simulation limits agree. No prospective result or .99 success claim is present. Twenty-two consulted source fingerprints match. PASS for this bounded textual/identity check, with no necessary conclusion change. Exact scope and limits: `verification-loop-015-referee-B-transport.md`. This is internal review, not external peer review. Self-check19 passed at21:41:57Z, 7.41s after schedule, all1,413 protected paths retained without unauthorized change.
+
+
+## Verification loop 16 — availability claims
+
+Current five availability/declaration paragraphs, package/root routing, author checklist and exact-input replay guide were checked. They separate public aggregate/doc integrity from private-input financial replay, ReportLab preview from formal TeX export, historical guide counts from current v6, and placeholders from author declarations. No necessary overclaim or conclusion correction found. Generic repository navigation is adequate with branch routing, so verified documents remain unchanged. See `verification-loop-016-availability-claims.md`; no tests, workers or new data acquisition.
+
+
+## Verification loop 17 — five transport numbers
+
+Seed2026102317 froze an18-claim frame before lookup, selecting indices[16,9,1,8,3]. The five observed quantities (negative-increment simulated rate5.032%, same-row SE.06913percentage points,706 aligned dates,192 complete procedure-cell outputs including48 references, and PEAK_POT1lower/3higher of4complete) match owning saved fields and static formatting/composition. All22 source fingerprints unchanged. No model, simulation, inference or conclusion change. Exact selectors and all failed-cell contexts are in `verification-loop-017-transport-numbers.md`.
+
+
+## Verification loop 18 — three exact-version/source references
+
+Seed2026102318 selected Liao2005, dataset and Xu2023 before lookup. Official arXivv1 date/authors/title and PMLR202 pages38707–38727 agree. Kaggle HTML was empty; bounded unauthenticated official metadata API matched exact ref, DavidLindsay,2020 update and version2. Source rights remain reserved; no observations downloaded and no redistribution right inferred. No reference/source/result/conclusion change. Actual access boundaries and source links: `verification-loop-018-references.md`.
+
+
+## Verification-note formatting
+
+A fresh diff whitespace check identified one extra blank line at EOF in four newly authored audit notes/selection files. Only those terminal blank lines were removed; no paragraph, JSON field, scientific value or literal command output was changed. Raw pytest stdout and its original whitespace are retained exactly under the earlier documented exception. Source/PDF/results are unchanged.
+
+
+## Scheduled self-check 20
+
+The exact ten-minute-grid check is retained in `self-check-020.json`; no wait interval is credited as active reading, financial computation or parallel researcher-hours. Only the authorized verification loop continues, and the six-hour goal remains active until00:31:50UTC. Current manuscript/result bytes remain those already compiled/tested and remotely byte-verified at eba48ed.
