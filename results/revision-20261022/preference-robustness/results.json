@@ -1,0 +1,4705 @@
+{
+  "groups": [
+    {
+      "dominated_methods": [
+        "SCALED_KNN",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "105760946788801400/110990640317093439",
+            "methods": [
+              "KNN",
+              "QR"
+            ]
+          },
+          {
+            "alpha": "19056123729472220/19757413338275541",
+            "methods": [
+              "KNN",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "105760946788801400/110990640317093439"
+          },
+          {
+            "left": "105760946788801400/110990640317093439",
+            "methods": [
+              "KNN"
+            ],
+            "right": "19056123729472220/19757413338275541"
+          },
+          {
+            "left": "19056123729472220/19757413338275541",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "443847.64994647214",
+          "strict_breach_count": 282,
+          "u_token": "139512.2911224875",
+          "v_token": "6226219.467602181"
+        },
+        "I": {
+          "mean_pinball": "441940.0361295025",
+          "strict_breach_count": 337,
+          "u_token": "170856.07185935092",
+          "v_token": "5592535.357262382"
+        },
+        "KNN": {
+          "mean_pinball": "436444.6925702447",
+          "strict_breach_count": 319,
+          "u_token": "151559.9001997132",
+          "v_token": "5849255.747610343"
+        },
+        "QR": {
+          "mean_pinball": "433246.30769461836",
+          "strict_breach_count": 531,
+          "u_token": "203856.83548263359",
+          "v_token": "4791646.279722329"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "466292.29114215187",
+          "strict_breach_count": 269,
+          "u_token": "118618.57669840915",
+          "v_token": "7072092.865573263"
+        },
+        "frozen_F": {
+          "mean_pinball": "442615.265176624",
+          "strict_breach_count": 332,
+          "u_token": "167398.89161864147",
+          "v_token": "5671726.362778291"
+        },
+        "frozen_K": {
+          "mean_pinball": "932433.1004686807",
+          "strict_breach_count": 514,
+          "u_token": "200445.00124226412",
+          "v_token": "14840206.985770596"
+        },
+        "frozen_S": {
+          "mean_pinball": "450773.74547576753",
+          "strict_breach_count": 255,
+          "u_token": "116495.41975954715",
+          "v_token": "6802061.934083954"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 6625,
+      "pairs": [
+        {
+          "equality_alpha": "31684205516989950/33251394553833121",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "3769637199918380/3890113290690637",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "143457318787985200/149891773223999809",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "16917467959421640/17335342247903207",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "55449310482389000/58237970532004397",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "11516849329635460/11977186756894267",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "377529985805825/405906708834704",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "80088907754005300/83388984116333567",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "16439527870120900/17019944483020253",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "1583820110318180/1652963715132369",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "120952657682157200/126388722892137577",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "105760946788801400/110990640317093439",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "24456742359258400/25115568829284481",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "17752938483205200/19336837625098027",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "19056123729472220/19757413338275541",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "57011164646273350/59142121115878961",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "22002002076399050/22913450672998853",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "1004856070604826700/1005197254028863647",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "16753463786346875/17481475584039262",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "8752290642468575/9057167610720027",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "28258389282641575/29530976079118933",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "fx_hourly",
+      "window": 720,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "I",
+        "frozen_F",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "34631329313121430/35599009063461303",
+            "methods": [
+              "QR",
+              "SCALED_KNN"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "SCALED_KNN"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "34631329313121430/35599009063461303"
+          },
+          {
+            "left": "34631329313121430/35599009063461303",
+            "methods": [
+              "SCALED_KNN"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "448339.24453073874",
+          "strict_breach_count": 338,
+          "u_token": "166121.46640001837",
+          "v_token": "5810477.029014426"
+        },
+        "I": {
+          "mean_pinball": "452727.114565427",
+          "strict_breach_count": 365,
+          "u_token": "186660.38790262645",
+          "v_token": "5507994.921158639"
+        },
+        "KNN": {
+          "mean_pinball": "410582.6188389968",
+          "strict_breach_count": 319,
+          "u_token": "145403.58722016605",
+          "v_token": "5448984.219596782"
+        },
+        "QR": {
+          "mean_pinball": "385844.8854897607",
+          "strict_breach_count": 376,
+          "u_token": "156123.0280958251",
+          "v_token": "4750560.175974538"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "426458.42063142033",
+          "strict_breach_count": 273,
+          "u_token": "107739.04057883145",
+          "v_token": "6482126.6416306095"
+        },
+        "frozen_F": {
+          "mean_pinball": "452692.9834478481",
+          "strict_breach_count": 360,
+          "u_token": "185672.2312882868",
+          "v_token": "5526087.274479514"
+        },
+        "frozen_K": {
+          "mean_pinball": "972161.8082156241",
+          "strict_breach_count": 536,
+          "u_token": "200221.33928754716",
+          "v_token": "15639030.717849087"
+        },
+        "frozen_S": {
+          "mean_pinball": "450800.94640977203",
+          "strict_breach_count": 268,
+          "u_token": "137768.09885237736",
+          "v_token": "6398425.050000272"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 6625,
+      "pairs": [
+        {
+          "equality_alpha": "7562052696394675/8075525733959877",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "33582480630809175/36501601921868521",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "28438975453491200/30394051942318043",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "58794802098584600/61630138853348701",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "1948263440943941/2106106135591531",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "361847066417500/381610198704293",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "89043012884163300/93932241789188209",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "13968480872444880/14182869689958061",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "10331424220338275/10708069686751621",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "94944083040349000/95707631877127869",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "34631329313121430/35599009063461303",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "82393243701286700/83310990163459087",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "19120787343021910/20679451157211017",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "8370159163033750/11373064990388341",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "10904222194009475/11503023849458343",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "fx_hourly",
+      "window": 2880,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "SCALED_KNN",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "32241742214205920/38133893639725449",
+            "methods": [
+              "KNN",
+              "QR"
+            ]
+          },
+          {
+            "alpha": "92050107608238600/103514765282707447",
+            "methods": [
+              "AR1_REPLAY",
+              "KNN"
+            ]
+          },
+          {
+            "alpha": "29075431634708860/30985073840047543",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "32241742214205920/38133893639725449"
+          },
+          {
+            "left": "32241742214205920/38133893639725449",
+            "methods": [
+              "KNN"
+            ],
+            "right": "92050107608238600/103514765282707447"
+          },
+          {
+            "left": "92050107608238600/103514765282707447",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "29075431634708860/30985073840047543"
+          },
+          {
+            "left": "29075431634708860/30985073840047543",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "773320.7238413277",
+          "strict_breach_count": 401,
+          "u_token": "253272.11481863228",
+          "v_token": "10654244.295272542"
+        },
+        "I": {
+          "mean_pinball": "787392.7883219462",
+          "strict_breach_count": 432,
+          "u_token": "275742.7307376604",
+          "v_token": "10508743.882423379"
+        },
+        "KNN": {
+          "mean_pinball": "836209.9179446624",
+          "strict_breach_count": 503,
+          "u_token": "367918.69156332075",
+          "v_token": "9733743.219190156"
+        },
+        "QR": {
+          "mean_pinball": "1035482.7551213254",
+          "strict_breach_count": 924,
+          "u_token": "662526.2628392972",
+          "v_token": "8121656.10847986"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "896752.699450796",
+          "strict_breach_count": 440,
+          "u_token": "277978.99320378917",
+          "v_token": "12653453.118143927"
+        },
+        "frozen_F": {
+          "mean_pinball": "787415.6197911236",
+          "strict_breach_count": 427,
+          "u_token": "269388.15695184906",
+          "v_token": "10629937.41373734"
+        },
+        "frozen_K": {
+          "mean_pinball": "1205807.9835790717",
+          "strict_breach_count": 732,
+          "u_token": "476771.62504754716",
+          "v_token": "15057498.795678038"
+        },
+        "frozen_S": {
+          "mean_pinball": "755301.2981745125",
+          "strict_breach_count": 289,
+          "u_token": "157790.00455169813",
+          "v_token": "12108015.877007985"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 6625,
+      "pairs": [
+        {
+          "equality_alpha": "3637510321229075/4199275719204778",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "92050107608238600/103514765282707447",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "63314704669817050/73546058370333673",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "1215344076760100/2021146183420939",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "29075431634708860/30985073840047543",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "15500013264664460/17343532481177667",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "11935438869717595/13869356530225779",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "6059676565698050/6377405254988617",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "159927199458460600/171722472077056827",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "32241742214205920/38133893639725449",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "20855070706812650/21497497123666447",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "6893801496516800/7651728685835813",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "118713632890891450/129220067241472581",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "453179700966406700/491634427929957503",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "125414065262874000/145070970557246407",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "13338159013842650/13695379471134477",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "132878658950937500/149703200893857469",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "147807846327064500/158967661567079593",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "fx_hourly",
+      "window": 720,
+      "winners_at_095": [
+        "frozen_S"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "SCALED_KNN",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "335769696945034900/350844274558596259",
+            "methods": [
+              "QR",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "335769696945034900/350844274558596259"
+          },
+          {
+            "left": "335769696945034900/350844274558596259",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "798456.5312134775",
+          "strict_breach_count": 444,
+          "u_token": "311237.11965039873",
+          "v_token": "10055625.350911975"
+        },
+        "I": {
+          "mean_pinball": "763582.8786524369",
+          "strict_breach_count": 359,
+          "u_token": "245251.2808339623",
+          "v_token": "10611883.237203455"
+        },
+        "KNN": {
+          "mean_pinball": "769767.987405138",
+          "strict_breach_count": 456,
+          "u_token": "297210.11124781886",
+          "v_token": "9748367.6343942"
+        },
+        "QR": {
+          "mean_pinball": "734695.0685732415",
+          "strict_breach_count": 531,
+          "u_token": "317678.11539357586",
+          "v_token": "8658017.178986888"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "848004.1997279915",
+          "strict_breach_count": 395,
+          "u_token": "262752.1991466762",
+          "v_token": "11967792.210772982"
+        },
+        "frozen_F": {
+          "mean_pinball": "763381.1758251915",
+          "strict_breach_count": 357,
+          "u_token": "242912.4195328302",
+          "v_token": "10652287.545380058"
+        },
+        "frozen_K": {
+          "mean_pinball": "1240039.373938015",
+          "strict_breach_count": 592,
+          "u_token": "474874.97351396224",
+          "v_token": "15778162.981995018"
+        },
+        "frozen_S": {
+          "mean_pinball": "759371.429716926",
+          "strict_breach_count": 292,
+          "u_token": "166932.33925796227",
+          "v_token": "12015714.148437237"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 6625,
+      "pairs": [
+        {
+          "equality_alpha": "55625788629148000/62224372510791643",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "139760817192508700/140404916766826413",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "191216685986100700/196065178036472953",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "59666219446808300/66498689458565153",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "98004439876263100/105219678895884923",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "21587890070231375/22886860830577789",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "2123767454583225/2202492274756718",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "404043081766030/427431694777351",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "140383091123378200/148214985280978203",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "1090350455407312/1110818459553069",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "110971228818939100/112694124423996233",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "45195995549292900/47910880135042333",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "226734651404303700/239762428603289359",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "4472668961873100/4546893173017559",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "99713518319658500/103451803112695783",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "335769696945034900/350844274558596259",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "4792193766425500/14374179755296893",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "136342660305717900/143940668333204693",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "fx_hourly",
+      "window": 2880,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "SCALED_KNN",
+        "frozen_K",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "3320065684462664/4624714213835193",
+            "methods": [
+              "AR1_REPLAY",
+              "QR"
+            ]
+          },
+          {
+            "alpha": "156305902436775700/160668673434229883",
+            "methods": [
+              "AR1_REPLAY",
+              "KNN",
+              "frozen_F"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "KNN",
+              "frozen_F"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "3320065684462664/4624714213835193"
+          },
+          {
+            "left": "3320065684462664/4624714213835193",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "156305902436775700/160668673434229883"
+          },
+          {
+            "left": "156305902436775700/160668673434229883",
+            "methods": [
+              "KNN",
+              "frozen_F"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "2411.987342682572",
+          "strict_breach_count": 22,
+          "u_token": "1101.4684354854905",
+          "v_token": "27311.84657942712"
+        },
+        "I": {
+          "mean_pinball": "2723.6225631768957",
+          "strict_breach_count": 14,
+          "u_token": "808.0938628158844",
+          "v_token": "39118.6678700361"
+        },
+        "KNN": {
+          "mean_pinball": "2779.053610108303",
+          "strict_breach_count": 11,
+          "u_token": "665.1913357400722",
+          "v_token": "42942.43682310469"
+        },
+        "QR": {
+          "mean_pinball": "5095.519389384495",
+          "strict_breach_count": 84,
+          "u_token": "4363.089758916813",
+          "v_token": "19011.68236827046"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "4208.2930419678505",
+          "strict_breach_count": 9,
+          "u_token": "723.7672869101426",
+          "v_token": "70414.2823880643"
+        },
+        "frozen_F": {
+          "mean_pinball": "2779.053610108303",
+          "strict_breach_count": 11,
+          "u_token": "665.1913357400722",
+          "v_token": "42942.43682310469"
+        },
+        "frozen_K": {
+          "mean_pinball": "2574.0981949458483",
+          "strict_breach_count": 28,
+          "u_token": "1259.4079422382672",
+          "v_token": "27553.21299638989"
+        },
+        "frozen_S": {
+          "mean_pinball": "2786.619855595668",
+          "strict_breach_count": 11,
+          "u_token": "672.8231046931407",
+          "v_token": "42948.75812274368"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 277,
+      "pairs": [
+        {
+          "equality_alpha": "118068212906089800/121001958632785861",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "156305902436775700/160668673434229883",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "3320065684462664/4624714213835193",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "143674786028790600/144933789857375093",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "156305902436775700/160668673434229883",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "78184557716582800/80327784370544549",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "19118844765342950/19833357400722011",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "100534927508828200/118309906989332843",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "156478072590141000/156899705469669709",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "19118844765342950/19833357400722011",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "28913637184115525/30041922382671482",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "38300902527075800/39653610108303237",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "59826886137085575/69071632195027427",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "identical",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "1025948255114320/1065562695547533",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "32126625012371150/34401201557375319",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "59826886137085575/69071632195027427",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "42707653140597150/58226062223989879",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "239370757544732200/276273424086968923",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "214305346958372050/216983550235012673",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "1025948255114320/1065562695547533",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "30791090252707580/31964259927797833",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "nyfed_weekly",
+      "window": 52,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "I",
+        "KNN",
+        "QR",
+        "SCALED_KNN",
+        "frozen_F",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "AR1_REPLAY"
+            ]
+          },
+          {
+            "alpha": "8679397304452847/9039550431967810",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_K"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "8679397304452847/9039550431967810"
+          },
+          {
+            "left": "8679397304452847/9039550431967810",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "2195.933728660255",
+          "strict_breach_count": 31,
+          "u_token": "1093.1314668651435",
+          "v_token": "23149.17670276737"
+        },
+        "I": {
+          "mean_pinball": "2847.965523465704",
+          "strict_breach_count": 32,
+          "u_token": "1557.4981949458484",
+          "v_token": "27366.84476534296"
+        },
+        "KNN": {
+          "mean_pinball": "2663.561371841155",
+          "strict_breach_count": 28,
+          "u_token": "1146.6462093862815",
+          "v_token": "31484.949458483756"
+        },
+        "QR": {
+          "mean_pinball": "4159.673194735081",
+          "strict_breach_count": 54,
+          "u_token": "3131.8618827941245",
+          "v_token": "23688.08812161324"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "3127.1727195733806",
+          "strict_breach_count": 23,
+          "u_token": "1103.2049271550798",
+          "v_token": "41582.560775521095"
+        },
+        "frozen_F": {
+          "mean_pinball": "2758.665342960289",
+          "strict_breach_count": 28,
+          "u_token": "1395.6389891696751",
+          "v_token": "28656.16606498195"
+        },
+        "frozen_K": {
+          "mean_pinball": "2287.758122743682",
+          "strict_breach_count": 29,
+          "u_token": "732.9783393501805",
+          "v_token": "31828.574007220217"
+        },
+        "frozen_S": {
+          "mean_pinball": "2707.243501805054",
+          "strict_breach_count": 28,
+          "u_token": "1322.7472924187725",
+          "v_token": "29012.671480144403"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 277,
+      "pairs": [
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "8679397304452847/9039550431967810",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "41181046931407960/45289566787003629",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "36787566437297200/52531203315779961",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "71078580050890675/73350046389844518",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "12893212996389900/14511805054151633",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "44617292418772570/52862490974729249",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "16458267148014430/18805776173285189",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "7796861336870516/9782077010278359",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "100976113170373390/101410525992685407",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "7071958483754515/7694440433212999",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "343624548736461/757292418772562",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "2472277978339353/2648379061371844",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "19882747393230950/22136810677274333",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "24840389716843550/33521504184965797",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "8140485885606977/10539369429050921",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "5324583358531163/7133697948906515",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "129263947105391450/132188287725537403",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "125698892953766920/127894316606403847",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "15862039711191335/19175342960288808",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "1782527075812265/2146985559566778",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "42665189804179/51601083032491",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "nyfed_weekly",
+      "window": 260,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "KNN",
+        "SCALED_KNN",
+        "frozen_F"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "5759715075028296/13586893226278237",
+            "methods": [
+              "QR",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "117611155234657025/130987328519855581",
+            "methods": [
+              "frozen_K",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "5759715075028296/13586893226278237"
+          },
+          {
+            "left": "5759715075028296/13586893226278237",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "117611155234657025/130987328519855581"
+          },
+          {
+            "left": "117611155234657025/130987328519855581",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "4935.279645669943",
+          "strict_breach_count": 56,
+          "u_token": "4219.522098644922",
+          "v_token": "18534.673039145346"
+        },
+        "I": {
+          "mean_pinball": "3946.5575812274365",
+          "strict_breach_count": 37,
+          "u_token": "2197.516245487365",
+          "v_token": "37178.342960288806"
+        },
+        "KNN": {
+          "mean_pinball": "3715.693140794224",
+          "strict_breach_count": 33,
+          "u_token": "1839.4548736462093",
+          "v_token": "39364.220216606496"
+        },
+        "QR": {
+          "mean_pinball": "12165.57410365444",
+          "strict_breach_count": 132,
+          "u_token": "12275.22147254958",
+          "v_token": "10082.274094646795"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "5625.666898721925",
+          "strict_breach_count": 32,
+          "u_token": "2748.3101333017153",
+          "v_token": "60295.44544170591"
+        },
+        "frozen_F": {
+          "mean_pinball": "3715.693140794224",
+          "strict_breach_count": 33,
+          "u_token": "1839.4548736462093",
+          "v_token": "39364.220216606496"
+        },
+        "frozen_K": {
+          "mean_pinball": "5017.740613718412",
+          "strict_breach_count": 70,
+          "u_token": "4448.043321299639",
+          "v_token": "15841.989169675091"
+        },
+        "frozen_S": {
+          "mean_pinball": "3652.3792418772564",
+          "strict_breach_count": 33,
+          "u_token": "1772.8086642599278",
+          "v_token": "39364.220216606496"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 277,
+      "pairs": [
+        {
+          "equality_alpha": "31653089849140/35086036968253",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "208295471774611500/232096144024598627",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "1207485563499793/2358299759771887",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "417607724025605640/432319843679037707",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "208295471774611500/232096144024598627",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "2692683869470255/2921205092124972",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "104147735887305750/116381303059230721",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "21858772563176900/25439386281588457",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "27096068865642011/37173774092704226",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "21858772563176900/25439386281588457",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "3048050541516245/3369554409489427",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "5464693140794225/6526462093862818",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "292819461219597010/397177127208630717",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "identical",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "235222310469314050/261308194945848347",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "0/1",
+          "left": "KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "502131713470591150/597400826863069797",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "292819461219597010/397177127208630717",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "5759715075028296/13586893226278237",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "146409730609798505/198921794651246766",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "444534562720308190/461531894600287427",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "235222310469314050/261308194945848347",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "0/1",
+          "left": "frozen_F",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "117611155234657025/130987328519855581",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "nyfed_weekly",
+      "window": 52,
+      "winners_at_095": [
+        "frozen_S"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "I",
+        "QR",
+        "SCALED_KNN",
+        "frozen_F"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "3813577886766790/4899469998019859",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "91333672611602885/94156776268488263",
+            "methods": [
+              "AR1_REPLAY",
+              "KNN"
+            ]
+          },
+          {
+            "alpha": "240827075812274250/241875451263537787",
+            "methods": [
+              "KNN",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_F",
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "3813577886766790/4899469998019859"
+          },
+          {
+            "left": "3813577886766790/4899469998019859",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "91333672611602885/94156776268488263"
+          },
+          {
+            "left": "91333672611602885/94156776268488263",
+            "methods": [
+              "KNN"
+            ],
+            "right": "240827075812274250/241875451263537787"
+          },
+          {
+            "left": "240827075812274250/241875451263537787",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "1881.016326092915",
+          "strict_breach_count": 59,
+          "u_token": "892.4366158536099",
+          "v_token": "20664.030820639713"
+        },
+        "I": {
+          "mean_pinball": "2538.6648014440434",
+          "strict_breach_count": 15,
+          "u_token": "489.1913357400722",
+          "v_token": "41478.660649819496"
+        },
+        "KNN": {
+          "mean_pinball": "2257.963357400722",
+          "strict_breach_count": 13,
+          "u_token": "327.8158844765343",
+          "v_token": "38930.76534296029"
+        },
+        "QR": {
+          "mean_pinball": "5204.759632250341",
+          "strict_breach_count": 84,
+          "u_token": "4087.0834137973834",
+          "v_token": "26440.60778285654"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "4137.26449184373",
+          "strict_breach_count": 8,
+          "u_token": "546.3353383620788",
+          "v_token": "72364.9184079951"
+        },
+        "frozen_F": {
+          "mean_pinball": "2480.3063176895307",
+          "strict_breach_count": 12,
+          "u_token": "306.84837545126356",
+          "v_token": "43776.007220216605"
+        },
+        "frozen_K": {
+          "mean_pinball": "2301.475631768953",
+          "strict_breach_count": 67,
+          "u_token": "1435.3826714801444",
+          "v_token": "18757.241877256318"
+        },
+        "frozen_S": {
+          "mean_pinball": "2478.871299638989",
+          "strict_breach_count": 12,
+          "u_token": "306.84837545126356",
+          "v_token": "43747.306859205775"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 277,
+      "pairs": [
+        {
+          "equality_alpha": "208146298291797830/212178751092933207",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "91333672611602885/94156776268488263",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "517008875873553870/520469888648469181",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "1155598819978844600/1184878231998961917",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "3813577886766790/4899469998019859",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "1154163801928303100/1183443213948420417",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "18797566083703695/23294931181275334",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "57433664259927725/61992238267147941",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "113607093862815890/118338050541516251",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "56716155234656975/61274729241877191",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "124901575601037500/162494250894245991",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "242262093862815750/243310469314079287",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "201735234657039720/212810902527075821",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "240827075812274250/241875451263537787",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "229621553125692800/247325293502869323",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "433384985934001625/527890861892654621",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "432667476908730875/527173352867383871",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "134019191326846955/136241809659642119",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "625469133574007175/653682490974729196",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "1/1",
+          "left": "frozen_F",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "624751624548736425/652964981949458446",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "full",
+      "source": "nyfed_weekly",
+      "window": 260,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "35228646474289300/37058573227618587",
+            "methods": [
+              "KNN",
+              "QR"
+            ]
+          },
+          {
+            "alpha": "128015277909259100/130046193358911709",
+            "methods": [
+              "KNN",
+              "SCALED_KNN"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "SCALED_KNN"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "35228646474289300/37058573227618587"
+          },
+          {
+            "left": "35228646474289300/37058573227618587",
+            "methods": [
+              "KNN"
+            ],
+            "right": "128015277909259100/130046193358911709"
+          },
+          {
+            "left": "128015277909259100/130046193358911709",
+            "methods": [
+              "SCALED_KNN"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "441437.6630198493",
+          "strict_breach_count": 39,
+          "u_token": "134200.3532788027",
+          "v_token": "6278946.548099733"
+        },
+        "I": {
+          "mean_pinball": "441070.0431339282",
+          "strict_breach_count": 50,
+          "u_token": "166627.18557866948",
+          "v_token": "5655484.336683844"
+        },
+        "KNN": {
+          "mean_pinball": "414221.8779612049",
+          "strict_breach_count": 44,
+          "u_token": "126388.96426779302",
+          "v_token": "5883047.23813603"
+        },
+        "QR": {
+          "mean_pinball": "413531.82071965554",
+          "strict_breach_count": 77,
+          "u_token": "181286.76686767163",
+          "v_token": "4826187.843907351"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "458935.82014413463",
+          "strict_breach_count": 37,
+          "u_token": "106079.80977126693",
+          "v_token": "7163200.017228621"
+        },
+        "frozen_F": {
+          "mean_pinball": "441547.87435291446",
+          "strict_breach_count": 50,
+          "u_token": "163017.43513548048",
+          "v_token": "5733626.21948416"
+        },
+        "frozen_K": {
+          "mean_pinball": "931196.6944408342",
+          "strict_breach_count": 74,
+          "u_token": "198054.47513199577",
+          "v_token": "14860898.861308765"
+        },
+        "frozen_S": {
+          "mean_pinball": "456350.7342811774",
+          "strict_breach_count": 42,
+          "u_token": "119286.45198416049",
+          "v_token": "6860572.097924498"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 947,
+      "pairs": [
+        {
+          "equality_alpha": "31173110570794450/32794452185787789",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "145275870419238200/149984511778125093",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "88425346912888800/91237401263642377",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "27266016430778650/28706870523612539",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "58162554982476500/59653945111940721",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "3792715024203100/4463352046051041",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "5528643285176620/5626373827103301",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "2741301237354140/2851387375185781",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "78141882800316/81751633243505",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "120508776124065400/125242849483516299",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "35228646474289300/37058573227618587",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "128015277909259100/130046193358911709",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "7471050932593500/9302474475977873",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "97752485978846800/98462737207210053",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "23370121733212700/24122191304176747",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "18148767511536180/18514154146180003",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "101719212700857350/104819228445032907",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "28591475954889220/29730228462173491",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "7565697982603075/7895864037925414",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "112694587844033800/117067686159165799",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "fx_hourly",
+      "window": 720,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "I",
+        "frozen_F",
+        "frozen_K",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "59571292631784500/60902063609752461",
+            "methods": [
+              "QR",
+              "SCALED_KNN"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "SCALED_KNN"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "59571292631784500/60902063609752461"
+          },
+          {
+            "left": "59571292631784500/60902063609752461",
+            "methods": [
+              "SCALED_KNN"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "445085.47579864186",
+          "strict_breach_count": 49,
+          "u_token": "160107.23208710353",
+          "v_token": "5859672.10631787"
+        },
+        "I": {
+          "mean_pinball": "448493.3069318902",
+          "strict_breach_count": 49,
+          "u_token": "179105.9383938754",
+          "v_token": "5566853.3091541715"
+        },
+        "KNN": {
+          "mean_pinball": "398680.54151307815",
+          "strict_breach_count": 39,
+          "u_token": "130863.27033896514",
+          "v_token": "5487208.693821225"
+        },
+        "QR": {
+          "mean_pinball": "368477.24427347985",
+          "strict_breach_count": 50,
+          "u_token": "135259.52041646946",
+          "v_token": "4799613.997556677"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "419907.21034906973",
+          "strict_breach_count": 33,
+          "u_token": "95336.39107743063",
+          "v_token": "6586752.776510212"
+        },
+        "frozen_F": {
+          "mean_pinball": "448537.48890444037",
+          "strict_breach_count": 49,
+          "u_token": "178192.65409081313",
+          "v_token": "5585089.350363358"
+        },
+        "frozen_K": {
+          "mean_pinball": "972548.0526551954",
+          "strict_breach_count": 76,
+          "u_token": "200126.54220696937",
+          "v_token": "15648556.751171488"
+        },
+        "frozen_S": {
+          "mean_pinball": "451266.1902650106",
+          "strict_breach_count": 40,
+          "u_token": "135300.84683949314",
+          "v_token": "6454607.715349842"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 947,
+      "pairs": [
+        {
+          "equality_alpha": "29281879716369850/31181750347047037",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "7270806701923420/7918515112020149",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "343228444943140/365835222447777",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "59493560903197200/61974199427958239",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "101989946735604050/110366901467248527",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "1823604120918650/1914932551224877",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "44387720309783525/46577974887502638",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "4297466851653425/4324943414637827",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "109954408268898700/113507096195052151",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "59571292631784500/60902063609752461",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "2003326852293708/2169039378320473",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "13214506116037000/17210951692243251",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "86951836498648400/91241017223780399",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "fx_hourly",
+      "window": 2880,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "SCALED_KNN",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "7530906001239450/9350542730727077",
+            "methods": [
+              "KNN",
+              "QR"
+            ]
+          },
+          {
+            "alpha": "18652943561940400/20490003118958463",
+            "methods": [
+              "AR1_REPLAY",
+              "KNN"
+            ]
+          },
+          {
+            "alpha": "11935316416561250/12439911923115111",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "7530906001239450/9350542730727077"
+          },
+          {
+            "left": "7530906001239450/9350542730727077",
+            "methods": [
+              "KNN"
+            ],
+            "right": "18652943561940400/20490003118958463"
+          },
+          {
+            "left": "18652943561940400/20490003118958463",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "11935316416561250/12439911923115111"
+          },
+          {
+            "left": "11935316416561250/12439911923115111",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "733781.2067051122",
+          "strict_breach_count": 14,
+          "u_token": "205994.67418268972",
+          "v_token": "10761725.32463114"
+        },
+        "I": {
+          "mean_pinball": "743610.3896020943",
+          "strict_breach_count": 14,
+          "u_token": "227409.95769811317",
+          "v_token": "10551418.595777737"
+        },
+        "KNN": {
+          "mean_pinball": "782534.7707693207",
+          "strict_breach_count": 15,
+          "u_token": "316218.2476037735",
+          "v_token": "9642548.710914716"
+        },
+        "QR": {
+          "mean_pinball": "1052956.6893595755",
+          "strict_breach_count": 33,
+          "u_token": "680145.5935012989",
+          "v_token": "8136367.510666826"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "826705.4707829293",
+          "strict_breach_count": 11,
+          "u_token": "186659.62405574383",
+          "v_token": "12987576.558599453"
+        },
+        "frozen_F": {
+          "mean_pinball": "743220.2522096416",
+          "strict_breach_count": 14,
+          "u_token": "220548.10747169814",
+          "v_token": "10673991.002230566"
+        },
+        "frozen_K": {
+          "mean_pinball": "1226759.106838868",
+          "strict_breach_count": 29,
+          "u_token": "497176.01467924536",
+          "v_token": "15088837.857871698"
+        },
+        "frozen_S": {
+          "mean_pinball": "747869.2174573396",
+          "strict_breach_count": 10,
+          "u_token": "145443.2133962264",
+          "v_token": "12193963.29461849"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 265,
+      "pairs": [
+        {
+          "equality_alpha": "4206134577068060/4634440247376529",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "18652943561940400/20490003118958463",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "131267890698215700/154975436664146159",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "222585123396831300/224518628409525889",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "4386716120028700/5114387784479121",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "11935316416561250/12439911923115111",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "90886988486302100/99767817476868133",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "241505108511091100/286778672091409673",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "121807898141085800/123845414823204267",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "12257240645282900/12943425667924403",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "164254469884075300/172451144314263977",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "7530906001239450/9350542730727077",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "334502784768473700/347458647123276667",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "12893028641448125/14088905393099067",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "8504715279012580/9073965393037737",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "485120904793262700/534469501737818207",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "63440587289093500/74930524439833519",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "347623517360243600/356771996301346277",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "8115191567903328/9184596328113473",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "231358555636888700/234747403978484131",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "75998614619396200/79753859323169787",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "fx_hourly",
+      "window": 720,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "SCALED_KNN",
+        "frozen_K"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "578937865306180/598942665753459",
+            "methods": [
+              "QR",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "578937865306180/598942665753459"
+          },
+          {
+            "left": "578937865306180/598942665753459",
+            "methods": [
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "804854.9364332171",
+          "strict_breach_count": 20,
+          "u_token": "312337.68496507476",
+          "v_token": "10162682.714327922"
+        },
+        "I": {
+          "mean_pinball": "726249.5221585095",
+          "strict_breach_count": 14,
+          "u_token": "204960.94452830194",
+          "v_token": "10630732.497132452"
+        },
+        "KNN": {
+          "mean_pinball": "712855.1483388867",
+          "strict_breach_count": 16,
+          "u_token": "244314.63390566033",
+          "v_token": "9615124.92257019"
+        },
+        "QR": {
+          "mean_pinball": "682311.3751453188",
+          "strict_breach_count": 21,
+          "u_token": "260271.6204055389",
+          "v_token": "8701066.715201138"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "786131.2520751061",
+          "strict_breach_count": 12,
+          "u_token": "208609.13489056888",
+          "v_token": "11759051.478581313"
+        },
+        "frozen_F": {
+          "mean_pinball": "725941.6898066226",
+          "strict_breach_count": 13,
+          "u_token": "202485.89688679244",
+          "v_token": "10671601.755283395"
+        },
+        "frozen_K": {
+          "mean_pinball": "1243337.330448302",
+          "strict_breach_count": 24,
+          "u_token": "476948.26686792454",
+          "v_token": "15804729.538475472"
+        },
+        "frozen_S": {
+          "mean_pinball": "739976.9056196037",
+          "strict_breach_count": 10,
+          "u_token": "144243.7778113207",
+          "v_token": "12058906.333976982"
+        }
+      },
+      "native_unit": "USD",
+      "origin_count": 265,
+      "pairs": [
+        {
+          "equality_alpha": "23402489140226500/28771326162065141",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "39909219106334775/42502432858197422",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "12722976023886825/15469270725843883",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "94811180982453000/103215876340140703",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "101560757456226200/105496126393962039",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "24120822274141425/24812205722606887",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "81738516301886/86688611584905",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "35704345921113250/37222275089037781",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "91405820736905200/93001519386893057",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "42878531120222460/43592641100524289",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "35215894423773500/36610185657735763",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "244378141140679200/254385226750113163",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "152899238169008750/155482362444757251",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "98526752004112850/101416038180050173",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "578937865306180/598942665753459",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "4997580923261150/6070336874581953",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "69365228934679350/72277334888452937",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_K",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "fx_hourly",
+      "window": 2880,
+      "winners_at_095": [
+        "QR"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "AR1_REPLAY",
+        "I",
+        "SCALED_KNN",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "1315902266754605/2037515146643951",
+            "methods": [
+              "QR",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "679337/682434",
+            "methods": [
+              "KNN",
+              "frozen_F",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "KNN",
+              "frozen_F"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "1315902266754605/2037515146643951"
+          },
+          {
+            "left": "1315902266754605/2037515146643951",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "679337/682434"
+          },
+          {
+            "left": "679337/682434",
+            "methods": [
+              "KNN",
+              "frozen_F"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "2304.669623173043",
+          "strict_breach_count": 2,
+          "u_token": "916.7917720724156",
+          "v_token": "28674.348794084963"
+        },
+        "I": {
+          "mean_pinball": "3148.69375",
+          "strict_breach_count": 3,
+          "u_token": "1126.0",
+          "v_token": "41579.875"
+        },
+        "KNN": {
+          "mean_pinball": "2996.03375",
+          "strict_breach_count": 2,
+          "u_token": "772.65",
+          "v_token": "45240.325"
+        },
+        "QR": {
+          "mean_pinball": "5938.838985342891",
+          "strict_breach_count": 13,
+          "u_token": "5179.752279336076",
+          "v_token": "20361.48639947237"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "4765.795080779926",
+          "strict_breach_count": 1,
+          "u_token": "1121.0732539059754",
+          "v_token": "74015.50979138499"
+        },
+        "frozen_F": {
+          "mean_pinball": "2996.03375",
+          "strict_breach_count": 2,
+          "u_token": "772.65",
+          "v_token": "45240.325"
+        },
+        "frozen_K": {
+          "mean_pinball": "2220.4162499999998",
+          "strict_breach_count": 3,
+          "u_token": "850.075",
+          "v_token": "28256.9"
+        },
+        "frozen_S": {
+          "mean_pinball": "3046.24125",
+          "strict_breach_count": 2,
+          "u_token": "825.5",
+          "v_token": "45240.325"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 40,
+      "pairs": [
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "82829881029575185/83550589889937263",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "41564311973062965/62879114509381267",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "82829881029575185/83550589889937263",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "82829881029575185/83286339889937263",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "73209/80276",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "10609194300263815/12636070439931853",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "162178173956924950/162202807687395073",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "73209/80276",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "73209/79219",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "12439419300263815/14642970439931853",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "identical",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "679337/682434",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "0/1",
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "268270116959563100/288563512086713603",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "12439419300263815/14642970439931853",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "1315902266754605/2037515146643951",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "12439419300263815/14616545439931853",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "679337/682434",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "0/1",
+          "left": "frozen_F",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "679337/680320",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "nyfed_weekly",
+      "window": 52,
+      "winners_at_095": [
+        "frozen_K"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "I",
+        "KNN",
+        "QR",
+        "SCALED_KNN",
+        "frozen_F",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "AR1_REPLAY"
+            ]
+          },
+          {
+            "alpha": "39729652848099850/42395294149611417",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "frozen_K"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "39729652848099850/42395294149611417"
+          },
+          {
+            "left": "39729652848099850/42395294149611417",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 6,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "2260.250318806199",
+          "strict_breach_count": 4,
+          "u_token": "1089.2782603023134",
+          "v_token": "24508.71943038003"
+        },
+        "I": {
+          "mean_pinball": "3474.2300000000005",
+          "strict_breach_count": 4,
+          "u_token": "2109.475",
+          "v_token": "29404.575"
+        },
+        "KNN": {
+          "mean_pinball": "2619.8175",
+          "strict_breach_count": 4,
+          "u_token": "1027.0",
+          "v_token": "32883.35"
+        },
+        "QR": {
+          "mean_pinball": "4056.363080516243",
+          "strict_breach_count": 7,
+          "u_token": "2950.2442137729186",
+          "v_token": "25072.6215486394"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "3341.532313549741",
+          "strict_breach_count": 3,
+          "u_token": "1288.2212150631926",
+          "v_token": "42354.44318479415"
+        },
+        "frozen_F": {
+          "mean_pinball": "3361.7974999999997",
+          "strict_breach_count": 4,
+          "u_token": "1925.625",
+          "v_token": "30649.075"
+        },
+        "frozen_K": {
+          "mean_pinball": "2151.075",
+          "strict_breach_count": 3,
+          "u_token": "556.15",
+          "v_token": "32454.65"
+        },
+        "frozen_S": {
+          "mean_pinball": "3205.30125",
+          "strict_breach_count": 4,
+          "u_token": "1742.725",
+          "v_token": "30994.25"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 40,
+      "pairs": [
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "41873152848099850/42184544149611417",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "39729652848099850/42395294149611417",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "139151/182450",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "21659767256803000/25863613325667593",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "64749340923970750/68855609848654787",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "24890/28567",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "122003/184136",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "63587/78257",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "39053642256803000/48669863325667593",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "89371/125316",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "8396/11577",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "8640910818077375/9471922317432238",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "9294089085601000/11001787775222531",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "36910142256803000/48880613325667593",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "29608142256803000/35645738325667593",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "58526840923970750/61713859848654787",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "56800965923970750/59073484848654787",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "72223/127002",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "13807/21123",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "16/29",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "nyfed_weekly",
+      "window": 260,
+      "winners_at_095": [
+        "frozen_K"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "I",
+        "SCALED_KNN"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "QR"
+            ]
+          },
+          {
+            "alpha": "8631914270543611/12443891775419019",
+            "methods": [
+              "QR",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "2529092855837558/2690148205992001",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "37657795243316428/38019573842698655",
+            "methods": [
+              "AR1_REPLAY",
+              "KNN",
+              "frozen_F",
+              "frozen_S"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "KNN",
+              "frozen_F",
+              "frozen_S"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "QR"
+            ],
+            "right": "8631914270543611/12443891775419019"
+          },
+          {
+            "left": "8631914270543611/12443891775419019",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "2529092855837558/2690148205992001"
+          },
+          {
+            "left": "2529092855837558/2690148205992001",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "37657795243316428/38019573842698655"
+          },
+          {
+            "left": "37657795243316428/38019573842698655",
+            "methods": [
+              "KNN",
+              "frozen_F",
+              "frozen_S"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "4688.474953623647",
+          "strict_breach_count": 2,
+          "u_token": "3816.722633024447",
+          "v_token": "21251.76904500845"
+        },
+        "I": {
+          "mean_pinball": "6031.745833333333",
+          "strict_breach_count": 5,
+          "u_token": "4340.333333333333",
+          "v_token": "38168.583333333336"
+        },
+        "KNN": {
+          "mean_pinball": "5458.075",
+          "strict_breach_count": 5,
+          "u_token": "3635.8333333333335",
+          "v_token": "40080.666666666664"
+        },
+        "QR": {
+          "mean_pinball": "7931.35374943779",
+          "strict_breach_count": 6,
+          "u_token": "7950.810838208741",
+          "v_token": "7561.669062789723"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "6905.501176435253",
+          "strict_breach_count": 2,
+          "u_token": "4129.051729586201",
+          "v_token": "59658.04066656724"
+        },
+        "frozen_F": {
+          "mean_pinball": "5458.075",
+          "strict_breach_count": 5,
+          "u_token": "3635.8333333333335",
+          "v_token": "40080.666666666664"
+        },
+        "frozen_K": {
+          "mean_pinball": "4741.570833333333",
+          "strict_breach_count": 3,
+          "u_token": "4138.833333333333",
+          "v_token": "16193.583333333334"
+        },
+        "frozen_S": {
+          "mean_pinball": "5458.075",
+          "strict_breach_count": 5,
+          "u_token": "3635.8333333333335",
+          "v_token": "40080.666666666664"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 12,
+      "pairs": [
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "I"
+        },
+        {
+          "equality_alpha": "37657795243316428/38019573842698655",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "13690099982218727/17824188187403021",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "37657795243316428/38019573842698655",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "2529092855837558/2690148205992001",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "37657795243316428/38019573842698655",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "3824166666666656/5233166666666655",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "10202304756847871/11405797258473007",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": "5372364333308476/5425184734245259",
+          "left": "I",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "3824166666666656/5233166666666655",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "3824166666666656/5233166666666655",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "65037995207753882/73667950217504697",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "identical",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "15924722222222220/16260055555555553",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "identical",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "52096371603777517/55918130712400057",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "65037995207753882/73667950217504697",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "8631914270543611/12443891775419019",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "65037995207753882/73667950217504697",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "21732228666616953/21737119468490519",
+          "left": "SCALED_KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "15924722222222220/16260055555555553",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "identical",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "15924722222222220/16260055555555553",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "nyfed_weekly",
+      "window": 52,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    },
+    {
+      "dominated_methods": [
+        "I",
+        "KNN",
+        "QR",
+        "SCALED_KNN",
+        "frozen_F",
+        "frozen_S"
+      ],
+      "frontier": {
+        "points": [
+          {
+            "alpha": "0/1",
+            "methods": [
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "19956537365855950/27652346249496953",
+            "methods": [
+              "AR1_REPLAY",
+              "frozen_K"
+            ]
+          },
+          {
+            "alpha": "1/1",
+            "methods": [
+              "AR1_REPLAY"
+            ]
+          }
+        ],
+        "regions": [
+          {
+            "left": "0/1",
+            "methods": [
+              "frozen_K"
+            ],
+            "right": "19956537365855950/27652346249496953"
+          },
+          {
+            "left": "19956537365855950/27652346249496953",
+            "methods": [
+              "AR1_REPLAY"
+            ],
+            "right": "1/1"
+          }
+        ]
+      },
+      "horizon": 24,
+      "methods": {
+        "AR1_REPLAY": {
+          "mean_pinball": "1721.1516762167178",
+          "strict_breach_count": 3,
+          "u_token": "726.3357783025664",
+          "v_token": "20622.653736585595"
+        },
+        "I": {
+          "mean_pinball": "2707.1833333333334",
+          "strict_breach_count": 2,
+          "u_token": "809.25",
+          "v_token": "38767.916666666664"
+        },
+        "KNN": {
+          "mean_pinball": "3111.7875",
+          "strict_breach_count": 2,
+          "u_token": "1317.9166666666667",
+          "v_token": "37195.333333333336"
+        },
+        "QR": {
+          "mean_pinball": "4638.399489015622",
+          "strict_breach_count": 4,
+          "u_token": "3108.6417032526406",
+          "v_token": "33703.79741851226"
+        },
+        "SCALED_KNN": {
+          "mean_pinball": "6001.758929488856",
+          "strict_breach_count": 1,
+          "u_token": "2473.5452449646677",
+          "v_token": "73037.8189354484"
+        },
+        "frozen_F": {
+          "mean_pinball": "2807.4",
+          "strict_breach_count": 2,
+          "u_token": "793.1666666666666",
+          "v_token": "41077.833333333336"
+        },
+        "frozen_K": {
+          "mean_pinball": "2352.4708333333333",
+          "strict_breach_count": 3,
+          "u_token": "1495.9166666666667",
+          "v_token": "18627.0"
+        },
+        "frozen_S": {
+          "mean_pinball": "2807.4",
+          "strict_breach_count": 2,
+          "u_token": "793.1666666666666",
+          "v_token": "41077.833333333336"
+        }
+      },
+      "native_unit": "USD millions",
+      "origin_count": 12,
+      "pairs": [
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "I"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "19956537365855950/27652346249496953",
+          "left": "AR1_REPLAY",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "AR1_REPLAY",
+          "relation": "left_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "15725833333333280/20812499999999947",
+          "left": "I",
+          "relation": "crosses",
+          "right": "KNN"
+        },
+        {
+          "equality_alpha": "25320596240772020/36817554757035223",
+          "left": "I",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "I",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "11549583333333360/11630000000000027",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "67136388888888880/69425277777777769",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "11549583333333360/11630000000000027",
+          "left": "I",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "34915359148210760/52822609514070499",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "QR"
+        },
+        {
+          "equality_alpha": null,
+          "left": "KNN",
+          "relation": "left_dominates",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "38825000000000000/44072500000000001",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": "2321041666666667/2343291666666667",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "38825000000000000/44072500000000001",
+          "left": "KNN",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "131113405056453800/133230393250747043",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "SCALED_KNN"
+        },
+        {
+          "equality_alpha": "3687017957410538/4844755475703525",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "QR",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": "3687017957410538/4844755475703525",
+          "left": "QR",
+          "relation": "crosses",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_F"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "SCALED_KNN",
+          "relation": "right_dominates",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "224508333333333360/231535833333333361",
+          "left": "frozen_F",
+          "relation": "crosses",
+          "right": "frozen_K"
+        },
+        {
+          "equality_alpha": null,
+          "left": "frozen_F",
+          "relation": "identical",
+          "right": "frozen_S"
+        },
+        {
+          "equality_alpha": "224508333333333360/231535833333333361",
+          "left": "frozen_K",
+          "relation": "crosses",
+          "right": "frozen_S"
+        }
+      ],
+      "sample": "sparse",
+      "source": "nyfed_weekly",
+      "window": 260,
+      "winners_at_095": [
+        "AR1_REPLAY"
+      ]
+    }
+  ],
+  "headline_comparisons": [
+    {
+      "equality_alpha": null,
+      "horizon": 6,
+      "id": "fx_h6_primary",
+      "left": {
+        "mean_pinball": "385844.8854897607",
+        "strict_breach_count": 376,
+        "u_token": "156123.0280958251",
+        "v_token": "4750560.175974538"
+      },
+      "left_method": "QR",
+      "left_window": 2880,
+      "relation": "left_dominates",
+      "right": {
+        "mean_pinball": "441774.03703851684",
+        "strict_breach_count": 332,
+        "u_token": "166531.06082855846",
+        "v_token": "5671390.5850277245"
+      },
+      "right_method": "rolling_F",
+      "right_window": 720,
+      "source": "fx_hourly"
+    },
+    {
+      "equality_alpha": null,
+      "horizon": 6,
+      "id": "fx_h6_matched",
+      "left": {
+        "mean_pinball": "385844.8854897607",
+        "strict_breach_count": 376,
+        "u_token": "156123.0280958251",
+        "v_token": "4750560.175974538"
+      },
+      "left_method": "QR",
+      "left_window": 2880,
+      "relation": "left_dominates",
+      "right": {
+        "mean_pinball": "452692.9834478481",
+        "strict_breach_count": 360,
+        "u_token": "185672.2312882868",
+        "v_token": "5526087.274479514"
+      },
+      "right_method": "frozen_F",
+      "right_window": 2880,
+      "source": "fx_hourly"
+    },
+    {
+      "equality_alpha": "86579744869851975/90776350660766843",
+      "horizon": 24,
+      "id": "fx_h24_legacy",
+      "left": {
+        "mean_pinball": "734695.0685732415",
+        "strict_breach_count": 531,
+        "u_token": "317678.11539357586",
+        "v_token": "8658017.178986888"
+      },
+      "left_method": "QR",
+      "left_window": 2880,
+      "relation": "crosses",
+      "right": {
+        "mean_pinball": "748383.5382581805",
+        "strict_breach_count": 287,
+        "u_token": "149813.88375698114",
+        "v_token": "12121206.973780967"
+      },
+      "right_method": "rolling_S",
+      "right_window": 720,
+      "source": "fx_hourly"
+    },
+    {
+      "equality_alpha": "24840389716843550/33521504184965797",
+      "horizon": 6,
+      "id": "treasury_h6_primary",
+      "left": {
+        "mean_pinball": "4159.673194735081",
+        "strict_breach_count": 54,
+        "u_token": "3131.8618827941245",
+        "v_token": "23688.08812161324"
+      },
+      "left_method": "QR",
+      "left_window": 260,
+      "relation": "crosses",
+      "right": {
+        "mean_pinball": "2758.665342960289",
+        "strict_breach_count": 28,
+        "u_token": "1395.6389891696751",
+        "v_token": "28656.16606498195"
+      },
+      "right_method": "frozen_F",
+      "right_window": 260,
+      "source": "nyfed_weekly"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Exact rational functions of saved decimal means; inspected sample; no new fits or operational costs.",
+  "status": "FIXED_REPORT_PREFERENCE_ANALYSIS"
+}
