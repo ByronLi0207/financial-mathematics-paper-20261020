@@ -1,0 +1,13 @@
+# Loop80 — selected-fit diagnostic claims
+
+Actual currentreading2026-10-23T23:24:24.815833Z. SupplementS10,index9,all4blocks:2paragraphs andbothcaptions(S26/S27); numericaltablecells excluded. CurrentJSON SHA256738bb71afab319e52b5296328858f890bf692692c97a3ab2a35a78f4d3ae6e28. Textualclaimscopeaudit only, not numericalreplay or a new proof.
+
+The currentparagraph identifies the four already selected Treasury C2 fits as apost-selectionreplay,withoutvalidationretuning. Its statedcapacityidentity is anexistingarchivalreplayclaim, not freshlyprovedhere. Coefficientnorms/response/scalecoordinates aredistinguishedfromnativeprojectedcontributions; evaluationqueries/blockweightsareexplicit. Holdingtheexecutedinterceptfixedwhileremovingslopes differsfromrefittingthelowerempiricalquantileinterceptI. Consequentlyanintercept-onlycounterfactual isnot silentlyequatedwithI/F.
+
+S26caption labels sourceUSDmillions anddescriptivechanges, retainingadverseFcomparisons. S27caption distinguishes capacity/headroomcorrelations,whichinclude/removesharedfloor,andmethod-specificeventsetJaccard/XOR. These are descriptivepointwisecomparisons, notcausalfeatureimportance, equivalentpredictionlaws orcoverageevidence.
+
+The finalparagraph correctlyseparates ordinaryIandcorrectedFranks onthe samefrozenmaturepool, identifiesW260asadjacentendpointsofapinballminimizerinterval ratherthanauniqueIminimizer, andretainsallselectedpenaltiesatthemenuupperendpoint. It expresslydeniescausalfeatureeffect/statisticalequivalence. Statedranks/norms/counts/capacityidentitieswerenot recalculated, and thisolderC2diagnostic isnot fresh evidenceforthelaterACI/SAVbenchmarks.
+
+No necessaryscientific/conclusioncorrection ornewauthor-pendingfinding withinthisboundedtext. No source/result/code/manuscriptchange,vectorread,model/statistic/count/proof/test,replay,network/UI/Claude,installation,deletionorcommit/state/ledgeraction. Onlythisnotewritten. Overallgoalremainsactiveuntil00:31:50UTC.
+
+Finished 2026-10-23T23:25:02.096886+00:00
