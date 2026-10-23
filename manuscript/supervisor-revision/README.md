@@ -2,15 +2,15 @@
 
 Author: **Byron**. Other author details are omitted at the author's request.
 
-The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **14 main/reference pages plus five appendix pages, nineteen total**. The abstract has **158 whitespace-delimited words** and the conclusion **185** after expanding the numerical macros; hyphenated compounds count once. The earlier progress counts used a punctuation-token rule; these final counts use the archived verifier's stated whitespace rule.
+The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **14 main/reference pages plus five appendix pages, nineteen total**. The current writing pass has **153 whitespace-delimited abstract words** and **161 conclusion words** after expanding the numerical macros; hyphenated compounds count once. The preceding E6–C1 version at commit `348179c` had 158/185 words.
 
 ## Read and edit
 
 - `main.tex` controls compilation, layout and author metadata. `abstract.tex`, `sections.tex`, `appendices.tex` and `references.tex` contain the editable paper.
 - `generated/round2-facts.tex` resolves empirical prose numbers from 36 source-bound fields; `results/supervisor-20261023/round2/numerical-facts.json` gives the source fingerprints and displayed values. Design constants come from the frozen study specification; illustrative numbers are explicitly synthetic.
 - `generated/` and six vector figures are produced from archived aggregates by `build_supervisor_document.py`. ReportLab draws figure assets only; Tectonic compiles the paper.
-- `round2-rewritten-passages.md` contains the complete final abstract, contribution paragraph and conclusion in copyable English.
-- Final proof is in `results/supervisor-20261023/round2/`: `document-verification.json`, `test-verification.json` and `visual-review.json`. All nineteen physical pages were individually rendered and inspected.
+- `round2-rewritten-passages.md` preserves the preceding E6–C1 wording at `348179c`. The current three-claim explanation, bilingual summaries, reviewer answers and title options are in `notes/supervisor-20261023/CONTRIBUTIONS.md`; current wording is in `abstract.tex` and `sections.tex`.
+- E6–C1 baseline proof remains unchanged in `results/supervisor-20261023/round2/`. The writing-only update is recorded separately in `notes/supervisor-20261023/CONTRIBUTIONS-verification.json`: compilation, all eight changed pages visually checked, source-bound prose values, and no result/protocol/figure changes.
 
 ## Build and checks
 
@@ -23,7 +23,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 -B -m 
 python3 -B reproduce_conditional.py
 ```
 
-The final full suite passed 574 tests in 91.582 seconds. The original archive check returned `ARCHIVE_VERIFIED` for 69 files, with `accuracy_recomputed=false` and `raw_sources_read=false`. The document verifier was run on the original local execution chain after real tests and visual review; it confirmed 516 protected baseline files unchanged and no tracked deletions. It creates a new exclusive receipt and refuses to overwrite the archived one. Its only observed text-comparison repair removes TeX line-wrap hyphenation in the extracted conclusion; the PDF and paper were unchanged by that repair.
+At the E6–C1 baseline `348179c`, the full suite passed 574 tests in 91.582 seconds. The original archive check returned `ARCHIVE_VERIFIED` for 69 files, with `accuracy_recomputed=false` and `raw_sources_read=false`. The document verifier was run on the original local execution chain after real tests and visual review; it confirmed 516 protected baseline files unchanged and no tracked deletions. It creates a new exclusive receipt and refuses to overwrite the archived one. Its only observed text-comparison repair removes TeX line-wrap hyphenation in the extracted conclusion; the PDF and paper were unchanged by that repair.
 
 The full numbered local execution chain and pre-fit E5 commit are preserved separately from the website's directory-upload commits. Publication and local/remote equality are documented in the Chinese change inventory and final delivery receipt. The old `verify_supervisor_document.py` and its first-round receipts remain historical records.
 
@@ -31,7 +31,7 @@ The full numbered local execution chain and pre-fit E5 commit are preserved sepa
 
 | Display | Current inputs and scope |
 |---|---|
-| Table 1 | Primary-source comparison; current source check in `notes/supervisor-20261023/round2-literature-recheck.md` |
+| Table 1 | Primary-source comparison; all 25 cells checked in `notes/supervisor-20261023/contributions-table1-audit.md`; Delft confidentiality wording corrected from original body passages |
 | Table 2 | `round2/source-date-budgets.json`, computed from pinned existing source dates and frozen split indices |
 | Tables 3/4 | `w3/tables3-4-ready.csv`; all 48 original method rows; two original primaries separately reported, remaining 71 matched contrasts Holm-adjusted |
 | Table 5 | Original checked `inference/coverage-verified.csv`; consistent first-hit conditional likelihood |
