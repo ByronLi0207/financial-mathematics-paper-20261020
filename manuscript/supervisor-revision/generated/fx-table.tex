@@ -3,7 +3,7 @@
 \caption{FX original reports, matched by horizon and history. Loss is in source-reported USD millions.}\label{tab:fx}
 \begin{tabular}{rrlrrrr}
 \toprule
-$H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p_{\rm Holm}$ \\
+$H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p$ \\
 \midrule
 6 & 720 & $F$ & 0.443 & +0.000 & 5.011 & -- \\
 6 & 720 & $S$ & 0.451 & +1.843 & 3.849 & -- \\
@@ -20,7 +20,7 @@ $H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p_{\rm Holm}$ 
 24 & 720 & $F$ & 0.787 & +0.000 & 6.445 & -- \\
 24 & 720 & $S$ & 0.755 & -4.078 & 4.362 & -- \\
 24 & 720 & $K$ & 1.206 & +53.135 & 11.049 & -- \\
-24 & 720 & QR & 1.035 & +31.504 & 13.947 & 0.067 \\
+24 & 720 & QR & 1.035 & +31.504 & 13.947 & 0.066 \\
 24 & 720 & KNN & 0.836 & +6.197 & 7.592 & 1.000 \\
 24 & 720 & Scaled KNN & 0.897 & +13.886 & 6.642 & 1.000 \\
 24 & 2880 & $F$ & 0.763 & +0.000 & 5.389 & -- \\
@@ -31,5 +31,5 @@ $H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p_{\rm Holm}$ 
 24 & 2880 & Scaled KNN & 0.848 & +11.085 & 5.962 & 1.000 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\begin{minipage}{\linewidth}\footnotesize Every relative change uses its own frozen $F$. Holm adjustment covers the original 72 matched conditional-versus-$F/S/K$ contrasts. Dashes mark self-references, historical contrasts outside that family, or the exact full-pool KNN identity. Identical-loss cells receive input one solely for conservative family bookkeeping. Percentages and loss are computed before display rounding.\end{minipage}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Every relative change uses its own frozen $F$. $^{*}$Primary, unadjusted HAC p-value (Treasury QR at the main setting). Other conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts. The FX cross-window primary is reported separately. This reporting division was chosen after results; the original 72-member adjustment remains archived. Dashes mark self-references, historical contrasts or the exact full-pool KNN identity. Identical-loss cells receive input one for conservative bookkeeping. Values are rounded only for display.\end{minipage}
 \end{table}
