@@ -20,12 +20,12 @@ Conditional quantile forecasting and its evaluation use mature tools. Regression
 
 \input{generated/literature-table.tex}
 
-Relative to this literature, the comparison changes the response from an endpoint interval, directional cash deficit or portfolio loss to a two-sided sampled position peak. Matching completed-label pools and update schedules reveals that conditional accuracy depends on both the information used and the available shrinkage: the wider menu approaches a historical headroom reference in Treasury while preserving the long-history FX gain. Joint error-amount, breach and elementary-score comparisons qualify that gain. The FX source family is that of \citet{wisniewski2020}; exact equality with their input file remains unverified.
+Relative to this literature, the comparison changes the response from an endpoint interval, directional cash deficit or portfolio loss to a two-sided sampled position peak. Matching completed-label pools and update schedules reveals that conditional accuracy depends on both the information used and the available shrinkage: the wider menu approaches a historical headroom reference in Treasury while preserving the long-history FX gain. Joint error-amount, breach and elementary-score comparisons qualify that gain.
 
 \section{Data and target}
-The FX record contains hourly client-flow net positions for one market maker across five liquid currency pairs, as described by \citet{wisniewski2020}. We use the hourly member of the Net Position Time Series Dataset, version two \citep{dataset}. It contains 18,576 observations. Adjacent observations are usually an hour apart, with weekend-sized gaps retained in their recorded order. The signed scalar is denominated in source-reported USD.
+The FX record contains hourly client-flow net positions for one market maker across five liquid currency pairs, as described by \citet{wisniewski2020}. We use the hourly member of the Net Position Time Series Dataset, version two \citep{dataset}. It contains \FXObservationCount{} observations. Adjacent observations are usually an hour apart, with weekend-sized gaps retained in their recorded order. The signed scalar is denominated in source-reported USD. It belongs to the source family of \citet{wisniewski2020}; exact equality with their input file remains unverified.
 
-The Treasury input is New York Fed Primary Dealer Statistics series PDPOSGS-B, the aggregate Treasury-bill long position less the short position \citep{nyfeddata}. The weekly Wednesday-close series contains 706 observations, denominated in USD millions. FR~2004A instructions describe market/fair-value positions on a trade-date basis, including eligible forward and when-issued outright positions, with specified settlement-date treatment for buybacks \citep{fr2004}. Table~\ref{tab:data} gives the chronological splits in calendar dates.
+The Treasury input is New York Fed Primary Dealer Statistics series PDPOSGS-B, the aggregate Treasury-bill long position less the short position \citep{nyfeddata}. The weekly Wednesday-close series contains \TreasuryObservationCount{} observations, denominated in USD millions. FR~2004A instructions describe market/fair-value positions on a trade-date basis, including eligible forward and when-issued outright positions, with specified settlement-date treatment for buybacks \citep{fr2004}. Table~\ref{tab:data} gives the chronological splits in calendar dates.
 
 \input{generated/data-table.tex}
 
@@ -47,22 +47,7 @@ The information set enforces label completion before fitting. Write $\kappa(t)$ 
 \end{equation}
 Every training response ends by $\kappa(t)$. Fitted transforms and coefficients stay fixed between refits, while current query predictors and $B_t$ update at issue. Earlier evaluation outcomes enter training only after completion. Validation and evaluation restart their schedules at their respective segment starts.
 
-\begin{center}\small
-\begin{minipage}{\linewidth}
-\captionof*{table}{Notation used in the comparison and appendices.}
-\begin{tabular}{ll}
-\toprule
-$N_t;B_t;P_{t,H};G_{t,H}$ & Signed position; issue magnitude; peak; headroom\\
-$H;W;d;\kappa(t)$ & Record horizon; completed-label count; refit interval; latest refit\\
-$s_\kappa;z_{i,\kappa};\lambda$ & Response scale; standardized predictors; ridge penalty\\
-$\ell_i;u_i;T^{\rm raw}_{i,h}$ & Lower/upper path increments; raw translated path\\
-$R_{\rm abs};R_{\rm signed}$ & Maximum absolute-anchor/signed-anchor distances\\
-$U;V;\omega$ & Mean underprediction; mean overprediction; their weight ratio\\
-$C^{\rm floor};\mathcal P_\lambda$ & Issue-floor report; penalized training objective\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\end{center}
+
 
 \section{Forecasting methods}
 \subsection{Historical reports and matched controls}
@@ -110,19 +95,19 @@ A strict breach is $P_{t,H}>C_t$; equality is a nonbreach. Both error amounts av
 
 Paired loss differentials support descriptive unconditional predictive-ability comparisons. For $d_t=L_t^A-L_t^B$, we report $\bar d/\sqrt{\widehat\Omega/M}$ using Bartlett Newey--West HAC \citep{diebold1995,newey1987}. The bandwidth is $L=\max\{H,\lfloor4(M/100)^{2/9}\rfloor\}$. It is ten lags for short-horizon FX and equals the horizon in the other cells. We also report twice-bandwidth sensitivity and the Harvey--Leybourne--Newbold correction \citep{harvey1997}. That correction originates in mean-squared-error comparisons; its use with pinball loss is approximate. The fixed-window interpretation follows unconditional predictive ability in \citet{giacomini2006}. Serial regularity and a suitable finite long-run variance remain assumptions of these reference distributions.
 
-We report the two previously declared source-specific primaries with unadjusted HAC p-values and a Bonferroni sensitivity across those two comparisons. \citet{holm1979}'s step-down procedure covers the remaining 71 original matched conditional-versus-frozen-$F/S/K$ contrasts. Tables~\ref{tab:fx}--\ref{tab:treasury} identify the Treasury primary and otherwise display the applicable adjusted own-$F$ comparisons; historical $S/K$ contrasts and the FX cross-window primary lie outside that matched family. This primary-versus-supplementary reporting division was chosen after inspecting results, and the former 72-member adjustment remains in the archive. Together with the selection and inspection history, this makes the p-values exploratory evidence rather than confirmatory control for the entire research process.
+We report the two previously declared source-specific primaries with unadjusted HAC p-values and a Bonferroni sensitivity across those two comparisons. \citet{holm1979}'s step-down procedure covers the remaining \RemainingMatchedCount{} original matched conditional-versus-frozen-$F/S/K$ contrasts. Tables~\ref{tab:fx}--\ref{tab:treasury} identify the Treasury primary and otherwise display the applicable adjusted own-$F$ comparisons; historical $S/K$ contrasts and the FX cross-window primary lie outside that matched family. This primary-versus-supplementary reporting division was chosen after inspecting results, and the former \ArchivedMatchedCount{}-member adjustment remains in the archive. Together with the selection and inspection history, this makes the p-values exploratory evidence rather than confirmatory control for the entire research process.
 
-Coverage diagnostics use the single grid $t_0+j(H+1)$, anchored once at evaluation start. The retained target windows share no recorded observations. Training histories and wider serial dependence can still overlap. We report full-grid Kupiec proportion-of-failures tests \citep{kupiec1995}, plus Christoffersen independence and conditional-coverage likelihood ratios conditional on the first retained hit \citep{christoffersen1998}. The latter uses the subsequent hits consistently in both its null and alternative likelihoods. Treasury's two grids contain only 40 and twelve observations, so asymptotic reference p-values have limited precision and power. The exact nominal-exceedance null also differs from an upper-bound null when the peak distribution has an atom at its known floor.
+Coverage diagnostics use the single grid $t_0+j(H+1)$, anchored once at evaluation start. The retained target windows share no recorded observations. Training histories and wider serial dependence can still overlap. We report full-grid Kupiec proportion-of-failures tests \citep{kupiec1995}, plus Christoffersen independence and conditional-coverage likelihood ratios conditional on the first retained hit \citep{christoffersen1998}. The latter uses the subsequent hits consistently in both its null and alternative likelihoods. Treasury's two grids contain only \TreasuryShortGridCount{} and \TreasuryLongGridCount{} observations, so asymptotic reference p-values have limited precision and power. The exact nominal-exceedance null also differs from an upper-bound null when the peak distribution has an atom at its known floor.
 
 \section{Results}
 \subsection{FX: a long-history gain and a short-history reversal}
-Long-history regression improves the six-step FX score. Its primary reduction is 12.7\% against rolling $F$, with a descriptive HAC statistic of approximately $-5.2$. Against its own frozen $F$, the reduction is 14.8\%. The matched statistic is approximately $-5.9$. Table~\ref{tab:fx} gives the complete original conditional menu and the historical controls. The long-history gain coexists with more breaches, a distinction developed below.
+Long-history regression improves the six-step FX score. Its primary reduction is \FXPrimaryGain{}\% against rolling $F$, with a HAC statistic of approximately $\FXPrimaryStatistic{}$. Against its own frozen $F$, the reduction is \FXMatchedGain{}\%. The matched statistic is approximately $\FXMatchedStatistic{}$. Table~\ref{tab:fx} gives the complete original conditional menu and the historical controls. The long-history gain coexists with more breaches, a distinction developed below.
 
 \input{generated/fx-table.tex}
 
-Short-history regression has a much weaker six-step result. Its matched score reduction is 2.12\%, with an unadjusted p-value of 0.54. At the longer horizon, the same short-history procedure increases mean loss by \FXShortLongExcess{}\%. The wider menu still selects $\lambda=\FXShortLongPenalty{}$ and leaves that cell's reports unchanged: menu expansion does not repair this adverse case. Extending history improves the regression comparison, whereas extending frozen $F$ slightly raises its short-horizon loss. This contrast motivates the ordered specification analysis.
+Short-history regression has a much weaker six-step result. Its matched score reduction is \FXShortGain{}\%, with an unadjusted p-value of \FXShortP{}. At the longer horizon, the same short-history procedure increases mean loss by \FXShortLongExcess{}\%. The wider menu still selects $\lambda=\FXShortLongPenalty{}$ and leaves that cell's reports unchanged: menu expansion does not repair this adverse case. Extending history improves the regression comparison, whereas extending frozen $F$ slightly raises its short-horizon loss. This contrast motivates the ordered specification analysis.
 
-The longer-horizon legacy gain is small and statistically imprecise. Regression improves mean loss by 1.83\% against the original rolling $S$, with an unadjusted p-value of 0.84. The partial final year contributes about 71\% of its aggregate improvement. By comparison, that partial year contributes about 8.6\% of the six-step primary improvement. The annual and sparse-grid outputs therefore help distinguish stable directions within this archive from gains concentrated in a short subdivision.
+The longer-horizon legacy gain is small and statistically imprecise. Regression improves mean loss by \FXLegacyGain{}\% against the original rolling $S$, with an unadjusted p-value of \FXLegacyP{}. The six-step primary gain has the same direction in each issue year, while the longer-horizon gain is concentrated in the partial \FXTailYear{} tail.
 
 \FloatBarrier
 \subsection{Treasury: the original regression loses}
@@ -130,7 +115,7 @@ The original Treasury regression is less accurate than matched historical headro
 
 \input{generated/treasury-table.tex}
 
-Plain KNN at the short Treasury history reproduces $F$. Validation selects the entire eligible pool at both horizons. Its longer-history, longer-horizon score gain reverses on the twelve-point grid: full-sample improvement becomes sparse-grid deterioration. Both reports have two strict breaches on that grid. These outcomes preserve the distinction between a complete-sample mean, a small sensitivity subset and an independent validation sample.
+Plain KNN at the short Treasury history reproduces $F$. Validation selects the entire eligible pool at both horizons. Its longer-history, longer-horizon score gain reverses on the twelve-point grid: full-sample improvement becomes sparse-grid deterioration. Both reports have two strict breaches on that grid.
 
 Coverage diagnostics reinforce the original Treasury regression's adverse breach record. Table~\ref{tab:coverage} gives the nonoverlapping-grid results beside the FX comparison. A failure to reject for the historical reference has limited evidential strength in this small grid. Section~\ref{sec:decomposition} shows how expanding the penalty menu changes the original regression result; the comparisons here retain the original procedure.
 
@@ -149,7 +134,7 @@ The original sequence combines two changes at its last step. The four-predictor 
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/decomposition.pdf}
-\caption{Ordered loss changes for the six-step comparisons. Each bar changes the preceding procedure; the common-baseline vertical scale makes the increments additive. The original full QR and the equal-menu E3 report are both retained. Corresponding paired HAC tests appear in the decomposition table. The chosen order defines the result; it is a procedure comparison rather than a Shapley allocation or a causal feature effect.}\label{fig:waterfall}
+\caption{Ordered loss changes for the six-step comparisons. Each bar changes the preceding procedure; the common-baseline vertical scale makes the increments additive. The original full QR and the equal-menu E3 report are both retained. Corresponding paired HAC tests appear in Table~\ref{tab:decomp}. The increments depend on the chosen sequence and do not identify causal feature effects.}\label{fig:waterfall}
 \end{figure}
 
 \input{generated/e5-summary.tex}
@@ -163,7 +148,7 @@ AR residual-block replay shows that family choice matters. At each original refi
 
 Rank sensitivity changes the finite-sample convention. The original historical rank is $\lceil(m+1)\tau\rceil$; ordinary empirical quantiles use $\lceil m\tau\rceil$, with an interval of minimizers at integral $m\tau$. The short Treasury full-pool case has distinct ranks under those rules. The rank-ablation supplement retains all contrasts, including reversals, and the full-pool KNN identity persists whenever both reports share their rank convention. Results concern the issued reports under the stated convention.
 
-Loss reweighting distinguishes a robust linear gain from a narrow tradeoff. For each fixed issued report, write $J_\omega=\omega U+V$, so the original quantile score corresponds to $\omega=19$ up to a positive factor. Table~\ref{tab:uv} shows that the short-horizon FX primary reduces both components. Its breach count nevertheless increases from 332 to 376. The longer-horizon legacy gain instead exchanges higher underprediction for lower overprediction, and reverses above a weight ratio of 20.6. These statements concern constant linear weights on the archived reports. The elementary-score comparisons in Appendix~\ref{app:murphy} cross for both primaries, ruling out empirical dominance over the full class of consistent quantile scores.
+Loss reweighting distinguishes a robust linear gain from a narrow tradeoff. For each fixed issued report, write $J_\omega=\omega U+V$, so the original quantile score corresponds to $\omega=19$ up to a positive factor. Table~\ref{tab:uv} shows that the short-horizon FX primary reduces both components. Its breach count nevertheless increases from \FXReferenceBreaches{} to \FXPrimaryBreaches{}. The longer-horizon legacy gain instead exchanges higher underprediction for lower overprediction, and reverses above a weight ratio of \FXLegacyCrossing{}. These statements concern constant linear weights on the archived reports. The elementary-score comparisons in Appendix~\ref{app:murphy} cross for both primaries, ruling out empirical dominance over the full class of consistent quantile scores.
 
 \input{generated/uv-table.tex}
 
@@ -172,7 +157,7 @@ Loss reweighting distinguishes a robust linear gain from a narrow tradeoff. For 
 \caption{Mean underprediction ($U$), mean overprediction ($V$) and strict-breach changes for the named original comparisons. Each amount panel scales its own reference to 100; the breach panel shows percentage-point changes. FX and Treasury amounts describe distinct financial objects.}\label{fig:errors}
 \end{figure}
 
-Horizon diagnostics show that realized peaks and fitted reports have different ordering properties. Realized peaks increase weakly with horizon on every common issue. Separately fitted quantile reports can cross; the original long-history Treasury regression crosses on about 29\% of issues. A post-result adjustment that raises a longer report can also worsen its score, as the appendix illustrates. Table~\ref{tab:robustness} summarizes these checks while the complete archived menus remain available in the supplement.
+Horizon diagnostics show that realized peaks and fitted reports have different ordering properties. Realized peaks increase weakly with horizon on every common issue. Separately fitted quantile reports can cross; the original long-history Treasury regression crosses on about \TreasuryHorizonCrossing{}\% of issues. A post-result adjustment that raises a longer report can also worsen its score, as the appendix illustrates. Table~\ref{tab:robustness} summarizes these checks while the complete archived menus remain available in the supplement.
 
 \input{generated/robustness-table.tex}
 
