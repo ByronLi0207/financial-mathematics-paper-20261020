@@ -71,6 +71,9 @@ def numerical_facts():
     add("TreasuryReferenceBreaches",epath,treasury,"frozen_F_breaches")
     fxlong=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["window"]=="2880")
     add("FXFeaturesGain",epath,fxlong,"common_menu_feature_change_percent",1,True)
+    fxshort=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="24" and r["window"]=="720")
+    add("FXShortLongExcess",epath,fxshort,"extended33_percent_vs_frozen_F",1)
+    add("FXShortLongPenalty",epath,fxshort,"extended33_selected_penalty",2)
     jpath=NEW/"e5/descriptive-summary.json"; panel=json.loads(jpath.read_text())
     add("PanelOriginalMedian",jpath,panel["original_QR33"],"median_percent_vs_F",1)
     add("PanelExpandedMedian",jpath,panel["QR33_plus"],"median_percent_vs_F",1)
@@ -191,8 +194,14 @@ The revised interpretation concerns regularization and specification jointly. St
         uvdata.append([label, f"{u:+.3f}", f"{v:+.3f}", crossing, r["strict_breach_count_left"] + "/" + r["strict_breach_count_right"]])
     table("uv-table.tex", "Error components and strict breaches for the original named comparisons.", "tab:uv", ["Comparison", "$\\Delta U$", "$\\Delta V$", "Crossing $\\omega$", "Breaches A/B"], uvdata,
           align="lrrrr", note="A is regression and B its named reference. Amounts are in source-reported USD millions, with distinct source measurement processes. Negative component differences favor A. A missing crossing means both components have the same sign. The weights describe hypothetical fixed-report preferences.")
+    ar = json.loads((NEW/"w4/ar-comparison.json").read_text())
+    counts, treas = ar["counts_all"], ar["counts_by_source"]["nyfed_weekly"]
+    primary = next(r for r in rows(NEW/"w4/ar-comparison.csv") if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    (GEN/"ar-comparison-summary.tex").write_text(
+        f"Against matched $F$ and $S$, AR lowers mean loss in {counts['F']['lower_loss']}/{counts['F']['cells']} and {counts['S']['lower_loss']}/{counts['S']['cells']} cells, respectively. Breaches rise relative to $S$ in {counts['S']['more_breaches']}/{counts['S']['cells']} cells and relative to $F$ in {counts['F']['more_breaches']}/{counts['F']['cells']}. At the main Treasury setting, AR lowers loss by {abs(float(primary['AR_percent_vs_F'])):.1f}\\% against $F$ and {abs(float(primary['AR_percent_vs_S'])):.1f}\\% against $S$, with {primary['AR_strict_breach_count']} breaches versus {primary['F_strict_breach_count']} for $F$. Relative to original QR, AR has lower loss in all {treas['original_QR33']['cells']} Treasury cells; relative to expanded QR33+, it does so in {treas['QR33_plus']['lower_loss']}/{treas['QR33_plus']['cells']}, including a {abs(float(primary['AR_percent_vs_QR33_plus'])):.1f}\\% reduction in the main Treasury cell.\n")
+    ar_finding=f"Lower loss than $F$ in {counts['F']['lower_loss']}/{counts['F']['cells']} and $S$ in {counts['S']['lower_loss']}/{counts['S']['cells']}; more breaches than $S$ in {counts['S']['more_breaches']}/{counts['S']['cells']}"
     table("robustness-table.tex", "Compact robustness summary; the complete original outputs are retained.", "tab:robustness", ["Check", "Finding", "Interpretation"],
-          [["AR residual replay", "Lower loss than translated paths in five cells; more breaches in every cell", "Conditional-family rankings differ"],
+          [["AR residual replay", ar_finding, f"Lower loss than QR33+ in {treas['QR33_plus']['lower_loss']}/{treas['QR33_plus']['cells']} Treasury cells"],
            ["Rank convention", "Ordinary versus corrected rank changes some finite reports; full-pool identities persist", "Report construction matters"],
            ["Fixed linear weights", "FX short-horizon components both fall; longer-horizon crossing near the original weight", "Mean score and breach count differ"],
            ["Horizon order", "Targets are ordered; fitted reports can cross", "Separate fits need an explicit reconciliation criterion"]],
