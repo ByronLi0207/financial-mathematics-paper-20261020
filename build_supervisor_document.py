@@ -314,9 +314,47 @@ def lambda_path():
     c.save()
 
 
+def panel_summary_and_figure():
+    panel = rows(NEW / "e5/summary.csv")
+    assessment = json.loads((NEW / "e5/prediction-assessment.json").read_text())
+    assert len(panel) == assessment["planned_cells"] == 48
+    assert all(r["status"] == "COMPLETE" for r in panel)
+    from statistics import median
+    old_median = median(float(r["original_QR33_percent_vs_F"]) for r in panel)
+    new_median = median(float(r["QR33_plus_percent_vs_F"]) for r in panel)
+    old_losses = sum(float(r["original_QR33_mean_pinball"]) > float(r["F_mean_pinball"]) for r in panel)
+    new_losses = sum(float(r["QR33_plus_mean_pinball"]) > float(r["F_mean_pinball"]) for r in panel)
+    predictions = assessment["predictions"]
+    ptext = "; ".join(f"{name}: {p['success_count']}/{p['fixed_denominator']} against a threshold of {p['threshold']}" for name,p in predictions.items())
+    series = list(dict.fromkeys(r["series_key"] for r in panel))
+    (GEN / "e5-summary.tex").write_text(
+        f"\n\nAn additional panel reuses {len(series)} previously archived New York Fed position series on the same economic-date grid, with all {len(panel)} horizon--history cells retained (Figure~\\ref{{fig:panel}}). Expanding the full regression's menu reduces the median excess loss relative to $F$ from {old_median:+.1f}\\% to {new_median:+.1f}\\%, but it still loses in {new_losses} cells, compared with {old_losses} originally. The committed pre-run predictions yield {ptext}. P1 and P2 are unsupported; P3 is supported. Shrinkage therefore mitigates rather than eliminates the observed weakness. The design followed inspection of the original panel results, and the series share a reporting system and overlapping dealer positions; this is an exploratory extension, not independent replication.\n")
+    c=start_pdf("panel-menu.pdf",650,400)
+    ticks=[.5,1,2,4,8]
+    for pi,(h,w) in enumerate([(6,52),(6,260),(24,52),(24,260)]):
+        xbase=(pi%2)*325; ybase=200 if pi<2 else 0
+        x0,x1,y0,y1=xbase+100,xbase+300,ybase+37,ybase+174
+        px=lambda ratio:x0+(math.log2(ratio)+1)/4*(x1-x0)
+        py=lambda i:y1-i*(y1-y0)/11
+        label(c,x0,ybase+188,f"H={h}, W={w}",9)
+        for tick in ticks:
+            c.setStrokeColor(GREY if tick==1 else LIGHT);c.setLineWidth(.8 if tick==1 else .4);c.line(px(tick),y0-5,px(tick),y1+5)
+            label(c,px(tick),ybase+19,f"{100*(tick-1):+.0f}%",8,GREY,"center")
+        for i,key in enumerate(series):
+            r=next(r for r in panel if r["series_key"]==key and int(r["horizon"])==h and int(r["window"])==w)
+            old=float(r["original_QR33_mean_pinball"])/float(r["F_mean_pinball"])
+            new=float(r["QR33_plus_mean_pinball"])/float(r["F_mean_pinball"])
+            label(c,x0-7,py(i)-3,key.removeprefix("PDPOS"),8,GREY,"right")
+            c.setStrokeColor(LIGHT);c.line(px(old),py(i),px(new),py(i))
+            c.setFillColor(RED);c.circle(px(old),py(i),2.3,fill=1,stroke=0)
+            c.setFillColor(BLUE);c.circle(px(new),py(i),2.0,fill=1,stroke=0)
+    label(c,325,3,"Loss change versus F (log ratio scale): red original QR33; blue expanded QR33+",8,GREY,"center")
+    c.save()
+
+
 def main():
     GEN.mkdir(parents=True,exist_ok=True);FIG.mkdir(parents=True,exist_ok=True)
-    build_tables();path_figure();waterfall();error_figure();murphy();lambda_path()
+    build_tables();path_figure();waterfall();error_figure();murphy();lambda_path();panel_summary_and_figure()
     print("Built revision-specific aggregate tables and vector figures; manuscript PDF requires Tectonic.")
 
 
