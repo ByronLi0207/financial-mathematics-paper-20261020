@@ -7,6 +7,7 @@ from pathlib import Path
 import csv
 import json
 import math
+import hashlib
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor, Color, black, white
 
@@ -39,6 +40,37 @@ def pval(x):
         return "--"
     x = float(x)
     return "$<.001$" if x < .001 else f"{x:.3f}"
+
+
+def numerical_facts():
+    """Print empirical prose numbers from archived full-precision fields."""
+    facts = {}
+    def add(name, path, row, field, digits=None, absolute=False):
+        raw = row[field]
+        value = abs(float(raw)) if absolute else float(raw)
+        display = str(int(value)) if digits is None else f"{value:.{digits}f}"
+        facts[name] = dict(value=raw, display=display, field=field,
+                           source=str(path.relative_to(ROOT)), source_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    ppath=OLD/"paired-comparisons.csv"; paired=rows(ppath)
+    fx=next(r for r in paired if r["contrast_id"]=="fx_hourly-h6-QR2880-minus-rolling_F720")
+    add("FXPrimaryGain",ppath,fx,"relative_mean_loss_difference_percent",1,True)
+    add("FXPrimaryBreaches",ppath,fx,"strict_breach_count_left")
+    add("FXReferenceBreaches",ppath,fx,"strict_breach_count_right")
+    epath=NEW/"e3/summary.csv"; e3=rows(epath)
+    treasury=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    for name,field,digits in [("TreasuryOriginalExcess","original33_percent_vs_frozen_F",1),("TreasuryExpandedExcess","extended33_percent_vs_frozen_F",1),("TreasuryExpandedExcessFine","extended33_percent_vs_frozen_F",2),("TreasuryFeatureChange","common_menu_feature_change_percent",2)]:
+        add(name,epath,treasury,field,digits)
+    fxlong=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["window"]=="2880")
+    add("FXFeaturesGain",epath,fxlong,"common_menu_feature_change_percent",1,True)
+    jpath=NEW/"e5/descriptive-summary.json"; panel=json.loads(jpath.read_text())
+    add("PanelOriginalMedian",jpath,panel["original_QR33"],"median_percent_vs_F",1)
+    add("PanelExpandedMedian",jpath,panel["QR33_plus"],"median_percent_vs_F",1)
+    add("PanelExpandedLosses",jpath,panel["QR33_plus"],"losing_to_F")
+    add("PanelCellCount",jpath,panel,"planned_cells")
+    manifest=NEW/"e5/inputs/panel/selection-manifest.json"
+    add("PanelSeriesCount",manifest,{"eligible_count":len(json.loads(manifest.read_text())["eligible"])},"eligible_count")
+    (GEN/"round2-facts.tex").write_text("% Generated from archived full-precision values; see round2/numerical-facts.json.\n"+"\n".join("\\newcommand{\\"+name+"}{"+r["display"]+"}" for name,r in facts.items())+"\n")
+    (NEW/"round2/numerical-facts.json").write_text(json.dumps(facts,indent=2)+"\n")
 
 
 def table(name, caption, label, columns, data, align=None, note="", fontsize="small"):
@@ -354,7 +386,7 @@ def panel_summary_and_figure():
 
 def main():
     GEN.mkdir(parents=True,exist_ok=True);FIG.mkdir(parents=True,exist_ok=True)
-    build_tables();path_figure();waterfall();error_figure();murphy();lambda_path();panel_summary_and_figure()
+    numerical_facts();build_tables();path_figure();waterfall();error_figure();murphy();lambda_path();panel_summary_and_figure()
     print("Built revision-specific aggregate tables and vector figures; manuscript PDF requires Tectonic.")
 
 
