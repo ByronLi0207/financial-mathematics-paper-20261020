@@ -1,54 +1,52 @@
-# Supervisor revision: source and verification
+# Second supervisor revision: source and verification
 
-Author: **Byron**. No affiliation is supplied, as the author requested.
+Author: **Byron**. Other author details are omitted at the author's request.
 
-`main.pdf` is the output of Tectonic 0.17.0 (XeTeX and xdvipdfmx), not the separate ReportLab manuscript renderer used by the preceding version. ReportLab here draws only four vector figure assets. The paper has **13 main/reference pages and four appendix pages**, including the one-page Appendix C. Its abstract has **145 whitespace-delimited words** and its conclusion **104**.
+The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **14 main/reference pages plus five appendix pages, nineteen total**. The abstract has **158 whitespace-delimited words** and the conclusion **185** after expanding the numerical macros; hyphenated compounds count once. The earlier progress counts used a punctuation-token rule; these final counts use the archived verifier's stated whitespace rule.
 
 ## Read and edit
 
-- `main.tex` is the compilation entry point and controls layout and author details.
-- `abstract.tex`, `sections.tex`, `appendices.tex` and `references.tex` are editable manuscript sources.
-- `generated/` contains aggregate-derived display tables and the E3 results paragraph. Edit its generator, `build_supervisor_document.py`, rather than hand-changing numeric cells.
-- `figures/` contains the synthetic target illustration, ordered loss waterfall, U/V-versus-breach changes and Murphy display.
-- `../../results/supervisor-20261023/document-verification.json` records counts, scope, PDF identity and baseline preservation.
+- `main.tex` controls compilation, layout and author metadata. `abstract.tex`, `sections.tex`, `appendices.tex` and `references.tex` contain the editable paper.
+- `generated/round2-facts.tex` resolves empirical prose numbers from 36 source-bound fields; `results/supervisor-20261023/round2/numerical-facts.json` gives the source fingerprints and displayed values. Design constants come from the frozen study specification; illustrative numbers are explicitly synthetic.
+- `generated/` and six vector figures are produced from archived aggregates by `build_supervisor_document.py`. ReportLab draws figure assets only; Tectonic compiles the paper.
+- `round2-rewritten-passages.md` contains the complete final abstract, contribution paragraph and conclusion in copyable English.
+- Final proof is in `results/supervisor-20261023/round2/`: `document-verification.json`, `test-verification.json` and `visual-review.json`. All nineteen physical pages were individually rendered and inspected.
 
-## Build
+## Build and checks
 
-Use the project's compatible existing Python environment with ReportLab and pypdf. The calculation environment used Python 3.12.14 and NumPy 2.3.5. From the repository root:
+Use the existing compatible project environment. The actual numerical environment is Python 3.12.14 with NumPy 2.3.5; no system package installation was performed. From the repository root:
 
 ```sh
 python3 -B build_supervisor_document.py
-tectonic --keep-logs manuscript/supervisor-revision/main.tex
-python3 -B verify_supervisor_document.py
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic --only-cached --keep-logs --keep-intermediates manuscript/supervisor-revision/main.tex
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 -B -m unittest discover -v
+python3 -B reproduce_conditional.py
 ```
 
-On the author's machine the engine was already bundled at `/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic`; no TeX distribution or application was installed. Tectonic fetched the missing font resources into its normal cache during the first compilation. Subsequent final builds used `--only-cached`. The actual successful command was:
+The final full suite passed 574 tests in 91.582 seconds. The original archive check returned `ARCHIVE_VERIFIED` for 69 files, with `accuracy_recomputed=false` and `raw_sources_read=false`. The document verifier was run on the original local execution chain after real tests and visual review; it confirmed 516 protected baseline files unchanged and no tracked deletions. It creates a new exclusive receipt and refuses to overwrite the archived one. Its only observed text-comparison repair removes TeX line-wrap hyphenation in the extracted conclusion; the PDF and paper were unchanged by that repair.
 
-```sh
-/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic --only-cached --keep-logs manuscript/supervisor-revision/main.tex
-```
+The full numbered local execution chain and pre-fit E5 commit are preserved separately from the website's directory-upload commits. Publication and local/remote equality are documented in the Chinese change inventory and final delivery receipt. The old `verify_supervisor_document.py` and its first-round receipts remain historical records.
 
-The compiler output is kept as delivered; pypdf only reads it for verification. The PDF's producer is xdvipdfmx and author metadata is Byron. The compilation log had no overfull boxes after ragged-right table columns were introduced. Underfull spacing warnings are distinguished from clipping; actual page renders were inspected.
+## Display map
 
-## Tables and figures
-
-| Display | Inputs and interpretation |
+| Display | Current inputs and scope |
 |---|---|
-| Table 1: closest studies | `results/supervisor-20261023/literature-table.json`; primary-source scopes in `notes/supervisor-20261023/literature-audit.md` |
-| Table 2: calendar splits | Pinned source timestamps, checked during E3 source loading; no source observations are printed |
-| Tables 3/4: full original method cells | `inference/tables3-4-ready.csv`; 48 rows, own-F changes and the original 72-family Holm adjustment |
-| Table 5: nonoverlap coverage | `inference/coverage-verified.csv`; full-n POF and consistent first-hit-conditioned CC |
-| Table 6: E3 | `e3/summary.csv` and `e3/paired-dm.csv`; shared-menu comparisons are exploratory |
-| Table 7 / Figure 2: ordered comparison | `e3/primary-decomposition.csv`; common-baseline percentage points add, step-relative percentages compound |
-| Table 8 / Figure 3: U/V and breaches | Original `results/revision-20261022/paired-comparisons.csv` and `evaluation-summary.csv` |
-| Table 9: robustness | Complete AR/rank/horizon and fixed-report result supplements retained at their original paths |
-| Figure 4: Murphy | Inherited plotting CSVs display the curves; the all-breakpoint check is independently retained in `inference/murphy-verified.csv` and `murphy-two-primary-exact.pdf` |
-| Table 10: old Table B1 | The unchanged previous structured paper content, rounded for display; the tiny adverse tau90 difference stays explicitly positive |
+| Table 1 | Primary-source comparison; current source check in `notes/supervisor-20261023/round2-literature-recheck.md` |
+| Table 2 | `round2/source-date-budgets.json`, computed from pinned existing source dates and frozen split indices |
+| Tables 3/4 | `w3/tables3-4-ready.csv`; all 48 original method rows; two original primaries separately reported, remaining 71 matched contrasts Holm-adjusted |
+| Table 5 | Original checked `inference/coverage-verified.csv`; consistent first-hit conditional likelihood |
+| Table 6 | `e6/table6.csv`; original 33, four+, 33+, ordinary I, selected penalty and 33+ breaches |
+| Table 7 / Figure 2 | `e3/primary-decomposition.csv`; additive common-baseline increments, order-dependent procedure comparison |
+| Figure 3 | All 48 E5 cells from `e5/summary.csv`, original versus expanded QR33 relative to matched F; logarithmic loss-ratio axis |
+| Table 8 / Figure 4 | Original U/V/breach evidence from `results/revision-20261022/paired-comparisons.csv` and `evaluation-summary.csv` |
+| Table 9 | AR row uses `w4/ar-comparison.csv`; original rank/horizon and fixed-report supplements preserved |
+| Figure 5 | Original all-breakpoint Murphy evidence in `inference/`; crossings do not establish population dominance |
+| Figure 6 | `e6/lambda-path.csv` and `lambda-path-I.csv`; descriptive validation/evaluation paths, no new selection |
+| Table 10 | Original historical construction table retained in Appendix B |
+| Appendix C.1 | Notation moved from the main text without changing table numbering |
 
-## Statistical and reuse boundaries
+## Statistical and reuse limits
 
-The original two primaries remain unchanged. The FX cross-window primary is outside the 72 matched contrasts. The E3 family has its own 28 comparisons. Identical KNN/F loss sequences have no nondegenerate DM statistic; conservative p=1 values are used solely to retain their family slots. The CC initialization correction changes diagnostics, not any forecast, loss or breach count. All statistical additions were made after inspection.
+Both original primaries and every adverse result remain. The new 71-member reporting family is explicitly post-result, and the old 72-member analysis remains byte-preserved. E5's two failed predictions are retained with fixed denominators. Stronger shrinkage mitigates deterioration; neither benchmark equivalence nor evaluation noninferiority is established. I and exact F are different candidates at some ranks.
 
-The E1/E3 helpers read retained private numeric traces and the earlier four-predictor run. Their default locations identify this actual audit context, not a clean-clone data service. Public outputs contain hashes, aggregates, candidate selections and solver diagnostics; per-origin financial arrays remain private. A fresh public checkout can rebuild the manuscript and inspect aggregate evidence, but reproducing these added financial calculations also requires the documented pinned source snapshots and retained numeric trace context. The older `reproduce_conditional.py` route remains the documented clean-attempt route for the original study. None of these calculations creates independent financial validation.
-
-The previous manuscript and every original result file are preserved. The Chinese change inventory maps material removed from the new printed paper to its retained repository location. Third-party full article copies and visual reading extracts remain in the ignored local scratch directory; the public source notes provide canonical links and reading scopes.
+The twelve panel series share a reporting system and overlapping dealer positions. No extra data were downloaded, no missing dates filled and no eligible series changed. This extension supplies no independent dealer sample. Private raw observations and per-origin traces stay in ignored directories; public outputs contain source fingerprints, selections, aggregates and numerical diagnostics. A public checkout can rebuild the document from these aggregate files, while full added-model reproduction also needs the pinned private inputs and retained trace context. The original clean-attempt reproduction route remains unchanged.
