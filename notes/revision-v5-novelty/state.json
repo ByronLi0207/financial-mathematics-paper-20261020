@@ -16,7 +16,8 @@
     "all_old_empirical_table_cells_preserved",
     "151_tests_15_subtests",
     "all_preview_pages_visual_QA",
-    "four_native_source_compilation_targets"
+    "four_native_source_compilation_targets",
+    "full_repository_714_tests_949_subtests_after_portable_fixture_fix"
   ],
   "remote_branch_exists": false,
   "same_branch_PR_search": [],
@@ -1315,5 +1316,19 @@
     "git_push": "failed_no_authenticated_git_username",
     "fallback": "authorized_logged_in_native_GitHub_UI_upload_in_progress",
     "same_PR": "No open PR at preflight; no false update claim"
+  },
+  "authorized_support_changes": {
+    "test_round2_shrinkage.py": {
+      "before_sha256": "7a9c057a6d7e04f2f5e76a8517416aee2a78ca0fdf4b400f57ac19cd09141fca",
+      "after_sha256": "f9887888bebd337f9dbd3524fa5963b1a3255cf656ead16a7cfc91696e6b09b3",
+      "reason": "Full clean-copy test exposed a hidden ignored-cache dependency in a manuscript converter test. Replace it by a self-contained synthetic fixture and require both generated tables; no scientific result changed."
+    }
+  },
+  "full_suite": {
+    "status": "PASS",
+    "tests": 714,
+    "subtests": 949,
+    "pytest_seconds": 85.0,
+    "scope": "Retained clean tracked-file copy; original first failure retained; one self-contained manuscript converter test fixture fix."
   }
 }
