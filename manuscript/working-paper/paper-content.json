@@ -1,48 +1,40 @@
 {
   "title": "Historical and Conditional Forecasts of Sampled Net-Position Peaks",
-  "subtitle": "Comparisons on an FX record and Treasury position aggregates",
-  "date": "Working paper - 22 October 2026; preference-robustness revision",
-  "abstract": "We compare established forecasts of the 0.95 quantile of sampled absolute net-position peaks. Historical headrooms, reanchored increments and native peaks are evaluated against regression and local quantiles with completed training labels and chronological selection. The evaluation records were previously inspected. On 6,625 FX origins, the six-record regression primary lowers mean pinball loss by 12.66% against the original reference and 14.77% against a matched-history reference, with 376 breaches versus 332 and 360. On 277 weekly Treasury-aggregate origins, the primary regression raises loss by 50.79% and breaches from 28 to 54. Exploratory AR replay improves on matched increment translation in five of eight cells while breaches increase in all eight. A fixed-report preference analysis adds complete shortfall/excess loss frontiers for eight matched cells and their sparse grids. Both mean loss components fall in the FX short-horizon primary, whereas the modest long-horizon gain reverses above a shortfall/excess weight ratio of 20.63, near the stipulated 19. Four of eight frontier winners at 19:1 change on sparse grids. These findings strengthen model validation using mature estimators; they establish neither new quantile methods, conditional coverage, unseen transfer nor observed quote, hedge or funding benefits.",
+  "subtitle": "A retrospective benchmark on an FX record and Treasury position aggregates",
+  "date": "Working paper - 23 October 2026; critical-review revision",
+  "abstract": "We benchmark established forecasts of the 0.95 quantile of the largest absolute net position observed at issue and over the next H source records. Historical constructions are evaluated against ridge quantile regression (QR) and local quantiles using completed responses and matched-history controls. The FX evaluation archive had previously been inspected; the Treasury exercise replays a downloaded vintage by economic date rather than historical public release. On 6,625 FX origins, the declared six-record-horizon QR primary lowers mean pinball loss by 12.66% against its original rolling reference and 14.77% against a matched-history reference, with 376 breaches versus 332 and 360. On 277 weekly Treasury-aggregate origins, the separately fitted six-week QR primary raises loss by 50.79% and breaches from 28 to 54. Exploratory AR replay improves on matched increment translation in five of eight cells while breaches increase in all eight. Reweighting eight archived .95 reports distinguishes the FX short-horizon reductions in both mean error components from the small 24-record gain, which reverses above an underprediction/overprediction weight ratio of 20.63, near the stipulated 19. These retrospective comparisons establish source-, horizon-, history- and family-dependent rankings, without coverage guarantees or observed trading and funding benefits.",
   "sections": [
     {
       "title": "1. Introduction",
       "blocks": [
         {
           "type": "p",
-          "html": "A recorded net position can reach a large magnitude and return toward its starting value before a horizon ends. A forecast of the terminal signed position leaves the intervening recorded magnitudes unmeasured. We study an upper-quantile report for the largest absolute source-reported position at issue and over the next H records. It answers a passive monitoring question: does any recorded future position exceed the issued level in magnitude? The financial interpretation depends on the measurement process; a sampled netted position does not reconstruct a complete hedged book or a funding requirement."
+          "html": "A terminal position forecast can miss a large intermediate magnitude that subsequently recedes. We study the largest absolute source-reported net position at issue and over the next H recorded observations. Its upper-quantile report provides a level against which subsequent recorded magnitudes can be monitored. Sampling and netting matter: the target does not reconstruct unobserved inter-record excursions, a complete hedged dealer book or a cash-funding requirement."
         },
         {
           "type": "p",
-          "html": "The empirical question is whether simple historical constructions remain competitive when established conditional methods are fitted directly to this peak response. We compare historical headrooms (F), increment paths reanchored to the current signed position (S), and native historical peaks subject to the current magnitude floor (K). Earlier one-state retrieval is retained as a reference. The added procedures are ridge quantile regression (QR), multivariate nearest-neighbor quantiles (KNN), and a scale-adjusted local variant. Their 33 coordinates include position lags, current magnitude, past increment scales and recorded-clock calendar information. These are established statistical operations, not newly proposed estimators. A later closed exploratory addition compares fitted AR(1) residual-block replay with matching S/F and the previously selected QR in all eight source/horizon/history cells."
+          "html": "The empirical question is whether simple historical peak constructions remain competitive with established regression and local quantile methods fitted directly to this response. We compare historical headrooms (F), increment paths reanchored to the current signed position (S), and native historical peaks subject to the current magnitude floor (K). These historical rules already use the current magnitude or signed anchor. We use direct conditional methods as a shorthand for ridge quantile regression (QR), multivariate nearest-neighbor quantiles (KNN) and a scale-adjusted local variant. Earlier one-state retrieval remains a reference. The methods are evaluated on common issue origins, with controls matching completed-response histories and refit schedules."
         },
         {
           "type": "p",
-          "html": "All direct training responses must have ended by the actual refit time. Historical controls with matching completed-label pools and update schedules distinguish part of the estimation-budget difference. Validation selects a small menu separately by source, horizon, history and family; all candidates and references are retained. The original FX evaluation archive had already been inspected. Publicly freezing the added procedures before their execution does not restore an unseen holdout."
+          "html": "The two declared primaries have opposite directions. At the six-record FX horizon, QR with 2,880 completed episodes lowers mean pinball loss by 12.66% against the original rolling 720-episode F rule and by 14.77% against matched-history F. Breaches increase to 376 from 332 and 360, respectively, while mean underprediction amount falls. The separately fitted six-week Treasury QR primary raises loss by 50.79% and increases breaches from 28 to 54 over 277 origins. All four Treasury QR cells lose to their own F controls. The weekly Treasury aggregate measures a different financial object from the individual-market-maker FX record; the two source primaries do not estimate a common replicated effect."
         },
         {
           "type": "p",
-          "html": "The favorable FX primary and adverse Treasury primary must be read together. At H=6, QR using 2,880 completed FX episodes lowers mean loss by 12.66% against the original rolling 720-episode F rule. It also lowers loss by 14.77% against F with the same 2,880-episode frozen pool and update schedule. QR records 376 breach occasions, compared with 332 for rolling F and 360 for matched frozen F; mean positive overrun falls against both references. At H=24, long-history QR improves on the old S reference by only 1.83%, with 531 rather than 287 breaches and more than doubled mean positive overrun. Short-history QR instead performs worse at that horizon."
+          "html": "The contribution is a reproducible comparison on a common sampled-peak target. Direct regression and local quantiles can change the ranking of historical constructions even when completed-label histories and update schedules are matched. The favorable short-horizon FX comparison, adverse Treasury QR comparison and later AR results show that rankings depend on the measurement process, horizon, history and model family. Fixed-report loss decomposition further distinguishes reductions in both mean error components from a score gain near an asymmetric-weight crossing. The estimators and supporting finite geometry are established operations; the comparison does not identify the causal value of additional features."
         },
         {
           "type": "p",
-          "html": "The separate application uses an official weekly compilation of primary dealers' aggregate Treasury-bill market-value positions. It is a different financial measurement process, not a second individual FX dealer or a known-disjoint institutional panel. Its declared H=6, W=260 QR comparison has 50.79% higher loss than matched-pool F, with 54 versus 28 breaches over 277 origins. All four Treasury QR specifications lose to their own F controls. A secondary H=24 neighbor gain reverses on the fixed sparse grid. Units, histories, horizons, release conventions and revised snapshots remain source specific."
-        },
-        {
-          "type": "p",
-          "html": "The contribution is a comparison that challenges historical peak constructions with credible conditional competitors and records the limits of transfer. The direct competitors change the original FX ranking, while the chosen QR procedure has substantial limitations on another measured position series. The later AR comparison improves on QR in all four Treasury cells and loses in three of four FX cells, requiring a family-specific interpretation. Completed-label matching does not isolate a causal information effect from regularization, function class, local response count or validation selection. Elementary geometry explains construction relationships, not predictive optimality. We claim no new calibration theorem, universal forecasting improvement or operational intervention."
-        },
-        {
-          "type": "p",
-          "html": "A further exploratory supplement evaluates the complete linear shortfall/excess preference range for the same fixed reports. It distinguishes coefficientwise improvement from a favorable score near a preference threshold, and retains all matched cells and sparse-grid reversals. This adds a decision-sensitivity finding without fitting another model or treating stipulated weights as observed financial prices."
+          "html": "Later exploratory additions retain the original primaries and every adverse comparison. AR(1) residual-block replay qualifies interpretations based on QR alone; rank, floor and horizon-order checks clarify the issued reports; linear weight sensitivity concerns eight archived .95 reports. These additions use previously inspected results. The FX evaluation archive had already been inspected before the conditional extension, and execution freezes do not restore an untouched holdout. The Treasury exercise uses a downloaded-vintage economic-date replay, rather than reconstructed historical public releases. Section 5 distinguishes the analysis stages and the supplement preserves their execution identities."
         }
       ]
     },
     {
-      "title": "2. Closest work and established method transfer",
+      "title": "2. Closest work and established forecasting methods",
       "blocks": [
         {
           "type": "p",
-          "html": "The closest empirical lineage is Wisniewski, Lindsay and Lindsay (2020), who already use nearest-neighbor and other regression engines on this FX source family, with positions over the preceding 24 hours and calendar or trading-session information. Their comparisons include quantile, conformal and normalized-conformal interval forecasts. Chapter 6 of Wisniewski's thesis continues related regularized and normalized endpoint constructions (award year 2024; inspected cover 2023). These precedents rule out first-use claims for conditional regression, lag/calendar features, neighbors or normalization on these records. Exact input-byte equality with the accepted version-2 member is not established."
+          "html": "Wisniewski, Lindsay and Lindsay (2020) already apply nearest-neighbor and other regression engines to this FX source family, using preceding positions and calendar or trading-session information. Their comparisons include quantile, conformal and normalized-conformal endpoint intervals. Chapter 6 of Wisniewski's thesis continues related regularized and normalized endpoint constructions (award year 2024; inspected cover 2023). Conditional regression, lag/calendar features, neighbors and normalization on these records are therefore precedents, rather than contributions of this study. Exact input-byte equality with the accepted version-2 member is not established."
         },
         {
           "type": "p",
@@ -58,7 +50,7 @@
         },
         {
           "type": "p",
-          "html": "Regression-quantile loss minimization is classical (Koenker and Bassett, 1978). Biau and Patra (2011) develop sequential quantile prediction with lag-neighbor experts, growing history, truncation and loss-weighted aggregation under stated stationarity, ergodicity and regularity conditions. Our fixed pools and delayed overlapping labels do not inherit that consistency theorem. The ridge and local estimators here constitute a bounded challenge, not the strongest possible conditional-model universe. Quantile forests (Meinshausen, 2006), autoregressive quantiles such as CAViaR (Engle and Manganelli, 2004), sequential predictive conformal inference (Xu and Xie, 2023) and full volatility-updated or filtered historical simulation (Hull and White, 1998; Barone-Adesi et al., 1999) remain distinct unexecuted alternatives."
+          "html": "Regression-quantile loss minimization is classical (Koenker and Bassett, 1978). Biau and Patra (2011) study sequential quantile prediction with lag-neighbor experts under stationarity, ergodicity and regularity assumptions. The fixed pools and delayed overlapping labels here do not inherit their consistency theorem. The comparison is deliberately bounded: quantile forests (Meinshausen, 2006), autoregressive quantiles such as CAViaR (Engle and Manganelli, 2004), sequential predictive conformal inference (Xu and Xie, 2023), and full volatility-updated or filtered historical simulation (Hull and White, 1998; Barone-Adesi et al., 1999) are established alternatives outside the executed menu."
         },
         {
           "type": "p",
@@ -66,7 +58,7 @@
         },
         {
           "type": "p",
-          "html": "The remaining distinction is the measured peak target, known floor, completed-label timing, construction/update controls and separately qualified aggregate application. A changed target or dataset alone is not a new method. The directed source search does not establish exhaustive priority for this exact target-and-data combination. Its evidence and selected reading ranges are documented separately from the experiments."
+          "html": "This study places selected mature methods on a common measured peak response, with a known floor, completed-label timing and construction/update controls. It provides a bounded empirical comparison rather than a new estimator. The directed literature search does not establish exhaustive priority for this exact target-and-data combination. The source evidence map records the consulted editions and selected reading ranges."
         }
       ]
     },
@@ -79,7 +71,7 @@
         },
         {
           "type": "p",
-          "html": "The Treasury source is the New York Fed Primary Dealer Statistics series PDPOSGS-B, identifying Treasury-bill long positions less short positions. The FR 2004 framework supplies a weekly Wednesday-close, market/fair-value basis. The accepted snapshot has 706 seven-day-spaced records from 3 April 2013 through 7 October 2026, in USD millions. It aggregates reporting dealers and can reflect valuation or reporting-composition changes. It does not identify pure customer order flow or gross exposures. Taking an absolute value after summing signed dealer positions permits cancellation; offsetting dealer positions can leave a small aggregate and large individual magnitudes (see also the aggregation discussion in Duffie et al., 2023)."
+          "html": "The Treasury source is New York Fed Primary Dealer Statistics series PDPOSGS-B, Treasury-bill long positions less short positions. FR 2004A supplies Wednesday-close positions at market/fair value. Its instructions use trade-date accounting, with specified buyback treatment on settlement date, and include eligible forward and when-issued outright positions; the series is not settled cash holdings (Board of Governors, March 2013 and July 2024 instructions). The accepted snapshot has 706 seven-day-spaced records from 3 April 2013 through 7 October 2026, in USD millions. It aggregates reporting dealers and can reflect valuation or reporting-composition changes. Taking an absolute value after summing signed positions permits cross-dealer cancellation: a small aggregate can coexist with large individual magnitudes (Duffie et al., 2023). It does not identify gross exposures or pure customer order flow."
         },
         {
           "type": "equation",
@@ -136,7 +128,7 @@
         },
         {
           "type": "p",
-          "html": "Strict loading accepts only exact source bytes, schemas, chronology and finite positions, without alias splicing. The FX CSV is 1,286,391 bytes, SHA-256 b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa; Treasury is 23,315 bytes, SHA-256 9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb. A hash identifies the downloaded version, not permanent publisher availability. The unchanged Treasury input is archived under NYFed terms; FX redistribution permission remains unverified. Source routes, attribution and strict identity checks accompany both. Changed current downloads require a separately versioned rerun."
+          "html": "Strict loading accepts only the pinned source bytes, schemas, chronology and finite positions, without alias splicing. The accepted Treasury snapshot is archived with attribution and continuing source terms; FX redistribution permission remains unverified. The data guide and replication manifests give acquisition routes, exact hashes and byte counts. A hash identifies a downloaded version, not permanent availability. Changed downloads require a separately versioned replay rather than silent substitution."
         }
       ]
     },
@@ -196,7 +188,7 @@
         },
         {
           "type": "p",
-          "html": "QR minimizes the normalized headroom regression-quantile objective with an unpenalized intercept and a ridge penalty on slopes. The fixed menu is lambda in {0.001,0.01,0.1}; tau=19/20. Training optimizes the unprojected response, while validation scores the final projected report in native units."
+          "html": "QR minimizes the normalized headroom regression-quantile objective with an unpenalized intercept and a ridge penalty on slopes. The fixed menu is lambda in {0.001,0.01,0.1}; tau=19/20. Training uses the unconstrained affine headroom prediction. Nonnegative projection is applied when issuing and validating a report, rather than inside the training objective; validation uses native units."
         },
         {
           "type": "equation",
@@ -244,16 +236,16 @@
         },
         {
           "type": "p",
-          "html": "Using the same fitted coefficients for every residual in a block and replaying its original order from x=N(t) gives M(i,h;x)=N(i+h)+phi(r)^h[x−N(i)]. Set h0 explicitly to x and report the corrected empirical quantile of the W maximum absolute replay paths. The intercept cancels in this deterministic identity; it is still estimated in the mean recursion. At exact phi1 the arithmetic agrees with frozen S. Negative or above-one finite estimates are eligible, without clipping. Constant regressors, lost dispersion and nonfinite computations fail without a substitute model."
+          "html": "Using the same fitted coefficients for every residual in a block and replaying its original order from x=N(t) gives M(i,h;x)=N(i+h)+phi(r)^h[x−N(i)]. Set h0 explicitly to x and report the corrected empirical quantile of the W maximum absolute replay paths. The intercept cancels in this deterministic identity; it is still estimated in the mean recursion. At phi=1 in real arithmetic the arithmetic agrees with frozen S. Negative or above-one finite estimates are eligible, without clipping. Constant regressors, lost dispersion and nonfinite computations fail without a substitute model."
         },
         {
           "type": "p",
-          "html": "This is a mean-filtered ordered-block historical comparison, not the full conditional-volatility filtered simulation of Hull and White (1998) or Barone-Adesi et al. (1999). It does not standardize/rescale innovations, fit GARCH, independently draw future steps or introduce Monte Carlo randomness. Conditional representativeness of historical residual blocks remains unverified; numerical OLS acceptance supplies no coverage or mean-reversion law. Appendix A.4 gives the path relationship, and Appendix C records numerical checks."
+          "html": "This is a mean-filtered ordered-block historical comparison, not the full conditional-volatility filtered simulation of Hull and White (1998) or Barone-Adesi et al. (1999). It does not standardize/rescale residuals, fit GARCH, independently draw future steps or introduce Monte Carlo randomness. Conditional representativeness of historical residual blocks remains unverified; numerical OLS acceptance supplies no coverage or mean-reversion law. Appendix A.4 gives the path relationship, and Appendix C records numerical checks."
         }
       ]
     },
     {
-      "title": "5. Evaluation, scoring and design history",
+      "title": "5. Evaluation, scoring and analysis status",
       "blocks": [
         {
           "type": "p",
@@ -270,11 +262,11 @@
         },
         {
           "type": "p",
-          "html": "The stipulated pinball preference weights an underprediction dollar nineteen times an overprediction dollar. It is a consistent quantile score (Gneiting, 2011), not an observed funding cost or the only possible consistent score. Paired means are aggregated from stored per-origin differences, not rounded table subtraction. Mean positive overrun averages (P−C)+ over every origin; mean unused allowance averages (C−P)+. Extra allowance C−B differs from unused allowance. Strict breaches use P>C. Conditional overrun uses each method's own breach set and denominator, with an explicit undefined reason when no event occurs."
+          "html": "The stipulated pinball score weights an underprediction dollar nineteen times an overprediction dollar. It is a consistent quantile score (Gneiting, 2011), rather than an observed financial cost. We report U=mean(P−C)<sub>+</sub>, the mean underprediction amount, and V=mean(C−P)<sub>+</sub>, the mean overprediction amount. Both average over all issue origins; conditional breach severity averages over each method's own strict P&gt;C event set. The reported headroom C−B is distinct from V. Archived fields mean_positive_overrun, mean_unused_allowance and mean_extra_allowance correspond to U, V and mean(C−B); their historical names do not represent resources actually allocated. Lower mean loss and fewer breach occasions are separate outcomes. Financial units are never pooled across sources."
         },
         {
           "type": "p",
-          "html": "Annual groups and the global grid t(start)+j(H+1) are descriptive sensitivities. The grid never resets by year and removes shared recorded observations between its closed label windows; shared training histories and temporal dependence remain. FX grid counts are 947/265 for H6/H24; Treasury counts are 40/12. Different source units and economic durations are not pooled. No population test, confidence interval, independent-replication count or conditional-coverage conclusion is attached to these added comparisons. The earlier original resampling profiles apply only to that historical F-minus-S sequence."
+          "html": "Issue-year groups and the single globally anchored grid t(start)+j(H+1) are descriptive sensitivities. The grid never resets by year and removes shared recorded observations between retained response windows, while preserving shared training histories and possible time dependence. Counts are 947/265 in FX and 40/12 in Treasury for H6/H24. Different horizons retain different issue subsets. These groups are neither independent replications nor population confidence intervals. A partial year is retained and labeled as such. Every declared candidate must complete; failures stop its phase rather than produce a shortened mean, substitute method or favorable retry."
         },
         {
           "type": "p",
@@ -360,19 +352,11 @@
         },
         {
           "type": "p",
-          "html": "The original construction study was specified at 05:46:37 UTC on 21 October 2026 and publicly committed before its target-specific forecasts/losses; it used seven settings and five methods. The subsequent one-state retrieval extension was conceived after those outcomes were inspected and retained 30 fixed configurations. Both are historical evidence, not fresh validation for the present additions. Appendix B preserves their complete loss menus and adverse outcomes."
+          "html": "The analysis has distinct stages. The original construction study fixed its target-specific procedure before calculating its forecasts and losses. The subsequent one-state retrieval extension was conceived after those outcomes were inspected; Appendix B retains both complete menus. The conditional extension fixed its sources, features, menus, machine limits and comparison definitions before its new validation runs, then recorded every selected parameter before evaluation. Its FX evaluation archive had already been inspected. These execution freezes establish what ran, rather than an unseen evaluation or removal of earlier inspection."
         },
         {
           "type": "p",
-          "html": "This revision publicly froze its source, model and machine specification at commit 1bd5b692fd9cb240763c032fb4e1c203871fad55 before the first new validation phase (22 October, 09:26:23 UTC). Every selected parameter and its full validation-receipt hash was then publicly frozen at 8ce6e398a17e4c12cb36a9a76785e78fd21a1da0 before selected evaluation. The FX evaluation archive had already been inspected; this execution chronology does not restore an unseen holdout."
-        },
-        {
-          "type": "p",
-          "html": "The root trace audit independently recomputed every source/H peak with direct maxima, checked archive hashes, origins, floors, refit indices and final scores, and reconciled all 90 method summaries, 372 annual rows and 98 paired contrasts. Twelve shared historical FX aggregate records match the earlier accepted study exactly. These checks establish execution identity and arithmetic consistency, not forecasting superiority. Numerical-vector and public-diagnostic review scopes are distinguished in Appendix C."
-        },
-        {
-          "type": "p",
-          "html": "The later AR specification was publicly frozen at a068dfe6b4dcb2447d6d16f665fb39fe9defd329 and all seventeen bound files were freshly verified before its 11:50:31 UTC start on 22 October. It contains the eight Cartesian source/H/W cells, direct matched-S comparisons and F/selected-QR context: 24 contrasts total. Both samples were already inspected, so every new contrast is exploratory. Original primaries, selections and forecasts remain unchanged; a favorable AR cell does not replace a declared QR primary."
+          "html": "AR replay, floor/horizon diagnostics, ordinary-rank sensitivity, late conditional-breach evidence and fixed-report weight sensitivity were added after earlier results were inspected. Each is explicitly exploratory and leaves the original primaries unchanged. The public supplements retain their complete menus, design/freezing chronology, input identities, numerical acceptance conditions, independent arithmetic checks and reproduction receipts. Archive verification, numerical reproduction and new financial validation are distinct: the first two do not supply an additional sample."
         }
       ]
     },
@@ -437,24 +421,24 @@
         },
         {
           "type": "p",
-          "html": "The H6 primary QR W2880 loss is USD 385,844.89, against USD 441,774.04 for original rolling F W720. The direct paired mean is −USD 55,929.15, or −12.660%. Against W2880 frozen F it is −14.767%; against frozen S at that same window it is also favorable. Thus the added conditional benchmark changes the older FX ranking. The cross-window primary changes history length and update frequency as well as the estimator; the matched-pool controls address part, but not all, of this procedural difference."
+          "html": "The H6 primary QR W2880 loss is USD 385,844.89, against USD 441,774.04 for original rolling F W720. The direct paired mean is −USD 55,929.15, or −12.660%. Against W2880 frozen F it is −14.767%; against frozen S at that same window it is also favorable. Thus the added conditional benchmark changes the older FX ranking. The cross-window primary changes history length and update frequency as well as the estimator; the matched-pool controls address part, but not all, of this procedural difference. Figure 1 places every selected conditional cell beside its same-history frozen F reference."
         },
         {
           "type": "p",
-          "html": "The H6 gain is not uniform risk improvement. QR has 376 strict breaches (5.675%) versus 332 (5.011%) for old rolling F. Mean positive overrun falls from USD 166,531.06 to 156,123.03, while mean unused allowance falls by USD 920,830.41. More occasions breach, with a lower unconditional overrun contribution. Conditional severity uses the different method-specific event sets and cannot identify improvement on the same incidents. At W720, H6 QR improves on frozen F by only 2.117%, while scaled KNN is worse by 5.349%."
+          "html": "The H6 gain is not uniform risk improvement. QR has 376 strict breaches (5.675%) versus 332 (5.011%) for old rolling F. Mean underprediction amount falls from USD 166,531.06 to 156,123.03, while mean overprediction amount falls by USD 920,830.41. More occasions breach, with a lower unconditional underprediction contribution. Conditional severity uses the different method-specific event sets and cannot identify improvement on the same incidents. At W720, H6 QR improves on frozen F by only 2.117%, while scaled KNN is worse by 5.349%. Figure 2 separates the score, breach-frequency and mean-error changes for the fixed headline comparisons."
         },
         {
           "type": "p",
-          "html": "At H24, QR W2880 loss is USD 734,695.07 against USD 748,383.54 for old rolling S W720: −USD 13,688.47 (−1.829%). Breaches increase from 287 (4.332%) to 531 (8.015%); mean positive overrun rises from USD 149,813.88 to 317,678.12, while unused allowance falls. With W720, QR instead loses to frozen F by 31.504% and frozen S by 37.095%. Neither the broader model class nor a favorable short-horizon result provides a uniform advantage across history budgets."
+          "html": "At H24, QR W2880 loss is USD 734,695.07 against USD 748,383.54 for old rolling S W720: −USD 13,688.47 (−1.829%). Breaches increase from 287 (4.332%) to 531 (8.015%); mean underprediction amount rises from USD 149,813.88 to 317,678.12, while overprediction amount falls. With W720, QR instead loses to frozen F by 31.504% and frozen S by 37.095%. Neither the broader model class nor a favorable short-horizon result provides a uniform advantage across history budgets."
         },
         {
           "type": "p",
-          "html": "The H6 primary loss difference is negative in both issue-year groups: −12.012% over 6,262 origins in 2016 and −29.513% over the 363-origin partial 2017. H24 improvement against its legacy reference is only −0.555% in 2016 and −33.007% in partial 2017; about 70.83% of the small total net gain comes from that short tail segment. The fixed H+1 grids retain favorable H6/H24 differences of −16.388%/−8.027%, with 947/265 origins. These subdivisions and grids are sensitivities of one inspected record, not independent replications or a basis for switching forecasts retrospectively."
+          "html": "The H6 primary loss difference is negative in both issue-year groups: −12.012% over 6,262 origins in 2016 and −29.513% over the 363-origin partial 2017. The latter contains 5.48% of all issue origins and contributes 8.64% of the H6 primary net gain and 6.87% of the matched-history H6 net gain. For both H6 comparisons, U and V fall in each issue-year group and on the fixed 947-origin grid. In contrast, H24 improves against its legacy reference by only 0.555% in 2016 and 33.007% in partial 2017; 70.83% of its small total net gain comes from that short tail segment, and U increases in both groups and on the 265-origin grid. Figure 3 shows the issue-year contrasts. The fixed H+1 grids retain favorable H6/H24 legacy-reference loss differences of −16.388%/−8.027%. These are decompositions and sensitivities of the same inspected record, not independent validation or a basis for retrospective forecast switching."
         }
       ]
     },
     {
-      "title": "7. Treasury results: an adverse primary transfer",
+      "title": "7. Treasury results: adverse QR comparisons",
       "blocks": [
         {
           "type": "table",
@@ -514,19 +498,19 @@
         },
         {
           "type": "p",
-          "html": "The declared H6 QR W260 primary has mean loss 4,159.673 versus 2,758.665 for matched frozen F, in USD millions. Its paired increase is 1,401.008 (+50.786%), with 54 rather than 28 strict breaches (19.495% versus 10.108%). Mean positive overrun rises from 1,395.639 to 3,131.862 and unused allowance falls from 28,656.166 to 23,688.088. Under the stipulated score, the reduced unused quantity does not compensate for the more heavily weighted overrun increase. This is an adverse accuracy result from numerically accepted fits, not a convergence failure."
+          "html": "The declared H6 QR W260 primary has mean loss 4,159.673 versus 2,758.665 for matched frozen F, in USD millions. Its paired increase is 1,401.008 (+50.786%), with 54 rather than 28 strict breaches (19.495% versus 10.108%). Mean underprediction amount rises from 1,395.639 to 3,131.862 and overprediction amount falls from 28,656.166 to 23,688.088. Under the stipulated score, the reduced overprediction amount does not compensate for the more heavily weighted underprediction increase. This is an adverse accuracy result from numerically accepted fits, not a convergence failure."
         },
         {
           "type": "p",
-          "html": "Every Treasury QR cell loses to its own frozen F control: +83.354% and +50.786% at H6 for W52/W260, and +227.411% and +109.843% at H24. Short-history H24 QR breaches 132 of 277 responses. All four selected scaled-KNN cells also have higher loss than their matched F controls. The primary QR difference is adverse in each complete year 2021–2025. Its favorable −14.404% in 2026 covers only 16 issue origins through April, with no breaches for either method. This partial period is retained, not used to rescue the primary."
+          "html": "Every Treasury QR cell loses to its own frozen F control: +83.354% and +50.786% at H6 for W52/W260, and +227.411% and +109.843% at H24. Short-history H24 QR breaches 132 of 277 responses. All four selected scaled-KNN cells also have higher loss than their matched F controls. The primary QR difference is adverse in each complete issue-year group from 2021 through 2025. Its favorable −14.404% in 2026 covers only 16 issue origins through April, with no breaches for either method. This partial period is retained, not used to rescue the primary."
         },
         {
           "type": "p",
-          "html": "Plain KNN W52 selects k=52 at both horizons and equals frozen F at every stored issue. The distance coordinates do not change membership in these rows; they demonstrate a full-pool fallback, not rich-feature gains. At W260, selected KNN has secondary all-origin loss reductions of 3.447% (H6) and 8.964% (H24) against F. These do not replace the QR primary, and no selected conditional procedure is descriptively below every retained historical reference at its horizon. Such a whole-menu observation is not a newly selected forecast rule."
+          "html": "Plain KNN W52 selects k=52 at both horizons and equals frozen F at every stored issue. The distance coordinates do not change membership in these rows; This is an ordinary validation-selected full-pool identity, rather than a response to fitting failure or evidence of a feature-membership gain. At W260, selected KNN has secondary all-origin loss reductions of 3.447% (H6) and 8.964% (H24) against F. These do not replace the QR primary, and no selected conditional procedure is descriptively below every retained historical reference at its horizon. Such a whole-menu observation is not a newly selected forecast rule."
         },
         {
           "type": "p",
-          "html": "The secondary H24 KNN W260 comparison has 13 versus 12 breaches and mean overrun 327.816 versus 306.848, alongside reduced unused allowance. On the fixed 12-origin H+1 grid its mean loss is 3,111.788 against 2,807.400 for F, reversing to +10.842%. The H6 KNN sensitivity does not reverse: its 40-origin difference remains −22.071%. These exact grids remove shared recorded label observations but retain common training histories and possible time dependence. The sparse reversal does not identify a cause or prove an opposite population ranking; it does prevent a claim of stable secondary transfer."
+          "html": "The secondary H24 KNN W260 comparison has 13 versus 12 breaches and mean underprediction amount 327.816 versus 306.848, alongside reduced overprediction amount. On the single globally anchored 12-origin H+1 grid its mean loss is 3,111.788 against 2,807.400 for F, reversing to +10.842%. The H6 KNN sensitivity does not reverse: its 40-origin difference remains −22.071%. These exact grids remove shared recorded label observations but retain common training histories and possible time dependence. The sparse reversal does not identify a cause or prove an opposite population ranking; it does prevent a claim of a stable secondary ranking."
         },
         {
           "type": "p",
@@ -630,7 +614,7 @@
         },
         {
           "type": "p",
-          "html": "Against S, AR mean report and mean unused allowance decrease in every cell, while strict breach occasions increase in all eight and mean positive overrun increases in seven. Treasury H24 W260 loss falls from 2478.871 to 1881.016 USD millions (−24.118%), yet breaches rise from 12 to 59 of 277 and mean positive overrun rises from 306.848 to 892.437. Mean unused allowance falls from 43747.307 to 20664.031. Under the stipulated score, .05 times the unused reduction exceeds .95 times the added overrun. This explains the observed loss change without asserting safer limits, calibrated tails or observed financing savings."
+          "html": "Against S, AR mean report and mean overprediction amount decrease in every cell, while strict breach occasions increase in all eight and mean underprediction amount increases in seven. Treasury H24 W260 loss falls from 2478.871 to 1881.016 USD millions (−24.118%), yet breaches rise from 12 to 59 of 277 and mean underprediction amount rises from 306.848 to 892.437. Mean overprediction amount falls from 43747.307 to 20664.031. Under the stipulated score, .05 times the overprediction reduction exceeds .95 times the added underprediction. This explains the observed loss change without asserting safer limits, calibrated tails or observed financing savings."
         },
         {
           "type": "p",
@@ -639,11 +623,11 @@
       ]
     },
     {
-      "title": "9. Fixed-report preference robustness",
+      "title": "9. Loss-weight sensitivity of eight fixed reports",
       "blocks": [
         {
           "type": "p",
-          "html": "The main score fixes a shortfall/excess preference of 19:1. We now quantify how rankings of those already issued reports depend on that stipulated preference. For report m let U be its mean positive overrun and V its mean unused allowance, over the same origins. For 0&lt;=a&lt;=1 define:"
+          "html": "The main score fixes an underprediction/overprediction weight ratio of 19:1. We now vary that ratio for previously issued .95 reports. This changes the evaluation of fixed actions, rather than fitting other quantiles. For report m, U and V are its mean underprediction and overprediction amounts over the same origins. For 0&lt;=a&lt;=1 define:"
         },
         {
           "type": "equation",
@@ -652,7 +636,7 @@
         },
         {
           "type": "p",
-          "html": "Here a=0 and a=1 are limiting single-component objectives; finite positive r corresponds to 0&lt;a&lt;1. For two reports A and B, the difference is a(U_A-U_B)+(1-a)(V_A-V_B). A coefficientwise reduction in both components is preferable for every nonnegative linear weighting. With opposing component differences, a unique crossing can reverse the ordering. This elementary affine geometry is not a new forecasting method. Changing a evaluates fixed actions under other hypothetical preferences; it neither refits them as other quantiles nor establishes dominance over all consistent scores for the .95 quantile (Gneiting, 2011)."
+          "html": "At a=0 or a=1 only one component remains; finite positive r corresponds to 0&lt;a&lt;1. For reports A and B the difference is a(U<sub>A</sub>−U<sub>B</sub>)+(1−a)(V<sub>A</sub>−V<sub>B</sub>). Reducing both components gives weak improvement for every constant nonnegative linear weighting, and strict improvement when a positively weighted component strictly decreases. Opposing component differences yield a crossing when it lies in the stated range. This elementary geometry establishes neither dominance under nonlinear or state-dependent costs nor dominance over every consistent .95 quantile score (Gneiting, 2011). A higher breach frequency remains possible when U falls."
         },
         {
           "type": "table",
@@ -697,15 +681,15 @@
         },
         {
           "type": "p",
-          "html": "The two FX H6 comparisons reduce both mean positive overrun and mean unused allowance. Their improvement therefore does not rely on the single 19:1 preference, even though strict breach occasions still increase. By contrast, the FX H24 legacy comparison increases overrun while reducing unused allowance: its 1.829% pinball improvement reverses at r=20.630898 (a=0.953770), close to 19. The Treasury H6 primary becomes preferable only below r=2.861429 (a=0.741028); its adverse result at 19 remains intact. These are descriptive consequences of fixed sample means, not estimates of financing prices or risk preferences."
+          "html": "The two FX H6 comparisons reduce both mean underprediction amount and mean overprediction amount. Their improvement therefore does not rely on the single 19:1 preference, even though strict breach occasions still increase. By contrast, the FX H24 legacy comparison increases U while reducing overprediction amount: its 1.829% pinball improvement reverses at r=20.630898 (a=0.953770), close to 19. The Treasury H6 primary becomes preferable only below r=2.861429 (a=0.741028); its adverse result at 19 remains intact. These are descriptive consequences of fixed sample means, not estimates of financing prices or risk preferences."
         },
         {
           "type": "p",
-          "html": "For each of the eight source/H/W cells, the complete lower envelope retains QR, KNN, scaled KNN, matched frozen F/S/K, AR and I. The eight reports share the completed-label history length and update schedule within a cell. Rolling and one-state reports are excluded from these frontiers; the original cross-window primary references remain separately labeled in Table 6. Appendix E retains every full and sparse-grid frontier, endpoint and tie convention. A supplementary figure displays the whole preference range and a high-shortfall-weight detail. The full-grid Treasury H6 W260 QR is never optimal within these eight fixed reports, including both endpoints. At a=.95 the preferred report changes on four of eight sparse grids: FX H24 W720 and Treasury H6 W52/W260 and H24 W52. Treasury H24 grids have only 12 origins. These changes delimit sample stability; sparse windows and shared training histories do not create independent evidence."
+          "html": "Within each source/H/W cell, the lower envelope is computed only over eight archived .95 reports: QR, KNN, scaled KNN, matched frozen F/S/K, AR and I. They share the completed-label history length and refit schedule, but this finite menu does not exhaust feasible reports. For example, C=B is feasible and has V=0, making it a minimizer at a=0 over all feasible reports; that floor-only action is absent from this eight-report menu. The reported endpoint winners therefore describe the menu, rather than all feasible decisions. Rolling and one-state reports are also excluded; the original cross-window primary references are separately labeled in Table 6. Appendix E retains all full and sparse-grid envelopes, endpoints and ties. Full-grid Treasury H6 W260 QR is never optimal among these eight reports, including both endpoints. At a=.95 the menu minimizer changes on four of eight sparse grids: FX H24 W720, Treasury H6 W52/W260 and Treasury H24 W52. Treasury H24 grids contain only 12 origins. These are dependent within-archive sensitivities, rather than four independent replication outcomes."
         },
         {
           "type": "p",
-          "html": "The supplement was conceived after previous results and preliminary preference calculations were inspected. An execution freeze at befd01798ca2669f5b9b12874290c5b5ed0134eb binds six archived tables, this design and six implementation/test files before the first complete recorded run. A subsequently strengthened headline-identity checker was publicly bound in protocol revision 2 before a second run, whose aggregate output was byte-identical. Both runs retain all 16 groups, 128 fixed report summaries and 448 unordered pairs. Independent affine optimality inequalities check all 45 open frontier regions, 61 boundary points and four headline comparisons. Arithmetic is exact for saved decimal mean tokens; those floating point summaries are not infinite-precision raw-loss truth. Reconstructed .95 means reconcile with the archive within the declared numerical tolerance. No raw observations are accessed or reports refitted. Neither primary is replaced, and hindsight frontiers are not deployment selectors."
+          "html": "This analysis was conceived after earlier results and preliminary preference calculations were inspected. It reads saved aggregate means without accessing raw observations or refitting reports. The supplement preserves the before-run execution identities, both byte-identical result runs and the strengthened independent affine-inequality check. Rational calculations are exact for the saved decimal mean tokens, which summarize floating-point losses rather than infinite-precision raw observations. The resulting hindsight envelopes are descriptive objects, not deployment selectors."
         }
       ]
     },
@@ -714,43 +698,27 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Observed rankings differ across the studied method-family, source, horizon and history cells. Long-history QR improves on the inspected FX record and loses on the separately measured Treasury aggregate. The later exploratory AR replay lowers loss in five of eight cells against matched S and raises it in three, while strict breach occasions increase in all eight. It improves on QR in all four Treasury cells and loses in three of four FX cells. The Treasury QR failure therefore remains family-specific, and average-score gains need not mean fewer tail events. None of these later results replaces either declared primary. The contribution is a bounded application/model-validation finding; elementary common-set bounds and implementation checks remain supporting evidence rather than methodological novelty."
+          "html": "The principal finding is variation in ranking. Long-history QR improves the six-record FX comparison and performs worse on the separately fitted Treasury aggregate. Exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR improves mean loss in five cells and raises it in three, while breach occasions increase in all eight. Thus the adverse Treasury QR primary concerns the tested QR specifications, and the favorable AR cells do not establish a general advantage for conditional modeling."
         },
         {
           "type": "p",
-          "html": "Matching completed-label pools and update schedules improves within-source interpretability, without isolating a causal value of additional features. F/K already use current magnitude and S uses the signed current anchor; the added procedures also change function class, regularization, local count, scaling and validation selection. The two source primaries have different references, histories, refit frequencies, score units and calendar horizons, so their percentages are not estimates of one common replicated effect. No FX-fitted coefficients or transforms are moved to Treasury: each source is fitted and validated separately. Portability concerns a source-adapted procedure family."
+          "html": "Mean quantile loss and breach frequency answer different questions. The two H6 FX comparisons reduce U and V despite more strict breaches; their sample-average improvement persists under every constant nonnegative linear weighting of those components. Higher breach frequency rules out empirical first-order stochastic dominance in the favorable direction for the distribution of positive-part errors (P−C)<sub>+</sub>, including zeros: its empirical distribution function is lower at zero. A cost per breach or a nonlinear loss can therefore change the ranking. The smaller H24 FX legacy gain instead trades increased U for reduced V and reverses at ratio 20.63. These are properties of fixed reports under stipulated weights, rather than measured financing costs or uniformly improved tail risk."
         },
         {
           "type": "p",
-          "html": "The specification and selection budgets also limit interpretation. A post-result audit of the complete validation menu finds five of eight QR selections at penalty-menu endpoints, including all four Treasury selections. This does not show that an untested penalty would help. Treasury validation has 52 consecutive origins; at H24, at most three label windows with origins among those 52 can avoid sharing observations. This is not an effective-sample-size estimate. The complete validation-loss profiles and fixed/adapted source contract delimit the tested specifications. Selections and negative results remain unchanged; mature alternatives are not exhausted and optimality is not established."
+          "html": "The controls address only part of the procedural difference. F/K already use current magnitude and S uses the signed anchor; QR and local methods also change function class, regularization, local count, scaling, validation selection and raw lookback. Matching completed-response pools and refit schedules does not isolate a causal information effect. Each source is fitted and validated separately; fitted FX coefficients and transforms are not transferred to Treasury. The source primaries also differ in references, histories, update schedules, units and calendar horizons."
         },
         {
           "type": "p",
-          "html": "A later post-inspection rank/endpoint ablation adds a same-pool, same-update intercept-only empirical headroom quantile, choosing its lower minimizer endpoint. The matched FX H6 W2880 QR comparison still lowers loss by 14.773%, with 376 rather than 365 breaches; the matched Treasury H6 W260 QR comparison still raises loss by 46.058%, with 54 rather than 32 breaches. All four Treasury QR cells remain adverse against this added report. The lower-rank rule improves on original frozen F in three cells and loses in five, so empirical minimization does not imply better realized evaluation loss. These two headline signs persist under this specific control; it neither isolates a causal feature effect nor exhausts alternative conditional models. Table D3 retains every cell and the later design history."
+          "html": "Limited validation budgets further restrict generalization. Five of eight QR selections lie at penalty-menu endpoints, including all four Treasury cells; this does not show that an untested penalty would help. The 52 consecutive Treasury validation origins contain at most three mutually observation-disjoint H24 label windows, without implying an effective sample size of three. Issue-year groups and sparse grids remain subdivisions of the inspected archives. They cannot replace compatible untouched financial records, and mature forecasting alternatives remain outside the tested menu."
         },
         {
           "type": "p",
-          "html": "Post-result diagnostics clarify the issued reports rather than changing their rankings. Every common realized target satisfies P(H6)≤P(H24), yet the separately fitted reports can cross: FX W720 QR crosses on 640/6,625 issues, and Treasury W52 QR on 91/277. Some short Treasury historical F/S controls also cross because the horizons use different mature episode sets; zero observed crossings supply no general guarantee. Appendix D retains all 45 original pairs and a separately frozen addition covering all four AR pairs. AR has zero observed FX crossings, but Treasury W52/W260 cross on 59/26 of 277 issues. The horizon-specific fits and mature scenario sets differ; numerical acceptance does not establish an ordered report curve."
+          "html": "Post-result diagnostics clarify the accepted reports without repairing them. The ordinary empirical-rank control retains the matched H6 QR improvement in FX and deterioration in Treasury. Separately fitted horizon reports can cross even though every realized target is ordered; numerical acceptance supplies no horizon-coherence guarantee. A binding floor is not an identified cause of the Treasury QR errors, and projection onto a known outcome floor differs from raising a long-horizon report to another learned report. Appendix D retains complete rank, floor and crossing results. Its late fixed-terminal conditional-breach calculations remain exploratory and provide no retrospective coverage certification for the selected analysis."
         },
         {
           "type": "p",
-          "html": "The floor diagnostic distinguishes a binding issued report from an outcome atom. Treasury H24 QR W52 has breaches both at and away from its floor, so poor accuracy cannot be attributed solely to floor binding; Appendix D retains the full event counts. Stored equality cannot distinguish unprojected negative, exactly zero and rounded headrooms. Projection onto the known floor weakly improves realized pinball loss, but a learned H6 report is not a known lower bound for the H24 outcome: forcing H24 above H6 has no analogous automatic improvement argument. No forecast reconciliation or post-result retuning is performed."
-        },
-        {
-          "type": "p",
-          "html": "A near-five-percent empirical breach rate does not certify a conditional 95% envelope. The response can have an atom at its current magnitude, so even a true quantile need not have exactly five-percent strict exceedance. Refitted histories, selected neighborhoods, overlapping labels and finite validation remain dependent. We have not established the assumptions needed for the published asymptotic or conformal results discussed in Section 2. Numerical convergence and arithmetic reproducibility do not remove those statistical limitations."
-        },
-        {
-          "type": "p",
-          "html": "A separately frozen late fixed-terminal diagnostic examines the stronger datewise conditional strict-breach upper-bound null. Four of 56 matched reports cross the declared formal reference threshold, all specific QR configurations; the other 52 do not receive a coverage PASS. Appendix D retains every report and phase and distinguishes fixed-procedure theory from the inspected-sample selection history. Treasury H24 W260 AR still has 59 breaches in 277 issues despite not crossing that threshold. This addition changes neither the score comparisons nor the missing independent validation."
-        },
-        {
-          "type": "p",
-          "html": "The Treasury application broadens the observed measurement process while leaving compatible individual-dealer validation and original-release forecasting unresolved. Cross-dealer cancellation, market-value accounting, reporting composition, weekly sampling and the downloaded economic-date convention limit its financial interpretation. These qualifications apply to favorable and adverse outcomes; they do not justify dismissing the adverse primary after observation. A perfectly offset aggregate can be zero while individual dealer magnitudes are arbitrarily large, and sampled observations impose no finite bound on inter-record excursions without additional path restrictions. Further compatible records and an original-release replay remain open research questions, not completed evidence."
-        },
-        {
-          "type": "p",
-          "html": "Operational claims require data on quotes, fills, hedges, book decomposition, cash flows, collateral and financing prices, none of which is observed here. Active inventory-sensitive quoting models, such as Avellaneda and Stoikov (2008), concern decisions that can change the position process; these interventions are not evaluated here. A netted position envelope is therefore not optimal capital, cash adequacy, a funding saving, profit or a recommendation to change risk limits. Mean loss, report levels, breach frequency and severity describe passive reports under stipulated weights."
+          "html": "The remaining limits concern information, measurement and decisions. The Treasury economic-date replay does not reconstruct historical public releases or revisions, and its aggregate can conceal offsetting dealer positions. Both sources omit inter-record paths, book decomposition and the quotes, fills, hedges, cash flows, collateral and financing prices needed for an operational evaluation. Active inventory-sensitive quoting, as in Avellaneda and Stoikov (2008), changes the position process and is outside this passive exercise. Further compatible data, a defensible release clock and an observed decision link would answer stronger questions than another comparison on the same archives."
         }
       ]
     },
@@ -759,7 +727,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Established conditional methods materially change an earlier sampled-peak comparison; observed rankings differ across the studied model-family, source, horizon and history cells. The FX six-record QR primary lowers loss by 12.66% with more breach occasions; its matched-pool improvement is 14.77%. The separately specified Treasury six-week QR primary raises loss by 50.79% and increases breaches. Short-history regressions, a secondary neighbor sensitivity reversal and post-result horizon incoherence limit a general success narrative. The later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S it lowers loss in five cells and raises it in three, while breaches increase in all eight. Its long-history Treasury H24 gain accompanies 59 rather than 12 breaches. Complete adverse and favorable comparisons are retained; this supplement does not replace either original primary. The evidence supports a bounded comparison of mature forecasting procedures on two measured financial position series, not a new estimator, conditional-coverage theorem or operational risk-policy gain. A separately frozen lower empirical-rank supplement retains the matched long-history H6 QR improvement in FX and deterioration in Treasury without replacing the original primaries. Fixed-report preference frontiers further distinguish the coefficientwise FX H6 improvements from the near-threshold FX H24 gain. Four of eight .95 frontier winners change on the existing sparse grids, preserving the need for compatible unseen and decision-linked evidence."
+          "html": "Established methods change the ranking of historical forecasts for the sampled net-position peak, with results depending on source, horizon, history and model family. The declared six-record FX QR primary lowers mean loss by 12.66%, with a 14.77% matched-history reduction and more breach occasions. The separately fitted six-week Treasury QR primary raises loss by 50.79% and increases breaches. Later AR replay improves on QR in every Treasury cell while increasing breaches relative to matched increment translation in all eight cells. Fixed-report weight sensitivity separates the short-horizon FX reductions in both mean error components from the near-threshold long-horizon gain; sparse-grid reversals further limit claims of stable rankings. The retained evidence supports a bounded retrospective benchmark using mature methods. It establishes neither a new estimator, conditional coverage nor an observed benefit from changing trading, funding or risk-limit decisions."
         }
       ]
     },
@@ -918,7 +886,7 @@
         },
         {
           "type": "p",
-          "html": "For interpretation, fix common coefficients c and phi in N(s+1)=c+phi N(s)+epsilon(s). Replay a historical window's ordered innovations from query x. The coefficients may be treated as fixed after a refit; this algebra does not assert that they are the true dynamics. Denote replay by M and raw translation by W. Subtracting the two recursions and using induction gives"
+          "html": "For interpretation, fix arbitrary coefficients c and phi and define residuals epsilon(s)=N(s+1)−c−phi N(s). Replay a historical window's ordered residuals from query x. The coefficients are fixed after a refit; this algebra does not assert a true dynamic law or a martingale-difference property. Denote replay by M and raw translation by W. Subtracting the recursions and using induction gives"
         },
         {
           "type": "equation",
@@ -936,7 +904,7 @@
         },
         {
           "type": "p",
-          "html": "For 0≤φ≤1 the coefficient is 1−φ<super>H</super>; at φ=1 the paths coincide. The identity needs no innovation law, while treating past innovations as representative of future conditional innovations is a separate assumption. Section 8 fits a specified mean recursion and compares realized loss, but does not validate that conditional innovation assumption. The extrema suffice to evaluate the peak after raw translation, but generally not after the dynamic correction, which depends on path order. The same-rank reports inherit a deterministic bound with max over historical anchor distances, not a guaranteed sign of loss improvement. Conditional validity remains a separate question."
+          "html": "For 0≤φ≤1 the coefficient is 1−φ<super>H</super>; at φ=1 the paths coincide. The identity needs no residual law, while treating past residuals as representative of future conditional residuals is a separate assumption. Section 8 fits a specified mean recursion and compares realized loss, but does not validate that conditional residual-representativeness assumption. The extrema suffice to evaluate the peak after raw translation, but generally not after the dynamic correction, which depends on path order. The same-rank reports inherit a deterministic bound with max over historical anchor distances, not a guaranteed sign of loss improvement. Conditional validity remains a separate question."
         }
       ]
     },
@@ -1125,7 +1093,7 @@
         },
         {
           "type": "p",
-          "html": "All 12 fixed nearest-minus-recent score contrasts were negative. Each matched S gain accompanied more breaches and greater mean positive overrun; conditional severities describe method-specific event sets. January 2016 was adverse for the primary K retrieval comparison at both horizons. The original primary F-minus-S mean was −USD 9,374.86 (−2.08%), with 332 versus 254 breaches and greater mean overrun; its H24 and tau=.90 rankings reversed. The latter tau=.90 difference was small and did not establish equivalence."
+          "html": "All 12 fixed nearest-minus-recent score contrasts were negative. Each matched S gain accompanied more breaches and greater mean underprediction amount; conditional severities describe method-specific event sets. January 2016 was adverse for the primary K retrieval comparison at both horizons. The original primary F-minus-S mean was −USD 9,374.86 (−2.08%), with 332 versus 254 breaches and greater mean underprediction amount; its H24 and tau=.90 rankings reversed. The latter tau=.90 difference was small and did not establish equivalence."
         },
         {
           "type": "p",
@@ -1146,7 +1114,7 @@
         },
         {
           "type": "p",
-          "html": "QR implements mature two-block convex ADMM (Boyd et al., 2011), with 34 coefficients, an unpenalized intercept, penalty rho=1/W, at most 10000 iterations, absolute tolerance 10<super>−6</super> and relative tolerance 10<super>−5</super>. Training checks finite values and linear-system solve residuals. Acceptance requires both primal and dual ADMM residual thresholds and a separate feasible-dual objective-gap condition. These numerical checks do not certify a statistical forecasting law."
+          "html": "QR implements mature two-block convex ADMM (Boyd et al., 2011), with 34 coefficients, an unpenalized intercept, penalty rho=1/W, at most 10000 iterations, absolute tolerance 10<super>−6</super> and relative tolerance 10<super>−5</super>. Training checks finite values and linear-system solve residuals. Acceptance requires both primal and dual ADMM residual thresholds and a separate feasible-dual objective-gap condition. These numerical checks do not certify a statistical forecasting law. Each fit initializes slopes at zero and the intercept at the inverted-CDF training quantile, following the frozen implementation. An objective-gap bound does not bound issued-report differences or ranking sensitivity: with an unpenalized intercept the pinball objective can be flat or nearly flat. For example, at real tau=19/20, an intercept-only sample of nineteen zeros and one M&gt;0 has every intercept in [0,M] as a minimizer. This illustrates the certificate's scope; it does not assert that the accepted financial fits exhibited that example or exact nonuniqueness."
         },
         {
           "type": "equation",
@@ -1159,15 +1127,15 @@
         },
         {
           "type": "p",
-          "html": "All 72 validation candidates and 24 selected evaluations passed their declared numerical/resource conditions; 768 validation and 1196 evaluation QR refits were accepted. Other conditional families have the same respective refit-event counts, not independent replications. Public receipts retain scalar diagnostics and coefficient/dual-vector hashes. Public-only review checked their acceptance and maturity metadata; it did not reconstruct hidden coefficient vectors. Separate root checks used private forecast arrays and direct source-window maxima to reconcile realized outcomes and scores. Analytic and independently enumerated small convex fixtures, causal future perturbations and explicit failures support the implementation checks."
+          "html": "All 72 validation candidates and 24 selected evaluations passed their declared numerical/resource conditions; 768 validation and 1196 evaluation QR refits were accepted. Public receipts retain scalar diagnostics, coefficient/dual-vector hashes and maturity metadata. The original outcome audit used private forecast arrays and direct source-window maxima. Analytic and independently enumerated convex fixtures, future perturbations and explicit failures support the implementation checks; these checks do not establish model adequacy or a forecasting law."
         },
         {
           "type": "p",
-          "html": "One requested numerical thread and one financial worker ran at a time. Each phase had internal 540-second/1.5-GiB stops and a 600-second alarm. Measured validation-worker peak RSS was at most 69,746,688 bytes; evaluation/reference peak was 67,584,000 bytes, maximum phase time 15.827 seconds, and maximum observed worker threads one at recorded snapshots. Total reported worker compute was about 45.125 seconds for validation and 73.838 seconds for evaluation/references. Audit processes are measured separately. These are recorded process high-water/snapshot measurements, not a continuous thread bound, an OS hard-memory sandbox or research hours."
+          "html": "One financial worker and one requested numerical thread ran at a time, under declared time and memory budgets. The result supplements retain actual elapsed times, process high-water RSS and observed thread snapshots, separately for calculation and checking. These observations are neither continuous OS hard limits nor research hours."
         },
         {
           "type": "p",
-          "html": "The public result package contains all 56 phase receipts, 72 candidate summaries, 90 evaluated procedure summaries, 372 annual rows, 98 paired means, 388 annual paired rows and 98 sparse paired rows. The first aggregate audit was tightened for finite/nonnegative numerical metadata, parameter-label binding, terminal fields and parsing the exact hashed archive bytes. Its second pass reproduced all 38 existing table/receipt export bytes unchanged; no forecasts or frozen scientific files changed. Original audit versions are retained."
+          "html": "The public result package retains every phase receipt, validation candidate, procedure summary, annual subdivision, declared contrast and sparse-grid contrast. Historical checker revisions and their original receipts remain available. Arithmetic verification reads the exact hashed archive bytes and binds parameter labels and complete inventories; it does not create a new financial sample."
         },
         {
           "type": "p",
@@ -1175,11 +1143,11 @@
         },
         {
           "type": "p",
-          "html": "The public route separates archive verification from recomputation. With the pinned inputs, reproduce_conditional.py replicate creates a new attempt and serially reruns all 56 phases; its archive-only mode reads no raw source. The recorded replay matched all 24 selections, all 72 validation candidate scalar rows and all six aggregate CSV bytes. It took 129.50 seconds, with maximum worker RSS 68,911,104 bytes and one observed worker thread. The separate diagnostic replay reproduced all 90 floor and 45 horizon rows byte-for-byte without another model fit. Commands, genuine new receipt identities and measurements are in the repository guide. This computation reproduction uses the same source versions and supplies no new validation sample."
+          "html": "The public reproduction route separates read-only archive verification from explicit financial recomputation. With the pinned inputs, reproduce_conditional.py replicate creates a new attempt and serially reruns all 56 phases. The recorded replay matched the 24 selected cells, all 72 validation-candidate scalar rows and all six aggregate CSV bytes. A separate diagnostic replay matched the floor and horizon tables without another fit. New timestamps and resources need not match old receipt hashes. Commands and measured scopes are in the repository guide; the source versions are the same, so this is numerical reproduction rather than independent financial validation."
         },
         {
           "type": "p",
-          "html": "The separate AR implementation uses a finite common power-of-two scale and anchor-centered OLS cross-products, followed by numerical normal-equation checks. An independent large-offset artificial-input challenge exposed a defect in an earlier unexecuted implementation; it was repaired before the new freeze. All 399 combined synthetic tests then passed. The financial addition completed all eight cells in 10.692 seconds at its final checkpoint, with peak process RSS 104,251,392 bytes and one observed OS thread. A separate scalar/Fraction readback reconciled all 192 aggregate rows, 24 selected exact OLS fits and 24 scalar recursive reports; it checks arithmetic, not financial model adequacy."
+          "html": "AR uses a common finite power-of-two scale and anchor-centered OLS cross-products with normal-equation checks. Its supplement retains the pre-execution synthetic challenges, complete eight-cell run and a separate scalar/Fraction readback of all aggregate rows, 24 selected exact OLS fits and 24 scalar recursive reports. The selected fit/report oracles do not independently reconstruct every financial fit. Full implementation history and resource observations remain outside the scientific comparison."
         }
       ]
     },
@@ -1331,7 +1299,7 @@
         },
         {
           "type": "p",
-          "html": "The original AR diagnostic command remains restricted to its retained manifest-bound attempt. A separate demonstrated fresh-attempt route now chains run_ar1_replay.py, verify_ar1_output.py and reproduce_ar1_diagnostics.py, with new identifiers and the actual hash of a genuinely generated version-2 readback. Its public guide is results/revision-20261022/ar1-fresh-reproduction/README.md. The new eight-cell AR execution reproduced all six aggregate CSVs (192 rows) and both eight/four-row diagnostic tables byte-for-byte, retaining the adverse counts without rerunning the 56 conditional phases. AR took 8.85 seconds externally with 102,629,376 bytes peak RSS and one observed OS thread. Separate arithmetic checks cover 24 exact represented-input OLS fits, 24 scalar-recursion reports and all 236 diagnostic fields; they do not independently recompute every fit. New private vectors are generated locally. This reproduction establishes neither independent data validation nor model adequacy."
+          "html": "The original AR diagnostic command remains restricted to its retained manifest-bound attempt. The separately demonstrated fresh-attempt route chains run_ar1_replay.py, verify_ar1_output.py and reproduce_ar1_diagnostics.py with new identifiers and the genuinely generated version-2 readback identity. It reproduced all six AR aggregate CSVs and both diagnostic tables byte-for-byte without rerunning the conditional phases. The guide results/revision-20261022/ar1-fresh-reproduction/README.md gives the actual commands and verification scope. This is same-source reproduction, rather than additional financial validation."
         },
         {
           "type": "p",
@@ -1449,7 +1417,7 @@
         },
         {
           "type": "p",
-          "html": "The four reference crossings are FX H24 W720 QR and Treasury H6 W52/W260 and H24 W52 QR. Treasury H24 W260 AR has 59/277 strict hits and evidence 11.0284, below 1120; this does not negate its adverse breach record. Two Treasury QR cells both have 84/277 hits but very different evidence: about 1.311×10<super>8</super> at H6 W52 and 59.4235 at H24 W260. Their phase sizes and hit allocation differ, as do their forecasting tasks. No power calculation, equivalence or sharpness conclusion follows. Production retained all 56 summary and 896 phase rows; a distinct integer-formula readback recomputed every hit, phase and exact value. The two processes took 1.19 and 1.18 seconds externally, with peak RSS of 92,766,208 and 79,855,616 bytes and one observed thread each. No raw source, model refit or report repair was used. Complete inputs, proof, commands and measurement scope are in results/revision-20261022/coverage-evalues/README.md."
+          "html": "The four reference crossings are FX H24 W720 QR and Treasury H6 W52/W260 and H24 W52 QR. Treasury H24 W260 AR has 59/277 strict hits and evidence 11.0284, below 1120; this does not negate its adverse breach record. Two Treasury QR cells both have 84/277 hits but different evidence: about 1.311×10<super>8</super> at H6 W52 and 59.4235 at H24 W260. Their phase sizes, hit allocation and forecasting tasks differ. No power, equivalence or financial-quality conclusion follows. A distinct integer-formula readback reconciled every hit, phase and exact rational value without raw sources, refitting or report repair. Complete inputs, proof and reproduction scope are in results/revision-20261022/coverage-evalues/README.md."
         },
         {
           "type": "subheading",
@@ -1557,16 +1525,16 @@
         },
         {
           "type": "p",
-          "html": "All eight reconstructed F summaries match every original summary metric exactly. The lower report I is strictly below F at every issue in this archive; its breach count and mean positive overrun increase in all eight cells, while mean unused allowance decreases. Its mean loss improves in only three cells. For example, Treasury H24 W52 I raises loss by 6.213% against F despite using the lower ordinary empirical minimizer. QR remains worse than I in all four Treasury cells, while the matched FX H6 W2880 improvement is 14.773%. The ablation supports these finite signs and tradeoffs under the stipulated convention, without removing the inspected-sample, model-universe or measurement limits."
+          "html": "All eight reconstructed F summaries match every original summary metric exactly. The lower report I is strictly below F at every issue in this archive; its breach count and mean underprediction amount increase in all eight cells, while mean overprediction amount decreases. Its mean loss improves in only three cells. For example, Treasury H24 W52 I raises loss by 6.213% against F despite using the lower ordinary empirical minimizer. QR remains worse than I in all four Treasury cells, while the matched FX H6 W2880 improvement is 14.773%. The ablation supports these finite signs and tradeoffs under the stipulated convention, without removing the inspected-sample, model-universe or measurement limits."
         },
         {
           "type": "p",
-          "html": "The supplement retains 16 I/F summaries, 64 annual rows, 16 globally anchored sparse-grid rows and 24 contrasts under results/revision-20261022/rank-ablation/. QR-minus-I uses the stored original unrounded QR mean and new I mean; it is explicitly a difference of means, not a new originwise reconstruction of QR traces. Direct I-minus-F paired differences are separately retained. An independent scalar-window/Python-sorting implementation reconstructed all 55,216 I/F issued reports across 27,608 cell-issues and reconciled 361,487 exact checks without a discrepancy, including all targets, scores and aggregate tables. It shares the strict source parser and the same accepted data; this is independent arithmetic, not external financial validation. The new eight-cell calculation took 0.29 seconds externally at 49,856,512 bytes peak RSS; its independent readback took 1.61 seconds at 59,293,696 bytes. Each observed one OS thread at recorded snapshots, not a continuous hard thread bound. No earlier QR fit, forecast or adverse result was replaced."
+          "html": "The supplement retains all I/F summaries, annual and globally anchored sparse-grid rows, and 24 contrasts under results/revision-20261022/rank-ablation/. QR-minus-I uses the original unrounded QR mean and the added I mean, rather than a new originwise reconstruction of QR traces. Direct I-minus-F paired differences are retained separately. An independent scalar-window/Python-sorting implementation reconstructed every I/F report and reconciled all targets, scores and aggregate tables. It shares the strict source parser and accepted data, so this is independent arithmetic rather than external financial validation. Actual resource observations and check counts remain in the supplement; no earlier fit or adverse result was replaced."
         }
       ]
     },
     {
-      "title": "Appendix E. Complete fixed-report preference frontiers",
+      "title": "Appendix E. Lower envelopes of eight archived reports",
       "blocks": [
         {
           "type": "p",
@@ -1730,7 +1698,7 @@
         },
         {
           "type": "p",
-          "html": "For full Treasury H6 W52, NN and F have identical component means and share their final region. For sparse Treasury H24 W52, NN, F and S share the final region. The complete mathematical comparison retains a report that is optimal only at a boundary even if it has no open interval; absence from a displayed sequence alone is not an endpoint claim. The .95 winner changes in four cells on the sparse grid. A complete envelope of inspected fixed reports is a hindsight descriptive object, not an estimated optimal decision rule, an independence argument or a confidence set."
+          "html": "For full Treasury H6 W52, NN and F have identical component means and share their final region. For sparse Treasury H24 W52, NN, F and S share the final region. The complete mathematical comparison retains a report that is optimal only at a boundary even if it has no open interval; absence from a displayed sequence alone is not an endpoint claim. The .95 winner changes in four cells on the sparse grid. The lower envelope within this inspected eight-report menu is a hindsight descriptive object, not an estimated optimal decision rule, an independence argument or a confidence set. As in Section 9, the omitted feasible floor-only report prevents interpreting these endpoint or interval minimizers as an optimization over all feasible actions."
         }
       ]
     }
@@ -1738,7 +1706,7 @@
   "references": [
     {
       "id": "arjani2020",
-      "html": "Arjani, N., F. Li and L. Sabetti (2020). Monitoring Intraday Liquidity Risks in a Real Time Gross Settlement System. Payments Canada discussion paper, 23 April. <a href='https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf'>Consulted official report</a>; no separate journal edition or DOI is asserted."
+      "html": "Arjani, N., F. Li and L. Sabetti (2020). Monitoring Intraday Liquidity Risks in a Real Time Gross Settlement System. Payments Canada discussion paper, 23 April. <a href='https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf'>Consulted official report</a>."
     },
     {
       "id": "avellaneda2008",
@@ -1746,19 +1714,19 @@
     },
     {
       "id": "barone1999",
-      "html": "Barone-Adesi, G., K. Giannopoulos and L. Vosper (1999). VaR without correlations for portfolios of derivative securities. <i>Journal of Futures Markets</i> 19(5), 583–602. DOI:10.1002/(SICI)1096-9934(199908)19:5&lt;583::AID-FUT5&gt;3.0.CO;2-S. Consulted body: <a href='https://folia.unifr.ch/documents/318043/files/wp9904.pdf'>USI Quaderno 99-04, revised March 1999</a>; final-body equivalence is unverified."
+      "html": "Barone-Adesi, G., K. Giannopoulos and L. Vosper (1999). VaR without correlations for portfolios of derivative securities. <i>Journal of Futures Markets</i> 19(5), 583–602. DOI:10.1002/(SICI)1096-9934(199908)19:5&lt;583::AID-FUT5&gt;3.0.CO;2-S. Consulted body: <a href='https://folia.unifr.ch/documents/318043/files/wp9904.pdf'>USI Quaderno 99-04, revised March 1999</a>."
     },
     {
       "id": "biau2011",
-      "html": "Biau, G. and B. Patra (2011). Sequential Quantile Prediction of Time Series. <i>IEEE Transactions on Information Theory</i> 57(3), 1664–1674. <a href='https://doi.org/10.1109/TIT.2011.2104610'>DOI:10.1109/TIT.2011.2104610</a>. Consulted body: <a href='https://arxiv.org/abs/0908.2503v2'>arXiv:0908.2503v2</a>, 31 May 2010; final-body equivalence is unverified."
+      "html": "Biau, G. and B. Patra (2011). Sequential Quantile Prediction of Time Series. <i>IEEE Transactions on Information Theory</i> 57(3), 1664–1674. <a href='https://doi.org/10.1109/TIT.2011.2104610'>DOI:10.1109/TIT.2011.2104610</a>. Consulted body: <a href='https://arxiv.org/abs/0908.2503v2'>arXiv:0908.2503v2</a>, 31 May 2010."
     },
     {
       "id": "fr2004",
-      "html": "Board of Governors of the Federal Reserve System. FR 2004: Government Securities Dealer Reports. <a href='https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2004'>Official reporting framework</a>, consulted 22 October 2026. The historical as-released series was not reconstructed."
+      "html": "Board of Governors of the Federal Reserve System. FR 2004: Government Securities Dealers Reports. <a href='https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2004'>Official reporting framework</a>. Consulted instructions: <a href='https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=f555fe11-e149-479b-8088-4ed4e9ae1206'>March 2013</a>, p. 13, and <a href='https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=950ab256-b485-4586-99b0-b27eb205fdfa'>July 2024</a>, p. A-1. Accessed 23 October 2026."
     },
     {
       "id": "boudoukh2004",
-      "html": "Boudoukh, J., M. Richardson, R. Stanton and R.F. Whitelaw (2004). MaxVaR: Long-Horizon Value at Risk in a Mark-to-Market Environment. <i>Journal of Investment Management</i> 2(3), 14–19. <a href='https://pages.stern.nyu.edu/~rwhitela/papers/maxvar.pdf'>Consulted author manuscript</a>; its cover is undated and final-body equivalence is unverified."
+      "html": "Boudoukh, J., M. Richardson, R. Stanton and R.F. Whitelaw (2004). MaxVaR: Long-Horizon Value at Risk in a Mark-to-Market Environment. <i>Journal of Investment Management</i> 2(3), 14–19. <a href='https://pages.stern.nyu.edu/~rwhitela/papers/maxvar.pdf'>Consulted author manuscript</a>."
     },
     {
       "id": "boyd2011",
@@ -1766,7 +1734,7 @@
     },
     {
       "id": "casgrain2023",
-      "html": "Casgrain, P., M. Larsson and J. Ziegel (2023). Anytime-valid sequential testing for elicitable functionals via supermartingales. <a href='https://arxiv.org/abs/2204.05680v2'>arXiv:2204.05680v2</a>, 4 June. Consulted edition: this fixed preprint; final journal-body equivalence was not checked in the current revisit."
+      "html": "Casgrain, P., M. Larsson and J. Ziegel (2023). Anytime-valid sequential testing for elicitable functionals via supermartingales. <a href='https://arxiv.org/abs/2204.05680v2'>arXiv:2204.05680v2</a>, 4 June."
     },
     {
       "id": "dataset",
@@ -1790,19 +1758,15 @@
     },
     {
       "id": "henzi2022",
-      "html": "Henzi, A. and J.F. Ziegel (2022). Valid sequential inference on probability forecast performance. <a href='https://arxiv.org/abs/2103.08402v3'>arXiv:2103.08402v3</a>, 1 July. Consulted edition: this fixed preprint, with delayed fixed-terminal and stopping distinctions; source simulations were not reproduced."
+      "html": "Henzi, A. and J.F. Ziegel (2022). Valid sequential inference on probability forecast performance. <a href='https://arxiv.org/abs/2103.08402v3'>arXiv:2103.08402v3</a>, 1 July."
     },
     {
       "id": "hull1998",
-      "html": "Hull, J. and A. White (1998). Incorporating volatility updating into the historical simulation method for value-at-risk. <i>Journal of Risk</i> 1(1), 5–19. <a href='https://doi.org/10.21314/jor.1998.001'>DOI:10.21314/jor.1998.001</a>. Consulted body: the author's October 1998 manuscript; final-body equivalence is unverified."
+      "html": "Hull, J. and A. White (1998). Incorporating volatility updating into the historical simulation method for value-at-risk. <i>Journal of Risk</i> 1(1), 5–19. <a href='https://doi.org/10.21314/jor.1998.001'>DOI:10.21314/jor.1998.001</a>. Consulted body: the author's October 1998 manuscript."
     },
     {
       "id": "koenker1978",
       "html": "Koenker, R. and G. Bassett, Jr. (1978). Regression Quantiles. <i>Econometrica</i> 46(1), 33–50. <a href='https://doi.org/10.2307/1913643'>DOI:10.2307/1913643</a>. Consulted scanned original body: <a href='https://people.eecs.berkeley.edu/~jordan/sail/readings/koenker-bassett.pdf'>institutional reading copy</a>."
-    },
-    {
-      "id": "liao2005",
-      "html": "Liao, J. and T.V. Theodosopoulos (2005). Study on optimal timing of mark-to-market for contingent credit risk control. <a href='https://arxiv.org/abs/math/0506077v1'>arXiv:math/0506077v1</a>, 4 June 2005. The PDF names Theodore V. Theodosopoulos; arXiv metadata uses Ted Theodosopoulos."
     },
     {
       "id": "meinshausen2006",
@@ -1810,7 +1774,7 @@
     },
     {
       "id": "petrunia2019",
-      "html": "Petrunia, R., L. Sabetti and M. Voia (2019). Tail Risk in the Automated Clearing Settlement System (ACSS). Payments Canada Discussion Paper No. 7, January 2019 update of September 2018 original. <a href='https://www.paiements.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf'>Consulted official discussion paper</a>; no claim of equivalence to an unverified journal version."
+      "html": "Petrunia, R., L. Sabetti and M. Voia (2019). Tail Risk in the Automated Clearing Settlement System (ACSS). Payments Canada Discussion Paper No. 7, January 2019 update of September 2018 original. <a href='https://www.paiements.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf'>Consulted official discussion paper</a>."
     },
     {
       "id": "politis1994",
@@ -1822,7 +1786,7 @@
     },
     {
       "id": "hoogen2017",
-      "html": "van den Hoogen, S. (2017). Intraday liquidity risk estimation using transaction data: an extreme value theory approach. MSc Applied Mathematics thesis, Delft University of Technology, August. <a href='https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872'>Institutional record</a>. Consulted body: selected passages of the institutional original thesis; no journal edition or verified DOI is asserted."
+      "html": "van den Hoogen, S. (2017). Intraday liquidity risk estimation using transaction data: an extreme value theory approach. MSc Applied Mathematics thesis, Delft University of Technology, August. <a href='https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872'>Institutional record</a>. Consulted body: selected passages of the institutional original thesis."
     },
     {
       "id": "wisniewski2020",
@@ -1838,7 +1802,7 @@
     },
     {
       "id": "zhou2024",
-      "html": "Zhou, Y., L. Lindemann and M. Sesia (2024). Conformalized Adaptive Forecasting of Heterogeneous Trajectories. <a href='https://arxiv.org/abs/2402.09623v2'>arXiv:2402.09623v2</a>, 15 May 2024. The consulted edition is this fixed preprint; no unverified journal venue is assigned."
+      "html": "Zhou, Y., L. Lindemann and M. Sesia (2024). Conformalized Adaptive Forecasting of Heterogeneous Trajectories. <a href='https://arxiv.org/abs/2402.09623v2'>arXiv:2402.09623v2</a>, 15 May 2024. The consulted edition is this fixed preprint."
     }
   ],
   "figures": [
@@ -1848,7 +1812,7 @@
     },
     {
       "path": "figures/conditional-primary-tradeoffs.pdf",
-      "caption": "Figure 2. The two declared source primaries and FX H24 legacy-reference sensitivity: relative mean-loss, overrun and unused-allowance changes, plus breach-rate differences in percentage points. These are separate descriptive quantities, not a combined utility or monetary saving. A reduced unused quantity is not automatically overall improvement."
+      "caption": "Figure 2. The two declared source primaries and FX H24 legacy-reference sensitivity: relative mean-loss, underprediction and overprediction changes, plus breach-rate differences in percentage points. The preserved figure labels mean positive overrun and mean unused allowance denote U and V, respectively. These are descriptive mean errors of passive reports, rather than combined utility or observed monetary savings."
     },
     {
       "path": "figures/conditional-annual-primary.pdf",
