@@ -120,7 +120,7 @@ Long-history regression improves the six-step FX score. Its primary reduction is
 
 \input{generated/fx-table.tex}
 
-Short-history regression has a much weaker six-step result. Its matched score reduction is 2.12\%, with an unadjusted p-value of 0.54. At the longer horizon, the same short-history procedure increases mean loss by about 32\%. Extending history improves the regression comparison, whereas extending frozen $F$ slightly raises its short-horizon loss. This contrast motivates the ordered specification analysis.
+Short-history regression has a much weaker six-step result. Its matched score reduction is 2.12\%, with an unadjusted p-value of 0.54. At the longer horizon, the same short-history procedure increases mean loss by \FXShortLongExcess{}\%. The wider menu still selects $\lambda=\FXShortLongPenalty{}$ and leaves that cell's reports unchanged: menu expansion does not repair this adverse case. Extending history improves the regression comparison, whereas extending frozen $F$ slightly raises its short-horizon loss. This contrast motivates the ordered specification analysis.
 
 The longer-horizon legacy gain is small and statistically imprecise. Regression improves mean loss by 1.83\% against the original rolling $S$, with an unadjusted p-value of 0.84. The partial final year contributes about 71\% of its aggregate improvement. By comparison, that partial year contributes about 8.6\% of the six-step primary improvement. The annual and sparse-grid outputs therefore help distinguish stable directions within this archive from gains concentrated in a short subdivision.
 
@@ -132,7 +132,7 @@ The original Treasury regression is less accurate than matched historical headro
 
 Plain KNN at the short Treasury history reproduces $F$. Validation selects the entire eligible pool at both horizons. Its longer-history, longer-horizon score gain reverses on the twelve-point grid: full-sample improvement becomes sparse-grid deterioration. Both reports have two strict breaches on that grid. These outcomes preserve the distinction between a complete-sample mean, a small sensitivity subset and an independent validation sample.
 
-Coverage diagnostics reinforce the original Treasury regression's adverse breach record. Table~\ref{tab:coverage} gives the nonoverlapping-grid results beside the FX comparison. A failure to reject for the historical reference has limited evidential strength in this small grid.
+Coverage diagnostics reinforce the original Treasury regression's adverse breach record. Table~\ref{tab:coverage} gives the nonoverlapping-grid results beside the FX comparison. A failure to reject for the historical reference has limited evidential strength in this small grid. Section~\ref{sec:decomposition} shows how expanding the penalty menu changes the original regression result; the comparisons here retain the original procedure.
 
 \input{generated/coverage-table.tex}
 
@@ -159,7 +159,7 @@ The original sequence combines two changes at its last step. The four-predictor 
 \end{figure}
 
 \section{Robustness and score interpretation}
-AR residual-block replay shows that family choice matters. At each original refit, OLS estimates an intercept and slope on unique transitions from the union of completed windows. Ordered residuals are replayed from the current anchor; Appendix~\ref{app:replay} gives the exact path identity. AR improves on regression in every Treasury cell and loses in most FX cells. Against frozen translated paths, its score improves in five cells, while breaches rise in every cell. This is a mean-filtered comparison with a separate residual-representativeness assumption.
+AR residual-block replay shows that family choice matters. At each original refit, OLS estimates an intercept and slope on unique transitions from the union of completed windows. Ordered residuals are replayed from the current anchor; Appendix~\ref{app:replay} gives the exact path identity. \input{generated/ar-comparison-summary.tex} This mean-filtered procedure relies on a separate residual-representativeness assumption.
 
 Rank sensitivity changes the finite-sample convention. The original historical rank is $\lceil(m+1)\tau\rceil$; ordinary empirical quantiles use $\lceil m\tau\rceil$, with an interval of minimizers at integral $m\tau$. The short Treasury full-pool case has distinct ranks under those rules. The rank-ablation supplement retains all contrasts, including reversals, and the full-pool KNN identity persists whenever both reports share their rank convention. Results concern the issued reports under the stated convention.
 
@@ -188,7 +188,7 @@ Horizon diagnostics show that realized peaks and fitted reports have different o
 
 \textbf{Measurement and information timing.} Treasury is a downloaded-vintage replay indexed by economic date, not a reconstruction of historical public releases. The aggregate can hide offsetting dealer positions and includes valuation and composition effects. Both sources sample a position process and omit intrarecord excursions; the FX client-flow record is not a complete hedged dealer book.
 
-\textbf{Coverage and specification.} These procedures have no established conditional-coverage guarantee for these records. Floor atoms distinguish an exact nominal-exceedance null from the upper-bound implication of a quantile, while Treasury's sparse grids make likelihood-ratio approximations fragile. Matching the penalty menu removes one specification difference, but the ordered regression comparison cannot identify a universal or causal value of extra predictors.
+\textbf{Coverage and specification.} These procedures have no established conditional-coverage guarantee for these records. Floor atoms distinguish an exact nominal-exceedance null from the upper-bound implication of a quantile, while Treasury's sparse grids make likelihood-ratio approximations fragile. Stronger Treasury shrinkage brings scores closer to the intercept-only reference while leaving more breaches than $F$ in each original Treasury cell. The additional panel retains substantial adverse cells, and the short-history longer-horizon FX failure survives menu expansion. Matching the menu removes one specification difference without identifying a universal or causal value of extra predictors.
 
 \textbf{Decision value.} We have no observations of the trading, hedging, collateral or funding decisions needed to measure economic benefit. A lower stipulated score therefore does not establish lower realized financing cost. Active inventory-sensitive decisions would also alter the position process that a passive forecast observes.
 
