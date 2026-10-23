@@ -136,16 +136,16 @@ def build_tables():
     literature = [
         ["Boudoukh et al. (2004)", "Worst intermediate portfolio-value loss", "Modeled portfolio paths", "First-passage formula; discrete simulation", "Model-implied MaxVaR/VaR ratios; discrete-monitoring simulation"],
         ["Petrunia et al. (2019)", "Largest daily endpoint debit across ACSS participants", "ACSS settlement balances", "GEV blocks; GPD exceedances", "Fitted-versus-empirical quantiles; monthly-updated collateral shortfalls"],
-        ["van den Hoogen (2017)", "Maximum cumulative negative payment balance", "Confidential bank transactions", "Modeled transaction paths; EVT", "Backtesting outcomes withheld (confidential)"],
-        ["Wisniewski et al. (2020)", "Next-hour signed-position interval", "Same FX source family", "Quantile/conformal intervals; KNN and other regressions", "Two endpoint pinball scores; interval and coverage diagnostics"],
-        ["This paper", "Two-sided absolute sampled peak quantile", "FX record; Treasury aggregate", "Historical rules; QR/KNN on matched histories", "Pinball, paired DM, U/V, breaches and coverage diagnostics"],
+        ["van den Hoogen (2017)", "Maximum cumulative negative payment balance", "Two ABN AMRO transaction accounts", "ACD/UHF-GARCH; Monte Carlo paths", "Coverage and independence tests; application details confidential"],
+        ["Wisniewski et al. (2020)", "Next-hour signed-position interval", "One market maker's hourly FX net positions", "Quantile/conformal intervals; KNN and other regressions", "Two endpoint pinball scores; interval and coverage diagnostics"],
+        ["This paper", "Two-sided absolute sampled peak quantile", "Hourly FX; weekly dealer-position series", "Historical rules; QR/KNN on matched histories and updates", "Pinball; paired DM; U/V, breaches and elementary scores"],
     ]
     audit = json.loads((NEW / "literature-table.json").read_text())
     assert len(audit["rows"]) == len(literature) == 5
     table("literature-table.tex", "Closest studies and the present comparison.", "tab:literature",
           ["Study", "Target", "Data", "Method", "Evaluation"], literature,
           align="p{.14\\linewidth}p{.20\\linewidth}p{.14\\linewidth}p{.20\\linewidth}p{.20\\linewidth}",
-          note="Van den Hoogen (2017) specifies unconditional-coverage and independence tests in Section 5.4; its numerical application results are confidential (Section 5.5).", fontsize="footnotesize")
+          note="Van den Hoogen (2017) specifies coverage and independence tests in Section 5.4; detailed application results in Section 5.5 are confidential, while Chapter 7 provides public out-of-sample summaries.", fontsize="footnotesize")
     budgets=json.loads((NEW/"round2/source-date-budgets.json").read_text())
     source_rows=[]
     for source,name in [("fx_hourly","FX"),("nyfed_weekly","Treasury")]:
