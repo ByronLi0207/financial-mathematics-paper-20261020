@@ -91,6 +91,11 @@ def build():
         facts[name] = formatted(value, places, signed)
         pointers[name] = pointer
 
+    fact('RProtectionWorstLimit', loss_threshold,
+         'r6-design.md:/success/S1/worst_percent_vs_F_max')
+    fact('RProtectionMedianLimit', contract['success']['S1']['median_percent_vs_F_max'],
+         'r6-design.md:/success/S1/median_percent_vs_F_max')
+
     for report, values in weekly.items():
         names = dict(F='F', I='I', R0='Zero', R1='One', R2='Two', R3='Three')
         for key, suffix in [('median', 'Median'), ('worst', 'Worst'),
@@ -104,6 +109,21 @@ def build():
         name = dict(S1='ROneStatus', S2='RTwoStatus', S3='RThreeStatus')[criterion]
         facts[name] = assessment[criterion]['status'].replace('_', r'\_')
         pointers[name] = 'assessment.json:/' + criterion + '/status'
+
+    for name, subset in [
+        ('RRetroFailedRows', retro),
+        ('RRetroFXFailedRows', [row for row in retro if row['source'] == 'fx_hourly']),
+        ('RInspectedFailedRows', [row for row in rows if row['phase'] == 'inspected']),
+    ]:
+        fact(name, sum(row['status'] != 'COMPLETE' for row in subset),
+             'summary.csv:' + name + '/non-COMPLETE count', places=0)
+    for cell in assessment['S2']['cells']:
+        if cell['eligible']:
+            window = {720: 'Short', 2880: 'Long'}[cell['window']]
+            fraction = cell['R2_percent_vs_F'] / cell['R0_percent_vs_F']
+            fact('RFX' + window + 'GainRetained', 100 * fraction,
+                 'assessment.json:/S2/cells/W' + str(cell['window'])
+                 + ':100*R2_percent_vs_F/R0_percent_vs_F')
 
     for row in retro:
         if row['source'] == 'fx_hourly' and int(row['horizon']) == 6:
@@ -144,7 +164,8 @@ def build():
               r'Cell summaries are descriptive across related series and horizons, not independent replications. '
               r'All rule cells, including failures, are retained in the public R6 archive.}\label{tab:r6-selection}',
               r'\end{table}', '']
-    write_new_or_tracked(GENERATED / 'r6-summary-table.tex', '\n'.join(lines))
+    if assessment['publication_gate']['status'] == 'METHOD_SECTION':
+        write_new_or_tracked(GENERATED / 'r6-summary-table.tex', '\n'.join(lines))
 
     lines = [r'\begin{table}[htbp]', r'\centering\small',
              r'\begin{tabular}{p{.31\linewidth}p{.29\linewidth}rr}', r'\toprule',
