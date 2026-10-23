@@ -4195,3 +4195,53 @@ All six related-literature blocks and the full eight-row table/caption agree wit
 ## Verification loop28
 
 Section9 and its full descriptive decision map retain noncausal/nonpolicy scope and the relevant proposition, state, finite-method and unavailable-tau qualifications. No necessary author issue in this bounded wording check; existing independent-data, release-vintage, costs and inference gaps remain unresolved. No new analysis/conclusion edit.
+
+
+## Scheduled self-check23 and loop28 publication gate
+
+Actual self-check22:21:56UTC was6.959092seconds after its scheduled due time;1413protected paths have no missing/unauthorized modifications. Exact ed4bfc2 audit-only publication gate covers18files783294B, with all staged bytes matched and no scientific/code/manuscript/result changes. Three note-only EOFblank findings remain explicitly nonblocking; this delta whitespace check returned2 and is not claimed clean. Current original stdout exceptions are retained. See self-check-023.json and loop28-publication-snapshot-audit.md. The six-hour deadline has not elapsed.
+
+
+## Loop28 audit-only snapshot published and read back
+
+Native commits de8210c,b208a1e publish exact ed4bfc2 source snapshot. At22:23:37UTC all18file byte lengths/SHA256 match; whole-tree3e213cc3f7d04a7564c60c8cdd6f796ebf9181e6 is equal, with no code/manuscript/result/protocol delta. Main remains65feeee, and live all-state same-head PR query still returns none; another-head PR was not edited. The current18-page article/94-page Supplement remain the validated loop20 bytes; no fullsuite or compilation rerun is needed for this notes-only delta. This receipt and subsequent local audit notes are outside that alreadyverified immutable snapshot until a later publication. Goal remains active.
+
+
+## Verification loop29
+
+Conclusion has no numerical evidence to sample; no RQ labels were fabricated into claims. A separately frozen19claim Data fallback and seeded five trace dates, refit13 and attributed one-maker/five-pair text to existing scalar protocols/staticroutes. Calendar arithmetic does not newly authenticate raw timestamps, release-time availability or dealer-book completeness. See loop029 scope gap and selection record.
+
+
+## Verification loop30
+
+Seed2026102330 fixed three remaining references before lookup. Official PaymentsCanada cover, Springer article/locator and AIMS title/date/citation metadata agree. DOI suffix year, original/update dates and current publisher date remain distinct. Metadata/locator audit only, no full-paper reading or new method verdict; source links and actual limitations in loop030 note.
+
+
+## Verification loop31
+
+All nine limitations paragraphs retain the distinction between exact featureconstancy and unproven mechanisms, passive forecast and operational cost/policy, finite executed methods and whole classes, related aggregate tasks and unseen dealers, and protocol-only versus prospective issuance. Existing tables support bounded descriptive language; no new financial/statistical calculation, externalreview or sourceedit. Exact read scope is in loop031.
+
+
+## Verification loop32
+
+All four conclusion paragraphs remain bounded to inspected records and executed comparisons. Actual prospective issuance, compatible new dealer and remaining methodclasses are expressly next evidence; protocol plans are not issuance receipts. No novel guarantee, class-wide failure or publication claim; no conclusion/source/result modification. See loop032.
+
+
+## Verification loop33
+
+Seed2026102333 froze18semantic propositions before lookup; five traces preserve originalH6/legacyH24 control identities, approximateHLN formula, existing doubledbandwidth fields and the displayed adverse FX illegal-control percentage. No statistics or models recomputed. Previous goalturn classification: PROGRESS, based on actual independent note commits and verified remote immutable18file/whole-tree update rather than statusrestatement.
+
+
+## Verification loop34
+
+Seed2026102334 selected remaining refs beforelookup. Official NYFed cover/title, publisher-deposited registeredmetadata and authorhosted final-layout cover confirm titles/authors/editions/locators. No fullbodyreading, new priority or financialvalidation claim. Exact original/revision/online/print distinctions and inaccessible routes are in loop034.
+
+
+## Verification loop35
+
+Two complete non-table paragraphs in the bounded firstS16adaptation subsection were checked against static definitions/caller/legacycoverage, without execution or privatevectors. Mature feedback, exact rank/projection, validationcarry, SAVscale and new/legacyCC distinctions agree. Optional nonconstantresponse/fullsuppliedgrid wording recorded only; no result/conclusion/sourceedit.
+
+
+## Verification loop36
+
+All33response rows and fullauthorchecklist retain21major/12minor individualdispositions and unresolvedscientificgaps. E08now identifies its unchanged wordcount as the original integration snapshot and routes currentcandidate metrics, verified directly against b895c67/current boundmetrics. Only this historical-status language changed. Numeric tokens identical; manuscript/results/code unchanged. First convenience rowparser omittedA10 and failed assertion before note write; corrected exactID regex verifiedallrows, as retained in loop036.
