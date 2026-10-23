@@ -1,0 +1,95 @@
+{
+  "status": "SCALAR_ARITHMETIC_AGREES",
+  "input_sha256": {
+    "dm.csv": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41",
+    "coverage.csv": "58db76faaeb3250f66bbc90ab0be3f87f674e2022e3374961f73a27a935a2419",
+    "holm.csv": "976affb08867b6e1c821f6ce5d9491a3b8087f427f0af9296763872863d2c8b3"
+  },
+  "row_counts": {
+    "dm": 74,
+    "coverage": 90,
+    "holm": 72
+  },
+  "status_counts": {
+    "dm": {
+      "OK": 72,
+      "IDENTICAL_LOSSES": 2
+    },
+    "coverage": {
+      "OK": 52,
+      "BOUNDARY_REFERENCE": 38
+    }
+  },
+  "checked_scalar_counts": {
+    "dm_t": 72,
+    "hln_t": 72,
+    "dm_p": 72,
+    "double_dm_p_from_stored_t": 72,
+    "rate": 90,
+    "pof_lr": 90,
+    "pof_p": 90,
+    "ind_lr": 90,
+    "ind_p": 90,
+    "cc_lr": 90,
+    "cc_p": 90,
+    "dq_tail_from_stored_stat_only": 90,
+    "holm_input": 72,
+    "holm_p": 72
+  },
+  "max_absolute_errors": {
+    "dm_t": 0.0,
+    "hln_t": 0.0,
+    "dm_p": 0.0,
+    "double_dm_p_from_stored_t": 0.0,
+    "rate": 0.0,
+    "pof_lr": 2.469136006766348e-13,
+    "pof_p": 2.5224267119483557e-13,
+    "ind_lr": 1.9895196601282805e-13,
+    "ind_p": 3.0242475190789264e-13,
+    "cc_lr": 4.198863479132342e-13,
+    "cc_p": 1.488809076022335e-13,
+    "dq_tail_from_stored_stat_only": 9.43689570931383e-16,
+    "holm_input": 0.0,
+    "holm_p": 0.0
+  },
+  "absolute_tolerance": 1e-09,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "holm_direction_counts": {
+    "favorable": 15,
+    "adverse": 4
+  },
+  "holm_direction_ids": {
+    "favorable": [
+      "fx_hourly-h24-KNN2880-minus-frozen_K2880",
+      "fx_hourly-h24-KNN720-minus-frozen_K720",
+      "fx_hourly-h24-QR2880-minus-frozen_K2880",
+      "fx_hourly-h24-SCALED_KNN2880-minus-frozen_K2880",
+      "fx_hourly-h24-SCALED_KNN720-minus-frozen_K720",
+      "fx_hourly-h6-KNN2880-minus-frozen_F2880",
+      "fx_hourly-h6-KNN2880-minus-frozen_K2880",
+      "fx_hourly-h6-KNN2880-minus-frozen_S2880",
+      "fx_hourly-h6-KNN720-minus-frozen_K720",
+      "fx_hourly-h6-QR2880-minus-frozen_F2880",
+      "fx_hourly-h6-QR2880-minus-frozen_K2880",
+      "fx_hourly-h6-QR2880-minus-frozen_S2880",
+      "fx_hourly-h6-QR720-minus-frozen_K720",
+      "fx_hourly-h6-SCALED_KNN2880-minus-frozen_K2880",
+      "fx_hourly-h6-SCALED_KNN720-minus-frozen_K720"
+    ],
+    "adverse": [
+      "nyfed_weekly-h24-SCALED_KNN260-minus-frozen_F260",
+      "nyfed_weekly-h24-SCALED_KNN260-minus-frozen_S260",
+      "nyfed_weekly-h6-SCALED_KNN52-minus-frozen_F52",
+      "nyfed_weekly-h6-SCALED_KNN52-minus-frozen_S52"
+    ]
+  },
+  "not_verified": [
+    "raw loss pairing or source observations",
+    "HAC/LRV construction",
+    "double t from unavailable double LRV",
+    "raw hit order or actual grid first origin",
+    "DQ instruments, covariance, rank or Wald statistic",
+    "asymptotic distribution calibration or external validity"
+  ]
+}
