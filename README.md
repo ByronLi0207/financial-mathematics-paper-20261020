@@ -2,9 +2,17 @@
 
 An English working paper comparing established forecasting methods for the largest absolute source-reported net position at issue and over the next H records. It uses an individual-market-maker FX record and a separately fitted weekly Treasury-bill position aggregate. The contribution is a bounded retrospective benchmark on a common target, with complete favorable and adverse results.
 
-Read the revised [17-page paper](manuscript/supervisor-revision/main.pdf), [editable TeX](manuscript/supervisor-revision/main.tex), [revision guide](manuscript/supervisor-revision/README.md) and [Chinese change inventory](REVISION_SUPERVISOR_20261023.md). The new PDF is the actual Tectonic/XeTeX output: 13 pages including references plus four appendix pages, authored as Byron.
+Read the revised [19-page paper](manuscript/supervisor-revision/main.pdf), [editable TeX](manuscript/supervisor-revision/main.tex), [revision guide](manuscript/supervisor-revision/README.md) and [Chinese change inventory](REVISION_SUPERVISOR_20261023.md). The new PDF is the actual Tectonic/XeTeX output: 14 pages including references plus five appendix pages, authored as Byron.
 
-## Supervisor revision on 23 October 2026
+## Second supervisor revision on 23 October 2026
+
+The [E6 table](results/supervisor-20261023/e6/table6.csv) adds ordinary empirical-quantile I and expanded-regression breaches, and [fixed ridge paths](results/supervisor-20261023/e6/lambda-path.csv) preserve every diagnostic point without changing selection. The intercept-only minimizer can be an interval; I is not universally the exact corrected-rank historical F.
+
+The [E5 prediction](protocol/supervisor-20261023/e5-panel-prediction.md) was committed alone before new fitting. All [48 panel cells](results/supervisor-20261023/e5/summary.csv) completed. P1=30/45 and P2=24/48 are unsupported; P3=33/48 is supported. The full regression's median excess loss falls from +92.6% to +9.2%, but 34/48 cells still lose to F. This is a post-result extension using twelve archived series with shared dealer reporting and overlapping positions, not independent replication.
+
+The paper now centers its contribution on shrinkage and remaining failures, adds practical implications, and [reports the two original primaries separately from the remaining 71 Holm contrasts](results/supervisor-20261023/w3/summary.json). This reporting division was chosen after results; the previous 72-member archive is preserved. The Treasury primary has raw HAC p=.007611 and two-primary Bonferroni p=.015223. [AR comparisons](results/supervisor-20261023/w4/ar-comparison.csv) distinguish original and expanded QR. The [full rewritten abstract, contribution paragraph and conclusion](manuscript/supervisor-revision/round2-rewritten-passages.md) and [current verification](results/supervisor-20261023/round2/document-verification.json) accompany the paper.
+
+## First supervisor revision archive
 
 The revision reorganizes the paper around three empirical contributions, adds checked predictive-ability and coverage diagnostics, and separates predictor changes from the ridge-menu change. The exploratory [E3 results](results/supervisor-20261023/e3/README.md) retain every original comparison: expanding the full regression's penalty menu changes Treasury H6/W260 excess loss from +50.786% to +3.434%, while all four FX forecasts remain identical to the originals. The common-menu full-versus-four-predictor difference is only +1.242% in that Treasury cell (unadjusted DM p=.685); this does not establish equivalence or a causal feature effect.
 
@@ -12,7 +20,7 @@ The checked [inference archive](results/supervisor-20261023/inference/) reports 
 
 The original [24-page paper](manuscript/working-paper/paper.pdf), [TeX](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md) remain unchanged. That older supplied PDF uses a separate ReportLab/pypdf route; the new revision uses real TeX compilation.
 
-## Critical review on 23 October 2026
+## Earlier critical review of the original working paper
 
 The [review and corrections](REVIEW_20261023.md) explain the substantive changes. The revision clarifies that Treasury models are fitted separately, exposes the downloaded-vintage economic-date convention in the abstract, and limits the loss-weight envelopes to eight archived .95 reports. It separates mean underprediction and overprediction amounts from breach frequency and actual resource allocation. It also distinguishes the stronger short-horizon FX finding from the long-horizon gain concentrated in a short tail segment.
 
@@ -31,7 +39,7 @@ The response is the sampled peak P=max|N|, including the current known floor B=|
 
 The FX H6 tail contribution is only 8.64% for the primary and 6.87% for the matched comparison. Their mean underprediction and overprediction amounts both fall in each existing issue-year group and on the fixed 947-origin grid. The [aggregate decomposition](notes/revision-20261023/annual-decomposition.json) supports this distinction without creating a new validation sample.
 
-Every Treasury QR and scaled-KNN cell loses to its own frozen F control. Short-history plain KNN selects the whole pool and equals F; this is a selected identity, rather than a failure fallback. Later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR lowers loss in five of eight cells while breaches increase in all eight. The original primaries remain unchanged.
+Every original-menu Treasury QR and scaled-KNN cell loses to its own frozen F control. Short-history plain KNN selects the whole pool and equals F; this is a selected identity, rather than a failure fallback. Later exploratory AR replay improves on original QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR lowers loss in five of eight cells while breaches increase in all eight. The original primaries remain unchanged.
 
 The .95 score is .95 U+.05 V, where U=mean(P−C)₊ and V=mean(C−P)₊. These are passive forecast errors under stipulated weights, rather than observed financing costs. The [eight-report loss-weight supplement](results/revision-20261022/preference-robustness/README.md) shows that the FX H24 legacy gain reverses above ratio **20.630898**, near the stipulated 19. Full/sparse menu minimizers at .95 differ in four dependent cells; Treasury H24 grids contain only 12 origins. The envelope excludes feasible reports such as C=B, so its endpoint winners are menu-relative.
 

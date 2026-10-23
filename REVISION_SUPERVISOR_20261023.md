@@ -1,3 +1,78 @@
+# 第二轮最终改动清单（2026-10-23；C1 最终交付仍在进行）
+
+修改依据为《第二轮修改意见（导师版）》，继续使用 PR #3 的 `codex/supervisor-revision-20261023` 分支。执行顺序为 **E6 → E5 → W1 → W2 → W3 → W4 → W5 → C1**。本节记录第二轮的当前交付事实；下方第一轮记录完整保留，仅作为历史记录，不能用其中旧页数、旧词数或旧推断口径代表本轮。
+
+## 1. 最终稿、范围与当前状态
+
+- [最终论文 PDF](manuscript/supervisor-revision/main.pdf)：**正文连参考文献 14 页，附录 5 页，共 19 页**；附录从物理第 15 页开始，满足本轮 14/5 页上限。
+- 摘要 **158 词**，结论 **185 词**。统计规则为展开数值宏后按空格分词，连字符词计一个；记录见 [第二轮文档核对](results/supervisor-20261023/round2/document-verification.json)。
+- E6、E5、W1–W5 已完成。**C1 仍为 IN_PROGRESS**：编译、逐页检查和完整测试已形成记录，最终远端交付、执行历史打包和最终计时仍由主执行任务收尾。
+- 保留两个原 primary、所有原始正负结果和原 72 项 Holm 归档；新增结果明确标为 post-result exploratory。没有增加 E5 指定 panel 之外的新数据、新模型或新命题，也没有启动 Claude/Cloud 或跨模型复审。
+
+## 2. E6 与 E5：实际做了什么
+
+**E6：λ→∞ 参照和菜单端点。** [Table 6 的 8 行数值表](results/supervisor-20261023/e6/table6.csv)加入普通经验分位数 I 和 QR33+ 严格破线次数；[正式排版表源](manuscript/supervisor-revision/generated/e3-table.tex)使用明确列名。Treasury 四格的 I 相对 F 损失依次为 −1.99%、+3.24%、+6.21%、+2.35%；QR33+ 为 −3.24%、+3.43%、+4.34%、−0.19%。主格 QR33+、F、原 QR 的破线次数为 32、28、54。正文写明 Treasury 四格中三格选到扩展菜单上端点 λ=10。
+
+第 4 节说明未惩罚截距的 λ→∞ 极限和两种秩的区别：I 使用 `ceil(.95W)`，F 使用 `ceil(.95(W+1))`；当 `.95W` 为整数时，截距最优解可能是以 I/F 为端点的区间。选做的 λ 路径图也已完成，放在附录 A.7；[路径 CSV](results/supervisor-20261023/e6/lambda-path.csv)与[分阶段 I 参照](results/supervisor-20261023/e6/lambda-path-I.csv)保留验证和评估两条曲线，评估曲线不用于重新选参。[E6 数值读回记录](results/supervisor-20261023/e6/numeric-readback.json)说明了核对范围。
+
+**E5：先提交预测，再跑全部 48 格。** 使用 v3 已下载并冻结的 12 条合格序列，移植既有读取/运行入口，沿用原来源记录、哈希、对齐、切分、平局规则和核心模型。没有重新下载或替换序列。扩展 QR33 菜单为 `{.001,.01,.1,1,10}`，另算 I；原 F、QR33、QR4+ 只读取和核对，不重拟合。
+
+- [预测文件](protocol/supervisor-20261023/e5-panel-prediction.md)的独立提交为 `8baa2f5b44327b3ba295927bd3db954f3475d35d`，提交时间 **2026-10-23 18:27:50 UTC（温哥华 11:27:50）**。
+- E5 运行开始于 **18:30:55.671193 UTC**，首个新拟合开始于 **18:30:55.774398 UTC**；预测提交在前。运行于 **18:31:33.256996 UTC** 完成，实际计算耗时 **37.586 秒**。[运行回执](results/supervisor-20261023/e5/run-receipt.json)保留精确时间、文件身份和资源记录。
+- **48/48 格均首次完成**，没有失败后重试、删格或更换菜单；[完整 48 行汇总表](results/supervisor-20261023/e5/summary.csv)包含 F、原 QR33、QR4+、QR33+、I、选中 λ 和破线次数。
+
+| 冻结预测 | 实际成功数 | 事先阈值 | 结论 |
+|---|---:|---:|---|
+| P1：原来输给 F 的 45 格中，QR33+ 优于原 QR33 | **30/45** | 至少 40 格 | **不成立** |
+| P2：QR33+ 相对 F 落在含端点的 ±10% 内 | **24/48** | 至少 36 格 | **不成立** |
+| P3：选择 λ≥1 | **33/48** | 至少 25 格 | **成立** |
+
+[固定预测判定 JSON](results/supervisor-20261023/e5/prediction-assessment.json)原样保留失败阈值。原 QR33 的相对 F 损失中位数为 +92.6%，QR33+ 为 +9.2%；扩展后仍有 **34/48** 格输给 F。正文第 6.3 节和新 panel 图据此写成“收缩缓解但没有消除劣势”，没有写成 13 条序列一致，也没有把失败结果推成预测变量完全没有信息。正文同时说明设计发生在看过原 QR33/QR4+ 之后，序列共享报告体系及重叠交易商头寸，不能当作独立复制或做独立样本合并检验。[E5 完整说明](results/supervisor-20261023/e5/README.md)列出来源与复现边界。
+
+## 3. W1–W5：逐项落实位置
+
+| 编号 | 本轮改动与位置 | 未做事项及原因 |
+|---|---|---|
+| W1 | 重写摘要、引言贡献段、第 2 节结尾和结论，围绕 Treasury 过窄菜单、FX 同菜单增益与 E5 剩余损失展开；将库存政策限定句移到第 9 节。完整三段见[改写全文](manuscript/supervisor-revision/round2-rewritten-passages.md)。 | 没有采用“13 条周度序列结论一致”的候选措辞，因为 E5 的 P1/P2 不成立。 |
+| W2 | 新增第 8 节 Implications for position monitoring，写历史基准、显式收缩/基准候选、U/V 与破线次数联合报告三条。明确 I 和有限大 λ 未必等于 F，建议显式加入 I 和精确 F；验证损失保护不构成评估期保证。 | 无删减。 |
+| W3 | 第 5 节、6.2 和 Tables 3/4 统一两个原 primary 的原始 HAC p 值；Treasury 显示 0.008，两个 primary 的 Bonferroni 敏感性为 0.015；剩余 71 个 matched 对比使用 Holm。明确该报告口径重排发生在结果之后，旧 72 项调整原样保留。来源见 [W3 汇总](results/supervisor-20261023/w3/summary.json)。 | 没有把重新分组宣称为新的预注册或全研究过程的确认性错误控制。 |
+| W4 | 第 7 节 AR 段和 Table 9 改以 F/S 为主，并加上 AR 对 QR33+ 的 3/4 Treasury 格及主格 −23.0% 对比；6.2 加前向引用；第 9 节 Coverage and specification 同步 E3/E5；6.1 写明 FX H24/W720 的 λ=0.01 和 +31.5% 仍不变。来源见 [AR 对比汇总](results/supervisor-20261023/w4/ar-comparison.json)。 | 无新增拟合；只核对已有聚合结果。 |
+| W5 | 删除或改写指定审计腔句子；数据文件同一性边界移到数据节；直接写 H6 年度方向一致和 H24 改进集中于 2017 年尾段；p 值解释集中在第 5 节。记号表移至附录 C.1；Figure 1/2 标签分开；Figure 2 图注明确 Table 7；Table 6 列名加入 λ、I 和破线；Table 1 前三行按原来源再核对。核对记录见 [round2-literature-recheck.md](notes/supervisor-20261023/round2-literature-recheck.md)。 | van den Hoogen 直接 PDF 请求超时，核对范围明确限于机构索引中的正文段落与目录，没有声称新读完整学位论文。 |
+| C1 | 最终 TeX 已编译成 19 页 PDF；19 页均逐页渲染检查；完整 574 项测试及 69 个原归档结果文件核对通过。更新本清单与交付链接。 | **仍在进行**；最终远端交付、执行历史 bundle 和 C1 最终耗时尚待主执行任务完成后登记。 |
+
+## 4. 实际分项用时
+
+以下为 [round2/timing.json](results/supervisor-20261023/round2/timing.json)记录的分项墙钟时间，包含该项读写、执行和核对；不等同于模型纯计算时间。顺序和起止记录保留在原 JSON。
+
+| 项目 | 预算 | 实际用时（秒，显示至毫秒） | 约合 | 状态 |
+|---|---:|---:|---:|---|
+| E6 | 90 分钟 | 693.349 | 11 分 33.349 秒 | COMPLETE |
+| E5 | 210 分钟 | 469.323 | 7 分 49.323 秒 | COMPLETE |
+| W1 | 90 分钟 | 186.348 | 3 分 6.348 秒 | COMPLETE |
+| W2 | 30 分钟 | 27.807 | 27.807 秒 | COMPLETE |
+| W3 | 30 分钟 | 245.558 | 4 分 5.558 秒 | COMPLETE |
+| W4 | 30 分钟 | 156.033 | 2 分 36.033 秒 | COMPLETE |
+| W5 | 60 分钟 | 364.797 | 6 分 4.797 秒 | COMPLETE |
+| C1 | 60 分钟 | **待最终交付登记** | 起于 18:51:07.214770 UTC | IN_PROGRESS |
+
+## 5. 编译、检查与证据边界
+
+[文档核对](results/supervisor-20261023/round2/document-verification.json)记录最终 PDF 的 14+5 页边界、158/185 词、36 个经验数值来源和保护文件范围。最终 PDF SHA-256 为 `f7369f0857b5d46cae55d25e5bb77baafff430aa415267ee153604195143a811`。[逐页检查记录](results/supervisor-20261023/round2/visual-review.json)绑定同一 PDF，记录全部物理第 1–19 页；Table 6、新 panel 图及两张标签修改图均已检查。
+
+[完整测试记录](results/supervisor-20261023/round2/test-verification.json)为 **574 tests, OK**，用时 91.582 秒。原结果核对为 **69 个结果文件 ARCHIVE_VERIFIED**；该检查不声称重新计算原始金融准确率或产生独立金融样本。只读科学一致性检查没有发现需修改的重大科学表述问题；它与编译、测试、逐页图像检查的范围分别记录。
+
+## 6. 导师要求的五项交付入口
+
+1. **新 PDF 与正文/附录页数：**[main.pdf](manuscript/supervisor-revision/main.pdf)，正文连参考文献 **14 页**、附录 **5 页**；[页数和词数核对](results/supervisor-20261023/round2/document-verification.json)。
+2. **E5 提交时间、运行时间、48 格与预测判定：**[运行前预测文件](protocol/supervisor-20261023/e5-panel-prediction.md)、[提交/运行回执](results/supervisor-20261023/e5/run-receipt.json)、[48 行汇总表](results/supervisor-20261023/e5/summary.csv)、[P1–P3 判定](results/supervisor-20261023/e5/prediction-assessment.json)。
+3. **新的 Table 6：**[8 行完整 CSV](results/supervisor-20261023/e6/table6.csv)和[正式排版表源](manuscript/supervisor-revision/generated/e3-table.tex)；印刷表在 PDF 物理第 9 页。
+4. **改写后的摘要、贡献段和结论全文：**[round2-rewritten-passages.md](manuscript/supervisor-revision/round2-rewritten-passages.md)，已展开数值与正式交叉引用。
+5. **逐项改动清单：**[本文件 REVISION_SUPERVISOR_20261023.md](REVISION_SUPERVISOR_20261023.md)。
+
+---
+
+# 第一轮历史记录（原文完整保留；以下不是本轮交付状态）
+
 # 导师意见落实与改动清单
 
 修改依据：用户提供的《论文修改意见（导师版）》，对象为公开 main `65feeee`。本轮在独立目录、独立分支完成；另一对话正在使用的 `revision-v4-jof` 目录保持只读。作者按用户最新答复填写 **Byron**，其他署名信息留空。
@@ -82,3 +157,9 @@ E4 对所有实数阈值的有限断点核查，两个原主比较均交叉。FX
 原始 443 个已跟踪文件中只修改根 README 的入口说明；其他原文件均保留，69 个核心结果的原归档校验通过。新文件采用独立版本目录。源码、聚合数值、页数、词数、引用对应和 PDF 身份可由核对脚本检查；17 页作了实际图片检查，改动图页再次检查。没有调用 Claude 或跨模型审查。
 
 没有增加数据源、QRF/FHS/EVT 实验、Lévy 命题或第二轮扩展。没有改原主比较或旧结果，也没有把描述性 p 值当作未受选择影响的确认性推断。没有投稿、注册账户、填写作者未授权的信息或合并 main。已有脚本/私有数值上下文是新增核算的复现依赖；公开克隆可重建稿件和检查聚合证据，不能凭空获得私有逐点数组。该边界在新文档指南明确列出。
+
+---
+
+## 待用户决定
+
+**目前没有需要用户作出的科学分析决定。** C1 的剩余问题是交付渠道与提交历史的呈现：GitHub 连接器返回 403，本地 CLI 未认证，因此采用网站目录提交会增加文件或目录级提交，无法同时让远端历史满足“每项恰好一次提交”的形式。主执行任务已经核对远端与本地内容；原始按序的本地执行提交链及拟合前的 E5 预测提交，将完整保存在 [round2-execution-history.bundle](results/supervisor-20261023/round2/round2-execution-history.bundle) 中。C1 最终耗时与交付完成状态仍待主执行任务最后登记；本文件不将该收尾状态提前记为完成。
