@@ -1,12 +1,16 @@
-## Current Journal of Forecasting revision candidate (v5)
+## Current Journal of Forecasting revision candidate (v6)
 
-The current revision candidate is [the main manuscript](submission-jof/manuscript-preview.pdf), with [Online Supplement](submission-jof/supplement-preview.pdf), [standard LaTeX/figure package](submission-jof/overleaf-package.zip), [revision record](REVISION_V5_CHANGELOG.md), and [directed original-text positioning evidence](notes/novelty-search.md). The earlier published working-paper artifact and original numerical archives below are retained as their dated records. The v5 evidence clarifies the target and classical properties, adds a controlled illegal-label timing illustration and an exact descriptive gain bridge, and preserves all adverse findings. It does not claim global priority, compatible unseen-dealer validation or journal acceptance.
+The current candidate is the [main manuscript](submission-jof/manuscript-preview.pdf) (18 preview pages), with the [complete Online Supplement](submission-jof/supplement-preview.pdf) (94 pages), [standard LaTeX/figure package](submission-jof/overleaf-package.zip), [v6 revision ledger](REVISION_V6_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md). PDFs are separately typeset previews; formal TeX export remains distinct from built-in source diagnostics.
+
+The original source primaries and all adverse archives remain unchanged. New finite delayed ACI-style wrappers, headroom SAV, fixed combinations, state diagnostics and target-level checks are post-result / exploratory; failures and upper-target NA remain explicit. Neither independent dealer validation, a canonical method guarantee nor journal acceptance is claimed. The preceding v5 source snapshots and audits remain under notes/revision-v6/ and notes/revision-v5-novelty/; earlier dated records follow below.
+
+The [v6 reproduction guide](protocol/revision-v6/REPLAY.md) separates public document regeneration from exact-byte private-input financial replay. The standard-library setup helper validates and prepares a new isolated tree without fitting models; it does not supply missing private data or bypass frozen gates.
 
 ## Journal of Forecasting preparation (revision v4)
 
 The branch `revision-v4-jof` contains the [submission preparation package](submission-jof/README.md), [author checklist](submission-jof/AUTHOR-TODO.md) and [complete revision/evidence ledger](REVISION_V4_CHANGELOG.md). No journal submission or acceptance claim is made. The original primaries, archived numbers and adverse results are retained.
 
-The merged-main guide follows below. The [pre-merge v3 guide](notes/revision-v4-jof/readme-v3-before-merge.md) and [v3 manuscript](manuscript/revision-v3/README.md) remain available alongside it.
+The dated merged-main historical guide follows below; its version labels describe that archived milestone. The [pre-merge v3 guide](notes/revision-v4-jof/readme-v3-before-merge.md) and [v3 manuscript](manuscript/revision-v3/README.md) remain available alongside it.
 
 ---
 

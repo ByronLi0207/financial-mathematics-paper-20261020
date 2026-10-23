@@ -24,7 +24,22 @@ def content_numbers(value):
 def fields(b):
  return {k:b[k] for k in ('html','headers','rows','caption','latex') if k in b}
 
+def contextual_fields(b):
+ return {**fields(b),**{k:b[k] for k in ('inline_math','math_cells') if k in b}}
+
 def validate_block(b):
+ if b.get('_generator','').startswith(('v6:','v6supp:')):
+  prefix,key=b['_generator'].split(':',1)
+  if prefix=='v6':
+   from v6_submission import generated
+  else:
+   from v6_supplement import generated
+  expected=generated(key);bad=[]
+  for spec in b.get('_bindings',[]):
+   if hashlib.sha256((ROOT/spec['path']).read_bytes()).hexdigest()!=spec['sha256']:
+    bad.append({'kind':'v6 input fingerprint changed','path':spec['path']})
+  if contextual_fields(b)!=contextual_fields(expected):bad.append({'kind':'v6 contextual regeneration mismatch','key':key})
+  return bad
  if b.get('_generator','').startswith('v5:'):
   from v5_submission import generated
   key=b['_generator'][3:]
@@ -72,6 +87,18 @@ def validate_block(b):
   return [] if not nums else [{'kind':'unbound numbers in synthesis','actual':nums,'text':str(fields(b))[:400]}]
  return [{'kind':'missing provenance','text':str(fields(b))[:300]}]
 
+def expected_reference_html(ident):
+ additions=ROOT/'notes/revision-v6/reference-additions.json'
+ if additions.exists():
+  added=next((r for r in json.loads(additions.read_text())['entries'] if r['id']==ident),None)
+  if added:return added['html']
+ audit=json.loads((NOTE/'reference-audit.json').read_text())
+ recorded=next((x for x in audit['entries'] if x['id']==ident),None)
+ amend_path=ROOT/'notes/revision-v5-novelty/reference-amendments.json'
+ amend=json.loads(amend_path.read_text()) if amend_path.exists() else {}
+ amended=next((x for x in amend.get('rows',[]) if x['id']==ident and x.get('proposed_note')),None)
+ return (html.escape(amended['proposed_note'])+" <a href='"+amended['proposed_url']+"'>Original source</a>.") if amended else (recorded or {}).get('suggested_html')
+
 def validate_all():
  from v4_typeset import tex_document
  report={'status':'PASS','scope':'All numeric tokens in manuscript.tex and supplement.tex; exact per-block source contexts and generated CSV row/field selectors. Archived consistency only, not independent data replication.',
@@ -94,9 +121,7 @@ def validate_all():
   amend_path=ROOT/'notes/revision-v5-novelty/reference-amendments.json'
   amend=json.loads(amend_path.read_text()) if amend_path.exists() else {}
   for ref in doc['references']:
-   recorded=next((x for x in audit['entries'] if x['id']==ref['id']),None)
-   amended=next((x for x in amend.get('rows',[]) if x['id']==ref['id'] and x.get('proposed_note')),None)
-   expected_ref=(html.escape(amended['proposed_note'])+" <a href='"+amended['proposed_url']+"'>Original source</a>.") if amended else (recorded or {}).get('suggested_html')
+   expected_ref=expected_reference_html(ref['id'])
    if ref['html']!=expected_ref:bad.append({'reference':ref['id'],'kind':'reference differs from verified metadata disposition'})
   for si,s in enumerate(doc['sections']):
    for bi,b in enumerate(s['blocks']):
@@ -112,7 +137,9 @@ def validate_all():
   report['structural_template_tokens']+=extracted-claims-bibl
   report['mismatches'] += [{'document':name,**e} for e in bad]
  if report['mismatches']:report['status']='FAIL'
- ((ROOT/'notes/revision-v5-novelty' if any(json.loads((OUT/(n+'-content.json')).read_text()).get('_abstract_generator') for n in ('manuscript','supplement')) else NOTE)/'numeric-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+ documents=[json.loads((OUT/(n+'-content.json')).read_text()) for n in ('manuscript','supplement')]
+ destination=ROOT/'notes/revision-v6' if any(d.get('_abstract_generator','').startswith('v6:') for d in documents) else ROOT/'notes/revision-v5-novelty' if any(d.get('_abstract_generator') for d in documents) else NOTE
+ (destination/'numeric-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(report,ensure_ascii=False,indent=2));return report
 
 if __name__=='__main__':
