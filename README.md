@@ -1,3 +1,7 @@
+## Current Journal of Forecasting revision candidate (v5)
+
+The current revision candidate is [the main manuscript](submission-jof/manuscript-preview.pdf), with [Online Supplement](submission-jof/supplement-preview.pdf), [standard LaTeX/figure package](submission-jof/overleaf-package.zip), [revision record](REVISION_V5_CHANGELOG.md), and [directed original-text positioning evidence](notes/novelty-search.md). The earlier published working-paper artifact and original numerical archives below are retained as their dated records. The v5 evidence clarifies the target and classical properties, adds a controlled illegal-label timing illustration and an exact descriptive gain bridge, and preserves all adverse findings. It does not claim global priority, compatible unseen-dealer validation or journal acceptance.
+
 ## Journal of Forecasting preparation (revision v4)
 
 The branch `revision-v4-jof` contains the [submission preparation package](submission-jof/README.md), [author checklist](submission-jof/AUTHOR-TODO.md) and [complete revision/evidence ledger](REVISION_V4_CHANGELOG.md). No journal submission or acceptance claim is made. The original primaries, archived numbers and adverse results are retained.

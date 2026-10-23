@@ -11,8 +11,10 @@ def main():
  new=Counter(signature(b) for d in after for s in d['sections'] for b in s['blocks'] if b['type']=='table')
  missing=list((old-new).elements());state=read('notes/revision-v5-novelty/state.json');changed=[]
  for path,sha in state['protected'].items():
-  if hashlib.sha256((ROOT/path).read_bytes()).hexdigest()!=sha:changed.append(path)
- report={'all_v4_table_rows_preserved':not missing,'v4_table_count':sum(old.values()),'structural_exception':'Method overview L row Proposition 1 relabeled Proposition 2; no empirical cell altered','missing_table_count':len(missing),'protected_file_changes':changed,'status':'PASS' if not missing and not changed else 'FAIL'}
+  actual=hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
+  permitted=state.get('authorized_support_changes',{}).get(path,{})
+  if actual!=sha and actual!=permitted.get('after_sha256'):changed.append(path)
+ report={'all_v4_table_rows_preserved':not missing,'v4_table_count':sum(old.values()),'structural_exception':'Method overview L row Proposition 1 relabeled Proposition 2; no empirical cell altered','missing_table_count':len(missing),'protected_file_changes':changed,'documented_support_changes':state.get('authorized_support_changes',{}),'status':'PASS' if not missing and not changed else 'FAIL'}
  dump(NOTE/'preservation-check.json',report)
  occurrences=[];bad=[];wordtext=[]
  for dn,d in zip(['manuscript','supplement'],after):

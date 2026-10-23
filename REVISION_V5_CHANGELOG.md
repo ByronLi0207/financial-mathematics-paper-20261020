@@ -57,3 +57,13 @@ At preflight, GitHub main is65feeee and there is no open PR or remote revision-v
 3. Review the noncausal gain-bridge and descriptive decision-map wording; the label-contamination illustration has mixed directions and only preselected clock blocks.
 4. Complete personal authorship/contact/funding/conflict/applicable policy fields and inspect a formally exported TeX PDF before journal submission. No declaration was signed and no submission occurred.
 5. There was no existing open PR to update at preflight; publication/authentication outcome must be reported accurately. No main merge, permission expansion, software installation or cache/backup cleanup is authorized here.
+
+## Clean-copy full-repository test addendum
+
+The preliminary selected suite above was followed by **all pytest-discovered repository tests** in a retained isolated copy of committed files. The first run produced713passed,949subtests passed and1failure: the historical manuscript-cell test read ignored `.scratch/round2/entry/paper-content.json`, so it could not run from a clean source checkout. Both complete first-attempt logs are preserved as `pytest-all-first-attempt-*`.
+
+The test now uses a minimal synthetic document, isolates unrelated augmenters and requires both generated tables and nonempty string rows. Production methods, original empirical digits and frozen results are unchanged. The exact support-only before/after fingerprints and reason are retained in state/preservation evidence; this is not hidden by deleting the original protected hash.
+
+After this correction the entire suite completed: **714passed,949subtests passed in85.00seconds**. Full output is `notes/revision-v5-novelty/pytest-all-repository-output.txt`; invocation/resource receipt is adjacent. The isolated test tree and all task/user source artifacts were retained. This supersedes the earlier limited test scope; it is a software/document test result, not new financial replication.
+
+The current-candidate link was added at the top of README while retaining the dated older working-paper overview. Existing evidence/output logs preserve their exact whitespace and CSV line endings; they were not tidied in ways that would invalidate their source hashes.

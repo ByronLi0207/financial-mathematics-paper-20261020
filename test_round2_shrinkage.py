@@ -17,11 +17,19 @@ class ShrinkageDiagnostics(unittest.TestCase):
 
 class ManuscriptCells(unittest.TestCase):
  def test_round2_table_cells_are_formal_converter_strings(self):
-  import json
-  from v3_revision import ROOT
+  from unittest.mock import patch
   from round2_manuscript import augment_round2
-  c=json.loads((ROOT/'.scratch/round2/entry/paper-content.json').read_text());augment_round2(c)
-  for sec in c['sections']:
-   if sec['title'].startswith('Appendix I.'):
-    for b in sec['blocks']:
-     if b['type']=='table':self.assertTrue(all(isinstance(x,str) for row in b['rows'] for x in row))
+  # A converter test must not depend on a private, ignored historical draft.
+  c={'sections':[{'title':'Synthetic section','blocks':[]} for _ in range(9)],
+     'references':[]}
+  with patch('round2_levy_manuscript.augment_levy'), \
+       patch('round2_panel_manuscript.augment_panel'), \
+       patch('round2_baselines_manuscript.augment_baselines'):
+   augment_round2(c)
+  sections=[sec for sec in c['sections'] if sec['title'].startswith('Appendix I.')]
+  self.assertEqual(len(sections),1)
+  tables=[b for b in sections[0]['blocks'] if b['type']=='table']
+  self.assertEqual(len(tables),2)
+  for b in tables:
+   self.assertTrue(b['rows'])
+   self.assertTrue(all(isinstance(x,str) for row in b['rows'] for x in row))
