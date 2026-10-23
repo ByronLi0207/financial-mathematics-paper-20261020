@@ -54,6 +54,8 @@ def numerical_facts():
     ppath=OLD/"paired-comparisons.csv"; paired=rows(ppath)
     fx=next(r for r in paired if r["contrast_id"]=="fx_hourly-h6-QR2880-minus-rolling_F720")
     add("FXPrimaryGain",ppath,fx,"relative_mean_loss_difference_percent",1,True)
+    legacy=next(r for r in paired if r["contrast_id"]=="fx_hourly-h24-QR2880-minus-rolling_S720")
+    add("FXLegacyGain",ppath,legacy,"relative_mean_loss_difference_percent",2,True)
     add("FXPrimaryBreaches",ppath,fx,"strict_breach_count_left")
     add("FXReferenceBreaches",ppath,fx,"strict_breach_count_right")
     dpath=NEW/"w3/dm-family.csv"; dm=rows(dpath)
@@ -63,6 +65,35 @@ def numerical_facts():
     facts["FXPrimaryP"]["display"]=pval(fxp["dm_p"])
     add("TreasuryPrimaryP",dpath,tp,"dm_p",3)
     add("TreasuryPrimaryBonferroni",dpath,tp,"primary_bonferroni_p",3)
+    add("FXPrimaryStatistic",dpath,fxp,"dm_t",1)
+    fxmatched=next(r for r in dm if r["contrast_id"]=="fx_hourly-h6-QR2880-minus-frozen_F2880")
+    fxshortdm=next(r for r in dm if r["contrast_id"]=="fx_hourly-h6-QR720-minus-frozen_F720")
+    add("FXMatchedStatistic",dpath,fxmatched,"dm_t",1)
+    add("FXShortP",dpath,fxshortdm,"dm_p",2)
+    fxmatchedloss=next(r for r in paired if r["contrast_id"]==fxmatched["contrast_id"])
+    fxshortloss=next(r for r in paired if r["contrast_id"]==fxshortdm["contrast_id"])
+    add("FXMatchedGain",ppath,fxmatchedloss,"relative_mean_loss_difference_percent",1,True)
+    add("FXShortGain",ppath,fxshortloss,"relative_mean_loss_difference_percent",2,True)
+    add("FXLegacyCrossing",ppath,{"negative_delta_V_divided_by_delta_U":-float(legacy["mean_unused_allowance_difference"])/float(legacy["mean_positive_overrun_difference"])},"negative_delta_V_divided_by_delta_U",1)
+    family_path=NEW/"w3/summary.json"; family=json.loads(family_path.read_text())
+    add("RemainingMatchedCount",family_path,family,"remaining_matched_family_size")
+    add("ArchivedMatchedCount",family_path,family,"archived_matched_family_size")
+    cpath=NEW/"inference/coverage-verified.csv"; coverage=rows(cpath)
+    for h,name in [("6","TreasuryShortGridCount"),("24","TreasuryLongGridCount")]:
+        cell=next(r for r in coverage if r["source"]=="nyfed_weekly" and r["horizon"]==h and r["window"]=="260" and r["method"]=="QR")
+        add(name,cpath,cell,"n")
+    hpath=OLD/"post-result-horizon.csv"
+    horizon=next(r for r in rows(hpath) if r["source"]=="nyfed_weekly" and r["window"]=="260" and r["method"]=="QR")
+    add("TreasuryHorizonCrossing",hpath,{"100_times_strict_crossing_rate":100*float(horizon["strict_crossing_rate"])},"100_times_strict_crossing_rate",0)
+    spath=NEW/"round2/source-date-budgets.json"; sources=json.loads(spath.read_text())
+    add("FXObservationCount",spath,sources["fx_hourly"],"record_count")
+    facts["FXObservationCount"]["display"]=f"{sources['fx_hourly']['record_count']:,}"
+    add("TreasuryObservationCount",spath,sources["nyfed_weekly"],"record_count")
+    legacydm=next(r for r in dm if r["contrast_id"]==legacy["contrast_id"])
+    add("FXLegacyP",dpath,legacydm,"dm_p",2)
+    apath=OLD/"paired-annual.csv"
+    lastyear=max(int(r["calendar_year"]) for r in rows(apath) if r["contrast_id"]==fx["contrast_id"])
+    add("FXTailYear",apath,{"maximum_calendar_year":lastyear},"maximum_calendar_year")
     epath=NEW/"e3/summary.csv"; e3=rows(epath)
     treasury=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
     for name,field,digits in [("TreasuryOriginalExcess","original33_percent_vs_frozen_F",1),("TreasuryExpandedExcess","extended33_percent_vs_frozen_F",1),("TreasuryExpandedExcessFine","extended33_percent_vs_frozen_F",2),("TreasuryFeatureChange","common_menu_feature_change_percent",2)]:
@@ -103,9 +134,9 @@ def table(name, caption, label, columns, data, align=None, note="", fontsize="sm
 def build_tables():
     # Short display cells retain exactly the scope of the full audited JSON.
     literature = [
-        ["Boudoukh et al. (2004)", "Worst intermediate portfolio-value loss", "Modeled portfolio paths", "First-passage formula; discrete simulation", "MaxVaR/VaR ratios and parameter illustrations"],
-        ["Petrunia et al. (2019)", "Largest daily endpoint debit across ACSS participants", "ACSS settlement balances", "GEV blocks; GPD exceedances", "Quantile diagnostics; monthly collateral shortfalls"],
-        ["van den Hoogen (2017)", "Maximum cumulative negative payment balance", "Confidential bank transactions", "Modeled transaction paths; EVT", "UC and independence procedures; outcomes confidential"],
+        ["Boudoukh et al. (2004)", "Worst intermediate portfolio-value loss", "Modeled portfolio paths", "First-passage formula; discrete simulation", "Model-implied MaxVaR/VaR ratios; discrete-monitoring simulation"],
+        ["Petrunia et al. (2019)", "Largest daily endpoint debit across ACSS participants", "ACSS settlement balances", "GEV blocks; GPD exceedances", "Fitted-versus-empirical quantiles; monthly-updated collateral shortfalls"],
+        ["van den Hoogen (2017)", "Maximum cumulative negative payment balance", "Confidential bank transactions", "Modeled transaction paths; EVT", "Backtesting outcomes withheld (confidential)"],
         ["Wisniewski et al. (2020)", "Next-hour signed-position interval", "Same FX source family", "Quantile/conformal intervals; KNN and other regressions", "Two endpoint pinball scores; interval and coverage diagnostics"],
         ["This paper", "Two-sided absolute sampled peak quantile", "FX record; Treasury aggregate", "Historical rules; QR/KNN on matched histories", "Pinball, paired DM, U/V, breaches and coverage diagnostics"],
     ]
@@ -114,13 +145,17 @@ def build_tables():
     table("literature-table.tex", "Closest studies and the present comparison.", "tab:literature",
           ["Study", "Target", "Data", "Method", "Evaluation"], literature,
           align="p{.14\\linewidth}p{.20\\linewidth}p{.14\\linewidth}p{.20\\linewidth}p{.20\\linewidth}",
-          note="The FX relationship concerns the source family. The public thesis specifies backtests but withholds its application outcomes.", fontsize="footnotesize")
+          note="Van den Hoogen (2017) specifies unconditional-coverage and independence tests in Section 5.4; its numerical application results are confidential (Section 5.5).", fontsize="footnotesize")
+    budgets=json.loads((NEW/"round2/source-date-budgets.json").read_text())
+    source_rows=[]
+    for source,name in [("fx_hourly","FX"),("nyfed_weekly","Treasury")]:
+        b=budgets[source]
+        source_rows.append([name,b["first_date"]+" to "+b["last_date"],b["validation"]["first_date"]+" to "+b["validation"]["last_date"],b["evaluation"]["first_date"]+" to "+b["evaluation"]["last_date"]," or ".join(map(str,b["windows"]))+" / "+str(b["refit_step"])])
     table("data-table.tex", "Source-specific chronological budgets. Dates are issue dates; all horizons share the same evaluation issues.", "tab:data",
           ["Source", "Full record", "Validation", "Evaluation", "$W$ / $d$"],
-          [["FX", "2014-02-05 to 2017-01-24", "2015-10-08 to 2015-12-30", "2016-01-01 to 2017-01-23", "720 or 2880 / 24"],
-           ["Treasury", "2013-04-03 to 2026-10-07", "2019-07-24 to 2020-07-15", "2021-01-06 to 2026-04-22", "52 or 260 / 13"]],
+          source_rows,
           align="lp{.20\\linewidth}p{.20\\linewidth}p{.20\\linewidth}p{.17\\linewidth}",
-          note="FX has 1,440 validation and 6,625 evaluation issues; Treasury has 52 and 277. The longest validation response completes before evaluation starts. $H$ counts records, preserving recorded FX gaps.", fontsize="footnotesize")
+          note=f"FX has {budgets['fx_hourly']['validation']['count']:,} validation and {budgets['fx_hourly']['evaluation']['count']:,} evaluation issues; Treasury has {budgets['nyfed_weekly']['validation']['count']} and {budgets['nyfed_weekly']['evaluation']['count']}. The longest validation response completes before evaluation starts. $H$ counts records, preserving recorded FX gaps.", fontsize="footnotesize")
     ready = rows(NEW / "w3/tables3-4-ready.csv")
     assert len(ready) == 48
     names = {"frozen_F": "$F$", "frozen_S": "$S$", "frozen_K": "$K$", "QR": "QR", "KNN": "KNN", "SCALED_KNN": "Scaled KNN"}
@@ -151,14 +186,14 @@ def build_tables():
     for r in sorted(e6, key=lambda r: (r["source"] != "fx_hourly", int(r["horizon"]), int(r["window"]))):
         data.append(["FX" if r["source"] == "fx_hourly" else "Treasury", r["horizon"], r["window"], f"{float(r['extended33_selected_penalty']):g}", *[f"{float(r[k]):+.2f}" for k in ["original33_percent_vs_frozen_F", "four_percent_vs_frozen_F", "extended33_percent_vs_frozen_F", "I_percent_vs_frozen_F"]], r["extended33_breaches"]])
     table("e3-table.tex", "Penalty-menu expansion and the intercept-only reference. Loss changes relative to frozen $F$ (percent); the final column counts strict breaches.", "tab:e3",
-          ["Source", "$H$", "$W$", "$\\lambda$ (33+)", "Original 33", "Four+", "33+", "$I$", "Breaches (33+)"], data,
+          ["Source", "$H$", "$W$", "$\\lambda$ (33+)", "Original 33", "Four+", "33+", "$I$ ($\\lambda\\!\\to\\!\\infty$)", "Breaches (33+)"], data,
           align="lrrrrrrrr", fontsize="footnotesize", note="Plus denotes the common menu $\\{.001,.01,.1,1,10\\}$. Original 33 retains its smaller menu. $I$ uses the ordinary empirical headroom quantile at $\\lceil .95W\\rceil$; it is a $\\lambda\\to\\infty$ reference, with a minimizer interval when $.95W$ is integral. $F$ instead uses $\\lceil .95(W+1)\\rceil$. Each predictor set selects its own penalty by the same validation rule. All eight cells and all 40 candidates completed. Common-menu paired tests, the separate 28-comparison E3 adjustment, HLN and doubled-bandwidth results remain in the supplement.")
     treasury = [r for r in e6 if r["source"] == "nyfed_weekly"]
     primary = next(r for r in treasury if r["horizon"] == "6" and r["window"] == "260")
     endpoint_count = sum(r["selected_at_extended_menu_upper_endpoint"] == "True" for r in treasury)
     i_changes = ", ".join(f"${float(r['I_percent_vs_frozen_F']):+.1f}$\\%" for r in treasury)
     (GEN / "e6-summary.tex").write_text(
-        f"The intercept-only reference helps locate the remaining Treasury differences. In the displayed Treasury order, $I$ changes loss by {i_changes} relative to $F$. The expanded full regression selects the menu's upper endpoint in {endpoint_count} of {len(treasury)} Treasury cells. At the main Treasury setting, expanded QR has {primary['extended33_breaches']} strict breaches, compared with {primary['frozen_F_breaches']} for $F$ and {primary['original33_breaches']} for original QR. Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.\\n".replace("\\n", "\n"))
+        f"\n\nThe intercept-only reference helps locate the remaining Treasury differences. In the displayed Treasury order, $I$ changes loss by {i_changes} relative to $F$. The expanded full regression selects the menu's upper endpoint in {endpoint_count} of {len(treasury)} Treasury cells. At the main Treasury setting, expanded QR has {primary['extended33_breaches']} strict breaches, compared with {primary['frozen_F_breaches']} for $F$ and {primary['original33_breaches']} for original QR. Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.\n")
     decomp = rows(NEW / "e3/primary-decomposition.csv")
     round2 = NEW / "round2"
     round2.mkdir(exist_ok=True)
@@ -176,12 +211,12 @@ def build_tables():
     table("decomposition-table.tex", "Ordered six-step changes ending at the original main comparisons.", "tab:decomp",
           ["Source", "Change", "Step (\\%)", "Initial (pp)", "$p_{\\rm DM}$", "$p_{\\rm HLN}$"], data,
           align="llrrrr", fontsize="footnotesize", note="Step percentages use the preceding row's loss and compound. Initial percentage points use the chain's common starting loss and sum to the original total. The last Treasury step restricts the ridge menu again, separating that change from the common-menu predictor comparison. Dashes denote identical losses. Tests are exploratory and unadjusted here; the declared E3 family and twice-bandwidth checks are in the supplement.")
-    (GEN / "e3-summary.tex").write_text("""A wider penalty menu largely removes the original Treasury deterioration. At the main Treasury setting, the full regression's excess loss relative to $F$ falls from 50.8\\% to 3.43\\%. Its penalty changes from 0.001 to one. Under the common menu, the full predictor set increases loss by 1.24\\% relative to the parsimonious regression, with a descriptive p-value of 0.685. The small difference leaves substantial uncertainty; it is not an equivalence result. Across the Treasury cells, the full model's matched-$F$ changes now range from a modest improvement to a modest deterioration.
-
-The FX gain persists under the wider menu. Every FX selection and issued report agrees with the original full specification. At the long history, changing from the parsimonious to the full predictor set reduces loss by 10.9\\%, with an E3-adjusted HAC p-value below 0.001. Changing from frozen $F$ to the parsimonious model yields a smaller reduction; that step has an unadjusted p-value of 0.010 and an E3-adjusted value of 0.251. Table~\\ref{tab:decomp} retains every step, including the update and history changes.
-
-The revised interpretation concerns regularization and specification jointly. Stronger shrinkage is useful for the weekly Treasury histories, while the long-history FX specification retains its gain. The shared-menu comparison permits each feature set to select its own penalty. Its order-dependent differences support a conditional comparison of procedures, rather than a causal attribution to a particular predictor or a universal dimension rule.
-""")
+    tmain=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    tpair=next(r for r in pairs if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["new_window"]=="260" and r["old_method"]=="four_predictor_extended_menu" and r["new_method"]=="33_predictor_extended_menu")
+    fxpair=next(r for r in pairs if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["new_window"]=="2880" and r["old_method"]=="four_predictor_extended_menu" and r["new_method"]=="33_predictor_extended_menu")
+    (GEN / "e3-summary.tex").write_text(
+        f"A wider penalty menu largely removes the original Treasury deterioration. At the main setting, the full regression's excess loss relative to $F$ falls from {float(tmain['original33_percent_vs_frozen_F']):.1f}\\% to {float(tmain['extended33_percent_vs_frozen_F']):.2f}\\%, and its selected penalty changes from ${float(tmain['original33_selected_penalty']):g}$ to ${float(tmain['extended33_selected_penalty']):g}$. Under the common menu, the full predictor procedure has {float(tpair['relative_percent']):.2f}\\% higher loss than the parsimonious procedure (HAC p-value {pval(tpair['dm_p'])}). The small observed difference does not establish equivalence.\n\n"
+        f"The FX gain persists under the wider menu: every selection and issued report agrees with the original full specification. At the long history, changing from the parsimonious to the full predictor procedure reduces loss by {abs(float(fxpair['relative_percent'])):.1f}\\% (E3-adjusted HAC p-value {pval(fxpair['dm_p_holm_e3_28'])}). This comparison concerns jointly selected tuning procedures and does not isolate the effect of an individual predictor. Table~\\ref{{tab:decomp}} retains the update, history, predictor-set and menu steps.\n")
     # Named U/V comparisons from the immutable original paired table.
     pairsold = rows(OLD / "paired-comparisons.csv")
     ids = ["fx_hourly-h6-QR2880-minus-rolling_F720", "fx_hourly-h6-QR2880-minus-frozen_F2880", "fx_hourly-h24-QR2880-minus-rolling_S720", "nyfed_weekly-h6-QR260-minus-frozen_F260"]
@@ -273,7 +308,9 @@ def waterfall():
             if abs(val-old)<1e-9: c.line(x-bw/2,y(val),x+bw/2,y(val))
             else: c.rect(x-bw/2,y(min(old,val)),bw,abs(y(val)-y(old)),fill=1,stroke=0)
             if i: c.setStrokeColor(GREY);c.setLineWidth(.5);c.line(x-spacing+bw/2,y(old),x-bw/2,y(old))
-            label(c,x,y(val)+5,f"{val:.1f}",8,black,"center")
+            label_y=y(val)+5
+            if val < old-1e-9: label_y=y(val)-14
+            label(c,x,label_y,f"{val:.1f}",8,black,"center")
             for j, bit in enumerate(labs[i].split(" ")): label(c,x,49-j*10,bit,7,black,"center")
         label(c,x0,17,"Common starting loss = 100; blue lowers mean loss",8,GREY)
     c.save()
