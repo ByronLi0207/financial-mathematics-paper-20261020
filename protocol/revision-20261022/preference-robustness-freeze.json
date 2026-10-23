@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "base_commit": "43e4bb69cc1e354f74b375403dd5eb28b6ec0f5c",
+  "analysis_status": "Post-inspection exploratory; preliminary values were seen before this execution freeze",
+  "input_files": [
+    {
+      "path": "results/revision-20261022/evaluation-summary.csv",
+      "bytes": 17416,
+      "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15"
+    },
+    {
+      "path": "results/revision-20261022/ar1-replay/ar1-summary.csv",
+      "bytes": 2600,
+      "sha256": "45d3ced6483b84bc2a8ba6b68719b813be1232dbb78a167d550c5c04ec802c1a"
+    },
+    {
+      "path": "results/revision-20261022/rank-ablation/summary.csv",
+      "bytes": 3078,
+      "sha256": "23a5f9d1979fd8d79a5230c9b5315b81c2295dec3991a206dcd7bfb1efa47b70"
+    },
+    {
+      "path": "results/revision-20261022/evaluation-nonoverlap.csv",
+      "bytes": 15512,
+      "sha256": "571485073b7136cbb66ca70799706a6ed50598d3a940933c0180a0bfe2938a8b"
+    },
+    {
+      "path": "results/revision-20261022/ar1-replay/ar1-nonoverlap.csv",
+      "bytes": 1832,
+      "sha256": "9214c18bfb3b2f1eb523280a8c33c52fbfef36467499a83786874b61e168d49e"
+    },
+    {
+      "path": "results/revision-20261022/rank-ablation/nonoverlap.csv",
+      "bytes": 2709,
+      "sha256": "49144ace708740738d44383a21b80c0f3b2866186ba1fdf4caa5a4db4cff0b7f"
+    }
+  ],
+  "implementation_files": [
+    {
+      "path": "preference_frontier.py",
+      "bytes": 6044,
+      "sha256": "72680f65671a7b7cf4408946b4208a57a9166e4cda253b22aabd8f0f61ba71b5"
+    },
+    {
+      "path": "test_preference_frontier.py",
+      "bytes": 8527,
+      "sha256": "7127dc47348a8b2566620bba01b7ff3edb27a8709ef35617cd6dcf5150dc0f15"
+    },
+    {
+      "path": "build_preference_results.py",
+      "bytes": 7651,
+      "sha256": "cacf5e65e54a2271ebd3855408a0ae1c0bf4bea852c86743b4fe405191fe151d"
+    },
+    {
+      "path": "test_build_preference_results.py",
+      "bytes": 2462,
+      "sha256": "812864b724de719e0176fb427113c520c5aae1716bce2a8e3a581748eff8c454"
+    },
+    {
+      "path": "verify_preference_frontier.py",
+      "bytes": 17398,
+      "sha256": "a4dd01ad6077d406cab8396c4f3552a4d42fca43a49ab8730b20909388d33f4f"
+    },
+    {
+      "path": "test_verify_preference_frontier.py",
+      "bytes": 14039,
+      "sha256": "f2f6638fcb8333571d3bf4789531080f6dd6ceba431ea2799578f0ff999f10c7"
+    }
+  ],
+  "design_file": {
+    "path": "protocol/revision-20261022/preference-robustness-design.md",
+    "bytes": 5323,
+    "sha256": "73d2e4b800bc3a1518cc30ec2f71842e81d31685976ebffe3fd5b50aeb8e28f0"
+  },
+  "revision": 2,
+  "previous_freeze": {
+    "path": "protocol/revision-20261022/preference-robustness-freeze-v1.json",
+    "public_commit": "befd01798ca2669f5b9b12874290c5b5ed0134eb",
+    "reason": "Independent review found headline identity/statistic fields missing from verifier checks; strengthen checker and tests, with no procedure or aggregate changes."
+  }
+}

@@ -1,8 +1,8 @@
 {
   "title": "Historical and Conditional Forecasts of Sampled Net-Position Peaks",
   "subtitle": "Comparisons on an FX record and Treasury position aggregates",
-  "date": "Working paper - 22 October 2026",
-  "abstract": "We evaluate established procedures targeting the 0.95 quantile of the maximum absolute source-reported position at issue and over the next H records. Historical headrooms, reanchored increment scenarios and native peaks are compared with ridge quantile regression and multivariate local quantiles. Chronological validation selects parameters from small fixed menus before the added evaluations; the previously inspected FX interval remains exploratory. On 6,625 FX origins, six-record regression with longer history lowers mean pinball loss by 12.66% relative to the original historical-headroom rule and 14.77% relative to a reference with the same completed-label pool and update schedule. QR records 376 breaches, versus 332 for the original rule and 360 for the matched reference. In a separately specified weekly Treasury-bill position aggregate, the declared six-week regression comparison raises loss by 50.79% and breaches from 28 to 54 over 277 origins. Short-history regression performs poorly at the longer horizon in both sources. A favorable secondary Treasury neighbor comparison reverses on a fixed sparse grid containing only 12 origins. A later, separately frozen exploratory AR residual replay lowers loss in five of eight cells against matched increment translation and raises it in three; breaches increase in all eight. At Treasury H24 W260, AR lowers loss by 24.12% against matched increment translation, with breaches rising from 12 to 59. Observed rankings differ across the studied model-family, source, horizon and history cells. The contribution is an application and model-validation comparison using mature estimators. Aggregation, calendar horizons, estimated-forecast incoherence and downloaded vintages limit transfer. The results establish neither conditional coverage nor gains from changing quotes, hedges, capital or funding decisions.",
+  "date": "Working paper - 22 October 2026; preference-robustness revision",
+  "abstract": "We compare established forecasts of the 0.95 quantile of sampled absolute net-position peaks. Historical headrooms, reanchored increments and native peaks are evaluated against regression and local quantiles with completed training labels and chronological selection. The evaluation records were previously inspected. On 6,625 FX origins, the six-record regression primary lowers mean pinball loss by 12.66% against the original reference and 14.77% against a matched-history reference, with 376 breaches versus 332 and 360. On 277 weekly Treasury-aggregate origins, the primary regression raises loss by 50.79% and breaches from 28 to 54. Exploratory AR replay improves on matched increment translation in five of eight cells while breaches increase in all eight. A fixed-report preference analysis adds complete shortfall/excess loss frontiers for eight matched cells and their sparse grids. Both mean loss components fall in the FX short-horizon primary, whereas the modest long-horizon gain reverses above a shortfall/excess weight ratio of 20.63, near the stipulated 19. Four of eight frontier winners at 19:1 change on sparse grids. These findings strengthen model validation using mature estimators; they establish neither new quantile methods, conditional coverage, unseen transfer nor observed quote, hedge or funding benefits.",
   "sections": [
     {
       "title": "1. Introduction",
@@ -30,6 +30,10 @@
         {
           "type": "p",
           "html": "The contribution is a comparison that challenges historical peak constructions with credible conditional competitors and records the limits of transfer. The direct competitors change the original FX ranking, while the chosen QR procedure has substantial limitations on another measured position series. The later AR comparison improves on QR in all four Treasury cells and loses in three of four FX cells, requiring a family-specific interpretation. Completed-label matching does not isolate a causal information effect from regularization, function class, local response count or validation selection. Elementary geometry explains construction relationships, not predictive optimality. We claim no new calibration theorem, universal forecasting improvement or operational intervention."
+        },
+        {
+          "type": "p",
+          "html": "A further exploratory supplement evaluates the complete linear shortfall/excess preference range for the same fixed reports. It distinguishes coefficientwise improvement from a favorable score near a preference threshold, and retains all matched cells and sparse-grid reversals. This adds a decision-sensitivity finding without fitting another model or treating stipulated weights as observed financial prices."
         }
       ]
     },
@@ -635,7 +639,78 @@
       ]
     },
     {
-      "title": "9. Interpretation, coherence and remaining limits",
+      "title": "9. Fixed-report preference robustness",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "The main score fixes a shortfall/excess preference of 19:1. We now quantify how rankings of those already issued reports depend on that stipulated preference. For report m let U be its mean positive overrun and V its mean unused allowance, over the same origins. For 0&lt;=a&lt;=1 define:"
+        },
+        {
+          "type": "equation",
+          "html": "J<sub>m</sub>(a)=a U<sub>m</sub>+(1-a)V<sub>m</sub>; r=a/(1-a); J<sub>m</sub>(.95)=L<sub>m,.95</sub>.",
+          "latex": "J_m(a)=aU_m+(1-a)V_m,\\qquad r=\\frac{a}{1-a},\\qquad J_m(.95)=\\overline L_{m,.95}."
+        },
+        {
+          "type": "p",
+          "html": "Here a=0 and a=1 are limiting single-component objectives; finite positive r corresponds to 0&lt;a&lt;1. For two reports A and B, the difference is a(U_A-U_B)+(1-a)(V_A-V_B). A coefficientwise reduction in both components is preferable for every nonnegative linear weighting. With opposing component differences, a unique crossing can reverse the ordering. This elementary affine geometry is not a new forecasting method. Changing a evaluates fixed actions under other hypothetical preferences; it neither refits them as other quantiles nor establishes dominance over all consistent scores for the .95 quantile (Gneiting, 2011)."
+        },
+        {
+          "type": "table",
+          "caption": "Table 6. Preference sensitivity of the four named fixed comparisons. Differences are left minus right. FX amounts are divided by 10^6; Treasury amounts already have USD-million source units. The sources and economic horizons are not pooled. r is the stipulated shortfall/excess weight ratio; equality holds at a finite displayed crossing, before rounding. Reference definitions remain those of Section 5.",
+          "headers": [
+            "Comparison",
+            "dU",
+            "dV",
+            "Crossing r",
+            "Left preferred"
+          ],
+          "rows": [
+            [
+              "FX H6 primary",
+              "-0.010408",
+              "-0.920830",
+              "None",
+              "All r >= 0"
+            ],
+            [
+              "FX H6 matched",
+              "-0.029549",
+              "-0.775527",
+              "None",
+              "All r >= 0"
+            ],
+            [
+              "FX H24 legacy",
+              "+0.167864",
+              "-3.463190",
+              "20.630898",
+              "r < 20.630898"
+            ],
+            [
+              "Treasury H6 primary",
+              "+1736.222894",
+              "-4968.077943",
+              "2.861429",
+              "r < 2.861429"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "html": "The two FX H6 comparisons reduce both mean positive overrun and mean unused allowance. Their improvement therefore does not rely on the single 19:1 preference, even though strict breach occasions still increase. By contrast, the FX H24 legacy comparison increases overrun while reducing unused allowance: its 1.829% pinball improvement reverses at r=20.630898 (a=0.953770), close to 19. The Treasury H6 primary becomes preferable only below r=2.861429 (a=0.741028); its adverse result at 19 remains intact. These are descriptive consequences of fixed sample means, not estimates of financing prices or risk preferences."
+        },
+        {
+          "type": "p",
+          "html": "For each of the eight source/H/W cells, the complete lower envelope retains QR, KNN, scaled KNN, matched frozen F/S/K, AR and I. The eight reports share the completed-label history length and update schedule within a cell. Rolling and one-state reports are excluded from these frontiers; the original cross-window primary references remain separately labeled in Table 6. Appendix E retains every full and sparse-grid frontier, endpoint and tie convention. A supplementary figure displays the whole preference range and a high-shortfall-weight detail. The full-grid Treasury H6 W260 QR is never optimal within these eight fixed reports, including both endpoints. At a=.95 the preferred report changes on four of eight sparse grids: FX H24 W720 and Treasury H6 W52/W260 and H24 W52. Treasury H24 grids have only 12 origins. These changes delimit sample stability; sparse windows and shared training histories do not create independent evidence."
+        },
+        {
+          "type": "p",
+          "html": "The supplement was conceived after previous results and preliminary preference calculations were inspected. An execution freeze at befd01798ca2669f5b9b12874290c5b5ed0134eb binds six archived tables, this design and six implementation/test files before the first complete recorded run. A subsequently strengthened headline-identity checker was publicly bound in protocol revision 2 before a second run, whose aggregate output was byte-identical. Both runs retain all 16 groups, 128 fixed report summaries and 448 unordered pairs. Independent affine optimality inequalities check all 45 open frontier regions, 61 boundary points and four headline comparisons. Arithmetic is exact for saved decimal mean tokens; those floating point summaries are not infinite-precision raw-loss truth. Reconstructed .95 means reconcile with the archive within the declared numerical tolerance. No raw observations are accessed or reports refitted. Neither primary is replaced, and hindsight frontiers are not deployment selectors."
+        }
+      ]
+    },
+    {
+      "title": "10. Interpretation, coherence and remaining limits",
       "blocks": [
         {
           "type": "p",
@@ -680,11 +755,11 @@
       ]
     },
     {
-      "title": "10. Conclusion",
+      "title": "11. Conclusion",
       "blocks": [
         {
           "type": "p",
-          "html": "Established conditional methods materially change an earlier sampled-peak comparison; observed rankings differ across the studied model-family, source, horizon and history cells. The FX six-record QR primary lowers loss by 12.66% with more breach occasions; its matched-pool improvement is 14.77%. The separately specified Treasury six-week QR primary raises loss by 50.79% and increases breaches. Short-history regressions, a secondary neighbor sensitivity reversal and post-result horizon incoherence limit a general success narrative. The later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S it lowers loss in five cells and raises it in three, while breaches increase in all eight. Its long-history Treasury H24 gain accompanies 59 rather than 12 breaches. Complete adverse and favorable comparisons are retained; this supplement does not replace either original primary. The evidence supports a bounded comparison of mature forecasting procedures on two measured financial position series, not a new estimator, conditional-coverage theorem or operational risk-policy gain. A separately frozen lower empirical-rank supplement retains the matched long-history H6 QR improvement in FX and deterioration in Treasury without replacing the original primaries."
+          "html": "Established conditional methods materially change an earlier sampled-peak comparison; observed rankings differ across the studied model-family, source, horizon and history cells. The FX six-record QR primary lowers loss by 12.66% with more breach occasions; its matched-pool improvement is 14.77%. The separately specified Treasury six-week QR primary raises loss by 50.79% and increases breaches. Short-history regressions, a secondary neighbor sensitivity reversal and post-result horizon incoherence limit a general success narrative. The later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S it lowers loss in five cells and raises it in three, while breaches increase in all eight. Its long-history Treasury H24 gain accompanies 59 rather than 12 breaches. Complete adverse and favorable comparisons are retained; this supplement does not replace either original primary. The evidence supports a bounded comparison of mature forecasting procedures on two measured financial position series, not a new estimator, conditional-coverage theorem or operational risk-policy gain. A separately frozen lower empirical-rank supplement retains the matched long-history H6 QR improvement in FX and deterioration in Treasury without replacing the original primaries. Fixed-report preference frontiers further distinguish the coefficientwise FX H6 improvements from the near-threshold FX H24 gain. Four of eight .95 frontier winners change on the existing sparse grids, preserving the need for compatible unseen and decision-linked evidence."
         }
       ]
     },
@@ -1487,6 +1562,175 @@
         {
           "type": "p",
           "html": "The supplement retains 16 I/F summaries, 64 annual rows, 16 globally anchored sparse-grid rows and 24 contrasts under results/revision-20261022/rank-ablation/. QR-minus-I uses the stored original unrounded QR mean and new I mean; it is explicitly a difference of means, not a new originwise reconstruction of QR traces. Direct I-minus-F paired differences are separately retained. An independent scalar-window/Python-sorting implementation reconstructed all 55,216 I/F issued reports across 27,608 cell-issues and reconciled 361,487 exact checks without a discrepancy, including all targets, scores and aggregate tables. It shares the strict source parser and the same accepted data; this is independent arithmetic, not external financial validation. The new eight-cell calculation took 0.29 seconds externally at 49,856,512 bytes peak RSS; its independent readback took 1.61 seconds at 59,293,696 bytes. Each observed one OS thread at recorded snapshots, not a continuous hard thread bound. No earlier QR fit, forecast or adverse result was replaced."
+        }
+      ]
+    },
+    {
+      "title": "Appendix E. Complete fixed-report preference frontiers",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Each row follows a from 0 to 1 through its maximal open intervals. NN=KNN; Sc=scaled KNN; F/S/K=matched frozen historical controls; AR=AR residual replay; I=ordinary empirical headroom quantile. A slash separates consecutive intervals. Adjacent displayed intervals tie at their common exact boundary; equals joins identical minimizing lines. Breakpoints are rounded for display. The public results.json retains exact rational boundaries and every endpoint/tie set, all 128 input summaries, 448 pair relations and coefficientwise dominance. Endpoints are evaluated separately and are not inferred from rounded interior thresholds. Ratios r=a/(1-a) should be converted from the exact fractions, especially near 1."
+        },
+        {
+          "type": "table",
+          "caption": "Table E1. All eight full-origin frontiers among the same eight fixed reports; 6,625 FX or 277 Treasury origins per row. Units are source native and are never pooled.",
+          "headers": [
+            "Source",
+            "H",
+            "W",
+            "Preferred sequence",
+            "Interior a boundaries",
+            "At .95"
+          ],
+          "rows": [
+            [
+              "FX",
+              "6",
+              "720",
+              "QR / NN / S",
+              "0.952882, 0.964505",
+              "QR"
+            ],
+            [
+              "FX",
+              "6",
+              "2880",
+              "QR / Sc",
+              "0.972817",
+              "QR"
+            ],
+            [
+              "FX",
+              "24",
+              "720",
+              "QR / NN / AR / S",
+              "0.845488, 0.889246, 0.938369",
+              "S"
+            ],
+            [
+              "FX",
+              "24",
+              "2880",
+              "QR / S",
+              "0.957033",
+              "QR"
+            ],
+            [
+              "Treasury",
+              "6",
+              "52",
+              "QR / AR / NN=F",
+              "0.717896, 0.972846",
+              "AR"
+            ],
+            [
+              "Treasury",
+              "6",
+              "260",
+              "AR / K",
+              "0.960158",
+              "AR"
+            ],
+            [
+              "Treasury",
+              "24",
+              "52",
+              "QR / K / S",
+              "0.423917, 0.897882",
+              "S"
+            ],
+            [
+              "Treasury",
+              "24",
+              "260",
+              "K / AR / NN / S",
+              "0.778365, 0.970017, 0.995666",
+              "AR"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Table E2. All eight existing globally anchored H+1 sparse-grid frontiers. Counts are FX 947/265 and Treasury 40/12 for H6/H24. These are descriptive sensitivities with shared training histories.",
+          "headers": [
+            "Source",
+            "H",
+            "W",
+            "Preferred sequence",
+            "Interior a boundaries",
+            "At .95"
+          ],
+          "rows": [
+            [
+              "FX",
+              "6",
+              "720",
+              "QR / NN / Sc",
+              "0.950621, 0.984383",
+              "QR"
+            ],
+            [
+              "FX",
+              "6",
+              "2880",
+              "QR / Sc",
+              "0.978149",
+              "QR"
+            ],
+            [
+              "FX",
+              "24",
+              "720",
+              "QR / NN / AR / S",
+              "0.805398, 0.910344, 0.959437",
+              "AR"
+            ],
+            [
+              "FX",
+              "24",
+              "2880",
+              "QR / S",
+              "0.966600",
+              "QR"
+            ],
+            [
+              "Treasury",
+              "6",
+              "52",
+              "QR / K / NN=F",
+              "0.645837, 0.995462",
+              "K"
+            ],
+            [
+              "Treasury",
+              "6",
+              "260",
+              "AR / K",
+              "0.937124",
+              "K"
+            ],
+            [
+              "Treasury",
+              "24",
+              "52",
+              "QR / K / AR / NN=F=S",
+              "0.693667, 0.940131, 0.990484",
+              "AR"
+            ],
+            [
+              "Treasury",
+              "24",
+              "260",
+              "K / AR",
+              "0.721694",
+              "AR"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "html": "For full Treasury H6 W52, NN and F have identical component means and share their final region. For sparse Treasury H24 W52, NN, F and S share the final region. The complete mathematical comparison retains a report that is optimal only at a boundary even if it has no open interval; absence from a displayed sequence alone is not an endpoint claim. The .95 winner changes in four cells on the sparse grid. A complete envelope of inspected fixed reports is a hindsight descriptive object, not an estimated optimal decision rule, an independence argument or a confidence set."
         }
       ]
     }
