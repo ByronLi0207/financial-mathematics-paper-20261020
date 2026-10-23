@@ -1,0 +1,730 @@
+{
+  "status": "COMPLETE",
+  "scores": {
+    "status": "OK",
+    "n": 52,
+    "tau": 0.95,
+    "horizon": 6,
+    "nonfinite_count": 0,
+    "mean_loss": 6169.578831613927,
+    "full_hits": 19,
+    "full_rate": 0.36538461538461536,
+    "coverage_distance": 0.3153846153846154,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 6,
+      "full": {
+        "n": 52,
+        "hits": 19,
+        "rate": 0.36538461538461536,
+        "uc_lr": 48.952017357273974,
+        "uc_p": 2.6230132603228497e-12,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 8,
+        "hits": 4,
+        "rate": 0.5,
+        "uc_lr": 13.285849654573207,
+        "uc_p": 0.00026741681103853275,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 329,
+          "step": 7,
+          "expected_count": 8,
+          "observed_count": 8
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 7,
+          "n00": 1,
+          "n01": 2,
+          "n10": 2,
+          "n11": 2,
+          "boundary": false,
+          "boundary_cell_count": 0,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 14.909355500508791,
+          "p": 0.0005787281250000001,
+          "saturated_log_likelihood": -4.68213122712422,
+          "fixed_alpha_log_likelihood": -12.136808977378616,
+          "status": "OK"
+        }
+      },
+      "boundary_count": 0,
+      "na_count": 0
+    }
+  },
+  "refit_count": 4,
+  "refits": [
+    {
+      "refit_index": 329,
+      "status": "CONVERGED",
+      "coefficients": [
+        0.6988278414759787,
+        0.6895199922252699,
+        6.375934237165102e-08
+      ],
+      "scale": 9953.057692307691,
+      "initial_quantile": 4.011832467409513,
+      "objective": 0.07866962726772936,
+      "selected_start": 0,
+      "starts": [
+        {
+          "index": 0,
+          "initial_coefficients": [
+            3.1995148224646854,
+            0.2,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07866962726772936,
+          "solver_objective": 0.07866962726772936,
+          "nfev": 1451,
+          "nit": 8,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.6988278414759787,
+            0.6895199922252699,
+            6.375934237165102e-08
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 1,
+          "initial_coefficients": [
+            3.1099544592983603,
+            0.2,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08067620969527445,
+          "solver_objective": 0.08067620969527445,
+          "nfev": 471,
+          "nit": 3,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.8337072022975294,
+            0.2155171455618721,
+            4.8814113202836163e-17
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 2,
+          "initial_coefficients": [
+            1.5947818355008803,
+            0.6,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.078833731192889,
+          "solver_objective": 0.078833731192889,
+          "nfev": 427,
+          "nit": 3,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.9058571760448734,
+            0.6013067294225904,
+            6.415959472286903e-08
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 3,
+          "initial_coefficients": [
+            1.5052214723345552,
+            0.6,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07882540861256875,
+          "solver_objective": 0.07882540861256875,
+          "nfev": 600,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.888836917170178,
+            0.6087978520955426,
+            5.940421205321982e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 4,
+          "initial_coefficients": [
+            0.39123209527802616,
+            0.9,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.0808754661412282,
+          "solver_objective": 0.0808754661412282,
+          "nfev": 561,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.2234693115740206,
+            0.8999999714387962,
+            3.248703805991757e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 5,
+          "initial_coefficients": [
+            0.3016717321117012,
+            0.9,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08044131888051996,
+          "solver_objective": 0.08044131888051996,
+          "nfev": 781,
+          "nit": 5,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.2592101565278933,
+            0.8840402388145967,
+            6.046653952561016e-09
+          ],
+          "bound_solutions": []
+        }
+      ],
+      "training_count": 260,
+      "training_first": 64,
+      "training_last": 323,
+      "initialization_count": 58,
+      "initialization_first": 0,
+      "initialization_last": 57
+    },
+    {
+      "refit_index": 342,
+      "status": "CONVERGED",
+      "coefficients": [
+        2.2633153391111414,
+        4.229916145582933e-14,
+        6.117748342861884e-08
+      ],
+      "scale": 9991.13076923077,
+      "initial_quantile": 3.992140721732429,
+      "objective": 0.07825141094773679,
+      "selected_start": 2,
+      "starts": [
+        {
+          "index": 0,
+          "initial_coefficients": [
+            3.183905721767075,
+            0.2,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.0783266904588104,
+          "solver_objective": 0.0783266904588104,
+          "nfev": 496,
+          "nit": 3,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.8657159680393882,
+            0.18851358619214956,
+            1.0538177800001355e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 1,
+          "initial_coefficients": [
+            3.095644021197262,
+            0.2,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07829787832112108,
+          "solver_objective": 0.07829787832112108,
+          "nfev": 608,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.983984819613102,
+            0.12345228762811028,
+            3.4384268507682873e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 2,
+          "initial_coefficients": [
+            1.5870494330741034,
+            0.6,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07825141094773679,
+          "solver_objective": 0.07825141094773679,
+          "nfev": 567,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            2.2633153391111414,
+            4.229916145582933e-14,
+            6.117748342861884e-08
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 3,
+          "initial_coefficients": [
+            1.4987877325042904,
+            0.6,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07872969872694145,
+          "solver_objective": 0.07872969872694145,
+          "nfev": 584,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.9277220037746894,
+            0.5901215615072594,
+            6.993886801462508e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 4,
+          "initial_coefficients": [
+            0.38940721655437466,
+            0.9,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08118916287292009,
+          "solver_objective": 0.08118916287292009,
+          "nfev": 240,
+          "nit": 2,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.2175245747168943,
+            0.8999999672074839,
+            0.010000033474720425
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 5,
+          "initial_coefficients": [
+            0.3011455159845616,
+            0.9,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.07849136377919248,
+          "solver_objective": 0.07849136377919248,
+          "nfev": 754,
+          "nit": 5,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.3137652308334389,
+            0.4195630927157952,
+            1.9576087909373396e-15
+          ],
+          "bound_solutions": []
+        }
+      ],
+      "training_count": 260,
+      "training_first": 77,
+      "training_last": 336,
+      "initialization_count": 71,
+      "initialization_first": 0,
+      "initialization_last": 70
+    },
+    {
+      "refit_index": 355,
+      "status": "CONVERGED",
+      "coefficients": [
+        2.328255612760178,
+        5.523332966677031e-14,
+        5.604172886892303e-08
+      ],
+      "scale": 10213.423076923076,
+      "initial_quantile": 3.894384840462589,
+      "objective": 0.08260339936505266,
+      "selected_start": 0,
+      "starts": [
+        {
+          "index": 0,
+          "initial_coefficients": [
+            3.1054756560936028,
+            0.2,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08260339936505266,
+          "solver_objective": 0.08260339936505266,
+          "nfev": 670,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            2.328255612760178,
+            5.523332966677031e-14,
+            5.604172886892303e-08
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 1,
+          "initial_coefficients": [
+            3.015185709605384,
+            0.2,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08265082233496085,
+          "solver_objective": 0.08265082233496085,
+          "nfev": 600,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.976382434214523,
+            0.13236067744192062,
+            4.154285024370594e-15
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 2,
+          "initial_coefficients": [
+            1.5477217199085669,
+            0.6,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08301084772823229,
+          "solver_objective": 0.08301084772823229,
+          "nfev": 225,
+          "nit": 2,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.9222150522756103,
+            0.5999999943064468,
+            0.010000016043103556
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 3,
+          "initial_coefficients": [
+            1.4574317734203481,
+            0.6,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08294822552977539,
+          "solver_objective": 0.08294822552977539,
+          "nfev": 497,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.9081872291639163,
+            0.5999981568484047,
+            0.024299586085376274
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 4,
+          "initial_coefficients": [
+            0.37940626776979003,
+            0.9,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.08474550202871091,
+          "solver_objective": 0.08474550202871091,
+          "nfev": 358,
+          "nit": 3,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.20693577801659677,
+            0.8999998821603837,
+            0.025533145408030512
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 5,
+          "initial_coefficients": [
+            0.28911632128157133,
+            0.9,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.0833027826328954,
+          "solver_objective": 0.0833027826328954,
+          "nfev": 933,
+          "nit": 7,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.5257967138581968,
+            0.7274290623198768,
+            0.1084882570283779
+          ],
+          "bound_solutions": []
+        }
+      ],
+      "training_count": 260,
+      "training_first": 90,
+      "training_last": 349,
+      "initialization_count": 84,
+      "initialization_first": 0,
+      "initialization_last": 83
+    },
+    {
+      "refit_index": 368,
+      "status": "CONVERGED",
+      "coefficients": [
+        1.8412311627190978,
+        0.19408077889619627,
+        0.02343104020571989
+      ],
+      "scale": 10699.653846153846,
+      "initial_quantile": 3.717409980912395,
+      "objective": 0.10246900450018193,
+      "selected_start": 0,
+      "starts": [
+        {
+          "index": 0,
+          "initial_coefficients": [
+            2.9643931938847774,
+            0.2,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10246900450018193,
+          "solver_objective": 0.10246900450018193,
+          "nfev": 1110,
+          "nit": 10,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            1.8412311627190978,
+            0.19408077889619627,
+            0.02343104020571989
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 1,
+          "initial_coefficients": [
+            2.8785800762785283,
+            0.2,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10261112834878153,
+          "solver_objective": 0.10261112834878153,
+          "nfev": 589,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            2.204826484087707,
+            1.4196057062848361e-14,
+            0.06916370931872164
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 2,
+          "initial_coefficients": [
+            1.4774292015198192,
+            0.6,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10279363336833904,
+          "solver_objective": 0.10279363336833904,
+          "nfev": 396,
+          "nit": 3,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.9159967244693474,
+            0.5927108613833011,
+            0.025434261781890344
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 3,
+          "initial_coefficients": [
+            1.3916160839135703,
+            0.6,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10248440612344593,
+          "solver_objective": 0.10248440612344593,
+          "nfev": 706,
+          "nit": 5,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            2.2737118338843025,
+            2.0575744291679775e-14,
+            0.0414068759374877
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 4,
+          "initial_coefficients": [
+            0.36220620724610064,
+            0.9,
+            0.01
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10469372419853469,
+          "solver_objective": 0.10469372419853469,
+          "nfev": 216,
+          "nit": 2,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.21923901352329597,
+            0.9000000195069631,
+            0.01000000315904291
+          ],
+          "bound_solutions": []
+        },
+        {
+          "index": 5,
+          "initial_coefficients": [
+            0.27639308963985165,
+            0.9,
+            0.1
+          ],
+          "success": true,
+          "eligible": true,
+          "status": "CONVERGED",
+          "objective": 0.10468683942828189,
+          "solver_objective": 0.10468683942828189,
+          "nfev": 466,
+          "nit": 4,
+          "solver_status": 0,
+          "message": "Optimization terminated successfully.",
+          "coefficients": [
+            0.21715752904291813,
+            0.8999986515293342,
+            0.011772754710045545
+          ],
+          "bound_solutions": []
+        }
+      ],
+      "training_count": 260,
+      "training_first": 103,
+      "training_last": 362,
+      "initialization_count": 97,
+      "initialization_first": 0,
+      "initialization_last": 96
+    }
+  ],
+  "source": "nyfed_weekly",
+  "horizon": 6,
+  "window": 260,
+  "method": "SAV",
+  "phase": "validation",
+  "analysis_status": "post-result / exploratory",
+  "executable_freeze_sha256": "c9fb8deff4a73ae3c9798de831d5d3a7a1d498b82789731460a09e4ebf1a3399",
+  "started_utc": "2026-10-23T19:04:22.677857+00:00",
+  "ended_utc": "2026-10-23T19:04:24.024570+00:00",
+  "resources": {
+    "started_utc": "2026-10-23T19:04:22.677659+00:00",
+    "ended_utc": "2026-10-23T19:04:24.028466+00:00",
+    "elapsed_seconds": 1.3508236659690738,
+    "peak_rss_bytes": 135053312,
+    "maximum_observed_os_threads": 1,
+    "thread_snapshot_count": 2,
+    "requested_numerical_threads": 1,
+    "internal_wall_seconds": 540,
+    "hard_wall_seconds": 600,
+    "internal_rss_bytes": 1610612736,
+    "hard_rss_bytes": 2147483648
+  },
+  "private_artifact": {
+    "bytes": 18536,
+    "sha256": "cee9726d43092417791412d02eb116d25b08f4492d043fd4b10423e564beb673"
+  }
+}

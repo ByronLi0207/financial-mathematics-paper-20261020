@@ -1,0 +1,172 @@
+{
+  "status": "COMPLETE",
+  "selected_gamma": 0.001,
+  "selection_freeze_sha256": "e847695a92941bc162b036bc94e0ea72e7d8996df9511d9561229ac3e1762166",
+  "validation_prefix_identical": true,
+  "scores": {
+    "status": "OK",
+    "n": 6625,
+    "tau": 0.95,
+    "horizon": 24,
+    "nonfinite_count": 0,
+    "mean_loss": 755982.7014517846,
+    "full_hits": 294,
+    "full_rate": 0.04437735849056604,
+    "coverage_distance": 0.005622641509433965,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 24,
+      "full": {
+        "n": 6625,
+        "hits": 294,
+        "rate": 0.04437735849056604,
+        "uc_lr": 4.575390408682324,
+        "uc_p": 0.03243435440221614,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 265,
+        "hits": 10,
+        "rate": 0.03773584905660377,
+        "uc_lr": 0.9135277267110666,
+        "uc_p": 0.33918013842732714,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 11927,
+          "step": 25,
+          "expected_count": 265,
+          "observed_count": 265
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 264,
+          "n00": 245,
+          "n01": 9,
+          "n10": 9,
+          "n11": 1,
+          "boundary": false,
+          "boundary_cell_count": 0,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 1.6707374656781155,
+          "p": 0.43371452715566716,
+          "saturated_log_likelihood": -42.15045077713869,
+          "fixed_alpha_log_likelihood": -42.985819509977745,
+          "status": "OK"
+        }
+      },
+      "boundary_count": 0,
+      "na_count": 0
+    }
+  },
+  "diagnostics": {
+    "gamma": 0.001,
+    "initial_calibration_count": 2880,
+    "alpha_min": 0.0003471017007983339,
+    "alpha_max": 0.08189710170079834,
+    "calibration_min": 2880,
+    "calibration_max": 2880,
+    "rank_min": 2646,
+    "rank_max": 2880,
+    "clip_count": 5,
+    "issue_count": 6625,
+    "clipped_issue_count": 5,
+    "clipped_issue_fraction": 0.0007547169811320754,
+    "matured_wrapped_feedback_consumed": 6625,
+    "cumulative_matured_wrapped_feedback": 8041
+  },
+  "unwrapped_scores": {
+    "status": "OK",
+    "n": 6625,
+    "tau": 0.95,
+    "horizon": 24,
+    "nonfinite_count": 0,
+    "mean_loss": 734695.0685732415,
+    "full_hits": 531,
+    "full_rate": 0.08015094339622642,
+    "coverage_distance": 0.030150943396226412,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 24,
+      "full": {
+        "n": 6625,
+        "hits": 531,
+        "rate": 0.08015094339622642,
+        "uc_lr": 108.05352619007408,
+        "uc_p": 2.6161657443357074e-25,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 265,
+        "hits": 21,
+        "rate": 0.07924528301886792,
+        "uc_lr": 4.083111705160775,
+        "uc_p": 0.04331382313342323,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 11927,
+          "step": 25,
+          "expected_count": 265,
+          "observed_count": 265
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 264,
+          "n00": 226,
+          "n01": 17,
+          "n10": 17,
+          "n11": 4,
+          "boundary": false,
+          "boundary_cell_count": 0,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 7.08217466958186,
+          "p": 0.0289817970272293,
+          "saturated_log_likelihood": -71.83356094601766,
+          "fixed_alpha_log_likelihood": -75.37464828080859,
+          "status": "OK"
+        }
+      },
+      "boundary_count": 0,
+      "na_count": 0
+    }
+  },
+  "source": "fx_hourly",
+  "horizon": 24,
+  "window": 2880,
+  "method": "ACI_QR",
+  "phase": "evaluation",
+  "analysis_status": "post-result / exploratory",
+  "executable_freeze_sha256": "c9fb8deff4a73ae3c9798de831d5d3a7a1d498b82789731460a09e4ebf1a3399",
+  "started_utc": "2026-10-23T19:06:17.733736+00:00",
+  "ended_utc": "2026-10-23T19:06:18.566365+00:00",
+  "resources": {
+    "started_utc": "2026-10-23T19:06:17.733561+00:00",
+    "ended_utc": "2026-10-23T19:06:18.631653+00:00",
+    "elapsed_seconds": 0.8981045000255108,
+    "peak_rss_bytes": 74055680,
+    "maximum_observed_os_threads": 1,
+    "thread_snapshot_count": 1,
+    "requested_numerical_threads": 1,
+    "internal_wall_seconds": 540,
+    "hard_wall_seconds": 600,
+    "internal_rss_bytes": 1610612736,
+    "hard_rss_bytes": 2147483648
+  },
+  "private_artifact": {
+    "bytes": 527971,
+    "sha256": "cbe9554b50b282e302fc9b49f8e576a527942278f3341e6b434cdd7024d82a79"
+  }
+}
