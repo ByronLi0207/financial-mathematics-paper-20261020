@@ -152,6 +152,12 @@ The original sequence combines two changes at its last step. The four-predictor 
 \caption{Ordered loss changes for the six-step comparisons. Each bar changes the preceding procedure; the common-baseline vertical scale makes the increments additive. The original full QR and the equal-menu E3 report are both retained. Corresponding paired HAC tests appear in the decomposition table. The chosen order defines the result; it is a procedure comparison rather than a Shapley allocation or a causal feature effect.}\label{fig:waterfall}
 \end{figure}
 
+\input{generated/e5-summary.tex}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/panel-menu.pdf}
+\caption{All archived panel cells, each comparing original and expanded full regression against its own $F$. The axis shows relative loss on a logarithmic ratio scale; zero is the historical reference. Row labels omit the common PDPOS prefix. Complete native-unit losses, selected penalties, $I$ and breach counts are retained in the E5 table.}\label{fig:panel}
+\end{figure}
+
 \section{Robustness and score interpretation}
 AR residual-block replay shows that family choice matters. At each original refit, OLS estimates an intercept and slope on unique transitions from the union of completed windows. Ordered residuals are replayed from the current anchor; Appendix~\ref{app:replay} gives the exact path identity. AR improves on regression in every Treasury cell and loses in most FX cells. Against frozen translated paths, its score improves in five cells, while breaches rise in every cell. This is a mean-filtered comparison with a separate residual-representativeness assumption.
 
