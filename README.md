@@ -2,7 +2,15 @@
 
 An English working paper comparing established forecasting methods for the largest absolute source-reported net position at issue and over the next H records. It uses an individual-market-maker FX record and a separately fitted weekly Treasury-bill position aggregate. The contribution is a bounded retrospective benchmark on a common target, with complete favorable and adverse results.
 
-Read the current [24-page paper](manuscript/working-paper/paper.pdf), [LaTeX source](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [25-reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md). The supplied PDF uses a separate ReportLab/pypdf route; it is not an export of the desktop TeX compiler.
+Read the revised [17-page paper](manuscript/supervisor-revision/main.pdf), [editable TeX](manuscript/supervisor-revision/main.tex), [revision guide](manuscript/supervisor-revision/README.md) and [Chinese change inventory](REVISION_SUPERVISOR_20261023.md). The new PDF is the actual Tectonic/XeTeX output: 13 pages including references plus four appendix pages, authored as Byron.
+
+## Supervisor revision on 23 October 2026
+
+The revision reorganizes the paper around three empirical contributions, adds checked predictive-ability and coverage diagnostics, and separates predictor changes from the ridge-menu change. The exploratory [E3 results](results/supervisor-20261023/e3/README.md) retain every original comparison: expanding the full regression's penalty menu changes Treasury H6/W260 excess loss from +50.786% to +3.434%, while all four FX forecasts remain identical to the originals. The common-menu full-versus-four-predictor difference is only +1.242% in that Treasury cell (unadjusted DM p=.685); this does not establish equivalence or a causal feature effect.
+
+The checked [inference archive](results/supervisor-20261023/inference/) reports the fixed 72-member Holm family, separate unadjusted FX cross-window comparisons, HLN and bandwidth sensitivity. The original Treasury adverse comparison has raw p=.007611 and Holm p=.319678. Coverage diagnostics consistently condition the Christoffersen joint likelihood on the initial hit while retaining full-grid Kupiec separately. All inference is retrospective and exploratory.
+
+The original [24-page paper](manuscript/working-paper/paper.pdf), [TeX](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md) remain unchanged. That older supplied PDF uses a separate ReportLab/pypdf route; the new revision uses real TeX compilation.
 
 ## Critical review on 23 October 2026
 
