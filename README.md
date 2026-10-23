@@ -1,3 +1,11 @@
+## Journal of Forecasting preparation (revision v4)
+
+The branch `revision-v4-jof` contains the [submission preparation package](submission-jof/README.md), [author checklist](submission-jof/AUTHOR-TODO.md) and [complete revision/evidence ledger](REVISION_V4_CHANGELOG.md). No journal submission or acceptance claim is made. The original primaries, archived numbers and adverse results are retained.
+
+The merged-main guide follows below. The [pre-merge v3 guide](notes/revision-v4-jof/readme-v3-before-merge.md) and [v3 manuscript](manuscript/revision-v3/README.md) remain available alongside it.
+
+---
+
 # Historical and Conditional Forecasts of Sampled Net-Position Peaks
 
 An English working paper comparing established forecasting methods for the largest absolute source-reported net position at issue and over the next H records. It uses an individual-market-maker FX record and a separately fitted weekly Treasury-bill position aggregate. The contribution is a bounded retrospective benchmark on a common target, with complete favorable and adverse results.
