@@ -1,0 +1,2804 @@
+{
+  "label": "v7-local-5e35dba-before-v8",
+  "created_utc": "2026-10-24T07:40:49.480212+00:00",
+  "baseline_commit": "5e35dba21ea5ced708dad47cbee29fe12e4c6936",
+  "source": "submission-jof/manuscript.tex",
+  "source_sha256": "fa01292c3be526dec0218a5ee78fcd2d96668173a9ccba72cf6052b921737eda",
+  "checker_origin_commit": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+  "checker_origin_path": "notes/supervisor-20261023/writing-pass-check.py",
+  "checker_retrieval": "Read in prior B0 tool output; no Git command in this delegated audit.",
+  "reusable_core_sha256": "6c19a518389b6536b3a4e053e4f0ef088068d16f7c00cf5cdb83357ef3bdbb3a",
+  "adapter_sha256": "d00cc809dd5d947e604d6c3cea6e9339db732aef782c267efcffeb398c3c5368",
+  "method": {
+    "scope": "Introduction through Conclusion; exclude headings, tables, figures and captions, references, declarations, and displayed formula content. Include Research design and transparency subsection, matching PR3 scope.",
+    "adaptation": "Unified v7 manuscript source replaces PR3 separate sections.tex/abstract.tex/appendices.tex I/O only. Float/table masking matches original inventory().",
+    "sentences": "Original PR3 full-stop splitting. Protect decimal points, leading decimals, standard abbreviations and initial sequences; nonempty final fragment is a sentence. Paragraph breaks alone do not split.",
+    "flagged_terms": [
+      "establish",
+      "descriptive",
+      "exploratory",
+      "post-result",
+      "inspected",
+      "audit",
+      "readback",
+      "archive",
+      "receipt",
+      "analogue",
+      "qualify",
+      "rather than",
+      "without",
+      "does not",
+      "do not",
+      "cannot"
+    ],
+    "forbidden_terms": [
+      "audit",
+      "readback",
+      "archive",
+      "receipt",
+      "analogue",
+      "R0",
+      "R1",
+      "R2",
+      "R3",
+      "S1",
+      "S2",
+      "S3",
+      "E3",
+      "E5",
+      "R6",
+      "33+",
+      "Four+"
+    ],
+    "pr3_thresholds_are_historical": "Original target_pass retains <8 percent and mean <=25; v8_target_pass applies user <=8 percent, mean <=20, >40 words =0.",
+    "no_scope_optimization": "Keep same regions and terms before and after. Do not drop a limitations subsection to lower scores."
+  },
+  "task_stated_baseline": {
+    "flagged_proportion": 0.161,
+    "average_sentence_words": 21.2,
+    "over_40_words": 8
+  },
+  "task_stated_baseline_reproduced": false,
+  "two_decimal_percent_occurrences": [
+    {
+      "line": 17,
+      "tokens": [
+        "-14.77\\%",
+        "-16.62\\%"
+      ],
+      "paragraph": "\\begin{abstract}Risk limits on dealer positions concern the largest magnitude reached before a review horizon ends, rather than the position at its endpoint. We compare historical and conditional quantile forecasts of sampled absolute-position peaks for an FX market maker and weekly primary-dealer position aggregates. Simple historical rules prove difficult to beat. Long-history FX regression changes matched loss by -14.77\\% and -16.62\\% in the later and earlier periods. Its later advantage survives the evaluated finite delayed coverage correction. Before correction, however, regression breaches more frequently, while its ranking against a shorter-history rolling rule changes across periods. After stronger regularization, regression still loses 34 of 48 additional-panel comparisons. We formalize the known-floor target and apply a classical endpoint-to-peak bound under explicit assumptions. The results support joint validation of accuracy, breach behavior, and stability across reference rules, periods, and related series.\\end{abstract}"
+    },
+    {
+      "line": 34,
+      "tokens": [
+        "-14.77\\%",
+        "-16.62\\%"
+      ],
+      "paragraph": "The clearest repeated gains arise for long-history FX regression at the shorter forecast horizon, rather than across every conditional specification. Against a historical headroom rule with the same history, its later-period loss changes by -14.77\\%. The earlier-period matched comparison changes loss by -16.62\\%, and the evaluated coverage correction preserves the later advantage. Changing the comparison to the shorter-history rolling reference reverses the direction of the earlier-period result, while weekly comparisons frequently favor historical rules."
+    },
+    {
+      "line": 193,
+      "tokens": [
+        "-14.77\\%",
+        "-16.62\\%"
+      ],
+      "paragraph": "Long-history FX regression provides the clearest repeated improvement against a historical headroom rule using the same completed history and update schedule. The later-period matched loss change is -14.77\\%, while the earlier-period matched change is -16.62\\%. Table~\\ref{tab:fx} shows that these gains refer to the same-history controls, with separate columns for the original shorter-history rolling reference. The distinction matters because model choice and the amount of historical information answer different comparative forecasting questions."
+    },
+    {
+      "line": 196,
+      "tokens": [
+        "-15.00\\%"
+      ],
+      "paragraph": "The evaluated calibration wrappers preserve the long-history matched FX advantage while bringing the two observed breach frequencies close together. Wrapped regression changes mean loss by -15.00\\% against the wrapped historical reference on their common evaluation grid. Their strict breach counts are 329 and 328, respectively. This result gives a concrete calibration comparison for the actual finite delayed procedures rather than treating the unwrapped score gain as a coverage result."
+    },
+    {
+      "line": 199,
+      "tokens": [
+        "-10.15\\%",
+        "-9.20\\%"
+      ],
+      "paragraph": "The long-history FX gain also persists across the evaluated position-increment states and at the lower target quantile. The unchanged primary has a negative mean loss difference in every training-defined RMS group, with the group results documented in the Supplement. At the lower target, the matched relative loss change is -10.15\\%, and the original-primary reference gives -9.20\\%. These results broaden the description of that configuration while leaving the separate upper-target validation failures visible in the full record."
+    },
+    {
+      "line": 217,
+      "tokens": [
+        "-12.66\\%",
+        "3.17\\%"
+      ],
+      "paragraph": "The advantage changes when the reference changes, even for the same long-history FX regression report at the shorter horizon. Against the original shorter-history rolling rule, the later loss change is -12.66\\%, whereas the earlier-period change is 3.17\\%. The earlier matched improvement therefore coexists with an adverse original-primary comparison, rather than reproducing the original gain against every historical rule. Table~\\ref{tab:fx} makes that reversal part of the main result instead of treating it as a secondary qualification."
+    },
+    {
+      "line": 220,
+      "tokens": [
+        "31.50\\%"
+      ],
+      "paragraph": "Short histories and longer horizons produce additional adverse outcomes that prevent a broad ranking of regression above historical forecasting rules. The short-history FX regression at the longer horizon raises mean loss by 31.50\\% relative to its matched historical headroom rule. Its breach counts are 924 for regression and 427 for the reference. Other long-horizon comparisons show smaller score gains alongside more breaches, so a positive result at the shorter horizon cannot stand in for the full map."
+    },
+    {
+      "line": 223,
+      "tokens": [
+        "50.79\\%"
+      ],
+      "paragraph": "The original Treasury-bill primary is adverse in both its score and its breach count, despite numerically accepted regression fits. Its relative loss increase is 50.79\\%, with 54 regression breaches on the evaluation grid. The historical reference records 28 breaches, as Table~\\ref{tab:weekly} shows together with the corresponding fixed-reference inference. The earlier shorter-history structural analogue also loses, so the weekly evidence challenges transport of the successful FX configuration to these aggregate tasks."
+    },
+    {
+      "line": 229,
+      "tokens": [
+        "-3.98\\%",
+        "2.77\\%"
+      ],
+      "paragraph": "Simpler conditional descriptions and forecast combinations also produce mixed outcomes rather than a uniform solution to the weekly regression losses. The fixed median combination improves on the bill historical reference by a relative loss change of -3.98\\%. The fixed mean combination instead changes that loss by 2.77\\%, and the headroom quantile recursion is also worse than the reference in that primary context. Table~\\ref{tab:weekly} and the Supplement preserve these comparisons together with the additional model failures, including every unfavorable completed result."
+    },
+    {
+      "line": 245,
+      "tokens": [
+        "+181.39\\%"
+      ],
+      "paragraph": "\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize The original bill primary has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results are a structural analogue, not an exact replay of that primary. The one-standard-error worst excess is +181.39\\%; all its prewritten success criteria remain unmet. Full panel and selection tables are linked from the Supplement and EXTENDED\\_RESULTS.md.\\end{minipage}"
+    }
+  ],
+  "sentences": 219,
+  "words": 4222,
+  "flagged_sentences": 29,
+  "flagged_proportion": 0.1324200913242009,
+  "average_sentence_words": 19.27853881278539,
+  "over_40_words": 1,
+  "forbidden_occurrences": 2,
+  "forbidden_by_term": {
+    "archive": 1,
+    "analogue": 1
+  },
+  "main_caption_forbidden_occurrences": 0,
+  "target_pass": {
+    "flagged_below_8_percent": false,
+    "average_at_most_25": true,
+    "no_sentences_over_40": false,
+    "no_forbidden_body_terms": false
+  },
+  "abstract_words": 137,
+  "abstract_numeric_occurrences": 4,
+  "sentences_detail": [
+    {
+      "id": 1,
+      "text": "A position can finish inside its limit after exceeding that limit during the intervening period, as Figure illustrates.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 2,
+      "text": "For a market maker, the relevant forecast therefore concerns the largest exposure before the next review, rather than the endpoint alone.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 3,
+      "text": "The distinction changes the response variable, the observations available for training, and the interpretation of successful prediction.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 4,
+      "text": "We study how established historical and conditional forecasts perform when every method targets this same sampled absolute-position peak.",
+      "words": 18,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 5,
+      "text": "Simple historical rules provide a demanding reference because they already incorporate information about the current position and its recent path behavior.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 24
+      }
+    },
+    {
+      "id": 6,
+      "text": "A conditional model must improve on that information while estimating additional relationships from a finite, changing sequence of completed outcomes.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 24
+      }
+    },
+    {
+      "id": 7,
+      "text": "More predictors can help distinguish current conditions, but they also increase sensitivity to the historical sample and the strength of regularization.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 24
+      }
+    },
+    {
+      "id": 8,
+      "text": "We examine these competing effects through matched histories, alternative reference rules, and repeated chronological comparisons.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 24
+      }
+    },
+    {
+      "id": 9,
+      "text": "Our empirical comparison joins an hourly FX market-maker record with weekly U.S.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 31
+      }
+    },
+    {
+      "id": 10,
+      "text": "primary-dealer position-category aggregates, using a common forecasting objective.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 31
+      }
+    },
+    {
+      "id": 11,
+      "text": "The methods predict source-native peaks separately for each series, so monetary magnitudes from different reporting systems remain separate throughout evaluation.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 31
+      }
+    },
+    {
+      "id": 12,
+      "text": "We compare regression, local quantiles, historical rules, and additional conditional benchmarks on the same completed response within each comparison.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 31
+      }
+    },
+    {
+      "id": 13,
+      "text": "The evidence asks where added conditioning helps, whether that advantage survives a change of reference, and how scores relate to breaches.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 31
+      }
+    },
+    {
+      "id": 14,
+      "text": "The clearest repeated gains arise for long-history FX regression at the shorter forecast horizon, rather than across every conditional specification.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 34
+      }
+    },
+    {
+      "id": 15,
+      "text": "Against a historical headroom rule with the same history, its later-period loss changes by -14.77%.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 34
+      }
+    },
+    {
+      "id": 16,
+      "text": "The earlier-period matched comparison changes loss by -16.62%, and the evaluated coverage correction preserves the later advantage.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 34
+      }
+    },
+    {
+      "id": 17,
+      "text": "Changing the comparison to the shorter-history rolling reference reverses the direction of the earlier-period result, while weekly comparisons frequently favor historical rules.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 34
+      }
+    },
+    {
+      "id": 18,
+      "text": "A lower quantile score also leaves a separate operational question about how often the predicted limit is crossed during the forecast period.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 37
+      }
+    },
+    {
+      "id": 19,
+      "text": "The later matched FX comparison records 376 regression breaches, compared with 360 for its historical reference.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 37
+      }
+    },
+    {
+      "id": 20,
+      "text": "Elementary-score curves and error-weight comparisons show why these assessments can disagree, with the relevant comparison stated explicitly in each case.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 37
+      }
+    },
+    {
+      "id": 21,
+      "text": "For managers setting monitoring limits, the practical implication is to evaluate prediction errors and exceedance frequency together before selecting a more complex forecast.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 37
+      }
+    },
+    {
+      "id": 22,
+      "text": "C1.",
+      "words": 1,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 23,
+      "text": "We formalize the peak-position quantile as a path-dependent forecast with a known current-position floor.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 24,
+      "text": "We establish loss-improving floor projection and a strict-tail bound for true conditional quantiles, and apply the classical Lévy bound under independent symmetric increments.",
+      "words": 24,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 25,
+      "text": "Separately fitted short-history FX regression forecasts cross across horizons on 640 evaluation origins.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 26,
+      "text": "Wisniewski et al. (2020) forecast signed endpoint intervals rather than a sampled absolute inventory peak.",
+      "words": 15,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 27,
+      "text": "The portfolio-loss maximum of Boudoukh et al. (2004) and payment-deficit peak of van den Hoogen (2017) provide distinct path-risk precedents.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 28,
+      "text": "Section provides the definitions, propositions and crossing diagnostic, with proofs and simulation qualifications in the Supplement.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 29,
+      "text": "C2.",
+      "words": 1,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 30,
+      "text": "We find that conditional-model gains vary across the observed frequency, training-history and forecast-horizon settings.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 31,
+      "text": "We compare the same peak target for one FX record and thirteen weekly position-category aggregates with matched histories and update schedules.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 32,
+      "text": "Even after extending the regression penalty menu, historical rules win in 34 of 48 additional-panel comparisons.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 33,
+      "text": "Where Duffie et al. (2023) examine capacity, illiquidity and PnL quantiles, and Wisniewski et al. (2020) forecast one market maker's endpoints, we compare these peak-position tasks.",
+      "words": 26,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 34,
+      "text": "Section reports the gains and failures, and Table organizes the frequency—history—horizon decision map.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 42
+      }
+    },
+    {
+      "id": 35,
+      "text": "C3.",
+      "words": 1,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 36,
+      "text": "We show why peak-limit validation must compare scores, breaches and stability against explicitly matched reference rules.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 37,
+      "text": "We compare same-history controls with the original shorter-history rolling controls, examine two periods, and assess elementary-score curves alongside error-weight preferences.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 38,
+      "text": "For the distinct long-horizon legacy comparison, the preferred report reverses at a penalty ratio of about 20.6:1.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 39,
+      "text": "Where the endpoint lineage evaluates intervals and Ehm et al. (2016) develop general score comparisons, we connect these diagnostics to monitoring limits with completed path labels.",
+      "words": 26,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 40,
+      "text": "Sections — support a four-part checklist: use matured labels, separate history and model changes, report scores with breaches, and check stability across periods and related series.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 44
+      }
+    },
+    {
+      "id": 41,
+      "text": "The paper develops the forecast target before describing the data, methods, and chronological evaluation design used for the empirical comparisons.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 47
+      }
+    },
+    {
+      "id": 42,
+      "text": "The results separate settings with conditional gains from settings with losses, then examine the differences between scores and breach behavior.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 47
+      }
+    },
+    {
+      "id": 43,
+      "text": "A final validation checklist turns those findings into concrete controls for comparing candidate peak limits across reference rules, periods, and series.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 47
+      }
+    },
+    {
+      "id": 44,
+      "text": "The central message is that complexity earns its place through a stable comparative advantage on the quantity that the limit actually monitors.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 47
+      }
+    },
+    {
+      "id": 45,
+      "text": "Net-position forecasting already has a close empirical lineage in the market-making literature, where Wisniewski and colleagues predict signed next-hour endpoint intervals.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 46,
+      "text": "Their methods combine historical positions, calendar information, neighboring observations, and normalized prediction intervals, with sequential training, calibration, and evaluation .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 47,
+      "text": "They also report scores and coverage tests together, providing a direct precedent for the joint evaluation of interval forecasts.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 48,
+      "text": "Our response instead requires the complete future path segment and includes the current absolute position as a known lower bound.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 49,
+      "text": "This distinction creates different training labels and different limits, even when the numerical forecasting engine follows the same broad family.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 50,
+      "text": "Financial path-risk studies establish that a within-period extreme can matter more than the value observed at the end of the period.",
+      "words": 21,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 51,
+      "text": "MaxVaR evaluates the worst cumulative portfolio return under a fixed portfolio and diffusion assumptions, including a conversion from endpoint probabilities to path risk .",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 52,
+      "text": "The payment-liquidity thesis studies conditional maximum deficits using a different path-risk target and confidential transactions .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 53,
+      "text": "Related settlement studies examine tail liquidity needs and collateral requirements in their respective payment systems .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 54,
+      "text": "Duffie and colleagues analyze dealer capacity and Treasury-market functioning, with additional out-of-sample PnL quantile comparisons in their appendix .",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 55,
+      "text": "Our empirical contribution concerns matched forecasts of the present peak-position target across the FX record and related public position aggregates.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 56,
+      "text": "Quantile estimation and evaluation supply established tools for comparing conditional peak forecasts against historical rules on a shared response.",
+      "words": 19,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 57,
+      "text": "Regression quantiles directly target asymmetric forecast errors through the associated loss function, providing the basic statistical building block .",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 58,
+      "text": "Conditional autoregressive quantiles and quantile forests provide additional conditioning structures for different forecasting applications .",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 59,
+      "text": "Consistent scoring rules and elementary-score representations explain why rankings can vary across distinct evaluation questions .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 60,
+      "text": "We connect these tools to mature path labels, matched historical controls, and the stability of observed score and breach differences.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 61,
+      "text": "The positioning in Table locates the substantive comparison in the peak response, completed labels and explicitly matched reference rules.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 62,
+      "text": "The forecast target is the largest sampled absolute position between the issue time and the end of the stated forecast horizon.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 63,
+      "text": "Let \\(N t\\) denote the reported signed position and let \\( F t\\) contain the information available at the forecast origin.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 64,
+      "text": "Define the peak \\(Y t,H \\), its observed floor \\(B t\\), and the corresponding nonnegative headroom \\(Z t,H \\) by The inclusion of the issue position matters because a feasible peak limit must already cover the exposure observed at the forecast origin.",
+      "words": 42,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 65,
+      "text": "Figure shows a real window selected by a fixed chronological rule, with an endpoint inside the limit and an earlier peak outside it.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 90
+      }
+    },
+    {
+      "id": 66,
+      "text": "A successful endpoint interval can therefore answer a different risk question from a successful report for the full sampled peak.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 90
+      }
+    },
+    {
+      "id": 67,
+      "text": "We evaluate the latter through pinball loss and count a breach precisely when the observed peak strictly exceeds the reported limit.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 90
+      }
+    },
+    {
+      "id": 68,
+      "text": "proposition Proposition (known-floor projection).",
+      "words": 4,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 97
+      }
+    },
+    {
+      "id": 69,
+      "text": "Suppose \\(Y B\\) almost surely and the issue information contains \\(B\\).",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 97
+      }
+    },
+    {
+      "id": 70,
+      "text": "Projecting any forecast \\(c\\) to \\( \\ B,c\\ \\) weakly improves pinball loss for every possible outcome, with an exact gain below the floor.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 97
+      }
+    },
+    {
+      "id": 71,
+      "text": "If \\(q\\) is the true conditional lower inverse quantile at level \\(1- \\), its strict exceedance probability is at most \\( \\).",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 97
+      }
+    },
+    {
+      "id": 72,
+      "text": "At an atom of the response distribution, that probability can be smaller than the nominal tail probability.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 97
+      }
+    },
+    {
+      "id": 73,
+      "text": "proposition Proposition (classical endpoint-to-peak bound).",
+      "words": 5,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 74,
+      "text": "Let future increments be independent and individually symmetric about zero, with partial sums \\(S h\\).",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 75,
+      "text": "Fix a starting position \\(x\\), set \\(B=|x|\\), and let \\(q\\) be the population \\((1- /2)\\) quantile of \\(|S H|\\).",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 76,
+      "text": "The triangle inequality and the classical scalar L\\'evy maximal inequality then imply the following bound, including strict inequalities at atoms .",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 77,
+      "text": "Neither identical increment distributions nor finite increment moments are required for this population statement.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 78,
+      "text": "The Supplement gives both proofs and distinguishes the population endpoint quantile from the empirical endpoint estimate used by the corresponding benchmark.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 111
+      }
+    },
+    {
+      "id": 79,
+      "text": "A conditional use of Proposition requires the independence, symmetry, and endpoint-quantile assumptions under the law conditional on issue information.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 111
+      }
+    },
+    {
+      "id": 80,
+      "text": "Its simulation comparisons separate mean-reverting position levels from serially correlated increments, since those constructions have different dependence in their future paths.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 111
+      }
+    },
+    {
+      "id": 81,
+      "text": "This separation makes the mathematical premises explicit before the empirical benchmark is judged by its observed losses and breaches.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 111
+      }
+    },
+    {
+      "id": 82,
+      "text": "Forecasts for longer horizons should also respect the nesting of the underlying path maxima, which makes the true horizon quantiles ordered.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 83,
+      "text": "Separate fits can violate that order even though their observed targets remain correctly nested at every evaluated forecast origin.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 84,
+      "text": "The short-history FX regression reports cross across horizons on 640 origins, illustrating a coherence problem distinct from the score of each marginal forecast.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 85,
+      "text": "The target definition therefore determines the floor, label maturity, breach event, and horizon relationships that a peak-limit comparison must preserve.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 86,
+      "text": "The FX application uses the hourly member of the publicly described Net Position Time Series Dataset, representing a market maker's net client-flow position .",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 121
+      }
+    },
+    {
+      "id": 87,
+      "text": "The accepted source contains 18576 records, with positions measured in the source's USD units and ordered by its observation clock.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 121
+      }
+    },
+    {
+      "id": 88,
+      "text": "We use the same series for the later evaluation and the earlier chronological comparison, with their separate evaluation indices preserved throughout.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 121
+      }
+    },
+    {
+      "id": 89,
+      "text": "Within each comparison, every candidate forecast is scored against the same sampled peak and the same current-position floor.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 121
+      }
+    },
+    {
+      "id": 90,
+      "text": "The weekly application uses Primary Dealer Statistics published by the Federal Reserve Bank of New York .",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 91,
+      "text": "Its reporting definitions follow the government-securities dealer framework and the relevant position-accounting instructions .",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 92,
+      "text": "The original Treasury-bill aggregate has 706 observations, with values expressed in USD millions and indexed by their economic dates.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 93,
+      "text": "Additional position categories use the same complete weekly date grid after a metadata and calendar eligibility check conducted before their model evaluation.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 94,
+      "text": "These categories cover different reported position components and are fitted separately rather than pooled into a common monetary forecasting sample.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 95,
+      "text": "We preserve the distinction between a single market maker's FX record and signed weekly position aggregates compiled across primary dealers.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 127
+      }
+    },
+    {
+      "id": 96,
+      "text": "The economic-date convention identifies where the observations enter the downloaded series, while the reporting definitions identify the positions being aggregated.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 127
+      }
+    },
+    {
+      "id": 97,
+      "text": "Each analysis uses its own units, training history, forecast horizon, and issue grid, with reference rules matched inside the relevant comparison.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 127
+      }
+    },
+    {
+      "id": 98,
+      "text": "The data design makes frequency and measurement differences visible instead of treating every sequence as an interchangeable dealer history.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 127
+      }
+    },
+    {
+      "id": 99,
+      "text": "The primary forecasts target the conditional quantile at \\( =19/20\\), with its upper tail defining the strict-breach event.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 134
+      }
+    },
+    {
+      "id": 100,
+      "text": "The two horizons span \\(H \\ 6,24\\ \\) subsequent source records, and each peak also includes the position observed at issue time.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 134
+      }
+    },
+    {
+      "id": 101,
+      "text": "This common target keeps the comparisons aligned while allowing the historical pool and conditioning structure to differ between the named procedures.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 134
+      }
+    },
+    {
+      "id": 102,
+      "text": "Historical rules serve as substantive competitors because they can already adapt their limits to the position observed at the forecast origin.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 137
+      }
+    },
+    {
+      "id": 103,
+      "text": "The historical headroom rule adds an empirical quantile of completed past headroom to the current absolute position, while the translated-path rule reanchors historical signed paths.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 137
+      }
+    },
+    {
+      "id": 104,
+      "text": "The historical-peak rule uses completed absolute peaks directly, and the endpoint-derived rule adds an empirical absolute-displacement quantile to the observed floor.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 137
+      }
+    },
+    {
+      "id": 105,
+      "text": "Table gives their definitions, order-statistic conventions, update schedules, and the parameter menus used by the conditional methods.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 137
+      }
+    },
+    {
+      "id": 106,
+      "text": "Conditional quantile regression links completed peak headroom to issue-known position histories and calendar information, using training-based transformations and ridge regularization.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 140
+      }
+    },
+    {
+      "id": 107,
+      "text": "The original predictor set contains 33 features before its intercept, with all transformations fitted inside the chronological training sample.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 140
+      }
+    },
+    {
+      "id": 108,
+      "text": "The parsimonious variant concentrates on a smaller state description, while the expanded ridge comparison changes the penalty menu with the richer predictor set held fixed.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 140
+      }
+    },
+    {
+      "id": 109,
+      "text": "These comparisons distinguish changes in the conditioning information from changes in the strength of regularization rather than attributing every gain to feature reduction.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 140
+      }
+    },
+    {
+      "id": 110,
+      "text": "Local quantile methods condition on neighboring historical states, with a scale-adjusted variant using training information to normalize the comparison.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 111,
+      "text": "The filtered-path benchmark recursively simulates signed positions using GARCH-standardized empirical innovations drawn independently with replacement .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 112,
+      "text": "The other benchmarks estimate a quantile from response distributions in tree leaves or fit tails of volatility-scaled peak headroom .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 113,
+      "text": "These are the existing fitted specifications, with every complete result and numerical or structural failure documented in the Supplement.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 114,
+      "text": "Their different conditioning assumptions make the actual executed procedure, rather than its family name alone, the relevant object for comparison.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 115,
+      "text": "The further robustness comparisons address calibration, forecast combination, and conservative selection while keeping the peak response and chronological information restrictions explicit.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 146
+      }
+    },
+    {
+      "id": 116,
+      "text": "A headroom version of the symmetric absolute-value quantile recursion follows the CAViaR family, and finite delayed calibration wrappers update only after outcomes mature .",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 146
+      }
+    },
+    {
+      "id": 117,
+      "text": "Fixed mean and median combinations aggregate the specified forecasts, while a paired-difference one-standard-error rule favors simpler reports within its stated validation tolerance.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 146
+      }
+    },
+    {
+      "id": 118,
+      "text": "Every method earns its comparison against the historical headroom rule through its actual score and breach outcomes on the shared evaluation origins.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 146
+      }
+    },
+    {
+      "id": 119,
+      "text": "The forecasting clock admits a training label only after the entire response horizon has ended, preventing an unfinished peak from entering estimation.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 170
+      }
+    },
+    {
+      "id": 120,
+      "text": "At refit origin \\(r\\), a historical origin \\(i\\) is eligible only when \\(i+H r\\), and every selected window uses the same completed-label convention.",
+      "words": 24,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 170
+      }
+    },
+    {
+      "id": 121,
+      "text": "Predictors use issue-known observations, and training-only transformations remain fixed until the next scheduled refit rather than learning from future evaluation outcomes.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 170
+      }
+    },
+    {
+      "id": 122,
+      "text": "Parameter selection uses the preceding validation segment, after which the evaluation proceeds on the complete specified issue grid.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 170
+      }
+    },
+    {
+      "id": 123,
+      "text": "Matched comparisons hold the completed-response history and refit schedule fixed when evaluating the regression against the historical headroom rule.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 124,
+      "text": "The original FX primary instead uses the shorter-history rolling historical reference, making it a distinct comparison from the same-history benchmark.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 125,
+      "text": "The Treasury-bill primary compares the longer-history regression with the historical headroom rule on a shared history and update schedule.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 126,
+      "text": "Tables and preserve these original comparisons alongside the matched, additional-panel, and earlier-period results.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 127,
+      "text": "We evaluate forecast accuracy with mean pinball loss and report strict breaches separately, including their frequency and the associated overrun amounts.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 176
+      }
+    },
+    {
+      "id": 128,
+      "text": "Paired loss differences use heteroskedasticity and autocorrelation consistent covariance estimates, with the horizon represented in the bandwidth choice .",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 176
+      }
+    },
+    {
+      "id": 129,
+      "text": "The existing calculations also report the small-sample adjustment and the stated multiple-comparison families, with each family's role identified explicitly .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 176
+      }
+    },
+    {
+      "id": 130,
+      "text": "Coverage diagnostics use a fixed spaced grid and distinguish unconditional coverage from a transition likelihood conditioned on its initial hit .",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 176
+      }
+    },
+    {
+      "id": 131,
+      "text": "The original source-specific primaries retain their original roles, outcomes, and reference procedures throughout this paper.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 132,
+      "text": "The conditional extension followed inspection of the original FX evaluation archive; later calibration, combination, state, quantile-level, and selection analyses are post-result and exploratory.",
+      "words": 23,
+      "terms": [
+        "exploratory",
+        "post-result",
+        "archive"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 133,
+      "text": "Their designs and execution records preserve the chronology of each addition, including failed candidates and full comparison families rather than selected favorable subsets.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 134,
+      "text": "The earlier FX origins reuse familiar source history, and the later writing-stage HAC comparisons are descriptive rather than independent or prospective confirmation.",
+      "words": 22,
+      "terms": [
+        "descriptive",
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 135,
+      "text": "The Supplement provides the complete prior and later comparison inventories, the exact evaluation clocks, numerical checks, and all incomplete or unsuccessful procedures.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 136,
+      "text": "We report sensitivity to bandwidth, adjustment family, target level, and state definition as separate diagnostic questions within their specified scopes.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 137,
+      "text": "The subsequent interpretation follows the same sequence: establish the reference and sample, compare losses, examine breaches, and assess stability across periods.",
+      "words": 21,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 138,
+      "text": "A credible peak-limit gain must survive this sequence with its benchmark and its information set stated clearly.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 139,
+      "text": "Long-history FX regression provides the clearest repeated improvement against a historical headroom rule using the same completed history and update schedule.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 193
+      }
+    },
+    {
+      "id": 140,
+      "text": "The later-period matched loss change is -14.77%, while the earlier-period matched change is -16.62%.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 193
+      }
+    },
+    {
+      "id": 141,
+      "text": "Table shows that these gains refer to the same-history controls, with separate columns for the original shorter-history rolling reference.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 193
+      }
+    },
+    {
+      "id": 142,
+      "text": "The distinction matters because model choice and the amount of historical information answer different comparative forecasting questions.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 193
+      }
+    },
+    {
+      "id": 143,
+      "text": "The evaluated calibration wrappers preserve the long-history matched FX advantage while bringing the two observed breach frequencies close together.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 196
+      }
+    },
+    {
+      "id": 144,
+      "text": "Wrapped regression changes mean loss by -15.00% against the wrapped historical reference on their common evaluation grid.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 196
+      }
+    },
+    {
+      "id": 145,
+      "text": "Their strict breach counts are 329 and 328, respectively.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 196
+      }
+    },
+    {
+      "id": 146,
+      "text": "This result gives a concrete calibration comparison for the actual finite delayed procedures rather than treating the unwrapped score gain as a coverage result.",
+      "words": 24,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 196
+      }
+    },
+    {
+      "id": 147,
+      "text": "The long-history FX gain also persists across the evaluated position-increment states and at the lower target quantile.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 199
+      }
+    },
+    {
+      "id": 148,
+      "text": "The unchanged primary has a negative mean loss difference in every training-defined RMS group, with the group results documented in the Supplement.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 199
+      }
+    },
+    {
+      "id": 149,
+      "text": "At the lower target, the matched relative loss change is -10.15%, and the original-primary reference gives -9.20%.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 199
+      }
+    },
+    {
+      "id": 150,
+      "text": "These results broaden the description of that configuration while leaving the separate upper-target validation failures visible in the full record.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 199
+      }
+    },
+    {
+      "id": 151,
+      "text": "The advantage changes when the reference changes, even for the same long-history FX regression report at the shorter horizon.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 217
+      }
+    },
+    {
+      "id": 152,
+      "text": "Against the original shorter-history rolling rule, the later loss change is -12.66%, whereas the earlier-period change is 3.17%.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 217
+      }
+    },
+    {
+      "id": 153,
+      "text": "The earlier matched improvement therefore coexists with an adverse original-primary comparison, rather than reproducing the original gain against every historical rule.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 217
+      }
+    },
+    {
+      "id": 154,
+      "text": "Table makes that reversal part of the main result instead of treating it as a secondary qualification.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 217
+      }
+    },
+    {
+      "id": 155,
+      "text": "Short histories and longer horizons produce additional adverse outcomes that prevent a broad ranking of regression above historical forecasting rules.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 220
+      }
+    },
+    {
+      "id": 156,
+      "text": "The short-history FX regression at the longer horizon raises mean loss by 31.50% relative to its matched historical headroom rule.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 220
+      }
+    },
+    {
+      "id": 157,
+      "text": "Its breach counts are 924 for regression and 427 for the reference.",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 220
+      }
+    },
+    {
+      "id": 158,
+      "text": "Other long-horizon comparisons show smaller score gains alongside more breaches, so a positive result at the shorter horizon cannot stand in for the full map.",
+      "words": 25,
+      "terms": [
+        "cannot"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 220
+      }
+    },
+    {
+      "id": 159,
+      "text": "The original Treasury-bill primary is adverse in both its score and its breach count, despite numerically accepted regression fits.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      }
+    },
+    {
+      "id": 160,
+      "text": "Its relative loss increase is 50.79%, with 54 regression breaches on the evaluation grid.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      }
+    },
+    {
+      "id": 161,
+      "text": "The historical reference records 28 breaches, as Table shows together with the corresponding fixed-reference inference.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      }
+    },
+    {
+      "id": 162,
+      "text": "The earlier shorter-history structural analogue also loses, so the weekly evidence challenges transport of the successful FX configuration to these aggregate tasks.",
+      "words": 22,
+      "terms": [
+        "analogue"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      }
+    },
+    {
+      "id": 163,
+      "text": "Heavier regularization improves the additional weekly panel substantially but leaves historical rules ahead in most of its evaluated cells.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 226
+      }
+    },
+    {
+      "id": 164,
+      "text": "The richer regression's median excess loss falls from 92.6% to 9.2% after expansion of its ridge menu.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 226
+      }
+    },
+    {
+      "id": 165,
+      "text": "Even then, it loses 34 of 48 comparisons against matched historical headroom rules.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 226
+      }
+    },
+    {
+      "id": 166,
+      "text": "The earlier-period one-standard-error exercise misses its success criteria, reinforcing the need to examine stability rather than selecting a favorable regularization summary.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 226
+      }
+    },
+    {
+      "id": 167,
+      "text": "Simpler conditional descriptions and forecast combinations also produce mixed outcomes rather than a uniform solution to the weekly regression losses.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 229
+      }
+    },
+    {
+      "id": 168,
+      "text": "The fixed median combination improves on the bill historical reference by a relative loss change of -3.98%.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 229
+      }
+    },
+    {
+      "id": 169,
+      "text": "The fixed mean combination instead changes that loss by 2.77%, and the headroom quantile recursion is also worse than the reference in that primary context.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 229
+      }
+    },
+    {
+      "id": 170,
+      "text": "Table and the Supplement preserve these comparisons together with the additional model failures, including every unfavorable completed result.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 229
+      }
+    },
+    {
+      "id": 171,
+      "text": "The matched FX gain comes with more breaches before calibration, showing why pinball accuracy and exceedance frequency deserve separate reporting.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 250
+      }
+    },
+    {
+      "id": 172,
+      "text": "Regression breaches 376 times, compared with 360 for the matched historical headroom rule.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 250
+      }
+    },
+    {
+      "id": 173,
+      "text": "Pinball loss accounts for the magnitudes of underprediction and overprediction, whereas the strict-hit indicator records only the occurrence of an exceedance.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 250
+      }
+    },
+    {
+      "id": 174,
+      "text": "Managers comparing monitoring limits therefore need both measures, rather than interpreting a smaller average score as a direct reduction in breach occasions.",
+      "words": 22,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 250
+      }
+    },
+    {
+      "id": 175,
+      "text": "Elementary-score comparisons show a further dependence on the evaluation question even when the quantile level and the two reports stay fixed.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 253
+      }
+    },
+    {
+      "id": 176,
+      "text": "Figure displays crossing curves for the original FX primary, and Figure presents the distinct Treasury comparison.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 253
+      }
+    },
+    {
+      "id": 177,
+      "text": "A separate error-weight analysis finds a preference reversal near 20.6:1 for the long-horizon legacy FX report against the rolling translated-path reference.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 253
+      }
+    },
+    {
+      "id": 178,
+      "text": "The short-horizon FX primary and matched comparisons have lower mean overrun and unused allowance together, so that particular reversal belongs to the long-horizon comparison.",
+      "words": 24,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 253
+      }
+    },
+    {
+      "id": 179,
+      "text": "Table places the working-reference loss tests alongside the fixed-grid coverage results, preserving their distinct null hypotheses and comparison families.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 256
+      }
+    },
+    {
+      "id": 180,
+      "text": "A loss-difference test concerns average relative accuracy, while coverage tests concern the frequency and temporal behavior of the strict-hit sequence.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 256
+      }
+    },
+    {
+      "id": 181,
+      "text": "State diagnostics add another comparison between conditional predictive ability and differences across the specified RMS groups .",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 256
+      }
+    },
+    {
+      "id": 182,
+      "text": "The combined evidence supports a narrow score advantage in the successful FX setting and a broader requirement to assess limits through several operationally relevant dimensions.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 256
+      }
+    },
+    {
+      "id": 183,
+      "text": "Peak-limit validation should begin with the information set and the comparison rule before examining a candidate model's favorable performance statistic.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 293
+      }
+    },
+    {
+      "id": 184,
+      "text": "Admit a historical response only after its whole peak horizon has matured, and construct all transformations from the eligible training observations.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 293
+      }
+    },
+    {
+      "id": 185,
+      "text": "Then compare the candidate with a historical rule using the same history and update schedule before returning to the original operational reference.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 293
+      }
+    },
+    {
+      "id": 186,
+      "text": "This sequence separates the matched model comparison from the combined effects of a different history length and a different update schedule.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 293
+      }
+    },
+    {
+      "id": 187,
+      "text": "A practical validation record should also keep scores, breaches, and stability together rather than replacing one assessment with another after seeing the results.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 296
+      }
+    },
+    {
+      "id": 188,
+      "text": "Report the mean quantile loss together with strict-hit frequency, overrun amounts, and the magnitude of unused headroom under the same issue grid.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 296
+      }
+    },
+    {
+      "id": 189,
+      "text": "Repeat the comparison across the available periods and related series, while displaying every failed or adverse configuration beside the successful settings.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 296
+      }
+    },
+    {
+      "id": 190,
+      "text": "Table summarizes this checklist and maps the observed frequency, history, and horizon conditions to their principal comparative outcomes.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 296
+      }
+    },
+    {
+      "id": 191,
+      "text": "For a limit manager, the key decision is whether extra conditioning improves the chosen monitoring objective reliably enough to justify the additional estimation.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 299
+      }
+    },
+    {
+      "id": 192,
+      "text": "The hourly FX result motivates further evaluation of long-history short-horizon regression, while the weekly results support a demanding historical starting benchmark.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 299
+      }
+    },
+    {
+      "id": 193,
+      "text": "Calibration and combination comparisons should enter that decision through their own measured score and breach behavior, with their definitions kept explicit.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 299
+      }
+    },
+    {
+      "id": 194,
+      "text": "The appropriate default is a matched validation process that lets comparative evidence, rather than model complexity, determine the preferred peak-limit report.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 299
+      }
+    },
+    {
+      "id": 195,
+      "text": "The FX evidence comes from a single market maker's client-flow record, limiting conclusions about other dealers, currencies, and market-making arrangements.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 319
+      }
+    },
+    {
+      "id": 196,
+      "text": "Its original evaluation history had already been viewed, and the earlier chronological comparison reuses familiar observations from the same source.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 319
+      }
+    },
+    {
+      "id": 197,
+      "text": "Those periods provide a stability check within this record rather than independent dealer replication or a prospective test on unseen future outcomes.",
+      "words": 22,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 319
+      }
+    },
+    {
+      "id": 198,
+      "text": "A stronger external assessment requires a compatible additional dealer source and a future evaluation protocol fixed before the new outcomes become available.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 319
+      }
+    },
+    {
+      "id": 199,
+      "text": "The weekly data are signed position-category aggregates, so offsetting exposures across dealers can reduce the aggregate while individual gross exposures remain large.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 322
+      }
+    },
+    {
+      "id": 200,
+      "text": "Related categories share a reporting system and economic components, which limits an interpretation of their comparisons as independent replications across institutions.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 322
+      }
+    },
+    {
+      "id": 201,
+      "text": "The downloaded economic-date series also differs from a reconstruction of the observations available at each historical publication time.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 322
+      }
+    },
+    {
+      "id": 202,
+      "text": "The sampled target measures recorded positions; excursions between observations, settlement cash needs, and the costs of actual limit decisions require additional measurement.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 322
+      }
+    },
+    {
+      "id": 203,
+      "text": "The later analyses and working-reference tests describe the observed records after earlier results had informed the research process and additional comparisons.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 204,
+      "text": "Their p-values therefore do not account for the full sequence of model, sample, diagnostic, and presentation choices made during that process.",
+      "words": 21,
+      "terms": [
+        "do not"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 205,
+      "text": "The finite calibration wrapper, empirical endpoint rule, and dependent financial paths also require distinctions from the population assumptions in Proposition .",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 206,
+      "text": "The main evidence supports a bounded comparative forecasting result, with external validity, prospective calibration, and economic decision value remaining questions for future evaluation.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 207,
+      "text": "The score uses a nineteen-to-one error-weight ratio for evaluation, which does not measure the actual costs of a limit decision.",
+      "words": 20,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 208,
+      "text": "Simple historical rules are strong competitors for predicting the largest sampled absolute position before a monitoring horizon ends.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 332
+      }
+    },
+    {
+      "id": 209,
+      "text": "The clearest repeated conditional gain occurs for long-history FX regression at the shorter horizon, where same-history comparisons favor regression in both periods.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 332
+      }
+    },
+    {
+      "id": 210,
+      "text": "The later gain survives the evaluated calibration wrapper, but unwrapped regression breaches more frequently and its comparison with a shorter-history rolling rule changes direction.",
+      "words": 24,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 332
+      }
+    },
+    {
+      "id": 211,
+      "text": "These findings answer the first research question through a specific successful setting rather than a broad ranking of conditional models.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 332
+      }
+    },
+    {
+      "id": 212,
+      "text": "The second research question concerns stability across related tasks, and the weekly evidence gives a predominantly adverse answer for the evaluated regressions.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 335
+      }
+    },
+    {
+      "id": 213,
+      "text": "Heavier regularization reduces the additional panel's median excess loss substantially, yet historical rules still win most comparisons and the conservative-selection exercise misses its success criteria.",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 335
+      }
+    },
+    {
+      "id": 214,
+      "text": "The third question concerns validation: lower average quantile loss, fewer breaches, and stable rankings are different requirements with distinct empirical outcomes.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 335
+      }
+    },
+    {
+      "id": 215,
+      "text": "For managers selecting peak limits, their joint assessment provides a firmer basis for action than a favorable score considered on its own.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 335
+      }
+    },
+    {
+      "id": 216,
+      "text": "Future work should evaluate these comparisons prospectively and obtain a compatible independent dealer record, while preserving the same response and information clock.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 338
+      }
+    },
+    {
+      "id": 217,
+      "text": "A decision study could then measure the economic consequences of changing a limit, including monitoring actions, funding, hedging, and inventory adjustments.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 338
+      }
+    },
+    {
+      "id": 218,
+      "text": "Such evidence would connect forecast quality to realized operating value under a specified policy rather than treating asymmetric error weights as observed costs.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 338
+      }
+    },
+    {
+      "id": 219,
+      "text": "Peak-limit forecasting advances when its comparisons remain matched, its failures remain visible, and its practical claims stay tied to what the data measure.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 338
+      }
+    }
+  ],
+  "flagged_detail": [
+    {
+      "id": 2,
+      "text": "For a market maker, the relevant forecast therefore concerns the largest exposure before the next review, rather than the endpoint alone.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 4,
+      "text": "We study how established historical and conditional forecasts perform when every method targets this same sampled absolute-position peak.",
+      "words": 18,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 21
+      }
+    },
+    {
+      "id": 14,
+      "text": "The clearest repeated gains arise for long-history FX regression at the shorter forecast horizon, rather than across every conditional specification.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 34
+      }
+    },
+    {
+      "id": 24,
+      "text": "We establish loss-improving floor projection and a strict-tail bound for true conditional quantiles, and apply the classical Lévy bound under independent symmetric increments.",
+      "words": 24,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 26,
+      "text": "Wisniewski et al. (2020) forecast signed endpoint intervals rather than a sampled absolute inventory peak.",
+      "words": 15,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 40
+      }
+    },
+    {
+      "id": 50,
+      "text": "Financial path-risk studies establish that a within-period extreme can matter more than the value observed at the end of the period.",
+      "words": 21,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 57
+      }
+    },
+    {
+      "id": 56,
+      "text": "Quantile estimation and evaluation supply established tools for comparing conditional peak forecasts against historical rules on a shared response.",
+      "words": 19,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 94,
+      "text": "These categories cover different reported position components and are fitted separately rather than pooled into a common monetary forecasting sample.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 124
+      }
+    },
+    {
+      "id": 109,
+      "text": "These comparisons distinguish changes in the conditioning information from changes in the strength of regularization rather than attributing every gain to feature reduction.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 140
+      }
+    },
+    {
+      "id": 114,
+      "text": "Their different conditioning assumptions make the actual executed procedure, rather than its family name alone, the relevant object for comparison.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 143
+      }
+    },
+    {
+      "id": 121,
+      "text": "Predictors use issue-known observations, and training-only transformations remain fixed until the next scheduled refit rather than learning from future evaluation outcomes.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 170
+      }
+    },
+    {
+      "id": 132,
+      "text": "The conditional extension followed inspection of the original FX evaluation archive; later calibration, combination, state, quantile-level, and selection analyses are post-result and exploratory.",
+      "words": 23,
+      "terms": [
+        "exploratory",
+        "post-result",
+        "archive"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 133,
+      "text": "Their designs and execution records preserve the chronology of each addition, including failed candidates and full comparison families rather than selected favorable subsets.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 134,
+      "text": "The earlier FX origins reuse familiar source history, and the later writing-stage HAC comparisons are descriptive rather than independent or prospective confirmation.",
+      "words": 22,
+      "terms": [
+        "descriptive",
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      }
+    },
+    {
+      "id": 137,
+      "text": "The subsequent interpretation follows the same sequence: establish the reference and sample, compare losses, examine breaches, and assess stability across periods.",
+      "words": 21,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 146,
+      "text": "This result gives a concrete calibration comparison for the actual finite delayed procedures rather than treating the unwrapped score gain as a coverage result.",
+      "words": 24,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 196
+      }
+    },
+    {
+      "id": 153,
+      "text": "The earlier matched improvement therefore coexists with an adverse original-primary comparison, rather than reproducing the original gain against every historical rule.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 217
+      }
+    },
+    {
+      "id": 158,
+      "text": "Other long-horizon comparisons show smaller score gains alongside more breaches, so a positive result at the shorter horizon cannot stand in for the full map.",
+      "words": 25,
+      "terms": [
+        "cannot"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 220
+      }
+    },
+    {
+      "id": 162,
+      "text": "The earlier shorter-history structural analogue also loses, so the weekly evidence challenges transport of the successful FX configuration to these aggregate tasks.",
+      "words": 22,
+      "terms": [
+        "analogue"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      }
+    },
+    {
+      "id": 166,
+      "text": "The earlier-period one-standard-error exercise misses its success criteria, reinforcing the need to examine stability rather than selecting a favorable regularization summary.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 226
+      }
+    },
+    {
+      "id": 167,
+      "text": "Simpler conditional descriptions and forecast combinations also produce mixed outcomes rather than a uniform solution to the weekly regression losses.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 229
+      }
+    },
+    {
+      "id": 174,
+      "text": "Managers comparing monitoring limits therefore need both measures, rather than interpreting a smaller average score as a direct reduction in breach occasions.",
+      "words": 22,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 250
+      }
+    },
+    {
+      "id": 187,
+      "text": "A practical validation record should also keep scores, breaches, and stability together rather than replacing one assessment with another after seeing the results.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 296
+      }
+    },
+    {
+      "id": 194,
+      "text": "The appropriate default is a matched validation process that lets comparative evidence, rather than model complexity, determine the preferred peak-limit report.",
+      "words": 21,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 299
+      }
+    },
+    {
+      "id": 197,
+      "text": "Those periods provide a stability check within this record rather than independent dealer replication or a prospective test on unseen future outcomes.",
+      "words": 22,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 319
+      }
+    },
+    {
+      "id": 204,
+      "text": "Their p-values therefore do not account for the full sequence of model, sample, diagnostic, and presentation choices made during that process.",
+      "words": 21,
+      "terms": [
+        "do not"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 207,
+      "text": "The score uses a nineteen-to-one error-weight ratio for evaluation, which does not measure the actual costs of a limit decision.",
+      "words": 20,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 325
+      }
+    },
+    {
+      "id": 211,
+      "text": "These findings answer the first research question through a specific successful setting rather than a broad ranking of conditional models.",
+      "words": 20,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 332
+      }
+    },
+    {
+      "id": 218,
+      "text": "Such evidence would connect forecast quality to realized operating value under a specified policy rather than treating asymmetric error weights as observed costs.",
+      "words": 23,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 338
+      }
+    }
+  ],
+  "long_sentences": [
+    {
+      "id": 64,
+      "text": "Define the peak \\(Y t,H \\), its observed floor \\(B t\\), and the corresponding nonnegative headroom \\(Z t,H \\) by The inclusion of the issue position matters because a feasible peak limit must already cover the exposure observed at the forecast origin.",
+      "words": 42,
+      "terms": [],
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 83
+      }
+    }
+  ],
+  "forbidden_detail": [
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 181
+      },
+      "context": "er. The conditional extension followed inspection of the original FX evaluation archive; later calibration, combination, state, quantile-level, and selection analyses are post-result and "
+    },
+    {
+      "term": "analogue",
+      "matched": "analogue",
+      "location": {
+        "file": "submission-jof/manuscript.tex",
+        "line": 223
+      },
+      "context": "corresponding fixed-reference inference. The earlier shorter-history structural analogue also loses, so the weekly evidence challenges transport of the successful FX configuration to these"
+    }
+  ],
+  "main_caption_forbidden_detail": [],
+  "v8_target_pass": {
+    "flagged_at_most_8_percent": false,
+    "average_at_most_20": true,
+    "no_sentences_over_40": false
+  }
+}

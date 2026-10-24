@@ -1,0 +1,532 @@
+[
+  {
+    "id": 1,
+    "old_line": 21,
+    "category": "data/method/background",
+    "old_first": "A position can finish inside its limit after exceeding that limit during the intervening period, as Figure~\\ref{fig:example} illustrates",
+    "new_first": "Dealer position limits concern the largest exposure reached before a review horizon ends",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "A position can finish inside its limit after exceeding that limit during the intervening period, as Figure~\\ref{fig:example} illustrates. For a market maker, the relevant forecast therefore concerns the largest exposure before the next review, rather than the endpoint alone. The distinction changes the response variable, the observations available for training, and the interpretation of successful prediction. We study how established historical and conditional forecasts perform when every method targets this same sampled absolute-position peak.",
+    "new": "Dealer position limits concern the largest exposure reached before a review horizon ends. A position can finish within its limit after crossing it earlier (Figure~\\ref{fig:example}). We compare historical and conditional forecasts of this sampled absolute-position peak."
+  },
+  {
+    "id": 2,
+    "old_line": 24,
+    "category": "data/method/background",
+    "old_first": "Simple historical rules provide a demanding reference because they already incorporate information about the current position and its recent path behavior",
+    "new_first": "Historical headroom already combines the current position with completed past peak behavior",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Simple historical rules provide a demanding reference because they already incorporate information about the current position and its recent path behavior. A conditional model must improve on that information while estimating additional relationships from a finite, changing sequence of completed outcomes. More predictors can help distinguish current conditions, but they also increase sensitivity to the historical sample and the strength of regularization. We examine these competing effects through matched histories, alternative reference rules, and repeated chronological comparisons.",
+    "new": "Historical headroom already combines the current position with completed past peak behavior. Conditional models estimate additional relationships from finite historical windows. Matched histories and update schedules show whether the added conditioning improves the forecast."
+  },
+  {
+    "id": 3,
+    "old_line": 31,
+    "category": "data/method/background",
+    "old_first": "Our empirical comparison joins an hourly FX market-maker record with weekly U.S",
+    "new_first": "Our comparisons cover hourly FX positions and weekly U.S",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Our empirical comparison joins an hourly FX market-maker record with weekly U.S. primary-dealer position-category aggregates, using a common forecasting objective. The methods predict source-native peaks separately for each series, so monetary magnitudes from different reporting systems remain separate throughout evaluation. We compare regression, local quantiles, historical rules, and additional conditional benchmarks on the same completed response within each comparison. The evidence asks where added conditioning helps, whether that advantage survives a change of reference, and how scores relate to breaches.",
+    "new": "Our comparisons cover hourly FX positions and weekly U.S. primary-dealer aggregates. Each series retains source-native units and its own evaluation grid. Two pre-specified comparisons anchor the analysis. They compare long-history FX regression with a shorter rolling rule, and Treasury regression with matched historical headroom."
+  },
+  {
+    "id": 4,
+    "old_line": 34,
+    "category": "data/method/background",
+    "old_first": "The clearest repeated gains arise for long-history FX regression at the shorter forecast horizon, rather than across every conditional specification",
+    "new_first": "[consolidated]",
+    "note": "Duplicate finding paragraph merged into First/Third contributions and Section7; all results remain in tables/Supplement.",
+    "old": "The clearest repeated gains arise for long-history FX regression at the shorter forecast horizon, rather than across every conditional specification. Against a historical headroom rule with the same history, its later-period loss changes by -14.77\\%. The earlier-period matched comparison changes loss by -16.62\\%, and the evaluated coverage correction preserves the later advantage. Changing the comparison to the shorter-history rolling reference reverses the direction of the earlier-period result, while weekly comparisons frequently favor historical rules.",
+    "new": ""
+  },
+  {
+    "id": 5,
+    "old_line": 37,
+    "category": "data/method/background",
+    "old_first": "A lower quantile score also leaves a separate operational question about how often the predicted limit is crossed during the forecast period",
+    "new_first": "[consolidated]",
+    "note": "Duplicate finding paragraph merged into First/Third contributions and Section7; all results remain in tables/Supplement.",
+    "old": "A lower quantile score also leaves a separate operational question about how often the predicted limit is crossed during the forecast period. The later matched FX comparison records 376 regression breaches, compared with 360 for its historical reference. Elementary-score curves and error-weight comparisons show why these assessments can disagree, with the relevant comparison stated explicitly in each case. For managers setting monitoring limits, the practical implication is to evaluate prediction errors and exceedance frequency together before selecting a more complex forecast.",
+    "new": ""
+  },
+  {
+    "id": 6,
+    "old_line": 40,
+    "category": "contribution",
+    "old_first": "The paper makes three empirical points.",
+    "new_first": "The paper makes three empirical points.",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "The paper makes three empirical points.",
+    "new": "The paper makes three empirical points."
+  },
+  {
+    "id": 7,
+    "old_line": 42,
+    "category": "contribution",
+    "old_first": "\\textit{First, matched FX gains recur across periods, and the later gain survives delayed calibration.} Regression lowers matched loss by 14.8\\% and 16.6\\% in the later and earlier periods (Table~\\ref{tab:fx})",
+    "new_first": "\\textit{First, matched FX gains recur across periods, and the later gain survives delayed calibration.} Regression lowers matched loss by 14.8\\% and 16.6\\% in the later and earlier periods (Table~\\ref{tab:fx})",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "\\textit{First, matched FX gains recur across periods, and the later gain survives delayed calibration.} Regression lowers matched loss by 14.8\\% and 16.6\\% in the later and earlier periods (Table~\\ref{tab:fx}). Calibration retains a 15.0\\% gain with 329 versus 328 breaches. The shorter-history rolling reference reverses the earlier-period ranking.",
+    "new": "\\textit{First, matched FX gains recur across periods, and the later gain survives delayed calibration.} Regression lowers matched loss by 14.8\\% and 16.6\\% in the later and earlier periods (Table~\\ref{tab:fx}). Calibration retains a 15.0\\% gain with 329 versus 328 breaches. The shorter-history rolling reference reverses the earlier-period ranking."
+  },
+  {
+    "id": 8,
+    "old_line": 44,
+    "category": "contribution",
+    "old_first": "\\textit{Second, historical rules prevail across the weekly aggregate comparisons.} The Treasury-bill regression raises loss by 50.8\\%, and expanded-menu regression still loses 34 of 48 additional-panel comparisons (Table~\\ref{tab:weekly})",
+    "new_first": "\\textit{Second, historical rules prevail across the weekly aggregate comparisons.} The Treasury-bill regression raises loss by 50.8\\%, and expanded-menu regression still loses 34 of 48 additional-panel comparisons (Table~\\ref{tab:weekly})",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "\\textit{Second, historical rules prevail across the weekly aggregate comparisons.} The Treasury-bill regression raises loss by 50.8\\%, and expanded-menu regression still loses 34 of 48 additional-panel comparisons (Table~\\ref{tab:weekly}). Conservative one-standard-error selection also leaves a worst-cell loss increase of 181.4\\% in the earlier weekly period. More regularization and conservative validation therefore leave substantial observed gaps.",
+    "new": "\\textit{Second, historical rules prevail across the weekly aggregate comparisons.} The Treasury-bill regression raises loss by 50.8\\%, and expanded-menu regression still loses 34 of 48 additional-panel comparisons (Table~\\ref{tab:weekly}). Conservative one-standard-error selection also leaves a worst-cell loss increase of 181.4\\% in the earlier weekly period. More regularization and conservative validation therefore leave substantial observed gaps."
+  },
+  {
+    "id": 9,
+    "old_line": 46,
+    "category": "contribution",
+    "old_first": "\\textit{Third, lower quantile loss can coincide with more limit breaches.} The unwrapped matched FX gain comes with 376 versus 360 breaches (Table~\\ref{tab:fx})",
+    "new_first": "\\textit{Third, lower quantile loss can coincide with more limit breaches.} The unwrapped matched FX gain comes with 376 versus 360 breaches (Table~\\ref{tab:fx})",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "\\textit{Third, lower quantile loss can coincide with more limit breaches.} The unwrapped matched FX gain comes with 376 versus 360 breaches (Table~\\ref{tab:fx}). Elementary-score curves cross for both original main comparisons (Figures~\\ref{fig:murphyfx} and~\\ref{fig:murphybill}). Scores, error amounts and breach counts therefore provide complementary evidence for selecting a peak limit.",
+    "new": "\\textit{Third, lower quantile loss can coincide with more limit breaches.} The unwrapped matched FX gain comes with 376 versus 360 breaches (Table~\\ref{tab:fx}). Elementary-score curves cross for both original main comparisons (Figures~\\ref{fig:murphyfx} and~\\ref{fig:murphybill}). Scores, error amounts and breach counts therefore provide complementary evidence for selecting a peak limit."
+  },
+  {
+    "id": 10,
+    "old_line": 48,
+    "category": "contribution",
+    "old_first": "Section~\\ref{sec:target} defines the target and records two elementary properties used later",
+    "new_first": "Section~\\ref{sec:target} defines the target and records two elementary properties used later",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "Section~\\ref{sec:target} defines the target and records two elementary properties used later. The classical endpoint-to-peak bound supplies a separate benchmark under its stated assumptions. The subsequent sections compare matched forecasts, their stability and their implications for monitoring limits.",
+    "new": "Section~\\ref{sec:target} defines the target and records two elementary properties used later. The classical endpoint-to-peak bound supplies a separate benchmark under its stated assumptions. The subsequent sections compare matched forecasts, their stability and their implications for monitoring limits."
+  },
+  {
+    "id": 11,
+    "old_line": 54,
+    "category": "data/method/background",
+    "old_first": "Net-position forecasting already has a close empirical lineage in the market-making literature, where Wisniewski and colleagues predict signed next-hour endpoint intervals",
+    "new_first": "Wisniewski and colleagues forecast signed next-hour position intervals using historical states, calendar information and local prediction methods \\citep{wisniewski2020,wisniewski2024}",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Net-position forecasting already has a close empirical lineage in the market-making literature, where Wisniewski and colleagues predict signed next-hour endpoint intervals. Their methods combine historical positions, calendar information, neighboring observations, and normalized prediction intervals, with sequential training, calibration, and evaluation \\citep{wisniewski2020,wisniewski2024}. They also report scores and coverage tests together, providing a direct precedent for the joint evaluation of interval forecasts. Our response instead requires the complete future path segment and includes the current absolute position as a known lower bound. This distinction creates different training labels and different limits, even when the numerical forecasting engine follows the same broad family.",
+    "new": "Wisniewski and colleagues forecast signed next-hour position intervals using historical states, calendar information and local prediction methods \\citep{wisniewski2020,wisniewski2024}. Their chronological training, calibration and test design reports scores and coverage together. The present peak response uses a complete future path segment and the current magnitude, producing different labels and limits."
+  },
+  {
+    "id": 12,
+    "old_line": 57,
+    "category": "data/method/background",
+    "old_first": "Financial path-risk studies establish that a within-period extreme can matter more than the value observed at the end of the period",
+    "new_first": "Path-risk forecasts address within-period extremes",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Financial path-risk studies establish that a within-period extreme can matter more than the value observed at the end of the period. MaxVaR evaluates the worst cumulative portfolio return under a fixed portfolio and diffusion assumptions, including a conversion from endpoint probabilities to path risk \\citep{boudoukh2004}. The payment-liquidity thesis studies conditional maximum deficits using a different path-risk target and confidential transactions \\citep{hoogen2017}. Related settlement studies examine tail liquidity needs and collateral requirements in their respective payment systems \\citep{petrunia2019,arjani2020}. Duffie and colleagues analyze dealer capacity and Treasury-market functioning, with additional out-of-sample PnL quantile comparisons in their appendix \\citep{duffie2023}. Our empirical contribution concerns matched forecasts of the present peak-position target across the FX record and related public position aggregates.",
+    "new": "Path-risk forecasts address within-period extremes. MaxVaR studies the worst cumulative portfolio return under fixed holdings and diffusion assumptions \\citep{boudoukh2004}. The payment-liquidity thesis forecasts conditional maximum deficits from confidential transactions \\citep{hoogen2017}. Settlement studies examine tail liquidity needs and collateral requirements \\citep{petrunia2019,arjani2020}. Duffie and colleagues study dealer capacity and Treasury-market functioning, including PnL quantile forecasts \\citep{duffie2023}. These responses differ from the sampled absolute-position peak."
+  },
+  {
+    "id": 13,
+    "old_line": 60,
+    "category": "data/method/background",
+    "old_first": "Quantile estimation and evaluation supply established tools for comparing conditional peak forecasts against historical rules on a shared response",
+    "new_first": "Regression quantiles target asymmetric forecast errors directly \\citep{koenker1978}",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Quantile estimation and evaluation supply established tools for comparing conditional peak forecasts against historical rules on a shared response. Regression quantiles directly target asymmetric forecast errors through the associated loss function, providing the basic statistical building block \\citep{koenker1978}. Conditional autoregressive quantiles and quantile forests provide additional conditioning structures for different forecasting applications \\citep{engle2004,meinshausen2006}. Consistent scoring rules and elementary-score representations explain why rankings can vary across distinct evaluation questions \\citep{gneiting2011,ehm2016}. We connect these tools to mature path labels, matched historical controls, and the stability of observed score and breach differences. The positioning in Table~\\ref{tab:literature} locates the substantive comparison in the peak response, completed labels and explicitly matched reference rules.",
+    "new": "Regression quantiles target asymmetric forecast errors directly \\citep{koenker1978}. Autoregressive quantiles and quantile forests supply other conditioning structures \\citep{engle2004,meinshausen2006}. Consistent scores and elementary-score representations permit comparison across evaluation preferences \\citep{gneiting2011,ehm2016}. Table~\\ref{tab:literature} locates the present peak response, completed labels and matched historical controls."
+  },
+  {
+    "id": 14,
+    "old_line": 79,
+    "category": "contribution",
+    "old_first": "Relative to the endpoint and path-risk precedents in Table~\\ref{tab:literature}, the contribution is three comparative findings",
+    "new_first": "Relative to the endpoint and path-risk precedents in Table~\\ref{tab:literature}, the contribution is three comparative findings",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "Relative to the endpoint and path-risk precedents in Table~\\ref{tab:literature}, the contribution is three comparative findings. First, matched FX gains of 14.8\\% and 16.6\\% recur across periods; the later gain survives calibration, while the shorter rolling reference changes the earlier ranking (Table~\\ref{tab:fx}). Second, expanded regression still loses 34 of 48 weekly panel comparisons, while conservative validation leaves a 181.4\\% worst-cell excess (Table~\\ref{tab:weekly}). Third, the matched FX score gain accompanies 376 versus 360 breaches; the two original comparisons have crossing elementary-score curves (Table~\\ref{tab:diagnostics}; Figures~\\ref{fig:murphyfx}--\\ref{fig:murphybill}). The forecasting and scoring methods are standard.",
+    "new": "Relative to the endpoint and path-risk precedents in Table~\\ref{tab:literature}, the contribution is three comparative findings. First, matched FX gains of 14.8\\% and 16.6\\% recur across periods; the later gain survives calibration, while the shorter rolling reference changes the earlier ranking (Table~\\ref{tab:fx}). Second, expanded regression still loses 34 of 48 weekly panel comparisons, while conservative validation leaves a 181.4\\% worst-cell excess (Table~\\ref{tab:weekly}). Third, the matched FX score gain accompanies 376 versus 360 breaches; the two original comparisons have crossing elementary-score curves (Table~\\ref{tab:diagnostics}; Figures~\\ref{fig:murphyfx}--\\ref{fig:murphybill}). The forecasting and scoring methods are standard."
+  },
+  {
+    "id": 15,
+    "old_line": 85,
+    "category": "data/method/background",
+    "old_first": "The forecast target is the largest sampled absolute position between the issue time and the end of the stated forecast horizon",
+    "new_first": "The target is the largest sampled absolute position from issue time through the stated horizon",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The forecast target is the largest sampled absolute position between the issue time and the end of the stated forecast horizon. Let \\(N_t\\) denote the reported signed position and let \\(\\mathcal F_t\\) contain the information available at the forecast origin. Define the peak \\(Y_{t,H}\\), its observed floor \\(B_t\\), and the corresponding nonnegative headroom \\(Z_{t,H}\\) by",
+    "new": "The target is the largest sampled absolute position from issue time through the stated horizon. Let \\(N_t\\) denote signed position and \\(\\mathcal F_t\\) the issue-time information. The peak \\(Y_{t,H}\\), observed floor \\(B_t\\) and nonnegative headroom \\(Z_{t,H}\\) satisfy the following identities."
+  },
+  {
+    "id": 16,
+    "old_line": 92,
+    "category": "data/method/background",
+    "old_first": "The inclusion of the issue position matters because a feasible peak limit must already cover the exposure observed at the forecast origin",
+    "new_first": "A feasible limit covers the current observed exposure",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The inclusion of the issue position matters because a feasible peak limit must already cover the exposure observed at the forecast origin. Figure~\\ref{fig:example} shows a real window selected by a fixed chronological rule, with an endpoint inside the limit and an earlier peak outside it. A successful endpoint interval can therefore answer a different risk question from a successful report for the full sampled peak. We evaluate the latter through pinball loss and count a breach precisely when the observed peak strictly exceeds the reported limit.",
+    "new": "A feasible limit covers the current observed exposure. Figure~\\ref{fig:example} shows an endpoint inside the historical report after an earlier breach. We score reports with pinball loss and count a strict breach when the peak exceeds the limit."
+  },
+  {
+    "id": 17,
+    "old_line": 99,
+    "category": "data/method/background",
+    "old_first": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (known-floor projection).}\\label{prop:floor} Suppose \\(Y\\ge B\\) almost surely and the issue information contains \\(B\\)",
+    "new_first": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (known-floor projection).}\\label{prop:floor} Suppose \\(Y\\ge B\\) almost surely and the issue information contains \\(B\\)",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (known-floor projection).}\\label{prop:floor} Suppose \\(Y\\ge B\\) almost surely and the issue information contains \\(B\\). Projecting any forecast \\(c\\) to \\(\\max\\{B,c\\}\\) weakly improves pinball loss for every possible outcome, with an exact gain below the floor. If \\(q\\) is the true conditional lower inverse quantile at level \\(1-\\alpha\\), its strict exceedance probability is at most \\(\\alpha\\). At an atom of the response distribution, that probability can be smaller than the nominal tail probability.",
+    "new": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (known-floor projection).}\\label{prop:floor} Suppose \\(Y\\ge B\\) almost surely and the issue information contains \\(B\\). Projecting any forecast \\(c\\) to \\(\\max\\{B,c\\}\\) weakly improves pinball loss for every possible outcome, with an exact gain below the floor. If \\(q\\) is the true conditional lower inverse quantile at level \\(1-\\alpha\\), its strict exceedance probability is at most \\(\\alpha\\). At an atom of the response distribution, that probability can be smaller than the nominal tail probability."
+  },
+  {
+    "id": 18,
+    "old_line": 106,
+    "category": "data/method/background",
+    "old_first": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (classical endpoint-to-peak bound).}\\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \\(S_h\\)",
+    "new_first": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (classical endpoint-to-peak bound).}\\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \\(S_h\\)",
+    "note": "Reviewed and retained; technical conditions or aligned contribution prose already concise.",
+    "old": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (classical endpoint-to-peak bound).}\\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \\(S_h\\). Fix a starting position \\(x\\), set \\(B=|x|\\), and let \\(q\\) be the population \\((1-\\alpha/2)\\) quantile of \\(|S_H|\\). The triangle inequality and the classical scalar L\\'evy maximal inequality then imply the following bound, including strict inequalities at atoms \\citep{sussman2023}. Neither identical increment distributions nor finite increment moments are required for this population statement.",
+    "new": "\\refstepcounter{proposition}\\noindent\\textbf{Proposition~\\theproposition (classical endpoint-to-peak bound).}\\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \\(S_h\\). Fix a starting position \\(x\\), set \\(B=|x|\\), and let \\(q\\) be the population \\((1-\\alpha/2)\\) quantile of \\(|S_H|\\). The triangle inequality and the classical scalar L\\'evy maximal inequality then imply the following bound, including strict inequalities at atoms \\citep{sussman2023}. Neither identical increment distributions nor finite increment moments are required for this population statement."
+  },
+  {
+    "id": 19,
+    "old_line": 113,
+    "category": "data/method/background",
+    "old_first": "The Supplement gives both proofs and distinguishes the population endpoint quantile from the empirical endpoint estimate used by the corresponding benchmark",
+    "new_first": "The Supplement proves both statements and compares population quantiles with their empirical plug-ins",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The Supplement gives both proofs and distinguishes the population endpoint quantile from the empirical endpoint estimate used by the corresponding benchmark. A conditional use of Proposition~\\ref{prop:levy} requires the independence, symmetry, and endpoint-quantile assumptions under the law conditional on issue information. Its simulation comparisons separate mean-reverting position levels from serially correlated increments, since those constructions have different dependence in their future paths. This separation makes the mathematical premises explicit before the empirical benchmark is judged by its observed losses and breaches.",
+    "new": "The Supplement proves both statements and compares population quantiles with their empirical plug-ins. A conditional application requires independence, symmetry and the stated endpoint quantile under the law given issue information. The separate bound simulations distinguish mean-reverting levels from serially correlated increments."
+  },
+  {
+    "id": 20,
+    "old_line": 116,
+    "category": "finding",
+    "old_first": "Forecasts for longer horizons should also respect the nesting of the underlying path maxima, which makes the true horizon quantiles ordered",
+    "new_first": "Separately fitted horizon forecasts can violate the ordering of true peak quantiles",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Forecasts for longer horizons should also respect the nesting of the underlying path maxima, which makes the true horizon quantiles ordered. Separate fits can violate that order even though their observed targets remain correctly nested at every evaluated forecast origin. The short-history FX regression reports cross across horizons on 640 origins, illustrating a coherence problem distinct from the score of each marginal forecast. The target definition therefore determines the floor, label maturity, breach event, and horizon relationships that a peak-limit comparison must preserve.",
+    "new": "Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression crosses across horizons on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports."
+  },
+  {
+    "id": 21,
+    "old_line": 123,
+    "category": "data/method/background",
+    "old_first": "The FX application uses the hourly member of the publicly described Net Position Time Series Dataset, representing a market maker's net client-flow position \\citep{dataset,wisniewski2020}",
+    "new_first": "The FX application uses the hourly Net Position Time Series Dataset, reporting market-maker client-flow positions \\citep{dataset,wisniewski2020}",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The FX application uses the hourly member of the publicly described Net Position Time Series Dataset, representing a market maker's net client-flow position \\citep{dataset,wisniewski2020}. The accepted source contains 18576 records, with positions measured in the source's USD units and ordered by its observation clock. We use the same series for the later evaluation and the earlier chronological comparison, with their separate evaluation indices preserved throughout. Within each comparison, every candidate forecast is scored against the same sampled peak and the same current-position floor.",
+    "new": "The FX application uses the hourly Net Position Time Series Dataset, reporting market-maker client-flow positions \\citep{dataset,wisniewski2020}. It contains 18,576 observation records in source USD units. The later and earlier comparisons use distinct chronological issue grids and the same sampled-peak definition."
+  },
+  {
+    "id": 22,
+    "old_line": 126,
+    "category": "data/method/background",
+    "old_first": "The weekly application uses Primary Dealer Statistics published by the Federal Reserve Bank of New York \\citep{nyfeddata}",
+    "new_first": "The weekly data are New York Fed Primary Dealer Statistics \\citep{nyfeddata}",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The weekly application uses Primary Dealer Statistics published by the Federal Reserve Bank of New York \\citep{nyfeddata}. Its reporting definitions follow the government-securities dealer framework and the relevant position-accounting instructions \\citep{fr2004_2013,fr2004_2024}. The original Treasury-bill aggregate has 706 observations, with values expressed in USD millions and indexed by their economic dates. Additional position categories use the same complete weekly date grid after a metadata and calendar eligibility check conducted before their model evaluation. These categories cover different reported position components and are fitted separately rather than pooled into a common monetary forecasting sample.",
+    "new": "The weekly data are New York Fed Primary Dealer Statistics \\citep{nyfeddata}. Reporting definitions follow the government-securities dealer framework and position-accounting instructions \\citep{fr2004_2013,fr2004_2024}. The Treasury-bill series has 706 economic-date observations in USD millions. Additional categories pass metadata and calendar checks and use complete weekly grids, with separate fits by category."
+  },
+  {
+    "id": 23,
+    "old_line": 129,
+    "category": "data/method/background",
+    "old_first": "We preserve the distinction between a single market maker's FX record and signed weekly position aggregates compiled across primary dealers",
+    "new_first": "Every method within a comparison uses identical peak labels, current floors and issue origins",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "We preserve the distinction between a single market maker's FX record and signed weekly position aggregates compiled across primary dealers. The economic-date convention identifies where the observations enter the downloaded series, while the reporting definitions identify the positions being aggregated. Each analysis uses its own units, training history, forecast horizon, and issue grid, with reference rules matched inside the relevant comparison. The data design makes frequency and measurement differences visible instead of treating every sequence as an interchangeable dealer history.",
+    "new": "Every method within a comparison uses identical peak labels, current floors and issue origins. Source units and histories remain distinct across series. This design preserves the measurement differences between FX client flow and weekly position totals."
+  },
+  {
+    "id": 24,
+    "old_line": 136,
+    "category": "data/method/background",
+    "old_first": "The primary forecasts target the conditional quantile at \\(\\tau=19/20\\), with its upper tail defining the strict-breach event",
+    "new_first": "Forecasts target the conditional quantile at \\(\\tau=19/20\\)",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The primary forecasts target the conditional quantile at \\(\\tau=19/20\\), with its upper tail defining the strict-breach event. The two horizons span \\(H\\in\\{6,24\\}\\) subsequent source records, and each peak also includes the position observed at issue time. This common target keeps the comparisons aligned while allowing the historical pool and conditioning structure to differ between the named procedures.",
+    "new": "Forecasts target the conditional quantile at \\(\\tau=19/20\\). The horizons \\(H\\in\\{6,24\\}\\) count subsequent source records, and each peak includes the issue position. All methods forecast this common target."
+  },
+  {
+    "id": 25,
+    "old_line": 139,
+    "category": "data/method/background",
+    "old_first": "Historical rules serve as substantive competitors because they can already adapt their limits to the position observed at the forecast origin",
+    "new_first": "Historical headroom uses the corrected empirical rank of completed headrooms and adds its report to the current magnitude",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Historical rules serve as substantive competitors because they can already adapt their limits to the position observed at the forecast origin. The historical headroom rule adds an empirical quantile of completed past headroom to the current absolute position, while the translated-path rule reanchors historical signed paths. The historical-peak rule uses completed absolute peaks directly, and the endpoint-derived rule adds an empirical absolute-displacement quantile to the observed floor. Table~\\ref{tab:methods} gives their definitions, order-statistic conventions, update schedules, and the parameter menus used by the conditional methods.",
+    "new": "Historical headroom uses the corrected empirical rank of completed headrooms and adds its report to the current magnitude. Translated paths reanchor historical signed paths, while historical-peak quantiles are projected to the observed floor. The endpoint plug-in uses an absolute-displacement quantile; Table~\\ref{tab:methods} gives the executed menus and schedules."
+  },
+  {
+    "id": 26,
+    "old_line": 142,
+    "category": "data/method/background",
+    "old_first": "Conditional quantile regression links completed peak headroom to issue-known position histories and calendar information, using training-based transformations and ridge regularization",
+    "new_first": "Ridge quantile regression links mature headroom to issue-known position states and calendar variables",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Conditional quantile regression links completed peak headroom to issue-known position histories and calendar information, using training-based transformations and ridge regularization. The original predictor set contains 33 features before its intercept, with all transformations fitted inside the chronological training sample. The parsimonious variant concentrates on a smaller state description, while the expanded ridge comparison changes the penalty menu with the richer predictor set held fixed. These comparisons distinguish changes in the conditioning information from changes in the strength of regularization rather than attributing every gain to feature reduction.",
+    "new": "Ridge quantile regression links mature headroom to issue-known position states and calendar variables. The larger set contains 33 predictors plus an unpenalized intercept. The four-predictor variant uses current magnitude, signed level and two increment RMS measures. All standardization uses mature training observations. Expanded-menu regression changes only the penalty grid."
+  },
+  {
+    "id": 27,
+    "old_line": 145,
+    "category": "data/method/background",
+    "old_first": "Local quantile methods condition on neighboring historical states, with a scale-adjusted variant using training information to normalize the comparison",
+    "new_first": "Local quantiles use neighboring historical states, with an increment-scaled variant",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Local quantile methods condition on neighboring historical states, with a scale-adjusted variant using training information to normalize the comparison. The filtered-path benchmark recursively simulates signed positions using GARCH-standardized empirical innovations drawn independently with replacement \\citep{hull1998,barone1999}. The other benchmarks estimate a quantile from response distributions in tree leaves or fit tails of volatility-scaled peak headroom \\citep{meinshausen2006,mcneilfrey2000}. These are the existing fitted specifications, with every complete result and numerical or structural failure documented in the Supplement. Their different conditioning assumptions make the actual executed procedure, rather than its family name alone, the relevant object for comparison.",
+    "new": "Local quantiles use neighboring historical states, with an increment-scaled variant. Filtered paths simulate positions from GARCH-standardized empirical innovations drawn independently with replacement \\citep{hull1998,barone1999}. Quantile forests use leaf distributions; tail methods fit volatility-scaled headroom \\citep{meinshausen2006,mcneilfrey2000}. The Supplement lists all complete results and numerical or structural failures."
+  },
+  {
+    "id": 28,
+    "old_line": 148,
+    "category": "data/method/background",
+    "old_first": "The further robustness comparisons address calibration, forecast combination, and conservative selection while keeping the peak response and chronological information restrictions explicit",
+    "new_first": "Additional comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The further robustness comparisons address calibration, forecast combination, and conservative selection while keeping the peak response and chronological information restrictions explicit. A headroom version of the symmetric absolute-value quantile recursion follows the CAViaR family, and finite delayed calibration wrappers update only after outcomes mature \\citep{engle2004,gibbs2021}. Fixed mean and median combinations aggregate the specified forecasts, while a paired-difference one-standard-error rule favors simpler reports within its stated validation tolerance. Every method earns its comparison against the historical headroom rule through its actual score and breach outcomes on the shared evaluation origins.",
+    "new": "Additional comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response. A headroom CAViaR recursion and calibration wrappers follow existing methods \\citep{engle2004,gibbs2021}. Calibration parameters update after outcomes mature. Fixed mean and median combinations use predefined members; the one-standard-error rule favors stronger shrinkage within a paired validation-loss tolerance."
+  },
+  {
+    "id": 29,
+    "old_line": 172,
+    "category": "data/method/background",
+    "old_first": "The forecasting clock admits a training label only after the entire response horizon has ended, preventing an unfinished peak from entering estimation",
+    "new_first": "At refit \\(r\\), training labels are eligible only when \\(i+H\\le r\\)",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The forecasting clock admits a training label only after the entire response horizon has ended, preventing an unfinished peak from entering estimation. At refit origin \\(r\\), a historical origin \\(i\\) is eligible only when \\(i+H\\le r\\), and every selected window uses the same completed-label convention. Predictors use issue-known observations, and training-only transformations remain fixed until the next scheduled refit rather than learning from future evaluation outcomes. Parameter selection uses the preceding validation segment, after which the evaluation proceeds on the complete specified issue grid.",
+    "new": "At refit \\(r\\), training labels are eligible only when \\(i+H\\le r\\). Predictors use issue-known observations, and training transforms remain fixed until the next refit. The preceding validation segment selects parameters; the entire specified evaluation grid then receives forecasts."
+  },
+  {
+    "id": 30,
+    "old_line": 175,
+    "category": "data/method/background",
+    "old_first": "Matched comparisons hold the completed-response history and refit schedule fixed when evaluating the regression against the historical headroom rule",
+    "new_first": "Matched comparisons fix completed-response history and refit schedule for regression and historical headroom",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Matched comparisons hold the completed-response history and refit schedule fixed when evaluating the regression against the historical headroom rule. The original FX primary instead uses the shorter-history rolling historical reference, making it a distinct comparison from the same-history benchmark. The Treasury-bill primary compares the longer-history regression with the historical headroom rule on a shared history and update schedule. Tables~\\ref{tab:fx} and~\\ref{tab:weekly} preserve these original comparisons alongside the matched, additional-panel, and earlier-period results.",
+    "new": "Matched comparisons fix completed-response history and refit schedule for regression and historical headroom. The main FX reference uses a shorter rolling history; the main Treasury reference shares regression's longer history and refit schedule. Tables~\\ref{tab:fx} and~\\ref{tab:weekly} report both alongside the other comparison sets."
+  },
+  {
+    "id": 31,
+    "old_line": 178,
+    "category": "data/method/background",
+    "old_first": "We evaluate forecast accuracy with mean pinball loss and report strict breaches separately, including their frequency and the associated overrun amounts",
+    "new_first": "Accuracy uses mean pinball loss; breaches are strict peak exceedances",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "We evaluate forecast accuracy with mean pinball loss and report strict breaches separately, including their frequency and the associated overrun amounts. Paired loss differences use heteroskedasticity and autocorrelation consistent covariance estimates, with the horizon represented in the bandwidth choice \\citep{dm1995,nw1987}. The existing calculations also report the small-sample adjustment and the stated multiple-comparison families, with each family's role identified explicitly \\citep{hln1997,holm1979}. Coverage diagnostics use a fixed spaced grid and distinguish unconditional coverage from a transition likelihood conditioned on its initial hit \\citep{kupiec1995,christ1998}.",
+    "new": "Accuracy uses mean pinball loss; breaches are strict peak exceedances. Paired loss differences use HAC covariance with the horizon-based bandwidth rule \\citep{dm1995,nw1987}. Tables report the small-sample adjustment and named multiplicity families \\citep{hln1997,holm1979}. Coverage diagnostics use the fixed spaced grid and condition the transition likelihood on its initial hit \\citep{kupiec1995,christ1998}."
+  },
+  {
+    "id": 32,
+    "old_line": 183,
+    "category": "process",
+    "old_first": "The original source-specific primaries retain their original roles, outcomes, and reference procedures throughout this paper",
+    "new_first": "The original protocol fixes the two main comparisons and their reference procedures",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The original source-specific primaries retain their original roles, outcomes, and reference procedures throughout this paper. The conditional extension followed inspection of the original FX evaluation archive; later calibration, combination, state, quantile-level, and selection analyses are post-result and exploratory. Their designs and execution records preserve the chronology of each addition, including failed candidates and full comparison families rather than selected favorable subsets. The earlier FX origins reuse familiar source history, and the later writing-stage HAC comparisons are descriptive rather than independent or prospective confirmation.",
+    "new": "The original protocol fixes the two main comparisons and their reference procedures. Other p-values are exploratory and unadjusted unless stated. The Supplement records chronology, comparison families and all failure inventories."
+  },
+  {
+    "id": 33,
+    "old_line": 186,
+    "category": "process",
+    "old_first": "The Supplement provides the complete prior and later comparison inventories, the exact evaluation clocks, numerical checks, and all incomplete or unsuccessful procedures",
+    "new_first": "[consolidated]",
+    "note": "Chronology/route details consolidated into Section6 and existing supplementary reproducibility section.",
+    "old": "The Supplement provides the complete prior and later comparison inventories, the exact evaluation clocks, numerical checks, and all incomplete or unsuccessful procedures. We report sensitivity to bandwidth, adjustment family, target level, and state definition as separate diagnostic questions within their specified scopes. The subsequent interpretation follows the same sequence: establish the reference and sample, compare losses, examine breaches, and assess stability across periods. A credible peak-limit gain must survive this sequence with its benchmark and its information set stated clearly.",
+    "new": ""
+  },
+  {
+    "id": 34,
+    "old_line": 195,
+    "category": "finding",
+    "old_first": "Long-history FX regression provides the clearest repeated improvement against a historical headroom rule using the same completed history and update schedule",
+    "new_first": "Long-history FX regression beats matched historical headroom in both periods",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Long-history FX regression provides the clearest repeated improvement against a historical headroom rule using the same completed history and update schedule. The later-period matched loss change is -14.77\\%, while the earlier-period matched change is -16.62\\%. Table~\\ref{tab:fx} shows that these gains refer to the same-history controls, with separate columns for the original shorter-history rolling reference. The distinction matters because model choice and the amount of historical information answer different comparative forecasting questions.",
+    "new": "Long-history FX regression beats matched historical headroom in both periods. Loss falls by 14.8\\% later and 16.6\\% earlier. Table~\\ref{tab:fx} separates these matched controls from the shorter rolling reference."
+  },
+  {
+    "id": 35,
+    "old_line": 198,
+    "category": "finding",
+    "old_first": "The evaluated calibration wrappers preserve the long-history matched FX advantage while bringing the two observed breach frequencies close together",
+    "new_first": "Delayed calibration retains the later matched FX gain",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The evaluated calibration wrappers preserve the long-history matched FX advantage while bringing the two observed breach frequencies close together. Wrapped regression changes mean loss by -15.00\\% against the wrapped historical reference on their common evaluation grid. Their strict breach counts are 329 and 328, respectively. This result gives a concrete calibration comparison for the actual finite delayed procedures rather than treating the unwrapped score gain as a coverage result.",
+    "new": "Delayed calibration retains the later matched FX gain. Wrapped regression lowers loss by 15.0\\%. Its 329 breaches compare with 328 for wrapped historical headroom on common origins (Table~\\ref{tab:fx})."
+  },
+  {
+    "id": 36,
+    "old_line": 201,
+    "category": "finding",
+    "old_first": "The long-history FX gain also persists across the evaluated position-increment states and at the lower target quantile",
+    "new_first": "The long-history FX gain persists across training-defined increment-RMS states and at the lower target quantile",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The long-history FX gain also persists across the evaluated position-increment states and at the lower target quantile. The unchanged primary has a negative mean loss difference in every training-defined RMS group, with the group results documented in the Supplement. At the lower target, the matched relative loss change is -10.15\\%, and the original-primary reference gives -9.20\\%. These results broaden the description of that configuration while leaving the separate upper-target validation failures visible in the full record.",
+    "new": "The long-history FX gain persists across training-defined increment-RMS states and at the lower target quantile. At the lower target, matched loss falls by 10.1\\%, and loss against the original rolling reference by 9.2\\%. The Supplement reports all state results and failed validation at the upper quantile."
+  },
+  {
+    "id": 37,
+    "old_line": 219,
+    "category": "finding",
+    "old_first": "The advantage changes when the reference changes, even for the same long-history FX regression report at the shorter horizon",
+    "new_first": "The earlier FX ranking reverses when the reference changes",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The advantage changes when the reference changes, even for the same long-history FX regression report at the shorter horizon. Against the original shorter-history rolling rule, the later loss change is -12.66\\%, whereas the earlier-period change is 3.17\\%. The earlier matched improvement therefore coexists with an adverse original-primary comparison, rather than reproducing the original gain against every historical rule. Table~\\ref{tab:fx} makes that reversal part of the main result instead of treating it as a secondary qualification.",
+    "new": "The earlier FX ranking reverses when the reference changes. Against shorter-history rolling headroom, later loss falls by 12.7\\%, but earlier loss rises by 3.2\\%. Matched gains and rolling-reference gains therefore have different period stability (Table~\\ref{tab:fx})."
+  },
+  {
+    "id": 38,
+    "old_line": 222,
+    "category": "finding",
+    "old_first": "Short histories and longer horizons produce additional adverse outcomes that prevent a broad ranking of regression above historical forecasting rules",
+    "new_first": "Short-history FX regression performs poorly at the longer horizon",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Short histories and longer horizons produce additional adverse outcomes that prevent a broad ranking of regression above historical forecasting rules. The short-history FX regression at the longer horizon raises mean loss by 31.50\\% relative to its matched historical headroom rule. Its breach counts are 924 for regression and 427 for the reference. Other long-horizon comparisons show smaller score gains alongside more breaches, so a positive result at the shorter horizon cannot stand in for the full map.",
+    "new": "Short-history FX regression performs poorly at the longer horizon. Loss rises by 31.5\\% against matched historical headroom. Regression records 924 breaches against 427 for the reference; the full horizon map retains the other adverse comparisons."
+  },
+  {
+    "id": 39,
+    "old_line": 225,
+    "category": "finding",
+    "old_first": "The original Treasury-bill primary is adverse in both its score and its breach count, despite numerically accepted regression fits",
+    "new_first": "Treasury-bill regression loses on both accuracy and breaches",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The original Treasury-bill primary is adverse in both its score and its breach count, despite numerically accepted regression fits. Its relative loss increase is 50.79\\%, with 54 regression breaches on the evaluation grid. The historical reference records 28 breaches, as Table~\\ref{tab:weekly} shows together with the corresponding fixed-reference inference. The earlier shorter-history structural analogue also loses, so the weekly evidence challenges transport of the successful FX configuration to these aggregate tasks.",
+    "new": "Treasury-bill regression loses on both accuracy and breaches. Mean loss rises by 50.8\\%, with 54 regression breaches. Historical headroom records 28 breaches; the earlier short-window version also loses (Table~\\ref{tab:weekly})."
+  },
+  {
+    "id": 40,
+    "old_line": 228,
+    "category": "finding",
+    "old_first": "Heavier regularization improves the additional weekly panel substantially but leaves historical rules ahead in most of its evaluated cells",
+    "new_first": "Stronger regularization narrows weekly panel losses but leaves historical rules ahead",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Heavier regularization improves the additional weekly panel substantially but leaves historical rules ahead in most of its evaluated cells. The richer regression's median excess loss falls from 92.6\\% to 9.2\\% after expansion of its ridge menu. Even then, it loses 34 of 48 comparisons against matched historical headroom rules. The earlier-period one-standard-error exercise misses its success criteria, reinforcing the need to examine stability rather than selecting a favorable regularization summary.",
+    "new": "Stronger regularization narrows weekly panel losses but leaves historical rules ahead. Median excess loss falls from 92.6\\% to 9.2\\% after menu expansion. Regression still loses 34 of 48 matched comparisons. In the earlier weekly grid, conservative selection's worst increase is 181.4\\%. The adverse cell is the Treasury-bill short-window, 24-step comparison (Table~\\ref{tab:weekly})."
+  },
+  {
+    "id": 41,
+    "old_line": 231,
+    "category": "finding",
+    "old_first": "Simpler conditional descriptions and forecast combinations also produce mixed outcomes rather than a uniform solution to the weekly regression losses",
+    "new_first": "Simpler conditional reports and fixed combinations also give mixed weekly results",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Simpler conditional descriptions and forecast combinations also produce mixed outcomes rather than a uniform solution to the weekly regression losses. The fixed median combination improves on the bill historical reference by a relative loss change of -3.98\\%. The fixed mean combination instead changes that loss by 2.77\\%, and the headroom quantile recursion is also worse than the reference in that primary context. Table~\\ref{tab:weekly} and the Supplement preserve these comparisons together with the additional model failures, including every unfavorable completed result.",
+    "new": "Simpler conditional reports and fixed combinations also give mixed weekly results. The median combination lowers Treasury-bill loss by 4.0\\%, while the mean combination raises it by 2.8\\%. The headroom recursion is also worse; Table~\\ref{tab:weekly} and the Supplement retain every completed loss and model failure."
+  },
+  {
+    "id": 42,
+    "old_line": 252,
+    "category": "finding",
+    "old_first": "The matched FX gain comes with more breaches before calibration, showing why pinball accuracy and exceedance frequency deserve separate reporting",
+    "new_first": "Lower FX loss coexists with more breaches before calibration",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The matched FX gain comes with more breaches before calibration, showing why pinball accuracy and exceedance frequency deserve separate reporting. Regression breaches 376 times, compared with 360 for the matched historical headroom rule. Pinball loss accounts for the magnitudes of underprediction and overprediction, whereas the strict-hit indicator records only the occurrence of an exceedance. Managers comparing monitoring limits therefore need both measures, rather than interpreting a smaller average score as a direct reduction in breach occasions.",
+    "new": "Lower FX loss coexists with more breaches before calibration. Regression breaches 376 times against 360 for matched historical headroom. Pinball loss measures error amounts, while a strict-hit indicator records event occurrence; both matter for choosing monitoring limits."
+  },
+  {
+    "id": 43,
+    "old_line": 255,
+    "category": "finding",
+    "old_first": "Elementary-score comparisons show a further dependence on the evaluation question even when the quantile level and the two reports stay fixed",
+    "new_first": "Elementary-score rankings cross for both main comparisons (Figures~\\ref{fig:murphyfx} and~\\ref{fig:murphybill})",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Elementary-score comparisons show a further dependence on the evaluation question even when the quantile level and the two reports stay fixed. Figure~\\ref{fig:murphyfx} displays crossing curves for the original FX primary, and Figure~\\ref{fig:murphybill} presents the distinct Treasury comparison. A separate error-weight analysis finds a preference reversal near 20.6:1 for the long-horizon legacy FX report against the rolling translated-path reference. The short-horizon FX primary and matched comparisons have lower mean overrun and unused allowance together, so that particular reversal belongs to the long-horizon comparison.",
+    "new": "Elementary-score rankings cross for both main comparisons (Figures~\\ref{fig:murphyfx} and~\\ref{fig:murphybill}). A separate 24-step FX comparison against rolling translated paths reverses near 20.6:1. Both six-step FX comparisons improve mean overrun and unused allowance, so that weight reversal belongs to the 24-step reference."
+  },
+  {
+    "id": 44,
+    "old_line": 258,
+    "category": "finding",
+    "old_first": "Table~\\ref{tab:diagnostics} places the working-reference loss tests alongside the fixed-grid coverage results, preserving their distinct null hypotheses and comparison families",
+    "new_first": "Loss and coverage tests answer different questions (Table~\\ref{tab:diagnostics})",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Table~\\ref{tab:diagnostics} places the working-reference loss tests alongside the fixed-grid coverage results, preserving their distinct null hypotheses and comparison families. A loss-difference test concerns average relative accuracy, while coverage tests concern the frequency and temporal behavior of the strict-hit sequence. State diagnostics add another comparison between conditional predictive ability and differences across the specified RMS groups \\citep{gw2006}. The combined evidence supports a narrow score advantage in the successful FX setting and a broader requirement to assess limits through several operationally relevant dimensions.",
+    "new": "Loss and coverage tests answer different questions (Table~\\ref{tab:diagnostics}). HAC tests compare average loss; strict-hit tests examine event frequency and serial behavior. RMS-state diagnostics compare conditional predictive ability across training-defined groups \\citep{gw2006}."
+  },
+  {
+    "id": 45,
+    "old_line": 296,
+    "category": "finding",
+    "old_first": "Longer histories help regression under the calibrated stationary weekly mechanisms, which differ from the persistent losses in the financial record",
+    "new_first": "Stationary weekly simulations favor regression with longer histories, unlike the financial record",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Longer histories help regression under the calibrated stationary weekly mechanisms, which differ from the persistent losses in the financial record. With 33 predictors, median loss changes from +1.1\\% to -19.8\\% in the constant-variance process as history grows. The weekly GARCH process changes from +0.4\\% to -20.6\\% (Figure~\\ref{fig:calibrated-mc}). These histories contain 52 and 2880 completed responses. Constant variance leaves useful level-state information in an AR(1) peak target. The hourly GARCH design completes only one of its eight cells; seven fail the unchanged solver's acceptance criteria. Those entire cells remain failed, including their successful partial repetitions. The prespecified P1 and P3 predictions are unsupported; P2 and P4 are unassessable because required cells failed.",
+    "new": "Stationary weekly simulations favor regression with longer histories, unlike the financial record. Weekly GARCH median loss changes from +0.4\\% to -20.6\\% (Figure~\\ref{fig:calibrated-mc}). This comparison uses 33 predictors and histories of 52 and 2880 completed responses. The constant-variance AR process also retains useful level-state information. Seven of eight hourly cells fail numerical acceptance; each entire cell is reported failed. Prespecified predictions of at most 2.0\\% gain under constant variance and over 5.0\\% loss in short weekly samples are unsupported; hourly failures preclude assessment of long-history gains and the joint trend (Supplement Table~S32)."
+  },
+  {
+    "id": 46,
+    "old_line": 306,
+    "category": "recommendation",
+    "old_first": "Peak-limit validation should begin with the information set and the comparison rule before examining a candidate model's favorable performance statistic",
+    "new_first": "\\textbf{Benchmark against historical headroom.} Use the same completed labels, history length and refit schedule",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Peak-limit validation should begin with the information set and the comparison rule before examining a candidate model's favorable performance statistic. Admit a historical response only after its whole peak horizon has matured, and construct all transformations from the eligible training observations. Then compare the candidate with a historical rule using the same history and update schedule before returning to the original operational reference. This sequence separates the matched model comparison from the combined effects of a different history length and a different update schedule.",
+    "new": "\\textbf{Benchmark against historical headroom.} Use the same completed labels, history length and refit schedule. The FX ranking against shorter rolling history changes across periods, showing why the control must be named."
+  },
+  {
+    "id": 47,
+    "old_line": 309,
+    "category": "recommendation",
+    "old_first": "A practical validation record should also keep scores, breaches, and stability together rather than replacing one assessment with another after seeing the results",
+    "new_first": "\\textbf{In short weekly samples, default to the corrected-rank historical rule.} Expanded regularization and conservative one-standard-error selection leave large observed losses",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "A practical validation record should also keep scores, breaches, and stability together rather than replacing one assessment with another after seeing the results. Report the mean quantile loss together with strict-hit frequency, overrun amounts, and the magnitude of unused headroom under the same issue grid. Repeat the comparison across the available periods and related series, while displaying every failed or adverse configuration beside the successful settings. Table~\\ref{tab:map} summarizes this checklist and maps the observed frequency, history, and horizon conditions to their principal comparative outcomes.",
+    "new": "\\textbf{In short weekly samples, default to the corrected-rank historical rule.} Expanded regularization and conservative one-standard-error selection leave large observed losses. The ordinary empirical quantile is up to 36.5\\% worse than corrected F in the earlier weekly grid. Change to a conditional report when validation across periods and controls supports the decision."
+  },
+  {
+    "id": 48,
+    "old_line": 312,
+    "category": "recommendation",
+    "old_first": "For a limit manager, the key decision is whether extra conditioning improves the chosen monitoring objective reliably enough to justify the additional estimation",
+    "new_first": "\\textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "For a limit manager, the key decision is whether extra conditioning improves the chosen monitoring objective reliably enough to justify the additional estimation. The hourly FX result motivates further evaluation of long-history short-horizon regression, while the weekly results support a demanding historical starting benchmark. Calibration and combination comparisons should enter that decision through their own measured score and breach behavior, with their definitions kept explicit. The appropriate default is a matched validation process that lets comparative evidence, rather than model complexity, determine the preferred peak-limit report.",
+    "new": "\\textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid. The matched unwrapped FX gain records 376 versus 360 breaches; Table~\\ref{tab:map} summarizes the validation decisions."
+  },
+  {
+    "id": 49,
+    "old_line": 332,
+    "category": "limitation",
+    "old_first": "The FX evidence comes from a single market maker's client-flow record, limiting conclusions about other dealers, currencies, and market-making arrangements",
+    "new_first": "The FX data describe a single market maker's client-flow record",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The FX evidence comes from a single market maker's client-flow record, limiting conclusions about other dealers, currencies, and market-making arrangements. Its original evaluation history had already been viewed, and the earlier chronological comparison reuses familiar observations from the same source. Those periods provide a stability check within this record rather than independent dealer replication or a prospective test on unseen future outcomes. A stronger external assessment requires a compatible additional dealer source and a future evaluation protocol fixed before the new outcomes become available.",
+    "new": "The FX data describe a single market maker's client-flow record. Its original evaluation period was viewed before the conditional methods were specified. The earlier 2015 comparison was designed after the original results and is retrospective."
+  },
+  {
+    "id": 50,
+    "old_line": 335,
+    "category": "limitation",
+    "old_first": "The weekly data are signed position-category aggregates, so offsetting exposures across dealers can reduce the aggregate while individual gross exposures remain large",
+    "new_first": "The weekly categories share a reporting system and economic components, so related series are not independent dealer replications",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The weekly data are signed position-category aggregates, so offsetting exposures across dealers can reduce the aggregate while individual gross exposures remain large. Related categories share a reporting system and economic components, which limits an interpretation of their comparisons as independent replications across institutions. The downloaded economic-date series also differs from a reconstruction of the observations available at each historical publication time. The sampled target measures recorded positions; excursions between observations, settlement cash needs, and the costs of actual limit decisions require additional measurement.",
+    "new": "The weekly categories share a reporting system and economic components, so related series are not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage; historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure, and between-observation excursions remain unmeasured."
+  },
+  {
+    "id": 51,
+    "old_line": 338,
+    "category": "limitation",
+    "old_first": "The later analyses and working-reference tests describe the observed records after earlier results had informed the research process and additional comparisons",
+    "new_first": "Causal and individual-predictor effects are outside this design",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "The later analyses and working-reference tests describe the observed records after earlier results had informed the research process and additional comparisons. Their p-values therefore do not account for the full sequence of model, sample, diagnostic, and presentation choices made during that process. The finite calibration wrapper, empirical endpoint rule, and dependent financial paths also require distinctions from the population assumptions in Proposition~\\ref{prop:levy}. The main evidence supports a bounded comparative forecasting result, with external validity, prospective calibration, and economic decision value remaining questions for future evaluation. The score uses a nineteen-to-one error-weight ratio for evaluation, which does not measure the actual costs of a limit decision.",
+    "new": "Causal and individual-predictor effects are outside this design. The financial procedures provide no coverage guarantee under their dependence and calibration scheme. Trading and funding gains are not measured, and scoring weights do not identify actual decision costs. The calibrated simulations leave the hourly mechanism unresolved and fail to reproduce persistent weekly losses. Their DGPs bundle frequency, validation length and volatility laws."
+  },
+  {
+    "id": 52,
+    "old_line": 345,
+    "category": "finding",
+    "old_first": "Simple historical rules are hard to beat when forecasting peak net positions in these records",
+    "new_first": "Simple historical rules are hard to beat for peak net positions in these records",
+    "note": "Rewritten with direct subject, active construction and shorter sentences.",
+    "old": "Simple historical rules are hard to beat when forecasting peak net positions in these records. Long-history FX regression lowers matched loss by 14.8\\% and 16.6\\% across two periods. Calibration retains the later gain with 329 versus 328 breaches, while the shorter rolling reference changes the earlier ranking.",
+    "new": "Simple historical rules are hard to beat for peak net positions in these records. FX regression lowers matched loss by 14.8\\% and 16.6\\% across periods. Calibration retains the later gain with 329 versus 328 breaches. The shorter rolling reference changes the earlier ranking."
+  },
+  {
+    "id": 53,
+    "old_line": 347,
+    "category": "finding",
+    "old_first": "Weekly regression remains behind historical headroom: expanded regularization leaves 34 of 48 panel comparisons worse, and conservative validation leaves large losses",
+    "new_first": "Expanded regularization leaves weekly regression behind in 34 of 48 panel comparisons, and conservative validation leaves large losses",
+    "note": "Simulation boundary moved to Limitations; conclusion keeps the same three empirical points.",
+    "old": "Weekly regression remains behind historical headroom: expanded regularization leaves 34 of 48 panel comparisons worse, and conservative validation leaves large losses. Lower pinball loss also accompanies more breaches before FX calibration (376 versus 360). Peak-limit selection should therefore assess accuracy, error amounts, breaches and reference stability together. The calibrated simulation leaves the hourly mechanism unresolved and fails to reproduce the persistent weekly losses; the empirical findings remain specific to the observed records.",
+    "new": "Expanded regularization leaves weekly regression behind in 34 of 48 panel comparisons, and conservative validation leaves large losses. Lower FX pinball loss coexists with 376 versus 360 breaches before calibration. Peak-limit selection should assess accuracy, error amounts, breaches and reference stability together."
+  }
+]

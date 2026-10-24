@@ -1,0 +1,126 @@
+"""B4 paragraph-by-paragraph writing pass; no experiment or changed estimate."""
+import csv
+import json
+from pathlib import Path
+import re
+import sys
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+import rewrite_contributions as facts
+
+REWRITE={
+1:r'''Dealer position limits concern the largest exposure reached before a review horizon ends. A position can finish within its limit after crossing it earlier (Figure~\ref{fig:example}). We compare historical and conditional forecasts of this sampled absolute-position peak.''',
+2:r'''Historical headroom already combines the current position with completed past peak behavior. Conditional models estimate additional relationships from finite historical windows. Matched histories and update schedules show whether the added conditioning improves the forecast.''',
+3:r'''Our comparisons cover hourly FX positions and weekly U.S. primary-dealer aggregates. Each series retains source-native units and its own evaluation grid. Two pre-specified comparisons anchor the analysis. They compare long-history FX regression with a shorter rolling rule, and Treasury regression with matched historical headroom.''',
+4:'',5:'',
+11:r'''Wisniewski and colleagues forecast signed next-hour position intervals using historical states, calendar information and local prediction methods \citep{wisniewski2020,wisniewski2024}. Their chronological training, calibration and test design reports scores and coverage together. The present peak response uses a complete future path segment and the current magnitude, producing different labels and limits.''',
+12:r'''Path-risk forecasts address within-period extremes. MaxVaR studies the worst cumulative portfolio return under fixed holdings and diffusion assumptions \citep{boudoukh2004}. The payment-liquidity thesis forecasts conditional maximum deficits from confidential transactions \citep{hoogen2017}. Settlement studies examine tail liquidity needs and collateral requirements \citep{petrunia2019,arjani2020}. Duffie and colleagues study dealer capacity and Treasury-market functioning, including PnL quantile forecasts \citep{duffie2023}. These responses differ from the sampled absolute-position peak.''',
+13:r'''Regression quantiles target asymmetric forecast errors directly \citep{koenker1978}. Autoregressive quantiles and quantile forests supply other conditioning structures \citep{engle2004,meinshausen2006}. Consistent scores and elementary-score representations permit comparison across evaluation preferences \citep{gneiting2011,ehm2016}. Table~\ref{tab:literature} locates the present peak response, completed labels and matched historical controls.''',
+15:r'''The target is the largest sampled absolute position from issue time through the stated horizon. Let \(N_t\) denote signed position and \(\mathcal F_t\) the issue-time information. The peak \(Y_{t,H}\), observed floor \(B_t\) and nonnegative headroom \(Z_{t,H}\) satisfy the following identities.''',
+16:r'''A feasible limit covers the current observed exposure. Figure~\ref{fig:example} shows an endpoint inside the historical report after an earlier breach. We score reports with pinball loss and count a strict breach when the peak exceeds the limit.''',
+19:r'''The Supplement proves both statements and compares population quantiles with their empirical plug-ins. A conditional application requires independence, symmetry and the stated endpoint quantile under the law given issue information. The separate bound simulations distinguish mean-reverting levels from serially correlated increments.''',
+20:r'''Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression crosses across horizons on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.''',
+21:r'''The FX application uses the hourly Net Position Time Series Dataset, reporting market-maker client-flow positions \citep{dataset,wisniewski2020}. It contains 18,576 observation records in source USD units. The later and earlier comparisons use distinct chronological issue grids and the same sampled-peak definition.''',
+22:r'''The weekly data are New York Fed Primary Dealer Statistics \citep{nyfeddata}. Reporting definitions follow the government-securities dealer framework and position-accounting instructions \citep{fr2004_2013,fr2004_2024}. The Treasury-bill series has 706 economic-date observations in USD millions. Additional categories pass metadata and calendar checks and use complete weekly grids, with separate fits by category.''',
+23:r'''Every method within a comparison uses identical peak labels, current floors and issue origins. Source units and histories remain distinct across series. This design preserves the measurement differences between FX client flow and weekly position totals.''',
+24:r'''Forecasts target the conditional quantile at \(\tau=19/20\). The horizons \(H\in\{6,24\}\) count subsequent source records, and each peak includes the issue position. All methods forecast this common target.''',
+25:r'''Historical headroom uses the corrected empirical rank of completed headrooms and adds its report to the current magnitude. Translated paths reanchor historical signed paths, while historical-peak quantiles are projected to the observed floor. The endpoint plug-in uses an absolute-displacement quantile; Table~\ref{tab:methods} gives the executed menus and schedules.''',
+26:r'''Ridge quantile regression links mature headroom to issue-known position states and calendar variables. The larger set contains 33 predictors plus an unpenalized intercept. The four-predictor variant uses current magnitude, signed level and two increment RMS measures. All standardization uses mature training observations. Expanded-menu regression changes only the penalty grid.''',
+27:r'''Local quantiles use neighboring historical states, with an increment-scaled variant. Filtered paths simulate positions from GARCH-standardized empirical innovations drawn independently with replacement \citep{hull1998,barone1999}. Quantile forests use leaf distributions; tail methods fit volatility-scaled headroom \citep{meinshausen2006,mcneilfrey2000}. The Supplement lists all complete results and numerical or structural failures.''',
+28:r'''Additional comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response. A headroom CAViaR recursion and calibration wrappers follow existing methods \citep{engle2004,gibbs2021}. Calibration parameters update after outcomes mature. Fixed mean and median combinations use predefined members; the one-standard-error rule favors stronger shrinkage within a paired validation-loss tolerance.''',
+29:r'''At refit \(r\), training labels are eligible only when \(i+H\le r\). Predictors use issue-known observations, and training transforms remain fixed until the next refit. The preceding validation segment selects parameters; the entire specified evaluation grid then receives forecasts.''',
+30:r'''Matched comparisons fix completed-response history and refit schedule for regression and historical headroom. The main FX reference uses a shorter rolling history; the main Treasury reference shares regression's longer history and refit schedule. Tables~\ref{tab:fx} and~\ref{tab:weekly} report both alongside the other comparison sets.''',
+31:r'''Accuracy uses mean pinball loss; breaches are strict peak exceedances. Paired loss differences use HAC covariance with the horizon-based bandwidth rule \citep{dm1995,nw1987}. Tables report the small-sample adjustment and named multiplicity families \citep{hln1997,holm1979}. Coverage diagnostics use the fixed spaced grid and condition the transition likelihood on its initial hit \citep{kupiec1995,christ1998}.''',
+32:r'''The original protocol fixes the two main comparisons and their reference procedures. Other p-values are exploratory and unadjusted unless stated. The Supplement records chronology, comparison families and all failure inventories.''',
+33:'',
+34:r'''Long-history FX regression beats matched historical headroom in both periods. Loss falls by @@FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT|gain@@\% later and @@FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT|gain@@\% earlier. Table~\ref{tab:fx} separates these matched controls from the shorter rolling reference.''',
+35:r'''Delayed calibration retains the later matched FX gain. Wrapped regression lowers loss by @@FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT|gain@@\%. Its @@FX_ACI_H6_W2880_QR_HITS|count@@ breaches compare with @@FX_ACI_H6_W2880_F_HITS|count@@ for wrapped historical headroom on common origins (Table~\ref{tab:fx}).''',
+36:r'''The long-history FX gain persists across training-defined increment-RMS states and at the lower target quantile. At the lower target, matched loss falls by @@FX_TAU90_MATCHED_MEAN_LOSS_CHANGE_PERCENT|gain@@\%, and loss against the original rolling reference by @@FX_TAU90_PRIMARY_MEAN_LOSS_CHANGE_PERCENT|gain@@\%. The Supplement reports all state results and failed validation at the upper quantile.''',
+37:r'''The earlier FX ranking reverses when the reference changes. Against shorter-history rolling headroom, later loss falls by @@FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT|gain@@\%, but earlier loss rises by @@FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT|pct@@\%. Matched gains and rolling-reference gains therefore have different period stability (Table~\ref{tab:fx}).''',
+38:r'''Short-history FX regression performs poorly at the longer horizon. Loss rises by @@FX_LATE_SHORT_H24_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT|pct@@\% against matched historical headroom. Regression records 924 breaches against 427 for the reference; the full horizon map retains the other adverse comparisons.''',
+39:r'''Treasury-bill regression loses on both accuracy and breaches. Mean loss rises by @@PANEL_BILL_QR_H6_W260_LOSS_PERCENT|pct@@\%, with 54 regression breaches. Historical headroom records 28 breaches; the earlier short-window version also loses (Table~\ref{tab:weekly}).''',
+40:r'''Stronger regularization narrows weekly panel losses but leaves historical rules ahead. Median excess loss falls from @@PANEL_E5_QR33_MEDIAN|pct@@\% to @@PANEL_E5_QR33_EXPANDED_MEDIAN|pct@@\% after menu expansion. Regression still loses @@PANEL_E5_QR33_EXPANDED_LOSSES|count@@ of @@PANEL_E5_PLANNED|count@@ matched comparisons. In the earlier weekly grid, conservative selection's worst increase is @@PANEL_R6_R2_RETRO_WORST|pct@@\%. The adverse cell is the Treasury-bill short-window, 24-step comparison (Table~\ref{tab:weekly}).''',
+41:r'''Simpler conditional reports and fixed combinations also give mixed weekly results. The median combination lowers Treasury-bill loss by @@PANEL_WP3_BILL_PRIMARY_MEDIAN_VS_F|gain@@\%, while the mean combination raises it by @@PANEL_WP3_BILL_PRIMARY_MEAN_VS_F|pct@@\%. The headroom recursion is also worse; Table~\ref{tab:weekly} and the Supplement retain every completed loss and model failure.''',
+42:r'''Lower FX loss coexists with more breaches before calibration. Regression breaches 376 times against 360 for matched historical headroom. Pinball loss measures error amounts, while a strict-hit indicator records event occurrence; both matter for choosing monitoring limits.''',
+43:r'''Elementary-score rankings cross for both main comparisons (Figures~\ref{fig:murphyfx} and~\ref{fig:murphybill}). A separate 24-step FX comparison against rolling translated paths reverses near 20.6:1. Both six-step FX comparisons improve mean overrun and unused allowance, so that weight reversal belongs to the 24-step reference.''',
+44:r'''Loss and coverage tests answer different questions (Table~\ref{tab:diagnostics}). HAC tests compare average loss; strict-hit tests examine event frequency and serial behavior. RMS-state diagnostics compare conditional predictive ability across training-defined groups \citep{gw2006}.''',
+45:r'''Stationary weekly simulations favor regression with longer histories, unlike the financial record. Weekly GARCH median loss changes from +0.4\% to -20.6\% (Figure~\ref{fig:calibrated-mc}). This comparison uses 33 predictors and histories of 52 and 2880 completed responses. The constant-variance AR process also retains useful level-state information. Seven of eight hourly cells fail numerical acceptance; each entire cell is reported failed. Prespecified predictions of at most 2.0\% gain under constant variance and over 5.0\% loss in short weekly samples are unsupported; hourly failures preclude assessment of long-history gains and the joint trend (Supplement Table~S32).''',
+46:r'''\textbf{Benchmark against historical headroom.} Use the same completed labels, history length and refit schedule. The FX ranking against shorter rolling history changes across periods, showing why the control must be named.''',
+47:r'''\textbf{In short weekly samples, default to the corrected-rank historical rule.} Expanded regularization and conservative one-standard-error selection leave large observed losses. The ordinary empirical quantile is up to @@I_WORST@@\% worse than corrected F in the earlier weekly grid. Change to a conditional report when validation across periods and controls supports the decision.''',
+48:r'''\textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid. The matched unwrapped FX gain records 376 versus 360 breaches; Table~\ref{tab:map} summarizes the validation decisions.''',
+49:r'''The FX data describe a single market maker's client-flow record. Its original evaluation period was viewed before the conditional methods were specified. The earlier 2015 comparison was designed after the original results and is retrospective.''',
+50:r'''The weekly categories share a reporting system and economic components, so related series are not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage; historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure, and between-observation excursions remain unmeasured.''',
+51:r'''Causal and individual-predictor effects are outside this design. The financial procedures provide no coverage guarantee under their dependence and calibration scheme. Trading and funding gains are not measured, and scoring weights do not identify actual decision costs. The calibrated simulations leave the hourly mechanism unresolved and fail to reproduce persistent weekly losses. Their DGPs bundle frequency, validation length and volatility laws.''',
+52:r'''Simple historical rules are hard to beat for peak net positions in these records. FX regression lowers matched loss by 14.8\% and 16.6\% across periods. Calibration retains the later gain with 329 versus 328 breaches. The shorter rolling reference changes the earlier ranking.''',
+53:r'''Expanded regularization leaves weekly regression behind in 34 of 48 panel comparisons, and conservative validation leaves large losses. Lower FX pinball loss coexists with 376 versus 360 breaches before calibration. Peak-limit selection should assess accuracy, error amounts, breaches and reference stability together.'''
+}
+
+CAPTIONS={
+'fig:example':'An intervening Treasury-bill peak breaches the historical report although the endpoint lies inside it. The selected window is the earliest eligible original evaluation window.',
+'tab:literature':'Closest literature and the peak-position task. A dash denotes a dimension unverified in the consulted passage. This study compares scores, breaches and reference stability for a common peak response.',
+'tab:methods':'Historical and conditional forecasts use a common completed-peak response; menus and schedules are the executed settings.',
+'tab:fx':'Long-history short-horizon FX regression under two references and periods. Negative percentages favor regression. Matched gains recur while the rolling-reference direction changes.',
+'tab:weekly':'Weekly loss changes for distinct history and selection settings. Expanding the penalty menu reduces losses while leaving historical headroom ahead in most panel cells.',
+'tab:diagnostics':'Paired loss tests and strict-hit diagnostics for the explicitly named reports. Panel A uses working-reference inference; Panel B uses the fixed nonoverlap grid.',
+'fig:murphyfx':'Crossing elementary-score curves for the FX main comparison against rolling headroom. Curves use a display grid; full-breakpoint comparisons confirm crossings.',
+'fig:murphybill':'Elementary-score curves cross for the Treasury-bill main comparison. Curves use a display grid; full-breakpoint comparisons confirm crossings.',
+'fig:calibrated-mc':"Calibrated simulation: median regression loss changes against F, with IQRs shaded. Each complete cell uses 100 repetitions of 500 origins; dashed curves and black dots are finite oracles from 2,000 future paths per origin. Seven hourly cells failed; the Supplement's calibrated-simulation section gives full setting details.",
+'tab:map':'Financial and stationary-simulation findings for the specified histories and horizons. The action column states how each comparison informs peak-limit validation.'
+}
+
+
+def main():
+    path=ROOT/'submission-jof/manuscript.tex';text=path.read_text()
+    before=(ROOT/'.scratch/v8/manuscript-before-b4.tex').read_text();assert text==before,'one-time pass must start at frozen B3'
+    inventory=json.loads((ROOT/'.scratch/v8/paragraph-inventory.json').read_text())
+    source='results/supervisor-20261023/r6/summary.csv'
+    irows=[r for r in csv.DictReader((ROOT/source).open()) if r['phase']=='retro' and r['report']=='I' and r['source']!='fx_hourly']
+    worst=max(irows,key=lambda r:float(r['percent_vs_F']));iworst=format(float(worst['percent_vs_F']),'.1f')
+    log=[]
+    for row in inventory:
+        idx=row['id'];old=row['text'];new=REWRITE.get(idx,old).replace('@@I_WORST@@',iworst);new=facts.render(new)
+        assert text.count(old)==1,(idx,'paragraph mismatch');text=text.replace(old,new,1)
+        category=('limitation' if 49<=idx<=51 else 'finding' if idx in range(34,46) or idx in (20,52,53) else 'process' if idx in (32,33) else 'recommendation' if idx in (46,47,48) else 'contribution' if 6<=idx<=10 or idx==14 else 'data/method/background')
+        note='Rewritten with direct subject, active construction and shorter sentences.' if idx in REWRITE else 'Reviewed and retained; technical conditions or aligned contribution prose already concise.'
+        if idx in (4,5):note='Duplicate finding paragraph merged into First/Third contributions and Section7; all results remain in tables/Supplement.'
+        if idx==33:note='Chronology/route details consolidated into Section6 and existing supplementary reproducibility section.'
+        if idx==53:note='Simulation boundary moved to Limitations; conclusion keeps the same three empirical points.'
+        log.append(dict(id=idx,old_line=row['line'],category=category,old_first=old.split('. ')[0],new_first=new.split('. ')[0] if new else '[consolidated]',note=note,old=old,new=new))
+    def caption(m):
+        label=m.group(2);return '\\caption{'+CAPTIONS.get(label,m.group(1))+'}\\label{'+label+'}'
+    text=re.sub(r'\\caption\{(.*?)\}\\label\{([^}]+)\}',caption,text,flags=re.S)
+    # Percentage columns are formatted directly from archived raw values;
+    # converting the already rounded v7 cells would double-round some values.
+    fx=[('-12.66','FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT'),('-14.77','FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT'),('+3.17','FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT'),('-16.62','FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT'),('-15.00','FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT')]
+    weekly=[('+50.79','PANEL_BILL_QR_H6_W260_LOSS_PERCENT'),('+144.30','PANEL_R6_BILL_W52_ANALOGUE_LOSS_PERCENT'),('+92.63','PANEL_E5_QR33_MEDIAN'),('+9.91','PANEL_E5_QR4_MEDIAN'),('+9.22','PANEL_E5_QR33_EXPANDED_MEDIAN'),('+0.50','PANEL_E5_ORDINARY_I_MEDIAN'),('+4.15','PANEL_R6_R0_RETRO_MEDIAN'),('+5.37','PANEL_R6_R2_RETRO_MEDIAN')]
+    table_formats=[]
+    for old,key in fx+weekly:
+        raw=float(facts.EVIDENCE[key]['value']);new=format(raw,'+.1f') if old.startswith('+') else format(raw,'.1f')
+        needle='& '+old+' &';assert text.count(needle)==1,(old,text.count(needle));text=text.replace(needle,'& '+new+' &',1)
+        table_formats.append(dict(id=key,source=facts.EVIDENCE[key]['source'],raw=raw,old=old,new=new))
+    # Float notes and table terminology.
+    text=text.replace('Absolute-position floor n.r.','---').replace('n.r.','---')
+    text=text.replace("The institutional payment-thesis reading is partial; --- is not evidence of absence. The earlier FX work and this paper share a source family, without verified input-byte identity.","The payment-thesis reading is partial. Dashes identify unverified dimensions in the consulted passages.")
+    text=text.replace('Quantile and normalization conventions are detailed in the Supplement; this table does not expand any executed menu.','The Supplement specifies quantile and normalization conventions.')
+    a='The original bill primary has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results are a structural analogue, not an exact replay of that primary. The one-standard-error worst excess is +181.39\\%; all its prewritten success criteria remain unmet. Full panel and selection tables are linked from the Supplement and EXTENDED\\_RESULTS.md.'
+    b='The bill main comparison has 54 versus 28 strict breaches among 277 issues. The earlier bill comparison uses history 52 instead of 260; its conservative-selection worst cell is the 24-step bill case (+181.4\\%). All three preset success criteria remain unmet.'
+    assert a in text;text=text.replace(a,b)
+    a='Original matched Holm uses 72 contrasts. The later regrouped matched family is separate; earlier-period writing-stage HAC comparisons have neither a new HLN field nor a new family adjustment.'
+    b='Original matched Holm uses 72 contrasts. The later regrouped family is separate and documented in the Supplement.'
+    assert a in text;text=text.replace(a,b)
+    replacements={'Later / original primary':'Later / main comparison','Original Treasury-bill primary':'Treasury-bill main comparison','Earlier Treasury-bill analogue':'Earlier Treasury-bill short window','Short-history structural analogue':'Short-history regression','Original primary':'Main comparison','FX original primary':'FX main comparison','Treasury original primary':'Treasury main comparison','Two-primary Bonferroni':'Bonferroni (two main comparisons)'}
+    for a,b in replacements.items():text=text.replace(a,b)
+    # Any remaining percentage literals are pure display precision changes.
+    text=re.sub(r'(?<![\w.])([+-]?\d+(?:\.\d+)?)\\%',lambda m:format(float(m.group(1)),'.1f')+r'\%',text)
+    path.write_text(text)
+    with (ROOT/'notes/v8/writing-pass-log.json').open('x') as f:json.dump(log,f,indent=2);f.write('\n')
+    lines=['# B4 paragraph pass','', 'All53 ordinary body paragraphs were reviewed. Tables, figures and mathematical displays retain their numerical content. Three duplicate/process paragraphs are consolidated, not removed from the scientific record.','', '|ID / original line|Class|Original first sentence|Revised first sentence|Disposition|','|---|---|---|---|---|']
+    for r in log:lines.append('|'+str(r['id'])+' / '+str(r['old_line'])+'|'+r['category']+'|'+r['old_first'].replace('|','/')+'|'+r['new_first'].replace('|','/')+'|'+r['note']+'|')
+    lines+=['','## Numeric precision','', 'Percentages are formatted from original source values, including table cells. The lower-quantile matched FX change is -10.145914078498173, which rounds to -10.1%, not a second rounding of the printed -10.15%. Old financial estimates and all adverse outcomes remain unchanged.','', 'The ordinary-rank worst earlier weekly loss is an existing PR3 finding restored from the unchanged v7 R6 archive: '+iworst+'%. This is a source readback, not a new forecast evaluation.','', '## Scope and relocated material','', 'The current v8 instruction to state the eight restrictions once in Limitations supersedes the older guide\'s repeated placements. Mathematical assumptions remain beside their propositions. The conclusion\'s simulation boundary is consolidated in Limitations. The old FX-source byte-identity qualification remains in the supplementary provenance section.']
+    with (ROOT/'notes/v8/writing-pass-log.md').open('x') as f:f.write('\n'.join(lines)+'\n')
+    with (ROOT/'notes/v8/writing-numeric-bindings.json').open('x') as f:json.dump({'body':facts.BINDINGS,'table_formats':table_formats,'ordinary_rank_worst':{'source':source,'selector':{k:worst[k] for k in ['phase','source','series_key','horizon','window','report']},'field':'percent_vs_F','raw':worst['percent_vs_F'],'rendered':iworst,'scope':'Existing archived PR3/v7 result, no new experiment'}},f,indent=2);f.write('\n')
+    print('Reviewed paragraphs',len(log),'rewritten',sum(i in REWRITE for i in range(1,54)))
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,62 @@
+[
+  {
+    "old": "Two pre-specified comparisons anchor the analysis.",
+    "new": "Two comparisons, pre-specified in the original execution protocol, anchor the analysis.",
+    "reason": "M3: define the protocol-relative meaning of pre-specified."
+  },
+  {
+    "old": "The Treasury-bill series has 706 economic-date observations in USD millions.",
+    "new": "The Treasury-bill series has 706 economic-date observations in USD millions. These are reported fair-value positions aggregated as long-minus-short totals.",
+    "reason": "F3: clarify measurement using existing FR2004 reference, checked SectionIII.A/p13."
+  },
+  {
+    "old": "The horizons \\(H\\in\\{6,24\\}\\) count subsequent source records, and each peak includes the issue position.",
+    "new": "The horizons \\(H\\in\\{6,24\\}\\) count subsequent source records, and each peak includes the issue position. Calendar gaps extend the elapsed span of an FX horizon, while weekly steps represent a different review interval.",
+    "reason": "F4: distinguish observation-count and calendar horizons."
+  },
+  {
+    "old": "Accuracy uses mean pinball loss; breaches are strict peak exceedances.",
+    "new": "Accuracy uses mean pinball loss; breaches are strict peak exceedances. Evaluation scores passive reports on the observed position paths.",
+    "reason": "F1: identify the evaluated report and fixed path, without claiming intervention benefits."
+  },
+  {
+    "old": "The preceding validation segment selects parameters; the entire specified evaluation grid then receives forecasts.",
+    "new": "The preceding validation segment selects parameters; the entire specified evaluation grid then receives forecasts. Validation labels overlap in time.",
+    "reason": "M4: identify overlapping validation labels."
+  },
+  {
+    "old": "The wrapper comparison is a separate finite projected delayed ACI-style exercise.",
+    "new": "The wrapper comparison is a separate finite projected delayed ACI-style exercise; both regression and historical headroom are calibrated in that row.",
+    "reason": "M1: explicit wrapped control."
+  },
+  {
+    "old": "Original matched Holm uses 72 contrasts. The later regrouped family is separate and documented in the Supplement.",
+    "new": "Original matched Holm uses 72 contrasts. Each adjusted p-value applies only to its named family; the later regrouped family is separate.",
+    "reason": "M2: identify multiplicity scope without changing any p-value."
+  },
+  {
+    "old": "Stationary weekly simulations favor regression with longer histories, unlike the financial record.",
+    "new": "The calibrated simulation does not reproduce the persistent weekly losses in the financial record.",
+    "reason": "M5/E3: state the unsuccessful mechanism result directly."
+  },
+  {
+    "old": "Trading and funding gains are not measured, and scoring weights do not identify actual decision costs. The calibrated simulations leave the hourly mechanism unresolved and fail to reproduce persistent weekly losses. Their DGPs bundle frequency, validation length and volatility laws.",
+    "new": "Trading and funding gains are not measured, and scoring weights do not identify actual decision costs. Independent dealer data and prospective evaluation are needed for broader validation. Valuation, gross-exposure and decision-cost observations would connect forecasts to inventory actions.\n\nThe calibrated simulations leave the hourly mechanism unresolved and fail to reproduce persistent weekly losses. Their DGPs bundle frequency, validation length and volatility laws. Isolating these effects and studying failed hourly fits requires a separate experiment. Longer chronologically eligible validation histories also require future evaluation.",
+    "reason": "M3-M5/F1-F5/E2-E3: explicit future-data and future-design needs in Limitations."
+  },
+  {
+    "old": "Relative to the endpoint and path-risk precedents in Table~\\ref{tab:literature}, the contribution is three comparative findings. First, matched FX gains of 14.8\\% and 16.6\\% recur across periods; the later gain survives calibration, while the shorter rolling reference changes the earlier ranking (Table~\\ref{tab:fx}). Second, expanded regression still loses 34 of 48 weekly panel comparisons, while conservative validation leaves a 181.4\\% worst-cell excess (Table~\\ref{tab:weekly}). Third, the matched FX score gain accompanies 376 versus 360 breaches; the two original comparisons have crossing elementary-score curves (Table~\\ref{tab:diagnostics}; Figures~\\ref{fig:murphyfx}--\\ref{fig:murphybill}). The forecasting and scoring methods are standard.",
+    "new": "Table~\\ref{tab:literature} distinguishes the peak response from earlier endpoint and path-risk tasks. First, matched FX gains of 14.8\\% and 16.6\\% recur; the later gain survives calibration, while reference rankings change (Table~\\ref{tab:fx}). Second, expanded weekly regression loses 34 of 48 comparisons, and conservative validation leaves a 181.4\\% worst excess (Table~\\ref{tab:weekly}). Third, matched FX gains accompany 376 versus 360 breaches; the original comparisons have crossing elementary-score curves (Table~\\ref{tab:diagnostics}; Figures~\\ref{fig:murphyfx}--\\ref{fig:murphybill}).",
+    "reason": "E4: shorten duplicated signposting while retaining the same three numbered empirical points."
+  },
+  {
+    "old": "Validation labels overlap in time.",
+    "new": "Weekly selection uses 52 validation origins with overlapping labels.",
+    "reason": "M4: distinguish52validationorigins from52evaluationpoints; fixedsourceprotocol r6-design.md line17/JSONvalidation_count."
+  },
+  {
+    "old": "Fixed mean and median combinations use predefined members; the one-standard-error rule favors stronger shrinkage within a paired validation-loss tolerance.",
+    "new": "Fixed mean and median combinations use predefined members. Conservative selection favors the strongest shrinkage whose paired mean-loss excess against the validation winner falls within one heteroskedasticity and autocorrelation consistent (HAC) standard error.",
+    "reason": "M4: definecandidate-pairedHACband andstrongest-shrinkage selection."
+  }
+]

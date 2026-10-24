@@ -1,0 +1,20 @@
+{
+  "complete_history": true,
+  "original_head": "3e64c7323aaa1f3b3cb4cdc576675187c92d90c1",
+  "bundle_bytes": 25244990,
+  "bundle_sha256": "d3b27946cf103fbaf903ae6921bab12738a69ac4af987dabd45da7fa1b513865",
+  "parts": [
+    {
+      "path": "notes/v8/local-revision-history.bundle.part01",
+      "bytes": 13000000,
+      "sha256": "14a2ad85852134974187b79e1c6abb74d041ae7f213acbb1cec63f666924e469"
+    },
+    {
+      "path": "notes/v8/local-revision-history.bundle.part02",
+      "bytes": 12244990,
+      "sha256": "1ad025405279a207a491f8713c845dfe859e88fdba2073b689b0a2668807a33a"
+    }
+  ],
+  "restore_command": "cat notes/v8/local-revision-history.bundle.part01 notes/v8/local-revision-history.bundle.part02 > /tmp/v8-history.bundle; git bundle verify /tmp/v8-history.bundle; git clone -b revision-v8 /tmp/v8-history.bundle v8-original-history",
+  "note": "Split solely for browser upload size; original complete verified bundle retained in ignored local scratch. No scientific data or output changed."
+}
