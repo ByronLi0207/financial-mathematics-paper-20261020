@@ -1,0 +1,531 @@
+{
+  "schema": "v9-native-number-audit-c6-final-v1",
+  "created_utc": "2026-10-24T20:33:00.597628+00:00",
+  "status": "PASS_NATIVE_NUMBER_BINDINGS_WITH_RETAINED_PRECISION_NOTE",
+  "current": {
+    "main_path": "submission-jof/manuscript.tex",
+    "main_sha256": "83c611692ecba07dd155d9792aa71870f9f9040f88cc9143c7ea639dd9278993",
+    "supplement_path": "submission-jof/supplement.tex",
+    "supplement_sha256": "65b8ca7cb427c225a33d9ca2f52dcfecc62fcf22e5958065000455705ee14c22",
+    "table_binding_receipt_path": "submission-jof/generated/v9-table-bindings.json",
+    "table_binding_receipt_sha256": "c8b46442b414da8df05d3d014d066576bb1f8addbd19d67d476485f46bcee93c"
+  },
+  "scope": "Final current-native/source audit inheriting prior located C0/C3/C4 proofs,not a rerun orindependent scientific replication. Numeric-token equality is an extra consistency check,not a replacement for source bindings.",
+  "audit_chain": [
+    {
+      "stage": "C0",
+      "path": "notes/v9/real-number-reconciliation.json",
+      "sha256": "1436b7058257913c96830e3cd171fdae7618e06681ff873b890dddeeb24fcfbc",
+      "recorded_status": "PASS"
+    },
+    {
+      "stage": "C3_initial",
+      "path": "notes/v9/main-number-audit.json",
+      "sha256": "f857b958fd58d7845c368602e709292631a2224c745674a14cc2903b417a8fb3",
+      "recorded_status": "FIRST_PASS_CONTEXT_BOUND_WITH_PENDING_FLAGS"
+    },
+    {
+      "stage": "C3_final",
+      "path": "notes/v9/main-number-audit-c3-final.json",
+      "sha256": "6e380aed9a700b20acdb08906ca423467f51dd27a84df83260a8127d1c6c1f0f",
+      "recorded_status": "PASS_C3_INCREMENT_WITH_C4_C7_PENDING"
+    },
+    {
+      "stage": "C4",
+      "path": "notes/v9/main-number-audit-c4.json",
+      "sha256": "ae416924f822197b62c41abcbce8d7c8e8ae33d2774a9b39f7d981b93e71c119",
+      "recorded_status": "PASS_C4_NUMERIC_SOURCE_INCREMENT_AND_150_NATIVE_TABLE_ROWS_WITH_PRECISION_NOTE"
+    },
+    {
+      "stage": "C5",
+      "path": "notes/v9/c5-document-check.json",
+      "sha256": "8e68b0b12fc1910d37772e06817d689258a804b0a28a5ef3201b741a7127c3af",
+      "recorded_status": "C5"
+    }
+  ],
+  "main_C5_vs_C4": {
+    "base_commit": "e6a3c98b48f22f4ba4e2236c48444ef915af3661",
+    "base_source_sha256": "4d138febc2d3e9ee3176150eddce81a9a1405e3dac645ba16aca06fc08bd2431",
+    "regex": "(?<![A-Za-z])[-+]?\\d+(?:[.,]\\d+)*",
+    "preprocessing": "None: direct UTF-8readtext() / gitshow text",
+    "base_numeric_tokens": 593,
+    "current_numeric_tokens": 593,
+    "ordered_equal": true,
+    "ordered_token_list_sha256": "e5019073b1915fce8018fa39cce106f33bfde1099a86ab29ea7448d3c4842a0b",
+    "broader_independent_tokenizations": [
+      {
+        "regex": "[-+]?\\d+(?:\\.\\d+)?(?:[eE][-+]?\\d+)?",
+        "base_count": 614,
+        "current_count": 614,
+        "ordered_equal": true
+      },
+      {
+        "regex": "\\d+(?:\\.\\d+)?",
+        "base_count": 622,
+        "current_count": 622,
+        "ordered_equal": true
+      }
+    ],
+    "changed_contexts": [
+      {
+        "operation": "replace",
+        "base_lines": [
+          290,
+          290
+        ],
+        "current_lines": [
+          290,
+          290
+        ],
+        "before": [
+          "\\textbf{For these short weekly samples, default to the corrected-rank historical rule.} Expanded penalties and conservative selection leave large losses. The ordinary empirical quantile is up to 36.5\\% worse than corrected headroom in the earlier weekly grid."
+        ],
+        "after": [
+          "\\textbf{For these short weekly samples, use corrected-rank history as the default benchmark.} Expanded penalties and conservative selection leave large losses. The ordinary empirical quantile is up to 36.5\\% worse than corrected headroom in the earlier weekly grid."
+        ],
+        "numeric_sequence_equal_in_change": true
+      },
+      {
+        "operation": "replace",
+        "base_lines": [
+          302,
+          302
+        ],
+        "current_lines": [
+          302,
+          302
+        ],
+        "before": [
+          "Weekly / short or long history & Short or longer & Regression often loses despite expanded penalties & --- & At history 52, full-regression medians are +116.2\\% with constant parameters and +121.4\\% with switching; full history-260 medians are unavailable & Default to corrected-rank history for these short samples; compare scores and breaches\\\\"
+        ],
+        "after": [
+          "Weekly / short or long history & Short or longer & Regression often loses despite expanded penalties & --- & At history 52, full-regression medians are +116.2\\% with constant parameters and +121.4\\% with switching; full history-260 medians are unavailable & Use corrected-rank history as the default benchmark for these short samples; compare scores and breaches\\\\"
+        ],
+        "numeric_sequence_equal_in_change": true
+      },
+      {
+        "operation": "replace",
+        "base_lines": [
+          313,
+          313
+        ],
+        "current_lines": [
+          313,
+          313
+        ],
+        "before": [
+          "The weekly categories share a reporting system and economic components; they are related aggregate tasks, not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage. Historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure; sampled net inventory also differs from settlement cash needs. Sampled peaks omit intervening excursions. Daily last records also differ from verified closes or intraday maxima; the source timezone and release vintage are unknown."
+        ],
+        "after": [
+          "The weekly categories share a reporting system and economic components; they are related aggregate tasks, not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage. Historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure; sampled net inventory also differs from settlement cash needs. Valuation and reporting-composition changes are not separated from trading. Sampled peaks omit intervening excursions. Daily last records also differ from verified closes or intraday maxima; the source timezone and release vintage are unknown."
+        ],
+        "numeric_sequence_equal_in_change": true
+      },
+      {
+        "operation": "replace",
+        "base_lines": [
+          319,
+          319
+        ],
+        "current_lines": [
+          319,
+          319
+        ],
+        "before": [
+          "The simulation designs use different menus, clocks, calibration laws and summary statistics. Their differences cannot isolate a single source of the empirical losses. The new parameter-switching process repeats fitted dwell lengths and adds artificial last-to-first transitions. Its stability screen uses a plug-in model-based approximation. Moment qualification and successful optimization leave the assumed law and boundary-estimate uncertainty unresolved. Failed cells and unavailable diagnostic comparisons retain those statuses."
+        ],
+        "after": [
+          "Short overlapping validation samples and research-stage selection limit tuning stability and confirmatory inference. Longer weekly outer validation windows remain untested. The simulation designs use different menus, clocks, calibration laws and summary statistics. Their differences cannot isolate a single source of the empirical losses. The new parameter-switching process repeats fitted dwell lengths and adds artificial last-to-first transitions. Its stability screen uses a plug-in model-based approximation. Moment qualification and successful optimization leave the assumed law and boundary-estimate uncertainty unresolved. Failed cells and unavailable diagnostic comparisons retain those statuses."
+        ],
+        "numeric_sequence_equal_in_change": true
+      }
+    ],
+    "semantic_scope": "290/302narrowdefaultbenchmark wording;313unseparatedvaluation/reportingcomposition;319shortvalidation/researchselection limits. No newnumericclaim ornewcomparator introduced.",
+    "source_mapping_inherited_from": [
+      "notes/v9/main-number-audit.json",
+      "notes/v9/main-number-audit-c3-final.json",
+      "notes/v9/main-number-audit-c4.json"
+    ],
+    "unmapped_current_claims": [],
+    "binding_mismatches": []
+  },
+  "inherited_source_identity_checks": {
+    "unique_located_files_checked": 36,
+    "all_current_hashes_equal_prior_located_audits": true,
+    "files": [
+      {
+        "path": "/Users/bingyouli/Research/论文/金融数学论文-v8-20261024/results/v8/mc/calibration.json",
+        "sha256": "62421a107caaa29dfe57023c38306a55cc550ad2f779e44886a7309ea9c8413f"
+      },
+      {
+        "path": "/Users/bingyouli/Research/论文/金融数学论文-v8-20261024/results/v8/mc/predictions.json",
+        "sha256": "ed029abc9fd8cb83581c8246bcb73be65203fc0c15d76db314d1564e84e4d276"
+      },
+      {
+        "path": "/Users/bingyouli/Research/论文/金融数学论文-v8-20261024/results/v8/mc/summary.json",
+        "sha256": "d29622633d77cb58ebf99d8aa4e5b401fdd1d30353676124c5f0bb5409859eab"
+      },
+      {
+        "path": "fixtures/v9-baselines/pr5-v8/submission-jof/manuscript.tex",
+        "sha256": "66287e0d3b192affe04a4c974a1d0141fe3a3be8eda4da074552be5828bead40"
+      },
+      {
+        "path": "notes/revision-v5-novelty/theory-source.json",
+        "sha256": "5eb436ab5a944a38c70ac4ab4db9ecb8be6c2033650788d7db9f19c65cc8a8cc"
+      },
+      {
+        "path": "notes/supervisor-20261023/r6-literature.md",
+        "sha256": "43b1c8f7e8366047e2418fd20eb9ac1572948f9a1d919b481b00153da81ecc7f"
+      },
+      {
+        "path": "notes/supervisor-20261023/r6-writing-provenance.json",
+        "sha256": "3c233582932438b15c64973c57a1065349c93e7adc1e825882eb3091ed1c59e0"
+      },
+      {
+        "path": "notes/v7/example-selection.json",
+        "sha256": "c8166b3bb06fc2116db5f3e7143c7ff0cb38d72beb8893a20eb66f0c12e650b1"
+      },
+      {
+        "path": "notes/v9/bibliographic-additions.md",
+        "sha256": "c8cde49611a61c0ad252b10f1233d254bed67d46bfc3de1d651d6a3443809cee"
+      },
+      {
+        "path": "protocol/revision-20261022/study-spec.json",
+        "sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+      },
+      {
+        "path": "protocol/revision-20261023/round2-D3-panel.json",
+        "sha256": "bd992316d679080c792acfcf4069610613774e7ce8727eef6f8944ed18812500"
+      },
+      {
+        "path": "protocol/revision-v8/wp3-mechanism-design.json",
+        "sha256": "ed2bedb5a086615957ea8423d61632edbb9de34549c886b4e2f6a04bb3567d70"
+      },
+      {
+        "path": "protocol/supervisor-20261023/r6-design.md",
+        "sha256": "de301f131426ed9b185451d87e3aee1726d978dd2d55ffd322efc02477b6bbae"
+      },
+      {
+        "path": "protocol/v9/nonstationarity-design.md",
+        "sha256": "76df3a3d2c2c5b90d4c3f4b225cc4f879b384c6f3d288b6732f488bda15a3894"
+      },
+      {
+        "path": "results/revision-20261022/paired-comparisons.csv",
+        "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+      },
+      {
+        "path": "results/revision-20261022/post-result-horizon.csv",
+        "sha256": "59bc82949da1642daed554ed0fcc2f9d16f989773a988cb11ecbd297fa6a5a5a"
+      },
+      {
+        "path": "results/revision-20261022/preference-robustness/results.json",
+        "sha256": "5c644543f6461f94050e0049c94f092ae6ad8358adb277944ece4dc8bcdba418"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp2-findings.json",
+        "sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp3-findings.json",
+        "sha256": "abe27d8f1ef08ba50680b6f3e1a9207f7271cdb4270f92437fbaa1746ad523e9"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp5-tau-summary.json",
+        "sha256": "085d2dbf7a94a13f3b1557d966848cf5f58382fa4f330dc8e221235427c71501"
+      },
+      {
+        "path": "results/revision-v8/wp3/summary.json",
+        "sha256": "3de27c0f50a5b1882d4c8aba80d3fc8d2487972f22674d7e6e1423e62da663d0"
+      },
+      {
+        "path": "results/revision-v8/wp3/support.json",
+        "sha256": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc"
+      },
+      {
+        "path": "results/revision-v8/wp4/summary.json",
+        "sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12"
+      },
+      {
+        "path": "results/revision-v8/wp5/summary.json",
+        "sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629"
+      },
+      {
+        "path": "results/supervisor-20261023/e5/descriptive-summary.json",
+        "sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+      },
+      {
+        "path": "results/supervisor-20261023/inference/coverage-verified.csv",
+        "sha256": "428485bc5efebff9d902a094e1f710b631740970fcd52e59e45b3a4502de45c3"
+      },
+      {
+        "path": "results/supervisor-20261023/inference/dm-verified.csv",
+        "sha256": "39abe844f7a81875bfcda717a5d6d3634aa58e1e55e4a956b3f4cf2a2f269b20"
+      },
+      {
+        "path": "results/supervisor-20261023/r6-writing-hac-20261023/results.json",
+        "sha256": "21c620f735daf1c0d238626bc4b0c608fd5feb4cf175d6476286d0a15731b4cc"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/assessment.json",
+        "sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/primary-replication.csv",
+        "sha256": "6bb428de35651ac0010b21ebf119c2b5cbec7853836fea9a2ca69d592ba7c0f3"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/retro-summary.csv",
+        "sha256": "bf27070e03386fcfc20c52743438f868d07c52fd53e21ff5c3f3a7646dfaa57b"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/summary.csv",
+        "sha256": "2b65b80ed7e0b74948455b61e58e825165ab23cc81cde6615de29a3c7d6be82d"
+      },
+      {
+        "path": "results/supervisor-20261023/w3/dm-family.csv",
+        "sha256": "6986183a5c5ad069e397efe78130060de9c1b6882a71743fe6092d122fcd5854"
+      },
+      {
+        "path": "results/v9/figures/scalars.json",
+        "sha256": "c67faab6648b2a65b21ec196202f4d911f84e47ae5c6c290eb62ddddacf637a1"
+      },
+      {
+        "path": "results/v9/nonstationarity/postrun/analysis/report.json",
+        "sha256": "60fe5055d0d67c45fb40d4ccbf022f297ae4a6fa53c4b25d7098e19389661a04"
+      },
+      {
+        "path": "results/v9/nonstationarity/prior-stationary-reconciliation.json",
+        "sha256": "5f0cf721b95f418f88da62a683cda55540e17eccaf9e196344a50181fe51b770"
+      }
+    ]
+  },
+  "supplement": {
+    "earlier_native_bindings_inherited": 2125,
+    "earlier_C0_binding_audit_path": "notes/v9/real-number-reconciliation.json",
+    "earlier_owning_sources_revalidated": [
+      {
+        "path": "notes/revision-v5-novelty/theory-source.json",
+        "sha256": "5eb436ab5a944a38c70ac4ab4db9ecb8be6c2033650788d7db9f19c65cc8a8cc"
+      },
+      {
+        "path": "results/revision-20261022/ar1-replay/ar1-paired.csv",
+        "sha256": "def8af7fe1e1f3cc629975707e5ebaab7e3d71642ccfe4c5ad1cb5909fa7fd9b"
+      },
+      {
+        "path": "results/revision-20261022/ar1-replay/ar1-summary.csv",
+        "sha256": "45d3ced6483b84bc2a8ba6b68719b813be1232dbb78a167d550c5c04ec802c1a"
+      },
+      {
+        "path": "results/revision-20261022/coverage-evalues/coverage-evalue-summary.csv",
+        "sha256": "b708b5777b1f8252c76cc57e196ee281e590726e9f1c9567499e379ccacead31"
+      },
+      {
+        "path": "results/revision-20261022/evaluation-summary.csv",
+        "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15"
+      },
+      {
+        "path": "results/revision-20261022/post-result-horizon.csv",
+        "sha256": "59bc82949da1642daed554ed0fcc2f9d16f989773a988cb11ecbd297fa6a5a5a"
+      },
+      {
+        "path": "results/revision-20261022/preference-robustness/results.json",
+        "sha256": "5c644543f6461f94050e0049c94f092ae6ad8358adb277944ece4dc8bcdba418"
+      },
+      {
+        "path": "results/revision-20261022/rank-ablation/contrasts.csv",
+        "sha256": "7d936668d61caedf3e53402a3a4d32e9a669eac0daa5ee76b04585b15ad657e8"
+      },
+      {
+        "path": "results/revision-20261022/rank-ablation/summary.csv",
+        "sha256": "23a5f9d1979fd8d79a5230c9b5315b81c2295dec3991a206dcd7bfb1efa47b70"
+      },
+      {
+        "path": "results/revision-20261023/round2/levy-ar-correction/independent-readback-portable.json",
+        "sha256": "9882e0ce7aa21abb798d0139726e4c9fe863119e73b584ce034d541d33636d2a"
+      },
+      {
+        "path": "results/revision-20261023/round2/levy-ar-correction/simulation.json",
+        "sha256": "99c1ce198dcdb15e88ec30eccb7b9ece936042a630886e65c7a03dd412fc2a3d"
+      },
+      {
+        "path": "results/revision-20261023/round2/levy/paired-tests.csv",
+        "sha256": "8bbf83abefba40969e9cf78e174bd71688e57d578ca039fa1b0fce8daeb01eb5"
+      },
+      {
+        "path": "results/revision-20261023/round2/levy/simulation.json",
+        "sha256": "931ace42110cd074e277303e832f66535a05cb30327a302afbac682f9b4a3829"
+      },
+      {
+        "path": "results/revision-20261023/round2/levy/summary.csv",
+        "sha256": "d779705c3717e19f67c44ae44629fd172d09887eb0d2bd5eebcb7eb7bd010a23"
+      },
+      {
+        "path": "results/revision-20261023/round2/panel/summary.csv",
+        "sha256": "34134445a00354dcce3dc43de4c2adada7f2ea5403212558f90ef3480ee810f9"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp2-comparisons.json",
+        "sha256": "37df0e0f87340cac9c0526484e123dba08fb914a795761f9ae9828fdfc6983fd"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp2-findings.json",
+        "sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp2-summary.json",
+        "sha256": "44beea32857e5f13233178e014c4ed4737918f523b61790e42d2c94ee763f98c"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp3-combinations.json",
+        "sha256": "1526d8aa656077445988271c76988c0a950cd95631946add3d8b8642629c7aaa"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp3-findings.json",
+        "sha256": "abe27d8f1ef08ba50680b6f3e1a9207f7271cdb4270f92437fbaa1746ad523e9"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp4-states.json",
+        "sha256": "63a89756ba5a97e9a4454701708ff12972e2d23cfd24c238b25b490a531e833d"
+      },
+      {
+        "path": "results/revision-20261023/v6/wp5-tau-summary.json",
+        "sha256": "085d2dbf7a94a13f3b1557d966848cf5f58382fa4f330dc8e221235427c71501"
+      },
+      {
+        "path": "results/supervisor-20261023/e5/descriptive-summary.json",
+        "sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+      },
+      {
+        "path": "results/supervisor-20261023/e5/summary.csv",
+        "sha256": "82cc4b66bf2142d5bea44ad781659096cfa859ae1dafe2080ae3e45ce650b50e"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/assessment.json",
+        "sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/retro-summary.csv",
+        "sha256": "bf27070e03386fcfc20c52743438f868d07c52fd53e21ff5c3f3a7646dfaa57b"
+      },
+      {
+        "path": "results/supervisor-20261023/r6/summary.csv",
+        "sha256": "2b65b80ed7e0b74948455b61e58e825165ab23cc81cde6615de29a3c7d6be82d"
+      }
+    ],
+    "five_new_tables": {
+      "files": {
+        "submission-jof/generated/v9-legacy-simulation-table.tex": {
+          "sha256": "2fc76150e3868ad2a9ab323d336113279706ed1b7682fb1b825551192f6d0791",
+          "rows": 31
+        },
+        "submission-jof/generated/v9-stability-diagnostics-table.tex": {
+          "sha256": "c63ad9cf58c0f088e5b656defa35d49bb6acc4ca3729f51e5a261f3ffe4037f9",
+          "rows": 15
+        },
+        "submission-jof/generated/v9-stability-W52-table.tex": {
+          "sha256": "f49f5697ff6b772b2045d718e6f9cdcea3f716a65eee1b0c5ff61f782757d889",
+          "rows": 26
+        },
+        "submission-jof/generated/v9-stability-W260-table.tex": {
+          "sha256": "1cbfe76d7331d14c69f54cf07355918cbb42d04798b5784d43e6383bec1e2c5f",
+          "rows": 26
+        },
+        "submission-jof/generated/v9-stability-F-table.tex": {
+          "sha256": "ea8dcf113cbb883673664fe1b8726828582b288f256bbeb84bde295e02dd4977",
+          "rows": 52
+        }
+      },
+      "row_groups": {
+        "legacy": 24,
+        "legacy-failures": 7,
+        "diagnostics": 15,
+        "W52": 26,
+        "W260": 26,
+        "F": 52
+      },
+      "native_rows_checked_live": 150,
+      "actual_display_cells_checked_live": 1269,
+      "native_equals_current_owner_and_receipt": true,
+      "actual_TeX_equals_previously_verified_format_and_receipt": true,
+      "includes_once_each_in_current_supplement": true,
+      "source_sha256": {
+        "results/v9/legacy-calibrated/summary.json": "d29622633d77cb58ebf99d8aa4e5b401fdd1d30353676124c5f0bb5409859eab",
+        "results/v9/legacy-calibrated/analysis-facts.json": "c5ba12a5d31f7573ec79eac964e4321420bf535fad21a99be3fa01c9b053f967",
+        "results/v9/nonstationarity/postrun/analysis/report.json": "60fe5055d0d67c45fb40d4ccbf022f297ae4a6fa53c4b25d7098e19389661a04",
+        "results/v9/nonstationarity/audit/f-benchmark-cells.csv": "fe46758d2e2894f8d1ff35fc2bb90073b05f8c5e0f0f68e0b11f6d32ea51b68b"
+      },
+      "column_native_field_map_inherited_from": "notes/v9/main-number-audit-c4.json#/supplement_tables/display_column_to_native_fields",
+      "row_locator_ledger_inherited_from": "notes/v9/main-number-audit-c4.json#/supplement_tables/rows",
+      "unmapped_rows": [],
+      "binding_or_display_mismatches": []
+    }
+  },
+  "precision_note": {
+    "count": 3,
+    "maximum_absolute_difference": 8.881784197001252e-16,
+    "differences": [
+      {
+        "row_index": 41,
+        "identity": {
+          "source_id": "PDPOSTIPS-G11",
+          "arm": "constant",
+          "window": 52,
+          "method": "QR4"
+        },
+        "field": "q25_pct",
+        "analysis_report_raw": -4.217417954872129,
+        "original_summary_raw": -4.21741795487213,
+        "difference": 8.881784197001252e-16,
+        "identical_table_display": "-4.2",
+        "status": "FINITE_PRECISION_DIFFERENCE_NO_DISPLAY_EFFECT"
+      },
+      {
+        "row_index": 45,
+        "identity": {
+          "source_id": "PDPOSTIPS-G11",
+          "arm": "switching",
+          "window": 52,
+          "method": "QR4"
+        },
+        "field": "q25_pct",
+        "analysis_report_raw": -4.217417954872129,
+        "original_summary_raw": -4.21741795487213,
+        "difference": 8.881784197001252e-16,
+        "identical_table_display": "-4.2",
+        "status": "FINITE_PRECISION_DIFFERENCE_NO_DISPLAY_EFFECT"
+      },
+      {
+        "row_index": 58,
+        "identity": {
+          "source_id": "PDPOSTIPS-G6L11",
+          "arm": "constant",
+          "window": 260,
+          "method": "QR33"
+        },
+        "field": "q25_pct",
+        "analysis_report_raw": -3.71448371547522,
+        "original_summary_raw": -3.7144837154752195,
+        "difference": -4.440892098500626e-16,
+        "identical_table_display": "-3.7",
+        "status": "FINITE_PRECISION_DIFFERENCE_NO_DISPLAY_EFFECT"
+      }
+    ],
+    "interpretation": "The separately archived independent analysisreport has3q25 values oneULP away fromoriginalpostrunsummary. Tables match their declared reportowner exactly. Allaffected1decimaldisplays,allmedians,statuses,predicatesandconclusions areunchanged. Originalarchives remainunchanged;not described asbit-identical."
+  },
+  "summary": {
+    "numeric_tokens_C5_vs_C4_in_order": 593,
+    "native_table_rows": 150,
+    "native_table_display_cells": 1269,
+    "unmapped_within_audited_scope": 0,
+    "native_binding_or_display_mismatches": 0,
+    "retained_original_summary_vs_analysis_report_precision_differences": 3,
+    "affected_display_changes": 0,
+    "new_research_computations": 0
+  },
+  "limits": [
+    "Source/format consistency isnot independently recomputed forecast accuracy.",
+    "Bibliographic andlayout numerals remain separately classified in the inherited audits.",
+    "Finalpagevisualreview,packagepublicationandremoteequality areC7/C6deliverychecks,not certified bythis numeric report.",
+    "Historicalexactfullreplay retains its documented localdesign-object/inputdependencies;thisreport doesnot waive sourceguards."
+  ]
+}
