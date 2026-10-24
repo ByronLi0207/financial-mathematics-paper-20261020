@@ -1,0 +1,56 @@
+# WP8 Supplement visual QA — initial candidate (superseded)
+
+**Disposition: FAIL_SUPERSEDED.** All 28 pages were actually viewed. Material fraction-row overlap was found on pages 7–10, Tables S8–S10; this record applies only to the original PDF below.
+
+- PDF: `/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/wp8-supplement-final/supplement.pdf`
+- PDF SHA-256: `71e7dd52a428a24d6d549232b7a431dfeca8077c63d7382aa469762b1ad903c4`
+- Expected original source SHA-256 supplied by parent: `01f276a959754d4981c6c2711f0e4fb218e238c526d87a24815ec9217c3aabbe` (not independently recomputed before parent edited source).
+- Rendering: Poppler pdftoppm, 140 DPI, actual page pixels viewed with view_image original detail. Follow-ups at 230 DPI: pages 7, 8, 14.
+- Actually viewed page IDs: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28.
+- Viewing completed: 2026-10-24 11:57:08 UTC.
+
+## Material finding
+
+SUPP-VIS-01: On page 7, Table S8's exact equal-loss ratios collide between the fx_h24_legacy denominator and the treasury_h6_primary numerator. On pages 8–10, successive exact fraction rows in Tables S9 and S10 collide repeatedly. Page 8 was checked at 230 DPI to confirm this is actual PDF layout, rather than a low-resolution artifact.
+
+The parent was alerted and produced a revised 30-page candidate at `.scratch/revision-v8/wp8-fraction-layout-250/supplement.pdf`. This task changed no manuscript, result or code.
+
+## Page-by-page observations
+
+| Page | Actual view time (UTC) | Disposition and observations |
+|---:|---|---|
+| 1 | 2026-10-24 11:54:30 | no_material_visual_issue_observed: Title and opening text fit. S1 heading, proposition, proof, displayed formula, math glyphs and footer 1 are legible. The final paragraph continues naturally on page 2; no clipping or overlap observed. |
+| 2 | 2026-10-24 11:54:30 | no_material_visual_issue_observed: S1 continuation and S2 heading/proposition/proof are legible. Endpoint-bound display fits the text width; subscripts, inequality signs and Greek glyphs render. Footer 2 clear. The final sentence continues on page 3; no clipping or overlap observed. |
+| 3 | 2026-10-24 11:54:44 | no_material_visual_issue_observed: S3/S4 headings, prose and formulas are legible. Table S1 caption, all nine column headings and eight rows fit. Table S2 begins with its caption/header and one complete row, continuing on page 4; this is a minor pagination characteristic, not clipping. Footer 3 clear. |
+| 4 | 2026-10-24 11:54:44 | no_material_visual_issue_observed: Table S2 continuation repeats its caption and nine-column header; all continuation rows and bottom rule fit. S5 prose/formulas and Table S3 caption/header/all rows fit. Footer 4 clear; no observed clipping or overlap. |
+| 5 | 2026-10-24 11:54:51 | no_material_visual_issue_observed: S6 text and Tables S4/S5 are legible, with source/horizon/reference labels, signed differences, scientific-notation p-values and all rows contained by their rules. Caption line breaks are clean. Body ending and footer 5 do not collide; no clipping observed. |
+| 6 | 2026-10-24 11:54:51 | no_material_visual_issue_observed: S7/S8 text and replay identity render clearly; phi hat and exponents visible. Table S6 caption/header/eight rows fit. Table S7 begins with three complete rows and continues on page 7. Footer 6 visible; no clipping or overlap observed. |
+| 7 | 2026-10-24 11:54:58 | material_layout_issue: Material layout issue: Table S8 equal-loss ratio column has adjacent exact fractions overlapping between fx_h24_legacy and treasury_h6_primary (denominator 907763... and next numerator 248403...). Confirmed in 230-DPI re-view at 2026-10-24 11:55:31 UTC. Table S7 continuation, S9 text/formula, caption and footer 7 remain readable. |
+| 8 | 2026-10-24 11:54:58 | material_layout_issue: Material layout issue: Table S9 exact fractions in adjacent rows visibly overlap (e.g. FX full H6/W720 and Bills full H6/W52 bound columns); denominators of one row collide with the next numerator. Confirmed at 140 and 230 DPI, detail page viewed 2026-10-24 11:55:19 UTC. Task/kind/minimizer labels, caption, table boundaries and footer 8 remain visible. |
+| 9 | 2026-10-24 11:55:36 | material_layout_issue: Material layout issue continues: Table S9 continuation and Table S10 start have exact fractions in adjacent rows colliding (e.g. Bills full H24/W52, FX sparse H6/W720 bound columns). Repeated headers/captions, S11 heading, task/kind/minimizer labels and footer 9 visible; tables remain within page width. |
+| 10 | 2026-10-24 11:55:36 | material_layout_issue: Material layout issue continues in Table S10 exact-fraction columns: adjacent bound numerators/denominators collide, including FX sparse H24/W720 and Bills sparse H24/W52. Multi-line task/minimizer labels fit within columns. Continued caption/header, bottom rule and footer 10 visible; no page-edge clipping observed. |
+| 11 | 2026-10-24 11:55:44 | no_material_visual_issue_observed: S12 definitions and S13 introduction readable. Table S11 complete first-half weekly panel has legible row IDs, multi-line headers and signed percent/hit cells; all rows fit without overlap. Footer 11 visible. |
+| 12 | 2026-10-24 11:55:44 | no_material_visual_issue_observed: Table S12 caption, complete second-half weekly panel, wrapped series IDs and aligned numeric columns fit. S14 heading/prose and Table S13 start fit; four complete rows continue to page 13. Footer 12 clear; no observed clipping or overlap. |
+| 13 | 2026-10-24 11:55:55 | no_material_visual_issue_observed: Table S13 continuation repeats header and fits. S15 heading and three prose blocks are legible, including R0/R2/R3 notation. Table S14 caption/header and first ten rows fit; footer 13 visible. No clipping or overlap observed. |
+| 14 | 2026-10-24 11:55:55 | no_material_visual_issue_observed: Table S14 continuation fits all rows and repeated header. Higher-DPI re-view at 230 DPI (2026-10-24 11:57:08 UTC) confirms the 19.18 / 12.77 pair has distinct column spacing and no overlap. S16 text and Table S15 complete failure inventory fit; monospaced failure reason readable. Footer 14 visible. |
+| 15 | 2026-10-24 11:56:08 | no_material_visual_issue_observed: S17/S18 prose and Table S16 complete inventory fit. Method/source/status columns and NA rows are legible. Long monospaced VALIDATION_INELIGIBLE fits its line. Footer 15 clear; no observed clipping or overlap. |
+| 16 | 2026-10-24 11:56:08 | no_material_visual_issue_observed: Table S17 caption/header/all paired wrapper rows fit; NA cells readable. S19 heading/prose and Table S18 start are legible; complete rows continue to page 17. Footer 16 clear; no observed clipping or overlap. |
+| 17 | 2026-10-24 11:56:15 | no_material_visual_issue_observed: Table S18 continuation fits. Table S19 compact counts and Table S20 Murphy comparison inventory have readable captions/headers, rule IDs and all numeric rows. S20 heading and prose fit within margins. Footer 17 clear; no observed clipping or overlap. |
+| 18 | 2026-10-24 11:56:15 | no_material_visual_issue_observed: S21/S22 headings, prose, tau glyph and monospaced eligibility status are legible. Tables S21/S22 fit all rows with clear headers; Table S23 starts with three complete rows and continues on page 19. Footer 18 clear; no observed clipping or overlap. |
+| 19 | 2026-10-24 11:56:24 | no_material_visual_issue_observed: Table S23 continuation repeats headers and NA rows. S23 heading/prose, Table S24 coherence inventory and Table S25 scientific-notation saved values all fit. Conditional expectation and indicator glyphs legible. Ending text and footer 19 do not collide; no clipping or overlap observed. |
+| 20 | 2026-10-24 11:56:24 | no_material_visual_issue_observed: S24 numerical conventions text is legible with bold run-in headings. Completed-label origin set, kappa/H/W notation, paired common-pool inequalities and max subscripts render clearly within margins. Footer 20 clear; no observed clipping or overlap. |
+| 21 | 2026-10-24 11:56:31 | no_material_visual_issue_observed: S25 frozen simulation definitions and discussion fit. AR/variance recursion, iid normal notation, delta-method MCSE equation, bars/hats/square roots and screen inequality all render legibly. Footer 21 clear; no observed clipping or overlap. |
+| 22 | 2026-10-24 11:56:31 | no_material_visual_issue_observed: Dense Table S26 first page remains legible: caption, H/phi/p/history labels, multi-line rate/error headers, all visible rows and bottom continuation rule fit. Parenthesized errors and signed loss changes are distinguishable. Footer 22 clear; no clipping or overlap observed. |
+| 23 | 2026-10-24 11:56:41 | no_material_visual_issue_observed: Table S26 continuation and Table S27 first page have repeated readable multi-line headers, aligned numeric rows and complete bottom rules. Caption wraps cleanly. Phi/p/history and parenthesized MCSE cells remain distinct. Footer 23 clear; no clipping or overlap observed. |
+| 24 | 2026-10-24 11:56:41 | no_material_visual_issue_observed: Table S27 continuation fits all remaining rows with clear header and bottom rule. Candidate/procedure-status prose below is legible, including math parameter tuple and monospaced results path. Footer 24 clear; no clipping or overlap observed. |
+| 25 | 2026-10-24 11:56:47 | no_material_visual_issue_observed: Six-panel four-feature heatmap is fully visible. Panel titles, history/p axes, all cell estimates/MCSE parentheses, grayscale color bar/ticks, legend and Figure 1 caption are legible. Figure boundaries and footer 25 fit; no clipping or overlap observed. |
+| 26 | 2026-10-24 11:56:47 | no_material_visual_issue_observed: S26 daily aggregation text and Table S28 complete twelve-row results fit. USD-million, penalty, signed changes and count/rate headers are legible. S27 heading wraps the word windows across two lines (win-/dows), a minor typography characteristic; following paragraph continues naturally on page 27. Footer 26 clear; no clipping or overlap observed. |
+| 27 | 2026-10-24 11:56:57 | no_material_visual_issue_observed: S27 continuation and Tables S29/S30 fit within margins. Multi-line captions and headers, references, raw p-value notation, breach pairs and all rows are legible. Ending discussion and footer 27 clear; no observed clipping or overlap. |
+| 28 | 2026-10-24 11:56:57 | no_material_visual_issue_observed: Final inference convention, displayed L bandwidth formula and LRV hat/square root render clearly. S28 heading and all bold run-in resource/evidence paragraphs fit, including final line above footer 28. No clipping, overlap or missing math glyph observed. |
+
+## File integrity and scope
+
+Every 140-DPI page PNG and every follow-up PNG has a SHA-256 in the companion JSON. The PDF has 28 A4 pages. Page numbers 1–28 were visible. No page-edge clipping, missing math glyph, or additional material layout issue was observed outside the identified fraction overlaps; this statement is bounded to the actual rendered pages reviewed.
+
+This is a visual artifact review. It does not establish numerical correctness, independent replication, journal acceptance or new financial analysis. No package installation, source/result edit, model rerun, data acquisition, Claude/cross-model review or commit was performed.
+
