@@ -2,7 +2,7 @@
 
 Author: **Byron**. Other author details are omitted at the author's request.
 
-The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **15 main/reference pages plus five appendix pages, twenty total**. R6 follows the pre-evaluation design commit `6c0eef44c46a0ff525264b13ae1dae9b821ad3c2`. Its fixed main rule misses S1, S2 and S3, so the paper reports a robustness paragraph and a small original-structure comparison table; it makes no R6 abstract claim. The abstract and conclusion retain **153/161 whitespace-delimited words**, respectively. The earlier writing pass delivered 14+5 pages; its receipt remains historical.
+The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **15 main/reference pages plus five appendix pages, twenty total**. R6 follows the pre-evaluation design commit `6c0eef44c46a0ff525264b13ae1dae9b821ad3c2`. Its fixed main rule misses S1, S2 and S3. The subsequent writing clarification places the earlier-period qualification in the abstract and conclusion at the author's explicit request; it makes no positive R6 method claim. The earlier writing pass delivered 14+5 pages; its receipt remains historical.
 
 ## Read and edit
 
@@ -12,6 +12,7 @@ The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **15 main/re
 - `round2-rewritten-passages.md` preserves the preceding E6–C1 wording at `348179c`. The current three-claim explanation, bilingual summaries, reviewer answers and title options are in `notes/supervisor-20261023/CONTRIBUTIONS.md`; current wording is in `abstract.tex` and `sections.tex`.
 - E6–C1 baseline proof remains unchanged in `results/supervisor-20261023/round2/`. The writing-only update is recorded separately in `notes/supervisor-20261023/CONTRIBUTIONS-verification.json`: compilation, all eight changed pages visually checked, source-bound prose values, and no result/protocol/figure changes.
 - R6 aggregates are in `results/supervisor-20261023/r6/`; `build_supervisor_r6_document.py` reads those files without fitting and generates `r6-facts.tex` and `r6-primary-table.tex`. Exact fact pointers and input hashes are in `notes/supervisor-20261023/r6-document-provenance.json`. The Chinese research memo is `notes/supervisor-20261023/r6-memo.md`; literature and the frozen protocol are separate files.
+- The later writing clarification reads exactly two fixed QR-versus-F loss comparisons in `results/supervisor-20261023/r6-writing-hac-20261023/`; these are descriptive HAC readbacks, not R2 comparisons or new experiments. `build_supervisor_r6_writing.py` runs after the original R6 document reader and updates Table 10 plus `r6-writing-facts.tex` from existing aggregates only. Input hashes and field pointers are in `notes/supervisor-20261023/r6-writing-provenance.json`.
 
 ## Build and checks
 
@@ -20,6 +21,7 @@ Use the existing compatible project environment. The actual numerical environmen
 ```sh
 python3 -B build_supervisor_document.py
 python3 -B build_supervisor_r6_document.py
+python3 -B build_supervisor_r6_writing.py
 /Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic --only-cached --keep-logs --keep-intermediates manuscript/supervisor-revision/main.tex
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 -B -m unittest discover -v
 python3 -B reproduce_conditional.py
@@ -44,7 +46,7 @@ The full numbered local execution chain and pre-fit E5 commit are preserved sepa
 | Table 9 | AR row uses `w4/ar-comparison.csv`; original rank/horizon and fixed-report supplements preserved |
 | Figure 5 | Original all-breakpoint Murphy evidence in `inference/`; crossings do not establish population dominance |
 | Figure 6 | `e6/lambda-path.csv` and `lambda-path-I.csv`; descriptive validation/evaluation paths, no new selection |
-| Table 10 | `r6/primary-replication.csv`; original FX comparison structure and explicitly limited Treasury W52 analogue on earlier origins |
+| Table 10 | `r6/primary-replication.csv` and `r6-writing-hac-20261023/comparisons.csv`; the same earlier FX QR reports versus matched frozen F2880 and original rolling F720, explicit origin counts and descriptive HAC p-values, plus the limited Treasury W52 analogue |
 | Table 11 | Original historical construction table retained in Appendix B |
 | Appendix C.1 | Notation remains in the appendix |
 
