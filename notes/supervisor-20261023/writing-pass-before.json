@@ -1,0 +1,4470 @@
+{
+  "label": "before",
+  "source": "/Users/bingyouli/Research/论文/金融数学论文-导师修订-20261023/.scratch/writing-pass-20261023/before/manuscript/supervisor-revision",
+  "created_utc": "2026-10-24T06:00:48.400956+00:00",
+  "baseline_commit": "0ebc6e5",
+  "method": {
+    "scope": "Sections 1 through Conclusion from sections.tex and its recursive inputs; no headings, tables, figures/captions, references or appendices. Main captions flagged separately.",
+    "macros": "Expand zero-argument newcommand/renewcommand definitions from generated/*facts.tex. Expanded values retain invocation source location and macro name.",
+    "sentences": "Split on full stops only (not semicolons, colons, question marks or paragraph breaks); protect decimal points, leading-decimal fractions, listed standard abbreviations and initial sequences. A nonempty final fragment counts as a sentence.",
+    "protected_abbreviations": [
+      "e.g.",
+      "i.e.",
+      "et al.",
+      "etc.",
+      "vs.",
+      "Dr.",
+      "Mr.",
+      "Mrs.",
+      "Prof.",
+      "Fig.",
+      "Figs.",
+      "Eq.",
+      "Eqs.",
+      "Sec.",
+      "No.",
+      "cf."
+    ],
+    "words": "English alphabetic words, contractions, numeric literals and alphanumeric hyphen compounds; an internal ASCII/nonbreaking hyphen keeps a compound as one word. Math command names and symbols do not count; readable inline letters/numbers count. Displayed formulas omitted from writing statistics.",
+    "flagged_terms": [
+      "establish",
+      "descriptive",
+      "exploratory",
+      "post-result",
+      "inspected",
+      "audit",
+      "readback",
+      "archive",
+      "receipt",
+      "analogue",
+      "qualify",
+      "rather than",
+      "without",
+      "does not",
+      "do not",
+      "cannot"
+    ],
+    "term_matching": "Case-insensitive whole words/phrases. establish and qualify include common inflections; audit/readback/archive/receipt/analogue include common inflections. Codes match whole alphanumeric tokens, including textual occurrences in captions.",
+    "number_inventory": "Values expanded before inventory. Categories distinguish abstract, main_body, main_body_math, main_captions, main_table_data, main_table_notes and appendix equivalents. Citations, labels, refs, URL targets, headings and layout widths are removed. Scientific-notation TeX is recorded as its literal numeric components, and the surrounding expression remains in context/fingerprints. Numbers inside model codes are excluded by alphanumeric boundaries. Literal numbered Section/Table/Figure/Equation/Step references are excluded separately; 24-step prediction horizons remain substantive numbers.",
+    "numeric_comparison": "Each surviving AFTER empirical number must find an identical normalized value and percent/nonpercent unit in the BEFORE evidence pool, with source context retained. Removed occurrences are expected after condensation. Repeated existing values are allowed but flagged when an AFTER count exceeds BEFORE; counts alone cannot prove claim equivalence. A change in rounding requires an explicit documented exception, never automatic acceptance.",
+    "immutability": "Table numeric sequences and inline-math sequences must match exactly in order. All body display formulas are whitespace/label-normalized and compared as a multiset; editorial relocation is allowed. Raw source/figure hashes are also reported for independent provenance."
+  },
+  "source_sha256": {
+    "abstract.tex": "1e991ea8a58aa1612a2320527e4eea703750f73759b3ccf707464c82a14ca36b",
+    "appendices.tex": "a46a0c47c8ec7fd15dc4536a9cc797b7e814c6543e6f0ece3c44257f202f3a9e",
+    "figures/decomposition.pdf": "f75756246a258105e1665f5e805f97cf7eb7786bc26570c473c0ca2a6f891c4c",
+    "figures/error-components.pdf": "ee6977d53be4fb646f2efd40bdd81ff3cbbf0baaa7be2e0c6b37051da52080a8",
+    "figures/lambda-path.pdf": "89da2a8b0174ec1e1e1a78daf71c22ab1cf4ff36d5ef87c733f82ccdded22e1c",
+    "figures/murphy.pdf": "6a2a85611b7b74d73c243093e47de6bbf593fddc566739e6490f409ed6628e40",
+    "figures/panel-menu.pdf": "a87ebba5e05938e032efe17971aa01fdfa9c5061825e5a5c0c25bc6aeda727ba",
+    "figures/path-target.pdf": "8301b7941ecc946e91d4f3ff62407967e9c548e183f6360250c23eef30bd36ea",
+    "generated/ar-comparison-summary.tex": "7e9fd595fad018c7b08716fff1bcfa73017d7ffaf0887fe7b63da9e25f7445a4",
+    "generated/coverage-table.tex": "e585bb4555c4e2cd941ed79c4fd240e6bbc5e54f2c46807e9513c579b8f1d72d",
+    "generated/data-table.tex": "d5bd52cc9698f7190cb5a63475fa36d6ba48c915fb551bdd19b7515f06965319",
+    "generated/decomposition-table.tex": "6bcc0d7a852e60dc73057b5bb5eded323da7e92d414ddfaed79ade448cd2ac08",
+    "generated/e3-summary.tex": "8f152ac46e66c777525241566d0d005564c2a388c48ce5e78ac60b1fccdf976e",
+    "generated/e3-table.tex": "c22ce6a4d0f4af7f88f4c67ba5626374b58ee081f6e4ac8bf31e0d1911cc3bb3",
+    "generated/e5-summary.tex": "0b2c244ce91f20deba193d65887c0bbdf711872ac4d29285d76034548283a79a",
+    "generated/e6-summary.tex": "683649c2effa983c4e9bacd89e41a612816a2f143689247b8d17dc97e6d4b9c6",
+    "generated/earlier-table.tex": "74e6c081d5548a3ef5b241e39a833d3c33d1222c371219797c293436969db70c",
+    "generated/fx-table.tex": "7faeed4928250260f10617aa04b70d8f4e9b150616a3c2b690f55015b1901fd9",
+    "generated/literature-table.tex": "9df9a013627748363cd7ec00c94b6b62e533d1fa3ae51d928efb3c77b6c33aa2",
+    "generated/r6-facts.tex": "d6b7a50f2d2163957410df448801073e8a5d70e0dcca98b18fab43467719cfed",
+    "generated/r6-primary-table.tex": "dd4c0cefb815c807fa83e2b603411fb174375de83a8ee390720fc48d4d01f2c3",
+    "generated/r6-writing-facts.tex": "508d581b43a462081ce816b991e2f85d55b63f1b105c62919706df2cb02eb4e7",
+    "generated/robustness-table.tex": "dc87c6f5076b25024667234e81cf07fc1d4b2dce5b523332fcff06f78041f928",
+    "generated/round2-facts.tex": "05cc4ce1310b0ad9bb0fe391cc5d60bc8c85202ac1801f8da56991ee7c0b23c4",
+    "generated/treasury-table.tex": "81f2c92272e8c863846e5d8a93d54731c797fcd524d84664b525baf72122046c",
+    "generated/uv-table.tex": "06d6ead7a3b6159ca666759aa2b3a3c3ab8c988fc8bda3ed99bad7df21d68d1a",
+    "main.pdf": "64f8e4a6544bb6c819948dc73231fe6e9efcf4c31716ea9178717ebfb2f322be",
+    "main.tex": "ac992e729f9fea67c2c4e02f067bf6a2039ba623ad3e64805a33e508c3d530fa",
+    "references.tex": "e242868dbbfba5b90e35eafe569ab3c3f0b92c0fdde929b05ab2a50f0db8390c",
+    "sections.tex": "fdb720c03fdae95000e5a8a1f90a975f67c477e8e172f8f803f1693bb17a72f3"
+  },
+  "macros": {
+    "RProtectionWorstLimit": {
+      "value": "25.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 2
+    },
+    "RProtectionMedianLimit": {
+      "value": "5.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 3
+    },
+    "RWeeklyFMedian": {
+      "value": "+0.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 4
+    },
+    "RWeeklyFWorst": {
+      "value": "+0.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 5
+    },
+    "RWeeklyFComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 6
+    },
+    "RWeeklyFLargeLosses": {
+      "value": "0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 7
+    },
+    "RWeeklyFWins": {
+      "value": "0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 8
+    },
+    "RWeeklyIMedian": {
+      "value": "+2.5",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 9
+    },
+    "RWeeklyIWorst": {
+      "value": "+36.5",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 10
+    },
+    "RWeeklyIComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 11
+    },
+    "RWeeklyILargeLosses": {
+      "value": "2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 12
+    },
+    "RWeeklyIWins": {
+      "value": "10",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 13
+    },
+    "RWeeklyZeroMedian": {
+      "value": "+4.2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 14
+    },
+    "RWeeklyZeroWorst": {
+      "value": "+283.9",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 15
+    },
+    "RWeeklyZeroComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 16
+    },
+    "RWeeklyZeroLargeLosses": {
+      "value": "6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 17
+    },
+    "RWeeklyZeroWins": {
+      "value": "10",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 18
+    },
+    "RWeeklyOneMedian": {
+      "value": "+4.6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 19
+    },
+    "RWeeklyOneWorst": {
+      "value": "+283.9",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 20
+    },
+    "RWeeklyOneComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 21
+    },
+    "RWeeklyOneLargeLosses": {
+      "value": "6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 22
+    },
+    "RWeeklyOneWins": {
+      "value": "10",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 23
+    },
+    "RWeeklyTwoMedian": {
+      "value": "+5.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 24
+    },
+    "RWeeklyTwoWorst": {
+      "value": "+181.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 25
+    },
+    "RWeeklyTwoComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 26
+    },
+    "RWeeklyTwoLargeLosses": {
+      "value": "5",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 27
+    },
+    "RWeeklyTwoWins": {
+      "value": "8",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 28
+    },
+    "RWeeklyThreeMedian": {
+      "value": "+5.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 29
+    },
+    "RWeeklyThreeWorst": {
+      "value": "+181.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 30
+    },
+    "RWeeklyThreeComplete": {
+      "value": "26",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 31
+    },
+    "RWeeklyThreeLargeLosses": {
+      "value": "5",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 32
+    },
+    "RWeeklyThreeWins": {
+      "value": "9",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 33
+    },
+    "ROneStatus": {
+      "value": "NOT\\_MET",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 34
+    },
+    "RTwoStatus": {
+      "value": "NOT\\_MET",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 35
+    },
+    "RThreeStatus": {
+      "value": "NOT\\_MET",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 36
+    },
+    "RRetroFailedRows": {
+      "value": "2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 37
+    },
+    "RRetroFXFailedRows": {
+      "value": "2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 38
+    },
+    "RInspectedFailedRows": {
+      "value": "2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 39
+    },
+    "RFXLongGainRetained": {
+      "value": "37.8",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 40
+    },
+    "RFXShortFChange": {
+      "value": "+0.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 41
+    },
+    "RFXShortIChange": {
+      "value": "-0.3",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 42
+    },
+    "RFXShortZeroChange": {
+      "value": "+2.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 43
+    },
+    "RFXShortOneChange": {
+      "value": "+2.4",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 44
+    },
+    "RFXShortTwoChange": {
+      "value": "+0.6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 45
+    },
+    "RFXShortThreeChange": {
+      "value": "unavailable",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 46
+    },
+    "RFXLongFChange": {
+      "value": "+0.0",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 47
+    },
+    "RFXLongIChange": {
+      "value": "-0.2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 48
+    },
+    "RFXLongZeroChange": {
+      "value": "-16.6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 49
+    },
+    "RFXLongOneChange": {
+      "value": "-16.6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 50
+    },
+    "RFXLongTwoChange": {
+      "value": "-6.3",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 51
+    },
+    "RFXLongThreeChange": {
+      "value": "-16.6",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 52
+    },
+    "RTreasuryPrimaryChange": {
+      "value": "+144.3",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 53
+    },
+    "RTreasuryPrimarySelected": {
+      "value": "0.1",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 54
+    },
+    "RFXPrimaryChange": {
+      "value": "+3.2",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 55
+    },
+    "RFXPrimarySelected": {
+      "value": "0.01",
+      "definition_file": "generated/r6-facts.tex",
+      "definition_line": 56
+    },
+    "RWritingMatchedGain": {
+      "value": "16.6",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 2
+    },
+    "RWritingOriginalExcess": {
+      "value": "3.2",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 3
+    },
+    "RWritingTreasuryExcess": {
+      "value": "144.3",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 4
+    },
+    "RWritingISelected": {
+      "value": "17",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 5
+    },
+    "RWritingWeeklyCells": {
+      "value": "26",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 6
+    },
+    "RWritingWeeklyN": {
+      "value": "52",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 7
+    },
+    "RWritingFXN": {
+      "value": "1,440",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 8
+    },
+    "RWritingFXWeeks": {
+      "value": "12",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 9
+    },
+    "RWritingHACL": {
+      "value": "7",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 10
+    },
+    "RWritingMatchedP": {
+      "value": "2.94\\times10^{-5}",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 11
+    },
+    "RWritingOriginalP": {
+      "value": "0.574",
+      "definition_file": "generated/r6-writing-facts.tex",
+      "definition_line": 12
+    },
+    "FXPrimaryGain": {
+      "value": "12.7",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 2
+    },
+    "FXLegacyGain": {
+      "value": "1.83",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 3
+    },
+    "FXPrimaryBreaches": {
+      "value": "376",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 4
+    },
+    "FXReferenceBreaches": {
+      "value": "332",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 5
+    },
+    "FXPrimaryP": {
+      "value": "$<.001$",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 6
+    },
+    "TreasuryPrimaryP": {
+      "value": "0.008",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 7
+    },
+    "TreasuryPrimaryBonferroni": {
+      "value": "0.015",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 8
+    },
+    "FXPrimaryStatistic": {
+      "value": "-5.2",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 9
+    },
+    "FXMatchedStatistic": {
+      "value": "-5.9",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 10
+    },
+    "FXShortP": {
+      "value": "0.54",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 11
+    },
+    "FXMatchedGain": {
+      "value": "14.8",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 12
+    },
+    "FXShortGain": {
+      "value": "2.12",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 13
+    },
+    "FXLegacyCrossing": {
+      "value": "20.6",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 14
+    },
+    "RemainingMatchedCount": {
+      "value": "71",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 15
+    },
+    "ArchivedMatchedCount": {
+      "value": "72",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 16
+    },
+    "TreasuryShortGridCount": {
+      "value": "40",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 17
+    },
+    "TreasuryLongGridCount": {
+      "value": "12",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 18
+    },
+    "TreasuryHorizonCrossing": {
+      "value": "29",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 19
+    },
+    "FXObservationCount": {
+      "value": "18,576",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 20
+    },
+    "TreasuryObservationCount": {
+      "value": "706",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 21
+    },
+    "FXLegacyP": {
+      "value": "0.84",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 22
+    },
+    "FXTailYear": {
+      "value": "2017",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 23
+    },
+    "TreasuryOriginalExcess": {
+      "value": "50.8",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 24
+    },
+    "TreasuryExpandedExcess": {
+      "value": "3.4",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 25
+    },
+    "TreasuryExpandedExcessFine": {
+      "value": "3.43",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 26
+    },
+    "TreasuryFeatureChange": {
+      "value": "1.24",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 27
+    },
+    "TreasuryOriginalBreaches": {
+      "value": "54",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 28
+    },
+    "TreasuryReferenceBreaches": {
+      "value": "28",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 29
+    },
+    "FXFeaturesGain": {
+      "value": "10.9",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 30
+    },
+    "FXShortLongExcess": {
+      "value": "31.5",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 31
+    },
+    "FXShortLongPenalty": {
+      "value": "0.01",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 32
+    },
+    "PanelOriginalMedian": {
+      "value": "92.6",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 33
+    },
+    "PanelExpandedMedian": {
+      "value": "9.2",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 34
+    },
+    "PanelExpandedLosses": {
+      "value": "34",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 35
+    },
+    "PanelCellCount": {
+      "value": "48",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 36
+    },
+    "PanelSeriesCount": {
+      "value": "12",
+      "definition_file": "generated/round2-facts.tex",
+      "definition_line": 37
+    }
+  },
+  "sentences": 272,
+  "words": 4248,
+  "flagged_sentences": 51,
+  "flagged_proportion": 0.1875,
+  "average_sentence_words": 15.617647058823529,
+  "over_40_words": 3,
+  "forbidden_occurrences": 31,
+  "forbidden_by_term": {
+    "audit": 2,
+    "readback": 1,
+    "archive": 9,
+    "analogue": 3,
+    "R0": 2,
+    "R1": 1,
+    "R2": 4,
+    "R3": 2,
+    "S1": 1,
+    "S2": 1,
+    "S3": 1,
+    "E3": 2,
+    "R6": 2
+  },
+  "main_caption_forbidden_occurrences": 6,
+  "target_pass": {
+    "flagged_below_8_percent": false,
+    "average_at_most_25": true,
+    "no_sentences_over_40": false,
+    "no_forbidden_body_terms": false
+  },
+  "abstract_words": 186,
+  "abstract_numeric_occurrences": 19,
+  "sentences_detail": [
+    {
+      "id": 1,
+      "text": "Dealer inventories connect customer order imbalances to risk limits and balance-sheet capacity.",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 2
+      }
+    },
+    {
+      "id": 2,
+      "text": "Inventory affects optimal dealer pricing and observed position adjustment ; dealer capacity also matters for Treasury intermediation .",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 2
+      }
+    },
+    {
+      "id": 3,
+      "text": "A position can become large during a holding interval and then return toward its starting value.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 2
+      }
+    },
+    {
+      "id": 4,
+      "text": "Monitoring its largest recorded magnitude therefore asks a different question from predicting the endpoint.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 2
+      }
+    },
+    {
+      "id": 5,
+      "text": "We ask when conditional quantile methods forecast a sampled absolute position peak better than simple historical rules.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 4
+      }
+    },
+    {
+      "id": 6,
+      "text": "An upper quantile of this peak supplies a report against which future recorded positions can be compared.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 4
+      }
+    },
+    {
+      "id": 7,
+      "text": "The comparison uses an hourly client-flow net-position record from one FX market maker and a weekly Treasury-bill net-position aggregate.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 6
+      }
+    },
+    {
+      "id": 8,
+      "text": "Historical headroom and translated-path rules compete with ridge quantile regression and nearest-neighbour quantiles.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 6
+      }
+    },
+    {
+      "id": 9,
+      "text": "Matched controls use the same completed response histories and refit schedules, so each comparison holds the target and those two design choices fixed.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 6
+      }
+    },
+    {
+      "id": 10,
+      "text": "The source-specific rankings motivate an exploratory sequence that separates update schedules, history lengths, predictor sets and penalty menus; the original comparisons remain the reference points.",
+      "words": 25,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 8
+      }
+    },
+    {
+      "id": 11,
+      "text": "Three empirical findings define the contribution.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 12,
+      "text": "On the two-sided absolute holding-period peak, history- and update-matched regression lowers six-step FX loss by 14.8% but raises Treasury loss by 50.8% (Tables — ); this extends the endpoint question of to a common sampled-peak target.",
+      "words": 34,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 13,
+      "text": "The earlier FX block retains a 16.6% matched reduction but raises loss by 3.2% against the original primary's rolling reference, so that primary's gain direction does not recur (Table ).",
+      "words": 29,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 14,
+      "text": "Across 12 additional weekly series, expanding the ridge menu reduces median excess loss from 92.6% to 9.2%, yet 34 of 48 cells still lose to historical headroom (Figure ).",
+      "words": 28,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 15,
+      "text": "Shrinkage mitigates losses, but short-sample weekly validation selection, including a conservative one-SE rule, does not stably protect the historical benchmark: R2's earlier-period worst excess is +181.4% (Section 7).",
+      "words": 29,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 16,
+      "text": "Score improvement also separates from risk control: the original FX primary lowers loss by 12.7% while breaches rise from 332 to 376; the 1.83% 24-step legacy gain reverses above an underprediction/overprediction weight ratio of 20.6, and both primary Murphy curves cross (Table ; Appendix ).",
+      "words": 44,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 17,
+      "text": "Inventory-limit comparisons therefore require underprediction amounts, overprediction amounts and breach counts alongside pinball loss.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 18,
+      "text": "The comparison is retrospective, and Section describes its information, statistical and decision limits.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 12
+      }
+    },
+    {
+      "id": 19,
+      "text": "The paper proceeds from related work through the target, methods and evaluation to results, robustness and implications.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 12
+      }
+    },
+    {
+      "id": 20,
+      "text": "Inventory research provides the economic motivation for position monitoring.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 15
+      }
+    },
+    {
+      "id": 21,
+      "text": "model dealer quotes under inventory uncertainty, and studies inventory and information in FX trading.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 15
+      }
+    },
+    {
+      "id": 22,
+      "text": "connects Treasury-market functioning to dealer capacity.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 15
+      }
+    },
+    {
+      "id": 23,
+      "text": "Our observed net-position series supplies an input to this motivation, while the forecasting exercise evaluates passive reports.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 15
+      }
+    },
+    {
+      "id": 24,
+      "text": "Financial path extrema and liquidity buffers provide the closest target precedents.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 17
+      }
+    },
+    {
+      "id": 25,
+      "text": "MaxVaR measures the worst intermediate portfolio-value loss .",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 17
+      }
+    },
+    {
+      "id": 26,
+      "text": "studies the maximum end-of-day net debit across payment-system participants, and models a one-sided maximum cumulative payment deficit.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 17
+      }
+    },
+    {
+      "id": 27,
+      "text": "forecasts a payment-demand/resource ratio.",
+      "words": 5,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 17
+      }
+    },
+    {
+      "id": 28,
+      "text": "Table distinguishes these targets from the absolute peak of a single recorded position series.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 17
+      }
+    },
+    {
+      "id": 29,
+      "text": "Conditional quantile forecasting and its evaluation use mature tools.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 30,
+      "text": "Regression quantiles minimize asymmetric absolute loss ; CAViaR models time-varying conditional quantiles .",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 31,
+      "text": "Volatility-updated historical simulation is an established alternative for financial scenario construction .",
+      "words": 11,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 32,
+      "text": "already applies conditional methods and lag/calendar predictors to endpoint intervals in the FX source family.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 33,
+      "text": "formalizes consistent quantile scores, and represents their comparison through elementary scores.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 34,
+      "text": "We use these established ideas for a common peak response.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 35,
+      "text": "Relative to these studies, three findings concern a common two-sided absolute sampled peak rather than a signed endpoint, directional payment deficit or portfolio-value loss.",
+      "words": 24,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 36,
+      "text": "With history lengths and update schedules matched, FX regression lowers loss by 14.8%, whereas Treasury regression raises it by 50.8% (Tables — ); the original FX primary's gain direction does not recur in the earlier block (Table ).",
+      "words": 35,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 37,
+      "text": "Stronger shrinkage reduces the additional weekly panel's median excess from 92.6% to 9.2%, but 34 of 48 cells still lose (Figure ); short-sample one-SE selection still reaches +181.4% excess loss (Section 7).",
+      "words": 31,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 38,
+      "text": "Finally, the original FX primary's 12.7% score gain accompanies 376 versus 332 breaches, the 1.83% 24-step legacy gain reverses above weight ratio 20.6, and both primary Murphy curves cross (Table ; Appendix ).",
+      "words": 31,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 39,
+      "text": "These are empirical applications of established forecasting and scoring ideas, with error amounts and breach counts qualifying the inventory-monitoring interpretation.",
+      "words": 20,
+      "terms": [
+        "establish",
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 40,
+      "text": "The FX record contains hourly client-flow net positions for one market maker across five liquid currency pairs, as described by .",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 41,
+      "text": "We use the hourly member of the Net Position Time Series Dataset, version two .",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 42,
+      "text": "It contains 18,576 observations.",
+      "words": 4,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 43,
+      "text": "Adjacent observations are usually an hour apart, with weekend-sized gaps retained in their recorded order.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 44,
+      "text": "The signed scalar is denominated in source-reported USD.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 45,
+      "text": "It belongs to the source family of ; exact equality with their input file remains unverified.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 26
+      }
+    },
+    {
+      "id": 46,
+      "text": "The Treasury input is New York Fed Primary Dealer Statistics series PDPOSGS-B, the aggregate Treasury-bill long position less the short position .",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 28
+      }
+    },
+    {
+      "id": 47,
+      "text": "The weekly Wednesday-close series contains 706 observations, denominated in USD millions.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 28
+      }
+    },
+    {
+      "id": 48,
+      "text": "FR 2004A instructions describe market/fair-value positions on a trade-date basis, including eligible forward and when-issued outright positions, with specified settlement-date treatment for buybacks .",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 28
+      }
+    },
+    {
+      "id": 49,
+      "text": "Table gives the chronological splits in calendar dates.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 28
+      }
+    },
+    {
+      "id": 50,
+      "text": "The target includes the known issue position.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 32
+      }
+    },
+    {
+      "id": 51,
+      "text": "Let N t be the signed recorded position and let H count subsequent source records.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 32
+      }
+    },
+    {
+      "id": 52,
+      "text": "Define Figure illustrates why endpoint information can miss an intervening peak.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 32
+      }
+    },
+    {
+      "id": 53,
+      "text": "For example, two future magnitudes can each take values zero or one with equal probability.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 36
+      }
+    },
+    {
+      "id": 54,
+      "text": "Perfect positive dependence gives maximum one with probability one half; perfect negative dependence gives maximum one with probability one.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 36
+      }
+    },
+    {
+      "id": 55,
+      "text": "The identical marginal distributions thus permit different peak distributions.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 36
+      }
+    },
+    {
+      "id": 56,
+      "text": "The information set enforces label completion before fitting.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 43
+      }
+    },
+    {
+      "id": 57,
+      "text": "Write (t) for the latest scheduled refit and W for the number of completed training origins.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 43
+      }
+    },
+    {
+      "id": 58,
+      "text": "At segment start t 0 and refit interval d , Every training response ends by (t) .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 43
+      }
+    },
+    {
+      "id": 59,
+      "text": "Fitted transforms and coefficients stay fixed between refits, while current query predictors and B t update at issue.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 48
+      }
+    },
+    {
+      "id": 60,
+      "text": "Earlier evaluation outcomes enter training only after completion.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 48
+      }
+    },
+    {
+      "id": 61,
+      "text": "Validation and evaluation restart their schedules at their respective segment starts.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 48
+      }
+    },
+    {
+      "id": 62,
+      "text": "The historical rules differ in how they anchor completed episodes to the current issue.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 63,
+      "text": "For each episode i , let i= h(N i+h -N i) and u i= h(N i+h -N i) , including h=0 .",
+      "words": 24,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 64,
+      "text": "At query x=N t , its raw translated peak is T i(x)= \\ x+u i,-x- i\\ .",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 65,
+      "text": "For a selected set A of size m , denotes its duplicate-preserving order statistic at j= (m+1) , with =.95 .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 66,
+      "text": "The three reports are Rolling controls use the most recent completed episodes at every issue.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 54
+      }
+    },
+    {
+      "id": 67,
+      "text": "Frozen controls use A= ,H,W , matching the conditional fitting pool and update schedule.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 68,
+      "text": "The query anchor still updates in a frozen control.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 69,
+      "text": "Appendix gives the finite-array relationships among these constructions.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 60
+      }
+    },
+    {
+      "id": 70,
+      "text": "The original specification contains 33 predictors: the current signed level and preceding lagged levels, current magnitude, two past increment RMS measures, recorded hour and weekday sine/cosine pairs, and a gap indicator.",
+      "words": 32,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 63
+      }
+    },
+    {
+      "id": 71,
+      "text": "The level sequence spans lags zero through 24.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 63
+      }
+    },
+    {
+      "id": 72,
+      "text": "RMS uses short and long past-only spans, defined by The spans are daily and weekly record counts in FX, and six and 26 records in Treasury.",
+      "words": 26,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 63
+      }
+    },
+    {
+      "id": 73,
+      "text": "All transforms use completed training rows.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 67
+      }
+    },
+    {
+      "id": 74,
+      "text": "With training mean j and population standard deviation j , An exactly constant predictor is centered at its repeated value and assigned scale one.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 67
+      }
+    },
+    {
+      "id": 75,
+      "text": "Treasury's calendar and gap coordinates are constant under its weekly sampling.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 72
+      }
+    },
+    {
+      "id": 76,
+      "text": "Matching label histories permits different past-only predictor lookbacks; the longer FX RMS reaches before the oldest training origin.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 72
+      }
+    },
+    {
+      "id": 77,
+      "text": "Ridge quantile regression fits normalized headroom with an unpenalized intercept.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 75
+      }
+    },
+    {
+      "id": 78,
+      "text": "For (e)= (e) ++(1- )(-e) + , it solves and issues C t QR =B t+ \\ 0,s ( 0+z t, T )\\ .",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 75
+      }
+    },
+    {
+      "id": 79,
+      "text": "The original penalty menu is \\ .001,.01,.1\\ .",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 79
+      }
+    },
+    {
+      "id": 80,
+      "text": "Projection acts on issued reports; the training objective uses the affine headroom prediction.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 79
+      }
+    },
+    {
+      "id": 81,
+      "text": "Appendix derives the equivalent peak parameterization and its shifted penalty.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 79
+      }
+    },
+    {
+      "id": 82,
+      "text": "As , penalized slopes vanish and the unpenalized intercept approaches the set of empirical headroom-quantile minimizers.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 81
+      }
+    },
+    {
+      "id": 83,
+      "text": "Write I t=B t+G ( W ) for its lower-endpoint reference on the frozen pool.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 81
+      }
+    },
+    {
+      "id": 84,
+      "text": "If W is integral, the entire interval between the adjacent order statistics minimizes the intercept-only objective.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 81
+      }
+    },
+    {
+      "id": 85,
+      "text": "Thus I is the unique empirical quantile at the shorter Treasury history, while the longer Treasury and both FX histories admit an interval with endpoints I and corrected-rank F (possibly coincident).",
+      "words": 31,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 81
+      }
+    },
+    {
+      "id": 86,
+      "text": "The two rank conventions need not issue the same report.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 81
+      }
+    },
+    {
+      "id": 87,
+      "text": "Nearest-neighbour quantiles select standardized predictor rows by a group-balanced Euclidean distance and resolve equal distances by recency.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 88,
+      "text": "Before computing distance, each of the lagged-level coordinates is divided by five; each coordinate in the RMS, hour and weekday pairs is divided by 2 .",
+      "words": 25,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 89,
+      "text": "Magnitude and gap retain their standardized scales.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 90,
+      "text": "Plain KNN applies the corrected order statistic to selected headrooms.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 91,
+      "text": "Scaled KNN first divides each selected headroom by a short-run RMS scale and multiplies the resulting quantile by the current scale.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 92,
+      "text": "The RMS floor is 10 -6 s .",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 93,
+      "text": "The supplement records the fixed neighbourhood menus for each source and history.",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 94,
+      "text": "At k=W , plain KNN equals frozen F because membership is the full pool.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 83
+      }
+    },
+    {
+      "id": 95,
+      "text": "Validation selects the lowest native-unit mean pinball loss and resolves an exact parameter tie toward the larger candidate.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 85
+      }
+    },
+    {
+      "id": 96,
+      "text": "Every declared candidate must complete for the cell to be eligible.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 85
+      }
+    },
+    {
+      "id": 97,
+      "text": "The full validation and evaluation inventories retain all numerical failures and adverse outcomes.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 85
+      }
+    },
+    {
+      "id": 98,
+      "text": "Appendix gives the reproduction route and numerical acceptance scope.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 85
+      }
+    },
+    {
+      "id": 99,
+      "text": "The two source-specific main comparisons were declared before their conditional evaluation runs.",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 100,
+      "text": "We call these pre-specified main comparisons the primaries: FX regression at the long history versus the original rolling short-history F , and Treasury regression versus its own long-history frozen F .",
+      "words": 29,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 101,
+      "text": "Their horizons are both six records.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 102,
+      "text": "The longer-horizon FX comparison against the original rolling S is a legacy-reference sensitivity.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 103,
+      "text": "The original designs, menus and selected parameters are publicly recorded in the protocol archive .",
+      "words": 14,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 104,
+      "text": "The FX evaluation archive had already been inspected before specifying the conditional extension.",
+      "words": 13,
+      "terms": [
+        "inspected",
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 105,
+      "text": "AR replay, rank and loss-weight diagnostics, statistical inference and the regression specification analysis are later exploratory additions.",
+      "words": 17,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 106,
+      "text": "Mean score and breach frequency answer complementary questions.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 90
+      }
+    },
+    {
+      "id": 107,
+      "text": "For report C t , define A strict breach is P t,H >C t ; equality is a nonbreach.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 90
+      }
+    },
+    {
+      "id": 108,
+      "text": "Both error amounts average over all issues.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 94
+      }
+    },
+    {
+      "id": 109,
+      "text": "Mean headroom C t-B t measures a different quantity from V .",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 94
+      }
+    },
+    {
+      "id": 110,
+      "text": "All scores use the original source units, and each percentage comparison uses its own reference mean.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 94
+      }
+    },
+    {
+      "id": 111,
+      "text": "Paired loss differentials support descriptive unconditional predictive-ability comparisons.",
+      "words": 8,
+      "terms": [
+        "descriptive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 112,
+      "text": "For d t=L t A-L t B , we report d/ /M using Bartlett Newey—West HAC .",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 113,
+      "text": "The bandwidth is L= \\ H, 4(M/100) 2/9 \\ .",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 114,
+      "text": "In the original evaluation cells it is ten lags for short-horizon FX and equals the horizon in the other cells.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 115,
+      "text": "For those original comparisons, we also report twice-bandwidth sensitivity and the Harvey—Leybourne—Newbold correction .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 116,
+      "text": "That correction originates in mean-squared-error comparisons; its use with pinball loss is approximate.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 117,
+      "text": "The fixed-window interpretation follows unconditional predictive ability in .",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 118,
+      "text": "Serial regularity and a suitable finite long-run variance remain assumptions of these reference distributions.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 119,
+      "text": "We report the two previously declared source-specific primaries with unadjusted HAC p-values and a Bonferroni sensitivity across those two comparisons.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 120,
+      "text": "'s step-down procedure covers the remaining 71 original matched conditional-versus-frozen- F/S/K contrasts.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 121,
+      "text": "Tables — identify the Treasury primary and otherwise display the applicable adjusted own- F comparisons; historical S/K contrasts and the FX cross-window primary lie outside that matched family.",
+      "words": 28,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 122,
+      "text": "This primary-versus-supplementary reporting division was chosen after inspecting results, and the former 72-member adjustment remains in the archive.",
+      "words": 18,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 123,
+      "text": "Together with the selection and inspection history, this makes the p-values exploratory evidence rather than confirmatory control for the entire research process.",
+      "words": 22,
+      "terms": [
+        "exploratory",
+        "rather than"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 124,
+      "text": "Coverage diagnostics use the single grid t 0+j(H+1) , anchored once at evaluation start.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 125,
+      "text": "The retained target windows share no recorded observations.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 126,
+      "text": "Training histories and wider serial dependence can still overlap.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 127,
+      "text": "We report full-grid Kupiec proportion-of-failures tests , plus Christoffersen independence and conditional-coverage likelihood ratios conditional on the first retained hit .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 128,
+      "text": "The latter uses the subsequent hits consistently in both its null and alternative likelihoods.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 129,
+      "text": "Treasury's two grids contain only 40 and 12 observations, so asymptotic reference p-values have limited precision and power.",
+      "words": 18,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 130,
+      "text": "The exact nominal-exceedance null also differs from an upper-bound null when the peak distribution has an atom at its known floor.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 100
+      }
+    },
+    {
+      "id": 131,
+      "text": "Long-history regression improves the six-step FX score.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 132,
+      "text": "Its primary reduction is 12.7% against rolling F , with a HAC statistic of approximately -5.2 .",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 133,
+      "text": "Against its own frozen F , the reduction is 14.8%.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 134,
+      "text": "The matched statistic is approximately -5.9 .",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 135,
+      "text": "Table gives the complete original conditional menu and the historical controls.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 136,
+      "text": "The long-history gain coexists with more breaches, a distinction developed below.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 104
+      }
+    },
+    {
+      "id": 137,
+      "text": "Short-history regression has a much weaker six-step result.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 138,
+      "text": "Its matched score reduction is 2.12%, with an unadjusted p-value of 0.54.",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 139,
+      "text": "At the longer horizon, the same short-history procedure increases mean loss by 31.5%.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 140,
+      "text": "The wider menu still selects =0.01 and leaves that cell's reports unchanged: menu expansion does not repair this adverse case.",
+      "words": 20,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 141,
+      "text": "Extending history improves the regression comparison, whereas extending frozen F slightly raises its short-horizon loss.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 142,
+      "text": "This contrast motivates the ordered specification analysis.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 143,
+      "text": "The longer-horizon legacy gain is small and statistically imprecise.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 110
+      }
+    },
+    {
+      "id": 144,
+      "text": "Regression improves mean loss by 1.83% against the original rolling S , with an unadjusted p-value of 0.84.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 110
+      }
+    },
+    {
+      "id": 145,
+      "text": "The six-step primary gain has the same direction in each issue year, while the longer-horizon gain is concentrated in the partial 2017 tail.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 110
+      }
+    },
+    {
+      "id": 146,
+      "text": "The original Treasury regression is less accurate than matched historical headroom.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 147,
+      "text": "Its main score increases by 50.8%.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 148,
+      "text": "Strict breaches rise from 28 to 54.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 149,
+      "text": "Its primary HAC p-value is 0.008 (0.015 with the two-primary Bonferroni sensitivity).",
+      "words": 12,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 150,
+      "text": "All original Treasury regression and Scaled KNN cells lose to their own frozen F controls.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 151,
+      "text": "Each accepted fit passed the numerical conditions, so these losses are forecasting outcomes.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 114
+      }
+    },
+    {
+      "id": 152,
+      "text": "Plain KNN at the short Treasury history reproduces F .",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 118
+      }
+    },
+    {
+      "id": 153,
+      "text": "Validation selects the entire eligible pool at both horizons.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 118
+      }
+    },
+    {
+      "id": 154,
+      "text": "Its longer-history, longer-horizon score gain reverses on the twelve-point grid: full-sample improvement becomes sparse-grid deterioration.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 118
+      }
+    },
+    {
+      "id": 155,
+      "text": "Both reports have two strict breaches on that grid.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 118
+      }
+    },
+    {
+      "id": 156,
+      "text": "Coverage diagnostics reinforce the original Treasury regression's adverse breach record.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 120
+      }
+    },
+    {
+      "id": 157,
+      "text": "Table gives the nonoverlapping-grid results beside the FX comparison.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 120
+      }
+    },
+    {
+      "id": 158,
+      "text": "A failure to reject for the historical reference has limited evidential strength in this small grid.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 120
+      }
+    },
+    {
+      "id": 159,
+      "text": "Section shows how expanding the penalty menu changes the original regression result; the comparisons here retain the original procedure.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 120
+      }
+    },
+    {
+      "id": 160,
+      "text": "The exploratory sequence asks which procedural changes accompany the score differences.",
+      "words": 11,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 126
+      }
+    },
+    {
+      "id": 161,
+      "text": "We start from rolling F , freeze the update schedule, extend the completed-label history, change to a four-predictor regression, and then change to the original full predictor set.",
+      "words": 27,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 126
+      }
+    },
+    {
+      "id": 162,
+      "text": "The parsimonious regression retains current signed position, current magnitude and the two past RMS measures.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 126
+      }
+    },
+    {
+      "id": 163,
+      "text": "Figure displays successive differences in loss units normalized by a common starting reference; its increments therefore sum to the total.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 126
+      }
+    },
+    {
+      "id": 164,
+      "text": "The original sequence combines two changes at its last step.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 165,
+      "text": "The four-predictor fit used the extended penalty menu \\ .001,.01,.1,1,10\\ , while the published full specification used the smaller original menu.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 166,
+      "text": "Every Treasury parsimonious cell selected the strongest available penalty.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 167,
+      "text": "E3 therefore fits the full specification using the same extended menu and preserves the original splits, refit schedule, tie rule and numerical conditions.",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 168,
+      "text": "It is a post-result comparison and leaves both published primaries in place.",
+      "words": 12,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 169,
+      "text": "A wider penalty menu largely removes the original Treasury deterioration.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 170,
+      "text": "At the main setting, the full regression's excess loss relative to F falls from 50.8% to 3.43%, and its selected penalty changes from 0.001 to 1 .",
+      "words": 26,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 171,
+      "text": "Under the common menu, the full predictor procedure has 1.24% higher loss than the parsimonious procedure (HAC p-value 0.685).",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 172,
+      "text": "The small observed difference does not establish equivalence.",
+      "words": 8,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 173,
+      "text": "The FX gain persists under the wider menu: every selection and issued report agrees with the original full specification.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 174,
+      "text": "At the long history, changing from the parsimonious to the full predictor procedure reduces loss by 10.9% (E3-adjusted HAC p-value <.001 ).",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 175,
+      "text": "This comparison concerns jointly selected tuning procedures and does not isolate the effect of an individual predictor.",
+      "words": 17,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 176,
+      "text": "Table retains the update, history, predictor-set and menu steps.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 177,
+      "text": "The intercept-only reference helps locate the remaining Treasury differences.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 178,
+      "text": "In the displayed Treasury order, I changes loss by -2.0 %, +3.2 %, +6.2 %, +2.4 % relative to F .",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 179,
+      "text": "The expanded full regression selects the menu's upper endpoint in 3 of 4 Treasury cells.",
+      "words": 15,
+      "terms": [],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 180,
+      "text": "At the main Treasury setting, expanded QR has 32 strict breaches, compared with 28 for F and 54 for original QR.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 181,
+      "text": "Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.",
+      "words": 13,
+      "terms": [
+        "without"
+      ],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 182,
+      "text": "An additional panel reuses 12 previously archived New York Fed position series on the same economic-date grid, with all 48 horizon—history cells retained (Figure ).",
+      "words": 25,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 183,
+      "text": "Expanding the full regression's menu reduces the median excess loss relative to F from +92.6% to +9.2%, but it still loses in 34 cells, compared with 45 originally.",
+      "words": 28,
+      "terms": [],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 184,
+      "text": "The committed pre-run predictions yield P1: 30/45 against a threshold of 40; P2: 24/48 against a threshold of 36; P3: 33/48 against a threshold of 25.",
+      "words": 29,
+      "terms": [],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 185,
+      "text": "P1 and P2 are unsupported; P3 is supported.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 186,
+      "text": "Shrinkage therefore mitigates rather than eliminates the observed weakness.",
+      "words": 9,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 187,
+      "text": "The design followed inspection of the original panel results, and the series share a reporting system and overlapping dealer positions; this is an exploratory extension, not independent replication.",
+      "words": 28,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 188,
+      "text": "AR residual-block replay shows that family choice matters.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 147
+      }
+    },
+    {
+      "id": 189,
+      "text": "At each original refit, OLS estimates an intercept and slope on unique transitions from the union of completed windows.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 147
+      }
+    },
+    {
+      "id": 190,
+      "text": "Ordered residuals are replayed from the current anchor; Appendix gives the exact path identity.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 147
+      }
+    },
+    {
+      "id": 191,
+      "text": "Against matched F and S , AR lowers mean loss in 5/8 and 5/8 cells, respectively.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "generated/ar-comparison-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 192,
+      "text": "Breaches rise relative to S in 8/8 cells and relative to F in 5/8.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "generated/ar-comparison-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 193,
+      "text": "At the main Treasury setting, AR lowers loss by 20.4% against F and 18.9% against S , with 31 breaches versus 28 for F .",
+      "words": 23,
+      "terms": [],
+      "location": {
+        "file": "generated/ar-comparison-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 194,
+      "text": "Relative to original QR, AR has lower loss in all 4 Treasury cells; relative to expanded QR33+, it does so in 3/4, including a 23.0% reduction in the main Treasury cell.",
+      "words": 33,
+      "terms": [],
+      "location": {
+        "file": "generated/ar-comparison-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 195,
+      "text": "This mean-filtered procedure relies on a separate residual-representativeness assumption.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 147
+      }
+    },
+    {
+      "id": 196,
+      "text": "Rank sensitivity changes the finite-sample convention.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 149
+      }
+    },
+    {
+      "id": 197,
+      "text": "The original historical rank is (m+1) ; ordinary empirical quantiles use m , with an interval of minimizers at integral m .",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 149
+      }
+    },
+    {
+      "id": 198,
+      "text": "The short Treasury full-pool case has distinct ranks under those rules.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 149
+      }
+    },
+    {
+      "id": 199,
+      "text": "The rank-ablation supplement retains all contrasts, including reversals, and the full-pool KNN identity persists whenever both reports share their rank convention.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 149
+      }
+    },
+    {
+      "id": 200,
+      "text": "Results concern the issued reports under the stated convention.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 149
+      }
+    },
+    {
+      "id": 201,
+      "text": "Loss reweighting distinguishes a robust linear gain from a narrow tradeoff.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 202,
+      "text": "For each fixed issued report, write J = U+V , so the original quantile score corresponds to =19 up to a positive factor.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 203,
+      "text": "Table shows that the short-horizon FX primary reduces both components.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 204,
+      "text": "Its breach count nevertheless increases from 332 to 376.",
+      "words": 9,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 205,
+      "text": "The longer-horizon legacy gain instead exchanges higher underprediction for lower overprediction, and reverses above a weight ratio of 20.6.",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 206,
+      "text": "These statements concern constant linear weights on the archived reports.",
+      "words": 10,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 207,
+      "text": "The elementary-score comparisons in Appendix cross for both primaries, ruling out empirical dominance over the full class of consistent quantile scores.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 208,
+      "text": "Horizon diagnostics show that realized peaks and fitted reports have different ordering properties.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 209,
+      "text": "Realized peaks increase weakly with horizon on every common issue.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 210,
+      "text": "Separately fitted quantile reports can cross; the original long-history Treasury regression crosses on about 29% of issues.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 211,
+      "text": "A post-result adjustment that raises a longer report can also worsen its score, as the appendix illustrates.",
+      "words": 17,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 212,
+      "text": "Table summarizes these checks while the complete archived menus remain available in the supplement.",
+      "words": 14,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 213,
+      "text": "Conservative selection on an earlier period.",
+      "words": 6,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 214,
+      "text": "Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates and ordinary empirical I , choose the candidate with greatest shrinkage whose validation loss excess over the empirical best is within one paired-loss Newey—West standard error.",
+      "words": 43,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 215,
+      "text": "This adapts the parsimonious one-SE preference of ; it is neither their standard CV formula nor a guarantee relative to corrected-rank F .",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 216,
+      "text": "Each weekly cell has 52 evaluation origins.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 217,
+      "text": "R2 selects I in 17/26 cells, yet weekly loss changes have median +5.4% and worst +181.4%, against R0's median +4.2%.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 218,
+      "text": "The single T-bill H=24 cell attains the worst statistic; the median also exceeds its fixed 5.0% limit, while 5 cells exceed the 25.0% protection limit.",
+      "words": 26,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 219,
+      "text": "S1 and S3 therefore fail.",
+      "words": 5,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 220,
+      "text": "The FX six-step long-window change is -6.3%, versus R0's -16.6%, missing S2's half-gain criterion.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 221,
+      "text": "R3 adds purged chronological validation folds and retains 2 failed FX cells in the complete archive.",
+      "words": 16,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 222,
+      "text": "Original-period R1—R3 results are labelled inspected development results.",
+      "words": 9,
+      "terms": [
+        "inspected"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 223,
+      "text": "All earlier evaluation labels finish before the original validation starts.",
+      "words": 10,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 224,
+      "text": "A bounded repository audit found no prior evaluation role for these earlier origins; the raw history was familiar, the rules followed earlier inspected results, and this is not prospective or external validation.",
+      "words": 32,
+      "terms": [
+        "inspected",
+        "audit"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 225,
+      "text": "Retuning the original three-penalty QR structure on the earlier validation segment also qualifies replication (Table ).",
+      "words": 15,
+      "terms": [
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 226,
+      "text": "The 2015 FX block contains 1,440 origins, about 12 calendar weeks.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 227,
+      "text": "The same QR reports lower loss by 16.6% against matched frozen F 2880 (descriptive HAC p=2.94 × 10 -5 ), but raise it by 3.2% against the original primary's rolling F 720 ( p=0.574 ).",
+      "words": 33,
+      "terms": [
+        "descriptive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 228,
+      "text": "The original gain's direction does not recur; the latter difference is statistically imprecise.",
+      "words": 13,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 229,
+      "text": "These later, unadjusted two-sided normal readbacks use L=7 under Section 5's bandwidth rule and do not control error across the selection and inspection process.",
+      "words": 26,
+      "terms": [
+        "readback",
+        "do not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 230,
+      "text": "Treasury bill loss rises by 144.3% in the W=52 analogue, retaining the weekly loss direction on 52 origins.",
+      "words": 19,
+      "terms": [
+        "analogue"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 231,
+      "text": "Insufficient earlier history prevents exact replication of the original W=260 primary; the analogue does not replace it.",
+      "words": 18,
+      "terms": [
+        "analogue",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 232,
+      "text": "No pooled test treats related series as independent.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 233,
+      "text": "Keep a historical benchmark.",
+      "words": 4,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 171
+      }
+    },
+    {
+      "id": 234,
+      "text": "Historical headroom is a demanding reference for these sampled position peaks.",
+      "words": 11,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 171
+      }
+    },
+    {
+      "id": 235,
+      "text": "The weekly results show why a conditional method should be compared with a historical rule on the same completed labels and update schedule before it is used for monitoring.",
+      "words": 29,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 171
+      }
+    },
+    {
+      "id": 236,
+      "text": "Default to conservative historical reports in short samples.",
+      "words": 8,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 237,
+      "text": "R6 shows that adding ordinary intercept-only I to the menu and applying one-SE selection still permits large weekly losses: R2 selects I in 17/26 cells, yet its worst excess over F is +181.4%.",
+      "words": 34,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 238,
+      "text": "For short samples of this kind, use the historical rule by default and switch to a conditional model only when validation evidence is sufficiently strong; this study establishes no such sufficiency threshold.",
+      "words": 32,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 239,
+      "text": "Prefer conservative corrected-rank F at short windows: earlier-period I itself loses by as much as +36.5% relative to F .",
+      "words": 19,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 240,
+      "text": "An intercept-only option and a larger penalty do not establish evaluation protection.",
+      "words": 12,
+      "terms": [
+        "establish",
+        "do not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 241,
+      "text": "Report error amounts and breach occasions together.",
+      "words": 7,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 175
+      }
+    },
+    {
+      "id": 242,
+      "text": "Mean underprediction and overprediction describe the size of opposite forecast errors, whereas strict breaches count their occurrence.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 175
+      }
+    },
+    {
+      "id": 243,
+      "text": "A monitoring report should display all three alongside the stipulated score, since a lower score alone does not establish fewer limit exceedances or lower observed funding cost.",
+      "words": 27,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 175
+      }
+    },
+    {
+      "id": 244,
+      "text": "Inspection and inference.",
+      "words": 3,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 245,
+      "text": "The FX evaluation period had been inspected before the conditional methods were specified, so it is not a clean untouched test.",
+      "words": 21,
+      "terms": [
+        "inspected"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 246,
+      "text": "Later statistical inference and the specification sequence describe that same archive.",
+      "words": 11,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 247,
+      "text": "HAC regularity, fixed-window predictive-ability premises and the effective sample information behind overlapping labels require care; a nonoverlap grid does not make the observations independent.",
+      "words": 24,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 248,
+      "text": "Measurement and information timing.",
+      "words": 4,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 180
+      }
+    },
+    {
+      "id": 249,
+      "text": "Treasury is a downloaded-vintage replay indexed by economic date, not a reconstruction of historical public releases.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 180
+      }
+    },
+    {
+      "id": 250,
+      "text": "The aggregate can hide offsetting dealer positions and includes valuation and composition effects.",
+      "words": 13,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 180
+      }
+    },
+    {
+      "id": 251,
+      "text": "Both sources sample a position process and omit intrarecord excursions; the FX client-flow record is not a complete hedged dealer book.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 180
+      }
+    },
+    {
+      "id": 252,
+      "text": "Coverage and specification.",
+      "words": 3,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 253,
+      "text": "These procedures have no established conditional-coverage guarantee for these records.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 254,
+      "text": "Floor atoms distinguish an exact nominal-exceedance null from the upper-bound implication of a quantile, while Treasury's sparse grids make likelihood-ratio approximations fragile.",
+      "words": 22,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 255,
+      "text": "Stronger Treasury shrinkage brings scores closer to the intercept-only reference while leaving more breaches than F in each original Treasury cell.",
+      "words": 21,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 256,
+      "text": "The additional panel retains substantial adverse cells, and the short-history longer-horizon FX failure survives menu expansion.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 257,
+      "text": "Matching the menu removes one specification difference without identifying a universal or causal value of extra predictors.",
+      "words": 17,
+      "terms": [
+        "without"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 258,
+      "text": "Decision value.",
+      "words": 2,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 259,
+      "text": "We have no observations of the trading, hedging, collateral or funding decisions needed to measure economic benefit.",
+      "words": 17,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 260,
+      "text": "A lower stipulated score therefore does not establish lower realized financing cost.",
+      "words": 12,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 261,
+      "text": "Active inventory-sensitive decisions would also alter the position process that a passive forecast observes.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 262,
+      "text": "The empirical object is a measured position magnitude; its connection to a particular inventory policy requires the corresponding decision setting.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 186
+      }
+    },
+    {
+      "id": 263,
+      "text": "Three findings qualify conditional forecasts of two-sided absolute holding-period peaks.",
+      "words": 10,
+      "terms": [
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 264,
+      "text": "History- and update-matched six-step regression lowers FX loss by 14.8% but raises Treasury loss by 50.8%.",
+      "words": 16,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 265,
+      "text": "In the earlier 2015 FX block with no prior evaluation role found in the repository audit, QR lowers loss by 16.6% against matched frozen F 2880 but raises it by 3.2% against the original primary's rolling F 720 , whose gain direction does not recur; the Treasury W=52 analogue raises loss by 144.3%.",
+      "words": 53,
+      "terms": [
+        "audit",
+        "analogue",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 266,
+      "text": "Expanded ridge menus reduce the 12-series weekly panel's median excess from 92.6% to 9.2%, but 34/48 cells still lose.",
+      "words": 20,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 267,
+      "text": "Shrinkage mitigates losses, yet short-sample weekly validation selection, including conservative one-SE selection, does not stably protect the historical benchmark.",
+      "words": 19,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 268,
+      "text": "Finally, the original FX primary's 12.7% score gain accompanies breaches rising from 332 to 376; the 1.83% 24-step legacy gain reverses above weight ratio 20.6, and both primary Murphy curves cross.",
+      "words": 31,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 269,
+      "text": "Inventory-limit selection therefore requires underprediction amounts, overprediction amounts and breach counts alongside pinball loss.",
+      "words": 14,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 270,
+      "text": "These retrospective comparisons apply established estimators to a sampled peak.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    },
+    {
+      "id": 271,
+      "text": "Prior FX inspection, downloaded-vintage Treasury aggregates, post-result menu expansion and shared panel reporting limit generalization.",
+      "words": 15,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    },
+    {
+      "id": 272,
+      "text": "They establish neither conditional-coverage guarantees nor benefits from actual inventory or funding decisions.",
+      "words": 13,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    }
+  ],
+  "flagged_detail": [
+    {
+      "id": 10,
+      "text": "The source-specific rankings motivate an exploratory sequence that separates update schedules, history lengths, predictor sets and penalty menus; the original comparisons remain the reference points.",
+      "words": 25,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 8
+      }
+    },
+    {
+      "id": 13,
+      "text": "The earlier FX block retains a 16.6% matched reduction but raises loss by 3.2% against the original primary's rolling reference, so that primary's gain direction does not recur (Table ).",
+      "words": 29,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 15,
+      "text": "Shrinkage mitigates losses, but short-sample weekly validation selection, including a conservative one-SE rule, does not stably protect the historical benchmark: R2's earlier-period worst excess is +181.4% (Section 7).",
+      "words": 29,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 31,
+      "text": "Volatility-updated historical simulation is an established alternative for financial scenario construction .",
+      "words": 11,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 34,
+      "text": "We use these established ideas for a common peak response.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 19
+      }
+    },
+    {
+      "id": 35,
+      "text": "Relative to these studies, three findings concern a common two-sided absolute sampled peak rather than a signed endpoint, directional payment deficit or portfolio-value loss.",
+      "words": 24,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 36,
+      "text": "With history lengths and update schedules matched, FX regression lowers loss by 14.8%, whereas Treasury regression raises it by 50.8% (Tables — ); the original FX primary's gain direction does not recur in the earlier block (Table ).",
+      "words": 35,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 39,
+      "text": "These are empirical applications of established forecasting and scoring ideas, with error amounts and breach counts qualifying the inventory-monitoring interpretation.",
+      "words": 20,
+      "terms": [
+        "establish",
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 23
+      }
+    },
+    {
+      "id": 103,
+      "text": "The original designs, menus and selected parameters are publicly recorded in the protocol archive .",
+      "words": 14,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 104,
+      "text": "The FX evaluation archive had already been inspected before specifying the conditional extension.",
+      "words": 13,
+      "terms": [
+        "inspected",
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 105,
+      "text": "AR replay, rank and loss-weight diagnostics, statistical inference and the regression specification analysis are later exploratory additions.",
+      "words": 17,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      }
+    },
+    {
+      "id": 111,
+      "text": "Paired loss differentials support descriptive unconditional predictive-ability comparisons.",
+      "words": 8,
+      "terms": [
+        "descriptive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 96
+      }
+    },
+    {
+      "id": 122,
+      "text": "This primary-versus-supplementary reporting division was chosen after inspecting results, and the former 72-member adjustment remains in the archive.",
+      "words": 18,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 123,
+      "text": "Together with the selection and inspection history, this makes the p-values exploratory evidence rather than confirmatory control for the entire research process.",
+      "words": 22,
+      "terms": [
+        "exploratory",
+        "rather than"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      }
+    },
+    {
+      "id": 140,
+      "text": "The wider menu still selects =0.01 and leaves that cell's reports unchanged: menu expansion does not repair this adverse case.",
+      "words": 20,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 108
+      }
+    },
+    {
+      "id": 160,
+      "text": "The exploratory sequence asks which procedural changes accompany the score differences.",
+      "words": 11,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 126
+      }
+    },
+    {
+      "id": 168,
+      "text": "It is a post-result comparison and leaves both published primaries in place.",
+      "words": 12,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      }
+    },
+    {
+      "id": 172,
+      "text": "The small observed difference does not establish equivalence.",
+      "words": 8,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 1
+      }
+    },
+    {
+      "id": 175,
+      "text": "This comparison concerns jointly selected tuning procedures and does not isolate the effect of an individual predictor.",
+      "words": 17,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 181,
+      "text": "Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.",
+      "words": 13,
+      "terms": [
+        "without"
+      ],
+      "location": {
+        "file": "generated/e6-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 182,
+      "text": "An additional panel reuses 12 previously archived New York Fed position series on the same economic-date grid, with all 48 horizon—history cells retained (Figure ).",
+      "words": 25,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 186,
+      "text": "Shrinkage therefore mitigates rather than eliminates the observed weakness.",
+      "words": 9,
+      "terms": [
+        "rather than"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 187,
+      "text": "The design followed inspection of the original panel results, and the series share a reporting system and overlapping dealer positions; this is an exploratory extension, not independent replication.",
+      "words": 28,
+      "terms": [
+        "exploratory"
+      ],
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      }
+    },
+    {
+      "id": 206,
+      "text": "These statements concern constant linear weights on the archived reports.",
+      "words": 10,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      }
+    },
+    {
+      "id": 211,
+      "text": "A post-result adjustment that raises a longer report can also worsen its score, as the appendix illustrates.",
+      "words": 17,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 212,
+      "text": "Table summarizes these checks while the complete archived menus remain available in the supplement.",
+      "words": 14,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      }
+    },
+    {
+      "id": 214,
+      "text": "Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates and ordinary empirical I , choose the candidate with greatest shrinkage whose validation loss excess over the empirical best is within one paired-loss Newey—West standard error.",
+      "words": 43,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 221,
+      "text": "R3 adds purged chronological validation folds and retains 2 failed FX cells in the complete archive.",
+      "words": 16,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 222,
+      "text": "Original-period R1—R3 results are labelled inspected development results.",
+      "words": 9,
+      "terms": [
+        "inspected"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 224,
+      "text": "A bounded repository audit found no prior evaluation role for these earlier origins; the raw history was familiar, the rules followed earlier inspected results, and this is not prospective or external validation.",
+      "words": 32,
+      "terms": [
+        "inspected",
+        "audit"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 225,
+      "text": "Retuning the original three-penalty QR structure on the earlier validation segment also qualifies replication (Table ).",
+      "words": 15,
+      "terms": [
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 227,
+      "text": "The same QR reports lower loss by 16.6% against matched frozen F 2880 (descriptive HAC p=2.94 × 10 -5 ), but raise it by 3.2% against the original primary's rolling F 720 ( p=0.574 ).",
+      "words": 33,
+      "terms": [
+        "descriptive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 228,
+      "text": "The original gain's direction does not recur; the latter difference is statistically imprecise.",
+      "words": 13,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 229,
+      "text": "These later, unadjusted two-sided normal readbacks use L=7 under Section 5's bandwidth rule and do not control error across the selection and inspection process.",
+      "words": 26,
+      "terms": [
+        "readback",
+        "do not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 230,
+      "text": "Treasury bill loss rises by 144.3% in the W=52 analogue, retaining the weekly loss direction on 52 origins.",
+      "words": 19,
+      "terms": [
+        "analogue"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 231,
+      "text": "Insufficient earlier history prevents exact replication of the original W=260 primary; the analogue does not replace it.",
+      "words": 18,
+      "terms": [
+        "analogue",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      }
+    },
+    {
+      "id": 238,
+      "text": "For short samples of this kind, use the historical rule by default and switch to a conditional model only when validation evidence is sufficiently strong; this study establishes no such sufficiency threshold.",
+      "words": 32,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 240,
+      "text": "An intercept-only option and a larger penalty do not establish evaluation protection.",
+      "words": 12,
+      "terms": [
+        "establish",
+        "do not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      }
+    },
+    {
+      "id": 243,
+      "text": "A monitoring report should display all three alongside the stipulated score, since a lower score alone does not establish fewer limit exceedances or lower observed funding cost.",
+      "words": 27,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 175
+      }
+    },
+    {
+      "id": 245,
+      "text": "The FX evaluation period had been inspected before the conditional methods were specified, so it is not a clean untouched test.",
+      "words": 21,
+      "terms": [
+        "inspected"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 246,
+      "text": "Later statistical inference and the specification sequence describe that same archive.",
+      "words": 11,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 247,
+      "text": "HAC regularity, fixed-window predictive-ability premises and the effective sample information behind overlapping labels require care; a nonoverlap grid does not make the observations independent.",
+      "words": 24,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      }
+    },
+    {
+      "id": 253,
+      "text": "These procedures have no established conditional-coverage guarantee for these records.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 257,
+      "text": "Matching the menu removes one specification difference without identifying a universal or causal value of extra predictors.",
+      "words": 17,
+      "terms": [
+        "without"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 182
+      }
+    },
+    {
+      "id": 260,
+      "text": "A lower stipulated score therefore does not establish lower realized financing cost.",
+      "words": 12,
+      "terms": [
+        "establish",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 184
+      }
+    },
+    {
+      "id": 263,
+      "text": "Three findings qualify conditional forecasts of two-sided absolute holding-period peaks.",
+      "words": 10,
+      "terms": [
+        "qualify"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 265,
+      "text": "In the earlier 2015 FX block with no prior evaluation role found in the repository audit, QR lowers loss by 16.6% against matched frozen F 2880 but raises it by 3.2% against the original primary's rolling F 720 , whose gain direction does not recur; the Treasury W=52 analogue raises loss by 144.3%.",
+      "words": 53,
+      "terms": [
+        "audit",
+        "analogue",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 267,
+      "text": "Shrinkage mitigates losses, yet short-sample weekly validation selection, including conservative one-SE selection, does not stably protect the historical benchmark.",
+      "words": 19,
+      "terms": [
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    },
+    {
+      "id": 270,
+      "text": "These retrospective comparisons apply established estimators to a sampled peak.",
+      "words": 10,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    },
+    {
+      "id": 271,
+      "text": "Prior FX inspection, downloaded-vintage Treasury aggregates, post-result menu expansion and shared panel reporting limit generalization.",
+      "words": 15,
+      "terms": [
+        "post-result"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    },
+    {
+      "id": 272,
+      "text": "They establish neither conditional-coverage guarantees nor benefits from actual inventory or funding decisions.",
+      "words": 13,
+      "terms": [
+        "establish"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 191
+      }
+    }
+  ],
+  "long_sentences": [
+    {
+      "id": 16,
+      "text": "Score improvement also separates from risk control: the original FX primary lowers loss by 12.7% while breaches rise from 332 to 376; the 1.83% 24-step legacy gain reverses above an underprediction/overprediction weight ratio of 20.6, and both primary Murphy curves cross (Table ; Appendix ).",
+      "words": 44,
+      "terms": [],
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      }
+    },
+    {
+      "id": 214,
+      "text": "Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates and ordinary empirical I , choose the candidate with greatest shrinkage whose validation loss excess over the empirical best is within one paired-loss Newey—West standard error.",
+      "words": 43,
+      "terms": [
+        "archive"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      }
+    },
+    {
+      "id": 265,
+      "text": "In the earlier 2015 FX block with no prior evaluation role found in the repository audit, QR lowers loss by 16.6% against matched frozen F 2880 but raises it by 3.2% against the original primary's rolling F 720 , whose gain direction does not recur; the Treasury W=52 analogue raises loss by 144.3%.",
+      "words": 53,
+      "terms": [
+        "audit",
+        "analogue",
+        "does not"
+      ],
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      }
+    }
+  ],
+  "forbidden_detail": [
+    {
+      "term": "audit",
+      "matched": "audit",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "ation labels finish before the original validation starts. A bounded repository audit found no prior evaluation role for these earlier origins; the raw history was familiar, the rules f"
+    },
+    {
+      "term": "audit",
+      "matched": "audit",
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      },
+      "context": "the earlier 2015 FX block with no prior evaluation role found in the repository audit, QR lowers loss by 16.6% against matched frozen F 2880 but raises it by 3.2% against the original p"
+    },
+    {
+      "term": "readback",
+      "matched": "readbacks",
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      },
+      "context": "difference is statistically imprecise. These later, unadjusted two-sided normal readbacks use L=7 under Section 5's bandwidth rule and do not control error across the selection and inspecti"
+    },
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      },
+      "context": "al designs, menus and selected parameters are publicly recorded in the protocol archive . The FX evaluation archive had already been inspected before specifying the conditional extension."
+    },
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "sections.tex",
+        "line": 88
+      },
+      "context": "ed parameters are publicly recorded in the protocol archive . The FX evaluation archive had already been inspected before specifying the conditional extension. AR replay, rank and loss-we"
+    },
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "sections.tex",
+        "line": 98
+      },
+      "context": "en after inspecting results, and the former 72-member adjustment remains in the archive. Together with the selection and inspection history, this makes the p-values exploratory evidence r"
+    },
+    {
+      "term": "archive",
+      "matched": "archived",
+      "location": {
+        "file": "generated/e5-summary.tex",
+        "line": 3
+      },
+      "context": "restoring the historical breach count. An additional panel reuses 12 previously archived New York Fed position series on the same economic-date grid, with all 48 horizon—history cells reta"
+    },
+    {
+      "term": "archive",
+      "matched": "archived",
+      "location": {
+        "file": "sections.tex",
+        "line": 151
+      },
+      "context": "a weight ratio of 20.6. These statements concern constant linear weights on the archived reports. The elementary-score comparisons in Appendix cross for both primaries, ruling out empirica"
+    },
+    {
+      "term": "archive",
+      "matched": "archived",
+      "location": {
+        "file": "sections.tex",
+        "line": 160
+      },
+      "context": ", as the appendix illustrates. Table summarizes these checks while the complete archived menus remain available in the supplement. Conservative selection on an earlier period. Before the R"
+    },
+    {
+      "term": "archive",
+      "matched": "archived",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "t. Conservative selection on an earlier period. Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates and ordinary empirical I , c"
+    },
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "ed chronological validation folds and retains 2 failed FX cells in the complete archive. Original-period R1—R3 results are labelled inspected development results. All earlier evaluation l"
+    },
+    {
+      "term": "archive",
+      "matched": "archive",
+      "location": {
+        "file": "sections.tex",
+        "line": 178
+      },
+      "context": ". Later statistical inference and the specification sequence describe that same archive. HAC regularity, fixed-window predictive-ability premises and the effective sample information behi"
+    },
+    {
+      "term": "analogue",
+      "matched": "analogue",
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      },
+      "context": "election and inspection process. Treasury bill loss rises by 144.3% in the W=52 analogue, retaining the weekly loss direction on 52 origins. Insufficient earlier history prevents exact rep"
+    },
+    {
+      "term": "analogue",
+      "matched": "analogue",
+      "location": {
+        "file": "sections.tex",
+        "line": 166
+      },
+      "context": "t earlier history prevents exact replication of the original W=260 primary; the analogue does not replace it. No pooled test treats related series as independent. Keep a historical benchma"
+    },
+    {
+      "term": "analogue",
+      "matched": "analogue",
+      "location": {
+        "file": "sections.tex",
+        "line": 189
+      },
+      "context": "rimary's rolling F 720 , whose gain direction does not recur; the Treasury W=52 analogue raises loss by 144.3%. Expanded ridge menus reduce the 12-series weekly panel's median excess from "
+    },
+    {
+      "term": "R0",
+      "matched": "R0",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "/26 cells, yet weekly loss changes have median +5.4% and worst +181.4%, against R0's median +4.2%. The single T-bill H=24 cell attains the worst statistic; the median also exceeds it"
+    },
+    {
+      "term": "R0",
+      "matched": "R0",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": ". S1 and S3 therefore fail. The FX six-step long-window change is -6.3%, versus R0's -16.6%, missing S2's half-gain criterion. R3 adds purged chronological validation folds and retai"
+    },
+    {
+      "term": "R1",
+      "matched": "R1",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "on folds and retains 2 failed FX cells in the complete archive. Original-period R1—R3 results are labelled inspected development results. All earlier evaluation labels finish before "
+    },
+    {
+      "term": "R2",
+      "matched": "R2",
+      "location": {
+        "file": "sections.tex",
+        "line": 10
+      },
+      "context": "g a conservative one-SE rule, does not stably protect the historical benchmark: R2's earlier-period worst excess is +181.4% (Section 7). Score improvement also separates from risk co"
+    },
+    {
+      "term": "R2",
+      "matched": "R2",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "n on an earlier period. Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates and ordinary empirical I , choose the candidat"
+    },
+    {
+      "term": "R2",
+      "matched": "R2",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "ntee relative to corrected-rank F . Each weekly cell has 52 evaluation origins. R2 selects I in 17/26 cells, yet weekly loss changes have median +5.4% and worst +181.4%, against R0's"
+    },
+    {
+      "term": "R2",
+      "matched": "R2",
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      },
+      "context": " I to the menu and applying one-SE selection still permits large weekly losses: R2 selects I in 17/26 cells, yet its worst excess over F is +181.4%. For short samples of this kind, u"
+    },
+    {
+      "term": "R3",
+      "matched": "R3",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "g-window change is -6.3%, versus R0's -16.6%, missing S2's half-gain criterion. R3 adds purged chronological validation folds and retains 2 failed FX cells in the complete archive. O"
+    },
+    {
+      "term": "R3",
+      "matched": "R3",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "folds and retains 2 failed FX cells in the complete archive. Original-period R1—R3 results are labelled inspected development results. All earlier evaluation labels finish before the"
+    },
+    {
+      "term": "S1",
+      "matched": "S1",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": " exceeds its fixed 5.0% limit, while 5 cells exceed the 25.0% protection limit. S1 and S3 therefore fail. The FX six-step long-window change is -6.3%, versus R0's -16.6%, missing S2'"
+    },
+    {
+      "term": "S2",
+      "matched": "S2",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": " fail. The FX six-step long-window change is -6.3%, versus R0's -16.6%, missing S2's half-gain criterion. R3 adds purged chronological validation folds and retains 2 failed FX cells "
+    },
+    {
+      "term": "S3",
+      "matched": "S3",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "s its fixed 5.0% limit, while 5 cells exceed the 25.0% protection limit. S1 and S3 therefore fail. The FX six-step long-window change is -6.3%, versus R0's -16.6%, missing S2's half-"
+    },
+    {
+      "term": "E3",
+      "matched": "E3",
+      "location": {
+        "file": "sections.tex",
+        "line": 128
+      },
+      "context": "enu. Every Treasury parsimonious cell selected the strongest available penalty. E3 therefore fits the full specification using the same extended menu and preserves the original split"
+    },
+    {
+      "term": "E3",
+      "matched": "E3",
+      "location": {
+        "file": "generated/e3-summary.tex",
+        "line": 3
+      },
+      "context": "ng from the parsimonious to the full predictor procedure reduces loss by 10.9% (E3-adjusted HAC p-value <.001 ). This comparison concerns jointly selected tuning procedures and does "
+    },
+    {
+      "term": "R6",
+      "matched": "R6",
+      "location": {
+        "file": "sections.tex",
+        "line": 164
+      },
+      "context": "able in the supplement. Conservative selection on an earlier period. Before the R6 calculations, the archived protocol fixed R2 as the main rule: among the expanded-menu candidates a"
+    },
+    {
+      "term": "R6",
+      "matched": "R6",
+      "location": {
+        "file": "sections.tex",
+        "line": 173
+      },
+      "context": "ed for monitoring. Default to conservative historical reports in short samples. R6 shows that adding ordinary intercept-only I to the menu and applying one-SE selection still permits"
+    }
+  ],
+  "main_caption_forbidden_detail": [
+    {
+      "caption": "main-caption-9",
+      "term": "E3",
+      "matched": "E3",
+      "location": {
+        "file": "sections.tex",
+        "line": 137
+      },
+      "context": "Ordered loss changes for the six-step comparisons. Each bar changes the preceding procedure; the common-baseline vertical scale makes the increments additive. The original full QR and the equal-menu E3 report are both retained. Corresponding paired HAC tests appear in Table . The increments depend on the chosen sequence and do not identify causal feature effects."
+    },
+    {
+      "caption": "main-caption-10",
+      "term": "archive",
+      "matched": "archived",
+      "location": {
+        "file": "sections.tex",
+        "line": 143
+      },
+      "context": "All archived panel cells, each comparing original and expanded full regression against its own F . The axis shows relative loss on a logarithmic ratio scale; zero is the historical reference. Row labels omit the common PDPOS prefix. Complete native-unit losses, selected penalties, I and breach counts are retained in the E5 table."
+    },
+    {
+      "caption": "main-caption-10",
+      "term": "E5",
+      "matched": "E5",
+      "location": {
+        "file": "sections.tex",
+        "line": 143
+      },
+      "context": "All archived panel cells, each comparing original and expanded full regression against its own F . The axis shows relative loss on a logarithmic ratio scale; zero is the historical reference. Row labels omit the common PDPOS prefix. Complete native-unit losses, selected penalties, I and breach counts are retained in the E5 table."
+    },
+    {
+      "caption": "main-caption-14",
+      "term": "readback",
+      "matched": "readbacks",
+      "location": {
+        "file": "generated/r6-primary-table.tex",
+        "line": 12
+      },
+      "context": "Earlier-period QR comparisons. is mean pinball relative to the stated reference; positive is worse. Weekly cells each have 52 evaluation origins; the common FX block has 1,440 origins (about 12 calendar weeks). The original three-penalty menu selects =0.1 for Treasury and =0.01 for FX; both FX rows use the same QR reports, not R2. Two-sided normal HAC p values are later descriptive readbacks, with L=7 under the Section 5 rule, without multiplicity adjustment or control for the whole selection/inspection process. Treasury is a W=52 structural analogue, not exact replication of the original W=260 primary."
+    },
+    {
+      "caption": "main-caption-14",
+      "term": "analogue",
+      "matched": "analogue",
+      "location": {
+        "file": "generated/r6-primary-table.tex",
+        "line": 12
+      },
+      "context": "Earlier-period QR comparisons. is mean pinball relative to the stated reference; positive is worse. Weekly cells each have 52 evaluation origins; the common FX block has 1,440 origins (about 12 calendar weeks). The original three-penalty menu selects =0.1 for Treasury and =0.01 for FX; both FX rows use the same QR reports, not R2. Two-sided normal HAC p values are later descriptive readbacks, with L=7 under the Section 5 rule, without multiplicity adjustment or control for the whole selection/inspection process. Treasury is a W=52 structural analogue, not exact replication of the original W=260 primary."
+    },
+    {
+      "caption": "main-caption-14",
+      "term": "R2",
+      "matched": "R2",
+      "location": {
+        "file": "generated/r6-primary-table.tex",
+        "line": 12
+      },
+      "context": "Earlier-period QR comparisons. is mean pinball relative to the stated reference; positive is worse. Weekly cells each have 52 evaluation origins; the common FX block has 1,440 origins (about 12 calendar weeks). The original three-penalty menu selects =0.1 for Treasury and =0.01 for FX; both FX rows use the same QR reports, not R2. Two-sided normal HAC p values are later descriptive readbacks, with L=7 under the Section 5 rule, without multiplicity adjustment or control for the whole selection/inspection process. Treasury is a W=52 structural analogue, not exact replication of the original W=260 primary."
+    }
+  ]
+}
