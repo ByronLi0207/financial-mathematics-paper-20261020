@@ -4609,3 +4609,145 @@ Full4paragraphConclusionandboundedabstract onnew92candidate retain economicpolic
 ## Verification loop96
 
 Actualtitle/abstract,9Introductionparagraphs,5Relatedparagraphs andcoverletterretain maturemethod/nearestprior/target-specificcontribution,adverse/retrospective/independentandcostboundaries. No newoverclaimorunsupportedself-deprecation; no edit.
+
+
+## Verification loop97
+
+CurrentTable3complete22framefresh,predeclaredprior-exposedrepeat17exclude093five;5savedfields/formatter matches retain72family/full-sparse-DQ/control/NAidentity. No newstatistics/sourceedit.
+
+
+## Verification loop98
+
+SeededBoyd/Kupiec/HLNoriginalmetadata match; author2011versusdraft2010andsite2026,registration2009/2003versuspublication1995/1997 distinct. PublisherBoyd403retained; no fullpaper/proof/edit.
+
+
+## Verification loop99
+
+FullS9threeprose/twocaptions andboundedmaininferencecontext retainfull/sparse/DQ/transitiondenominators,legacyversusnewCC,72versusnewfamilies,workingreference/HAC/HLN/Holm andselectionlimits. No output/theoremcountrevalidation orsourceedit.
+
+
+## Verification loop100
+
+Currentv6toproutes/package/TODO/92receipts andfreshactualmainhashes agree; previews/compile/export,synthetic/financialvalidation,project/publisherbudgetandmissingPR keptdistinct. Fixed96publicationpendingatnotetime;97+excluded; no source/conclusionedit.
+
+
+## Scheduled self-check32
+
+Actual 2026-10-23T23:51:53.679112+00:00; 3.679112seconds late. Protected1413/exact16allowed,missing0/unauthorized0. Previous boundedturn89–100, source92language-onlyfreshcompile/0numericmismatch/all18mainrastercomparison/isolated950+1062tests andimmutable96publicationplan prepared: PROGRESS. Published76remainsolderuntilactual96UIreadback; later97+excludedfromfixed96. Goalactive00:31:50UTC; nextcheck00:01:50UTC. No idle/parallel timecreditedasreading.
+
+
+## Verification loop101
+
+Seeded5actualTable3fields/formattermatch onpredeclared17repeat; TreasuryrightBOUNDARY_REFERENCEretained and277/40/267denominatorsdistinct; no statistics/sourceedit.
+
+
+## Verification loop102
+
+SeededBarone1999/DM1995/Gneiting2007 originalpublisherdepositmetadata match; fullDOIencoding/registration/print-online distinctionsretained. No fullpaper/proof/financialvalidation/sourceedit.
+
+
+## Verification loop103
+
+Full9paragraphInterpretation/limitations andboundedscoredefinitionretain19:1preferenceversusprice/decisions,finiteexecuted/canonicalclasses,adverseTreas/C2mechanismandaggregate/publicclock/prospective/unseendealergaps. No necessaryconclusionissue.
+
+
+## Verification loop104
+
+Actualmethodoverviewnine rows,mainmethodlimit andS16firstfourblocks retainfiniteACI/SAV/combo,projection/delay/rank/tuning/failure andworkingreference/NAfamilylimits. No importedcanonicalguarantee orclass-widefailure; no sourceedit.
+
+
+## Fixed source96 publication and exact remote readback
+
+NativeGitHubUI commits003c6536/c3dae812/e62ffa0dd565f37723d9aeec0be0978dd440ddcc published64files2454589B. Freshfetch/readback 2026-10-23T23:55:27.183785+00:00: all64 sizes/SHA256matchfixedlocal581674ae; completebothGit trees29ce5b3612c8e1a52b9ac413aa33c5a0b11cc268identical. Mainremains65feeee. Laterlocal97+andthisnewgate/readbackwerenotinthefixedsnapshot. Proof: `notes/revision-v6/loop96-remote-publication-readback.json`. PrivateUIscreenshotactuallyviewedandshowninchat; notpublishedtoGitHub.
+
+Gate`loop96-publication-snapshot-audit.md` byte/privacy/scopePASS. Actualcompletebase→sourcewhitespacecheckreturn2,143findingssolelyliteral`final6-pytest-output.txt`; no sourceissue. Retainedrawoutput/inheritedexceptions, notnormalized/notcalledclean. CurrentnewPDFhashdbcf2d2d…;nativecompileandfinal6tests bindthatcandidate. ActualsameheadPRquery[]isnotPRupdatesuccess; authorchoicepersists. Goalremainsactiveuntil00:31:50UTC.
+
+
+## Verification loop105
+
+FreshactualTable3prior-exposedrepeat17exclude101five; seeded5savedfields/formatter match, originalrollingF720coverageidentity/fullsparseDQ/NAretained. No stats/sourceedit.
+
+
+## Verification loop106
+
+HolmoriginalissueTOC,Sussmanoriginalheader/Prop3.4locator,McNeilFreyoriginaldeposit match; edition/registration/DOIyears distinct. Metadata/locatoronly, no newproof orfinancialvalidation.
+
+
+## Verification loop107
+
+Fullmainvalidationsection/Table6andboundedS16definitions retaindescriptive/notdeployedmap,original/matched/score-frequency,adverseTreas/combo/state/upperNA andpopulation-versuspluginlimits. No resultrecalculation ornecessaryconclusionissue.
+
+
+## Verification loop108
+
+FullcurrentREPLAYguide separatespublicdocument/aggregateintegrity fromexactprivateinputadmission/financialreplay andindependentvalidation; version/runtime/stops/NA/permission/preview-exportlimits retained. Documentationreadonly,noreplay/setup/testexecuted.
+
+
+## Verification loop109
+
+ActualTable3repeat17exclude105five,seededfivefreshsavedfields/formattermatch; equalroundedlegacyDM/HLN aredistinct,full/sparse/DQandNAretained. No newstatistics.
+
+
+## Verification loop110
+
+SeededDuffie/HoStoll/AvellanedaStoikovoriginalheaders/deposits agree; August/revisedOctober2023edition,Or/Orrdepositvariation,currentO.initial,registration/DOIversuspublicationyears retained. Metadataonly,no edit.
+
+
+## Verification loop111
+
+FullS2non-table29blockscope retainscommonset/rank/floorandreal-arithmeticdomains,stabilitynotlossordering,artificialexamplesnotdata,fixedcoefficientnottruelaw/fittedcoverage. No independentreproof/newanalysis ornecessaryconclusionissue.
+
+
+## Verification loop112
+
+Administrativeclockauditall32stateentries equalactualseparatereceipts,consecutivescheduledslots/noalreadyduemissing. Actualmaxlateness198.379727sretained; notexactlyontime/6hactivereadingclaim. Future33–36notyetcomplete.
+
+
+## Scheduled self-check33
+
+Actual 2026-10-24T00:02:04.474954+00:00; 14.474954seconds late. Protected1413/exact16allowed,missing0/unauthorized0. Previousboundedturn89–108/32check andsource96actual64-file/whole-treepublicatione62ffa0 = PROGRESS. Current109–112separatecommits/readback pluspredeadlineaudit. Allfuturechecks/wholegoalnotcompleted; next00:11:50UTC/deadline00:31:50UTC. No idleorparalleltimecredit.
+
+
+## Verification loop113
+
+Prior-exposedactualTable3repeat17exclude109five;seededfivefreshsavedfields/formattermatch, original/matched/legacy/full-sparse-DQ/NAflagsretain. No newstatistics/sourceedit.
+
+
+## Verification loop114
+
+NeweyoriginalissueTOCfreshresolves703–708despitestart-onlydeposit/tagmanager; Engledepositfullsubtitle/2004printversus2012online andMcNeilFrey2000metadataagree. Earlierloop10routingonly; no body/proof/citationedit.
+
+
+## Verification loop115
+
+Full35blockmainTarget/methods and9methodrows retainpointwisefloor/atom/strictpopulationtailversusfittedreport, independent-symmetricabsolute-displacementpopulationboundversusLplugin,commonpool/rankandfiniteACI/SAVscope. Existingproofdomainsread, notnewproof.
+
+
+## Verification loop116
+
+Freshactual33internalresponseIDs/21majorstatuses4implemented10withlimitation4retained2NA1authordecision. Allrespondeddoesnotmeanallweaknessessolved; no upgradefromrepeatedchecks/sourceedit.
+
+
+## Verification loop117
+
+Prior-exposed Table3 seeded5 fresh savedfields/formatter allmatch; method/window/full-sparse/boundary/Holm family retained. No newstats.
+
+
+## Verification loop118
+
+Biau publisherdeposit/NYFed original source metadata agree; Delft indexed originalcover corroborates author/title/Aug2017, directrecord failures retained. No body/financialvalidation.
+
+
+## Verification loop119
+
+FullS13 permitted prose/equations/captions retain finite FHS/POT/QRF adaptations, maturetiming, failureNA and independent-validation limits. No conclusionissue/newanalysis.
+
+
+## Scheduled self-check34 and pre-deadline requirements/compile evidence
+
+Actualcheck34 2026-10-24T00:11:52.252158Z,2.252158seconds late,PASS:1413protected/exact16allowed/no missing or extra. Goalactiveuntil00:31:50; next00:21:50. Predeadline requirements audit retains journal-cap/unseen-dealer/releaseclock/cost/export and absentPR gaps. Fresh explicit mainFile native main/supplement/title success, current sourcehashes bound in predeadline-native-compile.json. Initial parallel main path resolvedtitle, retained but notcounted as main; explicitsequentialmain corrected selection. No TeXPDFexport; no sourcechange/newfinancialanalysis.
+
+
+## Verification loop120
+
+Fullabstract/Introduction/related-literature positioning andcoverdraft retain establishedprecedents, finite empiricalcontribution and author/validationlimits. No necessaryconclusionchange; notpriority/acceptancecertification.
