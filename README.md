@@ -1,3 +1,19 @@
+# Current v9 revision: Hard to Beat
+
+Read the [17-page native main PDF](submission-jof/manuscript.pdf), [28-page Online Supplement](submission-jof/supplement.pdf), [editable submission package](submission-jof/README.md), [v9 ledger](REVISION_V9_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md). The only publication branch for this task is `revision-v9`; no existing PR is merged, closed or replaced. PR #5 at `0f1f066843e0c49cf3e24bce7d72032dc189603d` supplies the evidence base, while the separate older v8 supplies selected writing and supplementary results.
+
+The three findings are repeated matched hourly FX gains with reference-sensitive rankings; persistent weekly and same-record daily losses despite expanded/conservative tuning; and large short-history losses already present in stationary designs. New constant-parameter and switching medians at history52 are +116.2% and +121.4%. These results leave the empirical low-frequency mechanism unidentified. The original comparisons, adverse results, failed cells and unassessable diagnostics are retained.
+
+The [new design](protocol/v9/nonstationarity-design.md) was committed alone locally before any new diagnostic or study computation. See the [study receipts](notes/v9/c2-results.md), [complete saved results](results/v9/nonstationarity/README.md), [two-v8 inventory](notes/v9/two-v8-inventory.md), [42-item referee reconciliation](notes/v9/referee-check.md) and [reproduction boundary](notes/v9/REPRODUCING.md). Numerical forecasting tasks finished before the frozen runner encountered a reporting-only scalar serialization error; the separate saved-receipt report preserves that error and changes no research calculation.
+
+Source bindings and the native source package are independently inspectable without private FX observations. Full historical replay and history-dependent checks still require the retained original commit objects and restricted inputs. Browser file publication preserves content rather than those original design-commit identities; no private historical Git bundle is published. Final software, page and publication checks are recorded separately in the v9 ledger, rather than inherited from an older revision.
+
+## Preserved earlier revision records
+
+Everything below is retained verbatim as a historical version record. Page counts, tests, uses of “current,” and branch or publication claims below describe those earlier revisions. Use the v9 links above for this task.
+
+---
+
 # Current v8 revision: Hard to Beat
 
 The current [20-page native main PDF](submission-jof/manuscript.pdf), [30-page Online Supplement](submission-jof/supplement.pdf), [editable source and Overleaf package](submission-jof/README.md), [v8 execution ledger](REVISION_V8_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md) identify this revision. The v8 branch is `revision-v8-goal`; [PR #5](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/5) is open and unmerged; [initial complete remote-tree verification](notes/revision-v8/wp9-initial-remote-tree.json) matches the frozen WP8 file tree. Publication receipts and later review checkpoints are recorded in the [v8 ledger](REVISION_V8_CHANGELOG.md). Main and PR #3 remain outside this task's merge scope.

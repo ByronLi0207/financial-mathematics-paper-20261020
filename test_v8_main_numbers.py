@@ -1,9 +1,26 @@
-"""Current-document numeric guard negative controls; real documents stay read-only."""
+"""Frozen PR #5 v8 document negative controls; v9 authoring stays independent.
+
+All original field/source guards and negative assertions remain in place.
+These historical cases audit public-base document fixtures, not the v9 draft.
+"""
+import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import pytest
 
 ROOT=Path(__file__).resolve().parent
+FROZEN=ROOT/'fixtures/v9-baselines/pr5-v8'
+BASE_COMMIT='0f1f066843e0c49cf3e24bce7d72032dc189603d'
+
+
+def frozen_document(name):
+    assert (FROZEN/'manifest.json').is_file(), 'frozen public PR #5 document fixtures missing'
+    manifest=json.loads((FROZEN/'manifest.json').read_text())
+    assert manifest['source_commit']==BASE_COMMIT
+    raw=(FROZEN/name).read_bytes();entry=manifest['members'][name]
+    assert len(raw)==entry['bytes'] and hashlib.sha256(raw).hexdigest()==entry['sha256']
+    return raw
 
 
 def checker():
@@ -15,8 +32,8 @@ def checker():
 @pytest.fixture
 def documents(tmp_path):
     main=tmp_path/'manuscript.tex';letter=tmp_path/'cover-letter.md'
-    main.write_bytes((ROOT/'submission-jof/manuscript.tex').read_bytes())
-    letter.write_bytes((ROOT/'submission-jof/cover-letter.md').read_bytes())
+    main.write_bytes(frozen_document('submission-jof/manuscript.tex'))
+    letter.write_bytes(frozen_document('submission-jof/cover-letter.md'))
     return main,letter
 
 
