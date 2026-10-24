@@ -1787,3 +1787,246 @@ NON_DELETION_DIFF
 ```
 
 Theexistingcheckpointhelperindexescurrent_wpinstatedictionary; REVIEW_LOOPstatusisexplicitlypresentwithoutchangingthehelper.
+
+
+## Review loop, rounds1–9: PASS with one resolved wording MISMATCH
+
+The review log records separate bounded rounds: Introduction; five MC fields; five daily fields; The forecast target/proof context; three existing bibliography metadata records; Data; five expanded-backcast fields; Evaluation design; and methods-scope reading. No financial model, data set, hypothesis test or tuning was added. Internal same-model readers' elapsed intervals are not summed as extra research time. The abstract/C2word “rejects” remains an author query because the frozen MC screen is descriptive and pointwise; no conclusion was changed during this loop.
+
+**MISMATCH-REVIEW-MENU-LABEL, corrected:** Supplementline722said “The enlarged predictor menu is not uniformly better than historical rules.” The underlying QR33+ holds predictors fixed and expands penalties. Exactly one word is corrected to “penalty”; the adverse conclusion and every source numeric token remain. The prior source/PDF/ZIP are retained in task scratch and in the earlier commit; historical WP8 reports were not overwritten.
+
+Actual current-Supplement audit:
+
+```text
+python3 -B notes/revision-v8/check_wp8_supp_numbers.py --output notes/revision-v8/wp8-supp-review-r9-number-check.json
+status: PASS_WITH_SCOPE_LIMITS
+numeric_occurrences:4983
+number_word_occurrences:109
+failures:0 unresolved:0 ambiguous:0
+old_typed_fields:2125 old_numeric_rows:370 new_typed_fields:2080
+```
+
+First mechanical attempts were refused without scientific sideeffects: an output filename lacking the required wp8-supp-prefix, then an absent cached-compiler outputdirectory. The assignedprefix and new task-only outputdirectory were used; no guard was bypassed and no financial experiment retried.
+
+Actual cached compile command:
+
+```text
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic -X compile --only-cached submission-jof/supplement.tex --outdir .scratch/revision-v8/review-loop-round9/compiled --keep-logs --keep-intermediates
+returncode:0; error/overfull/undefined/missingglyph:[]; underfull warnings:28
+```
+
+All30pagepixelswerecomparedwiththepreviouslyviewedSupp. Onlypage13changed; the parent actuallyviewedit and confirmed the correctedcaption, legible tables and complete adverse rows. Every extracted word exceptpredictor→penaltyremains identical. The other29pagepixels are unchanged. The corrected18memberZIPdiffers inonlysupplement.tex; extracting it intoanemptydirectory and compiling/rasterizingallthreePDFs reproduces20main+30Supplement+1titlepages, all textandpixelsidenticaltothecurrentviewedpagebasis. Childpeak249102336B; no downloads or financial execution. See `review-r9-page-diff.json` and `review-r9-isolated-package.json`.
+
+The document-only sealer originally pinned one historical numericreport path. It now accepts an explicit repository-local current report without weakening its original exactSHA/status checks, which still precede allwrites. Wronghash/statusreports stillreject. Actual fixture commands and unabridgedoutputs are in `review-r9-package-red.txt` / `review-r9-package-green.txt`:
+
+```text
+python3 -B -m unittest discover -s .scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8 -p test_review_package_reports.py -v
+Ran7tests in0.053s
+FAILED(failures=6)
+python3 -B -m unittest discover -s notes/revision-v8 -p test_review_package_reports.py -v
+Ran7tests in0.069s
+OK
+```
+
+Actual delivery refresh:
+
+```text
+python3 -B notes/revision-v8/seal_wp8_delivery.py --main-pdf .scratch/revision-v8/wp8-main-final/manuscript.pdf --supplement-pdf .scratch/revision-v8/review-loop-round9/compiled/supplement.pdf --title-pdf .scratch/revision-v8/wp8-title-final/title-page.pdf --supp-numeric-report notes/revision-v8/wp8-supp-review-r9-number-check.json --output notes/revision-v8/review-r9-delivery-package.json
+all_members_match_current_sources:true
+results_recomputed:false
+```
+
+Actual full-suite command and verbatim ending:
+
+```text
+python3 -B notes/revision-v8/run_full_pytest.py review-r9
+============ 1335 passed, 1068 subtests passed in 99.72s (0:01:39) =============
+```
+
+3230trackedfiles copied; no filtering/skips added. Outerelapsed100.099483167s; peakRSS329842688B; numericalthreads1; exit0. All1645originalprotectedfilesandFINAL.mdremainunchanged, as do everyWP3–5result/design/driver. The twoadditional subtests concern wrong-reportstatusguardfixtures; they are not financial comparisons. `review-r9-acceptance.json` pinsallcurrentdeliverybytes.
+
+This is the first review-loop completioncut; laterreviewcommitsmustbe at leastonehourapart. It doesnotcomplete the10hourgoal, alterthe original two primaries, remove adverse results, grant independentdealer/prospective validation or cure public-clone financialreplay's missinglocalGitobjects.
+
+Review publication cadence: the existing authorized browser route commits by directory. During the review loop, those remote commits will be spaced at leastonehourapart on the public branch; the corresponding frozen local completioncut is a separate history, not directly pushed. Pending batches are explicit; exact equality will only be claimed after the entire frozen cut is read back. This avoids using directory uploads as repeated same-hour public review commits.
+
+
+## Review loop, rounds10–30: PASS with a second resolved label MISMATCH
+
+The append-only review log records each bounded five-number, three-reference or one-section check, its actual reading/access scope, and every limited/failed publisher access. Source unit, vintage, rights, menu-specific preference, dependent-hit and post-selection boundaries remain explicit. No new financial analysis, data acquisition, tuning, hypothesis test or conclusion change occurred during the loop. The abstract word “rejects” remains a pending author query about the descriptive pointwise MC screen.
+
+**MISMATCH-REVIEW-MIXTURE-WEIGHT-LABEL, corrected:** the headline preference table and continued header said “Equal-loss weight ratio,” while both exact fractions were saved `headline_comparisons[2/3].equality_alpha` fields for the existing mixture weight. The two headers now say “Equal-loss weight a,” and one sentence names mixture-weight boundaries. No fraction was converted, no error-weight boundary recomputed, and the main long-horizon legacy20.6:1 comparison is unchanged. The earlier penalty-menu correction remains.
+
+Actual current Supplement audit command/output:
+
+```text
+python3 -B notes/revision-v8/check_wp8_supp_numbers.py --output notes/revision-v8/wp8-supp-review-r30-number-check.json
+status: PASS_WITH_SCOPE_LIMITS
+numeric_occurrences:4983
+number_word_occurrences:109
+failures:0 unresolved:0 ambiguous:0
+old_typed_fields:2125 old_numeric_rows:370 new_typed_fields:2080
+```
+
+Actual cached compilation:
+
+```text
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic -X compile --only-cached submission-jof/supplement.tex --outdir .scratch/revision-v8/review-loop-round30/compiled --keep-logs --keep-intermediates
+returncode:0
+error_overfull_undefined_missing_glyph:[]
+final_log_underfull_occurrences:28
+```
+
+The console repeated28underfull warnings across passes (56consoleoccurrences); the final log has28. The first pixel comparison incorrectly paired110dpi and140dpi images and failed its dimension/content assertion; `review-r30-render-scale-refusal.json` preserves that failed comparison. Matching140dpi rerendering of all30pages finds onlypage7 text/pixels changed. Page7 was actually viewed at both scales; the exact fractions, corrected header and every row are legible. The other29pages are pixel-identical to the previously viewed R9basis. All rendered numeric tokens remain unchanged. The source ZIP differs from R9onlyin`supplement.tex`; extraction into a new empty directory, cached compilation and rasterization produce all20main+30Supplement+1titlepages with identical text/pixels to the current viewed/bound basis.
+
+Actual delivery command:
+
+```text
+python3 -B notes/revision-v8/seal_wp8_delivery.py --main-pdf .scratch/revision-v8/wp8-main-final/manuscript.pdf --supplement-pdf .scratch/revision-v8/review-loop-round30/compiled/supplement.pdf --title-pdf .scratch/revision-v8/wp8-title-final/title-page.pdf --supp-numeric-report notes/revision-v8/wp8-supp-review-r30-number-check.json --output notes/revision-v8/review-r30-delivery-package.json
+all_members_match_current_sources:true
+results_recomputed:false
+```
+
+Actual full-suite command and verbatim ending:
+
+```text
+python3 -B notes/revision-v8/run_full_pytest.py review-r30
+============ 1335 passed, 1068 subtests passed in 100.04s (0:01:40) ============
+```
+
+Full unfiltered output: `notes/revision-v8/review-r30-pytest-output.txt`;3234trackedfiles copied at test start, no filtering/skips added. Outer100.425315959s; peak335134720B; one numerical thread; exit0. All1645original result/data/protocol/Python paths andFINAL.md remain unchanged. Current acceptance is `review-r30-acceptance.json`; exact current document hashes and every owning receipt are there. Public financial replay remainsBLOCKED by missing original local Git objects; neither guard weakening nor identity export occurred.
+
+**Publication boundary:** local860b85f reviewcut had16note files published at e7a7f2f(13:40:18Z) and5document files at d9b754c(14:40:44Z), both exact-byte checked. Their actual3626second separation satisfies the remote hourly limit. Its remaining rootguide group was superseded before send by the present real label correction; a complete860b85f remote tree is not claimed. Those snapshots/receipts are retained. The next new document send remains no earlier than15:40:49Z; currentrootguides follow at leastonehour later, and finalnotes onlyafter17:55:15Z and the actual publication interval. Final whole-tree identity is deferred until every directory matches the final source cut. This gate does not declare the10hourgoalcomplete.
+
+
+## Review loop, rounds31–33: PASS with a resolved methods-pointer MISMATCH
+
+Three foundation citations and three institutional records were checked with their actual metadata/version limits recorded in the loop. Registry truncation, malformed suffix metadata, unavailable publisher access and scanned-cover-date limits were not treated as manuscript errors or fulltext evidence. No fresh data or financial inference was introduced.
+
+**MISMATCH-REVIEW-METHODS-POINTER, corrected:** the mainMethods sentence attributed precise order-statistic conventions toTable2, whose footnote instead correctly directs those details to theSupplement. Removing that phrase improves only the cross-reference. The source formula blocks, all six original tablebytes and every numeric token remain unchanged. Onlymainpage6text/pixelschange; it was actuallyviewed at125dpi. All19othermainpages remain pixelidentical to the previously viewedWP8basis. The R30Supplement remains exactlyunchanged and alreadyviewed/bound.
+
+Actual current commands and selected saved-field summaries (unabridged owning reports and raw test output are linked below):
+
+```text
+python3 -B notes/revision-v8/check_wp8_main_numbers.py --output notes/revision-v8/wp8-main-review-r33-number-check.json
+status:PASS
+main_numeric_occurrences:535
+meaningful_number_word_occurrences:32
+unclassified_numeric_occurrences:0
+ambiguous_numeric_locations:0
+mismatches:0
+original_table_vectors_checked:6
+original_table_vector_mismatches:[]
+
+python3 -B notes/revision-v8/writing_metrics.py --output notes/revision-v8/review-r33-writing-metrics.json --require-pass
+after.mean_sentence_words:19.040983606557376
+after.negation_percent:4.508196721311475
+after.all_v8_writing_gates_pass:true
+
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic -X compile --only-cached submission-jof/manuscript.tex --outdir .scratch/revision-v8/review-loop-round33/compiled --keep-logs --keep-intermediates
+returncode:0
+error_overfull_undefined_missing_glyph:[]
+underfull_final_log_occurrences:0
+
+python3 -B notes/revision-v8/seal_wp8_delivery.py --main-pdf .scratch/revision-v8/review-loop-round33/compiled/manuscript.pdf --supplement-pdf .scratch/revision-v8/review-loop-round30/compiled/supplement.pdf --title-pdf .scratch/revision-v8/wp8-title-final/title-page.pdf --main-numeric-report notes/revision-v8/wp8-main-review-r33-number-check.json --supp-numeric-report notes/revision-v8/wp8-supp-review-r30-number-check.json --output notes/revision-v8/review-r33-delivery-package.json
+all_members_match_current_sources:true
+results_recomputed:false
+
+python3 -B notes/revision-v8/run_full_pytest.py review-r33
+============ 1335 passed, 1068 subtests passed in 99.86s (0:01:39) =============
+```
+
+Full unfiltered output: `review-r33-pytest-output.txt`;3258trackedfiles copied at teststart, no filtering or addedskips. Outer100.267430334s; peak345587712B; numericalthreads1; exit0. All1645originalprotectedpaths were hashed fromactualworktreefiles, with0differences andFINAL.mdunchanged. `review-r33-protected-files.json` uses one Gitstdin-paths call without relying on the index. The18memberZIP was extracted into a newemptydirectory; all51rebuiltpages have identicaltext/pixels to the currentviewedbasis, with nofinancialexecution/download. Exact currentacceptance andhashes: `review-r33-acceptance.json`.
+
+Current broader wordbudget is4994body+164abstract=5158;4mainfigures,6maintables,20mainpagesincludingreferences/authorfields,30Supplementpages. The prose-only sentence-metric denominator remains separate, with negation11/244=4.51%, increased from5/215=2.33%; no claimeddecrease. Abstract andIntroductionfirstparagraph before/afterpassages are unchanged by thispointeredit.
+
+**Publication/commit cadence:** the0745030documentgroup was superseded beforeanysend. The latestnine validateddocumentfiles are frozen by exacthash in a separate task-onlysnapshot, withparent0745030explicitlyidentified as theparent ratherthan falselyclaimedR33commit. This is a writing-onlysnapshot; noWP3–5design/resultchronologychanged. The next nativeUIcommit remains>=15:40:49Z; the next localreviewcompletioncommit remains>=15:56:26.251429Z and will be explicitlyboundtothoseninehashes. Rootguides follow the actualremotehourlyguard, and finalnotes follow the17:55:15Zwindow. Complete currentfile-tree identity remainspending untilalldirectoriesareverified. No newfinancialanalysis or earlygoalcompletion.
+
+
+## Review loop, rounds34–35: PASS with clarified local notation
+
+The five-number H24readback verifies the adverse rollingcomparison and matched scoregain/breaches against saved summaryfields, without recomputing scores,DM or forecasts. The reviewed institutional/claim boundaries remain unchanged. A first oversized read of a CSV containing embedded diagnostics was replaced by bounded namedJSONfield reads; no privatearrayorinputwasloaded.
+
+**MISMATCH-REVIEW-LOCAL-NOTATION, clarified:** SupplementProposition1usedq/alphainthe retained displayafterdefiningq_tauandthecomplementtailbound; Proposition2usedBwithafixedxwithoutlocalrestatement. Nonnumericnotationprose now explicitly linksqtoq_tauandalphatothealready-statednominalbound,andstatesBisx'sabsolutemagnitude. Existingdisplayequations,proofsteps,tablebytes,numericvaluesandconditional/populationlimitationsarenotchanged. Thisisnotanewproofortheoremclaim.
+
+The first numericcontextcheck retained0failuresbut1UNRESOLVEDtoken1when the oldboundclause wasexpandedinline. `wp8-supp-review-r35-number-check.json` andthefirstsource/PDF/compile/renderremain. Theoriginalnumericclausewasrestoredverbatim; aseparatenonnumericsentenceclarifiesthealiases. The originalchecker/contracts/guardswere notedited, broadened or bypassed.
+
+Actualfinalcheckcommands/output:
+
+```text
+python3 -B notes/revision-v8/check_wp8_supp_numbers.py --output notes/revision-v8/wp8-supp-review-r35-number-check-final.json
+status:PASS_WITH_SCOPE_LIMITS
+numeric_occurrences:4983
+number_word_occurrences:109
+failures:0 unresolved:0 ambiguous:0
+
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic -X compile --only-cached submission-jof/supplement.tex --outdir .scratch/revision-v8/review-loop-round35/compiled-final --keep-logs --keep-intermediates
+returncode:0
+error_overfull_undefined_missing_glyph:[]
+underfull_final_log_occurrences:28
+
+python3 -B notes/revision-v8/seal_wp8_delivery.py --main-pdf .scratch/revision-v8/review-loop-round33/compiled/manuscript.pdf --supplement-pdf .scratch/revision-v8/review-loop-round35/compiled-final/supplement.pdf --title-pdf .scratch/revision-v8/wp8-title-final/title-page.pdf --main-numeric-report notes/revision-v8/wp8-main-review-r33-number-check.json --supp-numeric-report notes/revision-v8/wp8-supp-review-r35-number-check-final.json --output notes/revision-v8/review-r35-delivery-package.json
+all_members_match_current_sources:true
+results_recomputed:false
+
+python3 -B notes/revision-v8/run_full_pytest.py review-r35
+============ 1335 passed, 1068 subtests passed in 99.93s (0:01:39) =============
+```
+
+Fullunfilteredrawoutput:`review-r35-pytest-output.txt`;3258trackedfilescopied,no filtering/skipsadded. Outer100.350012917s,peak345292800B,numericalthreads1,exit0. All1645originalworktreefileblobhashesandFINAL.mdremainunchanged. Finalcachedcompilechildpeak248938496B; mainR33source/PDFremainunchanged. All30Supplementpagesrerenderedat140dpi; onlypages1and2text/pixelschanged,bothactuallyviewedandlegible. Other28pagesarepixelidenticaltothealreadyviewedR30basis. The18memberZIPdiffersfromR33onlyinSupplementTeX; newemptydirectorycompilation/rasterizationrebuildsall51pageswithidenticaltext/pixelstocurrentviewedbasis,with0financialmodels/rawinputs/downloads. `review-r35-acceptance.json` ownsthecurrentmain/Supplement/packagehashes; R33writingmetricsandR35source-boundbudgetremain5158wordsincludingabstract,20+30pages,4figures/6tables.
+
+The15:15checkpoint'sprocesswordingreferstothelastlive9507toolyield. Itsactualcompletedpagecheckreceiptis15:15:29.215556Z;thefollowingpollconfirmedexit0. Thoseactualreceiptsgovernprocesscompletion,notthecheckpoint'sunpolledlast-observationlabel.No suchintervaliscountedasactivepaperreading.
+
+No additional localreviewcommitwascreated: the14:55cut'shourlyguardstillholds until15:56:26.251429Z. PriorR33documenthashsnapshotwasnever sent andisretained. The latestnineR35deliveryfilesareindependentlyhashfrozenbeforeexistingnativebrowserpublication,notbeforeanewfinancialanalysis. After15:40:49Zactualremoteuploadandreadback,the15:56+localcompletioncommitwillbeexplicitlyboundtothosefilehashes. Rootguideswillcomefromthatlocalcutaftertheactualremotehourguard,notanextra16:35localcommit. Finalnotes/whole-treeproofremainafterthe17:55:15Zwindow. Thisisnotanearlycompletionclaim.
+
+
+### Evidence presentation note before the next publication
+
+Condensed field labels in the review-loop sections are selected summaries of the cited owning reports, not replacements for unabridged console output. Raw cached-compiler and full-pytest outputs, complete JSON numeric/identity reports and the failed initial checks remain at their exact named paths. The quoted pytest ending lines are verbatim. The latest complete current document acceptance is `notes/revision-v8/review-r35-acceptance.json`; no source-field value, result table or financial archive is changed by this clarification.
+
+
+## Current document publication and next local completion cut
+
+The existing native GitHub upload route published the current nine document/source/ZIP/index files to `revision-v8-goal`. The actual new remotecommit is `224a2ee5a4bfdd74d4449671433e88dc9ac27344`, parent `d9b754ce1cf09fb6e82b51ba9f19939d509070c1`. Servercommit time is2026-10-24T08:41:46-07:00(15:41:46Z). Each of the nine Git remote blobs has exactly the frozen926b8613...snapshot SHA256 and100644mode; the full unaltered per-file receipt is `notes/revision-v8/review-current-documents-remote.json`. The native PR5page remainsOpen. Only this directorygroup is verified here; rootguides/finalnotes and finalwhole-source-tree equality remainpending. No original local Git objects or privateidentity were sent.
+
+Actual readback commands and selected saved receipt fields:
+
+```text
+git fetch origin refs/heads/revision-v8-goal:refs/remotes/origin/revision-v8-goal
+git rev-parse origin/revision-v8-goal
+224a2ee5a4bfdd74d4449671433e88dc9ac27344
+
+Per-file operations: git show REMOTE:path -> SHA256; git ls-tree REMOTE -- path -> mode
+files:9
+all_matches:true
+all_modes:100644
+server_commit_time:2026-10-24T08:41:46-07:00
+next_remote_rootguide_commit_not_before_utc:2026-10-24T16:41:51+00:00
+whole_tree_status:PENDING rootguides andfinalnotes
+```
+
+Fresh read-only Git/owning-PR checks before upload confirmedmain65feeee...,PR3open/unmergedat2328994...,v7d119a1f...,andourgoalbranchd9b754cparent. The server's merge_commit_sha field is not an actual merge receipt; merged=false and merged_at=null are the relevant states. The prior R35acceptance's “notyetpublic” statement remains its15:21snapshot, superseded by the15:42:37actualremote receipt; it is not retrospectively rewritten.
+
+The next local review completion commit is held until15:56:26.251429Z. Before it, all nine staged sourcefiles must equal the published hashes, every protected original file andFINAL.mdmust remainunchanged, and staged scope/deletion/private-input checks must pass. Its new Git SHA and ninefile binding will be recorded after creation; parent0745030is not falsely called theR33/R35completioncommit. Rootguides are taken from that exact nextcut, after16:41:51Z, rather than creating another local16:35commit. Ongoing finalnotes stay mutable until the ten-hour checkpoint and then receive their own finalcut, followed by exact full remote-tree verification.
+
+The rootguide independently matches the current20/30pages,18ZIPmembers and1,335+1,068localtest counts. “Original table” is narrowed to “original table result value” because legitimate caption/columnheader/style edits already exist. No paper source or numeric result changes. Reproduction still distinguishes native document compilation/saved-field checks from original-history-gated financial replay.
+
+
+## MISMATCH-REVIEW-COMMIT-CADENCE: strict combined commit limit
+
+The instruction gives no separate local/browser allowance. Earlier review cuts were limited separately in the local completion history and native browser mirror history. The combined actual Git timeline has multiple commits within an hour; that interpretation cannot be represented as fully compliant. This execution MISMATCH is retained, with no history rewrite or change to any financial result.
+
+Actual read-only command, run for each named SHA:
+
+```text
+git show -s --format="%H %cI" COMMIT
+860b85f9b31334c7ff59a2dba1b1f1d8a681ed5f 2026-10-24T06:38:40-07:00
+e7a7f2ff7268a60ce37a6edf94f0268ed029433e 2026-10-24T06:40:18-07:00
+d9b754ce1cf09fb6e82b51ba9f19939d509070c1 2026-10-24T07:40:44-07:00
+0745030a22770040d9bef1f2e37aebe822dc53cc 2026-10-24T07:55:54-07:00
+224a2ee5a4bfdd74d4449671433e88dc9ac27344 2026-10-24T08:41:46-07:00
+f17f42c5a8c06637e8d8cbb3f5adab7763253640 2026-10-24T08:58:19-07:00
+```
+
+The full identity-free timing receipt is `notes/revision-v8/review-commit-cadence-mismatch.json`. Adjacent gaps in that order are 98s, 3626s, 910s, 2752s, 993s. Both local and webpage commits now consume a single shared interval. The previously planned16:41:51Z root-guide submission is cancelled before send; the next actual commit is held until16:58:25Z. Original source/hash snapshots are preserved. Updated root guides are separately byte-frozen before that native mirror, then bound to the next eligible final local completion cut. No additional paper source, scientific computation, private data or Git identity is sent.
+
+The research/review window still ends17:55:15Z. At that checkpoint the final timing and outcome records are completed, but any necessary publishing waits for the unified interval. A later native publish is operational delivery time, not additional claimed active research. The final report cannot claim publication completed before its actual per-file/full-tree evidence. This records a real scheduling correction, not an exemption or a claim that past intervals have been repaired.
