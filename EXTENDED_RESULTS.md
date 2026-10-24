@@ -1,3 +1,11 @@
+# Complete result archive: current v8 index
+
+The current manuscript and Supplement add the [full controlled grid and failure archive](results/revision-v8/wp3/README.md), [all same-dealer daily comparisons](results/revision-v8/wp4/README.md) and [complete fixed-prefix/backcast tables](results/revision-v8/wp5/README.md). Their frozen designs, run receipts, exact source bindings and acceptance records are in `protocol/revision-v8/` and `notes/revision-v8/`. These post-result / exploratory additions retain a failed mechanism criterion, a daily conditional exception and longer-horizon gains; none supplies independent dealer validation. The expanded prefix contains the earlier backcast and previously scored target paths.
+
+The following index is retained as the earlier v7 archive guide. Its claims of “no new experiment” and “current” presentation refer to that historical revision. Every linked earlier favorable, adverse, failed or unavailable result remains intact.
+
+---
+
 # Extended results and complete historical records
 
 The compact v7 manuscript and Online Supplement select presentation material; every earlier outcome remains available below. These are related retrospective comparisons, with their original source definitions, denominators, failed fits and adverse results. This index does not add an experiment or validate a new sample.

@@ -1,3 +1,19 @@
+# Current v8 revision: Hard to Beat
+
+The current [20-page native main PDF](submission-jof/manuscript.pdf), [30-page Online Supplement](submission-jof/supplement.pdf), [editable source and Overleaf package](submission-jof/README.md), [v8 execution ledger](REVISION_V8_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md) identify this revision. The v8 branch is `revision-v8-goal`; publication and exact remote-tree verification are recorded in its final ledger. Main and PR #3 remain outside this task's merge scope.
+
+Three designs were committed before their own new outputs: [controlled mechanism study](protocol/revision-v8/wp3-mechanism-design.json), [same-dealer daily aggregation](protocol/revision-v8/wp4-daily-fx-design.json) and [fixed-parameter expanded backcast](protocol/revision-v8/wp5-fixed-prefix-design.json). Their full [simulation](results/revision-v8/wp3/README.md), [daily](results/revision-v8/wp4/README.md) and [backcast](results/revision-v8/wp5/README.md) archives retain all completed and adverse cases. The simulated restriction fails; aggregation is not a pure frequency intervention; overlapping, previously scored backcast windows are not independent validation. Both original primary comparisons remain unchanged.
+
+The source-field inventories, plotting/display readbacks, bibliography audit, compiled-PDF identities, every-page visual review and complete software-test output are in [notes/revision-v8](notes/revision-v8). These check artifact consistency and bounded retrospective comparisons, rather than independent dealer replication, prospective success or journal acceptance. [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md) indexes every older result archive. Rights restrictions on raw FX data continue to apply.
+
+The [reproduction guide](notes/revision-v8/REPRODUCING.md) distinguishes self-contained document compilation and saved-result inspection from financial replay. Original local design commits are not transferred by browser upload; sealed financial replay/history-dependent checks remain blocked in a fresh public clone pending a safe author-approved provenance route. No guard is bypassed or machine-local identity republished.
+
+## Preserved historical revision notes
+
+Everything below this boundary is a retained earlier-revision record. Version-specific words such as “current,” page counts, test counts, source routes and contribution statements below refer to the named historical revision, not to v8. Use the v8 links above for the present artifact. No historical adverse result is removed.
+
+---
+
 # Current v7 revision: Hard to Beat
 
 The current [native LaTeX main PDF](submission-jof/manuscript.pdf), [compact Online Supplement](submission-jof/supplement.pdf), [editable sources and package](submission-jof/README.md), [v7 execution ledger](REVISION_V7_CHANGELOG.md), [evidence table](notes/v7/evidence-table.md) and [author checklist](submission-jof/AUTHOR-TODO.md) describe this revision. The complete earlier outcomes and documents remain indexed by [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md). Both research lines are preserved on revision-v7-final; neither main nor PR #3 is merged by this task.
