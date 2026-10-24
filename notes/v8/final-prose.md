@@ -1,10 +1,10 @@
 # Final v8 prose
 
-Source SHA256: 1522c06446e76df48f175aa9f82fb7631a7c58989451f2c7058028d1084ab6aa
+Source SHA256: 2f34250947a157ca81b65d7e06352a1e1b397ce45093a3757379f7261e7094aa
 
 ## Abstract
 
-Dealers set limits on the largest position reached before a review horizon ends. Using hourly FX and weekly dealer positions, we compare conditional quantile forecasts with historical rules at matched history lengths and update schedules. Historical rules are demanding benchmarks. Long-history FX regression lowers matched loss by 14.8\% and 16.6\% in two periods. A calibration adjustment that updates after outcomes are observed retains the later gain (15.0\%), with 329 versus 328 breaches. Ranking against a shorter-history rolling rule changes across periods. On weekly aggregates, expanded regularization still leaves regression behind in 34 of 48 panel comparisons. Conservative short-sample validation also leaves large weekly losses. Lower scores accompany more breaches before calibration: 376 versus 360 in the matched FX comparison. These findings support selecting peak limits from accuracy, breaches and ranking stability together.
+Dealers set limits on the largest position reached before a review horizon ends. Using hourly FX and weekly dealer positions, we compare conditional quantile forecasts with historical rules at matched history lengths and update schedules. Historical rules are demanding benchmarks. Long-history FX regression lowers matched loss by 14.8\% and 16.6\% in two periods. A calibration adjustment that updates after outcomes are observed retains the later gain (15.0\%), with 329 versus 328 breaches. Ranking against a shorter-history rolling rule changes across periods. On weekly aggregates, expanded regularization still leaves regression behind in 34 of 48 panel comparisons. Conservative short-sample validation also leaves large weekly losses. Lower scores accompany more breaches before calibration: 376 versus 360 in the matched FX comparison. Calibrated simulations fail to reproduce the persistent weekly losses; seven hourly cells are numerically unavailable. These findings support selecting peak limits from accuracy, breaches and ranking stability together.
 
 ## Introduction contributions
 

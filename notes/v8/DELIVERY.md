@@ -33,7 +33,7 @@
 
 ## 写法、内部审稿与数字核对
 
-写法指标使用 PR3 同口径、固定范围的检查，取 v7 基线与最终 v8，详见[统计口径](writing-metric-contract.md)、[基线](writing-baseline.json)和[最终记录](writing-final.json)。它是措辞规则命中比例，不代表所有必要限制都应删除。
+写法指标使用 PR3 同口径、固定范围的检查，取 v7 基线与最终 v8，详见[统计口径](writing-metric-contract.md)、[基线](writing-baseline.json)和[最终记录](writing-abstract-final.json)。它是措辞规则命中比例，不代表所有必要限制都应删除。
 
 |指标|修改前|最终|
 |---|---:|---:|
@@ -76,3 +76,8 @@
 - **B7 发布状态：完整内容验收PASS，closeout记录随即发布。**
 - **B7整树验收截止：2026-10-24T09:37:37.045150+00:00；B7 27.1分钟，总计2.24小时。最后行政回执上传用时在最终答复另计。**
 - 本轮不开 PR、不合并、不向期刊提交；这些属于作者审阅具体结果后的后续决定。
+
+
+## B4摘要最终逐条验收补充
+
+最后复查发现，前版摘要遗漏任务单指定的B1结论句。现已补入“Calibrated simulations fail to reproduce the persistent weekly losses; seven hourly cells are numerically unavailable.” 三条经验发现不变，没有重跑实验或修改结果。新句七格失败直接绑定冻结summary；删除这一句后精确回到5049项完整审计时的源码指纹。正文仍15页，只有第1页渲染变化并已目检，另外14页在相同90dpi渲染下逐字节一致。新包145项通过；新source绑定及视觉证据见abstract-final.json、abstract-numeric-addendum.json、abstract-page-review.json和package-abstract-final-check.json。最新发布head以最终答复和分支当前提交为准，先前发布回执保留为历史快照。
