@@ -1,31 +1,31 @@
-# Second supervisor revision: source and verification
+# Supervisor writing pass: source and verification
 
 Author: **Byron**. Other author details are omitted at the author's request.
 
-The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **15 main/reference pages plus five appendix pages, twenty total**. R6 follows the pre-evaluation design commit `6c0eef44c46a0ff525264b13ae1dae9b821ad3c2`. Its fixed main rule misses S1, S2 and S3. The subsequent writing clarification places the earlier-period qualification in the abstract and conclusion at the author's explicit request; it makes no positive R6 method claim. The earlier writing pass delivered 14+5 pages; its receipt remains historical.
+The delivered `main.pdf` is actual Tectonic/XeTeX/xdvipdfmx output: **14 main/reference pages plus five appendix pages, nineteen total**. The current writing pass makes the historical-rule finding explicit, keeps all adverse outcomes, and moves procedural details into Appendix C. The abstract has **153 words and ten numeric items**; the conclusion has **121 words**. No experiments, result calculations, data changes or figure edits were performed in this pass.
+
+The paragraph-by-paragraph record is `notes/supervisor-20261023/writing-pass-log.md`. Before/after writing metrics and numerical inventories use the `writing-pass-` prefix; `writing-pass-numbers-alignment.json` explains the raw scanner's label/layout flags and verifies every original table cell independently. The final compilation and visual checks are in `writing-pass-verification.json`. Previous research and writing receipts remain historical evidence.
 
 ## Read and edit
 
 - `main.tex` controls compilation, layout and author metadata. `abstract.tex`, `sections.tex`, `appendices.tex` and `references.tex` contain the editable paper.
 - `generated/round2-facts.tex` resolves empirical prose numbers from 36 source-bound fields; `results/supervisor-20261023/round2/numerical-facts.json` gives the source fingerprints and displayed values. Design constants come from the frozen study specification; illustrative numbers are explicitly synthetic.
-- `generated/` and six vector figures are produced from archived aggregates by `build_supervisor_document.py`. ReportLab draws figure assets only; Tectonic compiles the paper.
+- Historical aggregate readers produced `generated/` and the six vector figures. This writing pass edits the delivered prose, table labels and captions directly while preserving original data cells and figure bytes. Compile the delivered TeX to reproduce the current wording; the historical aggregate readers retain their earlier editorial text.
 - `round2-rewritten-passages.md` preserves the preceding E6–C1 wording at `348179c`. The current three-claim explanation, bilingual summaries, reviewer answers and title options are in `notes/supervisor-20261023/CONTRIBUTIONS.md`; current wording is in `abstract.tex` and `sections.tex`.
-- E6–C1 baseline proof remains unchanged in `results/supervisor-20261023/round2/`. The writing-only update is recorded separately in `notes/supervisor-20261023/CONTRIBUTIONS-verification.json`: compilation, all eight changed pages visually checked, source-bound prose values, and no result/protocol/figure changes.
+- E6–C1 baseline proof remains unchanged in `results/supervisor-20261023/round2/`. The earlier contribution-writing receipt is `notes/supervisor-20261023/CONTRIBUTIONS-verification.json`; the current pass has its separate log and verification listed above.
 - R6 aggregates are in `results/supervisor-20261023/r6/`; `build_supervisor_r6_document.py` reads those files without fitting and generates `r6-facts.tex` and `r6-primary-table.tex`. Exact fact pointers and input hashes are in `notes/supervisor-20261023/r6-document-provenance.json`. The Chinese research memo is `notes/supervisor-20261023/r6-memo.md`; literature and the frozen protocol are separate files.
 - The later writing clarification reads exactly two fixed QR-versus-F loss comparisons in `results/supervisor-20261023/r6-writing-hac-20261023/`; these are descriptive HAC readbacks, not R2 comparisons or new experiments. `build_supervisor_r6_writing.py` runs after the original R6 document reader and updates Table 10 plus `r6-writing-facts.tex` from existing aggregates only. Input hashes and field pointers are in `notes/supervisor-20261023/r6-writing-provenance.json`.
 
 ## Build and checks
 
-Use the existing compatible project environment. The actual numerical environment is Python 3.12.14 with NumPy 2.3.5; no system package installation was performed. From the repository root:
+The current pass needs only the delivered TeX, Tectonic and the standard-library writing checker. The existing numerical environment and all research code remain unchanged. Compile from the manuscript directory into a fresh output directory:
 
 ```sh
-python3 -B build_supervisor_document.py
-python3 -B build_supervisor_r6_document.py
-python3 -B build_supervisor_r6_writing.py
-/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic --only-cached --keep-logs --keep-intermediates manuscript/supervisor-revision/main.tex
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python3 -B -m unittest discover -v
-python3 -B reproduce_conditional.py
+cd manuscript/supervisor-revision
+/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic -X compile main.tex --outdir ../../.scratch/writing-pass-20261023/delivery-compile --keep-logs
 ```
+
+The exact executed command, source hashes, nineteen rendered-page checks, wording metrics and immutable-result checks are recorded in `writing-pass-verification.json`. The before/after statistics use the same full-stop and word-count rules, detailed in each JSON. Embedded image labels keep their original text under the author's no-figure-edit instruction; Appendix C maps them to the names used in the prose.
 
 At the E6–C1 baseline `348179c`, the full suite passed 574 tests in 91.582 seconds. The original archive check returned `ARCHIVE_VERIFIED` for 69 files, with `accuracy_recomputed=false` and `raw_sources_read=false`. The document verifier was run on the original local execution chain after real tests and visual review; it confirmed 516 protected baseline files unchanged and no tracked deletions. It creates a new exclusive receipt and refuses to overwrite the archived one. Its only observed text-comparison repair removes TeX line-wrap hyphenation in the extracted conclusion; the PDF and paper were unchanged by that repair.
 

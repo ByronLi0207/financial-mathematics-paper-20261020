@@ -1,5 +1,5 @@
 \section{Finite geometry and parameterization}\label{app:proofs}
-These elementary arguments concern a common nonempty historical set $J$, an available rank $1\le j\le |J|$ and real arithmetic. Write $x=N_t$, $B=|x|$, $B_i=|N_i|$, and $d_{i,h}=N_{i+h}-N_i$, including $d_{i,0}=0$. The quantities $\ell_i=\min_h d_{i,h}$ and $u_i=\max_h d_{i,h}$ retain the notation of the main text.
+The finite-array arguments use a common nonempty historical set $J$, an available rank $1\le j\le |J|$ and real arithmetic. Write $x=N_t$, $B=|x|$, $B_i=|N_i|$, and $d_{i,h}=N_{i+h}-N_i$, including $d_{i,0}=0$. The quantities $\ell_i=\min_h d_{i,h}$ and $u_i=\max_h d_{i,h}$ retain the notation of the main text.
 
 \subsection{Common-set projection bounds}
 Define $A_i=B+P_i-B_i$, $T_i=\max_h|x+d_{i,h}|$ and the floor projection $\Pi_B(v)=\max(B,v)$. Both $A_i$ and $T_i$ are at least $B$. A nondecreasing projection commutes with a finite order statistic, so $F_J=\Q(A)$, $S_J=\Q(T)$ and $K_J=\Q(\Pi_B(P))$. The projection is one-Lipschitz; therefore
@@ -7,12 +7,12 @@ Define $A_i=B+P_i-B_i$, $T_i=\max_h|x+d_{i,h}|$ and the floor projection $\Pi_B(
 |A_i-\Pi_B(P_i)|\le |B-B_i|,\qquad
 |T_i-\Pi_B(P_i)|\le |x-N_i|.
 \end{equation}
-The second bound follows by applying the reverse triangle inequality to every path point, then taking the maximum and applying the floor projection. Order statistics are nonexpansive in the maximum paired-row difference: if $|a_i-b_i|\le R$ for each $i$, then $a_i\le b_i+R$ and conversely, which implies $|\Q(a)-\Q(b)|\le R$. Consequently,
+The second bound follows by applying the reverse triangle inequality to every path point, then taking the maximum and applying the floor projection. Order statistics are nonexpansive in the maximum paired-row difference. If $|a_i-b_i|\le R$ for each $i$, then $a_i\le b_i+R$ and conversely. Thus $|\Q(a)-\Q(b)|\le R$. Consequently,
 \begin{equation}
 |F_J-K_J|\le R_{\rm abs},\quad |S_J-K_J|\le R_{\rm signed},\quad
 |F_J-S_J|\le R_{\rm abs}+R_{\rm signed},
 \end{equation}
-where $R_{\rm abs}=\max_{i\in J}|B-B_i|$ and $R_{\rm signed}=\max_{i\in J}|x-N_i|$. Among size-$m$ subsets, choosing the smallest signed distances minimizes their largest distance, since every other subset contains a distance at least as large as the $m$th ordered distance. This minimax statement concerns the signed radius. For any realized response, pinball loss is $\max(\tau,1-\tau)$-Lipschitz in its report, so the report bounds also bound absolute score differences. They supply no direction of score improvement and require common rows and rank.
+where $R_{\rm abs}=\max_{i\in J}|B-B_i|$ and $R_{\rm signed}=\max_{i\in J}|x-N_i|$. Among size-$m$ subsets, choosing the smallest signed distances minimizes their largest distance, since every other subset contains a distance at least as large as the $m$th ordered distance. Pinball loss is $\max(\tau,1-\tau)$-Lipschitz in its report, so the same bounds apply to absolute score differences on common rows and rank. The bounds permit either score ranking.
 
 \subsection{Envelope plateaus and signed anchors}
 Put $v_i=-\ell_i\ge0$. The headroom of an increment envelope at anchor $z$ is
@@ -24,7 +24,7 @@ The branches agree at zero. Thus $g_i$ is two-Lipschitz and lies between $\min(u
 \begin{equation}
 |F_J-S_J|\le\max_{i\in J}\min\{2|x-N_i|,|u_i-v_i|\}.
 \end{equation}
-Symmetric envelopes, $u_i=v_i$, suffice for equality of $F_J$ and $S_J$. Nonnegative historical/query anchors and $u_i\ge v_i$ also suffice; the sign-reversed analogue interchanges the two envelope sides. These are sufficient conditions. The same range bound yields $F_J,S_J\le B+\Q\{\max(u_i,v_i)\}$. If every $B_i\le B$, then $F_J\ge K_J$; if every $B_i\ge B$, the order reverses. Both follow directly by comparing $A_i$ with $\Pi_B(P_i)$.
+Symmetric envelopes, $u_i=v_i$, give $F_J=S_J$. Nonnegative historical and query anchors with $u_i\ge v_i$ also give equality; reversing the anchor signs interchanges the envelope sides. The same range bound yields $F_J,S_J\le B+\Q\{\max(u_i,v_i)\}$. If every $B_i\le B$, then $F_J\ge K_J$; if every $B_i\ge B$, the order reverses. Both follow directly by comparing $A_i$ with $\Pi_B(P_i)$.
 
 Equal absolute anchors can still leave a translated-path gap. Take $c>0$, $H=1$, $t=721$ and the history $N_s=(-1)^{s+1}c$. The completed pool $J=\{1,\ldots,720\}$ contains equal counts of both signs and the query is $c$. All native peaks are $c$ and all headrooms vanish. Raw translation gives half the peaks $c$ and half $3c$, so rank 685 yields $F=K=c$ and $S=3c$. Here $R_{\rm abs}=0$ and $R_{\rm signed}=2c$.
 
@@ -34,7 +34,7 @@ Fix $d>0$ and an available corrected rank for a pool of size $n$. Set $t=H+n-1$,
 Report order can also differ across constructions. The artificial history $(0,-4,-1,2)$ with $H=1$ has completed origins $0,1,2$ and current anchor two. Their native peaks are $(4,4,2)$, headrooms $(4,0,1)$ and translated peaks $(2,5,5)$. At the available corrected rank three for $\tau=3/4$, this gives $F=6$, $S=5$ and $K=4$. This auxiliary quantile belongs only to the illustration.
 
 \subsection{Fixed-coefficient residual replay}\label{app:replay}
-Fix arbitrary $c,\phi$ and define residuals $\epsilon_s=N_{s+1}-c-\phi N_s$. Replaying a historical residual sequence from $x$ gives $M_{i,0}(x)=x$ and $M_{i,h+1}=c+\phi M_{i,h}+\epsilon_{i+h}$. Subtracting the observed recursion and using induction establishes
+Fix arbitrary $c,\phi$ and define residuals $\epsilon_s=N_{s+1}-c-\phi N_s$. Replaying a historical residual sequence from $x$ gives $M_{i,0}(x)=x$ and $M_{i,h+1}=c+\phi M_{i,h}+\epsilon_{i+h}$. Subtracting the observed recursion and using induction gives
 \begin{equation}
 M_{i,h}(x)=N_{i+h}+\phi^h(x-N_i),\qquad
 T^{\rm raw}_{i,h}(x)=N_{i+h}+(x-N_i).
@@ -44,7 +44,7 @@ Taking absolute maxima and using the reverse triangle inequality gives
 \left|\max_h|T^{\rm raw}_{i,h}(x)|-\max_h|M_{i,h}(x)|\right|
 \le \max_{0\le h\le H}|1-\phi^h|\,|x-N_i|.
 \end{equation}
-For $0\le\phi\le1$, the coefficient is $1-\phi^H$; at $\phi=1$ the paths coincide. The identity is algebraic and needs no residual distribution. Treating historical blocks as representative future scenarios is an additional modeling premise. The replay's time order generally requires more information than the two raw increment extrema.
+For $0\le\phi\le1$, the coefficient is $1-\phi^H$; at $\phi=1$ the paths coincide. The identity follows algebraically for any residual sequence. Scenario replay treats historical blocks as representative of future paths. The replay's time order generally requires more information than the two raw increment extrema.
 
 Horizon order alone leaves score effects unresolved. For example, $B=0$, both realized peaks equal one, the short report is ten, and the long report is one. Raising the long report to the short one changes its quantile loss from zero to $0.45$. This separates a known response floor from an ordering imposed between fitted reports.
 
@@ -60,44 +60,103 @@ Positive homogeneity of pinball loss implies that multiplying the objective in \
 =\frac1W\sum_{i\in\T}\rho_\tau(P_{i,H}-\alpha-z_{i,\kappa}^{\mathsf T}\theta)
 +\frac{\lambda}{2s_\kappa}\|\theta-\sigma_{\kappa B}e_B\|_2^2.
 \end{equation}
-The issued report is $\max\{B_t,\alpha+z_{t,\kappa}^{\mathsf T}\theta\}$. The equivalent peak problem thus has a shifted slope penalty. For every response $P\ge B$, raising a report below $B$ to $B$ weakly reduces its realized pinball loss. Translation by a known $B$ also translates the corresponding conditional quantile. These finite relationships leave estimation and future calibration as separate questions.
+The issued report is $\max\{B_t,\alpha+z_{t,\kappa}^{\mathsf T}\theta\}$. The equivalent peak problem thus has a shifted slope penalty. For every response $P\ge B$, raising a report below $B$ to $B$ weakly reduces its realized pinball loss. Translation by a known $B$ also translates the corresponding conditional quantile.
 
 \subsection{Elementary quantile scores}\label{app:murphy}
 For a threshold $\eta$, the elementary score for forecast $c$ and outcome $p$ is
 \begin{equation}
 S_{\eta,\tau}(c,p)=\{\mathbf1(p<c)-\tau\}\{\mathbf1(\eta<c)-\mathbf1(\eta<p)\}.
 \end{equation}
-\citet{ehm2016} represents quantile-consistent scores as nonnegative mixtures of these elementary scores under the appropriate regularity conditions. The empirical difference is constant between forecast/outcome breakpoints, with equality conventions checked at the breakpoints. Both named primaries take positive and negative values over the full breakpoint set. Figure~\ref{fig:murphy} displays a reduced plotting grid; the sign audit uses all breakpoints. The crossing establishes absence of empirical uniform dominance over consistent scores; it supplies no population dominance test.
+\citet{ehm2016} represents quantile-consistent scores as nonnegative mixtures of elementary scores under the stated regularity conditions. The empirical difference is constant between forecast and outcome breakpoints, including the equality conventions at each breakpoint. Both main comparisons take positive and negative values over the full breakpoint set. Neither forecast therefore dominates its reference across all consistent quantile scores in this sample. Figure~\ref{fig:murphy} displays a reduced grid with the same crossing conclusion.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/murphy.pdf}
-\caption{Elementary-score differences for the two original primaries, regression minus its declared reference. Positive and negative segments occur in each panel. Thresholds follow the respective source scales; the plotting subset preserves the audit's full-range sign conclusion.}\label{fig:murphy}
+\caption{Elementary-score differences for the two main comparisons, with regression minus its stated historical reference. Each curve takes positive and negative values, and thresholds retain their source scales. The displayed grid preserves the crossings found over all breakpoints.}\label{fig:murphy}
 \end{figure}
 
-\subsection{Descriptive penalty paths}\label{app:lambda}
-Figure~\ref{fig:lambda} extends the penalty grid for the two original six-step long-history settings. The validation-selected models and original comparisons remain fixed. Evaluation curves are diagnostic and do not select a replacement penalty. An evaluation score need not improve monotonically with shrinkage, and the intercept-only optimum can be an interval rather than a unique report.
+\subsection{Penalty paths}\label{app:lambda}
+The penalty paths show that greater shrinkage can raise or lower evaluation loss. Figure~\ref{fig:lambda} extends the grid for both original six-step long-history settings, using fixed validation-selected models. The intercept-only optimum can be an interval of reports. Evaluation curves describe the fitted procedures; validation determines the selected penalty.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/lambda-path.pdf}
-\caption{Descriptive validation and evaluation loss paths with phase-specific intercept-only references. The complete grid, reused and newly fitted reports, and numerical receipts are archived under E6. No point on the evaluation curve is used for selection.}\label{fig:lambda}
+\caption{Validation and evaluation loss paths for the original long-history settings, with phase-specific intercept-only references. The penalty grid extends beyond the selection menu. Selected penalties use validation losses.}\label{fig:lambda}
 \end{figure}
 
 \section{Earlier construction evidence}
-Table~\ref{tab:old} retains the original historical-rule grid. $R$ is the symmetric-increment-envelope rule and $C^{\rm floor}=B$ is the issue-floor report. The earlier one-state retrieval study then compared recent and nearest signed-state pools. Its nearest native-peak improvement left the stronger original $F/S$ references ahead. The complete retrieval menu, monthly subdivisions and stationary-block sensitivities remain in the original result supplement; they are historical evidence from this same record.
+Nearest-state retrieval improves its native-peak reference but still loses to the stronger historical headroom and translated-path rules. The earlier comparison uses recent and nearest signed-state pools on the same record. Table~\ref{tab:old} gives the historical construction grid. Here $R$ denotes the symmetric-increment-envelope rule and $C^{\rm floor}=B$ the issue-floor report.
 
 \input{generated/earlier-table.tex}
 
-\FloatBarrier\clearpage
+\FloatBarrier
 \section{Reproducibility and technical supplement}\label{app:repro}
-The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020}{repository} separates frozen original results, new exploratory results and document sources. The original working paper remains available beside this revision. The revision guide maps each current table and figure to its source file, records moved material, and provides the exact compilation command. Conventional bibliography entries replace reading-log annotations; the underlying source-evidence notes preserve consulted versions and ranges.
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020}{repository} links the original comparisons, subsequent diagnostics and document sources to their specifications. The revision guide maps every table and figure to its inputs and gives the compilation command. All stored outputs retain the complete adverse cases, numerical failures, source identities and execution context, including the longer coverage tables and loss-weight frontiers. The supplied PDF is compiled from the delivered TeX with the bundled Tectonic engine.
 
-Exact recomputation requires the pinned source snapshots, model specification and code. The Treasury snapshot is archived with source attribution and terms. The FX acquisition route is documented separately; source redistribution rights remain unresolved. Public new outputs contain aggregates and numerical diagnostics, while per-origin financial arrays remain private. A later download of the same series can differ from the frozen version.
+Exact recomputation uses the pinned source snapshots, model specification and code. The FX record belongs to the source family studied by \citet{wisniewski2020}; exact equality with their input file remains unverified. Treasury sources carry attribution and terms; FX redistribution rights remain unresolved. Public outputs contain aggregates and numerical diagnostics, while per-origin financial arrays remain private; later downloads can differ from the pinned version.
 
-The original ridge optimizer uses two-block ADMM \citep{boyd2011}. Acceptance requires finite calculations, the declared primal/dual residual conditions and a feasible-dual objective-gap check. Its floating-point gap certificate bounds optimization error in the stated objective, rather than statistical adequacy or issued-report stability. An unpenalized intercept can have a flat minimizer interval: at real $\tau=19/20$, nineteen zeros and a single positive value $M$ admit every intercept in $[0,M]$. The implementation documentation retains the dual construction, iteration limits, tolerances and resource checks.
+The original ridge optimizer uses two-block ADMM \citep{boyd2011}. Accepted fits require finite calculations, the stated primal and dual residual conditions, and a feasible-dual objective-gap check. All eight expanded-menu cells and all 40 validation candidates completed, and reused four-predictor outputs were reconciled with their stored arrays and selections. The floating-point gap certificate bounds optimization error in the stated objective. An unpenalized intercept can have a flat minimizer interval: at $\tau=19/20$, nineteen zeros and one positive value $M$ admit every intercept in $[0,M]$.
 
-E1--E4 form a later exploratory supplement. The inference audit records the fixed Holm family, bandwidth sensitivity and coverage initialization correction. E3 records its pre-run menu and resource limits, original candidate eligibility, exact tie handling and all outcomes. The earlier four-predictor outputs were reused after reconciliation with their stored arrays and validation selections. These checks establish what was computed on the retained inputs; they add no independent financial sample.
+\begin{center}\footnotesize
+\begin{minipage}{\linewidth}
+\captionof*{table}{Sequence of design and computation records.}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.22\linewidth}>{\raggedright\arraybackslash}p{.73\linewidth}}
+\toprule
+Stage & Record\\
+\midrule
+Historical construction & Historical-rule and signed-state retrieval results provide the starting comparisons.\\
+Conditional comparison & The two main comparisons and original tuning menus precede their conditional evaluation runs.\\
+Regression diagnostics & Common-menu specifications precede their new fits; panel predictions precede the expanded-menu panel run and follow the original panel results.\\
+Earlier-period selection & The conservative rule, periods, success criteria and failure policy precede the earlier-period calculations, which finish before the original-period calculations start.\\
+Development and writing & Original-period selection-rule results are used for development; rolling cross-validation retains two failed FX cells in each period, four in total.\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{center}
 
-The former long coverage-evidence table, full loss-weight frontiers, machine diagnostics and execution histories remain in their original repository paths. The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/main/results}{result archive} retains adverse cells and original file identities. New coverage diagnostics supplement those records. The new manuscript is compiled directly from the delivered TeX using the bundled Tectonic engine, and the supplied PDF is that compiler's output.
+The split between the two main comparisons and the remaining 71 matched contrasts was chosen after observing results. The former 72-comparison adjustment remains stored; the cross-window FX comparison and historical contrasts lie outside the matched family. Expanded-menu paired tests form a separate 28-comparison Holm family. The earlier-period table uses the same original regression reports for both FX references, with selected penalties $\lambda=\RTreasuryPrimarySelected{}$ for Treasury and $\lambda=\RFXPrimarySelected{}$ for FX.
+
+Applying the Harvey--Leybourne--Newbold correction to pinball loss is approximate because it originates in mean-squared-error comparisons. HAC reference distributions assume serial regularity and a suitable finite long-run variance; the fixed-window interpretation concerns unconditional predictive ability. Nonoverlapping targets can still share dependent estimation histories, and Treasury's 40- and 12-observation grids give coarse asymptotic references. Floor atoms distinguish the exact nominal-exceedance null from the upper-bound condition for a quantile. POF uses all retained hits, while independence and joint coverage use likelihoods consistently conditioned on the first hit; the earlier mixed-initialization calculation is preserved separately.
+
+\begin{center}\footnotesize
+\begin{minipage}{\linewidth}
+\captionof*{table}{Numerical details relocated from the main text.}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.33\linewidth}>{\raggedright\arraybackslash}p{.62\linewidth}}
+\toprule
+Comparison & Recorded detail\\
+\midrule
+Original six-step FX HAC & Approximately $\FXPrimaryStatistic{}$ against rolling headroom; $\FXMatchedStatistic{}$ against matched frozen headroom.\\
+Ordinary intercept-only Treasury quantile & Loss changes of $-2.0\%,+3.2\%,+6.2\%,+2.4\%$ relative to $F$, in Table~\ref{tab:e3}'s Treasury row order.\\
+Expanded-menu Treasury regression & The upper menu endpoint is selected in 3 of 4 cells.\\
+Original Treasury main inference & Unadjusted HAC $p=\TreasuryPrimaryP{}$; two-comparison Bonferroni $p=\TreasuryPrimaryBonferroni{}$.\\
+Treasury selected penalty & The main setting changes from $\lambda=0.001$ under original regression to $\lambda=1$ under expanded-menu regression.\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\begin{center}\footnotesize
+\begin{minipage}{\linewidth}
+\captionof*{table}{Internal labels retained in stored outputs and figure images, with reader-facing names and fixed prediction outcomes.}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.79\linewidth}}
+\toprule
+Stored label & Description or recorded outcome\\
+\midrule
+R0 & Standard validation.\\
+R1 & Validation with the intercept-only option.\\
+R2 & The conservative one-standard-error rule.\\
+R3 & Rolling cross-validation.\\
+S1 / S2 / S3 & The three pre-set success criteria: weekly protection, FX gain retention and weekly median improvement; all fail.\\
+E3 & The common-menu regression comparison.\\
+E5 & The additional weekly panel with an expanded penalty menu.\\
+E6 & The extended penalty paths.\\
+R6 & The earlier-period selection-rule comparison and original-period development results.\\
+33+ / Four+ / Original 33 & Expanded-menu regression / four-predictor regression / original regression.\\
+P1 & Improvement over original regression in originally losing panel cells: 30/45 against a threshold of 40; unsupported.\\
+P2 & Panel losses within the pre-set band around $F$: 24/48 against a threshold of 36; unsupported.\\
+P3 & Panel penalties $\lambda\ge1$: 33/48 against a threshold of 25; supported.\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{center}
 
 \subsection{Notation}
 \begin{center}\small
