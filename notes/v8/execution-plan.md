@@ -13,7 +13,7 @@ Only the new clone and revision-v8 are writable. revision-v7-final, its original
 |B4|1.5h|2.25h|PR3 writing conventions, one-decimal prose percentages, <=8%/20words/no>40, eight limits concentrated|complete:53paras;1.12%/12.24words/zero>40;15pages|
 |B5|1h|1.5h|3 simulated referees x5 concerns and response table; unresolved toTODO|complete:3roles/15responses;futureT1-T6|
 |B6|0.5h|0.75h|One-pageJoF coverletter, ordinaryFigure1ticks, figurelabels, metadata/placeholders|complete:16/25/1/1;145packageassertionsPASS|
-|B7|0.5h|0.75h|Alltests/numericchecks/threePDFcompile andpageQA;pushrevision-v8only;comparelink|QA complete:1025tests/1090subtests,5049numeric,145package;42pages inspected;publication next|
+|B7|0.5h|0.75h|Alltests/numericchecks/threePDFcompile andpageQA;pushrevision-v8only;comparelink|complete:1025tests/1090subtests,5049numeric,145package;42pages inspected;2772-file remote tree identical;closeout receipt follows|
 
 ## Rulings fixed before simulation
 

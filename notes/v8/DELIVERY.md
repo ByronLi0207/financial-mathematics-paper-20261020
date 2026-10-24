@@ -47,7 +47,7 @@
 
 [最终数字验收](numerical-final.json)为 **5049 项、0 个未解决数字问题**；包括 1205 个 v7 证据字段、2125 个补充材料绑定、418 行历史表格逐行保留，以及 606 个模拟绑定。低分位 FX 匹配原值 −10.145914… 正确直接显示为下降 10.1%。外层验证 52 与 R3 合并滚动折 78 已区别，最初核对器假阳性已记录并纠正。
 
-[最终测试](final-tests.json)记录 **1025 passed、1090 subtests passed，116.62 秒**。[发布前验收](final-verification.json)记录 42 页逐页检查、原生编译成功、数字与包检查通过；这不替代尚待结束的远端发布验收。
+[最终测试](final-tests.json)记录 **1025 passed、1090 subtests passed，116.62 秒**。[发布前验收](final-verification.json)记录 42 页逐页检查、原生编译成功、数字与包检查通过；远端发布验收另见 browser-publication.json。
 
 ## 实际阶段用时
 
@@ -62,17 +62,17 @@
 |B4|全文写法修改与数字保全|18 分 0.1 秒|已完成|
 |B5|三角色模拟审稿及逐条回应|12 分 30.1 秒|已完成|
 |B6|投稿说明、图形与作者待办|12 分 5.5 秒|已完成|
-|B7|最终测试、逐页检查、打包与发布验收|**待发布完成后填写**|技术检查已有通过记录；发布／树一致性待验收|
+|B7|最终测试、逐页检查、打包与发布验收|27.1 分钟（整树验收截止）|已完成；2,772文件整树及本地字节一致|
 
 ## 发布传输、历史保全与待用户决定
 
-浏览器传输使用的原始完整历史包按上传大小拆成 [part01](local-revision-history.bundle.part01) 和 [part02](local-revision-history.bundle.part02)，[历史清单](local-history-manifest.json)记录原始 head、完整 bundle 和各分片哈希。分片用于保留原始历史；**它们本身不证明远端分支的文件树或历史已与本地验收一致**。浏览器传输及远端／本地树核对由主流程继续完成。
+浏览器传输使用的原始完整历史包按上传大小拆成 [part01](local-revision-history.bundle.part01) 和 [part02](local-revision-history.bundle.part02)，[历史清单](local-history-manifest.json)记录原始 head、完整 bundle 和各分片哈希。分片用于保留原始历史；**它们本身不证明远端分支的文件树或历史已与本地验收一致**。浏览器传输后，2772文件全部本地字节与远端Git对象一致，文件树完全相同；原始研究历史仍由上述bundle保留。
 
 原 v7 在本轮期间同时推进至 `039f6f1b49d46610697bed5300cab687b37951df`，最终保全检查因此记录了外部并行漂移，核对本身不归因于具体操作者。本轮没有写入原 v7 目录，也没有把它“保持未变”作为通过项。v8 自身的 **1414 个旧结果／数据／协议文件**与冻结模拟源／输出仍通过保全检查；详情见[保全核对](immutability-final.json)及[归因说明](immutability-assessment.json)。初次远端 v7 与冻结本地 v7 的树差异仍保留为作者决定，不静默更新 v8 基线。
 
 待决定事项：独立／前瞻数据、更长验证历史、小时数值可执行性及解耦机制设计、真实估值／总敞口／决策成本数据、标题最终确认，以及作者信息、ORCID、资金、利益冲突、AI 声明和数据权限。所有个人声明仍为 `[TO BE COMPLETED BY AUTHOR]`。完整清单见[作者决定](author-decisions.md)。
 
-- 计划比较链接：[revision-v7-final…revision-v8](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/revision-v7-final...revision-v8)。**远端可用性与最终 head／tree：待 B7 验证后填写。**
-- **B7 发布状态：待主流程填写。**
-- **B7 结束时间、实际耗时与总用时：待主流程填写。**
+- 计划比较链接：[revision-v7-final…revision-v8](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/revision-v7-final...revision-v8)。已核对快照 `cf4ed85887c18e1fcb650086a844c266461fcda4`，树 `f13cb41cd5291aff3d5ccccdd97142ba85bd5576`；最终closeout仅更新本节及发布/时间记录。
+- **B7 发布状态：完整内容验收PASS，closeout记录随即发布。**
+- **B7整树验收截止：2026-10-24T09:37:37.045150+00:00；B7 27.1分钟，总计2.24小时。最后行政回执上传用时在最终答复另计。**
 - 本轮不开 PR、不合并、不向期刊提交；这些属于作者审阅具体结果后的后续决定。
