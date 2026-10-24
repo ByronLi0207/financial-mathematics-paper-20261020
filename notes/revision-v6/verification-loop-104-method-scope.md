@@ -1,0 +1,18 @@
+# Loop104 — executed-method scope and guarantee claims
+
+Directread currentmainTable2 caption/headers/allnine rows, mainlimitationsindex9block5, andSupplementS16firstfourblocks: scope paragraph, diagnosticreadingparagraph, inventorytableS38, andfullfiniteACI/headroomSAVdefinitionincludinginlineformulas. Thisis a repeated internalclaimcheck, notnewmethod/statisticalverification. Bindingswereobservedbutlinkedfinancialoutputs/protocols notopened.
+
+Table2namesFiniteDelayedACI-style,HeadroomSAVandFixedcombinations; itdistinguishes maturity/refit controls and explicitlydeniesinheritedcoverage/globaloptimum/fullCAViaRreturn-VaR replication. S16definesfinitewindow/matureonce-onlyfeedback/projectedalphaandrank-zero floor, coverage-firstretrospectivetuning/carrygap, headroom-normalizedfixedsix-startrecursionandcomplete-cellfailure. Thesechangesareactualscopequalifiers, nothiddenunderunqualifiedcanonicalnames. Thisreadneitherprovescorrectness norimports a canonicaltheorem.
+
+S16scopeexplicitlykeeps originalprimaries, inspectedarchives andnativeunits, withno independentdealer/prospective/financingpolicy orswitchingexperimentclaim. Diagnosticparagraphretainsworkingreferences,NAversusbookkeeping,andseparatelyfrozenfamilieswhichdonotadjustallhistoricalselection. S38countsandstatuses were read, not re-counted orverifiedagainstresults. Mainlimitationssays executionsbroadenmenuwithoutrepresentingwholemethodclasses; canonicalsequentialconformal/richerdynamics/innovation-tailEVTremaindistinct, whilefiniteFHS/QRF/POTfailure/resourceboundsremain. Pool/update matchingdoesnotestablishidenticalfeatures/assumptions.
+
+No scope/guaranteeoverclaim requiring sourceorconclusionchangefound. The adverse primary/method/NA evidence isnot removedormadeintoclass-widefailure. No newanalysis,statistic,count,proof,model/test,rawvector/UI/Claude,source/resultedit,install/delete. Fixed96publicationstillinprogressseparatelyanddoesnotincludethisnote; goalactiveuntil00:31:50UTC.
+
+Actualreadback 2026-10-23T23:53:30.400989+00:00
+
+```json
+{
+  "submission-jof/manuscript-content.json": "b9197f80173b8dccbb74cb2086cea202a4f2d1c1659768f7f62835a1a9a1510b",
+  "submission-jof/supplement-content.json": "738bb71afab319e52b5296328858f890bf692692c97a3ab2a35a78f4d3ae6e28"
+}
+```

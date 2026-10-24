@@ -1,0 +1,19 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_numbered_sections_do_not_repeat_the_same_first_subheading ________
+
+    def test_numbered_sections_do_not_repeat_the_same_first_subheading():
+        d,_=api().compose(write_outputs=False)
+        for sec in d['sections']:
+            title=re.sub(r'^\d+\.\s*','',sec['title']).casefold()
+            if sec['blocks'] and sec['blocks'][0]['type']=='subheading':
+>               assert sec['blocks'][0]['text'].casefold()!=title
+E               AssertionError: assert 'research design and transparency' != 'research design and transparency'
+E                +  where 'research design and transparency' = <built-in method casefold of str object at 0x10781af60>()
+E                +    where <built-in method casefold of str object at 0x10781af60> = 'Research design and transparency'.casefold
+
+test_v6_submission.py:63: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_submission.py::test_numbered_sections_do_not_repeat_the_same_first_subheading
+1 failed in 0.12s

@@ -1,0 +1,76 @@
+{
+  "round": 13,
+  "task": "Read-only numeric trace of five current-main-abstract claims; no analyses or replication",
+  "source_commit": "d1888c0a89fafbe3f36e194ff5a467ef9a3f6902",
+  "recorded_utc": "2026-10-23T21:39:20.908675+00:00",
+  "seed": 2026102313,
+  "sampling_unit": "Semantic empirical numeric claim; paired counts and numerator/denominator ratios each count as one claim",
+  "sampling_frame_order": "Order of first appearance in current abstract; six numeric claims; rhetorical 'Three findings' excluded",
+  "frame": [
+    {
+      "index": 0,
+      "id": "fx_original_loss_percent",
+      "display": "12.660%",
+      "claim": "Original FX primary mean-loss reduction"
+    },
+    {
+      "index": 1,
+      "id": "fx_matched_loss_percent",
+      "display": "14.77%",
+      "claim": "Separate matched-history FX mean-loss reduction"
+    },
+    {
+      "index": 2,
+      "id": "fx_matched_breach_counts",
+      "display": "360 to 376",
+      "claim": "Matched-history FX breach-count increase"
+    },
+    {
+      "index": 3,
+      "id": "fx_crossing_origins",
+      "display": "640/6625",
+      "claim": "Short-history FX QR horizon-report crossings"
+    },
+    {
+      "index": 4,
+      "id": "treasury_primary_loss_percent",
+      "display": "50.79%",
+      "claim": "Adverse Treasury primary mean-loss increase"
+    },
+    {
+      "index": 5,
+      "id": "aggregate_panel_lower_loss_cells",
+      "display": "3/48",
+      "claim": "Additional aggregate-panel QR33 lower-loss cells"
+    }
+  ],
+  "algorithm": "random.Random(2026102313).sample(range(6), 5)",
+  "selected_indices": [
+    5,
+    4,
+    2,
+    3,
+    0
+  ],
+  "selected_claims": [
+    "aggregate_panel_lower_loss_cells",
+    "treasury_primary_loss_percent",
+    "fx_matched_breach_counts",
+    "fx_crossing_origins",
+    "fx_original_loss_percent"
+  ],
+  "excluded": "fx_matched_loss_percent (14.77%); this value was already sampled in loop1 Table3",
+  "prior_scope_read": [
+    "verification-loop-001-numbers.json (Table3)",
+    "verification-loop-005-numbers.json (Table4)",
+    "verification-loop-009-numbers.json (Table5)"
+  ],
+  "document_sha256": {
+    "submission-jof/manuscript-content.json": "6b5c15d930f88431140fb84f7042ec83d55d63e72620a5ac18b4796ea606ded2",
+    "submission-jof/manuscript.tex": "6c6ee36e505165dde0a3d3f4d27fbcfe5d20642929e37ac2316ed6e87b10af72",
+    "submission-jof/manuscript-preview.pdf": "9e4f54f02fe3ce1a1ff105a05b0cdf9805dbf149fd8053d0e23ccd02b530eece",
+    "v6_submission.py": "6f96167d21ea915b7c71a0a2a80d9bab5d4beb96075e67d43ddf4db56c7f46f2"
+  },
+  "status": "PASS",
+  "conclusion_changing_issue_found": false
+}

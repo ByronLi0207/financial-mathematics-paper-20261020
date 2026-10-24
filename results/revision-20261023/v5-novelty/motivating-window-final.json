@@ -1,0 +1,62 @@
+{
+  "status": "COMPLETE",
+  "analysis_status": "post-result / exploratory",
+  "identity": {
+    "source": "nyfed_weekly",
+    "raw_source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+    "raw_source_bytes": 23315,
+    "spec_path": "protocol/revision-20261022/study-spec.json",
+    "spec_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+    "selection_path": "protocol/revision-20261022/selection-freeze.json",
+    "selection_sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+    "code_sha256": "715895a987d8d09d424c560fa03c8c0328ac708f14ad024c9046621bac991962",
+    "design_sha256": "47227940c17d4c292eca7b666a90fb03b58c35fcbb534b3ea4ffa98a64da07ad"
+  },
+  "source_series_key": "PDPOSGS-B",
+  "native_unit": "USD millions",
+  "original_source_url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGS-B.csv",
+  "eligible_first_origin": 405,
+  "eligible_last_origin": 681,
+  "method": "clean frozen F",
+  "window": 260,
+  "example": {
+    "origin": 408,
+    "horizon": 6,
+    "report": 73139.0,
+    "floor": 42513.0,
+    "peak": 74397.0,
+    "endpoint_absolute": 48144.0,
+    "endpoint_signed": 48144.0,
+    "positions": [
+      42513.0,
+      43528.0,
+      73875.0,
+      65145.0,
+      74397.0,
+      50851.0,
+      48144.0
+    ],
+    "selection_rule": "earliest eligible issue origin; absolute endpoint <= clean F report < sampled peak",
+    "refit_origin": 405,
+    "dates": [
+      "2021-01-27T00:00:00.000000",
+      "2021-02-03T00:00:00.000000",
+      "2021-02-10T00:00:00.000000",
+      "2021-02-17T00:00:00.000000",
+      "2021-02-24T00:00:00.000000",
+      "2021-03-03T00:00:00.000000",
+      "2021-03-10T00:00:00.000000"
+    ],
+    "absolute_positions": [
+      42513.0,
+      43528.0,
+      73875.0,
+      65145.0,
+      74397.0,
+      50851.0,
+      48144.0
+    ],
+    "dates_are": "economic dates in the downloaded vintage; not original public release timestamps"
+  },
+  "limitation": "Selected deterministic illustration; not typicality, holdout validation, or an intrarecord peak."
+}

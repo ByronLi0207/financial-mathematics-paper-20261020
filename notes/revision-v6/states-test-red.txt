@@ -1,0 +1,390 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFFFFFFFFFFFFF                                                        [100%]
+=================================== FAILURES ===================================
+______ test_group_influence_hac_retains_the_complete_nonconsecutive_clock ______
+
+    def test_group_influence_hac_retains_the_complete_nonconsecutive_clock():
+        # Catches compressing group dates, wrong p_g scaling, uncentered HAC or wrong n.
+>       public, private = api().analyze_states(*fixture(), horizon=1, response_scale=2., return_private=True)
+                          ^^^^^
+
+test_v6_states.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+______ test_two_restriction_heterogeneity_uses_full_influence_covariance _______
+
+    def test_two_restriction_heterogeneity_uses_full_influence_covariance():
+        # Catches replacing equal group means by the intercept-only equal-accuracy null.
+>       public, private = api().analyze_states(*fixture(), horizon=1, response_scale=2., return_private=True)
+                          ^^^^^
+
+test_v6_states.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+___ test_gw_lag_is_t_minus_h_after_explicit_burn_in_with_frozen_normalizers ____
+
+    def test_gw_lag_is_t_minus_h_after_explicit_burn_in_with_frozen_normalizers():
+        # Catches d_(t-1), suffix row shifting, evaluation-fitted scales or centered instruments.
+        rms=np.full(40,np.nan);rms[14:19]=[1.,2.,3.,4.,5.]
+        rms[20:28]=[1.,3.,5.,1.,3.,5.,1.,3.]
+        losses=[1.,3.,-1.,2.,0.,5.,-2.,4.]
+>       public, private=api().analyze_states(rms,losses,np.arange(20,28),np.arange(14,19),
+                        ^^^^^
+                                            horizon=2,response_scale=2.,return_private=True)
+
+test_v6_states.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+____ test_rms_and_state_thresholds_are_prefix_only_with_no_future_refitting ____
+
+    def test_rms_and_state_thresholds_are_prefix_only_with_no_future_refitting():
+        # Catches forward-looking RMS or estimating terciles/normalizers on evaluation.
+>       module=api()
+               ^^^^^
+
+test_v6_states.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+__ test_state_ties_are_low_then_middle_and_collapsed_groups_are_not_repaired ___
+
+    def test_state_ties_are_low_then_middle_and_collapsed_groups_are_not_repaired():
+        # Catches changing <= boundaries or moving cutpoints to force nonempty groups.
+        rms,losses,origins,training=fixture()
+        rms[20:26]=[1.,2.,2.5,1.,2.,2.5]
+>       public,private=api().analyze_states(rms,losses,origins,training,horizon=1,response_scale=2.,return_private=True)
+                       ^^^^^
+
+test_v6_states.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_gw_can_reject_mean_advantage_while_equal_state_means_have_no_heterogeneity _
+
+    def test_gw_can_reject_mean_advantage_while_equal_state_means_have_no_heterogeneity():
+        # Catches interpreting a joint GW rejection as volatility dependence.
+        rms=np.full(180,np.nan);rms[14:19]=[0.,.75,1.5,2.25,3.]
+        rms[20:140]=np.tile([.25,1.5,2.75],40)
+        noise=np.tile([-.4,.4,-.3,.3,-.2,.2,-.1,.1],5)
+        losses=np.repeat(-3.+noise,3)
+>       public=api().analyze_states(rms,losses,np.arange(20,140),np.arange(14,19),horizon=2,response_scale=1.)
+               ^^^^^
+
+test_v6_states.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_constant_loss_and_constant_rms_preserve_singular_na_without_dropping_instruments _
+
+    def test_constant_loss_and_constant_rms_preserve_singular_na_without_dropping_instruments():
+        # Catches reducing to an intercept test or manufacturing p=1 after rank failure.
+        rms=np.ones(40)
+>       public=api().analyze_states(rms,np.full(12,-2.),np.arange(20,32),np.arange(14,19),horizon=2,response_scale=1.)
+               ^^^^^
+
+test_v6_states.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+______ test_zero_within_group_variance_is_explicit_singular_covariance_na ______
+
+    def test_zero_within_group_variance_is_explicit_singular_covariance_na():
+        # Catches displaying a valid equal-means p after zero long-run covariance.
+        rms,losses,origins,training=fixture()
+>       public=api().analyze_states(rms,np.ones(6),origins,training,horizon=1,response_scale=1.)
+               ^^^^^
+
+test_v6_states.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+______________ test_short_gw_suffix_keeps_full_group_denominators ______________
+
+    def test_short_gw_suffix_keeps_full_group_denominators():
+        # Catches shortening state summaries to the GW suffix or indexing a future lag.
+        rms=np.ones(40)
+>       public=api().analyze_states(rms,[1.,2.],[20,21],np.arange(13,19),horizon=2,response_scale=1.)
+               ^^^^^
+
+test_v6_states.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+___ test_unobserved_early_and_future_rms_nan_is_allowed_but_used_nan_is_not ____
+
+    def test_unobserved_early_and_future_rms_nan_is_allowed_but_used_nan_is_not():
+        # Catches scanning unused RMS history or dropping malformed actual issues.
+        parts=fixture()
+>       public=api().analyze_states(*parts,horizon=1,response_scale=2.)
+               ^^^^^
+
+test_v6_states.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin0-training0] _
+
+origin = [20, 22], training = array([14, 15, 16, 17, 18])
+
+    @pytest.mark.parametrize('origin,training',[
+        ([20,22],np.arange(14,19)),([20,21],[14,16,18]),([20,21],np.arange(15,20)),
+        ([20.,21.],np.arange(14,19)),([True],np.arange(14,19))])
+    def test_bad_full_axis_or_nonmature_training_pool_is_rejected(origin,training):
+        # Catches compressed issue dates, favorable training deletion or immature labels.
+        with pytest.raises(ValueError):
+>           api().analyze_states(np.ones(40),np.ones(len(origin)),origin,training,horizon=2,response_scale=1.)
+            ^^^^^
+
+test_v6_states.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin1-training1] _
+
+origin = [20, 21], training = [14, 16, 18]
+
+    @pytest.mark.parametrize('origin,training',[
+        ([20,22],np.arange(14,19)),([20,21],[14,16,18]),([20,21],np.arange(15,20)),
+        ([20.,21.],np.arange(14,19)),([True],np.arange(14,19))])
+    def test_bad_full_axis_or_nonmature_training_pool_is_rejected(origin,training):
+        # Catches compressed issue dates, favorable training deletion or immature labels.
+        with pytest.raises(ValueError):
+>           api().analyze_states(np.ones(40),np.ones(len(origin)),origin,training,horizon=2,response_scale=1.)
+            ^^^^^
+
+test_v6_states.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin2-training2] _
+
+origin = [20, 21], training = array([15, 16, 17, 18, 19])
+
+    @pytest.mark.parametrize('origin,training',[
+        ([20,22],np.arange(14,19)),([20,21],[14,16,18]),([20,21],np.arange(15,20)),
+        ([20.,21.],np.arange(14,19)),([True],np.arange(14,19))])
+    def test_bad_full_axis_or_nonmature_training_pool_is_rejected(origin,training):
+        # Catches compressed issue dates, favorable training deletion or immature labels.
+        with pytest.raises(ValueError):
+>           api().analyze_states(np.ones(40),np.ones(len(origin)),origin,training,horizon=2,response_scale=1.)
+            ^^^^^
+
+test_v6_states.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin3-training3] _
+
+origin = [20.0, 21.0], training = array([14, 15, 16, 17, 18])
+
+    @pytest.mark.parametrize('origin,training',[
+        ([20,22],np.arange(14,19)),([20,21],[14,16,18]),([20,21],np.arange(15,20)),
+        ([20.,21.],np.arange(14,19)),([True],np.arange(14,19))])
+    def test_bad_full_axis_or_nonmature_training_pool_is_rejected(origin,training):
+        # Catches compressed issue dates, favorable training deletion or immature labels.
+        with pytest.raises(ValueError):
+>           api().analyze_states(np.ones(40),np.ones(len(origin)),origin,training,horizon=2,response_scale=1.)
+            ^^^^^
+
+test_v6_states.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin4-training4] _
+
+origin = [True], training = array([14, 15, 16, 17, 18])
+
+    @pytest.mark.parametrize('origin,training',[
+        ([20,22],np.arange(14,19)),([20,21],[14,16,18]),([20,21],np.arange(15,20)),
+        ([20.,21.],np.arange(14,19)),([True],np.arange(14,19))])
+    def test_bad_full_axis_or_nonmature_training_pool_is_rejected(origin,training):
+        # Catches compressed issue dates, favorable training deletion or immature labels.
+        with pytest.raises(ValueError):
+>           api().analyze_states(np.ones(40),np.ones(len(origin)),origin,training,horizon=2,response_scale=1.)
+            ^^^^^
+
+test_v6_states.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_______ test_nonfinite_moments_are_na_without_a_smaller_instrument_menu ________
+
+    def test_nonfinite_moments_are_na_without_a_smaller_instrument_menu():
+        # Catches normalizing overflow, deleting moments, or retaining a misleading p.
+        rms,losses,origins,training=fixture()
+>       public=api().analyze_states(rms,losses,origins,training,horizon=1,response_scale=1e-308)
+               ^^^^^
+
+test_v6_states.py:198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+_ test_public_output_is_json_safe_aggregate_only_and_native_unit_rescaling_is_invariant _
+
+    def test_public_output_is_json_safe_aggregate_only_and_native_unit_rescaling_is_invariant():
+        # Catches leaking influence arrays or fitting a0/v0 from evaluation data.
+>       parts=fixture();module=api()
+                               ^^^^^
+
+test_v6_states.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_states') is not None, 'WP4 state API is not implemented'
+E       AssertionError: WP4 state API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x1064a3ba0>('v6_states')
+E        +    where <function find_spec at 0x1064a3ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_states.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_states.py::test_group_influence_hac_retains_the_complete_nonconsecutive_clock
+FAILED test_v6_states.py::test_two_restriction_heterogeneity_uses_full_influence_covariance
+FAILED test_v6_states.py::test_gw_lag_is_t_minus_h_after_explicit_burn_in_with_frozen_normalizers
+FAILED test_v6_states.py::test_rms_and_state_thresholds_are_prefix_only_with_no_future_refitting
+FAILED test_v6_states.py::test_state_ties_are_low_then_middle_and_collapsed_groups_are_not_repaired
+FAILED test_v6_states.py::test_gw_can_reject_mean_advantage_while_equal_state_means_have_no_heterogeneity
+FAILED test_v6_states.py::test_constant_loss_and_constant_rms_preserve_singular_na_without_dropping_instruments
+FAILED test_v6_states.py::test_zero_within_group_variance_is_explicit_singular_covariance_na
+FAILED test_v6_states.py::test_short_gw_suffix_keeps_full_group_denominators
+FAILED test_v6_states.py::test_unobserved_early_and_future_rms_nan_is_allowed_but_used_nan_is_not
+FAILED test_v6_states.py::test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin0-training0]
+FAILED test_v6_states.py::test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin1-training1]
+FAILED test_v6_states.py::test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin2-training2]
+FAILED test_v6_states.py::test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin3-training3]
+FAILED test_v6_states.py::test_bad_full_axis_or_nonmature_training_pool_is_rejected[origin4-training4]
+FAILED test_v6_states.py::test_nonfinite_moments_are_na_without_a_smaller_instrument_menu
+FAILED test_v6_states.py::test_public_output_is_json_safe_aggregate_only_and_native_unit_rescaling_is_invariant
+17 failed in 0.30s

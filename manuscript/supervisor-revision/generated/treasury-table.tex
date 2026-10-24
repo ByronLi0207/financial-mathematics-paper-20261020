@@ -1,0 +1,35 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Treasury original reports, matched by horizon and history. Loss is in source-reported USD millions.}\label{tab:treasury}
+\begin{tabular}{rrlrrrr}
+\toprule
+$H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p$ \\
+\midrule
+6 & 52 & $F$ & 2779.054 & +0.000 & 3.971 & -- \\
+6 & 52 & $S$ & 2786.620 & +0.272 & 3.971 & -- \\
+6 & 52 & $K$ & 2574.098 & -7.375 & 10.108 & -- \\
+6 & 52 & QR & 5095.519 & +83.354 & 30.325 & 0.112 \\
+6 & 52 & KNN & 2779.054 & +0.000 & 3.971 & -- \\
+6 & 52 & Scaled KNN & 4208.293 & +51.429 & 3.249 & 0.013 \\
+6 & 260 & $F$ & 2758.665 & +0.000 & 10.108 & -- \\
+6 & 260 & $S$ & 2707.244 & -1.864 & 10.108 & -- \\
+6 & 260 & $K$ & 2287.758 & -17.070 & 10.469 & -- \\
+6 & 260 & QR & 4159.673 & +50.786 & 19.495 & 0.008$^{*}$ \\
+6 & 260 & KNN & 2663.561 & -3.447 & 10.108 & 1.000 \\
+6 & 260 & Scaled KNN & 3127.173 & +13.358 & 8.303 & 1.000 \\
+24 & 52 & $F$ & 3715.693 & +0.000 & 11.913 & -- \\
+24 & 52 & $S$ & 3652.379 & -1.704 & 11.913 & -- \\
+24 & 52 & $K$ & 5017.741 & +35.042 & 25.271 & -- \\
+24 & 52 & QR & 12165.574 & +227.411 & 47.653 & 0.983 \\
+24 & 52 & KNN & 3715.693 & +0.000 & 11.913 & -- \\
+24 & 52 & Scaled KNN & 5625.667 & +51.403 & 11.552 & 0.226 \\
+24 & 260 & $F$ & 2480.306 & +0.000 & 4.332 & -- \\
+24 & 260 & $S$ & 2478.871 & -0.058 & 4.332 & -- \\
+24 & 260 & $K$ & 2301.476 & -7.210 & 24.188 & -- \\
+24 & 260 & QR & 5204.760 & +109.843 & 30.325 & 1.000 \\
+24 & 260 & KNN & 2257.963 & -8.964 & 4.693 & 1.000 \\
+24 & 260 & Scaled KNN & 4137.264 & +66.805 & 2.888 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Every relative change uses its own frozen $F$. $^{*}$Primary, unadjusted HAC p-value (Treasury QR at the main setting). Other conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts. The FX cross-window primary is reported separately. This reporting division was chosen after results; the original 72-member adjustment remains archived. Dashes mark self-references, historical contrasts or the exact full-pool KNN identity. Identical-loss cells receive input one for conservative bookkeeping. Values are rounded only for display.\end{minipage}
+\end{table}

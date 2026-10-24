@@ -1,0 +1,254 @@
+{
+  "kind": "pre_output_lookup_semantic_numeric_claim_selection",
+  "loop": 17,
+  "created_at_utc": "2026-10-23T21:44:53.888305+00:00",
+  "repository": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023",
+  "branch": "revision-v4-jof",
+  "head": "14262bd68ac5e18c5daaf961c0730a43442e4957",
+  "source": "submission-jof/manuscript-content.json",
+  "source_sha256": "6b5c15d930f88431140fb84f7042ec83d55d63e72620a5ac18b4796ea606ded2",
+  "section_index": 7,
+  "section_title": "8. Transport and robustness (RQ3)",
+  "section_block_count": 6,
+  "frame_policy": "Explicit semantic numeric quantities in Section 8, in order of appearance. A complete lower/higher/denominator partition is one compound claim; one percentage range is one claim; the rate, nominal excess and Monte Carlo SE are separate quantities. Elliptical C2 and L cell counts inherit the explicit 48-cell denominator and F reference from the same sentence.",
+  "exclusions": [
+    "Section, supplement and table locators",
+    "Citation years",
+    "Method-name digits QR33/C2 and horizon/window context labels H6/H24/W260, unless serving as identity for a selected numeric claim",
+    "Pure qualitative direction claims without an explicit numeric quantity"
+  ],
+  "frame": [
+    {
+      "frame_index": 0,
+      "claim_id": "level_ar_breach_range",
+      "json_pointer": "/sections/7/blocks/0/html",
+      "appearance_block": 0,
+      "claim_text": "Corrected level-AR sensitivities give observed peak-breach rates of 0–0.913%.",
+      "expected": {
+        "minimum_percent": "0",
+        "maximum_percent": "0.913"
+      }
+    },
+    {
+      "frame_index": 1,
+      "claim_id": "negative_increment_breach_rate",
+      "json_pointer": "/sections/7/blocks/0/html",
+      "appearance_block": 0,
+      "claim_text": "Negative-increment AR reaches 5.032%",
+      "expected": {
+        "maximum_percent": "5.032"
+      }
+    },
+    {
+      "frame_index": 2,
+      "claim_id": "negative_increment_nominal_excess",
+      "json_pointer": "/sections/7/blocks/0/html",
+      "appearance_block": 0,
+      "claim_text": "an excess of 0.032 percentage points",
+      "expected": {
+        "excess_percentage_points": "0.032"
+      }
+    },
+    {
+      "frame_index": 3,
+      "claim_id": "negative_increment_mcse",
+      "json_pointer": "/sections/7/blocks/0/html",
+      "appearance_block": 0,
+      "claim_text": "Monte Carlo SE 0.06913 percentage points",
+      "expected": {
+        "mcse_percentage_points": "0.06913"
+      }
+    },
+    {
+      "frame_index": 4,
+      "claim_id": "additional_panel_series",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "A metadata/calendar rule selected 12 additional NYFed net-position series before model evaluation",
+      "expected": {
+        "selected_series": 12
+      }
+    },
+    {
+      "frame_index": 5,
+      "claim_id": "nominal_coupon_buckets",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "five nominal-coupon maturity buckets",
+      "expected": {
+        "nominal_coupon_buckets": 5
+      }
+    },
+    {
+      "frame_index": 6,
+      "claim_id": "tips_buckets",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "four TIPS buckets",
+      "expected": {
+        "tips_buckets": 4
+      }
+    },
+    {
+      "frame_index": 7,
+      "claim_id": "long_maturity_skips",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "The two longer-maturity coupon keys lack the required complete history and are retained as skips.",
+      "expected": {
+        "skipped_series": 2
+      }
+    },
+    {
+      "frame_index": 8,
+      "claim_id": "economic_grid_dates",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "Every included series uses the original 706-date economic grid",
+      "expected": {
+        "dates": 706
+      }
+    },
+    {
+      "frame_index": 9,
+      "claim_id": "completed_panel_procedure_cells",
+      "json_pointer": "/sections/7/blocks/1/html",
+      "appearance_block": 1,
+      "claim_text": "All 192 procedure-cell outputs complete.",
+      "expected": {
+        "complete_procedure_cells": 192
+      }
+    },
+    {
+      "frame_index": 10,
+      "claim_id": "qr33_lower_loss_cells",
+      "json_pointer": "/sections/7/blocks/2/html",
+      "appearance_block": 2,
+      "claim_text": "QR33 lowers loss against F in 3 of 48 cells",
+      "expected": {
+        "method": "QR33",
+        "lower_loss": 3,
+        "cells": 48,
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 11,
+      "claim_id": "c2_lower_loss_cells",
+      "json_pointer": "/sections/7/blocks/2/html",
+      "appearance_block": 2,
+      "claim_text": "C2 does so in 11",
+      "expected": {
+        "method": "C2",
+        "lower_loss": 11,
+        "cells": 48,
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 12,
+      "claim_id": "levy_lower_loss_cells",
+      "json_pointer": "/sections/7/blocks/2/html",
+      "appearance_block": 2,
+      "claim_text": "L in 19",
+      "expected": {
+        "method": "L",
+        "lower_loss": 19,
+        "cells": 48,
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 13,
+      "claim_id": "qr33_max_adverse_loss_change",
+      "json_pointer": "/sections/7/blocks/2/html",
+      "appearance_block": 2,
+      "claim_text": "QR33 loss changes as high as 544.3%",
+      "expected": {
+        "method": "QR33",
+        "maximum_adverse_percent": "544.3",
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 14,
+      "claim_id": "c2_max_adverse_loss_change",
+      "json_pointer": "/sections/7/blocks/2/html",
+      "appearance_block": 2,
+      "claim_text": "C2 changes as high as 299.1%",
+      "expected": {
+        "method": "C2",
+        "maximum_adverse_percent": "299.1",
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 15,
+      "claim_id": "fhs_complete_loss_partition",
+      "json_pointer": "/sections/7/blocks/4/html",
+      "appearance_block": 4,
+      "claim_text": "FHS: 3 lower-loss and 3 higher-loss cells out of 6 complete comparisons",
+      "expected": {
+        "method": "FHS",
+        "lower_loss": 3,
+        "higher_loss": 3,
+        "complete_comparisons": 6,
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 16,
+      "claim_id": "pot_complete_loss_partition",
+      "json_pointer": "/sections/7/blocks/4/html",
+      "appearance_block": 4,
+      "claim_text": "PEAK_POT: 1 lower-loss and 3 higher-loss cells out of 4 complete comparisons",
+      "expected": {
+        "method": "PEAK_POT",
+        "lower_loss": 1,
+        "higher_loss": 3,
+        "complete_comparisons": 4,
+        "reference": "matched F"
+      }
+    },
+    {
+      "frame_index": 17,
+      "claim_id": "qrf_complete_loss_partition",
+      "json_pointer": "/sections/7/blocks/4/html",
+      "appearance_block": 4,
+      "claim_text": "QRF: 2 lower-loss and 6 higher-loss cells out of 8 complete comparisons",
+      "expected": {
+        "method": "QRF",
+        "lower_loss": 2,
+        "higher_loss": 6,
+        "complete_comparisons": 8,
+        "reference": "matched F"
+      }
+    }
+  ],
+  "seed": 2026102317,
+  "rng": "Python random.Random(seed).sample(range(18),5)",
+  "sample_size": 5,
+  "selected_frame_indices_draw_order": [
+    16,
+    9,
+    1,
+    8,
+    3
+  ],
+  "selected_frame_indices_appearance_order": [
+    1,
+    3,
+    8,
+    9,
+    16
+  ],
+  "selected_claim_ids_appearance_order": [
+    "negative_increment_breach_rate",
+    "negative_increment_mcse",
+    "economic_grid_dates",
+    "completed_panel_procedure_cells",
+    "pot_complete_loss_partition"
+  ],
+  "output_lookup_started": false,
+  "freeze_rule": "This record was written before any owning result-output or generator-content lookup in loop 17; no financial routine is run. Do not revise the sampled frame after seeing outputs."
+}

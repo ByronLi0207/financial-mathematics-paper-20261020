@@ -1,0 +1,137 @@
+{
+  "started_utc": "2026-10-23T12:28:12.511891+00:00",
+  "ended_utc": "2026-10-23T12:28:13.006686+00:00",
+  "status": "PASS_BOUNDED_SYNTHETIC_ALGEBRA_CHECK",
+  "source_sha256": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c",
+  "fixtures": [
+    {
+      "T": 360,
+      "H": 1,
+      "n": 355,
+      "start": 5,
+      "bandwidth": 5,
+      "raw_basis_Wald": 52.73889560883576,
+      "standardized_basis_independent_Wald": 52.73889560883582,
+      "implemented_Wald": 52.738895608835904,
+      "raw_implementation_difference": 1.4210854715202004e-13,
+      "covariance_congruence_error": 5.898059818321144e-17,
+      "mean_transform_error": 1.734723475976807e-18,
+      "affine_variants": [
+        {
+          "shift": 0.0,
+          "scale": 1.0,
+          "Wald": 52.738895608835904,
+          "difference": 0.0
+        },
+        {
+          "shift": 10.0,
+          "scale": 2.5,
+          "Wald": 52.7388956088359,
+          "difference": 7.105427357601002e-15
+        },
+        {
+          "shift": 10.0,
+          "scale": -0.75,
+          "Wald": 52.738895608835904,
+          "difference": 0.0
+        },
+        {
+          "shift": 2.0,
+          "scale": 0.125,
+          "Wald": 52.738895608835904,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "T": 517,
+      "H": 6,
+      "n": 507,
+      "start": 10,
+      "bandwidth": 6,
+      "raw_basis_Wald": 51.78439033907456,
+      "standardized_basis_independent_Wald": 51.7843903390746,
+      "implemented_Wald": 51.7843903390758,
+      "raw_implementation_difference": 1.2363443602225743e-12,
+      "covariance_congruence_error": 9.228728892196614e-16,
+      "mean_transform_error": 8.673617379884035e-19,
+      "affine_variants": [
+        {
+          "shift": 0.0,
+          "scale": 1.0,
+          "Wald": 51.7843903390758,
+          "difference": 0.0
+        },
+        {
+          "shift": 10.0,
+          "scale": 2.5,
+          "Wald": 51.784390339075806,
+          "difference": 7.105427357601002e-15
+        },
+        {
+          "shift": 10.0,
+          "scale": -0.75,
+          "Wald": 51.7843903390758,
+          "difference": 0.0
+        },
+        {
+          "shift": 2.0,
+          "scale": 0.125,
+          "Wald": 51.78439033907581,
+          "difference": 1.4210854715202004e-14
+        }
+      ]
+    },
+    {
+      "T": 1000,
+      "H": 24,
+      "n": 972,
+      "start": 28,
+      "bandwidth": 24,
+      "raw_basis_Wald": 199.1503281435476,
+      "standardized_basis_independent_Wald": 199.1503281435476,
+      "implemented_Wald": 199.1503281435036,
+      "raw_implementation_difference": 4.3996806198265404e-11,
+      "covariance_congruence_error": 4.649058915617843e-16,
+      "mean_transform_error": 4.445228907190568e-18,
+      "affine_variants": [
+        {
+          "shift": 0.0,
+          "scale": 1.0,
+          "Wald": 199.1503281435036,
+          "difference": 0.0
+        },
+        {
+          "shift": 10.0,
+          "scale": 2.5,
+          "Wald": 199.1503281435036,
+          "difference": 0.0
+        },
+        {
+          "shift": 10.0,
+          "scale": -0.75,
+          "Wald": 199.15032814350354,
+          "difference": 5.684341886080802e-14
+        },
+        {
+          "shift": 2.0,
+          "scale": 0.125,
+          "Wald": 199.15032814350354,
+          "difference": 5.684341886080802e-14
+        }
+      ]
+    }
+  ],
+  "constant_capacity_status": "RANK_DEFICIENT",
+  "proof": [
+    "Let Z0 contain1, four mature hit lags and raw issued capacity. The sample-centered/scaled Z=Z0 A uses one common invertible column transformation A when capacity standard deviation is positive.",
+    "For g_t=Z_t*(hit_t-.05), the empirical mean transforms as m=A^T m0. The centered Bartlett HAC transforms as S=A^T S0 A, since A is common across retained rows.",
+    "Consequently n*m^T*S^-1*m equals n*m0^T*S0^-1*m0 in exact arithmetic. The raw instrument basis defines the issue-known moment target; future-sample centering is only numerical conditioning of an equivalent diagnostic statistic."
+  ],
+  "limits": [
+    "Artificial deterministic binary/capacity fixtures only; no financial outcomes, refitting, new hypothesis, new p-value result or coverage proof.",
+    "Finite precision rank, definiteness and solve checks can differ under ill-conditioned coordinates; the result is exact-arithmetic invariance, not bitwise output invariance.",
+    "The raw-basis conditional-moment/HAC assumptions and post-result selection limits remain unverified for the financial application.",
+    "No statistical guarantee follows from passing this calculation."
+  ]
+}

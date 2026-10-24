@@ -1,0 +1,19 @@
+WARN `--no-project` was provided, but no project was found
+.................F..                                                     [100%]
+=================================== FAILURES ===================================
+__ test_even_matching_missing_gamma_cannot_be_admitted_as_a_frozen_selection ___
+
+    def test_even_matching_missing_gamma_cannot_be_admitted_as_a_frozen_selection():
+        # Catches treating None==None as a legal selection from the fixed gamma menu.
+        parts=fixture()
+        key='fx_hourly-h6-w720-ACI_F'
+        parts[3]['validation'][key]['selected_gamma']=None
+        parts[2][key]['receipt']['selected_gamma']=None
+>       with pytest.raises(api().DataIdentityError,match='SELECTED_GAMMA_IDENTITY'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE DataIdentityError
+
+test_v6_wp2_summary.py:221: Failed
+=========================== short test summary info ============================
+FAILED test_v6_wp2_summary.py::test_even_matching_missing_gamma_cannot_be_admitted_as_a_frozen_selection
+1 failed, 19 passed in 0.28s

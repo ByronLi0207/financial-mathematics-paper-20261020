@@ -1,0 +1,41 @@
+test_any_failed_declared_candidate_invalidates_whole_menu (test_v6_tau_worker.TauWorkerTests.test_any_failed_declared_candidate_invalidates_whole_menu) ... FAIL
+test_complete_exact_tie_chooses_larger_penalty (test_v6_tau_worker.TauWorkerTests.test_complete_exact_tie_chooses_larger_penalty) ... FAIL
+test_direction_reversal_is_against_same_named_point95_contrast (test_v6_tau_worker.TauWorkerTests.test_direction_reversal_is_against_same_named_point95_contrast) ... FAIL
+
+======================================================================
+FAIL: test_any_failed_declared_candidate_invalidates_whole_menu (test_v6_tau_worker.TauWorkerTests.test_any_failed_declared_candidate_invalidates_whole_menu)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 8, in test_any_failed_declared_candidate_invalidates_whole_menu
+    a=self.api();rows=[dict(parameter=p,status='COMPLETE',origin_count=20,mean_pinball=2.) for p in (.001,.01,.1)]
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 5, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_tau_worker'),'tau orchestration API missing')
+AssertionError: unexpectedly None : tau orchestration API missing
+
+======================================================================
+FAIL: test_complete_exact_tie_chooses_larger_penalty (test_v6_tau_worker.TauWorkerTests.test_complete_exact_tie_chooses_larger_penalty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 12, in test_complete_exact_tie_chooses_larger_penalty
+    a=self.api();rows=[dict(parameter=p,status='COMPLETE',origin_count=20,mean_pinball=2.) for p in (.001,.01,.1)]
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 5, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_tau_worker'),'tau orchestration API missing')
+AssertionError: unexpectedly None : tau orchestration API missing
+
+======================================================================
+FAIL: test_direction_reversal_is_against_same_named_point95_contrast (test_v6_tau_worker.TauWorkerTests.test_direction_reversal_is_against_same_named_point95_contrast)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 15, in test_direction_reversal_is_against_same_named_point95_contrast
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_tau_worker.py", line 5, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_tau_worker'),'tau orchestration API missing')
+AssertionError: unexpectedly None : tau orchestration API missing
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

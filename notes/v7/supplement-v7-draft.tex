@@ -1,0 +1,1409 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,hyperref}
+\hypersetup{hidelinks,breaklinks=true}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Online Supplement to Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+This compact supplement contains the existing mathematical proofs and the
+complete principal adverse-result inventories, with links to unchanged longer
+archives. It accompanies the v7 manuscript and does not add models, data,
+statistical tests or parameter selection. All later diagnostics are identified
+as post-result / exploratory; the two original primary comparisons retain
+their values and roles.
+
+Tables format saved native fields. Loss percentages are the existing relative
+differences against the named reference; probabilities are labelled as such.
+Different source-native monetary units are not pooled. NA and failed rows
+remain distinct from complete results. The exact binding file and document
+builder permit source-field readback without re-running any financial model.
+
+The complete earlier supplement, full comparison families, all candidate
+tables, annual and sparse sensitivities, numerical details and source guides
+remain accessible through \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS}.
+This index is an access route, not a substitute for compatible input data or
+independent validation.
+\section{Known-floor projection and strict quantile coverage}\label{sup:floor}
+
+We forecast the sampled maximum of the absolute position, including
+the observed issue position. Write \(B=|N_t|\) and let \(Y\ge B\) almost surely,
+with \(B\) measurable at the forecast origin. For \(0<\tau<1\), the pinball score is
+\(\rho_\tau(u)=\tau u_+ +(1-\tau)(-u)_+\). A lower inverse conditional quantile
+is \(q_\tau=\inf\{c:F(c\mid\mathcal F_t)\ge\tau\}\).
+
+\paragraph{Proposition 1: floor projection.}
+Replacing a report \(c\) by \(\max(B,c)\) weakly reduces its score at every possible
+outcome. At the population conditional quantile, the strict breach probability
+is at most \(1-\tau\). These are distinct statements: projection applies to any
+report; the tail qualification requires the true conditional quantile.
+\[
+\rho_\tau(Y-c)-\rho_\tau(Y-\max\{B,c\})=\tau(B-c)_+,\qquad \Pr(Y>q\mid\mathcal F_t)\le\alpha.
+\]
+\paragraph{Proof.}
+If \(c\ge B\), the replacement changes nothing. If \(c<B\), both errors
+\(Y-c\) and \(Y-B\) are nonnegative, so their score difference is
+\(\tau(B-c)\). This proves the pointwise identity without a density assumption.
+Right continuity of the conditional distribution gives
+\(F(q_\tau\mid\mathcal F_t)\ge\tau\), hence
+\(\Pr(Y>q_\tau\mid\mathcal F_t)\le1-\tau\). An atom at the quantile can make
+this strict; exact nominal hit frequency is not required for a valid upper
+quantile. A fitted report does not automatically inherit this population claim.
+\hfill\textit{QED}
+
+\paragraph{Why the floor matters.}
+The sampled maximum equals the current magnitude whenever the recorded future
+path remains inside its current absolute-position band. This can create an atom
+even when later signed observations are continuous. The existence of a floor
+alone does not imply an atom: an outcome uniformly distributed above the floor
+provides a counterexample. Equality-based coverage tests therefore diagnose
+their stated equalities, rather than every possible valid upper-quantile report.
+
+\paragraph{Endpoint marginals do not identify the peak.}
+The exact artificial constructions in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/notes/revision-v5-novelty/theory-source.json}{the formal example record}
+hold each future-time marginal fixed while changing temporal dependence.
+Comonotone and disjoint rare events then give different peak quantiles.
+The example is a logical construction, not another financial dataset or an
+estimated mechanism. Forecast evaluation must use the ordered path response
+and the information available at its actual origin.
+
+\paragraph{Takeaway.}
+Known-floor projection is an elementary pointwise improvement. It does not
+establish empirical calibration, identify the conditional distribution, or turn
+a fitted endpoint forecast into a forecast of a path maximum.\section{Classical endpoint-to-peak bound}\label{sup:levy}
+
+\paragraph{Proposition 2: the classical endpoint bound.}
+Let future real increments \(X_1,\ldots,X_H\) be independent and individually
+symmetric about zero. Set \(S_0=0\), \(S_h=\sum_{j=1}^hX_j\), and fix a starting
+position \(x\). Equal increment laws and finite moments are unnecessary.
+For the population absolute-displacement quantile at level \(1-\alpha/2\),
+\(q=\inf\{c:\Pr(|S_H|\le c)\ge1-\alpha/2\}\), the classical scalar maximal
+inequality and the triangle inequality give
+\[
+\Pr\!\left(\max_{0\le h\le H}|x+S_h|>B+q\right)\le\Pr\!\left(\max_h|S_h|>q\right)\le2\Pr(|S_H|>q)\le\alpha.
+\]
+This is a direct application of the classical L\'evy inequality, not a new
+maximal inequality. The existing source audit identifies Sussman (2023),
+Proposition 3.4, and records the actual consulted source range.
+
+\paragraph{Proof, including strict events and atoms.}
+For \(c\ge0\), let \(\eta\) be the first index with \(|S_\eta|>c\). On
+\(\{\eta=k,S_k>c\}\), the remaining sum \(R_k=S_H-S_k\) is independent of
+the information through \(k\) and is symmetric. Therefore \(\Pr(R_k\ge0)\ge1/2\),
+including a possible atom at zero, and that weak sign keeps \(S_H>c\).
+On the corresponding negative crossing, \(R_k\le0\) keeps \(S_H<-c\), also
+with probability at least one half. Summing over the disjoint crossing events
+gives \(\Pr(\max_h|S_h|>c)\le2\Pr(|S_H|>c)\). The argument covers \(c=0\).
+Finally, \(\max_{0\le h\le H}|x+S_h|\le |x|+\max_h|S_h|\), and right
+continuity gives the required strict tail bound at \(q\). \hfill\textit{QED}
+
+\paragraph{Conditional use and empirical implementation.}
+For an observed random anchor, the same argument must hold under its
+forecast-origin conditional law, with the corresponding conditional population
+endpoint quantile. Conditional independence and zero symmetry cannot be inferred
+from unconditional marginals. The empirical endpoint plug-in adds the current
+floor to a historical absolute-displacement order statistic. Overlapping labels,
+estimated quantiles and changing dependent histories provide no automatic
+inheritance of this population bound or a pinball-risk ordering.
+
+\paragraph{Two different failure mechanisms.}
+Dependence can destroy the inequality: take \(X_1=Z\), \(X_2=-Z\), with
+\(Z\in\{-1,1\}\) equally likely. The endpoint is zero, while the sampled
+maximum is one. Separately, replacing the required absolute-displacement
+quantile by a generic one-sided endpoint quantile can fail even for independent
+symmetric increments. The exact finite example is preserved in the formal
+example record. These logical counterexamples are separate from the Gaussian
+Monte Carlo cases below; a nonviolating simulation does not prove a theorem
+extension.
+
+\paragraph{Takeaway.}
+The bound supplies a clear population benchmark under explicit assumptions;
+the empirical report remains a model to validate, not a coverage certificate.\section{Monte Carlo mechanisms: original increment persistence}\label{sup:simulation-original}
+
+These are the existing fixed-seed Gaussian experiments, not newly run
+simulations or calibrated replicas of either financial source. Every reported
+rate is a probability, not a percentage. The peak includes the initial level;
+the endpoint event concerns absolute displacement from that initial level.
+Each path cell has 100000 paths.
+L/Stat starts the level AR in stationarity; L/Abs fixes its absolute-level
+tail anchor; L/Sig is the separate signed-level tail-anchor sensitivity.
+I/Zero accumulates stationary AR increments from a zero position.
+M denotes a stationary-marginal endpoint threshold; C denotes a distinct
+fixed-start conditional endpoint oracle. Threshold partners sharing a seed use
+the same paths, not independent repetitions.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{Original increment-AR simulation, unchanged. Serial persistence here concerns increments, not fitted position levels.}\\
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endfirsthead
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.00 & I/Zero & 20267023 & 5.490 & 3035 & 0.03035 & 0.00054 & 0.02454 \\
+6 & 0.70 & I/Zero & 20267093 & 10.092 & 2597 & 0.02597 & 0.00050 & 0.02573 \\
+6 & 0.85 & I/Zero & 20267108 & 11.634 & 2550 & 0.02550 & 0.00050 & 0.02550 \\
+6 & 0.98 & I/Zero & 20267121 & 13.190 & 2557 & 0.02557 & 0.00050 & 0.02557 \\
+24 & 0.00 & I/Zero & 20285023 & 10.981 & 3819 & 0.03819 & 0.00061 & 0.02504 \\
+24 & 0.70 & I/Zero & 20285093 & 24.599 & 2772 & 0.02772 & 0.00052 & 0.02475 \\
+24 & 0.85 & I/Zero & 20285108 & 33.394 & 2619 & 0.02619 & 0.00051 & 0.02525 \\
+24 & 0.98 & I/Zero & 20285121 & 49.784 & 2572 & 0.02572 & 0.00050 & 0.02572 \\
+\end{longtable}
+\endgroup
+
+The independent-increment rows satisfy the classical premise.
+Positive increment coefficients violate independence without necessarily causing
+a numerical breach of the bound. Their favourable rates are not a general
+result for serial dependence.\section{Mean-reverting levels and negative-increment sensitivities}\label{sup:simulation-primary}
+
+The corrected level process is
+\(N_h=\phi N_{h-1}+\varepsilon_h\), with independent Gaussian innovations
+of variance \(1-\phi^2\) and unit stationary level variance. Its stationary
+increments have lag correlation
+\(\rho_X(k)=-(1-\phi)\phi^{k-1}/2\), so this mechanism differs from a
+positively persistent increment AR. The fitted financial coefficient describes
+levels, making the level equation the relevant illustrative mechanism.
+The negative-increment family is a separate sensitivity, with stationary
+increments and nonstationary cumulative levels.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{All corrected primary cases. Mean-reverting level rates are conservative in these finite cases; the negative-increment result must also be retained.}\\
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endfirsthead
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.68 & L/Stat/M & 20567123 & 3.009 & 175 & 0.00175 & 0.00013 & 0.02462 \\
+6 & 0.68 & L/Abs/M & 20567124 & 3.009 & 0 & 0.00000 & 0.00000 & 0.10447 \\
+6 & 0.85 & L/Stat/M & 20567133 & 2.502 & 300 & 0.00300 & 0.00017 & 0.02553 \\
+6 & 0.85 & L/Abs/M & 20567134 & 2.502 & 14 & 0.00014 & 0.00004 & 0.08227 \\
+6 & 0.98 & L/Stat/M & 20567143 & 1.071 & 913 & 0.00913 & 0.00030 & 0.02434 \\
+6 & 0.98 & L/Abs/M & 20567144 & 1.071 & 372 & 0.00372 & 0.00019 & 0.03623 \\
+6 & -0.30 & I/Zero/M & 20567223 & 4.244 & 3563 & 0.03563 & 0.00059 & 0.02524 \\
+6 & -0.60 & I/Zero/M & 20567233 & 3.127 & 4439 & 0.04439 & 0.00065 & 0.02558 \\
+24 & 0.68 & L/Stat/M & 20585123 & 3.170 & 636 & 0.00636 & 0.00025 & 0.02495 \\
+24 & 0.68 & L/Abs/M & 20585124 & 3.170 & 1 & 0.00001 & 0.00001 & 0.11416 \\
+24 & 0.85 & L/Stat/M & 20585133 & 3.138 & 402 & 0.00402 & 0.00020 & 0.02520 \\
+24 & 0.85 & L/Abs/M & 20585134 & 3.138 & 1 & 0.00001 & 0.00001 & 0.11159 \\
+24 & 0.98 & L/Stat/M & 20585143 & 1.965 & 768 & 0.00768 & 0.00028 & 0.02468 \\
+24 & 0.98 & L/Abs/M & 20585144 & 1.965 & 85 & 0.00085 & 0.00009 & 0.06201 \\
+24 & -0.30 & I/Zero/M & 20585223 & 8.167 & 4281 & 0.04281 & 0.00064 & 0.02476 \\
+24 & -0.60 & I/Zero/M & 20585233 & 5.701 & 5032 & 0.05032 & 0.00069 & 0.02516 \\
+\end{longtable}
+\endgroup
+
+All saved level cases have peak rates below the nominal threshold.
+The largest negative-increment point estimate occurs at the longer horizon and
+the more negative coefficient. Its rate is 0.05032,
+with a saved excess of 0.032
+percentage points and Monte Carlo SE 0.00069.
+This is not demonstrated population failure. General dependence invalidates the
+classical premise regardless of the observed direction. Zero observed counts
+also do not establish zero population probability.\section{All secondary simulation sensitivities}\label{sup:simulation-secondary}
+
+For stationary random starts, absolute endpoint displacement has
+variance \(2(1-\phi^H)\). At a fixed start \(x\), its conditional Gaussian
+mean and variance are \((\phi^H-1)x\) and \(1-\phi^{2H}\). Thus holding the
+stationary-marginal endpoint threshold across starts does not condition on a
+large anchor. The conditional-oracle sensitivities below are distinct thresholds
+on shared paths; neither is an oracle for the maximum.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{All secondary anchor and conditional-threshold sensitivities. Conditional and marginal endpoint calibration remain distinct.}\\
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endfirsthead
+\toprule
+H & \(\phi\) & Process & Seed & q & Hits & Peak prob. & MC SE & End prob. \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.68 & L/Abs/C & 20567124 & 3.717 & 0 & 0.00000 & 0.00000 & 0.02411 \\
+6 & 0.68 & L/Sig/M & 20567125 & 3.009 & 2 & 0.00002 & 0.00001 & 0.06261 \\
+6 & 0.68 & L/Sig/C & 20567125 & 3.433 & 1 & 0.00001 & 0.00001 & 0.02476 \\
+6 & 0.85 & L/Abs/C & 20567134 & 3.036 & 0 & 0.00000 & 0.00000 & 0.02488 \\
+6 & 0.85 & L/Sig/M & 20567135 & 2.502 & 21 & 0.00021 & 0.00005 & 0.05689 \\
+6 & 0.85 & L/Sig/C & 20567135 & 2.840 & 4 & 0.00004 & 0.00002 & 0.02607 \\
+6 & 0.98 & L/Abs/C & 20567144 & 1.146 & 215 & 0.00215 & 0.00015 & 0.02503 \\
+6 & 0.98 & L/Sig/M & 20567145 & 1.071 & 464 & 0.00464 & 0.00021 & 0.03184 \\
+6 & 0.98 & L/Sig/C & 20567145 & 1.117 & 340 & 0.00340 & 0.00018 & 0.02521 \\
+24 & 0.68 & L/Abs/C & 20585124 & 3.920 & 0 & 0.00000 & 0.00000 & 0.02567 \\
+24 & 0.68 & L/Sig/M & 20585125 & 3.170 & 9 & 0.00009 & 0.00003 & 0.06486 \\
+24 & 0.68 & L/Sig/C & 20585125 & 3.605 & 1 & 0.00001 & 0.00001 & 0.02514 \\
+24 & 0.85 & L/Abs/C & 20585134 & 3.880 & 0 & 0.00000 & 0.00000 & 0.02495 \\
+24 & 0.85 & L/Sig/M & 20585135 & 3.138 & 3 & 0.00003 & 0.00002 & 0.06306 \\
+24 & 0.85 & L/Sig/C & 20585135 & 3.571 & 0 & 0.00000 & 0.00000 & 0.02484 \\
+24 & 0.98 & L/Abs/C & 20585144 & 2.298 & 20 & 0.00020 & 0.00004 & 0.02518 \\
+24 & 0.98 & L/Sig/M & 20585145 & 1.965 & 146 & 0.00146 & 0.00012 & 0.04607 \\
+24 & 0.98 & L/Sig/C & 20585145 & 2.179 & 56 & 0.00056 & 0.00007 & 0.02556 \\
+\end{longtable}
+\endgroup
+
+The complete correction contains 34 threshold rows on 22 initialized path samples.
+The retained CSV and portable readback provide exact endpoint moments,
+deviations from the nominal probability, and the single-prespecified-row bound
+for zero counts. None estimates financial innovation laws, changing fitted
+parameters or empirical-quantile uncertainty.\section{Empirical endpoint plug-in: all original cells}\label{sup:levy-empirical}
+
+The endpoint plug-in uses each completed historical episode's
+absolute endpoint displacement and adds its specified empirical quantile to
+the actual current-position floor. It shares the historical rule's completed
+origin pool and fixed refit schedule, with no fitted tuning parameter.
+The operational empirical rank and overlapping financial history are distinct
+from the known population quantile in the classical proposition. The report
+therefore has to earn its financial coverage and score performance empirically.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{Every original-cell endpoint plug-in comparison. A population bound does not imply a lower empirical pinball score.}\\
+\toprule
+Source & H/W & L/F \(\Delta\%\) & L/QR \(\Delta\%\) & Hits L/F \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & L/F \(\Delta\%\) & L/QR \(\Delta\%\) & Hits L/F \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & 30.93 & 33.76 & 101/332 \\
+FX & 6/2880 & 30.39 & 52.98 & 75/360 \\
+FX & 24/720 & 10.85 & -15.71 & 136/427 \\
+FX & 24/2880 & 7.94 & 12.16 & 174/357 \\
+Bills & 6/52 & 3.37 & -43.62 & 10/11 \\
+Bills & 6/260 & -11.77 & -41.49 & 15/28 \\
+Bills & 24/52 & 26.32 & -61.42 & 42/33 \\
+Bills & 24/260 & 9.87 & -47.64 & 22/12 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrr}
+\caption{All separate endpoint-plug-in working-reference contrasts. Adverse score comparisons remain alongside lower-breach reports.}\\
+\toprule
+Source & H/W & Ref. & DM t & DM p & HLN p & Holm p \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & Ref. & DM t & DM p & HLN p & Holm p \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & F & 7.891 & 2.988e-15 & 3.658e-15 & 4.483e-14 \\
+FX & 6/720 & QR & 6.608 & 3.908e-11 & 4.37e-11 & 5.081e-10 \\
+FX & 6/2880 & F & 7.790 & 6.695e-15 & 8.123e-15 & 9.373e-14 \\
+FX & 6/2880 & QR & 12.832 & 1.089e-37 & 3.451e-37 & 1.743e-36 \\
+FX & 24/720 & F & 1.848 & 0.06462 & 0.06562 & 0.5169 \\
+FX & 24/720 & QR & -1.673 & 0.09434 & 0.09556 & 0.6604 \\
+FX & 24/2880 & F & 2.058 & 0.03958 & 0.04032 & 0.3958 \\
+FX & 24/2880 & QR & 1.530 & 0.1259 & 0.1273 & 0.7002 \\
+Bills & 6/52 & F & 0.971 & 0.3317 & 0.3422 & 0.7002 \\
+Bills & 6/52 & QR & -2.778 & 0.005471 & 0.006887 & 0.06018 \\
+Bills & 6/260 & F & -1.345 & 0.1785 & 0.1884 & 0.7002 \\
+Bills & 6/260 & QR & -3.031 & 0.002441 & 0.003236 & 0.02929 \\
+Bills & 24/52 & F & 1.569 & 0.1167 & 0.1522 & 0.7002 \\
+Bills & 24/52 & QR & -1.991 & 0.04645 & 0.06948 & 0.418 \\
+Bills & 24/260 & F & 1.092 & 0.2746 & 0.3183 & 0.7002 \\
+Bills & 24/260 & QR & -1.516 & 0.1294 & 0.1664 & 0.7002 \\
+\end{longtable}
+\endgroup
+
+The family and its doubled-bandwidth sensitivities are separate
+from the original regression family. The complete tables keep every adverse
+direction; no negative comparison is removed by describing the population
+inequality as conservative. The linked records preserve source-native mean
+error amounts and every numerical status.\section{AR residual replay and its adverse comparisons}\label{sup:ar}
+
+At each original refit, estimate an intercept-bearing level recursion
+on each unique mature adjacent transition once. Replaying a historical ordered
+residual block from the current position gives the exact algebraic identity
+\[
+M_{i,h}(x)=N_{i+h}+\widehat\phi^{\,h}(x-N_i),\qquad M_{i,0}(x)=x.
+\]
+The empirical peak uses the same completed scenario origins, response rank,
+floor and refit schedule as its matched historical controls. Finite negative or
+above-unit coefficients were eligible, not clipped; all observed fitted
+coefficients in the archived run happened to lie inside the unit interval.
+Their descriptive means are not identified data-generating parameters.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrr}
+\caption{Complete original AR replay comparison. Lower scores can accompany more strict breaches.}\\
+\toprule
+Source & H & W & Mean \(\widehat\phi\) & AR/S \(\Delta\%\) & AR/QR \(\Delta\%\) & Hits AR/S \\
+\midrule
+\endfirsthead
+\toprule
+Source & H & W & Mean \(\widehat\phi\) & AR/S \(\Delta\%\) & AR/QR \(\Delta\%\) & Hits AR/S \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & 0.981 & -1.54 & 2.45 & 282/255 \\
+FX & 6 & 2880 & 0.985 & -0.55 & 16.20 & 338/268 \\
+FX & 24 & 720 & 0.981 & 2.39 & -25.32 & 401/289 \\
+FX & 24 & 2880 & 0.985 & 5.15 & 8.68 & 444/292 \\
+Bills & 6 & 52 & 0.676 & -13.44 & -52.66 & 22/11 \\
+Bills & 6 & 260 & 0.847 & -18.89 & -47.21 & 31/28 \\
+Bills & 24 & 52 & 0.711 & 35.13 & -59.43 & 56/33 \\
+Bills & 24 & 260 & 0.850 & -24.12 & -63.86 & 59/12 \\
+\end{longtable}
+\endgroup
+
+The replay improves on original regression in every original Treasury
+cell but loses in most FX cells. Its comparisons with the translated-path rule
+have mixed directions, while strict breaches increase in every row above.
+Sparse-grid and annual signs can reverse. The full paired, annual and fixed-grid
+tables remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/ar1-replay/README.md}{the AR archive}.
+These are post-result / exploratory same-data calculations, not independent
+validation. Numerical readback checked the represented-input recursion and
+saved summaries without validating the financial innovation law.\section{Ordinary quantile ranks and minimizer endpoints}\label{sup:rank}
+
+The ordinary empirical quantile and the corrected empirical rule use
+the same completed pool, refit times and issue floor. The former takes the
+lower empirical pinball minimizer; the latter uses the specified add-one rank.
+At integer probability-times-pool-size values, adjacent reports can be the two
+endpoints of the same empirical minimizer interval. Calling the lower report a
+uniquely optimal comparator would therefore be wrong. At the short weekly pool,
+the noninteger rank distinction differs.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Complete ordinary-rank ablation. Lower empirical reports increase breach occasions and need not improve score.}\\
+\toprule
+Source & H & W & QR/I \(\Delta\%\) & I/F \(\Delta\%\) & Hits I/F/QR \\
+\midrule
+\endfirsthead
+\toprule
+Source & H & W & QR/I \(\Delta\%\) & I/F \(\Delta\%\) & Hits I/F/QR \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & -1.967 & -0.153 & 337/332/531 \\
+FX & 6 & 2880 & -14.773 & 0.008 & 365/360/376 \\
+FX & 24 & 720 & 31.508 & -0.003 & 432/427/924 \\
+FX & 24 & 2880 & -3.783 & 0.026 & 359/357/531 \\
+Bills & 6 & 52 & 87.086 & -1.995 & 14/11/84 \\
+Bills & 6 & 260 & 46.058 & 3.237 & 32/28/54 \\
+Bills & 24 & 52 & 208.258 & 6.213 & 37/33/132 \\
+Bills & 24 & 260 & 105.020 & 2.353 & 15/12/84 \\
+\end{longtable}
+\endgroup
+
+The reconstructed historical summaries match the original controls.
+The lower report increases strict hits and mean underprediction amount in every
+cell, but its loss direction is mixed. Every Treasury regression remains worse
+than the lower empirical report. This ablation isolates a rank convention on
+the same viewed record; it neither supplies a fresh validation sample nor
+establishes universal superiority of either finite-sample quantile endpoint.
+Exact counts, annual splits and fixed-grid rows are linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/rank-ablation/README.md}{the complete rank archive}.\section{Fixed-report error preferences}\label{sup:preference}
+
+For a fixed report, changing the loss weight traces a line
+\(R_a=aU+(1-a)V\), where \(U=\operatorname{mean}(P-C)_+\) and
+\(V=\operatorname{mean}(C-P)_+\). These are passive error amounts over all
+origins, not observed funding costs. Breach frequency averages an indicator and
+need not rank reports like either amount. The following source-native monetary
+values are never pooled across FX and weekly aggregates.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{30mm}rrrrp{32mm}}
+\caption{The four fixed headline comparisons. The longer-horizon FX result is sensitive to error weights.}\\
+\toprule
+Comparison & \(U_L\) & \(U_R\) & \(V_L\) & \(V_R\) & Equality \(a\) \\
+\midrule
+\endfirsthead
+\toprule
+Comparison & \(U_L\) & \(U_R\) & \(V_L\) & \(V_R\) & Equality \(a\) \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+fx\_h6\_primary & 156123.03 & 166531.06 & 4750560.18 & 5671390.59 & none \\
+fx\_h6\_matched & 156123.03 & 185672.23 & 4750560.18 & 5526087.27 & none \\
+fx\_h24\_legacy & 317678.12 & 149813.88 & 8658017.18 & 12121206.97 & \(\frac{86579744869851975}{90776350660766843}\) \\
+treasury\_h6\_primary & 3131.86 & 1395.64 & 23688.09 & 28656.17 & \(\frac{24840389716843550}{33521504184965797}\) \\
+\end{longtable}
+\endgroup
+
+The equality column gives exact saved rational boundaries, not newly
+estimated costs. The short-horizon FX primary reduces both mean error amounts;
+its elementary-score curves can nevertheless cross because a Murphy diagram
+varies the elementary score threshold, a different comparison from reweighting
+these two unconditional amounts. The longer-horizon FX legacy pair reverses
+near the loss-weight ratio reported in the main text. Actual decision costs
+were not observed.
+
+The complete frontiers below include every open region and every boundary tie.
+The full and sparse samples remain separate, and feasible reports outside the
+specified menu are not part of these menu-relative envelopes. All pairwise
+relations, dominated labels and exact arithmetic are additionally preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/preference-robustness/README.md}{the preference archive}.\section{Complete preference frontier: full sample}\label{sup:frontier-0}
+
+Open intervals exclude their endpoints. Point rows retain all
+ties, including ties at the extreme loss weights. Method codes here denote
+the original fixed report menu; their definitions remain in the main methods
+table. The sparse grid is a sensitivity on the same record, not independent
+data.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
+\caption{Complete saved preference frontier, full sample. Exact ties prevent an artificially unique winner.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endfirsthead
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX full H6/W720 & open & \(\frac{0}{1}\) & \(\frac{105760946788801400}{110990640317093439}\) & QR \\
+ & open & \(\frac{105760946788801400}{110990640317093439}\) & \(\frac{19056123729472220}{19757413338275541}\) & KNN \\
+ & open & \(\frac{19056123729472220}{19757413338275541}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{105760946788801400}{110990640317093439}\) &  & KNN, QR \\
+ & point & \(\frac{19056123729472220}{19757413338275541}\) &  & KNN, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX full H6/W2880 & open & \(\frac{0}{1}\) & \(\frac{34631329313121430}{35599009063461303}\) & QR \\
+ & open & \(\frac{34631329313121430}{35599009063461303}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{34631329313121430}{35599009063461303}\) &  & QR, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX full H24/W720 & open & \(\frac{0}{1}\) & \(\frac{32241742214205920}{38133893639725449}\) & QR \\
+ & open & \(\frac{32241742214205920}{38133893639725449}\) & \(\frac{92050107608238600}{103514765282707447}\) & KNN \\
+ & open & \(\frac{92050107608238600}{103514765282707447}\) & \(\frac{29075431634708860}{30985073840047543}\) & AR1\_REPLAY \\
+ & open & \(\frac{29075431634708860}{30985073840047543}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{32241742214205920}{38133893639725449}\) &  & KNN, QR \\
+ & point & \(\frac{92050107608238600}{103514765282707447}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\frac{29075431634708860}{30985073840047543}\) &  & AR1\_REPLAY, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX full H24/W2880 & open & \(\frac{0}{1}\) & \(\frac{335769696945034900}{350844274558596259}\) & QR \\
+ & open & \(\frac{335769696945034900}{350844274558596259}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{335769696945034900}{350844274558596259}\) &  & QR, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills full H6/W52 & open & \(\frac{0}{1}\) & \(\frac{3320065684462664}{4624714213835193}\) & QR \\
+ & open & \(\frac{3320065684462664}{4624714213835193}\) & \(\frac{156305902436775700}{160668673434229883}\) & AR1\_REPLAY \\
+ & open & \(\frac{156305902436775700}{160668673434229883}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{3320065684462664}{4624714213835193}\) &  & AR1\_REPLAY, QR \\
+ & point & \(\frac{156305902436775700}{160668673434229883}\) &  & AR1\_REPLAY, KNN, frozen\_F \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
+Bills full H6/W260 & open & \(\frac{0}{1}\) & \(\frac{8679397304452847}{9039550431967810}\) & AR1\_REPLAY \\
+ & open & \(\frac{8679397304452847}{9039550431967810}\) & \(\frac{1}{1}\) & frozen\_K \\
+ & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
+ & point & \(\frac{8679397304452847}{9039550431967810}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & frozen\_K \\
+Bills full H24/W52 & open & \(\frac{0}{1}\) & \(\frac{5759715075028296}{13586893226278237}\) & QR \\
+ & open & \(\frac{5759715075028296}{13586893226278237}\) & \(\frac{117611155234657025}{130987328519855581}\) & frozen\_K \\
+ & open & \(\frac{117611155234657025}{130987328519855581}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{5759715075028296}{13586893226278237}\) &  & QR, frozen\_K \\
+ & point & \(\frac{117611155234657025}{130987328519855581}\) &  & frozen\_K, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills full H24/W260 & open & \(\frac{0}{1}\) & \(\frac{3813577886766790}{4899469998019859}\) & frozen\_K \\
+ & open & \(\frac{3813577886766790}{4899469998019859}\) & \(\frac{91333672611602885}{94156776268488263}\) & AR1\_REPLAY \\
+ & open & \(\frac{91333672611602885}{94156776268488263}\) & \(\frac{240827075812274250}{241875451263537787}\) & KNN \\
+ & open & \(\frac{240827075812274250}{241875451263537787}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & frozen\_K \\
+ & point & \(\frac{3813577886766790}{4899469998019859}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{91333672611602885}{94156776268488263}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\frac{240827075812274250}{241875451263537787}\) &  & KNN, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_F, frozen\_S \\
+\end{longtable}
+\endgroup
+
+\section{Complete preference frontier: sparse sensitivity}\label{sup:frontier-8}
+
+Open intervals exclude their endpoints. Point rows retain all
+ties, including ties at the extreme loss weights. Method codes here denote
+the original fixed report menu; their definitions remain in the main methods
+table. The sparse grid is a sensitivity on the same record, not independent
+data.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
+\caption{Complete saved preference frontier, fixed sparse grid. Exact ties prevent an artificially unique winner.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endfirsthead
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX sparse H6/W720 & open & \(\frac{0}{1}\) & \(\frac{35228646474289300}{37058573227618587}\) & QR \\
+ & open & \(\frac{35228646474289300}{37058573227618587}\) & \(\frac{128015277909259100}{130046193358911709}\) & KNN \\
+ & open & \(\frac{128015277909259100}{130046193358911709}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{35228646474289300}{37058573227618587}\) &  & KNN, QR \\
+ & point & \(\frac{128015277909259100}{130046193358911709}\) &  & KNN, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX sparse H6/W2880 & open & \(\frac{0}{1}\) & \(\frac{59571292631784500}{60902063609752461}\) & QR \\
+ & open & \(\frac{59571292631784500}{60902063609752461}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{59571292631784500}{60902063609752461}\) &  & QR, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX sparse H24/W720 & open & \(\frac{0}{1}\) & \(\frac{7530906001239450}{9350542730727077}\) & QR \\
+ & open & \(\frac{7530906001239450}{9350542730727077}\) & \(\frac{18652943561940400}{20490003118958463}\) & KNN \\
+ & open & \(\frac{18652943561940400}{20490003118958463}\) & \(\frac{11935316416561250}{12439911923115111}\) & AR1\_REPLAY \\
+ & open & \(\frac{11935316416561250}{12439911923115111}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{7530906001239450}{9350542730727077}\) &  & KNN, QR \\
+ & point & \(\frac{18652943561940400}{20490003118958463}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\frac{11935316416561250}{12439911923115111}\) &  & AR1\_REPLAY, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX sparse H24/W2880 & open & \(\frac{0}{1}\) & \(\frac{578937865306180}{598942665753459}\) & QR \\
+ & open & \(\frac{578937865306180}{598942665753459}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{578937865306180}{598942665753459}\) &  & QR, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills sparse H6/W52 & open & \(\frac{0}{1}\) & \(\frac{1315902266754605}{2037515146643951}\) & QR \\
+ & open & \(\frac{1315902266754605}{2037515146643951}\) & \(\frac{679337}{682434}\) & frozen\_K \\
+ & open & \(\frac{679337}{682434}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{1315902266754605}{2037515146643951}\) &  & QR, frozen\_K \\
+ & point & \(\frac{679337}{682434}\) &  & KNN, frozen\_F, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
+Bills sparse H6/W260 & open & \(\frac{0}{1}\) & \(\frac{39729652848099850}{42395294149611417}\) & AR1\_REPLAY \\
+ & open & \(\frac{39729652848099850}{42395294149611417}\) & \(\frac{1}{1}\) & frozen\_K \\
+ & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
+ & point & \(\frac{39729652848099850}{42395294149611417}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & frozen\_K \\
+Bills sparse H24/W52 & open & \(\frac{0}{1}\) & \(\frac{8631914270543611}{12443891775419019}\) & QR \\
+ & open & \(\frac{8631914270543611}{12443891775419019}\) & \(\frac{2529092855837558}{2690148205992001}\) & frozen\_K \\
+ & open & \(\frac{2529092855837558}{2690148205992001}\) & \(\frac{37657795243316428}{38019573842698655}\) & AR1\_REPLAY \\
+ & open & \(\frac{37657795243316428}{38019573842698655}\) & \(\frac{1}{1}\) & KNN, frozen\_F, frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\frac{8631914270543611}{12443891775419019}\) &  & QR, frozen\_K \\
+ & point & \(\frac{2529092855837558}{2690148205992001}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{37657795243316428}{38019573842698655}\) &  & AR1\_REPLAY, KNN, frozen\_F, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F, frozen\_S \\
+Bills sparse H24/W260 & open & \(\frac{0}{1}\) & \(\frac{19956537365855950}{27652346249496953}\) & frozen\_K \\
+ & open & \(\frac{19956537365855950}{27652346249496953}\) & \(\frac{1}{1}\) & AR1\_REPLAY \\
+ & point & \(\frac{0}{1}\) &  & frozen\_K \\
+ & point & \(\frac{19956537365855950}{27652346249496953}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & AR1\_REPLAY \\
+\end{longtable}
+\endgroup
+
+\section{Complete weekly panel: definitions and first half}\label{sup:panel}
+
+Each cell compares the same peak target, completed-label pool,
+origin sequence, fixed refit schedule and native monetary units. The original
+full regression, smaller predictor regression, expanded-ridge full regression
+and ordinary empirical report all remain visible. The additional series are
+related weekly aggregates, not independent individual-dealer replications.
+Changes in predictors and changes in the ridge menu are distinct interventions.
+Every listed comparison is post-result / exploratory.
+
+The historical column gives mean pinball loss and strict hits. Other columns
+give saved percentage loss difference against that same historical rule and
+strict hits; negative percentages favour the column method. Original QR33,
+QR4 and expanded QR33 are distinct fitted procedures. I is the ordinary
+empirical-quantile report, with the endpoint qualification in Section~\ref{sup:rank}.
+Across the archived panel, expanded full-regression median excess
+loss is 9.22 percent,
+compared with 92.63 percent for the original menu. Expanded regression still loses in 34 cells.
+This improvement does not erase the remaining failures or identify a causal
+feature effect.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{26mm}rrrrrr}
+\caption{Complete panel, first half. Additional regularization leaves substantial adverse cases.}\\
+\toprule
+Series & H/W & F loss/hits & QR33 \%/hits & QR4 \%/hits & QR33+ \%/hits & I \%/hits \\
+\midrule
+\endfirsthead
+\toprule
+Series & H/W & F loss/hits & QR33 \%/hits & QR4 \%/hits & QR33+ \%/hits & I \%/hits \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSMBS-TOT & 6/52 & 921.7 / 21 & 170.97 / 101 & 3.24 / 27 & 5.82 / 28 & 3.26 / 27 \\
+PDPOSMBS-TOT & 6/260 & 945.6 / 26 & 7.36 / 19 & 1.17 / 27 & 7.36 / 19 & 1.96 / 27 \\
+PDPOSMBS-TOT & 24/52 & 1753.7 / 39 & 215.55 / 145 & 5.09 / 43 & 66.24 / 104 & 3.49 / 42 \\
+PDPOSMBS-TOT & 24/260 & 1611.9 / 25 & 26.79 / 29 & 1.04 / 26 & 0.72 / 24 & 1.14 / 26 \\
+PDPOSCS-TOT & 6/52 & 530.3 / 16 & 52.75 / 48 & -5.79 / 23 & -4.70 / 23 & -6.28 / 23 \\
+PDPOSCS-TOT & 6/260 & 399.7 / 6 & 1.90 / 15 & -1.10 / 6 & -0.95 / 8 & -1.56 / 7 \\
+PDPOSCS-TOT & 24/52 & 579.4 / 16 & 73.78 / 63 & 1.85 / 24 & 2.97 / 25 & 2.12 / 23 \\
+PDPOSCS-TOT & 24/260 & 569.9 / 6 & 27.46 / 3 & -3.38 / 6 & -3.06 / 5 & -4.68 / 6 \\
+PDPOSFGS-TOT & 6/52 & 400.7 / 16 & 107.22 / 77 & -4.15 / 24 & -4.29 / 20 & -4.98 / 18 \\
+PDPOSFGS-TOT & 6/260 & 358.3 / 6 & -1.08 / 14 & 4.88 / 9 & -6.04 / 6 & -1.54 / 6 \\
+PDPOSFGS-TOT & 24/52 & 476.2 / 36 & 128.67 / 64 & 13.36 / 37 & 10.67 / 37 & 4.52 / 38 \\
+PDPOSFGS-TOT & 24/260 & 354.0 / 9 & 30.02 / 21 & 72.24 / 26 & -0.97 / 10 & -1.50 / 9 \\
+PDPOSTIPS-L2 & 6/52 & 287.3 / 26 & 217.18 / 125 & 6.74 / 29 & 2.64 / 28 & 1.69 / 26 \\
+PDPOSTIPS-L2 & 6/260 & 269.3 / 24 & 66.28 / 45 & 1.78 / 25 & 66.28 / 45 & 1.63 / 25 \\
+PDPOSTIPS-L2 & 24/52 & 641.0 / 48 & 307.36 / 181 & 24.88 / 69 & 152.16 / 146 & 1.88 / 49 \\
+PDPOSTIPS-L2 & 24/260 & 532.2 / 47 & 226.91 / 147 & 11.41 / 59 & 226.91 / 147 & 1.84 / 51 \\
+PDPOSTIPS-G11 & 6/52 & 42.3 / 23 & 196.70 / 118 & 1.71 / 29 & 6.68 / 41 & -1.13 / 26 \\
+PDPOSTIPS-G11 & 6/260 & 41.8 / 14 & 90.31 / 38 & 63.18 / 29 & -1.52 / 13 & -2.53 / 14 \\
+PDPOSTIPS-G11 & 24/52 & 80.8 / 61 & 218.69 / 123 & 135.59 / 103 & 64.63 / 78 & -0.01 / 63 \\
+PDPOSTIPS-G11 & 24/260 & 51.2 / 9 & 98.59 / 33 & 37.18 / 30 & 98.59 / 33 & -1.09 / 10 \\
+PDPOSTIPS-G2 & 6/52 & 181.3 / 16 & 208.61 / 96 & 8.58 / 21 & 35.47 / 41 & 3.33 / 19 \\
+PDPOSTIPS-G2 & 6/260 & 179.4 / 19 & 63.47 / 36 & 10.78 / 24 & 63.47 / 36 & -0.29 / 19 \\
+PDPOSTIPS-G2 & 24/52 & 377.9 / 31 & 277.81 / 131 & 11.77 / 42 & 40.47 / 60 & -3.63 / 33 \\
+PDPOSTIPS-G2 & 24/260 & 286.0 / 23 & 109.33 / 66 & 120.12 / 58 & 109.33 / 66 & 0.29 / 23 \\
+\end{longtable}
+\endgroup
+
+\section{Complete weekly panel: second half}\label{sup:panel-second}
+
+The second half follows the identical convention. All original
+and expanded results remain unchanged. Cross-series dependence, aggregation
+offsets, native-unit differences and overlapping economic positions preclude
+treating these cells as independent replications. Forecasts are fitted
+separately; observations and losses are not pooled into a single financial
+population.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{26mm}rrrrrr}
+\caption{Complete panel, second half. The enlarged predictor menu is not uniformly better than historical rules.}\\
+\toprule
+Series & H/W & F loss/hits & QR33 \%/hits & QR4 \%/hits & QR33+ \%/hits & I \%/hits \\
+\midrule
+\endfirsthead
+\toprule
+Series & H/W & F loss/hits & QR33 \%/hits & QR4 \%/hits & QR33+ \%/hits & I \%/hits \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSTIPS-G6L11 & 6/52 & 133.6 / 9 & 59.30 / 73 & -1.65 / 12 & -2.52 / 13 & -0.79 / 12 \\
+PDPOSTIPS-G6L11 & 6/260 & 114.9 / 4 & -5.72 / 14 & -1.11 / 4 & -1.17 / 4 & -1.00 / 4 \\
+PDPOSTIPS-G6L11 & 24/52 & 147.0 / 10 & 76.48 / 92 & -0.97 / 16 & -2.43 / 17 & 0.44 / 15 \\
+PDPOSTIPS-G6L11 & 24/260 & 133.8 / 2 & -26.42 / 1 & -1.30 / 2 & -1.33 / 2 & -0.55 / 2 \\
+PDPOSGSC-L2 & 6/52 & 1232.9 / 15 & 215.90 / 129 & -3.85 / 23 & 215.90 / 129 & -2.12 / 19 \\
+PDPOSGSC-L2 & 6/260 & 1247.4 / 15 & 64.40 / 40 & 9.04 / 20 & 2.20 / 20 & 0.61 / 17 \\
+PDPOSGSC-L2 & 24/52 & 2270.8 / 46 & 276.55 / 165 & 182.80 / 96 & 131.63 / 93 & 5.02 / 55 \\
+PDPOSGSC-L2 & 24/260 & 2918.7 / 33 & 41.60 / 55 & -0.19 / 33 & 0.12 / 32 & 0.14 / 34 \\
+PDPOSGSC-G2L3 & 6/52 & 792.4 / 24 & 121.15 / 93 & 145.25 / 112 & 25.51 / 40 & 3.86 / 28 \\
+PDPOSGSC-G2L3 & 6/260 & 1004.0 / 28 & 21.31 / 44 & 22.62 / 59 & 21.31 / 44 & 0.23 / 30 \\
+PDPOSGSC-G2L3 & 24/52 & 2101.9 / 47 & 112.95 / 135 & 129.55 / 151 & 112.95 / 135 & 1.78 / 54 \\
+PDPOSGSC-G2L3 & 24/260 & 2677.0 / 55 & 11.60 / 64 & 39.73 / 91 & -2.06 / 52 & 1.93 / 55 \\
+PDPOSGSC-G3L6 & 6/52 & 764.9 / 12 & 87.61 / 82 & 75.44 / 72 & 10.10 / 29 & -4.25 / 15 \\
+PDPOSGSC-G3L6 & 6/260 & 699.1 / 20 & 0.79 / 15 & 1.91 / 21 & 0.79 / 15 & 2.27 / 22 \\
+PDPOSGSC-G3L6 & 24/52 & 977.4 / 38 & 544.34 / 137 & 299.12 / 120 & 19.44 / 47 & 9.23 / 45 \\
+PDPOSGSC-G3L6 & 24/260 & 931.0 / 20 & 15.52 / 37 & 0.13 / 20 & -5.76 / 17 & 0.56 / 20 \\
+PDPOSGSC-G6L7 & 6/52 & 542.3 / 16 & 253.66 / 142 & 89.00 / 79 & 48.88 / 63 & -1.24 / 24 \\
+PDPOSGSC-G6L7 & 6/260 & 564.9 / 20 & 31.61 / 42 & 71.05 / 49 & 31.61 / 42 & 0.43 / 21 \\
+PDPOSGSC-G6L7 & 24/52 & 993.4 / 43 & 264.80 / 217 & 264.77 / 215 & 264.80 / 217 & 11.08 / 47 \\
+PDPOSGSC-G6L7 & 24/260 & 699.0 / 22 & 146.41 / 77 & 142.57 / 67 & 146.41 / 77 & 0.98 / 23 \\
+PDPOSGSC-G7L11 & 6/52 & 505.7 / 25 & 175.62 / 83 & 15.72 / 34 & 86.69 / 55 & 14.85 / 34 \\
+PDPOSGSC-G7L11 & 6/260 & 506.2 / 25 & 8.34 / 31 & -0.06 / 25 & 8.34 / 31 & 0.44 / 26 \\
+PDPOSGSC-G7L11 & 24/52 & 1653.9 / 36 & 94.95 / 105 & 62.40 / 91 & -0.51 / 39 & 2.38 / 36 \\
+PDPOSGSC-G7L11 & 24/260 & 1002.9 / 32 & 229.96 / 94 & 202.78 / 99 & 229.96 / 94 & 8.62 / 35 \\
+\end{longtable}
+\endgroup
+
+The independent saved-array arithmetic checks and selection-before-
+evaluation records are linked from \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/e5/README.md}{the E5 archive}. The original panel's entire candidate/status inventory remains in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/round2/panel/summary.csv}{the original panel archive},
+and the fitted expanded-menu predictions are not substitutes for unavailable
+methods or independent dealer data.\section{Complete added-panel endpoint-plug-in comparison}\label{sup:panel-levy}
+
+The original added-panel endpoint plug-in was evaluated on the
+same task grids as the historical and regression reports. Each entry gives
+the saved loss percentage against the historical rule, followed by strict
+hits for the endpoint plug-in and historical report. These are all related
+aggregate tasks, not independent replications or source-pooled monetary losses.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{30mm}rrrr}
+\caption{Every additional-panel endpoint-plug-in result. Fewer breaches do not guarantee a better score.}\\
+\toprule
+Series & H6/W52 & H6/W260 & H24/W52 & H24/W260 \\
+\midrule
+\endfirsthead
+\toprule
+Series & H6/W52 & H6/W260 & H24/W52 & H24/W260 \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSMBS-TOT & 7.17; 11/21 & 7.33; 5/26 & -17.87; 27/39 & -3.92; 22/25 \\
+PDPOSCS-TOT & 18.28; 11/16 & 17.56; 2/6 & -5.06; 11/16 & 19.63; 4/6 \\
+PDPOSFGS-TOT & -4.74; 13/16 & 16.77; 0/6 & -3.72; 37/36 & -4.06; 12/9 \\
+PDPOSTIPS-L2 & -1.89; 12/26 & -7.42; 19/24 & -34.60; 30/48 & -4.52; 46/47 \\
+PDPOSTIPS-G11 & 13.93; 3/23 & 27.71; 1/14 & -16.39; 16/61 & 27.11; 0/9 \\
+PDPOSTIPS-G2 & 19.45; 4/16 & 23.00; 4/19 & 6.36; 27/31 & 2.09; 20/23 \\
+PDPOSTIPS-G6L11 & 9.67; 5/9 & 36.27; 0/4 & 5.03; 4/10 & 12.63; 0/2 \\
+PDPOSGSC-L2 & 20.65; 6/15 & -2.64; 6/15 & 0.93; 27/46 & -22.23; 24/33 \\
+PDPOSGSC-G2L3 & 17.31; 15/24 & -14.81; 12/28 & 22.35; 49/47 & -9.35; 40/55 \\
+PDPOSGSC-G3L6 & 20.57; 9/12 & 3.66; 8/20 & -11.37; 20/38 & -5.73; 17/20 \\
+PDPOSGSC-G6L7 & 0.95; 12/16 & -10.15; 15/20 & 1.69; 49/43 & 5.19; 21/22 \\
+PDPOSGSC-G7L11 & 4.92; 11/25 & 1.05; 12/25 & -20.33; 26/36 & 1.88; 26/32 \\
+\end{longtable}
+\endgroup
+
+The complete original panel CSV also preserves every original
+regression candidate, selection result, native-unit mean error amount and
+failure status. This table adds no refit or parameter selection and does not
+extend the independent-increment population guarantee to these financial
+series.\section{Earlier-period fixed selection rules}\label{sup:selection}
+
+The earlier-period experiment applies the saved fixed selection rules
+to familiar historical data. The bounded repository audit found no prior
+evaluation role for these earlier origins; this is still retrospective, not
+external or prospective validation. R0 denotes the fixed minimum-validation-
+loss rule. R2 is the predesignated main one-standard-error selection rule,
+not a result-dependent replacement chosen for its subsequent performance.
+The rule design precedes its calculations but follows earlier research results.
+
+R1 adds the ordinary empirical quantile to the finite regression candidates.
+R2 compares each candidate's validation losses with the same best-mean
+candidate, using the paired-difference Bartlett-HAC standard error. Candidates
+within that tolerance qualify, and the fixed rule prefers the strongest
+shrinkage, including the empirical report. This paired HAC tolerance is a
+time-series adaptation of a one-standard-error preference, not the textbook
+formula, a significance test or a noninferiority guarantee. It does not account
+for the whole uncertainty from selecting the best candidate on that segment.
+
+R3 applies the same preference to prespecified earlier rolling folds and the
+outer validation segment, with origin-equal weighting and maturity gaps.
+Its HAC pairs use actual source-index distances rather than compressing gaps.
+Without an eligible earlier fold, the saved design makes it identical to R2;
+this is not a numerical fallback. Earlier-period results were sealed before
+the already-inspected-period calculations that could reuse those origins.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{35mm}rrrrr}
+\caption{Every earlier-period R0/R2 comparison. The one-standard-error rule misses the recorded success conditions.}\\
+\toprule
+Series & H/W & R0 \% & R2 \% & Hits R0/R2 & Hits F \\
+\midrule
+\endfirsthead
+\toprule
+Series & H/W & R0 \% & R2 \% & Hits R0/R2 & Hits F \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSGS-B & 6/52 & 11.22 & 7.43 & 10/10 & 7 \\
+PDPOSGS-B & 24/52 & 181.39 & 181.39 & 27/27 & 8 \\
+PDPOSMBS-TOT & 6/52 & -4.11 & 3.83 & 7/6 & 4 \\
+PDPOSMBS-TOT & 24/52 & 48.55 & 26.55 & 14/13 & 10 \\
+PDPOSCS-TOT & 6/52 & -11.56 & -11.56 & 0/0 & 0 \\
+PDPOSCS-TOT & 24/52 & -4.12 & 1.02 & 4/4 & 2 \\
+PDPOSFGS-TOT & 6/52 & -27.32 & -27.32 & 6/6 & 0 \\
+PDPOSFGS-TOT & 24/52 & -3.87 & -3.60 & 4/3 & 2 \\
+PDPOSTIPS-L2 & 6/52 & -7.06 & -7.06 & 2/2 & 1 \\
+PDPOSTIPS-L2 & 24/52 & -23.33 & -1.55 & 4/1 & 1 \\
+PDPOSTIPS-G11 & 6/52 & -5.55 & -5.79 & 5/5 & 4 \\
+PDPOSTIPS-G11 & 24/52 & 5.67 & -0.87 & 15/15 & 15 \\
+PDPOSTIPS-G2 & 6/52 & 15.16 & 15.16 & 8/8 & 0 \\
+PDPOSTIPS-G2 & 24/52 & 30.27 & 30.27 & 14/14 & 10 \\
+PDPOSTIPS-G6L11 & 6/52 & 283.88 & 28.58 & 17/6 & 0 \\
+PDPOSTIPS-G6L11 & 24/52 & -4.03 & -2.70 & 2/1 & 0 \\
+PDPOSGSC-L2 & 6/52 & 48.04 & 16.09 & 17/15 & 14 \\
+PDPOSGSC-L2 & 24/52 & 40.77 & 40.77 & 34/34 & 30 \\
+PDPOSGSC-G2L3 & 6/52 & 1.40 & 11.14 & 12/13 & 8 \\
+PDPOSGSC-G2L3 & 24/52 & -11.22 & 15.48 & 15/20 & 15 \\
+PDPOSGSC-G3L6 & 6/52 & 2.63 & 2.35 & 11/11 & 10 \\
+PDPOSGSC-G3L6 & 24/52 & 15.62 & 6.92 & 29/28 & 26 \\
+PDPOSGSC-G6L7 & 6/52 & 19.03 & 19.03 & 6/6 & 1 \\
+PDPOSGSC-G6L7 & 24/52 & 2.05 & 1.82 & 20/19 & 19 \\
+PDPOSGSC-G7L11 & 6/52 & 19.18 & 12.77 & 13/13 & 10 \\
+PDPOSGSC-G7L11 & 24/52 & 8.48 & 2.70 & 29/29 & 27 \\
+fx\_hourly & 6/720 & 2.44 & 0.62 & 79/73 & 63 \\
+fx\_hourly & 6/2880 & -16.62 & -6.28 & 20/20 & 16 \\
+fx\_hourly & 24/720 & -4.36 & -4.36 & 47/47 & 32 \\
+fx\_hourly & 24/2880 & -1.42 & -1.40 & 1/1 & 0 \\
+\end{longtable}
+\endgroup
+
+All recorded success criteria are NOT\_MET,
+NOT\_MET and NOT\_MET, respectively.
+R2's worst weekly excess is 181.39 percent,
+and its weekly median is 5.37 percent.
+The long-history FX gain also fails the prewritten retention criterion.
+This adverse result remains a robustness finding rather than a contribution
+claim. Complete inspected-period and all-rule rows remain linked in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/README.md}{the R6 archive}.\section{Selection failures and replication boundaries}\label{sup:selection-failures}
+
+Required validation-candidate failure blocks the dependent rule;
+it is neither retried nor replaced by a shorter mean. The complete noncomplete
+report inventory is below. Every listed row has the saved reason
+\texttt{REQUIRED\_VALIDATION\_CANDIDATE\_FAILED}. Those failures remain part of
+the evidence even though other rules in the same task can complete.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{All noncomplete R6 report rows. Failed mandatory candidates remain failures.}\\
+\toprule
+Phase & Series & H/W & Rule & Status \\
+\midrule
+\endfirsthead
+\toprule
+Phase & Series & H/W & Rule & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+retro & fx\_hourly & 6/720 & R3 & FAILED \\
+retro & fx\_hourly & 24/720 & R3 & FAILED \\
+inspected & fx\_hourly & 6/720 & R3 & FAILED \\
+inspected & fx\_hourly & 24/720 & R3 & FAILED \\
+\end{longtable}
+\endgroup
+
+The Treasury earlier-period structural comparison uses a shorter
+history than the original primary. It is explicitly an analogue, not an exact
+earlier replication of the long-history primary. The source-native comparison
+and its definition are preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/primary-replication.csv}{the primary-structure table}.
+All original primary values remain unchanged. Reclassifying the analogue as an
+exact primary replication, or calling familiar retrospective FX data an unseen
+dealer, would change the scientific claim without adding evidence.\section{Finite delayed calibration and headroom SAV}\label{sup:wp2}
+
+The finite delayed ACI-style wrapper adapts past strict hits after
+their entire peak labels mature. Its score pool contains only completed residual
+scores and uses the specified finite memory. The base-plus-score quantile is
+projected onto the known floor. The adaptive alpha state is projected to the
+current feasible range; the rank-zero convention issues the floor. Gamma was
+selected by coverage distance, then pinball loss and the fixed tie rule, a
+coverage-first selection criterion distinct from original regression fitting.
+No canonical ACI theorem is imported to this modified procedure.
+
+The headroom SAV method adapts a CAViaR recursion, rather than replicating a
+return-VaR model. The completed headroom response is normalized by its
+training-only scale; the recursive report is multiplied back by that same
+scale and then floor-projected. Its fixed bounded optimizer and starts retain
+all eligibility and convergence failures; a complete fit is not a proof of a
+global optimum. Selection state carries across the unissued chronological gap.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrlrrl}
+\caption{Complete delayed-wrapper and headroom-SAV inventory. Two long-horizon wrapper cells remain unavailable.}\\
+\toprule
+Source & H/W & Method & Mean loss & Hits & Status \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & Method & Mean loss & Hits & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & ACI\_F & 472677.77 & 331 & COMPLETE \\
+FX & 6/720 & ACI\_QR & 439672.91 & 352 & COMPLETE \\
+FX & 6/720 & SAV & 449237.37 & 349 & COMPLETE \\
+FX & 6/2880 & ACI\_F & 463271.47 & 328 & COMPLETE \\
+FX & 6/2880 & ACI\_QR & 393795.06 & 329 & COMPLETE \\
+FX & 6/2880 & SAV & 456696.22 & 364 & COMPLETE \\
+FX & 24/720 & ACI\_F & 921402.08 & 322 & COMPLETE \\
+FX & 24/720 & ACI\_QR & 1020220.09 & 393 & COMPLETE \\
+FX & 24/720 & SAV & 781586.36 & 439 & COMPLETE \\
+FX & 24/2880 & ACI\_F & 791441.18 & 323 & COMPLETE \\
+FX & 24/2880 & ACI\_QR & 755982.70 & 294 & COMPLETE \\
+FX & 24/2880 & SAV & 756811.00 & 333 & COMPLETE \\
+Bills & 6/52 & ACI\_F & 3818.40 & 18 & COMPLETE \\
+Bills & 6/52 & ACI\_QR & 3489.82 & 29 & COMPLETE \\
+Bills & 6/52 & SAV & 2974.32 & 16 & COMPLETE \\
+Bills & 6/260 & ACI\_F & 2792.91 & 7 & COMPLETE \\
+Bills & 6/260 & ACI\_QR & 3013.16 & 6 & COMPLETE \\
+Bills & 6/260 & SAV & 2892.23 & 29 & COMPLETE \\
+Bills & 24/52 & ACI\_F & 4368.10 & 38 & COMPLETE \\
+Bills & 24/52 & ACI\_QR & 6250.53 & 47 & COMPLETE \\
+Bills & 24/52 & SAV & 4182.40 & 35 & COMPLETE \\
+Bills & 24/260 & ACI\_F & NA & NA & NA \\
+Bills & 24/260 & ACI\_QR & NA & NA & NA \\
+Bills & 24/260 & SAV & 3100.97 & 25 & COMPLETE \\
+\end{longtable}
+\endgroup
+
+The NA wrapper rows have the saved reason
+\texttt{VALIDATION\_INELIGIBLE}; no test is substituted for the absent forecasts.
+All losses are in each source's native units and must not be pooled.\section{Wrapper comparisons, uncertainty and missing cells}\label{sup:wp2-pairs}
+
+Comparing wrapped regression with wrapped historical reports is a
+different question from comparing either wrapper with its unwrapped base.
+The following table retains every within-cell comparison. A lower coverage
+distance measures closeness of empirical hits to the target probability, not
+conditional coverage or lower monetary loss.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Every paired wrapper comparison. Calibration adjustment preserves the long-history short-horizon FX score gain but does not produce universal dominance.}\\
+\toprule
+Source & H/W & QR/F \(\Delta\%\) & Hits QR/F & QR dist. & F dist. \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & QR/F \(\Delta\%\) & Hits QR/F & QR dist. & F dist. \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & -6.98 & 352/331 & 0.00313 & 0.00004 \\
+FX & 6/2880 & -15.00 & 329/328 & 0.00034 & 0.00049 \\
+FX & 24/720 & 10.72 & 393/322 & 0.00932 & 0.00140 \\
+FX & 24/2880 & -4.48 & 294/323 & 0.00562 & 0.00125 \\
+Bills & 6/52 & -8.61 & 29/18 & 0.05469 & 0.01498 \\
+Bills & 6/260 & 7.89 & 6/7 & 0.02834 & 0.02473 \\
+Bills & 24/52 & 43.09 & 47/38 & 0.11968 & 0.08718 \\
+Bills & 24/260 & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The working-reference comparison inventory contains 56 fixed slots,
+with 5 raw p values unavailable.
+The reported Holm bookkeeping keeps those slots; mapping an NA component to a
+bookkeeping value does not create an observed p value or validate failed
+reference assumptions. HLN references remain separately identified.
+Exact update equations, gamma candidates, selection freezes,
+numerical receipts and all comparisons remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{the v6 replay guide} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp2-summary.json}{the complete WP2 inventory}.
+The original primaries are not overwritten by these post-result / exploratory
+extensions. The upper-horizon NA rows and adverse SAV comparisons remain
+visible rather than becoming a favourable subset.\section{Untuned forecast combinations}\label{sup:wp3}
+
+Fixed report combinations use the matched historical and original
+regression reports at identical origins. Their arithmetic mean is untuned.
+The median also requires the original selected plain local-quantile report;
+neither a smaller predictor model nor the endpoint plug-in substitutes for
+that missing constituent. Combining floor-respecting reports preserves the
+floor, but does not guarantee a conditional quantile or a score below the
+best constituent. Identical reports generate an NA equal-loss p value rather
+than a manufactured significance result.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{All original-cell combination comparisons. A report combination can improve one constituent while losing to the other.}\\
+\toprule
+Source & H/W & Rule & vs F \(\%\) & vs QR \(\%\) & Hits \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & Rule & vs F \(\%\) & vs QR \(\%\) & Hits \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & Mean & -6.91 & -4.90 & 338 \\
+FX & 6/720 & Median & -4.81 & -2.75 & 325 \\
+FX & 6/2880 & Mean & -10.61 & 4.87 & 330 \\
+FX & 6/2880 & Median & -11.17 & 4.22 & 327 \\
+FX & 24/720 & Mean & 5.50 & -19.77 & 533 \\
+FX & 24/720 & Median & 5.00 & -20.15 & 514 \\
+FX & 24/2880 & Mean & -8.94 & -5.39 & 345 \\
+FX & 24/2880 & Median & -3.74 & 0.01 & 416 \\
+Bills & 6/52 & Mean & -3.15 & -47.18 & 26 \\
+Bills & 6/52 & Median & 0.00 & -45.46 & 11 \\
+Bills & 6/260 & Mean & 2.77 & -31.84 & 40 \\
+Bills & 6/260 & Median & -3.98 & -36.32 & 28 \\
+Bills & 24/52 & Mean & 18.87 & -63.69 & 54 \\
+Bills & 24/52 & Median & 0.00 & -69.46 & 33 \\
+Bills & 24/260 & Mean & -5.32 & -54.88 & 28 \\
+Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrr}
+\caption{Complete combination counts including the added panel. Missing median constituents remain NA.}\\
+\toprule
+Rule & Total & Complete & NA & Below both & Below F & Below QR & Equal F \\
+\midrule
+\endfirsthead
+\toprule
+Rule & Total & Complete & NA & Below both & Below F & Below QR & Equal F \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Mean & 56 & 56 & 0 & 14 & 16 & 54 & 0 \\
+Median & 56 & 8 & 48 & 3 & 5 & 6 & 2 \\
+\end{longtable}
+\endgroup
+
+The added panel lacks the specified plain local-quantile
+constituent, so all its median rows remain unavailable. Mean combinations are
+complete, but lower loss than regression alone does not imply lower loss than
+the historical rule. All panel-specific values and every comparison remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp3-combinations.json}{the complete combination record}.\section{Combination Murphy diagrams and comparison families}\label{sup:wp3-murphy}
+
+Elementary-score comparisons vary the score threshold while
+keeping the quantile level fixed. Exact integer-event signs at every unique
+breakpoint determine sample crossing before display interpolation. A picture
+is not used to select favourable thresholds. These matched combination
+contexts are distinct from the original FX primary with its shorter rolling
+reference.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{34mm}p{18mm}lrr}
+\caption{Every combination Murphy comparison in the original-primary contexts. Crossing prevents threshold-uniform sample dominance.}\\
+\toprule
+Source & Left & Right & Ranking & Positive & Negative \\
+\midrule
+\endfirsthead
+\toprule
+Source & Left & Right & Ranking & Positive & Negative \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & MEAN\_F\_QR & F & CROSSING & 217 & 15628 \\
+FX & MEAN\_F\_QR & QR & CROSSING & 13562 & 2343 \\
+FX & MEDIAN\_F\_QR\_KNN & F & CROSSING & 909 & 13572 \\
+FX & MEDIAN\_F\_QR\_KNN & QR & CROSSING & 10827 & 2575 \\
+Bills & MEAN\_F\_QR & F & CROSSING & 336 & 291 \\
+Bills & MEAN\_F\_QR & QR & CROSSING & 179 & 454 \\
+Bills & MEDIAN\_F\_QR\_KNN & F & CROSSING & 262 & 274 \\
+Bills & MEDIAN\_F\_QR\_KNN & QR & CROSSING & 147 & 446 \\
+\end{longtable}
+\endgroup
+
+The complete normal-DM comparison family has 224 slots,
+of which 98 have NA raw p values.
+The family adjustment is bookkeeping for those saved working references, not
+error control over the complete historical analysis search. The inspected
+record, overlapping labels, repeated fitting and related aggregate series
+remain common to the methods. All original and adverse rows remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp3-findings.json}{the combination findings}.
+Exact breakpoint signs support only the stated finite-sample score comparison;
+they do not certify general forecast dominance, optimal funding, or a causal
+benefit from acting on the limits.\section{Training-defined position-change states}\label{sup:wp4}
+
+The states are low, middle and high issue-known RMS position-change
+states, not price volatility or yield regimes. Cutpoints come only from the
+training history. Reports and original primary means stay unchanged; the
+diagnostic divides the already viewed evaluation record without estimating a
+switching policy. Source-native group differences are not pooled.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{All three state groups for each original primary. The FX advantage remains negative in every group, while the weekly evidence remains adverse.}\\
+\toprule
+Source & State & n & QR minus reference & HAC SE \\
+\midrule
+\endfirsthead
+\toprule
+Source & State & n & QR minus reference & HAC SE \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & low & 1593 & -58761.27 & 16492.94 \\
+FX & middle & 1816 & -27839.43 & 16257.70 \\
+FX & high & 3216 & -70387.91 & 17895.89 \\
+Bills & low & 9 & 6696.66 & 1705.21 \\
+Bills & middle & 25 & 5230.59 & 2608.15 \\
+Bills & high & 243 & 810.88 & 466.48 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{Complete state diagnostic reference family. A joint rejection need not identify a useful state rule.}\\
+\toprule
+Source & Diagnostic & Raw p & Holm p & Status \\
+\midrule
+\endfirsthead
+\toprule
+Source & Diagnostic & Raw p & Holm p & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & joint\_GW & 1.46298e-06 & 5.8519e-06 & OK \\
+FX & group\_heterogeneity & 0.159383 & 0.159383 & OK \\
+Bills & joint\_GW & 0.0484878 & 0.0969756 & OK \\
+Bills & group\_heterogeneity & 0.000426772 & 0.00128032 & OK \\
+\end{longtable}
+\endgroup
+
+These finite-instrument and group-mean HAC references require
+unverified moment, dependence and covariance assumptions. A joint conditional-
+moment rejection can be driven by an unconditional mean difference; it is not
+evidence that a state-dependent trading or limit-selection policy works.
+The source-level reconstruction and all cutpoints remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp4-states.json}{the complete state record}.\section{Refitted target-level sensitivities}\label{sup:wp5}
+
+Changing the target quantile requires fitting the specified target-
+level procedure; it is different from reweighting the errors of a fixed report.
+The following saved sensitivities keep the original horizon and reference
+structure. The weekly primary and matched reference coincide and count once.
+All unavailable upper-target rows remain NA with
+\texttt{VALIDATION\_INELIGIBLE}, rather than being replaced by a lower target
+or a favourable subset. Absolute loss values across different quantile levels
+measure different objectives.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrp{20mm}rrrl}
+\caption{Complete target-level sensitivity. The lower-target directions recur, but upper-target evidence remains unavailable.}\\
+\toprule
+Source & \(\tau\) & Reference & Mean difference & QR hits & Ref. hits & Status \\
+\midrule
+\endfirsthead
+\toprule
+Source & \(\tau\) & Reference & Mean difference & QR hits & Ref. hits & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 0.90 & primary & -60715.44 & 686 & 620 & OK \\
+FX & 0.90 & matched & -67628.17 & 686 & 667 & OK \\
+Bills & 0.90 & primary & 1175.03 & 73 & 55 & OK \\
+FX & 0.99 & primary & NA & NA & NA & NA \\
+FX & 0.99 & matched & NA & NA & NA & NA \\
+Bills & 0.99 & primary & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The complete family contains 6 slots,
+with 3 raw p values unavailable.
+The existing selection freezes and chronological evaluation receipts remain
+linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp5-tau-summary.json}{the target-level inventory}.
+The saved lower-target directions do not establish robustness to an arbitrary
+tail level, actual shortage costs, or a new economic decision rule. Failed
+eligibility is a result of the specified procedure and remains part of the
+paper's boundary.\section{Horizon coherence and late conditional-hit evidence}\label{sup:coherence}
+
+Realized peaks are ordered as the forecast horizon grows, but
+independently fitted reports use horizon-specific completed responses and can
+cross. The following exact strict comparisons keep all common issue origins.
+Repairing a long-horizon report upward can worsen pinball loss; target ordering
+alone does not identify a universally beneficial repair.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{Every original QR horizon-coherence comparison. Ordered targets do not force ordered fitted reports.}\\
+\toprule
+Source & W & Origins & Report crossings & Target violations \\
+\midrule
+\endfirsthead
+\toprule
+Source & W & Origins & Report crossings & Target violations \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 720 & 6625 & 640 & 0 \\
+FX & 2880 & 6625 & 140 & 0 \\
+Bills & 52 & 277 & 91 & 0 \\
+Bills & 260 & 277 & 80 & 0 \\
+\end{longtable}
+\endgroup
+
+The late fixed-terminal conditional-hit diagnostic uses the null
+\(E[I_t\mid\mathcal F_t]\le\alpha\), where \(I_t=1\{P_t>C_t\}\).
+Within each globally anchored maturity phase, a fixed upper-probability
+alternative supplies hit/no-hit factors with conditional expectation at most
+one under the stated null. The procedure mixes whole products over its fixed
+prior, then averages dependent phases. It does not multiply phases or select
+their maximum. The fixed-family threshold does not restore retrospective
+error control after viewed-sample diagnostic selection.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrr}
+\caption{Every threshold-crossing cell in the complete late diagnostic. A noncrossing elsewhere is not a calibration certificate.}\\
+\toprule
+Source & H/W & Hits/origins & Saved display value \\
+\midrule
+\endfirsthead
+\toprule
+Source & H/W & Hits/origins & Saved display value \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 24/720 & 924/6625 & 8.499112682788E+7 \\
+Bills & 6/52 & 84/277 & 1.310958812771E+8 \\
+Bills & 6/260 & 54/277 & 2.204375927802E+3 \\
+Bills & 24/52 & 132/277 & 3.814063640027E+4 \\
+\end{longtable}
+\endgroup
+
+The complete summary and phase tables, exact rational identities,
+all noncrossings and the interpretation boundaries remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/coverage-evalues/README.md}{the e-value archive}.
+This is a fixed-terminal diagnostic, not an anytime p value, optional-stopping
+guarantee, new estimator, or independent validation. Score, breach amount,
+frequency and conditional-hit evidence answer different questions.\section{Numerical implementation and inference conventions}\label{sup:implementation}
+
+\paragraph{Completed labels and update clocks.}
+At a scheduled refit \(\kappa\), the latest completed response origin is
+\(\kappa-H\). A history of \(W\) completed responses therefore uses
+\(\{\kappa-H-W+1,\ldots,\kappa-H\}\), with every target ending by that refit.
+Training transforms, scales, coefficients and historical pools are held until
+the next scheduled refit. The current observed position may still change at
+each forecast issue. Replacing that issue anchor by the refit anchor changes
+the forecasting procedure.
+
+\paragraph{Regression and local quantiles.}
+The regression objective uses a training-normalized headroom response, an
+unpenalized intercept and a ridge penalty on slopes. Projection is applied when
+issuing the report and evaluating its validation score, not inside the fitted
+training objective. Local methods use training-only standardized predictors,
+fixed neighbour menus and duplicate-preserving order statistics. A selected
+whole-pool local quantile is an exact historical identity, not a failed-fit
+fallback. Scale-adjusted neighbours change responses as well as retrieval.
+
+\paragraph{Numerical eligibility.}
+The accepted solver records primal and dual residuals, objectives, feasibility
+and their gap. Ill-conditioned, nonfinite, unsupported-rank or failed candidate
+states remain failures under the specified whole-cell selection contract.
+Changing the ridge menu changes the procedure even when feature definitions
+stay fixed. A successful numerical certificate is separate from the financial
+accuracy, economic relevance and inferential validity of a forecast.
+
+\paragraph{Working-reference inference.}
+Saved unconditional loss differences use the recorded Bartlett-HAC convention;
+HLN and doubled-bandwidth sensitivities are labelled separately. Separate
+families and later reporting partitions do not erase the wider selection
+history. Coverage references distinguish full-grid Kupiec from the
+transition-conditional Christoffersen joint likelihood, which conditions on
+the initial hit. Small sparse grids and boundary likelihoods retain their
+original status. Neither a nonrejection nor a small working-reference p value
+proves conditional coverage or supplies selection-adjusted confirmation.
+
+\paragraph{Common-pool construction distances.}
+On one nonempty historical episode set, compare the historical headroom,
+translated-path and historical-peak reports using the same available order
+statistic. Each episode peak includes its starting observation. A translated
+path changes each level by the same anchor difference, so its absolute peak
+changes by at most that difference. Flooring is nonexpansive and commutes with
+the fixed order statistic. The headroom construction has the corresponding
+bound in the difference of anchor magnitudes. Thus
+\[
+|C^{\rm headroom}-C^{\rm peak}|\le\max_i\bigl||N_i|-B\bigr|,\qquad
+|C^{\rm translated}-C^{\rm peak}|\le\max_i|N_i-x|.
+\]
+For a proof of the order-statistic step, paired coordinatewise differences
+bounded by a radius imply that each empirical quantile lies below the other
+plus that radius; reverse the roles for the second inequality. These
+deterministic same-pool bounds do not order financial accuracy or coverage.
+Changing historical rows on one side invalidates the common-pool argument.
+
+\paragraph{Complete implementation evidence.}
+Exact menus, numerical tolerances, failures and diagnostic tables remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source archives.
+This supplement describes the existing procedures; its document builder
+imports no forecasting code and performs no new financial computation.\section{Reproduction, availability and retained extended results}\label{sup:reproduction}
+
+\paragraph{What is public.}
+The repository provides editable sources, public aggregate results, original
+design records, computational code and numerical verification evidence. Old
+favourable and adverse outputs remain unchanged. The compact supplement links
+the longer retained material instead of removing its rows. Exact source-field
+bindings for every aggregate printed here accompany the document generator.
+
+\paragraph{What public checking proves.}
+The read-only conditional-archive entry point verifies the existing aggregate
+inventory without raw observations. Document regeneration reads public
+aggregates and formats their saved values. These checks establish internal
+artifact consistency, not recomputed forecasting accuracy, a new sample,
+independent scientific replication or journal acceptance.
+
+\paragraph{Full financial replay requires compatible inputs.}
+The original FX member and Treasury snapshot must match their recorded
+fingerprints and source definitions before a separately authorized fresh
+replay. Private per-origin forecasts, fitted traces and restricted FX
+observations are not redistributed. Downloaded-vintage economic dates differ
+from verified historical first-release availability. A current file with the
+same series name is not automatically the accepted snapshot.
+
+\paragraph{Version-specific entry points.}
+The v7 merge preserves both source lines. The supervisor panel scripts retain
+their original canonical paths and whole-file identity gates. Earlier panel
+implementations remain as the explicitly named legacy scripts, with the same
+original bytes. Historical execution contracts keep their original values and
+dates; exact old-protocol replay should use its recorded source commit.
+The existing prospective parameter binding is not silently reactivated or
+rebound by this manuscript edit.
+
+\paragraph{Resources and software.}
+This revision reads existing local software and results. No package installation,
+model fit, additional data acquisition, simulation rerun or parameter search
+belongs to document assembly. The historical execution receipts report their
+actual worker time, resident memory and observed threads separately from
+requested budgets. Test execution uses an isolated copy of tracked inputs so
+synthetic fixture writes do not alter the scientific archives.
+
+\paragraph{Routes to complete evidence.}
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{v6 replay guide},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/README.md}{original conditional archive},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/README.md}{supervisor rule archive} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{extended-results index} identify the
+complete retained tables, failure inventories and longer technical discussions.
+Missing compatible external validation and prospective first-release evaluation
+remain research tasks, rather than claims created by these reproducibility
+materials.\end{document}

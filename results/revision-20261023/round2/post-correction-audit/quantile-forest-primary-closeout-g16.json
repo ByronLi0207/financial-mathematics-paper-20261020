@@ -1,0 +1,207 @@
+{
+  "schema": "quantile-forest-primary-closeout-v1",
+  "created_utc": "2026-10-23 13:25:28 UTC",
+  "status": "NO_MATERIAL_SOURCE_DEFINITION_OR_COMPARISON_SCOPE_ERROR_FOUND",
+  "reviewer_role": "The QRF core's implementation author performing a bounded source/math/current-text readback; not an independent code-author review or external peer review.",
+  "canonical_snapshot": {
+    "path": "manuscript/revision-v3/paper-content.json",
+    "sha256": "85d14613df8def23104fba35bc6de2369aae18f5dcf383e9ae7eb3f5fecdb86c"
+  },
+  "local_inputs": [
+    {
+      "path": "round2_qrf.py",
+      "bytes": 9945,
+      "sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+    },
+    {
+      "path": "round2_baselines_run.py",
+      "bytes": 9814,
+      "sha256": "35e184aa3fc861024413dad1b454695e11d56a112180a9110626eb10d053fa54"
+    },
+    {
+      "path": "conditional_features.py",
+      "bytes": 6985,
+      "sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5"
+    },
+    {
+      "path": "protocol/revision-20261023/round2-D1-mature-baselines.md",
+      "bytes": 6952,
+      "sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db"
+    },
+    {
+      "path": "notes/revision-20261022/conditional-baseline-admission-and-delay.md",
+      "bytes": 9854,
+      "sha256": "65da4d401f47b0dec5986c32ae077b081865d45d82bd5499fb38a99a8138eae1"
+    }
+  ],
+  "historical_note_boundary": "The 22 October note was consulted first for source identity and earlier selected-body reading. Its then-unexecuted QRF status is historical, superseded by current D1 receipts. Historical PDF fingerprint is not claimed as a fresh current byte verification.",
+  "primary": {
+    "author": "Nicolai Meinshausen",
+    "title": "Quantile Regression Forests",
+    "edition": "Journal of Machine Learning Research 7 (2006), 983–999; official article header: submitted October 2005, revised February 2006, published June 2006; 17 physical pages.",
+    "official_pdf": "https://www.jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf",
+    "actual_fresh_read": [
+      "Physical page 1 / printed 983: title, publication header and introductory CDF definition.",
+      "Physical page 2 / printed 984: quantile left-inverse definition, equation (1).",
+      "Physical pages 3–4 / printed 985–986: Section 2 setup and per-tree/forest weights, equations (4)–(5).",
+      "Physical page 5 / printed 987: complete Section 3 CDF definition and algorithm, equation (6), inverse-CDF linkage to (1).",
+      "Physical page 6 / printed 988: Section 4 assumptions; physical page 7 / printed 989: Theorem 1 statement and selected surrounding proof opening."
+    ],
+    "not_read_or_claimed": "No full 17-page reading, complete proof verification, Section 5 empirical reconstruction, R-package equivalence, new PDF hash, or fresh visual-page inspection.",
+    "paraphrase": "Equations (4)–(6) average per-leaf observation weights into a conditional empirical CDF; Section 3 obtains quantiles by the inverse-CDF rule in equation (1). Retaining response values distinguishes QRF from quantiles of tree means. Section 4 imposes distribution, leaf-size and splitting assumptions for consistency, following the independent-observation setup of Section 2. These definitions support a finite fixed-specification QRF baseline, not optimal tuning, a reproduction of the original empirical experiments, or automatic validity for overlapping time-series labels and possible floor atoms.",
+    "direct_source_body_quotes": 0
+  },
+  "formula_crosswalk": [
+    {
+      "item": "Leaf and forest masses",
+      "source": "Section 2, equations (4)–(5), printed 986",
+      "mathematical_readback": "w_i^(b)(z)=1{z_i in R_b(z)}/sum_j 1{z_j in R_b(z)}; w_i(z)=100^(-1) sum_b w_i^(b)(z).",
+      "current_implementation": "round2_qrf.py:38–58 and 160–180; fitted partitions are applied to all original W rows, not to repeated bootstrap occurrences.",
+      "ruling": "Matches the displayed original-row weighting convention. Bootstrap chooses partitions; no assertion of equality to sklearn's bootstrap-weighted mean prediction or every QRF software variant."
+    },
+    {
+      "item": "Conditional CDF and quantile",
+      "source": "Section 3, equation (6), printed 987, and equation (1), printed 984",
+      "mathematical_readback": "Fhat(y|z)=sum_i w_i(z) 1{Y_i<=y}; qhat_tau(z)=inf{y:Fhat(y|z)>=tau}.",
+      "current_implementation": "round2_qrf.py:61–83, 184–188; positive-mass values sorted, left inverse at .95, no interpolation or corrected finite F rank.",
+      "ruling": "A genuine retained-response QRF quantile, not a quantile over tree predictions."
+    }
+  ],
+  "current_fixed_configuration": {
+    "n_estimators": 100,
+    "criterion": "squared_error",
+    "bootstrap": true,
+    "max_samples": null,
+    "max_features": 11,
+    "min_samples_leaf": 5,
+    "min_samples_split": 10,
+    "max_depth": 10,
+    "n_jobs": 1,
+    "random_state": 20261023,
+    "oob_score": false,
+    "warm_start": false
+  },
+  "configuration_binding": {
+    "recorded_cells": [
+      {
+        "path": "results/revision-20261023/round2/baselines/fx_hourly-h24-w2880-QRF.json",
+        "sha256": "2b43e76711cad4df6dd514a9d99109d91486eaf98727de938facc684d37cc831",
+        "status": "COMPLETE",
+        "refit_count": 277,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/fx_hourly-h24-w720-QRF.json",
+        "sha256": "648b143a3bfa36b3205d2354a8f7179197fe8dda7328692762b44adf575974aa",
+        "status": "COMPLETE",
+        "refit_count": 277,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/fx_hourly-h6-w2880-QRF.json",
+        "sha256": "85017a236c159b1e24d4da44daccc8f927a511aa22a838bde1c26ee7bd8570ee",
+        "status": "COMPLETE",
+        "refit_count": 277,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/fx_hourly-h6-w720-QRF.json",
+        "sha256": "cde9b6c9458dd39c596f12ee390fe74d7124e3bd1e034ed24d11accd80f31ab1",
+        "status": "COMPLETE",
+        "refit_count": 277,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/nyfed_weekly-h24-w260-QRF.json",
+        "sha256": "7709ed47cd7d226a109924cdd709da7bc9f0c89a2e9b409f7119734c7bcf1958",
+        "status": "COMPLETE",
+        "refit_count": 22,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/nyfed_weekly-h24-w52-QRF.json",
+        "sha256": "6a0dfd719c0183f92f7d289f761d38be833b502eb058c074ca6a35b06f5fa17a",
+        "status": "COMPLETE",
+        "refit_count": 22,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/nyfed_weekly-h6-w260-QRF.json",
+        "sha256": "aa461f8d6016382e9fec565c34523ee2e5af35f2b694b8d92f99fd7b561adcd6",
+        "status": "COMPLETE",
+        "refit_count": 22,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      },
+      {
+        "path": "results/revision-20261023/round2/baselines/nyfed_weekly-h6-w52-QRF.json",
+        "sha256": "63225a2ecc778aaf160a95713e114a0ec1223685588acf98f11c26ddf6e4bd26",
+        "status": "COMPLETE",
+        "refit_count": 22,
+        "recorded_refit_configs_match_current_static_config": true,
+        "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+        "recorded_qrf_code_sha256": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4"
+      }
+    ],
+    "all_eight_cells_match_current_forest_parameters": true,
+    "scope": "Only stored receipt/configuration identity was read back. No fitted forest, private numeric trace, loss or test statistic was regenerated.",
+    "runtime": "Stored execution receipts identify numpy 2.3.5, scipy 1.18.1, arch 8.0.0 and scikit-learn 1.9.1; this pass did not import or execute these numerical packages."
+  },
+  "same_target_analysis": {
+    "target": "P_t=max_{0<=h<=H}|N_{t+h}|; B_t=|N_t|; G_t=P_t-B_t>=0.",
+    "mature_fit_pool": "At scheduled refit r, original completed origins are r-H-W+1 through r-H inclusive; their label ends are <=r. Training feature transforms and positive response scale use only this pool.",
+    "normalized_response": "Y_i=G_i/a_r with a_r>0. The issue query uses current causal features, including current signed N_t and B_t.",
+    "issued_report": "C_t=B_t+max(0,a_r*qhat_.95(Y|z_t)). Because leaf responses are nonnegative, the floor operation is already satisfied mathematically.",
+    "analytic_mapping": "For a fixed fitted forest, weights and positive a_r, scaling back the left-inverse is exact for its empirical distribution. Adding issue-known B_t maps headroom reports to the same sampled-peak response. This is target equivariance and deterministic feasibility, not a coverage or consistency result.",
+    "current_call_boundary": "round2_baselines_run.py:61–74 evaluates QRF on the retained original issue origins, peak and floor arrays, and checks alignment with original F/QR traces. No financial source rows were read by this task."
+  },
+  "interpretation_checks": [
+    {
+      "location": "Main Section 8 block24 and Appendix L block12",
+      "finding": "The manuscript states retained leaf-response distributions, fixed resource-bounded configuration, and explicit lack of QRF-class optimization or dependent fixed-window theorem transfer.",
+      "ruling": "Supports the term fixed-specification mature QRF baseline."
+    },
+    {
+      "location": "Main Section 9 block8, Appendix L block12, current quality note",
+      "finding": "Matched mature pools/update schedules improve procedural comparability. Fixed QRF and validation-selected QR have different tuning budgets; no equal-budget class-best claim follows.",
+      "ruling": "No whole-class optimality or fair-tuning implication found in the inspected wording."
+    },
+    {
+      "location": "Main Section 8 block25, Table11 and Conclusion block2",
+      "finding": "The full fixed-specification outcomes, including six adverse versus-F cells out of eight QRF comparisons, remain explicit. Failures of other baselines are not treated as scored inferiority.",
+      "ruling": "No general QRF superiority or original-implementation novelty claim found."
+    }
+  ],
+  "findings": [],
+  "manuscript_change_required": false,
+  "boundaries": [
+    "Source equations support the finite estimator definition; the fixed 100-tree/depth-10 settings are this study's frozen choices, not a claim to reproduce Meinshausen's original software or experiments.",
+    "Independent-observation, growing-leaf and distribution conditions of the original consistency analysis are not established here; fixed overlapping windows and possible response atoms retain their stated limits.",
+    "Existing result arithmetic, original raw data and current PDF pixels were not revalidated by this source-closeout task.",
+    "This bounded check does not prove exhaustive novelty, external dealer validity, valid asymptotic inference, economic decision benefit or publication level."
+  ],
+  "operations": {
+    "sole_new_file": "results/revision-20261023/round2/post-correction-audit/quantile-forest-primary-closeout-g16.json",
+    "existing_files_modified": false,
+    "financial_training_or_tests": false,
+    "pdf_downloaded": false,
+    "software_installation": false,
+    "deletion": false,
+    "push": false,
+    "claude_or_ui": false
+  }
+}
+

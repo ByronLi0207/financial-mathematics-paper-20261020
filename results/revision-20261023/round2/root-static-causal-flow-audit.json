@@ -1,0 +1,36 @@
+{
+  "actual_read_at_utc": "2026-10-23T11:17:25.092184+00:00",
+  "kind": "root static reasoning over frozen code, not independent reimplementation or external review",
+  "actual_read_ranges": {
+    "round2_filtered.py": "185–390: filter fit/native scaling, headroom indexing, refit/issue state and failures",
+    "round2_qrf.py": "115–285: observed-prefix truncation, mature-pool training, leaves/quantile/reanchoring and failures"
+  },
+  "findings": [
+    {
+      "claim": "Filter state has correct issue-time variance index",
+      "reason": "Last fitted variance corresponds to final refit increment; the recorded residual at that increment drives the next variance step. Each subsequent observed increment advances variance before replacing its residual; one further step gives the next simulated-increment variance."
+    },
+    {
+      "claim": "POT historical denominator aligns with first future increment of each mature label",
+      "reason": "Headroom origins start at segment indexzero; first increment variance is historical_v[0], and the first W such variances align with W headroom origins. Parameters are in-sample at refit, not historical forecasts at those starts."
+    },
+    {
+      "claim": "FHS retains finite empirical pool without hidden moment correction",
+      "reason": "Stored standardized residuals pass directly to rng.choice; their empirical moments need not be zero/unit. No empirical financial moments calculated or pool changed."
+    },
+    {
+      "claim": "QRF mature labels and transforms use only the scheduled completed pool",
+      "reason": "Observed source is sliced at latest issue, label ends are explicitly checked against refit, transforms and G/a use that pool. Future entries may exist in batch caches but no future label index is selected."
+    },
+    {
+      "claim": "Same-target reports include known floor and signed simulation anchor",
+      "reason": "FHS simulates native increments from signed current position including zero step; POT/QRF restore nonnegative headroom above absolute observed issue position."
+    }
+  ],
+  "limitations": [
+    "Input identity/type validation and retrospective scoring are distinct from a live data service",
+    "This read is neither a universal causality proof nor a guarantee of a correct financial law",
+    "Completed synthetic future-perturbation tests and saved-output arithmetic are separate evidence",
+    "Frozen financial core/worker code and outcomes were not altered"
+  ]
+}

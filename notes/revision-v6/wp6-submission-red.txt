@@ -1,0 +1,81 @@
+WARN `--no-project` was provided, but no project was found
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+____ test_original_empirical_main_rows_and_all_supplement_rows_remain_exact ____
+
+    def test_original_empirical_main_rows_and_all_supplement_rows_remain_exact():
+>       m=api();d,s=m.compose(write_outputs=False)
+          ^^^^^
+
+test_v6_submission.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_submission'),'v6 composition missing'
+E       AssertionError: v6 composition missing
+E       assert None
+E        +  where None = <function find_spec at 0x105d07b00>('v6_submission')
+E        +    where <function find_spec at 0x105d07b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_submission.py:9: AssertionError
+_______ test_physical_main_table_order_and_target_specific_curve_routing _______
+
+    def test_physical_main_table_order_and_target_specific_curve_routing():
+>       d,s=api().compose(write_outputs=False)
+            ^^^^^
+
+test_v6_submission.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_submission'),'v6 composition missing'
+E       AssertionError: v6 composition missing
+E       assert None
+E        +  where None = <function find_spec at 0x105d07b00>('v6_submission')
+E        +    where <function find_spec at 0x105d07b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_submission.py:9: AssertionError
+_ test_main_extension_has_one_source_generated_empirical_number_and_honest_limits _
+
+    def test_main_extension_has_one_source_generated_empirical_number_and_honest_limits():
+>       d,s=api().compose(write_outputs=False)
+            ^^^^^
+
+test_v6_submission.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_submission'),'v6 composition missing'
+E       AssertionError: v6 composition missing
+E       assert None
+E        +  where None = <function find_spec at 0x105d07b00>('v6_submission')
+E        +    where <function find_spec at 0x105d07b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_submission.py:9: AssertionError
+_ test_deterministic_context_regeneration_and_no_writes_in_read_only_composition _
+
+    def test_deterministic_context_regeneration_and_no_writes_in_read_only_composition():
+>       m=api();paths=list((ROOT/'submission-jof').glob('*-content.json'))
+          ^^^^^
+
+test_v6_submission.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_submission'),'v6 composition missing'
+E       AssertionError: v6 composition missing
+E       assert None
+E        +  where None = <function find_spec at 0x105d07b00>('v6_submission')
+E        +    where <function find_spec at 0x105d07b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_submission.py:9: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_submission.py::test_original_empirical_main_rows_and_all_supplement_rows_remain_exact
+FAILED test_v6_submission.py::test_physical_main_table_order_and_target_specific_curve_routing
+FAILED test_v6_submission.py::test_main_extension_has_one_source_generated_empirical_number_and_honest_limits
+FAILED test_v6_submission.py::test_deterministic_context_regeneration_and_no_writes_in_read_only_composition
+4 failed in 0.03s

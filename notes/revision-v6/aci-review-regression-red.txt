@@ -1,0 +1,56 @@
+test_checkpoint_failure_propagates_without_partial_scoring (test_v6_aci.FiniteDelayedACI.test_checkpoint_failure_propagates_without_partial_scoring) ... ok
+test_corrected_rank_exactly_at_finite_lower_boundary (test_v6_aci.FiniteDelayedACI.test_corrected_rank_exactly_at_finite_lower_boundary) ... ok
+test_exact_warm_grid_boundary_uses_latest_sufficient_start (test_v6_aci.FiniteDelayedACI.test_exact_warm_grid_boundary_uses_latest_sufficient_start) ... FAIL
+test_feedback_waits_for_the_issued_outcome_and_uses_old_report (test_v6_aci.FiniteDelayedACI.test_feedback_waits_for_the_issued_outcome_and_uses_old_report) ... ok
+test_future_peak_perturbation_cannot_change_pre_maturity_reports (test_v6_aci.FiniteDelayedACI.test_future_peak_perturbation_cannot_change_pre_maturity_reports) ... ok
+test_gap_consumes_each_matured_wrapped_hit_once (test_v6_aci.FiniteDelayedACI.test_gap_consumes_each_matured_wrapped_hit_once) ... ok
+test_inadequate_initial_calibration_is_whole_stream_failure (test_v6_aci.FiniteDelayedACI.test_inadequate_initial_calibration_is_whole_stream_failure) ... ok
+test_missing_validation_candidate_is_not_silently_omitted (test_v6_aci.FiniteDelayedACI.test_missing_validation_candidate_is_not_silently_omitted) ... ok
+test_negative_corrections_reach_floor_then_use_new_matured_score (test_v6_aci.FiniteDelayedACI.test_negative_corrections_reach_floor_then_use_new_matured_score) ... ok
+test_nonfinite_candidate_visible_but_other_gammas_remain_eligible (test_v6_aci.FiniteDelayedACI.test_nonfinite_candidate_visible_but_other_gammas_remain_eligible) ... ERROR
+test_original_treasury_grid_admission_is_value_free (test_v6_aci.FiniteDelayedACI.test_original_treasury_grid_admission_is_value_free) ... ok
+test_private_threshold_survives_floor_projection (test_v6_aci.FiniteDelayedACI.test_private_threshold_survives_floor_projection) ... ERROR
+test_unsigned_descending_clock_rejected_before_cast (test_v6_aci.FiniteDelayedACI.test_unsigned_descending_clock_rejected_before_cast) ... FAIL
+test_validation_selection_is_coverage_first_with_visible_failure (test_v6_aci.FiniteDelayedACI.test_validation_selection_is_coverage_first_with_visible_failure) ... ok
+
+======================================================================
+ERROR: test_nonfinite_candidate_visible_but_other_gammas_remain_eligible (test_v6_aci.FiniteDelayedACI.test_nonfinite_candidate_visible_but_other_gammas_remain_eligible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 89, in test_nonfinite_candidate_visible_but_other_gammas_remain_eligible
+    r=a.select_gamma(rows,expected_count=20)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_aci.py", line 133, in select_gamma
+    raise ValueError('invalid complete candidate metrics')
+ValueError: invalid complete candidate metrics
+
+======================================================================
+ERROR: test_private_threshold_survives_floor_projection (test_v6_aci.FiniteDelayedACI.test_private_threshold_survives_floor_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 95, in test_private_threshold_survives_floor_projection
+    np.testing.assert_array_equal(r['score_quantiles'],[-19.,-19.,-14.])
+                                  ~^^^^^^^^^^^^^^^^^^^
+KeyError: 'score_quantiles'
+
+======================================================================
+FAIL: test_exact_warm_grid_boundary_uses_latest_sufficient_start (test_v6_aci.FiniteDelayedACI.test_exact_warm_grid_boundary_uses_latest_sufficient_start)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 104, in test_exact_warm_grid_boundary_uses_latest_sufficient_start
+    self.assertEqual(self.api().initialization_grid(100,2,19,20,0)['pre_first'],80)
+AssertionError: 60 != 80
+
+======================================================================
+FAIL: test_unsigned_descending_clock_rejected_before_cast (test_v6_aci.FiniteDelayedACI.test_unsigned_descending_clock_rejected_before_cast)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 100, in test_unsigned_descending_clock_rejected_before_cast
+    with self.assertRaises(ValueError):self.stream(origins=np.array([20,19],dtype=np.uint64),peak=(10.,10.))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.032s
+
+FAILED (failures=2, errors=2)

@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-23T12:21:22.217687+00:00",
+  "status": "APPLICATION_POSITIONING_SUPPORTED_PRIORITY_UNPROVEN_CHECKPOINT_CURRENTNESS_FINDING",
+  "reviewer_role": "Fresh read-only literature-positioning and current-results audit by the agent who authored the round2 QRF core. This is not an independent QRF-code-author review, a new external peer review or a publication recommendation.",
+  "scope": "Directed existing-reference-chain audit only: current main Sections1/2, existing closest-neighbor evidence maps, selected freshly accessed W20 original PDF body, thesis owning metadata, historical thesis/cash-peak reading records, and current D1/D3/D2 aggregate status. No broad search, new financial data, model run, pytest, third-party PDF download into a public directory or modification of an existing file.",
+  "file_inputs": [
+    {
+      "path": "manuscript/revision-v3/paper-content.json",
+      "bytes": 269932,
+      "sha256": "cc52dceb57cf12dfb856dcfface35b3b00c2a818622866d734de0da675a0041e"
+    },
+    {
+      "path": "notes/revision-20261022/paper-evidence-map.md",
+      "bytes": 31477,
+      "sha256": "c400b8aaa2f5a0051c5b96f82efe765913d7e413bcc758b457e41d43c112a549"
+    },
+    {
+      "path": "notes/revision-20261022/known-cash-peak-precursor-restoration.md",
+      "bytes": 3441,
+      "sha256": "8861a6735ec5fb02f7056034e37b250d84a66ff3c4886cd8bd8cdd6b9f38e90d"
+    },
+    {
+      "path": "notes/revision-20261021/thesis-financial-task-comparison.md",
+      "bytes": 4833,
+      "sha256": "785e7b7dad8974986128df12c4df910d3533c51d586e4f887d5f9e5ab86d878e"
+    },
+    {
+      "path": "notes/revision-20261022/thesis-measurement-figure-followup.md",
+      "bytes": 4537,
+      "sha256": "dd8e9a3560024cabd272bf0c693e483bf2833e923688c7e7064ffaa653384e59"
+    },
+    {
+      "path": "notes/revision-20261022/endpoint-marginals-and-peak-score-comparability.md",
+      "bytes": 5923,
+      "sha256": "06c709d2e1f0b36c2bd592c0d6e725624fad810790b7c8ca098f977fb5c7e6f7"
+    },
+    {
+      "path": "notes/v3-source-inference-readback-20261023.md",
+      "bytes": 5335,
+      "sha256": "d19b40cc2fb9b4c8ad70cafc6b11bbf1beee11f9ef143e1dedcecdfa0af57c67"
+    },
+    {
+      "path": "results/revision-20261023/round2/baselines/summary.json",
+      "bytes": 323,
+      "sha256": "cf3681e1e44758a5d239c2f1a871bf97238e566c7f7e3105cd96754c14632dce"
+    },
+    {
+      "path": "results/revision-20261023/round2/panel/descriptive-counts.json",
+      "bytes": 732,
+      "sha256": "d4d3f1ebe5d6851f72f321d2a00c2c599f4903415f66580b1524a36e0b66b649"
+    },
+    {
+      "path": "results/revision-20261023/round2/levy-ar-correction/README.md",
+      "bytes": 2549,
+      "sha256": "620f7b2e39a5c9ed275b288b40ce7c1c2015c243d9090c7bb186026f78c235fa"
+    }
+  ],
+  "main_sections_read": [
+    {
+      "title": "1. Introduction",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Dealers absorb customer order imbalances while managing inventory risk and scarce balance-sheet capacity. Inventory affects optimal dealer pricing (Ho and Stoll, 1981), FX dealing (Lyons, 1995), and observed inventory adjustment in dealership markets (Hansch, Naik and Viswanathan, 1998). Treasury intermediation likewise depends on dealer capacity (Duffie et al., 2023). A forecast of the maximum recorded position magnitude over a future horizon may support monitoring of the measured position: an endpoint can return toward its starting value after an intervening large position. Translating that monitoring signal into a particular margin or financing decision requires the corresponding contractual and balance-sheet inputs.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "We ask whether mature conditional estimators improve forecasts of an absolute sampled-position peak relative to simple historical constructions. Every procedure predicts the same upper quantile of the same response on common issue origins. The historical alternatives use past headrooms, paths translated to the current signed position, or native peaks floored at the observed current magnitude. The conditional alternatives use ridge quantile regression, nearest-neighbor quantiles and scaled nearest-neighbor quantiles.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "The matched-history FX regression comparison lowers mean loss by 14.77%, but increases breaches from 360 to 376. The original FX primary uses a different historical window and lowers loss by 12.66%. The separately declared Treasury primary deteriorates by 50.79%, with 54 rather than 28 breaches. Short-history FX regression also deteriorates at the longer horizon; a Treasury neighbor gain reverses on the sparse grid. These adverse outcomes are central findings.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "The paper makes three contributions. First, it places established forecasting engines and historical constructions on a common completed-peak response with an explicit issue-known floor. Second, it controls completed-label pools and update schedules and retains the complete favorable and adverse model menu. Third, it documents how score, breach frequency, report coherence and fixed-report preferences can disagree across two financial measurement processes. The contribution is an application and model-validation benchmark using mature methods.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "Section 2 locates the study in the literature. Sections 3–5 describe data, forecasts and evaluation. Sections 6–7 report FX and Treasury results. Section 8 collects exploratory robustness evidence, Section 9 discusses mechanisms and limitations, and Section 10 concludes. Detailed historical menus, geometry and supplementary diagnostics appear in the appendices.",
+          "inline_math": []
+        }
+      ]
+    },
+    {
+      "title": "2. Related literature",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Wisniewski, Lindsay and Lindsay (2020) and the net-position forecasting chapter of Wisniewski (2024) are the closest empirical lineage. They already study conditional, neighbor and normalized endpoint forecasts on the FX source family, using lagged positions and calendar information. Here the response is a single upper quantile of a future absolute sampled maximum, including the current magnitude. Marginal endpoint intervals and their averaged losses address a different functional; the present comparison fits the established engines directly to completed peak labels.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "Financial path extrema have a substantial prior literature. MaxVaR evaluates worst intermediate mark-to-market loss (Boudoukh et al., 2004). Liao and Theodosopoulos (2005) study the timing of mark-to-market for collateralized contingent credit exposure. Van den Hoogen (2017) models a conditional intraday liquidity buffer through the maximum cumulative payment deficit; Petrunia, Sabetti and Voia (2019) study a cross-participant end-of-day debit maximum. Arjani, Li and Sabetti (2020) forecast remaining-day liquidity-demand ratios. These targets clarify the specific contribution of a sampled net-position envelope.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "Regression quantiles (Koenker and Bassett, 1978), sequential neighbor quantiles (Biau and Patra, 2011), conditional historical filtering (Hull and White, 1998; Barone-Adesi et al., 1999), and quantile scoring (Gneiting, 2011) supply the mature methods. Quantile forests (Meinshausen, 2006), CAViaR (Engle and Manganelli, 2004), sequential conformal prediction (Xu and Xie, 2023), trajectory calibration (Zhou, Lindemann and Sesia, 2024) and expected-shortfall curves (Sözen, 2026) are further relevant alternatives. The executed estimator menu is deliberately bounded.",
+          "inline_math": []
+        },
+        {
+          "type": "p",
+          "html": "The resulting distinction is the measured peak response, known issue floor, completed-label timing, controlled history/update comparisons and qualified aggregate application. The benchmark measures how these mature procedures behave on the specified task; its supporting finite geometry explains construction differences.",
+          "inline_math": []
+        }
+      ]
+    }
+  ],
+  "main_sections_canonical_json_sha256": "9864c7ecec34ad9ed6b9e43d20e1361b1ef238910c90bd175654c55870fbe66c",
+  "historical_quality_checkpoint_snapshot": {
+    "path": "notes/v3-quality-assessment-checkpoint.md",
+    "bytes": 3944,
+    "sha256": "64b38f52406b0132379711af1f0c5b84c73f0a1fc0d7713d8e0d9281cedbf001",
+    "stale_original_sentence": "Quantile forests, CAViaR, full volatility-filtered historical simulation and sequential conformal procedures have not been evaluated on this target.",
+    "read_scope": "Complete28-line note before parent correction; this is preserved as the observed earlier checkpoint, not a claim that later bytes must remain identical."
+  },
+  "quality_checkpoint_at_receipt_creation": {
+    "path": "notes/v3-quality-assessment-checkpoint.md",
+    "bytes": 11420,
+    "sha256": "f5d30f2daa1f2693fbba6e9880a9eeeec598f23e83ca5e32e594d2dfa80aaddb",
+    "stale_sentence_present": false
+  },
+  "primary_source_and_reading_inventory": [
+    {
+      "id": "W20",
+      "identity": "Wojciech Wisniewski, David Lindsay and Sian Lindsay (2020), Application of conformal prediction interval estimations to market makers’ net positions. PMLR128:285-301.",
+      "primary_record": "https://proceedings.mlr.press/v128/wisniewski20a.html",
+      "primary_body": "https://proceedings.mlr.press/v128/wisniewski20a/wisniewski20a.pdf",
+      "fresh_read_type": "Selected original-body extracted text, not a new full-paper or figure/code audit.",
+      "fresh_actual_ranges": "Introduction target physical p2; normalized-CP equations and dataset p4; preprocessing/features pp5-6; rolling/tuning and models pp7-8; endpoint score pp10; selected results and coverage/conclusion passages pp11,13-15. Official metadata and current17-page count read.",
+      "facts_supported": "Signed next-hour intervals, lag/hour/weekday/session inputs, KNN, quantile variants and CP/NCP predate this study. Interval scoring averages two endpoint pinball losses. Published scores concern a different outcome and cannot be imported as peak-score comparisons.",
+      "limits": "No source code or empirical table reproduced. Exact bytes of this project’s version2 data versus W20 input remain unproved. No freshly verified PDF byte hash; the old retained-PDF fingerprint in project notes is not asserted for this web fetch."
+    },
+    {
+      "id": "W2024-thesis",
+      "identity": "Wojciech Wisniewski, Net Position and Retail Trader Behaviour: Implications for Market Makers’ Risk Management Strategies. Royal Holloway doctoral thesis, award1October2024; historical notes distinguish cover2023.",
+      "primary_record": "https://pure.royalholloway.ac.uk/en/publications/net-position-and-retail-trader-behaviour-implications-for-market-/",
+      "primary_body_route": "https://pure.royalholloway.ac.uk/ws/portalfiles/portal/63018039/2024WisniewskiWJWphd.pdf",
+      "fresh_read_type": "Owning institutional metadata only; no new thesis body recovered or read in this pass.",
+      "fresh_actual_ranges": "Institutional record identifies author, doctoral status, award date and11.4MB document link.",
+      "historical_reading_evidence": "Existing notes record complete Chapter6 extracted text at physical107-125/printed106-124 plus selected other chapters/measurement figures. Those are prior reading records, not newly read original pages.",
+      "facts_supported_from_recorded_prior_body": "The net-position forecasting chapter continues signed endpoint forecasting with normalized/regularized conditioning. Other inspected trading/measurement chapters concern different decisions and richer inputs.",
+      "limits": "No whole-thesis absence claim, new PDF hash verification, input-pipeline authentication, separate-dealer proof or new priority evidence. The manuscript attribution is correctly restricted to its net-position forecasting chapter."
+    },
+    {
+      "id": "cash-peak2017",
+      "identity": "Sofie van den Hoogen (August2017), Intraday liquidity risk estimation using transaction data: an extreme value theory approach. Delft MSc Applied Mathematics thesis.",
+      "primary_record": "https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872",
+      "fresh_read_type": "No new original body; one owning-record open returned400 timeout. Prior selected-body records were read instead.",
+      "historical_source_identity_recorded_only": {
+        "physical_pages": 160,
+        "bytes": 1305967,
+        "sha256": "773faae8edfb4d296762d12ea446c9b1be8fb1c47d5c58be68d8d47609461e4c"
+      },
+      "historical_actual_ranges_recorded": "Earlier selected body:1/3,5,19-24,27-33,75-94,108-110,126-128,148-152; later event-time/dependence passages. Not a complete160-page audit.",
+      "facts_supported_from_prior_records": "A conditional quantile of the maximum cumulative negative payment balance already serves as an intraday liquidity buffer; transaction path simulation and EVT supply the modeling route.",
+      "limits": "Cash deficits differ from absolute sampled net position. Confidential/redacted bank transactions and omitted results are not reconstructed. Access failure is not absence evidence, and no outperformance against that source engine is established."
+    }
+  ],
+  "current_contribution_assessment": [
+    {
+      "claim": "Established forecasting engines on a completed peak/headroom response with an issue-known floor",
+      "assessment": "SUPPORTED_AS_CONTROLLED_APPLICATION_DIFFERENCE",
+      "reason": "A peak depends on the joint future path and differs from a signed endpoint interval; direct fitting to this response creates a meaningful benchmark. Known-floor projection and translating headroom are elementary operations, not new estimator primitives. Financial peak quantiles and liquidity buffers already have prior examples; priority for the exact source/target combination is unproved."
+    },
+    {
+      "claim": "Matching mature-label pools and refit schedules",
+      "assessment": "SUPPORTED_AS_EVALUATION_CONTROL",
+      "reason": "The original frozen protocol and current methods explicitly control within-source completed labels and updates. This improves fairness but does not equalize feature lookbacks, local effective sample sizes, objective penalties or estimator families. Causal maturity is a necessary design requirement, not a new inference theorem."
+    },
+    {
+      "claim": "Negative source/model-family transport and retained failures",
+      "assessment": "SUPPORTED_WITH_SCOPE_LIMIT",
+      "reason": "Source-adapted, separately fitted specifications produce mixed FX results and many adverse Treasury/aggregate outcomes. They show fragility of executed procedures, not a causal mechanism or impossibility result for conditional methods. Numerical NA cells limit menu coverage and are not measured predictive losses."
+    },
+    {
+      "claim": "Score, breach counts, coherence and preference rankings can disagree",
+      "assessment": "SUPPORTED_AS_EMPIRICAL_MODEL_VALIDATION",
+      "reason": "Complete existing comparisons document this distinction on measured financial tasks. The general distinction between a proper score, exact breach frequency, shape constraints and decision costs is established; these recorded examples and matched comparisons are the applied evidence."
+    },
+    {
+      "claim": "Elementary finite geometry and classical Levy corollary",
+      "assessment": "EXPLANATORY_NOT_MAJOR_METHOD_INNOVATION",
+      "reason": "Projection/order-statistic stability, coherent counterexamples, triangle inequality and an acknowledged classical maximal inequality explain constructions. The corrected AR simulations distinguish levels from increments and retain uncertainty; they do not create a new coverage theorem or financial validation."
+    },
+    {
+      "claim": "Additional aggregate panel as independent evidence",
+      "assessment": "ADDITIONAL_TASKS_NOT_COMPATIBLE_UNSEEN_DEALER",
+      "reason": "Twelve eligible series and two metadata/calendar skips broaden measured aggregate tasks, while shared dealers, categories, dates and reporting regimes prevent an independent-institution interpretation. No compatible unseen dealer has been added."
+    }
+  ],
+  "execution_currentness": {
+    "D1": {
+      "planned_cells": 24,
+      "complete_cells": 18,
+      "NA_cells": 6,
+      "FHS_complete": 6,
+      "PEAK_POT_complete": 4,
+      "QRF_complete": 8,
+      "interpretation": "The old assertion that QRF/full volatility-filtered historical simulation have not been evaluated is obsolete. These fixed adaptations were executed with adverse outcomes and explicit failures. It remains false to claim exhaustive best-in-class coverage, optimization of those families or predictive inferiority for NA cells."
+    },
+    "D3": {
+      "series": 12,
+      "skips": 2,
+      "procedure_rows_complete": 192,
+      "QR33_lower_higher_vs_F": [
+        3,
+        45
+      ],
+      "C2_lower_higher_vs_F": [
+        11,
+        37
+      ],
+      "L_lower_higher_vs_F": [
+        19,
+        29
+      ],
+      "interpretation": "The panel adds complete adverse evidence, not another compatible dealer or independent48-trial experiment."
+    },
+    "D2_correction": "Current correction README retains34 threshold rows on22 initialized path samples, old positive-increment results and all empirical L outputs. Its largest negative-increment estimate5.032 percent is only0.032 percentage points above5 with0.06913 percentage-point MCSE; it is not a demonstrated population counterexample. This supports interpretation repair, not estimator novelty.",
+    "still_unexecuted_examples": [
+      "CAViaR on this target",
+      "sequential conformal procedures on this target",
+      "canonical McNeil-Frey innovation-tail implementation as distinct from the executed peak-headroom POT adaptation"
+    ]
+  },
+  "main_text_vs_historical_note_findings": [
+    {
+      "id": "stale-current-quality-note",
+      "severity": "material currentness error in the earlier checkpoint",
+      "location": "notes/v3-quality-assessment-checkpoint.md:16, earlier3944-byte snapshot",
+      "finding": "The quoted never-evaluated statement about QRF/FHS conflicts with current D1. Parent was immediately notified and explicitly accepted updating the current checkpoint. Preserve the dated22October evidence map as historical rather than silently relabeling it as current.",
+      "parent_accepted_update": true,
+      "old_sentence_still_present_at_creation": false
+    },
+    {
+      "id": "section2-alternatives-scope",
+      "severity": "potential isolated-reading ambiguity, not a contradiction in the complete manuscript",
+      "location": "Section2 block2; Section8 mature baselines; Section9 further alternatives; AppendixL",
+      "finding": "Section2 lists QRF among further relevant alternatives without explicitly saying it is unexecuted. The later D1 paragraph and AppendixL explicitly execute it; Section9 separately lists CAViaR/sequential conformal as further alternatives and names FHS/QRF/peak-POT as executed. Read together, the manuscript is consistent. The old quality-note never-evaluated sentence cannot be inferred from Section2."
+    },
+    {
+      "id": "novelty-restraint",
+      "severity": "bounded agreement",
+      "location": "Section1 contributions and Section2 closest empirical lineage/path-extrema discussion",
+      "finding": "Current main text explicitly identifies an application/model-validation benchmark using mature methods, includes the known2017 cash-peak precursor, narrows thesis attribution to its net-position forecasting chapter, and makes no first-use/new-estimator or guaranteed-publication-tier assertion."
+    }
+  ],
+  "quality_judgment": "The substantive contribution remains a bounded controlled application and model-validation benchmark with informative adverse evidence. Better chronology, mature comparators, exact numerical receipts, broader aggregate tasks and correction of mechanism mistakes strengthen credibility. They do not establish a new estimator, first financial peak forecast, general conditional advantage, fresh compatible dealer validation or measured financing/hedging benefit.",
+  "publication_boundary": "No journal tier, acceptance probability or publication outcome is guaranteed. Usefulness and sufficient originality would depend on the specific venue and on whether the measured-position task, controlled comparisons and negative findings answer a consequential applied question. Compatible new financial observations and a specified decision-linked evaluation address more consequential remaining gaps than page count, citation count or extra diagnostics alone.",
+  "mutations": "Only this new audit JSON is created. All existing notes, manuscript, results and PDF are untouched by this agent."
+}

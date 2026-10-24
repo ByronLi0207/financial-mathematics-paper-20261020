@@ -1,0 +1,36 @@
+START 2026-10-23T10:22:54.875220+00:00
+COMMAND /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with arch --with scikit-learn python -B -m pytest -p no:cacheprovider -v test_round2_qrf.py::test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report
+ENVIRONMENT {"JOBLIB_TEMP_FOLDER": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/joblib-d1", "MKL_NUM_THREADS": "1", "MPLBACKEND": "Agg", "MPLCONFIGDIR": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/mpl-d1", "NUMBA_DISABLE_JIT": "1", "NUMBA_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1", "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages", "UV_CACHE_DIR": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/uv-d1-cache", "UV_PYTHON_DOWNLOADS": "never", "VECLIB_MAXIMUM_THREADS": "1"}
+EXIT 1
+STDOUT
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache/builds-v0/.tmptcgXQ9/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 1 item
+
+test_round2_qrf.py::test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report FAILED [100%]
+
+=================================== FAILURES ===================================
+_ test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report _
+
+    def test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report():
+        x, times = source()
+        # Simulate a numerical-library failure at the fitting boundary only.
+        with patch('sklearn.ensemble.RandomForestRegressor.fit',
+                   side_effect=ValueError('synthetic numerical fit failure')):
+            with pytest.raises(ValueError) as caught:
+                qrf_forecast(x, times, np.arange(100, 103), config())
+        context = caught.value.failure_context
+>       assert context['training_first_origin'] == 55
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'training_first_origin'
+
+test_round2_qrf.py:155: KeyError
+=========================== short test summary info ============================
+FAILED test_round2_qrf.py::test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report
+============================== 1 failed in 2.11s ===============================
+
+STDERR
+WARN `--no-project` was provided, but no project was found
+
+END 2026-10-23T10:22:57.498432+00:00

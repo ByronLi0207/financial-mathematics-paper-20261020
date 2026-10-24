@@ -1,0 +1,139 @@
+{
+  "status": "NO_BLOCKING_INFORMATION_SET_DEFECT_FOUND_IN_READ_SCOPE",
+  "audit_snapshot_utc": "2026-10-23T12:07:47.004804+00:00",
+  "scope": "Read-only source/protocol/manuscript inspection and scalar metadata checks on retained result JSON; no financial fitting, simulation, raw-source read, download, test run, or existing-file mutation.",
+  "findings": [],
+  "checks": {
+    "original_conditional": {
+      "selected_cells": 24,
+      "complete_validation_candidates": 72,
+      "validation_fit_diagnostics_checked": 2304,
+      "evaluation_fit_diagnostics_checked": 3588,
+      "all_16_executable_bound_file_hashes_match": true,
+      "all_24_validation_receipt_hashes_match_selection": true,
+      "all_selected_parameters_match_native_pinball_minimum_with_larger_exact_tie": true,
+      "all_evaluation_receipts_use_original_selection_hash": true,
+      "latest_validation_ended_utc": "2026-10-22T09:28:47Z",
+      "selection_created_utc": "2026-10-22T09:31:37Z",
+      "local_selection_commit_timestamp_utc": "2026-10-22T09:33:55Z",
+      "first_evaluation_started_utc": "2026-10-22T09:35:37Z",
+      "local_executable_commit_timestamp_utc": "2026-10-22T09:24:35Z",
+      "first_validation_started_utc_documented_in_reproduction_guide": "2026-10-22T09:26:23Z",
+      "chronological_execution_and_selection_order_match": true,
+      "mature_training_pool": "Every inspected saved fit has first=r-H-W+1, last=r-H, count=W, latest_label_end=r; scheduled refits start at each declared segment start. Query anchor/features use actual issue t, r<=t<r+step.",
+      "feature_admissibility": "Lag levels read at most t; RMS convolution maps to increments ending at t; calendar/gap fields read current or preceding timestamps. Centering, standard deviations, response scale and neighbor scaling reference the completed fit pool. Full-series cached future labels enter the separate scorer, not the fit slice."
+    },
+    "split_boundaries": [
+      {
+        "source": "fx_hourly",
+        "validation_first": 10463,
+        "validation_last": 11902,
+        "latest_H24_validation_label_end": 11926,
+        "evaluation_first": 11927,
+        "evaluation_last": 18551,
+        "earliest_long_window_H24_validation_training_origin": 7560,
+        "feature_valid_from": 168
+      },
+      {
+        "source": "nyfed_weekly",
+        "validation_first": 329,
+        "validation_last": 380,
+        "latest_H24_validation_label_end": 404,
+        "evaluation_first": 405,
+        "evaluation_last": 681,
+        "earliest_long_window_H24_validation_training_origin": 46,
+        "feature_valid_from": 26
+      }
+    ],
+    "C2": {
+      "complete_cells": 8,
+      "complete_validation_candidates": 40,
+      "failed_candidates": 0,
+      "evaluation_fit_diagnostics_checked": 1196,
+      "selected_parameters_match_recorded_validation_minimum": true,
+      "mature_pool_and_original_segment_refits_match": true,
+      "policy_boundary": "Original C2 chooses the first minimum among completed candidates. Its penalty and four-feature menu were specified after original outcomes; it is post-result. D3 explicitly changes to full-menu eligibility and larger-penalty exact ties. No failure or exact-tie substitution was observed in the retained C2 cells."
+    },
+    "D3": {
+      "eligible_series": 12,
+      "complete_H_W_cells": 48,
+      "complete_procedure_records": 192,
+      "complete_validation_candidates": 384,
+      "QR33_and_C2_evaluation_fit_diagnostics_checked": 2112,
+      "all_candidate_menus_complete": true,
+      "selected_parameters_match_recorded_validation_minimum_and_larger_tie": true,
+      "all_evaluation_refit_origins_equal_405_plus_13j": true,
+      "mature_pool_boundaries_and_feature_availability_match": true,
+      "all_cell_selection_manifest_hashes_match": true,
+      "source_selection_manifest_precedes_every_cell_start": true,
+      "validation_H24_last_label_404_precedes_evaluation_405": true,
+      "selection_scope": "Series eligibility uses the complete pinned economic-date grid and finite availability, not realized forecast loss. That metadata-based retrospective eligibility does not create a prospective sample or an independent dealer."
+    },
+    "publication_and_vintage_scope": {
+      "economic_date_and_source_naive_clock_not_publication_timestamps": true,
+      "retrospective_information_convention_explicit": true,
+      "FX_source_timezone_and_historical_release_vintage_unverified": true,
+      "Treasury_downloaded_vintage_not_original_release_backtest": true,
+      "future_capture_adapter_explicitly_not_implemented_or_validated": true,
+      "evidence": [
+        "conditional_sources.py:115-145 parses source-native dates, not release-availability metadata",
+        "protocol/revision-20261022/conditional-baseline-design.md:11-13,25-37",
+        "results/revision-20261022/EXTERNAL_DATA.md:51-78",
+        "manuscript/revision-v3/main.tex:43-63,92-129,171,445-458,1229-1231",
+        "protocol/revision-20261023/prospective-vintage-amendment-20261023.md:17-56"
+      ]
+    }
+  },
+  "actual_read_ranges": {
+    "conditional_features.py": "35-136",
+    "conditional_study.py": "71-190,205-249",
+    "run_conditional_study.py": "108-329,406-509,550-649",
+    "conditional_sources.py": "104-181",
+    "study_core.py": "229-265",
+    "parsimonious_v3.py": "1-102",
+    "round2_shrinkage.py": "1-69",
+    "round2_panel_run.py": "1-67",
+    "round2_panel_sources.py": "1-38",
+    "test_conditional_features.py": "32-78",
+    "test_conditional_study.py": "39-55,selection/maturity named-test search",
+    "test_parsimonious_v3.py": "1-19",
+    "test_round2_panel.py": "1-28",
+    "test_run_conditional_study.py": "named-test search only; no tests run",
+    "protocol/revision-20261022/conditional-baseline-design.md": "1-53",
+    "protocol/revision-20261022/study-spec.json": "1-92",
+    "protocol/revision-20261023/round2-D3-panel.md": "1-11",
+    "protocol/revision-20261023/round2-D3-panel.json": "1-120",
+    "protocol/revision-20261023/round2-E9-shrinkage.md": "refit, selected-parameter and matching rules",
+    "REPRODUCIBILITY_V3.md": "1-27,114-120",
+    "manuscript/revision-v3/main.tex": "1-171,439-461 and targeted publication/vintage/refit references"
+  },
+  "saved_output_readback": {
+    "method": "Existing Python -B with standard-library json/hashlib/datetime/collections; iterate every original selection and corresponding public validation/evaluation receipt; every C2 cell; every panel cell. Recompute parameter minima and expected refit/pool indices directly, without importing financial workers.",
+    "exit_code": 0,
+    "raw_stdout_summary": "original_cells=24; validation_candidate_count=72; phase_receipt_hashes_match=true; executable_files_match=true; original_validation_fit_diagnostics=2304; original_evaluation_fit_diagnostics=3588; C2_complete_cells=8; C2_validation_candidates=40; C2_failed_candidates=0; C2_evaluation_fit_diagnostics=1196; D3_eligible_sources=12; D3_cells=48; D3_complete_procedures=192; D3_all_candidates_complete=384; D3_evaluation_fit_diagnostics=2112; D3_selection_manifest_before_every_cell=true; financial_fits_run=false; raw_sources_read=false"
+  },
+  "limitations_of_this_audit": [
+    "Saved metadata and causal source-code indexing were checked. This audit does not independently reconstruct numerical QR coefficients, neighbor memberships, original forecasts or losses, and does not rerun future-perturbation fixtures.",
+    "C2 and D3 retain validation candidate summaries but do not retain every candidate's validation fit diagnostics in their public cell files. Their validation maturity is checked by the reused source-code indexing and read fixture definitions, rather than by a new exhaustive coefficient-level or origin-trace replay.",
+    "Original study has a separate hashed selection artifact before evaluation; C2/D3 choose within the same worker and retain the chosen scalar in its terminal receipt. Their per-cell algorithm fixes that scalar before its evaluation call, but this audit does not imply a separately timestamped public per-cell selection commit for C2/D3.",
+    "Local Git objects supply the two cited commit timestamps. No network query was made to freshly verify current remote visibility or publisher release schedules.",
+    "The timestamped execution order does not restore an unseen FX archive, eliminate research-family selection, validate original release vintages, or supply compatible independent-dealer evidence.",
+    "Complete-data batch rejection of a nonfinite future record can stop the retrospective cell. That is an input-acceptance boundary, not a forecast dependence demonstrated here, and it does not establish an operational missing-data adapter."
+  ],
+  "inspected_snapshot_sha256": {
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "run_conditional_study.py": "14881dc6611feef3cd642558ecdff0571f16dde1af1081349c2d99bd36dbf2e0",
+    "conditional_sources.py": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+    "round2_panel_run.py": "e3c0575dc50e3c9dc51395a43b1bd7daf06972395a4aaf4552713967146d76e9",
+    "round2_panel_sources.py": "cfadcade45ce726c4f19f691ac515e966294f8afffaca9332d129419545464a6",
+    "protocol/revision-20261022/study-spec.json": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+    "protocol/revision-20261022/executable-freeze.json": "e88dfe0d53eb00a8210cb6c3b1203a16f5dfa22d928d4c3b3e2090e1cd0513cb",
+    "protocol/revision-20261022/selection-freeze.json": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+    "protocol/revision-20261023/round2-D3-panel.md": "f2460d4302f6b49d3cef8af532aa019f051f0bdc6d5bab8957c71843e392f858",
+    "protocol/revision-20261023/round2-D3-panel.json": "bd992316d679080c792acfcf4069610613774e7ce8727eef6f8944ed18812500",
+    "manuscript/revision-v3/main.tex": "ce15f10e1ab37d9ca9f96163dccb51f972129f1728ee5d600f54d33f8705550d"
+  }
+}

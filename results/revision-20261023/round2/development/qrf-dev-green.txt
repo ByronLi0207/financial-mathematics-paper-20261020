@@ -1,0 +1,36 @@
+START 2026-10-23T10:22:06.509781+00:00
+COMMAND /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with arch --with scikit-learn python -B -m pytest -p no:cacheprovider -v test_round2_qrf.py
+ENVIRONMENT {"JOBLIB_TEMP_FOLDER": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/joblib-d1", "MKL_NUM_THREADS": "1", "MPLBACKEND": "Agg", "MPLCONFIGDIR": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/mpl-d1", "NUMBA_DISABLE_JIT": "1", "NUMBA_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1", "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages", "UV_CACHE_DIR": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/uv-d1-cache", "UV_PYTHON_DOWNLOADS": "never", "VECLIB_MAXIMUM_THREADS": "1"}
+EXIT 0
+STDOUT
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache/builds-v0/.tmpaF4ElM/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 19 items
+
+test_round2_qrf.py::test_all_original_leaf_weights_are_not_quantiles_of_tree_means PASSED [  5%]
+test_round2_qrf.py::test_leaf_distribution_does_not_replace_original_rows_by_bootstrap_counts PASSED [ 10%]
+test_round2_qrf.py::test_duplicate_responses_and_zero_mass_use_cdf_left_inverse_without_interpolation PASSED [ 15%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values0-weights0-0.95] PASSED [ 21%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values1-weights1-0.95] PASSED [ 26%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values2-weights2-0.95] PASSED [ 31%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values3-weights3-0.95] PASSED [ 36%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values4-weights4-0.95] PASSED [ 42%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values5-weights5-0.95] PASSED [ 47%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values6-weights6-0.0] PASSED [ 52%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values7-weights7-True] PASSED [ 57%]
+test_round2_qrf.py::test_invalid_or_unoccupied_query_leaf_is_rejected PASSED [ 63%]
+test_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[0.0] PASSED [ 68%]
+test_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[-12.5] PASSED [ 73%]
+test_round2_qrf.py::test_known_linear_path_has_exact_nonnegative_headroom_six PASSED [ 78%]
+test_round2_qrf.py::test_full_future_perturbation_cannot_change_reports_or_fit_fingerprints PASSED [ 84%]
+test_round2_qrf.py::test_fixed_forest_seed_gives_identical_reports_and_fit_receipts PASSED [ 89%]
+test_round2_qrf.py::test_checkpoint_failure_retains_only_issued_prefix_and_no_fallback PASSED [ 94%]
+test_round2_qrf.py::test_noncontiguous_origins_and_unavailable_training_features_fail_with_context PASSED [100%]
+
+============================== 19 passed in 4.80s ==============================
+
+STDERR
+WARN `--no-project` was provided, but no project was found
+
+END 2026-10-23T10:22:11.797240+00:00

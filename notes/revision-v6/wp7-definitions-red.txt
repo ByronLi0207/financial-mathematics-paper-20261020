@@ -1,0 +1,17 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ SupplementTests.test_feedback_and_initial_training_normalizers_are_explained _
+
+self = <test_v6_supplement.SupplementTests testMethod=test_feedback_and_initial_training_normalizers_are_explained>
+
+    def test_feedback_and_initial_training_normalizers_are_explained(self):
+        aci=self.api.generated('wp2-definition')
+        state=self.api.generated('wp4-definition')
+>       self.assertIn('Initialize',aci['html'])
+E       AssertionError: 'Initialize' not found in "<b>Finite delayed ACI-style calibration and headroom SAV.</b> The ACI-style procedure is motivated by Gibbs and Candès (2021), with the following finite-memory, delayed and projected modifications. Its score s<sub>i</sub>=P<sub>i,H</sub>−C<sub>i</sub><super>base</super> uses the actual completed H-horizon peak and that issue's base report. At issue t the pool contains at most W scores with i+H≤t; each wrapped breach is consumed once, in order. After delayed feedback the α state itself is projected to α<sub>t</sub>∈[1/(m<sub>t</sub>+1),1], where the current pool size is used, and the exact fractional rank is r<sub>t</sub>=⌈(m<sub>t</sub>+1)(1−α<sub>t</sub>)⌉. Rank zero issues the known floor; other reports are floor-projected base-plus-score quantiles. No original ACI guarantee is imported. Gamma is selected from 0.001, 0.005, 0.01, 0.05 by validation absolute breach-rate distance to .05, then .95 pinball loss, then smaller gamma; that coverage-first retrospective tuning differs from original QR tuning. The chosen validation state and unconsumed feedback carry across the unissued gap. Headroom SAV adapts the symmetric absolute-value CAViaR recursion of Engle and Manganelli (2004). Define B<sub>i</sub>=|N<sub>i</sub>| and G<sub>i,H</sub>=P<sub>i,H</sub>−B<sub>i</sub>. At each refit use g<sub>i</sub>=G<sub>i,H</sub>/a<sub>κ</sub> and q̃<sub>i</sub>=β<sub>0</sub>+β<sub>1</sub>q̃<sub>i−1</sub>+β<sub>2</sub>g<sub>i−H</sub>, with the positive response scale a<sub>κ</sub> known at refit κ and held until the next refit. The source-unit report is C<sub>t</sub>=B<sub>t</sub>+a<sub>κ</sub>max(0,q̃<sub>t</sub>), so the normalized prediction is multiplied back by the same training scale. It is a headroom adaptation rather than a literal CAViaR return-VaR replication. Its fixed bounded Powell six-start algorithm retains convergence failures and claims no global optimum. Initial history, delayed feedback and solver eligibility can invalidate a whole cell."
+
+test_v6_supplement.py:31: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_supplement.py::SupplementTests::test_feedback_and_initial_training_normalizers_are_explained
+1 failed, 10 deselected in 0.10s

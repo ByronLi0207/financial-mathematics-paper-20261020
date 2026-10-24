@@ -1,0 +1,37 @@
+WARN `--no-project` was provided, but no project was found
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_readonly_solver_diagnostics_serialize_without_changing_failure_rule[validation] _
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-15/test_readonly_solver_diagnosti0')
+phase = 'validation'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    def test_readonly_solver_diagnostics_serialize_without_changing_failure_rule(tmp_path,phase):
+>       assert importlib.util.find_spec('v6_tau_worker_v2'),'transport-only worker v2 missing'
+E       AssertionError: transport-only worker v2 missing
+E       assert None
+E        +  where None = <function find_spec at 0x106033b00>('v6_tau_worker_v2')
+E        +    where <function find_spec at 0x106033b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_tau_failure_receipts.py:13: AssertionError
+_ test_readonly_solver_diagnostics_serialize_without_changing_failure_rule[evaluation] _
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-15/test_readonly_solver_diagnosti1')
+phase = 'evaluation'
+
+    @pytest.mark.parametrize('phase',['validation','evaluation'])
+    def test_readonly_solver_diagnostics_serialize_without_changing_failure_rule(tmp_path,phase):
+>       assert importlib.util.find_spec('v6_tau_worker_v2'),'transport-only worker v2 missing'
+E       AssertionError: transport-only worker v2 missing
+E       assert None
+E        +  where None = <function find_spec at 0x106033b00>('v6_tau_worker_v2')
+E        +    where <function find_spec at 0x106033b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_tau_failure_receipts.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_tau_failure_receipts.py::test_readonly_solver_diagnostics_serialize_without_changing_failure_rule[validation]
+FAILED test_v6_tau_failure_receipts.py::test_readonly_solver_diagnostics_serialize_without_changing_failure_rule[evaluation]
+2 failed in 0.16s

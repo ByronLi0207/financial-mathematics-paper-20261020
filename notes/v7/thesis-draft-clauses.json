@@ -1,0 +1,72 @@
+[
+  {
+    "id": "T1",
+    "text": "Simple historical rules provide a demanding benchmark for forecasts of peak net-position limits.",
+    "evidence": [
+      "PANEL_E5_QR33_LOSSES",
+      "PANEL_E5_QR33_EXPANDED_LOSSES",
+      "PANEL_E5_PLANNED"
+    ]
+  },
+  {
+    "id": "T2",
+    "text": "The clearest repeated score gains arise for hourly FX positions with a long training history and a short horizon, where quantile regression improves on a historical headroom rule with the same history in both retrospective periods.",
+    "evidence": [
+      "FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT",
+      "FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT",
+      "META_FX_HOURLY_PRIMARY_CONTRAST_HORIZON",
+      "META_FX_HOURLY_PRIMARY_CONTRAST_WINDOW"
+    ]
+  },
+  {
+    "id": "T3",
+    "text": "The later-period gain also survives the evaluated coverage correction, while the regression breaches more often before correction.",
+    "evidence": [
+      "FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT",
+      "FX_ACI_H6_W2880_QR_HITS",
+      "FX_ACI_H6_W2880_F_HITS",
+      "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_LEFT",
+      "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_RIGHT",
+      "FX_EARLY_MATCHED_R0_STRICT_BREACH_COUNT",
+      "FX_EARLY_MATCHED_F_STRICT_BREACH_COUNT"
+    ]
+  },
+  {
+    "id": "T4",
+    "text": "Against the original shorter-history rolling rule, its gain changes sign across the two periods.",
+    "evidence": [
+      "FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT",
+      "FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT"
+    ]
+  },
+  {
+    "id": "T5",
+    "text": "Other FX configurations show smaller score gains or losses and adverse breach frequencies, so the evidence supports a narrow comparative advantage rather than a universal claim about conditional models.",
+    "evidence": [
+      "FX_TAU90_MATCHED_MEAN_LOSS_CHANGE_PERCENT"
+    ]
+  },
+  {
+    "id": "T6",
+    "text": "For weekly aggregate position categories, historical rules win most of the evaluated comparisons even after heavier regularization, and the earlier-period selection exercise preserves important failures.",
+    "evidence": [
+      "PANEL_E5_QR33_EXPANDED_LOSSES",
+      "PANEL_E5_PLANNED",
+      "PANEL_R6_S1_STATUS",
+      "PANEL_R6_S3_STATUS",
+      "PANEL_SCOPE_BILL_PLUS_TWELVE",
+      "PANEL_SCOPE_NOT_INDEPENDENT_DEALERS"
+    ]
+  },
+  {
+    "id": "T7",
+    "text": "Peak-limit models should therefore be evaluated jointly on forecast accuracy, breach frequency and stability across reference rules, periods and related series.",
+    "evidence": [
+      "FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT",
+      "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_LEFT",
+      "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_RIGHT",
+      "FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT",
+      "PANEL_E5_QR33_EXPANDED_LOSSES"
+    ]
+  }
+]

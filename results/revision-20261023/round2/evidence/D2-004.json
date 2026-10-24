@@ -1,0 +1,23 @@
+{
+  "step": "D2",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B run_round2_levy.py --mode cell --source fx_hourly --horizon 6 --window 720",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "run_round2_levy.py",
+    "--mode",
+    "cell",
+    "--source",
+    "fx_hourly",
+    "--horizon",
+    "6",
+    "--window",
+    "720"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T09:54:19.125355+00:00",
+  "ended_utc": "2026-10-23T09:54:20.692187+00:00",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/run_round2_levy.py\", line 62, in <module>\n    else:cell(v.source,v.horizon,v.window)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/run_round2_levy.py\", line 31, in cell\n    paired.append(dict(source=s,horizon=h,window=w,left_method='Levy_L',right_method=method,contrast_id=f'{s}-h{h}-w{w}-Levy_L-minus-{method}',post_result=True,exploratory=True,relative_loss_percent=100*(summary['mean_pinball']-float(a['pinball'].mean()))/float(a['pinball'].mean()),reference_strict_breaches=int(np.sum(a['peak']>a['capacity'])),**z,double_bandwidth=zz['bandwidth'],double_dm_t=zz['dm_t'],double_dm_p=zz['dm_p'],double_hln_p=zz['hln_p']))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: dict() got multiple values for keyword argument 'horizon'\n"
+}
