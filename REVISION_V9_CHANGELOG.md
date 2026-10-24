@@ -12,3 +12,9 @@ Authority: supervisor v9 merge task, target10h, early completion allowed. Goal s
 - C7 local gates: fresh23-memberZIP native compilation;47finalpages individually opened;1463tests and1068subtests pass in110.80s. Numeric/writing/protected-input/ref/archive checks pass. Actual revision-v9 file publication and remote/local verification remain pending this checkpoint. See notes/v9/c7-local-acceptance.md.
 
 The public comparison must use PR5's fixed base against `revision-v9`, not main. No PR creation, merge, close or journal submission is authorized. Existing PR3/4/5 handling remains a user decision. Browser publication preserves file-tree content rather than original local design history; no private Git object bundle is redistributed. Final local/remote content and head verification are recorded after actual publication.
+
+## C7 complete scientific-content publication
+
+At2026-10-24T21:04:23.014208UTC, fetched public8d0b676a73b3300dc9d19380938d0491c8247f01 exactly matches original locale094bf62310013f4619d1f34383a81374ce595df:tree688d91efdfc124f72bd688783ccc381552371b26,3451files,227358259bytes,all paths/modes/blobs and every file byte equal. All final software/numbers/native pages/archives/protected-source gates passed. See notes/v9/publication.md and its full manifest. Formal two parts stayed identical and were uploaded individually after one combined UI rejection. No research rerun or result change.
+
+The next commit contains only this ledger and final delivery/provenance/checklist metadata. After its file mirror is compared, only the new revision-v9 local head/index will be aligned with the public head, retaining the original local history privately. The final external receipt and user delivery report that final head/time; this checkpoint does not self-reference a future commit. All C0–C7 scientific/content requirements are met; T1–T9, including PR3/4/5 handling, remain author decisions.
