@@ -1,0 +1,213 @@
+{
+  "design_id": "v8-wp5-fixed-parameter-full-fx-prefix",
+  "post_result": true,
+  "exploratory": true,
+  "original_primary_comparisons_changed": false,
+  "instruction_scope": "The original full mature prefix before original validation, without selecting unscored gaps, new methods, new data or retuning.",
+  "pre_result_status": "No WP5 source parse, label construction, forecast, loss or DM has occurred. Old result and metadata audit is disclosed and not a blind design.",
+  "input": {
+    "local_private_path": ".scratch/data/1hourNetPositionsKaggle.csv",
+    "dataset_version": 2,
+    "bytes": 1286391,
+    "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "expected_original_rows": 18576,
+    "timestamp_timezone": "unspecified source-naive; no UTC or exchange-time assertion",
+    "rights": "Raw and resampled positions remain private; publish acquisition route, fingerprints and aggregates only."
+  },
+  "clock_and_target": {
+    "horizons": [
+      6,
+      24
+    ],
+    "unit": "next recorded hourly observations, not fixed calendar hours across source gaps",
+    "peak": "max(abs(N[t:t+H+1])) including known current state",
+    "tau_numerator": 19,
+    "tau_denominator": 20,
+    "training_maturity": "i+H <= actual refit index",
+    "real_time_vintage_claim": false
+  },
+  "sample": {
+    "feature_valid_from": 168,
+    "longest_window": 2880,
+    "max_horizon": 24,
+    "first_rule": "168+2880+24-1",
+    "evaluation_first": 3071,
+    "last_rule": "original validation first10463 - maxH24 - 1",
+    "evaluation_last": 10438,
+    "evaluation_count": 7368,
+    "original_validation_first": 10463,
+    "original_validation_last": 11902,
+    "purge": "Last H24 backcast target10462 precedes original validation issue10463. This is chronological separation only from that later validation, not from all previous scoring.",
+    "common_grid": "all7368 contiguous issue origins, all methods and horizons; no deletion of failed/high-loss issues"
+  },
+  "methods": [
+    {
+      "name": "F_matched",
+      "engine": "F",
+      "window": 2880,
+      "refit_step": 24,
+      "penalty_by_horizon": null
+    },
+    {
+      "name": "F_rolling720",
+      "engine": "F",
+      "window": 720,
+      "refit_step": 1,
+      "penalty_by_horizon": null
+    },
+    {
+      "name": "QR33",
+      "engine": "QR33",
+      "window": 2880,
+      "refit_step": 24,
+      "penalty_by_horizon": {
+        "6": 0.01,
+        "24": 0.001
+      }
+    },
+    {
+      "name": "QR4",
+      "engine": "QR4",
+      "window": 2880,
+      "refit_step": 24,
+      "penalty_by_horizon": {
+        "6": 0.01,
+        "24": 0.01
+      }
+    }
+  ],
+  "features": {
+    "builder": "conditional_features.build_features",
+    "short_rms": 24,
+    "long_rms": 168,
+    "nominal_gap_seconds": 3600,
+    "qr4_column_indices": [
+      25,
+      0,
+      26,
+      27
+    ],
+    "normalization": "training-only original per-refit standardization and headroom response scale"
+  },
+  "forecasting": {
+    "engine": "WP3-sealed v8_mechanism_mc.forecast_report unchanged, F-only branch for both references; no helper that computes S/K or other unlisted methods",
+    "refit_origin": "segment starts3071; starts anew at each declared segment, then actual refit_step",
+    "rank": "F ceil(19*(W+1)/20) of mature own-anchor headroom; current absolute-position floor",
+    "parameters": "Read and verify original later-validation selected penalties; do not refit a menu, select on backcast or change a failed penalty",
+    "parameter_source_sha256": {
+      "protocol/revision-20261022/selection-freeze.json": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+      "results/revision-20261023/parsimonious/fx_hourly-h6-w2880.json": "b32541cb18e3ee149e68932affbfb0c02026dd8fa79625066a198493bf567d87",
+      "results/revision-20261023/parsimonious/fx_hourly-h24-w2880.json": "6e6d18e979e1fdc2b6ba6bc1fe78bb0821ee83701c0973b0b959fcb2ae6d34b9"
+    }
+  },
+  "solver": {
+    "max_iter": 10000,
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "gap_rtol": 1e-06,
+    "intercept_penalized": false,
+    "numerical_retuning": false
+  },
+  "inference": {
+    "comparisons": "QR33 and QR4 minus each of F_matched and F_rolling720 separately, H6/H24:8 fixed comparisons only",
+    "statistic": "standard normal two-sided Diebold-Mariano-type HAC, negative mean favors regression",
+    "bandwidth": "min(n-1,max(H,floor(4*(n/100)^(2/9))))",
+    "LRV": "centered Bartlett Newey-West, covariance divisor n, sum symmetric lags1..L",
+    "mean": "math.fsum(d)/n",
+    "stat": "mean/sqrt(LRV/n)",
+    "p": "erfc(abs(stat)/sqrt(2))",
+    "failure": "nonpositive LRV or constant loss difference => NA with explicit original status, no epsilon repair",
+    "multiplicity": "raw unadjusted descriptive p-values only, eight declared comparisons; no new correction/test/sensitivity/HLN/GW/nonoverlap/coverage test",
+    "limits": "Already inspected, overlapping targets, later parameter choice and serial dependence. Nominal HAC p-values do not correct full selection/inspection and are not confirmatory evidence."
+  },
+  "known_exposure": {
+    "MISMATCH-WP5-01": "The training-only/never-scored premise is false. Earlier R3 validation scoring from3071 for W2880 and911 for W720 already exposed these targets. No untouched third validation period is supplied.",
+    "R6_retro_validation": [
+      7535,
+      8974
+    ],
+    "R6_retro_evaluation": [
+      8999,
+      10438
+    ],
+    "overlap_with_retro_evaluation_origins": 1440,
+    "R3_H24_W2880_first_scored_block": [
+      3071,
+      3094
+    ],
+    "backcast_window_relation": "This extra full-prefix window includes all1440 old retro issue origins. Three windows are not three disjoint or independent periods.",
+    "do_not_replace": "Do not seek unscored gaps, move endpoints, shorten W/H or switch a model/source to rescue novelty."
+  },
+  "three_window_summary": {
+    "main_focus": "H6 QR33 comparison; exact archived matched and rolling scalar/DM identity exists in both earlier reported windows",
+    "windows": [
+      {
+        "name": "extra_full_prefix",
+        "first": 3071,
+        "last": 10438,
+        "role": "new fixed-parameter post-result overlapping backcast, penalties chosen later"
+      },
+      {
+        "name": "previous_retro",
+        "first": 8999,
+        "last": 10438,
+        "role": "previously published retro; fully nested in extra full prefix; own frozen selected method/parameter provenance retained"
+      },
+      {
+        "name": "original_inspected",
+        "first": 11927,
+        "last": 18551,
+        "role": "original inspected evaluation"
+      }
+    ],
+    "old_cells": "Copy only exact existing scalar/count/DM fields with source binding. Missing old H24 original-three-menu/QR4/rolling DM remain NA. Five-menu H24 R0 is not QR33. No new old-window computation. Percent display differences may be arithmetic from pinned original scalar values; original files/fields unchanged.",
+    "no_pooling": "No pooled effect, combining p-values, significance claim from three correlated windows, or selection of only favorable methods"
+  },
+  "predeclared_interpretation": {
+    "primary_descriptive_question": "For H6 QR33 do all three available matched mean-loss changes favor QR, while at least one rolling comparison changes sign across the three windows? Evaluate exact mean scores, not a p-value threshold.",
+    "SUPPORT_WITH_LIMITS": "All three H6 QR33 matched changes strictly negative and rolling signs contain both positive and negative; report only period/reference dependence conditional on overlapping inspected windows and later parameter choice.",
+    "MISMATCH": "Any complete H6 QR33 matched change nonnegative weakens stability; if all rolling changes have same sign it does not support period-varying direction. Retain adverse values.",
+    "INCONCLUSIVE": "Any required original H6 QR33/reference comparison is missing/failed; do not complete-case label stability.",
+    "secondary": "H24 and QR4 all declared new comparisons reported, not used to rescue the H6 rule; archive gaps disclosed.",
+    "independence_claim": "FAIL in advance: no previously unscored independent third evaluation period. This factual MISMATCH remains whatever new scores show."
+  },
+  "randomness": "none; no stochastic fit or seed/split choice",
+  "failure_rules": {
+    "fit": "Whole method FAILED on nonconvergence/invalid numerical output; preserve diagnostics, do not score partial prefix or try another penalty.",
+    "reference_or_model_failure": "Only the affected complete-pair DM/contrast NA; preserve every planned slot and failure reason.",
+    "runtime": "One attempt in fixed order; preserve completed, interrupted and unattempted slots. Technical interruption cannot be silently retried as another outcome.",
+    "source": "Hash/bytes/rows/schema/source-spec mismatch stops before scientific scoring. No download or alternate source."
+  },
+  "outputs": {
+    "directory": "results/revision-v8/wp5",
+    "public": "manifest, exact source/protocol/code hashes, eight planned method receipts, eight pair summaries including raw DM, all failure reasons, training maturity, per-fit diagnostics, aggregate source/date metadata, actual resources; three-window table with source provenance",
+    "private": "raw source positions and all per-issue targets/capacities/scores/refits under .scratch/revision-v8/wp5 only; publish hashes not private values",
+    "precision": "Full original float precision in JSON/CSV; display generated from those fields; original archives never modified."
+  },
+  "resources": {
+    "numerical_workers": 1,
+    "numerical_threads": 1,
+    "maximum_observed_os_threads": 2,
+    "internal_rss_bytes": 1610612736,
+    "maximum_rss_bytes": 2147483648,
+    "worker_internal_seconds": 540,
+    "worker_hard_seconds": 600,
+    "global_wall_seconds": 1800,
+    "order": "H6 thenH24; withinH F_matched,F_rolling720,QR33,QR4, each separate sequential worker. DM only after terminated complete pairs.",
+    "no_outcome_based_retry_or_expansion": true
+  },
+  "original_and_sealed_modules_sha256": {
+    "study_data.py": "5238c4282839e99538bd0d1f221e48a3a0e2ebd537dd7722ae148224f4302687",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "inference_tests.py": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c",
+    "v8_daily_fx.py": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36",
+    "run_v8_wp4.py": "bee16c1cd83fe291a04c33322d48e01bb3c9ab7b9bc93e878fa3e3c2354d0122"
+  }
+}
