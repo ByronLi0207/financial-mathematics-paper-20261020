@@ -12,15 +12,19 @@
 
 **边界：** 峰值只覆盖采样网格，不是连续路径极值；条件方法本身不是新算法。上述 **14.767%** 是匹配 frozen F2880 的比较，须与另一个、预先声明但参照为 rolling F720 的 **12.7% primary** 区分；也不能据此声称某一个预测变量具有因果效果。
 
-## 2. 识别收缩菜单限制，并保留其未能消除的损失
+## 2. 识别收缩菜单与短样本选参的保护边界
 
-**中文一句话：** 扩大岭惩罚菜单大幅缓解原来的周度恶化，但追加面板仍有多数格输给历史规则，因而“更强收缩会普遍修好条件模型”没有得到本轮预测检验支持。
+**中文一句话：** 扩大岭惩罚菜单缓解周度恶化，但在这次短周度验证和评估中，包括 one-SE 在内的选择规则仍未稳定守住历史基准。
 
-**English:** Expanding the ridge menu substantially mitigates weekly deterioration, but the additional panel does not support the prediction that stronger shrinkage generally removes the loss relative to historical headroom.
+**English:** Expanding the ridge menu mitigates weekly deterioration, but selection on the short weekly validation samples, including a paired-loss one-SE rule, does not reliably preserve the historical benchmark in the subsequent evaluation.
 
 **证据与文献增量：** 原 Treasury primary 的超额损失由 **50.8% 降至 3.4%**；E5 的 **12 条追加序列、48 格**中，中位超额由 **92.6% 降至 9.2%**，仍有 **34/48 格**败给 F。冻结预测为 **P1：30/45<40，失败；P2：24/48<36，失败；P3：33/48≥25，成立**（§6.3、Table 6、Figures 2–3；[E3 表][e3]、[E5 全表][e5]、[冻结预测判定][predictions]）。“13 条周度序列”只指**原 Treasury-bill 序列 + 12 条追加序列**；E5 面板自身只有 12 条。相对于 Wisniewski et al. (2020) 的 FX 端点区间预测，本文进一步在周度峰值任务中量化同一条件程序的菜单敏感性，并保留冻结阈值下未获支持的预测；增量是这项可追溯的经验诊断及失败边界，不是新正则化理论。
 
-**边界与实务含义：** 证据只说明当前数据、切分、特征和选择规则下没有普遍稳定的增益，不能推出“特征没有信息”。I 是截距分位数参照，有限大 λ 或 I 都未必等于 corrected-rank F；选择菜单应显式包含 I 与准确的 F，而不是把有限惩罚当成嵌套 F 的保证（§4、§6.3、§8）。这保护同一验证规则下的最低验证分数，不保证评估期不劣。菜单在看过旧结果后扩展，12 条序列共享报告体系及交易商，不能当作独立复制或合并独立样本做检验。
+在另行冻结的更早期比较中，每个周度格只有 **52 个验证 origins 和 52 个评估 origins**。主规则 R2 在 **17/26 格**选择普通经验分位数 I，最差损失仍为 **+181.4%**，出现在 **Treasury-bill H24/W52**；I 单独作为参照的最差值也为 **+36.5%**。S1 的最差统计量由该 T-bill 格达到，但不能说 S1 仅由一格导致失败：R2 中位数 **+5.374%** 也超过 **+5%** 门槛，且 **5/26 格**超过 **+25%**。S1、S2、S3 均未达到；one-SE 是成熟简约选择思想的配对差 HAC 适配，不是本文提出的新理论，也不提供对 corrected-rank F 的非劣性保证（§7、[R6 冻结设计][r6design]、[完整结果][r6summary]、[固定判定][r6assessment]）。
+
+更早的 **2015 年 FX** 比较还说明参照不能混用：同一原三点菜单 QR 报告相对自身 frozen F/W2880/d24 降损 **16.6%**，相对原 primary 的 rolling F/W720/d1 则增损 **3.2%**，原 primary 的收益方向没有复现。Treasury H6/W52 结构类比增损 **144.3%**，保留了周度恶化方向；它不是原 W260 primary 的精确复现，也不替换原 primary（Table 10；[原结构表][r6primary]）。两项 FX HAC 读取核算仅是结果后的描述性比较，针对这条 QR 报告而非 R2；[固定轨迹与两项核算][r6hac]保留来源与检视边界。
+
+**边界与实务含义：** 证据只说明当前数据、切分、特征和选择规则下没有稳定的基准保护，不能推出“特征没有信息”，也不能把失败唯一归因于 52 点验证噪声。H24 标签重叠，52 个 origins 不是 52 个独立观测；26 个周度格同样不是独立复制。I 是截距分位数参照，有限大 λ 或 I 都未必等于 corrected-rank F。对这类短样本，默认采用历史报告，仅在验证证据足够充分时才切换为条件模型；本研究没有建立何为充分的切换阈值。短窗口优先采用 corrected-rank F：早期 I 自身仍有最高 +36.5% 的超额损失；截距选项和较大惩罚本身不能保证评估保护（§4、§6.3、§8）。菜单在看过旧结果后扩展，12 条序列共享报告体系及交易商，不能当作独立复制或合并独立样本做检验。
 
 ## 3. 显示本案中“分数更低”与“风险更少”会分离
 
@@ -36,7 +40,7 @@
 
 1. **“QR、KNN 和评分都是旧方法，创新在哪里？”** 增量是目标、比较控制和上述三项带数字的发现；算法、优化器和评分理论均明确归于既有文献。定位：§2/Table 1、§4、§6.3、§7；不以“新算法”答辩。
 2. **“两个数据来源能证明外部有效吗？”** 不能。一个来源是单个 FX 做市商的客户流记录，另一个是 Treasury 交易商聚合；追加面板仍属同一 NY Fed 报告体系。定位：§3/Table 2、§6.3/Figure 3、§9 “Measurement and information timing”。
-3. **“FX 评估期是否此前看过？”** 是。后来的执行冻结不能把已检查样本变成干净的未知留出集；保留原 primary 与不利结果也不消除这项限制。定位：§5、§9 “Inspection and inference”。
+3. **“FX 评估期是否此前看过？”** 原评估期此前看过，后来的执行冻结不能把它变成干净的未知留出集。更早的 2015 年 R6 origins 在有界仓库审计中未发现既往 evaluation 角色，且所有目标在原验证期前完成；但原始历史已经被读取和训练使用，新规则也受先前已检视结果影响，无法排除仓库外使用，因此不称完全未见、前瞻或外部验证。该更早期 QR 报告相对 matched frozen F 降损，不能掩盖它相对原 rolling F 的 +3.2%：原 FX primary 的收益方向未复现；相应两项 HAC p 值仍属结果后描述性读取核算。保留原 primary 与不利结果不消除检视限制。定位：§5、§7/Table 10、§9 “Inspection and inference”；[R6 设计][r6design]、[两项核算及边界][r6hac]。
 4. **“看到失败才扩菜单，E5 算原始预注册吗？”** 不算。E3 是结果后探索；E5 是看过旧 QR33/QR4+ 后设计、仅在新 QR33+ 运行前提交预测的局部冻结，且 P1/P2 失败照报。定位：§6.3、§9、Appendix C 及[预测文件][protocol]（提交 `8baa2f5`）。
 
 ## 不是创新的部分
@@ -52,6 +56,11 @@ QR/KNN、岭惩罚与 ADMM、pinball/HAC/DM/Murphy 方法不是新发明；金�
 [preference]: ../../results/revision-20261022/preference-robustness/results.json
 [murphy]: ../../results/supervisor-20261023/inference/murphy-verified.csv
 [protocol]: ../../protocol/supervisor-20261023/e5-panel-prediction.md
+[r6design]: ../../protocol/supervisor-20261023/r6-design.md
+[r6summary]: ../../results/supervisor-20261023/r6/summary.csv
+[r6assessment]: ../../results/supervisor-20261023/r6/assessment.json
+[r6primary]: ../../results/supervisor-20261023/r6/primary-replication.csv
+[r6hac]: ../../results/supervisor-20261023/r6-writing-hac-20261023/results.json
 
 ## 待用户决定
 
