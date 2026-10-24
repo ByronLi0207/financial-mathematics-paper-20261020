@@ -1,8 +1,12 @@
-"""Software-only negative controls; all document mutations use fresh scratch copies.
+"""Frozen PR #5 v8 negative controls; mutations use fresh scratch copies.
 
 No financial model, data input, simulation or statistical test is executed.
+All original assertions/source guards are retained; the v9 draft is not the
+document-under-test for these version-specific historical cases.
 """
+import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import shutil
 import tempfile
@@ -10,9 +14,20 @@ import unittest
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+FROZEN = ROOT / 'fixtures/v9-baselines/pr5-v8'
+BASE_COMMIT = '0f1f066843e0c49cf3e24bce7d72032dc189603d'
 spec = importlib.util.spec_from_file_location("wp8_supp_numbers", HERE / "check_wp8_supp_numbers.py")
 checker = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checker)
+
+
+def frozen_document(name):
+    assert (FROZEN/'manifest.json').is_file(), 'frozen public PR #5 document fixtures missing'
+    manifest=json.loads((FROZEN/'manifest.json').read_text())
+    assert manifest['source_commit']==BASE_COMMIT
+    source=FROZEN/name;raw=source.read_bytes();entry=manifest['members'][name]
+    assert len(raw)==entry['bytes'] and hashlib.sha256(raw).hexdigest()==entry['sha256']
+    return source
 
 
 class SupplementNumericControls(unittest.TestCase):
@@ -22,7 +37,7 @@ class SupplementNumericControls(unittest.TestCase):
         for name in ["submission-jof/supplement.tex", *checker.EXPECTED_INPUTS]:
             target = self.docs / name
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / name, target)
+            shutil.copyfile(frozen_document(name), target)
 
     def tearDown(self):
         self.tmp.cleanup()
