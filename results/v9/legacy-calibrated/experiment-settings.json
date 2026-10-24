@@ -1,0 +1,99 @@
+{
+  "dgps": [
+    "D0",
+    "D1",
+    "D2"
+  ],
+  "windows": [
+    52,
+    260,
+    720,
+    2880
+  ],
+  "features": [
+    4,
+    33
+  ],
+  "penalties": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    "inf"
+  ],
+  "horizon": 6,
+  "tau": 0.95,
+  "oracle_paths": 2000,
+  "repetitions": 100,
+  "evaluation_origins": 500,
+  "grid_cells": 24,
+  "geometry": {
+    "D0": {
+      "validation_first": 2911,
+      "validation_last": 2962,
+      "evaluation_first": 2969,
+      "evaluation_last": 3468,
+      "records": 3475,
+      "validation_count": 52,
+      "short_scale": 6,
+      "long_scale": 26,
+      "refit_step": 13,
+      "nominal_gap_seconds": 604800
+    },
+    "D1": {
+      "validation_first": 3053,
+      "validation_last": 4492,
+      "evaluation_first": 4499,
+      "evaluation_last": 4998,
+      "records": 5005,
+      "validation_count": 1440,
+      "short_scale": 24,
+      "long_scale": 168,
+      "refit_step": 24,
+      "nominal_gap_seconds": 3600
+    },
+    "D2": {
+      "validation_first": 2911,
+      "validation_last": 2962,
+      "evaluation_first": 2969,
+      "evaluation_last": 3468,
+      "records": 3475,
+      "validation_count": 52,
+      "short_scale": 6,
+      "long_scale": 26,
+      "refit_step": 13,
+      "nominal_gap_seconds": 604800
+    }
+  },
+  "scientific_source": "Frozen v8_mc.py and committed protocol/v8/mc-design.md",
+  "preregistered_constants": {
+    "ar_phi_bound": 0.995,
+    "burnin_minimum": 10000,
+    "burnin_maximum": 1000000,
+    "burnin_decay_factor": 10,
+    "hourly_clock_anchor": "2000-01-03T00:00:00",
+    "weekly_clock_anchor": "2000-01-05T00:00:00",
+    "hourly_records_per_week": 120,
+    "weekend_gap_hours": 48,
+    "base_seed": 20261024,
+    "phase_codes": {
+      "pilot": 1,
+      "formal": 2,
+      "fixtures": 9
+    },
+    "stream_codes": {
+      "path": 0,
+      "oracle": 1
+    },
+    "prediction_thresholds": {
+      "P1_maximum_gain_pct": 2,
+      "P2_minimum_gain_pct": 5,
+      "P3_minimum_excess_pct": 5
+    },
+    "formal_limit_seconds": 5400,
+    "pilot_repetitions": 2,
+    "projection_safety_factor": 1.25,
+    "source_protocol_sha256": "28a12fa5350b9fdb1d9c86730aa3bd5a10556a7529000d50b5ecf02c7169f597"
+  }
+}
