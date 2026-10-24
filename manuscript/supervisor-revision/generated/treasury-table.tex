@@ -1,6 +1,6 @@
 \begin{table}[!htbp]
 \centering\small
-\caption{Treasury original reports, matched by horizon and history. Loss is in source-reported USD millions.}\label{tab:treasury}
+\caption{Treasury forecasts matched by horizon and history, with mean pinball losses in source-reported USD millions.}\label{tab:treasury}
 \begin{tabular}{rrlrrrr}
 \toprule
 $H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p$ \\
@@ -31,5 +31,5 @@ $H$ & $W$ & Report & Mean loss & $\Delta_F$ (\%) & Breach (\%) & $p$ \\
 24 & 260 & Scaled KNN & 4137.264 & +66.805 & 2.888 & $<0.001$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\begin{minipage}{\linewidth}\footnotesize Every relative change uses its own frozen $F$. $^{*}$Primary, unadjusted HAC p-value (Treasury QR at the main setting). Other conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts. The FX cross-window primary is reported separately. This reporting division was chosen after results; the original 72-member adjustment remains archived. Dashes mark self-references, historical contrasts or the exact full-pool KNN identity. Identical-loss cells receive input one for conservative bookkeeping. Values are rounded only for display.\end{minipage}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Relative changes use each report's frozen $F$; conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts, except the marked unadjusted Treasury main comparison. Dashes mark historical contrasts, self-comparisons or exact full-pool KNN identities; identical losses enter the adjustment with p-value one.\end{minipage}
 \end{table}
