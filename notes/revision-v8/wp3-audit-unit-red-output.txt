@@ -1,0 +1,286 @@
+FFFFFFFFFFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_________ test_topology_rejects_duplicate_even_when_count_is_unchanged _________
+
+    def test_topology_rejects_duplicate_even_when_count_is_unchanged():
+        rows=inventory(); rows[-1]=dict(rows[-2])
+>       errors=audit.inventory_errors(design(),rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def inventory_errors(*args): raise NotImplementedError
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:3: NotImplementedError
+_______ test_topology_checks_frozen_physical_identity_and_unknown_status _______
+
+    def test_topology_checks_frozen_physical_identity_and_unknown_status():
+        rows=inventory(); rows[0]['phi']=.9; rows[1]['status']='SUCCESS'
+>       errors=audit.inventory_errors(design(),rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def inventory_errors(*args): raise NotImplementedError
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:3: NotImplementedError
+_______ test_complete_scores_require_correct_n_and_strict_count_fraction _______
+
+    def test_complete_scores_require_correct_n_and_strict_count_fraction():
+        rows=inventory(); rows[0]['evaluation']['n']=3
+        rows[1]['evaluation']['strict_breach_rate']=.9
+>       assert sum(e['code']=='INVALID_COMPLETE_SCORE' for e in audit.inventory_errors(design(),rows))==2
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def inventory_errors(*args): raise NotImplementedError
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:3: NotImplementedError
+_______ test_ratio_of_means_and_delta_mcse_are_independently_recomputed ________
+
+    def test_ratio_of_means_and_delta_mcse_are_independently_recomputed():
+>       qr=next(r for r in audit.paired_oracle(design(),inventory()) if r['method']=='QR33')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def paired_oracle(*args): raise NotImplementedError
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:4: NotImplementedError
+__________ test_failed_reference_cannot_be_paired_with_complete_model __________
+
+    def test_failed_reference_cannot_be_paired_with_complete_model():
+        rows=inventory(); rows[0].update(status='FAILED',reason='NONCONVERGENCE',evaluation=None)
+>       qr=next(r for r in audit.paired_oracle(design(),rows) if r['method']=='QR33')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def paired_oracle(*args): raise NotImplementedError
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:4: NotImplementedError
+_________ test_missing_pair_status_and_distinct_reasons_are_preserved __________
+
+    def test_missing_pair_status_and_distinct_reasons_are_preserved():
+        rows=inventory()
+        rows[0].update(status='NOT_ATTEMPTED',reason='METHOD_NOT_REACHED',evaluation=None)
+        rows[1].update(status='FAILED',reason='INTERRUPTED_METHOD',evaluation=None)
+>       qr=next(r for r in audit.paired_oracle(design(),rows) if r['method']=='QR33')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def paired_oracle(*args): raise NotImplementedError
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:4: NotImplementedError
+_____________ test_no_complete_pairs_do_not_create_zero_estimates ______________
+
+    def test_no_complete_pairs_do_not_create_zero_estimates():
+        rows=inventory()
+        for r in rows:r.update(status='NOT_ATTEMPTED',reason='METHOD_NOT_REACHED',evaluation=None)
+>       qr=next(r for r in audit.paired_oracle(design(),rows) if r['method']=='QR33')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def paired_oracle(*args): raise NotImplementedError
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:4: NotImplementedError
+___________ test_single_completion_keeps_undefined_sample_mcse_null ____________
+
+    def test_single_completion_keeps_undefined_sample_mcse_null():
+        rows=inventory()
+        for r in rows[3:]:r.update(status='NOT_ATTEMPTED',reason='METHOD_NOT_REACHED',evaluation=None)
+>       qr=next(r for r in audit.paired_oracle(design(),rows) if r['method']=='QR33')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 4, 'phi': [0.7], 'variance_persistence': [0.0], 'windows': [52], ...}, [{'rep': 0, 'phi_index': 0, 'p...p': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, {'rep': 1, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}, ...])
+
+>   def paired_oracle(*args): raise NotImplementedError
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:4: NotImplementedError
+__ test_support_keeps_enough_known_target_gains_despite_other_target_missing ___
+
+    def test_support_keeps_enough_known_target_gains_despite_other_target_missing():
+        rows=screen_rows(); target=[r for r in rows if r['horizon']==6 and r['window']>=720 and r['variance_persistence']>=.9]
+        for r in target[:6]:r.update(relative_loss_percent=-2.,win_fraction=.75)
+        target[-1].update(complete_repetitions=31,full_procedure_status='NA')
+>       assert audit.support_oracle(full_design(),rows,'QR33')['status']=='SUPPORTED'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 32, 'phi': [0.7, 0.9, 0.98], 'variance_persistence': [0.0, 0.9, 0.98], 'windows': [52, 260, 720, 2880...': 720, 'horizon': 6, ...}, {'phi': 0.7, 'variance_persistence': 0.0, 'window': 720, 'horizon': 24, ...}, ...], 'QR33')
+
+>   def support_oracle(*args): raise NotImplementedError
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:5: NotImplementedError
+____________ test_outside_counterexample_has_priority_over_missing _____________
+
+    def test_outside_counterexample_has_priority_over_missing():
+        rows=screen_rows(); rows[0].update(relative_loss_percent=-2.,win_fraction=.75)
+        rows[-1].update(complete_repetitions=31,full_procedure_status='NA')
+>       assert audit.support_oracle(full_design(),rows,'QR33')['status']=='MISMATCH'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 32, 'phi': [0.7, 0.9, 0.98], 'variance_persistence': [0.0, 0.9, 0.98], 'windows': [52, 260, 720, 2880...': 720, 'horizon': 6, ...}, {'phi': 0.7, 'variance_persistence': 0.0, 'window': 720, 'horizon': 24, ...}, ...], 'QR33')
+
+>   def support_oracle(*args): raise NotImplementedError
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:5: NotImplementedError
+_ test_support_unknown_target_only_matters_if_it_can_change_six_gain_decision __
+
+    def test_support_unknown_target_only_matters_if_it_can_change_six_gain_decision():
+        rows=screen_rows(); target=[r for r in rows if r['horizon']==6 and r['window']>=720 and r['variance_persistence']>=.9]
+        target[-1].update(complete_repetitions=31,full_procedure_status='NA')
+>       assert audit.support_oracle(full_design(),rows,'QR33')['status']=='NOT_SUPPORTED'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 32, 'phi': [0.7, 0.9, 0.98], 'variance_persistence': [0.0, 0.9, 0.98], 'windows': [52, 260, 720, 2880...': 720, 'horizon': 6, ...}, {'phi': 0.7, 'variance_persistence': 0.0, 'window': 720, 'horizon': 24, ...}, ...], 'QR33')
+
+>   def support_oracle(*args): raise NotImplementedError
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:5: NotImplementedError
+___________ test_maturity_checks_validation_and_evaluation_fit_rows ____________
+
+    def test_maturity_checks_validation_and_evaluation_fit_rows():
+        row=inventory()[1]
+        row['fit_diagnostics']=[dict(refit_index=100,latest_label_end=100,training_count=52)]
+        row['candidates']=[dict(status='COMPLETE',fit_diagnostics=[dict(refit_index=100,latest_label_end=101,training_count=52)])]
+>       errors=audit.maturity_errors([row])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([{'rep': 0, 'phi_index': 0, 'p_index': 0, 'phi': 0.7, ...}],)
+
+>   def maturity_errors(*args): raise NotImplementedError
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:6: NotImplementedError
+_______ test_numeric_comparison_does_not_equate_null_zero_or_boolean_one _______
+
+    def test_numeric_comparison_does_not_equate_null_zero_or_boolean_one():
+>       assert audit.same_value(None,0.) is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (None, 0.0)
+
+>   def same_value(*args): raise NotImplementedError
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:7: NotImplementedError
+________ test_resource_observations_are_measured_and_hard_caps_checked _________
+
+    def test_resource_observations_are_measured_and_hard_caps_checked():
+        d=full_design();d['resources']=dict(public_rss_bytes=2**31,maximum_observed_os_threads=2,worker_hard_wall_seconds=600)
+        values=[dict(unit_id='a',peak_rss_bytes=100,maximum_observed_os_threads=1,elapsed_seconds=599.9),
+                dict(unit_id='b',peak_rss_bytes=2**31+1,maximum_observed_os_threads=3,elapsed_seconds=606.)]
+>       out=audit.resource_oracle(d,values)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 32, 'phi': [0.7, 0.9, 0.98], 'variance_persistence': [0.0, 0.9, 0.98], 'windows': [52, 260, 720, 2880...': 599.9}, {'unit_id': 'b', 'peak_rss_bytes': 2147483649, 'maximum_observed_os_threads': 3, 'elapsed_seconds': 606.0}])
+
+>   def resource_oracle(*args): raise NotImplementedError
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:8: NotImplementedError
+______ test_unmeasured_resources_are_unverified_instead_of_budget_values _______
+
+    def test_unmeasured_resources_are_unverified_instead_of_budget_values():
+        d=full_design();d['resources']=dict(public_rss_bytes=2**31,maximum_observed_os_threads=2,worker_hard_wall_seconds=600)
+>       out=audit.resource_oracle(d,[dict(unit_id='a',peak_rss_bytes=None,maximum_observed_os_threads=None,elapsed_seconds=1.)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_audit.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'repetitions': 32, 'phi': [0.7, 0.9, 0.98], 'variance_persistence': [0.0, 0.9, 0.98], 'windows': [52, 260, 720, 2880], ...}, [{'unit_id': 'a', 'peak_rss_bytes': None, 'maximum_observed_os_threads': None, 'elapsed_seconds': 1.0}])
+
+>   def resource_oracle(*args): raise NotImplementedError
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp3.py:8: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_v8_wp3_audit.py::test_topology_rejects_duplicate_even_when_count_is_unchanged
+FAILED test_v8_wp3_audit.py::test_topology_checks_frozen_physical_identity_and_unknown_status
+FAILED test_v8_wp3_audit.py::test_complete_scores_require_correct_n_and_strict_count_fraction
+FAILED test_v8_wp3_audit.py::test_ratio_of_means_and_delta_mcse_are_independently_recomputed
+FAILED test_v8_wp3_audit.py::test_failed_reference_cannot_be_paired_with_complete_model
+FAILED test_v8_wp3_audit.py::test_missing_pair_status_and_distinct_reasons_are_preserved
+FAILED test_v8_wp3_audit.py::test_no_complete_pairs_do_not_create_zero_estimates
+FAILED test_v8_wp3_audit.py::test_single_completion_keeps_undefined_sample_mcse_null
+FAILED test_v8_wp3_audit.py::test_support_keeps_enough_known_target_gains_despite_other_target_missing
+FAILED test_v8_wp3_audit.py::test_outside_counterexample_has_priority_over_missing
+FAILED test_v8_wp3_audit.py::test_support_unknown_target_only_matters_if_it_can_change_six_gain_decision
+FAILED test_v8_wp3_audit.py::test_maturity_checks_validation_and_evaluation_fit_rows
+FAILED test_v8_wp3_audit.py::test_numeric_comparison_does_not_equate_null_zero_or_boolean_one
+FAILED test_v8_wp3_audit.py::test_resource_observations_are_measured_and_hard_caps_checked
+FAILED test_v8_wp3_audit.py::test_unmeasured_resources_are_unverified_instead_of_budget_values
+15 failed in 0.06s
+WARN `--no-project` was provided, but no project was found

@@ -1,0 +1,490 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+=================================== FAILURES ===================================
+_____________ test_garch_recursion_and_burnin_are_not_increment_ar _____________
+
+    def test_garch_recursion_and_burnin_are_not_increment_ar():
+        z = np.array([1., 0., -2., 1.])
+>       got = simulate_level_garch(z, .7, .1, .05, .85, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([ 1.,  0., -2.,  1.]), phi = 0.7, omega = 0.1, alpha = 0.05
+beta = 0.85, burn_in = 1
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+__________ test_homoskedastic_case_preserves_unit_innovation_variance __________
+
+    def test_homoskedastic_case_preserves_unit_innovation_variance():
+        z = np.array([1., -2., .5, 0.])
+>       got = simulate_level_garch(z, .5, 1., 0., 0., 0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([ 1. , -2. ,  0.5,  0. ]), phi = 0.5, omega = 1.0, alpha = 0.0
+beta = 0.0, burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad0] __________________
+
+bad = {'phi': 1.0}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 1.0, omega = 0.1, alpha = 0.05, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad1] __________________
+
+bad = {'omega': 0.0}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.0, alpha = 0.05, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad2] __________________
+
+bad = {'alpha': -0.01}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = -0.01, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad3] __________________
+
+bad = {'alpha': 0.2, 'beta': 0.9}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = 0.2, beta = 0.9
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad4] __________________
+
+bad = {'burn_in': 4}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = 0.05, beta = 0.85
+burn_in = 4
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_____________ test_repetition_stream_is_reproducible_and_distinct ______________
+
+    def test_repetition_stream_is_reproducible_and_distinct():
+        design = dict(master_entropy=2026102408, burn_in=2, retained_observations=5,
+                      repetitions=32)
+>       a, initial, final = repetition_normals(0, design)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rep = 0
+design = {'master_entropy': 2026102408, 'burn_in': 2, 'retained_observations': 5, 'repetitions': 32}
+
+    def repetition_normals(rep, design):
+>       raise NotImplementedError("WP3 RNG contract not implemented")
+E       NotImplementedError: WP3 RNG contract not implemented
+
+v8_mechanism_mc.py:9: NotImplementedError
+____________ test_original_selectors_keep_different_exact_tie_rules ____________
+
+    def test_original_selectors_keep_different_exact_tie_rules():
+>       assert select_candidate(candidates('QR33'), 'QR33', 2, MENUS)['penalty'] == .1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+________ test_original_qr33_failed_mandatory_candidate_blocks_selection ________
+
+    def test_original_qr33_failed_mandatory_candidate_blocks_selection():
+        rows = candidates('QR33')
+        rows[1] = dict(penalty=.01, status='FAILED', reason='NONCONVERGENCE')
+>       selected = select_candidate(rows, 'QR33', 2, MENUS)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.01, 'status': 'FAILED', 'reason': 'NONCONVERGENCE'}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+___ test_original_qr4_selects_completed_candidates_without_erasing_failures ____
+
+    def test_original_qr4_selects_completed_candidates_without_erasing_failures():
+        rows = candidates('QR4')
+        rows[0] = dict(penalty=.001, status='FAILED', reason='NONCONVERGENCE')
+>       selected = select_candidate(rows, 'QR4', 2, MENUS)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'FAILED', 'reason': 'NONCONVERGENCE'}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_los...E', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 10.0, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR4', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+_________ test_wrong_or_nonfinite_validation_score_cannot_be_complete __________
+
+    def test_wrong_or_nonfinite_validation_score_cannot_be_complete():
+        rows = candidates('QR33')
+        rows[0]['mean_loss'] = float('nan')
+        with pytest.raises(ValueError):
+>           select_candidate(rows, 'QR33', 2, MENUS)
+
+test_v8_wp3_core.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': nan, 'origin_count': 2}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+________ test_historical_report_freezes_pool_but_reanchors_every_issue _________
+
+    def test_historical_report_freezes_pool_but_reanchors_every_issue():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 231)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'F')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230]), horizon = 6, window = 52
+refit_step = 24, method = 'F', penalty = None, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+____________ test_qr33_matches_original_fixed_parameter_arithmetic _____________
+
+    def test_qr33_matches_original_fixed_parameter_arithmetic():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 231)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'QR33', .1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230]), horizon = 6, window = 52
+refit_step = 24, method = 'QR33', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+__________ test_future_positions_do_not_change_the_current_report[F] ___________
+
+method = 'F'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24, method = 'F'
+penalty = None, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+_________ test_future_positions_do_not_change_the_current_report[QR33] _________
+
+method = 'QR33'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24
+method = 'QR33', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+_________ test_future_positions_do_not_change_the_current_report[QR4] __________
+
+method = 'QR4'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24
+method = 'QR4', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+___________ test_refit_maturity_and_frozen_query_blocks_are_explicit ___________
+
+    def test_refit_maturity_and_frozen_query_blocks_are_explicit():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 255)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'F')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237,
+       238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250,
+       251, 252, 253, 254])
+horizon = 6, window = 52, refit_step = 24, method = 'F', penalty = None
+checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_v8_wp3_core.py::test_garch_recursion_and_burnin_are_not_increment_ar
+FAILED test_v8_wp3_core.py::test_homoskedastic_case_preserves_unit_innovation_variance
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad0] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad1] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad2] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad3] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad4] - Not...
+FAILED test_v8_wp3_core.py::test_repetition_stream_is_reproducible_and_distinct
+FAILED test_v8_wp3_core.py::test_original_selectors_keep_different_exact_tie_rules
+FAILED test_v8_wp3_core.py::test_original_qr33_failed_mandatory_candidate_blocks_selection
+FAILED test_v8_wp3_core.py::test_original_qr4_selects_completed_candidates_without_erasing_failures
+FAILED test_v8_wp3_core.py::test_wrong_or_nonfinite_validation_score_cannot_be_complete
+FAILED test_v8_wp3_core.py::test_historical_report_freezes_pool_but_reanchors_every_issue
+FAILED test_v8_wp3_core.py::test_qr33_matches_original_fixed_parameter_arithmetic
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[F]
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[QR33]
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[QR4]
+FAILED test_v8_wp3_core.py::test_refit_maturity_and_frozen_query_blocks_are_explicit
+18 failed in 0.19s
