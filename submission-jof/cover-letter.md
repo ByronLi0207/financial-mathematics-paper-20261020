@@ -1,11 +1,11 @@
 Dear Editors,
 
-Please consider “Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits” for Journal of Forecasting.
+Long-history FX quantile regression lowers matched peak-position forecast loss by 14.8% and 16.6% across two periods, while historical rules prevail in most weekly comparisons.
 
-The paper evaluates historical and conditional quantile forecasts of sampled peak net positions for a market-maker FX record and related weekly dealer-position aggregates. Historical rules provide a demanding benchmark. The clearest repeated regression gains use long FX histories and a short horizon against a same-history historical control. The later gain survives the evaluated coverage wrapper, while unwrapped regression breaches more often. Rankings against a shorter-history rolling rule change across periods, and the weekly comparisons remain largely adverse despite stronger regularization.
+Please consider "Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits" for Journal of Forecasting. The manuscript fits Journal of Forecasting through comparative forecast evaluation, demanding historical benchmarks and practical validation of peak-position limits. Its peak target requires completed forward labels and matched histories and update schedules.
 
-The contribution combines a precise known-floor peak target, a qualified application of the classical endpoint-to-peak bound, and evidence on reference sensitivity, score–breach disagreement and stability across related tasks. The manuscript separates distinct retrospective periods from independent or prospective validation, preserves numerical failures and adverse results, and provides complete source-linked result files and reproducible document sources.
+The three empirical findings concern reference stability, weekly benchmark strength and score-breach disagreement. A calibration adjustment retains the later 15.0% FX gain with 329 versus 328 breaches, but rankings against a shorter rolling reference vary by period. Expanded regression loses 34 of 48 weekly panel comparisons; conservative validation leaves large losses. Before calibration, the matched FX score gain accompanies 376 versus 360 breaches. Standard forecasters and elementary target properties support these empirical comparisons.
 
-The submission materials include the main manuscript, Online Supplement, title-page template and public code/result repository. The author must complete and personally confirm authorship, permissions and all journal-required declarations before any submission.
+The submission includes the manuscript, Online Supplement, title-page template and code/results. The calibrated simulation preserves every adverse and numerically failed cell. 
 
 [TO BE COMPLETED BY AUTHOR]
