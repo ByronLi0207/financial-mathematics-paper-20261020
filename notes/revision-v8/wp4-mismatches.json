@@ -1,0 +1,32 @@
+[
+  {
+    "id": "MISMATCH-WP4-01",
+    "type": "calendar-scope adaptation",
+    "evidence": "protocol/revision-v8/wp4-daily-fx-design.json: sample; original Treasury2021 dates cannot apply to earlier FX source. Observation-index geometry transferred, not same calendar or proportion."
+  },
+  {
+    "id": "MISMATCH-WP4-02",
+    "type": "instruction sample-size estimate differs from evidence",
+    "expected_description": "approximately780 daily observations",
+    "observed_nonempty_source_naive_days": 930,
+    "action": "Keep every nonempty day under the frozen rule; do not filter weekdays/partial days to fit the estimate."
+  },
+  {
+    "id": "MISMATCH-WP4-03",
+    "type": "literal hourly-only conditional-gain wording contradicted",
+    "counterexamples": [
+      {
+        "window": 260,
+        "horizon": 6,
+        "method": "QR4",
+        "outcome": "CONDITIONAL_WIN",
+        "model_status": "COMPLETE",
+        "reference_status": "COMPLETE",
+        "mean_model_loss": 935234.5089243338,
+        "mean_F_loss": 963900.8565547904,
+        "reason": null
+      }
+    ],
+    "action": "Retain the daily parsimonious gain and its additional breaches; do not claim all conditional gains require hourly observations."
+  }
+]

@@ -1,0 +1,18 @@
+WARN `--no-project` was provided, but no project was found
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/notes/revision-v8/audit_wp5.py", line 516, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/notes/revision-v8/audit_wp5.py", line 510, in main
+    result=audit_bundle(root,formal);output.parent.mkdir(parents=True,exist_ok=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/notes/revision-v8/audit_wp5.py", line 458, in audit_bundle
+    errors+=csv_errors(formal/'summary.csv',inventory);errors+=csv_errors(formal/'contrasts.csv',summary.get('contrasts',[]))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/notes/revision-v8/audit_wp5.py", line 64, in csv_errors
+    reader=csv.DictReader(stream);actual=list(reader)
+                                         ^^^^^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py", line 116, in __next__
+    row = next(self.reader)
+          ^^^^^^^^^^^^^^^^^
+_csv.Error: field larger than field limit (131072)
