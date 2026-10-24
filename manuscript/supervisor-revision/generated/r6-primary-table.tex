@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{p{.29\linewidth}p{.27\linewidth}rrr}
+\toprule
+Earlier six-step structure & Historical reference & Origins & $\Delta$ (\%) & HAC $p$ \\
+\midrule
+Treasury regression, $W=52$ & Frozen $F_{52}$, $d=13$ & 52 & +144.3 & --- \\
+FX regression, $W=2880$ & Frozen $F_{2880}$, $d=24$ & 1,440 & -16.6 & $2.94\times10^{-5}$ \\
+FX regression, $W=2880$ & Rolling $F_{720}$, $d=1$ & 1,440 & +3.2 & 0.574 \\
+\bottomrule
+\end{tabular}
+\caption{Earlier-period six-step regression compared with matched and rolling historical rules.}\label{tab:r6-primary}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Positive $\Delta$ denotes higher mean pinball loss; the weekly comparison has \RWritingWeeklyN{} origins and the common FX period has \RWritingFXN{} (about \RWritingFXWeeks{} calendar weeks). HAC p-values use bandwidth \RWritingHACL{} and are unadjusted; the Treasury short-window version at $W=52$ differs from the original $W=260$ comparison.\end{minipage}
+\end{table}

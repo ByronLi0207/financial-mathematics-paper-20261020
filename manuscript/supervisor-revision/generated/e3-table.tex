@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Regression loss changes (percent) relative to frozen $F$ under the expanded penalty menu; selected penalties and breaches describe expanded-menu regression.}\label{tab:e3}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrr>{\raggedleft\arraybackslash}p{.12\linewidth}>{\raggedleft\arraybackslash}p{.12\linewidth}>{\raggedleft\arraybackslash}p{.12\linewidth}>{\raggedleft\arraybackslash}p{.07\linewidth}>{\raggedleft\arraybackslash}p{.09\linewidth}}
+\toprule
+Source & $H$ & $W$ & $\lambda$ & Original regression & Four-predictor regression & Expanded-menu regression & $I$ & Breaches \\
+\midrule
+FX & 6 & 720 & 0.01 & -2.12 & +1.48 & -2.12 & -0.15 & 531 \\
+FX & 6 & 2880 & 0.01 & -14.77 & -4.29 & -14.77 & +0.01 & 376 \\
+FX & 24 & 720 & 0.01 & +31.50 & +16.51 & +31.50 & -0.00 & 924 \\
+FX & 24 & 2880 & 0.001 & -3.76 & -2.89 & -3.76 & +0.03 & 531 \\
+Treasury & 6 & 52 & 10 & +83.35 & -2.59 & -3.24 & -1.99 & 14 \\
+Treasury & 6 & 260 & 1 & +50.79 & +2.17 & +3.43 & +3.24 & 32 \\
+Treasury & 24 & 52 & 10 & +227.41 & +5.95 & +4.34 & +6.21 & 39 \\
+Treasury & 24 & 260 & 10 & +109.84 & +0.11 & -0.19 & +2.35 & 17 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Expanded-menu and four-predictor regressions each select from $\{.001,.01,.1,1,10\}$; original regression retains its smaller menu. The intercept-only reference $I$ uses $\lceil .95W\rceil$, and $F$ uses $\lceil .95(W+1)\rceil$.\end{minipage}
+\end{table}

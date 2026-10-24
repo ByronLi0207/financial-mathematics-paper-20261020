@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Ordered six-step loss changes from historical rules to original regression.}\label{tab:decomp}
+\begin{tabular}{l>{\raggedright\arraybackslash}p{.43\linewidth}rrrr}
+\toprule
+Source & Change & Step (\%) & Initial (pp) & $p_{\rm DM}$ & $p_{\rm HLN}$ \\
+\midrule
+FX & Rolling $F_{720}$$\to$Frozen $F$ & +0.190 & +0.190 & 0.297 & 0.297 \\
+FX & Frozen $F_{720}$$\to$Frozen $F_{2880}$ & +2.277 & +2.281 & 0.143 & 0.143 \\
+FX & Frozen $F$$\to$four-predictor regression & -4.289 & -4.395 & 0.010 & 0.010 \\
+FX & four-predictor regression$\to$expanded-menu regression & -10.947 & -10.736 & $<.001$ & $<.001$ \\
+FX & expanded-menu regression$\to$original regression & +0.000 & +0.000 & -- & -- \\
+Treasury & Frozen $F$$\to$four-predictor regression & +2.166 & +2.166 & 0.178 & 0.188 \\
+Treasury & four-predictor regression$\to$expanded-menu regression & +1.242 & +1.269 & 0.685 & 0.691 \\
+Treasury & expanded-menu regression$\to$original regression & +45.779 & +47.352 & 0.006 & 0.007 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Step percentages use each preceding loss and compound; initial percentage points share the chain's starting loss and add. The last Treasury step restores the smaller penalty menu, dashes mark identical losses, and paired tests are unadjusted.\end{minipage}
+\end{table}

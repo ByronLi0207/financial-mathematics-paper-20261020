@@ -1,0 +1,14 @@
+\begin{table}[!htbp]
+\centering\footnotesize
+\caption{Robustness checks for residual replay, quantile ranks, loss weights and horizon ordering.}\label{tab:robustness}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.19\linewidth}>{\raggedright\arraybackslash}p{.47\linewidth}>{\raggedright\arraybackslash}p{.23\linewidth}}
+\toprule
+Check & Finding & Interpretation \\
+\midrule
+AR residual replay & Lower loss than $F$ in 5/8 and $S$ in 5/8; more breaches than $S$ in 8/8 & Lower loss than expanded-menu regression in 3/4 Treasury cells \\
+Rank convention & Ordinary versus corrected rank changes some finite reports; full-pool identities persist & Report construction matters \\
+Fixed linear weights & FX short-horizon components both fall; longer-horizon crossing near the original weight & Mean score and breach count differ \\
+Horizon order & Targets are ordered; fitted reports can cross & Separate fits need an explicit reconciliation criterion \\
+\bottomrule
+\end{tabular}
+\end{table}
