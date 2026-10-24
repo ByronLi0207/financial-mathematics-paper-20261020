@@ -1,10 +1,10 @@
-# 待用户决定与投稿前事项
+# Author actions before submission
 
-- 是否从已更新的 revision-v4-jof 分支新建 PR：当前未核到该 head 的既有 PR；不要改动独立 supervisor PR，也未合并 main。
-- 是否安装 TeX 或用现有外部编辑器导出正式 TeX PDF。当前随包 PDF 为 ReportLab 独立预览；应用内编译诊断通过也不等于已导出该正式 PDF。
-- 是否清理本任务 .bak/.scratch 缓存；本轮没有删除或移除文件，也没有触碰本地旧终版或其他项目。
-- 前瞻公共发布协议何时开始执行：需要先完成实际发布/issue-time 捕获适配，再在目标发布前留存有时间戳的预测；目前没有前瞻结果。
-- 由作者填写姓名、顺序、单位、联系信息、ORCID、基金、利益冲突和提交系统要求的个人声明；本任务未注册、投稿或代签。
-- 确认获取/使用权限、NYFed 归属和条款；免费读取不等于原数据可再分发。
-- 保留证据限制：兼容独立交易商样本、原始 release vintage 和决策成本映射仍缺失；上尾分位水平因既定失败或信息不足而不可评价，不应称其稳健性通过。
-- 期刊指南未核得数值字数/页数上限；9000 正文字、6 主表、4 主图是项目预算，并非已确认的期刊硬上限。按实际投稿时的最新要求再核对。
+- Review the selected title and final manuscript. The alternatives remain in notes/v7/author-decisions.md; accept or replace the chosen title yourself.
+- Complete author names, affiliations, corresponding contact and ORCID, funding, competing interests and the journal’s AI-use statement. Every supplied field remains [TO BE COMPLETED BY AUTHOR]; no declaration has been signed or inferred.
+- Personally verify originality, coauthor approval, exclusive-submission status, permissions and every journal form. This task neither submits to the journal nor registers an account.
+- Confirm data-use permissions. Kaggle metadata labels the FX data “Data files © Original Authors”; raw FX observations and private prediction vectors are excluded. Preserve New York Fed attribution and continuing source conditions.
+- Review the bounded scientific interpretation: related aggregate categories are not independent dealers; earlier FX history is familiar; the W52 Treasury analogue is not exact replication of the original W260 primary. All adverse outcomes remain.
+- Decide whether and when to execute a genuinely prospective protocol and obtain a compatible independent dealer source. This revision adds no model, financial sample, statistical test or prospective issuance. The historical parameter binding remains version-specific; do not treat its current legacy path mapping as a newly activated future-data protocol.
+- Inspect and approve the new PR/compare view. Do not merge the main branch or PR #3 as part of this task.
+- Any later cleanup of .bak/.scratch files requires a separate scoped decision; this revision deletes no files. No new TeX software is required for the delivered native PDFs.

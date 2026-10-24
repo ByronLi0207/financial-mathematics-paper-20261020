@@ -1,14 +1,11 @@
-Dear Editors of the Journal of Forecasting,
+Dear Editors,
 
-Please consider “Forecasting Peak Net Positions: Known Floors, Endpoint-to-Peak Bounds and Score–Coverage Disagreement” as a research article. The study compares established forecasting procedures for a sampled absolute net-position peak with an issue-known floor, completed training labels and explicit history/update controls. Its elementary floor and construction properties, and the classical endpoint-to-peak bound, clarify the forecast object without claiming new probability inequalities or a universal forecasting method.
+Please consider “Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits” for Journal of Forecasting.
 
-The original inspected FX comparison has lower stipulated quantile loss alongside more breach occasions; the separately fitted Treasury regression primary deteriorates. A source- and clock-controlled extension evaluates finite projected delayed ACI-style wrappers, a mature-headroom SAV adaptation inspired by CAViaR, and fixed mean/median combinations. These bounded adaptations are distinguished from their canonical method classes and guarantees. State-conditional diagnostics and target-level refits retain adverse outcomes, failed complete validation menus and insufficient-tail NA cases. The complete results and original primaries remain visible.
+The paper evaluates historical and conditional quantile forecasts of sampled peak net positions for a market-maker FX record and related weekly dealer-position aggregates. Historical rules provide a demanding benchmark. The clearest repeated regression gains use long FX histories and a short horizon against a same-history historical control. The later gain survives the evaluated coverage wrapper, while unwrapped regression breaches more often. Rankings against a shorter-history rolling rule change across periods, and the weekly comparisons remain largely adverse despite stronger regularization.
 
-The contribution is evidence on the specified peak response, and the limits of transporting forecast rankings across measurement tasks. Historical, parsimonious, simulation, tail and forest controls give mixed outcomes. Related Treasury aggregates are not independent dealer replications, and the downloaded-vintage economic-date replay is not historical public-release validation. Compatible unseen-dealer and prospective evaluations, and an identified decision-cost mapping, remain outstanding. These forecast-object, evaluation and transport questions motivate the journal fit without presuming editorial acceptance.
+The contribution combines a precise known-floor peak target, a qualified application of the classical endpoint-to-peak bound, and evidence on reference sensitivity, score–breach disagreement and stability across related tasks. The manuscript separates distinct retrospective periods from independent or prospective validation, preserves numerical failures and adverse results, and provides complete source-linked result files and reproducible document sources.
 
-Code, source fingerprints, acquisition routes and aggregate outputs are available in the study repository. Raw FX inputs and private per-origin traces are not redistributed. New York Fed materials retain attribution and terms.
+The submission materials include the main manuscript, Online Supplement, title-page template and public code/result repository. The author must complete and personally confirm authorship, permissions and all journal-required declarations before any submission.
 
-Author identity, approval, funding, conflicts and required submission declarations: [TO BE COMPLETED BY AUTHOR]. This is a draft for author review; no journal submission or signed declaration has been made.
-
-Sincerely,
 [TO BE COMPLETED BY AUTHOR]
