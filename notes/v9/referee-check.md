@@ -100,3 +100,7 @@
 ## C6 后续实际收口
 
 本表第5节的C6 pending为C5提交时点；C6现已完成letter/README/metadata/snapshots/ZIP本地验收，见`notes/v9/c6-metadata.md`及`c6-package.json`。上述42行的科学处置不变；C7最终全页/全测试/远端发布仍待实际执行。
+
+## C7后续科研内容验收
+
+C5时点的C7 pending现由实际科研内容全树验收收口：47页逐页、1463tests/1068subtests、数字绑定、保护对象及3451个公开文件逐字节一致已通过，见publication.md及owning C7 receipts。科学缺口/T1–T9仍不变；后续只同步这些交付凭据，最终head以最终回复为准。

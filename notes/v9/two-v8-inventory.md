@@ -197,3 +197,7 @@ C1–C7 后续执行者应以本清单的“处置”列作迁移导航，并以
 ### C6 投稿包收口
 
 旧cover letter仅取简洁定位，现已重写为v9的211词、一页native稿；作者签名仍占位。title-page版本链接已统一、6关键词/32字符running title通过；31个bib键匹配31正文引文/打印项。README、两源快照、10递归表输入与23成员ZIP已按现源逐字节验收，详见`c6-metadata.md`/`c6-package.json`。上表C6 pending至此由实际产物收口；C7尚未预判。
+
+### C7实际科研内容收口
+
+主文17/补充28/title1/letter1，47页逐页检查；1463tests与1068subtests通过。公开8d0b676a...与原本地e094bf6...整树3451文件/227358259bytes完全一致，全部文件逐字节及SHA256核对通过。见publication-first-tree.json。原本地设计历史没有由浏览器镜像传远端，私有原对象留在新clone；最终仅凭据/交付metadata同步的head和结束时刻由最终回复收口。原各项pending已按实际产物处理，科学NA/失败及作者决定继续保留。

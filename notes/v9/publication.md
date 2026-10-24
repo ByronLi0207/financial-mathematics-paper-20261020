@@ -1,0 +1,13 @@
+# v9 publication verification
+
+First complete public-content acceptance: **2026-10-24T21:04:23.014208+00:00**. Public branch head `8d0b676a73b3300dc9d19380938d0491c8247f01` and original local source `e094bf62310013f4619d1f34383a81374ce595df` have the identical tree `688d91efdfc124f72bd688783ccc381552371b26`. Every one of**3451files/227358259bytes** was read from the fetched public commit and compared byte-for-byte to the local file, with matching path, mode and Git blob. Missing/extra/changed files:0; byte differences:0. `publication-first-tree.json` contains the full per-file SHA256 manifest.
+
+The branch is based on public PR5`0f1f066843e0c49cf3e24bce7d72032dc189603d`. Twenty-three logical directories used25successful browser commits because the original two formal archive parts were committed individually. One combined large-file commit failed before any branch change with the GitHub message “file is too large”; the existing bytes were uploaded separately. No new parts, changed archive, retry of research or omitted failure was introduced. The formal joined archive remains40508197bytes/SHA7ecc25fe719c5624e8e9774b38eb3a54aa6ed14d6d8756d3cbefbbffe214c1b8.
+
+Normal noninteractive Git push had no credential; the connected GitHub integration rejected branch/blob writes403. Only the existing logged-in owner browser was used, without permissions expansion. File-tree publication does not transfer the original local research commit identities. Those original objects and unrelated historical objects stay private in the new clone; no bundle,mirror orprivate ref is published. Original design-only commit5decccb0... still precedes all original numerical study computations locally.
+
+Main/Supp/title native outputs remain17/28/1pages; the one-page letter and all47finalpages were individually opened. Full local tests passed1463/1068subtests in110.80s. The current source and all scientific results were unchanged during publication. Existing branches/PR3/4/5 remain outside the write scope; independent protective check and final close identify their actual refs/states. No PR was created,merged orclosed and no journal submission was made.
+
+This receipt deliberately certifies the completed source cut above. A following commit adds only this receipt, delivery summary, progress/timing/checklist metadata and the root ledger. Those metadata bytes must be separately compared after upload; the final returned public/local head is supplied in the assistant's final delivery and retained `.scratch/v9/final-close.json`. A receipt cannot contain the hash of its own future commit.
+
+Fixed-base compare: https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/0f1f066843e0c49cf3e24bce7d72032dc189603d...revision-v9

@@ -73,9 +73,9 @@
 
 ## C7 — final verification/publication (30min; stop45min)
 
-- [ ] Full suite, numeric/source/archive protection checks, native main/supp/title compilation; render and inspect every final page.
-- [ ] Publish only revision-v9 using existing authenticated transport; no credential/permission expansion or private-object export. Preserve original research history privately if browser transport is required; report file-tree and Git-history identity separately.
-- [ ] Verify remote/local files, modes and head; protected refs and local snapshots unchanged. Give fixed-base compare link and keep PR3/4/5 decisions for author. Commit C7 records.
+- [x] Full suite, numeric/source/archive protection checks, native main/supp/title compilation; render and inspect every final page.
+- [x] Publish only revision-v9 using existing authenticated transport; no credential/permission expansion or private-object export. Preserve original research history privately if browser transport is required; report file-tree and Git-history identity separately.
+- [x] Verify remote/local files, modes and head; protected refs and local snapshots unchanged. Give fixed-base compare link and keep PR3/4/5 decisions for author. Commit C7 records.
 
 ## Rulings
 
