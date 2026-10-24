@@ -1,10 +1,21 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=25mm]{geometry}
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
 \usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref}
 \hypersetup{hidelinks,breaklinks=true}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+\setlength{\parskip}{4pt}
 \setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{5pt}
+\setlength{\LTcapwidth}{\textwidth}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-2ex \@plus -.5ex \@minus -.2ex}{.8ex \@plus .2ex}%
+  {\normalfont\large\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1ex \@plus .2ex \@minus .1ex}{-1em}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
 \title{Online Supplement to Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
@@ -14,10 +25,12 @@
 \maketitle
 This supplement retains the existing proofs and complete principal adverse-result
 inventories, with links to the unchanged longer archives. It accompanies the
-v8 manuscript and adds the accepted frozen simulation, same-dealer daily
+v9 manuscript and retains the accepted frozen simulation, same-dealer daily
 aggregation and fixed-parameter full-prefix backcast. Each addition was frozen
 before its own new output within a post-result / exploratory revision. The
 two original primary comparisons retain their values and roles.
+The earlier calibrated design and the new pre-evaluation stability screen
+with its paired switching study are reported separately below.
 
 Tables format saved native fields. Loss percentages are the existing relative
 differences against the named reference; probabilities are labelled as such.
@@ -139,7 +152,7 @@ M denotes a stationary-marginal endpoint threshold; C denotes a distinct
 fixed-start conditional endpoint oracle. Threshold partners sharing a seed use
 the same paths, not independent repetitions.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -181,7 +194,7 @@ levels, making the level equation the relevant illustrative mechanism.
 The negative-increment family is a separate sensitivity, with stationary
 increments and nonstationary cumulative levels.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -232,7 +245,7 @@ stationary-marginal endpoint threshold across starts does not condition on a
 large anchor. The conditional-oracle sensitivities below are distinct thresholds
 on shared paths; neither is an oracle for the maximum.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -311,7 +324,7 @@ Bills & 24/260 & 9.87 & -47.64 & 22/12 \\
 \endgroup
 
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrr}
@@ -450,7 +463,7 @@ origins, not observed funding costs. Breach frequency averages an indicator and
 need not rank reports like either amount. The following source-reported monetary
 values are never pooled across FX and weekly aggregates.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{2.50}
 \begin{longtable}{p{30mm}rrrrp{32mm}}
@@ -492,7 +505,7 @@ ties, including ties at the extreme loss weights. Method codes here denote
 the original fixed report menu; their definitions remain in the main methods
 table. The sparse grid is a sensitivity on the same record, not independent
 data.\begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{2.50}
 \begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
@@ -572,7 +585,7 @@ ties, including ties at the extreme loss weights. Method codes here denote
 the original fixed report menu; their definitions remain in the main methods
 table. The sparse grid is a sensitivity on the same record, not independent
 data.\begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{2.50}
 \begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
@@ -665,7 +678,7 @@ loss is 9.22 percent,
 compared with 92.63 percent for the original menu. Expanded regression still loses in 34 cells.
 This improvement does not erase the remaining failures or identify a causal
 feature effect.\begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{26mm}rrrrrr}
@@ -716,7 +729,7 @@ offsets, native-unit differences and overlapping economic positions preclude
 treating these cells as independent replications. Forecasts are fitted
 separately; observations and losses are not pooled into a single financial
 population.\begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{26mm}rrrrrr}
@@ -771,7 +784,7 @@ the saved loss percentage against the historical rule, followed by strict
 hits for the endpoint plug-in and historical report. These are all related
 aggregate tasks, not independent replications or source-pooled monetary losses.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{30mm}rrrr}
@@ -834,7 +847,7 @@ Without an eligible earlier fold, the saved design makes it identical to R2;
 this is not a numerical fallback. Earlier-period results were sealed before
 the already-inspected-period calculations that could reuse those origins.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{35mm}rrrrr}
@@ -946,7 +959,7 @@ scale and then floor-projected. Its fixed bounded optimizer and starts retain
 all eligibility and convergence failures; a complete fit is not a proof of a
 global optimum. Selection state carries across the unissued chronological gap.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrlrrl}
@@ -1084,7 +1097,7 @@ Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
 \endgroup
 
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrr}
@@ -1118,7 +1131,7 @@ is not used to select favourable thresholds. These matched combination
 contexts are distinct from the original FX primary with its shorter rolling
 reference.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lp{34mm}p{18mm}lrr}
@@ -1227,7 +1240,7 @@ All unavailable upper-target rows remain NA with
 or a favourable subset. Absolute loss values across different quantile levels
 measure different objectives.
 \begingroup
-\scriptsize
+\footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrp{20mm}rrrl}
@@ -1451,8 +1464,11 @@ is \textbf{MISMATCH}: both the target count and the no-outside requirement fail.
 This screen has no family-wide significance guarantee and supplies no new
 population endpoint-bound guarantee under dependent financial paths.
 
+\begingroup
+\renewcommand{\footnotesize}{\fontsize{9}{10.5}\selectfont}
 \input{generated/v8-mc-full-table.tex}
 \input{generated/v8-mc-four-table.tex}
+\endgroup
 
 \paragraph{Candidate and procedure statuses.}
 The complete inventory contains 6912 complete method tasks, 18431 complete
@@ -1468,15 +1484,9 @@ on completion. The saved source summaries retain all cells and their full
 precision in \path{results/revision-v8/wp3/summary.json}; all six loss, breach and
 win heatmaps and the complete receipt archive remain alongside them.
 
-\begin{figure}[htbp]\centering
-\includegraphics[width=.96\linewidth]{figures/v8-wp3-qr4-loss.pdf}
-\caption{Four-feature regression in the complete fixed grid. Estimates are
-relative mean loss changes against matched historical headroom; parentheses
-show Monte Carlo standard errors across independent repetitions. Common
-innovations correlate conditions, and shading is not a family-wide test.
-Outside-region gains contradict the frozen narrow-condition restriction.}
-\label{fig:v8-mc-four}
-\end{figure}
+The duplicate four-feature loss heatmap is available with the six complete
+archived heatmaps. Both complete numerical grids above retain every cell.
+
 
 
 \section{Same-dealer completed-day aggregation}\label{sup:v8-daily}
@@ -1558,6 +1568,99 @@ independent confirmation. Missing old longer-horizon original-menu, parsimonious
 rolling-DM or breach-count fields stay NA; the old five-menu rule is not relabelled
 as the original three-menu regression. No missing old test was recalculated.
 
+\section{Earlier calibrated simulation and numerical failures}\label{sup:v9-legacy-mc}
+
+This distinct calibrated design uses constant-variance AR(1) levels, where the
+peak depends on the current position (D0), an hourly AR--GARCH--t law with a
+known hour shape (D1), and a weekly AR--GARCH--t law (D2).
+D0/D2 share the original pre-validation Treasury calibration; D1 uses the
+original pre-validation FX prefix. Levels are divided by the prefix standard
+deviation without demeaning. The frozen calibration, clocks, origin geometry,
+parameters and numerical rules are retained in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v9/results/v9/legacy-calibrated}{the imported calibrated archive}.
+The weekly clock, validation span, refit schedule and six-candidate menu,
+including the intercept-only limit, differ from Section~\ref{sup:v8-mc}.
+Their short-history outcomes cannot be treated as replications of one design.
+
+Each completed cell reports repetition medians and quartiles of the
+within-repetition relative loss against F. These differ from the ratio of
+across-repetition mean losses in Section~\ref{sup:v8-mc}.
+Quartiles describe dispersion under fixed fitted laws, not confidence limits.
+The known-state oracle is a finite future-path approximation; its realized
+score need not beat F in every repetition. Ordinary-rank I, oracle results,
+strict breaches and intercept-only selections remain separate diagnostics.
+
+\input{generated/v9-legacy-simulation-table.tex}
+
+A required numerical failure blocks the whole cell. Partial repetitions do
+not supply a replacement median, quartile, win rate or breach rate.
+The retained nonconvergence exceptions mean that the unchanged solver did not
+obtain its joint residual-and-gap acceptance certificate within its iteration
+budget. They establish neither nonexistence of an optimum nor poor predictive
+accuracy of an unavailable report. Final residuals and gaps were not retained;
+the four-feature exceptions also lack exact refit context. These quantities
+remain unknown. The original constant-variance and short-weekly predictions
+are unsupported; the hourly and history-order predictions are unassessable.
+These outcomes identify neither the financial loss mechanism nor a pure
+frequency effect.
+
+\section{Pre-evaluation stability screen and switching stress simulation}\label{sup:v9-stability}
+
+The separately frozen
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v9/protocol/v9/nonstationarity-design.md}{stability-study protocol}
+uses only pre-evaluation prefixes. Its joint OLS score includes intercept,
+AR slope and centered residual-square channels (Hansen, 1992).
+Each qualified whole-prefix AR--GARCH--t fit generates a plug-in parametric
+bootstrap reference. OLS and the score statistic are re-estimated on each
+bootstrap path; the generator is fitted once. Published iid critical values
+are not used. With the registered \(B=999\) bootstrap paths, the p value is
+\((1+\#\{H_b\ge H_{\rm obs}\})/(B+1)\); the registered draw count and
+all exceedances remain in the archive. The table retains the observed statistic,
+bootstrap p value, Holm adjustment, moment qualification and descriptive cuts.
+Qualified fitted nulls require \(\nu>4\) and
+\(q_4=\alpha^2\{3(\nu-2)/(\nu-4)\}+2\alpha\beta+\beta^2<1-10^{-8}\).
+A successful fit and this fourth-moment gate do not prove that the real law
+has those moments. The plug-in calibration supplies no exact finite-sample
+size guarantee; rejection can also reflect misspecification or outliers.
+
+\input{generated/v9-stability-diagnostics-table.tex}
+
+Candidate cuts minimize a separate-variance Gaussian AR quasi-likelihood
+criterion with penalty \((3+4k)\log M\), where \(M\) counts transitions.
+The fixed search allows at most two cuts and requires each segment to contain
+at least \(\max\{104,\lceil .20M\rceil\}\) transitions.
+These are descriptive calibration partitions, not individually significant
+breaks. Whole-prefix scaling is shared by every segment without demeaning;
+the first target in a segment keeps its preceding observed lag.
+The constrained AR and GARCH fits have one declared start and no retry.
+The daily nonregular null and hourly optimization failure retain unavailable
+primary p values; neither is evidence of stability.
+
+The constant control retains the whole-prefix parameters. The stress arm
+cycles the fitted regimes with their original transition dwell lengths and a
+fixed repetition-phase grid. Level, innovation and variance state continue
+through each switch. The last-to-first wrap is artificial, rather than an
+observed historical break. Common uniforms are transformed through each arm's
+own standardized t law; a no-cut source reuses the identical whole-fit path.
+Both arms retain the forecasting procedures of Section~\ref{sup:v8-mc}.
+The following complete grids retain failed conditional cells and all F cells.
+
+\input{generated/v9-stability-W52-table.tex}
+\input{generated/v9-stability-W260-table.tex}
+\input{generated/v9-stability-F-table.tex}
+
+Loss summaries are medians across repetitions within each source, then equal-
+weight medians across every required source. They are not the controlled
+grid's ratio-of-means estimand. A required repetition failure makes its whole
+cell unavailable; successful subsets do not replace missing full-grid results.
+The raw weekly screening threshold is met, while multiplicity adjustment
+retains fewer rejections. The near-parity constant-control prediction is
+unsupported. The two-history switching prediction and the daily/hourly
+comparison are unassessable. Constant controls themselves generate large
+losses, so instability is not necessary for losses in these procedures.
+The empirical low-frequency mechanism remains unidentified.
+
+\clearpage
 \section{Reproduction, availability and retained extended results}\label{sup:reproduction}
 
 \paragraph{What is public.}
