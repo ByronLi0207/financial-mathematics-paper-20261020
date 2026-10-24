@@ -1,0 +1,81 @@
+{
+  "id": "MISMATCH-REVIEW-COMMIT-CADENCE",
+  "utc": "2026-10-24T16:21:46.762738+00:00",
+  "instruction": "review loop at most one commit per hour; no explicit local/browser exception",
+  "prior_execution_interpretation": "Separate>=1hour local completion cuts and native browser mirror histories; this is recorded reasoning, not a user-authorized exception.",
+  "strict_combined_status": "MISMATCH_NOT_FULLY_COMPLIANT",
+  "commits": [
+    {
+      "kind": "local",
+      "commit": "860b85f9b31334c7ff59a2dba1b1f1d8a681ed5f",
+      "utc": "2026-10-24T13:38:40+00:00",
+      "raw_identity_free_output": "860b85f9b31334c7ff59a2dba1b1f1d8a681ed5f 2026-10-24T06:38:40-07:00"
+    },
+    {
+      "kind": "browser",
+      "commit": "e7a7f2ff7268a60ce37a6edf94f0268ed029433e",
+      "utc": "2026-10-24T13:40:18+00:00",
+      "raw_identity_free_output": "e7a7f2ff7268a60ce37a6edf94f0268ed029433e 2026-10-24T06:40:18-07:00"
+    },
+    {
+      "kind": "browser",
+      "commit": "d9b754ce1cf09fb6e82b51ba9f19939d509070c1",
+      "utc": "2026-10-24T14:40:44+00:00",
+      "raw_identity_free_output": "d9b754ce1cf09fb6e82b51ba9f19939d509070c1 2026-10-24T07:40:44-07:00"
+    },
+    {
+      "kind": "local",
+      "commit": "0745030a22770040d9bef1f2e37aebe822dc53cc",
+      "utc": "2026-10-24T14:55:54+00:00",
+      "raw_identity_free_output": "0745030a22770040d9bef1f2e37aebe822dc53cc 2026-10-24T07:55:54-07:00"
+    },
+    {
+      "kind": "browser",
+      "commit": "224a2ee5a4bfdd74d4449671433e88dc9ac27344",
+      "utc": "2026-10-24T15:41:46+00:00",
+      "raw_identity_free_output": "224a2ee5a4bfdd74d4449671433e88dc9ac27344 2026-10-24T08:41:46-07:00"
+    },
+    {
+      "kind": "local",
+      "commit": "f17f42c5a8c06637e8d8cbb3f5adab7763253640",
+      "utc": "2026-10-24T15:58:19+00:00",
+      "raw_identity_free_output": "f17f42c5a8c06637e8d8cbb3f5adab7763253640 2026-10-24T08:58:19-07:00"
+    }
+  ],
+  "adjacent_gaps": [
+    {
+      "first": "860b85f9b31334c7ff59a2dba1b1f1d8a681ed5f",
+      "second": "e7a7f2ff7268a60ce37a6edf94f0268ed029433e",
+      "seconds": 98.0,
+      "at_least_one_hour": false
+    },
+    {
+      "first": "e7a7f2ff7268a60ce37a6edf94f0268ed029433e",
+      "second": "d9b754ce1cf09fb6e82b51ba9f19939d509070c1",
+      "seconds": 3626.0,
+      "at_least_one_hour": true
+    },
+    {
+      "first": "d9b754ce1cf09fb6e82b51ba9f19939d509070c1",
+      "second": "0745030a22770040d9bef1f2e37aebe822dc53cc",
+      "seconds": 910.0,
+      "at_least_one_hour": false
+    },
+    {
+      "first": "0745030a22770040d9bef1f2e37aebe822dc53cc",
+      "second": "224a2ee5a4bfdd74d4449671433e88dc9ac27344",
+      "seconds": 2752.0,
+      "at_least_one_hour": false
+    },
+    {
+      "first": "224a2ee5a4bfdd74d4449671433e88dc9ac27344",
+      "second": "f17f42c5a8c06637e8d8cbb3f5adab7763253640",
+      "seconds": 993.0,
+      "at_least_one_hour": false
+    }
+  ],
+  "new_unified_next_commit_not_before_utc": "2026-10-24T16:58:25Z",
+  "future_rule": "One combined clock for every actual local/browser commit. After each actual successful event wait>=3600seconds plus5second guard; no amend, history rewriting, identity export or relabelling as exemption.",
+  "window_rule": "Research/review window still ends17:55:15Z. Necessary publication after that does not extend or get counted as active10hour research; final delivery waits for actual byte/protected-ref proof.",
+  "paper_science_changes": 0
+}
