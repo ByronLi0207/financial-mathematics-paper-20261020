@@ -1052,3 +1052,53 @@ $ git ls-remote origin refs/heads/main refs/heads/codex/supervisor-revision-2026
 ```
 
 No revision-v7-final remote head exists, so a remote-tree equality check and usable PR/compare URL cannot be supplied. Main remains 65feeee; PR #3 was not changed by this task. All S1–S9 deliverables remain committed locally. Final publication is BLOCKED rather than represented as completed. See notes/v7/s10-blocked.json.
+
+## S10: PASS — author-authorized browser publication
+
+Accepted 2026-10-24T07:51:03.629521+00:00. The user explicitly authorized switching from the unavailable command-line Git authentication to the existing logged-in GitHub browser, while prohibiting main merges and changes to PR #3. This supersedes the earlier S10 transport blocker; its original failure record remains above.
+
+Browser actions: create revision-v7-final from the existing v4 publication branch; upload the exact local delta by directory; commit each batch only to revision-v7-final; open a new PR with base main and head revision-v7-final. No credential or permission was changed. Browser commits have their own history; exact file-tree identity is verified rather than claiming identical commit IDs.
+
+Actual terminal readback after the complete upload:
+
+```text
+$ git fetch origin refs/heads/revision-v7-final:refs/remotes/origin/revision-v7-final
+From https://github.com/ByronLi0207/financial-mathematics-paper-20261020
+   1fcab92..7056570  revision-v7-final -> origin/revision-v7-final
+$ git diff --exit-code 5e35dba21ea5ced708dad47cbee29fe12e4c6936 7056570757a6721da873ec1032a62e7111bdda07
+[no output; exit 0]
+```
+
+Every remote blob was then read from git cat-file --batch and compared byte-for-byte to its local file, with SHA-256 and file mode checks:
+
+```json
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-24T07:48:23.688382+00:00",
+  "local_source_commit": "5e35dba21ea5ced708dad47cbee29fe12e4c6936",
+  "remote_commit": "7056570757a6721da873ec1032a62e7111bdda07",
+  "local_tree": "ad439a1c12b16b3f198d43e398248f1fe5f85ff0",
+  "remote_tree": "ad439a1c12b16b3f198d43e398248f1fe5f85ff0",
+  "files_checked": 2652,
+  "bytes_checked": 74909563,
+  "mismatches": 0,
+  "missing": 0,
+  "extra": 0,
+  "mode_mismatches": 0,
+  "git_diff_returncode": 0
+}
+```
+
+The native browser result visibly showed:
+
+```text
+URL: https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/4
+Publish verified v7 peak-position manuscript and complete evidence — #4
+Open
+base: main
+head: revision-v7-final
+```
+
+The GitHub connector independently confirmed PR #4 open/unmerged with head 7056570 and base 65feeee; PR #3 remained open/unmerged at 2328994c with the same main base. The new PR is attached to this task. Native 17/20/1-page PDFs match the final S9 hashes. Existing scientific code, data, results, negative findings and author placeholders are unchanged. No merge, submission, deletion or new financial calculation occurred.
+
+Publication evidence is notes/v7/s10-browser-publication.json. This final evidence record and ledger appendix add metadata only; after uploading them, the updated branch is subjected to another complete tree and file-content comparison before handoff.
