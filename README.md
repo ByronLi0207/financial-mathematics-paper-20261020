@@ -1,8 +1,8 @@
-# Current v7 revision: Hard to Beat
+# Current v8 revision: Hard to Beat
 
-The current [native LaTeX main PDF](submission-jof/manuscript.pdf), [compact Online Supplement](submission-jof/supplement.pdf), [editable sources and package](submission-jof/README.md), [v7 execution ledger](REVISION_V7_CHANGELOG.md), [evidence table](notes/v7/evidence-table.md) and [author checklist](submission-jof/AUTHOR-TODO.md) describe this revision. The complete earlier outcomes and documents remain indexed by [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md). Both research lines are preserved on revision-v7-final; neither main nor PR #3 is merged by this task.
+Use the [current v8 submission guide](submission-jof/README.md) for authoritative TeX entry points, figures, simulation results, data-access restrictions and the final B7 export checks. The [author checklist](submission-jof/AUTHOR-TODO.md) and [v8 decisions](notes/v8/author-decisions.md) preserve the personal approvals and future-work choices.
 
-Historical rules remain strong competitors; the qualified FX gains, reference-dependent period reversal and persistent weekly regression failures are reported together. The data comprise one market-maker record and related aggregate categories, not independent dealer replications. No new financial experiment, data sample or hypothesis test is added by this presentation revision.
+v8 starts from frozen local v7 commit `5e35dba` on `revision-v8`. The new calibrated simulation retains all 24 cells, including seven failures; it does not add a financial forecast re-evaluation or independent dealer validation. The final v8 PDF/ZIP identities and branch publication are verified at B7. Earlier dated guides below describe their own historical milestones and builders.
 
 ## Historical versioned guides preserved verbatim below
 
