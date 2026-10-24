@@ -4841,3 +4841,22 @@ FullactualS8two-paragraphread retains execution/selectionarchive notprospective/
 ## Verification loop136
 
 Finaldeliveryclaimreadback ofexistingcompactWP2–5fields retainsfinite/adverse/NA/state/tauandvalidationlimits. No newfinancialanalysis orconclusionchange;35checksrecorded/36future.
+
+
+## Deadline self-check36 and six-hour window audit
+
+# Six-hour window deadline audit
+
+Actual audit 2026-10-24T00:33:05.314139+00:00, after required00:31:50Z deadline (18:31:50Zstart23October). Six-hour window closed; not six active reading hours. All36plannedten-minute slots have actual PASS records; max lateness198.379727s, finalcheck10.714105s late. Last28.0079s proceduralwait and any parallel overlap are not credited as reading. No new financialanalysis after WP7; afterdeadline only delivery administration.
+
+WP1 completed33internalissues/21major,notexternalreview:4implemented/10withlimitation/4retained/2NA/1authordecision. WP2 completed finite delayed ACI-style/headroomSAV;22/24evaluationmethodscomplete,2NA. WP3 completedfixedcombinations64methodrows/48missing-KNN NA. WP4 completedstate/HAC/GWdiagnosticswithworking-reference limits. WP5 completed3tau.90contrasts,3tau.99NA. WP6 integratedfullS16/mainbrief/decisionmap/cover; publishernumericcap remainsunverified. WP7 completednumeric/nativecompile/113preview-pageQAchain/syntheticpytest/package/branchpublication; formalnativePDFexport,authorapprovals andsameheadPRitems authorpending. Originalprimaries,alladverseandfailed attempts preserved.
+
+The committed method/executable designs precede financial receipts as detailed in pre-deadline-requirements-audit.md; WP2family56 was frozen beforeexecution, lateraggregationimplementationfreezeaftercells is notpreregistration. Newanalysesarepost-result/exploratory,notindependentorprospectiveevidence.
+
+Atdeadline fresh1413protectedpaths allpresent/exact16allowedchanges; 7criticalcandidate92hashes unchanged, no subsequentcode/submission/protocol/results/FINALdelta. Current PDFs18/94/1,ZIP16membersCRC/memberbytesmatch. Saved0/15255numericmismatches,950tests+1062subtests/85.76s atunchangedcandidate; sourceboundfullpageQAretained. ThreeexplicitnativeTeXtargetssuccess; mainlatest27:18Z/restoreddefault. No nativePDFexport: deliveredPDFsReportLabpreviews. Currentclosingdelta retains originalstdout/history whitespaceexceptions; no whole-historyclean claim.
+
+Source136 was published at11143b52485558c7f0fffb3bb2dc60bb7aedee82, all38files899693B andwhole-treecb317dca1dbf0e4c7671692f4bc15d3d975c5801 match. Thisnewclosingaudit/check36/gate/readback stillrequiretheirlastuploadandfreshproof. Do notcallthatfutureproofalreadycomplete. Finalproof retainedprivatelyaftertheimmutableclosingcommit toavoidself-referentialrepublication; finalchatreportsactualremotecommit.
+
+Sameheadrevision-v4-jofPRnotfound,fresh00:31:01Zsearch[]; PR1/2mergedandPR3isindependentsupervisorhead, untouched. Branchupdated/mainunmerged. OtherbranchR6metadataobservedbutscientificclaims unverified/unintegrated, authorreconciliationchoice.
+
+Remainingauthor/evidenceitems: newPR/reconciliation,formalexportandidentity/approval/disclosures,sourcepermissions,unverifiedportal/type-specificcaps,compatibleunseendealer/historicalreleasevintages/decisioncost/prospectiveissuance,optionalcachecleanup. Liveofficialguidefullpagewasread128andcontainsnoarticle/abstractnumericcap; no unlimited-length/complianceinference. RawFX/privateoriginvectors/thirdpartypaperPDF/UIcapturesunpublished. No installation/journalsubmission/accountregistration/mainmerge. Originalbackups/cache/userfilesnotcleaned.
