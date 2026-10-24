@@ -16,7 +16,7 @@ class PanelAlignment(unittest.TestCase):
 class PanelFitting(unittest.TestCase):
  def test_future_perturbation_preserves_both_issued_fits(self):
   import numpy as np
-  from round2_panel_run import segment
+  from legacy_round2_panel_run import segment
   x=50+np.cumsum(np.random.default_rng(37).normal(size=300));dates=np.arange(300).astype('datetime64[W]');o=np.arange(200,221);changed=x.copy();changed[211:]+=500
   for method in ['QR33','C2_QR4']:
    a,_=segment(x,dates,o,6,52,method,.1,lambda **kw:None)
