@@ -43,6 +43,7 @@ Replacing a report \(c\) by \(\max(B,c)\) weakly reduces its score at every poss
 outcome. At the population conditional quantile, the strict breach probability
 is at most \(1-\tau\). These are distinct statements: projection applies to any
 report; the tail qualification requires the true conditional quantile.
+Here \(q=q_\tau\), and \(\alpha\) denotes the stated nominal tail bound.
 \[
 \rho_\tau(Y-c)-\rho_\tau(Y-\max\{B,c\})=\tau(B-c)_+,\qquad \Pr(Y>q\mid\mathcal F_t)\le\alpha.
 \]
@@ -81,7 +82,7 @@ a fitted endpoint forecast into a forecast of a path maximum.\section{Classical 
 \paragraph{Proposition 2: the classical endpoint bound.}
 Let future real increments \(X_1,\ldots,X_H\) be independent and individually
 symmetric about zero. Set \(S_0=0\), \(S_h=\sum_{j=1}^hX_j\), and fix a starting
-position \(x\). Equal increment laws and finite moments are unnecessary.
+position \(x\), with absolute magnitude \(B\). Equal increment laws and finite moments are unnecessary.
 For the population absolute-displacement quantile at level \(1-\alpha/2\),
 \(q=\inf\{c:\Pr(|S_H|\le c)\ge1-\alpha/2\}\), the classical scalar maximal
 inequality and the triangle inequality give
@@ -455,12 +456,12 @@ values are never pooled across FX and weekly aggregates.
 \begin{longtable}{p{30mm}rrrrp{32mm}}
 \caption{The four fixed headline comparisons. The longer-horizon FX result is sensitive to error weights.}\\
 \toprule
-Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight ratio} \\
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight ratio} \\
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
 \midrule
 \endhead
 \bottomrule
@@ -472,8 +473,8 @@ treasury\_h6\_primary & 3131.86 & 1395.64 & 23688.09 & 28656.17 & \(\dfrac{24840
 \end{longtable}
 \endgroup
 
-The equality column gives exact saved rational boundaries, not newly
-estimated costs. The short-horizon FX primary reduces both mean error amounts;
+The equality column gives exact saved rational boundaries for the mixture
+weight defined above, not newly estimated costs. The short-horizon FX primary reduces both mean error amounts;
 its elementary-score curves can nevertheless cross because a Murphy diagram
 varies the elementary score threshold, a different comparison from reweighting
 these two unconditional amounts. The longer-horizon FX legacy pair reverses
