@@ -1,0 +1,74 @@
+test_cli_routes_only_the_supplement_override (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+test_defaults_preserve_existing_report_paths (test_review_package_reports.PackageReportRoutingTests) ... ok
+test_explicit_reports_are_checked_and_recorded (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+test_supplement_override_keeps_main_default (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+test_wrong_main_hash_fails_before_copy (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+test_wrong_statuses_fail_before_copy (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+test_wrong_supplement_hash_fails_before_copy (test_review_package_reports.PackageReportRoutingTests) ... FAIL
+
+======================================================================
+FAIL: test_cli_routes_only_the_supplement_override (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 155, in test_cli_routes_only_the_supplement_override
+    self.assertEqual(result.returncode, 0, result.stdout)
+AssertionError: 2 != 0 : usage: seal_wp8_delivery.py [-h] --main-pdf MAIN_PDF --supplement-pdf
+                            SUPPLEMENT_PDF --title-pdf TITLE_PDF --output
+                            OUTPUT
+seal_wp8_delivery.py: error: unrecognized arguments: --supp-numeric-report notes/revision-v8/wp8-supp-review-number-check.json
+
+
+======================================================================
+FAIL: test_explicit_reports_are_checked_and_recorded (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 96, in test_explicit_reports_are_checked_and_recorded
+    self.require_options()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 76, in require_options
+    self.assertIn("main_numeric_report", parameters)
+AssertionError: 'main_numeric_report' not found in mappingproxy(OrderedDict([('main_pdf', <Parameter "main_pdf">), ('supplement_pdf', <Parameter "supplement_pdf">), ('title_pdf', <Parameter "title_pdf">)]))
+
+======================================================================
+FAIL: test_supplement_override_keeps_main_default (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 107, in test_supplement_override_keeps_main_default
+    self.require_options()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 76, in require_options
+    self.assertIn("main_numeric_report", parameters)
+AssertionError: 'main_numeric_report' not found in mappingproxy(OrderedDict([('main_pdf', <Parameter "main_pdf">), ('supplement_pdf', <Parameter "supplement_pdf">), ('title_pdf', <Parameter "title_pdf">)]))
+
+======================================================================
+FAIL: test_wrong_main_hash_fails_before_copy (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 124, in test_wrong_main_hash_fails_before_copy
+    self.require_options()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 76, in require_options
+    self.assertIn("main_numeric_report", parameters)
+AssertionError: 'main_numeric_report' not found in mappingproxy(OrderedDict([('main_pdf', <Parameter "main_pdf">), ('supplement_pdf', <Parameter "supplement_pdf">), ('title_pdf', <Parameter "title_pdf">)]))
+
+======================================================================
+FAIL: test_wrong_statuses_fail_before_copy (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 132, in test_wrong_statuses_fail_before_copy
+    self.require_options()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 76, in require_options
+    self.assertIn("main_numeric_report", parameters)
+AssertionError: 'main_numeric_report' not found in mappingproxy(OrderedDict([('main_pdf', <Parameter "main_pdf">), ('supplement_pdf', <Parameter "supplement_pdf">), ('title_pdf', <Parameter "title_pdf">)]))
+
+======================================================================
+FAIL: test_wrong_supplement_hash_fails_before_copy (test_review_package_reports.PackageReportRoutingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 115, in test_wrong_supplement_hash_fails_before_copy
+    self.require_options()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v8/review-loop-round9/helper-red/notes/revision-v8/test_review_package_reports.py", line 76, in require_options
+    self.assertIn("main_numeric_report", parameters)
+AssertionError: 'main_numeric_report' not found in mappingproxy(OrderedDict([('main_pdf', <Parameter "main_pdf">), ('supplement_pdf', <Parameter "supplement_pdf">), ('title_pdf', <Parameter "title_pdf">)]))
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.053s
+
+FAILED (failures=6)

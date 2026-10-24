@@ -33,7 +33,8 @@ def included_sources(name, seen=None):
     return answer
 
 
-def package(main_pdf, supplement_pdf, title_pdf):
+def package(main_pdf, supplement_pdf, title_pdf, *,
+            main_numeric_report=None, supp_numeric_report=None):
     source_names = sorted(set(included_sources("main.tex") +
                               included_sources("supplement.tex") +
                               included_sources("title-page.tex")))
@@ -47,8 +48,14 @@ def package(main_pdf, supplement_pdf, title_pdf):
     assert len(figures) == 5, figures
     assert len([name for name in source_names if name.startswith("generated/")]) == 5
     numeric_reports = {
-        "manuscript": "notes/revision-v8/wp8-main-number-check-root.json",
-        "supplement": "notes/revision-v8/wp8-supp-number-check-final-layout.json",
+        "manuscript": main_numeric_report or "notes/revision-v8/wp8-main-number-check-root.json",
+        "supplement": supp_numeric_report or "notes/revision-v8/wp8-supp-number-check-final-layout.json",
+    }
+    # Keep bindings repository-relative even when the caller supplies an
+    # absolute in-repository path. Outside reports cannot become public links.
+    numeric_reports = {
+        stem: (ROOT / path).resolve().relative_to(ROOT.resolve()).as_posix()
+        for stem, path in numeric_reports.items()
     }
     for stem in numeric_reports:
         expected = json.loads((ROOT / numeric_reports[stem]).read_text())
@@ -114,9 +121,15 @@ if __name__ == "__main__":
     parser.add_argument("--main-pdf", type=Path, required=True)
     parser.add_argument("--supplement-pdf", type=Path, required=True)
     parser.add_argument("--title-pdf", type=Path, required=True)
+    parser.add_argument("--main-numeric-report", type=Path,
+                        help="Checked main numeric report within the repository; defaults to the WP8 report")
+    parser.add_argument("--supp-numeric-report", type=Path,
+                        help="Checked Supplement numeric report within the repository; defaults to the WP8 report")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    receipt = package(args.main_pdf, args.supplement_pdf, args.title_pdf)
+    receipt = package(args.main_pdf, args.supplement_pdf, args.title_pdf,
+                      main_numeric_report=args.main_numeric_report,
+                      supp_numeric_report=args.supp_numeric_report)
     with args.output.open("x") as stream:
         stream.write(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps(receipt, indent=2))
