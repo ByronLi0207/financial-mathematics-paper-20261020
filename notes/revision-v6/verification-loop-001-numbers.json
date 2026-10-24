@@ -1,0 +1,94 @@
+{
+  "round": 1,
+  "task": "Randomly trace five main-article numerical cells to existing script outputs; no recomputation, new analysis or conclusion change",
+  "seed": 2026102301,
+  "sampling_frame": "All 14 available numeric cells in main Table 3 columns loss change, DM p, HLN p and Holm p; Outside family excluded as nonnumeric",
+  "started_utc": "2026-10-23T20:58:07.190454+00:00",
+  "ended_utc": "2026-10-23T20:58:07.194987+00:00",
+  "manuscript_sha256": "3a13df3d818218b095f4a6a4c548221c1ce233ed4317e7a5b1784ca24095b28d",
+  "source_commit": "c2916a2",
+  "records": [
+    {
+      "caption": "Main Table 3",
+      "row": "FX original primary",
+      "column": "HLN p",
+      "displayed": "2.31e-07",
+      "source_file": "results/revision-20261023/inference/dm.csv",
+      "source_sha256": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41",
+      "selector": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+      },
+      "field": "hln_p",
+      "raw_value": "2.312477658474048e-07",
+      "format": ".3g",
+      "reformatted": "2.31e-07",
+      "equal": true
+    },
+    {
+      "caption": "Main Table 3",
+      "row": "Treasury primary",
+      "column": "Holm p",
+      "displayed": "0.32",
+      "source_file": "results/revision-20261023/inference/holm.csv",
+      "source_sha256": "976affb08867b6e1c821f6ce5d9491a3b8087f427f0af9296763872863d2c8b3",
+      "selector": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "holm_p",
+      "raw_value": "0.31967752305162894",
+      "format": ".3g",
+      "reformatted": "0.32",
+      "equal": true
+    },
+    {
+      "caption": "Main Table 3",
+      "row": "FX matched control",
+      "column": "Holm p",
+      "displayed": "2.86e-07",
+      "source_file": "results/revision-20261023/inference/holm.csv",
+      "source_sha256": "976affb08867b6e1c821f6ce5d9491a3b8087f427f0af9296763872863d2c8b3",
+      "selector": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "holm_p",
+      "raw_value": "2.8626953049690645e-07",
+      "format": ".3g",
+      "reformatted": "2.86e-07",
+      "equal": true
+    },
+    {
+      "caption": "Main Table 3",
+      "row": "FX matched control",
+      "column": "Loss Δ%",
+      "displayed": "-14.77",
+      "source_file": "results/revision-20261022/paired-comparisons.csv",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+      "selector": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "relative_mean_loss_difference_percent",
+      "raw_value": "-14.766762552613885",
+      "format": "+.2f",
+      "reformatted": "-14.77",
+      "equal": true
+    },
+    {
+      "caption": "Main Table 3",
+      "row": "Treasury primary",
+      "column": "HLN p",
+      "displayed": "0.00939",
+      "source_file": "results/revision-20261023/inference/dm.csv",
+      "source_sha256": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41",
+      "selector": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "hln_p",
+      "raw_value": "0.009390617005130322",
+      "format": ".3g",
+      "reformatted": "0.00939",
+      "equal": true
+    }
+  ],
+  "status": "PASS",
+  "files_changed": "New audit note only; source/result/manuscript unchanged"
+}

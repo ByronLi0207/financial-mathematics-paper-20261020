@@ -1,0 +1,506 @@
+{
+  "status": "SELECTION_FROZEN_BEFORE_MODELS",
+  "completed_utc": "2026-10-23T10:00:54.493862+00:00",
+  "rule": "Include every specified current-era net-position key if direct API records supply every one of the706 original Treasury economic dates2013-04-03..2026-10-07 exactly once with finite numeric values. No splicing alternative series, no interpolation, no filling absent dates, no selection by fitted outcomes/volatility/loss. Restrict longer series to this fixed date grid. Preserve all skip reasons and all metadata-era descriptions; same-key definition changes remain a limitation.",
+  "eligible": [
+    "PDPOSMBS-TOT",
+    "PDPOSCS-TOT",
+    "PDPOSFGS-TOT",
+    "PDPOSTIPS-L2",
+    "PDPOSTIPS-G11",
+    "PDPOSTIPS-G2",
+    "PDPOSTIPS-G6L11",
+    "PDPOSGSC-L2",
+    "PDPOSGSC-G2L3",
+    "PDPOSGSC-G3L6",
+    "PDPOSGSC-G6L7",
+    "PDPOSGSC-G7L11"
+  ],
+  "skipped": [
+    {
+      "series_key": "PDPOSGSC-G11L21",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G11L21.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.580013+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G11L21",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 11 YEARS BUT LESS THAN OR EQUAL TO 21 YEARS - OUTRIGHT POSITIONS LONG - U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 11 YEARS BUT LESS THAN OR EQUAL TO 21 YEARS - OUTRIGHT POSITIONS SHORT"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 9796,
+      "sha256": "e02742b5582bd79568b3772bb4d54e5b4c56093ade4b063de08a50be137ac488",
+      "downloaded_utc": "2026-10-23T10:00:53.715756+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G11L21.csv",
+      "status": "SKIPPED",
+      "reason": "ValueError: missing required economic dates: 457"
+    },
+    {
+      "series_key": "PDPOSGSC-G21",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G21.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.716577+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G21",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 21 YEARS - OUTRIGHT POSITIONS LONG - U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 21 YEARS - OUTRIGHT POSITIONS SHORT"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 9046,
+      "sha256": "6da0a530656e2fde8d489c81a1960d57b847d233faedc642b5cca3d32e9d5712",
+      "downloaded_utc": "2026-10-23T10:00:53.819365+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G21.csv",
+      "status": "SKIPPED",
+      "reason": "ValueError: missing required economic dates: 457"
+    }
+  ],
+  "economic_grid_source": "original immutable PDPOSGS-B dates",
+  "series": [
+    {
+      "series_key": "PDPOSMBS-TOT",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSMBS-TOT.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:52.407622+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSMBS-TOT",
+          "description": "Total - Mortgage-backed Securities: Federal Agency and GSE MBS: Long - Mortgage-backed Securities: Federal Agency and GSE MBS: Short"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 25680,
+      "sha256": "2e493d17890870eff6eca247c62b9175fcf7564a70d87e63ee520561bb71efcb",
+      "downloaded_utc": "2026-10-23T10:00:52.611178+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSMBS-TOT.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSCS-TOT",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSCS-TOT.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:52.614816+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSCS-TOT",
+          "description": "Total - CORPORATE SECURITIES DEALER POSITION - LONG. - CORPORATE SECURITIES: DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 24713,
+      "sha256": "169fdb5201f6a34152936f0aa2b444d9ea0f8814d39750bfd4a4bc942a41fade",
+      "downloaded_utc": "2026-10-23T10:00:52.755438+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSCS-TOT.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSFGS-TOT",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSFGS-TOT.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:52.757786+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSFGS-TOT",
+          "description": "Total - FEDERAL AGENCY AND GSE SECURITIES (EXCLUDING MBS) - DEALER POSITION - LONG - FEDERAL AGENCY AND GSE SECURITIES (EXCLUDING MBS) - : DEALER POSITION - SHORT"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 25495,
+      "sha256": "00f321abeebf1aaee1af68dc7ab41bb403eafe770c915f4229fc80e18e3586de",
+      "downloaded_utc": "2026-10-23T10:00:52.899010+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSFGS-TOT.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSTIPS-L2",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSTIPS-L2.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:52.902587+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSTIPS-L2",
+          "description": "U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN LESS THAN OR EQUAL TO 2 YEARS : DEALER POSITION - LONG. - U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN LESS THAN OR EQUAL TO 2 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 24883,
+      "sha256": "dc3dd1ef3f9a364c25789523a5b2f0d46860681808005620055db4a47c996995",
+      "downloaded_utc": "2026-10-23T10:00:53.048128+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSTIPS-L2.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSTIPS-G11",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSTIPS-G11.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.050277+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSTIPS-G11",
+          "description": "U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 11 YEARS : DEALER POSITION - LONG. - U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 11 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 25017,
+      "sha256": "810355b1cf4c93282dcc76fa6fdc41bbccc1ec7d3675024a2400e2c27c695d5d",
+      "downloaded_utc": "2026-10-23T10:00:53.167828+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSTIPS-G11.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSTIPS-G2",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSTIPS-G2.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.170980+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSTIPS-G2",
+          "description": "U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 2 YEARS BUT LESS THAN OR EQUAL TO 6 YEARS : DEALER POSITION - LONG. - U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 2 YEARS BUT LESS THAN OR EQUAL TO 6 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 24761,
+      "sha256": "8e54675071813501a240c1ea3a2ca4fda0f2e2aa88b1ea1bb2852fe6a9f6c894",
+      "downloaded_utc": "2026-10-23T10:00:53.437031+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSTIPS-G2.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSTIPS-G6L11",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSTIPS-G6L11.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.439583+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSTIPS-G6L11",
+          "description": "U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 6 YEARS BUT LESS THAN OR EQUAL TO 11 YEARS : DEALER POSITION - LONG. - U.S. TREASURY INFLATION-PROTECTED SECURITIES (TIPS) DUE IN MORE THAN 6 YEARS BUT LESS THAN OR EQUAL TO 11 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 26797,
+      "sha256": "1e3ee3a336be321f47a3f7481591b15650607baa3fb46be7da99968ccbea7845",
+      "downloaded_utc": "2026-10-23T10:00:53.577723+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSTIPS-G6L11.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSGSC-G11L21",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G11L21.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.580013+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G11L21",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 11 YEARS BUT LESS THAN OR EQUAL TO 21 YEARS - OUTRIGHT POSITIONS LONG - U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 11 YEARS BUT LESS THAN OR EQUAL TO 21 YEARS - OUTRIGHT POSITIONS SHORT"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 9796,
+      "sha256": "e02742b5582bd79568b3772bb4d54e5b4c56093ade4b063de08a50be137ac488",
+      "downloaded_utc": "2026-10-23T10:00:53.715756+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G11L21.csv",
+      "status": "SKIPPED",
+      "reason": "ValueError: missing required economic dates: 457"
+    },
+    {
+      "series_key": "PDPOSGSC-G21",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G21.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.716577+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G21",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 21 YEARS - OUTRIGHT POSITIONS LONG - U.S. TREASURY SECURITIES (EXCLUDING TIPS): COUPONS DUE IN MORE THAN 21 YEARS - OUTRIGHT POSITIONS SHORT"
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 9046,
+      "sha256": "6da0a530656e2fde8d489c81a1960d57b847d233faedc642b5cca3d32e9d5712",
+      "downloaded_utc": "2026-10-23T10:00:53.819365+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G21.csv",
+      "status": "SKIPPED",
+      "reason": "ValueError: missing required economic dates: 457"
+    },
+    {
+      "series_key": "PDPOSGSC-L2",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-L2.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.819946+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-L2",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN LESS THAN OR EQUAL TO 2 YEARS : DEALER POSITION - LONG. - U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN LESS THAN OR EQUAL TO 2 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 24714,
+      "sha256": "7ab08e2b39534ca67f43006949a7504334d90b63034b9ed3cd5248e59c9126bf",
+      "downloaded_utc": "2026-10-23T10:00:53.974293+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-L2.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSGSC-G2L3",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G2L3.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:53.977237+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G2L3",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 2 YEARS BUT LESS THAN OR EQUAL TO 3 YEARS : DEALER POSITION - LONG. - U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 2 YEARS BUT LESS THAN OR EQUAL TO 3 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 25930,
+      "sha256": "10c35a9516154011c0821d12eb86052f7d4df01a4c7b0cddee4878b72868678c",
+      "downloaded_utc": "2026-10-23T10:00:54.098499+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G2L3.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSGSC-G3L6",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G3L6.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:54.100307+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G3L6",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 3 YEARS BUT LESS THAN OR EQUAL TO 6 YEARS : DEALER POSITION - LONG. - U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 3 YEARS BUT LESS THAN OR EQUAL TO 6 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 26090,
+      "sha256": "453f1a2458a2c9c7049d9128ccc9d1945b5a61e469ab1c8112577b3ad7539fa5",
+      "downloaded_utc": "2026-10-23T10:00:54.237028+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G3L6.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSGSC-G6L7",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G6L7.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:54.238924+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G6L7",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 6 YEARS BUT LESS THAN OR EQUAL TO 7 YEARS : DEALER POSITION - LONG. - U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 6 YEARS BUT LESS THAN OR EQUAL TO 7 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 25967,
+      "sha256": "429d542e2cda305d8d5c458592b57b4042c9f479ce4135e3ab3610951ae6b35d",
+      "downloaded_utc": "2026-10-23T10:00:54.379531+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G6L7.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    },
+    {
+      "series_key": "PDPOSGSC-G7L11",
+      "url": "https://markets.newyorkfed.org/api/pd/get/PDPOSGSC-G7L11.csv",
+      "publisher": "Federal Reserve Bank of New York",
+      "native_unit": "USD millions",
+      "request_started_utc": "2026-10-23T10:00:54.381687+00:00",
+      "post_result": true,
+      "exploratory": true,
+      "metadata_records": [
+        {
+          "seriesbreak": "SBN2024",
+          "keyid": "PDPOSGSC-G7L11",
+          "description": "U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 7 YEARS BUT LESS THAN OR EQUAL TO 11 YEARS : DEALER POSITION - LONG. - U.S. TREASURY SECURITIES (EXCLUDING TREASURY INFLATION-PROTECTED SECURITIES (TIPS)) COUPONS DUE IN MORE THAN 7 YEARS BUT LESS THAN OR EQUAL TO 11 YEARS : DEALER POSITION - SHORT."
+        }
+      ],
+      "raw_redistribution": "not included; acquisition code, URL and fingerprint supplied",
+      "http_status": 200,
+      "bytes": 26639,
+      "sha256": "0b102760c5e4cc181d438d9c8618f8990d047ac8ecb9bd85bac63851742199d0",
+      "downloaded_utc": "2026-10-23T10:00:54.491157+00:00",
+      "local_raw_path": ".scratch/round2/panel-data/PDPOSGSC-G7L11.csv",
+      "raw_observations": 707,
+      "raw_first_date": "2013-04-03",
+      "raw_last_date": "2026-10-14",
+      "aligned_observations": 706,
+      "aligned_first_date": "2013-04-03",
+      "aligned_last_date": "2026-10-07",
+      "missing_required_dates": 0,
+      "spliced": false,
+      "imputed": false,
+      "status": "ELIGIBLE"
+    }
+  ],
+  "post_result": true,
+  "exploratory": true
+}

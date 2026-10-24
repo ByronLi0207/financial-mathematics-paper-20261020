@@ -1,0 +1,34 @@
+{
+  "status": "CLARIFICATION_RECOMMENDED_NO_NUMERICAL_DEFECT_OR_RECOMPUTATION",
+  "question": "Does constant-mean FHS wording imply that its finite empirical innovation distribution is constrained to zero mean and unit variance?",
+  "verdict": "The fitted GARCH mean equation is constant, but the stored empirical standardized-residual pool is sampled directly without an extra empirical moment correction. The proposed clarification is a meaningful method detail. It does not show that any forecast or numerical result is incorrect and does not justify changing the frozen residual pool.",
+  "frozen_code_sha256": "c01b675d5a284ffc92890b78d043362edcc329f5d1ef824e81db43cef3f0aad7",
+  "frozen_protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+  "verified_code_and_protocol": [
+    {"file": "round2_filtered.py", "lines": [203, 205], "fact": "arch_model uses mean='Constant', Gaussian GARCH(1,1), rescale=False, followed by the single frozen optimization."},
+    {"file": "round2_filtered.py", "lines": [217, 220], "fact": "Native conditional variance is restored from the training RMS, and the innovation pool is np.asarray(fit.std_resid,dtype=float) without further centering or empirical scaling."},
+    {"file": "round2_filtered.py", "lines": [312, 313], "fact": "The frozen seeded generator chooses directly from residual_pool with replacement into the2048-by-H draw array."},
+    {"file": "round2_filtered.py", "lines": [337, 338], "fact": "Simulation receives the native fitted mu and variance state together with those unchanged draws."},
+    {"file": "protocol/revision-20261023/round2-D1-mature-baselines.md", "lines": [21, 22], "fact": "The frozen specification describes the constant-mean filter, frozen standardized-residual pool and iid resampling; it does not prescribe an extra finite-pool moment correction."}
+  ],
+  "elementary_method_interpretation": {
+    "definitions": "Let zbar be the arithmetic mean of the frozen pool and v_pool its variance under uniform sampling over that pool. These are symbols, not newly calculated financial statistics.",
+    "one_step_mean": "E_bootstrap[Delta_(t+1)|issue state]=mu_hat+sigma_(t+1)*zbar.",
+    "one_step_variance": "Var_bootstrap[Delta_(t+1)|issue state]=sigma_(t+1)^2*v_pool.",
+    "implication": "The constant fitted model-mean parameter and model variance scale need not equal the exact mean and variance of the finite empirical bootstrap law. Neither arch's standardized-residual label nor QMLE convergence imposes the missing extra empirical constraints by declaration.",
+    "measurement_boundary": "No actual pool mean, variance, financial moment, path, capacity, loss or p-value was computed in this audit. The statement is need-not-equal, not a claim that a particular stored pool has measured nonzero mean or nonunit variance."
+  },
+  "selected_primary_source_check": {
+    "source": "Barone-Adesi, Giannopoulos and Vosper1999, VaR without correlations for portfolios of derivative securities; March1999 working manuscript.",
+    "url": "https://folia.unifr.ch/documents/318043/files/wp9904.pdf",
+    "actual_current_pdf_bytes": 95729,
+    "actual_current_pdf_sha256": "787964528e645ecdf2c6bbf494f8dac345e69b2fcfc1a38c1777251708807d30",
+    "pdf_physical_pages": 29,
+    "fresh_read_range": "Extracted text of physical pages6-7, printed pages5-6. Retrieved into memory and parsed; no PDF persisted.",
+    "relevant_source_fact": "The selected algorithm standardizes estimated residuals by their fitted volatility, draws the resulting empirical innovations with replacement, rescales them with issue/simulated volatility and recursively constructs paths. No additional empirical recentering or unit-variance correction is displayed in these selected algorithm passages.",
+    "scope_limit": "This selected reading is not a whole-paper audit or proof that no alternative FHS implementation elsewhere applies an extra moment correction. It supplies no requirement to silently alter this project's frozen algorithm."
+  },
+  "suggested_manuscript_sentence": "The fitted mean equation is constant; FHS resamples the stored standardized residuals without further empirical recentering or rescaling, so their finite resampling distribution need not have exactly zero mean or unit variance.",
+  "disposition": "Clarify the existing method description only. Preserve coefficients, residual pools, seeds, forecasts, financial results and all failure classifications.",
+  "actions_not_performed": ["new financial moments", "financial fit or rerun", "new simulation", "test run", "manuscript/core/protocol/worker edit", "CHANGELOG/registry edit", "Git operation", "Claude review"]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "FAIL",
+  "scope": "All numeric tokens in manuscript.tex and supplement.tex; exact per-block source contexts and generated CSV row/field selectors. Archived consistency only, not independent data replication.",
+  "documents": {
+    "manuscript": {
+      "tex_numeric_token_count": 925,
+      "archived_or_synthesis_tokens": 495,
+      "bibliographic_tokens": 233,
+      "mismatch_count": 0
+    },
+    "supplement": {
+      "tex_numeric_token_count": 4208,
+      "archived_or_synthesis_tokens": 3523,
+      "bibliographic_tokens": 233,
+      "mismatch_count": 1
+    }
+  },
+  "mismatches": [
+    {
+      "document": "supplement",
+      "section": 6,
+      "block": 11,
+      "kind": "archived context mismatch",
+      "path": "manuscript/revision-v3/paper-content.json",
+      "pointer": [
+        "sections",
+        15,
+        "blocks",
+        11
+      ],
+      "field": "html",
+      "expected": [
+        "1998",
+        "1999",
+        "4"
+      ],
+      "actual": [
+        "1998",
+        "1999"
+      ]
+    }
+  ],
+  "matched_numeric_tokens": 925,
+  "empirical_or_archived_claim_tokens": 4018,
+  "structural_template_tokens": 649,
+  "bibliographic_tokens": 466
+}

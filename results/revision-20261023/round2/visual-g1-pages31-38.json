@@ -1,0 +1,100 @@
+{
+  "reviewer": "same-model independent visual-QA agent round2_receipt_audit",
+  "inspected_utc": "2026-10-23T10:45:27Z",
+  "pdf_path": "manuscript/revision-v3/paper.pdf",
+  "pdf_sha256": "856079ecf6c409ef397488fa49ba336a1b4296ab49b7cdda7b58b965410794e8",
+  "pdf_total_pages": 38,
+  "scope": "Every assigned page31 through38 viewed individually through view_image at original detail, from actual150dpi PNG renders. No contact-sheet or extracted-text substitute. Table11 is outside assigned pages and is not covered by this receipt.",
+  "status": "VISUALLY_REVIEWED_WITH_LAYOUT_REPAIR_CANDIDATES",
+  "pages": [
+    {
+      "page": 31,
+      "png_path": ".scratch/round2/pdf-final-g1/page-31.png",
+      "png_sha256": "671c082274824d2115e653e1a32d8e4d4905074d26cef41a20db1ede23cb46bc",
+      "actual_viewed": true,
+      "findings": [
+        "AppendixI paragraphs, TableI2, Greek letters and ceiling expressions are complete, with no observed missing glyph, clipping or collision.",
+        "TableI1 norm-range column wraps numerical endpoints mid-number: for example0.006541–0.019 then37 on the next line. The other three ranges similarly break digit sequences. Values remain present, but this is a layout repair candidate: widen the range column or put complete endpoints on separate lines without changing numerical values."
+      ]
+    },
+    {
+      "page": 32,
+      "png_path": ".scratch/round2/pdf-final-g1/page-32.png",
+      "png_sha256": "0ff3290e26f9dcec0a661575f40bac6d392f263d4a7a65057edf5c3a15c5e1a9",
+      "actual_viewed": true,
+      "findings": [
+        "AppendixJ proof, first-crossing indices, sums, inequalities and AR simulation text are visible and complete.",
+        "TablesJ1/J2 fit on the page; TableJ2 H and W columns are tight but readable. No observed missing glyph, clipping or collision."
+      ]
+    },
+    {
+      "page": 33,
+      "png_path": ".scratch/round2/pdf-final-g1/page-33.png",
+      "png_sha256": "e1f376d8d4b1249f246844a2de7e2e5c54f548893df69c84095a968c7ecbcc35",
+      "actual_viewed": true,
+      "findings": [
+        "AppendixK introduction and TableK1 first segment render completely. Bottom rows remain above the page footer without observed clipping.",
+        "The equal-width first column breaks series identifiers mid-key, including PDPOSMBS-TO thenT and PDPOSTIPS-G1 then1. All characters remain visible, but widening the identifier column would improve unambiguous source-key reading."
+      ]
+    },
+    {
+      "page": 34,
+      "png_path": ".scratch/round2/pdf-final-g1/page-34.png",
+      "png_sha256": "45a170e815db4e9b3fe31e686786a37bdb9a8e32267f3315cd92b2442c89d802",
+      "actual_viewed": true,
+      "findings": [
+        "TableK1 continuation repeats the column header and retains the remaining rows; prospective timing paragraph is complete and stays inside the text area.",
+        "Series keys continue to wrap mid-key, including coupon maturity bucket suffixes. This is the same first-column layout repair candidate as page33, with no observed omitted characters or clipping."
+      ]
+    },
+    {
+      "page": 35,
+      "png_path": ".scratch/round2/pdf-final-g1/page-35.png",
+      "png_sha256": "25bf2130c47243f61cf96dcc7541496378cdb8f8916328d6a9006ce995f03e27",
+      "actual_viewed": true,
+      "findings": [
+        "AppendixL opening, GARCH equations with localG subscripts, simulated peak/headroom formula, ceiling/floor, POT hats and QRF weighted-CDF formula all render visibly.",
+        "TableL1 starts clearly and continues at a row boundary; no observed missing glyph, clipped formula, collision or truncated row."
+      ]
+    },
+    {
+      "page": 36,
+      "png_path": ".scratch/round2/pdf-final-g1/page-36.png",
+      "png_sha256": "1a1271682048a23881c439aa88e2a6cedc2f2b48e62fa257863c353e2b380527",
+      "actual_viewed": true,
+      "findings": [
+        "TableL1 continuation repeats headers and retains zero-hit complete FHS rows separately from NA POT rows.",
+        "TableL2 begins with complete caption and headers; numerical p-values and NA component rows are readable. Bottom continuation is at a complete row, without observed clipping or collision."
+      ]
+    },
+    {
+      "page": 37,
+      "png_path": ".scratch/round2/pdf-final-g1/page-37.png",
+      "png_sha256": "7f4999b219cb37a014021c4b05a2022fffee7682a6746dd5724688663af79da0",
+      "actual_viewed": true,
+      "findings": [
+        "TableL2 continuation repeats its header and displays retained adverse comparisons, including TreasuryH24 FHS versusF.",
+        "All six retained-failure paragraphs are visible. The raw generic convergence-or-admissibility messages are immediately clarified by the paragraph stating successful optimizer flags and numerical persistence-boundary exclusions, without claiming predictor inferiority.",
+        "The alphaG+betaG persistence inequality, TableL3 caption and first two boundary rows render correctly; the table continues at a complete row. No observed missing glyph, clipping or collision."
+      ]
+    },
+    {
+      "page": 38,
+      "png_path": ".scratch/round2/pdf-final-g1/page-38.png",
+      "png_sha256": "f2df50150173e8cf90686bf7fbad69802b327c6bc915474e24313eb19ac16279",
+      "actual_viewed": true,
+      "findings": [
+        "TableL3 continuation repeats headers, retains two additional boundary-tolerance rows with successful flag0 and both structural-tail-size NA rows.",
+        "The final paragraph preserves separate48-slot Holm limitations and the missing compatible unseen-dealer validation. Page has generous remaining whitespace; no observed missing glyph, clipping or collision."
+      ]
+    }
+  ],
+  "reported_to_root": [
+    "Page31 TableI1 numerical endpoint line breaks should be repaired without editing numeric values.",
+    "Pages33–34 TableK1 source-key line breaks should be improved by an appropriate identifier-column width if table widths are adjusted."
+  ],
+  "limitations": [
+    "This receipt applies only to the exact g1 PDF and PNG hashes listed; later regenerated bytes require reconciliation and visual checks for changed pages.",
+    "This is visual layout acceptance and does not replace numerical, mathematical, provenance or whole-document audits."
+  ]
+}

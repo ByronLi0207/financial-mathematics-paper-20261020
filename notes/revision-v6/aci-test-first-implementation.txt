@@ -1,0 +1,34 @@
+test_checkpoint_failure_propagates_without_partial_scoring (test_v6_aci.FiniteDelayedACI.test_checkpoint_failure_propagates_without_partial_scoring) ... ok
+test_corrected_rank_exactly_at_finite_lower_boundary (test_v6_aci.FiniteDelayedACI.test_corrected_rank_exactly_at_finite_lower_boundary) ... ok
+test_feedback_waits_for_the_issued_outcome_and_uses_old_report (test_v6_aci.FiniteDelayedACI.test_feedback_waits_for_the_issued_outcome_and_uses_old_report) ... ok
+test_future_peak_perturbation_cannot_change_pre_maturity_reports (test_v6_aci.FiniteDelayedACI.test_future_peak_perturbation_cannot_change_pre_maturity_reports) ... ok
+test_gap_consumes_each_matured_wrapped_hit_once (test_v6_aci.FiniteDelayedACI.test_gap_consumes_each_matured_wrapped_hit_once) ... ok
+test_inadequate_initial_calibration_is_whole_stream_failure (test_v6_aci.FiniteDelayedACI.test_inadequate_initial_calibration_is_whole_stream_failure) ... ok
+test_missing_validation_candidate_is_not_silently_omitted (test_v6_aci.FiniteDelayedACI.test_missing_validation_candidate_is_not_silently_omitted) ... ok
+test_negative_scores_project_to_observed_floor (test_v6_aci.FiniteDelayedACI.test_negative_scores_project_to_observed_floor) ... FAIL
+test_original_treasury_grid_admission_is_value_free (test_v6_aci.FiniteDelayedACI.test_original_treasury_grid_admission_is_value_free) ... ok
+test_validation_selection_is_coverage_first_with_visible_failure (test_v6_aci.FiniteDelayedACI.test_validation_selection_is_coverage_first_with_visible_failure) ... ok
+
+======================================================================
+FAIL: test_negative_scores_project_to_observed_floor (test_v6_aci.FiniteDelayedACI.test_negative_scores_project_to_observed_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 51, in test_negative_scores_project_to_observed_floor
+    np.testing.assert_array_equal(r['capacities'],[5.,5.,5.])
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1054, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 919, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 3 (33.3%)
+Max absolute difference among violations: 1.
+Max relative difference among violations: 0.2
+ ACTUAL: array([5., 5., 6.])
+ DESIRED: array([5., 5., 5.])
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.032s
+
+FAILED (failures=1)

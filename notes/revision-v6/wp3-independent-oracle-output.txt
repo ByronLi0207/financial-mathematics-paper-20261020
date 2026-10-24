@@ -1,0 +1,18 @@
+COMMAND: /usr/bin/env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /Users/bingyouli/.local/bin/uv run --offline --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with scipy python -B notes/revision-v6/wp3-independent-oracle.py
+WORKING_DIRECTORY: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+STARTED_UTC: 2026-10-23T19:15:20.421542+00:00
+--- LITERAL CHILD OUTPUT ---
+WARN `--no-project` was provided, but no project was found
+scope: synthetic fixtures only; no financial NPZ or source data reads
+tau: exact Fraction(19,20); elementary interval convention: [lower,upper)
+seed: 20261023
+python: 3.12.14
+numpy: 2.3.5
+tested_code_sha256: v6_combinations.py 24adcb0db6272139301dff65529d91c53a9264b451b1bfd9e238610fbe333513
+tested_code_sha256: v6_inference.py 1c7fc9a3fe8392c771dde0272966b9a0f0f3c4b969df481d0d6818385dcfd2e5
+independent_fraction_murphy_exhaustive_cases: 729
+independent_convexity_floor_and_knn_identity_cases: 100
+status: PASS
+--- END LITERAL CHILD OUTPUT ---
+RETURN_CODE: 0
+ELAPSED_SECONDS: 0.512439667

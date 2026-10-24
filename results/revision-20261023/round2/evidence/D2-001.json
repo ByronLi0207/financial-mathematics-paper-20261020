@@ -1,0 +1,36 @@
+{
+  "step": "D2",
+  "command": "env UV_PYTHON_DOWNLOADS=never 'UV_CACHE_DIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache' PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest python -B -m pytest -p no:cacheprovider -v test_round2_levy.py",
+  "argv": [
+    "/Users/bingyouli/.local/bin/uv",
+    "run",
+    "--no-project",
+    "--no-env-file",
+    "--python",
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "--with",
+    "pytest",
+    "python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-v",
+    "test_round2_levy.py"
+  ],
+  "environment_delta": {
+    "UV_PYTHON_DOWNLOADS": "never",
+    "UV_CACHE_DIR": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "started_utc": "2026-10-23T09:53:00.702274+00:00",
+  "ended_utc": "2026-10-23T09:53:01.170620+00:00",
+  "returncode": 2,
+  "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache/builds-v0/.tmplN0WFK/bin/python\nrootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023\ncollecting ... collected 0 items / 1 error\n\n==================================== ERRORS ====================================\n_____________________ ERROR collecting test_round2_levy.py _____________________\nImportError while importing test module '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_round2_levy.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_round2_levy.py:4: in <module>\n    from round2_levy import predict,corrected_endpoint_rank,gaussian_endpoint_variance\nE   ModuleNotFoundError: No module named 'round2_levy'\n=========================== short test summary info ============================\nERROR test_round2_levy.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n=============================== 1 error in 0.10s ===============================\n",
+  "stderr": "WARN `--no-project` was provided, but no project was found\n"
+}

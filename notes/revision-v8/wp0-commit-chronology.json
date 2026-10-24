@@ -1,0 +1,66 @@
+{
+  "commits": [
+    {
+      "command": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%aI%n%cI%n%s",
+        "d760b6b"
+      ],
+      "exit_code": 0,
+      "stdout": "d760b6b66188af6f7903a929568ebf12e69a7e47\n0ebc6e54ee3682315670a641e8783fc15c3660f4\n2026-10-23T23:27:54-07:00\n2026-10-23T23:27:54-07:00\nWriting: replace internal table labels and simplify captions\n",
+      "ancestor_command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "d760b6b",
+        "revision-v7-final"
+      ],
+      "ancestor_exit_code": 1,
+      "common_ancestor": "0ebc6e54ee3682315670a641e8783fc15c3660f4"
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%aI%n%cI%n%s",
+        "91dccbf"
+      ],
+      "exit_code": 0,
+      "stdout": "91dccbf43efb3f293676c41cfb4e85645e462183\nd760b6b66188af6f7903a929568ebf12e69a7e47\n2026-10-23T23:28:17-07:00\n2026-10-23T23:28:17-07:00\nWriting: lead with historical benchmarks and compile the full paragraph pass\n",
+      "ancestor_command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "91dccbf",
+        "revision-v7-final"
+      ],
+      "ancestor_exit_code": 1,
+      "common_ancestor": "0ebc6e54ee3682315670a641e8783fc15c3660f4"
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "-s",
+        "--format=%H%n%P%n%aI%n%cI%n%s",
+        "2328994"
+      ],
+      "exit_code": 0,
+      "stdout": "2328994c44ec02bd731ad556f41fe9821f6de6df\n91dccbf43efb3f293676c41cfb4e85645e462183\n2026-10-23T23:28:33-07:00\n2026-10-23T23:28:33-07:00\nWriting: document all paragraph edits and before-after numerical checks\n",
+      "ancestor_command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "2328994",
+        "revision-v7-final"
+      ],
+      "ancestor_exit_code": 1,
+      "common_ancestor": "0ebc6e54ee3682315670a641e8783fc15c3660f4"
+    }
+  ],
+  "v7_research_line_merge": "832563bb1608aa21582da22cc70c0c33bbc76498\n2026-10-23T22:21:02-07:00\nMerge both research lines for sequential v7 revision\n",
+  "interpretation": "The three writing commits follow the 22:21 PDT research-line merge but are not ancestors of the final local v7. Hand transfer is required; no PR3 merge is performed."
+}

@@ -1,0 +1,40 @@
+WARN `--no-project` was provided, but no project was found
+.....F.F...........                                                      [100%]
+=================================== FAILURES ===================================
+_ test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue _
+
+    def test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue():
+        # Catches G_(t-1) query leakage and failure to advance recursion through actual t.
+        sav = _sav()
+        headroom, position = _periodic()
+        cfg = sav.SAVConfig(2, 10, 10, 20)
+        original = sav.forecast_sav(headroom, position, [20, 21], cfg)
+        changed = headroom.copy()
+        changed[19] = 100.
+        changed[20:] = np.nan
+        perturbed = sav.forecast_sav(changed, position, [20, 21], cfg)
+        assert original.capacities[0] == perturbed.capacities[0]
+>       assert perturbed.capacities[1] > original.capacities[1] + 10.
+E       assert np.float64(28.100001156116576) > (np.float64(18.999999896716496) + 10.0)
+
+test_v6_sav.py:85: AssertionError
+_ test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients _
+
+    def test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients():
+        # Catches hidden starts and accepting an unbounded or nonfinite numerical fit.
+        sav = _sav()
+        headroom, position = _periodic()
+        fit = sav.fit_sav_refit(headroom, position, 20, sav.SAVConfig(2, 10, 10, 20))
+        assert fit.status == 'CONVERGED'
+        assert len(fit.starts) == 6
+        assert fit.starts[fit.selected_start].eligible
+        assert np.isfinite(fit.objective)
+>       assert fit.objective < 1e-4
+E       AssertionError: assert 0.03683333199416383 < 0.0001
+E        +  where 0.03683333199416383 = SAVRefit(refit_index=20, status='CONVERGED', coefficients=array([1.28666657, 0.20000003, 0.10000001]), scale=5.0, init...687996, 1.80004265,\n       1.66667516, 1.80000169, 1.66666697, 1.80000005, 1.66666664,\n       1.79999998, 1.66666663])).objective
+
+test_v6_sav.py:115: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_sav.py::test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue
+FAILED test_v6_sav.py::test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients
+2 failed, 17 passed in 6.49s

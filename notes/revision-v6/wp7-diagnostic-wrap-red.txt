@@ -1,0 +1,19 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ SupplementTests.test_dense_diagnostics_break_at_separators_before_numeric_tokens _
+
+self = <test_v6_supplement.SupplementTests testMethod=test_dense_diagnostics_break_at_separators_before_numeric_tokens>
+
+    def test_dense_diagnostics_break_at_separators_before_numeric_tokens(self):
+        for key in ('wp2-coverage','wp3-coverage','wp5-coverage'):
+            t=self.api.generated(key)
+            column=t['headers'].index('Grid n/hits/rate')
+            for row in t['rows']:
+>               self.assertIn(' / ',row[column])
+E               AssertionError: ' / ' not found in '947/42/0.04435058'
+
+test_v6_supplement.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_supplement.py::SupplementTests::test_dense_diagnostics_break_at_separators_before_numeric_tokens
+1 failed, 9 deselected in 0.06s

@@ -1,0 +1,242 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+___ test_full_inventory_has_24_methods_16_controls_and_exact_56_frozen_slots ___
+
+    def test_full_inventory_has_24_methods_16_controls_and_exact_56_frozen_slots():
+        # Catches shrinking a family, dropping a source/H/W cell or inventing a contrast.
+        parts = fixture()
+>       summary, comparisons = run_fixture(parts)
+                               ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+_ test_every_comparison_uses_named_matched_controls_and_original_dm_direction __
+
+    def test_every_comparison_uses_named_matched_controls_and_original_dm_direction():
+        # Catches swapping F/QR, crossing windows, reversing loss signs or mixing tau.
+        parts = fixture()
+>       summary, comparisons = run_fixture(parts)
+                               ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+_____ test_missing_na_and_bad_private_hash_keep_their_slots_with_holm_one ______
+
+    def test_missing_na_and_bad_private_hash_keep_their_slots_with_holm_one():
+        # Catches favorable row removal and treating an unverified private artifact as complete.
+        parts = fixture()
+        spec, freeze, receipts, prov, new, _old, ln, lo = parts
+        del receipts['fx_hourly-h6-w720-ACI_F']
+        receipts['fx_hourly-h6-w720-ACI_QR']['receipt'].update(status='NA',reason='VALIDATION_INELIGIBLE')
+        new['fx_hourly-h6-w720-SAV']['provenance']['sha256'] = OTHER
+>       summary, comparisons = run_fixture(parts)
+                               ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+_____ test_bad_receipt_scores_or_shortened_origins_invalidate_whole_method _____
+
+    def test_bad_receipt_scores_or_shortened_origins_invalidate_whole_method():
+        # Catches trusting aggregates without replay and comparing favorable truncated vectors.
+        parts = fixture()
+        parts[2]['fx_hourly-h6-w720-ACI_F']['receipt']['scores']['full_hits'] += 1
+        t = parts[4]['fx_hourly-h6-w720-ACI_QR']['trace']
+        for key in tuple(t):
+            t[key] = t[key][1:]
+>       summary, comparisons = run_fixture(parts)
+                               ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+_____ test_target_or_floor_discrepancy_is_not_admitted_as_same_comparison ______
+
+    def test_target_or_floor_discrepancy_is_not_admitted_as_same_comparison():
+        # Catches comparing different outcomes or a report below the feasible floor.
+        parts = fixture()
+        parts[4]['fx_hourly-h6-w720-ACI_F']['trace']['peak'][0] += 1.
+        parts[4]['fx_hourly-h6-w720-ACI_QR']['trace']['floor'][0] += .5
+>       summary, _ = run_fixture(parts)
+                     ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+__ test_frozen_selection_and_executable_receipts_are_checked_before_admission __
+
+    def test_frozen_selection_and_executable_receipts_are_checked_before_admission():
+        # Catches evaluating an ineligible validation cell or selecting a different gamma later.
+        parts = fixture()
+        parts[3]['validation']['fx_hourly-h6-w720-ACI_F']['status'] = 'NA'
+        parts[2]['fx_hourly-h6-w720-ACI_QR']['receipt']['selected_gamma'] = .05
+        parts[2]['fx_hourly-h6-w720-SAV']['receipt']['executable_freeze_sha256'] = OTHER
+>       summary, _ = run_fixture(parts)
+                     ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+_ test_aci_rows_show_both_loss_and_coverage_changes_without_claiming_improvement _
+
+    def test_aci_rows_show_both_loss_and_coverage_changes_without_claiming_improvement():
+        # Catches presenting the method name as calibration success or omitting adverse scores.
+>       summary, _ = run_fixture(fixture())
+                     ^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+___ test_public_reports_are_json_safe_aggregates_with_hashes_and_no_vectors ____
+
+    def test_public_reports_are_json_safe_aggregates_with_hashes_and_no_vectors():
+        # Catches leaking actuals/capacities/loss vectors or losing the audit fingerprints.
+>       summary, comparisons = run_fixture(fixture())
+                               ^^^^^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+__________ test_invalid_frozen_family_or_unknown_receipt_is_rejected ___________
+
+    def test_invalid_frozen_family_or_unknown_receipt_is_rejected():
+        # Catches silently rebuilding an easier hypothesis family after failures.
+        parts = fixture()
+        parts[1]['wp2_contrast_slots'].pop()
+>       with pytest.raises(ValueError): run_fixture(parts)
+                                        ^^^^^^^^^^^^^^^^^^
+
+test_v6_wp2_summary.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_v6_wp2_summary.py:74: in run_fixture
+    return api().aggregate_wp2(spec, freeze, receipts, load_new=ln,
+           ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('v6_wp2_summary') is not None, 'WP2 summary API is not implemented'
+E       AssertionError: WP2 summary API is not implemented
+E       assert None is not None
+E        +  where None = <function find_spec at 0x105377ba0>('v6_wp2_summary')
+E        +    where <function find_spec at 0x105377ba0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v6_wp2_summary.py:17: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_wp2_summary.py::test_full_inventory_has_24_methods_16_controls_and_exact_56_frozen_slots
+FAILED test_v6_wp2_summary.py::test_every_comparison_uses_named_matched_controls_and_original_dm_direction
+FAILED test_v6_wp2_summary.py::test_missing_na_and_bad_private_hash_keep_their_slots_with_holm_one
+FAILED test_v6_wp2_summary.py::test_bad_receipt_scores_or_shortened_origins_invalidate_whole_method
+FAILED test_v6_wp2_summary.py::test_target_or_floor_discrepancy_is_not_admitted_as_same_comparison
+FAILED test_v6_wp2_summary.py::test_frozen_selection_and_executable_receipts_are_checked_before_admission
+FAILED test_v6_wp2_summary.py::test_aci_rows_show_both_loss_and_coverage_changes_without_claiming_improvement
+FAILED test_v6_wp2_summary.py::test_public_reports_are_json_safe_aggregates_with_hashes_and_no_vectors
+FAILED test_v6_wp2_summary.py::test_invalid_frozen_family_or_unknown_receipt_is_rejected
+9 failed in 0.19s

@@ -1,0 +1,15 @@
+WARN `--no-project` was provided, but no project was found
+Installed 5 packages in 27ms
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_v4_read_only_composition_preserves_current_revision ___________
+
+    def test_v4_read_only_composition_preserves_current_revision():
+     before={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.glob('*-content.json')}
+>    compose(write_outputs=False)
+E    TypeError: compose() got an unexpected keyword argument 'write_outputs'
+
+test_v5_authoring.py:7: TypeError
+=========================== short test summary info ============================
+FAILED test_v5_authoring.py::test_v4_read_only_composition_preserves_current_revision
+1 failed in 0.02s

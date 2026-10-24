@@ -1,0 +1,224 @@
+{
+  "generated_utc": "2026-10-24T09:38:04.041991+00:00",
+  "source_hashes": {
+    "manifest.json": "593c336fdd6023b5a78c82e58e527756ddfca5e3b64a53a75195f17ac3ffcf7d",
+    "inventory.json": "1c21fba237fc4436637929d420c72e7bcffff18d141dff2e2274e1477b8d1ff1",
+    "summary.json": "3de27c0f50a5b1882d4c8aba80d3fc8d2487972f22674d7e6e1423e62da663d0",
+    "support.json": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc",
+    "study-termination.json": "41c9b83820a5f97b2864a1dbd93fb631718c3ee9b10d81afd26981c3f4d497e8"
+  },
+  "candidate_status_counts": {
+    "COMPLETE": 18431,
+    "FAILED": 1
+  },
+  "failed_candidates": [
+    {
+      "identity": {
+        "rep": 23,
+        "phi": 0.9,
+        "variance_persistence": 0.0,
+        "window": 52,
+        "horizon": 24,
+        "method": "QR4"
+      },
+      "candidate": {
+        "penalty": 0.1,
+        "status": "FAILED",
+        "origin_count": 0,
+        "mean_loss": null,
+        "reason": "NONCONVERGENCE",
+        "failure_kind": "QUANTILE_FIT_FAILURE",
+        "failure_diagnostics": {
+          "iterations": 10000,
+          "primal_residual": 8.875767244780906e-05,
+          "dual_residual": 3.5847075265368096e-17,
+          "primal_tolerance": 8.919153376492926e-05,
+          "dual_tolerance": 2.637178642285145e-06,
+          "primal_objective": 0.011229025262680718,
+          "dual_objective": 0.011227445606504306,
+          "duality_gap": 1.5796561764139248e-06,
+          "gap_tolerance": 1.0112290252626807e-06
+        },
+        "failure_diagnostics_status": "FINITE_SCALARS"
+      },
+      "procedure_status": "COMPLETE",
+      "selected_penalty": 0.01
+    }
+  ],
+  "scientific_screen": {
+    "procedures": {
+      "QR33": {
+        "method": "QR33",
+        "status": "MISMATCH",
+        "planned_cells": 72,
+        "reported_cells": 72,
+        "target_cell_count": 12,
+        "outside_cell_count": 60,
+        "minimum_target_clear_gains": 6,
+        "target_clear_gain_count": 2,
+        "outside_clear_gain_count": 6,
+        "target_clear_gain_cells": [
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.98,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.98,
+            "window": 2880,
+            "horizon": 6
+          }
+        ],
+        "outside_clear_gain_cells": [
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 24
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.9,
+            "window": 2880,
+            "horizon": 24
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.98,
+            "window": 2880,
+            "horizon": 24
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 24
+          }
+        ],
+        "missing_or_unevaluable_cells": [],
+        "all_cells_fully_evaluable": true,
+        "grid_complete": true,
+        "unevaluable_target_cells": 0,
+        "unevaluable_outside_cells": 0,
+        "criterion": "all32complete; relative_loss_percent+2*relative_loss_mcse<0; win_fraction>=0.75",
+        "target_region": "H=6,W>=720,p>=0.9",
+        "inferential_status": "descriptive predeclared screen; no FWE guarantee"
+      },
+      "QR4": {
+        "method": "QR4",
+        "status": "MISMATCH",
+        "planned_cells": 72,
+        "reported_cells": 72,
+        "target_cell_count": 12,
+        "outside_cell_count": 60,
+        "minimum_target_clear_gains": 6,
+        "target_clear_gain_count": 2,
+        "outside_clear_gain_count": 6,
+        "target_clear_gain_cells": [
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.9,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.98,
+            "window": 2880,
+            "horizon": 6
+          }
+        ],
+        "outside_clear_gain_cells": [
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 24
+          },
+          {
+            "phi": 0.7,
+            "variance_persistence": 0.98,
+            "window": 720,
+            "horizon": 24
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.0,
+            "window": 720,
+            "horizon": 6
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 6
+          },
+          {
+            "phi": 0.9,
+            "variance_persistence": 0.0,
+            "window": 2880,
+            "horizon": 24
+          }
+        ],
+        "missing_or_unevaluable_cells": [],
+        "all_cells_fully_evaluable": true,
+        "grid_complete": true,
+        "unevaluable_target_cells": 0,
+        "unevaluable_outside_cells": 0,
+        "criterion": "all32complete; relative_loss_percent+2*relative_loss_mcse<0; win_fraction>=0.75",
+        "target_region": "H=6,W>=720,p>=0.9",
+        "inferential_status": "descriptive predeclared screen; no FWE guarantee"
+      }
+    },
+    "broad_conditional_models_restriction": "MISMATCH",
+    "descriptive_only": true,
+    "multiple_comparison_adjusted": false,
+    "screen": {
+      "requires_all_repetitions_complete": true,
+      "clear_gain": "ratio-of-mean-loss relative change plus 2 delta MC SE below zero and strict win fraction >=0.75",
+      "target_region": "H=6,W>=720,p>=0.9",
+      "target_cell_count": 12,
+      "minimum_target_clear_gains": 6,
+      "outside_requirement": "all outside cells fully evaluable and no outside clear gain",
+      "outside_clear_gain": "MISMATCH for claimed restriction",
+      "missing_prevents_classification": "INCONCLUSIVE",
+      "no_target_support": "NOT_SUPPORTED",
+      "inferential_status": "descriptive predeclared screen; pointwise uncertainty only; no family-wide significance guarantee"
+    }
+  },
+  "resources": {
+    "status": "PASS",
+    "differences": [],
+    "unverified_unit_ids": [],
+    "measured_worker_count": 288,
+    "maximum_observed_rss_bytes": 63258624,
+    "maximum_observed_os_threads": 1,
+    "maximum_observed_worker_wall_seconds": 10.024692,
+    "termination_tolerance_seconds": 5.0,
+    "interpretation": "Observed samples/receipts, not substituted configured resource budgets."
+  },
+  "study_elapsed_seconds": 2059.6466849998105,
+  "method_status_counts": {
+    "COMPLETE": 6912
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "status": "COMPLETE_INVENTORY",
+  "analysis_status": "post-result / exploratory",
+  "rows": [
+    {
+      "source": "fx_hourly",
+      "horizon": 6,
+      "window": 2880,
+      "reference_method": "rolling_F",
+      "reference_window": 720,
+      "native_unit": "USD",
+      "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+      "analysis_status": "post-result / exploratory",
+      "unchanged_primary_mean_difference": -55929.15154875609,
+      "raw_source_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "qr_trace_sha256": "2d7b1950a8a94fb194319616179486fef0b83f14b6ca68a76ec18871d91609bf",
+      "reference_trace_sha256": "04a18b7807d3355ad11f1f398d07125776f4d500a3c8b70451fa90a6c3de074d",
+      "private_artifact": {
+        "bytes": 400408,
+        "sha256": "5bc517dc3da54444b7356892509b472762d2f30a7966ff41693047327349182a"
+      },
+      "source_clock": "Observed source-record order; Treasury downloaded-vintage economic-date replay, not public-release availability",
+      "state_definition": "Issue-known position-increment RMS, not price or yield volatility",
+      "status": "OK",
+      "full_n": 6625,
+      "direction": "new_minus_reference",
+      "training_count": 2880,
+      "training_first": 9042,
+      "training_last": 11921,
+      "latest_training_label_end": 11927,
+      "cut1": 947476.4010013953,
+      "cut2": 1401103.2792395097,
+      "cutpoint_method": "training-only linear empirical terciles",
+      "a0": 1518215.6315329862,
+      "v0": 1503933.305819165,
+      "group_bandwidth": 10,
+      "groups": [
+        {
+          "group": "low",
+          "n": 1593,
+          "mean_difference": -58761.26651484724,
+          "hac_se": 16492.94369217626,
+          "hac_status": "OK"
+        },
+        {
+          "group": "middle",
+          "n": 1816,
+          "mean_difference": -27839.43372761798,
+          "hac_se": 16257.69788113348,
+          "hac_status": "OK"
+        },
+        {
+          "group": "high",
+          "n": 3216,
+          "mean_difference": -70387.91038650597,
+          "hac_se": 17895.89187185643,
+          "hac_status": "OK"
+        }
+      ],
+      "heterogeneity": {
+        "status": "OK",
+        "n": 6625,
+        "df": 2,
+        "bandwidth": 10,
+        "covariance_rank": 2,
+        "covariance_condition": 2.733994398700171,
+        "eigen_min": 1867534934478.2686,
+        "eigen_max": 5105830050240.478,
+        "stat": 3.6728861112166182,
+        "p": 0.15938333671965318,
+        "full_influence_covariance_rank": 3
+      },
+      "gw": {
+        "status": "OK",
+        "n": 6619,
+        "full_n": 6625,
+        "burn_in": 6,
+        "requested_burn_in": 6,
+        "df": 3,
+        "bandwidth": 10,
+        "instrument_rank": 3,
+        "covariance_rank": 3,
+        "covariance_condition": 44.475082659185645,
+        "eigen_min": 0.02855889724676991,
+        "eigen_max": 1.270159315705283,
+        "stat": 29.879526687903784,
+        "p": 1.4629751215136517e-06
+      },
+      "reference_note": "Working-reference diagnostics with unverified limited-memory, moment, mixing and long-run covariance assumptions. GW includes an intercept; rejection alone does not establish position-increment RMS dependence.",
+      "resources": {
+        "started_utc": "2026-10-23T19:27:31.598157+00:00",
+        "ended_utc": "2026-10-23T19:27:31.736549+00:00",
+        "elapsed_seconds": 0.13840591697953641,
+        "peak_rss_bytes": 62177280,
+        "maximum_observed_os_threads": 1,
+        "thread_snapshot_count": 1,
+        "requested_numerical_threads": 1,
+        "internal_wall_seconds": 540,
+        "hard_wall_seconds": 600,
+        "internal_rss_bytes": 1610612736,
+        "hard_rss_bytes": 2147483648,
+        "rss_scope": "Process-lifetime high-water; both serial source diagnostics share a process, so later source RSS is conservative and can inherit a prior breach."
+      }
+    },
+    {
+      "source": "nyfed_weekly",
+      "horizon": 6,
+      "window": 260,
+      "reference_method": "frozen_F",
+      "reference_window": 260,
+      "native_unit": "USD millions",
+      "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260",
+      "analysis_status": "post-result / exploratory",
+      "unchanged_primary_mean_difference": 1401.0078517747918,
+      "raw_source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+      "qr_trace_sha256": "b631f212db6dc8f0d3e8b32484d8c23f23529ddb6aa39d2a453e8d437ef77a2a",
+      "reference_trace_sha256": "aea48830e43da898c389a9f36da9848953fa62b191f9b3a0c6e7e174ebc15dfa",
+      "private_artifact": {
+        "bytes": 19961,
+        "sha256": "7e3698a74ac57f4fc053b69f4396d865d04e8ad112eecc860bef1d259f88e639"
+      },
+      "source_clock": "Observed source-record order; Treasury downloaded-vintage economic-date replay, not public-release availability",
+      "state_definition": "Issue-known position-increment RMS, not price or yield volatility",
+      "status": "OK",
+      "full_n": 277,
+      "direction": "new_minus_reference",
+      "training_count": 260,
+      "training_first": 140,
+      "training_last": 399,
+      "latest_training_label_end": 405,
+      "cut1": 7166.007119452218,
+      "cut2": 10189.759522337601,
+      "cutpoint_method": "training-only linear empirical terciles",
+      "a0": 11847.773076923077,
+      "v0": 9263.131826589442,
+      "group_bandwidth": 6,
+      "groups": [
+        {
+          "group": "low",
+          "n": 9,
+          "mean_difference": 6696.660916770632,
+          "hac_se": 1705.2072540448075,
+          "hac_status": "OK"
+        },
+        {
+          "group": "middle",
+          "n": 25,
+          "mean_difference": 5230.592580279634,
+          "hac_se": 2608.1547506502725,
+          "hac_status": "OK"
+        },
+        {
+          "group": "high",
+          "n": 243,
+          "mean_difference": 810.882354665394,
+          "hac_se": 466.4751442994694,
+          "hac_status": "OK"
+        }
+      ],
+      "heterogeneity": {
+        "status": "OK",
+        "n": 277,
+        "df": 2,
+        "bandwidth": 6,
+        "covariance_rank": 2,
+        "covariance_condition": 7.084674710668496,
+        "eigen_min": 476845549.9552757,
+        "eigen_max": 3378295608.6629543,
+        "stat": 15.518522440571937,
+        "p": 0.00042677175456407837,
+        "full_influence_covariance_rank": 3
+      },
+      "gw": {
+        "status": "OK",
+        "n": 271,
+        "full_n": 277,
+        "burn_in": 6,
+        "requested_burn_in": 6,
+        "df": 3,
+        "bandwidth": 6,
+        "instrument_rank": 3,
+        "covariance_rank": 3,
+        "covariance_condition": 48.04758353367505,
+        "eigen_min": 0.036857882225640265,
+        "eigen_max": 1.770932175110821,
+        "stat": 7.883224204839378,
+        "p": 0.04848777759558611
+      },
+      "reference_note": "Working-reference diagnostics with unverified limited-memory, moment, mixing and long-run covariance assumptions. GW includes an intercept; rejection alone does not establish position-increment RMS dependence.",
+      "resources": {
+        "started_utc": "2026-10-23T19:27:31.736567+00:00",
+        "ended_utc": "2026-10-23T19:27:31.754203+00:00",
+        "elapsed_seconds": 0.0176445001270622,
+        "peak_rss_bytes": 62750720,
+        "maximum_observed_os_threads": 1,
+        "thread_snapshot_count": 1,
+        "requested_numerical_threads": 1,
+        "internal_wall_seconds": 540,
+        "hard_wall_seconds": 600,
+        "internal_rss_bytes": 1610612736,
+        "hard_rss_bytes": 2147483648,
+        "rss_scope": "Process-lifetime high-water; both serial source diagnostics share a process, so later source RSS is conservative and can inherit a prior breach."
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "slot_id": "fx_hourly-h6-QR2880-minus-rolling_F720:joint_GW",
+      "source": "fx_hourly",
+      "test": "joint_GW",
+      "status": "OK",
+      "raw_p": 1.4629751215136517e-06,
+      "stat": 29.879526687903784,
+      "bookkeeping_p": 1.4629751215136517e-06,
+      "holm_p": 5.851900486054607e-06,
+      "holm_component_status": "OK"
+    },
+    {
+      "slot_id": "fx_hourly-h6-QR2880-minus-rolling_F720:group_heterogeneity",
+      "source": "fx_hourly",
+      "test": "group_heterogeneity",
+      "status": "OK",
+      "raw_p": 0.15938333671965318,
+      "stat": 3.6728861112166182,
+      "bookkeeping_p": 0.15938333671965318,
+      "holm_p": 0.15938333671965318,
+      "holm_component_status": "OK"
+    },
+    {
+      "slot_id": "nyfed_weekly-h6-QR260-minus-frozen_F260:joint_GW",
+      "source": "nyfed_weekly",
+      "test": "joint_GW",
+      "status": "OK",
+      "raw_p": 0.04848777759558611,
+      "stat": 7.883224204839378,
+      "bookkeeping_p": 0.04848777759558611,
+      "holm_p": 0.09697555519117222,
+      "holm_component_status": "OK"
+    },
+    {
+      "slot_id": "nyfed_weekly-h6-QR260-minus-frozen_F260:group_heterogeneity",
+      "source": "nyfed_weekly",
+      "test": "group_heterogeneity",
+      "status": "OK",
+      "raw_p": 0.00042677175456407837,
+      "stat": 15.518522440571937,
+      "bookkeeping_p": 0.00042677175456407837,
+      "holm_p": 0.0012803152636922351,
+      "holm_component_status": "OK"
+    }
+  ],
+  "family_n": 4,
+  "raw_na_count": 0,
+  "resources": {
+    "source_worker_count": 2,
+    "peak_rss_bytes": 62750720,
+    "maximum_observed_os_threads": 1,
+    "maximum_source_worker_seconds": 0.13840591697953641
+  },
+  "execution_freeze_sha256": "91e0bc167c623d5fde73096395e5f387f17814efffa1f6f267d81b2e39d79ad3",
+  "paired_archive_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+  "limitation": "Finite-instrument GW-style and group-mean HAC working references; unverified dependence/moment/covariance assumptions. Joint rejection may be only an unconditional mean advantage. No switching policy or causal state effect."
+}

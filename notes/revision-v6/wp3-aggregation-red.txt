@@ -1,0 +1,29 @@
+test_all_slots_and_unavailable_medians_are_retained (test_v6_wp3.WP3Tests.test_all_slots_and_unavailable_medians_are_retained) ... FAIL
+test_target_floor_geometry_and_duplicate_cells_stop (test_v6_wp3.WP3Tests.test_target_floor_geometry_and_duplicate_cells_stop) ... FAIL
+
+======================================================================
+FAIL: test_all_slots_and_unavailable_medians_are_retained (test_v6_wp3.WP3Tests.test_all_slots_and_unavailable_medians_are_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp3.py", line 9, in test_all_slots_and_unavailable_medians_are_retained
+    a=self.api();cells=[]
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp3.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_wp3'),'WP3 aggregation API missing')
+AssertionError: unexpectedly None : WP3 aggregation API missing
+
+======================================================================
+FAIL: test_target_floor_geometry_and_duplicate_cells_stop (test_v6_wp3.WP3Tests.test_target_floor_geometry_and_duplicate_cells_stop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp3.py", line 21, in test_target_floor_geometry_and_duplicate_cells_stop
+    a=self.api();cell=dict(cell_id='c',source='synthetic',horizon=1,window=20,native_unit='synthetic',original=False)
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp3.py", line 6, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_wp3'),'WP3 aggregation API missing')
+AssertionError: unexpectedly None : WP3 aggregation API missing
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (failures=2)

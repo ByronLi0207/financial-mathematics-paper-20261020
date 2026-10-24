@@ -1,0 +1,4930 @@
+{
+  "created_utc": "2026-10-23T12:12:06.082705+00:00",
+  "prior_commit": "db28ce0215fcdbc8b4a4bc3c082627e47bf24ead",
+  "prior_content_sha256": "48959f0c8ad9e0fbc2b86316a77f295f3e0b4e4ef7d0ab01fcff7adee9125080",
+  "table_count": 37,
+  "tables": [
+    {
+      "caption": "Table 1. Frozen source-specific chronological budgets. All indices are zero based; W and d count source records. H is 6 or 24 in every cell.",
+      "headers": [
+        "Source",
+        "Validation origins",
+        "Evaluation origins",
+        "W",
+        "Refit d"
+      ],
+      "rows": [
+        [
+          "FX",
+          "10463–11902 (1440)",
+          "11927–18551 (6625)",
+          "720 / 2880",
+          "24"
+        ],
+        [
+          "Treasury",
+          "329–380 (52)",
+          "405–681 (277)",
+          "52 / 260",
+          "13"
+        ]
+      ]
+    },
+    {
+      "caption": "Notation. Distinct symbols for response, refits, history, distances and preferences.",
+      "headers": [
+        "Symbol",
+        "Definition"
+      ],
+      "rows": [
+        [
+          "Nₜ; Bₜ",
+          "Signed position; observed issue magnitude |Nₜ|"
+        ],
+        [
+          "Pₜ,ₕ; Gₜ,ₕ",
+          "Sampled absolute peak; headroom Pₜ,ₕ−Bₜ"
+        ],
+        [
+          "κ(t); W; d",
+          "Most recent refit index; label-pool size; refit step"
+        ],
+        [
+          "Cₜᵐ; Floor",
+          "Issued report for method m; the known-floor report"
+        ],
+        [
+          "d(abs); d(signed)",
+          "Common-set anchor-distance radii"
+        ],
+        [
+          "Ñᵗʳᵢ,ₕ; Mᵢ,ₕ",
+          "Translated historical path; AR residual-replay path"
+        ],
+        [
+          "aκ; zᵢ,κ",
+          "Training response scale; standardized predictors"
+        ],
+        [
+          "a; ω=a/(1−a)",
+          "Shortfall weight; shortfall/excess preference ratio"
+        ],
+        [
+          "Jλ; Dλ",
+          "Penalized regression objective; feasible dual objective"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 2. Complete validation-selected parameters. QR entries are ridge penalties; KNN entries are neighborhood counts. W52 plain KNN selects the full pool at both horizons.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "QR λ",
+        "KNN k",
+        "Scaled KNN k"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "0.01",
+          "180",
+          "360"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "0.01",
+          "180",
+          "180"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "0.01",
+          "180",
+          "180"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "0.001",
+          "180",
+          "180"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "0.1",
+          "52",
+          "52"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "0.001",
+          "80",
+          "80"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "0.001",
+          "52",
+          "40"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "0.1",
+          "160",
+          "160"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 3. Complete selected conditional menu with breach rates and same-history frozen-F contrasts. Loss is in source-specific USD millions; B1 statistics are post-result / exploratory.",
+      "headers": [
+        "H",
+        "W",
+        "Method",
+        "Loss",
+        "Breach rate",
+        "Δ frozen F",
+        "DM / HLN"
+      ],
+      "rows": [
+        [
+          "6",
+          "720",
+          "QR",
+          "0.433",
+          "8.015%",
+          "-2.117%",
+          "t=-0.616; p=0.538; HLN p=0.538"
+        ],
+        [
+          "6",
+          "720",
+          "KNN",
+          "0.436",
+          "4.815%",
+          "-1.394%",
+          "t=-0.719; p=0.472; HLN p=0.473"
+        ],
+        [
+          "6",
+          "720",
+          "Scaled KNN",
+          "0.466",
+          "4.060%",
+          "+5.349%",
+          "t=1.245; p=0.213; HLN p=0.214"
+        ],
+        [
+          "6",
+          "2880",
+          "QR",
+          "0.386",
+          "5.675%",
+          "-14.767%",
+          "t=-5.866; p=4.47e-09; HLN p=4.83e-09"
+        ],
+        [
+          "6",
+          "2880",
+          "KNN",
+          "0.411",
+          "4.815%",
+          "-9.302%",
+          "t=-3.615; p=0.0003; HLN p=0.000306"
+        ],
+        [
+          "6",
+          "2880",
+          "Scaled KNN",
+          "0.426",
+          "4.121%",
+          "-5.795%",
+          "t=-1.255; p=0.209; HLN p=0.21"
+        ],
+        [
+          "24",
+          "720",
+          "QR",
+          "1.035",
+          "13.947%",
+          "+31.504%",
+          "t=3.223; p=0.00127; HLN p=0.00133"
+        ],
+        [
+          "24",
+          "720",
+          "KNN",
+          "0.836",
+          "7.592%",
+          "+6.197%",
+          "t=1.527; p=0.127; HLN p=0.128"
+        ],
+        [
+          "24",
+          "720",
+          "Scaled KNN",
+          "0.897",
+          "6.642%",
+          "+13.886%",
+          "t=1.541; p=0.123; HLN p=0.125"
+        ],
+        [
+          "24",
+          "2880",
+          "QR",
+          "0.735",
+          "8.015%",
+          "-3.758%",
+          "t=-0.504; p=0.614; HLN p=0.615"
+        ],
+        [
+          "24",
+          "2880",
+          "KNN",
+          "0.770",
+          "6.883%",
+          "+0.837%",
+          "t=0.185; p=0.854; HLN p=0.854"
+        ],
+        [
+          "24",
+          "2880",
+          "Scaled KNN",
+          "0.848",
+          "5.962%",
+          "+11.085%",
+          "t=1.325; p=0.185; HLN p=0.187"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 4. Complete selected conditional menu with breach rates and same-history frozen-F contrasts. Loss is in source-specific USD millions; B1 statistics are post-result / exploratory.",
+      "headers": [
+        "H",
+        "W",
+        "Method",
+        "Loss",
+        "Breach rate",
+        "Δ frozen F",
+        "DM / HLN"
+      ],
+      "rows": [
+        [
+          "6",
+          "52",
+          "QR",
+          "5095.519",
+          "30.325%",
+          "+83.354%",
+          "t=3.057; p=0.00224; HLN p=0.00298"
+        ],
+        [
+          "6",
+          "52",
+          "KNN",
+          "2779.054",
+          "3.971%",
+          "+0.000%",
+          "IDENTICAL_LOSSES"
+        ],
+        [
+          "6",
+          "52",
+          "Scaled KNN",
+          "4208.293",
+          "3.249%",
+          "+51.429%",
+          "t=3.682; p=0.000231; HLN p=0.000365"
+        ],
+        [
+          "6",
+          "260",
+          "QR",
+          "4159.673",
+          "19.495%",
+          "+50.786%",
+          "t=2.669; p=0.00761; HLN p=0.00939"
+        ],
+        [
+          "6",
+          "260",
+          "KNN",
+          "2663.561",
+          "10.108%",
+          "-3.447%",
+          "t=-0.442; p=0.658; HLN p=0.665"
+        ],
+        [
+          "6",
+          "260",
+          "Scaled KNN",
+          "3127.173",
+          "8.303%",
+          "+13.358%",
+          "t=0.945; p=0.345; HLN p=0.355"
+        ],
+        [
+          "24",
+          "52",
+          "QR",
+          "12165.574",
+          "47.653%",
+          "+227.411%",
+          "t=2.238; p=0.0252; HLN p=0.0415"
+        ],
+        [
+          "24",
+          "52",
+          "KNN",
+          "3715.693",
+          "11.913%",
+          "+0.000%",
+          "IDENTICAL_LOSSES"
+        ],
+        [
+          "24",
+          "52",
+          "Scaled KNN",
+          "5625.667",
+          "11.552%",
+          "+51.403%",
+          "t=2.797; p=0.00516; HLN p=0.011"
+        ],
+        [
+          "24",
+          "260",
+          "QR",
+          "5204.760",
+          "30.325%",
+          "+109.843%",
+          "t=1.667; p=0.0955; HLN p=0.128"
+        ],
+        [
+          "24",
+          "260",
+          "KNN",
+          "2257.963",
+          "4.693%",
+          "-8.964%",
+          "t=-1.941; p=0.0523; HLN p=0.0768"
+        ],
+        [
+          "24",
+          "260",
+          "Scaled KNN",
+          "4137.264",
+          "2.888%",
+          "+66.805%",
+          "t=4.923; p=8.53e-07; HLN p=9.8e-06"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 5. Summary of post-result / exploratory robustness; complete numerical tables remain in the appendices.",
+      "headers": [
+        "Analysis",
+        "Main finding",
+        "Retained adverse evidence"
+      ],
+      "rows": [
+        [
+          "AR replay",
+          "Improves on QR in every Treasury cell",
+          "Breach occasions rise against S in every cell"
+        ],
+        [
+          "Empirical rank",
+          "Both matched H6 QR directions persist",
+          "Lower empirical rank loses to F in five cells"
+        ],
+        [
+          "Preference frontier",
+          "FX H6 reduces both loss components",
+          "FX H24 reverses near the original weight"
+        ],
+        [
+          "Horizon coherence",
+          "Targets are ordered by construction",
+          "Separately fitted reports cross"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 6. Post-result / exploratory paired predictive-accuracy tests. Negative t favors QR; normal DM and Student-reference HLN p values are two sided. Holm p uses the fixed 72 common-history family; original cross-window FX comparisons are outside it. Original primaries and legacy remain fixed.",
+      "headers": [
+        "Comparison",
+        "L",
+        "DM t",
+        "DM p",
+        "HLN t",
+        "HLN p",
+        "Holm p"
+      ],
+      "rows": [
+        [
+          "FX H6 primary",
+          "10",
+          "-5.18",
+          "2.2e-07",
+          "-5.18",
+          "2.31e-07",
+          "Outside family"
+        ],
+        [
+          "FX H6 matched",
+          "10",
+          "-5.87",
+          "4.47e-09",
+          "-5.86",
+          "4.83e-09",
+          "2.86e-07"
+        ],
+        [
+          "FX H24 legacy",
+          "24",
+          "-0.204",
+          "0.839",
+          "-0.203",
+          "0.839",
+          "Outside family"
+        ],
+        [
+          "Treasury H6 primary",
+          "6",
+          "2.67",
+          "0.00761",
+          "2.62",
+          "0.00939",
+          "0.32"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 7. Post-result / exploratory coverage diagnostics. k/n counts strict breaches on the fixed H+1 grid; POF/independence/CC are chi-square-reference p values. DQ is the overlap-aware full-sample HAC adaptation. Boundary and small-sample qualifications apply.",
+      "headers": [
+        "Report",
+        "k/n",
+        "POF p",
+        "Ind p",
+        "CC p",
+        "DQ p"
+      ],
+      "rows": [
+        [
+          "FX QR H6",
+          "50/947",
+          "0.695",
+          "0.388",
+          "0.638",
+          "0.736"
+        ],
+        [
+          "FX rolling F H6",
+          "49/947",
+          "0.807",
+          "0.712",
+          "0.907",
+          "0.00798"
+        ],
+        [
+          "FX matched F H6",
+          "49/947",
+          "0.807",
+          "0.368",
+          "0.647",
+          "0.0407"
+        ],
+        [
+          "FX QR H24",
+          "21/265",
+          "0.0433",
+          "0.0866",
+          "0.0299",
+          "0.101"
+        ],
+        [
+          "FX legacy S H24",
+          "10/265",
+          "0.339",
+          "0.0454",
+          "0.0855",
+          "0.0299"
+        ],
+        [
+          "Treasury QR H6",
+          "7/40",
+          "0.00413",
+          "0.775",
+          "0.0157",
+          "0.00891"
+        ],
+        [
+          "Treasury F H6",
+          "4/40",
+          "0.199",
+          "0.338",
+          "0.277",
+          "8.52e-05"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 8. Post-result / exploratory parsimonious QR. Four predictors plus intercept, expanded validation penalty menu, original split/refit schedule. Percent changes compare loss against the original QR and matched F. Every original primary remains unchanged.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "λ",
+        "Δ QR %",
+        "Δ F %",
+        "Breaches",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Treasury",
+          "6",
+          "52",
+          "10",
+          "-46.9",
+          "-2.59",
+          "15",
+          "COMPLETE"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "10",
+          "-32.2",
+          "2.17",
+          "32",
+          "COMPLETE"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "10",
+          "-67.6",
+          "5.95",
+          "36",
+          "COMPLETE"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "10",
+          "-52.3",
+          "0.11",
+          "15",
+          "COMPLETE"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "0.01",
+          "3.67",
+          "1.48",
+          "414",
+          "COMPLETE"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "0.01",
+          "12.3",
+          "-4.29",
+          "399",
+          "COMPLETE"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "0.01",
+          "-11.4",
+          "16.5",
+          "701",
+          "COMPLETE"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "0.01",
+          "0.898",
+          "-2.89",
+          "508",
+          "COMPLETE"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 9. All eight classical-bound plug-in L cells. Loss uses source-native units (FX USD; Treasury USD millions). Δ F/QR compares the same W and refit schedule; positive values are adverse for L. DM p is the unadjusted working-reference paired L–F test; Appendix J retains both comparators and a separate 16-member Holm family. Original primaries are unchanged.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Mean loss",
+        "Hits / n",
+        "Δ F %",
+        "Δ QR %",
+        "DM p vs F"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "5.795e+05",
+          "101/6625",
+          "30.93",
+          "33.76",
+          "2.988e-15"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "5.903e+05",
+          "75/6625",
+          "30.39",
+          "52.98",
+          "6.695e-15"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "8.728e+05",
+          "136/6625",
+          "10.85",
+          "-15.71",
+          "0.06462"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "8.24e+05",
+          "174/6625",
+          "7.941",
+          "12.16",
+          "0.03958"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "2873",
+          "10/277",
+          "3.37",
+          "-43.62",
+          "0.3317"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "2434",
+          "15/277",
+          "-11.77",
+          "-41.49",
+          "0.1785"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "4694",
+          "42/277",
+          "26.32",
+          "-61.42",
+          "0.1167"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "2725",
+          "22/277",
+          "9.868",
+          "-47.64",
+          "0.2746"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 10. Complete panel summary: number of four H/W cells with lower pinball loss than matched F. These are descriptive counts, not independent trials or evidence selected after screening losses. Appendix K retains every loss change and breach count.",
+      "headers": [
+        "Series key",
+        "QR33 lower / cells",
+        "C2 lower / cells",
+        "L lower / cells"
+      ],
+      "rows": [
+        [
+          "PDPOSMBS-TOT",
+          "0/4",
+          "0/4",
+          "2/4"
+        ],
+        [
+          "PDPOSCS-TOT",
+          "0/4",
+          "3/4",
+          "1/4"
+        ],
+        [
+          "PDPOSFGS-TOT",
+          "1/4",
+          "1/4",
+          "3/4"
+        ],
+        [
+          "PDPOSTIPS-L2",
+          "0/4",
+          "0/4",
+          "4/4"
+        ],
+        [
+          "PDPOSTIPS-G11",
+          "0/4",
+          "0/4",
+          "1/4"
+        ],
+        [
+          "PDPOSTIPS-G2",
+          "0/4",
+          "0/4",
+          "0/4"
+        ],
+        [
+          "PDPOSTIPS-G6L11",
+          "2/4",
+          "4/4",
+          "0/4"
+        ],
+        [
+          "PDPOSGSC-L2",
+          "0/4",
+          "2/4",
+          "2/4"
+        ],
+        [
+          "PDPOSGSC-G2L3",
+          "0/4",
+          "0/4",
+          "2/4"
+        ],
+        [
+          "PDPOSGSC-G3L6",
+          "0/4",
+          "0/4",
+          "2/4"
+        ],
+        [
+          "PDPOSGSC-G6L7",
+          "0/4",
+          "0/4",
+          "1/4"
+        ],
+        [
+          "PDPOSGSC-G7L11",
+          "0/4",
+          "1/4",
+          "1/4"
+        ]
+      ]
+    },
+    {
+      "caption": "Table 11. Fixed FHS, GARCH-scaled peak-headroom POT and true leaf-distribution QRF on all original cells. Each entry gives Δ loss% versus matched frozen F / strict breaches; negative Δ favors the new method. NA retains a failed or structurally ineligible complete-cell comparison; issued counts are not scored as partial successes. Full native losses, reasons and comparisons are in Appendix L.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "FHS: Δ% / hits",
+        "Peak POT: Δ% / hits",
+        "QRF: Δ% / hits"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "NA (240 issued)",
+          "NA (240 issued)",
+          "5.793 / 402"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "-1.258 / 278",
+          "3.269 / 363",
+          "-4.48 / 354"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "NA (240 issued)",
+          "NA (240 issued)",
+          "16.02 / 779"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "6.255 / 136",
+          "10.61 / 369",
+          "7.335 / 600"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "-1.883 / 7",
+          "NA (0 issued)",
+          "-6.83 / 16"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "-8.276 / 4",
+          "-10.35 / 17",
+          "6.198 / 33"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "60.26 / 0",
+          "NA (0 issued)",
+          "4.279 / 44"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "125.1 / 0",
+          "32.09 / 20",
+          "33.94 / 62"
+        ]
+      ]
+    },
+    {
+      "caption": "Table A1. Artificial coherent continuations. Symbols are constructed quantities, not source-record estimates.",
+      "headers": [
+        "Future N(t+h), 1≤h≤H",
+        "Actual peak",
+        "F loss",
+        "S loss"
+      ],
+      "rows": [
+        [
+          "0",
+          "0",
+          "0",
+          "(1−τ)Hd"
+        ],
+        [
+          "−dh",
+          "Hd",
+          "τHd",
+          "0"
+        ]
+      ]
+    },
+    {
+      "caption": "Table A2. Completed H=1 windows from one artificial history, in arbitrary position units. P is the native peak, G the native headroom and T the peak after reanchoring at x=2. These values are not source-record estimates.",
+      "headers": [
+        "i",
+        "Historical pair",
+        "P",
+        "G",
+        "Reanchored pair",
+        "T"
+      ],
+      "rows": [
+        [
+          "0",
+          "0, −4",
+          "4",
+          "4",
+          "2, −2",
+          "2"
+        ],
+        [
+          "1",
+          "−4, −1",
+          "4",
+          "0",
+          "2, 5",
+          "5"
+        ],
+        [
+          "2",
+          "−1, 2",
+          "2",
+          "1",
+          "2, 5",
+          "5"
+        ]
+      ]
+    },
+    {
+      "caption": "Table B1. Complete original mean loss grid. Δ is the stored paired mean F minus S; negative favors F within that setting.",
+      "headers": [
+        "Setting",
+        "F",
+        "S",
+        "R",
+        "K",
+        "Floor",
+        "Δ F−S"
+      ],
+      "rows": [
+        [
+          "main",
+          "0.441774",
+          "0.451149",
+          "0.527544",
+          "0.925885",
+          "1.813620",
+          "-0.009375"
+        ],
+        [
+          "h12",
+          "0.592518",
+          "0.604781",
+          "0.689604",
+          "1.058614",
+          "2.950594",
+          "-0.012263"
+        ],
+        [
+          "h24",
+          "0.777069",
+          "0.748384",
+          "0.803106",
+          "1.197833",
+          "4.630827",
+          "+0.028685"
+        ],
+        [
+          "n480",
+          "0.449843",
+          "0.460816",
+          "0.532515",
+          "0.885243",
+          "1.813620",
+          "-0.010973"
+        ],
+        [
+          "n1440",
+          "0.443793",
+          "0.448275",
+          "0.526979",
+          "0.931562",
+          "1.813620",
+          "-0.004482"
+        ],
+        [
+          "tau90",
+          "0.659643",
+          "0.659499",
+          "0.763481",
+          "1.477201",
+          "1.718166",
+          "+0.000144"
+        ],
+        [
+          "tau99",
+          "0.154991",
+          "0.158998",
+          "0.175486",
+          "0.288834",
+          "1.889983",
+          "-0.004007"
+        ]
+      ]
+    },
+    {
+      "caption": "Table B2. Complete earlier retrieval-extension mean loss menu and same-set F-minus-S paired mean, in source-reported USD millions. Full 720 rows repeat original references. Differences are computed before display rounding.",
+      "headers": [
+        "H",
+        "Historical set",
+        "F loss",
+        "S loss",
+        "K loss",
+        "F−S mean"
+      ],
+      "rows": [
+        [
+          "6",
+          "full720",
+          "0.441774",
+          "0.451149",
+          "0.925885",
+          "-0.009375"
+        ],
+        [
+          "6",
+          "recent360",
+          "0.454089",
+          "0.467678",
+          "0.872516",
+          "-0.013589"
+        ],
+        [
+          "6",
+          "nearest360",
+          "0.448664",
+          "0.448731",
+          "0.594811",
+          "-0.000067"
+        ],
+        [
+          "6",
+          "recent180",
+          "0.485866",
+          "0.478940",
+          "0.785878",
+          "+0.006926"
+        ],
+        [
+          "6",
+          "nearest180",
+          "0.468133",
+          "0.459592",
+          "0.525471",
+          "+0.008541"
+        ],
+        [
+          "24",
+          "full720",
+          "0.777069",
+          "0.748384",
+          "1.197833",
+          "+0.028685"
+        ],
+        [
+          "24",
+          "recent360",
+          "0.807496",
+          "0.824047",
+          "1.246630",
+          "-0.016551"
+        ],
+        [
+          "24",
+          "nearest360",
+          "0.791192",
+          "0.770354",
+          "0.960696",
+          "+0.020838"
+        ],
+        [
+          "24",
+          "recent180",
+          "0.858214",
+          "0.895718",
+          "1.284092",
+          "-0.037504"
+        ],
+        [
+          "24",
+          "nearest180",
+          "0.847734",
+          "0.827305",
+          "0.963931",
+          "+0.020429"
+        ]
+      ]
+    },
+    {
+      "caption": "Table D1. Original QR/KNN/scaled-KNN horizon-coherence diagnostics; the later AR addition is not included. A crossing means stored C(H6)>C(H24), with no tolerance used to redefine the event. Maximum gap is displayed in USD millions (FX divided by 10⁶; Treasury already in that unit). The distinct financial quantities are not pooled.",
+      "headers": [
+        "Source",
+        "W",
+        "Method",
+        "Crossings",
+        "Origins",
+        "Cross %",
+        "Max gap"
+      ],
+      "rows": [
+        [
+          "FX",
+          "720",
+          "QR",
+          "640",
+          "6625",
+          "9.660",
+          "18.742"
+        ],
+        [
+          "FX",
+          "720",
+          "KNN",
+          "22",
+          "6625",
+          "0.332",
+          "1.930"
+        ],
+        [
+          "FX",
+          "720",
+          "Scaled KNN",
+          "48",
+          "6625",
+          "0.725",
+          "1.775"
+        ],
+        [
+          "FX",
+          "2880",
+          "QR",
+          "140",
+          "6625",
+          "2.113",
+          "5.303"
+        ],
+        [
+          "FX",
+          "2880",
+          "KNN",
+          "0",
+          "6625",
+          "0.000",
+          "0.000"
+        ],
+        [
+          "FX",
+          "2880",
+          "Scaled KNN",
+          "18",
+          "6625",
+          "0.272",
+          "1.772"
+        ],
+        [
+          "Treasury",
+          "52",
+          "QR",
+          "91",
+          "277",
+          "32.852",
+          "139288.627"
+        ],
+        [
+          "Treasury",
+          "52",
+          "KNN",
+          "39",
+          "277",
+          "14.079",
+          "8202.000"
+        ],
+        [
+          "Treasury",
+          "52",
+          "Scaled KNN",
+          "72",
+          "277",
+          "25.993",
+          "124615.389"
+        ],
+        [
+          "Treasury",
+          "260",
+          "QR",
+          "80",
+          "277",
+          "28.881",
+          "79417.646"
+        ],
+        [
+          "Treasury",
+          "260",
+          "KNN",
+          "0",
+          "277",
+          "0.000",
+          "0.000"
+        ],
+        [
+          "Treasury",
+          "260",
+          "Scaled KNN",
+          "25",
+          "277",
+          "9.025",
+          "18835.763"
+        ]
+      ]
+    },
+    {
+      "caption": "Table D2. All 56 late fixed-terminal evidence diagnostics, rounded to three significant figures; * marks an exact crossing of the fixed 1120 reference threshold. Treasury is the separately fitted Treasury aggregate; F/S/K are the matched frozen controls. A noncrossing is not coverage certification, and evidence magnitude is not a financial-quality ranking. All 896 phase rows and exact rational identities are retained in the supplement.",
+      "headers": [
+        "Source H/W",
+        "QR",
+        "KNN",
+        "Scaled",
+        "F",
+        "S",
+        "K",
+        "AR"
+      ],
+      "rows": [
+        [
+          "FX 6/720",
+          "104",
+          "0.00905",
+          "0.00476",
+          "0.0112",
+          "0.00397",
+          "26.5",
+          "0.00527"
+        ],
+        [
+          "FX 6/2880",
+          "0.0378",
+          "0.00923",
+          "0.00476",
+          "0.0183",
+          "0.00441",
+          "294",
+          "0.0125"
+        ],
+        [
+          "FX 24/720",
+          "8.5e7*",
+          "1.18",
+          "0.171",
+          "0.146",
+          "0.0164",
+          "270",
+          "0.0558"
+        ],
+        [
+          "FX 24/2880",
+          "0.734",
+          "0.153",
+          "0.0486",
+          "0.0318",
+          "0.0159",
+          "5.12",
+          "0.146"
+        ],
+        [
+          "Treasury 6/52",
+          "1.31e8*",
+          "0.057",
+          "0.0537",
+          "0.057",
+          "0.057",
+          "0.38",
+          "0.242"
+        ],
+        [
+          "Treasury 6/260",
+          "2.2e3*",
+          "0.637",
+          "0.305",
+          "0.919",
+          "0.919",
+          "0.401",
+          "1.95"
+        ],
+        [
+          "Treasury 24/52",
+          "3.81e4*",
+          "19.7",
+          "0.949",
+          "19.7",
+          "19.7",
+          "5.18",
+          "2.46"
+        ],
+        [
+          "Treasury 24/260",
+          "59.4",
+          "0.202",
+          "0.13",
+          "0.221",
+          "0.221",
+          "4.53",
+          "11"
+        ]
+      ]
+    },
+    {
+      "caption": "Table D3. Complete post-inspection ordinary empirical-rank ablation. Percentages are QR-minus-I and I-minus-F mean-loss changes relative to the right report; negative favors the left. QR means and counts are imported unchanged from the original selected fits. I/F counts are newly reconstructed; columns list I/F/QR strict breaches over 6,625 FX or 277 Treasury origins. H counts source records. Sources are not pooled.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Ranks I/F",
+        "QR−I (%)",
+        "I−F (%)",
+        "Breaches I/F/QR"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "684/685",
+          "−1.967",
+          "−0.153",
+          "337/332/531"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "2736/2737",
+          "−14.773",
+          "+0.008",
+          "365/360/376"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "684/685",
+          "+31.508",
+          "−0.003",
+          "432/427/924"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "2736/2737",
+          "−3.783",
+          "+0.026",
+          "359/357/531"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "50/51",
+          "+87.086",
+          "−1.995",
+          "14/11/84"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "247/248",
+          "+46.058",
+          "+3.237",
+          "32/28/54"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "50/51",
+          "+208.258",
+          "+6.213",
+          "37/33/132"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "247/248",
+          "+105.020",
+          "+2.353",
+          "15/12/84"
+        ]
+      ]
+    },
+    {
+      "caption": "Table E1. All eight full-origin frontiers among the same eight fixed reports; 6,625 FX or 277 Treasury origins per row. Units are source native and are never pooled.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Preferred sequence",
+        "Interior a boundaries",
+        "At .95"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "QR / NN / S",
+          "0.952882, 0.964505",
+          "QR"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR / Sc",
+          "0.972817",
+          "QR"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR / NN / AR / S",
+          "0.845488, 0.889246, 0.938369",
+          "S"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR / S",
+          "0.957033",
+          "QR"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR / AR / NN=F",
+          "0.717896, 0.972846",
+          "AR"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "AR / K",
+          "0.960158",
+          "AR"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR / K / S",
+          "0.423917, 0.897882",
+          "S"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "K / AR / NN / S",
+          "0.778365, 0.970017, 0.995666",
+          "AR"
+        ]
+      ]
+    },
+    {
+      "caption": "Table E2. All eight existing globally anchored H+1 sparse-grid frontiers. Counts are FX 947/265 and Treasury 40/12 for H6/H24. These are descriptive sensitivities with shared training histories.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Preferred sequence",
+        "Interior a boundaries",
+        "At .95"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "QR / NN / Sc",
+          "0.950621, 0.984383",
+          "QR"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR / Sc",
+          "0.978149",
+          "QR"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR / NN / AR / S",
+          "0.805398, 0.910344, 0.959437",
+          "AR"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR / S",
+          "0.966600",
+          "QR"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR / K / NN=F",
+          "0.645837, 0.995462",
+          "K"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "AR / K",
+          "0.937124",
+          "K"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR / K / AR / NN=F=S",
+          "0.693667, 0.940131, 0.990484",
+          "AR"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "K / AR",
+          "0.721694",
+          "AR"
+        ]
+      ]
+    },
+    {
+      "caption": "Table F1. Complete conditional loss menu and same-history frozen controls on 6,625 FX origins, in USD millions. Every selected QR/KNN/scaled cell is shown. Rolling and one-state reference results and all breach/severity quantities remain in the complete CSVs.",
+      "headers": [
+        "H",
+        "W",
+        "F frozen",
+        "S frozen",
+        "K frozen",
+        "QR",
+        "KNN",
+        "Scaled KNN"
+      ],
+      "rows": [
+        [
+          "6",
+          "720",
+          "0.442615",
+          "0.450774",
+          "0.932433",
+          "0.433246",
+          "0.436445",
+          "0.466292"
+        ],
+        [
+          "6",
+          "2880",
+          "0.452693",
+          "0.450801",
+          "0.972162",
+          "0.385845",
+          "0.410583",
+          "0.426458"
+        ],
+        [
+          "24",
+          "720",
+          "0.787416",
+          "0.755301",
+          "1.205808",
+          "1.035483",
+          "0.836210",
+          "0.896753"
+        ],
+        [
+          "24",
+          "2880",
+          "0.763381",
+          "0.759371",
+          "1.240039",
+          "0.734695",
+          "0.769768",
+          "0.848004"
+        ]
+      ]
+    },
+    {
+      "caption": "Table F2. Complete selected conditional loss menu and same-history frozen controls on 277 Treasury origins. Losses are in the source's USD-million units, not FX USD. H6/H24 mean six/24 weekly transitions. No monetary average is pooled across sources.",
+      "headers": [
+        "H",
+        "W",
+        "F frozen",
+        "S frozen",
+        "K frozen",
+        "QR",
+        "KNN",
+        "Scaled KNN"
+      ],
+      "rows": [
+        [
+          "6",
+          "52",
+          "2779.054",
+          "2786.620",
+          "2574.098",
+          "5095.519",
+          "2779.054",
+          "4208.293"
+        ],
+        [
+          "6",
+          "260",
+          "2758.665",
+          "2707.244",
+          "2287.758",
+          "4159.673",
+          "2663.561",
+          "3127.173"
+        ],
+        [
+          "24",
+          "52",
+          "3715.693",
+          "3652.379",
+          "5017.741",
+          "12165.574",
+          "3715.693",
+          "5625.667"
+        ],
+        [
+          "24",
+          "260",
+          "2480.306",
+          "2478.871",
+          "2301.476",
+          "5204.760",
+          "2257.963",
+          "4137.264"
+        ]
+      ]
+    },
+    {
+      "caption": "Table F3. Complete later AR comparison. Entries are within-reference mean-loss percentages; negative favors AR. S/F have matching source, H, W and refit schedule; QR is the original selected same-cell fit. Counts are AR / S strict breaches over 6,625 FX or 277 Treasury origins. Every row is exploratory; sources are not pooled.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "AR−S %",
+        "AR−F %",
+        "AR−QR %",
+        "Breaches AR / S"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "-1.536",
+          "+0.278",
+          "+2.447",
+          "282 / 255"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "-0.546",
+          "-0.962",
+          "+16.197",
+          "338 / 268"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "+2.386",
+          "-1.790",
+          "-25.318",
+          "401 / 289"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "+5.147",
+          "+4.595",
+          "+8.679",
+          "444 / 292"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "-13.444",
+          "-13.208",
+          "-52.665",
+          "22 / 11"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "-18.887",
+          "-20.399",
+          "-47.209",
+          "31 / 28"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "+35.125",
+          "+32.823",
+          "-59.432",
+          "56 / 33"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "-24.118",
+          "-24.162",
+          "-63.860",
+          "59 / 12"
+        ]
+      ]
+    },
+    {
+      "caption": "Table F4. Preference sensitivity of the four named fixed comparisons. Differences are left minus right. FX amounts are divided by 10⁶; Treasury amounts already have USD-million source units. The sources and economic horizons are not pooled. ω is the stipulated shortfall/excess weight ratio; equality holds at a finite displayed crossing, before rounding. Reference definitions remain those of Section 5.",
+      "headers": [
+        "Comparison",
+        "dU",
+        "dV",
+        "Crossing ω",
+        "Left preferred"
+      ],
+      "rows": [
+        [
+          "FX H6 primary",
+          "-0.010408",
+          "-0.920830",
+          "None",
+          "All ω >= 0"
+        ],
+        [
+          "FX H6 matched",
+          "-0.029549",
+          "-0.775527",
+          "None",
+          "All ω >= 0"
+        ],
+        [
+          "FX H24 legacy",
+          "+0.167864",
+          "-3.463190",
+          "20.630898",
+          "ω < 20.630898"
+        ],
+        [
+          "Treasury H6 primary",
+          "+1736.222894",
+          "-4968.077943",
+          "2.861429",
+          "ω < 2.861429"
+        ]
+      ]
+    },
+    {
+      "caption": "Table H1. Murphy full-breakpoint audit for both original primaries. The extrema of left-minus-right elementary scores span zero in both cases. Integral agreement is an arithmetic identity check.",
+      "headers": [
+        "Source",
+        "Breakpoints",
+        "Minimum Δ",
+        "Maximum Δ",
+        "Sample ranking"
+      ],
+      "rows": [
+        [
+          "FX",
+          "16146",
+          "-0.00443",
+          "0.00116",
+          "CROSSING"
+        ],
+        [
+          "Treasury",
+          "640",
+          "-0.0184",
+          "0.0496",
+          "CROSSING"
+        ]
+      ]
+    },
+    {
+      "caption": "Table H2. Complete fixed 72-member common-history Holm family, including nonsignificant and identical-loss rows. Comparators F/S/K are frozen with the displayed common W. Negative t favors the conditional method. The .05 decision is based on unrounded normal-reference DM p values and Holm adjustment; it is an exploratory working-reference decision conditional on valid component tests. Identical losses retain their NA t/status and bookkeeping p=1.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Conditional",
+        "Ref",
+        "DM t",
+        "DM p",
+        "Holm p",
+        "Decision / direction / status"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "QR",
+          "F",
+          "-0.616",
+          "0.538",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QR",
+          "S",
+          "-1.05",
+          "0.293",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QR",
+          "K",
+          "-16.3",
+          "2.18e-59",
+          "1.46e-57",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "KNN",
+          "F",
+          "-0.719",
+          "0.472",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "KNN",
+          "S",
+          "-1.49",
+          "0.136",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "KNN",
+          "K",
+          "-18.3",
+          "7.04e-75",
+          "4.93e-73",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "Scaled KNN",
+          "F",
+          "1.24",
+          "0.213",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "Scaled KNN",
+          "S",
+          "0.874",
+          "0.382",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "Scaled KNN",
+          "K",
+          "-16.3",
+          "1.93e-59",
+          "1.32e-57",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR",
+          "F",
+          "-5.87",
+          "4.47e-09",
+          "2.86e-07",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR",
+          "S",
+          "-6.16",
+          "7.16e-10",
+          "4.72e-08",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR",
+          "K",
+          "-21",
+          "3.15e-98",
+          "2.24e-96",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "KNN",
+          "F",
+          "-3.62",
+          "0.0003",
+          "0.0162",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "KNN",
+          "S",
+          "-4.09",
+          "4.35e-05",
+          "0.00256",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "KNN",
+          "K",
+          "-21.8",
+          "2e-105",
+          "1.44e-103",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "Scaled KNN",
+          "F",
+          "-1.26",
+          "0.209",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "Scaled KNN",
+          "S",
+          "-1.29",
+          "0.196",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "Scaled KNN",
+          "K",
+          "-18",
+          "8.12e-73",
+          "5.6e-71",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR",
+          "F",
+          "3.22",
+          "0.00127",
+          "0.0673",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR",
+          "S",
+          "3.05",
+          "0.00231",
+          "0.115",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR",
+          "K",
+          "-1.54",
+          "0.123",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "KNN",
+          "F",
+          "1.53",
+          "0.127",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "KNN",
+          "S",
+          "1.69",
+          "0.0909",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "KNN",
+          "K",
+          "-4.79",
+          "1.63e-06",
+          "9.79e-05",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "Scaled KNN",
+          "F",
+          "1.54",
+          "0.123",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "Scaled KNN",
+          "S",
+          "2.12",
+          "0.0343",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "Scaled KNN",
+          "K",
+          "-3.88",
+          "0.000105",
+          "0.00596",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR",
+          "F",
+          "-0.504",
+          "0.614",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR",
+          "S",
+          "-0.453",
+          "0.65",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR",
+          "K",
+          "-5.56",
+          "2.69e-08",
+          "1.69e-06",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "KNN",
+          "F",
+          "0.185",
+          "0.854",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "KNN",
+          "S",
+          "0.288",
+          "0.773",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "KNN",
+          "K",
+          "-6.1",
+          "1.08e-09",
+          "7.04e-08",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "Scaled KNN",
+          "F",
+          "1.32",
+          "0.185",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "Scaled KNN",
+          "S",
+          "1.51",
+          "0.131",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "Scaled KNN",
+          "K",
+          "-3.91",
+          "9.07e-05",
+          "0.00526",
+          "Below .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR",
+          "F",
+          "3.06",
+          "0.00224",
+          "0.114",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR",
+          "S",
+          "3.05",
+          "0.00231",
+          "0.115",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR",
+          "K",
+          "3.17",
+          "0.00152",
+          "0.0791",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "KNN",
+          "F",
+          "NA",
+          "NA",
+          "1",
+          "At least .05; Identical; IDENTICAL_LOSSES"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "KNN",
+          "S",
+          "-1.06",
+          "0.29",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "KNN",
+          "K",
+          "0.37",
+          "0.711",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "Scaled KNN",
+          "F",
+          "3.68",
+          "0.000231",
+          "0.013",
+          "Below .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "Scaled KNN",
+          "S",
+          "3.66",
+          "0.000254",
+          "0.014",
+          "Below .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "Scaled KNN",
+          "K",
+          "2.85",
+          "0.00439",
+          "0.202",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QR",
+          "F",
+          "2.67",
+          "0.00761",
+          "0.32",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QR",
+          "S",
+          "2.74",
+          "0.0061",
+          "0.262",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QR",
+          "K",
+          "2.8",
+          "0.00514",
+          "0.231",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "KNN",
+          "F",
+          "-0.442",
+          "0.658",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "KNN",
+          "S",
+          "-0.215",
+          "0.83",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "KNN",
+          "K",
+          "0.961",
+          "0.336",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "Scaled KNN",
+          "F",
+          "0.945",
+          "0.345",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "Scaled KNN",
+          "S",
+          "1.09",
+          "0.276",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "Scaled KNN",
+          "K",
+          "1.93",
+          "0.0538",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR",
+          "F",
+          "2.24",
+          "0.0252",
+          "0.983",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR",
+          "S",
+          "2.26",
+          "0.0235",
+          "0.942",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR",
+          "K",
+          "2.16",
+          "0.0306",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "KNN",
+          "F",
+          "NA",
+          "NA",
+          "1",
+          "At least .05; Identical; IDENTICAL_LOSSES"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "KNN",
+          "S",
+          "1.05",
+          "0.294",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "KNN",
+          "K",
+          "-0.71",
+          "0.478",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "Scaled KNN",
+          "F",
+          "2.8",
+          "0.00516",
+          "0.231",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "Scaled KNN",
+          "S",
+          "3",
+          "0.00271",
+          "0.13",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "Scaled KNN",
+          "K",
+          "0.347",
+          "0.729",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QR",
+          "F",
+          "1.67",
+          "0.0955",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QR",
+          "S",
+          "1.67",
+          "0.0953",
+          "1",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QR",
+          "K",
+          "2.32",
+          "0.0202",
+          "0.828",
+          "At least .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "KNN",
+          "F",
+          "-1.94",
+          "0.0523",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "KNN",
+          "S",
+          "-1.92",
+          "0.0547",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "KNN",
+          "K",
+          "-0.0682",
+          "0.946",
+          "1",
+          "At least .05; Favorable; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "Scaled KNN",
+          "F",
+          "4.92",
+          "8.53e-07",
+          "5.29e-05",
+          "Below .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "Scaled KNN",
+          "S",
+          "4.92",
+          "8.65e-07",
+          "5.29e-05",
+          "Below .05; Adverse; OK"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "Scaled KNN",
+          "K",
+          "2.95",
+          "0.00319",
+          "0.15",
+          "At least .05; Adverse; OK"
+        ]
+      ]
+    },
+    {
+      "caption": "Table I1. Treasury selected C2 coefficients and effects. Norms are in standardized/response-normalized coordinates. Mean absolute projected slope effect is in source USD millions. Loss changes are descriptive and all adverse F comparisons are retained.",
+      "headers": [
+        "H",
+        "W",
+        "λ",
+        "Refits",
+        "‖β‖₂ range",
+        "Mean |effect|",
+        "Δ I %",
+        "Δ F %"
+      ],
+      "rows": [
+        [
+          "6",
+          "52",
+          "10",
+          "22",
+          "0.006541–0.01937",
+          "366.7",
+          "-0.6063",
+          "-2.589"
+        ],
+        [
+          "6",
+          "260",
+          "10",
+          "22",
+          "0.004323–0.007924",
+          "136.8",
+          "-1.038",
+          "2.166"
+        ],
+        [
+          "24",
+          "52",
+          "10",
+          "22",
+          "0.009692–0.01725",
+          "832.3",
+          "-0.2432",
+          "5.955"
+        ],
+        [
+          "24",
+          "260",
+          "10",
+          "22",
+          "0.001497–0.01264",
+          "453",
+          "-2.192",
+          "0.1097"
+        ]
+      ]
+    },
+    {
+      "caption": "Table I2. Pointwise C2 comparisons with I and F. Max |Δ| is capacity difference in source USD millions; ρC includes the shared issue floor, ρG removes it. J is strict-breach-set Jaccard. Hits show C2/reference and XOR counts discordant breach occasions.",
+      "headers": [
+        "H",
+        "W",
+        "Ref",
+        "Max |Δ|",
+        "ρC",
+        "ρG",
+        "J",
+        "Hits",
+        "XOR"
+      ],
+      "rows": [
+        [
+          "6",
+          "52",
+          "I",
+          "2096",
+          "0.9999",
+          "0.9992",
+          "0.9333",
+          "15/14",
+          "1"
+        ],
+        [
+          "6",
+          "52",
+          "F",
+          "9113",
+          "0.9965",
+          "0.9776",
+          "0.7333",
+          "15/11",
+          "4"
+        ],
+        [
+          "6",
+          "260",
+          "I",
+          "967.8",
+          "1",
+          "0.9997",
+          "1",
+          "32/32",
+          "0"
+        ],
+        [
+          "6",
+          "260",
+          "F",
+          "3524",
+          "0.9995",
+          "0.9963",
+          "0.875",
+          "32/28",
+          "4"
+        ],
+        [
+          "24",
+          "52",
+          "I",
+          "6126",
+          "0.9998",
+          "0.9982",
+          "0.9211",
+          "36/37",
+          "3"
+        ],
+        [
+          "24",
+          "52",
+          "F",
+          "1.048e+04",
+          "0.9978",
+          "0.9905",
+          "0.9167",
+          "36/33",
+          "3"
+        ],
+        [
+          "24",
+          "260",
+          "I",
+          "3082",
+          "0.9996",
+          "0.9791",
+          "1",
+          "15/15",
+          "0"
+        ],
+        [
+          "24",
+          "260",
+          "F",
+          "4967",
+          "0.9987",
+          "0.926",
+          "0.8",
+          "15/12",
+          "3"
+        ]
+      ]
+    },
+    {
+      "caption": "Table J1. Original positive-increment-AR oracle-quantile simulation, retained unchanged. Rates/SE are percentages; Δ5 is percentage points from 5%. Endpoint tails are evaluated at the same threshold. Every specified cell is retained.",
+      "headers": [
+        "H",
+        "φ",
+        "Oracle q",
+        "Max rate %",
+        "Endpoint %",
+        "Δ5 pp",
+        "MC SE %"
+      ],
+      "rows": [
+        [
+          "6",
+          "0",
+          "5.49",
+          "3.035",
+          "2.454",
+          "-1.965",
+          "0.05425"
+        ],
+        [
+          "6",
+          "0.7",
+          "10.09",
+          "2.597",
+          "2.573",
+          "-2.403",
+          "0.05029"
+        ],
+        [
+          "6",
+          "0.85",
+          "11.63",
+          "2.55",
+          "2.55",
+          "-2.45",
+          "0.04985"
+        ],
+        [
+          "6",
+          "0.98",
+          "13.19",
+          "2.557",
+          "2.557",
+          "-2.443",
+          "0.04992"
+        ],
+        [
+          "24",
+          "0",
+          "10.98",
+          "3.819",
+          "2.504",
+          "-1.181",
+          "0.06061"
+        ],
+        [
+          "24",
+          "0.7",
+          "24.6",
+          "2.772",
+          "2.475",
+          "-2.228",
+          "0.05191"
+        ],
+        [
+          "24",
+          "0.85",
+          "33.39",
+          "2.619",
+          "2.525",
+          "-2.381",
+          "0.0505"
+        ],
+        [
+          "24",
+          "0.98",
+          "49.78",
+          "2.572",
+          "2.572",
+          "-2.428",
+          "0.05006"
+        ]
+      ]
+    },
+    {
+      "caption": "Table J2. Every post-result / exploratory L comparison. Negative t/Δloss favors L. Holm uses only this new 16-comparison family; the original 72-member family is unchanged. Component p values are approximate working references with shared-training and post-inspection limitations.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Ref",
+        "Δloss %",
+        "DM t",
+        "DM p",
+        "HLN p",
+        "Holm p"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "F",
+          "30.93",
+          "7.891",
+          "2.988e-15",
+          "3.658e-15",
+          "4.483e-14"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QR",
+          "33.76",
+          "6.608",
+          "3.908e-11",
+          "4.37e-11",
+          "5.081e-10"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "F",
+          "30.39",
+          "7.79",
+          "6.695e-15",
+          "8.123e-15",
+          "9.373e-14"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QR",
+          "52.98",
+          "12.83",
+          "1.089e-37",
+          "3.451e-37",
+          "1.743e-36"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "F",
+          "10.85",
+          "1.848",
+          "0.06462",
+          "0.06562",
+          "0.5169"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QR",
+          "-15.71",
+          "-1.673",
+          "0.09434",
+          "0.09556",
+          "0.6604"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "F",
+          "7.941",
+          "2.058",
+          "0.03958",
+          "0.04032",
+          "0.3958"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QR",
+          "12.16",
+          "1.53",
+          "0.1259",
+          "0.1273",
+          "0.7002"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "F",
+          "3.37",
+          "0.9707",
+          "0.3317",
+          "0.3422",
+          "0.7002"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QR",
+          "-43.62",
+          "-2.778",
+          "0.005471",
+          "0.006887",
+          "0.06018"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "F",
+          "-11.77",
+          "-1.345",
+          "0.1785",
+          "0.1884",
+          "0.7002"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QR",
+          "-41.49",
+          "-3.031",
+          "0.002441",
+          "0.003236",
+          "0.02929"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "F",
+          "26.32",
+          "1.569",
+          "0.1167",
+          "0.1522",
+          "0.7002"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QR",
+          "-61.42",
+          "-1.991",
+          "0.04645",
+          "0.06948",
+          "0.418"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "F",
+          "9.868",
+          "1.092",
+          "0.2746",
+          "0.3183",
+          "0.7002"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QR",
+          "-47.64",
+          "-1.516",
+          "0.1294",
+          "0.1664",
+          "0.7002"
+        ]
+      ]
+    },
+    {
+      "caption": "Table J3. Corrected primary simulation cases. Each row uses 100000 independent paths and includes the issue position in the peak. Rate/SE/endpoint are percentages; Δ5 is percentage points from 5%. Level rows use the stationary-marginal endpoint quantile; increment rows use their own known endpoint quantile with a zero starting position. Stat. denotes a stationary random start; Abs95 is the absolute-level 95th percentile. End measures the absolute change from the issue position exceeding the endpoint threshold. All seeds and exact counts are retained in the correction CSV.",
+      "headers": [
+        "Process/start",
+        "H",
+        "AR",
+        "q",
+        "Hits",
+        "Peak %",
+        "Δ5 pp",
+        "SE %",
+        "End %"
+      ],
+      "rows": [
+        [
+          "Level/stat.",
+          "6",
+          "0.68",
+          "3.009",
+          "175",
+          "0.175",
+          "-4.825",
+          "0.01322",
+          "2.462"
+        ],
+        [
+          "Level/Abs95",
+          "6",
+          "0.68",
+          "3.009",
+          "0",
+          "0",
+          "-5",
+          "0",
+          "10.45"
+        ],
+        [
+          "Level/stat.",
+          "6",
+          "0.85",
+          "2.502",
+          "300",
+          "0.3",
+          "-4.7",
+          "0.01729",
+          "2.553"
+        ],
+        [
+          "Level/Abs95",
+          "6",
+          "0.85",
+          "2.502",
+          "14",
+          "0.014",
+          "-4.986",
+          "0.003741",
+          "8.227"
+        ],
+        [
+          "Level/stat.",
+          "6",
+          "0.98",
+          "1.071",
+          "913",
+          "0.913",
+          "-4.087",
+          "0.03008",
+          "2.434"
+        ],
+        [
+          "Level/Abs95",
+          "6",
+          "0.98",
+          "1.071",
+          "372",
+          "0.372",
+          "-4.628",
+          "0.01925",
+          "3.623"
+        ],
+        [
+          "Increment/zero",
+          "6",
+          "-0.3",
+          "4.244",
+          "3563",
+          "3.563",
+          "-1.437",
+          "0.05862",
+          "2.524"
+        ],
+        [
+          "Increment/zero",
+          "6",
+          "-0.6",
+          "3.127",
+          "4439",
+          "4.439",
+          "-0.561",
+          "0.06513",
+          "2.558"
+        ],
+        [
+          "Level/stat.",
+          "24",
+          "0.68",
+          "3.17",
+          "636",
+          "0.636",
+          "-4.364",
+          "0.02514",
+          "2.495"
+        ],
+        [
+          "Level/Abs95",
+          "24",
+          "0.68",
+          "3.17",
+          "1",
+          "0.001",
+          "-4.999",
+          "0.001",
+          "11.42"
+        ],
+        [
+          "Level/stat.",
+          "24",
+          "0.85",
+          "3.138",
+          "402",
+          "0.402",
+          "-4.598",
+          "0.02001",
+          "2.52"
+        ],
+        [
+          "Level/Abs95",
+          "24",
+          "0.85",
+          "3.138",
+          "1",
+          "0.001",
+          "-4.999",
+          "0.001",
+          "11.16"
+        ],
+        [
+          "Level/stat.",
+          "24",
+          "0.98",
+          "1.965",
+          "768",
+          "0.768",
+          "-4.232",
+          "0.02761",
+          "2.468"
+        ],
+        [
+          "Level/Abs95",
+          "24",
+          "0.98",
+          "1.965",
+          "85",
+          "0.085",
+          "-4.915",
+          "0.009216",
+          "6.201"
+        ],
+        [
+          "Increment/zero",
+          "24",
+          "-0.3",
+          "8.167",
+          "4281",
+          "4.281",
+          "-0.719",
+          "0.06401",
+          "2.476"
+        ],
+        [
+          "Increment/zero",
+          "24",
+          "-0.6",
+          "5.701",
+          "5032",
+          "5.032",
+          "0.032",
+          "0.06913",
+          "2.516"
+        ]
+      ]
+    },
+    {
+      "caption": "Table J4. All prespecified anchor-definition and conditional-endpoint-oracle sensitivities. Each row has 100000 paths. Signed95 is the signed-level 95th percentile, while Abs95 is the absolute-level 95th percentile. Marginal/conditional thresholds on a given path cell share the same seed; these are not independent replications. Full seeds, endpoint rates, SE and exact parameters remain in simulation.csv.",
+      "headers": [
+        "H",
+        "φ",
+        "Start",
+        "Endpoint q",
+        "q",
+        "Hits",
+        "Peak %",
+        "Δ5 pp"
+      ],
+      "rows": [
+        [
+          "6",
+          "0.68",
+          "Abs95",
+          "conditional",
+          "3.717",
+          "0",
+          "0",
+          "-5"
+        ],
+        [
+          "6",
+          "0.68",
+          "Signed95",
+          "marginal",
+          "3.009",
+          "2",
+          "0.002",
+          "-4.998"
+        ],
+        [
+          "6",
+          "0.68",
+          "Signed95",
+          "conditional",
+          "3.433",
+          "1",
+          "0.001",
+          "-4.999"
+        ],
+        [
+          "6",
+          "0.85",
+          "Abs95",
+          "conditional",
+          "3.036",
+          "0",
+          "0",
+          "-5"
+        ],
+        [
+          "6",
+          "0.85",
+          "Signed95",
+          "marginal",
+          "2.502",
+          "21",
+          "0.021",
+          "-4.979"
+        ],
+        [
+          "6",
+          "0.85",
+          "Signed95",
+          "conditional",
+          "2.84",
+          "4",
+          "0.004",
+          "-4.996"
+        ],
+        [
+          "6",
+          "0.98",
+          "Abs95",
+          "conditional",
+          "1.146",
+          "215",
+          "0.215",
+          "-4.785"
+        ],
+        [
+          "6",
+          "0.98",
+          "Signed95",
+          "marginal",
+          "1.071",
+          "464",
+          "0.464",
+          "-4.536"
+        ],
+        [
+          "6",
+          "0.98",
+          "Signed95",
+          "conditional",
+          "1.117",
+          "340",
+          "0.34",
+          "-4.66"
+        ],
+        [
+          "24",
+          "0.68",
+          "Abs95",
+          "conditional",
+          "3.92",
+          "0",
+          "0",
+          "-5"
+        ],
+        [
+          "24",
+          "0.68",
+          "Signed95",
+          "marginal",
+          "3.17",
+          "9",
+          "0.009",
+          "-4.991"
+        ],
+        [
+          "24",
+          "0.68",
+          "Signed95",
+          "conditional",
+          "3.605",
+          "1",
+          "0.001",
+          "-4.999"
+        ],
+        [
+          "24",
+          "0.85",
+          "Abs95",
+          "conditional",
+          "3.88",
+          "0",
+          "0",
+          "-5"
+        ],
+        [
+          "24",
+          "0.85",
+          "Signed95",
+          "marginal",
+          "3.138",
+          "3",
+          "0.003",
+          "-4.997"
+        ],
+        [
+          "24",
+          "0.85",
+          "Signed95",
+          "conditional",
+          "3.571",
+          "0",
+          "0",
+          "-5"
+        ],
+        [
+          "24",
+          "0.98",
+          "Abs95",
+          "conditional",
+          "2.298",
+          "20",
+          "0.02",
+          "-4.98"
+        ],
+        [
+          "24",
+          "0.98",
+          "Signed95",
+          "marginal",
+          "1.965",
+          "146",
+          "0.146",
+          "-4.854"
+        ],
+        [
+          "24",
+          "0.98",
+          "Signed95",
+          "conditional",
+          "2.179",
+          "56",
+          "0.056",
+          "-4.944"
+        ]
+      ]
+    },
+    {
+      "caption": "Table K1. All 48 panel H/W cells, no favorable selection. F loss is in source USD millions; the next columns are percentage loss changes relative to F. Hits list F/QR33/C2/L, respectively. All methods complete on277 evaluation origins in every cell.",
+      "headers": [
+        "Series key",
+        "H",
+        "W",
+        "F loss",
+        "Δ QR %",
+        "Δ C2 %",
+        "Δ L %",
+        "Hits F/QR/C2/L"
+      ],
+      "rows": [
+        [
+          "PDPOSMBS-TOT",
+          "6",
+          "52",
+          "921.7",
+          "171",
+          "3.238",
+          "7.174",
+          "21/101/27/11"
+        ],
+        [
+          "PDPOSMBS-TOT",
+          "6",
+          "260",
+          "945.6",
+          "7.359",
+          "1.167",
+          "7.333",
+          "26/19/27/5"
+        ],
+        [
+          "PDPOSMBS-TOT",
+          "24",
+          "52",
+          "1754",
+          "215.5",
+          "5.095",
+          "-17.87",
+          "39/145/43/27"
+        ],
+        [
+          "PDPOSMBS-TOT",
+          "24",
+          "260",
+          "1612",
+          "26.79",
+          "1.038",
+          "-3.923",
+          "25/29/26/22"
+        ],
+        [
+          "PDPOSCS-TOT",
+          "6",
+          "52",
+          "530.3",
+          "52.75",
+          "-5.787",
+          "18.28",
+          "16/48/23/11"
+        ],
+        [
+          "PDPOSCS-TOT",
+          "6",
+          "260",
+          "399.7",
+          "1.902",
+          "-1.1",
+          "17.56",
+          "6/15/6/2"
+        ],
+        [
+          "PDPOSCS-TOT",
+          "24",
+          "52",
+          "579.4",
+          "73.78",
+          "1.851",
+          "-5.065",
+          "16/63/24/11"
+        ],
+        [
+          "PDPOSCS-TOT",
+          "24",
+          "260",
+          "569.9",
+          "27.46",
+          "-3.384",
+          "19.63",
+          "6/3/6/4"
+        ],
+        [
+          "PDPOSFGS-TOT",
+          "6",
+          "52",
+          "400.7",
+          "107.2",
+          "-4.151",
+          "-4.743",
+          "16/77/24/13"
+        ],
+        [
+          "PDPOSFGS-TOT",
+          "6",
+          "260",
+          "358.3",
+          "-1.081",
+          "4.883",
+          "16.77",
+          "6/14/9/0"
+        ],
+        [
+          "PDPOSFGS-TOT",
+          "24",
+          "52",
+          "476.2",
+          "128.7",
+          "13.36",
+          "-3.723",
+          "36/64/37/37"
+        ],
+        [
+          "PDPOSFGS-TOT",
+          "24",
+          "260",
+          "354",
+          "30.02",
+          "72.24",
+          "-4.06",
+          "9/21/26/12"
+        ],
+        [
+          "PDPOSTIPS-L2",
+          "6",
+          "52",
+          "287.3",
+          "217.2",
+          "6.738",
+          "-1.891",
+          "26/125/29/12"
+        ],
+        [
+          "PDPOSTIPS-L2",
+          "6",
+          "260",
+          "269.3",
+          "66.28",
+          "1.78",
+          "-7.423",
+          "24/45/25/19"
+        ],
+        [
+          "PDPOSTIPS-L2",
+          "24",
+          "52",
+          "641",
+          "307.4",
+          "24.88",
+          "-34.6",
+          "48/181/69/30"
+        ],
+        [
+          "PDPOSTIPS-L2",
+          "24",
+          "260",
+          "532.2",
+          "226.9",
+          "11.41",
+          "-4.519",
+          "47/147/59/46"
+        ],
+        [
+          "PDPOSTIPS-G11",
+          "6",
+          "52",
+          "42.32",
+          "196.7",
+          "1.706",
+          "13.93",
+          "23/118/29/3"
+        ],
+        [
+          "PDPOSTIPS-G11",
+          "6",
+          "260",
+          "41.76",
+          "90.31",
+          "63.18",
+          "27.71",
+          "14/38/29/1"
+        ],
+        [
+          "PDPOSTIPS-G11",
+          "24",
+          "52",
+          "80.85",
+          "218.7",
+          "135.6",
+          "-16.39",
+          "61/123/103/16"
+        ],
+        [
+          "PDPOSTIPS-G11",
+          "24",
+          "260",
+          "51.21",
+          "98.59",
+          "37.18",
+          "27.11",
+          "9/33/30/0"
+        ],
+        [
+          "PDPOSTIPS-G2",
+          "6",
+          "52",
+          "181.3",
+          "208.6",
+          "8.58",
+          "19.45",
+          "16/96/21/4"
+        ],
+        [
+          "PDPOSTIPS-G2",
+          "6",
+          "260",
+          "179.4",
+          "63.47",
+          "10.78",
+          "23",
+          "19/36/24/4"
+        ],
+        [
+          "PDPOSTIPS-G2",
+          "24",
+          "52",
+          "377.9",
+          "277.8",
+          "11.77",
+          "6.363",
+          "31/131/42/27"
+        ],
+        [
+          "PDPOSTIPS-G2",
+          "24",
+          "260",
+          "286",
+          "109.3",
+          "120.1",
+          "2.092",
+          "23/66/58/20"
+        ],
+        [
+          "PDPOSTIPS-G6L11",
+          "6",
+          "52",
+          "133.6",
+          "59.3",
+          "-1.655",
+          "9.669",
+          "9/73/12/5"
+        ],
+        [
+          "PDPOSTIPS-G6L11",
+          "6",
+          "260",
+          "114.9",
+          "-5.717",
+          "-1.109",
+          "36.27",
+          "4/14/4/0"
+        ],
+        [
+          "PDPOSTIPS-G6L11",
+          "24",
+          "52",
+          "147",
+          "76.48",
+          "-0.9743",
+          "5.028",
+          "10/92/16/4"
+        ],
+        [
+          "PDPOSTIPS-G6L11",
+          "24",
+          "260",
+          "133.8",
+          "-26.42",
+          "-1.297",
+          "12.63",
+          "2/1/2/0"
+        ],
+        [
+          "PDPOSGSC-L2",
+          "6",
+          "52",
+          "1233",
+          "215.9",
+          "-3.846",
+          "20.65",
+          "15/129/23/6"
+        ],
+        [
+          "PDPOSGSC-L2",
+          "6",
+          "260",
+          "1247",
+          "64.4",
+          "9.038",
+          "-2.638",
+          "15/40/20/6"
+        ],
+        [
+          "PDPOSGSC-L2",
+          "24",
+          "52",
+          "2271",
+          "276.6",
+          "182.8",
+          "0.9259",
+          "46/165/96/27"
+        ],
+        [
+          "PDPOSGSC-L2",
+          "24",
+          "260",
+          "2919",
+          "41.6",
+          "-0.1931",
+          "-22.23",
+          "33/55/33/24"
+        ],
+        [
+          "PDPOSGSC-G2L3",
+          "6",
+          "52",
+          "792.4",
+          "121.1",
+          "145.3",
+          "17.31",
+          "24/93/112/15"
+        ],
+        [
+          "PDPOSGSC-G2L3",
+          "6",
+          "260",
+          "1004",
+          "21.31",
+          "22.62",
+          "-14.81",
+          "28/44/59/12"
+        ],
+        [
+          "PDPOSGSC-G2L3",
+          "24",
+          "52",
+          "2102",
+          "113",
+          "129.6",
+          "22.35",
+          "47/135/151/49"
+        ],
+        [
+          "PDPOSGSC-G2L3",
+          "24",
+          "260",
+          "2677",
+          "11.6",
+          "39.73",
+          "-9.349",
+          "55/64/91/40"
+        ],
+        [
+          "PDPOSGSC-G3L6",
+          "6",
+          "52",
+          "764.9",
+          "87.61",
+          "75.44",
+          "20.57",
+          "12/82/72/9"
+        ],
+        [
+          "PDPOSGSC-G3L6",
+          "6",
+          "260",
+          "699.1",
+          "0.7876",
+          "1.907",
+          "3.661",
+          "20/15/21/8"
+        ],
+        [
+          "PDPOSGSC-G3L6",
+          "24",
+          "52",
+          "977.4",
+          "544.3",
+          "299.1",
+          "-11.37",
+          "38/137/120/20"
+        ],
+        [
+          "PDPOSGSC-G3L6",
+          "24",
+          "260",
+          "931",
+          "15.52",
+          "0.1286",
+          "-5.726",
+          "20/37/20/17"
+        ],
+        [
+          "PDPOSGSC-G6L7",
+          "6",
+          "52",
+          "542.3",
+          "253.7",
+          "89",
+          "0.9519",
+          "16/142/79/12"
+        ],
+        [
+          "PDPOSGSC-G6L7",
+          "6",
+          "260",
+          "564.9",
+          "31.61",
+          "71.05",
+          "-10.15",
+          "20/42/49/15"
+        ],
+        [
+          "PDPOSGSC-G6L7",
+          "24",
+          "52",
+          "993.4",
+          "264.8",
+          "264.8",
+          "1.686",
+          "43/217/215/49"
+        ],
+        [
+          "PDPOSGSC-G6L7",
+          "24",
+          "260",
+          "699",
+          "146.4",
+          "142.6",
+          "5.191",
+          "22/77/67/21"
+        ],
+        [
+          "PDPOSGSC-G7L11",
+          "6",
+          "52",
+          "505.7",
+          "175.6",
+          "15.72",
+          "4.917",
+          "25/83/34/11"
+        ],
+        [
+          "PDPOSGSC-G7L11",
+          "6",
+          "260",
+          "506.2",
+          "8.344",
+          "-0.06055",
+          "1.05",
+          "25/31/25/12"
+        ],
+        [
+          "PDPOSGSC-G7L11",
+          "24",
+          "52",
+          "1654",
+          "94.95",
+          "62.4",
+          "-20.33",
+          "36/105/91/26"
+        ],
+        [
+          "PDPOSGSC-G7L11",
+          "24",
+          "260",
+          "1003",
+          "230",
+          "202.8",
+          "1.881",
+          "32/94/99/26"
+        ]
+      ]
+    },
+    {
+      "caption": "Table L1. All 24 planned method cells. Loss is native FX USD or Treasury USD millions. Failed complete cells have NA, regardless of earlier issued reports; no partial average substitutes for the full evaluation.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Method",
+        "Status",
+        "Loss",
+        "Hits",
+        "Δ F %",
+        "Δ QR %"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "FHS",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "PEAK_POT",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QRF",
+          "COMPLETE",
+          "4.683e+05",
+          "402",
+          "5.793",
+          "8.081"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "FHS",
+          "COMPLETE",
+          "4.47e+05",
+          "278",
+          "-1.258",
+          "15.85"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "PEAK_POT",
+          "COMPLETE",
+          "4.675e+05",
+          "363",
+          "3.269",
+          "21.16"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QRF",
+          "COMPLETE",
+          "4.324e+05",
+          "354",
+          "-4.48",
+          "12.07"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "FHS",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "PEAK_POT",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QRF",
+          "COMPLETE",
+          "9.136e+05",
+          "779",
+          "16.02",
+          "-11.77"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "FHS",
+          "COMPLETE",
+          "8.111e+05",
+          "136",
+          "6.255",
+          "10.4"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "PEAK_POT",
+          "COMPLETE",
+          "8.444e+05",
+          "369",
+          "10.61",
+          "14.93"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QRF",
+          "COMPLETE",
+          "8.194e+05",
+          "600",
+          "7.335",
+          "11.53"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "FHS",
+          "COMPLETE",
+          "2727",
+          "7",
+          "-1.883",
+          "-46.49"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "PEAK_POT",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QRF",
+          "COMPLETE",
+          "2589",
+          "16",
+          "-6.83",
+          "-49.19"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "FHS",
+          "COMPLETE",
+          "2530",
+          "4",
+          "-8.276",
+          "-39.17"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "PEAK_POT",
+          "COMPLETE",
+          "2473",
+          "17",
+          "-10.35",
+          "-40.54"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QRF",
+          "COMPLETE",
+          "2930",
+          "33",
+          "6.198",
+          "-29.57"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "FHS",
+          "COMPLETE",
+          "5955",
+          "0",
+          "60.26",
+          "-51.05"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "PEAK_POT",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QRF",
+          "COMPLETE",
+          "3875",
+          "44",
+          "4.279",
+          "-68.15"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "FHS",
+          "COMPLETE",
+          "5582",
+          "0",
+          "125.1",
+          "7.249"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "PEAK_POT",
+          "COMPLETE",
+          "3276",
+          "20",
+          "32.09",
+          "-37.05"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QRF",
+          "COMPLETE",
+          "3322",
+          "62",
+          "33.94",
+          "-36.17"
+        ]
+      ]
+    },
+    {
+      "caption": "Table L2. All 48 planned paired comparisons. Tests are post-result working references; NA component tests remain NA. A separate 48-slot Holm family reserves missing/degenerate slots as 1 for adjustment only. This is distinct from claiming an observed valid p value of 1. Negative Δ/t favors the new method; shared training and inspected outcomes limit interpretation.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Method",
+        "Ref",
+        "Δloss %",
+        "DM t",
+        "DM p",
+        "HLN p",
+        "Holm p"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "FHS",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "FHS",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "PEAK_POT",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "PEAK_POT",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QRF",
+          "F",
+          "5.793",
+          "1.722",
+          "0.08512",
+          "0.08543",
+          "1"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "QRF",
+          "QR",
+          "8.081",
+          "2.559",
+          "0.01048",
+          "0.01057",
+          "0.3984"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "FHS",
+          "F",
+          "-1.258",
+          "-0.6564",
+          "0.5116",
+          "0.5119",
+          "1"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "FHS",
+          "QR",
+          "15.85",
+          "5.8",
+          "6.64e-09",
+          "7.147e-09",
+          "3.054e-07"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "PEAK_POT",
+          "F",
+          "3.269",
+          "1.538",
+          "0.1241",
+          "0.1245",
+          "1"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "PEAK_POT",
+          "QR",
+          "21.16",
+          "6.305",
+          "2.885e-10",
+          "3.175e-10",
+          "1.356e-08"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QRF",
+          "F",
+          "-4.48",
+          "-1.528",
+          "0.1264",
+          "0.1268",
+          "1"
+        ],
+        [
+          "FX",
+          "6",
+          "2880",
+          "QRF",
+          "QR",
+          "12.07",
+          "4.672",
+          "2.978e-06",
+          "3.094e-06",
+          "0.000131"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "FHS",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "FHS",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "PEAK_POT",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "PEAK_POT",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QRF",
+          "F",
+          "16.02",
+          "1.953",
+          "0.05076",
+          "0.05163",
+          "1"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "QRF",
+          "QR",
+          "-11.77",
+          "-1.872",
+          "0.06122",
+          "0.06219",
+          "1"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "FHS",
+          "F",
+          "6.255",
+          "1.062",
+          "0.2881",
+          "0.2898",
+          "1"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "FHS",
+          "QR",
+          "10.4",
+          "1.367",
+          "0.1717",
+          "0.1733",
+          "1"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "PEAK_POT",
+          "F",
+          "10.61",
+          "3.05",
+          "0.002286",
+          "0.002379",
+          "0.09144"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "PEAK_POT",
+          "QR",
+          "14.93",
+          "2.405",
+          "0.01618",
+          "0.01659",
+          "0.5987"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QRF",
+          "F",
+          "7.335",
+          "1.08",
+          "0.2801",
+          "0.2819",
+          "1"
+        ],
+        [
+          "FX",
+          "24",
+          "2880",
+          "QRF",
+          "QR",
+          "11.53",
+          "1.539",
+          "0.1237",
+          "0.1251",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "FHS",
+          "F",
+          "-1.883",
+          "-0.2039",
+          "0.8384",
+          "0.8417",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "FHS",
+          "QR",
+          "-46.49",
+          "-2.66",
+          "0.007819",
+          "0.009631",
+          "0.3049"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "PEAK_POT",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "PEAK_POT",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QRF",
+          "F",
+          "-6.83",
+          "-0.9999",
+          "0.3174",
+          "0.3279",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "QRF",
+          "QR",
+          "-49.19",
+          "-3.611",
+          "0.0003054",
+          "0.0004712",
+          "0.01313"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "FHS",
+          "F",
+          "-8.276",
+          "-0.5508",
+          "0.5818",
+          "0.5897",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "FHS",
+          "QR",
+          "-39.17",
+          "-2.277",
+          "0.02278",
+          "0.02642",
+          "0.7972"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "PEAK_POT",
+          "F",
+          "-10.35",
+          "-1.265",
+          "0.206",
+          "0.2162",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "PEAK_POT",
+          "QR",
+          "-40.54",
+          "-3.117",
+          "0.00183",
+          "0.002474",
+          "0.07503"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QRF",
+          "F",
+          "6.198",
+          "0.585",
+          "0.5585",
+          "0.5668",
+          "1"
+        ],
+        [
+          "Treasury",
+          "6",
+          "260",
+          "QRF",
+          "QR",
+          "-29.57",
+          "-3.238",
+          "0.001205",
+          "0.001677",
+          "0.05062"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "FHS",
+          "F",
+          "60.26",
+          "1.955",
+          "0.05059",
+          "0.0747",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "FHS",
+          "QR",
+          "-51.05",
+          "-1.467",
+          "0.1423",
+          "0.1804",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "PEAK_POT",
+          "F",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "PEAK_POT",
+          "QR",
+          "NA",
+          "NA",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QRF",
+          "F",
+          "4.279",
+          "0.2932",
+          "0.7693",
+          "0.7886",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "QRF",
+          "QR",
+          "-68.15",
+          "-2.395",
+          "0.0166",
+          "0.02921",
+          "0.5987"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "FHS",
+          "F",
+          "125.1",
+          "11.21",
+          "3.542e-29",
+          "3.876e-21",
+          "1.7e-27"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "FHS",
+          "QR",
+          "7.249",
+          "0.2367",
+          "0.8129",
+          "0.8287",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "PEAK_POT",
+          "F",
+          "32.09",
+          "5.485",
+          "4.146e-08",
+          "9.315e-07",
+          "1.866e-06"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "PEAK_POT",
+          "QR",
+          "-37.05",
+          "-1.219",
+          "0.2229",
+          "0.2657",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QRF",
+          "F",
+          "33.94",
+          "1.425",
+          "0.154",
+          "0.1931",
+          "1"
+        ],
+        [
+          "Treasury",
+          "24",
+          "260",
+          "QRF",
+          "QR",
+          "-36.17",
+          "-1.736",
+          "0.08256",
+          "0.1133",
+          "1"
+        ]
+      ]
+    },
+    {
+      "caption": "Table L3. Every retained NA classification. For boundary fits, δ is fitted persistence minus one and ε is excess over the declared numerical ceiling; optimizer flag 0 denotes success. Strict-tail structural exclusions have no fitted persistence. No missing full-cell loss is imputed.",
+      "headers": [
+        "Source",
+        "H",
+        "W",
+        "Method",
+        "Issued",
+        "Class",
+        "δ",
+        "ε",
+        "Flag"
+      ],
+      "rows": [
+        [
+          "FX",
+          "6",
+          "720",
+          "FHS",
+          "240",
+          "Boundary tolerance",
+          "1.272e-10",
+          "2.721e-11",
+          "0"
+        ],
+        [
+          "FX",
+          "6",
+          "720",
+          "PEAK_POT",
+          "240",
+          "Boundary tolerance",
+          "1.272e-10",
+          "2.721e-11",
+          "0"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "FHS",
+          "240",
+          "Boundary tolerance",
+          "1.299e-10",
+          "2.986e-11",
+          "0"
+        ],
+        [
+          "FX",
+          "24",
+          "720",
+          "PEAK_POT",
+          "240",
+          "Boundary tolerance",
+          "1.299e-10",
+          "2.986e-11",
+          "0"
+        ],
+        [
+          "Treasury",
+          "6",
+          "52",
+          "PEAK_POT",
+          "0",
+          "Tail size",
+          "NA",
+          "NA",
+          "NA"
+        ],
+        [
+          "Treasury",
+          "24",
+          "52",
+          "PEAK_POT",
+          "0",
+          "Tail size",
+          "NA",
+          "NA",
+          "NA"
+        ]
+      ]
+    }
+  ]
+}

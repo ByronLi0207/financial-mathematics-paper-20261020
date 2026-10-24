@@ -1,0 +1,27 @@
+test_current_and_rms_known (test_parsimonious_v3.CausalFourFeatures.test_current_and_rms_known) ... FAIL
+test_future_changes_do_not_change_issued_features (test_parsimonious_v3.CausalFourFeatures.test_future_changes_do_not_change_issued_features) ... ok
+test_training_transform_constant_and_causal (test_parsimonious_v3.CausalFourFeatures.test_training_transform_constant_and_causal) ... ok
+
+======================================================================
+FAIL: test_current_and_rms_known (test_parsimonious_v3.CausalFourFeatures.test_current_and_rms_known)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_parsimonious_v3.py", line 9, in test_current_and_rms_known
+    np.testing.assert_array_equal(v[60],[10.,10.,1.,1.])
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1054, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 919, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 4 (25%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 1.11022302e-16
+ ACTUAL: array([10., 10.,  1.,  1.])
+ DESIRED: array([10., 10.,  1.,  1.])
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.022s
+
+FAILED (failures=1)

@@ -1,0 +1,78 @@
+{
+  "status": "READ_ONLY_CONSISTENCY_AGREEMENT_WITH_NONBLOCKING_DOCUMENTATION_NOTE",
+  "scope": "Current D1 FHS/peak-POT descriptions, native recursion, normalization/tail construction, retained six NA classifications, 24 output-cell metadata, displayed D1 tables and resource/complete-cell claims. No optimizer, financial forecast rerun or test suite was invoked.",
+  "audited_manuscript_content_sha256": "5c89feabc56232aaceb7425316972af0861757b9b5091d4da7cc203d44b1ce34",
+  "source_hashes": {
+    "protocol/revision-20261023/round2-D1-mature-baselines.md": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+    "round2_filtered.py": "c01b675d5a284ffc92890b78d043362edcc329f5d1ef824e81db43cef3f0aad7",
+    "results/revision-20261023/round2/baselines/summary.json": "cf3681e1e44758a5d239c2f1a871bf97238e566c7f7e3105cd96754c14632dce",
+    "results/revision-20261023/round2/baselines/summary.csv": "dc10cdb68d54810dd9b457eac5d948a733fbc7e79948571e84e8e255c135de95",
+    "results/revision-20261023/round2/baselines/paired-tests.csv": "c243137ebaf54eb4acb1ae421b0051981bcfbd30f8f83fd7a6982cca4b2bb0f5",
+    "results/revision-20261023/round2/baselines/independent-readback.json": "f51e465851e372bf50c7298060e70baf629681fd751178c40f516c2a8d2ca89f"
+  },
+  "concrete_discrepancies": [],
+  "provenance_agreements": {
+    "output_cells_read": 24,
+    "all_code_and_protocol_hashes_match_prefit_binding_and_current_files": true,
+    "all_cell_start_times_after_v2_execution_binding_freeze": true,
+    "prefit_binding_utc": "2026-10-23T10:28:16.908908+00:00",
+    "all_outputs_flagged_post_result_and_exploratory": true,
+    "original_primaries_and_original72_family_not_replaced_in_D1_description": true
+  },
+  "method_description_agreements": [
+    "The W completed label origins run from r-H-W+1 through r-H; increment fitting uses their same position envelope with W+H-1 unique increments.",
+    "Training-only increment RMS normalization, constant-mean Gaussian QMLE GARCH(1,1), frozen coefficient/residual-pool blocks and causal observed-state variance updates match code and frozen protocol.",
+    "The manuscript's local GARCH coefficient subscripts distinguish those parameters from regression and preference notation; displayed native mean/innovation/variance recursion matches the implementation.",
+    "FHS uses2048 iid standardized-residual draws with replacement, bound to source/H/W/refit seed inputs and frozen within refit blocks; native signed position path maxima include h=0 and use corrected headroom rank ceil(19(M+1)/20).",
+    "Peak POT divides mature peak headroom by the in-sample historical one-step sigma from the refit filter. It freezes one fitted GPD tail per refit and rescales its quantile with issue-time one-step sigma, then adds the current absolute-position floor.",
+    "The manuscript correctly distinguishes peak-headroom POT from McNeil-Frey's filtered one-step return-innovation tail procedure and multi-period sums. It explicitly retains anchor/volatility, drift, variance-path and overlapping-label approximation limits.",
+    "The six NA descriptions do not mislabel successful-optimizer persistence exclusions as optimizer nonconvergence or predictive inferiority; no incomplete-cell score replaces a missing complete-cell comparison.",
+    "Separate48-slot multiplicity and post-result working-reference caveats do not imply control across every supplement or independent unseen-dealer validation."
+  ],
+  "displayed_table_agreements": {
+    "Table11_method_entries_checked": 24,
+    "TableL1_rows_checked": 24,
+    "TableL2_rows_checked": 48,
+    "TableL3_rows_checked": 6,
+    "displayed_strings_compared": 774,
+    "displayed_string_mismatches": 0,
+    "comparison_basis": "Actual saved cell JSON/paired-tests CSV fields formatted to the displayed four-significant-figure convention; NA and issued-prefix labels checked separately. Table L3 classification numbers checked against saved metadata arithmetic and retained readback.",
+    "negative_or_adverse_entries_omitted": 0
+  },
+  "cell_count_agreements": {
+    "planned": 24,
+    "complete": 18,
+    "NA": 6,
+    "FHS": {"complete": 6, "lower_loss_vs_matchedF": 3, "higher_loss_vs_matchedF": 3},
+    "PEAK_POT": {"complete": 4, "lower_loss_vs_matchedF": 1, "higher_loss_vs_matchedF": 3},
+    "QRF": {"complete": 8, "lower_loss_vs_matchedF": 2, "higher_loss_vs_matchedF": 6},
+    "complete_refit_receipts": 2436,
+    "partial_completed_refit_receipts": 40,
+    "all_complete_or_partial_refit_receipts_checked": 2476,
+    "refit_maturity_or_increment_span_discrepancies": 0,
+    "note": "The retained independent-readback count2436 covers complete-cell refits; this audit also checked40 completed refits from four failed FX prefixes. These counts have different stated scopes and do not conflict."
+  },
+  "NA_classification_agreements": [
+    {"source": "fx_hourly", "horizon": 6, "window": 720, "method": "FHS", "issued_before_failure": 240, "class": "PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS", "optimizer_flag": 0, "persistence": 1.0000000001272118, "persistence_minus_one": 1.272117966522046e-10, "declared_ceiling": 1.0000000001, "excess_over_ceiling": 2.7211788378167512e-11},
+    {"source": "fx_hourly", "horizon": 6, "window": 720, "method": "PEAK_POT", "issued_before_failure": 240, "class": "PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS", "optimizer_flag": 0, "persistence": 1.0000000001272118, "persistence_minus_one": 1.272117966522046e-10, "declared_ceiling": 1.0000000001, "excess_over_ceiling": 2.7211788378167512e-11},
+    {"source": "fx_hourly", "horizon": 24, "window": 720, "method": "FHS", "issued_before_failure": 240, "class": "PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS", "optimizer_flag": 0, "persistence": 1.0000000001298595, "persistence_minus_one": 1.2985945652133069e-10, "declared_ceiling": 1.0000000001, "excess_over_ceiling": 2.9859448247293585e-11},
+    {"source": "fx_hourly", "horizon": 24, "window": 720, "method": "PEAK_POT", "issued_before_failure": 240, "class": "PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS", "optimizer_flag": 0, "persistence": 1.0000000001298595, "persistence_minus_one": 1.2985945652133069e-10, "declared_ceiling": 1.0000000001, "excess_over_ceiling": 2.9859448247293585e-11},
+    {"source": "nyfed_weekly", "horizon": 6, "window": 52, "method": "PEAK_POT", "issued_before_failure": 0, "class": "POT_STRUCTURAL_TAIL_SIZE", "maximum_nominal_tail_count": 5, "minimum_strict_exceedances": 20},
+    {"source": "nyfed_weekly", "horizon": 24, "window": 52, "method": "PEAK_POT", "issued_before_failure": 0, "class": "POT_STRUCTURAL_TAIL_SIZE", "maximum_nominal_tail_count": 5, "minimum_strict_exceedances": 20}
+  ],
+  "NA_verification_boundary": "This audit independently recalculated the persistence/tolerance arithmetic, optimizer flags, positivity/finite scalar parameter gates, absence of complete scores and structural tail counts. It inspected the existing fixed-coefficient variance/residual hash-readback evidence but did not rerun that filtering or invoke an optimizer.",
+  "resource_agreements": {
+    "maximum_elapsed_seconds": 239.0302985419985,
+    "maximum_rss_bytes": 229376000,
+    "maximum_observed_os_threads": 1,
+    "all24_within_declared600second_2GiB_2thread_ceilings": true
+  },
+  "nonblocking_documentation_notes": [
+    {
+      "location": "Appendix L, Peak-headroom POT adaptation paragraph",
+      "finding": "The manuscript refers to the declared shape regularity gate but does not spell out xi>-.5, and it does not explicitly display m/W>.05. Both fixed conditions are explicit in the frozen protocol and implemented code; this is an expositional omission, not a numerical discrepancy.",
+      "suggestion": "Optionally state the two existing gates directly in the method description without changing any result or model specification."
+    }
+  ],
+  "actions_not_performed": ["financial rerun", "optimizer call", "new forecast", "test run", "core/worker/protocol edit", "CHANGELOG or registry edit", "Git operation", "Claude review"]
+}

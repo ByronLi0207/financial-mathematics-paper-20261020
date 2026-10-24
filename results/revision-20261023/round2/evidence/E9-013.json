@@ -1,0 +1,16 @@
+{
+  "step": "E9",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import json;from pathlib import Path\nfor p in sorted(Path('\"'\"'results/revision-20261023/round2/shrinkage'\"'\"').glob('\"'\"'*.json'\"'\"')):\n r=json.loads(p.read_text());n=[z['\"'\"'slope_l2_norm'\"'\"'] for z in r['\"'\"'refits'\"'\"']];print(p.name,'\"'\"'refits'\"'\"',len(n),'\"'\"'norm_minmax'\"'\"',min(n),max(n),'\"'\"'abs_projected_effect'\"'\"',r['\"'\"'aggregate_projected_native_slope_contribution'\"'\"']['\"'\"'mean_absolute'\"'\"'],'\"'\"'I_loss_pct'\"'\"',r['\"'\"'comparison_I'\"'\"']['\"'\"'percent_pinball_difference'\"'\"'],'\"'\"'F_loss_pct'\"'\"',r['\"'\"'comparison_F'\"'\"']['\"'\"'percent_pinball_difference'\"'\"'],'\"'\"'exact_C2'\"'\"',r['\"'\"'c2_replay_array_equal'\"'\"'],'\"'\"'exact_F'\"'\"',r['\"'\"'frozen_F_replay_array_equal'\"'\"'],'\"'\"'elapsed'\"'\"',r['\"'\"'resources'\"'\"']['\"'\"'elapsed_seconds'\"'\"'],'\"'\"'RSS'\"'\"',r['\"'\"'resources'\"'\"']['\"'\"'peak_rss_bytes'\"'\"'],'\"'\"'threads'\"'\"',r['\"'\"'resources'\"'\"']['\"'\"'maximum_observed_os_threads'\"'\"'])'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path\nfor p in sorted(Path('results/revision-20261023/round2/shrinkage').glob('*.json')):\n r=json.loads(p.read_text());n=[z['slope_l2_norm'] for z in r['refits']];print(p.name,'refits',len(n),'norm_minmax',min(n),max(n),'abs_projected_effect',r['aggregate_projected_native_slope_contribution']['mean_absolute'],'I_loss_pct',r['comparison_I']['percent_pinball_difference'],'F_loss_pct',r['comparison_F']['percent_pinball_difference'],'exact_C2',r['c2_replay_array_equal'],'exact_F',r['frozen_F_replay_array_equal'],'elapsed',r['resources']['elapsed_seconds'],'RSS',r['resources']['peak_rss_bytes'],'threads',r['resources']['maximum_observed_os_threads'])"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T09:50:08.356555+00:00",
+  "ended_utc": "2026-10-23T09:50:08.376851+00:00",
+  "returncode": 0,
+  "stdout": "nyfed-h24-w260.json refits 22 norm_minmax 0.0014966769207252154 0.012636986360068223 abs_projected_effect 452.9620095521541 I_loss_pct -2.191623481029305 F_loss_pct 0.10968443058975556 exact_C2 True exact_F True elapsed 0.15811087493784726 RSS 40534016 threads 1\nnyfed-h24-w52.json refits 22 norm_minmax 0.009691752739592026 0.017249693222041364 abs_projected_effect 832.3438980144283 I_loss_pct -0.2432162925240852 F_loss_pct 5.95489888474829 exact_C2 True exact_F True elapsed 0.15016320906579494 RSS 40599552 threads 1\nnyfed-h6-w260.json refits 22 norm_minmax 0.004323155808873013 0.007923695891303909 abs_projected_effect 136.7733897226244 I_loss_pct -1.0379138190989514 F_loss_pct 2.165567234410668 exact_C2 True exact_F True elapsed 0.08647841610945761 RSS 40665088 threads 1\nnyfed-h6-w52.json refits 22 norm_minmax 0.006540576072193279 0.019372116912597822 abs_projected_effect 366.7195226518396 I_loss_pct -0.6063396856566814 F_loss_pct -2.5888471945183236 exact_C2 True exact_F True elapsed 0.20832266681827605 RSS 40419328 threads 1\n",
+  "stderr": ""
+}

@@ -1,0 +1,327 @@
+{
+  "schema": "v8-wp4-driver-1",
+  "design_id": "v8-wp4-same-dealer-source-naive-day-end",
+  "design": {
+    "design_id": "v8-wp4-same-dealer-source-naive-day-end",
+    "post_result": true,
+    "exploratory": true,
+    "original_primary_comparisons_changed": false,
+    "input": {
+      "local_private_path": ".scratch/data/1hourNetPositionsKaggle.csv",
+      "dataset_version": 2,
+      "bytes": 1286391,
+      "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "expected_original_rows": 18576,
+      "timestamp_timezone": "unspecified source-naive; no UTC or exchange-time assertion",
+      "rights": "Raw and resampled positions remain private; publish acquisition route, fingerprints and aggregates only."
+    },
+    "resampling": {
+      "group": "source timestamp converted to datetime64[D] without timezone conversion",
+      "selected_record": "last strictly ordered original observation within each nonempty source-naive day",
+      "issue_clock": "end of that completed source-naive day: day + 1 day - 1 microsecond",
+      "why_issue_at_day_end": "The identity of the day's last record is not known at its original timestamp. All records in the completed day are known under this retrospective clock.",
+      "missing_day": "no row and no report; no fill, interpolation, synthetic zero or weekend adjustment",
+      "partial_first_or_last_day": "retain by the same last-observed-record rule; no outcome-based completeness exclusion",
+      "position": "selected original NetPosUsd float64, unchanged",
+      "private_mapping": "selected original row indices, original timestamps, daily positions and issue times under task scratch only",
+      "public_metadata": "aggregate counts/date range/gap histogram, mapping and daily-series hashes; no daily values or full selected-index vector",
+      "fingerprints": "SHA256 on canonical contiguous little-endian bytes: selected indices<i8, selected original timestamps in microseconds<i8, day-end issue timestamps in microseconds<i8, and positions<f8. Combined hash is SHA256(ASCII v8-daily-v1 followed by byte0x00, then these four byte vectors in that order).",
+      "worker_consistency": "Each sequential cell worker parses the same pinned snapshot and repeats the deterministic aggregation; all public resampling fingerprints must match. Parent imports only stdlib."
+    },
+    "clock_and_target": {
+      "horizons": [
+        6,
+        24
+      ],
+      "horizon_unit": "next recorded nonempty source-naive day-end observations",
+      "peak": "max(abs(N_daily[t:t+H+1])) including known current state",
+      "headroom": "peak-abs(N_daily[t])",
+      "intraday_excursions": "not part of the daily target; aggregation changes the sampled target",
+      "tau_numerator": 19,
+      "tau_denominator": 20,
+      "training_maturity": "i+H <= actual refit index",
+      "real_time_vintage_claim": false
+    },
+    "sample": {
+      "adaptation": "Original Treasury observation-index geometry, not its 2021 absolute calendar cutoff and not a proportional split.",
+      "validation_first": 329,
+      "validation_last": 380,
+      "validation_count": 52,
+      "evaluation_first": 405,
+      "evaluation_last_rule": "n_daily-1-max(horizons) = n_daily-25",
+      "purge": "24 issue indices between validation last380 and evaluation first405; last H24 validation response ends404",
+      "common_issue_grid": "same validation/evaluation indices across methods and all four W/H cells",
+      "insufficient_sample": "If validation/evaluation is unavailable, or earliest training origin for the cell is below common feature-valid index26, report the whole cell NA_SAMPLE_SIZE with exact reason; do not shorten W, move cutoffs, fill days or retune.",
+      "why_calendar_not_copied": "Treasury evaluation begins after2021-01-01; the accepted FX source is earlier. Copying that absolute date cannot evaluate this source. Report the scope mismatch explicitly."
+    },
+    "methods": [
+      "F",
+      "QR33",
+      "QR4"
+    ],
+    "windows": [
+      52,
+      260
+    ],
+    "features": {
+      "original_builder": "conditional_features.build_features",
+      "short_rms": 6,
+      "long_rms": 26,
+      "nominal_gap_seconds": 86400,
+      "valid_from": 26,
+      "calendar_clock": "fixed source-naive day-end issue times",
+      "constant_features": "original training-only constant-column standardization; no feature selection based on outcomes",
+      "qr4_column_indices": [
+        25,
+        0,
+        26,
+        27
+      ]
+    },
+    "forecasting": {
+      "refit_step": 13,
+      "refit_grid": "starts separately at validation329 and evaluation405, as original Treasury procedure",
+      "F": "corrected rank ceil(19*(W+1)/20) of mature own-anchor headroom; add current absolute-position floor; freeze selected headroom within each13-issue block",
+      "QR33": "original33 features, training-only original transform and response scale, original ridge-quantile solver",
+      "QR4": "original four predictors, original C-order training transform and response scale, original ridge-quantile solver",
+      "sealed_reuse": "Use WP3-sealed v8_mechanism_mc.forecast_report F/QR33/QR4 paths without modification. Do not call helpers that also compute S/K or other unlisted models."
+    },
+    "menus": {
+      "QR33": [
+        0.001,
+        0.01,
+        0.1
+      ],
+      "QR4": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "selection": {
+      "QR33": "all three declared validation candidates must complete; lowest mean pinball wins; exact tie chooses larger penalty",
+      "QR4": "choose among completed declared candidates; lowest mean pinball wins; exact tie chooses first increasing penalty",
+      "failed_candidate": "retain reason and available fit diagnostics, never substitute zero loss",
+      "selected_evaluation_failure": "whole method NA/FAILED; no other penalty or truncated evaluation replaces it"
+    },
+    "solver": {
+      "max_iter": 10000,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "gap_rtol": 1e-06,
+      "intercept_penalized": false,
+      "numerical_retuning": false
+    },
+    "outputs": {
+      "public": "four cell receipts,12 method summaries,8 regression-versus-F contrasts, all32 declared validation candidate records, selected penalties, failure/NA reasons, maturity and actual resources",
+      "scores": "original tau19/20 pinball mean and strict peak>capacity breach count/rate on identical complete issue grid; full precision stored",
+      "relative_change": "100*(mean_model_loss/mean_F_loss-1), NA if F loss zero",
+      "new_statistical_tests": false,
+      "private": "raw/daily source values, per-issue forecasts/targets/scores and exact resampling mapping under .scratch only",
+      "directory": "results/revision-v8/wp4"
+    },
+    "predeclared_interpretation": {
+      "per_regression_denominator": "four predeclared W/H cells; no weighting by favorable sample size",
+      "complete": "all four selected evaluations and their matched F complete",
+      "historical_win": "mean_F_loss < mean_regression_loss",
+      "conditional_win": "mean_regression_loss < mean_F_loss",
+      "tie": "exact equal mean losses; not a win",
+      "TREASURY_LIKE": "all four comparisons complete and historical wins in at least3/4",
+      "CONDITIONAL_GAINS_PERSIST": "all four comparisons complete and regression wins in at least3/4",
+      "MIXED": "all four complete and neither procedure-specific majority condition holds",
+      "INCONCLUSIVE": "For that regression separately, any of its own four regression-versus-F comparisons missing; retain available counts without a complete-case dominance claim. Failure of the other regression does not contaminate this classification.",
+      "literal_hourly_only_claim": "Any complete daily conditional score gain is a descriptive counterexample to a literal hourly-required claim; not population superiority evidence.",
+      "combined": "report QR33 and QR4 separately; differing patterns are method-dependent rather than one global frequency explanation",
+      "central_claim_non_support": "Conditional gains persisting on daily FX weaken a simple hourly-only explanation. Historical dominance is consistent with effects of aggregation/history scale within this source, not proof of a frequency cause.",
+      "causal_boundary": "Same dealer fixes source identity only. Observation frequency, physical horizon, physical history length, calendar features and sampled target change jointly. Neither outcome identifies a pure frequency or pure source effect; this does not supply independent-dealer validation."
+    },
+    "randomness": "none: deterministic resampling, menus and chronological indices; no random split or seed",
+    "resources": {
+      "numerical_workers": 1,
+      "numerical_threads": 1,
+      "maximum_observed_os_threads": 2,
+      "internal_rss_bytes": 1610612736,
+      "maximum_rss_bytes": 2147483648,
+      "worker_internal_seconds": 540,
+      "worker_hard_seconds": 600,
+      "global_wall_seconds": 1800,
+      "deadline": "interrupt in-flight owned worker at min(worker600s,global remaining); preserve partial and unattempted cells",
+      "order": "W ascending, H listed6 then24; inside each cell F thenQR33 thenQR4",
+      "no_outcome_based_retry_or_expansion": true
+    },
+    "original_and_sealed_modules_sha256": {
+      "study_data.py": "5238c4282839e99538bd0d1f221e48a3a0e2ebd537dd7722ae148224f4302687",
+      "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+      "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+      "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f"
+    }
+  },
+  "design_commit": "1427dc0b943ee77a82ee03a67ec9281c20e2cdf5",
+  "design_commit_requested": "1427dc0",
+  "source_spec": {
+    "dataset": "davidlindsay1979/net-position-time-series-dataset",
+    "version": 2,
+    "public_url": "https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset",
+    "requested_member": "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv",
+    "accepted_zip_members": [
+      "1hourNetPositionsKaggle.csv",
+      "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv"
+    ],
+    "expected_csv_bytes": 1286391,
+    "expected_csv_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "expected_rows": 18576,
+    "expected_header": [
+      "datetime",
+      "NetPosUsd",
+      "NetUsdPnL",
+      "AbsVolume",
+      "Mid"
+    ],
+    "used_fields": [
+      "datetime",
+      "NetPosUsd"
+    ],
+    "timestamp_format": "%Y.%m.%dT%H:%M:%S.%f",
+    "timestamp_timezone": "unspecified_naive",
+    "position_dtype": "float64",
+    "time_dtype": "datetime64[us]",
+    "position_unit": "source_reported_USD",
+    "observed_rights_label": "Data files \u00a9 Original Authors",
+    "raw_redistribution_verified": false,
+    "parse_same_immutable_snapshot_as_hashed": true,
+    "row_sort_drop_impute_interpolate": false,
+    "existing_mismatch_action": "STOP_NO_REDOWNLOAD_OR_REPLACEMENT",
+    "fetch_only_explicit_and_cache_absent": true,
+    "fetch_endpoint": "https://api.kaggle.com/v1/datasets.DatasetApiService/DownloadDataset",
+    "fetch_method": "POST",
+    "fetch_request": {
+      "ownerSlug": "davidlindsay1979",
+      "datasetSlug": "net-position-time-series-dataset",
+      "datasetVersionNumber": 2,
+      "fileName": "1hourNetPositionsKaggle/1hourNetPositionsKaggle.csv"
+    },
+    "fetch_credentials_agreement_retries_mirrors": false,
+    "signed_url_logging": false,
+    "row_count_excludes_header": true,
+    "opened_input_must_be_regular_file": true,
+    "local_symlink_policy": "an explicitly supplied local symlink may resolve to a regular opened file; validate that same bounded snapshot; no output symlinks",
+    "required_input_checks": [
+      "exact byte count and SHA256",
+      "exact header and row width",
+      "exact data row count",
+      "finite used position",
+      "valid naive timestamps",
+      "no duplicates",
+      "strict increasing order"
+    ],
+    "calendar_gap_imputation_or_completeness_requirement": false,
+    "https_only": true,
+    "initial_host": "api.kaggle.com",
+    "allowed_redirect_hosts": [
+      "storage.googleapis.com"
+    ],
+    "allowed_https_ports": [
+      443
+    ],
+    "max_redirects": 1,
+    "allowed_redirect_statuses": [
+      302
+    ],
+    "final_status": 200,
+    "accepted_final_media_types": [
+      "application/zip"
+    ],
+    "declared_length_precheck_and_stream_cap": true,
+    "fetch_uses_remaining_global_wall_budget": true,
+    "zip_policy": {
+      "exactly_one_non_directory_member": true,
+      "preinflate_size_equals_expected_csv_bytes": true,
+      "extracted_byte_cap": 1286391,
+      "reject": [
+        "extra members",
+        "absolute or traversal path",
+        "symlink",
+        "encrypted entry",
+        "unsupported container"
+      ],
+      "verify_crc_and_raw_sha256": true,
+      "extract_all": false,
+      "atomic_accept_no_overwrite": true
+    },
+    "public_download_metadata": "fixed endpoint, status, HTTPS host and query-presence only; no actual signed storage path/query, response body or exception text",
+    "redirect_handling": "manual single302; both openers disable automatic redirects; close redirect/error bodies without reading",
+    "implicit_proxy_cookie_authentication": false,
+    "proxy_policy": "direct ProxyHandler({}); no implicit proxy credentials",
+    "redirect_request": "GET without forwarded POST body/headers; exact HTTPS storage.googleapis.com:443; reject userinfo/fragment; transient signed query memory only",
+    "error_body_policy": "close without reading/logging; fixed sanitized error codes",
+    "stream_deadline_check": "remaining global wall budget and bounded socket timeouts; resource checkpoint during chunks"
+  },
+  "protocol_hashes": {
+    "protocol/revision-v8/wp4-daily-fx-design.md": "ac338abb6dac2f9c76539c145d7479c6a56cca61fc2323bdc9a5e7a67baabac0",
+    "protocol/revision-v8/wp4-daily-fx-design.json": "e1c00c57dea3c4a03e839bda34fef60046042876675d3612f005cddab277e5e3",
+    "protocol/study-spec.json": "0b8eda7bfd858c038bae22a96a7caa5ff21838317de58bc56eef98ca696c54ff"
+  },
+  "code_hashes": {
+    "study_data.py": "5238c4282839e99538bd0d1f221e48a3a0e2ebd537dd7722ae148224f4302687",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "v8_daily_fx.py": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36",
+    "run_v8_wp4.py": "bee16c1cd83fe291a04c33322d48e01bb3c9ab7b9bc93e878fa3e3c2354d0122",
+    "test_v8_daily_fx.py": "53ffc6162208c1335e0490f150749e037456b6bd0412a969f0893a74e82cf9bc",
+    "test_v8_wp4_driver.py": "50b629b613b3dddf22b745bc79b7c33246b087d680783d3269512d6dd67f1044"
+  },
+  "started_utc": "2026-10-24T10:18:44.927254Z",
+  "study_start_monotonic": 2010225.477757041,
+  "global_deadline_monotonic": 2012025.477757041,
+  "run_id": "36e8e444fff2499a845a1df9001f2978",
+  "formal_directory": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/results/revision-v8/wp4",
+  "private_directory": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/revision-v8/wp4/36e8e444fff2499a845a1df9001f2978",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "executable": "/Users/bingyouli/.cache/uv/builds-v0/.tmpwhuAv5/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.3.5",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "parent_pid": 36595,
+    "requested_worker_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    },
+    "inherited_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    }
+  },
+  "planned_workers": 4,
+  "planned_method_slots": 12,
+  "planned_validation_candidates": 32,
+  "no_source_parse_before_manifest": true,
+  "randomness": "none"
+}
