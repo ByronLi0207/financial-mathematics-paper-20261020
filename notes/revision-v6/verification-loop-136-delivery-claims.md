@@ -1,0 +1,11 @@
+# Loop136 — final-delivery claim gate before the deadline
+
+Fresh savedpublicaggregatefields, not new estimates or statisticalreanalysis. Read WP2wrappedpairs/resources,WP3allfourprimary-contextsummaries/counts,WP4allgroups/testfields/ranking,WP5all6compactrows/declaredscope; broadinitialprints truncated downstreamJSON, replacedbycomplete targetedcompactread. Allvaluesreadfromexistingoutputs; no refit/recount/statistic or probability calculation. Sourcefingerprints inJSON.
+
+Deliverymust distinguishsame-history wrappedFXH6W2880 QRvsF loss−14.99691078803782%,329/6625vs328/6625hits fromTreasuryH6W260 +7.885918997445085%,6/277vs7/277. Near5%onecellisnotconditional/universalcalibration. FiniteheadroomSAVdoesnotbeatmajor-contextmatchedF; do notcallallCAViaRineffective.
+
+Fixedmeanbeatsboth14/56,availablemedian3/8with48missing-KNN NA. PrimaryFXcombinationsbothworseQR,whereasTreasurymedianimprovesF/QRbut28/277hits; no universalwinner. FXgroupmeansallnegative/heterogeneityp.1593833;Treasuryallpositive/GWHolm.0969756; descriptivemapnotstate-switchingpolicy. All3tau.90namedcontrastskeepsign,all3tau.99NA. NAbookkeepingHolm1isnotvalidobservedp or evaluatedrobustness.
+
+Originalprimariesunchanged;33internalissues/21majorresponsesnot21scientificgapsclosed. Code/token/test/pagechecksnotunseendealer/prospectivevalidation. Reportlatestfullsyntheticpytest950+1062,0/15255numericmismatches,all3explicitnativecompilesuccess,18/94/1source-boundReportLabpreviewsnotformalexports. Financialworkerpeak153862144B/max70.025860s/1observedthread; notwholeMacRAM.
+
+Current35actualselfchecksarealreadyrecorded;deadline31:50and36thcheckremainfuturefinalrequirements; no earlygoalcompletion. Final36/publicationproof/delivery stillpending. ExactPRheadsabsent/pendingauthorchoice/formatexport/caps/independentvintage/cost/branchreconciliationremain. No manuscript/conclusionchange,newanalysis/test/model/proof/vector ornewauthor-pendingconclusionissue.
