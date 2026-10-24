@@ -1,0 +1,5485 @@
+{
+  "schema": "v8.mc-supplement-bindings.v1",
+  "inputs": {
+    "results/v8/mc/summary.json": "d29622633d77cb58ebf99d8aa4e5b401fdd1d30353676124c5f0bb5409859eab",
+    "results/v8/mc/calibration.json": "62421a107caaa29dfe57023c38306a55cc550ad2f779e44886a7309ea9c8413f",
+    "results/v8/mc/predictions.json": "ed029abc9fd8cb83581c8246bcb73be65203fc0c15d76db314d1564e84e4d276",
+    "results/v8/mc/analysis-facts.json": "c5ba12a5d31f7573ec79eac964e4321420bf535fad21a99be3fa01c9b053f967",
+    "results/v8/mc/experiment-settings.json": "2d4446f3d74528324ec8464b6b28951adf50d07f021abb9fc6205e4dd741976a",
+    "results/v8/mc/environment.json": "3cee614e80aa0cd55a1e43274255afb382c92f506b188f7bd5553fe83af06aa2",
+    "results/v8/mc/run-plan.json": "b861e91127784650f8c7dd3acf89087bdb7a64ee7530edf38f633b6857ce92a3",
+    "protocol/v8/mc-design.md": "28a12fa5350b9fdb1d9c86730aa3bd5a10556a7529000d50b5ecf02c7169f597"
+  },
+  "output": "notes/v8/mc-supplement.tex",
+  "output_sha256": "4d6632c358750b0dece0caeb81cb666b2b573ddf58fa9b21855de77bcc3916c4",
+  "numeric_policy": "No statistic recomputed. Formatting rounds archived scalars; hour labels are JSON array indices. Mathematical constants belong to the frozen definitions.",
+  "bindings": [
+    {
+      "id": "mc-supp-1",
+      "location": "DGP equations",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 22,
+      "exact_excerpt": "Let N_t=c+phi*N_(t-1)+s_t*u_t",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-2",
+      "location": "standardized Student-t equation",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 18,
+      "exact_excerpt": "NumPy draws are therefore t_nu*sqrt((nu-2)/nu)",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-3",
+      "location": "historical quantile rank definitions",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 42,
+      "exact_excerpt": "rank ceil(19*(W+1)/20)",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-4",
+      "location": "origin geometry equations",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 36,
+      "exact_excerpt": "validation first a=L+2880+H-1",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-5",
+      "location": "seed key definition",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 51,
+      "exact_excerpt": "SeedSequence([20261024,phase,dgp,rep,stream])",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-6",
+      "location": "percentage loss definition",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 61,
+      "exact_excerpt": "mean-pinball percent change100*(L_QR/L_F-1)",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-7",
+      "location": "IQR endpoint definition",
+      "source": "protocol/v8/mc-design.md",
+      "source_line": 61,
+      "exact_excerpt": "median and25/75percentiles",
+      "kind": "frozen mathematical definition; no estimated statistic"
+    },
+    {
+      "id": "mc-supp-8",
+      "location": "FX prefix count",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/sources/fx_hourly/prefix_stop",
+      "raw_value": 10463,
+      "format": "d",
+      "rendered": "10463"
+    },
+    {
+      "id": "mc-supp-9",
+      "location": "FX cutoff",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/sources/fx_hourly/last_prefix_date",
+      "raw_value": "2015-10-07T23:00:00.000000",
+      "format": "date",
+      "rendered": "2015-10-07"
+    },
+    {
+      "id": "mc-supp-10",
+      "location": "weekly prefix count",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/sources/nyfed_weekly/prefix_stop",
+      "raw_value": 329,
+      "format": "d",
+      "rendered": "329"
+    },
+    {
+      "id": "mc-supp-11",
+      "location": "weekly cutoff",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/sources/nyfed_weekly/last_prefix_date",
+      "raw_value": "2019-07-17T00:00:00.000000",
+      "format": "date",
+      "rendered": "2019-07-17"
+    },
+    {
+      "id": "mc-supp-12",
+      "location": "AR restriction",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/ar_phi_bound",
+      "raw_value": 0.995,
+      "format": ".3f",
+      "rendered": "0.995"
+    },
+    {
+      "id": "mc-supp-13",
+      "location": "arch version",
+      "source": "results/v8/mc/environment.json",
+      "pointer": "/packages/arch",
+      "raw_value": "8.0.0",
+      "format": "text",
+      "rendered": "8.0.0"
+    },
+    {
+      "id": "mc-supp-14",
+      "location": "parameter table D0 c",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D0/c",
+      "raw_value": 0.5896851158985289,
+      "format": ".7g",
+      "rendered": "0.5896851"
+    },
+    {
+      "id": "mc-supp-15",
+      "location": "parameter table D0 phi",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D0/phi",
+      "raw_value": 0.6655338193892367,
+      "format": ".7g",
+      "rendered": "0.6655338"
+    },
+    {
+      "id": "mc-supp-16",
+      "location": "parameter table D0 sigma",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D0/sigma",
+      "raw_value": 0.7391361356361148,
+      "format": ".7g",
+      "rendered": "0.7391361"
+    },
+    {
+      "id": "mc-supp-17",
+      "location": "parameter table D1 c",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/c",
+      "raw_value": 0.009683144577039561,
+      "format": ".7g",
+      "rendered": "0.009683145"
+    },
+    {
+      "id": "mc-supp-18",
+      "location": "parameter table D1 phi",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/phi",
+      "raw_value": 0.9090999303778198,
+      "format": ".7g",
+      "rendered": "0.9090999"
+    },
+    {
+      "id": "mc-supp-19",
+      "location": "parameter table D1 omega",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/omega",
+      "raw_value": 0.0034711062483784947,
+      "format": ".7g",
+      "rendered": "0.003471106"
+    },
+    {
+      "id": "mc-supp-20",
+      "location": "parameter table D1 alpha",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/alpha",
+      "raw_value": 0.2,
+      "format": ".7g",
+      "rendered": "0.2"
+    },
+    {
+      "id": "mc-supp-21",
+      "location": "parameter table D1 beta",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/beta",
+      "raw_value": 0.78,
+      "format": ".7g",
+      "rendered": "0.78"
+    },
+    {
+      "id": "mc-supp-22",
+      "location": "parameter table D1 nu",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/nu",
+      "raw_value": 4.0416713422468336,
+      "format": ".7g",
+      "rendered": "4.041671"
+    },
+    {
+      "id": "mc-supp-23",
+      "location": "parameter table D1 sigma",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/sigma",
+      "raw_value": 0.41659970285506037,
+      "format": ".7g",
+      "rendered": "0.4165997"
+    },
+    {
+      "id": "mc-supp-24",
+      "location": "parameter table D2 c",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/c",
+      "raw_value": 0.5896851158985289,
+      "format": ".7g",
+      "rendered": "0.5896851"
+    },
+    {
+      "id": "mc-supp-25",
+      "location": "parameter table D2 phi",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/phi",
+      "raw_value": 0.6655338193892367,
+      "format": ".7g",
+      "rendered": "0.6655338"
+    },
+    {
+      "id": "mc-supp-26",
+      "location": "parameter table D2 omega",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/omega",
+      "raw_value": 0.012308794387590503,
+      "format": ".7g",
+      "rendered": "0.01230879"
+    },
+    {
+      "id": "mc-supp-27",
+      "location": "parameter table D2 alpha",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/alpha",
+      "raw_value": 0.039013046333537804,
+      "format": ".7g",
+      "rendered": "0.03901305"
+    },
+    {
+      "id": "mc-supp-28",
+      "location": "parameter table D2 beta",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/beta",
+      "raw_value": 0.9389551578351067,
+      "format": ".7g",
+      "rendered": "0.9389552"
+    },
+    {
+      "id": "mc-supp-29",
+      "location": "parameter table D2 nu",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/nu",
+      "raw_value": 14.640829080214768,
+      "format": ".7g",
+      "rendered": "14.64083"
+    },
+    {
+      "id": "mc-supp-30",
+      "location": "parameter table D2 sigma",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D2/sigma",
+      "raw_value": 0.7391361356361148,
+      "format": ".7g",
+      "rendered": "0.7391361"
+    },
+    {
+      "id": "mc-supp-31",
+      "location": "shape normalization",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/calibrations/D1/hour_shape_weighted_mean_square",
+      "raw_value": 1.0,
+      "format": ".1f",
+      "rendered": "1.0"
+    },
+    {
+      "id": "mc-supp-32",
+      "location": "hour label 0",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/0",
+      "raw_value": 0.29270904909996803,
+      "format": "zero-based JSON array index",
+      "rendered": "0",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-33",
+      "location": "hour label 1",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/1",
+      "raw_value": 0.2961963142237247,
+      "format": "zero-based JSON array index",
+      "rendered": "1",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-34",
+      "location": "hour label 2",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/2",
+      "raw_value": 0.8228622348141273,
+      "format": "zero-based JSON array index",
+      "rendered": "2",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-35",
+      "location": "hour label 3",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/3",
+      "raw_value": 0.44218450735445153,
+      "format": "zero-based JSON array index",
+      "rendered": "3",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-36",
+      "location": "hour label 4",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/4",
+      "raw_value": 0.2861635889117191,
+      "format": "zero-based JSON array index",
+      "rendered": "4",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-37",
+      "location": "hour label 5",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/5",
+      "raw_value": 0.31625990739052856,
+      "format": "zero-based JSON array index",
+      "rendered": "5",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-38",
+      "location": "hour label 6",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/6",
+      "raw_value": 0.8679765337189652,
+      "format": "zero-based JSON array index",
+      "rendered": "6",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-39",
+      "location": "hour label 7",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/7",
+      "raw_value": 0.8459119765820627,
+      "format": "zero-based JSON array index",
+      "rendered": "7",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-40",
+      "location": "hour multiplier 0",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/0",
+      "raw_value": 0.29270904909996803,
+      "format": ".5f",
+      "rendered": "0.29271"
+    },
+    {
+      "id": "mc-supp-41",
+      "location": "hour multiplier 1",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/1",
+      "raw_value": 0.2961963142237247,
+      "format": ".5f",
+      "rendered": "0.29620"
+    },
+    {
+      "id": "mc-supp-42",
+      "location": "hour multiplier 2",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/2",
+      "raw_value": 0.8228622348141273,
+      "format": ".5f",
+      "rendered": "0.82286"
+    },
+    {
+      "id": "mc-supp-43",
+      "location": "hour multiplier 3",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/3",
+      "raw_value": 0.44218450735445153,
+      "format": ".5f",
+      "rendered": "0.44218"
+    },
+    {
+      "id": "mc-supp-44",
+      "location": "hour multiplier 4",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/4",
+      "raw_value": 0.2861635889117191,
+      "format": ".5f",
+      "rendered": "0.28616"
+    },
+    {
+      "id": "mc-supp-45",
+      "location": "hour multiplier 5",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/5",
+      "raw_value": 0.31625990739052856,
+      "format": ".5f",
+      "rendered": "0.31626"
+    },
+    {
+      "id": "mc-supp-46",
+      "location": "hour multiplier 6",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/6",
+      "raw_value": 0.8679765337189652,
+      "format": ".5f",
+      "rendered": "0.86798"
+    },
+    {
+      "id": "mc-supp-47",
+      "location": "hour multiplier 7",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/7",
+      "raw_value": 0.8459119765820627,
+      "format": ".5f",
+      "rendered": "0.84591"
+    },
+    {
+      "id": "mc-supp-48",
+      "location": "hour label 8",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/8",
+      "raw_value": 0.7647735950111992,
+      "format": "zero-based JSON array index",
+      "rendered": "8",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-49",
+      "location": "hour label 9",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/9",
+      "raw_value": 1.022749637379356,
+      "format": "zero-based JSON array index",
+      "rendered": "9",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-50",
+      "location": "hour label 10",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/10",
+      "raw_value": 1.0750186095279162,
+      "format": "zero-based JSON array index",
+      "rendered": "10",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-51",
+      "location": "hour label 11",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/11",
+      "raw_value": 1.38164196560278,
+      "format": "zero-based JSON array index",
+      "rendered": "11",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-52",
+      "location": "hour label 12",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/12",
+      "raw_value": 1.0790948710594017,
+      "format": "zero-based JSON array index",
+      "rendered": "12",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-53",
+      "location": "hour label 13",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/13",
+      "raw_value": 0.9070600676880397,
+      "format": "zero-based JSON array index",
+      "rendered": "13",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-54",
+      "location": "hour label 14",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/14",
+      "raw_value": 1.7345712100516475,
+      "format": "zero-based JSON array index",
+      "rendered": "14",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-55",
+      "location": "hour label 15",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/15",
+      "raw_value": 1.516187241005992,
+      "format": "zero-based JSON array index",
+      "rendered": "15",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-56",
+      "location": "hour multiplier 8",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/8",
+      "raw_value": 0.7647735950111992,
+      "format": ".5f",
+      "rendered": "0.76477"
+    },
+    {
+      "id": "mc-supp-57",
+      "location": "hour multiplier 9",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/9",
+      "raw_value": 1.022749637379356,
+      "format": ".5f",
+      "rendered": "1.02275"
+    },
+    {
+      "id": "mc-supp-58",
+      "location": "hour multiplier 10",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/10",
+      "raw_value": 1.0750186095279162,
+      "format": ".5f",
+      "rendered": "1.07502"
+    },
+    {
+      "id": "mc-supp-59",
+      "location": "hour multiplier 11",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/11",
+      "raw_value": 1.38164196560278,
+      "format": ".5f",
+      "rendered": "1.38164"
+    },
+    {
+      "id": "mc-supp-60",
+      "location": "hour multiplier 12",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/12",
+      "raw_value": 1.0790948710594017,
+      "format": ".5f",
+      "rendered": "1.07909"
+    },
+    {
+      "id": "mc-supp-61",
+      "location": "hour multiplier 13",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/13",
+      "raw_value": 0.9070600676880397,
+      "format": ".5f",
+      "rendered": "0.90706"
+    },
+    {
+      "id": "mc-supp-62",
+      "location": "hour multiplier 14",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/14",
+      "raw_value": 1.7345712100516475,
+      "format": ".5f",
+      "rendered": "1.73457"
+    },
+    {
+      "id": "mc-supp-63",
+      "location": "hour multiplier 15",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/15",
+      "raw_value": 1.516187241005992,
+      "format": ".5f",
+      "rendered": "1.51619"
+    },
+    {
+      "id": "mc-supp-64",
+      "location": "hour label 16",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/16",
+      "raw_value": 1.6747428800230206,
+      "format": "zero-based JSON array index",
+      "rendered": "16",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-65",
+      "location": "hour label 17",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/17",
+      "raw_value": 0.9002457587403379,
+      "format": "zero-based JSON array index",
+      "rendered": "17",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-66",
+      "location": "hour label 18",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/18",
+      "raw_value": 1.0811182356112445,
+      "format": "zero-based JSON array index",
+      "rendered": "18",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-67",
+      "location": "hour label 19",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/19",
+      "raw_value": 0.8715947823806217,
+      "format": "zero-based JSON array index",
+      "rendered": "19",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-68",
+      "location": "hour label 20",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/20",
+      "raw_value": 1.2575854430919895,
+      "format": "zero-based JSON array index",
+      "rendered": "20",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-69",
+      "location": "hour label 21",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/21",
+      "raw_value": 0.7773026593170239,
+      "format": "zero-based JSON array index",
+      "rendered": "21",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-70",
+      "location": "hour label 22",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/22",
+      "raw_value": 1.1733472504186968,
+      "format": "zero-based JSON array index",
+      "rendered": "22",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-71",
+      "location": "hour label 23",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/23",
+      "raw_value": 0.4499841576955072,
+      "format": "zero-based JSON array index",
+      "rendered": "23",
+      "kind": "index label"
+    },
+    {
+      "id": "mc-supp-72",
+      "location": "hour multiplier 16",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/16",
+      "raw_value": 1.6747428800230206,
+      "format": ".5f",
+      "rendered": "1.67474"
+    },
+    {
+      "id": "mc-supp-73",
+      "location": "hour multiplier 17",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/17",
+      "raw_value": 0.9002457587403379,
+      "format": ".5f",
+      "rendered": "0.90025"
+    },
+    {
+      "id": "mc-supp-74",
+      "location": "hour multiplier 18",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/18",
+      "raw_value": 1.0811182356112445,
+      "format": ".5f",
+      "rendered": "1.08112"
+    },
+    {
+      "id": "mc-supp-75",
+      "location": "hour multiplier 19",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/19",
+      "raw_value": 0.8715947823806217,
+      "format": ".5f",
+      "rendered": "0.87159"
+    },
+    {
+      "id": "mc-supp-76",
+      "location": "hour multiplier 20",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/20",
+      "raw_value": 1.2575854430919895,
+      "format": ".5f",
+      "rendered": "1.25759"
+    },
+    {
+      "id": "mc-supp-77",
+      "location": "hour multiplier 21",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/21",
+      "raw_value": 0.7773026593170239,
+      "format": ".5f",
+      "rendered": "0.77730"
+    },
+    {
+      "id": "mc-supp-78",
+      "location": "hour multiplier 22",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/22",
+      "raw_value": 1.1733472504186968,
+      "format": ".5f",
+      "rendered": "1.17335"
+    },
+    {
+      "id": "mc-supp-79",
+      "location": "hour multiplier 23",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D1/shape/23",
+      "raw_value": 0.4499841576955072,
+      "format": ".5f",
+      "rendered": "0.44998"
+    },
+    {
+      "id": "mc-supp-80",
+      "location": "burnin minimum",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/burnin_minimum",
+      "raw_value": 10000,
+      "format": "d",
+      "rendered": "10000"
+    },
+    {
+      "id": "mc-supp-81",
+      "location": "AR burnin decay",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/burnin_decay_factor",
+      "raw_value": 10,
+      "format": "d",
+      "rendered": "10"
+    },
+    {
+      "id": "mc-supp-82",
+      "location": "GARCH burnin decay",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/burnin_decay_factor",
+      "raw_value": 10,
+      "format": "d",
+      "rendered": "10"
+    },
+    {
+      "id": "mc-supp-83",
+      "location": "burnin limit",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/burnin_maximum",
+      "raw_value": 1000000,
+      "format": "d",
+      "rendered": "1000000"
+    },
+    {
+      "id": "mc-supp-84",
+      "location": "actual burnin",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/parameters/D0/burnin",
+      "raw_value": 10000,
+      "format": "d",
+      "rendered": "10000"
+    },
+    {
+      "id": "mc-supp-85",
+      "location": "hourly clock anchor",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/hourly_clock_anchor",
+      "raw_value": "2000-01-03T00:00:00",
+      "format": "clock",
+      "rendered": "2000-01-03 00:00:00"
+    },
+    {
+      "id": "mc-supp-86",
+      "location": "hourly trading week",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/hourly_records_per_week",
+      "raw_value": 120,
+      "format": "d",
+      "rendered": "120"
+    },
+    {
+      "id": "mc-supp-87",
+      "location": "weekend gap",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/weekend_gap_hours",
+      "raw_value": 48,
+      "format": "d",
+      "rendered": "48"
+    },
+    {
+      "id": "mc-supp-88",
+      "location": "weekly clock anchor",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/weekly_clock_anchor",
+      "raw_value": "2000-01-05T00:00:00",
+      "format": "clock",
+      "rendered": "2000-01-05 00:00:00"
+    },
+    {
+      "id": "mc-supp-89",
+      "location": "window menu 0",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/0",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-90",
+      "location": "window menu 1",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/1",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-91",
+      "location": "window menu 2",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/2",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-92",
+      "location": "window menu 3",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/3",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-93",
+      "location": "feature menu 0",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/features/0",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-94",
+      "location": "feature menu 1",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/features/1",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-95",
+      "location": "factorial cell count",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/grid_cells",
+      "raw_value": 24,
+      "format": "d",
+      "rendered": "24"
+    },
+    {
+      "id": "mc-supp-96",
+      "location": "forecast horizon",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/horizon",
+      "raw_value": 6,
+      "format": "d",
+      "rendered": "6"
+    },
+    {
+      "id": "mc-supp-97",
+      "location": "target quantile",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/tau",
+      "raw_value": 0.95,
+      "format": ".2f",
+      "rendered": "0.95"
+    },
+    {
+      "id": "mc-supp-98",
+      "location": "geometry D0 validation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/validation_first",
+      "raw_value": 2911,
+      "format": "d",
+      "rendered": "2911"
+    },
+    {
+      "id": "mc-supp-99",
+      "location": "geometry D0 validation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/validation_last",
+      "raw_value": 2962,
+      "format": "d",
+      "rendered": "2962"
+    },
+    {
+      "id": "mc-supp-100",
+      "location": "geometry D0 evaluation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/evaluation_first",
+      "raw_value": 2969,
+      "format": "d",
+      "rendered": "2969"
+    },
+    {
+      "id": "mc-supp-101",
+      "location": "geometry D0 evaluation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/evaluation_last",
+      "raw_value": 3468,
+      "format": "d",
+      "rendered": "3468"
+    },
+    {
+      "id": "mc-supp-102",
+      "location": "geometry D0 validation_count",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/validation_count",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-103",
+      "location": "geometry D0 refit_step",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/refit_step",
+      "raw_value": 13,
+      "format": "d",
+      "rendered": "13"
+    },
+    {
+      "id": "mc-supp-104",
+      "location": "geometry D0 short_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/short_scale",
+      "raw_value": 6,
+      "format": "d",
+      "rendered": "6"
+    },
+    {
+      "id": "mc-supp-105",
+      "location": "geometry D0 long_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D0/long_scale",
+      "raw_value": 26,
+      "format": "d",
+      "rendered": "26"
+    },
+    {
+      "id": "mc-supp-106",
+      "location": "geometry D1 validation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/validation_first",
+      "raw_value": 3053,
+      "format": "d",
+      "rendered": "3053"
+    },
+    {
+      "id": "mc-supp-107",
+      "location": "geometry D1 validation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/validation_last",
+      "raw_value": 4492,
+      "format": "d",
+      "rendered": "4492"
+    },
+    {
+      "id": "mc-supp-108",
+      "location": "geometry D1 evaluation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/evaluation_first",
+      "raw_value": 4499,
+      "format": "d",
+      "rendered": "4499"
+    },
+    {
+      "id": "mc-supp-109",
+      "location": "geometry D1 evaluation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/evaluation_last",
+      "raw_value": 4998,
+      "format": "d",
+      "rendered": "4998"
+    },
+    {
+      "id": "mc-supp-110",
+      "location": "geometry D1 validation_count",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/validation_count",
+      "raw_value": 1440,
+      "format": "d",
+      "rendered": "1440"
+    },
+    {
+      "id": "mc-supp-111",
+      "location": "geometry D1 refit_step",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/refit_step",
+      "raw_value": 24,
+      "format": "d",
+      "rendered": "24"
+    },
+    {
+      "id": "mc-supp-112",
+      "location": "geometry D1 short_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/short_scale",
+      "raw_value": 24,
+      "format": "d",
+      "rendered": "24"
+    },
+    {
+      "id": "mc-supp-113",
+      "location": "geometry D1 long_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D1/long_scale",
+      "raw_value": 168,
+      "format": "d",
+      "rendered": "168"
+    },
+    {
+      "id": "mc-supp-114",
+      "location": "geometry D2 validation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/validation_first",
+      "raw_value": 2911,
+      "format": "d",
+      "rendered": "2911"
+    },
+    {
+      "id": "mc-supp-115",
+      "location": "geometry D2 validation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/validation_last",
+      "raw_value": 2962,
+      "format": "d",
+      "rendered": "2962"
+    },
+    {
+      "id": "mc-supp-116",
+      "location": "geometry D2 evaluation_first",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/evaluation_first",
+      "raw_value": 2969,
+      "format": "d",
+      "rendered": "2969"
+    },
+    {
+      "id": "mc-supp-117",
+      "location": "geometry D2 evaluation_last",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/evaluation_last",
+      "raw_value": 3468,
+      "format": "d",
+      "rendered": "3468"
+    },
+    {
+      "id": "mc-supp-118",
+      "location": "geometry D2 validation_count",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/validation_count",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-119",
+      "location": "geometry D2 refit_step",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/refit_step",
+      "raw_value": 13,
+      "format": "d",
+      "rendered": "13"
+    },
+    {
+      "id": "mc-supp-120",
+      "location": "geometry D2 short_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/short_scale",
+      "raw_value": 6,
+      "format": "d",
+      "rendered": "6"
+    },
+    {
+      "id": "mc-supp-121",
+      "location": "geometry D2 long_scale",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/geometry/D2/long_scale",
+      "raw_value": 26,
+      "format": "d",
+      "rendered": "26"
+    },
+    {
+      "id": "mc-supp-122",
+      "location": "penalty menu 0",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/0",
+      "raw_value": 0.001,
+      "format": "penalty",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-123",
+      "location": "penalty menu 1",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/1",
+      "raw_value": 0.01,
+      "format": "penalty",
+      "rendered": "0.01"
+    },
+    {
+      "id": "mc-supp-124",
+      "location": "penalty menu 2",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/2",
+      "raw_value": 0.1,
+      "format": "penalty",
+      "rendered": "0.1"
+    },
+    {
+      "id": "mc-supp-125",
+      "location": "penalty menu 3",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/3",
+      "raw_value": 1.0,
+      "format": "penalty",
+      "rendered": "1"
+    },
+    {
+      "id": "mc-supp-126",
+      "location": "penalty menu 4",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/4",
+      "raw_value": 10.0,
+      "format": "penalty",
+      "rendered": "10"
+    },
+    {
+      "id": "mc-supp-127",
+      "location": "penalty menu 5",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/penalties/5",
+      "raw_value": "inf",
+      "format": "penalty",
+      "rendered": "\\infty"
+    },
+    {
+      "id": "mc-supp-128",
+      "location": "oracle paths",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/oracle_paths",
+      "raw_value": 2000,
+      "format": "d",
+      "rendered": "2000"
+    },
+    {
+      "id": "mc-supp-129",
+      "location": "formal repetitions",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-130",
+      "location": "formal origins",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/evaluation_origins",
+      "raw_value": 500,
+      "format": "d",
+      "rendered": "500"
+    },
+    {
+      "id": "mc-supp-131",
+      "location": "base entropy",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/base_seed",
+      "raw_value": 20261024,
+      "format": "d",
+      "rendered": "20261024"
+    },
+    {
+      "id": "mc-supp-132",
+      "location": "pilot phase",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/phase_codes/pilot",
+      "raw_value": 1,
+      "format": "d",
+      "rendered": "1"
+    },
+    {
+      "id": "mc-supp-133",
+      "location": "formal phase",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/phase_codes/formal",
+      "raw_value": 2,
+      "format": "d",
+      "rendered": "2"
+    },
+    {
+      "id": "mc-supp-134",
+      "location": "path stream",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/stream_codes/path",
+      "raw_value": 0,
+      "format": "d",
+      "rendered": "0"
+    },
+    {
+      "id": "mc-supp-135",
+      "location": "oracle stream",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/stream_codes/oracle",
+      "raw_value": 1,
+      "format": "d",
+      "rendered": "1"
+    },
+    {
+      "id": "mc-supp-136",
+      "location": "pilot repetitions",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/pilot_repetitions",
+      "raw_value": 2,
+      "format": "d",
+      "rendered": "2"
+    },
+    {
+      "id": "mc-supp-137",
+      "location": "worker count",
+      "source": "results/v8/mc/run-plan.json",
+      "pointer": "/workers",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-138",
+      "location": "formal limit",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/formal_limit_seconds",
+      "raw_value": 5400,
+      "format": "d",
+      "rendered": "5400"
+    },
+    {
+      "id": "mc-supp-139",
+      "location": "complete cell count",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/status_counts/COMPLETE",
+      "raw_value": 17,
+      "format": "d",
+      "rendered": "17"
+    },
+    {
+      "id": "mc-supp-140",
+      "location": "failed cell count",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/status_counts/FAILED",
+      "raw_value": 7,
+      "format": "d",
+      "rendered": "7"
+    },
+    {
+      "id": "mc-supp-141",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-142",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-143",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-144",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-145",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/qr_median_pct",
+      "raw_value": -0.1672677495150987,
+      "format": ".1f",
+      "rendered": "-0.2"
+    },
+    {
+      "id": "mc-supp-146",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/qr_q25_pct",
+      "raw_value": -4.632858960721462,
+      "format": ".1f",
+      "rendered": "-4.6"
+    },
+    {
+      "id": "mc-supp-147",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/qr_q75_pct",
+      "raw_value": 22.07992296348635,
+      "format": ".1f",
+      "rendered": "22.1"
+    },
+    {
+      "id": "mc-supp-148",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/win_rate",
+      "raw_value": 0.51,
+      "format": ".2f",
+      "rendered": "0.51"
+    },
+    {
+      "id": "mc-supp-149",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/oracle_median_pct",
+      "raw_value": -29.954067778865102,
+      "format": ".1f",
+      "rendered": "-30.0"
+    },
+    {
+      "id": "mc-supp-150",
+      "location": "loss table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/i_median_pct",
+      "raw_value": 0.05489399298688191,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-151",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-152",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-153",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-154",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-155",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/qr_median_pct",
+      "raw_value": 1.0883496892148292,
+      "format": ".1f",
+      "rendered": "1.1"
+    },
+    {
+      "id": "mc-supp-156",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/qr_q25_pct",
+      "raw_value": -2.021884190070902,
+      "format": ".1f",
+      "rendered": "-2.0"
+    },
+    {
+      "id": "mc-supp-157",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/qr_q75_pct",
+      "raw_value": 6.085913897307421,
+      "format": ".1f",
+      "rendered": "6.1"
+    },
+    {
+      "id": "mc-supp-158",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/win_rate",
+      "raw_value": 0.39,
+      "format": ".2f",
+      "rendered": "0.39"
+    },
+    {
+      "id": "mc-supp-159",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/oracle_median_pct",
+      "raw_value": -29.954067778865102,
+      "format": ".1f",
+      "rendered": "-30.0"
+    },
+    {
+      "id": "mc-supp-160",
+      "location": "loss table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/i_median_pct",
+      "raw_value": 0.05489399298688191,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-161",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-162",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-163",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-164",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-165",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/qr_median_pct",
+      "raw_value": -14.997342499745026,
+      "format": ".1f",
+      "rendered": "-15.0"
+    },
+    {
+      "id": "mc-supp-166",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/qr_q25_pct",
+      "raw_value": -20.41751732812942,
+      "format": ".1f",
+      "rendered": "-20.4"
+    },
+    {
+      "id": "mc-supp-167",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/qr_q75_pct",
+      "raw_value": -7.251880107732691,
+      "format": ".1f",
+      "rendered": "-7.3"
+    },
+    {
+      "id": "mc-supp-168",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/win_rate",
+      "raw_value": 0.98,
+      "format": ".2f",
+      "rendered": "0.98"
+    },
+    {
+      "id": "mc-supp-169",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/oracle_median_pct",
+      "raw_value": -24.63281335420924,
+      "format": ".1f",
+      "rendered": "-24.6"
+    },
+    {
+      "id": "mc-supp-170",
+      "location": "loss table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/i_median_pct",
+      "raw_value": 0.029676621624785682,
+      "format": ".3f",
+      "rendered": "0.030"
+    },
+    {
+      "id": "mc-supp-171",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-172",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-173",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-174",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-175",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/qr_median_pct",
+      "raw_value": -2.2027666705833395,
+      "format": ".1f",
+      "rendered": "-2.2"
+    },
+    {
+      "id": "mc-supp-176",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/qr_q25_pct",
+      "raw_value": -8.177532573046566,
+      "format": ".1f",
+      "rendered": "-8.2"
+    },
+    {
+      "id": "mc-supp-177",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/qr_q75_pct",
+      "raw_value": 2.665569267477225,
+      "format": ".1f",
+      "rendered": "2.7"
+    },
+    {
+      "id": "mc-supp-178",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/win_rate",
+      "raw_value": 0.64,
+      "format": ".2f",
+      "rendered": "0.64"
+    },
+    {
+      "id": "mc-supp-179",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/oracle_median_pct",
+      "raw_value": -24.63281335420924,
+      "format": ".1f",
+      "rendered": "-24.6"
+    },
+    {
+      "id": "mc-supp-180",
+      "location": "loss table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/i_median_pct",
+      "raw_value": 0.029676621624785682,
+      "format": ".3f",
+      "rendered": "0.030"
+    },
+    {
+      "id": "mc-supp-181",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-182",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-183",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-184",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-185",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/qr_median_pct",
+      "raw_value": -18.759413834543253,
+      "format": ".1f",
+      "rendered": "-18.8"
+    },
+    {
+      "id": "mc-supp-186",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/qr_q25_pct",
+      "raw_value": -24.444627267302852,
+      "format": ".1f",
+      "rendered": "-24.4"
+    },
+    {
+      "id": "mc-supp-187",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/qr_q75_pct",
+      "raw_value": -14.483514421104088,
+      "format": ".1f",
+      "rendered": "-14.5"
+    },
+    {
+      "id": "mc-supp-188",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/win_rate",
+      "raw_value": 0.98,
+      "format": ".2f",
+      "rendered": "0.98"
+    },
+    {
+      "id": "mc-supp-189",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/oracle_median_pct",
+      "raw_value": -23.254240662325802,
+      "format": ".1f",
+      "rendered": "-23.3"
+    },
+    {
+      "id": "mc-supp-190",
+      "location": "loss table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/i_median_pct",
+      "raw_value": 0.046340122495280855,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-191",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-192",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-193",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-194",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-195",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/qr_median_pct",
+      "raw_value": -14.55511575686229,
+      "format": ".1f",
+      "rendered": "-14.6"
+    },
+    {
+      "id": "mc-supp-196",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/qr_q25_pct",
+      "raw_value": -21.00277584985707,
+      "format": ".1f",
+      "rendered": "-21.0"
+    },
+    {
+      "id": "mc-supp-197",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/qr_q75_pct",
+      "raw_value": -9.681677829223126,
+      "format": ".1f",
+      "rendered": "-9.7"
+    },
+    {
+      "id": "mc-supp-198",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/win_rate",
+      "raw_value": 0.98,
+      "format": ".2f",
+      "rendered": "0.98"
+    },
+    {
+      "id": "mc-supp-199",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/oracle_median_pct",
+      "raw_value": -23.254240662325802,
+      "format": ".1f",
+      "rendered": "-23.3"
+    },
+    {
+      "id": "mc-supp-200",
+      "location": "loss table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/i_median_pct",
+      "raw_value": 0.046340122495280855,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-201",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-202",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-203",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-204",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-205",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/qr_median_pct",
+      "raw_value": -21.78506764093039,
+      "format": ".1f",
+      "rendered": "-21.8"
+    },
+    {
+      "id": "mc-supp-206",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/qr_q25_pct",
+      "raw_value": -25.209144377136457,
+      "format": ".1f",
+      "rendered": "-25.2"
+    },
+    {
+      "id": "mc-supp-207",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/qr_q75_pct",
+      "raw_value": -17.23651741233102,
+      "format": ".1f",
+      "rendered": "-17.2"
+    },
+    {
+      "id": "mc-supp-208",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/win_rate",
+      "raw_value": 0.99,
+      "format": ".2f",
+      "rendered": "0.99"
+    },
+    {
+      "id": "mc-supp-209",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/oracle_median_pct",
+      "raw_value": -23.60935607502882,
+      "format": ".1f",
+      "rendered": "-23.6"
+    },
+    {
+      "id": "mc-supp-210",
+      "location": "loss table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/i_median_pct",
+      "raw_value": -0.004862059418814235,
+      "format": ".3f",
+      "rendered": "-0.005"
+    },
+    {
+      "id": "mc-supp-211",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-212",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-213",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-214",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-215",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/qr_median_pct",
+      "raw_value": -19.80935477639096,
+      "format": ".1f",
+      "rendered": "-19.8"
+    },
+    {
+      "id": "mc-supp-216",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/qr_q25_pct",
+      "raw_value": -23.666851941007774,
+      "format": ".1f",
+      "rendered": "-23.7"
+    },
+    {
+      "id": "mc-supp-217",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/qr_q75_pct",
+      "raw_value": -15.223583720627143,
+      "format": ".1f",
+      "rendered": "-15.2"
+    },
+    {
+      "id": "mc-supp-218",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/win_rate",
+      "raw_value": 0.99,
+      "format": ".2f",
+      "rendered": "0.99"
+    },
+    {
+      "id": "mc-supp-219",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/oracle_median_pct",
+      "raw_value": -23.60935607502882,
+      "format": ".1f",
+      "rendered": "-23.6"
+    },
+    {
+      "id": "mc-supp-220",
+      "location": "loss table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/i_median_pct",
+      "raw_value": -0.004862059418814235,
+      "format": ".3f",
+      "rendered": "-0.005"
+    },
+    {
+      "id": "mc-supp-221",
+      "location": "loss table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-222",
+      "location": "loss table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-223",
+      "location": "loss table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-224",
+      "location": "loss table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/completed_repetitions",
+      "raw_value": 10,
+      "format": "d",
+      "rendered": "10"
+    },
+    {
+      "id": "mc-supp-225",
+      "location": "loss table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-226",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-227",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-228",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-229",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-230",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/qr_median_pct",
+      "raw_value": 0.20004059890593728,
+      "format": ".1f",
+      "rendered": "0.2"
+    },
+    {
+      "id": "mc-supp-231",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/qr_q25_pct",
+      "raw_value": -1.0690273793656724,
+      "format": ".1f",
+      "rendered": "-1.1"
+    },
+    {
+      "id": "mc-supp-232",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/qr_q75_pct",
+      "raw_value": 2.1463805674730163,
+      "format": ".1f",
+      "rendered": "2.1"
+    },
+    {
+      "id": "mc-supp-233",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/win_rate",
+      "raw_value": 0.47,
+      "format": ".2f",
+      "rendered": "0.47"
+    },
+    {
+      "id": "mc-supp-234",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/oracle_median_pct",
+      "raw_value": -34.00961569061138,
+      "format": ".1f",
+      "rendered": "-34.0"
+    },
+    {
+      "id": "mc-supp-235",
+      "location": "loss table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/i_median_pct",
+      "raw_value": 0.013046404483224583,
+      "format": ".3f",
+      "rendered": "0.013"
+    },
+    {
+      "id": "mc-supp-236",
+      "location": "loss table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-237",
+      "location": "loss table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-238",
+      "location": "loss table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-239",
+      "location": "loss table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/completed_repetitions",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-240",
+      "location": "loss table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-241",
+      "location": "loss table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-242",
+      "location": "loss table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-243",
+      "location": "loss table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-244",
+      "location": "loss table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/completed_repetitions",
+      "raw_value": 56,
+      "format": "d",
+      "rendered": "56"
+    },
+    {
+      "id": "mc-supp-245",
+      "location": "loss table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-246",
+      "location": "loss table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-247",
+      "location": "loss table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-248",
+      "location": "loss table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-249",
+      "location": "loss table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/completed_repetitions",
+      "raw_value": 3,
+      "format": "d",
+      "rendered": "3"
+    },
+    {
+      "id": "mc-supp-250",
+      "location": "loss table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-251",
+      "location": "loss table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-252",
+      "location": "loss table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-253",
+      "location": "loss table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-254",
+      "location": "loss table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/completed_repetitions",
+      "raw_value": 17,
+      "format": "d",
+      "rendered": "17"
+    },
+    {
+      "id": "mc-supp-255",
+      "location": "loss table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-256",
+      "location": "loss table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-257",
+      "location": "loss table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-258",
+      "location": "loss table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-259",
+      "location": "loss table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/completed_repetitions",
+      "raw_value": 3,
+      "format": "d",
+      "rendered": "3"
+    },
+    {
+      "id": "mc-supp-260",
+      "location": "loss table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-261",
+      "location": "loss table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-262",
+      "location": "loss table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-263",
+      "location": "loss table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-264",
+      "location": "loss table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/completed_repetitions",
+      "raw_value": 32,
+      "format": "d",
+      "rendered": "32"
+    },
+    {
+      "id": "mc-supp-265",
+      "location": "loss table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-266",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-267",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-268",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-269",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-270",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/qr_median_pct",
+      "raw_value": 1.18415021831757,
+      "format": ".1f",
+      "rendered": "1.2"
+    },
+    {
+      "id": "mc-supp-271",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/qr_q25_pct",
+      "raw_value": -3.0555888710781853,
+      "format": ".1f",
+      "rendered": "-3.1"
+    },
+    {
+      "id": "mc-supp-272",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/qr_q75_pct",
+      "raw_value": 19.78429009100371,
+      "format": ".1f",
+      "rendered": "19.8"
+    },
+    {
+      "id": "mc-supp-273",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/win_rate",
+      "raw_value": 0.43,
+      "format": ".2f",
+      "rendered": "0.43"
+    },
+    {
+      "id": "mc-supp-274",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/oracle_median_pct",
+      "raw_value": -29.46033957033091,
+      "format": ".1f",
+      "rendered": "-29.5"
+    },
+    {
+      "id": "mc-supp-275",
+      "location": "loss table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/i_median_pct",
+      "raw_value": -0.484559905127091,
+      "format": ".3f",
+      "rendered": "-0.485"
+    },
+    {
+      "id": "mc-supp-276",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-277",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-278",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-279",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-280",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/qr_median_pct",
+      "raw_value": 0.3528682097196367,
+      "format": ".1f",
+      "rendered": "0.4"
+    },
+    {
+      "id": "mc-supp-281",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/qr_q25_pct",
+      "raw_value": -1.6495384861973883,
+      "format": ".1f",
+      "rendered": "-1.6"
+    },
+    {
+      "id": "mc-supp-282",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/qr_q75_pct",
+      "raw_value": 5.653074214232196,
+      "format": ".1f",
+      "rendered": "5.7"
+    },
+    {
+      "id": "mc-supp-283",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/win_rate",
+      "raw_value": 0.46,
+      "format": ".2f",
+      "rendered": "0.46"
+    },
+    {
+      "id": "mc-supp-284",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/oracle_median_pct",
+      "raw_value": -29.46033957033091,
+      "format": ".1f",
+      "rendered": "-29.5"
+    },
+    {
+      "id": "mc-supp-285",
+      "location": "loss table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/i_median_pct",
+      "raw_value": -0.484559905127091,
+      "format": ".3f",
+      "rendered": "-0.485"
+    },
+    {
+      "id": "mc-supp-286",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-287",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-288",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-289",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-290",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/qr_median_pct",
+      "raw_value": -13.88227284664505,
+      "format": ".1f",
+      "rendered": "-13.9"
+    },
+    {
+      "id": "mc-supp-291",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/qr_q25_pct",
+      "raw_value": -20.461004657841585,
+      "format": ".1f",
+      "rendered": "-20.5"
+    },
+    {
+      "id": "mc-supp-292",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/qr_q75_pct",
+      "raw_value": -5.208079830476381,
+      "format": ".1f",
+      "rendered": "-5.2"
+    },
+    {
+      "id": "mc-supp-293",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/win_rate",
+      "raw_value": 0.91,
+      "format": ".2f",
+      "rendered": "0.91"
+    },
+    {
+      "id": "mc-supp-294",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/oracle_median_pct",
+      "raw_value": -25.554116325685868,
+      "format": ".1f",
+      "rendered": "-25.6"
+    },
+    {
+      "id": "mc-supp-295",
+      "location": "loss table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/i_median_pct",
+      "raw_value": -0.035725438162664824,
+      "format": ".3f",
+      "rendered": "-0.036"
+    },
+    {
+      "id": "mc-supp-296",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-297",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-298",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-299",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-300",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/qr_median_pct",
+      "raw_value": -0.7899180393038108,
+      "format": ".1f",
+      "rendered": "-0.8"
+    },
+    {
+      "id": "mc-supp-301",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/qr_q25_pct",
+      "raw_value": -7.79100730548305,
+      "format": ".1f",
+      "rendered": "-7.8"
+    },
+    {
+      "id": "mc-supp-302",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/qr_q75_pct",
+      "raw_value": 2.934312413363421,
+      "format": ".1f",
+      "rendered": "2.9"
+    },
+    {
+      "id": "mc-supp-303",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/win_rate",
+      "raw_value": 0.6,
+      "format": ".2f",
+      "rendered": "0.60"
+    },
+    {
+      "id": "mc-supp-304",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/oracle_median_pct",
+      "raw_value": -25.554116325685868,
+      "format": ".1f",
+      "rendered": "-25.6"
+    },
+    {
+      "id": "mc-supp-305",
+      "location": "loss table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/i_median_pct",
+      "raw_value": -0.035725438162664824,
+      "format": ".3f",
+      "rendered": "-0.036"
+    },
+    {
+      "id": "mc-supp-306",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-307",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-308",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-309",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-310",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/qr_median_pct",
+      "raw_value": -18.618879046936087,
+      "format": ".1f",
+      "rendered": "-18.6"
+    },
+    {
+      "id": "mc-supp-311",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/qr_q25_pct",
+      "raw_value": -22.59284669964419,
+      "format": ".1f",
+      "rendered": "-22.6"
+    },
+    {
+      "id": "mc-supp-312",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/qr_q75_pct",
+      "raw_value": -10.898133928777684,
+      "format": ".1f",
+      "rendered": "-10.9"
+    },
+    {
+      "id": "mc-supp-313",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/win_rate",
+      "raw_value": 0.98,
+      "format": ".2f",
+      "rendered": "0.98"
+    },
+    {
+      "id": "mc-supp-314",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/oracle_median_pct",
+      "raw_value": -24.803957949124694,
+      "format": ".1f",
+      "rendered": "-24.8"
+    },
+    {
+      "id": "mc-supp-315",
+      "location": "loss table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/i_median_pct",
+      "raw_value": -0.044465897339462934,
+      "format": ".3f",
+      "rendered": "-0.044"
+    },
+    {
+      "id": "mc-supp-316",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-317",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-318",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-319",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-320",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/qr_median_pct",
+      "raw_value": -12.395516616495078,
+      "format": ".1f",
+      "rendered": "-12.4"
+    },
+    {
+      "id": "mc-supp-321",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/qr_q25_pct",
+      "raw_value": -18.825868601517442,
+      "format": ".1f",
+      "rendered": "-18.8"
+    },
+    {
+      "id": "mc-supp-322",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/qr_q75_pct",
+      "raw_value": -4.053709073468034,
+      "format": ".1f",
+      "rendered": "-4.1"
+    },
+    {
+      "id": "mc-supp-323",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/win_rate",
+      "raw_value": 0.91,
+      "format": ".2f",
+      "rendered": "0.91"
+    },
+    {
+      "id": "mc-supp-324",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/oracle_median_pct",
+      "raw_value": -24.803957949124694,
+      "format": ".1f",
+      "rendered": "-24.8"
+    },
+    {
+      "id": "mc-supp-325",
+      "location": "loss table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/i_median_pct",
+      "raw_value": -0.044465897339462934,
+      "format": ".3f",
+      "rendered": "-0.044"
+    },
+    {
+      "id": "mc-supp-326",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-327",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-328",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-329",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-330",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/qr_median_pct",
+      "raw_value": -20.14917922162269,
+      "format": ".1f",
+      "rendered": "-20.1"
+    },
+    {
+      "id": "mc-supp-331",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/qr_q25_pct",
+      "raw_value": -24.939817318747725,
+      "format": ".1f",
+      "rendered": "-24.9"
+    },
+    {
+      "id": "mc-supp-332",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/qr_q75_pct",
+      "raw_value": -15.300284672691706,
+      "format": ".1f",
+      "rendered": "-15.3"
+    },
+    {
+      "id": "mc-supp-333",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/win_rate",
+      "raw_value": 0.97,
+      "format": ".2f",
+      "rendered": "0.97"
+    },
+    {
+      "id": "mc-supp-334",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/oracle_median_pct",
+      "raw_value": -24.059192224695373,
+      "format": ".1f",
+      "rendered": "-24.1"
+    },
+    {
+      "id": "mc-supp-335",
+      "location": "loss table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/i_median_pct",
+      "raw_value": -0.017138091794588473,
+      "format": ".3f",
+      "rendered": "-0.017"
+    },
+    {
+      "id": "mc-supp-336",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-337",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-338",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-339",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/completed_repetitions",
+      "raw_value": 100,
+      "format": "d",
+      "rendered": "100"
+    },
+    {
+      "id": "mc-supp-340",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/qr_median_pct",
+      "raw_value": -20.562859332263795,
+      "format": ".1f",
+      "rendered": "-20.6"
+    },
+    {
+      "id": "mc-supp-341",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/qr_q25_pct",
+      "raw_value": -24.11710665372435,
+      "format": ".1f",
+      "rendered": "-24.1"
+    },
+    {
+      "id": "mc-supp-342",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/qr_q75_pct",
+      "raw_value": -14.429810808793423,
+      "format": ".1f",
+      "rendered": "-14.4"
+    },
+    {
+      "id": "mc-supp-343",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/win_rate",
+      "raw_value": 0.95,
+      "format": ".2f",
+      "rendered": "0.95"
+    },
+    {
+      "id": "mc-supp-344",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/oracle_median_pct",
+      "raw_value": -24.059192224695373,
+      "format": ".1f",
+      "rendered": "-24.1"
+    },
+    {
+      "id": "mc-supp-345",
+      "location": "loss table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/i_median_pct",
+      "raw_value": -0.017138091794588473,
+      "format": ".3f",
+      "rendered": "-0.017"
+    },
+    {
+      "id": "mc-supp-346",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-347",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-348",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-349",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/f_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-350",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/i_breach_median",
+      "raw_value": 0.064,
+      "format": ".3f",
+      "rendered": "0.064"
+    },
+    {
+      "id": "mc-supp-351",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/qr_breach_median",
+      "raw_value": 0.129,
+      "format": ".3f",
+      "rendered": "0.129"
+    },
+    {
+      "id": "mc-supp-352",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-353",
+      "location": "breach table row 0",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/0/infinity_frequency",
+      "raw_value": 0.11,
+      "format": ".2f",
+      "rendered": "0.11"
+    },
+    {
+      "id": "mc-supp-354",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-355",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-356",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-357",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/f_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-358",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/i_breach_median",
+      "raw_value": 0.064,
+      "format": ".3f",
+      "rendered": "0.064"
+    },
+    {
+      "id": "mc-supp-359",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/qr_breach_median",
+      "raw_value": 0.094,
+      "format": ".3f",
+      "rendered": "0.094"
+    },
+    {
+      "id": "mc-supp-360",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-361",
+      "location": "breach table row 1",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/1/infinity_frequency",
+      "raw_value": 0.3,
+      "format": ".2f",
+      "rendered": "0.30"
+    },
+    {
+      "id": "mc-supp-362",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-363",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-364",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-365",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-366",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/i_breach_median",
+      "raw_value": 0.056,
+      "format": ".3f",
+      "rendered": "0.056"
+    },
+    {
+      "id": "mc-supp-367",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/qr_breach_median",
+      "raw_value": 0.068,
+      "format": ".3f",
+      "rendered": "0.068"
+    },
+    {
+      "id": "mc-supp-368",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-369",
+      "location": "breach table row 2",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/2/infinity_frequency",
+      "raw_value": 0.0,
+      "format": ".2f",
+      "rendered": "0.00"
+    },
+    {
+      "id": "mc-supp-370",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-371",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-372",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-373",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-374",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/i_breach_median",
+      "raw_value": 0.056,
+      "format": ".3f",
+      "rendered": "0.056"
+    },
+    {
+      "id": "mc-supp-375",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/qr_breach_median",
+      "raw_value": 0.094,
+      "format": ".3f",
+      "rendered": "0.094"
+    },
+    {
+      "id": "mc-supp-376",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-377",
+      "location": "breach table row 3",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/3/infinity_frequency",
+      "raw_value": 0.06,
+      "format": ".2f",
+      "rendered": "0.06"
+    },
+    {
+      "id": "mc-supp-378",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-379",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-380",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-381",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-382",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/i_breach_median",
+      "raw_value": 0.051000000000000004,
+      "format": ".3f",
+      "rendered": "0.051"
+    },
+    {
+      "id": "mc-supp-383",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/qr_breach_median",
+      "raw_value": 0.055,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-384",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-385",
+      "location": "breach table row 4",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/4/infinity_frequency",
+      "raw_value": 0.03,
+      "format": ".2f",
+      "rendered": "0.03"
+    },
+    {
+      "id": "mc-supp-386",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-387",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-388",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-389",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-390",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/i_breach_median",
+      "raw_value": 0.051000000000000004,
+      "format": ".3f",
+      "rendered": "0.051"
+    },
+    {
+      "id": "mc-supp-391",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/qr_breach_median",
+      "raw_value": 0.064,
+      "format": ".3f",
+      "rendered": "0.064"
+    },
+    {
+      "id": "mc-supp-392",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-393",
+      "location": "breach table row 5",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/5/infinity_frequency",
+      "raw_value": 0.05,
+      "format": ".2f",
+      "rendered": "0.05"
+    },
+    {
+      "id": "mc-supp-394",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-395",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-396",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-397",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-398",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/i_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-399",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/qr_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-400",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-401",
+      "location": "breach table row 6",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/6/infinity_frequency",
+      "raw_value": 0.02,
+      "format": ".2f",
+      "rendered": "0.02"
+    },
+    {
+      "id": "mc-supp-402",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/dgp",
+      "raw_value": "D0",
+      "format": "text",
+      "rendered": "D0"
+    },
+    {
+      "id": "mc-supp-403",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-404",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-405",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/f_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-406",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/i_breach_median",
+      "raw_value": 0.05,
+      "format": ".3f",
+      "rendered": "0.050"
+    },
+    {
+      "id": "mc-supp-407",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/qr_breach_median",
+      "raw_value": 0.052,
+      "format": ".3f",
+      "rendered": "0.052"
+    },
+    {
+      "id": "mc-supp-408",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/oracle_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-409",
+      "location": "breach table row 7",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/7/infinity_frequency",
+      "raw_value": 0.02,
+      "format": ".2f",
+      "rendered": "0.02"
+    },
+    {
+      "id": "mc-supp-410",
+      "location": "breach table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-411",
+      "location": "breach table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-412",
+      "location": "breach table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-413",
+      "location": "breach table row 8",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/8/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-414",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-415",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-416",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-417",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/f_breach_median",
+      "raw_value": 0.083,
+      "format": ".3f",
+      "rendered": "0.083"
+    },
+    {
+      "id": "mc-supp-418",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/i_breach_median",
+      "raw_value": 0.096,
+      "format": ".3f",
+      "rendered": "0.096"
+    },
+    {
+      "id": "mc-supp-419",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/qr_breach_median",
+      "raw_value": 0.096,
+      "format": ".3f",
+      "rendered": "0.096"
+    },
+    {
+      "id": "mc-supp-420",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/oracle_breach_median",
+      "raw_value": 0.055,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-421",
+      "location": "breach table row 9",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/infinity_frequency",
+      "raw_value": 0.77,
+      "format": ".2f",
+      "rendered": "0.77"
+    },
+    {
+      "id": "mc-supp-422",
+      "location": "breach table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-423",
+      "location": "breach table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-424",
+      "location": "breach table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-425",
+      "location": "breach table row 10",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/10/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-426",
+      "location": "breach table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-427",
+      "location": "breach table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-428",
+      "location": "breach table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-429",
+      "location": "breach table row 11",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/11/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-430",
+      "location": "breach table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-431",
+      "location": "breach table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-432",
+      "location": "breach table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-433",
+      "location": "breach table row 12",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/12/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-434",
+      "location": "breach table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-435",
+      "location": "breach table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-436",
+      "location": "breach table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-437",
+      "location": "breach table row 13",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/13/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-438",
+      "location": "breach table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-439",
+      "location": "breach table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-440",
+      "location": "breach table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-441",
+      "location": "breach table row 14",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/14/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-442",
+      "location": "breach table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-443",
+      "location": "breach table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-444",
+      "location": "breach table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-445",
+      "location": "breach table row 15",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/15/status",
+      "raw_value": "FAILED",
+      "format": "text",
+      "rendered": "FAILED"
+    },
+    {
+      "id": "mc-supp-446",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-447",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-448",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-449",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/f_breach_median",
+      "raw_value": 0.055,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-450",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/i_breach_median",
+      "raw_value": 0.07,
+      "format": ".3f",
+      "rendered": "0.070"
+    },
+    {
+      "id": "mc-supp-451",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/qr_breach_median",
+      "raw_value": 0.101,
+      "format": ".3f",
+      "rendered": "0.101"
+    },
+    {
+      "id": "mc-supp-452",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-453",
+      "location": "breach table row 16",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/16/infinity_frequency",
+      "raw_value": 0.18,
+      "format": ".2f",
+      "rendered": "0.18"
+    },
+    {
+      "id": "mc-supp-454",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-455",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-456",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-457",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/f_breach_median",
+      "raw_value": 0.055,
+      "format": ".3f",
+      "rendered": "0.055"
+    },
+    {
+      "id": "mc-supp-458",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/i_breach_median",
+      "raw_value": 0.07,
+      "format": ".3f",
+      "rendered": "0.070"
+    },
+    {
+      "id": "mc-supp-459",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/qr_breach_median",
+      "raw_value": 0.098,
+      "format": ".3f",
+      "rendered": "0.098"
+    },
+    {
+      "id": "mc-supp-460",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-461",
+      "location": "breach table row 17",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/infinity_frequency",
+      "raw_value": 0.27,
+      "format": ".2f",
+      "rendered": "0.27"
+    },
+    {
+      "id": "mc-supp-462",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-463",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-464",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-465",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/f_breach_median",
+      "raw_value": 0.052,
+      "format": ".3f",
+      "rendered": "0.052"
+    },
+    {
+      "id": "mc-supp-466",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/i_breach_median",
+      "raw_value": 0.056,
+      "format": ".3f",
+      "rendered": "0.056"
+    },
+    {
+      "id": "mc-supp-467",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/qr_breach_median",
+      "raw_value": 0.069,
+      "format": ".3f",
+      "rendered": "0.069"
+    },
+    {
+      "id": "mc-supp-468",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-469",
+      "location": "breach table row 18",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/18/infinity_frequency",
+      "raw_value": 0.03,
+      "format": ".2f",
+      "rendered": "0.03"
+    },
+    {
+      "id": "mc-supp-470",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-471",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-472",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-473",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/f_breach_median",
+      "raw_value": 0.052,
+      "format": ".3f",
+      "rendered": "0.052"
+    },
+    {
+      "id": "mc-supp-474",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/i_breach_median",
+      "raw_value": 0.056,
+      "format": ".3f",
+      "rendered": "0.056"
+    },
+    {
+      "id": "mc-supp-475",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/qr_breach_median",
+      "raw_value": 0.097,
+      "format": ".3f",
+      "rendered": "0.097"
+    },
+    {
+      "id": "mc-supp-476",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-477",
+      "location": "breach table row 19",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/19/infinity_frequency",
+      "raw_value": 0.08,
+      "format": ".2f",
+      "rendered": "0.08"
+    },
+    {
+      "id": "mc-supp-478",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-479",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-480",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-481",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/f_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-482",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/i_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-483",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/qr_breach_median",
+      "raw_value": 0.054,
+      "format": ".3f",
+      "rendered": "0.054"
+    },
+    {
+      "id": "mc-supp-484",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-485",
+      "location": "breach table row 20",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/20/infinity_frequency",
+      "raw_value": 0.03,
+      "format": ".2f",
+      "rendered": "0.03"
+    },
+    {
+      "id": "mc-supp-486",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-487",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-488",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-489",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/f_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-490",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/i_breach_median",
+      "raw_value": 0.048,
+      "format": ".3f",
+      "rendered": "0.048"
+    },
+    {
+      "id": "mc-supp-491",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/qr_breach_median",
+      "raw_value": 0.059,
+      "format": ".3f",
+      "rendered": "0.059"
+    },
+    {
+      "id": "mc-supp-492",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-493",
+      "location": "breach table row 21",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/21/infinity_frequency",
+      "raw_value": 0.05,
+      "format": ".2f",
+      "rendered": "0.05"
+    },
+    {
+      "id": "mc-supp-494",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-495",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-496",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-497",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/f_breach_median",
+      "raw_value": 0.044,
+      "format": ".3f",
+      "rendered": "0.044"
+    },
+    {
+      "id": "mc-supp-498",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/i_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-499",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/qr_breach_median",
+      "raw_value": 0.047,
+      "format": ".3f",
+      "rendered": "0.047"
+    },
+    {
+      "id": "mc-supp-500",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-501",
+      "location": "breach table row 22",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/22/infinity_frequency",
+      "raw_value": 0.03,
+      "format": ".2f",
+      "rendered": "0.03"
+    },
+    {
+      "id": "mc-supp-502",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/dgp",
+      "raw_value": "D2",
+      "format": "text",
+      "rendered": "D2"
+    },
+    {
+      "id": "mc-supp-503",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-504",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-505",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/f_breach_median",
+      "raw_value": 0.044,
+      "format": ".3f",
+      "rendered": "0.044"
+    },
+    {
+      "id": "mc-supp-506",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/i_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-507",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/qr_breach_median",
+      "raw_value": 0.052,
+      "format": ".3f",
+      "rendered": "0.052"
+    },
+    {
+      "id": "mc-supp-508",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/oracle_breach_median",
+      "raw_value": 0.046,
+      "format": ".3f",
+      "rendered": "0.046"
+    },
+    {
+      "id": "mc-supp-509",
+      "location": "breach table row 23",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/23/infinity_frequency",
+      "raw_value": 0.08,
+      "format": ".2f",
+      "rendered": "0.08"
+    },
+    {
+      "id": "mc-supp-510",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-511",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-512",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-513",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/rep",
+      "raw_value": 1,
+      "format": "d",
+      "rendered": "1"
+    },
+    {
+      "id": "mc-supp-514",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/failure_stage",
+      "raw_value": "evaluation",
+      "format": "text",
+      "rendered": "evaluation"
+    },
+    {
+      "id": "mc-supp-515",
+      "location": "failure row 0",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-516",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-517",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-518",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-519",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/rep",
+      "raw_value": 3,
+      "format": "d",
+      "rendered": "3"
+    },
+    {
+      "id": "mc-supp-520",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-521",
+      "location": "failure row 1",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-522",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-523",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-524",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-525",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/rep",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-526",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-527",
+      "location": "failure row 2",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-528",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-529",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/window",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-530",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/features",
+      "raw_value": 4,
+      "format": "d",
+      "rendered": "4"
+    },
+    {
+      "id": "mc-supp-531",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/rep",
+      "raw_value": 10,
+      "format": "d",
+      "rendered": "10"
+    },
+    {
+      "id": "mc-supp-532",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-533",
+      "location": "failure row 3",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-534",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-535",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-536",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-537",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/rep",
+      "raw_value": 17,
+      "format": "d",
+      "rendered": "17"
+    },
+    {
+      "id": "mc-supp-538",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-539",
+      "location": "failure row 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-540",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-541",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-542",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-543",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/rep",
+      "raw_value": 32,
+      "format": "d",
+      "rendered": "32"
+    },
+    {
+      "id": "mc-supp-544",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-545",
+      "location": "failure row 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-546",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/dgp",
+      "raw_value": "D1",
+      "format": "text",
+      "rendered": "D1"
+    },
+    {
+      "id": "mc-supp-547",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-548",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-549",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/rep",
+      "raw_value": 56,
+      "format": "d",
+      "rendered": "56"
+    },
+    {
+      "id": "mc-supp-550",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_stage",
+      "raw_value": "validation",
+      "format": "text",
+      "rendered": "validation"
+    },
+    {
+      "id": "mc-supp-551",
+      "location": "failure row 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_lambda",
+      "raw_value": 0.001,
+      "format": ".3f",
+      "rendered": "0.001"
+    },
+    {
+      "id": "mc-supp-552",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/0/failure_context",
+      "raw_value": null,
+      "rendered": "no retained refit context",
+      "location": "failure context missing"
+    },
+    {
+      "id": "mc-supp-553",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/1/failure_context",
+      "raw_value": null,
+      "rendered": "no retained refit context",
+      "location": "failure context missing"
+    },
+    {
+      "id": "mc-supp-554",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/2/failure_context",
+      "raw_value": null,
+      "rendered": "no retained refit context",
+      "location": "failure context missing"
+    },
+    {
+      "id": "mc-supp-555",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/3/failure_context",
+      "raw_value": null,
+      "rendered": "no retained refit context",
+      "location": "failure context missing"
+    },
+    {
+      "id": "mc-supp-556",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/window",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-557",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-558",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/rep",
+      "raw_value": 17,
+      "format": "d",
+      "rendered": "17"
+    },
+    {
+      "id": "mc-supp-559",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/refit_index",
+      "raw_value": 3677,
+      "format": "d",
+      "rendered": "3677"
+    },
+    {
+      "id": "mc-supp-560",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/training_first_origin",
+      "raw_value": 2952,
+      "format": "d",
+      "rendered": "2952"
+    },
+    {
+      "id": "mc-supp-561",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/training_last_origin",
+      "raw_value": 3671,
+      "format": "d",
+      "rendered": "3671"
+    },
+    {
+      "id": "mc-supp-562",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/training_count",
+      "raw_value": 720,
+      "format": "d",
+      "rendered": "720"
+    },
+    {
+      "id": "mc-supp-563",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/latest_label_end",
+      "raw_value": 3677,
+      "format": "d",
+      "rendered": "3677"
+    },
+    {
+      "id": "mc-supp-564",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/query_issue",
+      "raw_value": 3677,
+      "format": "d",
+      "rendered": "3677"
+    },
+    {
+      "id": "mc-supp-565",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/issued_origin_count",
+      "raw_value": 624,
+      "format": "d",
+      "rendered": "624"
+    },
+    {
+      "id": "mc-supp-566",
+      "location": "failure context 4",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/4/failure_context/response_scale",
+      "raw_value": 0.263798213029766,
+      "format": ".7g",
+      "rendered": "0.2637982"
+    },
+    {
+      "id": "mc-supp-567",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/window",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-568",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-569",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/rep",
+      "raw_value": 32,
+      "format": "d",
+      "rendered": "32"
+    },
+    {
+      "id": "mc-supp-570",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/refit_index",
+      "raw_value": 3053,
+      "format": "d",
+      "rendered": "3053"
+    },
+    {
+      "id": "mc-supp-571",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/training_first_origin",
+      "raw_value": 168,
+      "format": "d",
+      "rendered": "168"
+    },
+    {
+      "id": "mc-supp-572",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/training_last_origin",
+      "raw_value": 3047,
+      "format": "d",
+      "rendered": "3047"
+    },
+    {
+      "id": "mc-supp-573",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/training_count",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-574",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/latest_label_end",
+      "raw_value": 3053,
+      "format": "d",
+      "rendered": "3053"
+    },
+    {
+      "id": "mc-supp-575",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/query_issue",
+      "raw_value": 3053,
+      "format": "d",
+      "rendered": "3053"
+    },
+    {
+      "id": "mc-supp-576",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/issued_origin_count",
+      "raw_value": 0,
+      "format": "d",
+      "rendered": "0"
+    },
+    {
+      "id": "mc-supp-577",
+      "location": "failure context 5",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/5/failure_context/response_scale",
+      "raw_value": 0.3295513198295962,
+      "format": ".7g",
+      "rendered": "0.3295513"
+    },
+    {
+      "id": "mc-supp-578",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/window",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-579",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/features",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-580",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/rep",
+      "raw_value": 56,
+      "format": "d",
+      "rendered": "56"
+    },
+    {
+      "id": "mc-supp-581",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/refit_index",
+      "raw_value": 3461,
+      "format": "d",
+      "rendered": "3461"
+    },
+    {
+      "id": "mc-supp-582",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/training_first_origin",
+      "raw_value": 3196,
+      "format": "d",
+      "rendered": "3196"
+    },
+    {
+      "id": "mc-supp-583",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/training_last_origin",
+      "raw_value": 3455,
+      "format": "d",
+      "rendered": "3455"
+    },
+    {
+      "id": "mc-supp-584",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/training_count",
+      "raw_value": 260,
+      "format": "d",
+      "rendered": "260"
+    },
+    {
+      "id": "mc-supp-585",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/latest_label_end",
+      "raw_value": 3461,
+      "format": "d",
+      "rendered": "3461"
+    },
+    {
+      "id": "mc-supp-586",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/query_issue",
+      "raw_value": 3461,
+      "format": "d",
+      "rendered": "3461"
+    },
+    {
+      "id": "mc-supp-587",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/issued_origin_count",
+      "raw_value": 408,
+      "format": "d",
+      "rendered": "408"
+    },
+    {
+      "id": "mc-supp-588",
+      "location": "failure context 6",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/failure_events/6/failure_context/response_scale",
+      "raw_value": 0.42281172911817366,
+      "format": ".7g",
+      "rendered": "0.4228117"
+    },
+    {
+      "id": "mc-supp-589",
+      "location": "P1 threshold",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/prediction_thresholds/P1_maximum_gain_pct",
+      "raw_value": 2,
+      "format": ".1f",
+      "rendered": "2.0"
+    },
+    {
+      "id": "mc-supp-590",
+      "location": "P2 threshold",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/prediction_thresholds/P2_minimum_gain_pct",
+      "raw_value": 5,
+      "format": ".1f",
+      "rendered": "5.0"
+    },
+    {
+      "id": "mc-supp-591",
+      "location": "P3 threshold",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/preregistered_constants/prediction_thresholds/P3_minimum_excess_pct",
+      "raw_value": 5,
+      "format": ".1f",
+      "rendered": "5.0"
+    },
+    {
+      "id": "mc-supp-592",
+      "location": "P2 history",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/3",
+      "raw_value": 2880,
+      "format": "d",
+      "rendered": "2880"
+    },
+    {
+      "id": "mc-supp-593",
+      "location": "P3 history",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/windows/0",
+      "raw_value": 52,
+      "format": "d",
+      "rendered": "52"
+    },
+    {
+      "id": "mc-supp-594",
+      "location": "P3 features",
+      "source": "results/v8/mc/experiment-settings.json",
+      "pointer": "/features/1",
+      "raw_value": 33,
+      "format": "d",
+      "rendered": "33"
+    },
+    {
+      "id": "mc-supp-595",
+      "location": "prediction P1",
+      "source": "results/v8/mc/predictions.json",
+      "pointer": "/P1/status",
+      "raw_value": "NOT_SUPPORTED",
+      "format": "status",
+      "rendered": "Not supported"
+    },
+    {
+      "id": "mc-supp-596",
+      "location": "prediction P2",
+      "source": "results/v8/mc/predictions.json",
+      "pointer": "/P2/status",
+      "raw_value": "UNASSESSABLE",
+      "format": "status",
+      "rendered": "Unassessable"
+    },
+    {
+      "id": "mc-supp-597",
+      "location": "prediction P3",
+      "source": "results/v8/mc/predictions.json",
+      "pointer": "/P3/status",
+      "raw_value": "NOT_SUPPORTED",
+      "format": "status",
+      "rendered": "Not supported"
+    },
+    {
+      "id": "mc-supp-598",
+      "location": "prediction P4",
+      "source": "results/v8/mc/predictions.json",
+      "pointer": "/P4/status",
+      "raw_value": "UNASSESSABLE",
+      "format": "status",
+      "rendered": "Unassessable"
+    },
+    {
+      "id": "mc-supp-599",
+      "location": "P3 observed median",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/17/qr_median_pct",
+      "raw_value": 0.3528682097196367,
+      "format": ".1f",
+      "rendered": "0.4"
+    },
+    {
+      "id": "mc-supp-600",
+      "location": "only complete hourly median",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/qr_median_pct",
+      "raw_value": 0.20004059890593728,
+      "format": ".1f",
+      "rendered": "0.2"
+    },
+    {
+      "id": "mc-supp-601",
+      "location": "hourly infinity selection",
+      "source": "results/v8/mc/summary.json",
+      "pointer": "/9/infinity_frequency",
+      "raw_value": 0.77,
+      "format": ".2f",
+      "rendered": "0.77"
+    },
+    {
+      "id": "mc-supp-602",
+      "location": "D1 fourth-moment qualification",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/moment_diagnostics/D1/garch_finite_fourth_moment",
+      "raw_value": false,
+      "format": "bool",
+      "rendered": "false"
+    },
+    {
+      "id": "mc-supp-603",
+      "location": "D2 fourth-moment qualification",
+      "source": "results/v8/mc/analysis-facts.json",
+      "pointer": "/moment_diagnostics/D2/garch_finite_fourth_moment",
+      "raw_value": true,
+      "format": "bool",
+      "rendered": "true"
+    },
+    {
+      "id": "mc-supp-604",
+      "location": "D0 AR restriction qualification",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/calibrations/D0/ar/constraint_binds",
+      "raw_value": false,
+      "format": "restriction",
+      "rendered": "did not bind"
+    },
+    {
+      "id": "mc-supp-605",
+      "location": "D1 AR restriction qualification",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/calibrations/D1/ar/constraint_binds",
+      "raw_value": false,
+      "format": "restriction",
+      "rendered": "did not bind"
+    },
+    {
+      "id": "mc-supp-606",
+      "location": "D2 AR restriction qualification",
+      "source": "results/v8/mc/calibration.json",
+      "pointer": "/calibrations/D2/ar/constraint_binds",
+      "raw_value": false,
+      "format": "restriction",
+      "rendered": "did not bind"
+    }
+  ]
+}
