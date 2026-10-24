@@ -1,0 +1,25 @@
+# v7 contributions (current text)
+
+## C1
+
+We formalize the peak-position quantile as a path-dependent forecast with a known current-position floor. We establish loss-improving floor projection and a strict-tail bound for true conditional quantiles, and apply the classical Lévy bound under independent symmetric increments. Separately fitted short-history FX regression forecasts cross across horizons on 640 evaluation origins. Wisniewski et al. (2020) forecast signed endpoint intervals rather than a sampled absolute inventory peak. The portfolio-loss maximum of Boudoukh et al. (2004) and payment-deficit peak of van den Hoogen (2017) provide distinct path-risk precedents. Section~\ref{sec:target} provides the definitions, propositions and crossing diagnostic, with proofs and simulation qualifications in the Supplement.
+
+中文：明确带当前头寸下界的路径峰值分位数及其性质；经典不等式按原有假设应用，分期限拟合可产生交叉。
+
+Evidence location: Section 3, Propositions 1–2; Supplement proof and horizon-coherence sections. S2: THEORY_FLOOR_STATEMENT, THEORY_FLOOR_IDENTITY, THEORY_LEVY_STATEMENT, THEORY_LEVY_CONDITIONAL_PLUGIN_LIMIT, THEORY_CROSSING_FX_HOURLY_W720_STRICT_CROSSING_COUNT.
+
+## C2
+
+We find that conditional-model gains vary across the observed frequency, training-history and forecast-horizon settings. We compare the same peak target for one FX record and thirteen weekly position-category aggregates with matched histories and update schedules. Even after extending the regression penalty menu, historical rules win in 34 of 48 additional-panel comparisons. Where Duffie et al. (2023) examine capacity, illiquidity and PnL quantiles, and Wisniewski et al. (2020) forecast one market maker’s endpoints, we compare these peak-position tasks. Section~\ref{sec:results} reports the gains and failures, and Table~\ref{tab:map} organizes the frequency--history--horizon decision map.
+
+中文：给出频率、历史长度和期限的实证地图；13条周度加总序列不是独立交易商验证，扩大惩罚菜单后仍有34/48格落败。
+
+Evidence location: Sections 7.1–7.2 and 8; Tables 3, 4 and 6. S2: PANEL_E5_QR33_EXPANDED_LOSSES, PANEL_E5_PLANNED, PANEL_SCOPE_BILL_PLUS_TWELVE, PANEL_SCOPE_NOT_INDEPENDENT_DEALERS.
+
+## C3
+
+We show why peak-limit validation must compare scores, breaches and stability against explicitly matched reference rules. We compare same-history controls with the original shorter-history rolling controls, examine two periods, and assess elementary-score curves alongside error-weight preferences. For the distinct long-horizon legacy comparison, the preferred report reverses at a penalty ratio of about 20.6:1. Where the endpoint lineage evaluates intervals and Ehm et al. (2016) develop general score comparisons, we connect these diagnostics to monitoring limits with completed path labels. Sections~\ref{sec:evaluation}--\ref{sec:implications} support a four-part checklist: use matured labels, separate history and model changes, report scores with breaches, and check stability across periods and related series.
+
+中文：将成熟的验证工具用于这类限额预测，揭示对照、时期、误差幅度与破线频次之间的差异；20.6反转只归属H24旧对比。
+
+Evidence location: Sections 6–8; Tables 3 and 5; Figures 2–3 and Table 6. S2: FX_PREFERENCE_H24_REVERSAL_RATIO, FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT, FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT, FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_LEFT, FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_RIGHT.
