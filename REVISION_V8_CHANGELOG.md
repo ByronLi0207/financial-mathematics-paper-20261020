@@ -1543,7 +1543,7 @@ Independent27itemfollowthrough: `wp7-review-followthrough.md`; all source senten
 
 Accepted 2026-10-24T12:10:05.008381+00:00. Scope is the current document/source verification and delivered package, rather than independent financial replication. No new financial experiment, model, sample, hypothesis test or tuning was run in WP8.
 
-Current native documents: main20pages including references/author placeholders; Supplement30pages; unfilled titlepage1page. Main body4996words, abstract164, budget5160;4mainfigures and6maintables. The source snapshots, native preview aliases, references, cover letter, author checklist and19memberOverleafpackage now all describe v8. Historical guides are explicitly labelled; `FINAL.md` and original archives are unchanged.
+Current native documents: main20pages including references/author placeholders; Supplement30pages; unfilled titlepage1page. Main body4996words, abstract164, budget5160;4mainfigures and6maintables. The source snapshots, native preview aliases, references, cover letter, author checklist and18memberOverleafpackage now all describe v8. Historical guides are explicitly labelled; `FINAL.md` and original archives are unchanged.
 
 ### Numeric, figure, reference and cross-reference gates
 
@@ -1701,3 +1701,89 @@ All1645originalresults/data/protocol/Pythonpaths matchv7baseline;0differences an
 AllWP8requiredartifactgatesPASS; `wp8-acceptance.json` is the aggregate. WP9 remains unstarted until this completioncommit. The10hourgoal remainsactive until17:55:15Z; whole-goalcompletion isnotclaimed.
 
 WP8 writer correction: the first ledger aggregation completed its evidence append but its state update raised `NameError: load is not defined`. All actual acceptance gates and saved acceptance JSON had already passed; no research artifact changed. The state update was corrected and the single WP8 completion commit amended before starting WP9.
+
+MISMATCH-WP9-PACKAGE-COUNT: Independent release readback found the WP8 narrative said19 package members while the actual checked ZIP has18. The narrative metadata is corrected from the ZIP inventory; every member matched current source bytes and the package/PDF/research outcomes are unchanged. No count was inferred by hand.
+
+
+## WP9: PASS — native-browser publication and separate PR
+
+The26directory uploads published579new/changedfiles from frozen local completioncommit285a77f. Everybatch was fetched and compared against its exact staged bytes before proceeding. No remote API write, push, installation, deletion, main merge or PR3 mutation was used. Browser commits differ from local completion commits, as in the verified v7 route; no private local Git identity objects were transferred.
+
+Actual repeated command (`INDEX` = 0..25, batch0 initially equivalent manual readback):
+
+```text
+python3 -B notes/revision-v8/verify_wp9_browser_batch.py INDEX
+```
+
+The26original outcomes are preserved in `notes/revision-v8/wp9-browser-batches.json`: allstatusPASS, differences[],579files. Native browser showed every upload complete before one commit click; ambiguous sending was resolved by remote readback, never a blind duplicate mutation.
+
+Actual whole-tree command and verbatim output:
+
+```text
+python3 -B notes/revision-v8/verify_wp9_remote_tree.py --source-commit 285a77f4dcbb9e46910e6a49893cb33b36474e3b --output notes/revision-v8/wp9-initial-remote-tree.json
+{
+  "utc": "2026-10-24T13:09:26.138054+00:00",
+  "status": "PASS",
+  "source_commit": "285a77f4dcbb9e46910e6a49893cb33b36474e3b",
+  "remote_commit": "774001017d480e7eef7bd465a82a0c7461eca47f",
+  "source_tree": "a96de69f2b1655321ab1931794ba5d6715c6e445",
+  "remote_tree": "a96de69f2b1655321ab1931794ba5d6715c6e445",
+  "source_files": 3211,
+  "remote_files": 3211,
+  "files_checked": 3211,
+  "bytes_checked": 127901285,
+  "missing": [],
+  "extra": [],
+  "changed_or_mode_mismatches": [],
+  "git_diff_returncode": 0,
+  "per_file_sha256_csv": "notes/revision-v8/wp9-initial-remote-tree-files.csv",
+  "per_file_csv_sha256": "72075b7e3bb54622e1a38d7c8fd5aef7adcf5fee75873cab956cc8672070dc3d",
+  "protected_remote_refs": {
+    "main": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+    "codex/supervisor-revision-20261023": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+    "revision-v7-final": "d119a1fb30c48ceab9000552057882938cfa57a4"
+  },
+  "protected_ref_differences": {},
+  "elapsed_seconds": 0.788138125,
+  "blob_stream_buffer_max_bytes": 65536,
+  "no_remote_mutations": true,
+  "no_Git_identity_objects_published": true,
+  "scope": "Complete file-tree and streamed content identity; remote/local commit histories differ. Financial replay and journal acceptance are not certified."
+}
+```
+
+The native GitHub UI createdPR5. Owning-platform connector readback, after the actual completed page, returned these exact selected fields:
+
+```json
+{
+  "url": "https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/5",
+  "number": 5,
+  "state": "open",
+  "merged": false,
+  "base": "main",
+  "base_sha": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+  "head": "revision-v8-goal",
+  "head_sha": "774001017d480e7eef7bd465a82a0c7461eca47f",
+  "title": "Evaluate peak-position forecast regimes with complete v8 evidence",
+  "created_at": "2026-10-24T13:09:57Z",
+  "updated_at": "2026-10-24T13:09:57Z",
+  "closed_at": null,
+  "merged_at": null
+}
+```
+
+PR5 targets `main` from `revision-v8-goal`, open and unmerged; the PR is attached to this chat. PR3 remainsopen/unmerged at2328994c44ec02bd731ad556f41fe9821f6de6df; main remains65feeee801b6b228a608ca3200e0678bb5f62b1c; v7remainsd119a1fb30c48ceab9000552057882938cfa57a4. Scope/preupload private-data checks are in `wp9-prepublish-scope.json`. `wp9-acceptance.json` records the required publication gate.
+
+A final metadata-only browser pass will publish this WP9completion receipt and the corrected18member narrative, then verify the fulltree against its new local completioncommit. Current paper/PDF/ZIP/science bytes remain exactly the WP8candidate. The full-tree proof stored in this commit concerns its explicitly pinned WP8sourcecut; later terminal verification is kept outside the tracked tree to avoid a self-referential hash claim.
+
+The10hourgoal is stillactive. After this single WP9completioncommit, only the plan's bounded review loop is allowed until17:55:15Z: five saved-number readbacks, or three reference metadata checks, or one reviewer-perspective section read. No new financial analysis, conclusion change, deletion or external review. Followup review commits are limited to at most one per hour. The public-clone financial replay limitation remainsBLOCKED, separately from this passed publication gate.
+
+Actualprecommitfieldpreservation/scopeoutput:
+
+```text
+WP8_ARTIFACT_DIFFERENCES []
+TRACKED_FORBIDDEN_PATHS []
+NON_DELETION_DIFF
+```
+
+Theexistingcheckpointhelperindexescurrent_wpinstatedictionary; REVIEW_LOOPstatusisexplicitlypresentwithoutchangingthehelper.
