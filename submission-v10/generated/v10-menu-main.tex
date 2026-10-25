@@ -1,25 +1,21 @@
-\begin{table}[t]
-\centering
-\small
+\begin{table}[t]\centering\footnotesize
+\setlength{\tabcolsep}{2pt}
 \caption{Penalty-menu isolation on matched calibrated paths. Entries are the median relative loss (\%) across all 13 source medians, with the descriptive source IQR in brackets.}
 \label{tab:v10-menu-isolation}
-\begin{tabular}{lllrrl}
-\toprule
-Arm & $W$ & Method & Old menu & Expanded menu & Missing sources \\
- & & & Median [IQR] & Median [IQR] & Old / expanded \\
-\midrule
-Constant & 52 & QR33 & 116.24 [92.90, 124.34] & 0.21 [-0.52, 0.98] & 0 / 0 \\
-Constant & 52 & QR4 & -0.02 [-1.55, 1.73] & 0.44 [-1.69, 1.90] & 0 / 0 \\
-Constant & 260 & QR33 & \textsc{NA} & \textsc{NA} & 1 / 1 \\
-Constant & 260 & QR4 & -1.21 [-1.69, -0.54] & -1.13 [-1.69, -0.64] & 0 / 0 \\
-Switching & 52 & QR33 & 121.40 [101.92, 131.26] & -0.23 [-1.88, 0.98] & 0 / 0 \\
-Switching & 52 & QR4 & -0.03 [-2.03, 3.22] & 0.38 [-2.17, 3.17] & 0 / 0 \\
-Switching & 260 & QR33 & \textsc{NA} & \textsc{NA} & 1 / 1 \\
-Switching & 260 & QR4 & -0.27 [-0.66, 0.23] & -0.28 [-0.75, 0.48] & 0 / 0 \\
-\bottomrule
-\end{tabular}
-\par\vspace{2pt}
-\begin{minipage}{0.97\linewidth}\footnotesize
-Each source median uses all 32 matched repetitions. Relative loss is $100(\overline L_{QR}/\overline L_F-1)$ within each repetition. An unavailable old or expanded all-source aggregate is shown as NA; successful subsets are not substituted. Positive values mean higher QR loss. Displays are rounded; registered decisions use the saved full-precision operands. The expanded QR4 exact-tie rule prefers stronger penalties, unlike its old rule. Saved exact ties: 0; changed QR4 tie selections: 0.
-\end{minipage}
-\end{table}
+\begin{tabular}{lllrrr}\toprule
+Arm & History & Regression & Original menu & Expanded menu & Missing sources \\
+ & & & Median [IQR] & Median [IQR] & Original / expanded \\ \midrule
+Constant & 52 & Full regression & \makebox[3.0em][r]{116.24} [\makebox[3.1em][r]{92.90}, \makebox[3.2em][r]{124.34}] & \makebox[3.0em][r]{0.21} [\makebox[3.1em][r]{-0.52}, \makebox[3.2em][r]{0.98}] & 0 / 0 \\
+Constant & 52 & Four-feature & \makebox[3.0em][r]{-0.02} [\makebox[3.1em][r]{-1.55}, \makebox[3.2em][r]{1.73}] & \makebox[3.0em][r]{0.44} [\makebox[3.1em][r]{-1.69}, \makebox[3.2em][r]{1.90}] & 0 / 0 \\
+Constant & 260 & Full regression & \textsc{NA} & \textsc{NA} & 1 / 1 \\
+Constant & 260 & Four-feature & \makebox[3.0em][r]{-1.21} [\makebox[3.1em][r]{-1.69}, \makebox[3.2em][r]{-0.54}] & \makebox[3.0em][r]{-1.13} [\makebox[3.1em][r]{-1.69}, \makebox[3.2em][r]{-0.64}] & 0 / 0 \\
+Switching & 52 & Full regression & \makebox[3.0em][r]{121.40} [\makebox[3.1em][r]{101.92}, \makebox[3.2em][r]{131.26}] & \makebox[3.0em][r]{-0.23} [\makebox[3.1em][r]{-1.88}, \makebox[3.2em][r]{0.98}] & 0 / 0 \\
+Switching & 52 & Four-feature & \makebox[3.0em][r]{-0.03} [\makebox[3.1em][r]{-2.03}, \makebox[3.2em][r]{3.22}] & \makebox[3.0em][r]{0.38} [\makebox[3.1em][r]{-2.17}, \makebox[3.2em][r]{3.17}] & 0 / 0 \\
+Switching & 260 & Full regression & \textsc{NA} & \textsc{NA} & 1 / 1 \\
+Switching & 260 & Four-feature & \makebox[3.0em][r]{-0.27} [\makebox[3.1em][r]{-0.66}, \makebox[3.2em][r]{0.23}] & \makebox[3.0em][r]{-0.28} [\makebox[3.1em][r]{-0.75}, \makebox[3.2em][r]{0.48}] & 0 / 0 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}\begin{minipage}{.98\linewidth}\footnotesize
+Each source median uses all 32 matched repetitions with relative loss $100(\overline L_{QR}/\overline L_F-1)$; positive values mean higher regression loss, and NA retains unavailable all-source summaries without substituting successful subsets.
+Displays are rounded, while registered decisions use saved full-precision operands; full and four-feature regression correspond to QR33 and QR4.
+The expanded four-feature exact-tie rule prefers stronger penalties, unlike its original rule; saved exact ties: 0, changed selections: 0.
+\end{minipage}\end{table}
