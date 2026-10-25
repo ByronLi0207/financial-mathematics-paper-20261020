@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Penalty-menu isolation on matched calibrated paths. Entries are the median relative loss (\%) across all 13 source medians, with the descriptive source IQR in brackets.}
+\label{tab:v10-menu-isolation}
+\begin{tabular}{lllrrl}
+\toprule
+Arm & $W$ & Method & Old menu & Expanded menu & Missing sources \\
+ & & & Median [IQR] & Median [IQR] & Old / expanded \\
+\midrule
+Constant & 52 & QR33 & 116.24 [92.90, 124.34] & 0.21 [-0.52, 0.98] & 0 / 0 \\
+Constant & 52 & QR4 & -0.02 [-1.55, 1.73] & 0.44 [-1.69, 1.90] & 0 / 0 \\
+Constant & 260 & QR33 & \textsc{NA} & \textsc{NA} & 1 / 1 \\
+Constant & 260 & QR4 & -1.21 [-1.69, -0.54] & -1.13 [-1.69, -0.64] & 0 / 0 \\
+Switching & 52 & QR33 & 121.40 [101.92, 131.26] & -0.23 [-1.88, 0.98] & 0 / 0 \\
+Switching & 52 & QR4 & -0.03 [-2.03, 3.22] & 0.38 [-2.17, 3.17] & 0 / 0 \\
+Switching & 260 & QR33 & \textsc{NA} & \textsc{NA} & 1 / 1 \\
+Switching & 260 & QR4 & -0.27 [-0.66, 0.23] & -0.28 [-0.75, 0.48] & 0 / 0 \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}
+\begin{minipage}{0.97\linewidth}\footnotesize
+Each source median uses all 32 matched repetitions. Relative loss is $100(\overline L_{QR}/\overline L_F-1)$ within each repetition. An unavailable old or expanded all-source aggregate is shown as NA; successful subsets are not substituted. Positive values mean higher QR loss. Displays are rounded; registered decisions use the saved full-precision operands. The expanded QR4 exact-tie rule prefers stronger penalties, unlike its old rule. Saved exact ties: 0; changed QR4 tie selections: 0.
+\end{minipage}
+\end{table}
