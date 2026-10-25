@@ -1,0 +1,7 @@
+# WP3 retrospective FX learning curve
+
+Design was committed before this run at `b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a`; the JSON hash is in manifest.json. All ten fixed H/W units completed, with both exact W2880 archive gates passing. Three identified first cutpoints are consistent; the QR4/H6 curve is compatible-left-censored and NOT_TESTABLE, so an all-four confirmation is absent. H24 gain reverses at the longest W. No specification or prediction was changed after the run.
+
+contrasts.csv/json retain every fixed conditional row and its pointwise nominal post-result DM/HAC diagnostic. curve-predictions.json retains all loss rows and roots. The scalar-only tar stores all candidate/selection/fit diagnostics, baseline gate receipts, progress and resources, with member hashes and exact byte checks. The source CSV and private forecast vectors remain unpublished in .scratch. Their fingerprints and acquisition version are documented; a public scalar archive is not a public financial-data license or independent dealer replication. Existing archives were not changed.
+
+Independent saved-trace arithmetic verification is recorded in notes/revision-v9/wp3-independent-audit.json. It performs no QR refit or new forecast. The publicly cloned browser-upload history lacks the local pre-run design commit object required by the strict ancestry guard; this known fresh-clone replay limitation is not resolved by file identity and has not been bypassed.
