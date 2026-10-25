@@ -1,4 +1,8 @@
-"""Software-only negative controls; all document mutations use fresh scratch copies.
+"""Versioned v8 software controls; mutations use fresh temporary fixture copies.
+
+For a current v9 compact/extended layout, prove an exact inverse mapping of
+CURRENT content before applying the unchanged v8 layout contract. All five
+generated inputs remain current. Test methods and assertions are unchanged.
 
 No financial model, data input, simulation or statistical test is executed.
 """
@@ -22,7 +26,17 @@ class SupplementNumericControls(unittest.TestCase):
         for name in ["submission-jof/supplement.tex", *checker.EXPECTED_INPUTS]:
             target = self.docs / name
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / name, target)
+            source = ROOT / name
+            if name == "submission-jof/supplement.tex" and r"\label{sup:v9-history}" in source.read_text():
+                current_spec = importlib.util.spec_from_file_location(
+                    "current_v9_exact_relocation", ROOT / "notes/revision-v9/wp7_supplement_numeric_audit.py")
+                current = importlib.util.module_from_spec(current_spec)
+                current_spec.loader.exec_module(current)
+                restored, _, proof = current.relocation(ROOT)
+                self.assertTrue(proof["inverse_mapping_exact"])
+                target.write_text(restored)
+            else:
+                shutil.copyfile(source, target)
 
     def tearDown(self):
         self.tmp.cleanup()
