@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-25T05:23:18.625284+00:00",
+  "pass_name": "float-barrier-dependency-correction",
+  "edits": [
+    {
+      "id": "L001",
+      "file": "submission-v10/supplement.tex",
+      "before": "\\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref}",
+      "after": "\\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref,placeins}",
+      "occurrences": 1,
+      "reason": "Load the same standard float-barrier package used by the main manuscript. The first layout compile exposed the missing dependency; no scientific field changed.",
+      "category": "layout",
+      "numeric_sequence_unchanged": true
+    }
+  ]
+}
