@@ -1,3 +1,13 @@
+# Current v9 evidence and exact technical overflow
+
+The [unified history figure](results/revision-v9/wp4/render-v5/unified-history.pdf), [all new simulation outcomes](results/revision-v9/wp2/README.md) and [all fixed-grid FX contrasts](results/revision-v9/wp3/README.md) accompany the partly supported history-length interpretation. The universal simplification prediction fails, an FX first cutpoint is left-censored, and both longer-horizon curves reverse at the largest history. The known FX period is reused; these are not independent unseen-dealer replications.
+
+To keep the compact Supplement within its page budget, the complete unchanged full/sparse preference-frontier sections and full numerical conventions are copied verbatim into [extended-v9-technical.tex](submission-jof/extended-v9-technical.tex), with a [separate readable PDF](submission-jof/extended-v9-technical.pdf). Every frontier region, tie, adverse outcome and implementation qualification remains accessible. The exact relocation proof is [wp5-supplement-relocation.json](notes/revision-v9/wp5-supplement-relocation.json).
+
+The earlier index below is preserved as historical guidance.
+
+---
+
 # Complete result archive: current v8 index
 
 The current manuscript and Supplement add the [full controlled grid and failure archive](results/revision-v8/wp3/README.md), [all same-dealer daily comparisons](results/revision-v8/wp4/README.md) and [complete fixed-prefix/backcast tables](results/revision-v8/wp5/README.md). Their frozen designs, run receipts, exact source bindings and acceptance records are in `protocol/revision-v8/` and `notes/revision-v8/`. These post-result / exploratory additions retain a failed mechanism criterion, a daily conditional exception and longer-horizon gains; none supplies independent dealer validation. The expanded prefix contains the earlier backcast and previously scored target paths.

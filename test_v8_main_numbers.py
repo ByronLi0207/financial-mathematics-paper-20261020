@@ -1,4 +1,8 @@
-"""Current-document numeric guard negative controls; real documents stay read-only."""
+"""Inherited current-document negative controls, now applied to the additive v9 guard.
+
+Assertions and mutation scenarios are unchanged; the v9 guard calls the immutable
+v8 source/table/math audit and adds exact located bindings for the new results.
+"""
 import importlib.util
 from pathlib import Path
 import pytest
@@ -7,7 +11,7 @@ ROOT=Path(__file__).resolve().parent
 
 
 def checker():
-    spec=importlib.util.spec_from_file_location('wp8main',ROOT/'notes/revision-v8/check_wp8_main_numbers.py')
+    spec=importlib.util.spec_from_file_location('wp8main',ROOT/'notes/revision-v9/check_main_numbers.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     return module
 
