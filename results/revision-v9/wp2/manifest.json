@@ -1,0 +1,375 @@
+{
+  "schema": 1,
+  "design": {
+    "burn_in": 20000,
+    "retained_observations": 3264,
+    "initial_level": 0.0,
+    "retained_clock_first": "2000-01-03T00:00:00",
+    "gap_seconds": 3600,
+    "short_rms": 24,
+    "long_rms": 168,
+    "feature_valid_from": 168,
+    "refit_step": 24,
+    "tau_numerator": 19,
+    "tau_denominator": 20,
+    "validation_first": 3072,
+    "validation_last": 3143,
+    "evaluation_first": 3168,
+    "evaluation_last": 3239,
+    "menus": {
+      "QR33": [
+        0.001,
+        0.01,
+        0.1
+      ],
+      "QR4": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "selection": {
+      "QR33": {
+        "validation_failure": "any failed mandatory candidate makes procedure ineligible",
+        "exact_tie": "larger penalty"
+      },
+      "QR4": {
+        "validation_failure": "eligible completed candidates; keep all failed candidate records",
+        "exact_tie": "first increasing menu candidate"
+      }
+    },
+    "solver": {
+      "max_iter": 10000,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "gap_rtol": 1e-06,
+      "intercept_penalized": false,
+      "failure": "no forecast, no numerical retuning, no evaluation replacement"
+    },
+    "evaluation_failure": "whole procedure/rep/cell missing; no truncated score",
+    "original_modules_sha256": {
+      "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8"
+    },
+    "schema": 1,
+    "design_id": "v9-wp2-new-dgp-confirmation",
+    "created_utc": "2026-10-24T22:17:38.199077+00:00",
+    "post_hoc": false,
+    "conditional_on_post_hoc_WP1": true,
+    "wp1_end_commit": "9784372d523e93a50f21212e9a10adb55485768c",
+    "wp1_readout_sha256": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
+    "master_entropy": 2026102492,
+    "dgp": [
+      "student_t5",
+      "regime_3to1",
+      "compound_poisson"
+    ],
+    "phi": [
+      0.7,
+      0.9
+    ],
+    "windows": [
+      52,
+      260,
+      720,
+      2880
+    ],
+    "horizons": [
+      6,
+      24
+    ],
+    "methods": [
+      "F",
+      "QR33",
+      "QR4"
+    ],
+    "repetitions": 32,
+    "thresholds": {
+      "QR33": {
+        "r_star": 106.49618468616566,
+        "low_boundary": 53.24809234308283,
+        "high_boundary": 212.99236937233132,
+        "low_WH": [
+          [
+            52,
+            6
+          ],
+          [
+            52,
+            24
+          ],
+          [
+            260,
+            6
+          ],
+          [
+            260,
+            24
+          ],
+          [
+            720,
+            24
+          ]
+        ],
+        "high_WH": [
+          [
+            2880,
+            6
+          ]
+        ]
+      },
+      "QR4": {
+        "r_star": 27.324522025270575,
+        "low_boundary": 13.662261012635287,
+        "high_boundary": 54.64904405054115,
+        "low_WH": [
+          [
+            52,
+            6
+          ],
+          [
+            52,
+            24
+          ],
+          [
+            260,
+            24
+          ]
+        ],
+        "high_WH": [
+          [
+            720,
+            6
+          ],
+          [
+            2880,
+            6
+          ],
+          [
+            2880,
+            24
+          ]
+        ]
+      }
+    },
+    "expected_P1_cells": 48,
+    "expected_P2_cells": 24,
+    "expected_P3_pairs": 48,
+    "predictions": {
+      "cell_delta": "100*(mean_rep_QR_loss/mean_paired_rep_F_loss-1)",
+      "population": "equally weighted pooled conditional cells; separate method and DGP reports",
+      "P1": {
+        "region": "metric<method_rstar/2",
+        "strict_outcome": "delta>0",
+        "minimum_fraction": 0.8
+      },
+      "P2": {
+        "region": "metric>2*method_rstar",
+        "strict_outcome": "delta<0",
+        "minimum_fraction": 0.6
+      },
+      "P3": {
+        "matching": "same dgp,phi,W,H because metric c excludes p",
+        "inequality": "delta_QR4<=delta_QR33",
+        "required_fraction": 1.0,
+        "primary_requirement": false
+      },
+      "primary_decision": "SUPPORT iff P1 and P2; NOT_SUPPORT if either rejects; INCONCLUSIVE if missing prevents decision",
+      "missing": "fixed denominator bounds; upper<threshold may reject; any other missing primary-region cell => INCONCLUSIVE, never SUPPORT",
+      "scope": "pooled statement only; report each method and DGP; contrary subgroups cannot be called confirmed"
+    },
+    "resources": {
+      "numerical_threads": 1,
+      "maximum_observed_os_threads": 2,
+      "internal_rss_bytes": 1610612736,
+      "public_rss_bytes": 2147483648,
+      "worker_internal_wall_seconds": 540,
+      "worker_hard_wall_seconds": 600,
+      "total_study_wall_seconds": 5400,
+      "original_window_end_utc": "2026-10-25T05:10:12Z"
+    },
+    "budget_review": {
+      "after_repetitions": 16,
+      "reserve_fraction_remaining": 0.1,
+      "remove_remaining_rep16_to31_window_order": [
+        52,
+        260,
+        720,
+        2880
+      ],
+      "admission_uses": "elapsed times only; no losses",
+      "later_adaptation": false
+    },
+    "DGP_spec": {
+      "student_t5": {
+        "df": 5,
+        "scale": "sqrt(3/5)"
+      },
+      "regime_3to1": {
+        "stay_probability": 0.98,
+        "initial_state_probability_high": 0.5,
+        "sigma_low": "1/sqrt(5)",
+        "sigma_high": "3/sqrt(5)",
+        "transition": "after each current-state innovation"
+      },
+      "compound_poisson": {
+        "count_rate": 0.01,
+        "jump_magnitude_in_Gaussian_SD": 5,
+        "positive_sign_probability": 0.5,
+        "scale": "1/sqrt(1.25)"
+      }
+    },
+    "rng": "PCG64(SeedSequence(2026102492,spawn_key=(rep,dgp_index,stream_index)))",
+    "numeric_verification": {
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    "runtime_estimate": {
+      "actual_utc": "2026-10-24T22:16:40.507601+00:00",
+      "wp1_end_commit": "9784372d523e93a50f21212e9a10adb55485768c",
+      "source_old_metadata": "results/revision-v8/wp3/wp3-driver-output.tar.gz:study-termination.json",
+      "original_study_elapsed_seconds": 2059.6466849998105,
+      "original_worker_count": 288,
+      "new_planned_worker_count": 192,
+      "linear_wall_estimate_seconds": 1373.0977899998738,
+      "safety_factor": 2.0,
+      "safety_wall_estimate_seconds": 2746.1955799997477,
+      "global_budget_seconds": 5400,
+      "old_maximum_worker_seconds": 10.024692,
+      "new_dgp_not_generated": true,
+      "all32_initially_planned": true,
+      "threshold_regions": {
+        "QR33": {
+          "r_star": 106.49618468616566,
+          "low_boundary": 53.24809234308283,
+          "high_boundary": 212.99236937233132,
+          "low_WH": [
+            [
+              52,
+              6
+            ],
+            [
+              52,
+              24
+            ],
+            [
+              260,
+              6
+            ],
+            [
+              260,
+              24
+            ],
+            [
+              720,
+              24
+            ]
+          ],
+          "high_WH": [
+            [
+              2880,
+              6
+            ]
+          ]
+        },
+        "QR4": {
+          "r_star": 27.324522025270575,
+          "low_boundary": 13.662261012635287,
+          "high_boundary": 54.64904405054115,
+          "low_WH": [
+            [
+              52,
+              6
+            ],
+            [
+              52,
+              24
+            ],
+            [
+              260,
+              24
+            ]
+          ],
+          "high_WH": [
+            [
+              720,
+              6
+            ],
+            [
+              2880,
+              6
+            ],
+            [
+              2880,
+              24
+            ]
+          ]
+        }
+      },
+      "expected_P1_cell_count": 48,
+      "expected_P2_cell_count": 24,
+      "expected_P3_pair_count": 48
+    },
+    "primary_software_sources": [
+      "https://numpy.org/doc/2.3/reference/random/generated/numpy.random.Generator.standard_t.html",
+      "https://numpy.org/doc/2.3/reference/random/generated/numpy.random.Generator.poisson.html",
+      "https://numpy.org/doc/2.3/reference/random/generated/numpy.random.Generator.binomial.html"
+    ]
+  },
+  "design_commit": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+  "started_utc": "2026-10-24T22:25:19.696709+00:00",
+  "deadline_monotonic": 2059220.395249833,
+  "initial_planned_workers": 192,
+  "initial_planned_selected_reports": 4608,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "executable": "/Users/bingyouli/.cache/uv/builds-v0/.tmp6dI9ZJ/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.3.5",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "parent_pid": 3161,
+    "requested_worker_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    },
+    "inherited_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    }
+  },
+  "sealed_files": {
+    "v9_confirmation.py": "f8138482e11c574f83a0463ba29702242b0c5118878cc4f413f3888a54cb411c",
+    "run_v9_confirmation.py": "4710316ff5827d9ce71566798c2414a8d091e51cd78e4b6e1198b84e983d4edd",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+    "protocol/revision-v9/wp2-confirmatory.md": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+    "protocol/revision-v9/wp2-confirmatory.json": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+    "notes/revision-v9/wp1-breakeven.json": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184"
+  },
+  "no_RNG_before_manifest": true
+}
