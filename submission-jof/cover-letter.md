@@ -10,6 +10,6 @@ The earlier controlled simulation still fails its narrow-regime explanation. Sam
 
 The contribution is bounded forecasting and model-validation evidence for a precisely defined path-dependent position target, using mature methods and completed labels. It is neither a new quantile estimator nor a general causal mechanism, an operating limit policy or independent dealer validation. Actual decision costs, prospective performance and operational continuity remain unmeasured or unevaluated.
 
-The materials include the main manuscript, Online Supplement, linked complete technical material, title-page template and public code/result repository. The author must personally complete and confirm authorship, permissions and all journal-required declarations before any submission.
+The materials include the main manuscript, preserved Online Supplement and technical material, a diagnostic addendum correcting evidence-display completeness, the title-page template and public code/result repository. The author must personally complete and confirm authorship, permissions and all journal-required declarations before any submission.
 
 [TO BE COMPLETED BY AUTHOR]
