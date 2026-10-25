@@ -1,4 +1,16 @@
-# Canonical submission draft: revision-v11
+# Canonical submission draft: revision-v12
+
+Use [the v12 submission package](submission-v10/README.md), based on `revision-v11` / `4520648`. The native directory remains `submission-v10/`; the branch identifies the revision. New prewritten diagnostics separate finite-penalty hindsight gaps from selection errors, compare validation lengths and report quantile sensitivity, including every numerical failure. Existing data, archived results and designs are unchanged.
+
+See the [F1–F3 protocols](protocol/v12/), [aggregate results](results/v12/), [eleven-item editorial log](notes/v12/edit-log.md), [canonical-version recommendations](notes/v12/CANONICAL.md) and [pending decisions](notes/v12/PENDING.md). Each new protocol was committed separately locally and published separately before any financial computation. Exact design publication and calculation times are retained in `notes/v12/design-publication.jsonl` and the experiment runtime files.
+
+The documents retain author, ORCID, funding and competing-interest placeholders. Restricted FX observations and private prediction vectors remain excluded. No existing branch or PR is changed by this revision.
+
+Everything below is a versioned historical record. Older uses of “current” identify their own revision and do not supersede v12.
+
+---
+
+# Historical submission draft: revision-v11
 
 Use [the v11 submission package](submission-v10/README.md) as the sole current draft, based on frozen v10b `de1a1cf`. The directory name remains `submission-v10/`; the branch identifies this revision. The v10b title, abstract and three findings are retained, with the audited original-period FX learning curve added to the first finding and the saved confirmation summary added to the supplement. No experiment or result was rerun or changed.
 
