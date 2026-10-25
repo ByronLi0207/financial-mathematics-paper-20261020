@@ -38,3 +38,5 @@ F6最终测试/发布阶段包含session-resume.json记录的7小时6分15秒会
 已分批发布并读回代码、实验结果和四份文档；本记录与最后核验文件是最后一批上传。最终接收条件为本地/远端完整树及HEAD一致；最终Git提交见compare页面，原研究提交另保留本机历史bundle。
 
 [compare](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/revision-v11...revision-v12)。CANONICAL.md建议以v12作为唯一入口，旧分支/PR只给处理建议，不操作。其余待决定见PENDING.md，特别是外部v8-goal推进、未来是否另设计研究解决99%数值失败，以及作者信息和公共历史对象的提供方式。
+
+最终交叉引用复核修正：菜单图表迁入后，正文p14的补充图引用改为FiguresS2–S3，损失/命中检验表改为TableS47，均按实际编译aux核对。最终构建native-reference-final，页数仍20/36/1/1；仅p14图片变化并实际重看，其余57页像素精确继承，科学数字和代码不变。

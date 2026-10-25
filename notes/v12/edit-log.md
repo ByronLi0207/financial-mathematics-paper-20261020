@@ -21,3 +21,5 @@
 最终原生编译与渲染：`native-pass4`，页数20/36/1/1，无overfull、未解析引用、重复标签。逐页复查见visual-main-final与visual-supplement-final-a/b；像素未变页面以哈希精确继承已实际看过的版本。
 
 编号说明：新增数据表依任务作为Table2，原方法表自然顺延为Table3；任务第4项仍称“Table2的方法表”按其功能执行，代号只保留在该方法表。新增小节为7.4，原“Isolating the penalty menu”不再作为正文独立小节。
+
+最终交叉引用复核修正：菜单图表迁入后，正文p14的补充图引用改为FiguresS2–S3，损失/命中检验表改为TableS47，均按实际编译aux核对。最终构建native-reference-final，页数仍20/36/1/1；仅p14图片变化并实际重看，其余57页像素精确继承，科学数字和代码不变。
