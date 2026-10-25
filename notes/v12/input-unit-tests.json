@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-25T11:05:27.313285+00:00",
+  "scope": "Constructed CSV/NPZ fixtures and saved protocol/selection metadata only; no actual financial source parsing, labels, fits, predictions or loss evaluations.",
+  "protocol_commits": {
+    "F1": "9679e15",
+    "F2": "f8628db",
+    "F3": "185e1ae"
+  },
+  "red": {
+    "command": "bundled python3 -B -m unittest -v test_v12_inputs",
+    "tests": 14,
+    "failures": 16,
+    "errors": 0,
+    "reason": "v12_inputs module absent before production implementation; assertions failed as expected"
+  },
+  "intermediate": [
+    {
+      "reason": "macOS /var temporary-root alias incorrectly rejected as source symlink",
+      "resolution": "Canonicalize trusted root; retain descendant symlink checks"
+    },
+    {
+      "reason": "Test compared equivalent /var and /private/var spellings",
+      "resolution": "Compare resolved destination identity"
+    }
+  ],
+  "green": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 uv run --offline --no-project --no-env-file --python BUNDLED_PYTHON --with pytest==9.1.1 --with numpy==2.3.5 python -B -m pytest -q -p no:cacheprovider test_v12_inputs.py",
+    "tests_passed": 15,
+    "subtests_passed": 3,
+    "pytest_seconds": 0.18,
+    "exit_code": 0,
+    "output": "15 passed, 3 subtests passed in 0.18s",
+    "environment_warning": "uv: --no-project was provided, but no project was found"
+  },
+  "files": {
+    "v12_inputs.py": {
+      "bytes": 17551,
+      "sha256": "819087f0055fae722f9870378246d8e1dd7c45ecbe1484ef23d1fef21b7c8e0b"
+    },
+    "test_v12_inputs.py": {
+      "bytes": 12238,
+      "sha256": "f130e64cd17c0e116bcaa7ddfce1c69393b606f3158b4676e6f39f39211bb84a"
+    }
+  },
+  "coverage": [
+    "source inventory31 and literal source keys",
+    "F1grid90",
+    "F2grid68 and common evaluation",
+    "F3grid74 with tau99 first and two matched FX periods",
+    "N718 reject/N719 accept whole-contract gate",
+    "size/hash before parsing",
+    "source-naive FX gaps",
+    "bill key/date chronology",
+    "panel fixed grid excludes extra row",
+    "panel missing-date terminal failure",
+    "CFTC actual versus model dates",
+    "nonfinite/wrong-key rejection",
+    "exclusive private snapshot and no overwrite",
+    "descendant symlink rejection"
+  ],
+  "final_suite": "Root agent owns final whole-tree suite; only this input-layer file was run in the scoped subtask.",
+  "mutations": "No Git commands, old file edits, original source writes, downloads or financial fits/evaluations. Only v12_inputs.py, test_v12_inputs.py and this receipt newly written."
+}
