@@ -1,0 +1,58 @@
+WARN `--no-project` was provided, but no project was found
+...............................F.....................................    [100%]
+=================================== FAILURES ===================================
+___ test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases ___
+
+constructed_writer = (<module 'constructed_v9_sync' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/notes/revision-v9/sync_delivera...v9-continuation/guard-recovery-tests/test_fresh_receipt_preserves_t0/notes/revision-v9/constructed-sync-receipt.json'))
+
+    def test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases(constructed_writer):
+        writer,root,delivery,receipt=constructed_writer
+        writer.main()
+        assert receipt.is_file(), 'The requested notes receipt must not be shadowed by a source-snapshot target'
+        result=json.loads(receipt.read_text())
+        assert result['status']=='PASS'
+        assert result['package']=='submission-jof/overleaf-package.zip'
+        assert result['sha256']==hashlib.sha256((delivery/'overleaf-package.zip').read_bytes()).hexdigest()
+        for stem in STEMS[:-1]:
+            source=(delivery/(stem+'.tex')).read_bytes()
+>           snapshot=json.loads((delivery/(stem+'-content.json')).read_text())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v9_sync_deliverables.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v9-continuation/guard-recovery-tests/test_fresh_receipt_preserves_t0/submission-jof/supplement-content.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/revision-v9-continuation/guard-recovery-tests/test_fresh_receipt_preserves_t0/submission-jof/supplement-content.json'
+
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1013: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+{
+  "actual_utc": "2026-10-25T05:45:57.294959+00:00",
+  "status": "PASS",
+  "operation": "Current source snapshots, exact preview aliases and source-only ZIP",
+  "package": "submission-jof/overleaf-package.zip",
+  "bytes": 1498,
+  "sha256": "3db6c1041c3e635d5a9dd5941f978a54304aa643db0f8b5c047f3b9285114bd8",
+  "scientific_results_modified": 0,
+  "financial_models_run": 0,
+  "isolated_compile_and_visual_QA": "Separate required gates"
+}
+=========================== short test summary info ============================
+FAILED test_v9_sync_deliverables.py::test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases
+1 failed, 68 passed in 22.22s

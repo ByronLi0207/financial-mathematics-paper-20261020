@@ -13,7 +13,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 DELIVERY = ROOT / 'submission-jof'
-STEMS = ('manuscript', 'supplement', 'extended-v9-technical', 'title-page')
+STEMS = ('manuscript', 'supplement', 'extended-v9-technical', 'title-page', 'diagnostic-addendum')
 
 
 def sha(raw):
@@ -50,10 +50,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--receipt', type=Path,
                         default=Path('notes/revision-v9/wp7-deliverable-sync.json'))
+    parser.add_argument('--source-bindings', type=Path, default=None,
+                        help='Explicit current document-number audit, within notes/revision-v9')
     args = parser.parse_args()
     receipt_target = (ROOT / args.receipt).resolve()
     receipt_target.relative_to((ROOT / 'notes/revision-v9').resolve())
     assert receipt_target.suffix == '.json' and not receipt_target.exists(), 'Choose a fresh receipt before modifying aliases'
+    current_bindings = None
+    if args.source_bindings is not None:
+        binding_path = (ROOT / args.source_bindings).resolve()
+        binding_path.relative_to((ROOT / 'notes/revision-v9').resolve())
+        assert binding_path.is_file() and not binding_path.is_symlink()
+        assert binding_path.suffix == '.json'
+        current_bindings = '../notes/revision-v9/' + binding_path.name
     title = re.search(r'\\begin\{center\}\\Large\\bfseries (.*?)\\end\{center\}',
                       resolve('manuscript.tex').read_text()).group(1)
     snapshot_receipts = []
@@ -66,7 +75,7 @@ def main():
                            latex=source.read_text(), recursive_inputs=[dict(
                                path=str(p.relative_to(DELIVERY)), sha256=sha(p.read_bytes()),
                                latex=p.read_text()) for p in recursive],
-                           source_bindings='../notes/revision-v9/' + (
+                           source_bindings=current_bindings or '../notes/revision-v9/' + (
                                'wp7-main-number-audit.json' if stem == 'manuscript' else
                                'wp7-supp-number-audit-after-fixture.json'),
                            meaning='Current source snapshot, not an independent authoring pipeline')
