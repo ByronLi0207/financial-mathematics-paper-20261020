@@ -46,3 +46,5 @@ First, matched FX gains recur, but rankings against a shorter rolling rule chang
 候选标题“When Is History Long Enough?”、作者/AI信息、WP3未舍入百分比解释、WP4缺少事先合同、Wisniewski论文年份来源及安全公开历史对象路线，全部列在[待用户决定](PENDING.md)。
 
 比较入口：[v10b…v11](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/revision-v10b...revision-v11)。
+
+最后一轮公开源码包独立编译的56张图像和文字均与已审阅定稿一致，见[最终公开源码包回执](public-source-package-closure.json)。最后的全文逐页英文复读未再改源文，见[语言闭合记录](language-closure.json)；拼写检查通过，见[拼写回执](spelling-closure.json)。

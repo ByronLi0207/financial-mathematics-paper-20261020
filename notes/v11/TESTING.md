@@ -31,3 +31,5 @@ The publicly downloaded native source ZIP was independently extracted and all fo
 The writing statistics retain the original checker. The requested three gates pass; its five additional legacy flags are literal Supplement S1/S2/S3 cross-references. Their raw flags remain in the JSON, and the checker was not changed.
 
 The final English-only closure was tested again in the unchanged original historical-object environment: **1,715 tests and 1,181 subtests passed**. Its exact final command, UTC times and output fingerprint are in [closure-tests.json](closure-tests.json). Earlier public-package checks bind their named snapshot; the final public package has its separate closing readback receipt.
+
+The final public source ZIP readback is now [public-source-package-closure.json](public-source-package-closure.json): its 32 members produce all four targets and all 56 reviewed page images exactly. This closing receipt binds the named public commit and the final archive fingerprint.

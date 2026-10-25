@@ -9,9 +9,11 @@ User authority: detailed steps0–6, conservative pending decisions without wait
 - [x] 2 Selectpassitems:mainFXcurve;SuppWP4map/WP2table;doNOTimportPR5title/abstract/narrative. Bindallnumberspath/SHA/JSONpointer.15minbudget.
 - [x] 3 Main§7Howmuchhistory…onefigure/oneparagraph<=.75page,connecttoallowedstrongshrinkage,contribution1sentence,retainthreefindings;main<=20/supp<=34.40minbudget.
 - [x] 4 Fiveplaceconsistency andfrozenwritinggates<=8%/<=20/0>40.15minbudget.
-- [ ] 5 FourPDFnativecompile/renderchangedpages,fulltests,canonicalbranch/PRsuggestionsonly,publishonlyv11/treeproof.15minbudget.
-- [ ] 6 Anyremainingtimeuntildeadline:fullEnglishgrammar/spelling/articles/plurals,consistentterminology,andAPAmetadataauthor/year/volume/issue/pages/DOIprimarysourcecheck. Recordeverychangedpassageinproofreading-log.md. Compile/QA/publishagainafteredits.
+- [x] 5 FourPDFnativecompile/renderchangedpages,fulltests,canonicalbranch/PRsuggestionsonly,publishonlyv11/treeproof.15minbudget.
+- [x] 6 Anyremainingtimeuntildeadline:fullEnglishgrammar/spelling/articles/plurals,consistentterminology,andAPAmetadataauthor/year/volume/issue/pages/DOIprimarysourcecheck. Recordeverychangedpassageinproofreading-log.md. Compile/QA/publishagainafteredits.
 
 Review focus:publicuploadcommitvslocaldesignprovenance;WP4isaread-onlydisplayratherthananewexperiment;strictanchoragreementmustnotbetradedforanunregisteredtolerance;historyandmenuinteractdescriptively,notcausalguarantees;preserveWP2failuresandnegativecurvepoints;allauthor/AIplaceholderskept. PublicationandnativeQAreservednearend. Timedgoalnotcompletebefore07:01:20UTC.
 
 Closure snapshot: native compile/visual and final original-environment full tests PASS. Initial full publication tree equal; final English-only closure changes are being published to the same v11 branch. No further experimental work. Goal remains active until the fixed deadline.
+
+Final English reread covers all20mainpages plus title/letter/S35; all remaining language changes were already compiled, reviewed and published. The requested full timed window stays active until07:01:20UTC; no new task or experiment is added. Final publication-only receipts do not change the submission sources.
