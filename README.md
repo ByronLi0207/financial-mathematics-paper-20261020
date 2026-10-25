@@ -1,3 +1,7 @@
+# Current editorial draft: revision-v10b
+
+The submission copy is in [submission-v10](submission-v10/README.md), on `revision-v10b`, based on frozen v10 `23fd9fa`. This branch changes wording and display style only; archived scientific results, data and designs are unchanged. Read [the v10b delivery record](notes/v10b/DELIVERY.md) and [pending author decisions](notes/v10b/PENDING.md) before submission. Author and declaration placeholders remain unfilled.
+
 # Current revision: v10
 
 The current draft on `revision-v10` is [submission-v10/manuscript.tex](submission-v10/manuscript.tex), with [Online Supplement](submission-v10/supplement.tex), [source package](submission-v10/overleaf-package.zip) and [author actions](submission-v10/AUTHOR-TODO.md). The immutable starting v9 submission remains in `submission-jof/`.
