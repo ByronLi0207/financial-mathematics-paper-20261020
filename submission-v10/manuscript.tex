@@ -25,10 +25,10 @@ Dealer position limits concern the largest exposure reached before a review hori
 Historical headroom combines the current position with completed past peak behavior. Conditional models estimate additional relationships from finite historical windows. Matched histories and update schedules show whether the added conditioning improves the forecast.
 
 \begin{figure}[htbp]\centering\includegraphics[width=.94\linewidth]{figures/v9-endpoint-peak-example.pdf}
-\caption{A selected Treasury-bill path whose endpoint returns within the historical report after an intervening breach. The rule chooses the earliest eligible original evaluation window. Endpoint containment can conceal a peak breach.}\label{fig:example}
+\caption{A selected Treasury-bill path that returns within the reported historical limit at its endpoint after an intervening breach. The rule chooses the earliest eligible original evaluation window. Endpoint containment can conceal a peak breach.}\label{fig:example}
 \end{figure}
 
-Our evidence covers hourly FX positions, their daily aggregates, New York Fed categories and CFTC dealer-category futures. The two official weekly systems report different aggregate exposures. Original protocol comparisons retain their original reference procedures and values.
+Our evidence covers hourly FX positions, their daily aggregates, New York Fed categories and CFTC dealer-category futures positions. The two official weekly reporting systems describe different aggregate exposures. The protocol comparisons retain their original reference procedures and values.
 
 Three questions organize the evaluation.
 
@@ -40,7 +40,7 @@ Three questions organize the evaluation.
 
 The paper makes three empirical findings.
 
-\textit{First, matched FX gains recur, but rankings against a shorter rolling rule change.} The period comparisons separate conditioning gains from the reference procedure (Table~\ref{tab:fx}). Delayed calibration preserves the later matched gain while changing breach behavior.
+\textit{First, matched FX gains recur, but rankings against a shorter rolling rule change.} The period comparisons separate conditioning gains from the reference procedure (Table~\ref{tab:fx}). Delayed calibration preserves the later matched gain while changing breach behavior. Within the original FX period, the full-regression learning curve improves at intermediate histories but gives back part of the gain at the longest history (Figure~\ref{fig:v11-history}).
 
 \textit{Second, historical rules remain competitive in weekly data, and penalty menus explain large losses in the calibrated simulations.} The panel and independent CFTC reporting system favor historical controls in most comparisons (Tables~\ref{tab:weekly} and~\ref{tab:v10-cftc-contracts}). Historical procedures usually remain in model confidence sets alongside alternatives (Table~\ref{tab:v10-mcs-main}). Expanding the simulation menu brings short-history full regression close to its historical reference; the registered switching increment is unsupported.
 
@@ -52,7 +52,7 @@ Section~\ref{sec:target} defines the response. Section~\ref{sec:results} answers
 
 \section{Related literature}\label{sec:literature}
 
-Wisniewski and colleagues forecast signed next-hour position intervals using historical states, calendar information and local prediction methods \citep{wisniewski2020,wisniewski2024}. Their chronological training, calibration and test design reports scores and coverage together. The present peak response uses a complete future path segment and the current magnitude, producing different labels and limits.
+Earlier FX studies forecast signed next-hour position intervals using historical states, calendar information and local prediction methods \citep{wisniewski2020,wisniewski2024}. Their chronological training, calibration and test design reports scores and coverage together. The present peak response uses a complete future path segment and the current magnitude, producing different labels and limits.
 
 
 Path-risk forecasts address within-period extremes. MaxVaR studies the worst cumulative portfolio return under fixed holdings and diffusion assumptions \citep{boudoukh2004}. The payment-liquidity thesis forecasts conditional maximum deficits from confidential transactions \citep{hoogen2017}. Settlement studies examine tail liquidity needs and collateral requirements \citep{petrunia2019,arjani2020}. Duffie and colleagues study dealer capacity and Treasury-market functioning, including PnL quantile forecasts \citep{duffie2023}. These responses differ from the sampled absolute-position peak.
@@ -77,7 +77,7 @@ This study & Sampled absolute-position peak & FX record; weekly\allowbreak{} tot
 \par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The payment-thesis reading is partial. Dashes mark unverified dimensions in the consulted passages; shared source lineage leaves input-byte identity unverified.\end{minipage}
 \end{table}
 
-The matched FX gain changes interpretation with its reference. Weekly historical controls remain competitive, while expanded simulation menus remove the large short-history loss and leave the registered switching increment unsupported. In CFTC, higher reserve and lower fixed breach charges generally favor regression, with local exceptions. Established forecast tests support the comparisons \citep{dm1995,gw2006,mcs2011}. Inventory-sensitive quoting motivates exposure monitoring \citep{avellaneda2008}; here, the forecasts are scored on observed paths.
+The matched FX gain changes interpretation with its reference. Weekly historical controls remain competitive, while expanded simulation menus remove the large short-history loss and leave the registered switching increment unsupported. In the CFTC comparisons, higher reserve charges and lower fixed breach charges generally favor regression, with local exceptions. Established forecast tests support the comparisons \citep{dm1995,gw2006,mcs2011}. Inventory-sensitive quoting motivates exposure monitoring \citep{avellaneda2008}; here, the forecasts are scored on observed paths.
 
 \FloatBarrier
 
@@ -114,7 +114,7 @@ A feasible limit covers the current observed exposure. Figure~\ref{fig:example} 
 Supplement Sections S1--S2 prove both statements and distinguish population quantiles from their empirical plug-ins; Sections S3--S5 give the bound simulations. A conditional application requires independence, symmetry and the stated endpoint quantile under the law given issue information. The separate bound simulations distinguish mean-reverting levels from serially correlated increments.
 
 
-Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression crosses across horizons on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.
+Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression produces horizon crossings on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.
 
 
 \FloatBarrier
@@ -129,7 +129,7 @@ Daily aggregation takes the last recorded position on each nonempty source-naive
 
 The CFTC application is a retrospective survivor-universe, economic-date replay. It uses futures-only Dealer/Intermediary long positions minus short positions \citep{cftcTFF}. The fixed screen requires uninterrupted report weeks from 2010, stable literal codes, exchange and units. It excludes documented consolidation-code families before ranking eligible contracts by full-sample mean open interest. Seventeen contracts qualify, fewer than the planned maximum of twenty. Supplement Section S30 lists every selected code and explains the eligibility rules; complete code-level exclusions remain linked there.
 
-There are 877 weekly positions through 20 October 2026. Validation uses 52 origins; evaluation uses the last 260 eligible origins with horizon six. The evaluation position dates run from 21 September 2021 to 8 September 2026. Its final peak label completes on 20 October 2026. Refit frequency is thirteen records; histories are 52 and 260. Positions usually refer to Tuesday and are released Friday; this application replays downloaded economic dates.
+There are 877 weekly positions through 20 October 2026. Validation uses 52 origins; evaluation uses the last 260 eligible origins with horizon six. The evaluation position dates run from 21 September 2021 to 8 September 2026. Its final peak label completes on 20 October 2026. Refits occur every thirteen records; history lengths are 52 and 260. Positions usually refer to Tuesday and are released Friday; this application replays downloaded economic dates.
 
 Every method within a comparison uses identical peak labels, current floors and issue origins. Source units and histories remain distinct across series. The same-record aggregation holds dealer identity fixed while changing the measurement clock.
 
@@ -141,22 +141,22 @@ Forecasts target the conditional quantile at \(\tau=19/20\). The horizons \(H\in
 
 Historical headroom uses the corrected empirical rank of completed headrooms and adds its report to the current magnitude. Translated paths reanchor historical signed paths, while historical-peak quantiles are projected to the observed floor. The endpoint plug-in uses an absolute-displacement quantile; Table~\ref{tab:methods} gives the executed menus and schedules.
 
-Ridge quantile regression links mature headroom to issue-known position states and calendar variables. The larger set contains 33 predictors plus an unpenalized intercept. The four-predictor variant uses current magnitude, signed level and two increment RMS measures. All standardization uses mature training observations. Expanded-menu full regression changes only the penalty grid.
+Ridge quantile regression links mature headroom to issue-known position states and calendar variables. Full regression uses 33 predictors plus an unpenalized intercept. The four-feature variant uses current magnitude, signed level and two root mean square (RMS) measures of increments. All standardization uses mature training observations. Expanded-menu full regression changes only the penalty grid.
 
 Local quantiles use neighboring historical states, with an increment-scaled variant. Filtered paths simulate positions from GARCH-standardized empirical innovations drawn independently with replacement \citep{hull1998,barone1999}. Quantile forests use leaf distributions; tail methods fit volatility-scaled headroom \citep{meinshausen2006,mcneilfrey2000}. Supplement Sections S7 and S11--S18 report benchmark results and failures; Section S34 links the complete legacy inventories.
 
-Further comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response. A headroom CAViaR recursion and calibration wrappers follow existing methods \citep{engle2004,gibbs2021}. Calibration parameters update after outcomes mature. Fixed mean and median combinations use predefined members. Conservative selection favors the strongest shrinkage within one paired HAC standard error of the validation winner. This adapts one-standard-error selection \citep{hastie2009} to paired forecast losses.
+Further comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response. A headroom CAViaR recursion and calibration wrappers follow existing methods \citep{engle2004,gibbs2021}. Calibration parameters update after outcomes mature. Fixed mean and median combinations use predefined members. Conservative selection favors the strongest shrinkage whose validation loss is within one paired HAC standard error of the winner's loss. This adapts one-standard-error selection \citep{hastie2009} to paired forecast losses.
 
 \begin{table}[htbp]\centering\small
 \caption{Forecast definitions and executed menus. Codes occur here to connect with the result files. Matched histories and update schedules make the reference explicit.}\label{tab:methods}
 \begin{tabular}{>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{5.3cm}}\toprule
 Method & Forecast definition & Executed menu / setting\\\midrule
-Historical headroom (F) & Current floor plus a quantile of completed peak headrooms & FX histories \{720,2880\}; weekly \{52,260\}\\
+Historical headroom (F) & Current floor plus a quantile of completed peak headrooms & Original FX histories \{720,2880\}; weekly \{52,260\}\\
 Translated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed-label pools; fixed-window and rolling-window controls\\
 Historical peak (K) & Historical absolute-peak quantile projected to the current floor & Same histories and update controls\\
 Quantile regression (QR) & Training-scaled headroom regression with ridge slopes and an unpenalized intercept & Original three-point menu; six-point menu $\{0.001,0.01,0.1,1,10,\infty\}$\\
 Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Sections S8 and S23\\
-Parsimonious regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\
+Four-feature regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\
 Endpoint plug-in (L) & Floor plus a high absolute-displacement endpoint quantile & Proposition~\ref{prop:levy}; empirical plug-in evaluated separately\\
 Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications; results and complete failures linked from Supplement Sections S7 and S34\\
 Coverage and combinations & Delayed projected ACI-style wrappers; headroom SAV; fixed forecast combinations & Original-source wrapper/SAV inventory and broader combination inventory are separate\\
@@ -168,9 +168,9 @@ Coverage and combinations & Delayed projected ACI-style wrappers; headroom SAV; 
 
 \section{Evaluation design}\label{sec:evaluation}
 
-At refit \(r\), training labels are eligible only when \(i+H\le r\). Predictors use issue-known observations, and training transforms remain fixed until the next refit. Original comparisons select parameters in the preceding validation segment. The full-prefix backcast holds its specified penalties fixed. Weekly selection uses 52 outer validation origins with overlapping labels.
+At refit time \(r\), training labels are eligible only when \(i+H\le r\). Predictors use issue-known observations, and training transforms remain fixed until the next refit. Original comparisons select parameters in the preceding validation segment. The full-prefix backcast holds its specified penalties fixed. Weekly selection uses 52 outer validation origins with overlapping labels.
 
-Matched comparisons fix completed-response history and refit schedule for regression and historical headroom. The main FX reference uses a shorter rolling history. The main Treasury reference shares regression's longer history and refit schedule. Tables~\ref{tab:fx} and~\ref{tab:weekly} report both alongside the other comparison sets.
+Matched comparisons hold the completed-response history and refit schedule fixed for regression and historical headroom. The main FX reference uses a shorter rolling history. The main Treasury reference shares regression's longer history and refit schedule. Tables~\ref{tab:fx} and~\ref{tab:weekly} report both alongside the other comparison sets.
 
 Accuracy uses mean pinball loss; breaches are strict peak exceedances. Evaluation scores passive reports on the observed position paths. Paired loss differences use HAC covariance with the horizon-based bandwidth rule \citep{dm1995,nw1987}. Tables identify the small-sample adjustment and named multiplicity families \citep{hln1997,holm1979}. Hit diagnostics use a fixed spaced grid and condition the transition likelihood on its initial hit \citep{kupiec1995,christ1998}.
 
@@ -180,9 +180,9 @@ The original protocol fixes the two main comparisons and their reference procedu
 
 \subsection{Multiple-method forecast comparison}
 
-We form a 90\% model confidence set separately for each complete source, period, horizon and history grid \citep{mcs2011}. The range statistic uses 1,000 stationary-bootstrap replications in arch 8.0.0. Block length is $\max\{H,\lceil n^{1/3}\rceil\}$. All complete saved procedures enter; incomplete prior methods remain explicitly unavailable. Entire origin grids and targets must match. The nominal level presumes suitable loss dependence; it does not adjust earlier research-stage model development.
+We form a 90\% model confidence set separately for each complete source, period, horizon and history grid \citep{mcs2011}. The range statistic uses 1,000 stationary-bootstrap replications in arch 8.0.0. Block length is $\max\{H,\lceil n^{1/3}\rceil\}$. All complete saved procedures enter; incomplete prior methods remain explicitly unavailable. Entire origin grids and targets must match. The nominal level presumes suitable loss dependence; it does not account for earlier research-stage model development.
 
-Exact duplicate loss columns enter the bootstrap once and their procedure labels are unfolded afterward. Matched F/I aliases merge only after full forecast and target equality. Rolling references remain distinct. Literal sole membership differs from a sole surviving loss class containing several procedures. The fractions summarize related tasks, with no independent cross-market pooled test.
+Exact duplicate loss columns enter the bootstrap once, and their procedure labels are restored afterward. Matched F/I aliases merge only after full forecast and target equality. Rolling references remain distinct. Literal sole membership differs from a sole surviving loss class containing several procedures. The fractions summarize related tasks, with no independent cross-market pooled test.
 
 \FloatBarrier
 
@@ -192,9 +192,9 @@ Exact duplicate loss columns enter the bootstrap once and their procedure labels
 
 Long-history FX regression beats matched historical headroom in both periods. Table~\ref{tab:fx} separates these matched controls from the shorter rolling reference, whose earlier-period ranking reverses.
 
-Delayed calibration retains the later matched FX gain. Its breach count remains slightly higher than wrapped historical headroom on common origins (Table~\ref{tab:fx}).
+Delayed calibration retains the later matched FX gain. Its breach count remains slightly higher than that of wrapped historical headroom on common origins (Table~\ref{tab:fx}).
 
-Supplement Sections S20--S21 and S26 report the state, target-level and overlapping full-prefix comparisons (Tables S19--S21 and S25--S26). Full-prefix regression lowers matched loss by 12.2\% but records 416 versus 282 breaches. Its rolling-reference DM p-value is 0.055. Longer-horizon gains coexist with reference-sensitive losses in the complete tables.
+Supplement Sections S20--S21 and S26 report the state, target-level and overlapping full-prefix comparisons (Tables S19--S21 and S25--S26).
 
 \begin{table}[htbp]\centering\small
 \caption{Long-history short-horizon FX regression under two references and periods. Negative percentages favor regression. Matched gains recur while the rolling-reference direction changes.}\label{tab:fx}
@@ -209,6 +209,16 @@ Later / coverage-wrapped & Same-history wrapped headroom & -15.00 & 6625 & 329 /
 \par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Regression uses history 2880 and horizon 6; the original rolling reference uses 720. The earlier matched comparison is the original three-penalty regression, not the later one-standard-error selection rule. The wrapper comparison is a separate finite projected delayed ACI-style exercise.\end{minipage}
 \end{table}
 
+\FloatBarrier
+\subsection{How much history does FX regression need?}\label{sec:fx-history}
+
+The fixed-period, short-horizon learning curve shows that more history helps only over part of the tested range (Figure~\ref{fig:v11-history}). Full regression moves from higher loss at the shortest history to its largest matched gain at an intermediate history. The gain is smaller at the longest history, while the four-feature curve changes sign within the tested range. Both curves use the original FX period and their original penalty menus; regression is compared with its own matched historical reference at each history length. Supplement Section S35 retains the full contrasts and synthetic confirmation summary. Together, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.
+
+\begin{figure}[!htbp]\centering\includegraphics[width=.88\linewidth]{figures/v11-fx-history.pdf}
+\caption{Saved short-horizon FX learning curves on the original evaluation period. The methods retain distinct original penalty menus, and every tested history is shown against its own matched historical headroom. This retrospective comparison does not identify a universally optimal history.}\label{fig:v11-history}
+\end{figure}
+\FloatBarrier
+
 \subsection{RQ2: daily, weekly and independently reported positions}
 
 The reference-sensitive hourly results motivate comparisons with other measurement clocks and reporting systems. These comparisons retain their own matched histories and completed peak labels.
@@ -219,7 +229,7 @@ At weekly frequency, the Treasury-bill comparison also favors historical headroo
 
 Stronger regularization narrows weekly panel losses but leaves historical rules ahead (Table~\ref{tab:weekly}). Conservative selection chooses the intercept-only report in 17 of 26 earlier weekly cells. Its worst loss remains the Treasury-bill short-window, 24-step comparison, despite the conservative selection rule.
 
-Simpler conditional reports and fixed combinations also give mixed weekly results. The median combination lowers Treasury-bill loss by 4.0\%, while the mean combination raises it by 2.8\%. The headroom recursion is also worse. Supplement Sections S16--S18 retain the combination and headroom-recursion results, including completed losses and failures (Tables S14--S17).
+Simpler conditional reports and fixed combinations also give mixed weekly results. The headroom recursion is also worse. Supplement Sections S16--S18 retain the combination and headroom-recursion results, including completed losses and failures (Tables S14--S17).
 
 Returning to the same FX record, historical headroom wins seven of eight daily comparisons. The exception uses four predictors, history 260 and horizon 6, reducing loss by 3.0\%. It records 37 breaches versus 30 for matched headroom. Daily aggregation therefore preserves the score--breach disagreement while changing the leading forecast in most comparisons.
 
@@ -230,7 +240,7 @@ Comparison set & Procedure & Loss change / median (\%) & Higher-loss cells\\\mid
 Original Treasury-bill main comparison & Original regression, long history & +50.79 & Original main comparison\\
 Earlier Treasury-bill short-window version & Short-history short-window version & +144.30 & Different history\\
 Additional panel & Original full regression & +92.63 & 45 / 48\\
-Additional panel & Four-predictor regression & +9.91 & 37 / 48\\
+Additional panel & Four-feature regression & +9.91 & 37 / 48\\
 Additional panel & Full regression, expanded penalties & +9.22 & 34 / 48\\
 Additional panel & Ordinary empirical headroom quantile & +0.50 & 30 / 48\\
 Earlier weekly groups & Validation-minimum expanded rule & +4.15 & 26 groups\\
@@ -241,7 +251,7 @@ Earlier weekly groups & One-standard-error rule & +5.37 & 26 groups\\
 
 \subsubsection{CFTC: independent reporting-system evidence}
 
-The independent reporting system gives a similar overall ranking: F or I has lower loss in 29 of 34 contract/history comparisons. The frozen sixty-percent threshold is met. The count uses the better realized score among the two prespecified historical reports, not an executable F/I selector. F remains the fixed matched reference; I is reported separately. Both full-regression medians exceed the registered ten-percent tolerance. Four-predictor regression moves closer to historical headroom with the longer history. Thus the historical-benchmark pattern extends to another reporting system, with substantial contract-level variation.
+The independent reporting system gives a similar overall ranking: F or I has lower loss in 29 of 34 contract/history comparisons. The frozen sixty-percent threshold is met. The count uses the better realized score among the two prespecified historical reports, not an executable F/I selector. F remains the fixed matched reference; I is reported separately. Both full-regression medians exceed the registered ten-percent tolerance. Four-feature regression moves closer to historical headroom with the longer history. Thus the historical-benchmark pattern extends to another reporting system, with substantial contract-level variation.
 
 \input{generated/v10-cftc-contracts.tex}
 
@@ -279,7 +289,7 @@ The expanded full-regression medians move close to historical headroom in both a
 \caption{Paired penalty-menu isolation on unchanged calibrated paths. The expanded menu removes the large short-history full-regression loss in both arms. Longer-history full-regression summaries remain unavailable because a required repetition fails in each arm, with no successful-subset replacement.}\label{fig:mechanism}
 \end{figure}
 
-At history 260, one required full-regression repetition fails in each arm under the old low penalty. Both whole thirteen-source summaries remain unavailable. The experiment retains every failed cell and performs no retry. Earlier daily moment-qualification and hourly optimization failures also remain unavailable. Absence of a five-point switching increment is not evidence of equivalence.
+At history 260, one required full-regression repetition fails in each arm under the old low penalty. Both summaries across all thirteen sources remain unavailable. The experiment retains every failed cell and performs no retry. Earlier daily moment-qualification and hourly optimization failures also remain unavailable. Absence of a five-point switching increment is not evidence of equivalence.
 
 \FloatBarrier
 
@@ -293,11 +303,11 @@ m_F=\overline{C_F-B}>0,\quad\beta=b/m_F.
 \]
 
 For CFTC, higher reserve coefficients and lower fixed-breach coefficients generally favor expanded-menu regression over matched historical headroom, although the grid is not monotone (Figure~\ref{fig:v10-cost}).
-At $c=1$, regression is strictly cheaper in $5/34$ comparisons at the sorted-grid centre $(\kappa,\beta)=(.1,.25)$, $32/34$ at $(1,0)$, and $1/34$ at the opposite corner $(.01,5)$.
+At $c=1$, regression is strictly cheaper in $5/34$ comparisons at the center of the sorted grid $(\kappa,\beta)=(.1,.25)$, $32/34$ at $(1,0)$, and $1/34$ at the opposite corner $(.01,5)$.
 These are illustrative costs, not observed operating costs; Supplement Section S32 gives the normalization, fixed grid and complete-method results.
 
 \begin{figure}[p]\centering\includegraphics[width=.98\linewidth,height=.87\textheight,keepaspectratio]{figures/v10-cost-regions.pdf}
-\caption{Fixed reserve and breach-charge regions with the exceedance coefficient held at unity. Color shows the fraction of related comparisons where the stated conditional procedure costs less than corrected historical headroom, with each source group retaining its own histories and horizons. These are descriptive fractions; all comparisons complete and the lower and upper fractions coincide.}\label{fig:v10-cost}
+\caption{Fixed reserve and breach-charge regions with the exceedance coefficient held at unity. Color shows the fraction of related comparisons where the stated conditional procedure costs less than corrected historical headroom, with each source group retaining its own histories and horizons. These are descriptive fractions; all comparisons are complete, and the lower and upper fractions coincide.}\label{fig:v10-cost}
 \end{figure}
 
 \FloatBarrier
@@ -306,7 +316,7 @@ These are illustrative costs, not observed operating costs; Supplement Section S
 
 \textbf{Benchmark against historical headroom.} Use the same completed labels, history length and refit schedule. Name the shorter rolling reference separately, since its FX ranking changes across periods.
 
-\textbf{Retain corrected-rank history as a matched benchmark in these comparisons.} Expanded penalties reduce losses, while short-sample validation, including one-standard-error selection, still leaves large losses. The CFTC comparison also retains F/I in most model confidence sets. The ordinary empirical quantile is up to 36.5\% worse than corrected headroom in the earlier weekly grid.
+\textbf{Retain corrected-rank historical headroom as a matched benchmark in these comparisons.} Expanded penalties reduce losses, while short-sample validation, including one-standard-error selection, still leaves large losses. The CFTC comparison also retains F/I in most model confidence sets. The ordinary empirical quantile is up to 36.5\% worse than corrected headroom in the earlier weekly grid.
 
 \textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid. The unwrapped matched FX gain and the daily regression exception both have more breaches than their historical references. Cost regions add reserve, breach-frequency and exceedance preferences to this joint evaluation.
 
@@ -332,7 +342,7 @@ Coefficients are fixed preferences; no estimated funding return, optimal interve
 
 \section{Conclusion}\label{sec:conclusion}
 
-Historical rules are hard to beat. For RQ1, matched FX regression gains recur across periods, but rankings against the shorter rolling reference change. Delayed calibration preserves the later matched gain with a small breach-count difference. Matching history and update schedules is therefore central to interpreting conditional forecast gains.
+Historical rules are hard to beat. For RQ1, matched FX regression gains recur across periods, but rankings against the shorter rolling reference change. Delayed calibration preserves the later matched gain with a small breach-count difference. Matching history and update schedules is therefore central to interpreting conditional forecast gains. The original-period learning curve also shows that gains are not monotone in history length.
 
 For RQ2, historical controls remain competitive in related weekly categories, same-record daily aggregates and the independent CFTC reporting system. They usually remain in model confidence sets alongside alternatives. Short-sample validation still fails to protect the historical benchmark consistently. The calibrated paired experiment brings full regression near its historical reference by expanding the penalty menu. The registered switching increment is unsupported, while the empirical low-frequency mechanism remains unidentified.
 
@@ -343,11 +353,11 @@ For RQ3, higher reserve charges and lower fixed breach charges generally favor e
 \section*{Data and code availability}
 \paragraph{Data availability.} The FX input is the specified version of the Kaggle Net Position Time Series Dataset. The owning metadata labels its license ``Data files \copyright\ Original Authors.'' This repository supplies the acquisition route and input fingerprint, but excludes raw FX observations and private per-issue prediction vectors. Obtain the source from \url{https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset} subject to the original rights holders' terms.
 
-The New York Fed aggregates are available from its Primary Dealer Statistics service under the Bank's Terms of Use. The repository preserves the unchanged accepted Treasury snapshot with attribution and identifies study calculations separately. Copying or distributing that content remains subject to its source notices, attribution, modification labelling, continuing conditions and endorsement restrictions: \url{https://www.newyorkfed.org/privacy/termsofuse.html}. The code license does not replace those source conditions.
+The New York Fed aggregates are available from its Primary Dealer Statistics service under the Bank's Terms of Use. The repository preserves the unchanged accepted Treasury snapshot with attribution and identifies study calculations separately. Copying or distributing that content remains subject to its source notices, attribution, modification labeling, continuing conditions and endorsement restrictions: \url{https://www.newyorkfed.org/privacy/termsofuse.html}. The code license does not replace those source conditions.
 
 The CFTC application uses the public TFF historical files from \url{https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm}. The repository includes unchanged downloaded archives and a per-file URL, acquisition time, byte count and SHA-256 record in \texttt{data/cftc-tff/provenance.json}.
 
-\paragraph{Code availability.} Code, saved results and version-specific reproduction instructions are available at \url{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v10b}. The v10 package adds paired menu isolation, official CFTC sources, full MCS results and fixed cost regions. Earlier results remain unchanged in their versioned directories. Document compilation and restricted-input financial replay have separate instructions. Complete, adverse, failed and unavailable outcomes are retained.
+\paragraph{Code availability.} Code, saved results and version-specific reproduction instructions are available at \url{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v11}. The v10 package adds paired menu isolation, official CFTC sources, full MCS results and fixed cost regions. Earlier results remain unchanged in their versioned directories. Document compilation and restricted-input financial replay have separate instructions. Complete, adverse, failed and unavailable outcomes are retained.
 
 \section*{Author-provided information}
 Author information: [TO BE COMPLETED BY AUTHOR].\par
@@ -358,76 +368,76 @@ AI statement: [TO BE COMPLETED BY AUTHOR].
 
 \begin{thebibliography}{99}
 \raggedright
-\bibitem[Arjani et al.(2020)]{arjani2020} Arjani, N., Li, F., \& Sabetti, L. (2020). \emph{Monitoring intraday liquidity risks in a real time gross settlement system}. Payments Canada. \url{https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf}.
+\bibitem[Arjani et al.(2020)]{arjani2020} Arjani, N., Li, F., \& Sabetti, L. (2020). \emph{Monitoring intraday liquidity risks in a real time gross settlement system}. Payments Canada. \url{https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf}
 
-\bibitem[Avellaneda \& Stoikov(2008)]{avellaneda2008} Avellaneda, M., \& Stoikov, S. (2008). High-frequency trading in a limit order book. \emph{Quantitative Finance}, \emph{8}(3), 217--224. \url{https://doi.org/10.1080/14697680701381228}.
+\bibitem[Avellaneda \& Stoikov(2008)]{avellaneda2008} Avellaneda, M., \& Stoikov, S. (2008). High-frequency trading in a limit order book. \emph{Quantitative Finance}, \emph{8}(3), 217--224. \url{https://doi.org/10.1080/14697680701381228}
 
-\bibitem[Barone-Adesi et al.(1999)]{barone1999} Barone-Adesi, G., Giannopoulos, K., \& Vosper, L. (1999). VaR without correlations for portfolios of derivative securities. \emph{Journal of Futures Markets}, \emph{19}(5), 583--602. \url{https://doi.org/10.1002/(SICI)1096-9934(199908)19:5<583::AID-FUT5>3.0.CO;2-S}.
+\bibitem[Barone-Adesi et al.(1999)]{barone1999} Barone-Adesi, G., Giannopoulos, K., \& Vosper, L. (1999). VaR without correlations for portfolios of derivative securities. \emph{Journal of Futures Markets}, \emph{19}(5), 583--602. \url{https://doi.org/10.1002/(SICI)1096-9934(199908)19:5<583::AID-FUT5>3.0.CO;2-S}
 
-\bibitem[Board of Governors of the Federal Reserve System(2013)]{fr2004_2013} Board of Governors of the Federal Reserve System (2013, March). \emph{Reporting guidelines for preparing the FR 2004 primary government securities dealers reports}. Board of Governors of the Federal Reserve System. \url{https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=f555fe11-e149-479b-8088-4ed4e9ae1206}.
+\bibitem[Board of Governors of the Federal Reserve System(2013)]{fr2004_2013} Board of Governors of the Federal Reserve System. (2013, March). \emph{Reporting guidelines for preparing the FR 2004 primary government securities dealers reports}. \url{https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=f555fe11-e149-479b-8088-4ed4e9ae1206}
 
-\bibitem[Board of Governors of the Federal Reserve System(2024)]{fr2004_2024} Board of Governors of the Federal Reserve System (2024, July). \emph{Instructions for the preparation of government securities dealers reports: Reporting form FR 2004}. Board of Governors of the Federal Reserve System. \url{https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=950ab256-b485-4586-99b0-b27eb205fdfa}.
+\bibitem[Board of Governors of the Federal Reserve System(2024)]{fr2004_2024} Board of Governors of the Federal Reserve System. (2024, July). \emph{Instructions for the preparation of government securities dealers reports: Reporting form FR 2004}. \url{https://www.federalreserve.gov/apps/reportingforms/Download/DownloadAttachment?guid=950ab256-b485-4586-99b0-b27eb205fdfa}
 
-\bibitem[Bollerslev(1986)]{bollerslev1986} Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. \emph{Journal of Econometrics}, \emph{31}(3), 307--327. \url{https://doi.org/10.1016/0304-4076(86)90063-1}.
+\bibitem[Bollerslev(1986)]{bollerslev1986} Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. \emph{Journal of Econometrics}, \emph{31}(3), 307--327. \url{https://doi.org/10.1016/0304-4076(86)90063-1}
 
-\bibitem[Boudoukh et al.(2004)]{boudoukh2004} Boudoukh, J., Richardson, M., Stanton, R., \& Whitelaw, R. F. (2004). MaxVaR: Long-horizon value at risk in a mark-to-market environment. \emph{Journal of Investment Management}, \emph{2}(3), 1--6. \url{https://pages.stern.nyu.edu/~rwhitela/papers/maxvar%20joim04.pdf}.
+\bibitem[Boudoukh et al.(2004)]{boudoukh2004} Boudoukh, J., Richardson, M., Stanton, R., \& Whitelaw, R. F. (2004). MaxVaR: Long-horizon value at risk in a mark-to-market environment. \emph{Journal of Investment Management}, \emph{2}(3), 1--6. \url{https://pages.stern.nyu.edu/~rwhitela/papers/maxvar%20joim04.pdf}
 
-\bibitem[Christoffersen(1998)]{christ1998} Christoffersen, P. F. (1998). Evaluating interval forecasts. \emph{International Economic Review}, \emph{39}(4), 841--862. \url{https://doi.org/10.2307/2527341}.
+\bibitem[Christoffersen(1998)]{christ1998} Christoffersen, P. F. (1998). Evaluating interval forecasts. \emph{International Economic Review}, \emph{39}(4), 841--862. \url{https://doi.org/10.2307/2527341}
 
-\bibitem[Commodity Futures Trading Commission(n.d.)]{cftcTFF} Commodity Futures Trading Commission (n.d.). \emph{Traders in financial futures: Historical compressed reports}. \url{https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm}. Retrieved October 24, 2026.
+\bibitem[Commodity Futures Trading Commission(n.d.)]{cftcTFF} Commodity Futures Trading Commission. (n.d.). \emph{Historical compressed}. Retrieved October 24, 2026, from \url{https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm}
 
-\bibitem[Diebold \& Mariano(1995)]{dm1995} Diebold, F. X., \& Mariano, R. S. (1995). Comparing predictive accuracy. \emph{Journal of Business \& Economic Statistics}, \emph{13}(3), 253--263. \url{https://doi.org/10.1080/07350015.1995.10524599}.
+\bibitem[Diebold \& Mariano(1995)]{dm1995} Diebold, F. X., \& Mariano, R. S. (1995). Comparing predictive accuracy. \emph{Journal of Business \& Economic Statistics}, \emph{13}(3), 253--263. \url{https://doi.org/10.1080/07350015.1995.10524599}
 
-\bibitem[Duffie et al.(2023)]{duffie2023} Duffie, D., Fleming, M. J., Keane, F. M., Nelson, C., Shachar, O., \& Van Tassel, P. (2023). \emph{Dealer capacity and U.S. Treasury market functionality} (Staff Report No. 1070, August; revised October). Federal Reserve Bank of New York Staff Reports. \url{https://doi.org/10.59576/sr.1070}.
+\bibitem[Duffie et al.(2023)]{duffie2023} Duffie, D., Fleming, M. J., Keane, F. M., Nelson, C., Shachar, O., \& Van Tassel, P. (2023). \emph{Dealer capacity and U.S. Treasury market functionality} (Staff Report No. 1070, August; revised October). Federal Reserve Bank of New York Staff Reports. \url{https://doi.org/10.59576/sr.1070}
 
-\bibitem[Ehm et al.(2016)]{ehm2016} Ehm, W., Gneiting, T., Jordan, A., \& Krüger, F. (2016). Of quantiles and expectiles: Consistent scoring functions, Choquet representations and forecast rankings. \emph{Journal of the Royal Statistical Society Series B: Statistical Methodology}, \emph{78}(3), 505--562. \url{https://doi.org/10.1111/rssb.12154}.
+\bibitem[Ehm et al.(2016)]{ehm2016} Ehm, W., Gneiting, T., Jordan, A., \& Krüger, F. (2016). Of quantiles and expectiles: Consistent scoring functions, Choquet representations and forecast rankings. \emph{Journal of the Royal Statistical Society Series B: Statistical Methodology}, \emph{78}(3), 505--562. \url{https://doi.org/10.1111/rssb.12154}
 
-\bibitem[Engle \& Manganelli(2004)]{engle2004} Engle, R. F., \& Manganelli, S. (2004). CAViaR: Conditional autoregressive value at risk by regression quantiles. \emph{Journal of Business \& Economic Statistics}, \emph{22}(4), 367--381. \url{https://doi.org/10.1198/073500104000000370}.
+\bibitem[Engle \& Manganelli(2004)]{engle2004} Engle, R. F., \& Manganelli, S. (2004). CAViaR: Conditional autoregressive value at risk by regression quantiles. \emph{Journal of Business \& Economic Statistics}, \emph{22}(4), 367--381. \url{https://doi.org/10.1198/073500104000000370}
 
-\bibitem[Federal Reserve Bank of New York(n.d.)]{nyfeddata} Federal Reserve Bank of New York (n.d.). \emph{Primary dealer statistics} [Data set]. Federal Reserve Bank of New York. \url{https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics}. Retrieved October 23, 2026.
+\bibitem[Federal Reserve Bank of New York(n.d.)]{nyfeddata} Federal Reserve Bank of New York. (n.d.). \emph{Primary dealer statistics} [Data set]. Retrieved October 23, 2026, from \url{https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics}
 
-\bibitem[Giacomini \& White(2006)]{gw2006} Giacomini, R., \& White, H. (2006). Tests of conditional predictive ability. \emph{Econometrica}, \emph{74}(6), 1545--1578. \url{https://doi.org/10.1111/j.1468-0262.2006.00718.x}.
+\bibitem[Giacomini \& White(2006)]{gw2006} Giacomini, R., \& White, H. (2006). Tests of conditional predictive ability. \emph{Econometrica}, \emph{74}(6), 1545--1578. \url{https://doi.org/10.1111/j.1468-0262.2006.00718.x}
 
-\bibitem[Gibbs \& Candès(2021)]{gibbs2021} Gibbs, I., \& Candès, E. J. (2021). Adaptive conformal inference under distribution shift. \emph{Advances in Neural Information Processing Systems}, \emph{34}, 1660--1672. \url{https://proceedings.neurips.cc/paper_files/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html}.
+\bibitem[Gibbs \& Candès(2021)]{gibbs2021} Gibbs, I., \& Candès, E. J. (2021). Adaptive conformal inference under distribution shift. In M. Ranzato, A. Beygelzimer, Y. Dauphin, P. S. Liang, \& J. Wortman Vaughan (Eds.), \emph{Advances in Neural Information Processing Systems} (Vol. 34, pp. 1660--1672). Curran Associates, Inc. \url{https://proceedings.neurips.cc/paper_files/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html}
 
-\bibitem[Gneiting(2011)]{gneiting2011} Gneiting, T. (2011). Making and evaluating point forecasts. \emph{Journal of the American Statistical Association}, \emph{106}(494), 746--762. \url{https://doi.org/10.1198/jasa.2011.r10138}.
+\bibitem[Gneiting(2011)]{gneiting2011} Gneiting, T. (2011). Making and evaluating point forecasts. \emph{Journal of the American Statistical Association}, \emph{106}(494), 746--762. \url{https://doi.org/10.1198/jasa.2011.r10138}
 
-\bibitem[Hansen(1992)]{hansen1992} Hansen, B. E. (1992). Testing for parameter instability in linear models. \emph{Journal of Policy Modeling}, \emph{14}(4), 517--533. \url{https://doi.org/10.1016/0161-8938(92)90019-9}.
+\bibitem[Hansen(1992)]{hansen1992} Hansen, B. E. (1992). Testing for parameter instability in linear models. \emph{Journal of Policy Modeling}, \emph{14}(4), 517--533. \url{https://doi.org/10.1016/0161-8938(92)90019-9}
 
-\bibitem[Hansen et al.(2011)]{mcs2011} Hansen, P. R., Lunde, A., \& Nason, J. M. (2011). The model confidence set. \emph{Econometrica}, \emph{79}(2), 453--497. \url{https://doi.org/10.3982/ECTA5771}.
+\bibitem[Hansen et al.(2011)]{mcs2011} Hansen, P. R., Lunde, A., \& Nason, J. M. (2011). The model confidence set. \emph{Econometrica}, \emph{79}(2), 453--497. \url{https://doi.org/10.3982/ECTA5771}
 
 
 \raggedright
 
-\bibitem[Harvey et al.(1997)]{hln1997} Harvey, D., Leybourne, S., \& Newbold, P. (1997). Testing the equality of prediction mean squared errors. \emph{International Journal of Forecasting}, \emph{13}(2), 281--291. \url{https://doi.org/10.1016/s0169-2070(96)00719-4}.
+\bibitem[Harvey et al.(1997)]{hln1997} Harvey, D., Leybourne, S., \& Newbold, P. (1997). Testing the equality of prediction mean squared errors. \emph{International Journal of Forecasting}, \emph{13}(2), 281--291. \url{https://doi.org/10.1016/s0169-2070(96)00719-4}
 
-\bibitem[Hastie et al.(2009)]{hastie2009} Hastie, T., Tibshirani, R., \& Friedman, J. (2009). \emph{The elements of statistical learning: Data mining, inference, and prediction} (2nd ed.). Springer. \url{https://doi.org/10.1007/978-0-387-84858-7}.
+\bibitem[Hastie et al.(2009)]{hastie2009} Hastie, T., Tibshirani, R., \& Friedman, J. (2009). \emph{The elements of statistical learning: Data mining, inference, and prediction} (2nd ed.). Springer. \url{https://doi.org/10.1007/978-0-387-84858-7}
 
-\bibitem[Holm(1979)]{holm1979} Holm, S. (1979). A simple sequentially rejective multiple test procedure. \emph{Scandinavian Journal of Statistics}, \emph{6}(2), 65--70. \url{https://www.jstor.org/stable/4615733}.
+\bibitem[Holm(1979)]{holm1979} Holm, S. (1979). A simple sequentially rejective multiple test procedure. \emph{Scandinavian Journal of Statistics}, \emph{6}(2), 65--70. \url{https://www.jstor.org/stable/4615733}
 
-\bibitem[Hull \& White(1998)]{hull1998} Hull, J., \& White, A. (1998). Incorporating volatility updating into the historical simulation method for value-at-risk. \emph{The Journal of Risk}, \emph{1}(1), 5--19. \url{https://doi.org/10.21314/jor.1998.001}.
+\bibitem[Hull \& White(1998)]{hull1998} Hull, J., \& White, A. (1998). Incorporating volatility updating into the historical simulation method for value-at-risk. \emph{The Journal of Risk}, \emph{1}(1), 5--19. \url{https://doi.org/10.21314/jor.1998.001}
 
-\bibitem[Koenker \& Bassett(1978)]{koenker1978} Koenker, R., \& Bassett, G., Jr. (1978). Regression quantiles. \emph{Econometrica}, \emph{46}(1), 33--50. \url{https://doi.org/10.2307/1913643}.
+\bibitem[Koenker \& Bassett(1978)]{koenker1978} Koenker, R., \& Bassett, G., Jr. (1978). Regression quantiles. \emph{Econometrica}, \emph{46}(1), 33--50. \url{https://doi.org/10.2307/1913643}
 
-\bibitem[Kupiec(1995)]{kupiec1995} Kupiec, P. H. (1995). Techniques for verifying the accuracy of risk measurement models. \emph{The Journal of Derivatives}, \emph{3}(2), 73--84. \url{https://doi.org/10.3905/jod.1995.407942}.
+\bibitem[Kupiec(1995)]{kupiec1995} Kupiec, P. H. (1995). Techniques for verifying the accuracy of risk measurement models. \emph{The Journal of Derivatives}, \emph{3}(2), 73--84. \url{https://doi.org/10.3905/jod.1995.407942}
 
-\bibitem[Lindsay(2020)]{dataset} Lindsay, D. (2020). \emph{Net position time series dataset} (Version 2) [Data set]. Kaggle. \url{https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset}.
+\bibitem[Lindsay(2020)]{dataset} Lindsay, D. (2020). \emph{Net position time series dataset} (Version 2) [Data set]. Kaggle. \url{https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset}
 
-\bibitem[McNeil \& Frey(2000)]{mcneilfrey2000} McNeil, A. J., \& Frey, R. (2000). Estimation of tail-related risk measures for heteroscedastic financial time series: An extreme value approach. \emph{Journal of Empirical Finance}, \emph{7}(3--4), 271--300. \url{https://doi.org/10.1016/s0927-5398(00)00012-8}.
+\bibitem[McNeil \& Frey(2000)]{mcneilfrey2000} McNeil, A. J., \& Frey, R. (2000). Estimation of tail-related risk measures for heteroscedastic financial time series: An extreme value approach. \emph{Journal of Empirical Finance}, \emph{7}(3--4), 271--300. \url{https://doi.org/10.1016/s0927-5398(00)00012-8}
 
-\bibitem[Meinshausen(2006)]{meinshausen2006} Meinshausen, N. (2006). Quantile regression forests. \emph{Journal of Machine Learning Research}, \emph{7}(35), 983--999. \url{https://www.jmlr.org/papers/v7/meinshausen06a.html}.
+\bibitem[Meinshausen(2006)]{meinshausen2006} Meinshausen, N. (2006). Quantile regression forests. \emph{Journal of Machine Learning Research}, \emph{7}(35), 983--999. \url{https://www.jmlr.org/papers/v7/meinshausen06a.html}
 
-\bibitem[Newey \& West(1987)]{nw1987} Newey, W. K., \& West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. \emph{Econometrica}, \emph{55}(3), 703--708. \url{https://doi.org/10.2307/1913610}.
+\bibitem[Newey \& West(1987)]{nw1987} Newey, W. K., \& West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. \emph{Econometrica}, \emph{55}(3), 703--708. \url{https://doi.org/10.2307/1913610}
 
-\bibitem[Petrunia et al.(2019)]{petrunia2019} Petrunia, R., Sabetti, L., \& Voia, M. (2019). \emph{Tail risk in the automated clearing settlement system (ACSS)} (Discussion Paper No. 7). Payments Canada. \url{https://www.payments.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf}.
+\bibitem[Petrunia et al.(2019)]{petrunia2019} Petrunia, R., Sabetti, L., \& Voia, M. (2019). \emph{Tail risk in the automated clearing settlement system (ACSS)} (Discussion Paper No. 7). Payments Canada. \url{https://www.payments.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf}
 
-\bibitem[Sussman(2023)]{sussman2023} Sussman, E. (2023). A strengthened Orlicz--Pettis theorem via Itô--Nisio. \emph{Annals of Functional Analysis}, \emph{14}(1), Article 22. \url{https://doi.org/10.1007/s43034-022-00225-1}.
+\bibitem[Sussman(2023)]{sussman2023} Sussman, E. (2023). A strengthened Orlicz--Pettis theorem via Itô--Nisio. \emph{Annals of Functional Analysis}, \emph{14}(1), Article 22. \url{https://doi.org/10.1007/s43034-022-00225-1}
 
-\bibitem[van den Hoogen(2017)]{hoogen2017} van den Hoogen, S. (2017). \emph{Intraday liquidity risk estimation using transaction data: An extreme value theory approach} [Master's thesis, Delft University of Technology]. \url{https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872}.
+\bibitem[van den Hoogen(2017)]{hoogen2017} van den Hoogen, S. (2017). \emph{Intraday liquidity risk estimation using transaction data: An extreme value theory approach} [Master's thesis, Delft University of Technology]. TU Delft Repository. \url{https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872}
 
-\bibitem[Wisniewski et al.(2020)]{wisniewski2020} Wisniewski, W., Lindsay, D., \& Lindsay, S. (2020). Application of conformal prediction interval estimations to market makers' net positions. In \emph{Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction and Applications} (Proceedings of Machine Learning Research, Vol. 128, pp. 285--301). \url{https://proceedings.mlr.press/v128/wisniewski20a.html}.
+\bibitem[Wisniewski et al.(2020)]{wisniewski2020} Wisniewski, W., Lindsay, D., \& Lindsay, S. (2020). Application of conformal prediction interval estimations to market makers' net positions. In A. Gammerman, V. Vovk, Z. Luo, E. Smirnov, \& G. Cherubin (Eds.), \emph{Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction and Applications} (Proceedings of Machine Learning Research, Vol. 128, pp. 285--301). PMLR. \url{https://proceedings.mlr.press/v128/wisniewski20a.html}
 
-\bibitem[Wisniewski(2024)]{wisniewski2024} Wisniewski, W. J. (2024). \emph{Net position and retail trader behaviour: Implications for market makers' risk management strategies} [Doctoral thesis, Royal Holloway, University of London]. \url{https://pure.royalholloway.ac.uk/en/publications/net-position-and-retail-trader-behaviour-implications-for-market-/}.
+\bibitem[Wisniewski(2024)]{wisniewski2024} Wisniewski, W. J. (2024). \emph{Net position and retail trader behaviour: Implications for market makers' risk management strategies} [Doctoral dissertation, Royal Holloway, University of London]. Royal Holloway Research Portal. \url{https://pure.royalholloway.ac.uk/en/publications/net-position-and-retail-trader-behaviour-implications-for-market-/}
 \end{thebibliography}
 
 \end{document}

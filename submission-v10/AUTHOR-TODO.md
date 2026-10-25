@@ -1,4 +1,4 @@
-# Author actions before submission — v10
+# Author actions before submission — v11
 
 These are author decisions and scientific gaps, not tasks silently started by
 this revision. The manuscript's Limitations retains the scientific boundaries.
