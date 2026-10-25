@@ -20,3 +20,22 @@ outputs/
 /results/v9/nonstationarity/predictions.json
 # Intermediate v9 table backups stay local and outside the submission package.
 /submission-jof/generated/v9-*.bak
+
+# v10 retains complete loose receipts locally and publishes lossless ZIP/parts.
+/results/v10/menu/*/units/
+/results/v10/menu/formal/units.zip
+
+# v10 CFTC complete traces are public; all loose candidate bytes are in the ZIP.
+/results/v10/cftc/formal/units/
+
+# All98E3unitreceipts are published intact in units.zip and SHA index.
+/results/v10/mcs/formal/units/
+
+# v10 keeps unneeded copied display dependencies/backups locally; active ones are force-added.
+/submission-v10/generated/*
+/submission-v10/figures/*
+/submission-v10/*.bak
+/notes/v10/*.bak
+/notes/v10/target-journals-draft.md
+/notes/v10/prose-draft.md
+/notes/v10/rewrite_main.py

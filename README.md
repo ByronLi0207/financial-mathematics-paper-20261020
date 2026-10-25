@@ -1,3 +1,13 @@
+# Current revision: v10
+
+The current draft on `revision-v10` is [submission-v10/manuscript.tex](submission-v10/manuscript.tex), with [Online Supplement](submission-v10/supplement.tex), [source package](submission-v10/overleaf-package.zip) and [author actions](submission-v10/AUTHOR-TODO.md). The immutable starting v9 submission remains in `submission-jof/`.
+
+This version adds paired penalty-menu isolation, the official CFTC TFF application, complete model confidence sets and fixed normalized limit-cost regions. See [v10 changes](REVISION_V10_CHANGELOG.md), [protocols](protocol/v10/), [results](results/v10/), [reproduction boundaries](notes/v10/REPRODUCING.md) and [journal sources](notes/v10/target-journals.md). Negative and unavailable results remain; author/declaration fields are unfilled.
+
+The material below is the inherited versioned project record. Its old submission routes refer to those versions.
+
+---
+
 # Current v9 revision: Hard to Beat
 
 Read the [17-page native main PDF](submission-jof/manuscript.pdf), [28-page Online Supplement](submission-jof/supplement.pdf), [editable submission package](submission-jof/README.md), [v9 ledger](REVISION_V9_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md). The only publication branch for this task is `revision-v9`; no existing PR is merged, closed or replaced. PR #5 at `0f1f066843e0c49cf3e24bce7d72032dc189603d` supplies the evidence base, while the separate older v8 supplies selected writing and supplementary results.
