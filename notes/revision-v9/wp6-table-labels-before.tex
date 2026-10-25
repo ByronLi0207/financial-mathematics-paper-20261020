@@ -1,0 +1,116 @@
+% Generated only from accepted v9 JSON. Numerical literals are source-bound.
+% Display policy: loss/accuracy percentages1dp; cutpoints/intervals4sig; correlations/p3sig; exact counts.
+\clearpage\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{1.08}
+\subsection*{Post hoc discovery and simulation confirmation}
+\par\medskip\refstepcounter{table}\label{tab:v9-discovery-scores}
+\noindent\textbf{Table \thetable. Post hoc candidate-index comparison.}\par
+\begin{center}\begin{tabular}{lrrrrr}
+\toprule
+Index & Correct/total & Accuracy (\%) & $\rho$, pooled & $\rho$, original & $\rho$, four predictors \\
+\midrule
+$W/p$ & $117/144$ & $81.2$ & $-0.882$ & $-0.956$ & $-0.863$ \\ % v9-row:discovery_scores:a
+$W/((H+1)p)$ & $119/144$ & $82.6$ & $-0.864$ & $-0.935$ & $-0.812$ \\ % v9-row:discovery_scores:b
+$W/(H+1)$ & $119/144$ & $82.6$ & $-0.841$ & $-0.935$ & $-0.812$ \\ % v9-row:discovery_scores:c
+\bottomrule
+\end{tabular}\end{center}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize Correct classifications are in-sample descriptive counts, not held-out prediction accuracy. The tie rule selects the simpler index $c$, which contains no parameter count.\end{minipage}\par\smallskip
+\par\medskip\refstepcounter{table}\label{tab:v9-discovery-cutpoints}
+\noindent\textbf{Table \thetable. First discovery cutpoints and all-draw envelopes.}\par
+\begin{center}\begin{tabular}{p{33mm}rrr}
+\toprule
+Regression & First $r^\star$ & All-draw envelope & Multiple-root draws/total \\
+\midrule
+Original regression & $106.5$ & $[27.89, 110.7]$ & $199/1999$ \\ % v9-row:discovery_cutpoints:QR33
+Four-predictor regression & $27.32$ & $[13.27, 107.1]$ & $1234/1999$ \\ % v9-row:discovery_cutpoints:QR4
+\bottomrule
+\end{tabular}\end{center}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize These post hoc envelopes condition on the chosen index and fixed discovery grid. The four-predictor discovery curve has more than one downward crossing; a first cutpoint does not imply sustained gains at every longer history.\end{minipage}\par\smallskip
+\par\medskip\refstepcounter{table}\label{tab:v9-confirmation-pooled}
+\noindent\textbf{Table \thetable. Prospective simulation criteria, with every fixed denominator.}\par
+\begin{center}\begin{tabular}{lrrrrl}
+\toprule
+Criterion & Successes/total & Observed (\%) & Required (\%) & Missing & Result \\
+\midrule
+P1 & $47/48$ & $97.9$ & $80.0$ & $0$ & Met \\ % v9-row:confirmation_pooled:P1
+P2 & $21/24$ & $87.5$ & $60.0$ & $0$ & Met \\ % v9-row:confirmation_pooled:P2
+P3 & $42/48$ & $87.5$ & $100.0$ & $0$ & Not met \\ % v9-row:confirmation_pooled:P3
+\bottomrule
+\end{tabular}\end{center}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize P1 checks strict losses below each method's low cutpoint region; P2 checks strict wins above its high region. P3 requires the four-predictor loss change to be no larger in every same-$c$ paired cell. P1 and P2 meet their pooled criteria; P3 does not meet its universal criterion.\end{minipage}\par\smallskip
+\par\medskip\refstepcounter{table}\label{tab:v9-confirmation-subgroups}
+\noindent\textbf{Table \thetable. Method and data-generating-process breakdowns.}\par
+\begin{center}\begin{tabular}{p{38mm}rlrl}
+\toprule
+Group & P1 successes/total & P1 & P2 successes/total & P2 \\
+\midrule
+Original regression & $29/30$ & Met & $5/6$ & Met \\ % v9-row:confirmation_subgroups:0
+Four-predictor regression & $18/18$ & Met & $16/18$ & Met \\ % v9-row:confirmation_subgroups:1
+Student innovations & $15/16$ & Met & $5/8$ & Met \\ % v9-row:confirmation_subgroups:2
+Regime switching & $16/16$ & Met & $8/8$ & Met \\ % v9-row:confirmation_subgroups:3
+Poisson jumps & $16/16$ & Met & $8/8$ & Met \\ % v9-row:confirmation_subgroups:4
+\bottomrule
+\end{tabular}\end{center}
+\clearpage
+\subsection*{Adverse inequalities and retrospective financial cutpoints}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize The universal P3 prediction fails in $6$ paired cells. Every failed inequality is shown below; successes and ties remain in the complete fixed denominator.\end{minipage}\par\smallskip
+\par\medskip\refstepcounter{table}\label{tab:v9-confirmation-failures}
+\noindent\textbf{Table \thetable. All failed simplification inequalities.}\par
+\begin{center}\begin{tabular}{p{30mm}rrr rr}
+\toprule
+Process & $\phi$ & $W$ & $H$ & Original $\Delta$ (\%) & Four-predictor $\Delta$ (\%) \\
+\midrule
+Student innovations & $0.7$ & $720$ & $6$ & $+4.8$ & $+7.3$ \\ % v9-row:confirmation_failures:4
+Student innovations & $0.7$ & $720$ & $24$ & $-1.3$ & $+16.0$ \\ % v9-row:confirmation_failures:5
+Student innovations & $0.9$ & $720$ & $24$ & $+1.6$ & $+2.6$ \\ % v9-row:confirmation_failures:13
+Student innovations & $0.9$ & $2880$ & $24$ & $-10.9$ & $-6.5$ \\ % v9-row:confirmation_failures:15
+Regime switching & $0.7$ & $2880$ & $6$ & $-11.0$ & $-10.8$ \\ % v9-row:confirmation_failures:22
+Regime switching & $0.9$ & $720$ & $24$ & $+12.4$ & $+14.6$ \\ % v9-row:confirmation_failures:29
+\bottomrule
+\end{tabular}\end{center}
+\par\medskip\refstepcounter{table}\label{tab:v9-financial-cutpoints}
+\noindent\textbf{Table \thetable. All fixed financial cutpoint predictions.}\par
+\begin{center}\begin{tabular}{rp{32mm}p{29mm}p{23mm}p{27mm}}
+\toprule
+$H$ & Regression & Predicted $W$ interval & Identified first $W$ & Result \\
+\midrule
+$6$ & Original regression & $[195.3, 775]$ & $572.3$ & \shortstack[l]{Consistent} \\ % v9-row:financial_cutpoints:0
+$6$ & Four-predictor regression & $[92.91, 749.8]$ & Left-censored & \shortstack[l]{Compatible,\\left-censored} \\ % v9-row:financial_cutpoints:1
+$24$ & Original regression & $[697.4, 2768]$ & $2464$ & \shortstack[l]{Consistent} \\ % v9-row:financial_cutpoints:2
+$24$ & Four-predictor regression & $[331.8, 2678]$ & $1341$ & \shortstack[l]{Consistent} \\ % v9-row:financial_cutpoints:3
+\bottomrule
+\end{tabular}\end{center}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize For the shorter-horizon four-predictor curve, the first observed history $360$ already has a nonpositive loss change. Its later conditional crossing $943.4$ does not identify the first cutpoint. Compatibility under left censoring is not confirmation. Thus the all-four financial prediction is not confirmed.\end{minipage}\par\smallskip
+\clearpage
+\subsection*{Complete retrospective FX learning-curve contrasts}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize Each complete contrast uses the same $6625$ evaluation issues and a matched historical rule at the same $W$ and update schedule. The period was previously inspected. The fixed HAC bandwidth and normal-reference DM diagnostic remain post-result and nominal.\end{minipage}\par\smallskip
+\par\medskip\refstepcounter{table}\label{tab:v9-financial-full}
+\noindent\textbf{Table \thetable. Every prescribed financial history, horizon and method.}\par
+\begin{center}\begin{tabular}{rrp{33mm}rrrr}
+\toprule
+$H$ & $W$ & Regression & Loss change (\%) & Model breaches & F breaches & DM $p$ \\
+\midrule
+$6$ & $360$ & Original regression & $+3.0$ & $539$ & $356$ & $0.244$ \\ % v9-row:financial_full:4
+$6$ & $360$ & Four-predictor regression & $-0.9$ & $395$ & $356$ & $0.583$ \\ % v9-row:financial_full:5
+$6$ & $720$ & Original regression & $-2.1$ & $531$ & $332$ & $0.538$ \\ % v9-row:financial_full:8
+$6$ & $720$ & Four-predictor regression & $+1.5$ & $414$ & $332$ & $0.593$ \\ % v9-row:financial_full:9
+$6$ & $1440$ & Original regression & $-6.5$ & $401$ & $341$ & $2.50\times10^{-6}$ \\ % v9-row:financial_full:12
+$6$ & $1440$ & Four-predictor regression & $-3.3$ & $355$ & $341$ & $1.49\times10^{-4}$ \\ % v9-row:financial_full:13
+$6$ & $2880$ & Original regression & $-14.8$ & $376$ & $360$ & $4.47\times10^{-9}$ \\ % v9-row:financial_full:0
+$6$ & $2880$ & Four-predictor regression & $-4.3$ & $399$ & $360$ & $0.0101$ \\ % v9-row:financial_full:1
+$6$ & $5760$ & Original regression & $-6.4$ & $384$ & $344$ & $3.45\times10^{-10}$ \\ % v9-row:financial_full:16
+$6$ & $5760$ & Four-predictor regression & $-4.9$ & $424$ & $344$ & $0.0181$ \\ % v9-row:financial_full:17
+$24$ & $360$ & Original regression & $+24.3$ & $1011$ & $466$ & $0.00101$ \\ % v9-row:financial_full:6
+$24$ & $360$ & Four-predictor regression & $+16.6$ & $822$ & $466$ & $0.0134$ \\ % v9-row:financial_full:7
+$24$ & $720$ & Original regression & $+31.5$ & $924$ & $427$ & $0.00127$ \\ % v9-row:financial_full:10
+$24$ & $720$ & Four-predictor regression & $+16.5$ & $701$ & $427$ & $0.0277$ \\ % v9-row:financial_full:11
+$24$ & $1440$ & Original regression & $+9.2$ & $650$ & $331$ & $0.203$ \\ % v9-row:financial_full:14
+$24$ & $1440$ & Four-predictor regression & $-2.6$ & $465$ & $331$ & $0.394$ \\ % v9-row:financial_full:15
+$24$ & $2880$ & Original regression & $-3.8$ & $531$ & $357$ & $0.614$ \\ % v9-row:financial_full:2
+$24$ & $2880$ & Four-predictor regression & $-2.9$ & $508$ & $357$ & $0.617$ \\ % v9-row:financial_full:3
+$24$ & $5760$ & Original regression & $+1.9$ & $608$ & $361$ & $0.813$ \\ % v9-row:financial_full:18
+$24$ & $5760$ & Four-predictor regression & $+0.2$ & $526$ & $361$ & $0.981$ \\ % v9-row:financial_full:19
+\bottomrule
+\end{tabular}\end{center}
+\noindent\begin{minipage}{0.98\linewidth}\scriptsize Loss change is $100(\overline L_{\mathrm{model}}-\overline L_F)/\overline L_F$ and is displayed to one decimal place; no source value is rounded before analysis. Positive changes and every longer-history reversal remain visible. DM uses the fixed Bartlett HAC convention and a two-sided normal reference. A displayed $0^{u}$, if present, is a floating-point zero, not an exact probability.\end{minipage}\par\smallskip
+\endgroup
