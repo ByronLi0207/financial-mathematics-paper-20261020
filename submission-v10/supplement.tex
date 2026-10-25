@@ -373,7 +373,7 @@ inequality as conservative. The linked records preserve source-reported mean
 error amounts and every numerical status.\section{AR residual replay and its adverse comparisons}\label{sup:ar}
 
 At each original refit, estimate an intercept-bearing level recursion
-on each unique mature adjacent transition once. Replaying a historical ordered
+using each unique mature adjacent transition once. Replaying a historical ordered
 residual block from the current position gives the exact algebraic identity
 \[
 M_{i,h}(x)=N_{i+h}+\widehat\phi^{\,h}(x-N_i),\qquad M_{i,0}(x)=x.
@@ -454,15 +454,15 @@ Bills & 24 & 260 & 105.020 & 2.353 & 15/12/84 \\
 \endgroup
 
 The reconstructed historical summaries match the original controls.
-The lower report increases strict hits and mean underprediction amount in every
-cell, but its loss direction is mixed. Every Treasury regression remains worse
+The lower report increases the number of strict hits and the mean underprediction
+amount in every cell, but its loss direction is mixed. Every Treasury regression remains worse
 than the lower empirical report. This ablation isolates a rank convention on the same inspected record; it neither supplies a fresh validation sample nor
 establishes universal superiority of either finite-sample quantile endpoint.
 Exact counts, annual splits and fixed-grid rows are linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/rank-ablation/README.md}{the complete rank archive}.\section{Fixed-report error preferences}\label{sup:preference}
 
 For a fixed report, changing the loss weight traces a line
-\(R_a=aU+(1-a)V\), where \(U=\operatorname{mean}(P-C)_+\) and
-\(V=\operatorname{mean}(C-P)_+\). These are passive error amounts over all
+\(R_a=aU+(1-a)V\). Here, \(U=\operatorname{mean}(P-C)_+\) is mean underprediction and
+\(V=\operatorname{mean}(C-P)_+\) is mean unused allowance. These are passive error amounts over all
 origins, not observed funding costs. Breach frequency averages an indicator and
 need not rank reports like either amount. The following source-reported monetary
 values are never pooled across FX and weekly aggregates.
@@ -516,7 +516,7 @@ Changes in predictors and changes in the ridge menu are distinct interventions.
 Every listed comparison is post-result / exploratory.
 
 The historical column gives mean pinball loss and strict hits. Other columns
-give saved percentage loss difference against that same historical rule and
+give the saved percentage loss difference against that same historical rule and
 strict hits; negative percentages favor the column method. Original full
 regression, four-feature regression and expanded-menu full regression are
 distinct fitted procedures (result codes QR33, QR4 and QR33+, respectively).
@@ -743,8 +743,7 @@ fx\_hourly & 24/2880 & -1.42 & -1.40 & 1/1 & 0 \\
 \end{longtable}
 \endgroup
 
-All recorded success criteria are NOT\_MET,
-NOT\_MET and NOT\_MET, respectively.
+All three recorded success criteria are marked NOT\_MET.
 R2's worst weekly excess is 181.39 percent,
 and its weekly median is 5.37 percent.
 The long-history FX gain also fails the prewritten retention criterion.
@@ -1503,7 +1502,7 @@ The source is the CFTC TFF futures-only historical backcast for 2006--2016 plus 
 A complete generated calendar contains 877 Monday-labeled report weeks, from 2010-01-04 through 2026-10-19. Economic position dates are retained separately. A code needs one valid observation per week, a stable exchange and stable contract units. Missing weeks, duplicates and changes disqualify a contract rather than trigger interpolation or splicing. Known consolidation prefixes 13874,20974,12460 are excluded before ranking. This conservative rule is broader than the documented plus-suffixed codes. Full-period mean open interest ranks survivors, with literal-code ties. Seventeen of 141 observed codes qualify; the top-twenty cap never changes that count.
 The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v10b/results/v10/cftc/eligibility.json}{complete code-level eligibility and exclusions} preserve every screening decision.
 
-Validation indices are 553--604; evaluation indices are 611--870. All labels use horizon six, leaving six unissued origins between the segments. Validation position dates are 2020-08-11--2021-08-03; its last label ends 2021-09-14. Evaluation position dates are 2021-09-21--2026-09-08; its last label ends 2026-10-20. Training labels at refit r span r-H-W+1 through r-H. Monday labels index the inherited feature calendar; they do not claim Monday public availability. Actual positions are normally measured Tuesday and released Friday at 15:30 Eastern. Holiday, shutdown and ION-related publication delays prevent a first-release interpretation.
+Validation indices are 553--604; evaluation indices are 611--870. All labels use horizon six, leaving six unissued origins between the segments. Validation position dates are 2020-08-11--2021-08-03; the last validation label ends 2021-09-14. Evaluation position dates are 2021-09-21--2026-09-08; the last evaluation label ends 2026-10-20. Training labels at refit r span r-H-W+1 through r-H. Monday labels index the inherited feature calendar; they do not claim Monday public availability. Actual positions are normally measured Tuesday and released Friday at 15:30 Eastern. Holiday, shutdown and ION-related publication delays prevent a first-release interpretation.
 
 The selected category series are listed below. Net positions equal dealer long minus short in raw contract counts. Equal-weight median percentage changes preserve within-contract units; they are not common-dollar portfolio risk.
 \input{generated/v10-cftc-universe.tex}
@@ -1516,9 +1515,9 @@ Two narrow official-format clarifications follow the original design and acquisi
 
 \clearpage
 \section{Complete model confidence sets}\label{sup:v10-mcs}
-The registered ninety-percent MCS uses the range statistic and 1,000 stationary-bootstrap draws, with block length $\max\{H,\lceil n^{1/3}\rceil\}$ in arch 8.0.0. Deterministic source/grid seeds and method order are recorded in the design. Every claimed complete report uses its entire declared origin grid and common target. Missing stored losses are derived only from saved reports, without issuing or fitting forecasts. Every one of 98 comparisons completes. The 60 known unavailable slots remain unavailable, not statistical exclusions.
+The registered ninety-percent MCS uses the range statistic and 1,000 stationary-bootstrap draws, with block length $\max\{H,\lceil n^{1/3}\rceil\}$ in arch 8.0.0. Deterministic source/grid seeds and method order are recorded in the design. Every claimed complete report uses its entire declared origin grid and common target. Missing stored losses are derived only from saved reports, without issuing forecasts or fitting models. Every one of 98 comparisons completes. The 60 known unavailable slots remain unavailable, not statistical exclusions.
 
-Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact loss duplicates enter the library once, then recover the same p-value and inclusion partition for all members. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I, 2/98 have a sole literal F/I member, and 4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
+Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact duplicate loss columns enter the library once; all associated procedure labels then receive the same p-value and inclusion partition. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I, 2/98 have a sole literal F/I member, and 4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
 
 \input{generated/v10-mcs-compact.tex}
 
@@ -1565,7 +1564,7 @@ does not establish recomputed forecast accuracy or independent replication.
 A separately authorized replay requires the original FX member and Treasury
 snapshot to match their recorded fingerprints and definitions. Restricted FX
 observations and private per-origin forecasts or fitted traces are not
-redistributed. Downloaded economic dates are not verified first-release
+redistributed. Downloaded economic dates do not establish verified first-release
 availability; a matching series name does not establish snapshot identity.
 
 \paragraph{Routes to complete evidence.}
