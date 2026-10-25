@@ -2,7 +2,7 @@
 
 记录UTC：2026-10-25T04:18:27.716388+00:00。科学基线：`23fd9fa8c8659efd038a91c3b23d634fa15b0ce0`；工作分支：`revision-v10b`。本轮是投稿写作与显示打磨：没有新模型、新数据、新预测、重新评分、bootstrap、调参或实验。科学归档的2,077个受保护文件无变化；主稿两张内联结果表的数据行逐字节相同，六图的全部实际绘图数组及生成表的数值显示均保留。
 
-当前本地投稿材料与30文件原生源包已完成编译、现有全套测试和53页逐页视觉验收。**发布尚未执行**；远端HEAD、远端/本地tree一致性、发布回执与全程用时在本文末尾保留 `PENDING_ROOT_FILL`。这份记录不表示已正式投稿，也不代填作者声明。
+本地投稿材料、30文件原生源包、全套测试和53页逐页视觉验收均通过；97个改动文件已仅发布到revision-v10b，并完成首次全部3996个tracked文件的路径/模式/blob树核验。首次远端为`0b48963dfbcb1cf80fd7bfb9da6be9e11612509a`，内容树`2a234a5861acbd9314832f28db2385260b7f2fb0`，与本地编辑提交`a44bc2c92def8aac75d1d7bf4c63cc931d8f4dec`完全一致。最后交付元数据另行提交并再次核对；最终同一HEAD、结束UTC与总历时以本地`.scratch/v10b/final-remote-tree.json`为准，避免自引用提交。
 
 ## 文件与版本
 
@@ -118,22 +118,19 @@ For RQ3, higher reserve charges and lower fixed breach charges generally favor e
 
 |项目|已有UTC回执|已证实的耗时/性质|阶段workspan|
 |---|---|---|---|
-|0 基准、分支与科学封存|science-seal.json：2026-10-25T03:57:24.184895+00:00|仅完成时间；无可据此推算的active分钟|PENDING_ROOT_FILL|
-|1 摘要与三发现|writing-before：2026-10-25T03:55:11.885507+00:00；writing-final：2026-10-25T04:14:59.302528+00:00|两个全稿计数快照，非摘要专项起止|PENDING_ROOT_FILL|
-|2 成本只读读出|2026-10-25T03:56:52.503961+00:00 → 2026-10-25T03:56:53.337846+00:00|脚本归档读取约0.834秒，非整项工作时长|PENDING_ROOT_FILL|
-|3 五处同序、RQ逐项回答|当前稿及prose-consistency-review已核对|无独立起止回执，不估填分钟|PENDING_ROOT_FILL|
-|4 逐段写法与数字去重|writing-final：2026-10-25T04:14:59.302528+00:00|冻结计数完成时间，非全阶段起止|PENDING_ROOT_FILL|
-|5 图表显示与色盲/字号核对|visual-style-report及最终PDFscale回执|图表任务并行；没有本记录可据的独立active计时|PENDING_ROOT_FILL|
-|6 Supplement目录、审计移文与页限|supplement-check及最终build|开发检查与最终32页已有记录；阶段起止待根归并|PENDING_ROOT_FILL|
-|7 期刊格式、refs、letter|jof-guide-check：2026-10-25 UTC|仅核对日期，不能据此编造分钟|PENDING_ROOT_FILL|
-|8 测试|2026-10-25T04:00:39.082082+00:00 → 2026-10-25T04:02:49.546315+00:00|130.464711秒，实际测试进程wall time|PENDING_ROOT_FILL|
-|8 最终原生编译：manuscript|2026-10-25T04:13:19.403783+00:00 → 2026-10-25T04:13:23.647810+00:00|编译实际UTC起止；不含此前写作|见timing.json待补|
-|8 最终原生编译：supplement|2026-10-25T04:13:23.651075+00:00 → 2026-10-25T04:13:30.461357+00:00|编译实际UTC起止；不含此前写作|见timing.json待补|
-|8 最终原生编译：title-page|2026-10-25T04:13:30.466384+00:00 → 2026-10-25T04:13:30.801360+00:00|编译实际UTC起止；不含此前写作|见timing.json待补|
-|8 最终原生编译：cover-letter|2026-10-25T04:13:30.801696+00:00 → 2026-10-25T04:13:31.145349+00:00|编译实际UTC起止；不含此前写作|见timing.json待补|
-|8 全53页视觉整合|2026-10-25T04:15:23.520221+00:00|最终视觉验收完成时间|PENDING_ROOT_FILL|
-|8 最终包验收|2026-10-25T04:16:41.971557+00:00|最终本地包检查完成时间|PENDING_ROOT_FILL|
-|总历时/阶段重叠归并|PENDING_ROOT_FILL|不能由并行窗口求和，也不推算active分钟|PENDING_ROOT_FILL|
+|项目|实际工作窗口UTC|经过时间|计时口径|
+|---|---|---:|---|
+|0 准备|2026-10-25T03:53:04+00:00 → 2026-10-25T03:53:59+00:00|0.92分钟|独立准备窗口|
+|1 摘要核对与重写|2026-10-25T03:55:11.885507+00:00 → 2026-10-25T04:14:59.302528+00:00|19.79分钟|含并行处理与复核；非独立active计时|
+|2 成本只读与写入|2026-10-25T03:54:09.831+00:00 → 2026-10-25T03:58:00+00:00|3.84分钟|含并行处理与复核；非独立active计时|
+|3 五处统一|2026-10-25T03:57:05+00:00 → 2026-10-25T04:04:17.459795+00:00|7.21分钟|含并行处理与复核；非独立active计时|
+|4 逐节语言打磨|2026-10-25T03:58:00+00:00 → 2026-10-25T04:14:59.302528+00:00|16.99分钟|含并行处理与复核；非独立active计时|
+|5 图表样式与验证|2026-10-25T03:54:21.555+00:00 → 2026-10-25T04:18:04.680401+00:00|23.72分钟|含并行处理与复核；非独立active计时|
+|6 补充材料整理|2026-10-25T03:54:32.548+00:00 → 2026-10-25T04:11:38.582268+00:00|17.10分钟|含并行处理与复核；非独立active计时|
+|7 投稿指南与包核对|2026-10-25T03:58:00+00:00 → 2026-10-25T04:18:31.412053+00:00|20.52分钟|含并行处理与复核；非独立active计时|
+|8 收尾测试/编译/逐页/首轮发布验收|2026-10-25T04:00:39.082082+00:00 → 2026-10-25T04:27:15.941051+00:00|26.61分钟|含并行处理与复核；非独立active计时|
+
+以上是实际可观测工作窗口，不能求和或冒充各项独立active工时。专项未启用独立active计时，因此不编造净分钟；详细证据与边界见timing.json。首轮全部内容发布历时34.20分钟；最终元数据及branch对齐后的总时长见本地最终回执。
 
 ## Pending、发布与compare
 
@@ -147,14 +144,15 @@ For RQ3, higher reserve charges and lower fixed breach charges generally favor e
 
 |发布核对项|状态|
 |---|---|
-|仅revision-v10b提交/发布回执|PENDING_ROOT_FILL（本记录生成时尚未发布）|
-|最终本地commit|PENDING_ROOT_FILL|
-|远端revision-v10b HEAD|PENDING_ROOT_FILL|
-|本地/远端HEAD与tree相等|PENDING_ROOT_FILL|
-|受保护旧分支/refs与网页历史核对|PENDING_ROOT_FILL|
-|timing.json、每项最终workspan及总历时|PENDING_ROOT_FILL|
+|仅revision-v10b发布|PASS，97改动文件、6批，逐批Git只读回查|
+|首次本地编辑提交|`a44bc2c92def8aac75d1d7bf4c63cc931d8f4dec`；原历史本地ref/bundle保留|
+|首次远端提交|`0b48963dfbcb1cf80fd7bfb9da6be9e11612509a`|
+|首次完整内容tree相等|PASS，`2a234a5861acbd9314832f28db2385260b7f2fb0`，3996个tracked文件|
+|revision-v10 / main|均保持基准指向|
+|其他旧refs|13/15不变；revision-v8-goal与PR5 head外部推进，未由本任务操作或恢复|
+|最终元数据后的HEAD/完整tree/结束时刻|后续发布后再核，本地.scratch/v10b/final-remote-tree.json保存实际最终收据|
 
-固定compare链接：[基线23fd9fa…revision-v10b](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/23fd9fa8c8659efd038a91c3b23d634fa15b0ce0...revision-v10b)。该链接当前只是固定比较入口；只有根任务完成发布并回读远端后，才可填入远端已一致的结论。
+固定compare链接：[基线23fd9fa…revision-v10b](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/compare/23fd9fa8c8659efd038a91c3b23d634fa15b0ce0...revision-v10b)。首轮已回读远端完成内容树验收，最终元数据也将以完整树再核一次。浏览器发布提交身份与原本地编辑提交不同，内容逐字节核验；原提交留本地专用ref/bundle。
 
 ## 证据索引
 
