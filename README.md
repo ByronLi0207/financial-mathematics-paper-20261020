@@ -1,4 +1,14 @@
-# Current editorial draft: revision-v10b
+# Canonical submission draft: revision-v11
+
+Use [the v11 submission package](submission-v10/README.md) as the sole current draft, based on frozen v10b `de1a1cf`. The directory name remains `submission-v10/`; the branch identifies this revision. The v10b title, abstract and three findings are retained, with the audited original-period FX learning curve added to the first finding and the saved confirmation summary added to the supplement. No experiment or result was rerun or changed.
+
+Read [the import audit](notes/v11/import-audit.md), [number-to-source bindings](notes/v11/imported-number-bindings.json), [English proofreading log](notes/v11/proofreading-log.md), [canonical-version recommendations](notes/v11/CANONICAL.md) and [pending author decisions](notes/v11/PENDING.md). The WP4 display is excluded because its design commit follows rendering. The audit separately discloses the FX anchors' exact agreement at the specified display precision and their stored percentages' binary64 last-digit differences. Author and declaration placeholders remain unfilled.
+
+The versioned records below describe their named historical revisions. Their use of “current” does not supersede v11.
+
+---
+
+# Historical editorial draft: revision-v10b
 
 The submission copy is in [submission-v10](submission-v10/README.md), on `revision-v10b`, based on frozen v10 `23fd9fa`. This branch changes wording and display style only; archived scientific results, data and designs are unchanged. Read [the v10b delivery record](notes/v10b/DELIVERY.md) and [pending author decisions](notes/v10b/PENDING.md) before submission. Author and declaration placeholders remain unfilled.
 
