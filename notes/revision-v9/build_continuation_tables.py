@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -125,15 +126,21 @@ def build(root):
 
 
 def main():
+    if sys.flags.optimize:
+        raise RuntimeError("saved-field checks require non-optimized Python; unset PYTHONOPTIMIZE and omit -O")
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     text, receipt = build(ROOT)
     tex, bindings = ROOT / TEX, ROOT / BINDINGS
     if args.check:
-        assert tex.read_text() == text and json.loads(bindings.read_text()) == receipt
+        if tex.read_text() != text:
+            raise ValueError("saved diagnostic TeX MISMATCH")
+        if json.loads(bindings.read_text()) != receipt:
+            raise ValueError("saved diagnostic bindings MISMATCH")
     else:
-        assert not tex.exists() and not bindings.exists()
+        if tex.exists() or bindings.exists():
+            raise FileExistsError("refuse to overwrite existing diagnostic evidence; use --check")
         tex.write_text(text)
         bindings.write_text(json.dumps(receipt, indent=2, allow_nan=False) + "\n")
     print(json.dumps(dict(status="PASS", mode="check" if args.check else "generated",

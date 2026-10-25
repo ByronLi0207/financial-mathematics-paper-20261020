@@ -45,6 +45,7 @@ EXPECTED_MEMBERS = frozenset((
     "generated/v8-three-window-table.tex",
     "generated/v9-evidence-tables.tex",
     "generated/v9-complete-diagnostic-fields.tex",
+    "generated/v9-substantive-qualifications.tex",
 ))
 MAX_MEMBER_BYTES = 25 * 1024**2
 MAX_TOTAL_BYTES = 100 * 1024**2
@@ -288,7 +289,7 @@ def check_source_zip(delivery_dir, zip_path, sync_receipt):
                 elapsed_seconds=time.monotonic()-start,
                 peak_rss_bytes=rss if sys.platform == "darwin" else rss*1024,
                 extracted_members=0, compiled_documents=0, financial_models_run=0,
-                scope="Explicit23-file whitelist plus independently parsed current TeX closure, bidirectional namelist, byte/mode and sync-receipt identity. No install, extraction, compile, render, statistical analysis or financial replay.")
+                scope="Explicit24-file whitelist plus independently parsed current TeX closure, bidirectional namelist, byte/mode and sync-receipt identity. No install, extraction, compile, render, statistical analysis or financial replay.")
 
 
 def main():

@@ -30,3 +30,20 @@ The first checks the original compact v9 table bindings. The second checks every
 ## Source-documentation exception
 
 The unchanged public NYFed aggregate snapshot is retained under its dated delivery-only addendum and continuing source conditions. This is an explicit exception to the literal blanket no-raw-file delivery rule, not a private-FX redistribution grant or a change to the original frozen specification. The detailed `nyfed-data-source-draft.md` linked by the old addendum/data guide is missing from the current tree and was not located in the already acquired public branch history. The surviving [historical source-feasibility summary](../revision-20261022/independent-source-feasibility.md#access-attribution-and-raw-redistribution) and [data guide](../../data/nyfed-pdposgs-b-20261022/README.md) provide the available historical evidence. They are not reconstructed copies of the missing audit or a new permission review.
+
+
+## Substantive continuation, 25 October
+
+The current source closure adds exactly `generated/v9-substantive-qualifications.tex`, now required by `diagnostic-addendum.tex`; the closed source package has twenty-four members. Its analytical statements do not introduce new fitted forecasts or empirical score summaries. The protected Supplement and original technical material remain exact historical documents, with corrections explicitly supplied by the diagnostic addendum.
+
+The two documented display builders now reject Python optimization mode, because disabled assertions would otherwise remove internal acceptance checks. Run their ordinary unoptimized commands above. The WP3 saved-trace auditor now binds the complete manifest design to its original frozen design before raw/trace access and checks the actual classification inventory. Its conditional inventory count includes incomplete-status placeholders; completion counts, status counts and verified HAC-pair counts remain separate. This hardens a checker without supplying the missing original design history or authorizing a new trace audit.
+
+The compiler wrapper now treats serious TeX diagnostics as a failed build even if the engine returns zero. Constructed tests validate that software contract; actual source compilation, numerical bindings, PDF layout and package reproduction have separate cut-specific receipts. An earlier receipt, or a mock compiler, cannot certify a later PDF.
+
+For the current prose cut, the additive number checker requires its exact current context bindings. The old default points to the historical v9 prose and is intentionally unchanged:
+
+```bash
+python3 -B notes/revision-v9/check_main_numbers.py --bindings-path notes/revision-v9/substantive-20261025-main-context-bindings.json --output notes/revision-v9/wp7-main-CHOOSE-A-FRESH-NAME.json
+```
+
+Choose a genuinely unused output filename. This only audits existing display fields; it does not bypass the unchanged legacy guard or prove figure/layout/scientific adequacy.

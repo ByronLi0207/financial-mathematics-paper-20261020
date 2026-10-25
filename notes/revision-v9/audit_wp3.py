@@ -31,6 +31,52 @@ class AuditMismatch(AssertionError):pass
 def require(condition,label):
     if not condition:raise AuditMismatch(label)
 
+def validate_manifest_design(manifest,frozen_design):
+    """Bind the entire adopted design before any raw/trace fingerprint or read."""
+    design=manifest["design"]
+    require(isinstance(design,dict) and isinstance(frozen_design,dict),"manifest design object")
+    require(json.dumps(design,sort_keys=True,allow_nan=False)==json.dumps(frozen_design,sort_keys=True,allow_nan=False),"manifest design differs from frozen JSON")
+    require(design["horizons"]==[6,24] and design["windows"]==[360,720,1440,2880,5760],"fixed H/W plan")
+    expected_units={(h,w) for h in (6,24) for w in (360,720,1440,2880,5760)}
+    units=[tuple(unit) for unit in design["run_order"]]
+    require(len(units)==10 and set(units)==expected_units,"ten unique planned H/W units")
+    ranges=design["prediction_ranges"]
+    require(len(ranges)==4 and {(row["horizon"],row["method"]) for row in ranges}=={(h,m) for h in (6,24) for m in ("QR33","QR4")},"four unique frozen prediction ranges")
+    return design
+
+def validate_output_census(design,status,completed,rows,curves,saved_curves):
+    """Verify actual object populations; never infer four checks from existence."""
+    planned=[tuple(unit) for unit in design["run_order"]]
+    expected_rows={(h,w,m) for h,w in planned for m in ("QR33","QR4")}
+    row_keys=[(row["horizon"],row["window"],row["method"]) for row in rows]
+    require(len(rows)==20 and len(row_keys)==len(set(row_keys)) and set(row_keys)==expected_rows,"twenty unique conditional rows")
+    expected_curves={(h,m) for h in (6,24) for m in ("QR33","QR4")}
+    curve_keys=[(row["horizon"],row["method"]) for row in curves]
+    require(len(curves)==4 and len(curve_keys)==len(set(curve_keys)) and set(curve_keys)==expected_curves,"four actual curve classifications")
+    if status=="COMPLETE":
+        require(len(completed)==10 and [tuple(unit) for unit in completed]==planned,"COMPLETE requires all ten planned units")
+    if saved_curves is not None:compare(saved_curves,curves,"four frozen curve classifications")
+    return dict(planned_units=len(planned),planned_conditional_rows=len(expected_rows),
+        verified_units=len(completed),verified_conditional_inventory_rows=len(rows),curve_classifications=len(curves),
+        saved_curve_classifications_verified=len(saved_curves) if saved_curves is not None else 0)
+
+def validate_contrast_status_and_na(row,report,reference_summary,h,w):
+    """Bind saved contrast status before it can choose a paired-audit branch."""
+    fields={"horizon","window","method","status","relative_loss_percent","mean_model_loss","mean_reference_loss","model_breaches","reference_breaches","n","dm"}
+    require(isinstance(row,dict) and set(row)==fields,"saved contrast exact schema")
+    method=row["method"];status=row["status"]
+    require(method in ("QR33","QR4") and isinstance(report,dict) and report.get("method")==method,"saved contrast method report")
+    require(status==report.get("status") and status in ("COMPLETE","INELIGIBLE","EVALUATION_FAILED","FAILED"),"contrast status must match legal method-report status")
+    compare([row["horizon"],row["window"]],[h,w],"saved contrast H/W")
+    if status=="COMPLETE":
+        require(isinstance(report.get("evaluation"),dict),"complete contrast requires complete method evaluation")
+        return
+    require(report.get("evaluation") is None,"failed method has no complete evaluation")
+    expected=dict(horizon=h,window=w,method=method,status=status,relative_loss_percent=None,
+        mean_model_loss=None,mean_reference_loss=reference_summary["mean_pinball"],model_breaches=None,
+        reference_breaches=reference_summary["strict_breach_count"],n=0,dm=None)
+    compare(row,expected,"failed contrast retains NA and verified F scalars")
+
 def compare(actual,expected,location="value"):
     if isinstance(expected,dict):
         require(isinstance(actual,dict) and set(actual)==set(expected),location+":keys")
@@ -198,10 +244,11 @@ def main():
         maximum_threads=max(maximum_threads,len(subprocess.check_output(["ps","-M","-p",str(os.getpid())],text=True).strip().splitlines())-1)
         require(maximum_threads<=2 and resource.getrusage(resource.RUSAGE_SELF).ru_maxrss<=2147483648,"actual audit resource samples")
     probe();term=read(formal/"study-termination.json");require(term["all_workers_terminated"] is True,"formal worker must end before audit")
-    manifest=read(formal/"manifest.json");d=manifest["design"];cfg=d["clock"]
+    manifest=read(formal/"manifest.json")
     require(manifest["design_commit"]==DESIGN_COMMIT and digest(root/"protocol/revision-v9/wp3-learning-curve.json")==DESIGN_SHA,"frozen design identity")
     for name in ("protocol/revision-v9/wp3-learning-curve.md","protocol/revision-v9/wp3-learning-curve.json"):
         require(subprocess.check_output(["git","show",DESIGN_COMMIT+":"+name],cwd=root)==(root/name).read_bytes(),"committed protocol bytes")
+    d=validate_manifest_design(manifest,read(root/"protocol/revision-v9/wp3-learning-curve.json"));cfg=d["clock"]
     for name,sha in manifest["sealed_files"].items():require(digest(root/name)==sha,"sealed source/input identity")
     snapshot={str(p):digest(p) for folder in (formal,private) for p in folder.rglob("*") if p.is_file()}
     raw=root/d["raw"]["path"];require(raw.stat().st_size==d["raw"]["bytes"] and digest(raw)==d["raw"]["sha256"],"canonical private FX source")
@@ -344,6 +391,8 @@ def main():
             contrasts=read(path);require(len(contrasts)==2,"two conditional contrasts")
             for row in contrasts:
                 method=row["method"]
+                require(method in report_by_method and "F" in current,"saved contrast requires method report and verified F trace")
+                validate_contrast_status_and_na(row,report_by_method[method],current["F"][1],h,w)
                 if row["status"]=="COMPLETE":
                     require(method in current and "F" in current,"same-target paired traces")
                     a,b=current[method][1],current["F"][1];delta=100*(a["mean_pinball"]-b["mean_pinball"])/b["mean_pinball"] if b["mean_pinball"]>0 else None
@@ -367,16 +416,18 @@ def main():
     for band in d["prediction_ranges"]:
         rows=sorted((r for r in expected_rows if r["horizon"]==band["horizon"] and r["method"]==band["method"]),key=lambda r:r["window"])
         curves.append(dict(horizon=band["horizon"],method=band["method"],**classify([r["window"] for r in rows],[r["relative_loss_percent"] for r in rows],band["lower"],band["upper"])))
-    if (formal/"curve-predictions.json").exists():compare(read(formal/"curve-predictions.json"),curves,"four frozen curve classifications")
+    saved_curves=read(formal/"curve-predictions.json") if (formal/"curve-predictions.json").exists() else None
+    census=validate_output_census(d,term["status"],completed,expected_rows,curves,saved_curves)
     require(all(digest(Path(path))==sha for path,sha in snapshot.items()),"formal/private traces unchanged")
     probe();elapsed=time.monotonic()-began;rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss;require(elapsed<=600 and rss<=2147483648,"audit resource cap")
     aggregate_outputs_present=all((formal/name).exists() for name in ("contrasts.json","curve-predictions.json","contrasts.csv"))
     result=dict(status="PASS",audit_status="PASS",differences=[],difference_count=0,mismatch_count=0,
         formal_study_status=term["status"],formal_study_reason=term.get("reason"),scientific_WP3_complete=term["status"]=="COMPLETE" and not legacy_differences and aggregate_outputs_present,
-        saved_aggregate_outputs_present=aggregate_outputs_present,saved_curve_classifications_verified=4 if (formal/"curve-predictions.json").exists() else 0,
+        saved_aggregate_outputs_present=aggregate_outputs_present,saved_curve_classifications_verified=census["saved_curve_classifications_verified"],
         legacy_hard_gate_status="BLOCKED" if term["status"]=="BLOCKED" and any(g["window"]==2880 and g["worker_status"]=="BLOCKED" for g in gates) else ("PASS" if sum(g["window"]==2880 and g["worker_status"]=="COMPLETE" for g in gates)==2 and not legacy_differences else "INCOMPLETE"),
         independent_legacy_exact_difference_count=len(legacy_differences),independent_legacy_exact_differences=legacy_differences,
-        legacy_verification_boundaries=legacy_unavailable,worker_gates=gates,complete_units=completed,planned_units=10,planned_conditional_rows=20,
+        legacy_verification_boundaries=legacy_unavailable,worker_gates=gates,complete_units=completed,planned_units=census["planned_units"],planned_conditional_rows=census["planned_conditional_rows"],
+        verified_complete_units=census["verified_units"],verified_conditional_inventory_rows=census["verified_conditional_inventory_rows"],actual_curve_classifications=census["curve_classifications"],
         actual_resource_worker_receipts=worker_count,formal_resource_maximum=resource_max,scored_trace_blocks=trace_count,checked_numeric_values=values_count,
         retained_method_reports=reports_count,persisted_candidate_reports_verified=candidate_reports_count,
         persisted_selection_reports_verified=selection_reports_count,before_gate_evaluation_reports_verified=before_gate_reports_count,

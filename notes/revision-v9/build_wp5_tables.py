@@ -10,6 +10,7 @@ from collections import Counter
 import hashlib
 import json
 import math
+import sys
 from pathlib import Path
 
 PATHS={
@@ -269,11 +270,14 @@ def build(root):
     return document,payload
 
 def main():
+    if sys.flags.optimize:
+        raise RuntimeError("saved-field checks require non-optimized Python; unset PYTHONOPTIMIZE and omit -O")
     parser=argparse.ArgumentParser();parser.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[2])
     parser.add_argument("--check",action="store_true");args=parser.parse_args();root=args.root.resolve()
     text,bindings=build(root);tex=root/"submission-jof/generated/v9-evidence-tables.tex";numbers=root/"notes/revision-v9/wp6-new-number-bindings.json"
     if args.check:
-        assert tex.read_text()==text and json.loads(numbers.read_text())==bindings
+        if tex.read_text()!=text:raise ValueError("saved evidence TeX MISMATCH")
+        if json.loads(numbers.read_text())!=bindings:raise ValueError("saved evidence bindings MISMATCH")
     else:
         if tex.exists() or numbers.exists():raise FileExistsError("refuse to overwrite generated evidence; use --check")
         with tex.open("x") as f:f.write(text)
