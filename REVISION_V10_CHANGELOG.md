@@ -11,3 +11,5 @@ Base: public v9 `0d2526cc69092c5158437a0509613bac5e86d47f`; all work is in the n
 E6/E7 final reviewer dispositions, native PDFs, all-page checks, full-suite and actual publication evidence are appended only after those steps occur. Browser history/content equivalence is separate from original research-commit provenance. The final receipt reports the actual transport.
 
 - **E6:** same-model internal method/domain roles each supplied five concerns. All42prior IDs plus10new IDs have explicit current-source dispositions. Wording corrections retain unresolved science and all frozen results. No cross-model/external review or extra experiment was run. Final artifacts and publication remain E7 pending.
+
+- **E7:** finalnativePDFs20/33/1/1pages, all55pageschecked;1715tests/1181subtestsPASS; allscientificpinsPASS.26browserbatches473files andentire3925trackedfiletreeverifiedagainstfrozenlocalresearchHEAD.14protectedremoterefsrecheckedPASS. Oldv3external8filedriftisexplicitlynotrestored. TransportandGitprovenancearedistinct; finalmetadataisaseparatepublication.
