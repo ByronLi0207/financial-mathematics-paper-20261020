@@ -1,14 +1,17 @@
 # Current v9 revision: When Is History Long Enough?
 
-Read the [main manuscript](submission-jof/manuscript.pdf), [30-page Supplement](submission-jof/supplement.pdf), [complete linked technical material](submission-jof/extended-v9-technical.pdf) and [source package](submission-jof/overleaf-package.zip). The scientific assessment is **partly supported**: new simulated short/long-history loss screens pass, universal simplification fails, and familiar-period financial curves have broad compatible crossings, left censoring and long-history reversals. The coordinate omits parameter count and does not identify a causal estimation-cost channel or permanent operating cutoff.
+Read the [main manuscript](submission-jof/manuscript.pdf), [30-page Supplement](submission-jof/supplement.pdf), [preserved linked technical material](submission-jof/extended-v9-technical.pdf), [diagnostic addendum](submission-jof/diagnostic-addendum.pdf) and [source package](submission-jof/overleaf-package.zip). The scientific assessment is **partly supported**: new simulated short/long-history loss screens pass, universal simplification fails, and familiar-period financial curves have broad compatible crossings, left censoring and long-history reversals. The coordinate omits parameter count and does not identify a causal estimation-cost channel or permanent operating cutoff.
 
 The [v9 ledger](REVISION_V9_CHANGELOG.md), [frozen designs](protocol/revision-v9), [complete new results](results/revision-v9), [fourteen internal review responses](notes/revision-v9/wp6-response-matrix.md) and [reproduction boundary](notes/revision-v9/REPRODUCING.md) identify what was run and what remains unestablished. Existing primaries, adverse results and older scientific archives are preserved. The active proposed line is existing PR #5; main and the branches behind PR #3/#4 remain protected. No journal submission or personal declaration is made.
 
 Final verification receipts own their exact source cuts. An identical remote file tree is distinct from identical Git history, independent financial reproduction, live operational readiness or future performance. Author-controlled follow-up decisions remain in [AUTHOR-TODO](submission-jof/AUTHOR-TODO.md).
 
+Current execution routes are separated in the [reproduction-status map](notes/revision-v9/REPRODUCING.md#current-executable-scope): document compilation, saved-number inspection, and blocked formal/financial replay are different operations. Original formal-run commands retain their historical ancestry and deadline guards. The current guide also records the pre-existing public NYFed snapshot exception and missing detailed old source-audit link.
+
 ## Preserved v8 and earlier publication records
 
 Everything below refers to its named historical revision, including words such as current and its page/test/package counts. These records are preserved; use the v9 entry and exact final v9 receipts above for this revision.
+Some retained historical relative links resolve to the current editable files. Their old page counts and commands do not describe those current bytes; use the named immutable source cut and receipt when inspecting a historical artifact. Historical builder and replay commands below are not the current v9 compilation or fresh-public-clone financial-replay recipe.
 
 ---
 

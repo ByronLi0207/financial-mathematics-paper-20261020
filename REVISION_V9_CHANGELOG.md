@@ -3321,3 +3321,87 @@ python3 -B .scratch/revision-v9/publish_snapshot.py whole
 The existing complete default suite remains 1534 passed, 1068 subtests passed in 109.49s; no numerical experiment, bootstrap, compile or test was rerun for publication. All four document/PDF/source and source-ZIP hashes were checked against the already passed local acceptance before closing. The earlier local-only receipt remains historical evidence of its then-pending remote state; `wp7-final-acceptance.json` supersedes that publication field. The two earlier full-suite failures, output-writer failure, RED/GREEN evidence, negative results, left-censoring, six P3 counterexamples and long-history reversals remain present. The native selector focus/disabled-Open interruptions were resolved using the browser's documented file-chooser control and exact frozen paths; no hidden network, credential, permission or CLI write route was used. Early readbacks during GitHub processing did not trigger duplicate uploads.
 
 Scope remains limited: exact public file-tree equality does not transport original local design Git objects and does not establish an independent financial replication. Fresh-public-clone history-dependent financial replay remains BLOCKED pending an author-approved safe provenance route. No private FX observations/vectors or private identity bundle is exported. Main and PR #3/#4 refs remain unchanged. The fixed deadline remains 2026-10-25T05:10:12Z; after the actual final closing readback only the prescribed bounded review loop is allowed, with shared local/browser commit cadence.
+
+
+## 人类明确继续后的实质续修（原窗口结束后，另记时间）
+
+实际续做起点2026-10-25T05:31:06Z；本地验收记录时间2026-10-25T05:53:49.406071+00:00。原十小时窗口、全部延迟与MISMATCH均未改写。当前阶段是额外证据复核及改正，不延长或补造原有效研究时间。
+
+处理内容：补明cash-peak既有条件峰值分位数缓冲、endpoint/peak评分可比性、有限FHS/QRF/headroom-SAV执行与整类/原保证的边界；修正不存在的WP2 README入口；明确当前公开检查/历史正式运行/过期driver/本地设计对象的不同边界。新印刷展示从现存结果复制全部4个P1/P2例外和20行HAC保存字段，161字段经独立逐项核对差异0；不重新拟合/选择/计算检验。
+
+首次完整检查失败14项，原始输出完整保留在 [continuation-release-gate-pytest-output.txt](notes/revision-v9/continuation-release-gate-pytest-output.txt)，资源receipt同名前缀。根因是正确的旧整文件冻结检查拒绝往受保护Supplement/extended追加内容，另有定性one-sided被原数字词门识别。原guard/proof/8个旧断言一字未改；已从公开60e03准确恢复两份受保护文档的源和PDF，另建diagnostic-addendum明确勘误而非静默改旧文。冗余定性方向词改为已有目标定义，不造数值绑定。目标修复检查又有一次快照契约失败（[完整输出](notes/revision-v9/continuation-guard-recovery-output.txt)）；恢复原快照生成契约后，两项sync检查真实通过。所有失败和早期写作门不通过的JSON、分页尝试均保留。
+
+实际必要命令：`python3 -B notes/revision-v9/build_continuation_tables.py --check`（4例外/20HAC/161绑定，0新统计）；`python3 -B notes/revision-v9/audit_continuation_documents.py --output notes/revision-v9/continuation-addendum-number-audit.json`（PASS）；既有cached Tectonic编译命令在continuation-addendum-current-*-compile-receipt.json；独立ZIP编译/像素比对在continuation-addendum-isolated-document-package.json；最终README-only package delta在continuation-final-package-identity.json，所有编译输入和交付PDF逐hash相等。23成员闭包真实命令：`python3 -B notes/revision-v9/check_source_zip_closure.py --sync-receipt notes/revision-v9/continuation-final-deliverable-sync.json --output notes/revision-v9/continuation-final-source-zip-closure.json`，输出PASS、difference_count=0。
+
+最终完整默认套件真实命令：`python3 -B notes/revision-v9/run_full_pytest.py continuation-final-release-gate`。无filter/新增skip，实际完整stdout在 [continuation-final-release-gate-pytest-output.txt](notes/revision-v9/continuation-final-release-gate-pytest-output.txt)。原始receipt：
+
+```json
+{
+  "command": [
+    "/Users/bingyouli/.local/bin/uv",
+    "run",
+    "--no-project",
+    "--no-env-file",
+    "--python",
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "--with",
+    "pytest",
+    "--with",
+    "arch",
+    "--with",
+    "scikit-learn",
+    "python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-v",
+    "--basetemp",
+    "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/revision-v9/continuation-final-release-gate/pytest-temp"
+  ],
+  "cwd": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/revision-v9/continuation-final-release-gate/full-suite-copy",
+  "scope": "Full default discovery; every tracked/indexed file copied; no test filter or skips added",
+  "tracked_files_copied": 3767,
+  "started_utc": "2026-10-25T05:47:53.729498+00:00",
+  "ended_utc": "2026-10-25T05:49:51.425374+00:00",
+  "elapsed_seconds": 117.695986125,
+  "returncode": 0,
+  "child_peak_rss_bytes": 309903360,
+  "sampled_process_tree_peak_rss_bytes": 336904192,
+  "stop_reason": null,
+  "output_sha256": "61e52c707182b51012895e7a94b301cc6e2738d86dccd598600682152cdd83c1",
+  "numerical_threads": 1,
+  "UV_OFFLINE": true
+}
+```
+
+末行原文：
+
+```text
+test_verify_rank_ablation.py::CompleteSyntheticAttemptTests::test_complete_synthetic_readback_is_arithmetic_only_and_records_actual_resources PASSED [100%]
+
+============ 1534 passed, 1068 subtests passed in 116.75s (0:01:56) ============
+```
+
+最终主文22页、受保护Supplement30页、原technical6页、新diagnostic addendum2页、空白title template1页；源包23成员。全部61页独立重编译字/像素一致。最终主文22页视觉覆盖（19页与已查看图字节相同，3/15/19实看）及新附录两页实看见 [独立核对](notes/revision-v9/continuation-independent-readback.md)。原30/6文档字节与已接受公开版本相同。
+
+当前写作门原始指标：
+
+```json
+{
+  "main_words": 5600,
+  "main_sentences": 286,
+  "mean_sentence_words": 19.58041958041958,
+  "negation_percent": 4.895104895104895,
+  "over35_percent": 0.0,
+  "max_numbers_per_sentence": 2,
+  "all_v8_writing_gates_pass": true
+}
+```
+
+否定句比例较此前终版略升，未宣称下降；核心结论仍partly，没有以展示补全冒充新支持、独立金融复现或全面方法优越性。原有raw-file例外、缺失旧source audit、私有FX权限和PUBLIC history-dependent replay缺口均保留。
+
+本地验收PASS；此记录形成时远端新修订尚未发布。最终源包hash和当前PDFhash由 [continuation-local-acceptance.json](notes/revision-v9/continuation-local-acceptance.json) 绑定。发布使用同一个PR5，实际commit和整树回读将在真实发布后记录，不能把本地PASS提前写成远端PASS。
+
+补充保留边界：两份受保护文档的 serialized source snapshots 也恢复为公开60e03的接受字节，并逐项核验latex/recursive inputs一致。此明确保存步骤仅supersede最终sync receipt中这两个snapshot hash行；TeX/PDF/ZIP不变。实际hash和范围在continuation-local-acceptance.json及continuation-final-package-identity.json。原中间sync receipt保留为该时点历史记录，不静默改写。

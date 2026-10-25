@@ -15,7 +15,7 @@ import pytest
 
 FIXED_MEMBERS = frozenset({
     "main.tex", "manuscript.tex", "supplement.tex", "extended-v9-technical.tex",
-    "title-page.tex", "references.bib", "README.md", "AUTHOR-TODO.md", "cover-letter.md",
+    "title-page.tex", "diagnostic-addendum.tex", "references.bib", "README.md", "AUTHOR-TODO.md", "cover-letter.md",
     "figures/v7-endpoint-peak-example.pdf",
     "figures/v7-murphy-fx_hourly.pdf",
     "figures/v7-murphy-nyfed_weekly.pdf",
@@ -28,6 +28,7 @@ FIXED_MEMBERS = frozenset({
     "generated/v8-mc-full-table.tex",
     "generated/v8-three-window-table.tex",
     "generated/v9-evidence-tables.tex",
+    "generated/v9-complete-diagnostic-fields.tex",
 })
 REGULAR_0644 = 0o100644
 
@@ -123,8 +124,8 @@ def assert_fail(result):
     assert result["difference_count"] > 0
 
 
-def test_fixed_twenty_one_member_contract_and_valid_package(api, tmp_path):
-    assert len(FIXED_MEMBERS) == 21
+def test_fixed_twenty_three_member_contract_and_valid_package(api, tmp_path):
+    assert len(FIXED_MEMBERS) == 23
     assert api.EXPECTED_MEMBERS == FIXED_MEMBERS
     assert api.REQUIRED_MODE == REGULAR_0644
     delivery = source_fixture(tmp_path)
