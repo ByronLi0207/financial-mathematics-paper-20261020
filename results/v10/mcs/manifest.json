@@ -1,0 +1,246 @@
+{
+  "schema": "v10-mcs-seal-v1",
+  "created_utc": "2026-10-24T23:43:01.402861+00:00",
+  "design": {
+    "schema": "v10-mcs-design-v1",
+    "created_utc": "2026-10-24T23:23:01.658276+00:00",
+    "saved_inventory": "notes/v10/loss-input-inventory.json",
+    "saved_inventory_sha256": "2f10465195e774540d9a49079de37d4e6a56d0e22be634241b1d2a315b08abb2",
+    "copy_manifest": ".scratch/v10/copied-private-inputs.json",
+    "core_scope": "requested_core_saved_method",
+    "include_all_core_saved_alias_rows": 828,
+    "core_financial_trace_files": 407,
+    "old_expected_comparisons": 64,
+    "new_cftc_inventory": "results/v10/cftc/method-inventory.json",
+    "new_cftc_inventory_sha256": "722d3de06931a6ca6af80d01b1778dc71888b004bc4239df3c549ab4c3219824",
+    "new_cftc_eligibility": "results/v10/cftc/eligibility.json",
+    "new_cftc_eligibility_sha256": "0bacfb63a09a43f3f80832afafce403bdd824a6b48279bcf698d842d389943bf",
+    "new_cftc_method_cells": 204,
+    "total_expected_comparisons": 98,
+    "comparison_identity": [
+      "period",
+      "normalized_source",
+      "horizon",
+      "window"
+    ],
+    "periods": {
+      "fx_hourly": [
+        "original_evaluation",
+        "early_2015"
+      ],
+      "nyfed_weekly": [
+        "original_evaluation"
+      ],
+      "panel": [
+        "original_evaluation"
+      ],
+      "fx_daily": [
+        "same_record_daily_evaluation"
+      ],
+      "cftc": [
+        "economic_date_replay_2021_2026"
+      ]
+    },
+    "grid": {
+      "fx_hourly": {
+        "periods": 2,
+        "horizons": [
+          6,
+          24
+        ],
+        "windows": [
+          720,
+          2880
+        ],
+        "n_by_period": {
+          "original_evaluation": 6625,
+          "early_2015": 1440
+        }
+      },
+      "weekly": {
+        "sources": 13,
+        "horizons": [
+          6,
+          24
+        ],
+        "windows": [
+          52,
+          260
+        ],
+        "n": 277
+      },
+      "fx_daily": {
+        "horizons": [
+          6,
+          24
+        ],
+        "windows": [
+          52,
+          260
+        ],
+        "n": 501
+      },
+      "cftc": {
+        "sources": 17,
+        "horizons": [
+          6
+        ],
+        "windows": [
+          52,
+          260
+        ],
+        "n": 260
+      }
+    },
+    "excluded_scope_tags": [
+      "supplemental_weekly_retro_2018_2019_period",
+      "published_fixed_lambda_path_design_decision",
+      "supplemental_overlapping_full_prefix_period"
+    ],
+    "excluded_reason": "The request specifies two hourly FX periods and original weekly/daily tasks. Overlapping full-prefix and extra weekly retrospective periods are not additional independent evaluations. E6 fixed-lambda paths are exploratory tuning candidates, not complete selected forecasting procedures in this comparison inventory. All remain in old archives; no outcome-based exclusion.",
+    "core_method_id": "family::method, within declared comparison identity; preserve full source-qualified label unless the explicit F/I semantic alias rule below applies.",
+    "matched_F_aliases": [
+      "original::frozen_F",
+      "panel_legacy::frozen_F",
+      "E6_reference::E6_F",
+      "R6::R6_F",
+      "daily_FX::F",
+      "CFTC::F"
+    ],
+    "matched_I_aliases": [
+      "panel_E5::I",
+      "E6_reference::E6_I",
+      "R6::R6_I",
+      "CFTC::I"
+    ],
+    "semantic_alias_rule": "Only the named matchedF aliases, and separately matchedI aliases, may be merged to canonicalF/I when complete origins, capacities, targets and loss vectors are exactly equal. Record every alias. If claimed aliases differ, retain every source-qualified procedure with an explicit discrepancy; never choose a favourable version or average them.",
+    "other_historical_F_aliases": [
+      "original::rolling_F",
+      "R6_original_structure::retro_primary_F_reference"
+    ],
+    "one_state_class": "original::one_state_F/S/K condition on a query-nearest single-state subpool, so they are conditional state baselines, not the full-window matched F/I historical rule.",
+    "other_benchmark_aliases": [
+      "original::rolling_S",
+      "original::rolling_K",
+      "original::frozen_S",
+      "original::frozen_K",
+      "Levy::Levy_L",
+      "panel_legacy::Levy_L",
+      "mature_baselines::PEAK_POT"
+    ],
+    "conditional_class": "All remaining non-F/I procedures, including feature QR/KNN, query-nearest one-state baselines, QRF/FHS/SAV, selectedR0-R3, finite ACI wrappers and already published fixed combinations. A procedure selecting infinity or producing an identical forecast is not reclassified ex post as historical.",
+    "unavailable_slots": "Retain all12 inherited NA/FAILED selected-method slots and48 previously reported unavailable panel-median combination slots. They have no complete loss vector, enter no bootstrap and are not counted as statistically excluded. Never score a partial vector or rerun a forecast.",
+    "combinations": {
+      "source": "results/revision-20261023/v6/wp3-combinations.json",
+      "source_sha256": "1526d8aa656077445988271c76988c0a950cd95631946add3d8b8642629c7aaa",
+      "complete": 64,
+      "unavailable": 48,
+      "methods": [
+        "MEAN_F_QR",
+        "MEDIAN_F_QR_KNN"
+      ],
+      "implementation": "Unchanged v6_combinations.combine_reports: meanF/2+originalQR/2; median np.median(np.stack((F,originalQR,plainKNN)),axis=0). Use original matched frozenF/QR constituents; panels originalQR33, not QR33plus or QR4. No missing KNN substitution.",
+      "restriction": "Recover only previously COMPLETE published rows on the original56source/H/W contexts. Reconcile recovered aggregate loss with its unchanged published scores/mean_loss within existing1e-12absolute +2e-14relative arithmetic tolerance; failed reconciliation makes whole comparison FAILED_INPUT, not a new combination result. No new weights, models or periods."
+    },
+    "loss": "Use complete stored per-point pinball when available; derive only missing loss from saved complete peak/capacity by unchanged v6_inference.pinball_losses(tau=.95). Do not fit, select or issue a new financial report. Keep all private old input/derived vectors in .scratch; publish hashes/aggregate MCS only. CFTC vectors are already public.",
+    "floor_boundary": "No missing QR4/Levy floor recovery in E3: their stored loss/target/capacity suffices. Preserve missing floor/reference metadata for the separately registered E4. Existing stored floors may be used for validation and published deterministic combinations; no cost/headroom/excess averages here.",
+    "alignment": "Every claimed COMPLETE method must have its exact full declared origin axis, finite/nonnegative full loss, finite capacity/target, and exactly identical target/origins to every other method in that comparison. No intersection, truncation, imputation, rescaling, crossperiod merging or partial-prefix mean. File/hash/shape/target disagreement in a claimed complete input makes the whole comparison FAILED_INPUT. Known inherited NA slots remain explicit and do not prevent comparison of the complete methods.",
+    "loss_equivalence": "After semantic aliases, collapse only exact np.array_equal full loss columns for the library call; representative is lexicographically first method ID. Preserve groups and unfold inclusion and p-values to every distinct procedure label. Distinct conditional selection rules/combinations remain distinct ex ante even when forecasts/losses coincide.",
+    "all_equal_case": "One unique full loss column: analytic identical-loss set containing every procedure, p=1, with statusCOMPLETE_IDENTICAL_LOSSES; do not feed a one-column matrix into arch. Zero valid methods=>UNAVAILABLE. Single complete method=>analytic singleton with explicit count, no inferential discrimination claim.",
+    "package": "arch==8.0.0",
+    "implementation": "arch.bootstrap.MCS",
+    "confidence": 0.9,
+    "size": 0.1,
+    "statistic": "R",
+    "bootstrap": "stationary",
+    "bootstrap_repetitions": 1000,
+    "block_size": "max(H,ceil(n**(1/3)))",
+    "block_rationale": "Fixed cube-root heuristic bounded below by label horizon; accommodates local overlap. Not selected using any MCS result and not claimed optimal.",
+    "seed_prefix": "v10-MCS-20261024|",
+    "seed_formula": "identity=json.dumps([period,normalized_source,H,W],separators=(',',':'),ensure_ascii=True); seed=int.from_bytes(sha256((seed_prefix+identity).encode('utf-8')).digest()[:4],'big')",
+    "method_column_order": "lexicographic full method IDs after semantic alias handling; fixed independently of loss ranking",
+    "membership": "Use arch included/excluded/pvalues properties literally; version8 usesPvalue>size for included and<=size for excluded. No manual boundary adjustment.",
+    "failure": "One library attempt per complete comparison. RuntimeWarning, exception, nonfinite/out-of-range p-value, incomplete membership partition, timeout or resource failure =>MCS_FAILED for that whole comparison. Keep error/diagnostics and inventory, no retry, alternate statistic, block length, bootstrap or favourable subset.",
+    "report": {
+      "primary_historical": "Canonical/qualified matchedF/I only, from the explicit alias lists above; rolling primary controls remain in the model set but their broader historical membership is reported separately.",
+      "historical_membership": "fraction of successful comparisons whose unfolded set contains any matchedF/I procedure",
+      "historical_unique": "fraction whose unfolded set has exactly one distinct procedure and that procedure is matchedF/I; semantic duplicate storage aliases do not count as distinct procedures",
+      "historical_unique_equivalence": "secondary fraction with exactly one surviving exact-loss class containing matchedF/I; this may still contain indistinguishable conditional labels and is not the primary literal uniqueness claim",
+      "historical_only": "secondary fraction whose nonempty unfolded set is entirely matchedF/I",
+      "conditional_exclusion": "excluded conditional distinct-procedure slots divided by conditional complete-procedure slots in successful MCS comparisons; inherited failed/NA procedures are inventoried separately, not counted as statistical exclusions",
+      "failed_denominators": "Always show successful/planned comparisons and failed cells. In addition to successful-denominator fractions, publish all-planned lower/upper bounds obtained by treating failed comparisons (or their conditional slots) as unknown, never as favourable outcomes.",
+      "groups": [
+        "FX original",
+        "FX early2015",
+        "Treasury bills",
+        "Other NYFed panels",
+        "Same-record dailyFX",
+        "CFTC",
+        "All comparisons"
+      ],
+      "interpretation": "Descriptive fractions across related, overlapping tasks, no independent-source pooled test or family-wide across-cell coverage guarantee. Stationary-bootstrap approximation on inspected/replayed data does not establish future risk coverage, causal frequency effects or actual economic value."
+    },
+    "worker_count": 4,
+    "worker_internal_seconds": 540,
+    "worker_hard_seconds": 600,
+    "global_mcs_max_seconds": 1800,
+    "one_numerical_thread": true,
+    "no_retry": true,
+    "code_seal": "Commit artificial-tested adapter/wrapper/driver before source materialization/statistical run; seal numerical code, design commit, source inventory and private/public file hashes before the sole MCS launch. Report-only table derivations may follow without numerical rerun.",
+    "method_sources": [
+      {
+        "url": "https://bashtage.github.io/arch/multiple-comparison/generated/arch.bootstrap.MCS.html",
+        "version": "8.0.0",
+        "checked_utc_date": "2026-10-24"
+      },
+      {
+        "url": "https://bashtage.github.io/arch/_modules/arch/bootstrap/multiple_comparison.html",
+        "version": "8.0.0",
+        "checked_utc_date": "2026-10-24"
+      },
+      {
+        "url": "https://pure.au.dk/portal/en/publications/the-model-confidence-set/",
+        "reference": "Hansen PR,Lunde A,Nason JM2011. Econometrica79(2),453-497. DOI10.3982/ECTA5771",
+        "checked_utc_date": "2026-10-24"
+      }
+    ],
+    "unchanged_loss_and_combination_code_sha256": {
+      "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "v6_inference.py": "1c7fc9a3fe8392c771dde0272966b9a0f0f3c4b969df481d0d6818385dcfd2e5",
+      "v6_combinations.py": "24adcb0db6272139301dff65529d91c53a9264b451b1bfd9e238610fbe333513",
+      "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf"
+    }
+  },
+  "design_commit": "78ea93493379ab3a93459d28e1bab84200f01539",
+  "design_provenance": {
+    "commit": "78ea93493379ab3a93459d28e1bab84200f01539",
+    "commit_time": "2026-10-24T16:23:01-07:00",
+    "sha256": "2985d6484f9ca0fbb61281e082cf3a6a9496ee0667a042b7eb32aff39f353654",
+    "path": "protocol/v10/mcs-design.md"
+  },
+  "code_commit": "6626f6223bb0741966b206bb9ef5605259dec4e0",
+  "code_sha256": {
+    "run_v10_mcs.py": "341ff4258fc817d0a09733a8fd75c8eb9714914fdf428903970c9621d58d5aa6",
+    "v10_loss_inputs.py": "734ad662edb0d8b4e5c260caac562fa3a10c7afad1f82b01ab0f1ed1aa4a1d98",
+    "v10_mcs.py": "2c8d3b759240134557ebced420a0c15210409586a2e23d329c2905f190905a35",
+    "v10_mcs_summary.py": "74e1f3c8bab43935871021ddbc7067ea319f2bd1040fe70c84e4ab5c9f374ff4",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "run_v9_nonstationarity.py": "48507b638a2a57a71ffb11e96e5a44bdf2279bfed596388e7d6ad9b8cb4e73fa",
+    "run_v10_menu.py": "6d0553f0bd63b786d2d5335c9156be0eda8750d9d20c97511922e8208193990b",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "v6_inference.py": "1c7fc9a3fe8392c771dde0272966b9a0f0f3c4b969df481d0d6818385dcfd2e5",
+    "v6_combinations.py": "24adcb0db6272139301dff65529d91c53a9264b451b1bfd9e238610fbe333513",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf"
+  },
+  "input_index_provenance": {
+    "commit": "6626f6223bb0741966b206bb9ef5605259dec4e0",
+    "commit_time": "2026-10-24T16:43:00-07:00",
+    "sha256": "ff717e8075fed88d07427a450eb27bc91b84e1a4ae2a0e0862605c2b85990ac2",
+    "path": "results/v10/mcs/input-index.json"
+  },
+  "input_index_sha256": "ff717e8075fed88d07427a450eb27bc91b84e1a4ae2a0e0862605c2b85990ac2",
+  "preparation_sha256": "b54b602aad6031feb71549e858b2a51601ed8432114c57eea98dd078a5b2146b",
+  "copied_manifest_sha256": "4edce80b3b7b1a0225c149ff54ca267b755ccacd1e870b35c094cc75c6579731",
+  "cftc_splits_sha256": "0d2fd6175b049f49d06a5fa845dabaaa5ad4bda43760eb82529255e434b28198"
+}
