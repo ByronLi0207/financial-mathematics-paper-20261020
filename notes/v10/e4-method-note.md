@@ -1,0 +1,5 @@
+# E4 mathematical rationale
+
+The mean normalized cost is kappa times mean reserved headroom divided by mF, plus beta times strict-breach frequency, plus c times mean excess divided by mF. The monetary fixed charge is b=beta*mF. This makes all three terms dimensionally consistent without asserting a common dollar exposure across sources. For kappa=.05,beta=0,c=1 the difference fromF equals the tau=.95 pinball mean-loss difference divided bymF; the common target-minus-floor term cancels. The artificial tests verify this identity. Other coefficients can change a ranking because reserve, breach frequency and breach amount are separate forecast properties.
+
+The primary fixed expanded-menu QR33 selection uses the existing R6_R1 reports in hourly and weekly sources, CFTC QR33 in its new application, and the original daily QR33 where no expanded daily forecast was issued. This heterogeneity is explicit; no daily refit or new model was added. Every other complete existing method has its own full parameter region in the public zipped table.
