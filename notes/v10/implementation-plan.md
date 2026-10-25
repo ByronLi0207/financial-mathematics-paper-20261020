@@ -89,9 +89,9 @@
 
 ## E7 — final checks and publication (30min; stop45)
 
-- [ ] Full suite and all source/archive numeric/identity/old-target protection checks. Compile four native PDFs from saved sources/fresh sourceZIP, render/open every final page and verify caps.
-- [ ] Publish onlyrevision-v10, no PR/merge/closure; original private Git identity history not exported. Compare against fixedv9base; retrieve complete remote tree and verify every path/mode/byte, then align only new localbranch after preserving local research history.
-- [ ] Recheck protected refs/directories; report outside drift separately. Final Chinese7deliverables, complete prose, clocks/timings/unknowns and pending decisions; commit final records and close goal only after actual required gates.
+- [x] Full suite and all source/archive numeric/identity/old-target protection checks. Compile four native PDFs from saved sources/fresh sourceZIP, render/open every final page and verify caps.
+- [x] Publish onlyrevision-v10, no PR/merge/closure; original private Git identity history not exported. Compare against fixedv9base; retrieve complete remote tree and verify every path/mode/byte, then align only new localbranch after preserving local research history.
+- [x] Recheck protected refs/directories; report outside drift separately. Final Chinese7deliverables, complete prose, clocks/timings/unknowns and pending decisions; commit final records and close goal only after actual required gates.
 
 ## Pre-flight dependency rulings
 
