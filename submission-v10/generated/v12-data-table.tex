@@ -1,0 +1,34 @@
+\begin{table}[!htbp]
+\centering
+\caption{Data and matched six-record peak summaries.}\label{tab:v12-data}
+\begingroup\scriptsize\setlength{\tabcolsep}{2.5pt}
+\textit{Panel A. Sources, aligned samples and existing split dates}\\[3pt]
+\begin{tabular}{@{}p{.13\linewidth}p{.09\linewidth}p{.11\linewidth}p{.08\linewidth}p{.15\linewidth}p{.16\linewidth}p{.16\linewidth}@{}}
+\toprule
+Data & Frequency & Series / rows & Unit & Sample dates & Validation & Evaluation \\
+\midrule
+FX, hourly & Hourly & \shortstack[l]{1 series\\18,576 rows\\18,570 peaks} & USD mn & \shortstack[l]{2014-02-05\\--2017-01-24} & \shortstack[l]{2015-10-08\\--2015-12-30\\2015-04-21\\--2015-07-13} & \shortstack[l]{2016-01-01\\--2017-01-23\\2015-07-15\\--2015-10-06} \\
+FX, daily & Day end & \shortstack[l]{1 series\\930 rows\\924 peaks} & USD mn & \shortstack[l]{2014-02-05\\--2017-01-24} & \shortstack[l]{2015-02-24\\--2015-04-24} & \shortstack[l]{2015-05-24\\--2016-12-27} \\
+Treasury bills & Weekly & \shortstack[l]{1 series\\706 rows\\700 peaks} & USD mn & \shortstack[l]{2013-04-03\\--2026-10-07} & \shortstack[l]{2019-07-24\\--2020-07-15} & \shortstack[l]{2021-01-06\\--2026-04-22} \\
+NY Fed panel & Weekly & \shortstack[l]{12 series\\706 rows\\700 peaks} & USD mn & \shortstack[l]{2013-04-03\\--2026-10-07} & \shortstack[l]{2019-07-24\\--2020-07-15} & \shortstack[l]{2021-01-06\\--2026-04-22} \\
+CFTC panel & Weekly & \shortstack[l]{17 series\\877 rows\\871 peaks} & Contracts & \shortstack[l]{2010-01-05\\--2026-10-20} & \shortstack[l]{2020-08-11\\--2021-08-03} & \shortstack[l]{2021-09-21\\--2026-09-08} \\
+\bottomrule
+\end{tabular}
+\par\vspace{7pt}
+\textit{Panel B. Within-series mean, sample SD and empirical 95th percentile}\\[3pt]
+\begin{tabular}{@{}l*{9}{r}@{}}
+\toprule
+ & \multicolumn{3}{c}{$|N|$} & \multicolumn{3}{c}{Peak $Y$} & \multicolumn{3}{c}{Headroom $Z$} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Data & Mean & SD & 95th & Mean & SD & 95th & Mean & SD & 95th \\
+\midrule
+FX, hourly & 8.92 & 10.2 & 27.6 & 11.1 & 11.7 & 30.2 & 2.15 & 5.92 & 7.96 \\
+FX, daily & 9 & 10.5 & 27.5 & 17.9 & 16.6 & 41 & 8.91 & 14.8 & 24.9 \\
+Treasury bills & $3.95\!\times\!10^{4}$ & $2.72\!\times\!10^{4}$ & $9.26\!\times\!10^{4}$ & $5.53\!\times\!10^{4}$ & $3.04\!\times\!10^{4}$ & $1.08\!\times\!10^{5}$ & $1.58\!\times\!10^{4}$ & $1.6\!\times\!10^{4}$ & $5\!\times\!10^{4}$ \\
+NY Fed panel & $1.24\!\times\!10^{4}$ & $8.34\!\times\!10^{3}$ & $3.33\!\times\!10^{4}$ & $1.6\!\times\!10^{4}$ & $9.04\!\times\!10^{3}$ & $3.74\!\times\!10^{4}$ & $3.75\!\times\!10^{3}$ & $3.56\!\times\!10^{3}$ & $1.05\!\times\!10^{4}$ \\
+CFTC panel & $6.02\!\times\!10^{4}$ & $4.6\!\times\!10^{4}$ & $1.48\!\times\!10^{5}$ & $8.18\!\times\!10^{4}$ & $4.56\!\times\!10^{4}$ & $1.69\!\times\!10^{5}$ & $1.99\!\times\!10^{4}$ & $2.09\!\times\!10^{4}$ & $6.06\!\times\!10^{4}$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\begin{minipage}{.98\linewidth}\footnotesize\emph{Notes.} All summaries use complete $H=6$ origins and include the issue anchor; SD uses $m-1$, and the empirical 95th percentile has rank $\lceil95m/100\rceil$. Daily FX uses the last record of each nonempty source-naive calendar day at day end; the reported FX comparison periods were already inspected. Dollar values are in millions; panel entries are nine separate medians of within-series summaries, without exposure pooling or independence inference, and CFTC retains heterogeneous native contract counts.\end{minipage}
+\end{table}
