@@ -1,0 +1,199 @@
+\section{Analytic qualifications for history coordinates and horizon coherence}
+
+This note qualifies the interpretation of the existing comparisons and corrects
+an overly broad horizon-repair statement in the earlier Supplement. The
+arguments are algebraic or distributional: they introduce no fitted forecasts,
+new empirical scores, resampling output or changes to the archived results.
+
+\subsection*{A. Method-specific cutpoints cannot distinguish constant rescalings}
+
+Let \(W\) count completed fitting-label origins, let \(H\) be the forecast
+horizon, and let \(p_m>0\) be the declared coefficient count for a fixed method
+\(m\). Consider the two candidate coordinates
+\[
+c=\frac{W}{H+1},\qquad
+b=\frac{W}{(H+1)p_m}=\frac{c}{p_m}.
+\]
+The pooled discovery classifier can distinguish these coordinates when methods
+have different \(p_m\). The later use of a separate cutpoint for each method
+has a different invariance. Within a method, positive constant scaling
+preserves the ordering and equality groups of the coordinate values. If a
+zero crossing between adjacent points \((x_0,y_0)\) and \((x_1,y_1)\) is
+interpolated as
+\[
+r=x_0+(x_1-x_0)\frac{y_0}{y_0-y_1},
+\]
+replacing every \(x\) by \(x/p_m\) replaces \(r\) by \(r/p_m\). Crossing
+directions, crossing counts and censoring statuses are unchanged. Applied to
+each existing resampling draw separately, the same identity scales the
+cutpoint-interval endpoints; zero and unbounded endpoints retain their
+statuses.
+
+Writing \(r_b=r_c/p_m\), the subsequent method-specific screen regions obey
+\[
+b<r_b/2\ \Longleftrightarrow\ c<r_c/2,
+\qquad
+b>2r_b\ \Longleftrightarrow\ c>2r_c.
+\]
+Their interval transfers back to history are also identical:
+\[
+(H+1)p_m[\ell_b,u_b]=(H+1)[\ell_c,u_c].
+\]
+Consequently these later screens and interval transfers cannot select between
+the two normalizations when each method receives its own cutpoint. This is an
+exact-arithmetic property of the definitions, rather than a claim about an
+alternate floating-point execution. It does not undo the specified screen
+outcomes, establish a complexity mechanism, or resolve the separate
+comparison between larger and smaller forecasting procedures.
+
+\subsection*{B. A pooled discovery root is not a fixed-horizon learning root}
+
+The discovery construction pools a method's simulation cells across horizons
+and process settings before grouping and sorting by its selected coordinate.
+A crossing interpolated between neighboring points that differ in both \(W\)
+and \(H\) is therefore a cutpoint of that pooled grid summary. By itself it
+does not identify the amount of history at which a fixed-horizon learning
+curve crosses zero. Correct execution of the interpolation rule does not
+remove this distinction.
+
+For a logical example, suppose relative loss is a function of \(W\) alone,
+positive at shorter histories and negative at the longest history. Sorting
+the observations by \(W/(H+1)\) can still place opposite-sign observations
+from different horizons next to each other and produce an interpolated
+crossing. Such a crossing does not isolate an effect of the horizon
+normalization. This is an identification counterexample, not an estimated
+alternative process. A grid without common coordinate values across its
+horizons also supplies no direct comparison of distinct horizons at the same
+coordinate.
+
+The financial learning curves instead hold a horizon and evaluation record
+fixed while changing \(W\), together with the corresponding historical
+reference. Agreement with an interval transferred from the pooled discovery
+root is a conditional consistency check between these different objects.
+It does not turn the pooled root into a horizon-specific discovery root.
+For background, \href{https://arxiv.org/pdf/2103.10948}{Viering and Loog,
+Section 2.1} distinguish a fixed learning problem from averages across
+problems; that distinction does not itself validate the present coordinate.
+
+\subsection*{C. Matched completed-label pools do not match every information input}
+
+The matched procedures share the specified rolling pool of completed fitting
+labels and the refit clock. Conditional features additionally consult
+issue-known raw lookback observations, while the regression's penalty
+selection uses its specified validation segment. Thus \(W\) counts mature
+response origins rather than every raw observation consulted for predictors
+or every observation used for tuning.
+
+The results compare forecasting procedures matched on those declared
+dimensions. Equal \(W\) alone does not isolate architecture from all other
+information and tuning choices. This qualification does not assert future-label
+leakage or replace any result. The broader treatment of estimation and data
+use as components of a forecasting method is consistent with
+\href{https://doi.org/10.1111/j.1468-0262.2006.00718.x}{Giacomini and White
+(2006)}; the present information-footprint distinction concerns the specified
+procedures in this study.
+
+\subsection*{D. Sorting crossing horizon reports weakly improves aggregate pinball loss}
+
+At one issue origin, let the realized short- and long-horizon peaks satisfy
+\(y_s\le y_l\). Suppose the already available reports cross: the short-horizon
+report is \(a\), the long-horizon report is \(b\), and \(a>b\). Use the same
+quantile level \(0<\tau<1\), common units and the equally weighted sum of the
+two pinball losses. Sorting the reports into horizon order replaces
+\((a,b)\) by \((b,a)\).
+
+The identity \(\rho_\tau(y-c)=\tau(y-c)+(c-y)_+\) gives the original sum
+minus the sorted sum as
+\[
+\begin{aligned}
+D={}&\rho_\tau(y_s-a)+\rho_\tau(y_l-b)
+      -\rho_\tau(y_s-b)-\rho_\tau(y_l-a)\\
+ ={}&(a-y_s)_+-(b-y_s)_+-(a-y_l)_++(b-y_l)_+\\
+ ={}&\int_b^a\bigl[\mathbf1\{u>y_s\}-\mathbf1\{u>y_l\}\bigr]\,du\\
+ ={}&\operatorname{length}\bigl([b,a]\cap[y_s,y_l]\bigr)\ge0.
+\end{aligned}
+\]
+The inequality is strict exactly when the intersection has positive length.
+The transformation uses only the issued reports; future outcomes enter the
+proof of its score property, not the transformation. If both reports satisfy
+the common observed floor \(B\), their sorted versions still satisfy it.
+The same statement holds after averaging the sum over common issue origins.
+
+\textbf{Correction to the earlier Supplement.} Its statement that raising a
+long-horizon report can worsen that report's pinball loss is correct. Its
+following assertion that target ordering does not identify a universally
+beneficial repair is too broad when read as an assertion about aggregate
+equal-weight pinball loss: the identity above provides such a weak improvement.
+The earlier counterexample rules out a raise-only marginal-loss guarantee,
+rather than this sorting result. The protected Supplement and its crossing
+counts are retained; this note explicitly supplies the qualification.
+
+This aggregate result provides no guarantee for each horizon's loss
+separately, arbitrary unequal weights, differently normalized horizon scores,
+breach counts or conditional coverage. No sorted empirical forecasts or new
+financial loss summaries are reported here. Related rearrangement work gives
+useful context: \href{https://arxiv.org/pdf/0704.3649}{Chernozhukov,
+Fern\'andez-Val and Galichon, Proposition 4} establishes an \(L^p\)
+estimation-error improvement for a quantile curve rearranged over its
+probability index. That proposition is not the fixed-\(\tau\), cross-horizon,
+samplewise pinball identity proved here. No new general rearrangement theorem
+is claimed.
+
+\subsection*{E. Horizon ordering uses a common lower-inverse selection}
+
+For nested peaks under the same issue-information law,
+\(Y_{t,H_s}\le Y_{t,H_l}\) implies
+\(F_s(z\mid\mathcal F_t)\ge F_l(z\mid\mathcal F_t)\) for every \(z\).
+At the same level \(\tau\), using the common lower-inverse convention
+\[
+q^-_\tau(H\mid\mathcal F_t)
+=\inf\{z:F_H(z\mid\mathcal F_t)\ge\tau\}
+\]
+therefore yields
+\(q^-_\tau(H_s\mid\mathcal F_t)\le
+q^-_\tau(H_l\mid\mathcal F_t)\). Atoms and flat CDF intervals are allowed.
+This is the canonical selection already used in the Supplement.
+
+The full quantile functional can instead be set-valued. For example, if the
+two peaks coincide with a variable taking zero with probability \(\tau\) and
+one with probability \(1-\tau\), every report in \([0,1]\) minimizes expected
+pinball loss. Choosing different members of this interval at different
+horizons can produce crossing optimal reports. Consequently crossing is a
+coherence diagnostic relative to a declared selection convention; by itself
+it does not establish marginal misspecification.
+\href{https://arxiv.org/pdf/1503.08195v2}{Ehm et al., Sections 2.1--2.2}
+define the potentially set-valued quantile functional and its consistent
+scoring functions. This selection qualification is distinct from both the
+aggregate sorting identity and the strict-tail coverage inequality for a true
+conditional lower-inverse quantile.
+
+
+\subsection*{F. Observation and calibration contracts}
+
+In the weekly experiment, the current-position floor is observed under a
+stipulated economic-date replay of one downloaded vintage. This convention
+makes the current and prior snapshot values available at each issue index.
+It is distinct from the historical information of a public observer: the
+\href{https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics}{New
+York Fed source page} describes publication in the following week, and
+later versions may revise earlier observations. Delaying only the predictors
+would not repair a public-information interpretation while retaining an
+unreleased current-position floor. No release-vintage reconstruction or
+changed financial experiment is supplied by this clarification.
+
+The main delayed-calibration comparison concerns the score advantage of the
+wrapped regression over the wrapped historical reference. Each wrapper's
+saved mean loss is higher than that of its own unwrapped base. Thus a retained
+relative advantage and closer observed breach frequencies coexist with a
+score cost relative to the bases; this is not a claim of joint absolute
+improvement. The validation warmup and calibration-parameter choice are the
+already documented retrospective second-stage selection, not a fresh
+historical issue-by-issue model-selection exercise.
+
+The earlier Supplement's sentence about state carrying across the unissued
+gap refers to the selected ACI candidate's calibration state. It should not
+be read as a claim that the headroom-SAV fitted state is carried from validation
+into evaluation. That recursion is refitted on its evaluation segment's
+specified completed labels and refit grid. These distinctions follow the
+frozen implementations and existing saved outputs; no canonical ACI theorem,
+CAViaR-family result, new score or statistical comparison is imported.
