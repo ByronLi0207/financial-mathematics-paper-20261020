@@ -14,7 +14,7 @@
 \begin{document}
 \begin{center}\Large\bfseries Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits\end{center}
 
-\begin{abstract}Dealer peak-position forecasts improve with conditioning only in some samples and under specific benchmarks. Matched FX regression lowers loss by 14.8\% and 16.6\% across two retrospective periods. Against the original shorter rolling reference, earlier loss rises by 3.2\%; the earlier Treasury short-history comparison rises by 144.3\%. We compare matched forecasts, independent reporting systems and limit-cost rankings. Historical rules beat expanded regression in 34 of 48 additional weekly comparisons. In 17 related CFTC dealer-category futures series, F or I beats regression in 29 of 34 comparisons. Regression's median excess losses are 19.3\% and 10.3\% across the two histories. The 90\% model confidence set retains matched historical rules in 90 of 98 comparisons, usually alongside alternatives. On fixed calibrated paths, allowing stronger penalties and I reduces short-history median losses from 116.2\% and 121.4\% to 0.2\% and -0.2\%. Parameter switching misses the registered additional-loss threshold. Limit-cost rankings change with reserve, breach-frequency and exceedance charges. Peak-limit validation therefore needs matched references, complete tuning procedures and separate error-cost components.\end{abstract}
+\begin{abstract}Dealers monitor the largest absolute position reached before a review horizon ends. We compare conditional quantile models with historical rules using hourly FX positions, weekly New York Fed positions and dealer aggregates in 17 CFTC futures markets. Histories and update schedules are matched. Historical rules are hard to beat. First, FX regression lowers matched loss by 14.8\% and 16.6\% across two periods, but its ranking against a shorter rolling rule changes. Second, historical rules beat regression in 34 of 48 New York Fed comparisons and 29 of 34 CFTC comparisons. They usually remain in the model confidence set alongside alternatives. In calibrated simulations, expanding the penalty menu cuts the constant-parameter median excess loss from 116.2\% to near zero; the registered switching increment is unsupported. Third, in CFTC, lower scores need not mean lower limit costs: higher reserve charges and lower fixed breach charges generally favor expanded regression. The evidence is retrospective, and the original FX evaluation period had been inspected beforehand.\end{abstract}
 
 \noindent\textbf{Keywords:} Peak net positions; Quantile forecasting; Historical benchmarks; Forecast comparison; Calibration; Dealer positions.\par\medskip
 
@@ -40,11 +40,11 @@ Three questions organize the evaluation.
 
 The paper makes three empirical findings.
 
-\textit{First, matched FX gains recur, but the original-reference direction changes.} Regression lowers matched loss by 14.8\% and 16.6\% (Table~\ref{tab:fx}). Earlier loss rises by 3.2\% against the original rolling reference. Delayed calibration retains the later matched gain with 329 versus 328 breaches.
+\textit{First, matched FX gains recur, but rankings against a shorter rolling rule change.} The period comparisons separate conditioning gains from the reference procedure (Table~\ref{tab:fx}). Delayed calibration preserves the later matched gain while changing breach behavior.
 
-\textit{Second, historical benchmarks remain competitive across reporting systems, and tuning is consequential.} F or I beats expanded regression in 29/34 CFTC comparisons (Table~\ref{tab:v10-cftc-contracts}). Regression's median excess loss is 19.3\% at history 52 and 10.3\% at 260. Matched F/I enters 90/98 model confidence sets, but is the sole method in only 2. In paired simulations, allowing stronger penalties and I changes constant/switching short-history medians to 0.2\%/-0.2\%. Both improve over the original menu; the registered switching increment is unsupported.
+\textit{Second, historical rules remain competitive in weekly data, and penalty menus explain large losses in the calibrated simulations.} The panel and independent CFTC reporting system favor historical controls in most comparisons (Tables~\ref{tab:weekly} and~\ref{tab:v10-cftc-contracts}). Historical procedures usually remain in model confidence sets alongside alternatives (Table~\ref{tab:v10-mcs-main}). Expanding the simulation menu brings short-history full regression close to its historical reference; the registered switching increment is unsupported.
 
-\textit{Third, lower score and lower limit cost have different preference regions.} At $c=1$, across the displayed coefficient grid, expanded regression is cheaper in 1--32 of 34 CFTC comparisons. Figure~\ref{fig:v10-cost} retains the complete regions for all source groups. Reserve amounts, breach counts and exceedance amounts determine different parts of the ranking.
+\textit{Third, higher reserve charges and lower fixed breach charges generally favor expanded regression in CFTC.} The direction has local exceptions (Figure~\ref{fig:v10-cost}). Lower scores therefore need not mean lower limit costs, and validation should report reserve amounts, breach counts and exceedance amounts together.
 
 Section~\ref{sec:target} defines the response. Section~\ref{sec:results} answers RQ1 and RQ2; Section~\ref{sec:cost} answers RQ3. Elementary floor and endpoint properties support the forecast definitions. The forecasting, comparison and cost-accounting methods are established.
 
@@ -77,7 +77,7 @@ This study & Sampled absolute-position peak & FX record; weekly\allowbreak{} tot
 \par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The payment-thesis reading is partial. Dashes mark unverified dimensions in the consulted passages; shared source lineage leaves input-byte identity unverified.\end{minipage}
 \end{table}
 
-The empirical contribution concerns matched ranking stability across responses, reporting systems and cost preferences. Established forecast tests support this comparison \citep{dm1995,gw2006,mcs2011}. Inventory-sensitive quoting motivates exposure monitoring \citep{avellaneda2008}; the present exercise scores passive reports on observed paths.
+The matched FX gain changes interpretation with its reference. Weekly historical controls remain competitive, while expanded simulation menus remove the large short-history loss and leave the registered switching increment unsupported. In CFTC, higher reserve and lower fixed breach charges generally favor regression, with local exceptions. Established forecast tests support the comparisons \citep{dm1995,gw2006,mcs2011}. Inventory-sensitive quoting motivates exposure monitoring \citep{avellaneda2008}; here, the forecasts are scored on observed paths.
 
 \FloatBarrier
 
@@ -97,21 +97,21 @@ A feasible limit covers the current observed exposure. Figure~\ref{fig:example} 
 \rho_\tau(u)=\tau u_+ +(1-\tau)(-u)_+,\qquad I_{t,H}=\mathbf 1\{Y_{t,H}>C_{t,H}\}.
 \]
 
-\refstepcounter{proposition}\noindent\textbf{Proposition~\theproposition (known-floor projection).}\label{prop:floor} Suppose \(Y\ge B\) almost surely and the issue information contains \(B\). Projecting any forecast \(c\) to \(\max\{B,c\}\) weakly improves pinball loss for every possible outcome, with an exact gain below the floor. If \(q\) is the true conditional lower inverse quantile at level \(1-\alpha\), its strict exceedance probability is at most \(\alpha\). At an atom of the response distribution, that probability can be smaller than the nominal tail probability.
+\refstepcounter{proposition}\noindent\textbf{Proposition~\theproposition{} (known-floor projection).}\label{prop:floor} Suppose \(Y\ge B\) almost surely and the issue information contains \(B\). Projecting any forecast \(c\) to \(\max\{B,c\}\) weakly improves pinball loss for every possible outcome, with an exact gain below the floor. If \(q\) is the true conditional lower inverse quantile at level \(1-\alpha\), its strict exceedance probability is at most \(\alpha\). At an atom of the response distribution, that probability can be smaller than the nominal tail probability.
 
 
 \[
 \rho_\tau(Y-c)-\rho_\tau(Y-\max\{B,c\})=\tau(B-c)_+,\qquad \Pr(Y>q\mid\mathcal F_t)\le\alpha.
 \]
 
-\refstepcounter{proposition}\noindent\textbf{Proposition~\theproposition (classical endpoint-to-peak bound).}\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \(S_h\). Fix a starting position \(x\), set \(B=|x|\), and let \(q\) be the population \((1-\alpha/2)\) quantile of \(|S_H|\). The triangle inequality and the classical scalar L\'evy maximal inequality then imply the following bound, including strict inequalities at atoms \citep{sussman2023}. Neither identical increment distributions nor finite increment moments are required for this population statement.
+\refstepcounter{proposition}\noindent\textbf{Proposition~\theproposition{} (classical endpoint-to-peak bound).}\label{prop:levy} Let future increments be independent and individually symmetric about zero, with partial sums \(S_h\). Fix a starting position \(x\), set \(B=|x|\), and let \(q\) be the population \((1-\alpha/2)\) quantile of \(|S_H|\). The triangle inequality and the classical scalar L\'evy maximal inequality then imply the following bound, including strict inequalities at atoms \citep{sussman2023}. Neither identical increment distributions nor finite increment moments are required for this population statement.
 
 
 \[
 \Pr\!\left(\max_{0\le h\le H}|x+S_h|>B+q\right)\le\Pr\!\left(\max_h|S_h|>q\right)\le2\Pr(|S_H|>q)\le\alpha.
 \]
 
-The Supplement proves both statements and compares population quantiles with their empirical plug-ins. A conditional application requires independence, symmetry and the stated endpoint quantile under the law given issue information. The separate bound simulations distinguish mean-reverting levels from serially correlated increments.
+Supplement Sections S1--S2 prove both statements and distinguish population quantiles from their empirical plug-ins; Sections S3--S5 give the bound simulations. A conditional application requires independence, symmetry and the stated endpoint quantile under the law given issue information. The separate bound simulations distinguish mean-reverting levels from serially correlated increments.
 
 
 Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression crosses across horizons on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.
@@ -127,7 +127,7 @@ The weekly data are New York Fed Primary Dealer Statistics \citep{nyfeddata}. Re
 
 Daily aggregation takes the last recorded position on each nonempty source-naive calendar day. It retains partial boundary days, yielding 930 days and 501 common evaluation issues. Reports use the completed day's end as their issue clock. The resulting target is a peak over subsequent daily records.
 
-The CFTC application is a retrospective survivor-universe, economic-date replay. It uses futures-only Dealer/Intermediary long positions minus short positions \citep{cftcTFF}. The fixed screen requires uninterrupted report weeks from 2010, stable literal codes, exchange and units. It excludes documented consolidation-code families before ranking eligible contracts by full-sample mean open interest. Seventeen contracts qualify, fewer than the planned maximum of twenty. The Supplement lists every selected code and exclusion reason.
+The CFTC application is a retrospective survivor-universe, economic-date replay. It uses futures-only Dealer/Intermediary long positions minus short positions \citep{cftcTFF}. The fixed screen requires uninterrupted report weeks from 2010, stable literal codes, exchange and units. It excludes documented consolidation-code families before ranking eligible contracts by full-sample mean open interest. Seventeen contracts qualify, fewer than the planned maximum of twenty. Supplement Section S30 lists every selected code and explains the eligibility rules; complete code-level exclusions remain linked there.
 
 There are 877 weekly positions through 20 October 2026. Validation uses 52 origins; evaluation uses the last 260 eligible origins with horizon six. The evaluation position dates run from 21 September 2021 to 8 September 2026. Its final peak label completes on 20 October 2026. Refit frequency is thirteen records; histories are 52 and 260. Positions usually refer to Tuesday and are released Friday; this application replays downloaded economic dates.
 
@@ -143,25 +143,25 @@ Historical headroom uses the corrected empirical rank of completed headrooms and
 
 Ridge quantile regression links mature headroom to issue-known position states and calendar variables. The larger set contains 33 predictors plus an unpenalized intercept. The four-predictor variant uses current magnitude, signed level and two increment RMS measures. All standardization uses mature training observations. Expanded-menu full regression changes only the penalty grid.
 
-Local quantiles use neighboring historical states, with an increment-scaled variant. Filtered paths simulate positions from GARCH-standardized empirical innovations drawn independently with replacement \citep{hull1998,barone1999}. Quantile forests use leaf distributions; tail methods fit volatility-scaled headroom \citep{meinshausen2006,mcneilfrey2000}. The Supplement lists complete results and numerical or structural failures.
+Local quantiles use neighboring historical states, with an increment-scaled variant. Filtered paths simulate positions from GARCH-standardized empirical innovations drawn independently with replacement \citep{hull1998,barone1999}. Quantile forests use leaf distributions; tail methods fit volatility-scaled headroom \citep{meinshausen2006,mcneilfrey2000}. Supplement Sections S7 and S11--S18 report benchmark results and failures; Section S34 links the complete legacy inventories.
 
 Further comparisons apply delayed calibration, fixed combinations and conservative selection to the same peak response. A headroom CAViaR recursion and calibration wrappers follow existing methods \citep{engle2004,gibbs2021}. Calibration parameters update after outcomes mature. Fixed mean and median combinations use predefined members. Conservative selection favors the strongest shrinkage within one paired HAC standard error of the validation winner. This adapts one-standard-error selection \citep{hastie2009} to paired forecast losses.
 
 \begin{table}[htbp]\centering\small
 \caption{Forecast definitions and executed menus. Codes occur here to connect with the result files. Matched histories and update schedules make the reference explicit.}\label{tab:methods}
 \begin{tabular}{>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{5.3cm}}\toprule
-Method / code & Forecast definition & Executed menu / setting\\\midrule
+Method & Forecast definition & Executed menu / setting\\\midrule
 Historical headroom (F) & Current floor plus a quantile of completed peak headrooms & FX histories \{720,2880\}; weekly \{52,260\}\\
 Translated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed-label pools; fixed-window and rolling-window controls\\
 Historical peak (K) & Historical absolute-peak quantile projected to the current floor & Same histories and update controls\\
 Quantile regression (QR) & Training-scaled headroom regression with ridge slopes and an unpenalized intercept & Original three-point menu; six-point menu $\{0.001,0.01,0.1,1,10,\infty\}$\\
-Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement\\
+Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Sections S8 and S23\\
 Parsimonious regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\
 Endpoint plug-in (L) & Floor plus a high absolute-displacement endpoint quantile & Proposition~\ref{prop:levy}; empirical plug-in evaluated separately\\
-Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications, complete failures included in Supplement\\
+Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications; results and complete failures linked from Supplement Sections S7 and S34\\
 Coverage and combinations & Delayed projected ACI-style wrappers; headroom SAV; fixed forecast combinations & Original-source wrapper/SAV inventory and broader combination inventory are separate\\
 \bottomrule\end{tabular}
-\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Training histories count completed labels. Fixed-window models refit every 24 FX records or 13 weekly records. Quantile and normalization conventions are detailed in the Supplement; this table does not expand any executed menu.\end{minipage}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Training histories count completed labels. Fixed-window models refit every 24 FX records or 13 weekly records. Quantile and normalization conventions are detailed in Supplement Sections S8 and S23; this table retains the executed menus.\end{minipage}
 \end{table}
 
 \FloatBarrier
@@ -176,7 +176,7 @@ Accuracy uses mean pinball loss; breaches are strict peak exceedances. Evaluatio
 
 \subsection{Research design and transparency}
 
-The original protocol fixes the two main comparisons and their reference procedures. Other p-values are exploratory and unadjusted unless stated. The Supplement records comparison families, execution chronology and complete failure inventories. The new studies retain separate estimation, simulation and reporting records. Menu design follows the earlier simulation results but precedes paired computations. CFTC design precedes acquisition; two format clarifications precede all forecasts. MCS and cost specifications lock before calculations on previously inspected reports. These are frozen descriptive decision rules within a retrospective research program.
+The original protocol fixes the two main comparisons and their reference procedures. Other p-values are exploratory and unadjusted unless stated. Supplement Sections S14--S17, S19, S23 and S29--S34 give comparison families, chronology and failure inventories. The new studies retain separate estimation, simulation and reporting records. Menu design follows the earlier simulation results but precedes paired computations. CFTC design precedes acquisition; two format clarifications precede all forecasts. MCS and cost specifications lock before calculations on previously inspected reports. These are frozen descriptive decision rules within a retrospective research program.
 
 \subsection{Multiple-method forecast comparison}
 
@@ -190,15 +190,15 @@ Exact duplicate loss columns enter the bootstrap once and their procedure labels
 
 \subsection{RQ1: matched accuracy and reference stability}
 
-Long-history FX regression beats matched historical headroom in both periods. Loss falls by 14.8\% later and 16.6\% earlier. Table~\ref{tab:fx} separates these matched controls from the shorter rolling reference.
+Long-history FX regression beats matched historical headroom in both periods. Table~\ref{tab:fx} separates these matched controls from the shorter rolling reference, whose earlier-period ranking reverses.
 
-Delayed calibration retains the later matched FX gain. Wrapped regression lowers loss by 15.0\%. Its 329 breaches compare with 328 for wrapped historical headroom on common origins (Table~\ref{tab:fx}).
+Delayed calibration retains the later matched FX gain. Its breach count remains slightly higher than wrapped historical headroom on common origins (Table~\ref{tab:fx}).
 
-The Supplement reports the training-defined state, target-level and overlapping full-prefix comparisons. Full-prefix regression lowers matched loss by 12.2\% but records 416 versus 282 breaches. Its rolling-reference DM p-value is 0.055. Longer-horizon gains coexist with reference-sensitive losses in the complete tables.
+Supplement Sections S20--S21 and S26 report the state, target-level and overlapping full-prefix comparisons (Tables S19--S21 and S25--S26). Full-prefix regression lowers matched loss by 12.2\% but records 416 versus 282 breaches. Its rolling-reference DM p-value is 0.055. Longer-horizon gains coexist with reference-sensitive losses in the complete tables.
 
 \begin{table}[htbp]\centering\small
 \caption{Long-history short-horizon FX regression under two references and periods. Negative percentages favor regression. Matched gains recur while the rolling-reference direction changes.}\label{tab:fx}
-\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{3.2cm}}\toprule
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedleft\arraybackslash}p{2.5cm}>{\raggedleft\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{3.2cm}}\toprule
 Period / procedure & Reference & Loss change (\%) & Issues & Strict breaches (regression / reference)\\\midrule
 Later / original main comparison & Shorter-history rolling headroom & -12.66 & 6625 & 376 / 332\\
 Later / matched & Same-history fixed-window headroom & -14.77 & 6625 & 376 / 360\\
@@ -211,21 +211,21 @@ Later / coverage-wrapped & Same-history wrapped headroom & -15.00 & 6625 & 329 /
 
 \subsection{RQ2: daily, weekly and independently reported positions}
 
-The earlier FX ranking reverses when the reference changes. Against shorter-history rolling headroom, later loss falls by 12.7\%, but earlier loss rises by 3.2\%. Matched gains and rolling-reference gains therefore have different period stability (Table~\ref{tab:fx}).
+The reference-sensitive hourly results motivate comparisons with other measurement clocks and reporting systems. These comparisons retain their own matched histories and completed peak labels.
 
-Short-history FX regression performs poorly at the longer horizon. Loss rises by 31.5\% against matched historical headroom. Regression records 924 breaches against 427 for the reference; the full horizon map retains the other adverse comparisons.
+Beyond the matched long-history case, short-history FX regression performs poorly at the longer horizon. Loss rises by 31.5\% against matched historical headroom. Regression records 924 breaches against 427 for the reference; the full horizon map retains the other adverse comparisons.
 
-Treasury-bill regression loses on both accuracy and breaches. Mean loss rises by 50.8\%, with 54 regression breaches. Historical headroom records 28 breaches; the earlier short-window version also loses (Table~\ref{tab:weekly}).
+At weekly frequency, the Treasury-bill comparison also favors historical headroom on accuracy and breaches. The earlier short-window version has a different history and retains its separate adverse result (Table~\ref{tab:weekly}).
 
-Stronger regularization narrows weekly panel losses but leaves historical rules ahead. Median excess loss falls from 92.6\% to 9.2\% after menu expansion. Regression still loses 34 of 48 matched comparisons. Conservative selection chooses I in 17 of 26 earlier weekly cells but still leaves a worst-cell increase of 181.4\%. This is the Treasury-bill short-window, 24-step comparison (Table~\ref{tab:weekly}).
+Stronger regularization narrows weekly panel losses but leaves historical rules ahead (Table~\ref{tab:weekly}). Conservative selection chooses the intercept-only report in 17 of 26 earlier weekly cells. Its worst loss remains the Treasury-bill short-window, 24-step comparison, despite the conservative selection rule.
 
-Simpler conditional reports and fixed combinations also give mixed weekly results. The median combination lowers Treasury-bill loss by 4.0\%, while the mean combination raises it by 2.8\%. The headroom recursion is also worse. The Supplement retains every completed loss and model failure.
+Simpler conditional reports and fixed combinations also give mixed weekly results. The median combination lowers Treasury-bill loss by 4.0\%, while the mean combination raises it by 2.8\%. The headroom recursion is also worse. Supplement Sections S16--S18 retain the combination and headroom-recursion results, including completed losses and failures (Tables S14--S17).
 
-Historical headroom wins seven of eight same-record daily comparisons. The exception uses four predictors, history 260 and horizon 6, reducing loss by 3.0\%. It records 37 breaches versus 30 for matched headroom. Daily aggregation therefore preserves the score--breach disagreement while changing the leading forecast in most comparisons.
+Returning to the same FX record, historical headroom wins seven of eight daily comparisons. The exception uses four predictors, history 260 and horizon 6, reducing loss by 3.0\%. It records 37 breaches versus 30 for matched headroom. Daily aggregation therefore preserves the score--breach disagreement while changing the leading forecast in most comparisons.
 
 \begin{table}[htbp]\centering\small
 \caption{Weekly evidence across the original main comparison, added panel and earlier-period comparisons. Counts refer to related tasks rather than independent dealers. Stronger regularization narrows losses while leaving substantial failures.}\label{tab:weekly}
-\begin{tabular}{>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.5cm}}\toprule
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.5cm}}\toprule
 Comparison set & Procedure & Loss change / median (\%) & Higher-loss cells\\\midrule
 Original Treasury-bill main comparison & Original regression, long history & +50.79 & Original main comparison\\
 Earlier Treasury-bill short-window version & Short-history short-window version & +144.30 & Different history\\
@@ -236,12 +236,12 @@ Additional panel & Ordinary empirical headroom quantile & +0.50 & 30 / 48\\
 Earlier weekly groups & Validation-minimum expanded rule & +4.15 & 26 groups\\
 Earlier weekly groups & One-standard-error rule & +5.37 & 26 groups\\
 \bottomrule\end{tabular}
-\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The original bill main comparison has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results are a short-window version, not an exact replay of that main comparison. The one-standard-error worst excess is +181.39\%; all its prewritten success criteria remain unmet. The Supplement lists all panel and selection results.\end{minipage}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The original bill main comparison has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results use a different history; the one-standard-error worst excess is +181.39\%, and all its prewritten success criteria remain unmet. Supplement Sections S11--S15 list all panel and selection results (Tables S9--S13).\end{minipage}
 \end{table}
 
 \subsubsection{CFTC: independent reporting-system evidence}
 
-F or I has lower loss than expanded-menu regression in 29 of 34 contract/history comparisons. The frozen sixty-percent threshold is met. The count uses the better realized score among the two prespecified historical reports, not an executable F/I selector. F remains the fixed matched reference; I is reported separately. Regression's median excess losses are 19.3\% and 10.3\% at histories 52 and 260. Both exceed the registered ten-percent tolerance. Four-predictor regression improves from 10.3\% to 0.2\%. Thus the historical-benchmark pattern extends to another reporting system, with substantial contract-level variation.
+The independent reporting system gives a similar overall ranking: F or I has lower loss in 29 of 34 contract/history comparisons. The frozen sixty-percent threshold is met. The count uses the better realized score among the two prespecified historical reports, not an executable F/I selector. F remains the fixed matched reference; I is reported separately. Both full-regression medians exceed the registered ten-percent tolerance. Four-predictor regression moves closer to historical headroom with the longer history. Thus the historical-benchmark pattern extends to another reporting system, with substantial contract-level variation.
 
 \input{generated/v10-cftc-contracts.tex}
 
@@ -251,32 +251,32 @@ F or I has lower loss than expanded-menu regression in 29 of 34 contract/history
 
 \subsubsection{Model confidence sets}
 
-Matched F/I remains in 90/98 sets, while 197/683 complete conditional-procedure slots are excluded. Only 2 sets contain a single literal historical method. These results support retaining historical controls while leaving many alternatives uneliminated under the fixed bootstrap approximation. Non-elimination does not establish equal predictive risk. Table~\ref{tab:v10-mcs-main} distinguishes literal membership from exact observed-loss equality. Every set, method p-value, equivalence class and prior unavailable method appears in the Supplement.
+Joint comparison leaves matched historical methods alongside alternatives in most sets, with a single historical method surviving in only a small minority. These results support retaining historical controls while leaving many alternatives uneliminated under the fixed bootstrap approximation. Non-elimination does not establish equal predictive risk. Table~\ref{tab:v10-mcs-main} distinguishes literal membership from exact observed-loss equality. Supplement Section S31 retains every set, method p-value, equivalence class and prior unavailable method.
 
 \input{generated/v10-mcs-main.tex}
 
 \subsection{Scores and breach behavior answer different questions}
 
-Lower FX loss coexists with more breaches before calibration. Regression breaches 376 times against 360 for matched historical headroom. Pinball loss measures error amounts, while a strict-hit indicator records event occurrence. Monitoring reports should show both.
+Accuracy rankings leave breach behavior unresolved: the matched FX gain coexists with more breaches before calibration (Table~\ref{tab:fx}). Pinball loss measures error amounts, while a strict-hit indicator records event occurrence. Monitoring reports should show both.
 
-Elementary-score rankings cross for both original main comparisons (Supplementary Murphy diagrams). A separate 24-step FX comparison against rolling translated paths reverses near 20.6:1. Both six-step FX comparisons improve mean overrun and unused allowance. The weight reversal therefore belongs to the 24-step reference.
+Elementary-score rankings cross for both original main comparisons (Supplement Figures S1--S2, Section S33). A separate 24-step FX comparison against rolling translated paths reverses near 20.6:1. Both six-step FX comparisons improve mean overrun and unused allowance. The weight reversal therefore belongs to the 24-step reference.
 
-Loss and hit diagnostics answer different questions (the Supplementary diagnostics). HAC tests compare average loss; strict-hit tests examine event frequency and serial behavior. RMS-state diagnostics compare conditional predictive ability across training-defined groups \citep{gw2006}.
+Loss and hit diagnostics answer different questions (Supplement Table S46, Section S33). HAC tests compare average loss; strict-hit tests examine event frequency and serial behavior. RMS-state diagnostics compare conditional predictive ability across training-defined groups \citep{gw2006}.
 
 \FloatBarrier
 
 \subsection{Isolating the penalty menu}\label{sec:extensions}
 
-Earlier stationary comparisons already produce large short-history regression losses. The fitted constant and switching arms use thirteen pre-evaluation weekly calibrations. Their original history-52 medians are 116.2\% and 121.4\%. The earlier stability screen rejects seven series pointwise and two after Holm correction. The Supplement retains its diagnostics and all earlier simulation grids.
+The weekly failures motivate a closer look at the penalty menu in calibrated simulations. Earlier stationary comparisons already produce large short-history regression losses. The fitted constant and switching arms use thirteen pre-evaluation weekly calibrations. The earlier stability screen rejects seven series pointwise and two after Holm correction. Supplement Sections S27--S28 retain the earlier calibrated simulations and stability diagnostics (Tables S27--S32).
 
 The paired menu experiment changes only the ridge candidate menu and the stated exact-tie rule. It adds penalties one, ten and the intercept-only limit to full regression. Both regressions use the six-point menu. All paths, innovations, source calibrations and forecasting clocks match the earlier experiment. Thirty-two paired repetitions contribute to each complete source median. This isolates the executed menu comparison within these calibrated laws. The expanded procedure can choose ordinary I. Stronger finite penalties and access to I are not separately identified; near-parity loss alone supplies no evidence of added feature value.
 
-At history 52, the expanded full-regression medians are 0.2\% under constant parameters and -0.2\% under switching. Both arms improve in all thirteen sources. The constant-arm near-parity prediction and the paired-improvement prediction hold. The switching-minus-constant difference misses the registered five-percentage-point increase. This outcome supports the menu explanation for these simulated losses; it leaves the empirical frequency mechanism unresolved.
+The expanded full-regression medians move close to historical headroom in both arms (Table~\ref{tab:v10-menu-isolation}). Both arms improve in every source. The constant-arm near-parity prediction and the paired-improvement prediction hold. The switching-minus-constant difference misses the registered five-percentage-point increase. This outcome supports the menu explanation for these simulated losses; it leaves the empirical frequency mechanism unresolved.
 
 \input{generated/v10-menu-main.tex}
 
 \begin{figure}[htbp]\centering\includegraphics[width=.98\linewidth]{figures/v10-menu-isolation.pdf}
-\caption{Paired penalty-menu isolation on unchanged calibrated paths. The expanded menu removes the large short-history full-regression loss in both arms. Longer-history full-regression summaries remain unavailable because one required source repetition fails in each arm. No successful subset replaces them.}\label{fig:mechanism}
+\caption{Paired penalty-menu isolation on unchanged calibrated paths. The expanded menu removes the large short-history full-regression loss in both arms. Longer-history full-regression summaries remain unavailable because a required repetition fails in each arm, with no successful-subset replacement.}\label{fig:mechanism}
 \end{figure}
 
 At history 260, one required full-regression repetition fails in each arm under the old low penalty. Both whole thirteen-source summaries remain unavailable. The experiment retains every failed cell and performs no retry. Earlier daily moment-qualification and hourly optimization failures also remain unavailable. Absence of a five-point switching increment is not evidence of equivalence.
@@ -285,22 +285,19 @@ At history 260, one required full-regression repetition fails in each arm under 
 
 \section{RQ3: limit-cost regions}\label{sec:cost}
 
-Let $m_F=\overline{C_F-B}>0$ be matched F's average reserved headroom in a comparison. We evaluate each saved report using
 \[
 J_m(\kappa,\beta,c)=\kappa\frac{\overline{C_m-B}}{m_F}
 +\beta\,\overline{\mathbf 1\{Y>C_m\}}
-+c\frac{\overline{(Y-C_m)_+}}{m_F},\qquad \beta=b/m_F.
++c\frac{\overline{(Y-C_m)_+}}{m_F},\qquad
+m_F=\overline{C_F-B}>0,\quad\beta=b/m_F.
 \]
-The fixed breach amount is $b=\beta m_F$. Reserve, breach frequency and excess enter separately. Costs apply per issued report; overlapping horizons are not added as separate cash flows.
 
-The fixed grid uses $\kappa\in\{.01,.025,.05,.1,.2,.5,1\}$, $\beta\in\{0,.01,.05,.1,.25,.5,1,2,5\}$ and $c\in\{.5,1,2\}$. Every complete saved method enters all grid points. Each beta fixes breach charges relative to that cell's evaluation-sample F headroom. Monetary charges differ across cells. The panels compare fixed reports, not a cost-optimal policy frontier. Figure~\ref{fig:v10-cost} fixes $c=1$ and the expanded-menu full regression for hourly and weekly sources. The daily comparison retains its saved original-menu regression. No method is selected for having the lowest cost.
-
-The cheaper-method region changes with the cost coefficients in every source group. In CFTC, expanded regression wins 1--32 of 34 comparisons across the displayed grid. High reserve charges favor lower issued headroom; larger fixed breach charges shrink those regions. The Supplement and zipped table retain all methods and coefficient combinations.
-
-At $\kappa=.05,\beta=0,c=1$, the cost difference from F equals its pinball-loss difference divided by $m_F$. Other cost weights need not preserve that ranking. Breach frequency contributes information beyond the two error-amount components.
+For CFTC, higher reserve coefficients and lower fixed-breach coefficients generally favor expanded-menu regression over matched historical headroom, although the grid is not monotone (Figure~\ref{fig:v10-cost}).
+At $c=1$, regression is strictly cheaper in $5/34$ comparisons at the sorted-grid centre $(\kappa,\beta)=(.1,.25)$, $32/34$ at $(1,0)$, and $1/34$ at the opposite corner $(.01,5)$.
+These are illustrative costs, not observed operating costs; Supplement Section S32 gives the normalization, fixed grid and complete-method results.
 
 \begin{figure}[p]\centering\includegraphics[width=.98\linewidth,height=.87\textheight,keepaspectratio]{figures/v10-cost-regions.pdf}
-\caption{Complete registered reserve/fixed-breach regions at $c=1$. Color is the planned-comparison fraction where the fixed conditional procedure costs less than F. Each panel retains its source, horizon and history grids with equal comparison weights. These fractions are not probability estimates. All comparisons complete, so lower and upper fractions coincide.}\label{fig:v10-cost}
+\caption{Fixed reserve and breach-charge regions with the exceedance coefficient held at unity. Color shows the fraction of related comparisons where the stated conditional procedure costs less than corrected historical headroom, with each source group retaining its own histories and horizons. These are descriptive fractions; all comparisons complete and the lower and upper fractions coincide.}\label{fig:v10-cost}
 \end{figure}
 
 \FloatBarrier
@@ -311,7 +308,7 @@ At $\kappa=.05,\beta=0,c=1$, the cost difference from F equals its pinball-loss 
 
 \textbf{Retain corrected-rank history as a matched benchmark in these comparisons.} Expanded penalties reduce losses, while short-sample validation, including one-standard-error selection, still leaves large losses. The CFTC comparison also retains F/I in most model confidence sets. The ordinary empirical quantile is up to 36.5\% worse than corrected headroom in the earlier weekly grid.
 
-\textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid. The unwrapped matched FX gain records 376 versus 360 breaches; the daily regression exception also has more breaches. Cost regions add reserve, breach-frequency and exceedance preferences to this joint evaluation.
+\textbf{Report breaches with the score.} Show mean underprediction, mean unused headroom and strict-breach count on the same grid. The unwrapped matched FX gain and the daily regression exception both have more breaches than their historical references. Cost regions add reserve, breach-frequency and exceedance preferences to this joint evaluation.
 
 \FloatBarrier
 
@@ -329,17 +326,17 @@ Short overlapping validation samples and research-stage selection limit tuning s
 
 CFTC categories provide an independent reporting system, not independent individual dealers. Full-history continuity creates a retrospective survivor universe. Open-interest ranking only orders the eligible contracts here. Conservative consolidation-family exclusions leave seventeen eligible contracts. Raw contracts have different exposure units; normalized comparisons do not recover common-dollar risks. Downloaded position dates omit actual historical first-release vintages and reporting delays. Two ingestion-schema clarifications followed acquisition but preceded every forecast and model-loss result; their original failed technical attempts remain documented.
 
-The limit costs are illustrative, not observed real operating costs. Coefficients are fixed preferences; no estimated funding return, optimal intervention policy or trading-profit claim follows. The normalization uses evaluation-sample F headroom; ex ante institutional charges remain untested. MCS inference requires suitable loss dependence. The stationary bootstrap, modest samples and research-stage specification choices limit its nominal interpretation. Membership and cross-task fractions do not certify future coverage or simultaneous best-model status.
+Coefficients are fixed preferences; no estimated funding return, optimal intervention policy or trading-profit claim follows. The normalization uses evaluation-sample F headroom; ex ante institutional charges remain untested. MCS inference requires suitable loss dependence. The stationary bootstrap, modest samples and research-stage specification choices limit its nominal interpretation. Membership and cross-task fractions do not certify future coverage or simultaneous best-model status.
 
 \FloatBarrier
 
 \section{Conclusion}\label{sec:conclusion}
 
-RQ1 has a reference-dependent answer. Hourly FX regression lowers matched loss by 14.8\% and 16.6\% across periods. Delayed calibration retains the later gain with 329 versus 328 breaches. Earlier loss is 3.2\% higher against the original shorter rolling reference; that direction fails to recur. The earlier Treasury short-history comparison raises loss by 144.3\%.
+Historical rules are hard to beat. For RQ1, matched FX regression gains recur across periods, but rankings against the shorter rolling reference change. Delayed calibration preserves the later matched gain with a small breach-count difference. Matching history and update schedules is therefore central to interpreting conditional forecast gains.
 
-For RQ2, historical rules remain strong across related weekly categories, same-record daily aggregates and the independent CFTC reporting system. F or I beats expanded regression in 29/34 CFTC comparisons. Regression's median excess losses are 19.3\%/10.3\% at the two histories. Matched F/I survives in 90/98 model confidence sets, usually alongside other methods. Expanded menus reduce weekly losses, but short-sample validation still fails to protect the historical benchmark consistently. With stronger penalties and I, paired simulations reduce constant/switching short-history medians to 0.2\%/-0.2\%; the registered switching increment is unsupported. The empirical low-frequency mechanism remains unidentified.
+For RQ2, historical controls remain competitive in related weekly categories, same-record daily aggregates and the independent CFTC reporting system. They usually remain in model confidence sets alongside alternatives. Short-sample validation still fails to protect the historical benchmark consistently. The calibrated paired experiment brings full regression near its historical reference by expanding the penalty menu. The registered switching increment is unsupported, while the empirical low-frequency mechanism remains unidentified.
 
-For RQ3, score gains translate into lower limit costs only in parts of the coefficient grid. At $c=1$, CFTC regression is cheaper in 1--32 of 34 comparisons as reserve and breach charges vary. Limit validation should match histories and schedules, retain historical controls, and report reserve amounts, breach counts and excess amounts together.
+For RQ3, higher reserve charges and lower fixed breach charges generally favor expanded regression in CFTC, with local exceptions. Lower forecast scores therefore need not imply lower limit costs. Validation should report reserve amounts, breach counts and exceedance amounts together, using the cost regions in Figure~\ref{fig:v10-cost}.
 
 \FloatBarrier
 
@@ -350,7 +347,7 @@ The New York Fed aggregates are available from its Primary Dealer Statistics ser
 
 The CFTC application uses the public TFF historical files from \url{https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm}. The repository includes unchanged downloaded archives and a per-file URL, acquisition time, byte count and SHA-256 record in \texttt{data/cftc-tff/provenance.json}.
 
-\paragraph{Code availability.} Code, saved results and version-specific reproduction instructions are available at \url{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v10}. The v10 package adds paired menu isolation, official CFTC sources, full MCS results and fixed cost regions. Earlier results remain unchanged in their versioned directories. Document compilation and restricted-input financial replay have separate instructions. Complete, adverse, failed and unavailable outcomes are retained.
+\paragraph{Code availability.} Code, saved results and version-specific reproduction instructions are available at \url{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v10b}. The v10 package adds paired menu isolation, official CFTC sources, full MCS results and fixed cost regions. Earlier results remain unchanged in their versioned directories. Document compilation and restricted-input financial replay have separate instructions. Complete, adverse, failed and unavailable outcomes are retained.
 
 \section*{Author-provided information}
 Author information: [TO BE COMPLETED BY AUTHOR].\par

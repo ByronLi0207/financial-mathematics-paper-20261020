@@ -18,6 +18,7 @@
 \makeatother
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \title{Online Supplement to Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
 \author{}
 \date{}
@@ -34,14 +35,23 @@ The earlier calibrated design and stability screen retain separate sections. The
 Tables format saved native fields. Loss percentages are the existing relative
 differences against the named reference; probabilities are labelled as such.
 Different source-reported monetary units are not pooled. NA and failed rows
-remain distinct from complete results. The exact binding file and document
-builder permit source-field readback without re-running any financial model.
+remain distinct from complete results.
 
 The complete earlier supplement, full comparison families, all candidate
 tables, annual and sparse sensitivities, numerical details and source guides
 remain accessible through \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS}.
 This index is an access route, not a substitute for compatible input data or
 independent validation.
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{1}
+\makeatletter
+\renewcommand*\l@section[2]{\@dottedtocline{1}{0em}{2.5em}{#1}{#2}}
+\makeatother
+\tableofcontents
+\endgroup
+\medskip
 \section{Known-floor projection and strict quantile coverage}\label{sup:floor}
 
 We forecast the sampled maximum of the absolute position, including
@@ -102,8 +112,7 @@ inequality and the triangle inequality give
 \Pr\!\left(\max_{0\le h\le H}|x+S_h|>B+q\right)\le\Pr\!\left(\max_h|S_h|>q\right)\le2\Pr(|S_H|>q)\le\alpha.
 \]
 This is a direct application of the classical L\'evy inequality, not a new
-maximal inequality. The existing source audit identifies Sussman (2023),
-Proposition 3.4, and records the actual consulted source range.
+maximal inequality; see Sussman (2023), Proposition 3.4.
 
 \paragraph{Proof, including strict events and atoms.}
 For \(c\ge0\), let \(\eta\) be the first index with \(|S_\eta|>c\). On
@@ -155,14 +164,14 @@ the same paths, not independent repetitions.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
-\caption{Original increment-AR simulation, unchanged. Serial persistence here concerns increments, not fitted position levels.}\\
+\caption{Original increment-autoregression simulation, unchanged. Serial persistence here concerns increments, not fitted position levels.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endhead
 \bottomrule
@@ -199,12 +208,12 @@ increments and nonstationary cumulative levels.
 \begin{longtable}{lrrrrrrrr}
 \caption{All corrected primary cases. Mean-reverting level rates are conservative in these finite cases; the negative-increment result must also be retained.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endhead
 \bottomrule
@@ -250,12 +259,12 @@ on shared paths; neither is an oracle for the maximum.
 \begin{longtable}{lrrrrrrrr}
 \caption{All secondary anchor and conditional-threshold sensitivities. Conditional and marginal endpoint calibration remain distinct.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\SE} & \shortstack{Endpoint breach\\probability} \\
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
 \midrule
 \endhead
 \bottomrule
@@ -329,12 +338,12 @@ Bills & 24/260 & 9.87 & -47.64 & 22/12 \\
 \begin{longtable}{lrrrrrr}
 \caption{All separate endpoint-plug-in working-reference contrasts. Adverse score comparisons remain alongside lower-breach reports.}\\
 \toprule
-Source & \shortstack{Horizon /\\history} & Reference & DM t & DM p & HLN p & Holm p \\
+Source & \shortstack{Horizon /\\history} & Reference & \shortstack{Loss-test\\statistic} & \shortstack{Normal\\p-value} & \shortstack{Small-sample\\p-value} & \shortstack{Holm-adjusted\\p-value} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Source & \shortstack{Horizon /\\history} & Reference & DM t & DM p & HLN p & Holm p \\
+Source & \shortstack{Horizon /\\history} & Reference & \shortstack{Loss-test\\statistic} & \shortstack{Normal\\p-value} & \shortstack{Small-sample\\p-value} & \shortstack{Holm-adjusted\\p-value} \\
 \midrule
 \endhead
 \bottomrule
@@ -380,7 +389,7 @@ Their descriptive means are not identified data-generating parameters.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrr}
-\caption{Complete original AR replay comparison. Lower scores can accompany more strict breaches.}\\
+\caption{Complete original autoregressive replay comparison. Lower scores can accompany more strict breaches.}\\
 \toprule
 Source & Horizon & History & \shortstack{Mean fitted\\\(\widehat\phi\)} & \shortstack{Replay vs\\translated (\%)} & \shortstack{Replay vs\\regression (\%)} & \shortstack{Breaches\\replay / translated} \\
 \midrule
@@ -409,8 +418,7 @@ have mixed directions, while strict breaches increase in every row above.
 Sparse-grid and annual signs can reverse. The full paired, annual and fixed-grid
 tables remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/ar1-replay/README.md}{the AR archive}.
 These are post-result / exploratory same-data calculations, not independent
-validation. Numerical readback checked the represented-input recursion and
-saved summaries without validating the financial innovation law.\section{Ordinary quantile ranks and minimizer endpoints}\label{sup:rank}
+validation.\section{Ordinary quantile ranks and minimizer endpoints}\label{sup:rank}
 
 The ordinary empirical quantile and the corrected empirical rule use
 the same completed pool, refit times and issue floor. The former takes the
@@ -616,8 +624,7 @@ PDPOSGSC-G7L11 & 24/260 & 1002.9 / 32 & 229.96 / 94 & 202.78 / 99 & 229.96 / 94 
 \end{longtable}
 \endgroup
 
-The independent saved-array arithmetic checks and selection-before-
-evaluation records are linked from \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/e5/README.md}{the E5 archive}. The original panel's entire candidate/status inventory remains in
+The expanded-menu selection precedes its evaluation, as documented in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/e5/README.md}{the E5 archive}. The original panel's entire candidate/status inventory remains in
 \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/round2/panel/summary.csv}{the original panel archive},
 and the fitted expanded-menu predictions are not substitutes for unavailable
 methods or independent dealer data.\section{Complete added-panel endpoint-plug-in comparison}\label{sup:panel-levy}
@@ -695,14 +702,14 @@ the already-inspected-period calculations that could reuse those origins.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{35mm}rrrrr}
-\caption{Every earlier-period R0/R2 comparison. The one-standard-error rule misses the recorded success conditions.}\\
+\caption{Every earlier-period minimum-loss and one-standard-error comparison. The one-standard-error rule misses the recorded success conditions.}\\
 \toprule
-Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-SE\\rule (\%)} & \shortstack{Breaches\\minimum-loss / one-SE} & \shortstack{Historical\\breaches} \\
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-SE\\rule (\%)} & \shortstack{Breaches\\minimum-loss / one-SE} & \shortstack{Historical\\breaches} \\
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
 \midrule
 \endhead
 \bottomrule
@@ -759,7 +766,7 @@ the evidence even though other rules in the same task can complete.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lp{35mm}rrl}
-\caption{All noncomplete R6 report rows. Failed mandatory candidates remain failures.}\\
+\caption{All noncomplete fixed-rule report rows. Failed mandatory candidates remain failures.}\\
 \toprule
 Phase & Series & \shortstack{Horizon /\\history} & Rule & Status \\
 \midrule
@@ -807,7 +814,7 @@ global optimum. Selection state carries across the unissued chronological gap.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrlrrl}
-\caption{Complete delayed-wrapper and headroom-SAV inventory. Two long-horizon wrapper cells remain unavailable.}\\
+\caption{Complete delayed-wrapper and headroom-recursion inventory. Two long-horizon wrapper cells remain unavailable.}\\
 \toprule
 Source & \shortstack{Horizon /\\history} & Method & Mean loss & Breaches & Status \\
 \midrule
@@ -947,12 +954,12 @@ Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
 \begin{longtable}{lrrrrrrr}
 \caption{Complete combination counts including the added panel. Missing median constituents remain NA.}\\
 \toprule
-Rule & Total & Complete & NA & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Rule & Total & Complete & NA & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
 \midrule
 \endhead
 \bottomrule
@@ -981,12 +988,12 @@ reference.
 \begin{longtable}{lp{34mm}p{18mm}lrr}
 \caption{Every combination Murphy comparison in the original-primary contexts. Crossing prevents threshold-uniform sample dominance.}\\
 \toprule
-Source & Left & Right & Ranking & Positive & Negative \\
+Source & \shortstack{Left-hand\\method} & \shortstack{Right-hand\\method} & Ranking & \shortstack{Positive\\breakpoints} & \shortstack{Negative\\breakpoints} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Source & Left & Right & Ranking & Positive & Negative \\
+Source & \shortstack{Left-hand\\method} & \shortstack{Right-hand\\method} & Ranking & \shortstack{Positive\\breakpoints} & \shortstack{Negative\\breakpoints} \\
 \midrule
 \endhead
 \bottomrule
@@ -1025,12 +1032,12 @@ switching policy. Source-native group differences are not pooled.
 \begin{longtable}{lrrrr}
 \caption{All three state groups for each original primary. The FX advantage remains negative in every group, while the weekly evidence remains adverse.}\\
 \toprule
-Source & State & Issues & \shortstack{Regression minus\\reference loss} & HAC SE \\
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Source & State & Issues & \shortstack{Regression minus\\reference loss} & HAC SE \\
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
 \midrule
 \endhead
 \bottomrule
@@ -1051,12 +1058,12 @@ Bills & high & 243 & 810.88 & 466.48 \\
 \begin{longtable}{lp{35mm}rrl}
 \caption{Complete state diagnostic reference family. A joint rejection need not identify a useful state rule.}\\
 \toprule
-Source & Diagnostic & Raw p & Holm p & Status \\
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Source & Diagnostic & Raw p & Holm p & Status \\
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
 \midrule
 \endhead
 \bottomrule
@@ -1090,12 +1097,12 @@ measure different objectives.
 \begin{longtable}{lrp{20mm}rrrl}
 \caption{Complete target-level sensitivity. The lower-target directions recur, but upper-target evidence remains unavailable.}\\
 \toprule
-Source & \shortstack{Target\\\(\tau\)} & Reference & Mean difference & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
 \midrule
 \endfirsthead
 \caption[]{Continued.}\\
 \toprule
-Source & \shortstack{Target\\\(\tau\)} & Reference & Mean difference & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
 \midrule
 \endhead
 \bottomrule
@@ -1111,8 +1118,8 @@ Bills & 0.99 & primary & NA & NA & NA & NA \\
 
 The complete family contains 6 slots,
 with 3 raw p values unavailable.
-The existing selection freezes and chronological evaluation receipts remain
-linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp5-tau-summary.json}{the target-level inventory}.
+The fixed target-specific selections precede their evaluation; full settings
+and results remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp5-tau-summary.json}{the target-level inventory}.
 The saved lower-target directions do not establish robustness to an arbitrary
 tail level, actual shortage costs, or a new economic decision rule. Failed
 eligibility is a result of the specified procedure and remains part of the
@@ -1128,7 +1135,7 @@ alone does not identify a universally beneficial repair.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrr}
-\caption{Every original QR horizon-coherence comparison. Ordered targets do not force ordered fitted reports.}\\
+\caption{Every original quantile-regression horizon-coherence comparison. Ordered targets do not force ordered fitted reports.}\\
 \toprule
 Source & History & Issues & Forecast crossings & Target violations \\
 \midrule
@@ -1245,11 +1252,8 @@ plus that radius; reverse the roles for the second inequality. These
 deterministic same-pool bounds do not order financial accuracy or coverage.
 Changing historical rows on one side invalidates the common-pool argument.
 
-\paragraph{Complete implementation evidence.}
 Exact menus, numerical tolerances, failures and diagnostic tables remain in
 \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source archives.
-The separate study receipts identify the executed additions. This document
-builder imports no forecasting code and only formats unchanged public results.
 \section{Frozen controlled comparison of inherited procedures}\label{sup:v8-mc}
 
 The simulation compares inherited reports for mean-reverting position levels,
@@ -1325,10 +1329,7 @@ requires every declared validation candidate. Incomplete procedures retain NA
 full-procedure performance, with any available-pair summary labelled conditional
 on completion. The saved source summaries retain all cells and their full
 precision in \path{results/revision-v8/wp3/summary.json}; all six loss, breach and
-win heatmaps and the complete receipt archive remain alongside them.
-
-The duplicate four-feature loss heatmap is available with the six complete
-archived heatmaps. Both complete numerical grids above retain every cell.
+win heatmaps remain alongside them. Both complete numerical grids retain every cell.
 
 
 
@@ -1346,8 +1347,7 @@ not a verified financial close or a peak over intraday excursions.
 Histories and horizons count subsequent nonempty daily observations. The split
 copies the Treasury observation-index geometry, not its absolute calendar dates
 or a proportional split: validation runs from 2015-02-24 to 2015-04-24 and evaluation from
-2015-05-24 to 2016-12-27 on 501 common issues. The exact accepted raw fingerprint and
-private resampling mapping are recorded separately; raw or resampled positions
+2015-05-24 to 2016-12-27 on 501 common issues. Raw or resampled positions
 and per-issue trajectories are not redistributed.
 
 \input{generated/v8-daily-results-table.tex}
@@ -1503,7 +1503,6 @@ comparison are unassessable. Constant controls themselves generate large
 losses, so instability is not necessary for losses in these procedures.
 The empirical low-frequency mechanism remains unidentified.
 
-\clearpage
 \section{Paired menu isolation: full source inventory}\label{sup:v10-menu}
 Both QR variants use penalties $\{.001,.01,.1,1,10,\infty\}$; the infinite candidate is ordinary intercept-only I, distinct from corrected-rank F. Full regression requires every candidate to complete. Four-predictor regression selects from its completed eligible candidates, as before. Exact ties now prefer stronger shrinkage in both variants; no actual exact tie occurred. Old and expanded arms use identical source calibration, random streams, path geometry and forecasting clocks. The switching-phase denominator remains thirty-two. Two pilot repetitions selected the full thirty-two formal repetitions before launch. The simulated feature clock is inherited hourly geometry despite weekly calibration parameters; it is not a literal weekly-calendar replay.
 
@@ -1513,9 +1512,10 @@ The design preceded every new path calculation. M1 requires the constant-arm his
 
 \clearpage
 \section{CFTC sources, eligibility and information dates}\label{sup:v10-cftc}
-The source is the CFTC TFF futures-only historical backcast for 2006--2016 plus annual 2017--2026 files. The retained observations begin in 2010. Each of eleven archives has its exact official URL, request and completion UTC, byte length and SHA-256 in \texttt{data/cftc-tff/provenance.json}. No other new financial data were acquired. The original archive bytes remain public. The browser API did not expose HTTP status or redirect-chain metadata; those fields are explicitly unobserved.
+The source is the CFTC TFF futures-only historical backcast for 2006--2016 plus annual 2017--2026 files. The retained observations begin in 2010. All eleven original source archives remain public; no other new financial data were acquired.
 
 A complete generated calendar contains 877 Monday-labelled report weeks, from 2010-01-04 through 2026-10-19. Economic position dates are retained separately. A code needs one valid observation per week, a stable exchange and stable contract units. Missing weeks, duplicates and changes disqualify rather than interpolate or splice a contract. Known consolidation prefixes 13874,20974,12460 are excluded before ranking. This conservative rule is broader than the documented plus-suffixed codes. Full-period mean open interest ranks survivors, with literal-code ties. Seventeen of 141 observed codes qualify; the top-twenty cap never changes that count.
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v10b/results/v10/cftc/eligibility.json}{complete code-level eligibility and exclusions} preserve every screening decision.
 
 Validation indices are 553--604; evaluation indices are 611--870. All labels use horizon six, leaving six unissued origins between the segments. Validation position dates are 2020-08-11--2021-08-03; its last label ends 2021-09-14. Evaluation position dates are 2021-09-21--2026-09-08; its last label ends 2026-10-20. Training labels at refit r span r-H-W+1 through r-H. Monday labels index the inherited feature calendar; they do not claim Monday public availability. Actual positions are normally measured Tuesday and released Friday at 15:30 Eastern. Holiday, shutdown and ION-related publication delays prevent a first-release interpretation.
 
@@ -1532,13 +1532,32 @@ Two narrow official-format clarifications follow the original design and acquisi
 \section{Complete model confidence sets}\label{sup:v10-mcs}
 The registered ninety-percent MCS uses the range statistic and 1,000 stationary-bootstrap draws, with block length $\max\{H,\lceil n^{1/3}\rceil\}$ in arch 8.0.0. Deterministic source/grid seeds and method order are recorded in the design. Every claimed complete report uses its entire declared origin grid and common target. Missing stored losses are derived only from saved reports, without issuing or fitting forecasts. Every one of 98 comparisons completes. The 60 known unavailable slots remain unavailable, not statistical exclusions.
 
-Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact loss duplicates enter the library once, then recover the same p-value and inclusion partition for all members. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I,2/98 have a sole literal F/I member, and4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
+Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact loss duplicates enter the library once, then recover the same p-value and inclusion partition for all members. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I, 2/98 have a sole literal F/I member, and 4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
 
 \input{generated/v10-mcs-compact.tex}
 
-\clearpage
 \section{Fixed limit costs and full parameter regions}\label{sup:v10-cost}
-The main formula uses each matched F's mean reserved headroom. All 98 comparisons have a positive scale and all 976 complete methods enter 189 grid points, giving 184,464 cost rows. Sixteen missing-floor inputs are recovered only from their registered, fingerprinted same-origin F copies. Their complete origin, target and floor arrays match exactly. Other missing or mismatched floors would make the whole comparison unavailable. No missing scale uses an epsilon.
+For each comparison, let $B$ be the issue-known floor, $Y$ the realized sampled peak,
+$C_m$ a saved method report, and $m_F=\overline{C_F-B}>0$ the matched F report's
+mean reserved headroom. All four quantities use the same source-native position
+units (currency or contract counts). The normalized per-issue cost is
+\[
+J_m(\kappa,\beta,c)=\kappa\frac{\overline{C_m-B}}{m_F}
++\beta\,\overline{\mathbf 1\{Y>C_m\}}
++c\frac{\overline{(Y-C_m)_+}}{m_F},\qquad b=\beta m_F.
+\]
+Reserve, strict breach frequency and excess enter separately. The fixed breach
+charge $b$ is in those same position-value units; each $\beta$ scales it to that
+comparison's evaluation-sample F headroom. Charges therefore differ across
+comparisons. Costs apply per issued report; overlapping horizons are not
+added as separate cash flows.
+The fixed grid is $\kappa\in\{.01,.025,.05,.1,.2,.5,1\}$,
+$\beta\in\{0,.01,.05,.1,.25,.5,1,2,5\}$ and $c\in\{.5,1,2\}$.
+At $\kappa=.05,\beta=0,c=1$, the cost difference from F is the pinball-loss
+difference divided by $m_F$. Other weights need not preserve that ranking.
+The panels compare fixed reports and do not estimate a cost-optimal policy.
+
+All 98 comparisons have a positive scale and all 976 complete methods enter 189 grid points, giving 184,464 cost rows. Sixteen missing-floor inputs are recovered only from their registered, fingerprinted same-origin F copies. Their complete origin, target and floor arrays match exactly. Other missing or mismatched floors would make the whole comparison unavailable. No missing scale uses an epsilon.
 
 The public \texttt{results/v10/cost/cost-grid.csv.zip} contains every complete method's normalized mean cost, its F reference and strict cheaper/equal status at all coefficients. \texttt{primary-regions.csv} retains all 18,522 planned primary grid rows, including status fields. Primitive reserve amounts, strict breach counts/rates and excess amounts appear in \texttt{primitive-stats.json}. Source-group figures use the full planned comparison denominators. The primary comparison is fixed expanded-menu full regression for hourly/weekly/CFTC sources and the original saved regression for daily FX. Other methods retain separate regions and are never replaced by a minimum-cost oracle.
 
@@ -1548,16 +1567,13 @@ These are the unchanged earlier tests and Murphy plots moved from the main artic
 
 \section{Reproduction, availability and retained extended results}\label{sup:reproduction}
 
-\paragraph{What is public.}
-Editable sources, aggregate results, original designs, code and verification
-records accompany the paper. Favourable, adverse and failed outputs remain
-unchanged, with longer tables linked rather than removed. Source-field
-bindings identify every printed aggregate.
+Audit and run records are retained verbatim in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v10b/notes/v10b/supplement-audit-records.md}{v10b audit archive}.
 
-\paragraph{What public checking proves.}
-Archive checking and document regeneration verify saved aggregates without raw
-observations. They establish artifact consistency, not recomputed forecast
-accuracy, a new sample, independent replication or journal acceptance.
+Editable sources, aggregate results, original designs and code accompany the
+paper; favourable, adverse and failed outputs remain accessible.
+
+Document regeneration checks saved aggregates without raw observations; it
+does not establish recomputed forecast accuracy or independent replication.
 
 \paragraph{Full financial replay requires compatible inputs.}
 A separately authorized replay requires the original FX member and Treasury
@@ -1565,21 +1581,6 @@ snapshot to match their recorded fingerprints and definitions. Restricted FX
 observations and private per-origin forecasts or fitted traces are not
 redistributed. Downloaded economic dates are not verified first-release
 availability; a matching series name does not establish snapshot identity.
-
-\paragraph{Version-specific entry points.}
-The v7 merge preserves canonical supervisor scripts and explicitly named legacy
-implementations with their original paths and whole-file identity gates.
-Historical contracts retain their original parameters and dates; exact replay
-requires the recorded source commit. This edit does not reactivate or reassign
-the existing prospective parameter binding.
-
-\paragraph{Resources and software.}
-Document assembly uses existing local software and saved results, without
-package installation, model fitting, data acquisition, simulation reruns or
-parameter searches. The separately executed studies record actual worker time,
-resident memory and observed threads, distinct from requested budgets. Tests
-use isolated tracked-input copies so synthetic fixtures cannot alter the
-scientific archives.
 
 \paragraph{Routes to complete evidence.}
 The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{v6 replay guide},
