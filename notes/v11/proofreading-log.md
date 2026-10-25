@@ -4,7 +4,7 @@ This log records actual editorial changes. Scientific numbers, archived results 
 
 APA evidence is itemized in [part 1](APA-review-part1.md) and [part 2](APA-review-part2.md). No year, volume, issue, page range or DOI identity was corrected.
 
-Total recorded change groups: **131**; individual occurrences: **147**. Reference punctuation, bibliography synchronization, layout and cross-reference changes are included and identified by category.
+Total recorded change groups: **148**; individual occurrences: **164**. Reference punctuation, bibliography synchronization, layout and cross-reference changes are included and identified by category.
 
 ## 1. language — `submission-v10/manuscript.tex`
 
@@ -756,7 +756,196 @@ Reason: Flush earlier Murphy plots before the imported section; keep the section
 
 Scientific numeric sequence unchanged: True.
 
-## 54. layout — `submission-v10/supplement.tex`
+## 54. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> The CFTC application is a retrospective survivor-universe, economic-date replay.
+
+After:
+
+> The CFTC application retrospectively evaluates forecasts for a survivor universe using downloaded economic dates.
+
+Reason: Replace stacked compound modifiers with a complete sentence while retaining both retrospective economic dates and the survivor-universe limitation. The final wording makes forecasts the object of evaluation, rather than suggesting that dates themselves are replayed.
+
+Scientific numeric sequence unchanged: True.
+
+## 55. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> Ridge quantile regression links mature headroom to issue-known position states and calendar variables.
+
+After:
+
+> Ridge quantile regression links completed headroom labels to issue-known position states and calendar variables.
+
+Reason: Name the completed target labels explicitly, consistent with the mature-label eligibility condition.
+
+Scientific numeric sequence unchanged: True.
+
+## 56. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> All standardization uses mature training observations.
+
+After:
+
+> Standardization uses only training rows with completed labels.
+
+Reason: Use the same completed-label terminology and preserve training-only standardization.
+
+Scientific numeric sequence unchanged: True.
+
+## 57. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> Its worst loss remains the Treasury-bill short-window, 24-step comparison, despite the conservative selection rule.
+
+After:
+
+> Its largest relative loss increase occurs in the Treasury-bill short-history, 24-step comparison, despite conservative selection.
+
+Reason: State that the maximum is a relative loss increase occurring in a comparison; use the established short-history terminology without changing the result or selection rule.
+
+Scientific numeric sequence unchanged: True.
+
+## 58. language — `submission-v10/supplement.tex`
+
+Before:
+
+> At each original refit, estimate an intercept-bearing level recursion
+on each unique mature adjacent transition once.
+
+After:
+
+> At each original refit, estimate an intercept-bearing level recursion
+using each unique mature adjacent transition once.
+
+Reason: Clarify that the recursion uses the transition sample rather than fitting a separate recursion to each transition.
+
+Scientific numeric sequence unchanged: True.
+
+## 59. language — `submission-v10/supplement.tex`
+
+Before:
+
+> The lower report increases strict hits and mean underprediction amount in every
+cell, but its loss direction is mixed.
+
+After:
+
+> The lower report increases the number of strict hits and the mean underprediction
+amount in every cell, but its loss direction is mixed.
+
+Reason: Identify hit counts and mean error amounts explicitly and supply the definite articles.
+
+Scientific numeric sequence unchanged: True.
+
+## 60. language — `submission-v10/supplement.tex`
+
+Before:
+
+> give saved percentage loss difference against that same historical rule and
+
+After:
+
+> give the saved percentage loss difference against that same historical rule and
+
+Reason: Supply the definite article for the saved comparison statistic.
+
+Scientific numeric sequence unchanged: True.
+
+## 61. language — `submission-v10/supplement.tex`
+
+Before:
+
+> All recorded success criteria are NOT\_MET,
+NOT\_MET and NOT\_MET, respectively.
+
+After:
+
+> All three recorded success criteria are marked NOT\_MET.
+
+Reason: Remove an unnecessary respectively and repeated identical status codes, retaining that all three recorded criteria failed.
+
+Scientific numeric sequence unchanged: True.
+
+## 62. language — `submission-v10/supplement.tex`
+
+Before:
+
+> Validation position dates are 2020-08-11--2021-08-03; its last label ends 2021-09-14.
+
+After:
+
+> Validation position dates are 2020-08-11--2021-08-03; the last validation label ends 2021-09-14.
+
+Reason: Make the validation-label antecedent explicit; preserve every date and label endpoint.
+
+Scientific numeric sequence unchanged: True.
+
+## 63. language — `submission-v10/supplement.tex`
+
+Before:
+
+> Evaluation position dates are 2021-09-21--2026-09-08; its last label ends 2026-10-20.
+
+After:
+
+> Evaluation position dates are 2021-09-21--2026-09-08; the last evaluation label ends 2026-10-20.
+
+Reason: Make the evaluation-label antecedent explicit; preserve every date and label endpoint.
+
+Scientific numeric sequence unchanged: True.
+
+## 64. language — `submission-v10/supplement.tex`
+
+Before:
+
+> Missing stored losses are derived only from saved reports, without issuing or fitting forecasts.
+
+After:
+
+> Missing stored losses are derived only from saved reports, without issuing forecasts or fitting models.
+
+Reason: Give issuing and fitting their appropriate objects without changing the archived-report-only calculation boundary.
+
+Scientific numeric sequence unchanged: True.
+
+## 65. language — `submission-v10/supplement.tex`
+
+Before:
+
+> Exact loss duplicates enter the library once, then recover the same p-value and inclusion partition for all members.
+
+After:
+
+> Exact duplicate loss columns enter the library once; all associated procedure labels then receive the same p-value and inclusion partition.
+
+Reason: Make loss columns the deduplicated objects and procedure labels the recipients of the unchanged inference outputs.
+
+Scientific numeric sequence unchanged: True.
+
+## 66. language — `submission-v10/supplement.tex`
+
+Before:
+
+> Downloaded economic dates are not verified first-release
+availability; a matching series name does not establish snapshot identity.
+
+After:
+
+> Downloaded economic dates do not establish verified first-release
+availability; a matching series name does not establish snapshot identity.
+
+Reason: Correct the category mismatch between dates and availability while retaining both qualifications.
+
+Scientific numeric sequence unchanged: True.
+
+## 67. layout — `submission-v10/supplement.tex`
 
 Before:
 
@@ -770,7 +959,7 @@ Reason: Load the same standard float-barrier package used by the main manuscript
 
 Scientific numeric sequence unchanged: True.
 
-## 55. language — `submission-v10/manuscript.tex`
+## 68. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -784,7 +973,7 @@ Reason: Accepted english-review-main.md E01; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 56. language — `submission-v10/manuscript.tex`
+## 69. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -798,7 +987,7 @@ Reason: Accepted english-review-main.md E02; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 57. language — `submission-v10/manuscript.tex`
+## 70. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -812,7 +1001,7 @@ Reason: Accepted english-review-main.md E03; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 58. language — `submission-v10/manuscript.tex`
+## 71. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -826,7 +1015,7 @@ Reason: Accepted english-review-main.md E04; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 59. language — `submission-v10/manuscript.tex`
+## 72. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -840,7 +1029,7 @@ Reason: Accepted english-review-main.md E05; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 60. language — `submission-v10/manuscript.tex`
+## 73. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -854,7 +1043,7 @@ Reason: Accepted english-review-main.md E06; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 61. language — `submission-v10/manuscript.tex`
+## 74. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -868,7 +1057,7 @@ Reason: Accepted english-review-main.md E07; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 62. language — `submission-v10/manuscript.tex`
+## 75. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -882,7 +1071,7 @@ Reason: Accepted english-review-main.md E08; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 63. language — `submission-v10/manuscript.tex`
+## 76. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -896,7 +1085,7 @@ Reason: Accepted english-review-main.md E09; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 64. language — `submission-v10/manuscript.tex`
+## 77. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -910,7 +1099,7 @@ Reason: Accepted english-review-main.md E10; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 65. language — `submission-v10/manuscript.tex`
+## 78. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -924,7 +1113,7 @@ Reason: Accepted english-review-main.md E11; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 66. language — `submission-v10/manuscript.tex`
+## 79. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -938,7 +1127,7 @@ Reason: Accepted english-review-main.md E12; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 67. language — `submission-v10/manuscript.tex`
+## 80. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -952,7 +1141,7 @@ Reason: Accepted english-review-main.md E13; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 68. language — `submission-v10/manuscript.tex`
+## 81. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -966,7 +1155,7 @@ Reason: Accepted english-review-main.md E14; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 69. language — `submission-v10/manuscript.tex`
+## 82. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -980,7 +1169,7 @@ Reason: Accepted english-review-main.md E15; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 70. language — `submission-v10/manuscript.tex`
+## 83. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -994,7 +1183,7 @@ Reason: Accepted english-review-main.md E16; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 71. language — `submission-v10/manuscript.tex`
+## 84. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1008,7 +1197,7 @@ Reason: Accepted english-review-main.md H01; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 72. language — `submission-v10/manuscript.tex`
+## 85. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1022,7 +1211,7 @@ Reason: Accepted english-review-main.md H02; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 73. language — `submission-v10/manuscript.tex`
+## 86. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1036,7 +1225,7 @@ Reason: Accepted english-review-main.md H03; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 74. language — `submission-v10/manuscript.tex`
+## 87. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1050,7 +1239,7 @@ Reason: Accepted english-review-main.md H06; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 75. language — `submission-v10/manuscript.tex`
+## 88. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1064,7 +1253,7 @@ Reason: Accepted english-review-main.md H07; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 76. language — `submission-v10/cover-letter.tex`
+## 89. language — `submission-v10/cover-letter.tex`
 
 Before:
 
@@ -1078,7 +1267,7 @@ Reason: Accepted english-review-main.md C03; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 77. language — `submission-v10/cover-letter.tex`
+## 90. language — `submission-v10/cover-letter.tex`
 
 Before:
 
@@ -1092,7 +1281,7 @@ Reason: Accepted english-review-main.md C04; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 78. language — `submission-v10/cover-letter.tex`
+## 91. language — `submission-v10/cover-letter.tex`
 
 Before:
 
@@ -1106,7 +1295,7 @@ Reason: Accepted english-review-main.md C05; language clarification preserves th
 
 Scientific numeric sequence unchanged: True.
 
-## 79. language — `submission-v10/cover-letter.tex`
+## 92. language — `submission-v10/cover-letter.tex`
 
 Before:
 
@@ -1120,7 +1309,7 @@ Reason: Use an idiomatic fit statement and italicize the journal title.
 
 Scientific numeric sequence unchanged: True.
 
-## 80. language — `submission-v10/cover-letter.tex`
+## 93. language — `submission-v10/cover-letter.tex`
 
 Before:
 
@@ -1134,7 +1323,7 @@ Reason: Name the expanded-menu procedure and retain the already stated illustrat
 
 Scientific numeric sequence unchanged: True.
 
-## 81. language — `submission-v10/manuscript.tex`
+## 94. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1148,7 +1337,7 @@ Reason: Improve caption wording while preserving its three-sentence limit and un
 
 Scientific numeric sequence unchanged: True.
 
-## 82. language — `submission-v10/manuscript.tex`
+## 95. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1162,7 +1351,7 @@ Reason: Identify the full-regression curve; the four-feature curve has a differe
 
 Scientific numeric sequence unchanged: True.
 
-## 83. cross-reference — `submission-v10/manuscript.tex`
+## 96. cross-reference — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1176,7 +1365,7 @@ Reason: Add an exact navigation pointer to the imported supplement section; the 
 
 Scientific numeric sequence unchanged: True. The only added digits identify the S35 navigation pointer.
 
-## 84. language — `submission-v10/supplement.tex`
+## 97. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1190,7 +1379,7 @@ Reason: Accepted english-review-supplement.md E01; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 85. language — `submission-v10/supplement.tex`
+## 98. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1204,7 +1393,7 @@ Reason: Accepted english-review-supplement.md E02; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 86. language — `submission-v10/supplement.tex`
+## 99. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1218,7 +1407,7 @@ Reason: Accepted english-review-supplement.md E03; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 87. language — `submission-v10/supplement.tex`
+## 100. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1232,7 +1421,7 @@ Reason: Accepted english-review-supplement.md E04; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 88. language — `submission-v10/supplement.tex`
+## 101. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1246,7 +1435,7 @@ Reason: Accepted english-review-supplement.md E05; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 89. language — `submission-v10/supplement.tex`
+## 102. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1260,7 +1449,7 @@ Reason: Accepted english-review-supplement.md E06; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 90. language — `submission-v10/supplement.tex`
+## 103. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1274,7 +1463,7 @@ Reason: Accepted english-review-supplement.md E07; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 91. language — `submission-v10/supplement.tex`
+## 104. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1288,7 +1477,7 @@ Reason: Accepted english-review-supplement.md E08; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 92. language — `submission-v10/supplement.tex`
+## 105. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1302,7 +1491,7 @@ Reason: Accepted english-review-supplement.md E09; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 93. language — `submission-v10/supplement.tex`
+## 106. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1316,7 +1505,7 @@ Reason: Accepted english-review-supplement.md E11; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 94. language — `submission-v10/supplement.tex`
+## 107. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1330,7 +1519,7 @@ Reason: Accepted english-review-supplement.md E12; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 95. language — `submission-v10/supplement.tex`
+## 108. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1344,7 +1533,7 @@ Reason: Accepted english-review-supplement.md E13; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 96. language — `submission-v10/supplement.tex`
+## 109. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1358,7 +1547,7 @@ Reason: Accepted english-review-supplement.md E14; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 97. language — `submission-v10/supplement.tex`
+## 110. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1372,7 +1561,7 @@ Reason: Accepted english-review-supplement.md E15; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 98. language — `submission-v10/supplement.tex`
+## 111. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1386,7 +1575,7 @@ Reason: Accepted english-review-supplement.md E16; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 99. language — `submission-v10/supplement.tex`
+## 112. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1400,7 +1589,7 @@ Reason: Accepted english-review-supplement.md E17; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 100. language — `submission-v10/supplement.tex`
+## 113. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1414,7 +1603,7 @@ Reason: Accepted english-review-supplement.md E19; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 101. language — `submission-v10/supplement.tex`
+## 114. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1428,7 +1617,7 @@ Reason: Accepted english-review-supplement.md E23; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 102. language — `submission-v10/supplement.tex`
+## 115. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1442,7 +1631,7 @@ Reason: Accepted english-review-supplement.md E24; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 103. language — `submission-v10/supplement.tex`
+## 116. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1456,7 +1645,7 @@ Reason: Accepted english-review-supplement.md E25; language clarification preser
 
 Scientific numeric sequence unchanged: True.
 
-## 104. language — `submission-v10/generated/v8-daily-results-table.tex`
+## 117. language — `submission-v10/generated/v8-daily-results-table.tex`
 
 Before:
 
@@ -1470,7 +1659,7 @@ Reason: A report, rather than a score gain, has breaches; the original gain and 
 
 Scientific numeric sequence unchanged: True.
 
-## 105. language — `submission-v10/generated/v10-mcs-compact.tex`
+## 118. language — `submission-v10/generated/v10-mcs-compact.tex`
 
 Before:
 
@@ -1484,7 +1673,7 @@ Reason: Restore the space in a prose heading and caption; source keys remain unc
 
 Scientific numeric sequence unchanged: True.
 
-## 106. language — `submission-v10/generated/v10-mcs-compact.tex`
+## 119. language — `submission-v10/generated/v10-mcs-compact.tex`
 
 Before:
 
@@ -1498,7 +1687,7 @@ Reason: Restore the space before the unchanged period label; source keys remain 
 
 Scientific numeric sequence unchanged: True.
 
-## 107. language — `submission-v10/manuscript.tex`
+## 120. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1512,7 +1701,7 @@ Reason: Use four-feature consistently for the same QR4 procedure; no code identi
 
 Scientific numeric sequence unchanged: True.
 
-## 108. language — `submission-v10/supplement.tex`
+## 121. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1526,7 +1715,7 @@ Reason: Use four-feature consistently for the same QR4 procedure; no code identi
 
 Scientific numeric sequence unchanged: True.
 
-## 109. language — `submission-v10/supplement.tex`
+## 122. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1540,7 +1729,7 @@ Reason: Use four-feature consistently for the same QR4 procedure; no code identi
 
 Scientific numeric sequence unchanged: True.
 
-## 110. language — `submission-v10/manuscript.tex`
+## 123. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1554,7 +1743,7 @@ Reason: Use American-English spelling in prose, preserving all published titles 
 
 Scientific numeric sequence unchanged: True.
 
-## 111. language — `submission-v10/supplement.tex`
+## 124. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1568,7 +1757,7 @@ Reason: Use American-English spelling in prose, preserving all published titles 
 
 Scientific numeric sequence unchanged: True.
 
-## 112. language — `submission-v10/supplement.tex`
+## 125. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1582,7 +1771,7 @@ Reason: Use American-English spelling in prose, preserving all published titles 
 
 Scientific numeric sequence unchanged: True.
 
-## 113. language — `submission-v10/supplement.tex`
+## 126. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1596,7 +1785,7 @@ Reason: Use American-English spelling in prose, preserving all published titles 
 
 Scientific numeric sequence unchanged: True.
 
-## 114. APA — `submission-v10/manuscript.tex`
+## 127. APA — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1610,7 +1799,7 @@ Reason: Use the APA doctoral-dissertation descriptor; degree, institution, year 
 
 Scientific numeric sequence unchanged: True.
 
-## 115. APA — `submission-v10/references.bib`
+## 128. APA — `submission-v10/references.bib`
 
 Before:
 
@@ -1626,7 +1815,7 @@ Reason: Synchronize the APA thesis descriptor and institutional-repository sourc
 
 Scientific numeric sequence unchanged: True.
 
-## 116. APA — `submission-v10/references.bib`
+## 129. APA — `submission-v10/references.bib`
 
 Before:
 
@@ -1642,7 +1831,7 @@ Reason: Synchronize the verified thesis and institutional-repository source elem
 
 Scientific numeric sequence unchanged: True.
 
-## 117. layout relocation — `submission-v10/manuscript.tex → submission-v10/supplement.tex / S26`
+## 130. layout relocation — `submission-v10/manuscript.tex → submission-v10/supplement.tex / S26`
 
 Before:
 
@@ -1656,7 +1845,7 @@ Reason: The language pass made the main draft 21 pages. Move this unchanged seco
 
 Scientific numeric sequence unchanged: True.
 
-## 118. language — `submission-v10/supplement.tex`
+## 131. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1671,7 +1860,7 @@ Reason: Join a compound split by a source newline that printed an unintended spa
 
 Scientific numeric sequence unchanged: True.
 
-## 119. language — `submission-v10/supplement.tex`
+## 132. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1686,7 +1875,7 @@ Reason: Join a compound split by a source newline that printed an unintended spa
 
 Scientific numeric sequence unchanged: True.
 
-## 120. language — `submission-v10/supplement.tex`
+## 133. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1701,7 +1890,7 @@ Reason: Join a compound split by a source newline that printed an unintended spa
 
 Scientific numeric sequence unchanged: True.
 
-## 121. language — `submission-v10/supplement.tex`
+## 134. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1716,7 +1905,7 @@ Reason: Join a compound split by a source newline that printed an unintended spa
 
 Scientific numeric sequence unchanged: True.
 
-## 122. language — `submission-v10/generated/v10-mcs-main.tex`
+## 135. language — `submission-v10/generated/v10-mcs-main.tex`
 
 Before:
 
@@ -1730,7 +1919,7 @@ Reason: Supply the missing verb in the MCS table note; all saved counts remain u
 
 Scientific numeric sequence unchanged: True.
 
-## 123. layout — `submission-v10/manuscript.tex`
+## 136. layout — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1745,7 +1934,7 @@ Reason: Keep the preceding FX table before the history subsection so it cannot i
 
 Scientific numeric sequence unchanged: True.
 
-## 124. layout relocation — `submission-v10/manuscript.tex → submission-v10/supplement.tex / S18`
+## 137. layout relocation — `submission-v10/manuscript.tex → submission-v10/supplement.tex / S18`
 
 Before:
 
@@ -1759,7 +1948,7 @@ Reason: Keep the continuous history subsection and main page cap by moving only 
 
 Scientific numeric sequence unchanged: True.
 
-## 125. language — `submission-v10/manuscript.tex`
+## 138. language — `submission-v10/manuscript.tex`
 
 Before:
 
@@ -1773,7 +1962,7 @@ Reason: Use the same four-feature method name in definitions, prose and table ca
 
 Scientific numeric sequence unchanged: True.
 
-## 126. language — `submission-v10/supplement.tex`
+## 139. language — `submission-v10/supplement.tex`
 
 Before:
 
@@ -1787,7 +1976,7 @@ Reason: Use the same four-feature method name in definitions, prose and table ca
 
 Scientific numeric sequence unchanged: True.
 
-## 127. language — `submission-v10/generated/v8-daily-results-table.tex`
+## 140. language — `submission-v10/generated/v8-daily-results-table.tex`
 
 Before:
 
@@ -1801,7 +1990,7 @@ Reason: Use the same four-feature method name in definitions, prose and table ca
 
 Scientific numeric sequence unchanged: True.
 
-## 128. language — `submission-v10/generated/v11-confirmation.tex`
+## 141. language — `submission-v10/generated/v11-confirmation.tex`
 
 Before:
 
@@ -1815,7 +2004,7 @@ Reason: State the already-defined matched historical reference explicitly; WP2 p
 
 Scientific numeric sequence unchanged: True.
 
-## 129. language — `submission-v10/generated/v11-confirmation.tex`
+## 142. language — `submission-v10/generated/v11-confirmation.tex`
 
 Before:
 
@@ -1829,7 +2018,7 @@ Reason: Carry the original WP2 design caveat that its history index excludes pre
 
 Scientific numeric sequence unchanged: True.
 
-## 130. display wording mirror — `notes/v11/build_history_display.py`
+## 143. display wording mirror — `notes/v11/build_history_display.py`
 
 Before:
 
@@ -1843,7 +2032,7 @@ Reason: State the already-defined matched historical reference explicitly; WP2 p
 
 Scientific numeric sequence unchanged: True.
 
-## 131. display wording mirror — `notes/v11/build_history_display.py`
+## 144. display wording mirror — `notes/v11/build_history_display.py`
 
 Before:
 
@@ -1854,6 +2043,64 @@ After:
 > History regions use the method-specific thresholds fixed in the linked original design, conditional on the earlier threshold exercise; the history index excludes predictor dimension.
 
 Reason: Carry the original WP2 design caveat that its history index excludes predictor dimension into the table note; retain the unequal-menu caveat.
+
+Scientific numeric sequence unchanged: True.
+
+## 145. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> Both six-step FX comparisons improve mean overrun and unused allowance.
+
+After:
+
+> Both six-step FX comparisons reduce mean underprediction and mean unused allowance.
+
+Reason: Use the same names as the saved error decomposition and state the existing lower-error direction explicitly.
+
+Scientific numeric sequence unchanged: True.
+
+## 146. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> Show mean underprediction, mean unused headroom and strict-breach count on the same grid.
+
+After:
+
+> Show mean underprediction, mean unused allowance and strict-breach count on the same grid.
+
+Reason: Use unused allowance for the overprediction amount; reserved headroom in the cost section is a different quantity.
+
+Scientific numeric sequence unchanged: True.
+
+## 147. language — `submission-v10/supplement.tex`
+
+Before:
+
+> \(R_a=aU+(1-a)V\), where \(U=\operatorname{mean}(P-C)_+\) and
+\(V=\operatorname{mean}(C-P)_+\).
+
+After:
+
+> \(R_a=aU+(1-a)V\). Here, \(U=\operatorname{mean}(P-C)_+\) is mean underprediction and
+\(V=\operatorname{mean}(C-P)_+\) is mean unused allowance.
+
+Reason: Name both unchanged mathematical quantities explicitly and align them with the existing table headers; retain their passive-error and all-origin interpretation.
+
+Scientific numeric sequence unchanged: True.
+
+## 148. language — `submission-v10/manuscript.tex`
+
+Before:
+
+> shows an endpoint inside the historical report after an earlier breach.
+
+After:
+
+> shows an endpoint within the reported historical limit after an earlier breach.
+
+Reason: Use the same physical limit terminology as the already corrected figure caption; an endpoint lies within a limit rather than a report document.
 
 Scientific numeric sequence unchanged: True.
 
