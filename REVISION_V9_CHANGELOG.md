@@ -3281,3 +3281,43 @@ All actual current document identities:
 Main21pages, Supplement30, linked complete technical6, unfilled titletemplate1. Fourmainfigures and6maintables; broader bodybudget6209words. 32reference entry contents were alphabetized without changing any entry fields; only mainpage21changed and was directly re-viewed. All other final raster pages equal their individually viewed basis. The initial Supplement29column-readability concern was not reproduced by direct original-page rechecks and is retained in the visual receipt; no fabricated numeric/layout defect is asserted. 
 
 Existing cached Tectonic only; uv uses existing offline cache in temporary environments, with no new system/TeX installation. This local suite has access to original local Git objects. Browser file-tree mirroring does not transfer them; fresh public-clone sealed financial replay/history-dependent checks remain a separate BLOCKED provenance issue, and private FX observations/vectors remain excluded.
+
+
+## WP7: PASS — local release gates and frozen-payload remote identity
+
+Actual closing record: 2026-10-25T04:11:11.884904+00:00. The 18 authorized GitHub upload commits were each fresh-fetched and checked for exact path/blob/mode scope and their expected single parent. All 404 changed files / 55,415,163 bytes were transmitted from the immutable snapshot. The full payload has 3,703 files / 205,037,784 bytes and exactly the frozen tree. The final local WP7 commit and the finite closing-metadata mirror are bound after their actual creation/readback in ignored runtime; this avoids embedding a commit hash inside its own commit. No whole-task completion before the fixed deadline is asserted.
+
+Actual batch verification commands and saved emitted JSON receipts are retained in `notes/revision-v9/wp7-publication-command-output.txt` and `wp7-publication-batches.json`. Final payload command and original stdout:
+
+```text
+python3 -B .scratch/revision-v9/publish_snapshot.py whole
+```
+
+```json
+{
+  "actual_utc": "2026-10-25T04:09:46.484864+00:00",
+  "status": "PASS",
+  "source_index_tree": "fb2c3a741e8876056aefcdbf1784791d125f04fd",
+  "remote_commit": "f866a6145a96f82f6234f87a1b50ab741b66e04e",
+  "remote_tree": "fb2c3a741e8876056aefcdbf1784791d125f04fd",
+  "files": 3703,
+  "bytes": 205037784,
+  "missing": [],
+  "extra": [],
+  "content_or_mode_differences": [],
+  "protected_refs": {
+    "main": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+    "codex/supervisor-revision-20261023": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+    "revision-v7-final": "d119a1fb30c48ceab9000552057882938cfa57a4"
+  },
+  "protected_ref_differences": {},
+  "git_histories_identical": false,
+  "public_financial_replication_claimed": false,
+  "scope": "Full Git file/blob/mode identity against frozen index tree; original local design objects and private financial input remain separate",
+  "fetch_output": ""
+}
+```
+
+The existing complete default suite remains 1534 passed, 1068 subtests passed in 109.49s; no numerical experiment, bootstrap, compile or test was rerun for publication. All four document/PDF/source and source-ZIP hashes were checked against the already passed local acceptance before closing. The earlier local-only receipt remains historical evidence of its then-pending remote state; `wp7-final-acceptance.json` supersedes that publication field. The two earlier full-suite failures, output-writer failure, RED/GREEN evidence, negative results, left-censoring, six P3 counterexamples and long-history reversals remain present. The native selector focus/disabled-Open interruptions were resolved using the browser's documented file-chooser control and exact frozen paths; no hidden network, credential, permission or CLI write route was used. Early readbacks during GitHub processing did not trigger duplicate uploads.
+
+Scope remains limited: exact public file-tree equality does not transport original local design Git objects and does not establish an independent financial replication. Fresh-public-clone history-dependent financial replay remains BLOCKED pending an author-approved safe provenance route. No private FX observations/vectors or private identity bundle is exported. Main and PR #3/#4 refs remain unchanged. The fixed deadline remains 2026-10-25T05:10:12Z; after the actual final closing readback only the prescribed bounded review loop is allowed, with shared local/browser commit cadence.
