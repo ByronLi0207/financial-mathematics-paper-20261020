@@ -1,0 +1,44 @@
+WARN `--no-project` was provided, but no project was found
+.............FFF                                                         [100%]
+=================================== FAILURES ===================================
+______________ test_matched_overlay_refuses_different_issue_count ______________
+
+api = <module 'v9_posthoc' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v9_posthoc.py'>
+
+    def test_matched_overlay_refuses_different_issue_count(api):
+        row={"origin_count":"10","mean_pinball":"2","status":"COMPLETE"}
+        reference={"origin_count":"11","mean_pinball":"1"}
+>       result=api.overlay_pair(row,reference,"fx_hourly",720,24,"QR33","sealed.csv",2)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'v9_posthoc' has no attribute 'overlay_pair'
+
+test_v9_posthoc.py:92: AttributeError
+_____ test_overlay_retains_original_failure_instead_of_using_apparent_loss _____
+
+api = <module 'v9_posthoc' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v9_posthoc.py'>
+
+    def test_overlay_retains_original_failure_instead_of_using_apparent_loss(api):
+        row={"origin_count":"10","mean_pinball":"2","status":"FAILED"}
+        reference={"origin_count":"10","mean_pinball":"1"}
+>       result=api.overlay_pair(row,reference,"fx_hourly",720,24,"QR33","sealed.csv",2)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'v9_posthoc' has no attribute 'overlay_pair'
+
+test_v9_posthoc.py:98: AttributeError
+___________ test_overlay_uses_matched_loss_with_original_row_locator ___________
+
+api = <module 'v9_posthoc' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v9_posthoc.py'>
+
+    def test_overlay_uses_matched_loss_with_original_row_locator(api):
+        row={"origin_count":"10","mean_pinball":"2","status":"COMPLETE"}
+        reference={"origin_count":"10","mean_pinball":"1"}
+>       result=api.overlay_pair(row,reference,"fx_hourly",720,24,"QR33","sealed.csv",2)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'v9_posthoc' has no attribute 'overlay_pair'
+
+test_v9_posthoc.py:104: AttributeError
+=========================== short test summary info ============================
+FAILED test_v9_posthoc.py::test_matched_overlay_refuses_different_issue_count
+FAILED test_v9_posthoc.py::test_overlay_retains_original_failure_instead_of_using_apparent_loss
+FAILED test_v9_posthoc.py::test_overlay_uses_matched_loss_with_original_row_locator
+3 failed, 13 passed in 0.15s

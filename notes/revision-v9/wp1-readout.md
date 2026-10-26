@@ -1,0 +1,17 @@
+# WP1: post-hoc saved-result description
+
+The candidate rules were committed at `7f0fee8f1cfdeed584098bbc27570e88eafaea43` before any v9 candidate fit. This is a post-hoc description of a known v8 grid, not confirmation. Exact scores, original source fingerprints and interval endpoints are in `wp1-breakeven.json`; full per-repetition losses, all bootstrap indices/statuses and archive member hashes are retained under `results/revision-v9/wp1/`.
+
+The predeclared tie rule selects c, W/(H+1): c and b each classify 119 of 144 discovery cells correctly; a classifies 117. These are in-sample classification scores, conditional on this grid. Selection of c does not identify a per-parameter complexity effect because c excludes p. W/(H+1) is a nominal overlap adjustment, not a measured independent sample size. Nominal p34/p5 also differs from effective degrees of freedom; the two quantile procedures have different penalty menus and failure rules.
+
+The first downward crossing is 106.49618468616566 for QR33 and 27.324522025270575 for QR4. The all-draw 90% bootstrap endpoint envelopes are [27.894967082095143, 110.71007095944418] and [13.27239395223403, 107.10936480242033], respectively. All 1999 roots are finite for each method, but QR4 has two original downward crossings and 1234 bootstrap curves with multiple downward crossings. QR33 has 199 such bootstrap curves. Thus the primary first-crossing statistic cannot justify a universal rule that every greater history index improves performance. The intervals condition on the post-hoc chosen metric and fixed DGP mix, excluding selection uncertainty and any universal coverage guarantee.
+
+All 120 original empirical conditional-model cells are retained: original QR33, original four-predictor QR4, daily FX and twelve weekly panel series, always against the same-window historical rule. The stored CONSISTENT/INCONSISTENT field is specifically a **first-cutpoint hypothesis diagnostic**. It is not a comparison against every segment of the nonmonotone curve. Its 25 inconsistent cells are retained alongside 95 consistent cells; they are neither used to change the selected index nor to tune either crossing. The panel and Treasury effective complexities and observation clocks differ from the simulation.
+
+No new raw FX data, financial forecast, DGP, threshold tuning, or confirmatory test was part of this step. WP2 and WP3 remain unrun until their own numerical predictions and criteria are committed. The scientific status is **post-hoc description, not confirmation**.
+
+## Execution failure retained
+
+The bounded numerical command completed its source verification, fits, 1999 shared-cluster bootstrap draws and machine-readable saves, then exited1 because matplotlib was absent from that temporary numerical environment. The original console and resource receipt are preserved. Cached matplotlib3.11.2 was available offline; a separate plot-only command read the saved results and produced PDF/PNG, without recomputing numeric results. This failure was not hidden or treated as an all-successful original run. Reproduction of the complete CLI should include the cached temporary dependency `--with matplotlib` alongside the numerical dependencies.
+
+Subsequent implementation changes only added explicit nonfinite input guards, supported by a failing then passing synthetic regression test. The original numerical output files were not rewritten. An independent readback and complete pytest gate are required before the WP1 end commit.

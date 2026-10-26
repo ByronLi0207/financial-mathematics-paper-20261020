@@ -1,0 +1,17 @@
+WARN `--no-project` was provided, but no project was found
+.....................F..                                                 [100%]
+=================================== FAILURES ===================================
+____ test_nonfinite_delta_blocks_classifier_before_turning_nan_into_no_win _____
+
+api = <module 'v9_posthoc' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v9_posthoc.py'>
+
+    def test_nonfinite_delta_blocks_classifier_before_turning_nan_into_no_win(api):
+        cells=classification_cells();cells[0]["relative_loss_percent"]=float("nan")
+>       with pytest.raises(ValueError,match="nonfinite"): api.candidate_scores(cells)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_v9_posthoc.py:151: Failed
+=========================== short test summary info ============================
+FAILED test_v9_posthoc.py::test_nonfinite_delta_blocks_classifier_before_turning_nan_into_no_win
+1 failed, 23 passed in 2.18s

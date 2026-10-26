@@ -1,0 +1,18 @@
+..............F                                                          [100%]
+=================================== FAILURES ===================================
+______ test_candidate_and_selection_evidence_survives_later_gate_failure _______
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-123/test_candidate_and_selection_e0')
+
+    def test_candidate_and_selection_evidence_survives_later_gate_failure(tmp_path):
+     import run_v9_learning_curve as driver,json
+     public=tmp_path/'public'
+     candidate=dict(parameter=.01,status='FAILED',failure={'code':'SOLVER'},mean_pinball=None)
+>    driver.record_candidate(public,'QR33',0,candidate,[{'refit_index':10,'status':'FAILED'}])
+     ^^^^^^^^^^^^^^^^^^^^^^^
+E    AttributeError: module 'run_v9_learning_curve' has no attribute 'record_candidate'
+
+test_v9_learning_curve.py:96: AttributeError
+=========================== short test summary info ============================
+FAILED test_v9_learning_curve.py::test_candidate_and_selection_evidence_survives_later_gate_failure
+1 failed, 14 passed in 0.15s
