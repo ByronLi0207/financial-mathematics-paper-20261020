@@ -1,36 +1,24 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[margin=20mm]{geometry}
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
 \usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref}
 \hypersetup{hidelinks,breaklinks=true}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{6pt}
 \setlength{\emergencystretch}{2em}
-\setlength{\LTpre}{4pt}
-\setlength{\LTpost}{5pt}
-\setlength{\LTcapwidth}{\textwidth}
-\makeatletter
-\renewcommand\section{\@startsection{section}{1}{\z@}%
-  {-2ex \@plus -.5ex \@minus -.2ex}{.8ex \@plus .2ex}%
-  {\normalfont\large\bfseries}}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-  {1ex \@plus .2ex \@minus .1ex}{-1em}%
-  {\normalfont\normalsize\bfseries}}
-\makeatother
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
-\title{Online Supplement to Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
+\title{Online Supplement to When Is History Long Enough? Conditional Quantile Models versus Historical Rules for Peak Net-Position Limits}
 \author{}
 \date{}
 \begin{document}
 \maketitle
 This supplement retains the existing proofs and complete principal adverse-result
 inventories, with links to the unchanged longer archives. It accompanies the
-v9 manuscript and retains the accepted frozen simulation, same-dealer daily
-aggregation and fixed-parameter full-prefix backcast. Each addition was frozen
+current manuscript and preserves the preceding controlled grid, same-dealer daily
+aggregation and fixed-parameter full-prefix backcast. It also reports the post hoc
+history-coordinate discovery and the separately specified pre-run tests. Each addition was frozen
 before its own new output within a post-result / exploratory revision. The
 two original primary comparisons retain their values and roles.
-The earlier calibrated design and the new pre-evaluation stability screen
-with its paired switching study are reported separately below.
 
 Tables format saved native fields. Loss percentages are the existing relative
 differences against the named reference; probabilities are labelled as such.
@@ -152,7 +140,7 @@ M denotes a stationary-marginal endpoint threshold; C denotes a distinct
 fixed-start conditional endpoint oracle. Threshold partners sharing a seed use
 the same paths, not independent repetitions.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -194,7 +182,7 @@ levels, making the level equation the relevant illustrative mechanism.
 The negative-increment family is a separate sensitivity, with stationary
 increments and nonstationary cumulative levels.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -245,7 +233,7 @@ stationary-marginal endpoint threshold across starts does not condition on a
 large anchor. The conditional-oracle sensitivities below are distinct thresholds
 on shared paths; neither is an oracle for the maximum.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrrr}
@@ -324,7 +312,7 @@ Bills & 24/260 & 9.87 & -47.64 & 22/12 \\
 \endgroup
 
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrr}
@@ -463,7 +451,7 @@ origins, not observed funding costs. Breach frequency averages an indicator and
 need not rank reports like either amount. The following source-reported monetary
 values are never pooled across FX and weekly aggregates.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{2.50}
 \begin{longtable}{p{30mm}rrrrp{32mm}}
@@ -494,167 +482,13 @@ these two unconditional amounts. The longer-horizon FX legacy pair reverses
 near the loss-weight ratio reported in the main text. Actual decision costs
 were not observed.
 
-The complete frontiers below include every open region and every boundary tie.
+The complete linked frontiers include every open region and every boundary tie.
 The full and sparse samples remain separate, and feasible reports outside the
 specified menu are not part of these menu-relative envelopes. All pairwise
 relations, dominated labels and exact arithmetic are additionally preserved in
-\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/preference-robustness/README.md}{the preference archive}.\section{Complete preference frontier: full sample}\label{sup:frontier-0}
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/preference-robustness/README.md}{the preference archive}.\section{Complete preference frontiers: linked full inventories}\label{sup:frontier-0}\label{sup:frontier-8}
 
-Open intervals exclude their endpoints. Point rows retain all
-ties, including ties at the extreme loss weights. Method codes here denote
-the original fixed report menu; their definitions remain in the main methods
-table. The sparse grid is a sensitivity on the same record, not independent
-data.\begingroup
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{2.50}
-\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
-\caption{Complete saved preference frontier, full sample. Exact ties prevent an artificially unique winner.}\\
-\toprule
-Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
-\midrule
-\endfirsthead
-\caption[]{Continued.}\\
-\toprule
-Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-FX full H6/W720 & open & \(\frac{0}{1}\) & \(\dfrac{105760946788801400}{110990640317093439}\) & QR \\
- & open & \(\dfrac{105760946788801400}{110990640317093439}\) & \(\dfrac{19056123729472220}{19757413338275541}\) & KNN \\
- & open & \(\dfrac{19056123729472220}{19757413338275541}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{105760946788801400}{110990640317093439}\) &  & KNN, QR \\
- & point & \(\dfrac{19056123729472220}{19757413338275541}\) &  & KNN, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-FX full H6/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{34631329313121430}{35599009063461303}\) & QR \\
- & open & \(\dfrac{34631329313121430}{35599009063461303}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{34631329313121430}{35599009063461303}\) &  & QR, SCALED\_KNN \\
- & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
-FX full H24/W720 & open & \(\frac{0}{1}\) & \(\dfrac{32241742214205920}{38133893639725449}\) & QR \\
- & open & \(\dfrac{32241742214205920}{38133893639725449}\) & \(\dfrac{92050107608238600}{103514765282707447}\) & KNN \\
- & open & \(\dfrac{92050107608238600}{103514765282707447}\) & \(\dfrac{29075431634708860}{30985073840047543}\) & AR1\_REPLAY \\
- & open & \(\dfrac{29075431634708860}{30985073840047543}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{32241742214205920}{38133893639725449}\) &  & KNN, QR \\
- & point & \(\dfrac{92050107608238600}{103514765282707447}\) &  & AR1\_REPLAY, KNN \\
- & point & \(\dfrac{29075431634708860}{30985073840047543}\) &  & AR1\_REPLAY, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-FX full H24/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{335769696945034900}{350844274558596259}\) & QR \\
- & open & \(\dfrac{335769696945034900}{350844274558596259}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{335769696945034900}{350844274558596259}\) &  & QR, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-Bills full H6/W52 & open & \(\frac{0}{1}\) & \(\dfrac{3320065684462664}{4624714213835193}\) & QR \\
- & open & \(\dfrac{3320065684462664}{4624714213835193}\) & \(\dfrac{156305902436775700}{160668673434229883}\) & AR1\_REPLAY \\
- & open & \(\dfrac{156305902436775700}{160668673434229883}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{3320065684462664}{4624714213835193}\) &  & AR1\_REPLAY, QR \\
- & point & \(\dfrac{156305902436775700}{160668673434229883}\) &  & AR1\_REPLAY, KNN, frozen\_F \\
- & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
-Bills full H6/W260 & open & \(\frac{0}{1}\) & \(\dfrac{8679397304452847}{9039550431967810}\) & AR1\_REPLAY \\
- & open & \(\dfrac{8679397304452847}{9039550431967810}\) & \(\frac{1}{1}\) & frozen\_K \\
- & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
- & point & \(\dfrac{8679397304452847}{9039550431967810}\) &  & AR1\_REPLAY, frozen\_K \\
- & point & \(\frac{1}{1}\) &  & frozen\_K \\
-Bills full H24/W52 & open & \(\frac{0}{1}\) & \(\dfrac{5759715075028296}{13586893226278237}\) & QR \\
- & open & \(\dfrac{5759715075028296}{13586893226278237}\) & \(\dfrac{117611155234657025}{130987328519855581}\) & frozen\_K \\
- & open & \(\dfrac{117611155234657025}{130987328519855581}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{5759715075028296}{13586893226278237}\) &  & QR, frozen\_K \\
- & point & \(\dfrac{117611155234657025}{130987328519855581}\) &  & frozen\_K, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-Bills full H24/W260 & open & \(\frac{0}{1}\) & \(\dfrac{3813577886766790}{4899469998019859}\) & frozen\_K \\
- & open & \(\dfrac{3813577886766790}{4899469998019859}\) & \(\dfrac{91333672611602885}{94156776268488263}\) & AR1\_REPLAY \\
- & open & \(\dfrac{91333672611602885}{94156776268488263}\) & \(\dfrac{240827075812274250}{241875451263537787}\) & KNN \\
- & open & \(\dfrac{240827075812274250}{241875451263537787}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & frozen\_K \\
- & point & \(\dfrac{3813577886766790}{4899469998019859}\) &  & AR1\_REPLAY, frozen\_K \\
- & point & \(\dfrac{91333672611602885}{94156776268488263}\) &  & AR1\_REPLAY, KNN \\
- & point & \(\dfrac{240827075812274250}{241875451263537787}\) &  & KNN, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_F, frozen\_S \\
-\end{longtable}
-\endgroup
-
-\section{Complete preference frontier: sparse sensitivity}\label{sup:frontier-8}
-
-Open intervals exclude their endpoints. Point rows retain all
-ties, including ties at the extreme loss weights. Method codes here denote
-the original fixed report menu; their definitions remain in the main methods
-table. The sparse grid is a sensitivity on the same record, not independent
-data.\begingroup
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{2.50}
-\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
-\caption{Complete saved preference frontier, fixed sparse grid. Exact ties prevent an artificially unique winner.}\\
-\toprule
-Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
-\midrule
-\endfirsthead
-\caption[]{Continued.}\\
-\toprule
-Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-FX sparse H6/W720 & open & \(\frac{0}{1}\) & \(\dfrac{35228646474289300}{37058573227618587}\) & QR \\
- & open & \(\dfrac{35228646474289300}{37058573227618587}\) & \(\dfrac{128015277909259100}{130046193358911709}\) & KNN \\
- & open & \(\dfrac{128015277909259100}{130046193358911709}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{35228646474289300}{37058573227618587}\) &  & KNN, QR \\
- & point & \(\dfrac{128015277909259100}{130046193358911709}\) &  & KNN, SCALED\_KNN \\
- & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
-FX sparse H6/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{59571292631784500}{60902063609752461}\) & QR \\
- & open & \(\dfrac{59571292631784500}{60902063609752461}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{59571292631784500}{60902063609752461}\) &  & QR, SCALED\_KNN \\
- & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
-FX sparse H24/W720 & open & \(\frac{0}{1}\) & \(\dfrac{7530906001239450}{9350542730727077}\) & QR \\
- & open & \(\dfrac{7530906001239450}{9350542730727077}\) & \(\dfrac{18652943561940400}{20490003118958463}\) & KNN \\
- & open & \(\dfrac{18652943561940400}{20490003118958463}\) & \(\dfrac{11935316416561250}{12439911923115111}\) & AR1\_REPLAY \\
- & open & \(\dfrac{11935316416561250}{12439911923115111}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{7530906001239450}{9350542730727077}\) &  & KNN, QR \\
- & point & \(\dfrac{18652943561940400}{20490003118958463}\) &  & AR1\_REPLAY, KNN \\
- & point & \(\dfrac{11935316416561250}{12439911923115111}\) &  & AR1\_REPLAY, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-FX sparse H24/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{578937865306180}{598942665753459}\) & QR \\
- & open & \(\dfrac{578937865306180}{598942665753459}\) & \(\frac{1}{1}\) & frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{578937865306180}{598942665753459}\) &  & QR, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & frozen\_S \\
-Bills sparse H6/W52 & open & \(\frac{0}{1}\) & \(\dfrac{1315902266754605}{2037515146643951}\) & QR \\
- & open & \(\dfrac{1315902266754605}{2037515146643951}\) & \(\frac{679337}{682434}\) & frozen\_K \\
- & open & \(\frac{679337}{682434}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{1315902266754605}{2037515146643951}\) &  & QR, frozen\_K \\
- & point & \(\frac{679337}{682434}\) &  & KNN, frozen\_F, frozen\_K \\
- & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
-Bills sparse H6/W260 & open & \(\frac{0}{1}\) & \(\dfrac{39729652848099850}{42395294149611417}\) & AR1\_REPLAY \\
- & open & \(\dfrac{39729652848099850}{42395294149611417}\) & \(\frac{1}{1}\) & frozen\_K \\
- & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
- & point & \(\dfrac{39729652848099850}{42395294149611417}\) &  & AR1\_REPLAY, frozen\_K \\
- & point & \(\frac{1}{1}\) &  & frozen\_K \\
-Bills sparse H24/W52 & open & \(\frac{0}{1}\) & \(\dfrac{8631914270543611}{12443891775419019}\) & QR \\
- & open & \(\dfrac{8631914270543611}{12443891775419019}\) & \(\dfrac{2529092855837558}{2690148205992001}\) & frozen\_K \\
- & open & \(\dfrac{2529092855837558}{2690148205992001}\) & \(\dfrac{37657795243316428}{38019573842698655}\) & AR1\_REPLAY \\
- & open & \(\dfrac{37657795243316428}{38019573842698655}\) & \(\frac{1}{1}\) & KNN, frozen\_F, frozen\_S \\
- & point & \(\frac{0}{1}\) &  & QR \\
- & point & \(\dfrac{8631914270543611}{12443891775419019}\) &  & QR, frozen\_K \\
- & point & \(\dfrac{2529092855837558}{2690148205992001}\) &  & AR1\_REPLAY, frozen\_K \\
- & point & \(\dfrac{37657795243316428}{38019573842698655}\) &  & AR1\_REPLAY, KNN, frozen\_F, frozen\_S \\
- & point & \(\frac{1}{1}\) &  & KNN, frozen\_F, frozen\_S \\
-Bills sparse H24/W260 & open & \(\frac{0}{1}\) & \(\dfrac{19956537365855950}{27652346249496953}\) & frozen\_K \\
- & open & \(\dfrac{19956537365855950}{27652346249496953}\) & \(\frac{1}{1}\) & AR1\_REPLAY \\
- & point & \(\frac{0}{1}\) &  & frozen\_K \\
- & point & \(\dfrac{19956537365855950}{27652346249496953}\) &  & AR1\_REPLAY, frozen\_K \\
- & point & \(\frac{1}{1}\) &  & AR1\_REPLAY \\
-\end{longtable}
-\endgroup
+The unchanged full-sample and fixed-sparse frontiers, including every open region and boundary tie, appear in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v8-goal/submission-jof/extended-v9-technical.pdf}{complete linked technical PDF}. The identical editable sections and their original source-field tables are indexed in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v8-goal/EXTENDED_RESULTS.md}{EXTENDED RESULTS}. This relocation keeps every favorable, adverse and tied region while making room for the complete new prediction assessments below.
 
 \section{Complete weekly panel: definitions and first half}\label{sup:panel}
 
@@ -678,7 +512,7 @@ loss is 9.22 percent,
 compared with 92.63 percent for the original menu. Expanded regression still loses in 34 cells.
 This improvement does not erase the remaining failures or identify a causal
 feature effect.\begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{26mm}rrrrrr}
@@ -729,7 +563,7 @@ offsets, native-unit differences and overlapping economic positions preclude
 treating these cells as independent replications. Forecasts are fitted
 separately; observations and losses are not pooled into a single financial
 population.\begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{26mm}rrrrrr}
@@ -784,7 +618,7 @@ the saved loss percentage against the historical rule, followed by strict
 hits for the endpoint plug-in and historical report. These are all related
 aggregate tasks, not independent replications or source-pooled monetary losses.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{30mm}rrrr}
@@ -847,7 +681,7 @@ Without an eligible earlier fold, the saved design makes it identical to R2;
 this is not a numerical fallback. Earlier-period results were sealed before
 the already-inspected-period calculations that could reuse those origins.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{p{35mm}rrrrr}
@@ -959,7 +793,7 @@ scale and then floor-projected. Its fixed bounded optimizer and starts retain
 all eligibility and convergence failures; a complete fit is not a proof of a
 global optimum. Selection state carries across the unissued chronological gap.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrlrrl}
@@ -1097,7 +931,7 @@ Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
 \endgroup
 
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrrrrrrr}
@@ -1131,7 +965,7 @@ is not used to select favourable thresholds. These matched combination
 contexts are distinct from the original FX primary with its shorter rolling
 reference.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lp{34mm}p{18mm}lrr}
@@ -1240,7 +1074,7 @@ All unavailable upper-target rows remain NA with
 or a favourable subset. Absolute loss values across different quantile levels
 measure different objectives.
 \begingroup
-\footnotesize
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.12}
 \begin{longtable}{lrp{20mm}rrrl}
@@ -1351,61 +1185,9 @@ the next scheduled refit. The current observed position may still change at
 each forecast issue. Replacing that issue anchor by the refit anchor changes
 the forecasting procedure.
 
-\paragraph{Regression and local quantiles.}
-The regression objective uses a training-normalized headroom response, an
-unpenalized intercept and a ridge penalty on slopes. Projection is applied when
-issuing the report and evaluating its validation score, not inside the fitted
-training objective. Local methods use training-only standardized predictors,
-fixed neighbour menus and duplicate-preserving order statistics. A selected
-whole-pool local quantile is an exact historical identity, not a failed-fit
-fallback. Scale-adjusted neighbours change responses as well as retrieval.
 
-\paragraph{Numerical eligibility.}
-The accepted solver records primal and dual residuals, objectives, feasibility
-and their gap. Ill-conditioned, nonfinite, unsupported-rank and failed candidate
-states retain their original statuses under each named selection contract.
-A mandatory-candidate failure blocks a procedure when its contract requires
-every candidate. The original full regression has that requirement; the
-four-feature selector may choose among completed eligible candidates. A failed
-selected evaluation never receives a replacement penalty or a shortened score.
-Changing the ridge menu changes the procedure even when feature definitions
-stay fixed. A numerical certificate does not establish financial accuracy,
-economic relevance, inferential validity or production continuity.
-No production continuity or fallback policy is evaluated here.
+The unchanged normalization, solver-eligibility, working-reference inference and common-pool details appear in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v8-goal/submission-jof/extended-v9-technical.pdf}{complete linked technical PDF}. Their full source text is preserved verbatim, rather than replacing failed procedures or recalculating numerical results.
 
-\paragraph{Working-reference inference.}
-Saved unconditional loss differences use the recorded Bartlett-HAC convention;
-HLN and doubled-bandwidth sensitivities are labelled separately. Separate
-families and later reporting partitions do not erase the wider selection
-history. Coverage references distinguish full-grid Kupiec from the
-transition-conditional Christoffersen joint likelihood, which conditions on
-the initial hit. Small sparse grids and boundary likelihoods retain their
-original status. Neither a nonrejection nor a small working-reference p value
-proves conditional coverage or supplies selection-adjusted confirmation.
-
-\paragraph{Common-pool construction distances.}
-On one nonempty historical episode set, compare the historical headroom,
-translated-path and historical-peak reports using the same available order
-statistic. Each episode peak includes its starting observation. A translated
-path changes each level by the same anchor difference, so its absolute peak
-changes by at most that difference. Flooring is nonexpansive and commutes with
-the fixed order statistic. The headroom construction has the corresponding
-bound in the difference of anchor magnitudes. Thus
-\[
-|C^{\rm headroom}-C^{\rm peak}|\le\max_i\bigl||N_i|-B\bigr|,\qquad
-|C^{\rm translated}-C^{\rm peak}|\le\max_i|N_i-x|.
-\]
-For a proof of the order-statistic step, paired coordinatewise differences
-bounded by a radius imply that each empirical quantile lies below the other
-plus that radius; reverse the roles for the second inequality. These
-deterministic same-pool bounds do not order financial accuracy or coverage.
-Changing historical rows on one side invalidates the common-pool argument.
-
-\paragraph{Complete implementation evidence.}
-Exact menus, numerical tolerances, failures and diagnostic tables remain in
-\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source archives.
-The separate study receipts identify the executed additions. This document
-builder imports no forecasting code and only formats unchanged public results.
 \section{Frozen controlled comparison of inherited procedures}\label{sup:v8-mc}
 
 The simulation compares inherited reports for mean-reverting position levels,
@@ -1464,11 +1246,8 @@ is \textbf{MISMATCH}: both the target count and the no-outside requirement fail.
 This screen has no family-wide significance guarantee and supplies no new
 population endpoint-bound guarantee under dependent financial paths.
 
-\begingroup
-\renewcommand{\footnotesize}{\fontsize{9}{10.5}\selectfont}
 \input{generated/v8-mc-full-table.tex}
 \input{generated/v8-mc-four-table.tex}
-\endgroup
 
 \paragraph{Candidate and procedure statuses.}
 The complete inventory contains 6912 complete method tasks, 18431 complete
@@ -1484,9 +1263,19 @@ on completion. The saved source summaries retain all cells and their full
 precision in \path{results/revision-v8/wp3/summary.json}; all six loss, breach and
 win heatmaps and the complete receipt archive remain alongside them.
 
-The duplicate four-feature loss heatmap is available with the six complete
-archived heatmaps. Both complete numerical grids above retain every cell.
+\begin{figure}[htbp]\centering\includegraphics[width=.96\linewidth]{figures/v8-wp3-qr33-loss.pdf}
+\caption{Relative mean loss of the original regression against matched historical headroom in the controlled level-persistence and volatility-clustering grid. Annotations give the relative change with its Monte Carlo standard error. Panels vary horizon and level persistence; cells vary history and variance persistence. Gains outside the prespecified region contradict a universal narrow-condition explanation.}\label{fig:v8-mc-full-displaced}
+\end{figure}
 
+\begin{figure}[htbp]\centering
+\includegraphics[width=.96\linewidth]{figures/v8-wp3-qr4-loss.pdf}
+\caption{Four-feature regression in the complete fixed grid. Estimates are
+relative mean loss changes against matched historical headroom; parentheses
+show Monte Carlo standard errors across independent repetitions. Common
+innovations correlate conditions, and shading is not a family-wide test.
+Outside-region gains contradict the frozen narrow-condition restriction.}
+\label{fig:v8-mc-four}
+\end{figure}
 
 
 \section{Same-dealer completed-day aggregation}\label{sup:v8-daily}
@@ -1568,99 +1357,26 @@ independent confirmation. Missing old longer-horizon original-menu, parsimonious
 rolling-DM or breach-count fields stay NA; the old five-menu rule is not relabelled
 as the original three-menu regression. No missing old test was recalculated.
 
-\section{Earlier calibrated simulation and numerical failures}\label{sup:v9-legacy-mc}
+\section{History-coordinate discovery and pre-run prediction tests}\label{sup:v9-history}
 
-This distinct calibrated design uses constant-variance AR(1) levels, where the
-peak depends on the current position (D0), an hourly AR--GARCH--t law with a
-known hour shape (D1), and a weekly AR--GARCH--t law (D2).
-D0/D2 share the original pre-validation Treasury calibration; D1 uses the
-original pre-validation FX prefix. Levels are divided by the prefix standard
-deviation without demeaning. The frozen calibration, clocks, origin geometry,
-parameters and numerical rules are retained in
-\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v9/results/v9/legacy-calibrated}{the imported calibrated archive}.
-The weekly clock, validation span, refit schedule and six-candidate menu,
-including the intercept-only limit, differ from Section~\ref{sup:v8-mc}.
-Their short-history outcomes cannot be treated as replications of one design.
+The post hoc discovery compares $W/p$, $W/((H+1)p)$ and $W/(H+1)$ on the earlier controlled grid; $p$ denotes the nominal coefficient count including the intercept. The in-sample classification tie selects $c=W/(H+1)$, which omits $p$. The bootstrap resamples repetition identifiers jointly across methods and conditions, fixes the selected coordinate, and retains every draw. Its endpoint envelopes condition on coordinate selection and the discovery grid rather than cover the entire search history. Multiple crossings remain visible, so a first downward crossing is not a permanent superiority threshold.
 
-Each completed cell reports repetition medians and quartiles of the
-within-repetition relative loss against F. These differ from the ratio of
-across-repetition mean losses in Section~\ref{sup:v8-mc}.
-Quartiles describe dispersion under fixed fitted laws, not confidence limits.
-The known-state oracle is a finite future-path approximation; its realized
-score need not beat F in every repetition. Ordinary-rank I, oracle results,
-strict breaches and intercept-only selections remain separate diagnostics.
+The new simulation uses $N_t=\phi N_{t-1}+\eta_t$, with $\phi\in\{0.7, 0.9\}$, $W\in\{52, 260, 720, 2880\}$ and $H\in\{6, 24\}$. Each cell has 32 repetition streams; 20000 burn-in observations precede 3264 retained observations. The following innovation laws are controlled stress conditions, not fitted replicas of either financial source:
 
-\input{generated/v9-legacy-simulation-table.tex}
+\begin{itemize}
+\item Student: $\eta_t=\sqrt{\frac{3}{5}}T_t$, with independent $T_t\sim t_{5}$.
+\item Volatility switching: $\eta_t=\sigma_{S_t}Z_t$, $\sigma_0=\frac{1}{\sqrt{5}}$, $\sigma_1=\frac{3}{\sqrt{5}}$, independent $Z_t\sim N(0,1)$, same-state transition probability 0.98 and initial high-state probability 0.5. Transition follows the current-state innovation.
+\item Symmetric jumps: $\eta_t=(Z_t+5\sum_{j=1}^{K_t}U_{tj})/\sqrt{1.25}$, with independent $Z_t\sim N(0,1)$ and $K_t\sim\mathrm{Poisson}(0.01)$. Independent unit signs have positive probability 0.5.
+\end{itemize}
 
-A required numerical failure blocks the whole cell. Partial repetitions do
-not supply a replacement median, quartile, win rate or breach rate.
-The retained nonconvergence exceptions mean that the unchanged solver did not
-obtain its joint residual-and-gap acceptance certificate within its iteration
-budget. They establish neither nonexistence of an optimum nor poor predictive
-accuracy of an unavailable report. Final residuals and gaps were not retained;
-the four-feature exceptions also lack exact refit context. These quantities
-remain unknown. The original constant-variance and short-weekly predictions
-are unsupported; the hourly and history-order predictions are unassessable.
-These outcomes identify neither the financial loss mechanism nor a pure
-frequency effect.
+The seed entropy is 2026102492; repetition, process and component indices select distinct streams. The original regression and four-predictor procedures retain their respective menus, candidate-eligibility rules and exact-tie conventions. Shared innovations across conditions support paired comparisons, not independent-cell significance claims. P1 requires strict losses in at least 80\% of cells with $c<r^\star/2$; P2 requires strict gains in at least 60\% of cells with $c>2r^\star$. P3 requires the smaller procedure to have no larger relative loss in every same-$c$ pair. The primary screen requires P1 and P2, while the separate universal P3 statement fails.
 
-\section{Pre-evaluation stability screen and switching stress simulation}\label{sup:v9-stability}
+The FX study fixes validation origins 10463--11902 and evaluation origins 11927--18551, with both horizons and every prescribed history evaluated on the same issue grid. Each matched reference uses its own corresponding $W$ and the same update clock. The available original scientific vectors, summaries and selected penalties agree exactly at the original longer-history checkpoint before the remaining histories run. Older absent parsimonious trace fields remain outside that historical comparison.
 
-The separately frozen
-\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v9/protocol/v9/nonstationarity-design.md}{stability-study protocol}
-uses only pre-evaluation prefixes. Its joint OLS score includes intercept,
-AR slope and centered residual-square channels (Hansen, 1992).
-Each qualified whole-prefix AR--GARCH--t fit generates a plug-in parametric
-bootstrap reference. OLS and the score statistic are re-estimated on each
-bootstrap path; the generator is fitted once. Published iid critical values
-are not used. With the registered \(B=999\) bootstrap paths, the p value is
-\((1+\#\{H_b\ge H_{\rm obs}\})/(B+1)\); the registered draw count and
-all exceedances remain in the archive. The table retains the observed statistic,
-bootstrap p value, Holm adjustment, moment qualification and descriptive cuts.
-Qualified fitted nulls require \(\nu>4\) and
-\(q_4=\alpha^2\{3(\nu-2)/(\nu-4)\}+2\alpha\beta+\beta^2<1-10^{-8}\).
-A successful fit and this fourth-moment gate do not prove that the real law
-has those moments. The plug-in calibration supplies no exact finite-sample
-size guarantee; rejection can also reflect misspecification or outliers.
+Cutpoints interpolate the relative-loss curve in raw $W$, not the logarithmic display coordinate. NA cannot be bridged, a left-censored possible crossing is untestable, and later conditional crossings cannot replace the first. The same previously studied financial period supplies the learning curve; this grid does not create an untouched holdout or unseen dealer. All counts, cutpoints, counterexamples and complete paired-loss diagnostics follow in the source-bound tables. The governing designs are linked as \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v8-goal/protocol/revision-v9/wp2-confirmatory.md}{simulation protocol} and \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v8-goal/protocol/revision-v9/wp3-learning-curve.md}{financial learning-curve protocol}.
 
-\input{generated/v9-stability-diagnostics-table.tex}
+\input{generated/v9-evidence-tables.tex}
 
-Candidate cuts minimize a separate-variance Gaussian AR quasi-likelihood
-criterion with penalty \((3+4k)\log M\), where \(M\) counts transitions.
-The fixed search allows at most two cuts and requires each segment to contain
-at least \(\max\{104,\lceil .20M\rceil\}\) transitions.
-These are descriptive calibration partitions, not individually significant
-breaks. Whole-prefix scaling is shared by every segment without demeaning;
-the first target in a segment keeps its preceding observed lag.
-The constrained AR and GARCH fits have one declared start and no retry.
-The daily nonregular null and hourly optimization failure retain unavailable
-primary p values; neither is evidence of stability.
-
-The constant control retains the whole-prefix parameters. The stress arm
-cycles the fitted regimes with their original transition dwell lengths and a
-fixed repetition-phase grid. Level, innovation and variance state continue
-through each switch. The last-to-first wrap is artificial, rather than an
-observed historical break. Common uniforms are transformed through each arm's
-own standardized t law; a no-cut source reuses the identical whole-fit path.
-Both arms retain the forecasting procedures of Section~\ref{sup:v8-mc}.
-The following complete grids retain failed conditional cells and all F cells.
-
-\input{generated/v9-stability-W52-table.tex}
-\input{generated/v9-stability-W260-table.tex}
-\input{generated/v9-stability-F-table.tex}
-
-Loss summaries are medians across repetitions within each source, then equal-
-weight medians across every required source. They are not the controlled
-grid's ratio-of-means estimand. A required repetition failure makes its whole
-cell unavailable; successful subsets do not replace missing full-grid results.
-The raw weekly screening threshold is met, while multiplicity adjustment
-retains fewer rejections. The near-parity constant-control prediction is
-unsupported. The two-history switching prediction and the daily/hourly
-comparison are unassessable. Constant controls themselves generate large
-losses, so instability is not necessary for losses in these procedures.
-The empirical low-frequency mechanism remains unidentified.
-
-\clearpage
 \section{Reproduction, availability and retained extended results}\label{sup:reproduction}
 
 \paragraph{What is public.}
