@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-26T03:32:02.781496+00:00",
+  "scope": "Only human-made toy arrays/CSV and immutable metadata; no new G3 financial fits/evaluation before root code seal.",
+  "red_stage_1": "9 failed because v13_rp absent; then9 passed.",
+  "red_stage_2": "2 failed because v13_rp_runner absent; then11 passed.",
+  "command": "uv run --offline --no-project --with numpy==2.3.5 --with pytest==9.1.1 python -B -m pytest -q -p no:cacheprovider test_v13_rp.py test_v13_validation.py",
+  "output": "20 passed in0.87s (11 RP+9 G2), including corrected pre-specified order",
+  "review_focus": [
+    "Original HAC bandwidth/covariance and fsum mean exactly used.",
+    "Strict oneSE boundary and zero LRV.",
+    "Fixed60 weekly slots with missingness, four known adverse sufficient to reject R2.",
+    "FX halfgain must hold in each period, not a pooled or best-period result.",
+    "Trace bytes and origin alignment rejected after tampering.",
+    "Whole failed long-validation candidate is FAILED, never successful F fallback.",
+    "Toy instrument verifies choices.json exists before first evaluation read."
+  ],
+  "implementation_sha256": {
+    "v13_rp.py": "6970573a43cffe84e49b9508490c834bbbecb263241204a403a320c0d8aceade",
+    "v13_rp_runner.py": "f6285aecc1f452c8e45ec35a409fa77f7e81b22691078d193b48e4c47c2632e6",
+    "run_v13_rp.py": "a9406a25da1ea03e02863610b3bf758649ca286745ecc5fcb106e3b1d4259dcd",
+    "report_v13_rp.py": "c589d24c6ec38cc964259be8cb798fe2732e5a561fe8d063000faf398cb82f38",
+    "test_v13_rp.py": "e3007365d95fd434947843bca670505b12770eb63e238d3a29be84077abcfd47"
+  },
+  "order_red": "Added first13 H6/next13 H24 assertion:1 failed10passed before implementation order fix.",
+  "order_fix": "NYFed horizon outer loop matches fixed design runtime order; no rule or outcome change."
+}
