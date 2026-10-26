@@ -29,6 +29,7 @@ FIXED_MEMBERS = frozenset({
     "generated/v8-three-window-table.tex",
     "generated/v9-evidence-tables.tex",
     "generated/v9-complete-diagnostic-fields.tex",
+    "generated/v9-substantive-qualifications.tex",
 })
 REGULAR_0644 = 0o100644
 
@@ -69,8 +70,13 @@ def source_fixture(tmp_path):
     (delivery / "supplement.tex").write_text(
         "\\documentclass{article}\n\\begin{document}\n"
         + "".join("\\input{" + name + "}\n"
-                  for name in sorted(FIXED_MEMBERS) if name.startswith("generated/"))
+                  for name in sorted(FIXED_MEMBERS) if name.startswith("generated/")
+                  and name != "generated/v9-substantive-qualifications.tex")
         + "\\end{document}\n")
+    (delivery / "diagnostic-addendum.tex").write_text(
+        "\\documentclass{article}\n\\begin{document}\n"
+        "\\input{generated/v9-substantive-qualifications.tex}\n"
+        "\\end{document}\n")
     return delivery
 
 
@@ -124,13 +130,40 @@ def assert_fail(result):
     assert result["difference_count"] > 0
 
 
-def test_fixed_twenty_three_member_contract_and_valid_package(api, tmp_path):
-    assert len(FIXED_MEMBERS) == 23
+def test_fixed_twenty_four_member_contract_and_required_addendum_input(api, tmp_path):
+    assert len(FIXED_MEMBERS) == 24
     assert api.EXPECTED_MEMBERS == FIXED_MEMBERS
     assert api.REQUIRED_MODE == REGULAR_0644
     delivery = source_fixture(tmp_path)
     archive, receipt, _ = archive_and_receipt(delivery, tmp_path)
-    assert_pass(api.check_source_zip(delivery, archive, receipt))
+    result = api.check_source_zip(delivery, archive, receipt)
+    assert_pass(result)
+    assert result["actual_member_count"] == result["expected_member_count"] == 24
+    assert {"parent": "diagnostic-addendum.tex",
+            "target": "generated/v9-substantive-qualifications.tex",
+            "kind": "tex"} in result["tex_dependency_edges"]
+
+
+@pytest.mark.parametrize("missing_from", ["archive", "local"])
+def test_substantive_input_is_required_in_both_source_and_archive(api, tmp_path, missing_from):
+    delivery = source_fixture(tmp_path)
+    required = "generated/v9-substantive-qualifications.tex"
+    archive, receipt, _ = archive_and_receipt(
+        delivery, tmp_path, omit=(required,) if missing_from == "archive" else ())
+    if missing_from == "local":
+        (delivery / required).unlink()
+    assert_fail(api.check_source_zip(delivery, archive, receipt))
+
+
+def test_substantive_member_cannot_remain_an_unreferenced_whitelist_extra(api, tmp_path):
+    delivery = source_fixture(tmp_path)
+    (delivery / "diagnostic-addendum.tex").write_text("Constructed addendum without its required input.\n")
+    archive, receipt, _ = archive_and_receipt(delivery, tmp_path)
+    result = api.check_source_zip(delivery, archive, receipt)
+    assert_fail(result)
+    assert any(row["code"] == "WHITELIST_MEMBER_NOT_IN_CURRENT_TEX_CLOSURE"
+               and row["path"] == "generated/v9-substantive-qualifications.tex"
+               for row in result["differences"])
 
 
 def test_receipt_mode_can_be_present_when_correct(api, tmp_path):
@@ -173,11 +206,12 @@ def test_swapped_payloads_are_rejected_even_with_honest_current_zip_receipt(api,
     assert_fail(api.check_source_zip(delivery, archive, receipt))
 
 
-def test_zip_payload_byte_mutation_cannot_hide_behind_current_receipt(api, tmp_path):
+@pytest.mark.parametrize("member", ["main.tex", "generated/v9-substantive-qualifications.tex"])
+def test_zip_payload_byte_mutation_cannot_hide_behind_current_receipt(api, tmp_path, member):
     delivery = source_fixture(tmp_path)
-    old = (delivery/"main.tex").read_bytes()
+    old = (delivery/member).read_bytes()
     archive, receipt, _ = archive_and_receipt(delivery, tmp_path,
-                                              replacements={"main.tex": old+b"% changed archive byte\n"})
+                                              replacements={member: old+b"% changed archive byte\n"})
     assert_fail(api.check_source_zip(delivery, archive, receipt))
 
 
@@ -189,9 +223,10 @@ def test_local_source_byte_mutation_after_zip_and_receipt_is_detected(api, tmp_p
     assert_fail(api.check_source_zip(delivery, archive, receipt))
 
 
-def test_duplicate_archive_member_is_not_collapsed_into_dictionary_success(api, tmp_path):
+@pytest.mark.parametrize("member", ["main.tex", "generated/v9-substantive-qualifications.tex"])
+def test_duplicate_archive_member_is_not_collapsed_into_dictionary_success(api, tmp_path, member):
     delivery = source_fixture(tmp_path)
-    archive, receipt, _ = archive_and_receipt(delivery, tmp_path, duplicate="main.tex")
+    archive, receipt, _ = archive_and_receipt(delivery, tmp_path, duplicate=member)
     assert_fail(api.check_source_zip(delivery, archive, receipt))
 
 
