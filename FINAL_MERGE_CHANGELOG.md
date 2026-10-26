@@ -6579,3 +6579,604 @@ Current acceptance is localonly. The hourly review-loop commit gate is09:38:12UT
 ### Review-loop commit cadence interpretation corrected before any new commit
 
 At 2026-10-26T09:30:08.920616+00:00, rereading mentor Section I.26 confirmed that its hourly limit has no local/browser route exception. The earlier09:38:12 local-only gate was too narrow. One rolling-hour gate now covers every actual local or browser Git commit. The last actual WP8 platform commit was 2026-10-26T08:41:47+00:00; conservatively carrying it into the loop makes the next allowed commit 2026-10-26T09:41:47+00:00. No review-loop commit has occurred yet, so this corrects the planned route before violating the limit. Later native directory batches must each wait at least one hour from the preceding actual commit, including a local commit. Posting or reading PR6 text is recorded separately from Git commits. The correction changes no scientific result, protocol or manuscript claim. Timing waits are excluded from research time.
+
+
+# 截止后逐项收口：同步最终交付记录
+
+实际准备时间：2026-10-26T21:06:09.023371+00:00。用户要求将未完成事项逐个落实。本次发现公开日志停留在09:30UTC待发布检查点，最后一版编译/测试/提交/PR回读仅保存在本地后续附录，且作者待决定文件仍将已完成交付写为待办。因此将该附录原字节追加如下，补充公开九项报告和结构化证据。原日志315355字节保持原样；此项是交付记录收口，不是新增科学分析。
+
+以下附录内“待合并/待PR”均为它各自记录时点的历史状态，后面的实际收据及本节最终说明覆盖它们。附录原SHA-256：`e7ecba09e995b5ea293f013edf9ad9b2732a38e1ad276f7175d4bd2f18716fde`。
+
+# Review125 实际验收附录（原日志的后续记录）
+
+建立时间：2026-10-26T14:14:17.266099+00:00。本附录保存实际命令、原输出和验收边界；它不改写已公开的 FINAL_MERGE_CHANGELOG.md 历史字节，也不预先宣布未来合并或PR读回通过。
+
+本次补充 S7 的一条训练历史/未来 horizon 方向文字，原设计和代码不变，科学结果仍 PARTLY。四个文档文件于13:47:45UTC实际原生发布，完整6056路径/tree d42e835...逐字节验收通过；本地合并提交及当前PR6正文仍待完成。
+
+## 文档编译与独立ZIP原命令输出
+
+```text
+["/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic", "-X", "compile", "--only-cached", "supplement.tex", "--outdir", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical", "--keep-logs", "--keep-intermediates"]
+note: "version 2" Tectonic command-line interface activated
+note: using only cached resource files
+note: Running TeX ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+note: Rerunning TeX because "supplement.aux" changed ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+note: Rerunning TeX because "supplement.aux" changed ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.toc` (3.8525390625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.pdf` (236.013671875 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.aux` (21.1552734375 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.log` (14.111328125 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.out` (5.2900390625 KiB)
+
+[exit 0]
+
+["/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic", "-X", "compile", "--only-cached", "supplement.tex", "--outdir", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile", "--keep-logs", "--keep-intermediates"]
+note: "version 2" Tectonic command-line interface activated
+note: using only cached resource files
+note: Running TeX ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+note: Rerunning TeX because "supplement.out" changed ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+note: Rerunning TeX because "supplement.aux" changed ...
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.log` (14.111328125 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.aux` (21.1552734375 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.out` (5.2900390625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.toc` (3.8525390625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.pdf` (236.013671875 KiB)
+
+[exit 0]
+
+["/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm", "-r", "100", "-png", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical/supplement.pdf", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/canonical-render/page"]
+
+[exit 0]
+
+["/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm", "-r", "100", "-png", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/independent-zip-compile/supplement.pdf", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/fresh_zip-render/page"]
+
+[exit 0]
+
+["/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm", "-r", "100", "-png", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-before/supplement.pdf", "/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review125-document-validation/previous-render/page"]
+
+[exit 0]
+
+```
+
+## 首次直接缓存环境收集错误（原失败保留）
+
+```text
+
+==================================== ERRORS ====================================
+________________ ERROR collecting test_paper_caption_layout.py _________________
+ImportError while importing test module '/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/test_paper_caption_layout.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_paper_caption_layout.py:7: in <module>
+    from reportlab.lib.pagesizes import A4
+E   ModuleNotFoundError: No module named 'reportlab'
+=========================== short test summary info ============================
+ERROR test_paper_caption_layout.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 4.36s
+
+```
+
+## 已有缓存及已有reportlab路径下的全套实际输出
+
+```text
+.................................................... [  2%]
+..................................................................................... [  6%]
+..................................................................................... [ 10%]
+....................... [ 11%]
+.............................. [ 12%]
+............................................................................ [ 15%]
+............................................................................................ [ 20%]
+.................................................. [ 22%]
+....................................................... [ 24%]
+........................................................................ [ 27%]
+...................................................................................................... [ 32%]
+.............................................................. [ 35%]
+.................................................................. [ 38%]
+............................................................... [ 41%]
+................................................................................................................................ [ 46%]
+........................................................................ [ 50%]
+..................................................................... [ 53%]
+........................................................................ [ 56%]
+................................................................ [ 59%]
+......................................... [ 61%]
+...................................................................... [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+........................................................................ [ 77%]
+........................................................................ [ 80%]
+........................................................................ [ 84%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 93%]
+........................................................................ [ 97%]
+................................................... [ 99%]
+...............                                                          [100%]
+2215 passed, 1184 subtests passed in 193.60s (0:03:13)
+
+```
+
+## 全套通过的精确命令与环境限定
+
+```json
+{
+  "status": "PASS",
+  "command": [
+    "/Users/bingyouli/.cache/uv/archive-v0/y1Y61zcqAREv6YGo/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "existing_only_pythonpath": "/Users/bingyouli/.cache/uv/archive-v0/y1Y61zcqAREv6YGo/lib/python3.12/site-packages:/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages",
+  "earlier_collection_failure_retained": "review125-pytest/receipt.json",
+  "actual_start_utc": "2026-10-26T13:08:25.569218+00:00",
+  "actual_end_utc": "2026-10-26T13:11:41.615199+00:00",
+  "elapsed_seconds": 196.04652445903048,
+  "exit_code": 0,
+  "timed_out": false,
+  "existing_cached_environment_directly_invoked": "/Users/bingyouli/.cache/uv/archive-v0/y1Y61zcqAREv6YGo/bin/python",
+  "package_install_or_environment_launcher_invoked": false,
+  "thread_limits": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "NUMBA_NUM_THREADS": "1"
+  },
+  "source_and_artifact_hash_count": 528,
+  "boundary_hashes_equal": true,
+  "continuous_file_monitoring_claimed": false,
+  "local_historical_git_object_exception": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.git/objects",
+  "scope": "One required current-document-cut acceptance after actual S7/README/PDF/ZIP edit, through existing cached Python directly. No uv launcher, installer, download, model driver or scientific recomputation invoked. Historical Git tests retain the read-only local A-object exception; not an independent financial replication or fresh public-clone provenance proof.",
+  "stdout": ".scratch/final-merge-12h/review125-pytest-existing-paths/output.txt",
+  "passed": 2215,
+  "subtests_passed": 1184,
+  "reported_pytest_seconds": 193.6,
+  "module_path_inspection": "Pinned existing cache providesarch8.0/numpy2.3.5/sklearn1.9.1/pytest9.1.1/matplotlib3.11.2/pypdf6.10/Pillow12.3; existing bundledsite providesreportlab4.4.9. No installer/UV invoked."
+}
+```
+
+## 四文件与完整远端树验收
+
+```json
+{
+  "actual_start_utc": "2026-10-26T13:47:56.533981+00:00",
+  "stage": "verify",
+  "source_snapshot_kind": "FROZEN_VALIDATED_WORKTREE_NOT_A_NEW_LOCAL_COMMIT",
+  "local_baseline_head": "036ad9f2f02ae30b804c62a690ec9430b0839df5",
+  "expected_parent": "21237752718764288c86c08400eece2587110ef5",
+  "remote_head": "ab99cdf2234e7841c46b51b720fea3c8ac48df51",
+  "file_count": 4,
+  "compact_names_sha256": "660f214d4f3b0074abb10051b9cd444c1a66a8d4bd811cb9ab94dbf1a6fcb817",
+  "protected_refs": {
+    "revision-v8-goal": "60130eec7af2ebb38719b195dbe0e09fcb5796e7",
+    "revision-v12": "80608070e4a6f4207483dc95770e6e5926172b19",
+    "main": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+    "codex/supervisor-revision-20261023": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+    "revision-v7-final": "d119a1fb30c48ceab9000552057882938cfa57a4"
+  },
+  "shared_next_commit_not_before_utc": "2026-10-26T13:46:20+00:00",
+  "remote_verifier_writes": 0,
+  "status": "PASS_REVIEW125_NATIVE4_AND_WHOLE6056_TREE_LOCAL_HISTORY_MERGE_PENDING",
+  "commit": [
+    "ab99cdf2234e7841c46b51b720fea3c8ac48df51",
+    "21237752718764288c86c08400eece2587110ef5",
+    "2026-10-26T06:47:45-07:00",
+    "Clarify daily history and horizon direction"
+  ],
+  "exact_changed_paths": [
+    "submission-final/README.md",
+    "submission-final/overleaf-package.zip",
+    "submission-final/supplement.pdf",
+    "submission-final/supplement.tex"
+  ],
+  "checked_delta_files": [
+    {
+      "path": "submission-final/README.md",
+      "mode": "100644",
+      "blob": "1fb532c0d3f1cb4583bdd5d6b1b41d3ff84a4e81",
+      "bytes": 10139,
+      "sha256": "e75112bc6764d158ac8b20027a87ce192d2a1a5cf7183bfa405e50048f08b51b"
+    },
+    {
+      "path": "submission-final/overleaf-package.zip",
+      "mode": "100644",
+      "blob": "c9f873b9928a1e57d414f469dcb9d855fdcd8410",
+      "bytes": 248927,
+      "sha256": "35b63bebf4f1d6465a54d16c3059ed276f30dcf2928aa79771ecb1fd80bce22a"
+    },
+    {
+      "path": "submission-final/supplement.pdf",
+      "mode": "100644",
+      "blob": "ab2cc7f91a0b0c373740f15fa6ce4a078da139a8",
+      "bytes": 241678,
+      "sha256": "ccb2eb2f9923931d5d4fd34a2ba9e06a4953ac1030eb80616b5cc835f3486076"
+    },
+    {
+      "path": "submission-final/supplement.tex",
+      "mode": "100644",
+      "blob": "9c0b589a0075e1179d52b52a5f6931a1ba0867e1",
+      "bytes": 50592,
+      "sha256": "465a041c9114958e3bd8f89664550886de86140d63d2f0b9dffc8aafba7e36fa"
+    }
+  ],
+  "full_path_mode_blob_byte_checks": 6056,
+  "complete_tree": "d42e835ca6618f18fc63a4c590612a13bc4a2bd1",
+  "mismatch_count": 0,
+  "shared_commit_gap_seconds": 3685.0,
+  "actual_end_utc": "2026-10-26T13:47:58.317789+00:00",
+  "local_history_merge_status": "PENDING_NO_NEW_LOCAL_COMMIT_YET",
+  "publication_history_scope": "NATIVE_CONTENT_SNAPSHOT_NOT_EXPORT_OF_LOCAL_A_B_MERGE_OR_PREREGISTRATION_COMMITS"
+}
+```
+
+## 正常本地合并准备的实际冲突及解决输出
+
+```json
+[
+  {
+    "command": [
+      "git",
+      "restore",
+      "--source=HEAD",
+      "--worktree",
+      "--",
+      "submission-final/README.md",
+      "submission-final/overleaf-package.zip",
+      "submission-final/supplement.pdf",
+      "submission-final/supplement.tex"
+    ],
+    "exit_code": 0,
+    "stdout": ""
+  },
+  {
+    "command": [
+      "git",
+      "merge",
+      "--no-commit",
+      "--no-ff",
+      "refs/remotes/origin/final-jof"
+    ],
+    "exit_code": 1,
+    "stdout": "Auto-merging submission-final/README.md\nCONFLICT (add/add): Merge conflict in submission-final/README.md\nwarning: Cannot merge binary files: submission-final/overleaf-package.zip (HEAD vs. refs/remotes/origin/final-jof)\nAuto-merging submission-final/overleaf-package.zip\nCONFLICT (add/add): Merge conflict in submission-final/overleaf-package.zip\nwarning: Cannot merge binary files: submission-final/supplement.pdf (HEAD vs. refs/remotes/origin/final-jof)\nAuto-merging submission-final/supplement.pdf\nCONFLICT (add/add): Merge conflict in submission-final/supplement.pdf\nAuto-merging submission-final/supplement.tex\nCONFLICT (add/add): Merge conflict in submission-final/supplement.tex\nAutomatic merge failed; fix conflicts and then commit the result.\n"
+  },
+  {
+    "command": [
+      "git",
+      "restore",
+      "--source=refs/remotes/origin/final-jof",
+      "--staged",
+      "--worktree",
+      "--",
+      "submission-final/README.md",
+      "submission-final/overleaf-package.zip",
+      "submission-final/supplement.pdf",
+      "submission-final/supplement.tex"
+    ],
+    "exit_code": 0,
+    "stdout": ""
+  }
+]
+```
+
+## 后续验收仍待实际发生
+
+14:47:45UTC之前不提交本地merge；到时执行单次guard，之后只读真实Git设计/祖先链检查、同一PR6正文更新与独立精确回读另存实际收据。全部时间按真实UTC记录，等待不计入研究。
+
+## 实际正常合并提交和真实仓库上下文核验
+
+本地实际14:47:59UTC提交 c982de97e499c686fbdf2950fafe2455f157847f，共享间隔3614秒。没有重新推送私有历史。
+
+```text
+[final-jof c982de9] Preserve daily-timing clarification and public snapshot ancestry
+
+[exit 0]
+
+```
+
+### review125-local-merge-acceptance.json
+
+```json
+{
+  "actual_verified_utc": "2026-10-26T14:47:59.523023+00:00",
+  "status": "PASS_CLEAN_LOCAL_NORMAL_MERGE_CURRENT_PUBLIC_TREE_EQUAL",
+  "local_head": "c982de97e499c686fbdf2950fafe2455f157847f",
+  "parents": [
+    "036ad9f2f02ae30b804c62a690ec9430b0839df5",
+    "ab99cdf2234e7841c46b51b720fea3c8ac48df51"
+  ],
+  "platform_local_commit_utc": "2026-10-26T14:47:59+00:00",
+  "shared_commit_gap_seconds": 3614.0,
+  "remote_native_head": "ab99cdf2234e7841c46b51b720fea3c8ac48df51",
+  "complete_tree": "d42e835ca6618f18fc63a4c590612a13bc4a2bd1",
+  "full_current_path_count": 6056,
+  "local_full_A_B_and_preregistered_history_preserved": true,
+  "public_native_head_is_local_ancestor": true,
+  "public_snapshot_does_not_export_new_local_merge_commit": true,
+  "protected_refs": {
+    "revision-v8-goal": "60130eec7af2ebb38719b195dbe0e09fcb5796e7",
+    "revision-v12": "80608070e4a6f4207483dc95770e6e5926172b19",
+    "main": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+    "codex/supervisor-revision-20261023": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+    "revision-v7-final": "d119a1fb30c48ceab9000552057882938cfa57a4"
+  },
+  "remote_writes": 0,
+  "command": [
+    "git",
+    "commit",
+    "-m",
+    "Preserve daily-timing clarification and public snapshot ancestry"
+  ],
+  "stdout": "review125-local-merge-commit-output.txt",
+  "goal_complete": false
+}
+
+```
+
+### review125-postmerge-git-context.json
+
+```json
+{
+  "actual_start_utc": "2026-10-26T14:48:05.153739+00:00",
+  "local_head": "c982de97e499c686fbdf2950fafe2455f157847f",
+  "remote_head": "ab99cdf2234e7841c46b51b720fea3c8ac48df51",
+  "scope": "Read-only real-repository history/design context after one normal local merge. This does not run models, statistics, workers, fixtures or a second fullsuite.",
+  "read_only_local_historical_object_exception": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.git/objects",
+  "checks": [
+    {
+      "validator": "run_v8_wp3.verify_design",
+      "status": "PASS",
+      "accepted_design_commit": "039f6f1b49d46610697bed5300cab687b37951df",
+      "verified_file_hashes": 2
+    },
+    {
+      "validator": "run_v8_wp4.verify_design",
+      "status": "PASS",
+      "accepted_design_commit": "1427dc0b943ee77a82ee03a67ec9281c20e2cdf5",
+      "verified_file_hashes": 3
+    },
+    {
+      "validator": "run_v8_wp5.verify_design",
+      "status": "PASS",
+      "accepted_design_commit": "467a995b16a1c6446b5927992faec26b7f5f6276",
+      "verified_file_hashes": 6
+    },
+    {
+      "validator": "run_v12_studies.read_design",
+      "experiment": "F1",
+      "status": "PASS",
+      "provenance": {
+        "path": "protocol/v12/loss-decomposition-design.md",
+        "local_design_commit": "9679e15824bf24bbcf06b645688ee5c030793c30",
+        "accepted_design_commit": "4c5abeba018b22c39dbff57d16200934af6f6c39",
+        "public_design_commit": "4c5abeba018b22c39dbff57d16200934af6f6c39",
+        "sha256": "cf8a38f734fc22ffa0e8895c2ea34d698ec26c92c31a2835888c464161b858d1",
+        "accepted_commit_time": "2026-10-25T04:05:41-07:00",
+        "working_bytes_equal_design_commit": true
+      }
+    },
+    {
+      "validator": "run_v12_studies.read_design",
+      "experiment": "F2",
+      "status": "PASS",
+      "provenance": {
+        "path": "protocol/v12/validation-length-design.md",
+        "local_design_commit": "f8628dbf83ebeebf5fcd4e494985c11603f11eb5",
+        "accepted_design_commit": "12e86a23f0be1ad55d6ab980473972442cd006f0",
+        "public_design_commit": "12e86a23f0be1ad55d6ab980473972442cd006f0",
+        "sha256": "14192e8ccb8cf8cde9b53e65d20c871b93c537deb9cfdd39cac09e5cf6578819",
+        "accepted_commit_time": "2026-10-25T04:07:13-07:00",
+        "working_bytes_equal_design_commit": true
+      }
+    },
+    {
+      "validator": "run_v12_studies.read_design",
+      "experiment": "F3",
+      "status": "PASS",
+      "provenance": {
+        "path": "protocol/v12/tau-design.md",
+        "local_design_commit": "185e1ae9a63046b56181a77bb031c6a7a24a0138",
+        "accepted_design_commit": "9fa50a76e9b93fa26cb0931e9bde38a4fac27485",
+        "public_design_commit": "9fa50a76e9b93fa26cb0931e9bde38a4fac27485",
+        "sha256": "366c56a57983cbe8c9569abf626f2d5947166b66fd0a2ca2fa23a444dcd8943c",
+        "accepted_commit_time": "2026-10-25T04:09:40-07:00",
+        "working_bytes_equal_design_commit": true
+      }
+    },
+    {
+      "validator": "run_v9_nonstationarity.read_design",
+      "status": "PASS",
+      "accepted_design_commit": "5decccb0a13ef1969629cfec695dd3459c412c4e"
+    }
+  ],
+  "model_runs": 0,
+  "remote_writes": 0,
+  "test_sources_changed": false,
+  "status": "FAIL_REAL_REPOSITORY_POSTMERGE_CONTEXT",
+  "error_type": "ValueError",
+  "error": "RUN_PLAN_NOT_SOLE_FILE_COMMIT",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/check_review125_postmerge_context.py\", line 32, in <module>\n    _, provenance=v9.verify_committed_run_plan(manifest)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/run_v9_nonstationarity.py\", line 415, in verify_committed_run_plan\n    if changed!=[relative]:raise ValueError('RUN_PLAN_NOT_SOLE_FILE_COMMIT')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: RUN_PLAN_NOT_SOLE_FILE_COMMIT\n",
+  "actual_end_utc": "2026-10-26T14:48:05.454972+00:00",
+  "postcheck_head": "c982de97e499c686fbdf2950fafe2455f157847f",
+  "worktree_clean_after": true
+}
+
+```
+
+### review125-postmerge-context-qualified.json
+
+```json
+{
+  "actual_verified_utc": "2026-10-26T14:49:42.311618+00:00",
+  "status": "PASS_NO_NEW_MERGE_REGRESSION_WITH_UNRESOLVED_INHERITED_V9_REPLAY_BLOCKER",
+  "raw_context_failure_retained": "review125-postmerge-git-context.json",
+  "real_production_design_checks_passed": 7,
+  "legacy_v9_validator_status": "FAIL_RUN_PLAN_NOT_SOLE_FILE_COMMIT_BEFORE_AND_AFTER_CURRENT_MERGE",
+  "baseline_head": "036ad9f2f02ae30b804c62a690ec9430b0839df5",
+  "current_head": "c982de97e499c686fbdf2950fafe2455f157847f",
+  "same_path_log_selected_commit": "51b5f1190d43b5882acff9f6367a9492e672a4fb",
+  "selected_commit_time": "2026-10-24T13:50:48-07:00",
+  "selected_commit_changed_paths": [
+    "results/v9/nonstationarity/README.md",
+    "results/v9/nonstationarity/diagnostics.json",
+    "results/v9/nonstationarity/manifest.json",
+    "results/v9/nonstationarity/prior-stationary-reconciliation.json",
+    "results/v9/nonstationarity/prior-stationary-reconciliation.md",
+    "results/v9/nonstationarity/run-plan.json",
+    "results/v9/nonstationarity/summary.json"
+  ],
+  "old_new_current_run_plan_bytes_exact": true,
+  "caused_by_current_merge": false,
+  "scope_diagnosis": "Inherited B/public C7 snapshot identity, also selected at previous036HEAD. This concretely instantiates the already declared legacy public-provenance/replay limitation. Do not call allrealvalidatorsPASS or repair frozenhistoricaldriverbyalteringhistory. Currenttask doesnotauthorize newlegacyfinancialreplay.",
+  "wp2_protocol_commit": "effa537bd6d9b89855002aa79f95f62f9ff3761c",
+  "wp2_pre_run_chronology_still_exact": true,
+  "suite_boundary_hashes_current_exact": 528,
+  "worktree_clean_after": true,
+  "fullsuite_repeated": false,
+  "models_run": 0,
+  "public_writes": 0,
+  "no_new_source_or_result_edit": true
+}
+
+```
+
+### pr6-review125-exact-readback-acceptance.json
+
+```json
+{
+  "actual_utc": "2026-10-26T14:51:54.957812+00:00",
+  "accepted": true,
+  "status": "PASS_PR6_EXACT_STRUCTURED_BODY_WITH_DECLARED_CRLF_AND_LEGACY_REPLAY_BLOCKER",
+  "owning_platform": "GitHub get_pr_info structuredContent",
+  "native_single_update": true,
+  "pr_url": "https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6",
+  "pr_number": 6,
+  "title": "Final consolidated JoF submission",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "mergeable": true,
+  "head_sha": "ab99cdf2234e7841c46b51b720fea3c8ac48df51",
+  "base_sha": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+  "actual_updated_at": "2026-10-26T14:51:31Z",
+  "ready_lf_chars": 12948,
+  "actual_raw_chars": 13004,
+  "actual_crlf_count": 56,
+  "actual_raw_sha256": "9452f6da29c63732c401c99b81bccfffc24624f7fefffaf62d0819f876d509e3",
+  "expected_crlf_sha256": "9452f6da29c63732c401c99b81bccfffc24624f7fefffaf62d0819f876d509e3",
+  "raw_exact_expected_crlf": true,
+  "raw_exact_lf": false,
+  "all_nonnewline_characters_exact_after_declared_CRLF_conversion": true,
+  "legacy_v9_preflight_failure_explicitly_disclosed": true,
+  "current_local_merge": "c982de97e499c686fbdf2950fafe2455f157847f",
+  "complete_tree": "d42e835ca6618f18fc63a4c590612a13bc4a2bd1",
+  "path_count": 6056,
+  "public_local_history_distinction_preserved": true,
+  "new_pr_count": 1,
+  "goal_complete": false
+}
+
+```
+
+真实v9预检失败为先前036与当前c982共同存在的历史C7多路径快照来源限制；没有修复、删除或将其归入7项通过。WP2实际预登记、未改协议和本轮稿件内容验收与该旧版重放预检分别陈述。
+
+
+## 本次逐项收口的实际判定
+
+1. 原13:04文档编译、13:08—13:11全套测试、13:47原生发布、14:47本地正常merge、14:51 PR6精确回读的命令和原输出已并入本日志，原失败及警告不删。
+2. 原中文九项报告现有仓库内链接版本 `FINAL_MERGE_REPORT_ZH.md`；结构化原证据及72槽实际记录在 `FINAL_MERGE_ACCEPTANCE.json`。旧v9额外重放失败不升级为导师WP8未要求的新任务，也未将旧驱动改成PASS。
+3. “待用户决定”新增当前清单，已完成的稿件发布、最终报告不再列作尚未执行；作者个人信息、私人冲突/邮箱、权利、旧PR关闭决定仍由作者处理。
+4. 38个原始gap MISMATCH和末槽21.439350秒迟到不回改；不声称12小时净研究或全目标完美合规。本次公开化不构成作者接受这些偏差。
+5. 本次批准修改仅四个根目录文本：FINAL_MERGE_CHANGELOG.md、USER_DECISIONS_FINAL_MERGE.md、FINAL_MERGE_REPORT_ZH.md、FINAL_MERGE_ACCEPTANCE.json。正文/实验/协议/结果/PDF/ZIP和其他路径须逐字节保持。
+6. 本节冻结时远端提交、完整新树回读和本地合并尚待真实发生；最终提交不预填。实际结果由后续独立验收及PR6正文记录，避免自引用提交号。
+
+
+## 本次公开交付文本的实际核验输出
+
+实际命令：
+
+```text
+python3 .scratch/final-merge-12h/postdeadline-closure-20261026/verify_closure.py
+```
+
+原输出：
+
+```json
+{
+  "actual_utc": "2026-10-26T21:06:33.218374+00:00",
+  "status": "PASS",
+  "checks": {
+    "original_changelog_prefix_exact": true,
+    "original_runtime_annex_exact": true,
+    "original_decisions_prefix_exact": true,
+    "nine_report_sections": true,
+    "63_original_requirements_retained": true,
+    "original_timing_mismatch_retained": true,
+    "latest_actual_outputs_in_canonical_log": true,
+    "obsolete_decision_status_superseded": true,
+    "public_report_links_resolve": true,
+    "all_unapproved_tracked_paths_exact": true,
+    "only_four_approved_paths_changed": true,
+    "common_credential_patterns_zero": true,
+    "manuscript_zip_unchanged": true
+  },
+  "unchanged_tracked_path_count": 6054,
+  "mismatch_count": 0,
+  "bad_report_links": [],
+  "changed_paths": [
+    "FINAL_MERGE_ACCEPTANCE.json",
+    "FINAL_MERGE_CHANGELOG.md",
+    "FINAL_MERGE_REPORT_ZH.md",
+    "USER_DECISIONS_FINAL_MERGE.md"
+  ],
+  "new_model_runs": 0,
+  "new_full_pytest_runs": 0,
+  "new_compile_runs": 0,
+  "original_history_or_timestamps_rewritten": false
+}
+```
+
+这项检查只验证本次四个文本的边界、链接、原文保留及其他6054路径一致性，不重新运行模型、全套pytest或编译，也不把原G03偏差改成PASS。
