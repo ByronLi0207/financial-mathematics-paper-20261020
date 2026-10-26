@@ -61,3 +61,9 @@ NYFed source terms continue to apply. The inherited Treasury raw-delivery except
 A display rebuild, source compilation and passing fixture tests do not establish independent financial replication. Earlier full tests used a read-only local historical Git object directory for original provenance assertions; a fresh public clone does not thereby acquire that history. The exact exception is retained in `FINAL_MERGE_CHANGELOG.md` and `USER_DECISIONS_FINAL_MERGE.md`.
 
 Author details, funding, competing interests, required journal declarations and reviewer nominations remain for the author. The five proposed reviewers and ten anticipated questions are in `notes/final-merge/`. No submission or contact has occurred. Existing `.bak` files are preserved outside this source package and listed for the author; none belongs in `submission-final/` or its Overleaf ZIP.
+
+## Review clarification: daily history and horizon units
+
+The S7 daily-aggregation paragraph distinguishes mature training origins from subsequent daily observations: history lengths count mature training origins; horizons count subsequent nonempty daily observations. The earlier wording attached “subsequent” to both quantities. The inherited design and implementation already use past origins whose complete peak labels end by the refit. This is an explanatory correction, with no change to predictions, numerical values, protocols, selection policies, tables or the PARTLY result.
+
+The source package binds its exact editable members in `SOURCE-MANIFEST.json`; it does not export the local merge or pre-run registration history. Current publication and acceptance checkpoints are reported separately in the existing Draft PR #6, preserving the dates and qualifications of earlier checkpoints.
