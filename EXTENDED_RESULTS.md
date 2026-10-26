@@ -1,3 +1,11 @@
+# Consolidated extended results — current delivery status
+
+Status prepared at 2026-10-26T22:17:34.253797+00:00. The compact Supplement has been completed and accepted at 25 pages; it is available as [editable source](submission-final/supplement.tex) and [PDF](submission-final/supplement.pdf). The [Chinese final report](FINAL_MERGE_REPORT_ZH.md), [acceptance record](FINAL_MERGE_ACCEPTANCE.json) and [PR #6](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6) give the actual completed scientific and documentary checkpoints, together with the retained timing, rights and provenance limitations.
+
+The original WP4 index follows verbatim. Its phrase "while the compact Supplement is prepared" belongs to that earlier construction checkpoint and is superseded by the completed status above. Every section-map row, overflow source, scientific number and adverse result is unchanged; this update creates no new analysis.
+
+---
+
 # Consolidated final-jof extended results
 
 The current manuscript is in `submission-final/`. This index preserves exact overflow source blocks from the v12 backbone while the compact Supplement is prepared. The original complete [v12 Supplement](submission-v10/supplement.pdf) and [editable source](submission-v10/supplement.tex) remain unchanged. These are retained historical evidence, not additional analyses.

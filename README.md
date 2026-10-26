@@ -1,3 +1,27 @@
+# Final consolidated JoF manuscript — current delivery
+
+From the repository root, using the already available NumPy and Matplotlib environment, rebuild all six main tables and four main figures from saved outputs:
+
+```sh
+python3 reproduce_final_displays.py --output final-display-rebuild
+```
+
+Use a new output directory. This command formats saved results; it does not obtain data or fit models. The complete [source and reproduction guide](submission-final/README.md) states the dependencies, source fingerprints and limits of raw financial replay.
+
+## Current report and release status
+
+Entry-point status prepared at 2026-10-26T22:15:54.270336+00:00. The manuscript release and the nine-item Chinese report have been delivered. Read the [final Chinese report](FINAL_MERGE_REPORT_ZH.md), [actual command/output log](FINAL_MERGE_CHANGELOG.md), [structured acceptance evidence](FINAL_MERGE_ACCEPTANCE.json) and [current author-decision list](USER_DECISIONS_FINAL_MERGE.md). The sole new review vehicle is [Draft PR #6 — Final consolidated JoF submission](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6); existing PRs #3/#4/#5 remain untouched.
+
+The CFTC mechanism verdict remains **PARTLY**, with every failed criterion, counterexample and NA retained. The manuscript, source ZIP and scientific outputs retain the accepted bytes. The latest completed documentary checkpoint before this README correction is public head `3df3bbd6e41e774ed3b79faad8332728cb00251d`, local history merge `a6161188ee2543e7364ec9d0aad954ff41083d2e`, and common 6,058-path tree `d4149cd341a9573b05127bbaf83ea22b8989c394`. Later README-only commit identities are recorded by the Git history and current PR description; this paragraph does not predict them.
+
+The original twelve-hour timing deviations remain disclosed rather than relabelled PASS. Author identity/declarations, private reviewer conflicts/emails, FX rights and any decision to close older PRs remain for the author. No main merge or journal submission has occurred.
+
+## Preserved earlier guide
+
+The complete earlier README follows verbatim. Its first consolidated introduction was written before release, so its statement that WP8 or the timed report was pending is a dated historical checkpoint superseded by the current status above. Later historical branch guides, scientific values, failures and source qualifications are retained, not rewritten.
+
+---
+
 # Final consolidated JoF manuscript — final-jof
 
 Rebuild all six main tables and four main figures from saved public outputs, from this repository root with already available NumPy and Matplotlib:
