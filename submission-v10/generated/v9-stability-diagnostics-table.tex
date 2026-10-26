@@ -7,7 +7,7 @@
 \setlength{\LTpre}{2pt}
 \setlength{\LTpost}{3pt}
 \begin{longtable}{lrrrcrlllrcc}
-\caption{Registered prefix stability diagnostics: all 15 source rows.}\label{tab:v9-stability-diagnostics}\\
+\caption{Pre-specified prefix stability diagnostics: all 15 source rows.}\label{tab:v9-stability-diagnostics}\\
 \toprule
 Source & \rotatebox{90}{Statistic} & $p$ & Holm & \rotatebox{90}{Moment valid} & $q_4$ & Cuts & Dates & Segments & $h$ & \rotatebox{90}{Break cap} & State\\
 \midrule
@@ -52,5 +52,5 @@ FX daily & 3.13 & -- & -- & N & -- & 128/271 & 2014-07-06/2014-12-19 & 128/143/1
 % Native: {"source":"results/v9/nonstationarity/postrun/analysis/report.json","selector":{"source_id":"fx_hourly"},"native":{"source_id":"fx_hourly","kind":"hourly","n":8109,"M":8108,"first_time":"2014-02-05T01:00:00.000000","last_time":"2015-05-22T21:00:00.000000","status":"FAILED","statistic":null,"p_value":null,"holm13_p":null,"holm_internal_placeholder":false,"moment_qualified":null,"nu_gt4":null,"kappa":null,"q4":null,"null_boundary_status":null,"boundary_hits":null,"calibration_status":"FAILED","selected_breaks":2,"cuts":[2036,5365],"break_dates":[],"segment_lengths":[2036,3329,2743],"min_segment":1622,"cap_reached":true,"global_interpretation":"\u4e0d\u53ef\u8bc4\u4f30","failures":["GARCH_OPTIMIZATION_FAILED","FAILED","BREAK_DATES_NOT_ARCHIVED"]}}
 FX hourly & -- & -- & -- & -- & -- & 2036/5365 & -- & 2036/3329/2743 & 1622 & Y & OF\\
 \end{longtable}
-\noindent\parbox{\linewidth}{\fontsize{8}{9.2}\selectfont $H$: Hansen joint statistic; $h$: minimum segment transitions; M4: registered fitted-null fourth-moment qualification. Cuts use transition-row units; dates mark the first target after each cut. Unarchived dates remain -- even when cuts are available. Source codes omit the common PDPOS prefix. NR: daily FX NONREGULAR\_NULL (Student fourth moment unavailable); OF: hourly FX GARCH\_OPTIMIZATION\_FAILED. BF: a restricted-boundary fit; OK does not certify the model. Unavailable raw $p$ and Holm values remain --; internal Holm placeholders are not tests. Segmentation is descriptive, and the two-break cap does not establish significant individual breaks.}
+\noindent\parbox{\linewidth}{\fontsize{8}{9.2}\selectfont $H$: Hansen joint statistic; $h$: minimum segment transitions; M4: pre-specified fitted-null fourth-moment qualification. Cuts use transition-row units; dates mark the first target after each cut. Unarchived dates remain -- even when cuts are available. Source codes omit the common PDPOS prefix. NR: daily FX NONREGULAR\_NULL (Student fourth moment unavailable); OF: hourly FX GARCH\_OPTIMIZATION\_FAILED. BF: a restricted-boundary fit; OK does not certify the model. Unavailable raw $p$ and Holm values remain --; internal Holm placeholders are not tests. Segmentation is descriptive, and the two-break cap does not establish significant individual breaks.}
 \endgroup
