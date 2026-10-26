@@ -1,0 +1,25 @@
+WARN `--no-project` was provided, but no project was found
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+___ test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases ___
+test_v9_sync_deliverables.py:41: in test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases
+    assert receipt.is_file(), 'The requested notes receipt must not be shadowed by a source-snapshot target'
+E   AssertionError: The requested notes receipt must not be shadowed by a source-snapshot target
+E   assert False
+E    +  where False = is_file()
+E    +    where is_file = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-148/test_fresh_receipt_preserves_t0/notes/revision-v9/constructed-sync-receipt.json').is_file
+----------------------------- Captured stdout call -----------------------------
+{
+  "actual_utc": "2026-10-25T00:50:53.110202+00:00",
+  "status": "PASS",
+  "operation": "Current source snapshots, exact preview aliases and source-only ZIP",
+  "package": "submission-jof/overleaf-package.zip",
+  "bytes": 1498,
+  "sha256": "3db6c1041c3e635d5a9dd5941f978a54304aa643db0f8b5c047f3b9285114bd8",
+  "scientific_results_modified": 0,
+  "financial_models_run": 0,
+  "isolated_compile_and_visual_QA": "Separate required gates"
+}
+=========================== short test summary info ============================
+FAILED test_v9_sync_deliverables.py::test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases
+1 failed, 1 passed in 0.04s
