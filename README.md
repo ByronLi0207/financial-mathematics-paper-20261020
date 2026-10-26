@@ -1,3 +1,21 @@
+# Final consolidated JoF manuscript — final-jof
+
+Rebuild all six main tables and four main figures from saved public outputs, from this repository root with already available NumPy and Matplotlib:
+
+```sh
+python3 reproduce_final_displays.py --output final-display-rebuild
+```
+
+Use a new output directory. This formats and plots existing results; it acquires no raw data and runs no model, loss/HAC/bootstrap calculation or new scientific summary. The full [current source and reproduction guide](submission-final/README.md) separates this command from rights-dependent raw financial replay.
+
+The combined manuscript is [submission-final/manuscript.tex](submission-final/manuscript.tex), with [current main PDF](submission-final/manuscript.pdf), [Supplement](submission-final/supplement.tex) and [Supplement PDF](submission-final/supplement.pdf). The transported CFTC history verdict is **PARTLY**, retaining failed criteria, all counterexamples and the known-period/aggregate-market limits. The [WP0–WP8 log](FINAL_MERGE_CHANGELOG.md), [three-perspective reading](notes/final-merge/wp6-three-perspective-review.md), [reviewer candidates](notes/final-merge/suggested-reviewers.md), [anticipated questions](notes/final-merge/anticipated-questions.md) and [author decisions](USER_DECISIONS_FINAL_MERGE.md) define the current scope.
+
+This is the final-jof consolidation under the twelve-hour task, with WP8 release acceptance and the timed final report still pending. Existing PRs are untouched; only one new PR is authorized at the release checkpoint. No main merge or journal submission is authorized.
+
+---
+
+Everything below is preserved verbatim as a historical versioned guide. Earlier branch names, uses of current, page limits, test counts, publication labels and hypotheses describe their own checkpoints and do not supersede the consolidated source or its actual acceptance receipts.
+
 # Canonical submission draft: revision-v12
 
 Use [the v12 submission package](submission-v10/README.md), based on `revision-v11` / `4520648`. The native directory remains `submission-v10/`; the branch identifies the revision. New prewritten diagnostics separate finite-penalty hindsight gaps from selection errors, compare validation lengths and report quantile sensitivity, including every numerical failure. Existing data, archived results and designs are unchanged.
