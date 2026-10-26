@@ -1,4 +1,16 @@
-# Canonical submission draft: revision-v12
+# Canonical submission draft: revision-v13
+
+Use [the v13 submission package](submission-v10/README.md), based on `revision-v12` / `8060807`. The native directory remains `submission-v10/`; the branch identifies the revision. Longer validation reduces regression arm medians in both weekly reporting systems. The benchmark-default protocol retains the FX gains and a zero weekly median excess, but fails its large-loss criterion; it is a retrospective diagnostic, not a protection guarantee. The proposed high-quantile solver repair fails forecast compatibility, so the original unavailable results remain.
+
+Read the [G1–G3 designs](protocol/v13/), [complete separate results](results/v13/), [fresh-clone reproduction guide](REPRODUCING.md), [independent reproduction](notes/v13/independent-reproduction.md), [full-read log](notes/v13/final-read-log.md), [canonical-version recommendations](notes/v13/CANONICAL.md) and [pending decisions](notes/v13/PENDING.md). Each design was committed and publicly recorded separately before formal calculation. Exact times and content identities are in `notes/v13/design-publication.jsonl` and the individual runtime receipts.
+
+All pre-v13 data, archived scientific results, designs and Python sources retain their original bytes. Author, ORCID, funding and competing-interest placeholders remain. Restricted observations and private prediction vectors are excluded. This task publishes only `revision-v13` and performs no PR creation, merge or closure.
+
+Everything below is retained as a dated version record; its historical uses of “current” do not supersede v13.
+
+---
+
+# Historical submission draft: revision-v12
 
 Use [the v12 submission package](submission-v10/README.md), based on `revision-v11` / `4520648`. The native directory remains `submission-v10/`; the branch identifies the revision. New prewritten diagnostics separate finite-penalty hindsight gaps from selection errors, compare validation lengths and report quantile sensitivity, including every numerical failure. Existing data, archived results and designs are unchanged.
 
