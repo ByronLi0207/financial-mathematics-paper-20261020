@@ -1,0 +1,36 @@
+\section{Earlier calibrated simulation and numerical failures}\label{sup:v9-legacy-mc}
+
+This distinct calibrated design uses constant-variance AR(1) levels, where the
+peak depends on the current position (D0), an hourly AR--GARCH--t law with a
+known hour shape (D1), and a weekly AR--GARCH--t law (D2).
+D0/D2 share the original pre-validation Treasury calibration; D1 uses the
+original pre-validation FX prefix. Levels are divided by the prefix standard
+deviation without demeaning. The frozen calibration, clocks, origin geometry,
+parameters and numerical rules are retained in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v10/results/v9/legacy-calibrated}{the imported calibrated archive}.
+The weekly clock, validation span, refit schedule and six-candidate menu,
+including the intercept-only limit, differ from Section~\ref{sup:v8-mc}.
+Their short-history outcomes cannot be treated as replications of one design.
+
+Each completed cell reports repetition medians and quartiles of the
+within-repetition relative loss against F. These differ from the ratio of
+across-repetition mean losses in Section~\ref{sup:v8-mc}.
+Quartiles describe dispersion under fixed fitted laws, not confidence limits.
+The known-state oracle is a finite future-path approximation; its realized
+score need not beat F in every repetition. Ordinary-rank I, oracle results,
+strict breaches and intercept-only selections remain separate diagnostics.
+
+\input{generated/v9-legacy-simulation-table.tex}
+
+A required numerical failure blocks the whole cell. Partial repetitions do
+not supply a replacement median, quartile, win rate or breach rate.
+The retained nonconvergence exceptions mean that the unchanged solver did not
+obtain its joint residual-and-gap acceptance certificate within its iteration
+budget. They establish neither nonexistence of an optimum nor poor predictive
+accuracy of an unavailable report. Final residuals and gaps were not retained;
+the four-feature exceptions also lack exact refit context. These quantities
+remain unknown. The original constant-variance and short-weekly predictions
+are unsupported; the hourly and history-order predictions are unassessable.
+These outcomes identify neither the financial loss mechanism nor a pure
+frequency effect.
+

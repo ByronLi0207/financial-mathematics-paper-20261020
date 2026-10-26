@@ -1,0 +1,1870 @@
+{
+  "schema": 1,
+  "design_id": "v9-wp3-fixed-period-learning-curve",
+  "created_utc": "2026-10-24T23:10:52.678962+00:00",
+  "post_result": true,
+  "exploratory": true,
+  "predictions_fixed_before_new_forecasts": true,
+  "fresh_financial_holdout": false,
+  "wp2_end_commit": "1a535efe289254ced5b163361fefee357d13d583",
+  "wp1_readout_sha256": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
+  "source_preflight_sha256": "8ebe30e98e27f732a3115a79f78c866682a8be4dd98b7dc3190f92b8e91b40b5",
+  "raw": {
+    "path": ".scratch/revision-v9/wp3-input/1hourNetPositionsKaggle.csv",
+    "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+    "bytes": 1286391,
+    "record_count": 18576,
+    "financial_column": "NetPosUsd",
+    "native_unit": "USD",
+    "timezone": "UNVERIFIED",
+    "raw_redistribution": false
+  },
+  "clock": {
+    "validation_origin_first": 10463,
+    "validation_origin_last": 11902,
+    "evaluation_origin_first": 11927,
+    "evaluation_origin_last": 18551,
+    "refit_step": 24,
+    "short_scale": 24,
+    "long_scale": 168,
+    "nominal_gap_seconds": 3600
+  },
+  "windows": [
+    360,
+    720,
+    1440,
+    2880,
+    5760
+  ],
+  "horizons": [
+    6,
+    24
+  ],
+  "methods": [
+    "F",
+    "QR33",
+    "QR4"
+  ],
+  "menus": {
+    "QR33": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "QR4": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "source_code_sha256": {
+    "conditional_sources.py": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "inference_tests.py": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c"
+  },
+  "legacy_public": [
+    {
+      "path": "results/revision-20261022/validation-fx_hourly-h6-w2880-QR.json",
+      "bytes": 197700,
+      "sha256": "dbc56674ff3331d3f46fc2d0c90a9bca2bedaa277793b1b478909f0d3ac9aa68",
+      "phase": "validation",
+      "horizon": 6,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 1440,
+        "first": 10463,
+        "last": 11902,
+        "sha256": "72eb4dd7dee136ab4639d5044e89796531040364779b6b3e8dcb064bf8c88f85"
+      },
+      "selection": {
+        "status": "SELECTED",
+        "parameter": 0.01,
+        "mean_validation_pinball": 449402.73877008253
+      },
+      "candidate_rows": [
+        {
+          "parameter": 0.001,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 452407.6922996637,
+          "failure": null
+        },
+        {
+          "parameter": 0.01,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 449402.73877008253,
+          "failure": null
+        },
+        {
+          "parameter": 0.1,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 452096.10824217787,
+          "failure": null
+        }
+      ],
+      "summary_rows": [
+        {
+          "method": "QR",
+          "parameter": 0.001,
+          "origin_count": 1440,
+          "mean_pinball": 452407.6922996637,
+          "mean_capacity": 11492710.876204174,
+          "mean_extra_allowance": 5802827.113009729,
+          "strict_breach_count": 129,
+          "strict_breach_rate": 0.08958333333333333,
+          "mean_positive_overrun": 255175.15927817032,
+          "conditional_mean_overrun": 2848466.8942679474,
+          "conditional_overrun_denominator": 129,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 4199825.819708039
+        },
+        {
+          "method": "QR",
+          "parameter": 0.01,
+          "origin_count": 1440,
+          "mean_pinball": 449402.73877008253,
+          "mean_capacity": 11261967.272056567,
+          "mean_extra_allowance": 5572083.508862123,
+          "strict_breach_count": 118,
+          "strict_breach_rate": 0.08194444444444444,
+          "mean_positive_overrun": 263707.3859559694,
+          "conditional_mean_overrun": 3218124.03200505,
+          "conditional_overrun_denominator": 118,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 3977614.4422382307
+        },
+        {
+          "method": "QR",
+          "parameter": 0.1,
+          "origin_count": 1440,
+          "mean_pinball": 452096.10824217787,
+          "mean_capacity": 11423804.73376804,
+          "mean_extra_allowance": 5733920.970573596,
+          "strict_breach_count": 96,
+          "strict_breach_rate": 0.06666666666666667,
+          "mean_positive_overrun": 258308.88234249112,
+          "conditional_mean_overrun": 3874633.235137367,
+          "conditional_overrun_denominator": 96,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 4134053.4003362264
+        }
+      ],
+      "fit_diagnostic_count": 180,
+      "first_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.001,
+        "refit_index": 10463,
+        "training_first_origin": 7578,
+        "training_last_origin": 10457,
+        "training_count": 2880,
+        "latest_label_end": 10463,
+        "coefficients_sha256": "8b2e4b3d012402795f0ee7e2db7ae119964400330d7af041aec4c14395144494",
+        "dual_numerators_sha256": "b49484e7b5ac96b17c7867d6c68ce664c2b3ac83f3472cc7b845c032617bcf30"
+      },
+      "last_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.1,
+        "refit_index": 11879,
+        "training_first_origin": 8994,
+        "training_last_origin": 11873,
+        "training_count": 2880,
+        "latest_label_end": 11879,
+        "coefficients_sha256": "5c1230d034d9d53b731e16e53bbaeb05aa3c3c97a061184592a1e39f63e7c3f5",
+        "dual_numerators_sha256": "279cc1bd7b7e2a3cfe54c81a4fc3d87132785eccf0cdd4367cef3e1d0370b3e7"
+      }
+    },
+    {
+      "path": "results/revision-20261022/evaluation-fx_hourly-h6-w2880-QR.json",
+      "bytes": 302089,
+      "sha256": "30f872660f7b6eabbcec884d0a8fabca0f2071f52eb861414c5750f0b053f49f",
+      "phase": "evaluation",
+      "horizon": 6,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 6625,
+        "first": 11927,
+        "last": 18551,
+        "sha256": "1aa05a5dda2d5ae7f4bc60610a764636e2c9c01eaae0a9f3525eee15f3806790"
+      },
+      "selection": {
+        "status": "SELECTED",
+        "parameter": 0.01
+      },
+      "candidate_rows": [],
+      "summary_rows": [
+        {
+          "method": "QR",
+          "parameter": 0.01,
+          "origin_count": 6625,
+          "mean_pinball": 385844.8854897607,
+          "mean_capacity": 21735251.88370208,
+          "mean_extra_allowance": 6503510.634426474,
+          "strict_breach_count": 376,
+          "strict_breach_rate": 0.056754716981132075,
+          "mean_positive_overrun": 156123.0280958251,
+          "conditional_mean_overrun": 2750837.92855011,
+          "conditional_overrun_denominator": 376,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 4750560.175974538
+        }
+      ],
+      "fit_diagnostic_count": 277,
+      "first_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.01,
+        "refit_index": 11927,
+        "training_first_origin": 9042,
+        "training_last_origin": 11921,
+        "training_count": 2880,
+        "latest_label_end": 11927,
+        "coefficients_sha256": "815ed462db883e263038b9aeadc58752fdb2bd605a7991452e624efb5fc4186c",
+        "dual_numerators_sha256": "79bf0debac5318005f9d2d2b3fa0d0cb01b402d47ebe2405362e24e39e762700"
+      },
+      "last_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.01,
+        "refit_index": 18551,
+        "training_first_origin": 15666,
+        "training_last_origin": 18545,
+        "training_count": 2880,
+        "latest_label_end": 18551,
+        "coefficients_sha256": "cddb436c23ca17167ad614e25b685f92d873a4ece1a7df79cd15f5c8548728ef",
+        "dual_numerators_sha256": "29b8aea4da2a9e05e0100527bf0f64a5022980dbaeaaf2603004537a46540df8"
+      }
+    },
+    {
+      "path": "results/revision-20261022/references-fx_hourly-h6-w2880.json",
+      "bytes": 16585,
+      "sha256": "020ed4ba49c58ed6186031c821e2d7cf3d3d8187731e435fddb25b0d4637c6f2",
+      "phase": "references",
+      "horizon": 6,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 6625,
+        "first": 11927,
+        "last": 18551,
+        "sha256": "1aa05a5dda2d5ae7f4bc60610a764636e2c9c01eaae0a9f3525eee15f3806790"
+      },
+      "selection": null,
+      "candidate_rows": [],
+      "summary_rows": [
+        {
+          "method": "frozen_F",
+          "parameter": null,
+          "origin_count": 6625,
+          "mean_pinball": 452692.9834478481,
+          "mean_capacity": 22481229.779014595,
+          "mean_extra_allowance": 7249488.529738989,
+          "strict_breach_count": 360,
+          "strict_breach_rate": 0.05433962264150943,
+          "mean_positive_overrun": 185672.2312882868,
+          "conditional_mean_overrun": 3416884.8119024998,
+          "conditional_overrun_denominator": 360,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 5526087.274479514
+        }
+      ],
+      "fit_diagnostic_count": 0,
+      "first_fit_metadata": null,
+      "last_fit_metadata": null
+    },
+    {
+      "path": "results/revision-20261022/validation-fx_hourly-h24-w2880-QR.json",
+      "bytes": 197612,
+      "sha256": "a75f0f4a492509ec97e83ea5dedefe89c07e77b37fccee57b64634b631a268a2",
+      "phase": "validation",
+      "horizon": 24,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 1440,
+        "first": 10463,
+        "last": 11902,
+        "sha256": "72eb4dd7dee136ab4639d5044e89796531040364779b6b3e8dcb064bf8c88f85"
+      },
+      "selection": {
+        "status": "SELECTED",
+        "parameter": 0.001,
+        "mean_validation_pinball": 582035.5856921545
+      },
+      "candidate_rows": [
+        {
+          "parameter": 0.001,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 582035.5856921545,
+          "failure": null
+        },
+        {
+          "parameter": 0.01,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 587654.5261525756,
+          "failure": null
+        },
+        {
+          "parameter": 0.1,
+          "status": "COMPLETE",
+          "origin_count": 1440,
+          "mean_pinball": 598006.0153988505,
+          "failure": null
+        }
+      ],
+      "summary_rows": [
+        {
+          "method": "QR",
+          "parameter": 0.001,
+          "origin_count": 1440,
+          "mean_pinball": 582035.5856921545,
+          "mean_capacity": 16755301.71226652,
+          "mean_extra_allowance": 11065417.949072074,
+          "strict_breach_count": 120,
+          "strict_breach_rate": 0.08333333333333333,
+          "mean_positive_overrun": 248489.8478441062,
+          "conditional_mean_overrun": 2981878.1741292747,
+          "conditional_overrun_denominator": 120,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 6919404.604805071
+        },
+        {
+          "method": "QR",
+          "parameter": 0.01,
+          "origin_count": 1440,
+          "mean_pinball": 587654.5261525756,
+          "mean_capacity": 16540271.9500235,
+          "mean_extra_allowance": 10850388.186829057,
+          "strict_breach_count": 118,
+          "strict_breach_rate": 0.08194444444444444,
+          "mean_positive_overrun": 264860.2764166784,
+          "conditional_mean_overrun": 3232193.2037289566,
+          "conditional_overrun_denominator": 118,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 6720745.271134623
+        },
+        {
+          "method": "QR",
+          "parameter": 0.1,
+          "origin_count": 1440,
+          "mean_pinball": 598006.0153988505,
+          "mean_capacity": 16235772.731474556,
+          "mean_extra_allowance": 10545888.968280112,
+          "strict_breach_count": 125,
+          "strict_breach_rate": 0.08680555555555555,
+          "mean_positive_overrun": 290436.7265904005,
+          "conditional_mean_overrun": 3345831.0903214137,
+          "conditional_overrun_denominator": 125,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 6441822.502759403
+        }
+      ],
+      "fit_diagnostic_count": 180,
+      "first_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.001,
+        "refit_index": 10463,
+        "training_first_origin": 7560,
+        "training_last_origin": 10439,
+        "training_count": 2880,
+        "latest_label_end": 10463,
+        "coefficients_sha256": "278d86739b89abb6e9fb93603777a88fc4d55822132547bc6476f7299f746401",
+        "dual_numerators_sha256": "d0069e2cb6796485dc99c43d39a9ddc019366caf0d3f2bcfbcd89a33e08b5346"
+      },
+      "last_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.1,
+        "refit_index": 11879,
+        "training_first_origin": 8976,
+        "training_last_origin": 11855,
+        "training_count": 2880,
+        "latest_label_end": 11879,
+        "coefficients_sha256": "22d01bae5412bd3a57d38e131a301ed6cc97251bd2a494828f030ff393b906bc",
+        "dual_numerators_sha256": "9833748e11b0df82c0cf7f37c565a653edd764330098c68626e3748c722db987"
+      }
+    },
+    {
+      "path": "results/revision-20261022/evaluation-fx_hourly-h24-w2880-QR.json",
+      "bytes": 302188,
+      "sha256": "5e13a67a74c0e79735e47365811cce6c5044bb4e2c16b225e6eb409cef4385cf",
+      "phase": "evaluation",
+      "horizon": 24,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 6625,
+        "first": 11927,
+        "last": 18551,
+        "sha256": "1aa05a5dda2d5ae7f4bc60610a764636e2c9c01eaae0a9f3525eee15f3806790"
+      },
+      "selection": {
+        "status": "SELECTED",
+        "parameter": 0.001
+      },
+      "candidate_rows": [],
+      "summary_rows": [
+        {
+          "method": "QR",
+          "parameter": 0.001,
+          "origin_count": 6625,
+          "mean_pinball": 734695.0685732415,
+          "mean_capacity": 28446634.826339424,
+          "mean_extra_allowance": 13214893.577063821,
+          "strict_breach_count": 531,
+          "strict_breach_rate": 0.08015094339622642,
+          "mean_positive_overrun": 317678.11539357586,
+          "conditional_mean_overrun": 3963498.1440347275,
+          "conditional_overrun_denominator": 531,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 8658017.178986888
+        }
+      ],
+      "fit_diagnostic_count": 277,
+      "first_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.001,
+        "refit_index": 11927,
+        "training_first_origin": 9024,
+        "training_last_origin": 11903,
+        "training_count": 2880,
+        "latest_label_end": 11927,
+        "coefficients_sha256": "6ecaf0780b202ebc43e5932123e2b745539674010c3808bebfaafdcedb6865f3",
+        "dual_numerators_sha256": "3564d96549ec2dcad714c5ba6ba810b08d5bc068f537b5687dfbafb95e58995f"
+      },
+      "last_fit_metadata": {
+        "method": "QR",
+        "parameter": 0.001,
+        "refit_index": 18551,
+        "training_first_origin": 15648,
+        "training_last_origin": 18527,
+        "training_count": 2880,
+        "latest_label_end": 18551,
+        "coefficients_sha256": "87b4e3004bbbb1a01bd087e9e6037767902a3a34811f4ba6d95c41258c9c6390",
+        "dual_numerators_sha256": "98fd22edb3f306fffb366812cbf0035821e655f47f6fb2bcf2cedc571c286f64"
+      }
+    },
+    {
+      "path": "results/revision-20261022/references-fx_hourly-h24-w2880.json",
+      "bytes": 16664,
+      "sha256": "9e4b399bb8c9b371481873d9c80c49d553cc7285bb3f72fb0b816e642cf2e25f",
+      "phase": "references",
+      "horizon": 24,
+      "status": "COMPLETE",
+      "origin_identity": {
+        "count": 6625,
+        "first": 11927,
+        "last": 18551,
+        "sha256": "1aa05a5dda2d5ae7f4bc60610a764636e2c9c01eaae0a9f3525eee15f3806790"
+      },
+      "selection": null,
+      "candidate_rows": [],
+      "summary_rows": [
+        {
+          "method": "frozen_F",
+          "parameter": null,
+          "origin_count": 6625,
+          "mean_pinball": 763381.1758251915,
+          "mean_capacity": 30515670.88859334,
+          "mean_extra_allowance": 15283929.639317736,
+          "strict_breach_count": 357,
+          "strict_breach_rate": 0.053886792452830186,
+          "mean_positive_overrun": 242912.4195328302,
+          "conditional_mean_overrun": 4507828.513739496,
+          "conditional_overrun_denominator": 357,
+          "conditional_overrun_undefined_reason": null,
+          "mean_unused_allowance": 10652287.545380058
+        }
+      ],
+      "fit_diagnostic_count": 0,
+      "first_fit_metadata": null,
+      "last_fit_metadata": null
+    }
+  ],
+  "legacy_private": [
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/validation-fx_hourly-h6-w2880-QR/private/numeric-traces.npz",
+      "bytes": 212254,
+      "sha256": "f689e3aa1c80bd1038559653b3258abe910bffbf1e82263321786d3714dfd3e6",
+      "phase": "validation",
+      "horizon": 6,
+      "public_binding": "results/revision-20261022/validation-fx_hourly-h6-w2880-QR.json",
+      "expected_bytes": 212254,
+      "expected_sha256": "f689e3aa1c80bd1038559653b3258abe910bffbf1e82263321786d3714dfd3e6",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "candidate_0_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/evaluation-fx_hourly-h6-w2880-QR/private/numeric-traces.npz",
+      "bytes": 319538,
+      "sha256": "2d7b1950a8a94fb194319616179486fef0b83f14b6ca68a76ec18871d91609bf",
+      "phase": "evaluation",
+      "horizon": 6,
+      "public_binding": "results/revision-20261022/evaluation-fx_hourly-h6-w2880-QR.json",
+      "expected_bytes": 319538,
+      "expected_sha256": "2d7b1950a8a94fb194319616179486fef0b83f14b6ca68a76ec18871d91609bf",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "QR_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/references-fx_hourly-h6-w2880/private/numeric-traces.npz",
+      "bytes": 1917586,
+      "sha256": "12fbd3a7858dbf4397ddee4392cdd0043bfd5cd1a973d21f81968fe3440232c9",
+      "phase": "references",
+      "horizon": 6,
+      "public_binding": "results/revision-20261022/references-fx_hourly-h6-w2880.json",
+      "expected_bytes": 1917586,
+      "expected_sha256": "12fbd3a7858dbf4397ddee4392cdd0043bfd5cd1a973d21f81968fe3440232c9",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "rolling_F_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/validation-fx_hourly-h24-w2880-QR/private/numeric-traces.npz",
+      "bytes": 212254,
+      "sha256": "04813257646c434574b8dd2543e4b9a81bda9d0784611175f11c039f497fde9d",
+      "phase": "validation",
+      "horizon": 24,
+      "public_binding": "results/revision-20261022/validation-fx_hourly-h24-w2880-QR.json",
+      "expected_bytes": 212254,
+      "expected_sha256": "04813257646c434574b8dd2543e4b9a81bda9d0784611175f11c039f497fde9d",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "candidate_0_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_0_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_1_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        },
+        {
+          "name": "candidate_2_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            1440
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/evaluation-fx_hourly-h24-w2880-QR/private/numeric-traces.npz",
+      "bytes": 319538,
+      "sha256": "4adcd90f111303f5d83bf9a5d241ff5b0abf653fd5cf8662d07b8237dc055c67",
+      "phase": "evaluation",
+      "horizon": 24,
+      "public_binding": "results/revision-20261022/evaluation-fx_hourly-h24-w2880-QR.json",
+      "expected_bytes": 319538,
+      "expected_sha256": "4adcd90f111303f5d83bf9a5d241ff5b0abf653fd5cf8662d07b8237dc055c67",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "QR_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "QR_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/revision-20261022/replication-revision-v3-b5-full/references-fx_hourly-h24-w2880/private/numeric-traces.npz",
+      "bytes": 1917586,
+      "sha256": "b143db8e2e39002b0c0f6943ec12afa5e06d9b51c7a81be6a3f58673a8470f5e",
+      "phase": "references",
+      "horizon": 24,
+      "public_binding": "results/revision-20261022/references-fx_hourly-h24-w2880.json",
+      "expected_bytes": 1917586,
+      "expected_sha256": "b143db8e2e39002b0c0f6943ec12afa5e06d9b51c7a81be6a3f58673a8470f5e",
+      "exact_public_artifact_match": true,
+      "arrays": [
+        {
+          "name": "rolling_F_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_F_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_S_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "rolling_K_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_F_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_S_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_origins.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_capacity.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_peak.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_floor.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_refit_indices.npy",
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        },
+        {
+          "name": "frozen_K_pinball.npy",
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            6625
+          ]
+        }
+      ]
+    }
+  ],
+  "legacy_QR4": [
+    {
+      "horizon": 6,
+      "public": {
+        "path": "results/revision-20261023/parsimonious/fx_hourly-h6-w2880.json",
+        "bytes": 69201,
+        "sha256": "b32541cb18e3ee149e68932affbfb0c02026dd8fa79625066a198493bf567d87"
+      },
+      "status": "COMPLETE",
+      "selected_penalty": 0.01,
+      "candidates": [
+        {
+          "penalty": 0.001,
+          "status": "COMPLETE",
+          "mean_pinball": 468680.5797109469
+        },
+        {
+          "penalty": 0.01,
+          "status": "COMPLETE",
+          "mean_pinball": 452990.1674561345
+        },
+        {
+          "penalty": 0.1,
+          "status": "COMPLETE",
+          "mean_pinball": 462603.1390718967
+        },
+        {
+          "penalty": 1.0,
+          "status": "COMPLETE",
+          "mean_pinball": 466893.774763252
+        },
+        {
+          "penalty": 10.0,
+          "status": "COMPLETE",
+          "mean_pinball": 467515.9010356981
+        }
+      ],
+      "evaluation": {
+        "origin_count": 6625,
+        "mean_pinball": 433275.30347718514,
+        "mean_capacity": 22160678.653009325,
+        "mean_extra_allowance": 6928937.403733718,
+        "strict_breach_count": 399,
+        "strict_breach_rate": 0.060226415094339625,
+        "mean_positive_overrun": 182282.10761788732,
+        "conditional_mean_overrun": 3026613.942276951,
+        "conditional_overrun_denominator": 399,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 5202146.024803844
+      },
+      "private": {
+        "path": ".scratch/v3-parsimonious/fx_hourly-h6-w2880/numeric-traces.npz",
+        "bytes": 213002,
+        "sha256": "6a1a81692b48cb302d9c20d221d542168816af1d6581dd50c3cea1da6bcd00ff",
+        "arrays": [
+          {
+            "name": "origins.npy",
+            "descr": "<i8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "capacity.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "peak.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "pinball.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          }
+        ]
+      },
+      "legacy_public_npz_hash_binding": false,
+      "validation_forecast_arrays_saved": false,
+      "floor_and_refit_arrays_saved": false
+    },
+    {
+      "horizon": 24,
+      "public": {
+        "path": "results/revision-20261023/parsimonious/fx_hourly-h24-w2880.json",
+        "bytes": 69186,
+        "sha256": "6e6d18e979e1fdc2b6ba6bc1fe78bb0821ee83701c0973b0b959fcb2ae6d34b9"
+      },
+      "status": "COMPLETE",
+      "selected_penalty": 0.01,
+      "candidates": [
+        {
+          "penalty": 0.001,
+          "status": "COMPLETE",
+          "mean_pinball": 560440.760397114
+        },
+        {
+          "penalty": 0.01,
+          "status": "COMPLETE",
+          "mean_pinball": 552435.2813741701
+        },
+        {
+          "penalty": 0.1,
+          "status": "COMPLETE",
+          "mean_pinball": 595557.6071578915
+        },
+        {
+          "penalty": 1.0,
+          "status": "COMPLETE",
+          "mean_pinball": 675884.8129386286
+        },
+        {
+          "penalty": 10.0,
+          "status": "COMPLETE",
+          "mean_pinball": 688035.8437804198
+        }
+      ],
+      "evaluation": {
+        "origin_count": 6625,
+        "mean_pinball": 741291.4299639979,
+        "mean_capacity": 28674528.188956898,
+        "mean_extra_allowance": 13442786.939681295,
+        "strict_breach_count": 508,
+        "strict_breach_rate": 0.07667924528301887,
+        "mean_positive_overrun": 312879.8086534585,
+        "conditional_mean_overrun": 4080371.520332997,
+        "conditional_overrun_denominator": 508,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 8881112.234864244
+      },
+      "private": {
+        "path": ".scratch/v3-parsimonious/fx_hourly-h24-w2880/numeric-traces.npz",
+        "bytes": 213002,
+        "sha256": "21cab12c76dc117da22fcd1c131f8b245e1fd1b23df07649d872b377774d09db",
+        "arrays": [
+          {
+            "name": "origins.npy",
+            "descr": "<i8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "capacity.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "peak.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          },
+          {
+            "name": "pinball.npy",
+            "descr": "<f8",
+            "fortran_order": false,
+            "shape": [
+              6625
+            ]
+          }
+        ]
+      },
+      "legacy_public_npz_hash_binding": false,
+      "validation_forecast_arrays_saved": false,
+      "floor_and_refit_arrays_saved": false
+    }
+  ],
+  "legacy_verification_limits": [
+    "This preflight inspected NPZ headers/hashes only and did not load raw financial array values or fit any new forecast.",
+    "QR33/reference original private files exactly match archived public artifact hashes; QR4 private traces lack a legacy public file-hash binding and require their current fingerprint plus later public-scalar consistency checks.",
+    "QR4 saved only origins/capacity/peak/pinball; floor/refit arrays and per-candidate validation forecast arrays are absent.",
+    "Old original evaluation receipt lacks recorded Python/NumPy package versions, so package-version identity cannot be proved from that receipt; exact later numeric replication remains a mandatory gate."
+  ],
+  "prediction_ranges": [
+    {
+      "horizon": 6,
+      "method": "QR33",
+      "lower": 195.264769574666,
+      "upper": 774.9704967161092,
+      "upper_unbounded": false,
+      "source_envelope": {
+        "lower": 27.894967082095143,
+        "upper": 110.71007095944418,
+        "upper_unbounded": false,
+        "coverage_guarantee": false
+      },
+      "numeric_testable": true
+    },
+    {
+      "horizon": 6,
+      "method": "QR4",
+      "lower": 92.90675766563821,
+      "upper": 749.7655536169423,
+      "upper_unbounded": false,
+      "source_envelope": {
+        "lower": 13.27239395223403,
+        "upper": 107.10936480242033,
+        "upper_unbounded": false,
+        "coverage_guarantee": false
+      },
+      "numeric_testable": true
+    },
+    {
+      "horizon": 24,
+      "method": "QR33",
+      "lower": 697.3741770523785,
+      "upper": 2767.7517739861046,
+      "upper_unbounded": false,
+      "source_envelope": {
+        "lower": 27.894967082095143,
+        "upper": 110.71007095944418,
+        "upper_unbounded": false,
+        "coverage_guarantee": false
+      },
+      "numeric_testable": true
+    },
+    {
+      "horizon": 24,
+      "method": "QR4",
+      "lower": 331.8098488058507,
+      "upper": 2677.7341200605083,
+      "upper_unbounded": false,
+      "source_envelope": {
+        "lower": 13.27239395223403,
+        "upper": 107.10936480242033,
+        "upper_unbounded": false,
+        "coverage_guarantee": false
+      },
+      "numeric_testable": true
+    }
+  ],
+  "relative_loss_arithmetic": "100*(mean_model_loss-mean_matched_F_loss)/mean_matched_F_loss",
+  "crossing_rules": "rawW first positive-to-nonpositive root, no NA bridging, retain all roots; exact rules in companion MD",
+  "baseline_agreement": {
+    "window": 2880,
+    "array_equality": "identical shape/dtype and exact values/finite bytes",
+    "scalar_equality": "exact original arithmetic; execution metadata excluded",
+    "any_mismatch": "IMMEDIATE_BLOCKED_NO_RETRY_NO_ALTERNATE_ARCHIVE",
+    "compare_only_enumerated_available_science_fields": true,
+    "missing_old_QR4_arrays": "validation/floor/refit vectors unavailable, do not claim archived agreement"
+  },
+  "dm": {
+    "direction": "QR_minus_matched_F",
+    "n": 6625,
+    "kernel": "Bartlett_Newey_West",
+    "bandwidth": "min(n-1,max(H,floor(4*(n/100)**(2/9))))",
+    "reference": "two_sided_normal",
+    "degenerate": "NA_REASON",
+    "nominal_post_result": true,
+    "extra_tests": false,
+    "bandwidth_by_horizon_at_n6625": {
+      "6": 10,
+      "24": 24
+    }
+  },
+  "resources": {
+    "numerical_workers": 1,
+    "numerical_threads": 1,
+    "maximum_observed_os_threads": 2,
+    "internal_rss_bytes": 1610612736,
+    "absolute_rss_bytes": 2147483648,
+    "internal_unit_seconds": 540,
+    "hard_unit_seconds": 600,
+    "total_study_seconds": 3600,
+    "original_window_end_utc": "2026-10-25T05:10:12Z",
+    "grid_reduction": false
+  },
+  "run_order": [
+    [
+      6,
+      2880
+    ],
+    [
+      24,
+      2880
+    ],
+    [
+      6,
+      360
+    ],
+    [
+      24,
+      360
+    ],
+    [
+      6,
+      720
+    ],
+    [
+      24,
+      720
+    ],
+    [
+      6,
+      1440
+    ],
+    [
+      24,
+      1440
+    ],
+    [
+      6,
+      5760
+    ],
+    [
+      24,
+      5760
+    ]
+  ],
+  "runtime_estimate": {
+    "old_W2880_measured_seconds": {
+      "6": 82.36570449988358,
+      "24": 72.21311250003055
+    },
+    "window_scaling_sum": 3.875,
+    "safety_factor": 2.0,
+    "safety_total_estimated_seconds": 1197.9858317493345
+  },
+  "independent_verification_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-12
+  },
+  "baseline_tolerance": 0
+}

@@ -1,0 +1,16 @@
+{
+  "step": "E7",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import csv;from v3_revision import ROOT;p=ROOT/'\"'\"'results/revision-20261022/evaluation-summary.csv'\"'\"';lines=p.read_text().splitlines();rows=list(csv.DictReader(lines));print(lines[0]);\nfor h,w in [(6,720),(24,2880)]:\n i=next(i for i,r in enumerate(rows) if r['\"'\"'source'\"'\"']=='\"'\"'fx_hourly'\"'\"' and int(r['\"'\"'horizon'\"'\"'])==h and int(r['\"'\"'window'\"'\"'])==w and r['\"'\"'method'\"'\"']=='\"'\"'QR'\"'\"');r=rows[i];assert r['\"'\"'strict_breach_count'\"'\"']=='\"'\"'531'\"'\"' and r['\"'\"'origin_count'\"'\"']=='\"'\"'6625'\"'\"';print(lines[i+1])\nprint('\"'\"'已核实为巧合；原归档两行均为531/6625，未改动。'\"'\"')'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import csv;from v3_revision import ROOT;p=ROOT/'results/revision-20261022/evaluation-summary.csv';lines=p.read_text().splitlines();rows=list(csv.DictReader(lines));print(lines[0]);\nfor h,w in [(6,720),(24,2880)]:\n i=next(i for i,r in enumerate(rows) if r['source']=='fx_hourly' and int(r['horizon'])==h and int(r['window'])==w and r['method']=='QR');r=rows[i];assert r['strict_breach_count']=='531' and r['origin_count']=='6625';print(lines[i+1])\nprint('已核实为巧合；原归档两行均为531/6625，未改动。')"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T11:20:42.237974+00:00",
+  "ended_utc": "2026-10-23T11:20:42.267735+00:00",
+  "returncode": 0,
+  "stdout": "source,native_unit,horizon,window,method,parameter,refit_step,plain_knn_full_pool_fallback,origin_count,mean_pinball,mean_capacity,mean_extra_allowance,strict_breach_count,strict_breach_rate,mean_positive_overrun,conditional_mean_overrun,conditional_overrun_denominator,conditional_overrun_undefined_reason,mean_unused_allowance\nfx_hourly,USD,6,720,QR,0.01,24,False,6625,433246.30769461836,21728604.18006306,6496862.930787457,531,0.08015094339622642,203856.83548263359,2543411.5538087524,531,,4791646.279722329\nfx_hourly,USD,24,2880,QR,0.001,24,False,6625,734695.0685732415,28446634.826339424,13214893.577063821,531,0.08015094339622642,317678.11539357586,3963498.1440347275,531,,8658017.178986888\n已核实为巧合；原归档两行均为531/6625，未改动。\n",
+  "stderr": ""
+}

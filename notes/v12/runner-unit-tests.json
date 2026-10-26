@@ -1,0 +1,209 @@
+{
+  "scope": "Pinned constructed local toy inputs only; no financial runs/pilots.",
+  "runs": [
+    {
+      "phase": "RED",
+      "utc": "2026-10-25T11:12:32.236793+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py",
+        "--maxfail=1"
+      ],
+      "returncode": 1,
+      "stdout": "F\n=================================== FAILURES ===================================\n_ test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache __\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-156/test_f1_seals_all_validation_c0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b6d9a70>\n\n    def test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache(tmp_path, monkeypatch):\n>       m=api(); cell,cache,out=fixture(tmp_path)\n          ^^^^^\n\ntest_v12_runner.py:49: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def api():\n>       assert importlib.util.find_spec('v12_runner') is not None, 'v12 runner is missing'\nE       AssertionError: v12 runner is missing\nE       assert None is not None\nE        +  where None = <function find_spec at 0x10a97eb60>('v12_runner')\nE        +    where <function find_spec at 0x10a97eb60> = <module 'importlib.util' (frozen)>.find_spec\nE        +      where <module 'importlib.util' (frozen)> = importlib.util\n\ntest_v12_runner.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED test_v12_runner.py::test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed in 0.28s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "GREEN",
+      "utc": "2026-10-25T11:14:57.881560+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "..........                                                               [100%]\n10 passed in 23.05s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "RED_BOUNDARY_CHECK",
+      "utc": "2026-10-25T11:16:42.299361+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py",
+        "-k",
+        "trace_path_escape or original_reason"
+      ],
+      "returncode": 1,
+      "stdout": "FFF                                                                      [100%]\n=================================== FAILURES ===================================\n_ test_stale_or_corrupt_completed_entries_never_trigger_another_fit[trace_path_escape] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-158/test_stale_or_corrupt_complete0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1076e5ba0>\ndamage = 'trace_path_escape'\n\n    @pytest.mark.parametrize('damage', ['stale_started','trace_bytes','terminal_geometry','trace_path_escape'])\n    def test_stale_or_corrupt_completed_entries_never_trigger_another_fit(tmp_path, monkeypatch, damage):\n        m=api();cell,cache,out=fixture(tmp_path);first=m.compute_cell(cell,'F1',cache,out)\n        candidate=next(r for r in first['candidates'] if r['method']=='QR33' and r['penalty']==.001)\n        entry=cache/candidate['cache_key'];terminal=json.loads((entry/'result.json').read_text())\n        if damage=='stale_started': (entry/'result.json').unlink()\n        elif damage=='trace_bytes':\n            trace=entry/terminal['trace_path'];trace.write_bytes(trace.read_bytes()+b'corrupt')\n        elif damage=='terminal_geometry':\n            terminal['identity']['window']=260\n            (entry/'result.json').write_text(json.dumps(terminal))\n        else:\n            foreign=cache/'foreign';foreign.mkdir()\n            (foreign/'trace.npz').write_bytes((entry/'trace.npz').read_bytes())\n            terminal['trace_path']='../foreign/trace.npz'\n            (entry/'result.json').write_text(json.dumps(terminal))\n        seen=tracked_predictions(monkeypatch,m)\n        result=m.compute_cell(cell,'F1',cache,out/'resumed')\n        assert not seen\n>       assert next(r for r in result['rows'] if r['method']=='QR33')['status']=='FAILED'\nE       AssertionError: assert 'COMPLETE' == 'FAILED'\nE         \nE         - FAILED\nE         + COMPLETE\n\ntest_v12_runner.py:133: AssertionError\n____ test_f1_evaluation_failure_keeps_original_reason_on_method_row[False] _____\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-158/test_f1_evaluation_failure_kee0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1076e5810>\nresource_failure = False\n\n    @pytest.mark.parametrize('resource_failure', [False,True])\n    def test_f1_evaluation_failure_keeps_original_reason_on_method_row(tmp_path,monkeypatch,resource_failure):\n        m=api();cell,cache,out=fixture(tmp_path);real=m.predict_segment\n        def fail(context,ids,method,penalty=None,**kwargs):\n            if int(ids[0])==145 and method=='QR33' and penalty==.001:\n                if resource_failure: raise m.ResourceStop('RESOURCE_TOY_ACTIVE')\n                raise QuantileFitError('TOY_EVALUATION_FAILURE',{'iterations':10000})\n            return real(context,ids,method,penalty,**kwargs)\n        monkeypatch.setattr(m,'predict_segment',fail)\n        result=m.compute_cell(cell,'F1',cache,out)\n        row=next(r for r in result['rows'] if r['method']=='QR33')\n        assert row['status']==('FAILED_RESOURCE' if resource_failure else 'FAILED')\n>       assert row['reason']==('RESOURCE_TOY_ACTIVE' if resource_failure else 'TOY_EVALUATION_FAILURE')\nE       AssertionError: assert 'Required can...not COMPLETE.' == 'TOY_EVALUATION_FAILURE'\nE         \nE         - TOY_EVALUATION_FAILURE\nE         + Required candidate 0.001 is not COMPLETE.\n\ntest_v12_runner.py:148: AssertionError\n_____ test_f1_evaluation_failure_keeps_original_reason_on_method_row[True] _____\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-158/test_f1_evaluation_failure_kee1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10781ae70>\nresource_failure = True\n\n    @pytest.mark.parametrize('resource_failure', [False,True])\n    def test_f1_evaluation_failure_keeps_original_reason_on_method_row(tmp_path,monkeypatch,resource_failure):\n        m=api();cell,cache,out=fixture(tmp_path);real=m.predict_segment\n        def fail(context,ids,method,penalty=None,**kwargs):\n            if int(ids[0])==145 and method=='QR33' and penalty==.001:\n                if resource_failure: raise m.ResourceStop('RESOURCE_TOY_ACTIVE')\n                raise QuantileFitError('TOY_EVALUATION_FAILURE',{'iterations':10000})\n            return real(context,ids,method,penalty,**kwargs)\n        monkeypatch.setattr(m,'predict_segment',fail)\n        result=m.compute_cell(cell,'F1',cache,out)\n        row=next(r for r in result['rows'] if r['method']=='QR33')\n>       assert row['status']==('FAILED_RESOURCE' if resource_failure else 'FAILED')\nE       AssertionError: assert 'FAILED' == 'FAILED_RESOURCE'\nE         \nE         - FAILED_RESOURCE\nE         + FAILED\n\ntest_v12_runner.py:147: AssertionError\n=========================== short test summary info ============================\nFAILED test_v12_runner.py::test_stale_or_corrupt_completed_entries_never_trigger_another_fit[trace_path_escape]\nFAILED test_v12_runner.py::test_f1_evaluation_failure_keeps_original_reason_on_method_row[False]\nFAILED test_v12_runner.py::test_f1_evaluation_failure_keeps_original_reason_on_method_row[True]\n3 failed, 10 deselected in 9.32s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "GREEN",
+      "utc": "2026-10-25T11:19:04.688676+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": ".............                                                            [100%]\n13 passed in 32.53s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "RED_F2_METHOD_SUBSET",
+      "utc": "2026-10-25T11:23:55.497928+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py",
+        "-k",
+        "single_method or method_subset"
+      ],
+      "returncode": 1,
+      "stdout": "FFFFFFFFFF                                                               [100%]\n=================================== FAILURES ===================================\n____ test_f2_declared_single_method_never_calls_or_returns_the_other[QR33] _____\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_f2_declared_single_method0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b91de00>\nselected = 'QR33'\n\n    @pytest.mark.parametrize('selected', ['QR33','QR4'])\n    def test_f2_declared_single_method_never_calls_or_returns_the_other(tmp_path,monkeypatch,selected):\n        m=api();cell,cache,out=fixture(tmp_path,'F2');cell['methods']=[selected]\n        seen=tracked_predictions(monkeypatch,m)\n        result=m.compute_cell(cell,'F2',cache,out)\n        other='QR4' if selected=='QR33' else 'QR33'\n>       assert all(method!=other for _,method,_ in seen)\nE       assert False\nE        +  where False = all(<generator object test_f2_declared_single_method_never_calls_or_returns_the_other.<locals>.<genexpr> at 0x10b9a2c00>)\n\ntest_v12_runner.py:196: AssertionError\n_____ test_f2_declared_single_method_never_calls_or_returns_the_other[QR4] _____\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_f2_declared_single_method1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b91da70>\nselected = 'QR4'\n\n    @pytest.mark.parametrize('selected', ['QR33','QR4'])\n    def test_f2_declared_single_method_never_calls_or_returns_the_other(tmp_path,monkeypatch,selected):\n        m=api();cell,cache,out=fixture(tmp_path,'F2');cell['methods']=[selected]\n        seen=tracked_predictions(monkeypatch,m)\n        result=m.compute_cell(cell,'F2',cache,out)\n        other='QR4' if selected=='QR33' else 'QR33'\n>       assert all(method!=other for _,method,_ in seen)\nE       assert False\nE        +  where False = all(<generator object test_f2_declared_single_method_never_calls_or_returns_the_other.<locals>.<genexpr> at 0x10b9a3840>)\n\ntest_v12_runner.py:196: AssertionError\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods0] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b9cfad0>\nexperiment = 'F2', methods = []\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods1] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b9c6f10>\nexperiment = 'F2', methods = ['QR33', 'QR33']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods2] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp2')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b9c7350>\nexperiment = 'F2', methods = ['QR99']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-QR33] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp3')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bad1450>\nexperiment = 'F2', methods = 'QR33'\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F1-methods4] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp4')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bad1a50>\nexperiment = 'F1', methods = ['QR33']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F1-methods5] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp5')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ba9c6e0>\nexperiment = 'F1', methods = ['QR4']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F3-methods6] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp6')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ba9ce60>\nexperiment = 'F3', methods = ['QR4']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n_ test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F3-methods7] _\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-161/test_method_subset_rejects_emp7')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10baab070>\nexperiment = 'F3', methods = ['QR33', 'QR4']\n\n    @pytest.mark.parametrize('experiment,methods', [\n        ('F2',[]),('F2',['QR33','QR33']),('F2',['QR99']),('F2','QR33'),\n        ('F1',['QR33']),('F1',['QR4']),('F3',['QR4']),('F3',['QR33','QR4']),\n    ])\n    def test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment(tmp_path,monkeypatch,experiment,methods):\n        m=api();cell,cache,out=fixture(tmp_path,experiment);cell['methods']=methods\n        def forbidden(*args,**kwargs): raise AssertionError('invalid method subset reached source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n>       with pytest.raises(ValueError,match='METHOD_SUBSET'):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_v12_runner.py:213: Failed\n=========================== short test summary info ============================\nFAILED test_v12_runner.py::test_f2_declared_single_method_never_calls_or_returns_the_other[QR33]\nFAILED test_v12_runner.py::test_f2_declared_single_method_never_calls_or_returns_the_other[QR4]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods0]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods1]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-methods2]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F2-QR33]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F1-methods4]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F1-methods5]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F3-methods6]\nFAILED test_v12_runner.py::test_method_subset_rejects_empty_duplicate_unknown_or_wrong_experiment[F3-methods7]\n10 failed, 13 deselected in 3.43s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "GREEN_F2_METHOD_SUBSET",
+      "utc": "2026-10-25T11:25:19.683331+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "........................                                                 [100%]\n24 passed in 35.15s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "RED_DURABLE_RECEIPTS_AND_FINITE_RATIO",
+      "utc": "2026-10-25T11:27:22.429811+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py",
+        "-k",
+        "seals_all or worker_checks_code or relative_loss_ratio"
+      ],
+      "returncode": 1,
+      "stdout": "FFFF                                                                     [100%]\n=================================== FAILURES ===================================\n_ test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache __\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-163/test_f1_seals_all_validation_c0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1090c5f30>\n\n    def test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache(tmp_path, monkeypatch):\n        m=api(); cell,cache,out=fixture(tmp_path)\n        def inspect(context,ids,method,penalty):\n            started=list(cache.glob('*/attempt.json'))\n            assert started, 'exclusive STARTED marker must precede prediction'\n            if int(ids[0])==145:\n                for family in ('QR33','QR4'):\n                    seal=json.loads((out/cell['cell_id']/f'{family}.selection.json').read_text())\n                    assert seal['selection']['status']=='SELECTED'\n                if method=='QR4':\n                    completed=json.loads((out/cell['cell_id']/'QR33.result.json').read_text())\n                    assert completed['status']=='COMPLETE'\n        seen=tracked_predictions(monkeypatch,m,inspect)\n        result=m.compute_cell(cell,'F1',cache,out)\n        assert [r['method'] for r in result['rows']]==['QR33','QR4']\n>       assert all(r['status']=='COMPLETE' for r in result['rows'])\nE       assert False\nE        +  where False = all(<generator object test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache.<locals>.<genexpr> at 0x109217e00>)\n\ntest_v12_runner.py:63: AssertionError\n_______ test_worker_checks_code_before_loading_source_and_orders_f2_arms _______\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-163/test_worker_checks_code_before0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1090c5cd0>\n\n    def test_worker_checks_code_before_loading_source_and_orders_f2_arms(tmp_path,monkeypatch):\n        m=api();cell,cache,out=fixture(tmp_path,'F2');long=dict(cell,cell_id='F2-TOY-V7',validation_first=127,validation_n=7)\n        spec=dict(experiment='F2',cells=[long,cell],cache_root=str(cache),output_root=str(out),\n            cap_seconds=60,cell_cap_seconds=30,expected_code_sha256={'v12_runner.py':'0'*64})\n        path=tmp_path/'job.json';path.write_text(json.dumps(spec))\n        real=m.load_series\n        def forbidden(*args,**kwargs): raise AssertionError('code gate must precede source loading')\n        monkeypatch.setattr(m,'load_series',forbidden)\n        with pytest.raises(ValueError,match='CODE_HASH'): m.worker_job(path)\n        loads=[]\n        def observed_load(*args,**kwargs):\n            if loads:\n                completed=json.loads((out/cell['cell_id']/'cell-result.json').read_text())\n                assert completed['status']=='COMPLETE'\n                assert (out/cell['cell_id']/'references.json').is_file()\n            loads.append(1)\n            return real(*args,**kwargs)\n        monkeypatch.setattr(m,'load_series',observed_load)\n        spec['expected_code_sha256']={'v12_runner.py':hashlib.sha256(Path(m.__file__).read_bytes()).hexdigest()}\n        path.write_text(json.dumps(spec));result=m.worker_job(path)\n        assert [r['cell']['validation_n'] for r in result['cells']]==[4,7]\n        assert len(result['rows'])==4 and result['experiment']=='F2'\n>       assert all(r['status']=='COMPLETE' for r in result['rows'])\nE       assert False\nE        +  where False = all(<generator object test_worker_checks_code_before_loading_source_and_orders_f2_arms.<locals>.<genexpr> at 0x1092e4ba0>)\n\ntest_v12_runner.py:198: AssertionError\n_______ test_nonfinite_relative_loss_ratio_cannot_be_marked_complete[F2] _______\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-163/test_nonfinite_relative_loss_r0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10916fad0>\nexperiment = 'F2'\n\n    @pytest.mark.parametrize('experiment', ['F2','F3'])\n    def test_nonfinite_relative_loss_ratio_cannot_be_marked_complete(tmp_path,monkeypatch,experiment):\n        m=api();cell,cache,out=fixture(tmp_path,experiment)\n        def constructed(context,source,ids,method,penalty,tau,cache_root,guard):\n            mean=1e-320 if method=='F' else 1e100\n            return dict(status='COMPLETE',reason=None,cache_key=f'{method}-{penalty}-{ids[0]}',\n                summary=dict(mean_loss=mean,n=len(ids),strict_breach_count=0,strict_breach_rate=0.))\n        monkeypatch.setattr(m,'_attempt',constructed)\n        result=m.compute_cell(cell,experiment,cache,out)\n>       assert all(r['status']=='FAILED' and r['reason']=='NONFINITE_RELATIVE_LOSS'\n                   and r['actual_excess_pct'] is None for r in result['rows'])\nE       assert False\nE        +  where False = all(<generator object test_nonfinite_relative_loss_ratio_cannot_be_marked_complete.<locals>.<genexpr> at 0x109217b90>)\n\ntest_v12_runner.py:247: AssertionError\n_______ test_nonfinite_relative_loss_ratio_cannot_be_marked_complete[F3] _______\n\ntmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-163/test_nonfinite_relative_loss_r1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109163240>\nexperiment = 'F3'\n\n    @pytest.mark.parametrize('experiment', ['F2','F3'])\n    def test_nonfinite_relative_loss_ratio_cannot_be_marked_complete(tmp_path,monkeypatch,experiment):\n        m=api();cell,cache,out=fixture(tmp_path,experiment)\n        def constructed(context,source,ids,method,penalty,tau,cache_root,guard):\n            mean=1e-320 if method=='F' else 1e100\n            return dict(status='COMPLETE',reason=None,cache_key=f'{method}-{penalty}-{ids[0]}',\n                summary=dict(mean_loss=mean,n=len(ids),strict_breach_count=0,strict_breach_rate=0.))\n        monkeypatch.setattr(m,'_attempt',constructed)\n        result=m.compute_cell(cell,experiment,cache,out)\n>       assert all(r['status']=='FAILED' and r['reason']=='NONFINITE_RELATIVE_LOSS'\n                   and r['actual_excess_pct'] is None for r in result['rows'])\nE       assert False\nE        +  where False = all(<generator object test_nonfinite_relative_loss_ratio_cannot_be_marked_complete.<locals>.<genexpr> at 0x1092e4520>)\n\ntest_v12_runner.py:247: AssertionError\n=========================== short test summary info ============================\nFAILED test_v12_runner.py::test_f1_seals_all_validation_choices_before_any_evaluation_and_reuses_cache\nFAILED test_v12_runner.py::test_worker_checks_code_before_loading_source_and_orders_f2_arms\nFAILED test_v12_runner.py::test_nonfinite_relative_loss_ratio_cannot_be_marked_complete[F2]\nFAILED test_v12_runner.py::test_nonfinite_relative_loss_ratio_cannot_be_marked_complete[F3]\n4 failed, 22 deselected in 4.13s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "GREEN_DURABLE_RECEIPTS_AND_FINITE_RATIO",
+      "utc": "2026-10-25T11:28:41.711268+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "..........................                                               [100%]\n26 passed in 34.88s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    }
+  ],
+  "code_sha256": {
+    "v12_runner.py": "714ab36d47cee56947b131661ab2f9afb9f23529cea9f5b59f0424f2ad293e3b",
+    "test_v12_runner.py": "cc3cde6d5c2de9d4e614e46c910f1b565e0be1156e238b8dc64e8cb52a22ee14"
+  },
+  "final_status": "PASS",
+  "integration_suite": "Parent orchestrator owns final full suite; worker ran only new runner toy tests.",
+  "cache_files": [
+    "attempt.json (immutable STARTED)",
+    "terminal.json (exclusive terminal state)",
+    "trace.npz (exclusive complete numeric vectors)"
+  ],
+  "method_subset": "F2 accepts QR33 only, QR4 only, or canonical full list; F1 requires both and F3 QR33 only. Omitted methods retain defaults. Scope metadata excluded from same-method selection receipt identity.",
+  "durable_receipts": "Per-method result immediately after completion/failure, references after both references, evaluation candidate lists after each complete requested list, and full cell result before return. Existing unequal artifacts are rejected; method-specific jobs need separate output roots with shared cache root."
+}

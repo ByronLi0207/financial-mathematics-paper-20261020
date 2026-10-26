@@ -1,0 +1,63 @@
+\section{Finite delayed calibration and headroom SAV}\label{sup:wp2}
+
+The finite delayed ACI-style wrapper adapts to past strict hits after their entire peak labels mature. Its score pool contains only completed residual
+scores and uses the specified finite memory. The base-plus-score quantile is
+projected onto the known floor. The adaptive alpha state is projected to the
+current feasible range; the rank-zero convention issues the floor. Gamma was
+selected by coverage distance, then pinball loss and the fixed tie rule, a
+coverage-first selection criterion distinct from original regression fitting.
+No canonical ACI theorem is imported to this modified procedure.
+
+The headroom SAV method adapts a CAViaR recursion, rather than replicating a
+return-VaR model. The completed headroom response is normalized by its
+training-only scale; the recursive report is multiplied back by that same
+scale and then floor-projected. Its fixed bounded optimizer and starts retain
+all eligibility and convergence failures; a complete fit is not a proof of a
+global optimum. Selection state carries across the unissued chronological gap.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrlrrl}
+\caption{Complete delayed-wrapper and headroom-recursion inventory. Two long-horizon wrapper cells remain unavailable.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Method & Mean loss & Breaches & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Method & Mean loss & Breaches & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & ACI\_F & 472677.77 & 331 & COMPLETE \\
+FX & 6/720 & ACI\_QR & 439672.91 & 352 & COMPLETE \\
+FX & 6/720 & SAV & 449237.37 & 349 & COMPLETE \\
+FX & 6/2880 & ACI\_F & 463271.47 & 328 & COMPLETE \\
+FX & 6/2880 & ACI\_QR & 393795.06 & 329 & COMPLETE \\
+FX & 6/2880 & SAV & 456696.22 & 364 & COMPLETE \\
+FX & 24/720 & ACI\_F & 921402.08 & 322 & COMPLETE \\
+FX & 24/720 & ACI\_QR & 1020220.09 & 393 & COMPLETE \\
+FX & 24/720 & SAV & 781586.36 & 439 & COMPLETE \\
+FX & 24/2880 & ACI\_F & 791441.18 & 323 & COMPLETE \\
+FX & 24/2880 & ACI\_QR & 755982.70 & 294 & COMPLETE \\
+FX & 24/2880 & SAV & 756811.00 & 333 & COMPLETE \\
+Bills & 6/52 & ACI\_F & 3818.40 & 18 & COMPLETE \\
+Bills & 6/52 & ACI\_QR & 3489.82 & 29 & COMPLETE \\
+Bills & 6/52 & SAV & 2974.32 & 16 & COMPLETE \\
+Bills & 6/260 & ACI\_F & 2792.91 & 7 & COMPLETE \\
+Bills & 6/260 & ACI\_QR & 3013.16 & 6 & COMPLETE \\
+Bills & 6/260 & SAV & 2892.23 & 29 & COMPLETE \\
+Bills & 24/52 & ACI\_F & 4368.10 & 38 & COMPLETE \\
+Bills & 24/52 & ACI\_QR & 6250.53 & 47 & COMPLETE \\
+Bills & 24/52 & SAV & 4182.40 & 35 & COMPLETE \\
+Bills & 24/260 & ACI\_F & NA & NA & NA \\
+Bills & 24/260 & ACI\_QR & NA & NA & NA \\
+Bills & 24/260 & SAV & 3100.97 & 25 & COMPLETE \\
+\end{longtable}
+\endgroup
+
+The NA wrapper rows have the saved reason
+\texttt{VALIDATION\_INELIGIBLE}; no test is substituted for the absent forecasts.
+All losses are in each source's native units and must not be pooled.

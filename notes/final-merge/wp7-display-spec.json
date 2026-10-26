@@ -1,0 +1,502 @@
+{
+  "schema": "final-saved-display-layouts-v1",
+  "prepared_from_manuscript_sha256": "16ce1f0309c48a0f2e1faad1180dfeb42b871fa69e528a9a819a41a719839a87",
+  "templates": {
+    "table03-fx": "\\begin{table}[htbp]\\centering\\small\n\\caption{Long-history short-horizon FX regression is compared under two references across the earlier and later evaluation periods retained in the study.\nNegative percentages favor regression, revealing recurring matched gains alongside a reversal in its comparison with the shorter rolling historical reference.}\\label{tab:fx}\n\\begin{tabular}{>{\\raggedright\\arraybackslash}p{2.6cm}>{\\raggedright\\arraybackslash}p{4.4cm}>{\\raggedleft\\arraybackslash}p{2.5cm}>{\\raggedleft\\arraybackslash}p{1.5cm}>{\\raggedright\\arraybackslash}p{3.2cm}}\\toprule\nPeriod / procedure & Reference & Loss change (\\%) & Issues & Strict breaches (regression / reference)\\\\\\midrule\nLater / original main comparison & Shorter-history rolling headroom & @@FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT|.2f@@ & @@FX_LATE_PRIMARY_H6_ORIGIN_COUNT@@ & @@FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_LEFT@@ / @@FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_RIGHT@@\\\\\nLater / matched & Same-history fixed-window headroom & @@FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT|.2f@@ & @@FX_LATE_MATCHED_H6_ORIGIN_COUNT@@ & @@FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_LEFT@@ / @@FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_RIGHT@@\\\\\nEarlier / original structure & Shorter-history rolling headroom & @@FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT|+.2f@@ & @@FX_EARLY_PRIMARY_H6_N@@ & See complete earlier-period tables\\\\\nEarlier / matched & Same-history fixed-window headroom & @@FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT|.2f@@ & @@FX_EARLY_MATCHED_H6_N@@ & @@FX_EARLY_MATCHED_R0_STRICT_BREACH_COUNT@@ / @@FX_EARLY_MATCHED_F_STRICT_BREACH_COUNT@@\\\\\nLater / coverage-wrapped & Same-history wrapped headroom & @@FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT|.2f@@ & @@FX_ACI_H6_W2880_N@@ & @@FX_ACI_H6_W2880_QR_HITS@@ / @@FX_ACI_H6_W2880_F_HITS@@\\\\\n\\bottomrule\\end{tabular}\n\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize Regression uses history @@META_FX_HOURLY_PRIMARY_CONTRAST_WINDOW@@ and horizon @@META_FX_HOURLY_PRIMARY_CONTRAST_HORIZON@@, retaining the original comparison grid for each period reported in this table.\nThe original rolling reference uses @@META_FX_HOURLY_PRIMARY_CONTRAST_REFERENCE_WINDOW@@ observations, making its available history shorter than the matched historical headroom reference used alongside regression.\nThe earlier matched comparison uses the original three-penalty regression, while the later one-standard-error rule remains a separate selection exercise.\nThe wrapper comparison is a separate finite projected delayed ACI-style exercise, using its common evaluation dates and inherited calibration design.\\end{minipage}\n\\end{table}",
+    "table04-weekly": "\\begin{table}[htbp]\\centering\\small\n\\caption{Weekly evidence combines the original main comparison, added panel and earlier-period comparisons, with counts referring to related tasks rather than independent dealers.\nStronger regularization narrows the losses of conditional procedures while leaving substantial failures, including the adverse bill comparison under conservative selection.}\\label{tab:weekly}\n\\begin{tabular}{>{\\raggedright\\arraybackslash}p{4.3cm}>{\\raggedright\\arraybackslash}p{4.7cm}>{\\raggedleft\\arraybackslash}p{2.7cm}>{\\raggedright\\arraybackslash}p{2.5cm}}\\toprule\nComparison set & Procedure & Loss change / median (\\%) & Higher-loss cells\\\\\\midrule\nOriginal Treasury-bill main comparison & Original regression, long history & @@PANEL_BILL_QR_H6_W260_LOSS_PERCENT|+.2f@@ & Original main comparison\\\\\nEarlier Treasury-bill short-window version & Short-history short-window version & @@PANEL_R6_BILL_W52_ANALOGUE_LOSS_PERCENT|+.2f@@ & Different history\\\\\nAdditional panel & Original full regression & @@PANEL_E5_QR33_MEDIAN|+.2f@@ & @@PANEL_E5_QR33_LOSSES@@ / @@PANEL_E5_PLANNED@@\\\\\nAdditional panel & Four-feature regression & @@PANEL_E5_QR4_MEDIAN|+.2f@@ & @@PANEL_E5_QR4_LOSSES@@ / @@PANEL_E5_PLANNED@@\\\\\nAdditional panel & Full regression, expanded penalties & @@PANEL_E5_QR33_EXPANDED_MEDIAN|+.2f@@ & @@PANEL_E5_QR33_EXPANDED_LOSSES@@ / @@PANEL_E5_PLANNED@@\\\\\nAdditional panel & Ordinary empirical headroom quantile & @@PANEL_E5_ORDINARY_I_MEDIAN|+.2f@@ & @@PANEL_E5_ORDINARY_I_LOSSES@@ / @@PANEL_E5_PLANNED@@\\\\\nEarlier weekly groups & Validation-minimum expanded rule & @@PANEL_R6_R0_RETRO_MEDIAN|+.2f@@ & @@PANEL_R6_R0_RETRO_COMPLETE@@ groups\\\\\nEarlier weekly groups & One-standard-error rule & @@PANEL_R6_R2_RETRO_MEDIAN|+.2f@@ & @@PANEL_R6_S1_COMPLETE@@ groups\\\\\n\\bottomrule\\end{tabular}\n\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize The original bill main comparison has @@PANEL_BILL_QR_H6_W260_QR_HITS@@ versus @@PANEL_BILL_QR_H6_W260_F_HITS@@ strict breaches, favoring the historical report alongside its lower mean loss.\nIts evaluation contains @@PANEL_BILL_QR_H6_W260_N@@ forecast dates, with the complete paired results retained under the original chronological design and target definition. Earlier short-history bill results use a different history; the one-standard-error worst excess is +@@PANEL_R6_R2_RETRO_WORST|.2f@@\\%, and all its prewritten success criteria remain unmet. \\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{The original full Supplement: Sections S11--S15} list all panel and selection results (\\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the original full Supplement: Tables S9--S13}).\\end{minipage}\n\\end{table}",
+    "table02-methods": "\\begin{table}[htbp]\\centering\\small\n\\caption{Forecast definitions and executed menus retain the original procedure codes, connecting each reported comparison to its saved result files.\nMatched training-label histories and update schedules make the reference explicit, while the Supplement preserves the full normalization and parameter conventions.}\\label{tab:methods}\n\\begin{tabular}{>{\\raggedright\\arraybackslash}p{2.9cm}>{\\raggedright\\arraybackslash}p{6.0cm}>{\\raggedright\\arraybackslash}p{5.3cm}}\\toprule\nMethod & Forecast definition & Executed menu / setting\\\\\\midrule\nHistorical headroom (F) & Current floor plus a quantile of completed peak headrooms & Original FX histories @@META_FX_HOURLY_WINDOWS|set@@; weekly @@META_NYFED_WEEKLY_WINDOWS|set@@\\\\\nTranslated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed training targets; fixed-window and rolling-window controls\\\\\nHistorical peak (K) & Historical absolute-peak quantile projected to the current floor & Same histories and update controls\\\\\nQuantile regression (QR) & Training-scaled headroom regression with ridge slopes and an unpenalized intercept & Original three-point menu; six-point menu $@@FINAL_CFTC_MENU|mathset@@$\\\\\nLocal quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Sections S3 and S5\\\\\nFour-feature regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\\\\nEndpoint plug-in (L) & Floor plus a high absolute-displacement endpoint quantile & Proposition~\\ref{prop:levy}; empirical plug-in evaluated separately\\\\\nFurther benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications; results and complete failures linked from \\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the original full Supplement: Sections S7 and S34}\\\\\nCoverage and combinations & Delayed projected ACI-style wrappers; headroom SAV; fixed forecast combinations & Original-source wrapper/SAV inventory and broader combination inventory are separate\\\\\n\\bottomrule\\end{tabular}\n\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize Training histories count completed labels, and fixed-window models refit every @@META_FX_HOURLY_REFIT_STEP@@ FX records or @@META_NYFED_WEEKLY_REFIT_STEP@@ weekly records under their original schedules. Quantile and normalization conventions are detailed in Supplement Sections S3 and S5; this table retains the executed menus. The CFTC mechanism extension adds the longer history described in Section~\\ref{sec:history-mechanism}.\\end{minipage}\n\\end{table}",
+    "table05-mcs": "\\begin{table}[!htbp]\\centering\\footnotesize\n\\setlength{\\tabcolsep}{4pt}\n\\caption{Ninety-percent model confidence sets across all planned comparisons. Counts retain their comparison or conditional-procedure denominators.}\\label{tab:v10-mcs-main}\n\\begin{tabular}{lrrrrr}\\toprule\nGroup & Complete & Matched history & Sole historical & Conditional & Unavailable \\\\\n & / planned & included & method & excluded & procedures \\\\ \\midrule\n@@ROWS@@\n\\bottomrule\\end{tabular}\n\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize\nMatched history includes corrected and ordinary empirical headroom reports, excluding rolling references and nearest-neighbor baselines; conditional exclusions count complete procedures.\nIdentical losses can leave several methods tied, so the sole-method column counts only sets containing exactly one historical procedure.\nSupplement Section S11 retains all tied loss patterns, secondary membership counts and unavailable procedures; related comparisons are not independent replications.\n\\end{minipage}\\end{table}\n",
+    "table06-cftc": "\\begin{table}[htbp]\\centering\\small\n\\caption{Registered CFTC history-region predictions. The primary verdict is partial agreement because both short-history screens pass and the sparse long-history screen fails.}\\label{tab:cftc-mechanism}\n\\begin{tabular}{lllll}\\toprule\nPrediction & Procedure & Region / ordering & Successes & Verdict\\\\\\midrule\n@@ROWS@@\n\\bottomrule\\end{tabular}\n\\par\\smallskip\\begin{minipage}{.98\\linewidth}\\footnotesize\nBoth P1 screens must pass; the primary verdict then combines P1 and sparse P2.\nP3 is secondary and leaves that verdict unchanged; ties enter a separate category outside both the win and loss counts.\nUnknowns retain planned denominators under the registered classification bounds, although all planned reports complete in this particular run.\nAll comparisons use matched corrected-rank F, rather than selecting the better\nof F and I after evaluation. Both model procedures can select ordinary I.\n\\end{minipage}\\end{table}"
+  },
+  "operands": {
+    "FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT": {
+      "id": "FX_LATE_PRIMARY_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT",
+      "claim": "LATE_PRIMARY_H6 original recorded contrast \u2014 relative_mean_loss_difference_percent",
+      "value": "-12.660126412969763",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+      },
+      "field": "relative_mean_loss_difference_percent",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_PRIMARY_H6_ORIGIN_COUNT": {
+      "id": "FX_LATE_PRIMARY_H6_ORIGIN_COUNT",
+      "claim": "LATE_PRIMARY_H6 original recorded contrast \u2014 origin_count",
+      "value": "6625",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+      },
+      "field": "origin_count",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_LEFT": {
+      "id": "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_LEFT",
+      "claim": "LATE_PRIMARY_H6 original recorded contrast \u2014 strict_breach_count_left",
+      "value": "376",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+      },
+      "field": "strict_breach_count_left",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_RIGHT": {
+      "id": "FX_LATE_PRIMARY_H6_STRICT_BREACH_COUNT_RIGHT",
+      "claim": "LATE_PRIMARY_H6 original recorded contrast \u2014 strict_breach_count_right",
+      "value": "332",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+      },
+      "field": "strict_breach_count_right",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT": {
+      "id": "FX_LATE_MATCHED_H6_RELATIVE_MEAN_LOSS_DIFFERENCE_PERCENT",
+      "claim": "LATE_MATCHED_H6 original recorded contrast \u2014 relative_mean_loss_difference_percent",
+      "value": "-14.766762552613885",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "relative_mean_loss_difference_percent",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_MATCHED_H6_ORIGIN_COUNT": {
+      "id": "FX_LATE_MATCHED_H6_ORIGIN_COUNT",
+      "claim": "LATE_MATCHED_H6 original recorded contrast \u2014 origin_count",
+      "value": "6625",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "origin_count",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_LEFT": {
+      "id": "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_LEFT",
+      "claim": "LATE_MATCHED_H6 original recorded contrast \u2014 strict_breach_count_left",
+      "value": "376",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "strict_breach_count_left",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_RIGHT": {
+      "id": "FX_LATE_MATCHED_H6_STRICT_BREACH_COUNT_RIGHT",
+      "claim": "LATE_MATCHED_H6 original recorded contrast \u2014 strict_breach_count_right",
+      "value": "360",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+      },
+      "field": "strict_breach_count_right",
+      "note": "Negative loss changes favour QR; counts use strict P>C. H24 legacy reference is rolling S, not F.",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT": {
+      "id": "FX_EARLY_PRIMARY_H6_RATIO_CHANGE_PERCENT",
+      "claim": "EARLY_PRIMARY_H6 retrospective H6 original-three-menu QR report: ratio_change_percent",
+      "value": 3.1681985293173343,
+      "source": "results/supervisor-20261023/r6-writing-hac-20261023/results.json",
+      "format": "json",
+      "pointer": "/comparisons/1/ratio_change_percent",
+      "note": "This is the original-three-menu QR/R0 report, not R2. No HLN or adjusted p-value is issued for this two-comparison writing-stage readback.",
+      "source_sha256": "21c620f735daf1c0d238626bc4b0c608fd5feb4cf175d6476286d0a15731b4cc"
+    },
+    "FX_EARLY_PRIMARY_H6_N": {
+      "id": "FX_EARLY_PRIMARY_H6_N",
+      "claim": "EARLY_PRIMARY_H6 retrospective H6 original-three-menu QR report: n",
+      "value": 1440,
+      "source": "results/supervisor-20261023/r6-writing-hac-20261023/results.json",
+      "format": "json",
+      "pointer": "/comparisons/1/n",
+      "note": "This is the original-three-menu QR/R0 report, not R2. No HLN or adjusted p-value is issued for this two-comparison writing-stage readback.",
+      "source_sha256": "21c620f735daf1c0d238626bc4b0c608fd5feb4cf175d6476286d0a15731b4cc"
+    },
+    "FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT": {
+      "id": "FX_EARLY_MATCHED_H6_RATIO_CHANGE_PERCENT",
+      "claim": "EARLY_MATCHED_H6 retrospective H6 original-three-menu QR report: ratio_change_percent",
+      "value": -16.62356533682211,
+      "source": "results/supervisor-20261023/r6-writing-hac-20261023/results.json",
+      "format": "json",
+      "pointer": "/comparisons/0/ratio_change_percent",
+      "note": "This is the original-three-menu QR/R0 report, not R2. No HLN or adjusted p-value is issued for this two-comparison writing-stage readback.",
+      "source_sha256": "21c620f735daf1c0d238626bc4b0c608fd5feb4cf175d6476286d0a15731b4cc"
+    },
+    "FX_EARLY_MATCHED_H6_N": {
+      "id": "FX_EARLY_MATCHED_H6_N",
+      "claim": "EARLY_MATCHED_H6 retrospective H6 original-three-menu QR report: n",
+      "value": 1440,
+      "source": "results/supervisor-20261023/r6-writing-hac-20261023/results.json",
+      "format": "json",
+      "pointer": "/comparisons/0/n",
+      "note": "This is the original-three-menu QR/R0 report, not R2. No HLN or adjusted p-value is issued for this two-comparison writing-stage readback.",
+      "source_sha256": "21c620f735daf1c0d238626bc4b0c608fd5feb4cf175d6476286d0a15731b4cc"
+    },
+    "FX_EARLY_MATCHED_R0_STRICT_BREACH_COUNT": {
+      "id": "FX_EARLY_MATCHED_R0_STRICT_BREACH_COUNT",
+      "claim": "Earlier-period matched R0 score and strict breaches \u2014 strict_breach_count",
+      "value": "20",
+      "source": "results/supervisor-20261023/r6/retro-summary.csv",
+      "format": "csv",
+      "where": {
+        "phase": "retro",
+        "source": "fx_hourly",
+        "series_key": "fx_hourly",
+        "horizon": "6",
+        "window": "2880",
+        "report": "R0"
+      },
+      "field": "strict_breach_count",
+      "source_sha256": "bf27070e03386fcfc20c52743438f868d07c52fd53e21ff5c3f3a7646dfaa57b"
+    },
+    "FX_EARLY_MATCHED_F_STRICT_BREACH_COUNT": {
+      "id": "FX_EARLY_MATCHED_F_STRICT_BREACH_COUNT",
+      "claim": "Earlier-period matched F score and strict breaches \u2014 strict_breach_count",
+      "value": "16",
+      "source": "results/supervisor-20261023/r6/retro-summary.csv",
+      "format": "csv",
+      "where": {
+        "phase": "retro",
+        "source": "fx_hourly",
+        "series_key": "fx_hourly",
+        "horizon": "6",
+        "window": "2880",
+        "report": "F"
+      },
+      "field": "strict_breach_count",
+      "source_sha256": "bf27070e03386fcfc20c52743438f868d07c52fd53e21ff5c3f3a7646dfaa57b"
+    },
+    "FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT": {
+      "id": "FX_ACI_H6_W2880_QR_MINUS_F_LOSS_PERCENT",
+      "claim": "Finite delayed ACI-style wrapped pair H6/W2880: qr_minus_f_loss_percent",
+      "value": -14.99691078803782,
+      "source": "results/revision-20261023/v6/wp2-findings.json",
+      "format": "json",
+      "pointer": "/wrapped_pairs/1/qr_minus_f_loss_percent",
+      "note": "Both QR and matched F wrapped. Finite projected delayed implementation, not an imported canonical ACI guarantee; previous evaluation sample reused.",
+      "source_sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+    },
+    "FX_ACI_H6_W2880_N": {
+      "id": "FX_ACI_H6_W2880_N",
+      "claim": "Finite delayed ACI-style wrapped pair H6/W2880: n",
+      "value": 6625,
+      "source": "results/revision-20261023/v6/wp2-findings.json",
+      "format": "json",
+      "pointer": "/wrapped_pairs/1/n",
+      "note": "Both QR and matched F wrapped. Finite projected delayed implementation, not an imported canonical ACI guarantee; previous evaluation sample reused.",
+      "source_sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+    },
+    "FX_ACI_H6_W2880_QR_HITS": {
+      "id": "FX_ACI_H6_W2880_QR_HITS",
+      "claim": "Finite delayed ACI-style wrapped pair H6/W2880: qr_hits",
+      "value": 329,
+      "source": "results/revision-20261023/v6/wp2-findings.json",
+      "format": "json",
+      "pointer": "/wrapped_pairs/1/qr_hits",
+      "note": "Both QR and matched F wrapped. Finite projected delayed implementation, not an imported canonical ACI guarantee; previous evaluation sample reused.",
+      "source_sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+    },
+    "FX_ACI_H6_W2880_F_HITS": {
+      "id": "FX_ACI_H6_W2880_F_HITS",
+      "claim": "Finite delayed ACI-style wrapped pair H6/W2880: f_hits",
+      "value": 328,
+      "source": "results/revision-20261023/v6/wp2-findings.json",
+      "format": "json",
+      "pointer": "/wrapped_pairs/1/f_hits",
+      "note": "Both QR and matched F wrapped. Finite projected delayed implementation, not an imported canonical ACI guarantee; previous evaluation sample reused.",
+      "source_sha256": "8841a9258bae71c4c162afc6c5efd91ff4fa2a323621db637b7f012cf1623972"
+    },
+    "PANEL_BILL_QR_H6_W260_LOSS_PERCENT": {
+      "id": "PANEL_BILL_QR_H6_W260_LOSS_PERCENT",
+      "claim": "\u539f\u59cb Treasury bill PDPOSGS-B\uff0cH6/W260/d13\uff0cQR \u5bf9\u540c\u5386\u53f2 frozen F\uff1b\u539f\u58f0\u660e primary\uff0c\u539f\u5df2\u4fdd\u5b58\u8bc4\u4f30\u6bb5\uff1bUSD millions\uff1bQR\u76f8\u5bf9F\u5e73\u5747\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4",
+      "value": "50.78571256749063",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "relative_mean_loss_difference_percent",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "PANEL_R6_BILL_W52_ANALOGUE_LOSS_PERCENT": {
+      "id": "PANEL_R6_BILL_W52_ANALOGUE_LOSS_PERCENT",
+      "claim": "PR3\u65e9\u671f retro Treasury H6/W52\u7ed3\u6784\u7c7b\u6bd4\uff1b\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\uff1b\u4e0d\u662f\u539fW260 primary\u7684\u5b8c\u5168\u590d\u5236",
+      "value": "144.296201250835",
+      "source": "results/supervisor-20261023/r6/primary-replication.csv",
+      "format": "csv",
+      "where": {
+        "id": "Treasury-W52-structural-analogue"
+      },
+      "field": "percent_vs_reference",
+      "source_sha256": "6bb428de35651ac0010b21ebf119c2b5cbec7853836fea9a2ca69d592ba7c0f3"
+    },
+    "PANEL_E5_QR33_MEDIAN": {
+      "id": "PANEL_E5_QR33_MEDIAN",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1a\u539f33\u7279\u5f81QR\uff1b\u76f8\u5bf9F\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\u7684\u65e2\u5b58\u4e2d\u4f4d\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 92.62799824594052,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/original_QR33/median_percent_vs_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_QR33_LOSSES": {
+      "id": "PANEL_E5_QR33_LOSSES",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1a\u539f33\u7279\u5f81QR\uff1b\u8f93\u7ed9F\u683c\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 45,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/original_QR33/losing_to_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_PLANNED": {
+      "id": "PANEL_E5_PLANNED",
+      "claim": "E5\u51bb\u7ed3\u8ba1\u5212\u683c\u6570",
+      "value": 48,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/planned_cells",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_QR4_MEDIAN": {
+      "id": "PANEL_E5_QR4_MEDIAN",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1av3 C2\u56db\u7279\u5f81\u7b80\u7ea6QR\uff1b\u76f8\u5bf9F\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\u7684\u65e2\u5b58\u4e2d\u4f4d\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 9.90727239745182,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/QR4_plus/median_percent_vs_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_QR4_LOSSES": {
+      "id": "PANEL_E5_QR4_LOSSES",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1av3 C2\u56db\u7279\u5f81\u7b80\u7ea6QR\uff1b\u8f93\u7ed9F\u683c\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 37,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/QR4_plus/losing_to_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_QR33_EXPANDED_MEDIAN": {
+      "id": "PANEL_E5_QR33_EXPANDED_MEDIAN",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1aPR3\u6269\u5c55ridge\u83dc\u535533\u7279\u5f81QR\uff1b\u76f8\u5bf9F\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\u7684\u65e2\u5b58\u4e2d\u4f4d\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 9.220703399904492,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/QR33_plus/median_percent_vs_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_QR33_EXPANDED_LOSSES": {
+      "id": "PANEL_E5_QR33_EXPANDED_LOSSES",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1aPR3\u6269\u5c55ridge\u83dc\u535533\u7279\u5f81QR\uff1b\u8f93\u7ed9F\u683c\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 34,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/QR33_plus/losing_to_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_ORDINARY_I_MEDIAN": {
+      "id": "PANEL_E5_ORDINARY_I_MEDIAN",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1a\u672a\u7ecf\u4fee\u6b63\u5386\u53f2\u7ecf\u9a8c\u5206\u4f4dI\uff1b\u76f8\u5bf9F\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\u7684\u65e2\u5b58\u4e2d\u4f4d\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 0.5006801691981209,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/I/median_percent_vs_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_E5_ORDINARY_I_LOSSES": {
+      "id": "PANEL_E5_ORDINARY_I_LOSSES",
+      "claim": "\u540c\u4e00\u539f12\u5e8f\u5217/48\u683c\u9644\u52a0\u9762\u677f\uff1a\u672a\u7ecf\u4fee\u6b63\u5386\u53f2\u7ecf\u9a8c\u5206\u4f4dI\uff1b\u8f93\u7ed9F\u683c\u6570\uff1b\u6bcf\u683c\u5339\u914dF\u3001\u975e\u72ec\u7acbdealer\u590d\u5236",
+      "value": 30,
+      "source": "results/supervisor-20261023/e5/descriptive-summary.json",
+      "format": "json",
+      "pointer": "/I/losing_to_F",
+      "source_sha256": "c799938afb57fa830e697f552dcb94475a554c020b32cafa2b7d3c6e943a1f8c"
+    },
+    "PANEL_R6_R0_RETRO_MEDIAN": {
+      "id": "PANEL_R6_R0_RETRO_MEDIAN",
+      "claim": "R0\u6709\u9650\u83dc\u5355\u6700\u5c0f\u635f\u5931\u89c4\u5219\u7684retro\u5468\u9891W52\u683c\u4e2d\u4f4d\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\uff1b\u719f\u6089\u5386\u53f2\u7684post-result/exploratory\u7ed3\u679c",
+      "value": 4.1510024714803695,
+      "source": "results/supervisor-20261023/r6/assessment.json",
+      "format": "json",
+      "pointer": "/S3/R0_median_percent_vs_F",
+      "source_sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+    },
+    "PANEL_R6_R0_RETRO_COMPLETE": {
+      "id": "PANEL_R6_R0_RETRO_COMPLETE",
+      "claim": "R0\u5728retro\u5468\u9891W52\u683c\u7684\u5b8c\u6210\u6570\uff1b\u719f\u6089\u5386\u53f2\u7684post-result/exploratory\u7ed3\u679c",
+      "value": 26,
+      "source": "results/supervisor-20261023/r6/assessment.json",
+      "format": "json",
+      "pointer": "/S3/R0_complete_count",
+      "source_sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+    },
+    "PANEL_R6_R2_RETRO_MEDIAN": {
+      "id": "PANEL_R6_R2_RETRO_MEDIAN",
+      "claim": "R2\u5728retro\u5468\u9891W52\u683c\u7684\u65e2\u5b58\u4e2d\u4f4d\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\uff1b\u719f\u6089\u5386\u53f2\u7684post-result/exploratory\u7ed3\u679c",
+      "value": 5.374072481175762,
+      "source": "results/supervisor-20261023/r6/assessment.json",
+      "format": "json",
+      "pointer": "/S1/median_percent_vs_F",
+      "source_sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+    },
+    "PANEL_R6_S1_COMPLETE": {
+      "id": "PANEL_R6_S1_COMPLETE",
+      "claim": "R2\u95e8\u5b8c\u6210\u7684retro\u5468\u9891W52\u683c\u6570\uff1b\u719f\u6089\u5386\u53f2\u7684post-result/exploratory\u7ed3\u679c",
+      "value": 26,
+      "source": "results/supervisor-20261023/r6/assessment.json",
+      "format": "json",
+      "pointer": "/S1/complete_count",
+      "source_sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+    },
+    "META_FX_HOURLY_PRIMARY_CONTRAST_WINDOW": {
+      "id": "META_FX_HOURLY_PRIMARY_CONTRAST_WINDOW",
+      "claim": "fx_hourly original primary definition: window",
+      "value": 2880,
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/fx_hourly/primary_contrast/window",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "META_FX_HOURLY_PRIMARY_CONTRAST_HORIZON": {
+      "id": "META_FX_HOURLY_PRIMARY_CONTRAST_HORIZON",
+      "claim": "fx_hourly original primary definition: horizon",
+      "value": 6,
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/fx_hourly/primary_contrast/horizon",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "META_FX_HOURLY_PRIMARY_CONTRAST_REFERENCE_WINDOW": {
+      "id": "META_FX_HOURLY_PRIMARY_CONTRAST_REFERENCE_WINDOW",
+      "claim": "fx_hourly original primary definition: reference_window",
+      "value": 720,
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/fx_hourly/primary_contrast/reference_window",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "PANEL_BILL_QR_H6_W260_QR_HITS": {
+      "id": "PANEL_BILL_QR_H6_W260_QR_HITS",
+      "claim": "\u539f\u59cb Treasury bill PDPOSGS-B\uff0cH6/W260/d13\uff0cQR \u5bf9\u540c\u5386\u53f2 frozen F\uff1b\u539f\u58f0\u660e primary\uff0c\u539f\u5df2\u4fdd\u5b58\u8bc4\u4f30\u6bb5\uff1bUSD millions\uff1bQR\u4e25\u683c\u7834\u7ebf\u6b21\u6570",
+      "value": "54",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "strict_breach_count_left",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "PANEL_BILL_QR_H6_W260_F_HITS": {
+      "id": "PANEL_BILL_QR_H6_W260_F_HITS",
+      "claim": "\u539f\u59cb Treasury bill PDPOSGS-B\uff0cH6/W260/d13\uff0cQR \u5bf9\u540c\u5386\u53f2 frozen F\uff1b\u539f\u58f0\u660e primary\uff0c\u539f\u5df2\u4fdd\u5b58\u8bc4\u4f30\u6bb5\uff1bUSD millions\uff1bF\u4e25\u683c\u7834\u7ebf\u6b21\u6570",
+      "value": "28",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "strict_breach_count_right",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "PANEL_BILL_QR_H6_W260_N": {
+      "id": "PANEL_BILL_QR_H6_W260_N",
+      "claim": "\u539f\u59cb Treasury bill PDPOSGS-B\uff0cH6/W260/d13\uff0cQR \u5bf9\u540c\u5386\u53f2 frozen F\uff1b\u539f\u58f0\u660e primary\uff0c\u539f\u5df2\u4fdd\u5b58\u8bc4\u4f30\u6bb5\uff1bUSD millions\uff1b\u8bc4\u4f30\u539f\u70b9\u6570",
+      "value": "277",
+      "source": "results/revision-20261022/paired-comparisons.csv",
+      "format": "csv",
+      "where": {
+        "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260"
+      },
+      "field": "origin_count",
+      "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+    },
+    "PANEL_R6_R2_RETRO_WORST": {
+      "id": "PANEL_R6_R2_RETRO_WORST",
+      "claim": "R2\u5728retro\u5468\u9891W52\u683c\u7684\u6700\u5dee\u635f\u5931\u53d8\u5316\u767e\u5206\u6bd4\uff1b\u719f\u6089\u5386\u53f2\u7684post-result/exploratory\u7ed3\u679c",
+      "value": 181.39452368014167,
+      "source": "results/supervisor-20261023/r6/assessment.json",
+      "format": "json",
+      "pointer": "/S1/worst_percent_vs_F",
+      "source_sha256": "2c5d3d668b00bc27cc294fef7c2cf9633bb87e602d9bef814b3c7a3fbfe0b5f4"
+    },
+    "META_FX_HOURLY_WINDOWS": {
+      "id": "META_FX_HOURLY_WINDOWS",
+      "claim": "fx_hourly original source design: windows",
+      "value": [
+        720,
+        2880
+      ],
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/fx_hourly/windows",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "META_NYFED_WEEKLY_WINDOWS": {
+      "id": "META_NYFED_WEEKLY_WINDOWS",
+      "claim": "nyfed_weekly original source design: windows",
+      "value": [
+        52,
+        260
+      ],
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/nyfed_weekly/windows",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "META_FX_HOURLY_REFIT_STEP": {
+      "id": "META_FX_HOURLY_REFIT_STEP",
+      "claim": "fx_hourly original source design: refit_step",
+      "value": 24,
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/fx_hourly/refit_step",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "META_NYFED_WEEKLY_REFIT_STEP": {
+      "id": "META_NYFED_WEEKLY_REFIT_STEP",
+      "claim": "nyfed_weekly original source design: refit_step",
+      "value": 13,
+      "source": "protocol/revision-20261022/study-spec.json",
+      "format": "json",
+      "pointer": "/sources/nyfed_weekly/refit_step",
+      "source_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    "FINAL_CFTC_MENU": {
+      "id": "FINAL_CFTC_MENU",
+      "source": "results/v10/cftc/manifest.json",
+      "format": "json",
+      "pointer": "/design/menus/QR33",
+      "value": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        "inf"
+      ],
+      "source_sha256": "6210d909bc9d23f7074f1d981a7ca62fd51f81970a19c5246dcb06475ed219fa"
+    }
+  },
+  "scope": "Layout/prose templates; every substituted result/setting is resolved to its exact preserved JSON/CSV field before formatting. Table01 reads saved descriptive summaries; table05 and06 render saved MCS/WP2 counts without recomputing tests."
+}

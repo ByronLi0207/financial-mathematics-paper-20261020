@@ -1,0 +1,242 @@
+FFFFFFFFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+_______ test_daily_rule_keeps_last_nonempty_day_and_uses_ended_day_clock _______
+
+    def test_daily_rule_keeps_last_nonempty_day_and_uses_ended_day_clock():
+        t=np.array(['2014-01-02T01:00','2014-01-02T03:00','2014-01-05T23:00'],dtype='datetime64[us]')
+>       out=audit.daily_oracle(np.array([1.,7.,-3.]),t)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([ 1.,  7., -3.]), array(['2014-01-02T01:00:00.000000', '2014-01-02T03:00:00.000000',
+       '2014-01-05T23:00:00.000000'], dtype='datetime64[us]'))
+k = {}
+
+>   def daily_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:2: NotImplementedError
+______ test_daily_fingerprints_use_fixed_little_endian_vectors_and_prefix ______
+
+    def test_daily_fingerprints_use_fixed_little_endian_vectors_and_prefix():
+        t=np.array(['2014-01-02T01:00','2014-01-02T03:00','2014-01-05T23:00'],dtype='datetime64[us]')
+>       out=audit.daily_oracle(np.array([1.,7.,-3.],dtype='>f8'),t)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([ 1.,  7., -3.], dtype='>f8'), array(['2014-01-02T01:00:00.000000', '2014-01-02T03:00:00.000000',
+       '2014-01-05T23:00:00.000000'], dtype='datetime64[us]'))
+k = {}
+
+>   def daily_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:2: NotImplementedError
+______ test_nonincreasing_or_nonfinite_source_is_rejected_without_sorting ______
+
+    def test_nonincreasing_or_nonfinite_source_is_rejected_without_sorting():
+        times=np.array(['2014-01-02','2014-01-01'],dtype='datetime64[us]')
+>       with pytest.raises(ValueError):audit.daily_oracle(np.array([1.,2.]),times)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([1., 2.]), array(['2014-01-02T00:00:00.000000', '2014-01-01T00:00:00.000000'],
+      dtype='datetime64[us]'))
+k = {}
+
+>   def daily_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:2: NotImplementedError
+__________ test_grid_uses_full52_validation_and_common_n_minus25_tail __________
+
+    def test_grid_uses_full52_validation_and_common_n_minus25_tail():
+>       grid=audit.geometry_oracle(780,24,260,spec())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (780, 24, 260, {'windows': [52, 260], 'methods': ['F', 'QR33', 'QR4'], 'clock_and_target': {'horizons': [6, 24]}, 'sample': {'validation_first': 329, 'validation_last': 380, 'evaluation_first': 405}, ...})
+k = {}
+
+>   def geometry_oracle(*a,**k):raise NotImplementedError
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:4: NotImplementedError
+________ test_target_includes_current_and_strict_ties_are_not_breaches _________
+
+    def test_target_includes_current_and_strict_ties_are_not_breaches():
+        x=np.array([9.,2.,-3.,1.,4.])
+>       actual=audit.score_oracle(x,np.array([0,1]),np.array([9.,2.]),2)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([ 9.,  2., -3.,  1.,  4.]), array([0, 1]), array([9., 2.]), 2)
+k = {}
+
+>   def score_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:6: NotImplementedError
+________________ test_floor_and_incomplete_target_are_rejected _________________
+
+    def test_floor_and_incomplete_target_are_rejected():
+>       with pytest.raises(ValueError):audit.score_oracle(np.array([9.,2.,3.]),np.array([0]),np.array([8.]),2)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([9., 2., 3.]), array([0]), array([8.]), 2), k = {}
+
+>   def score_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:6: NotImplementedError
+___ test_f_replay_uses_own_anchor_headroom_corrected_rank_and_frozen13_block ___
+
+    def test_f_replay_uses_own_anchor_headroom_corrected_rank_and_frozen13_block():
+        x=np.array([0.,1.,2.,8.,0.,3.,4.,0.,7.,1.,5.,2.])
+>       actual=audit.f_oracle(x,np.array([6,7,8]),2,3,2,6)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([0., 1., 2., 8., 0., 3., 4., 0., 7., 1., 5., 2.]), array([6, 7, 8]), 2, 3, 2, 6)
+k = {}
+
+>   def f_oracle(*a,**k):raise NotImplementedError
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:8: NotImplementedError
+___________ test_f_replay_with_valid_corrected_rank_and_mature_pool ____________
+
+    def test_f_replay_with_valid_corrected_rank_and_mature_pool():
+        x=np.arange(80,dtype=float)
+        ids=np.arange(50,55,dtype=np.int64)
+>       result=audit.f_oracle(x,ids,6,20,13,50)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12.,
+       13., 14., 15., 16., 17., 18., 19., 20...., 67., 68., 69., 70., 71., 72., 73., 74., 75., 76., 77.,
+       78., 79.]), array([50, 51, 52, 53, 54]), 6, 20, 13, 50)
+k = {}
+
+>   def f_oracle(*a,**k):raise NotImplementedError
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:8: NotImplementedError
+____ test_private_trace_must_keep_every_declared_issue_and_exact_refit_grid ____
+
+    def test_private_trace_must_keep_every_declared_issue_and_exact_refit_grid():
+        d=spec();x=np.arange(500,dtype=float);ids=np.arange(329,381,dtype=np.int64)
+>       s=audit.score_oracle(x,ids,x[ids]+6,6)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  ...369., 370., 371., 372., 373., 374., 375., 376., 377., 378.,
+       379., 380., 381., 382., 383., 384., 385., 386.]), 6)
+k = {}
+
+>   def score_oracle(*a,**k):raise NotImplementedError
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:6: NotImplementedError
+__ test_classification_is_per_regression_and_preserves_other_models_failures ___
+
+    def test_classification_is_per_regression_and_preserves_other_models_failures():
+        data=rows();next(r for r in data if r['method']=='QR33')['status']='FAILED'
+>       assert audit.classification_oracle(data,'QR33',spec())['status']=='INCONCLUSIVE'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = ([{'window': 52, 'horizon': 6, 'method': 'F', 'status': 'COMPLETE', ...}, {'window': 52, 'horizon': 6, 'method': 'QR33...et': {'horizons': [6, 24]}, 'sample': {'validation_first': 329, 'validation_last': 380, 'evaluation_first': 405}, ...})
+k = {}
+
+>   def classification_oracle(*a,**k):raise NotImplementedError
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:12: NotImplementedError
+_________ test_three_of_four_gain_and_exact_ties_have_declared_labels __________
+
+    def test_three_of_four_gain_and_exact_ties_have_declared_labels():
+        data=rows((2.,1.,2.))
+>       assert audit.classification_oracle(data,'QR33',spec())['status']=='CONDITIONAL_GAINS_PERSIST'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = ([{'window': 52, 'horizon': 6, 'method': 'F', 'status': 'COMPLETE', ...}, {'window': 52, 'horizon': 6, 'method': 'QR33...et': {'horizons': [6, 24]}, 'sample': {'validation_first': 329, 'validation_last': 380, 'evaluation_first': 405}, ...})
+k = {}
+
+>   def classification_oracle(*a,**k):raise NotImplementedError
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:12: NotImplementedError
+______ test_pinned_csv_identity_and_chronology_are_independently_checked _______
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-48/test_pinned_csv_identity_and_c0')
+
+    def test_pinned_csv_identity_and_chronology_are_independently_checked(tmp_path):
+        content=b'datetime,NetPosUsd,NetUsdPnL,AbsVolume,Mid\n2014.01.02T01:00:00.000000,1,0,0,0\n2014.01.02T02:00:00.000000,-2,0,0,0\n'
+        path=tmp_path/'fixture.csv';path.write_bytes(content)
+        source=dict(bytes=len(content),sha256=hashlib.sha256(content).hexdigest(),expected_original_rows=2)
+>       x,t=audit.read_pinned_csv(path,source)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp4_audit.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-48/test_pinned_csv_ide...ytes': 114, 'sha256': '066845142243ef95a009ed6cbb528fbf450490b092ea70a906b718d29b7161fb', 'expected_original_rows': 2})
+k = {}
+
+>   def read_pinned_csv(*a,**k):raise NotImplementedError
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/audit_wp4.py:14: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_v8_wp4_audit.py::test_daily_rule_keeps_last_nonempty_day_and_uses_ended_day_clock
+FAILED test_v8_wp4_audit.py::test_daily_fingerprints_use_fixed_little_endian_vectors_and_prefix
+FAILED test_v8_wp4_audit.py::test_nonincreasing_or_nonfinite_source_is_rejected_without_sorting
+FAILED test_v8_wp4_audit.py::test_grid_uses_full52_validation_and_common_n_minus25_tail
+FAILED test_v8_wp4_audit.py::test_target_includes_current_and_strict_ties_are_not_breaches
+FAILED test_v8_wp4_audit.py::test_floor_and_incomplete_target_are_rejected - ...
+FAILED test_v8_wp4_audit.py::test_f_replay_uses_own_anchor_headroom_corrected_rank_and_frozen13_block
+FAILED test_v8_wp4_audit.py::test_f_replay_with_valid_corrected_rank_and_mature_pool
+FAILED test_v8_wp4_audit.py::test_private_trace_must_keep_every_declared_issue_and_exact_refit_grid
+FAILED test_v8_wp4_audit.py::test_classification_is_per_regression_and_preserves_other_models_failures
+FAILED test_v8_wp4_audit.py::test_three_of_four_gain_and_exact_ties_have_declared_labels
+FAILED test_v8_wp4_audit.py::test_pinned_csv_identity_and_chronology_are_independently_checked
+12 failed in 0.12s
+WARN `--no-project` was provided, but no project was found

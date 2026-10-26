@@ -1,0 +1,452 @@
+"""Build aggregate-only tables/figures for the separately compiled TeX revision.
+
+The manuscript PDF is produced by Tectonic, never by this figure renderer.
+Frozen originals are read only. All generated outputs are revision-specific.
+"""
+from pathlib import Path
+import csv
+import json
+import math
+import hashlib
+from reportlab.pdfgen import canvas
+from reportlab.lib.colors import HexColor, Color, black, white
+
+ROOT = Path(__file__).resolve().parent
+DOC = ROOT / "manuscript/supervisor-revision"
+GEN = DOC / "generated"
+FIG = DOC / "figures"
+NEW = ROOT / "results/supervisor-20261023"
+OLD = ROOT / "results/revision-20261022"
+BLUE = HexColor("#236A91")
+RED = HexColor("#B24C42")
+GREY = HexColor("#66727D")
+LIGHT = HexColor("#D9E0E5")
+
+
+def rows(path):
+    with path.open(newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def tex(s):
+    s = str(s).replace("–", "--").replace("—", "---").replace("’", "'")
+    for a, b in [("&", r"\&"), ("%", r"\%"), ("_", r"\_"), ("#", r"\#")]:
+        s = s.replace(a, b)
+    return s
+
+
+def pval(x):
+    if x in (None, ""):
+        return "--"
+    x = float(x)
+    return "$<.001$" if x < .001 else f"{x:.3f}"
+
+
+def numerical_facts():
+    """Print empirical prose numbers from archived full-precision fields."""
+    facts = {}
+    def add(name, path, row, field, digits=None, absolute=False):
+        raw = row[field]
+        value = abs(float(raw)) if absolute else float(raw)
+        display = str(int(value)) if digits is None else f"{value:.{digits}f}"
+        facts[name] = dict(value=raw, display=display, field=field,
+                           source=str(path.relative_to(ROOT)), source_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    ppath=OLD/"paired-comparisons.csv"; paired=rows(ppath)
+    fx=next(r for r in paired if r["contrast_id"]=="fx_hourly-h6-QR2880-minus-rolling_F720")
+    add("FXPrimaryGain",ppath,fx,"relative_mean_loss_difference_percent",1,True)
+    legacy=next(r for r in paired if r["contrast_id"]=="fx_hourly-h24-QR2880-minus-rolling_S720")
+    add("FXLegacyGain",ppath,legacy,"relative_mean_loss_difference_percent",2,True)
+    add("FXPrimaryBreaches",ppath,fx,"strict_breach_count_left")
+    add("FXReferenceBreaches",ppath,fx,"strict_breach_count_right")
+    dpath=NEW/"w3/dm-family.csv"; dm=rows(dpath)
+    fxp=next(r for r in dm if r["contrast_id"]==fx["contrast_id"])
+    tp=next(r for r in dm if r["contrast_id"]=="nyfed_weekly-h6-QR260-minus-frozen_F260")
+    add("FXPrimaryP",dpath,fxp,"dm_p",3)
+    facts["FXPrimaryP"]["display"]=pval(fxp["dm_p"])
+    add("TreasuryPrimaryP",dpath,tp,"dm_p",3)
+    add("TreasuryPrimaryBonferroni",dpath,tp,"primary_bonferroni_p",3)
+    add("FXPrimaryStatistic",dpath,fxp,"dm_t",1)
+    fxmatched=next(r for r in dm if r["contrast_id"]=="fx_hourly-h6-QR2880-minus-frozen_F2880")
+    fxshortdm=next(r for r in dm if r["contrast_id"]=="fx_hourly-h6-QR720-minus-frozen_F720")
+    add("FXMatchedStatistic",dpath,fxmatched,"dm_t",1)
+    add("FXShortP",dpath,fxshortdm,"dm_p",2)
+    fxmatchedloss=next(r for r in paired if r["contrast_id"]==fxmatched["contrast_id"])
+    fxshortloss=next(r for r in paired if r["contrast_id"]==fxshortdm["contrast_id"])
+    add("FXMatchedGain",ppath,fxmatchedloss,"relative_mean_loss_difference_percent",1,True)
+    add("FXShortGain",ppath,fxshortloss,"relative_mean_loss_difference_percent",2,True)
+    add("FXLegacyCrossing",ppath,{"negative_delta_V_divided_by_delta_U":-float(legacy["mean_unused_allowance_difference"])/float(legacy["mean_positive_overrun_difference"])},"negative_delta_V_divided_by_delta_U",1)
+    family_path=NEW/"w3/summary.json"; family=json.loads(family_path.read_text())
+    add("RemainingMatchedCount",family_path,family,"remaining_matched_family_size")
+    add("ArchivedMatchedCount",family_path,family,"archived_matched_family_size")
+    cpath=NEW/"inference/coverage-verified.csv"; coverage=rows(cpath)
+    for h,name in [("6","TreasuryShortGridCount"),("24","TreasuryLongGridCount")]:
+        cell=next(r for r in coverage if r["source"]=="nyfed_weekly" and r["horizon"]==h and r["window"]=="260" and r["method"]=="QR")
+        add(name,cpath,cell,"n")
+    hpath=OLD/"post-result-horizon.csv"
+    horizon=next(r for r in rows(hpath) if r["source"]=="nyfed_weekly" and r["window"]=="260" and r["method"]=="QR")
+    add("TreasuryHorizonCrossing",hpath,{"100_times_strict_crossing_rate":100*float(horizon["strict_crossing_rate"])},"100_times_strict_crossing_rate",0)
+    spath=NEW/"round2/source-date-budgets.json"; sources=json.loads(spath.read_text())
+    add("FXObservationCount",spath,sources["fx_hourly"],"record_count")
+    facts["FXObservationCount"]["display"]=f"{sources['fx_hourly']['record_count']:,}"
+    add("TreasuryObservationCount",spath,sources["nyfed_weekly"],"record_count")
+    legacydm=next(r for r in dm if r["contrast_id"]==legacy["contrast_id"])
+    add("FXLegacyP",dpath,legacydm,"dm_p",2)
+    apath=OLD/"paired-annual.csv"
+    lastyear=max(int(r["calendar_year"]) for r in rows(apath) if r["contrast_id"]==fx["contrast_id"])
+    add("FXTailYear",apath,{"maximum_calendar_year":lastyear},"maximum_calendar_year")
+    epath=NEW/"e3/summary.csv"; e3=rows(epath)
+    treasury=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    for name,field,digits in [("TreasuryOriginalExcess","original33_percent_vs_frozen_F",1),("TreasuryExpandedExcess","extended33_percent_vs_frozen_F",1),("TreasuryExpandedExcessFine","extended33_percent_vs_frozen_F",2),("TreasuryFeatureChange","common_menu_feature_change_percent",2)]:
+        add(name,epath,treasury,field,digits)
+    add("TreasuryOriginalBreaches",epath,treasury,"original33_breaches")
+    add("TreasuryReferenceBreaches",epath,treasury,"frozen_F_breaches")
+    fxlong=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["window"]=="2880")
+    add("FXFeaturesGain",epath,fxlong,"common_menu_feature_change_percent",1,True)
+    fxshort=next(r for r in e3 if r["source"]=="fx_hourly" and r["horizon"]=="24" and r["window"]=="720")
+    add("FXShortLongExcess",epath,fxshort,"extended33_percent_vs_frozen_F",1)
+    add("FXShortLongPenalty",epath,fxshort,"extended33_selected_penalty",2)
+    jpath=NEW/"e5/descriptive-summary.json"; panel=json.loads(jpath.read_text())
+    add("PanelOriginalMedian",jpath,panel["original_QR33"],"median_percent_vs_F",1)
+    add("PanelExpandedMedian",jpath,panel["QR33_plus"],"median_percent_vs_F",1)
+    add("PanelExpandedLosses",jpath,panel["QR33_plus"],"losing_to_F")
+    add("PanelCellCount",jpath,panel,"planned_cells")
+    manifest=NEW/"e5/inputs/panel/selection-manifest.json"
+    add("PanelSeriesCount",manifest,{"eligible_count":len(json.loads(manifest.read_text())["eligible"])},"eligible_count")
+    (GEN/"round2-facts.tex").write_text("% Generated from archived full-precision values; see round2/numerical-facts.json.\n"+"\n".join("\\newcommand{\\"+name+"}{"+r["display"]+"}" for name,r in facts.items())+"\n")
+    (NEW/"round2/numerical-facts.json").write_text(json.dumps(facts,indent=2)+"\n")
+
+
+def table(name, caption, label, columns, data, align=None, note="", fontsize="small"):
+    align = align or "l" + "r" * (len(columns) - 1)
+    align = align.replace("p{", r">{\raggedright\arraybackslash}p{")
+    out = [r"\begin{table}[!htbp]", "\\centering\\" + fontsize,
+           "\\caption{" + caption + "}\\label{" + label + "}",
+           r"\begin{tabular}{" + align + "}", r"\toprule",
+           " & ".join(columns) + r" \\", r"\midrule"]
+    out += [" & ".join(map(str, r)) + r" \\" for r in data]
+    out += [r"\bottomrule", r"\end{tabular}"]
+    if note:
+        out += [r"\par\smallskip\begin{minipage}{\linewidth}\footnotesize " + note + r"\end{minipage}"]
+    out += [r"\end{table}", ""]
+    (GEN / name).write_text("\n".join(out))
+
+
+def build_tables():
+    # Short display cells retain exactly the scope of the full audited JSON.
+    literature = [
+        ["Boudoukh et al. (2004)", "Worst intermediate portfolio-value loss", "Modeled portfolio paths", "First-passage formula; discrete simulation", "Model-implied MaxVaR/VaR ratios; discrete-monitoring simulation"],
+        ["Petrunia et al. (2019)", "Largest daily endpoint debit across ACSS participants", "ACSS settlement balances", "GEV blocks; GPD exceedances", "Fitted-versus-empirical quantiles; monthly-updated collateral shortfalls"],
+        ["van den Hoogen (2017)", "Maximum cumulative negative payment balance", "Two ABN AMRO transaction accounts", "ACD/UHF-GARCH; Monte Carlo paths", "Coverage and independence tests; application details confidential"],
+        ["Wisniewski et al. (2020)", "Next-hour signed-position interval", "One market maker's hourly FX net positions", "Quantile/conformal intervals; KNN and other regressions", "Two endpoint pinball scores; interval and coverage diagnostics"],
+        ["This paper", "Two-sided absolute sampled peak quantile", "Hourly FX; weekly dealer-position series", "Historical rules; QR/KNN on matched histories and updates", "Pinball; paired DM; U/V, breaches and elementary scores"],
+    ]
+    audit = json.loads((NEW / "literature-table.json").read_text())
+    assert len(audit["rows"]) == len(literature) == 5
+    table("literature-table.tex", "Closest studies and the present comparison.", "tab:literature",
+          ["Study", "Target", "Data", "Method", "Evaluation"], literature,
+          align="p{.14\\linewidth}p{.20\\linewidth}p{.14\\linewidth}p{.20\\linewidth}p{.20\\linewidth}",
+          note="Van den Hoogen (2017) specifies coverage and independence tests in Section 5.4; detailed application results in Section 5.5 are confidential, while Chapter 7 provides public out-of-sample summaries.", fontsize="footnotesize")
+    budgets=json.loads((NEW/"round2/source-date-budgets.json").read_text())
+    source_rows=[]
+    for source,name in [("fx_hourly","FX"),("nyfed_weekly","Treasury")]:
+        b=budgets[source]
+        source_rows.append([name,b["first_date"]+" to "+b["last_date"],b["validation"]["first_date"]+" to "+b["validation"]["last_date"],b["evaluation"]["first_date"]+" to "+b["evaluation"]["last_date"]," or ".join(map(str,b["windows"]))+" / "+str(b["refit_step"])])
+    table("data-table.tex", "Source-specific chronological budgets. Dates are issue dates; all horizons share the same evaluation issues.", "tab:data",
+          ["Source", "Full record", "Validation", "Evaluation", "$W$ / $d$"],
+          source_rows,
+          align="lp{.20\\linewidth}p{.20\\linewidth}p{.20\\linewidth}p{.17\\linewidth}",
+          note=f"FX has {budgets['fx_hourly']['validation']['count']:,} validation and {budgets['fx_hourly']['evaluation']['count']:,} evaluation issues; Treasury has {budgets['nyfed_weekly']['validation']['count']} and {budgets['nyfed_weekly']['evaluation']['count']}. The longest validation response completes before evaluation starts. $H$ counts records, preserving recorded FX gaps.", fontsize="footnotesize")
+    ready = rows(NEW / "w3/tables3-4-ready.csv")
+    assert len(ready) == 48
+    names = {"frozen_F": "$F$", "frozen_S": "$S$", "frozen_K": "$K$", "QR": "QR", "KNN": "KNN", "SCALED_KNN": "Scaled KNN"}
+    for source, name, label, title in [("fx_hourly", "fx", "tab:fx", "FX"), ("nyfed_weekly", "treasury", "tab:treasury", "Treasury")]:
+        subset = [r for r in ready if r["source"] == source]
+        assert len(subset) == 24
+        data = [[r["horizon"], r["window"], names[r["method"]], r["loss_display"], r["relative_display"], r["breach_rate_display"], r["holm_display"].replace("<", "$<").replace(".001", ".001$") if r["holm_display"].startswith("<") else r["holm_display"]] for r in subset]
+        for r, display in zip(subset,data):
+            if (r["source"],r["horizon"],r["window"],r["method"]) == ("nyfed_weekly","6","260","QR"):
+                primary=next(q for q in rows(NEW/"inference/dm-verified.csv") if q["contrast_id"]=="nyfed_weekly-h6-QR260-minus-frozen_F260")
+                display[-1]=pval(primary["dm_p"])+"$^{*}$"
+        table(name + "-table.tex", title + " original reports, matched by horizon and history. Loss is in source-reported USD millions.", label,
+              ["$H$", "$W$", "Report", "Mean loss", "$\\Delta_F$ (\\%)", "Breach (\\%)", "$p$"], data,
+              align="rrlrrrr", note="Every relative change uses its own frozen $F$. $^{*}$Primary, unadjusted HAC p-value (Treasury QR at the main setting). Other conditional p-values use Holm over the remaining 71 matched conditional-versus-$F/S/K$ contrasts. The FX cross-window primary is reported separately. This reporting division was chosen after results; the original 72-member adjustment remains archived. Dashes mark self-references, historical contrasts or the exact full-pool KNN identity. Identical-loss cells receive input one for conservative bookkeeping. Values are rounded only for display.")
+    cov = rows(NEW / "inference/coverage-verified.csv")
+    covkeys = [("fx_hourly", "6", "2880", "QR"), ("nyfed_weekly", "6", "260", "QR"), ("nyfed_weekly", "6", "260", "frozen_F")]
+    data = []
+    for key in covkeys:
+        r = next(r for r in cov if tuple(r[k] for k in ["source", "horizon", "window", "method"]) == key)
+        data.append([("FX" if key[0] == "fx_hourly" else "Treasury") + " " + names[key[3]], r["n"], r["hits"], f"{100*float(r['rate']):.3f}", pval(r["pof_p"]), pval(r["ind_p"]), pval(r["cc_p"])])
+    table("coverage-table.tex", "Six-step coverage diagnostics on the fixed nonoverlap grid.", "tab:coverage",
+          ["Report", "$n$", "Breaches", "Rate (\\%)", "$p_{\\rm POF}$", "$p_{\\rm IND}$", "$p_{\\rm CC}$"], data,
+          align="lrrrrrr", note="POF uses every retained hit. IND and CC condition on the first hit; their likelihoods therefore use the subsequent transitions consistently. Values are asymptotic reference p-values for equality/independence nulls. Complete grids and the preserved earlier initialization convention are in the inference supplement.")
+    e3 = rows(NEW / "e3/summary.csv")
+    pairs = rows(NEW / "e3/paired-dm.csv")
+    e6 = rows(NEW / "e6/table6.csv")
+    data = []
+    for r in sorted(e6, key=lambda r: (r["source"] != "fx_hourly", int(r["horizon"]), int(r["window"]))):
+        data.append(["FX" if r["source"] == "fx_hourly" else "Treasury", r["horizon"], r["window"], f"{float(r['extended33_selected_penalty']):g}", *[f"{float(r[k]):+.2f}" for k in ["original33_percent_vs_frozen_F", "four_percent_vs_frozen_F", "extended33_percent_vs_frozen_F", "I_percent_vs_frozen_F"]], r["extended33_breaches"]])
+    table("e3-table.tex", "Penalty-menu expansion and the intercept-only reference. Loss changes relative to frozen $F$ (percent); the final column counts strict breaches.", "tab:e3",
+          ["Source", "$H$", "$W$", "$\\lambda$ (33+)", "Original 33", "Four+", "33+", "$I$ ($\\lambda\\!\\to\\!\\infty$)", "Breaches (33+)"], data,
+          align="lrrrrrrrr", fontsize="footnotesize", note="Plus denotes the common menu $\\{.001,.01,.1,1,10\\}$. Original 33 retains its smaller menu. $I$ uses the ordinary empirical headroom quantile at $\\lceil .95W\\rceil$; it is a $\\lambda\\to\\infty$ reference, with a minimizer interval when $.95W$ is integral. $F$ instead uses $\\lceil .95(W+1)\\rceil$. Each predictor set selects its own penalty by the same validation rule. All eight cells and all 40 candidates completed. Common-menu paired tests, the separate 28-comparison E3 adjustment, HLN and doubled-bandwidth results remain in the supplement.")
+    treasury = [r for r in e6 if r["source"] == "nyfed_weekly"]
+    primary = next(r for r in treasury if r["horizon"] == "6" and r["window"] == "260")
+    endpoint_count = sum(r["selected_at_extended_menu_upper_endpoint"] == "True" for r in treasury)
+    i_changes = ", ".join(f"${float(r['I_percent_vs_frozen_F']):+.1f}$\\%" for r in treasury)
+    (GEN / "e6-summary.tex").write_text(
+        f"\n\nThe intercept-only reference helps locate the remaining Treasury differences. In the displayed Treasury order, $I$ changes loss by {i_changes} relative to $F$. The expanded full regression selects the menu's upper endpoint in {endpoint_count} of {len(treasury)} Treasury cells. At the main Treasury setting, expanded QR has {primary['extended33_breaches']} strict breaches, compared with {primary['frozen_F_breaches']} for $F$ and {primary['original33_breaches']} for original QR. Stronger shrinkage therefore narrows the score deterioration without restoring the historical breach count.\n")
+    decomp = rows(NEW / "e3/primary-decomposition.csv")
+    round2 = NEW / "round2"
+    round2.mkdir(exist_ok=True)
+    (round2 / "document-inputs.json").write_text(json.dumps({"table3_4_rows": len(ready), "e3_cells": len(e3), "e6_cells": len(e6), "decomposition_rows": len(decomp), "original_archives_read_only": True}, indent=2) + "\n")
+    # Direct columns are intentionally selected by schema, never reconstructed from rounded paper values.
+    method_names = {"rolling_F": "Rolling $F_{720}$", "frozen_F": "Frozen $F$", "four_predictor_extended_menu": "Four+", "33_predictor_extended_menu": "33+", "33_predictor_original_menu": "Original 33"}
+    data = []
+    for r in decomp:
+        source = "FX" if r["source"] == "fx_hourly" else "Treasury"
+        old = method_names[r["old_method"]]
+        new = method_names[r["new_method"]]
+        if r["old_method"] == r["new_method"] == "frozen_F":
+            old, new = "Frozen $F_{720}$", "Frozen $F_{2880}$"
+        data.append([source, old + "$\\to$" + new, f"{float(r['relative_percent']):+.3f}", f"{float(r['percentage_points_of_initial_loss']):+.3f}", pval(r.get("dm_p")), pval(r.get("hln_p"))])
+    table("decomposition-table.tex", "Ordered six-step changes ending at the original main comparisons.", "tab:decomp",
+          ["Source", "Change", "Step (\\%)", "Initial (pp)", "$p_{\\rm DM}$", "$p_{\\rm HLN}$"], data,
+          align="llrrrr", fontsize="footnotesize", note="Step percentages use the preceding row's loss and compound. Initial percentage points use the chain's common starting loss and sum to the original total. The last Treasury step restricts the ridge menu again, separating that change from the common-menu predictor comparison. Dashes denote identical losses. Tests are exploratory and unadjusted here; the declared E3 family and twice-bandwidth checks are in the supplement.")
+    tmain=next(r for r in e3 if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    tpair=next(r for r in pairs if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["new_window"]=="260" and r["old_method"]=="four_predictor_extended_menu" and r["new_method"]=="33_predictor_extended_menu")
+    fxpair=next(r for r in pairs if r["source"]=="fx_hourly" and r["horizon"]=="6" and r["new_window"]=="2880" and r["old_method"]=="four_predictor_extended_menu" and r["new_method"]=="33_predictor_extended_menu")
+    (GEN / "e3-summary.tex").write_text(
+        f"A wider penalty menu largely removes the original Treasury deterioration. At the main setting, the full regression's excess loss relative to $F$ falls from {float(tmain['original33_percent_vs_frozen_F']):.1f}\\% to {float(tmain['extended33_percent_vs_frozen_F']):.2f}\\%, and its selected penalty changes from ${float(tmain['original33_selected_penalty']):g}$ to ${float(tmain['extended33_selected_penalty']):g}$. Under the common menu, the full predictor procedure has {float(tpair['relative_percent']):.2f}\\% higher loss than the parsimonious procedure (HAC p-value {pval(tpair['dm_p'])}). The small observed difference does not establish equivalence.\n\n"
+        f"The FX gain persists under the wider menu: every selection and issued report agrees with the original full specification. At the long history, changing from the parsimonious to the full predictor procedure reduces loss by {abs(float(fxpair['relative_percent'])):.1f}\\% (E3-adjusted HAC p-value {pval(fxpair['dm_p_holm_e3_28'])}). This comparison concerns jointly selected tuning procedures and does not isolate the effect of an individual predictor. Table~\\ref{{tab:decomp}} retains the update, history, predictor-set and menu steps.\n")
+    # Named U/V comparisons from the immutable original paired table.
+    pairsold = rows(OLD / "paired-comparisons.csv")
+    ids = ["fx_hourly-h6-QR2880-minus-rolling_F720", "fx_hourly-h6-QR2880-minus-frozen_F2880", "fx_hourly-h24-QR2880-minus-rolling_S720", "nyfed_weekly-h6-QR260-minus-frozen_F260"]
+    uvdata = []
+    for cid, label in zip(ids, ["FX six-step primary", "FX six-step matched", "FX longer-horizon legacy", "Treasury primary"]):
+        r = next(r for r in pairsold if r["contrast_id"] == cid)
+        scale = 1e6 if r["source"] == "fx_hourly" else 1
+        u, v = [float(r[k]) / scale for k in ["mean_positive_overrun_difference", "mean_unused_allowance_difference"]]
+        crossing = "--" if u*v >= 0 else f"{-v/u:.3f}"
+        uvdata.append([label, f"{u:+.3f}", f"{v:+.3f}", crossing, r["strict_breach_count_left"] + "/" + r["strict_breach_count_right"]])
+    table("uv-table.tex", "Error components and strict breaches for the original named comparisons.", "tab:uv", ["Comparison", "$\\Delta U$", "$\\Delta V$", "Crossing $\\omega$", "Breaches A/B"], uvdata,
+          align="lrrrr", note="A is regression and B its named reference. Amounts are in source-reported USD millions, with distinct source measurement processes. Negative component differences favor A. A missing crossing means both components have the same sign. The weights describe hypothetical fixed-report preferences.")
+    ar = json.loads((NEW/"w4/ar-comparison.json").read_text())
+    counts, treas = ar["counts_all"], ar["counts_by_source"]["nyfed_weekly"]
+    primary = next(r for r in rows(NEW/"w4/ar-comparison.csv") if r["source"]=="nyfed_weekly" and r["horizon"]=="6" and r["window"]=="260")
+    (GEN/"ar-comparison-summary.tex").write_text(
+        f"Against matched $F$ and $S$, AR lowers mean loss in {counts['F']['lower_loss']}/{counts['F']['cells']} and {counts['S']['lower_loss']}/{counts['S']['cells']} cells, respectively. Breaches rise relative to $S$ in {counts['S']['more_breaches']}/{counts['S']['cells']} cells and relative to $F$ in {counts['F']['more_breaches']}/{counts['F']['cells']}. At the main Treasury setting, AR lowers loss by {abs(float(primary['AR_percent_vs_F'])):.1f}\\% against $F$ and {abs(float(primary['AR_percent_vs_S'])):.1f}\\% against $S$, with {primary['AR_strict_breach_count']} breaches versus {primary['F_strict_breach_count']} for $F$. Relative to original QR, AR has lower loss in all {treas['original_QR33']['cells']} Treasury cells; relative to expanded QR33+, it does so in {treas['QR33_plus']['lower_loss']}/{treas['QR33_plus']['cells']}, including a {abs(float(primary['AR_percent_vs_QR33_plus'])):.1f}\\% reduction in the main Treasury cell.\n")
+    ar_finding=f"Lower loss than $F$ in {counts['F']['lower_loss']}/{counts['F']['cells']} and $S$ in {counts['S']['lower_loss']}/{counts['S']['cells']}; more breaches than $S$ in {counts['S']['more_breaches']}/{counts['S']['cells']}"
+    table("robustness-table.tex", "Compact robustness summary; the complete original outputs are retained.", "tab:robustness", ["Check", "Finding", "Interpretation"],
+          [["AR residual replay", ar_finding, f"Lower loss than QR33+ in {treas['QR33_plus']['lower_loss']}/{treas['QR33_plus']['cells']} Treasury cells"],
+           ["Rank convention", "Ordinary versus corrected rank changes some finite reports; full-pool identities persist", "Report construction matters"],
+           ["Fixed linear weights", "FX short-horizon components both fall; longer-horizon crossing near the original weight", "Mean score and breach count differ"],
+           ["Horizon order", "Targets are ordered; fitted reports can cross", "Separate fits need an explicit reconciliation criterion"]],
+          align="p{.19\\linewidth}p{.47\\linewidth}p{.23\\linewidth}", fontsize="footnotesize")
+    # Only original Table B1 stays printed. Its cells are copied directly, rounding for display.
+    content = json.loads((DOC.parent / "working-paper/paper-content.json").read_text())
+    sec = next(s for s in content["sections"] if s["title"].startswith("Appendix B"))
+    original = next(b for b in sec["blocks"] if b["type"] == "table")
+    # Actual baseline schema is inspected rather than assuming HTML table contents.
+    data = [[tex(r[0])] + [f"{float(v):.3f}" for v in r[1:-1]] + [f"{float(r[-1]):+.3f}"] for r in original["rows"]]
+    table("earlier-table.tex", "Original historical construction grid; mean FX losses in USD millions.", "tab:old", ["Setting", "$F$", "$S$", "$R$", "$K$", "$C^{\\rm floor}$", "$F-S$"], data,
+          align="lrrrrrr", note="Each sensitivity changes one factor from the original six-step setting. All rows retain the same evaluation issues; different score preferences are separate tasks. The displayed +0.000 in the tau90 row is positive before rounding.")
+
+
+def start_pdf(name, width, height):
+    c = canvas.Canvas(str(FIG / name), pagesize=(width, height), pageCompression=1)
+    c.setTitle(name.removesuffix(".pdf").replace("-", " "))
+    c.setAuthor("")
+    c.setFont("Helvetica", 9)
+    return c
+
+
+def label(c, x, y, text, size=9, color=black, align="left"):
+    c.setFont("Helvetica", max(9, size*1.15))
+    c.setFillColor(color)
+    {"left": c.drawString, "right": c.drawRightString, "center": c.drawCentredString}[align](x, y, text)
+
+
+def path_figure():
+    c = start_pdf("path-target.pdf", 470, 200)
+    x0, x1, y0, y1 = 45, 430, 32, 175
+    px = lambda i: x0 + (x1-x0)*i/5
+    py = lambda v: y0 + (v+7)/11*(y1-y0)
+    c.setStrokeColor(LIGHT)
+    for v in [-6, 0, 2]:
+        c.line(x0, py(v), x1, py(v)); label(c, x0-9, py(v)-3, str(v), 8, GREY, "right")
+    vals = [2, 3, -1, -6, -2, 1.2]
+    c.setStrokeColor(BLUE); c.setLineWidth(1.8)
+    for i in range(5): c.line(px(i), py(vals[i]), px(i+1), py(vals[i+1]))
+    for i, v in enumerate(vals): c.setFillColor(BLUE); c.circle(px(i), py(v), 2.8, fill=1, stroke=0)
+    label(c, 48, 181, "Signed sampled position", 10)
+    label(c, px(0)+6, py(2)-18, "Issue magnitude B", 9)
+    label(c, px(3)-15, py(-6)-15, "Peak magnitude P", 9, RED, "center")
+    label(c, px(5), py(1.2)+10, "Endpoint magnitude", 9, BLUE, "right")
+    label(c, x0, 12, "Issue", 8, GREY, "center"); label(c, x1, 12, "Horizon", 8, GREY, "center")
+    c.save()
+
+
+def waterfall():
+    c = start_pdf("decomposition.pdf", 600, 245)
+    e3 = rows(NEW / "e3/primary-decomposition.csv")
+    for panel, source in enumerate(["fx_hourly", "nyfed_weekly"]):
+        rr = [r for r in e3 if r["source"] == source]
+        x0, width, y0, h = 43+panel*298, 245, 70, 137
+        y = lambda v: y0 + (v-80)/80*h
+        c.setStrokeColor(LIGHT)
+        for tick in [80,100,120,140,160]:
+            c.line(x0,y(tick),x0+width,y(tick)); label(c,x0-6,y(tick)-3,str(tick),7,GREY,"right")
+        title = "FX: six-step, original rolling reference" if panel == 0 else "Treasury: six-step, W=260"
+        label(c,x0,225,title,9)
+        initial = float(rr[0]["old_mean_pinball"])
+        values = [100]+[100*float(r["new_mean_pinball"])/initial for r in rr]
+        labs = (["Rolling F", "Frozen F", "Long F", "Four+", "33+", "Orig. 33"] if panel == 0 else ["Frozen F", "Four+", "33+", "Orig. 33"])
+        spacing=width/len(values);bw=min(27,spacing*.65)
+        for i, val in enumerate(values):
+            x=x0+(i+.5)*spacing
+            old=80 if i==0 else values[i-1]
+            c.setFillColor(GREY if i==0 else (BLUE if val<=old else RED)); c.setStrokeColor(GREY)
+            if abs(val-old)<1e-9: c.line(x-bw/2,y(val),x+bw/2,y(val))
+            else: c.rect(x-bw/2,y(min(old,val)),bw,abs(y(val)-y(old)),fill=1,stroke=0)
+            if i: c.setStrokeColor(GREY);c.setLineWidth(.5);c.line(x-spacing+bw/2,y(old),x-bw/2,y(old))
+            label_y=y(val)+5
+            if val < old-1e-9: label_y=y(val)-14
+            label(c,x,label_y,f"{val:.1f}",8,black,"center")
+            for j, bit in enumerate(labs[i].split(" ")): label(c,x,49-j*10,bit,7,black,"center")
+        label(c,x0,17,"Common starting loss = 100; blue lowers mean loss",8,GREY)
+    c.save()
+
+
+def error_figure():
+    c=start_pdf("error-components.pdf",600,193)
+    paired=rows(OLD/"paired-comparisons.csv")
+    ids=["fx_hourly-h6-QR2880-minus-rolling_F720","fx_hourly-h24-QR2880-minus-rolling_S720","nyfed_weekly-h6-QR260-minus-frozen_F260"]
+    labels=["FX six-step","FX longer horizon","Treasury six-step"]
+    # Recover exact component references from score, paired difference and summaries.
+    cells=rows(OLD/"evaluation-summary.csv")
+    for pi,(field,title) in enumerate([("U","Mean underprediction (U)"),("V","Mean overprediction (V)"),("B","Strict breaches (pp)")]):
+        x0=147+pi*148; span=116
+        values=[]
+        for cid in ids:
+            r=next(r for r in paired if r["contrast_id"]==cid)
+            if field=="B": val=100*(int(r["strict_breach_count_left"])-int(r["strict_breach_count_right"]))/int(r["origin_count"])
+            else:
+                metric="mean_positive_overrun" if field=="U" else "mean_unused_allowance"
+                left=next(q for q in cells if q["source"]==r["source"] and q["horizon"]==r["horizon"] and q["window"]==r["left_window"] and q["method"]==r["left_method"])
+                diff=float(r[metric+"_difference"]);ref=float(left[metric])-diff;val=100*diff/ref
+            values.append(val)
+        bound=max(1,max(abs(v) for v in values))*1.18
+        zero=x0+span*.5
+        c.setStrokeColor(LIGHT);c.line(zero,35,zero,150)
+        label(c,x0+span/2,174,title,8,black,"center")
+        for ri,(v,lab) in enumerate(zip(values,labels)):
+            y=135-ri*42; end=zero+v/bound*span*.47
+            c.setFillColor(BLUE if v<0 else RED);c.rect(min(zero,end),y-5,max(.4,abs(end-zero)),10,fill=1,stroke=0)
+            label(c,zero,y+9,f"{v:+.1f}"+("%" if field!="B" else ""),8,black,"center")
+            if pi==0:label(c,8,y-3,lab,9)
+        label(c,x0+span/2,17,"Change / own reference" if field!="B" else "Percentage-point change",7,GREY,"center")
+    c.save()
+
+
+def murphy():
+    c=start_pdf("murphy.pdf",600,178)
+    directory=NEW/"inference/inherited-exact"
+    for pi,source in enumerate(["fx_hourly","nyfed_weekly"]):
+        paths=list(directory.rglob("murphy-"+source+"-display.csv"))
+        assert len(paths)==1,paths
+        rr=rows(paths[0]);xkey=next(k for k in rr[0] if k.startswith("theta"))
+        xs=[float(r[xkey]) for r in rr];ys=[float(r["left_elementary"])-float(r["right_elementary"]) for r in rr]
+        x0,x1,y0,y1=43+pi*299,282+pi*299,39,140
+        xmin,xmax=min(xs),max(xs);bound=max(map(abs,ys))*1.15
+        px=lambda v:x0+(v-xmin)/(xmax-xmin)*(x1-x0)
+        py=lambda v:(y0+y1)/2+v/bound*(y1-y0)/2
+        c.setStrokeColor(LIGHT);c.line(x0,py(0),x1,py(0))
+        c.setStrokeColor(BLUE);c.setLineWidth(1)
+        for i in range(len(xs)-1):c.line(px(xs[i]),py(ys[i]),px(xs[i+1]),py(ys[i+1]))
+        label(c,x0,158,"FX" if pi==0 else "Treasury",10)
+        label(c,x0,y0-13,f"{xmin:.1f}",8,GREY);label(c,x1,y0-13,f"{xmax:.1f}",8,GREY,"right")
+        label(c,(x0+x1)/2,8,"Threshold in source-reported USD millions",8,GREY,"center")
+        label(c,x0-4,py(0)-3,"0",8,GREY,"right")
+        label(c,x0-4,y1-3,f"{bound:.3f}",7,GREY,"right")
+        label(c,x0-4,y0-3,f"{-bound:.3f}",7,GREY,"right")
+    c.save()
+
+
+def lambda_path():
+    path = rows(NEW / "e6/lambda-path.csv")
+    refs = rows(NEW / "e6/lambda-path-I.csv")
+    c = start_pdf("lambda-path.pdf", 600, 235)
+    for panel, source in enumerate(["fx_hourly", "nyfed_weekly"]):
+        subset = [r for r in path if r["source"] == source]
+        baseline = [r for r in refs if r["source"] == source]
+        scale = 1e6 if source == "fx_hourly" else 1
+        values = [float(r["mean_pinball"])/scale for r in subset + baseline if r["status"] == "COMPLETE"]
+        lower, upper = min(values), max(values)
+        pad = (upper-lower)*.12
+        x0, x1, y0, y1 = 49+panel*300, 282+panel*300, 48, 187
+        px = lambda v: x0+(math.log10(v)+3)/5*(x1-x0)
+        py = lambda v: y0+(v-lower+pad)/(upper-lower+2*pad)*(y1-y0)
+        label(c, x0, 216, "FX: original six-step long history" if panel == 0 else "Treasury: original six-step long history", 9)
+        for j in range(4):
+            val = lower-pad+(upper-lower+2*pad)*j/3
+            c.setStrokeColor(LIGHT); c.line(x0,py(val),x1,py(val))
+            label(c,x0-5,py(val)-3,f"{val:.2f}" if scale == 1e6 else f"{val:.0f}",8,GREY,"right")
+        for phase, color in [("validation", BLUE), ("evaluation", RED)]:
+            rr = sorted([r for r in subset if r["phase"] == phase and r["status"] == "COMPLETE"], key=lambda r:float(r["parameter"]))
+            c.setStrokeColor(color); c.setFillColor(color); c.setLineWidth(1.2)
+            for a,b in zip(rr,rr[1:]):
+                c.line(px(float(a["parameter"])),py(float(a["mean_pinball"])/scale),px(float(b["parameter"])),py(float(b["mean_pinball"])/scale))
+            for r in rr: c.circle(px(float(r["parameter"])),py(float(r["mean_pinball"])/scale),2.2,fill=1,stroke=0)
+            ref = next(r for r in baseline if r["phase"] == phase)
+            c.setDash(4,3); c.line(x0,py(float(ref["mean_pinball"])/scale),x1,py(float(ref["mean_pinball"])/scale)); c.setDash()
+        for val in sorted({float(r["parameter"]) for r in subset}): label(c,px(val),y0-15,f"{val:g}",8,GREY,"center")
+        label(c,x0,199,"Mean pinball loss (USD millions)",8,GREY)
+        label(c,(x0+x1)/2,15,"Ridge penalty (log scale)",8,GREY,"center")
+    label(c,300,3,"Blue: validation; red: evaluation; dashed: phase-specific intercept-only I",8,GREY,"center")
+    c.save()
+
+
+def panel_summary_and_figure():
+    panel = rows(NEW / "e5/summary.csv")
+    assessment = json.loads((NEW / "e5/prediction-assessment.json").read_text())
+    assert len(panel) == assessment["planned_cells"] == 48
+    assert all(r["status"] == "COMPLETE" for r in panel)
+    from statistics import median
+    old_median = median(float(r["original_QR33_percent_vs_F"]) for r in panel)
+    new_median = median(float(r["QR33_plus_percent_vs_F"]) for r in panel)
+    old_losses = sum(float(r["original_QR33_mean_pinball"]) > float(r["F_mean_pinball"]) for r in panel)
+    new_losses = sum(float(r["QR33_plus_mean_pinball"]) > float(r["F_mean_pinball"]) for r in panel)
+    predictions = assessment["predictions"]
+    ptext = "; ".join(f"{name}: {p['success_count']}/{p['fixed_denominator']} against a threshold of {p['threshold']}" for name,p in predictions.items())
+    series = list(dict.fromkeys(r["series_key"] for r in panel))
+    (GEN / "e5-summary.tex").write_text(
+        f"\n\nAn additional panel reuses {len(series)} previously archived New York Fed position series on the same economic-date grid, with all {len(panel)} horizon--history cells retained (Figure~\\ref{{fig:panel}}). Expanding the full regression's menu reduces the median excess loss relative to $F$ from {old_median:+.1f}\\% to {new_median:+.1f}\\%, but it still loses in {new_losses} cells, compared with {old_losses} originally. The committed pre-run predictions yield {ptext}. P1 and P2 are unsupported; P3 is supported. Shrinkage therefore mitigates rather than eliminates the observed weakness. The design followed inspection of the original panel results, and the series share a reporting system and overlapping dealer positions; this is an exploratory extension, not independent replication.\n")
+    c=start_pdf("panel-menu.pdf",650,400)
+    ticks=[.5,1,2,4,8]
+    for pi,(h,w) in enumerate([(6,52),(6,260),(24,52),(24,260)]):
+        xbase=(pi%2)*325; ybase=200 if pi<2 else 0
+        x0,x1,y0,y1=xbase+100,xbase+300,ybase+37,ybase+174
+        px=lambda ratio:x0+(math.log2(ratio)+1)/4*(x1-x0)
+        py=lambda i:y1-i*(y1-y0)/11
+        label(c,x0,ybase+188,f"H={h}, W={w}",9)
+        for tick in ticks:
+            c.setStrokeColor(GREY if tick==1 else LIGHT);c.setLineWidth(.8 if tick==1 else .4);c.line(px(tick),y0-5,px(tick),y1+5)
+            label(c,px(tick),ybase+19,f"{100*(tick-1):+.0f}%",8,GREY,"center")
+        for i,key in enumerate(series):
+            r=next(r for r in panel if r["series_key"]==key and int(r["horizon"])==h and int(r["window"])==w)
+            old=float(r["original_QR33_mean_pinball"])/float(r["F_mean_pinball"])
+            new=float(r["QR33_plus_mean_pinball"])/float(r["F_mean_pinball"])
+            label(c,x0-7,py(i)-3,key.removeprefix("PDPOS"),8,GREY,"right")
+            c.setStrokeColor(LIGHT);c.line(px(old),py(i),px(new),py(i))
+            c.setFillColor(RED);c.circle(px(old),py(i),2.3,fill=1,stroke=0)
+            c.setFillColor(BLUE);c.circle(px(new),py(i),2.0,fill=1,stroke=0)
+    label(c,325,3,"Loss change versus F (log ratio scale): red original QR33; blue expanded QR33+",8,GREY,"center")
+    c.save()
+
+
+def main():
+    GEN.mkdir(parents=True,exist_ok=True);FIG.mkdir(parents=True,exist_ok=True)
+    numerical_facts();build_tables();path_figure();waterfall();error_figure();murphy();lambda_path();panel_summary_and_figure()
+    print("Built revision-specific aggregate tables and vector figures; manuscript PDF requires Tectonic.")
+
+
+if __name__=="__main__":main()

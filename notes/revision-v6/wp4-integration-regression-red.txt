@@ -1,0 +1,19 @@
+test_analysis_metadata_merges_equal_keys_without_duplicate_kwargs (test_v6_wp4.WP4Admission.test_analysis_metadata_merges_equal_keys_without_duplicate_kwargs) ... ERROR
+test_primary_vector_reproduces_fixed_old_paired_row (test_v6_wp4.WP4Admission.test_primary_vector_reproduces_fixed_old_paired_row) ... ok
+test_reference_target_or_paired_direction_change_stops (test_v6_wp4.WP4Admission.test_reference_target_or_paired_direction_change_stops) ... ok
+test_resource_failures_preserve_two_sources_and_four_na_slots (test_v6_wp4.WP4Admission.test_resource_failures_preserve_two_sources_and_four_na_slots) ... ok
+
+======================================================================
+ERROR: test_analysis_metadata_merges_equal_keys_without_duplicate_kwargs (test_v6_wp4.WP4Admission.test_analysis_metadata_merges_equal_keys_without_duplicate_kwargs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp4.py", line 25, in test_analysis_metadata_merges_equal_keys_without_duplicate_kwargs
+    a=self.api();z=a.merge_analysis(dict(horizon=6,analysis_status='post-result / exploratory'),dict(horizon=6,analysis_status='post-result / exploratory',groups=[]))
+                   ^^^^^^^^^^^^^^^^
+AttributeError: module 'v6_wp4' has no attribute 'merge_analysis'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.041s
+
+FAILED (errors=1)
+{"status": "COMPLETE_INVENTORY", "sources": 2, "family_n": 4, "raw_na_count": 4, "resources": {"source_worker_count": 2, "peak_rss_bytes": 1, "maximum_observed_os_threads": 1, "maximum_source_worker_seconds": 0.1}}

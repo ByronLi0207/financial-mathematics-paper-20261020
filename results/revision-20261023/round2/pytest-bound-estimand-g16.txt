@@ -1,0 +1,159 @@
+env UV_PYTHON_DOWNLOADS=never 'UV_CACHE_DIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache' PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 NUMBA_DISABLE_JIT=1 NUMBA_NUM_THREADS=1 'MPLCONFIGDIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/mpl-d1' MPLBACKEND=Agg 'JOBLIB_TEMP_FOLDER=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/joblib-d1' VECLIB_MAXIMUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /usr/bin/time -l /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with arch --with scikit-learn python -B -m pytest -p no:cacheprovider -v test_inference_tests.py test_parsimonious_v3.py test_v3_math_format.py test_v3_inference_presentation.py test_v3_student_reference.py test_v3_write_policy.py test_round2_shrinkage.py test_round2_levy.py test_round2_panel.py test_v3_round2_consistency.py test_round2_qrf.py test_round2_filtered.py test_round2_baseline_worker.py test_round2_baseline_readback.py test_round2_levy_ar_correction.py test_reproducibility_guide.py
+
+STDOUT
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache/builds-v0/.tmp9Or1k0/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 125 items
+
+test_inference_tests.py::KnownAnswers::test_bad_inputs PASSED            [  0%]
+test_inference_tests.py::KnownAnswers::test_chi_square_six_known PASSED  [  1%]
+test_inference_tests.py::KnownAnswers::test_christoffersen_known PASSED  [  2%]
+test_inference_tests.py::KnownAnswers::test_dm_horizon_two_known PASSED  [  3%]
+test_inference_tests.py::KnownAnswers::test_dm_known_bartlett_and_hln PASSED [  4%]
+test_inference_tests.py::KnownAnswers::test_dm_sign_and_degenerate PASSED [  4%]
+test_inference_tests.py::KnownAnswers::test_dq_unidentified_hits PASSED  [  5%]
+test_inference_tests.py::KnownAnswers::test_holm_known_and_order PASSED  [  6%]
+test_inference_tests.py::KnownAnswers::test_kupiec_known PASSED          [  7%]
+test_inference_tests.py::KnownAnswers::test_murphy_crossing_and_integral PASSED [  8%]
+test_inference_tests.py::KnownAnswers::test_student_against_closed_forms PASSED [  8%]
+test_parsimonious_v3.py::CausalFourFeatures::test_current_and_rms_known PASSED [  9%]
+test_parsimonious_v3.py::CausalFourFeatures::test_future_changes_do_not_change_issued_features PASSED [ 10%]
+test_parsimonious_v3.py::CausalFourFeatures::test_training_transform_constant_and_causal PASSED [ 11%]
+test_v3_math_format.py::MathematicalTypesetting::test_absolute_value_is_not_norm PASSED [ 12%]
+test_v3_math_format.py::MathematicalTypesetting::test_adjacent_variance_word_does_not_block_the_complete_formula PASSED [ 12%]
+test_v3_math_format.py::MathematicalTypesetting::test_canonical_positive_parts_and_equal_window_binding PASSED [ 13%]
+test_v3_math_format.py::MathematicalTypesetting::test_catalog_does_not_bind_inside_larger_identifiers PASSED [ 14%]
+test_v3_math_format.py::MathematicalTypesetting::test_current_source_preserves_input_and_idempotence PASSED [ 15%]
+test_v3_math_format.py::MathematicalTypesetting::test_figure_caption_uses_whole_formula_binding PASSED [ 16%]
+test_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span PASSED [ 16%]
+test_v3_math_format.py::MathematicalTypesetting::test_long_inline_formulas_and_caption_are_whole_math PASSED [ 17%]
+test_v3_math_format.py::MathematicalTypesetting::test_membership_does_not_consume_english_phi PASSED [ 18%]
+test_v3_math_format.py::MathematicalTypesetting::test_notation_cells_use_whole_tex_expressions PASSED [ 19%]
+test_v3_math_format.py::MathematicalTypesetting::test_recovered_parameterization_has_real_symbols PASSED [ 20%]
+test_v3_math_format.py::MathematicalTypesetting::test_round2_table_norm_and_persistence_delta_are_whole_math PASSED [ 20%]
+test_v3_math_format.py::MathematicalTypesetting::test_simple_numeric_reports_are_full_math_spans PASSED [ 21%]
+test_v3_inference_presentation.py::FamilyReadback::test_existing_and_doubled_reference_counts PASSED [ 22%]
+test_v3_inference_presentation.py::FamilyReadback::test_identical_forecasts_are_conservative_bookkeeping PASSED [ 23%]
+test_v3_inference_presentation.py::FamilyReadback::test_mismatched_archived_adjustment_fails PASSED [ 24%]
+test_v3_inference_presentation.py::FamilyReadback::test_rejection_counts_preserve_adverse_directions PASSED [ 24%]
+test_v3_student_reference.py::IndependentStudentReference::test_closed_cauchy_and_t2_answers PASSED [ 25%]
+test_v3_student_reference.py::IndependentStudentReference::test_domain_is_bounded_to_audit_scope PASSED [ 26%]
+test_v3_student_reference.py::IndependentStudentReference::test_scalar_rows_and_mismatch PASSED [ 27%]
+test_v3_write_policy.py::WriteOwnership::test_backup_policy PASSED       [ 28%]
+test_v3_write_policy.py::WriteOwnership::test_new_owned_file_rewrites_without_backup PASSED [ 28%]
+test_round2_shrinkage.py::ShrinkageDiagnostics::test_overlap_counts_not_ordinary_accuracy PASSED [ 29%]
+test_round2_shrinkage.py::ShrinkageDiagnostics::test_projection_is_not_unprojected_contribution PASSED [ 30%]
+test_round2_shrinkage.py::ShrinkageDiagnostics::test_zero_slope_and_constant_correlation PASSED [ 31%]
+test_round2_shrinkage.py::ManuscriptCells::test_round2_table_cells_are_formal_converter_strings PASSED [ 32%]
+test_round2_levy.py::LevyBaseline::test_discrete_population_quantile_triangle_corollary PASSED [ 32%]
+test_round2_levy.py::LevyBaseline::test_exact_independent_symmetric_maximal_inequality PASSED [ 33%]
+test_round2_levy.py::LevyBaseline::test_exact_mature_endpoint_pool PASSED [ 34%]
+test_round2_levy.py::LevyBaseline::test_future_perturbation_and_truncation PASSED [ 35%]
+test_round2_levy.py::LevyBaseline::test_rank_and_gaussian_variance PASSED [ 36%]
+test_round2_levy.py::IndependenceBoundary::test_symmetric_but_dependent_counterexample PASSED [ 36%]
+test_round2_panel.py::PanelAlignment::test_duplicate_wrong_key_and_nonfinite_rejected PASSED [ 37%]
+test_round2_panel.py::PanelAlignment::test_exact_grid_truncates_only_extra_dates PASSED [ 38%]
+test_round2_panel.py::PanelAlignment::test_no_imputation_of_missing_date PASSED [ 39%]
+test_round2_panel.py::PanelFitting::test_common_strict_menu_rejects_failure PASSED [ 40%]
+test_round2_panel.py::PanelFitting::test_future_perturbation_preserves_both_issued_fits PASSED [ 40%]
+test_v3_round2_consistency.py::Round2ContentAudit::test_D2_new_formulas_are_whole_TeX_math_spans PASSED [ 41%]
+test_v3_round2_consistency.py::Round2ContentAudit::test_conclusion_count_includes_every_paragraph PASSED [ 42%]
+test_v3_round2_consistency.py::Round2ContentAudit::test_original_primaries_and_all_holm_rows_retained PASSED [ 43%]
+test_round2_qrf.py::test_all_original_leaf_weights_are_not_quantiles_of_tree_means PASSED [ 44%]
+test_round2_qrf.py::test_leaf_distribution_does_not_replace_original_rows_by_bootstrap_counts PASSED [ 44%]
+test_round2_qrf.py::test_duplicate_responses_and_zero_mass_use_cdf_left_inverse_without_interpolation PASSED [ 45%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values0-weights0-0.95] PASSED [ 46%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values1-weights1-0.95] PASSED [ 47%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values2-weights2-0.95] PASSED [ 48%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values3-weights3-0.95] PASSED [ 48%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values4-weights4-0.95] PASSED [ 49%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values5-weights5-0.95] PASSED [ 50%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values6-weights6-0.0] PASSED [ 51%]
+test_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values7-weights7-True] PASSED [ 52%]
+test_round2_qrf.py::test_invalid_or_unoccupied_query_leaf_is_rejected PASSED [ 52%]
+test_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[0.0] PASSED [ 53%]
+test_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[-12.5] PASSED [ 54%]
+test_round2_qrf.py::test_known_linear_path_has_exact_nonnegative_headroom_six PASSED [ 55%]
+test_round2_qrf.py::test_full_future_perturbation_cannot_change_reports_or_fit_fingerprints PASSED [ 56%]
+test_round2_qrf.py::test_fixed_forest_seed_gives_identical_reports_and_fit_receipts PASSED [ 56%]
+test_round2_qrf.py::test_checkpoint_failure_retains_only_issued_prefix_and_no_fallback PASSED [ 57%]
+test_round2_qrf.py::test_noncontiguous_origins_and_unavailable_training_features_fail_with_context PASSED [ 58%]
+test_round2_qrf.py::test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report PASSED [ 59%]
+test_round2_filtered.py::test_manual_variance_recursion PASSED           [ 60%]
+test_round2_filtered.py::test_simulated_peak_is_path_maximum_at_signed_anchor_and_includes_h0 PASSED [ 60%]
+test_round2_filtered.py::test_corrected_quantile_rank_and_unavailable_rank PASSED [ 61%]
+test_round2_filtered.py::test_strict_pot_threshold_ties_and_structural_small_window PASSED [ 62%]
+test_round2_filtered.py::test_gpd_exponential_limit_and_support_gate PASSED [ 63%]
+test_round2_filtered.py::test_one_pot_fit_retains_optimizer_and_finite_tail PASSED [ 64%]
+test_round2_filtered.py::test_real_garch_future_perturbation_and_frozen_issue_state PASSED [ 64%]
+test_round2_filtered.py::test_nonfinite_source_fails_and_w52_is_rejected_before_filter_fit PASSED [ 65%]
+test_round2_filtered.py::test_peak_pot_full_future_perturbation PASSED   [ 66%]
+test_round2_filtered.py::test_failed_garch_retains_training_bounds_without_shortening_cell PASSED [ 67%]
+test_round2_filtered.py::test_future_change_inside_refit_block_preserves_earlier_issues[FHS] PASSED [ 68%]
+test_round2_filtered.py::test_future_change_inside_refit_block_preserves_earlier_issues[PEAK_POT] PASSED [ 68%]
+test_round2_filtered.py::test_unobserved_nan_nat_and_absent_outcomes_cannot_affect_reports[FHS] PASSED [ 69%]
+test_round2_filtered.py::test_unobserved_nan_nat_and_absent_outcomes_cannot_affect_reports[PEAK_POT] PASSED [ 70%]
+test_round2_filtered.py::test_interrupted_filter_preserves_attempted_mature_pool_without_retry[TimeoutError] PASSED [ 71%]
+test_round2_filtered.py::test_interrupted_filter_preserves_attempted_mature_pool_without_retry[MemoryError] PASSED [ 72%]
+test_round2_filtered.py::test_interrupted_arch_fit_keeps_actual_warning_and_original_exception_code[TimeoutError] PASSED [ 72%]
+test_round2_filtered.py::test_interrupted_arch_fit_keeps_actual_warning_and_original_exception_code[MemoryError] PASSED [ 73%]
+test_round2_baseline_worker.py::test_comparison_retains_dm_status_once_and_identical_losses_are_not_failed_cells PASSED [ 74%]
+test_round2_baseline_worker.py::test_comparison_loss_direction_and_reference_hits_match_inputs PASSED [ 75%]
+test_round2_baseline_worker.py::test_qrf_checkpoint_adapter_calls_strict_guard_without_diagnostic_keywords PASSED [ 76%]
+test_round2_baseline_worker.py::test_successful_worker_saves_complete_cell_and_both_comparisons PASSED [ 76%]
+test_round2_baseline_worker.py::test_resource_failure_keeps_visible_reason_and_no_scored_cell PASSED [ 77%]
+test_round2_baseline_worker.py::test_setup_failure_yields_retained_NA_receipt_without_partial_average PASSED [ 78%]
+test_round2_baseline_worker.py::test_nonfinite_failed_optimizer_diagnostics_are_explicit_nulls_not_numbers PASSED [ 79%]
+test_round2_baseline_readback.py::test_scalar_bartlett_known_alternating_loss_difference PASSED [ 80%]
+test_round2_baseline_readback.py::test_successful_optimizer_rejected_only_by_frozen_persistence_gate_is_not_nonconvergence PASSED [ 80%]
+test_round2_baseline_readback.py::test_structural_POT_NA_and_complete_record_are_separate PASSED [ 81%]
+test_round2_levy_ar_correction.py::test_level_difference_covariance_by_independent_matrix_construction PASSED [ 82%]
+test_round2_levy_ar_correction.py::test_endpoint_variances_and_nonzero_conditional_mean PASSED [ 83%]
+test_round2_levy_ar_correction.py::test_folded_normal_quantiles_and_degenerate_distribution PASSED [ 84%]
+test_round2_levy_ar_correction.py::test_level_recursion_includes_initial_position_and_sign_mirror PASSED [ 84%]
+test_round2_levy_ar_correction.py::test_negative_increment_ar_is_not_level_mean_reversion PASSED [ 85%]
+test_round2_levy_ar_correction.py::test_strict_breach_endpoint_difference_and_h0_floor PASSED [ 86%]
+test_round2_levy_ar_correction.py::test_fixed_seed_is_batch_invariant_for_random_levels_and_negative_increments PASSED [ 87%]
+test_round2_levy_ar_correction.py::test_fixed_start_oracles_share_paths_and_have_distinct_information_labels PASSED [ 88%]
+test_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args0] PASSED [ 88%]
+test_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args1] PASSED [ 89%]
+test_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args2] PASSED [ 90%]
+test_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args3] PASSED [ 91%]
+test_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.0-0.0-1.0] PASSED [ 92%]
+test_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[1.0-0.0-1.0] PASSED [ 92%]
+test_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.975-nan-1.0] PASSED [ 93%]
+test_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.975-0.0--1.0] PASSED [ 94%]
+test_reproducibility_guide.py::RebuildGuideTests::test_empty_migration_and_same_content_rebuild_are_idempotent PASSED [ 95%]
+test_reproducibility_guide.py::RebuildGuideTests::test_existing_region_update_preserves_both_manual_sides PASSED [ 96%]
+test_reproducibility_guide.py::RebuildGuideTests::test_file_input_preserves_crlf_outside_the_generated_region PASSED [ 96%]
+test_reproducibility_guide.py::RebuildGuideTests::test_legacy_migration_preserves_indented_manual_headings 
+test_reproducibility_guide.py::RebuildGuideTests::test_legacy_migration_preserves_indented_manual_headings PASSED [ 97%]
+test_reproducibility_guide.py::RebuildGuideTests::test_legacy_migration_preserves_unknown_sections_verbatim PASSED [ 98%]
+test_reproducibility_guide.py::RebuildGuideTests::test_malformed_or_duplicate_reserved_markers_fail_closed 
+test_reproducibility_guide.py::RebuildGuideTests::test_malformed_or_duplicate_reserved_markers_fail_closed PASSED [ 99%]
+test_reproducibility_guide.py::RebuildGuideTests::test_unknown_nonempty_legacy_header_fails_closed 
+test_reproducibility_guide.py::RebuildGuideTests::test_unknown_nonempty_legacy_header_fails_closed PASSED [100%]
+
+=================== 125 passed, 15 subtests passed in 3.45s ====================
+
+STDERR
+WARN `--no-project` was provided, but no project was found
+        4.22 real         3.11 user         0.38 sys
+           223281152  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               46650  page reclaims
+                3269  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                  67  messages sent
+                  80  messages received
+                   1  signals received
+                2555  voluntary context switches
+                4833  involuntary context switches
+           799095746  instructions retired
+           344149910  cycles elapsed
+            60179176  peak memory footprint

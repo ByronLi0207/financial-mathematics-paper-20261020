@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "start_utc": "2026-10-24T22:52:18.334475+00:00",
+  "end_utc": "2026-10-24T22:54:17.726817+00:00",
+  "elapsed_seconds": 119.388763542,
+  "command": [
+    "/Users/bingyouli/.local/bin/uv",
+    "run",
+    "--offline",
+    "--no-project",
+    "--no-env-file",
+    "--python",
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "--with",
+    "arch==8.0.0",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "scikit-learn==1.9.1",
+    "--with",
+    "pytest==9.1.1",
+    "--with",
+    "matplotlib==3.11.2",
+    "--with",
+    "pypdf",
+    "--with",
+    "pillow",
+    "python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "NUMBA_NUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "result": "1596 passed, 1130 subtests passed in 118.85s (0:01:58)",
+  "output": "FULL_SUITE_START_UTC 2026-10-24T22:52:18.334475+00:00\n.................................................... [  3%]\n.............................................. [  6%]\n.......................................................... [  9%]\n............................................................................. [ 14%]\n............................................... [ 17%]\n............................................ [ 20%]\n............................................................................................. [ 26%]\n.................................................. [ 29%]\n................................................................................. [ 34%]\n.......................................................................................................... [ 40%]\n.............................................................................................. [ 46%]\n................................................................................................................................ [ 54%]\n............................................................................................................................................................................... [ 65%]\n........................................................................ [ 70%]\n........................................................................ [ 74%]\n........................................................................ [ 79%]\n........................................................................ [ 83%]\n........................................................................ [ 88%]\n........................................................................ [ 92%]\n.................................................................. [ 97%]\n...............................................           [100%]\n1596 passed, 1130 subtests passed in 118.85s (0:01:58)\n\nWARN `--no-project` was provided, but no project was found\n\nFULL_SUITE_EXIT_CODE 0 ELAPSED_SECONDS 119.388763542 END_UTC 2026-10-24T22:54:17.726817+00:00\n",
+  "scope": "Default full repository pytest suite in the NEW v10 directory; no explicit test-path filter. This is the unified E2 pre-run full-suite check. New CFTC tests construct artificial inputs; no real CFTC parser/eligibility/forecast study was invoked by this agent.",
+  "collection_evidence": {
+    "launch_utc": "2026-10-24T22:52:18.334475+00:00",
+    "exact_per_node_collection_timestamps_recorded": false,
+    "note": "All four CFTC test files existed before default full-directory pytest launch. Their pre-launch mtime evidence supports their inclusion; pytest -q did not print a per-node collection list. No invented exact per-node timestamps.",
+    "test_files_present_before_launch": [
+      "test_v10_cftc_data.py",
+      "test_v10_cftc_driver.py",
+      "test_v10_cftc_forecast.py",
+      "test_v10_cftc_summary.py"
+    ]
+  },
+  "files_observed_after_suite": {
+    "report_v10_cftc.py": {
+      "sha256": "c4f16d9ac3632bc577f96ec517baa27e611830870320a5eef733f2383c84caca",
+      "mtime_utc": "2026-10-24T22:53:50.818624+00:00"
+    },
+    "run_v10_cftc.py": {
+      "sha256": "dbbda26b82987708312df12919967f970e28c0042f4c9c0f9449beb68c8142da",
+      "mtime_utc": "2026-10-24T22:53:20.618401+00:00"
+    },
+    "test_v10_cftc_data.py": {
+      "sha256": "4e5f0ca1648c8c611a43ee16ed2c541f64fca8e868c02712c82b82719a3fc578",
+      "mtime_utc": "2026-10-24T22:52:00.852292+00:00"
+    },
+    "test_v10_cftc_driver.py": {
+      "sha256": "c1e19db3c7182c1cd333b518a7e6f31b8ca1a82479ef89e3fa3817f68360a045",
+      "mtime_utc": "2026-10-24T22:51:42.619692+00:00"
+    },
+    "test_v10_cftc_forecast.py": {
+      "sha256": "cbeba7bf37e48478b714dbfc3dc51f9f0798b879bb81b8de13b81115b6db0791",
+      "mtime_utc": "2026-10-24T22:52:13.437797+00:00"
+    },
+    "test_v10_cftc_summary.py": {
+      "sha256": "9c2a84b1195d47dd1fe63d8f6c7e9216b8692bceda2b5d41d0e765b1101519a0",
+      "mtime_utc": "2026-10-24T22:49:43.928491+00:00"
+    },
+    "v10_cftc_data.py": {
+      "sha256": "97ee191ba4e6bc81a48a4bf9061f44bf53dd8793fc639967b86df5a1526afd78",
+      "mtime_utc": "2026-10-24T22:52:05.976861+00:00"
+    },
+    "v10_cftc_forecast.py": {
+      "sha256": "4638b0aa039d35fc0252267b902a1985cc8d01d83a87c0a8f1c48aeff2c8894e",
+      "mtime_utc": "2026-10-24T22:51:25.720220+00:00"
+    },
+    "v10_cftc_summary.py": {
+      "sha256": "260737315ad8e88593f3ee9fb6736bfde90a0ba8177d4db94ca98b5d534abb34",
+      "mtime_utc": "2026-10-24T22:50:34.992138+00:00"
+    }
+  },
+  "no_real_cftc_input_read_by_this_agent": true,
+  "no_network_by_this_agent": true,
+  "subsequent_change_policy": "If another agent changes code after this run, run focused tests for that change; root will run the final full suite at E7. Do not represent these post-run hashes as an atomic at-collection snapshot."
+}

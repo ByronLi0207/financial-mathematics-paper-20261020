@@ -1,0 +1,273 @@
+{
+  "created_utc": "2026-10-23T13:45:17.511830+00:00",
+  "candidate": "g17 bounded framing/notation acceptance",
+  "status": "NO_NEW_ERROR_FOUND_IN_REQUESTED_SCOPE",
+  "input_sha256": {
+    "manuscript/revision-v3/paper-content.json": "a7bd559e1cf80d47331388ad0bf9ac5bec0b5df22c7f2efbf3d1420a2163e2a9",
+    "manuscript/revision-v3/main.tex": "89a5957a807b457b18076dbb3f7bbb6a949443ea5ad650c7a36cc5cef7aed532",
+    "results/revision-20261023/writing-audit.json": "3a56d2f6d5043c199eb6b8518d621fc8bb77123efc85e51c79a89ae136bd17b1",
+    "v3_revision.py": "1d0b0ceb92ae6c09cff6d34f0be07d01309fb23d07d484d76a6284bbd19e4eb8"
+  },
+  "candidate_PDF_identity_from_prior_actual_metadata": "e897bb052380f186964d5d253ece2d164cebff635f37e6c2717a9a28b833c3b1",
+  "actual_read_scope": {
+    "canonical": "Complete119-word abstract, all5 Introduction paragraphs, all23 Section4 target/method blocks including the9-row notation table; main10-section strings/tablelabels searched for specified legacy symbols and source/methodlabels.",
+    "formal_source": "main.tex actual lines15–175 read, covering abstract/introduction/literature/data/notation/methods and start of evaluation, not a fresh whole40-page source/visual reading.",
+    "statistics": "Read writing-audit.json and actual sentence_rate/plain implementation; independently counted base cbce398 and current main/whole-body prose as text without importing or executing v3_revision.",
+    "figures": "Actual5 retained figurePDF text layers extracted via existingpypdf solely for label identification, not new rendering/visual QA.",
+    "excluded": "No A4/A5/A8/A9/E1/E2 reopen; no new original-paper reading, financial value recomputation, generator, pytest, financial fits, Claude, installation, push, deletion or existing-file edit."
+  },
+  "A1": {
+    "word_count_actual_whitespace": 119,
+    "saved_word_count": 119,
+    "required_maximum": 180,
+    "actual_abstract": "How well can a dealer forecast the largest absolute recorded net position before a reporting horizon ends? Such forecasts motivate evaluating a monitoring input for the measured position series. We compare historical peak constructions with ridge quantile regression and local quantiles on a market maker's FX client-flow series and a weekly Treasury-dealer aggregate. The common target includes the observed issue position and uses completed training labels. First, six-record FX regression lowers matched-history pinball loss by 14.77%, while breaches rise from 360 to 376. Second, the Treasury primary deteriorates by 50.79%, with breaches rising from 28 to 54. Third, lower pinball loss often accompanies more breach occasions. The evidence is specific to the inspected records, stipulated score and source-measurement conventions.",
+    "required_findings": [
+      {
+        "finding": "FXH6 matched-history−14.77% and strictbreaches360→376",
+        "present": true,
+        "scope": "Explicitly matched-history; does not relabel it the originalcross-window primary."
+      },
+      {
+        "finding": "Treasuryprimary+50.79% and strictbreaches28→54",
+        "present": true
+      },
+      {
+        "finding": "Lowerpinballloss often accompaniesmorebreachoccasions",
+        "present": true
+      }
+    ],
+    "limitation": "The evidence is specific to the inspected records, stipulated score and source-measurement conventions.",
+    "not_in_abstract": [
+      "ARnumericaldetails",
+      "frontiernumericaldetails",
+      "sparse-gridnumericaldetails"
+    ],
+    "result": "Requested compact content present; no new financial reconciliation performed here."
+  },
+  "A2": {
+    "actual_intro_paragraphs": [
+      "Dealers absorb customer order imbalances while managing inventory risk and scarce balance-sheet capacity. Inventory affects optimal dealer pricing (Ho and Stoll, 1981), FX dealing (Lyons, 1995), and observed inventory adjustment in dealership markets (Hansch, Naik and Viswanathan, 1998). Treasury intermediation likewise depends on dealer capacity (Duffie et al., 2023). A forecast of the maximum recorded position magnitude over a future horizon may support monitoring of the measured position: an endpoint can return toward its starting value after an intervening large position. Translating that monitoring signal into a particular margin or financing decision requires the corresponding contractual and balance-sheet inputs.",
+      "We ask whether mature conditional estimators improve forecasts of an absolute sampled-position peak relative to simple historical constructions. Every report is evaluated against the same peak response and upper-quantile score on common issue origins. The endpoint-derived bound introduced below is a benchmark rather than a direct peak-quantile estimate. The historical alternatives use past headrooms, paths translated to the current signed position, or native peaks floored at the observed current magnitude. The conditional alternatives use ridge quantile regression, nearest-neighbor quantiles and scaled nearest-neighbor quantiles.",
+      "The matched-history FX regression comparison lowers mean loss by 14.77%, but increases breaches from 360 to 376. The original FX primary uses a different historical window and lowers loss by 12.66%. The separately declared Treasury primary deteriorates by 50.79%, with 54 rather than 28 breaches. Short-history FX regression also deteriorates at the longer horizon; a Treasury neighbor gain reverses on the sparse grid. These adverse outcomes are central findings.",
+      "The paper makes three contributions. First, it places established forecasting engines and historical constructions on a common completed-peak response with an explicit issue-known floor. Second, it controls completed-label pools and update schedules and retains the complete favorable and adverse model menu. Third, it documents how score, breach frequency, report coherence and fixed-report preferences can disagree across two financial measurement processes. The contribution is an application and model-validation benchmark using mature methods.",
+      "Section 2 locates the study in the literature. Sections 3–5 describe data, forecasts and evaluation. Sections 6–7 report FX and Treasury results. Section 8 collects exploratory robustness evidence, Section 9 discusses mechanisms and limitations, and Section 10 concludes. Detailed historical menus, geometry and supplementary diagnostics appear in the appendices."
+    ],
+    "three_contribution_block": "The paper makes three contributions. First, it places established forecasting engines and historical constructions on a common completed-peak response with an explicit issue-known floor. Second, it controls completed-label pools and update schedules and retains the complete favorable and adverse model menu. Third, it documents how score, breach frequency, report coherence and fixed-report preferences can disagree across two financial measurement processes. The contribution is an application and model-validation benchmark using mature methods.",
+    "structure": "Economic motivation → explicitquestion/methods → mainfavorable/adversefindings → threecontributions → roadmap.",
+    "motivation_assessment": "Inventory-sensitive dealing and constrained Treasury intermediation motivate monitoring the measured peak. The current text does not equate client-flow/public-aggregate sampled |N| peaks with contractualmargin, fundingoutflows, dealer-level capacity or proven financing benefits.",
+    "contribution_scope": "Application and model-validation benchmark with maturemethods; no newestimator/theorem or independentdealer claim.",
+    "endpoint_bound_scope": "Intro explicitly says commonpeakresponse/score for evaluation while the endpoint-derived L report remains a boundbenchmark, rather than directpeakquantileestimate.",
+    "result": "No new economic/estimand overstatement found within actual reread."
+  },
+  "A3": {
+    "requested_pattern": "\\b(not|neither|nor|no|cannot)\\b",
+    "flags": "IGNORECASE",
+    "requested_split": "Literal fullstop; decimalpoints produce additionalfragments, disclosed rather than redefined.",
+    "scope": "Abstract plus paragraphblocks; main excludesAppendices; tables,equations,referencecatalog excluded. Whole-body appendix-inclusive sensitivity separately retained.",
+    "independent_static_counts": {
+      "main_before": {
+        "literal_full_stop": {
+          "negative": 115,
+          "total": 500,
+          "ratio": 0.23,
+          "saved_json_matches": true
+        },
+        "full_stop_followed_by_space": {
+          "negative": 115,
+          "total": 387,
+          "ratio": 0.2971576227390181,
+          "saved_json_matches": true
+        }
+      },
+      "main_after": {
+        "literal_full_stop": {
+          "negative": 27,
+          "total": 439,
+          "ratio": 0.06150341685649203,
+          "saved_json_matches": true
+        },
+        "full_stop_followed_by_space": {
+          "negative": 27,
+          "total": 316,
+          "ratio": 0.08544303797468354,
+          "saved_json_matches": true
+        }
+      },
+      "whole_body_before": {
+        "literal_full_stop": {
+          "negative": 182,
+          "total": 780,
+          "ratio": 0.23333333333333334,
+          "saved_json_matches": true
+        },
+        "full_stop_followed_by_space": {
+          "negative": 182,
+          "total": 620,
+          "ratio": 0.29354838709677417,
+          "saved_json_matches": true
+        }
+      },
+      "whole_body_after": {
+        "literal_full_stop": {
+          "negative": 137,
+          "total": 912,
+          "ratio": 0.15021929824561403,
+          "saved_json_matches": true
+        },
+        "full_stop_followed_by_space": {
+          "negative": 137,
+          "total": 724,
+          "ratio": 0.18922651933701656,
+          "saved_json_matches": true
+        }
+      }
+    },
+    "all_saved_counts_match": true,
+    "main_target_under_10_percent": true,
+    "whole_body_under_10_percent": false,
+    "boundary": "Main-prose target is met. The15.02% appendix-inclusive result is not concealed or mislabeled below10%; this is not a statistical measure of paperquality.",
+    "no_generator_or_test_execution": true
+  },
+  "A6": {
+    "notation_table": {
+      "type": "table",
+      "caption": "Notation. Distinct symbols for response, refits, history, distances and preferences.",
+      "headers": [
+        "Symbol",
+        "Definition"
+      ],
+      "rows": [
+        [
+          "Nₜ; Bₜ",
+          "Signed position; observed issue magnitude |Nₜ|"
+        ],
+        [
+          "Pₜ,ₕ; Gₜ,ₕ",
+          "Sampled absolute peak; headroom Pₜ,ₕ−Bₜ"
+        ],
+        [
+          "κ(t); W; d",
+          "Most recent refit index; label-pool size; refit step"
+        ],
+        [
+          "Cₜᵐ; Floor",
+          "Issued report for method m; the known-floor report"
+        ],
+        [
+          "d(abs); d(signed)",
+          "Common-set anchor-distance radii"
+        ],
+        [
+          "Ñᵗʳᵢ,ₕ; Mᵢ,ₕ",
+          "Translated historical path; AR residual-replay path"
+        ],
+        [
+          "aκ; zᵢ,κ",
+          "Training response scale; standardized predictors"
+        ],
+        [
+          "a; ω=a/(1−a)",
+          "Shortfall weight; shortfall/excess preference ratio"
+        ],
+        [
+          "Jλ; Dλ",
+          "Penalized regression objective; feasible dual objective"
+        ]
+      ],
+      "cell_html": {
+        "Nₜ; Bₜ": "N<sub>t</sub>; B<sub>t</sub>",
+        "Pₜ,ₕ; Gₜ,ₕ": "P<sub>t,H</sub>; G<sub>t,H</sub>",
+        "Cₜᵐ; Floor": "C<sub>t</sub><super>m</super>; Floor",
+        "aκ; zᵢ,κ": "a<sub>κ</sub>; z<sub>i,κ</sub>",
+        "Jλ; Dλ": "J<sub>λ</sub>; D<sub>λ</sub>",
+        "d(abs); d(signed)": "d<sub>abs</sub>; d<sub>signed</sub>",
+        "Ñᵗʳᵢ,ₕ; Mᵢ,ₕ": "Ñ<sub>i,h</sub><super>tr</super>; M<sub>i,h</sub>",
+        "κ(t); W; d": "κ(t); W; d",
+        "a; ω=a/(1−a)": "a; ω=a/(1−a)"
+      },
+      "math_cells": {
+        "Nₜ; Bₜ": "N_t;\\ B_t",
+        "Pₜ,ₕ; Gₜ,ₕ": "P_{t,H};\\ G_{t,H}",
+        "Cₜᵐ; Floor": "C_t^m;\\ \\mathrm{Floor}",
+        "aκ; zᵢ,κ": "a_\\kappa;\\ z_{i,\\kappa}",
+        "Jλ; Dλ": "\\mathcal J_\\lambda;\\ \\mathcal D_\\lambda",
+        "d(abs); d(signed)": "d_{\\rm abs};\\ d_{\\rm signed}",
+        "Ñᵗʳᵢ,ₕ; Mᵢ,ₕ": "\\widetilde N_{i,h}^{\\rm tr};\\ M_{i,h}",
+        "κ(t); W; d": "\\kappa(t);\\ W;\\ d",
+        "a; ω=a/(1−a)": "a;\\ \\omega=a/(1-a)"
+      }
+    },
+    "symbol_resolution": [
+      {
+        "requested_conflict": "r as refit and anchor-radius",
+        "actual": "Refitκ(t), trainingTκ,H,W, standardizedzi,κ, responseaκ, RMSst|κ; anchor distancesdabs/dsigned. Bare radiusr in other finite-perturbation contexts is not used as a refit symbol here."
+      },
+      {
+        "requested_conflict": "W as history and translatedpath",
+        "actual": "W is completedlabel-pool size; translatedpath Ntilde_i,h^tr and replaypath M_i,h are distinct."
+      },
+      {
+        "requested_conflict": "P as peak, flooredcontrol and objective",
+        "actual": "P is sampledpeak; known-floorreport namedFloor; objectivesmathcalJλ/mathcalDλ."
+      },
+      {
+        "requested_conflict": "K called originalL",
+        "actual": "Historical K is separately defined as nativepeakquantileflooredatB. New L is explicitly the classical-boundplug-in; no originalL label found in main."
+      }
+    ],
+    "main_legacy_token_search": {
+      "legacy_original_L": 0,
+      "S-KNN": 0,
+      "SCALED_KNN": 0,
+      "TB_source_label": 0,
+      "NY_source_label": 0,
+      "P0_report": 0,
+      "P_lambda_objective": 0,
+      "translated_W_path": 0,
+      "refit_r_subscript": 0
+    },
+    "main_Scaled_KNN_table_entries": "Table2/3/4 use ScaledKNN/ScaledKNNk labels consistently; underlying immutable archive identifiers are not edited.",
+    "source_label": "Treasury used in current main tables/prose; legacy TB/NY zero as standalone labels. NYFed institutionalname/serieskeys remain provenance.",
+    "figure_label_text_readback": [
+      {
+        "path": "figures/conditional-common-history.pdf",
+        "sha256": "ec6bd6c835b25ccf6327a01814d15fbe5fc3c0ed90cf2f7f5fd9e50fb56ee69f",
+        "extracted_legacy_label_matches": [],
+        "extracted_Scaled_KNN_occurrences": 8,
+        "extracted_Treasury_occurrences": 1
+      },
+      {
+        "path": "figures/conditional-primary-tradeoffs.pdf",
+        "sha256": "251c10986c46ea95245951cb6e35c15c9a38cc9f1b942a2f19865523c4e0f94e",
+        "extracted_legacy_label_matches": [],
+        "extracted_Treasury_occurrences": 1
+      },
+      {
+        "path": "figures/conditional-annual-primary.pdf",
+        "sha256": "f47de950d80c31abdc60953310786654d9180dd4e78349e9b1aac70a9dc27edc",
+        "extracted_legacy_label_matches": [],
+        "extracted_Treasury_occurrences": 1
+      },
+      {
+        "path": "figures/murphy-fx_hourly.pdf",
+        "sha256": "e67120e4fb49cef44c670e8f47a85b7f48a4f8fe9a7a0fc3ca894afab0e1ec06",
+        "extracted_legacy_label_matches": [],
+        "extracted_Treasury_occurrences": 0
+      },
+      {
+        "path": "figures/murphy-nyfed_weekly.pdf",
+        "sha256": "0f4537fc2dc75166d67e47135588b381d769808eeda73daded861313f34b7277",
+        "extracted_legacy_label_matches": [],
+        "extracted_Treasury_occurrences": 1
+      }
+    ],
+    "result": "Requested main/source/figure label distinctions present; no new conflict found in bounded read."
+  },
+  "new_actionable_findings": [],
+  "limitations": [
+    "No exhaustive symbol proof for all appendices or sourcecode variables.",
+    "No all-PDF visual review in this batch.",
+    "No claim that shorter prose or fewer negativewords establishes novelty, externalvalidity, statisticalcalibration or publicationlevel.",
+    "Only this new JSON is created."
+  ]
+}

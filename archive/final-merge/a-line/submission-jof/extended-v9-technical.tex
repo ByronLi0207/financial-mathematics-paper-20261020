@@ -1,0 +1,242 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref}
+\hypersetup{hidelinks,breaklinks=true}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}\setlength{\emergencystretch}{2em}
+\renewcommand{\thesection}{E\arabic{section}}\renewcommand{\thetable}{E\arabic{table}}
+\begin{document}
+\begin{center}\Large\bfseries Complete preference frontiers and numerical conventions\end{center}
+These sections are copied verbatim from the preceding Supplement. Every
+frontier region, boundary tie and numerical convention remains present; the
+separate PDF is a page-budget relocation, not a new analysis or edited result.
+The compact Supplement links this file through the extended-results index.
+
+\section{Complete preference frontier: full sample}\label{sup:frontier-0}
+
+Open intervals exclude their endpoints. Point rows retain all
+ties, including ties at the extreme loss weights. Method codes here denote
+the original fixed report menu; their definitions remain in the main methods
+table. The sparse grid is a sensitivity on the same record, not independent
+data.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{2.50}
+\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
+\caption{Complete saved preference frontier, full sample. Exact ties prevent an artificially unique winner.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX full H6/W720 & open & \(\frac{0}{1}\) & \(\dfrac{105760946788801400}{110990640317093439}\) & QR \\
+ & open & \(\dfrac{105760946788801400}{110990640317093439}\) & \(\dfrac{19056123729472220}{19757413338275541}\) & KNN \\
+ & open & \(\dfrac{19056123729472220}{19757413338275541}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{105760946788801400}{110990640317093439}\) &  & KNN, QR \\
+ & point & \(\dfrac{19056123729472220}{19757413338275541}\) &  & KNN, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX full H6/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{34631329313121430}{35599009063461303}\) & QR \\
+ & open & \(\dfrac{34631329313121430}{35599009063461303}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{34631329313121430}{35599009063461303}\) &  & QR, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX full H24/W720 & open & \(\frac{0}{1}\) & \(\dfrac{32241742214205920}{38133893639725449}\) & QR \\
+ & open & \(\dfrac{32241742214205920}{38133893639725449}\) & \(\dfrac{92050107608238600}{103514765282707447}\) & KNN \\
+ & open & \(\dfrac{92050107608238600}{103514765282707447}\) & \(\dfrac{29075431634708860}{30985073840047543}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{29075431634708860}{30985073840047543}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{32241742214205920}{38133893639725449}\) &  & KNN, QR \\
+ & point & \(\dfrac{92050107608238600}{103514765282707447}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\dfrac{29075431634708860}{30985073840047543}\) &  & AR1\_REPLAY, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX full H24/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{335769696945034900}{350844274558596259}\) & QR \\
+ & open & \(\dfrac{335769696945034900}{350844274558596259}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{335769696945034900}{350844274558596259}\) &  & QR, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills full H6/W52 & open & \(\frac{0}{1}\) & \(\dfrac{3320065684462664}{4624714213835193}\) & QR \\
+ & open & \(\dfrac{3320065684462664}{4624714213835193}\) & \(\dfrac{156305902436775700}{160668673434229883}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{156305902436775700}{160668673434229883}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{3320065684462664}{4624714213835193}\) &  & AR1\_REPLAY, QR \\
+ & point & \(\dfrac{156305902436775700}{160668673434229883}\) &  & AR1\_REPLAY, KNN, frozen\_F \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
+Bills full H6/W260 & open & \(\frac{0}{1}\) & \(\dfrac{8679397304452847}{9039550431967810}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{8679397304452847}{9039550431967810}\) & \(\frac{1}{1}\) & frozen\_K \\
+ & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
+ & point & \(\dfrac{8679397304452847}{9039550431967810}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & frozen\_K \\
+Bills full H24/W52 & open & \(\frac{0}{1}\) & \(\dfrac{5759715075028296}{13586893226278237}\) & QR \\
+ & open & \(\dfrac{5759715075028296}{13586893226278237}\) & \(\dfrac{117611155234657025}{130987328519855581}\) & frozen\_K \\
+ & open & \(\dfrac{117611155234657025}{130987328519855581}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{5759715075028296}{13586893226278237}\) &  & QR, frozen\_K \\
+ & point & \(\dfrac{117611155234657025}{130987328519855581}\) &  & frozen\_K, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills full H24/W260 & open & \(\frac{0}{1}\) & \(\dfrac{3813577886766790}{4899469998019859}\) & frozen\_K \\
+ & open & \(\dfrac{3813577886766790}{4899469998019859}\) & \(\dfrac{91333672611602885}{94156776268488263}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{91333672611602885}{94156776268488263}\) & \(\dfrac{240827075812274250}{241875451263537787}\) & KNN \\
+ & open & \(\dfrac{240827075812274250}{241875451263537787}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & frozen\_K \\
+ & point & \(\dfrac{3813577886766790}{4899469998019859}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\dfrac{91333672611602885}{94156776268488263}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\dfrac{240827075812274250}{241875451263537787}\) &  & KNN, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_F, frozen\_S \\
+\end{longtable}
+\endgroup
+
+
+
+\section{Complete preference frontier: sparse sensitivity}\label{sup:frontier-8}
+
+Open intervals exclude their endpoints. Point rows retain all
+ties, including ties at the extreme loss weights. Method codes here denote
+the original fixed report menu; their definitions remain in the main methods
+table. The sparse grid is a sensitivity on the same record, not independent
+data.\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{2.50}
+\begin{longtable}{p{28mm}p{10mm}p{39mm}p{39mm}p{28mm}}
+\caption{Complete saved preference frontier, fixed sparse grid. Exact ties prevent an artificially unique winner.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Task & Kind & Left / point \(a\) & Right \(a\) & Minimizers \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX sparse H6/W720 & open & \(\frac{0}{1}\) & \(\dfrac{35228646474289300}{37058573227618587}\) & QR \\
+ & open & \(\dfrac{35228646474289300}{37058573227618587}\) & \(\dfrac{128015277909259100}{130046193358911709}\) & KNN \\
+ & open & \(\dfrac{128015277909259100}{130046193358911709}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{35228646474289300}{37058573227618587}\) &  & KNN, QR \\
+ & point & \(\dfrac{128015277909259100}{130046193358911709}\) &  & KNN, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX sparse H6/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{59571292631784500}{60902063609752461}\) & QR \\
+ & open & \(\dfrac{59571292631784500}{60902063609752461}\) & \(\frac{1}{1}\) & SCALED\_KNN \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{59571292631784500}{60902063609752461}\) &  & QR, SCALED\_KNN \\
+ & point & \(\frac{1}{1}\) &  & SCALED\_KNN \\
+FX sparse H24/W720 & open & \(\frac{0}{1}\) & \(\dfrac{7530906001239450}{9350542730727077}\) & QR \\
+ & open & \(\dfrac{7530906001239450}{9350542730727077}\) & \(\dfrac{18652943561940400}{20490003118958463}\) & KNN \\
+ & open & \(\dfrac{18652943561940400}{20490003118958463}\) & \(\dfrac{11935316416561250}{12439911923115111}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{11935316416561250}{12439911923115111}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{7530906001239450}{9350542730727077}\) &  & KNN, QR \\
+ & point & \(\dfrac{18652943561940400}{20490003118958463}\) &  & AR1\_REPLAY, KNN \\
+ & point & \(\dfrac{11935316416561250}{12439911923115111}\) &  & AR1\_REPLAY, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+FX sparse H24/W2880 & open & \(\frac{0}{1}\) & \(\dfrac{578937865306180}{598942665753459}\) & QR \\
+ & open & \(\dfrac{578937865306180}{598942665753459}\) & \(\frac{1}{1}\) & frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{578937865306180}{598942665753459}\) &  & QR, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & frozen\_S \\
+Bills sparse H6/W52 & open & \(\frac{0}{1}\) & \(\dfrac{1315902266754605}{2037515146643951}\) & QR \\
+ & open & \(\dfrac{1315902266754605}{2037515146643951}\) & \(\frac{679337}{682434}\) & frozen\_K \\
+ & open & \(\frac{679337}{682434}\) & \(\frac{1}{1}\) & KNN, frozen\_F \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{1315902266754605}{2037515146643951}\) &  & QR, frozen\_K \\
+ & point & \(\frac{679337}{682434}\) &  & KNN, frozen\_F, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F \\
+Bills sparse H6/W260 & open & \(\frac{0}{1}\) & \(\dfrac{39729652848099850}{42395294149611417}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{39729652848099850}{42395294149611417}\) & \(\frac{1}{1}\) & frozen\_K \\
+ & point & \(\frac{0}{1}\) &  & AR1\_REPLAY \\
+ & point & \(\dfrac{39729652848099850}{42395294149611417}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & frozen\_K \\
+Bills sparse H24/W52 & open & \(\frac{0}{1}\) & \(\dfrac{8631914270543611}{12443891775419019}\) & QR \\
+ & open & \(\dfrac{8631914270543611}{12443891775419019}\) & \(\dfrac{2529092855837558}{2690148205992001}\) & frozen\_K \\
+ & open & \(\dfrac{2529092855837558}{2690148205992001}\) & \(\dfrac{37657795243316428}{38019573842698655}\) & AR1\_REPLAY \\
+ & open & \(\dfrac{37657795243316428}{38019573842698655}\) & \(\frac{1}{1}\) & KNN, frozen\_F, frozen\_S \\
+ & point & \(\frac{0}{1}\) &  & QR \\
+ & point & \(\dfrac{8631914270543611}{12443891775419019}\) &  & QR, frozen\_K \\
+ & point & \(\dfrac{2529092855837558}{2690148205992001}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\dfrac{37657795243316428}{38019573842698655}\) &  & AR1\_REPLAY, KNN, frozen\_F, frozen\_S \\
+ & point & \(\frac{1}{1}\) &  & KNN, frozen\_F, frozen\_S \\
+Bills sparse H24/W260 & open & \(\frac{0}{1}\) & \(\dfrac{19956537365855950}{27652346249496953}\) & frozen\_K \\
+ & open & \(\dfrac{19956537365855950}{27652346249496953}\) & \(\frac{1}{1}\) & AR1\_REPLAY \\
+ & point & \(\frac{0}{1}\) &  & frozen\_K \\
+ & point & \(\dfrac{19956537365855950}{27652346249496953}\) &  & AR1\_REPLAY, frozen\_K \\
+ & point & \(\frac{1}{1}\) &  & AR1\_REPLAY \\
+\end{longtable}
+\endgroup
+
+
+
+\section{Numerical implementation and inference conventions}\label{sup:implementation}
+
+\paragraph{Completed labels and update clocks.}
+At a scheduled refit \(\kappa\), the latest mature peak response origin is
+\(\kappa-H\). A history of \(W\) mature peak responses therefore uses
+\(\{\kappa-H-W+1,\ldots,\kappa-H\}\), with every target ending by that refit.
+Training transforms, scales, coefficients and historical pools are held until
+the next scheduled refit. The current observed position may still change at
+each forecast issue. Replacing that issue anchor by the refit anchor changes
+the forecasting procedure.
+
+\paragraph{Regression and local quantiles.}
+The regression objective uses a training-normalized headroom response, an
+unpenalized intercept and a ridge penalty on slopes. Projection is applied when
+issuing the report and evaluating its validation score, not inside the fitted
+training objective. Local methods use training-only standardized predictors,
+fixed neighbour menus and duplicate-preserving order statistics. A selected
+whole-pool local quantile is an exact historical identity, not a failed-fit
+fallback. Scale-adjusted neighbours change responses as well as retrieval.
+
+\paragraph{Numerical eligibility.}
+The accepted solver records primal and dual residuals, objectives, feasibility
+and their gap. Ill-conditioned, nonfinite, unsupported-rank and failed candidate
+states retain their original statuses under each named selection contract.
+A mandatory-candidate failure blocks a procedure when its contract requires
+every candidate. The original full regression has that requirement; the
+four-feature selector may choose among completed eligible candidates. A failed
+selected evaluation never receives a replacement penalty or a shortened score.
+Changing the ridge menu changes the procedure even when feature definitions
+stay fixed. A numerical certificate does not establish financial accuracy,
+economic relevance, inferential validity or production continuity.
+No production continuity or fallback policy is evaluated here.
+
+\paragraph{Working-reference inference.}
+Saved unconditional loss differences use the recorded Bartlett-HAC convention;
+HLN and doubled-bandwidth sensitivities are labelled separately. Separate
+families and later reporting partitions do not erase the wider selection
+history. Coverage references distinguish full-grid Kupiec from the
+transition-conditional Christoffersen joint likelihood, which conditions on
+the initial hit. Small sparse grids and boundary likelihoods retain their
+original status. Neither a nonrejection nor a small working-reference p value
+proves conditional coverage or supplies selection-adjusted confirmation.
+
+\paragraph{Common-pool construction distances.}
+On one nonempty historical episode set, compare the historical headroom,
+translated-path and historical-peak reports using the same available order
+statistic. Each episode peak includes its starting observation. A translated
+path changes each level by the same anchor difference, so its absolute peak
+changes by at most that difference. Flooring is nonexpansive and commutes with
+the fixed order statistic. The headroom construction has the corresponding
+bound in the difference of anchor magnitudes. Thus
+\[
+|C^{\rm headroom}-C^{\rm peak}|\le\max_i\bigl||N_i|-B\bigr|,\qquad
+|C^{\rm translated}-C^{\rm peak}|\le\max_i|N_i-x|.
+\]
+For a proof of the order-statistic step, paired coordinatewise differences
+bounded by a radius imply that each empirical quantile lies below the other
+plus that radius; reverse the roles for the second inequality. These
+deterministic same-pool bounds do not order financial accuracy or coverage.
+Changing historical rows on one side invalidates the common-pool argument.
+
+\paragraph{Complete implementation evidence.}
+Exact menus, numerical tolerances, failures and diagnostic tables remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source archives.
+The separate study receipts identify the executed additions. This document
+builder imports no forecasting code and only formats unchanged public results.
+\end{document}

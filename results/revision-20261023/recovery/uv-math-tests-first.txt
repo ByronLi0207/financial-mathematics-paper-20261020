@@ -1,0 +1,103 @@
+WARN `--no-project` was provided, but no project was found
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache/builds-v0/.tmpzrL1oZ/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 5 items
+
+test_v3_math_format.py::MathematicalTypesetting::test_absolute_value_is_not_norm PASSED [ 20%]
+test_v3_math_format.py::MathematicalTypesetting::test_current_source_preserves_input_and_idempotence PASSED [ 40%]
+test_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span FAILED [ 60%]
+test_v3_math_format.py::MathematicalTypesetting::test_notation_cells_use_whole_tex_expressions FAILED [ 80%]
+test_v3_math_format.py::MathematicalTypesetting::test_recovered_parameterization_has_real_symbols PASSED [100%]
+
+=================================== FAILURES ===================================
+_____ MathematicalTypesetting.test_full_inline_formula_is_single_math_span _____
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_full_inline_formula_is_single_math_span>
+
+    def test_full_inline_formula_is_single_math_span(self):
+        c=self.content([dict(type='p',html='Choose k=ceil((n+1)τ)≤n.')])
+        normalize_math(c);prepared,bindings=prepare_tex_math(c)
+        from build_tex import build_source
+>       tex=restore_tex_math(build_source(prepared),bindings)
+                             ^^^^^^^^^^^^^^^^^^^^^^
+
+test_v3_math_format.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+content = {'sections': [{'title': 'Appendix C. Numerical conventions', 'blocks': [{'type': 'p', 'html': 'Choose VTHM00000TOKEN.', 'inline_math': [{...}]}]}], 'references': [], 'abstract': ''}
+
+    def build_source(content):
+        parts = [r'''\documentclass[10pt,a4paper]{article}
+    \usepackage[margin=50pt]{geometry}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath,amssymb,graphicx,booktabs,array}
+    \usepackage[unicode,breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt}
+    \setlength{\emergencystretch}{2em}
+    \setlength{\tabcolsep}{3pt}
+>   \hypersetup{pdftitle={''' + esc(content["title"]) + r'''},pdfauthor={}}
+                                    ^^^^^^^^^^^^^^^^
+    \begin{document}
+    \fontsize{10.5}{14}\selectfont
+    \begin{center}
+    {\LARGE\bfseries ''' + esc(content["title"]) + r'''}\par\vspace{8pt}
+    {\large ''' + esc(content["subtitle"]) + r'''}\par\vspace{6pt}
+    ''' + esc(content["date"]) + r'''
+    \end{center}
+    \begin{abstract}
+    ''' + conv(content["abstract"]) + r'''
+    \end{abstract}
+    ''']
+E       KeyError: 'title'
+
+build_tex.py:101: KeyError
+____ MathematicalTypesetting.test_notation_cells_use_whole_tex_expressions _____
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_notation_cells_use_whole_tex_expressions>
+
+    def test_notation_cells_use_whole_tex_expressions(self):
+        c=self.content([dict(type='table',caption='Notation.',headers=['Symbol','Definition'],rows=[['aκ; zᵢ,κ','Scale; feature'],['Jλ; Dλ','Objectives']])])
+        normalize_math(c);d,bindings=prepare_tex_math(c)
+        from build_tex import build_source
+>       tex=restore_tex_math(build_source(d),bindings)
+                             ^^^^^^^^^^^^^^^
+
+test_v3_math_format.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+content = {'sections': [{'title': 'Appendix C. Numerical conventions', 'blocks': [{'type': 'table', 'caption': 'Notation.', 'headers': ['Symbol', 'Definition'], 'rows': [[...], [...]], ...}]}], 'references': [], 'abstract': ''}
+
+    def build_source(content):
+        parts = [r'''\documentclass[10pt,a4paper]{article}
+    \usepackage[margin=50pt]{geometry}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath,amssymb,graphicx,booktabs,array}
+    \usepackage[unicode,breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt}
+    \setlength{\emergencystretch}{2em}
+    \setlength{\tabcolsep}{3pt}
+>   \hypersetup{pdftitle={''' + esc(content["title"]) + r'''},pdfauthor={}}
+                                    ^^^^^^^^^^^^^^^^
+    \begin{document}
+    \fontsize{10.5}{14}\selectfont
+    \begin{center}
+    {\LARGE\bfseries ''' + esc(content["title"]) + r'''}\par\vspace{8pt}
+    {\large ''' + esc(content["subtitle"]) + r'''}\par\vspace{6pt}
+    ''' + esc(content["date"]) + r'''
+    \end{center}
+    \begin{abstract}
+    ''' + conv(content["abstract"]) + r'''
+    \end{abstract}
+    ''']
+E       KeyError: 'title'
+
+build_tex.py:101: KeyError
+=========================== short test summary info ============================
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_notation_cells_use_whole_tex_expressions
+========================= 2 failed, 3 passed in 0.03s ==========================

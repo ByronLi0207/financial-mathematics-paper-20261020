@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "recorded_at_utc": "2026-10-25T11:07:07.401309+00:00",
+  "scope": "Pure functions and deterministic toy arithmetic only; no financial inputs read and no financial fitting/evaluation executed.",
+  "scientific_authority": {
+    "path": "protocol/v12/loss-decomposition-design.md",
+    "standalone_commit_supplied_by_parent": "9679e15824bf24bbcf06b645688ee5c030793c30",
+    "git_verification": "Not performed by subagent; Git operations reserved to parent."
+  },
+  "environment": {
+    "command": "/Users/bingyouli/.local/bin/uv run --offline --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest==9.1.1 --with numpy==2.3.5 python -B -m pytest -q -p no:cacheprovider test_v12_decomposition.py",
+    "network": "offline",
+    "dependency_policy": "Existing uv cache only; temporary uv resolution authorized; no system Python package installation.",
+    "pytest": "9.1.1",
+    "numpy_in_uv_environment": "2.3.5",
+    "production_dependencies": "Python standard library only",
+    "runner_notice": "uv emits WARN --no-project was provided, but no project was found; pytest emitted no warnings."
+  },
+  "cycles": [
+    {
+      "phase": "RED",
+      "exit_code": 1,
+      "tests_failed": 51,
+      "tests_passed": 0,
+      "summary": "51 failed in 0.32s",
+      "reason": "Expected missing production module: ModuleNotFoundError: No module named v12_decomposition."
+    },
+    {
+      "phase": "GREEN",
+      "exit_code": 0,
+      "tests_failed": 0,
+      "tests_passed": 51,
+      "summary": "51 passed in 0.04s"
+    },
+    {
+      "phase": "RED_INTERFACE_ALIGNMENT",
+      "exit_code": 1,
+      "tests_failed": 6,
+      "tests_passed": 51,
+      "summary": "6 failed, 51 passed in 0.07s",
+      "reason": "F1 driver convention is family fx and period original; old assumptions missed FX criteria and admitted another period.",
+      "failed_test_families": [
+        "test_d3_requires_both_original_fx_horizons_negative (three cases)",
+        "test_d3_complete_counterexample_decides_despite_other_failure",
+        "test_d3_resource_omission_is_not_evaluated",
+        "test_other_period_cannot_replace_missing_f1_cells"
+      ]
+    },
+    {
+      "phase": "GREEN_INTERFACE_ALIGNMENT",
+      "exit_code": 0,
+      "tests_failed": 0,
+      "tests_passed": 57,
+      "summary": "57 passed in 0.05s"
+    },
+    {
+      "phase": "RED_D3_HORIZON_SCOPE",
+      "exit_code": 1,
+      "tests_failed": 1,
+      "tests_passed": 60,
+      "summary": "1 failed, 60 passed in 0.06s",
+      "failed_test": "test_d3_unknown_horizon_resource_row_cannot_change_conjunction",
+      "reason": "An unplanned H999 resource row incorrectly changed the H6/H24 conjunction to NOT_EVALUATED."
+    },
+    {
+      "phase": "GREEN_D3_HORIZON_SCOPE",
+      "exit_code": 0,
+      "tests_failed": 0,
+      "tests_passed": 61,
+      "summary": "61 passed in 0.05s"
+    },
+    {
+      "phase": "RED_MISSING_ORIGINAL_SUMMARY",
+      "exit_code": 1,
+      "tests_failed": 1,
+      "tests_passed": 61,
+      "summary": "1 failed, 61 passed in 0.06s",
+      "failed_test": "test_summaries_preserve_original_plan_when_only_other_period_is_supplied",
+      "reason": "Only-other-period input omitted the original 180-cell plan from summaries."
+    },
+    {
+      "phase": "GREEN_FINAL",
+      "exit_code": 0,
+      "tests_failed": 0,
+      "tests_passed": 62,
+      "summary": "62 passed in 0.05s"
+    }
+  ],
+  "coverage": [
+    "All six ordered COMPLETE candidates required separately for both methods, with positive consistent counts and optional expected_n.",
+    "Exact validation ties prefer strongest penalty; near ties do not become tolerance ties.",
+    "Finite evaluation oracle excludes infinity and finite exact ties prefer larger penalty.",
+    "Actual infinity may give negative signed selection component; E=S+G checked by toy arithmetic.",
+    "F<=0 or nonfinite F makes relative decomposition FAILED while retaining available raw means.",
+    "D1/D2 use pinned 17 CFTC plus 12 panel by two horizons, fixed planned_n=41, known-support lower and unknown-inclusive upper bounds.",
+    "E<=0 is complete D2 nonsupport; G>0 and S>E/2 are strict inequalities.",
+    "QR33 is primary and QR4 is separate; periods, unknown sources, duplicates and extra geometries cannot substitute for planned F1 slots.",
+    "D3 requires both original FX W2880 H6 and H24 negative; resource omission, failure and complete counterexample cases are distinct.",
+    "Summary groups retain 180 planned method cells and failures; separate component means/medians and periods; no pooled inference.",
+    "Public functions do not mutate their inputs."
+  ],
+  "ast_parse": "PASS for implementation and tests; no bytecode written",
+  "current_file_manifest": {
+    "protocol/v12/loss-decomposition-design.md": {
+      "sha256": "cf8a38f734fc22ffa0e8895c2ea34d698ec26c92c31a2835888c464161b858d1",
+      "bytes": 21511
+    },
+    "v12_decomposition.py": {
+      "sha256": "e9df96e98954e287cabf30ae003474d633b565f8e72be2a641c4680a8b3006bf",
+      "bytes": 13735
+    },
+    "test_v12_decomposition.py": {
+      "sha256": "f4db7979da74bc9b0d211bd28be94726fc5b5d7e06efa2cf488696bcb99cc2d3",
+      "bytes": 15469
+    }
+  },
+  "full_project_suite": "Reserved to parent; only the assigned toy unit-test file was executed by this subagent.",
+  "no_cross_model_review": true
+}

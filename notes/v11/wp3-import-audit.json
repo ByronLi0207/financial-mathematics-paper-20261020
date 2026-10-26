@@ -1,0 +1,3544 @@
+{
+  "schema": "v11-wp3-read-only-import-audit-v1",
+  "created_utc": "2026-10-25T05:05:07.317150+00:00",
+  "source_ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+  "v10b_base_ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+  "audit_status": "FAIL",
+  "admit_to_v11": false,
+  "decision": "Do not import WP3 curve or its numeric conclusions. Keep existing v10b findings. No tolerance, alternate anchor source, or new calculation is authorized.",
+  "checks": {
+    "exact_W720_H6_QR33_vs_matched_F": "FAIL",
+    "exact_W2880_H6_QR33_vs_matched_F": "FAIL",
+    "display_rounding_both_anchors": "PASS",
+    "pre_run_separate_design_commit_and_content": "UNVERIFIED",
+    "protocol_receipt_and_manifest_byte_binding": "PASS",
+    "sealed_code_git_blob_hash_binding": "PASS",
+    "package_archive_index_and_all_members": "PASS",
+    "target_results_own_receipt_bindings": "PASS",
+    "recorded_formal_completion": "PASS",
+    "new_scientific_execution": "NONE",
+    "manifest_embedded_design_content_matches_protocol": "PASS"
+  },
+  "anchors": [
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "QR33",
+      "reference": "matched_F",
+      "status": "FAIL",
+      "exact_numeric_equal": false,
+      "exact_string_equal": false,
+      "tolerance_used": false,
+      "old": {
+        "value_full_precision": "-2.1167271486370858",
+        "display_2dp": "-2.12",
+        "source": {
+          "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+          "path": "results/revision-20261022/paired-comparisons.csv",
+          "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+          "git_blob": "11c7a053c252b03d948a8a5b5156b18788ade552",
+          "bytes": 26918
+        },
+        "csv_physical_line": 2,
+        "csv_unique_where": {
+          "contrast_id": "fx_hourly-h6-QR720-minus-frozen_F720"
+        },
+        "field": "relative_mean_loss_difference_percent",
+        "v10b_owning_binding": {
+          "path": "notes/v10/main-number-audit.json",
+          "sha256": "a014dff6641fa8daeaa0c10fa390fb4f798a671ce57c48d218485bfaef377708",
+          "json_pointer": "/old_archive_locator_checks/217"
+        }
+      },
+      "new": {
+        "value_full_precision": "-2.1167271486370893",
+        "display_2dp": "-2.12",
+        "source": {
+          "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp3/contrasts.json",
+          "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+          "git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+          "bytes": 12569
+        },
+        "json_pointer": "/8/relative_loss_percent",
+        "csv_source": {
+          "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp3/contrasts.csv",
+          "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+          "git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+          "bytes": 4347
+        },
+        "csv_physical_line": 10,
+        "field": "relative_loss_percent"
+      },
+      "new_minus_old_decimal_percentage_points": "-3.5E-15",
+      "mean_model_loss_exact_equal": true,
+      "note": "Identical displayed rounding is not exact agreement. No alternate archive or tolerance is substituted.",
+      "mean_reference_loss_exact_equal": true,
+      "model_breaches_exact_equal": true,
+      "reference_breaches_exact_equal": true
+    },
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "QR33",
+      "reference": "matched_F",
+      "status": "FAIL",
+      "exact_numeric_equal": false,
+      "exact_string_equal": false,
+      "tolerance_used": false,
+      "old": {
+        "value_full_precision": "-14.766762552613885",
+        "display_2dp": "-14.77",
+        "source": {
+          "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+          "path": "results/revision-20261022/paired-comparisons.csv",
+          "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+          "git_blob": "11c7a053c252b03d948a8a5b5156b18788ade552",
+          "bytes": 26918
+        },
+        "csv_physical_line": 14,
+        "csv_unique_where": {
+          "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+        },
+        "field": "relative_mean_loss_difference_percent",
+        "v10b_owning_binding": {
+          "path": "notes/v10/main-number-audit.json",
+          "sha256": "a014dff6641fa8daeaa0c10fa390fb4f798a671ce57c48d218485bfaef377708",
+          "json_pointer": "/old_archive_locator_checks/0"
+        }
+      },
+      "new": {
+        "value_full_precision": "-14.766762552613883",
+        "display_2dp": "-14.77",
+        "source": {
+          "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp3/contrasts.json",
+          "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+          "git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+          "bytes": 12569
+        },
+        "json_pointer": "/0/relative_loss_percent",
+        "csv_source": {
+          "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp3/contrasts.csv",
+          "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+          "git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+          "bytes": 4347
+        },
+        "csv_physical_line": 2,
+        "field": "relative_loss_percent"
+      },
+      "new_minus_old_decimal_percentage_points": "2E-15",
+      "mean_model_loss_exact_equal": true,
+      "note": "Identical displayed rounding is not exact agreement. No alternate archive or tolerance is substituted.",
+      "mean_reference_loss_exact_equal": true,
+      "model_breaches_exact_equal": true,
+      "reference_breaches_exact_equal": true
+    }
+  ],
+  "provenance": {
+    "status": "UNVERIFIED",
+    "claimed_design_commit": {
+      "sha": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+      "object_present": false,
+      "status": "UNVERIFIED",
+      "evidence": "fatal: bad object b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a"
+    },
+    "separate_pre_run_design_commit_content_verified": false,
+    "design_commit_before_formal_start_verified": false,
+    "claimed_design_created_utc": "2026-10-24T23:10:52.678962+00:00",
+    "claimed_pre_result_check_utc": "2026-10-24T23:13:50.989187+00:00",
+    "claimed_code_binding_utc": "2026-10-24T23:24:35.895093+00:00",
+    "formal_started_utc": "2026-10-24T23:24:51.666335+00:00",
+    "formal_ended_utc": "2026-10-24T23:35:21.429167+00:00",
+    "package_utc": "2026-10-24T23:36:47.665646+00:00",
+    "acceptance_utc": "2026-10-24T23:39:21.096007+00:00",
+    "formal_run_status": "COMPLETE",
+    "formal_completed_units": [
+      [
+        6,
+        2880
+      ],
+      [
+        24,
+        2880
+      ],
+      [
+        6,
+        360
+      ],
+      [
+        24,
+        360
+      ],
+      [
+        6,
+        720
+      ],
+      [
+        24,
+        720
+      ],
+      [
+        6,
+        1440
+      ],
+      [
+        24,
+        1440
+      ],
+      [
+        6,
+        5760
+      ],
+      [
+        24,
+        5760
+      ]
+    ],
+    "protocol_public_import_commit": {
+      "sha": "3b8b994990da774c8abd0e1c28cbcacae3e9d0be",
+      "parents": [
+        "12ed22fab66e93ebef3fb1107bf45f067230639b"
+      ],
+      "author_utc": "2026-10-25T04:00:56+00:00",
+      "committer_utc": "2026-10-25T04:00:56+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 07 of 18)",
+      "object_present": true
+    },
+    "receipt_public_import_commit": {
+      "sha": "9aec7d2ecddb542e7a8e08841a1e585591daa2a1",
+      "parents": [
+        "4022e31e97a8131b9ae3d5fd90c982c287e1f97b"
+      ],
+      "author_utc": "2026-10-25T03:55:28+00:00",
+      "committer_utc": "2026-10-25T03:55:28+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 03 of 18)",
+      "object_present": true
+    },
+    "results_public_import_commit": {
+      "sha": "131157623e2749654d0d35ed5033e23d4e107d18",
+      "parents": [
+        "81e9ac550fc27f7412dd2d0df0c3293bd45f2b4a"
+      ],
+      "author_utc": "2026-10-25T04:04:21+00:00",
+      "committer_utc": "2026-10-25T04:04:21+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 10 of 18)",
+      "object_present": true
+    },
+    "local_run_result_commit": "UNVERIFIED: no distinct local run/result commit object established by available evidence",
+    "explanation": "Available public import commits occur after formal run. Internal UTC fields and sealed bytes support receipt consistency but cannot verify the absent local design commit timestamp/content or strict pre-run ancestry. Source README expressly documents this fresh-clone limitation."
+  },
+  "protocol_binding_checks": [
+    {
+      "path": "protocol/revision-v9/wp3-learning-curve.md",
+      "actual_sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+      "binding_expected": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+      "pre_result_check_expected": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+      "manifest_seal_expected": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+      "status": "PASS"
+    },
+    {
+      "path": "protocol/revision-v9/wp3-learning-curve.json",
+      "actual_sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+      "binding_expected": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+      "pre_result_check_expected": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+      "manifest_seal_expected": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+      "status": "PASS"
+    }
+  ],
+  "code_binding_checks": [
+    {
+      "path": "run_v9_learning_curve.py",
+      "expected_sha256": "9952026f3b95e7f6239b876417c0ff7e74df7146962384edac833ad611352ed4",
+      "actual_git_blob_sha256": "9952026f3b95e7f6239b876417c0ff7e74df7146962384edac833ad611352ed4",
+      "status": "PASS"
+    },
+    {
+      "path": "v9_learning_curve.py",
+      "expected_sha256": "f219d43e00859239eb21d05c5ea458fe5817984faada315a87265f811b9e4ec8",
+      "actual_git_blob_sha256": "f219d43e00859239eb21d05c5ea458fe5817984faada315a87265f811b9e4ec8",
+      "status": "PASS"
+    },
+    {
+      "path": "run_conditional_study.py",
+      "expected_sha256": "14881dc6611feef3cd642558ecdff0571f16dde1af1081349c2d99bd36dbf2e0",
+      "actual_git_blob_sha256": "14881dc6611feef3cd642558ecdff0571f16dde1af1081349c2d99bd36dbf2e0",
+      "status": "PASS"
+    },
+    {
+      "path": "v3_revision.py",
+      "expected_sha256": "1d0b0ceb92ae6c09cff6d34f0be07d01309fb23d07d484d76a6284bbd19e4eb8",
+      "actual_git_blob_sha256": "1d0b0ceb92ae6c09cff6d34f0be07d01309fb23d07d484d76a6284bbd19e4eb8",
+      "status": "PASS"
+    },
+    {
+      "path": "run_v8_wp3.py",
+      "expected_sha256": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+      "actual_git_blob_sha256": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+      "status": "PASS"
+    },
+    {
+      "path": "run_study.py",
+      "expected_sha256": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+      "actual_git_blob_sha256": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+      "status": "PASS"
+    },
+    {
+      "path": "conditional_sources.py",
+      "expected_sha256": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+      "actual_git_blob_sha256": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+      "status": "PASS"
+    },
+    {
+      "path": "conditional_study.py",
+      "expected_sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "actual_git_blob_sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "status": "PASS"
+    },
+    {
+      "path": "conditional_features.py",
+      "expected_sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "actual_git_blob_sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "status": "PASS"
+    },
+    {
+      "path": "conditional_quantile.py",
+      "expected_sha256": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "actual_git_blob_sha256": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "status": "PASS"
+    },
+    {
+      "path": "study_core.py",
+      "expected_sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "actual_git_blob_sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "status": "PASS"
+    },
+    {
+      "path": "parsimonious_v3.py",
+      "expected_sha256": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+      "actual_git_blob_sha256": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+      "status": "PASS"
+    },
+    {
+      "path": "v8_mechanism_mc.py",
+      "expected_sha256": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "actual_git_blob_sha256": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "status": "PASS"
+    },
+    {
+      "path": "inference_tests.py",
+      "expected_sha256": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c",
+      "actual_git_blob_sha256": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c",
+      "status": "PASS"
+    }
+  ],
+  "package": {
+    "status": "PASS",
+    "receipt_source": {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/package-receipt.json",
+      "sha256": "09cdd4a865374b022d3609c288e3e81aa6df2e45cb331f24524466db49df51f7",
+      "git_blob": "620b3d196cb442011ae110f9b35b8299412aa9dc",
+      "bytes": 638
+    },
+    "archive_source": {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+      "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0",
+      "git_blob": "51784f8fccb4e131373bef7428ac27718152fa4a",
+      "bytes": 1862483
+    },
+    "index_source": {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "git_blob": "f4001746b8d616db0a94512b32bd16e7b918645e",
+      "bytes": 21740
+    },
+    "archive_receipt_hash_match": true,
+    "index_receipt_hash_match": true,
+    "member_count": 206,
+    "index_count": 206,
+    "all_member_differences": [],
+    "target_results": [
+      {
+        "path": "results/revision-v9/wp3/contrasts.csv",
+        "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+        "package_member": "contrasts.csv",
+        "package_index_csv_physical_line": 2,
+        "receipt_sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+        "own_receipt_match": true,
+        "archive_byte_identical": true,
+        "status": "PASS"
+      },
+      {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+        "package_member": "contrasts.json",
+        "package_index_csv_physical_line": 3,
+        "receipt_sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+        "own_receipt_match": true,
+        "archive_byte_identical": true,
+        "status": "PASS"
+      },
+      {
+        "path": "results/revision-v9/wp3/curve-predictions.json",
+        "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca",
+        "package_member": "curve-predictions.json",
+        "package_index_csv_physical_line": 4,
+        "receipt_sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca",
+        "own_receipt_match": true,
+        "archive_byte_identical": true,
+        "status": "PASS"
+      },
+      {
+        "path": "results/revision-v9/wp3/manifest.json",
+        "sha256": "429d866d105469b2c2904adfdb991e9b6c4ff5fc128be3d6980b90d1d59fc61c",
+        "package_member": "manifest.json",
+        "package_index_csv_physical_line": 5,
+        "receipt_sha256": "429d866d105469b2c2904adfdb991e9b6c4ff5fc128be3d6980b90d1d59fc61c",
+        "own_receipt_match": true,
+        "archive_byte_identical": true,
+        "status": "PASS"
+      },
+      {
+        "path": "results/revision-v9/wp3/study-termination.json",
+        "sha256": "adad6870f70c14eb4e5ecd965a24bf9e0ef58a18a668ac90173a96270dfbf47c",
+        "package_member": "study-termination.json",
+        "package_index_csv_physical_line": 7,
+        "receipt_sha256": "adad6870f70c14eb4e5ecd965a24bf9e0ef58a18a668ac90173a96270dfbf47c",
+        "own_receipt_match": true,
+        "archive_byte_identical": true,
+        "status": "PASS"
+      }
+    ],
+    "scope": "Byte integrity only, not independent financial replication or proof of pre-run design commitment."
+  },
+  "recorded_failures_and_boundaries": {
+    "conditional_row_status_counts": {
+      "COMPLETE": 20
+    },
+    "candidate_inventory": {
+      "actual_utc": "2026-10-24T23:36:14.050398+00:00",
+      "candidate_status_counts": {
+        "COMPLETE": 80
+      },
+      "failed_candidates": [],
+      "auxiliary_key_list_occurrences": [],
+      "sealed_driver_unchanged": true,
+      "scope": "QA of retained failure records; no model/selection change or new experiment"
+    },
+    "H6_QR4_prediction_status": "NOT_TESTABLE_COMPATIBLE_LEFT_CENSORED",
+    "H24_at_W5760_QR33_relative_loss_percent": "1.8577089031029423",
+    "H24_at_W5760_QR4_relative_loss_percent": "0.15840259366901976",
+    "inference": "Exploratory, post-result, same financial evaluation origins, no fresh holdout; pointwise nominal DM/HAC. No causal history or model-menu guarantee.",
+    "private_saved_trace_revalidation": "UNVERIFIED in this audit: private traces not opened and no score/summary recomputation permitted."
+  },
+  "rejected_curve_inventory": [
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/0",
+      "relative_loss_percent": "-14.766762552613883",
+      "mean_model_loss": "385844.8854897607",
+      "mean_reference_loss": "452692.9834478481",
+      "model_breaches": 376,
+      "reference_breaches": 360,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/1",
+      "relative_loss_percent": "-4.2893706508927965",
+      "mean_model_loss": "433275.30347718514",
+      "mean_reference_loss": "452692.9834478481",
+      "model_breaches": 399,
+      "reference_breaches": 360,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 2880,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/2",
+      "relative_loss_percent": "-3.757769795795826",
+      "mean_model_loss": "734695.0685732415",
+      "mean_reference_loss": "763381.1758251915",
+      "model_breaches": 531,
+      "reference_breaches": 357,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 2880,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/3",
+      "relative_loss_percent": "-2.8936718065277542",
+      "mean_model_loss": "741291.4299639979",
+      "mean_reference_loss": "763381.1758251915",
+      "model_breaches": 508,
+      "reference_breaches": 357,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 360,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/4",
+      "relative_loss_percent": "3.0438186779438983",
+      "mean_model_loss": "470333.9514736848",
+      "mean_reference_loss": "456440.72347869794",
+      "model_breaches": 539,
+      "reference_breaches": 356,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 360,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/5",
+      "relative_loss_percent": "-0.8754052083818208",
+      "mean_model_loss": "452445.01761218975",
+      "mean_reference_loss": "456440.72347869794",
+      "model_breaches": 395,
+      "reference_breaches": 356,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 360,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/6",
+      "relative_loss_percent": "24.346452155465645",
+      "mean_model_loss": "1012670.953280778",
+      "mean_reference_loss": "814394.7299876912",
+      "model_breaches": 1011,
+      "reference_breaches": 466,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 360,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/7",
+      "relative_loss_percent": "16.590207827669552",
+      "mean_model_loss": "949504.5082302374",
+      "mean_reference_loss": "814394.7299876912",
+      "model_breaches": 822,
+      "reference_breaches": 466,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/8",
+      "relative_loss_percent": "-2.1167271486370893",
+      "mean_model_loss": "433246.30769461836",
+      "mean_reference_loss": "442615.265176624",
+      "model_breaches": 531,
+      "reference_breaches": 332,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/9",
+      "relative_loss_percent": "1.4764717411070867",
+      "mean_model_loss": "449150.35448878305",
+      "mean_reference_loss": "442615.265176624",
+      "model_breaches": 414,
+      "reference_breaches": 332,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/10",
+      "relative_loss_percent": "31.503964246480937",
+      "mean_model_loss": "1035482.7551213254",
+      "mean_reference_loss": "787415.6197911236",
+      "model_breaches": 924,
+      "reference_breaches": 427,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/11",
+      "relative_loss_percent": "16.513128710925677",
+      "mean_model_loss": "917442.574577165",
+      "mean_reference_loss": "787415.6197911236",
+      "model_breaches": 701,
+      "reference_breaches": 427,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 1440,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/12",
+      "relative_loss_percent": "-6.5076708350722905",
+      "mean_model_loss": "415585.5609354353",
+      "mean_reference_loss": "444513.0040586647",
+      "model_breaches": 401,
+      "reference_breaches": 341,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 1440,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/13",
+      "relative_loss_percent": "-3.2812108413789005",
+      "mean_model_loss": "429927.5951781528",
+      "mean_reference_loss": "444513.0040586647",
+      "model_breaches": 355,
+      "reference_breaches": 341,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 1440,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/14",
+      "relative_loss_percent": "9.238708964820484",
+      "mean_model_loss": "823510.0803566112",
+      "mean_reference_loss": "753862.8826360594",
+      "model_breaches": 650,
+      "reference_breaches": 331,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 1440,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/15",
+      "relative_loss_percent": "-2.6227375691876738",
+      "mean_model_loss": "734091.0375930023",
+      "mean_reference_loss": "753862.8826360594",
+      "model_breaches": 465,
+      "reference_breaches": 331,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 5760,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/16",
+      "relative_loss_percent": "-6.440694459797079",
+      "mean_model_loss": "420341.27979006886",
+      "mean_reference_loss": "449277.89637071005",
+      "model_breaches": 384,
+      "reference_breaches": 344,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 6,
+      "window": 5760,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/17",
+      "relative_loss_percent": "-4.891469312713009",
+      "mean_model_loss": "427301.6059409342",
+      "mean_reference_loss": "449277.89637071005",
+      "model_breaches": 424,
+      "reference_breaches": 344,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 5760,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/18",
+      "relative_loss_percent": "1.8577089031029423",
+      "mean_model_loss": "772919.1169735254",
+      "mean_reference_loss": "758822.4055862104",
+      "model_breaches": 608,
+      "reference_breaches": 361,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    },
+    {
+      "horizon": 24,
+      "window": 5760,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source": {
+        "path": "results/revision-v9/wp3/contrasts.json",
+        "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+      },
+      "json_pointer": "/19",
+      "relative_loss_percent": "0.15840259366901976",
+      "mean_model_loss": "760024.3999580006",
+      "mean_reference_loss": "758822.4055862104",
+      "model_breaches": 526,
+      "reference_breaches": 361,
+      "n": 6625,
+      "dm_status": "OK",
+      "reason": "WP3 mandatory exact anchor and pre-run commit provenance gates did not pass."
+    }
+  ],
+  "rejected_method_inventory": [
+    {
+      "horizon": 6,
+      "window": 360,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H6/F.json",
+      "member_sha256": "3f8883ddbe4a715cd1675c7949f5dc82ef326aac087f068a7593e42632160426",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 108,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "456440.72347869794",
+      "strict_breach_count": 356,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 360,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H6/QR33.json",
+      "member_sha256": "5ba2f56d4f1f117bdf4029c714442a15d1ec875e7273387eae65f5c2ba9917be",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 114,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "470333.9514736848",
+      "strict_breach_count": 539,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 360,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H6/QR4.json",
+      "member_sha256": "184a4845c97c19ce97a38d63f92a21f4fec9ee52282ff91f830fad8146224506",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 122,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "452445.01761218975",
+      "strict_breach_count": 395,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H6/F.json",
+      "member_sha256": "77f70f15b82093f9bb454b2ff3031bfbf5d6de7274a7fd3e88687b509cffddf3",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 188,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "442615.265176624",
+      "strict_breach_count": 332,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H6/QR33.json",
+      "member_sha256": "2fffce397f8c0ddb915f8bbd3846b3295518f6b53d890d94119f71def4cab838",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 194,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "433246.30769461836",
+      "strict_breach_count": 531,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 720,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H6/QR4.json",
+      "member_sha256": "fbf6874f6828d9f36e15256eb2c5269db521099741348bb0fecf641903d9ffac",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 202,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "449150.35448878305",
+      "strict_breach_count": 414,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 1440,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H6/F.json",
+      "member_sha256": "4570f1d6f274cfbec9b9a1b716bdbc4da4f6904e2cf5115de92c13c895646763",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 28,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "444513.0040586647",
+      "strict_breach_count": 341,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 1440,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H6/QR33.json",
+      "member_sha256": "115c2c35e7294790c795a3f4801ce43b7cc2867db179f77a2bc365a1454a6baf",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 34,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "415585.5609354353",
+      "strict_breach_count": 401,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 1440,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H6/QR4.json",
+      "member_sha256": "4a81afdc4d9b2e85e2e641f998e6f27571bbe7ca49a12a4f93624903ae375254",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 42,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "429927.5951781528",
+      "strict_breach_count": 355,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H6/F.json",
+      "member_sha256": "c595f66acf18bdaf22ab2e9bcc09222550c4bb27a2d87cb3b0b6af72b14d651f",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 68,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "452692.9834478481",
+      "strict_breach_count": 360,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H6/QR33.json",
+      "member_sha256": "86a42d46c77acbbb2aa9bd4d8a826506539064834dbbaae2767f6cd90e01cc14",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 74,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "385844.8854897607",
+      "strict_breach_count": 376,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 2880,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H6/QR4.json",
+      "member_sha256": "626b4d65c8ce5f34a571e76aa2586d983b25cac6d7a3521a6cfec56c887b8cd5",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 82,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "433275.30347718514",
+      "strict_breach_count": 399,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 5760,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H6/F.json",
+      "member_sha256": "93ca3a2831bdaa5d863c8c7237da9f8b20558aac0cd94286b87ddf16845fa168",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 148,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "449277.89637071005",
+      "strict_breach_count": 344,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 5760,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H6/QR33.json",
+      "member_sha256": "79fd4c78f6065ff14be49ddd421e0bbdb0a623ee27d4c24286bbf5bada06b1ff",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 154,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "420341.27979006886",
+      "strict_breach_count": 384,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 6,
+      "window": 5760,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H6/QR4.json",
+      "member_sha256": "0c392a5aee749d7a7a4230954b29e12ed05054ef965586ba0e30c4eec6bf8297",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 162,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "427301.6059409342",
+      "strict_breach_count": 424,
+      "origin_count": 6625,
+      "selected_penalty": 0.001,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 360,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H24/F.json",
+      "member_sha256": "f4f161490669e4dfbce30d48d3e4c257a5db892fe30ccd31563b66ffb2a636f1",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 88,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "814394.7299876912",
+      "strict_breach_count": 466,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 360,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H24/QR33.json",
+      "member_sha256": "b62e38c5cccfe5efd0eb9be35a3097e20aa97308e8c62038e5c9e1e93d00f34f",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 94,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "1012670.953280778",
+      "strict_breach_count": 1011,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 360,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W360_H24/QR4.json",
+      "member_sha256": "3403528eeb38b503fdd3cd215c9a8577564f2f20850df6a73b528c2da6497976",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 102,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "949504.5082302374",
+      "strict_breach_count": 822,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H24/F.json",
+      "member_sha256": "972448a0ab641364910b85c42b8b359741d07779966d55fdc39de1a3f0d441b2",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 168,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "787415.6197911236",
+      "strict_breach_count": 427,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H24/QR33.json",
+      "member_sha256": "699ace82a4595da48b26a3d8ca617527b482f9960a507488bcc096ffda81166d",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 174,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "1035482.7551213254",
+      "strict_breach_count": 924,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 720,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W720_H24/QR4.json",
+      "member_sha256": "8ea8b09115ead98ed7d0f2784bfa7b99eb46751b8a081374754cafbff936f0c6",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 182,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "917442.574577165",
+      "strict_breach_count": 701,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 1440,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H24/F.json",
+      "member_sha256": "55bd549690e19dd23bcdd7205a51fe98507c26ca0288762aa243cb963bf937c8",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 8,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "753862.8826360594",
+      "strict_breach_count": 331,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 1440,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H24/QR33.json",
+      "member_sha256": "ec41940ca00a900062eb127947a832445a1430d828a4c5c1994c3940bd58ed84",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 14,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "823510.0803566112",
+      "strict_breach_count": 650,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 1440,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W1440_H24/QR4.json",
+      "member_sha256": "027e3476c1bb078c4f188a2874c0c7d45ed1cce5d568bf3238a9dfd72b47e5c9",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 22,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "734091.0375930023",
+      "strict_breach_count": 465,
+      "origin_count": 6625,
+      "selected_penalty": 0.1,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 2880,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H24/F.json",
+      "member_sha256": "7486d9313bca9ad8a1053093129ffbd626315a6421526a8f190ef021135f1712",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 48,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "763381.1758251915",
+      "strict_breach_count": 357,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 2880,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H24/QR33.json",
+      "member_sha256": "628a03c3f61b1c34eccf14cd115fd788c3601a6a92d18a07e9b0097040ee8d5e",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 54,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "734695.0685732415",
+      "strict_breach_count": 531,
+      "origin_count": 6625,
+      "selected_penalty": 0.001,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 2880,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W2880_H24/QR4.json",
+      "member_sha256": "9092ce3d591fd782a4fbda535abd755b7d817e76bca9e4bf30968fd55f2e3780",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 62,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "741291.4299639979",
+      "strict_breach_count": 508,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 5760,
+      "method": "F",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H24/F.json",
+      "member_sha256": "55ca5dcef5475c9004fa2b6f18db10b7a5eb62d51c4efd473a86ee68b3d1d330",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 128,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "758822.4055862104",
+      "strict_breach_count": 361,
+      "origin_count": 6625,
+      "selected_penalty": null,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 5760,
+      "method": "QR33",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H24/QR33.json",
+      "member_sha256": "c6772478eb02512c671ef66549b04a9afcfe7512e302ef1d809ea72d5a332fc4",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 134,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "772919.1169735254",
+      "strict_breach_count": 608,
+      "origin_count": 6625,
+      "selected_penalty": 0.001,
+      "own_receipt_match": true
+    },
+    {
+      "horizon": 24,
+      "window": 5760,
+      "method": "QR4",
+      "scientific_status": "COMPLETE",
+      "import_status": "REJECTED",
+      "source_archive": {
+        "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+        "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0"
+      },
+      "member": "units/W5760_H24/QR4.json",
+      "member_sha256": "adb554db770c1d8e33ecd1c6cfae73641a89c9176792877669c23c829eeb513d",
+      "receipt_index_path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "receipt_index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "receipt_csv_physical_line": 142,
+      "json_pointers": {
+        "mean_pinball": "/evaluation/mean_pinball",
+        "strict_breach_count": "/evaluation/strict_breach_count",
+        "origin_count": "/evaluation/origin_count",
+        "selected_penalty": "/selected_penalty",
+        "status": "/status"
+      },
+      "mean_pinball": "760024.3999580006",
+      "strict_breach_count": 526,
+      "origin_count": 6625,
+      "selected_penalty": 0.01,
+      "own_receipt_match": true
+    }
+  ],
+  "source_files": [
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "protocol/revision-v9/wp3-learning-curve.json",
+      "sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+      "git_blob": "96da8d9d31c6c4d91ddca99e9dd560cf4f415ec1",
+      "bytes": 51316
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "protocol/revision-v9/wp3-learning-curve.md",
+      "sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+      "git_blob": "d3d0f6a22fbf4cc97d1133599a013cdadd0eac2a",
+      "bytes": 11554
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/manifest.json",
+      "sha256": "429d866d105469b2c2904adfdb991e9b6c4ff5fc128be3d6980b90d1d59fc61c",
+      "git_blob": "56fa1a0740f19fe4e38f50578cef9d7546e19471",
+      "bytes": 60701
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/contrasts.json",
+      "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+      "git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+      "bytes": 12569
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/contrasts.csv",
+      "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+      "git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+      "bytes": 4347
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/curve-predictions.json",
+      "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca",
+      "git_blob": "117717495ffda67d510110d97ec065b8ad72cc76",
+      "bytes": 2619
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/package-receipt.json",
+      "sha256": "09cdd4a865374b022d3609c288e3e81aa6df2e45cb331f24524466db49df51f7",
+      "git_blob": "620b3d196cb442011ae110f9b35b8299412aa9dc",
+      "bytes": 638
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/study-termination.json",
+      "sha256": "adad6870f70c14eb4e5ecd965a24bf9e0ef58a18a668ac90173a96270dfbf47c",
+      "git_blob": "32ade223eb79a340f469b13e7657448089053bf6",
+      "bytes": 528
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/wp3-scalar-driver-output.tar.gz",
+      "sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0",
+      "git_blob": "51784f8fccb4e131373bef7428ac27718152fa4a",
+      "bytes": 1862483
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/wp3-scalar-members.csv",
+      "sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+      "git_blob": "f4001746b8d616db0a94512b32bd16e7b918645e",
+      "bytes": 21740
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp3/README.md",
+      "sha256": "fc88e1710c432fd6a93507b43d9258e6fc2ba949453bfc904e0d818eff3f09c6",
+      "git_blob": "160f1f2610f395d4edfccae40b1b0c7d26c49dd6",
+      "bytes": 1457
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-pre-result-design-check.json",
+      "sha256": "1aa2c5fed1f7a02b0ac34dc5cd6b5adbb06139558191d52311c6329935e7ccff",
+      "git_blob": "be8649335202408eaeef22bef253b514c0c45faa",
+      "bytes": 2544
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-code-pre-run-binding.json",
+      "sha256": "ed4b53b41c06530c2668d47e24d8f827275cc627fe538fe52ce1002431d64c41",
+      "git_blob": "8db7c25a9dd710d2cba45940240535a4ebcd41dc",
+      "bytes": 4991
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-independent-audit.json",
+      "sha256": "d6e60cc9900846577ee19f3c785600a9f1bc652f6bfa1774b09a3b93977a3c10",
+      "git_blob": "fa15515254c0d24832f499811050e39d9c0e956e",
+      "bytes": 7808
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-exact-2880-gates.json",
+      "sha256": "a78f7568ec330c9b343610958c9504f83b9a32813703551f04fa5f7eb474febb",
+      "git_blob": "092c4112ae03d9ca5c11d7d1aa51707e07e76a44",
+      "bytes": 6083
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-readout.md",
+      "sha256": "d33bf6297b128a18a901125bc87dd1a175dc7f4585fc56abcc5279312a2e7973",
+      "git_blob": "0fe9f2ab7339001eeeed25560697951a0b71fa78",
+      "bytes": 5035
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-source-preflight.json",
+      "sha256": "8ebe30e98e27f732a3115a79f78c866682a8be4dd98b7dc3190f92b8e91b40b5",
+      "git_blob": "f6182dc1f689785c9f9fc460ca7764c198c8d887",
+      "bytes": 52165
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-acceptance.json",
+      "sha256": "d17ae69f33bda05b243873e7eefde84c5f92b7d1778556d736e61eb6f21619e1",
+      "git_blob": "2637391d9905df3d1bcffff9b1ea9769642ca9ca",
+      "bytes": 4618
+    },
+    {
+      "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp3-failure-record-inventory.json",
+      "sha256": "72f9732cd5c6e539b6cd4c61b67b488c462d0483c8e062df06cfc7a18432592c",
+      "git_blob": "b3f4feb3df0c799e3b365ad04b53cf2a70ed0941",
+      "bytes": 302
+    },
+    {
+      "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+      "path": "notes/v10/main-number-audit.json",
+      "sha256": "a014dff6641fa8daeaa0c10fa390fb4f798a671ce57c48d218485bfaef377708",
+      "git_blob": "f0b24bab13d74b2df1cfa2d297f5ab43c23dfa2a",
+      "bytes": 166288
+    },
+    {
+      "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+      "path": "results/revision-20261022/paired-comparisons.csv",
+      "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+      "git_blob": "11c7a053c252b03d948a8a5b5156b18788ade552",
+      "bytes": 26918
+    }
+  ],
+  "execution_scope": {
+    "git_blob_reads_only": true,
+    "experiment_drivers_run": 0,
+    "score_runs": 0,
+    "summary_recomputations": 0,
+    "fits": 0,
+    "data_or_protocol_or_results_written": false,
+    "branch_checkout_or_commit": false,
+    "old_v3_directory_access": false,
+    "claude_or_cross_model_review": false,
+    "writes_only": [
+      "notes/v11/wp3-import-audit.json",
+      "notes/v11/wp3-import-audit.md",
+      ".scratch/v11/wp3-audit/"
+    ]
+  },
+  "provenance_reconciliation": {
+    "created_utc": "2026-10-25T05:07:50.908020+00:00",
+    "scope": "Append-only reconciliation of additional root-supplied Git object evidence and static arithmetic expressions. Initial audit_status=FAIL and strict anchor results remain unchanged.",
+    "proof_source": {
+      "path": "notes/v11/original-commit-proofs.json",
+      "sha256": "eafbb501cc4870e19ef87bc6e108f794e64fd3ceaa3f3040b60f2ddc43ad6152",
+      "source_repository_head_before": "689d4928f55bb73cac5b73e6cfc34aee1209e57a",
+      "source_repository_head_after": "689d4928f55bb73cac5b73e6cfc34aee1209e57a",
+      "head_unchanged": true,
+      "provided_by": "root read-only original Git object queries; this agent did not access the old v3 directory"
+    },
+    "original_commit_proofs": [
+      {
+        "sha": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+        "raw_commit_hash_reconstructed": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+        "raw_commit_hash_exact_match": true,
+        "author_utc": "2026-10-24T23:13:51+00:00",
+        "committer_utc": "2026-10-24T23:13:51+00:00",
+        "raw_commit": "tree e0fcc3c2dfe9ad8d0ca5c4bd2c893fc02df25123\nparent 1a535efe289254ced5b163361fefee357d13d583\nauthor BINGYOU LI <bingyouli@Byrons-MacBook-Pro.local> 1792883631 -0700\ncommitter BINGYOU LI <bingyouli@Byrons-MacBook-Pro.local> 1792883631 -0700\n\nFreeze original-period FX curve and exact W2880 agreement gate\n",
+        "changed_paths": "M\tREVISION_V9_CHANGELOG.md\nA\tnotes/revision-v9/wp3-pre-result-design-check.json\nA\tnotes/revision-v9/wp3-private-input-copy-receipt.json\nA\tnotes/revision-v9/wp3-source-preflight.json\nA\tprotocol/revision-v9/wp3-learning-curve.json\nA\tprotocol/revision-v9/wp3-learning-curve.md\n",
+        "proof_json_pointer": "/commits/b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a"
+      },
+      {
+        "sha": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+        "raw_commit_hash_reconstructed": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+        "raw_commit_hash_exact_match": true,
+        "author_utc": "2026-10-24T23:39:27+00:00",
+        "committer_utc": "2026-10-24T23:39:27+00:00",
+        "raw_commit": "tree adc5a179f993967ac00795cae291901f224936f3\nparent b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a\nauthor BINGYOU LI <bingyouli@Byrons-MacBook-Pro.local> 1792885167 -0700\ncommitter BINGYOU LI <bingyouli@Byrons-MacBook-Pro.local> 1792885167 -0700\n\nv9 WP3: verify frozen retrospective FX learning curve and preserve censoring\n",
+        "changed_paths": "M\tREVISION_V9_CHANGELOG.md\nA\tnotes/revision-v9/audit_wp3.py\nA\tnotes/revision-v9/package_wp3.py\nA\tnotes/revision-v9/wp3-acceptance.json\nA\tnotes/revision-v9/wp3-code-pre-run-binding.json\nA\tnotes/revision-v9/wp3-exact-2880-gates.json\nA\tnotes/revision-v9/wp3-failure-diagnostics-scope.json\nA\tnotes/revision-v9/wp3-failure-record-inventory.json\nA\tnotes/revision-v9/wp3-formal-run-console.txt\nA\tnotes/revision-v9/wp3-full-gate-pytest-output.txt\nA\tnotes/revision-v9/wp3-full-gate-pytest-receipt.json\nA\tnotes/revision-v9/wp3-green-persistence-output-2.txt\nA\tnotes/revision-v9/wp3-green-persistence-output.txt\nA\tnotes/revision-v9/wp3-hac-source-scope.md\nA\tnotes/revision-v9/wp3-independent-audit-console.txt\nA\tnotes/revision-v9/wp3-independent-audit.json\nA\tnotes/revision-v9/wp3-package-console.txt\nA\tnotes/revision-v9/wp3-readout.md\nA\tnotes/revision-v9/wp3-red-persistence-output.txt\nA\tnotes/revision-v9/wp3-summary-console.txt\nA\tnotes/revision-v9/wp3-targeted-audit-tests-output.txt\nA\tresults/revision-v9/wp3/README.md\nA\tresults/revision-v9/wp3/contrasts.csv\nA\tresults/revision-v9/wp3/contrasts.json\nA\tresults/revision-v9/wp3/curve-predictions.json\nA\tresults/revision-v9/wp3/manifest.json\nA\tresults/revision-v9/wp3/package-receipt.json\nA\tresults/revision-v9/wp3/study-termination.json\nA\tresults/revision-v9/wp3/wp3-scalar-driver-output.tar.gz\nA\tresults/revision-v9/wp3/wp3-scalar-members.csv\nA\trun_v9_learning_curve.py\nA\ttest_v9_learning_curve.py\nA\ttest_v9_wp3_audit.py\nA\tv9_learning_curve.py\n",
+        "proof_json_pointer": "/commits/bfd0493f4237b6b99ca4370a2e6cf2195f653b28"
+      }
+    ],
+    "reconciled_time_status": "PASS_FROM_ROOT_SUPPLIED_RAW_COMMIT_PROOFS",
+    "design_before_formal_start": true,
+    "end_commit_after_formal_end": true,
+    "end_commit_direct_parent_is_design": true,
+    "original_design_protocol_content_status": "UNVERIFIED_PENDING_ROOT_BLOB_HASH_BINDING",
+    "original_result_content_status": "UNVERIFIED_PENDING_ROOT_BLOB_HASH_BINDING",
+    "precision_layers": [
+      {
+        "horizon": 6,
+        "window": 720,
+        "method": "QR33",
+        "reference": "matched_F",
+        "display_precision": 2,
+        "user_display_anchor": "-2.12",
+        "old_display": "-2.12",
+        "new_display": "-2.12",
+        "display_exact_status": "PASS",
+        "stored_full_precision_exact_status": "FAIL",
+        "stored_binary64_exact_equal": false,
+        "old_binary64_hex": "-0x1.0ef0ea4af9ce8p+1",
+        "new_binary64_hex": "-0x1.0ef0ea4af9cf0p+1",
+        "means_and_breach_count_exact_status": "PASS",
+        "old_saved_pair_difference": "-9368.95748200563",
+        "new_saved_dm_mean_difference": "-9368.95748200563",
+        "saved_pair_difference_exact_equal": true,
+        "old_source": {
+          "value_full_precision": "-2.1167271486370858",
+          "display_2dp": "-2.12",
+          "source": {
+            "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+            "path": "results/revision-20261022/paired-comparisons.csv",
+            "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+            "git_blob": "11c7a053c252b03d948a8a5b5156b18788ade552",
+            "bytes": 26918
+          },
+          "csv_physical_line": 2,
+          "csv_unique_where": {
+            "contrast_id": "fx_hourly-h6-QR720-minus-frozen_F720"
+          },
+          "field": "relative_mean_loss_difference_percent",
+          "v10b_owning_binding": {
+            "path": "notes/v10/main-number-audit.json",
+            "sha256": "a014dff6641fa8daeaa0c10fa390fb4f798a671ce57c48d218485bfaef377708",
+            "json_pointer": "/old_archive_locator_checks/217"
+          }
+        },
+        "new_source": {
+          "value_full_precision": "-2.1167271486370893",
+          "display_2dp": "-2.12",
+          "source": {
+            "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+            "git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+            "bytes": 12569
+          },
+          "json_pointer": "/8/relative_loss_percent",
+          "csv_source": {
+            "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp3/contrasts.csv",
+            "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+            "git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+            "bytes": 4347
+          },
+          "csv_physical_line": 10,
+          "field": "relative_loss_percent"
+        },
+        "new_saved_difference_json_pointer": "/8/dm/mean_difference"
+      },
+      {
+        "horizon": 6,
+        "window": 2880,
+        "method": "QR33",
+        "reference": "matched_F",
+        "display_precision": 2,
+        "user_display_anchor": "-14.77",
+        "old_display": "-14.77",
+        "new_display": "-14.77",
+        "display_exact_status": "PASS",
+        "stored_full_precision_exact_status": "FAIL",
+        "stored_binary64_exact_equal": false,
+        "old_binary64_hex": "-0x1.d889519ee8c59p+3",
+        "new_binary64_hex": "-0x1.d889519ee8c58p+3",
+        "means_and_breach_count_exact_status": "PASS",
+        "old_saved_pair_difference": "-66848.09795808741",
+        "new_saved_dm_mean_difference": "-66848.09795808741",
+        "saved_pair_difference_exact_equal": true,
+        "old_source": {
+          "value_full_precision": "-14.766762552613885",
+          "display_2dp": "-14.77",
+          "source": {
+            "ref": "de1a1cf22a005179f0d9a7c288855591292ddb49",
+            "path": "results/revision-20261022/paired-comparisons.csv",
+            "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+            "git_blob": "11c7a053c252b03d948a8a5b5156b18788ade552",
+            "bytes": 26918
+          },
+          "csv_physical_line": 14,
+          "csv_unique_where": {
+            "contrast_id": "fx_hourly-h6-QR2880-minus-frozen_F2880"
+          },
+          "field": "relative_mean_loss_difference_percent",
+          "v10b_owning_binding": {
+            "path": "notes/v10/main-number-audit.json",
+            "sha256": "a014dff6641fa8daeaa0c10fa390fb4f798a671ce57c48d218485bfaef377708",
+            "json_pointer": "/old_archive_locator_checks/0"
+          }
+        },
+        "new_source": {
+          "value_full_precision": "-14.766762552613883",
+          "display_2dp": "-14.77",
+          "source": {
+            "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+            "git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+            "bytes": 12569
+          },
+          "json_pointer": "/0/relative_loss_percent",
+          "csv_source": {
+            "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp3/contrasts.csv",
+            "sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+            "git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+            "bytes": 4347
+          },
+          "csv_physical_line": 2,
+          "field": "relative_loss_percent"
+        },
+        "new_saved_difference_json_pointer": "/0/dm/mean_difference"
+      }
+    ],
+    "static_arithmetic_diagnosis": {
+      "status": "LOCATED_FROM_PINNED_SOURCE_CODE; NO_SCORING_OR_PERCENTAGE_RECALCULATION",
+      "old": {
+        "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "conditional_study.py",
+        "sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+        "git_blob": "894332f042ac9ae8a467f7ef23bef288df177d84",
+        "function": "paired_comparison.group",
+        "lines": [
+          274,
+          275,
+          277
+        ],
+        "statements": [
+          "a=core.stable_mean(left.pinball[mask]);b=core.stable_mean(right.pinball[mask])",
+          "difference=core.stable_mean(left.pinball[mask]-right.pinball[mask])",
+          "relative=100*(difference/b) if b>0 else None"
+        ],
+        "stored_fields": [
+          "mean_pinball_left",
+          "mean_pinball_right",
+          "mean_pinball_difference",
+          "relative_mean_loss_difference_percent"
+        ],
+        "same_code_bytes_in_v10b_base": true
+      },
+      "new": {
+        "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "run_v9_learning_curve.py",
+        "sha256": "9952026f3b95e7f6239b876417c0ff7e74df7146962384edac833ad611352ed4",
+        "git_blob": "3c57661c5d0ac0af73b57ec9b1e5c37707f0abc8",
+        "lines": [
+          177,
+          178,
+          179
+        ],
+        "statements": [
+          "difference=scores.pinball-fscore.pinball;dm=dm_hac_only(difference,h)",
+          "delta=100*(summary['mean_pinball']-fsummary['mean_pinball'])/fsummary['mean_pinball'] if fsummary['mean_pinball']>0 else None"
+        ],
+        "stored_fields": [
+          "mean_model_loss",
+          "mean_reference_loss",
+          "dm.mean_difference",
+          "relative_loss_percent"
+        ]
+      },
+      "stable_mean_definition": {
+        "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "study_core.py",
+        "sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+        "lines": [
+          403,
+          408,
+          411
+        ],
+        "statement": "value = math.fsum(float(x) for x in values) / len(values)",
+        "same_code_bytes_in_v10b_base": true
+      },
+      "summary_mean_definition": {
+        "path": "conditional_study.py",
+        "sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+        "line": 222,
+        "statement": "mean_pinball=core.stable_mean(scores.pinball)"
+      },
+      "interpretation": "The old archive divides the stable mean of pointwise differences by the reference mean; v9 subtracts separately stored means before dividing. They are algebraically equal over exact real numbers but follow different floating-point evaluation paths. The saved means, breach counts and paired/DM mean-difference fields agree; stored percentage binary64 values do not. This static diagnosis explains the observed last-place discrepancy without changing either archive, rescoring observations, recomputing a summary or introducing tolerance. It does not prove equality of unopened private vectors.",
+      "old_archive_writer": {
+        "ref": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "build_conditional_results.py",
+        "sha256": "9f87c689dd20027e223a423f427380cba7179f78565c0cf4fc896274be1776ab",
+        "lines": [
+          300,
+          307,
+          318,
+          320,
+          323
+        ],
+        "statements": [
+          "paired = paired_comparison(left, right, sources[s].dates[left.origins], horizon=h)",
+          "comparisons.append(meta | paired['all'])",
+          "output = ROOT / 'results/revision-20261022'",
+          "'paired-comparisons.csv': comparisons",
+          "write_csv(output / name, rows)"
+        ]
+      }
+    },
+    "reconciled_conclusion": {
+      "display_precision_exact_match": "PASS at the two decimal places supplied in the user anchor values",
+      "stored_percent_binary64_exact_match": "FAIL, retained as initial audit evidence",
+      "initial_strict_import_decision": "FAIL retained; no automatic override in this append-only reconciliation",
+      "editorial_decision": "Root may evaluate eligibility under the actual user-specified displayed precision after binding original protocol/result contents; must disclose stored-percent mismatch and arithmetic path rather than claim bitwise identity.",
+      "no_alternate_owning_source": true,
+      "no_tolerance_used": true
+    },
+    "final_reconciliation_after_original_blob_proofs": {
+      "created_utc": "2026-10-25T05:09:33.331804+00:00",
+      "blob_proof_source": {
+        "path": "notes/v11/original-blob-proofs.json",
+        "sha256": "126ddc187c93beb656c5c93e8187ed24a98492a16491630dac8c5569c1fa1c33",
+        "old_head_unchanged": true
+      },
+      "original_protocol_and_result_blob_checks": [
+        {
+          "original_commit": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+          "path": "protocol/revision-v9/wp3-learning-curve.json",
+          "original_git_blob": "96da8d9d31c6c4d91ddca99e9dd560cf4f415ec1",
+          "source_git_blob": "96da8d9d31c6c4d91ddca99e9dd560cf4f415ec1",
+          "bytes": 51316,
+          "original_sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+          "source_sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/7",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+          "path": "protocol/revision-v9/wp3-learning-curve.md",
+          "original_git_blob": "d3d0f6a22fbf4cc97d1133599a013cdadd0eac2a",
+          "source_git_blob": "d3d0f6a22fbf4cc97d1133599a013cdadd0eac2a",
+          "bytes": 11554,
+          "original_sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+          "source_sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/8",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "protocol/revision-v9/wp3-learning-curve.json",
+          "original_git_blob": "96da8d9d31c6c4d91ddca99e9dd560cf4f415ec1",
+          "source_git_blob": "96da8d9d31c6c4d91ddca99e9dd560cf4f415ec1",
+          "bytes": 51316,
+          "original_sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+          "source_sha256": "0490302463c17096b612fa7241cae97fed082052cefd29f176f0eba3926aedae",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/9",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "protocol/revision-v9/wp3-learning-curve.md",
+          "original_git_blob": "d3d0f6a22fbf4cc97d1133599a013cdadd0eac2a",
+          "source_git_blob": "d3d0f6a22fbf4cc97d1133599a013cdadd0eac2a",
+          "bytes": 11554,
+          "original_sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+          "source_sha256": "58855b74a875dd0632e571074f7fd1e3bb507bb12e61d2c32d8188c79f1d02e6",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/10",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "results/revision-v9/wp3/manifest.json",
+          "original_git_blob": "56fa1a0740f19fe4e38f50578cef9d7546e19471",
+          "source_git_blob": "56fa1a0740f19fe4e38f50578cef9d7546e19471",
+          "bytes": 60701,
+          "original_sha256": "429d866d105469b2c2904adfdb991e9b6c4ff5fc128be3d6980b90d1d59fc61c",
+          "source_sha256": "429d866d105469b2c2904adfdb991e9b6c4ff5fc128be3d6980b90d1d59fc61c",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/11",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "results/revision-v9/wp3/contrasts.json",
+          "original_git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+          "source_git_blob": "5dcad1ec43efafcc0cd9711c0e705118064c35bc",
+          "bytes": 12569,
+          "original_sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+          "source_sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/12",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "results/revision-v9/wp3/contrasts.csv",
+          "original_git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+          "source_git_blob": "a2d1b91112a8beec7355b8a3291dfd32ed62d2ad",
+          "bytes": 4347,
+          "original_sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+          "source_sha256": "f3a9cbc35cb310a6eb2371e06619638feac4d2add13ba78f68bf8042115bdd86",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/13",
+          "independent_pinned_source_identity_check": "PASS"
+        },
+        {
+          "original_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+          "path": "results/revision-v9/wp3/study-termination.json",
+          "original_git_blob": "32ade223eb79a340f469b13e7657448089053bf6",
+          "source_git_blob": "32ade223eb79a340f469b13e7657448089053bf6",
+          "bytes": 528,
+          "original_sha256": "adad6870f70c14eb4e5ecd965a24bf9e0ef58a18a668ac90173a96270dfbf47c",
+          "source_sha256": "adad6870f70c14eb4e5ecd965a24bf9e0ef58a18a668ac90173a96270dfbf47c",
+          "exact_bytes_equal": true,
+          "proof_json_pointer": "/blobs/14",
+          "independent_pinned_source_identity_check": "PASS"
+        }
+      ],
+      "design_content_and_time_status": "PASS",
+      "original_results_content_status": "PASS",
+      "underlying_saved_anchor_means_and_breaches_status": "PASS_EXACT",
+      "user_two_decimal_anchor_status": "PASS_EXACT",
+      "saved_percent_full_precision_and_binary64_status": "FAIL_EXACT_PRESERVED",
+      "initial_audit_unchanged": {
+        "audit_status": "FAIL",
+        "admit_to_v11": false
+      },
+      "root_editorial_decision": "Static import allowed under actual user anchor precision (-2.12% and -14.77%), with binary64 aggregation-path discrepancy disclosed; no claim of unrounded percentage bitwise identity. No owning source substitution or scientific data change.",
+      "source_records_all_20": [
+        {
+          "horizon": 6,
+          "window": 2880,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/0",
+          "relative_loss_percent": "-14.766762552613883",
+          "mean_model_loss": "385844.8854897607",
+          "mean_reference_loss": "452692.9834478481",
+          "model_breaches": 376,
+          "reference_breaches": 360,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/0/relative_loss_percent",
+            "mean_model_loss": "/0/mean_model_loss",
+            "mean_reference_loss": "/0/mean_reference_loss",
+            "model_breaches": "/0/model_breaches",
+            "reference_breaches": "/0/reference_breaches",
+            "n": "/0/n",
+            "status": "/0/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 2880,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/1",
+          "relative_loss_percent": "-4.2893706508927965",
+          "mean_model_loss": "433275.30347718514",
+          "mean_reference_loss": "452692.9834478481",
+          "model_breaches": 399,
+          "reference_breaches": 360,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/1/relative_loss_percent",
+            "mean_model_loss": "/1/mean_model_loss",
+            "mean_reference_loss": "/1/mean_reference_loss",
+            "model_breaches": "/1/model_breaches",
+            "reference_breaches": "/1/reference_breaches",
+            "n": "/1/n",
+            "status": "/1/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 2880,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/2",
+          "relative_loss_percent": "-3.757769795795826",
+          "mean_model_loss": "734695.0685732415",
+          "mean_reference_loss": "763381.1758251915",
+          "model_breaches": 531,
+          "reference_breaches": 357,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/2/relative_loss_percent",
+            "mean_model_loss": "/2/mean_model_loss",
+            "mean_reference_loss": "/2/mean_reference_loss",
+            "model_breaches": "/2/model_breaches",
+            "reference_breaches": "/2/reference_breaches",
+            "n": "/2/n",
+            "status": "/2/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 2880,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/3",
+          "relative_loss_percent": "-2.8936718065277542",
+          "mean_model_loss": "741291.4299639979",
+          "mean_reference_loss": "763381.1758251915",
+          "model_breaches": 508,
+          "reference_breaches": 357,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/3/relative_loss_percent",
+            "mean_model_loss": "/3/mean_model_loss",
+            "mean_reference_loss": "/3/mean_reference_loss",
+            "model_breaches": "/3/model_breaches",
+            "reference_breaches": "/3/reference_breaches",
+            "n": "/3/n",
+            "status": "/3/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 360,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/4",
+          "relative_loss_percent": "3.0438186779438983",
+          "mean_model_loss": "470333.9514736848",
+          "mean_reference_loss": "456440.72347869794",
+          "model_breaches": 539,
+          "reference_breaches": 356,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/4/relative_loss_percent",
+            "mean_model_loss": "/4/mean_model_loss",
+            "mean_reference_loss": "/4/mean_reference_loss",
+            "model_breaches": "/4/model_breaches",
+            "reference_breaches": "/4/reference_breaches",
+            "n": "/4/n",
+            "status": "/4/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 360,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/5",
+          "relative_loss_percent": "-0.8754052083818208",
+          "mean_model_loss": "452445.01761218975",
+          "mean_reference_loss": "456440.72347869794",
+          "model_breaches": 395,
+          "reference_breaches": 356,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/5/relative_loss_percent",
+            "mean_model_loss": "/5/mean_model_loss",
+            "mean_reference_loss": "/5/mean_reference_loss",
+            "model_breaches": "/5/model_breaches",
+            "reference_breaches": "/5/reference_breaches",
+            "n": "/5/n",
+            "status": "/5/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 360,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/6",
+          "relative_loss_percent": "24.346452155465645",
+          "mean_model_loss": "1012670.953280778",
+          "mean_reference_loss": "814394.7299876912",
+          "model_breaches": 1011,
+          "reference_breaches": 466,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/6/relative_loss_percent",
+            "mean_model_loss": "/6/mean_model_loss",
+            "mean_reference_loss": "/6/mean_reference_loss",
+            "model_breaches": "/6/model_breaches",
+            "reference_breaches": "/6/reference_breaches",
+            "n": "/6/n",
+            "status": "/6/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 360,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/7",
+          "relative_loss_percent": "16.590207827669552",
+          "mean_model_loss": "949504.5082302374",
+          "mean_reference_loss": "814394.7299876912",
+          "model_breaches": 822,
+          "reference_breaches": 466,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/7/relative_loss_percent",
+            "mean_model_loss": "/7/mean_model_loss",
+            "mean_reference_loss": "/7/mean_reference_loss",
+            "model_breaches": "/7/model_breaches",
+            "reference_breaches": "/7/reference_breaches",
+            "n": "/7/n",
+            "status": "/7/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 720,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/8",
+          "relative_loss_percent": "-2.1167271486370893",
+          "mean_model_loss": "433246.30769461836",
+          "mean_reference_loss": "442615.265176624",
+          "model_breaches": 531,
+          "reference_breaches": 332,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/8/relative_loss_percent",
+            "mean_model_loss": "/8/mean_model_loss",
+            "mean_reference_loss": "/8/mean_reference_loss",
+            "model_breaches": "/8/model_breaches",
+            "reference_breaches": "/8/reference_breaches",
+            "n": "/8/n",
+            "status": "/8/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 720,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/9",
+          "relative_loss_percent": "1.4764717411070867",
+          "mean_model_loss": "449150.35448878305",
+          "mean_reference_loss": "442615.265176624",
+          "model_breaches": 414,
+          "reference_breaches": 332,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/9/relative_loss_percent",
+            "mean_model_loss": "/9/mean_model_loss",
+            "mean_reference_loss": "/9/mean_reference_loss",
+            "model_breaches": "/9/model_breaches",
+            "reference_breaches": "/9/reference_breaches",
+            "n": "/9/n",
+            "status": "/9/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 720,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/10",
+          "relative_loss_percent": "31.503964246480937",
+          "mean_model_loss": "1035482.7551213254",
+          "mean_reference_loss": "787415.6197911236",
+          "model_breaches": 924,
+          "reference_breaches": 427,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/10/relative_loss_percent",
+            "mean_model_loss": "/10/mean_model_loss",
+            "mean_reference_loss": "/10/mean_reference_loss",
+            "model_breaches": "/10/model_breaches",
+            "reference_breaches": "/10/reference_breaches",
+            "n": "/10/n",
+            "status": "/10/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 720,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/11",
+          "relative_loss_percent": "16.513128710925677",
+          "mean_model_loss": "917442.574577165",
+          "mean_reference_loss": "787415.6197911236",
+          "model_breaches": 701,
+          "reference_breaches": 427,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/11/relative_loss_percent",
+            "mean_model_loss": "/11/mean_model_loss",
+            "mean_reference_loss": "/11/mean_reference_loss",
+            "model_breaches": "/11/model_breaches",
+            "reference_breaches": "/11/reference_breaches",
+            "n": "/11/n",
+            "status": "/11/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 1440,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/12",
+          "relative_loss_percent": "-6.5076708350722905",
+          "mean_model_loss": "415585.5609354353",
+          "mean_reference_loss": "444513.0040586647",
+          "model_breaches": 401,
+          "reference_breaches": 341,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/12/relative_loss_percent",
+            "mean_model_loss": "/12/mean_model_loss",
+            "mean_reference_loss": "/12/mean_reference_loss",
+            "model_breaches": "/12/model_breaches",
+            "reference_breaches": "/12/reference_breaches",
+            "n": "/12/n",
+            "status": "/12/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 1440,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/13",
+          "relative_loss_percent": "-3.2812108413789005",
+          "mean_model_loss": "429927.5951781528",
+          "mean_reference_loss": "444513.0040586647",
+          "model_breaches": 355,
+          "reference_breaches": 341,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/13/relative_loss_percent",
+            "mean_model_loss": "/13/mean_model_loss",
+            "mean_reference_loss": "/13/mean_reference_loss",
+            "model_breaches": "/13/model_breaches",
+            "reference_breaches": "/13/reference_breaches",
+            "n": "/13/n",
+            "status": "/13/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 1440,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/14",
+          "relative_loss_percent": "9.238708964820484",
+          "mean_model_loss": "823510.0803566112",
+          "mean_reference_loss": "753862.8826360594",
+          "model_breaches": 650,
+          "reference_breaches": 331,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/14/relative_loss_percent",
+            "mean_model_loss": "/14/mean_model_loss",
+            "mean_reference_loss": "/14/mean_reference_loss",
+            "model_breaches": "/14/model_breaches",
+            "reference_breaches": "/14/reference_breaches",
+            "n": "/14/n",
+            "status": "/14/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 1440,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/15",
+          "relative_loss_percent": "-2.6227375691876738",
+          "mean_model_loss": "734091.0375930023",
+          "mean_reference_loss": "753862.8826360594",
+          "model_breaches": 465,
+          "reference_breaches": 331,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/15/relative_loss_percent",
+            "mean_model_loss": "/15/mean_model_loss",
+            "mean_reference_loss": "/15/mean_reference_loss",
+            "model_breaches": "/15/model_breaches",
+            "reference_breaches": "/15/reference_breaches",
+            "n": "/15/n",
+            "status": "/15/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 5760,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/16",
+          "relative_loss_percent": "-6.440694459797079",
+          "mean_model_loss": "420341.27979006886",
+          "mean_reference_loss": "449277.89637071005",
+          "model_breaches": 384,
+          "reference_breaches": 344,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/16/relative_loss_percent",
+            "mean_model_loss": "/16/mean_model_loss",
+            "mean_reference_loss": "/16/mean_reference_loss",
+            "model_breaches": "/16/model_breaches",
+            "reference_breaches": "/16/reference_breaches",
+            "n": "/16/n",
+            "status": "/16/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 5760,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/17",
+          "relative_loss_percent": "-4.891469312713009",
+          "mean_model_loss": "427301.6059409342",
+          "mean_reference_loss": "449277.89637071005",
+          "model_breaches": 424,
+          "reference_breaches": 344,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/17/relative_loss_percent",
+            "mean_model_loss": "/17/mean_model_loss",
+            "mean_reference_loss": "/17/mean_reference_loss",
+            "model_breaches": "/17/model_breaches",
+            "reference_breaches": "/17/reference_breaches",
+            "n": "/17/n",
+            "status": "/17/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/18",
+          "relative_loss_percent": "1.8577089031029423",
+          "mean_model_loss": "772919.1169735254",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 608,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/18/relative_loss_percent",
+            "mean_model_loss": "/18/mean_model_loss",
+            "mean_reference_loss": "/18/mean_reference_loss",
+            "model_breaches": "/18/model_breaches",
+            "reference_breaches": "/18/reference_breaches",
+            "n": "/18/n",
+            "status": "/18/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/19",
+          "relative_loss_percent": "0.15840259366901976",
+          "mean_model_loss": "760024.3999580006",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 526,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/19/relative_loss_percent",
+            "mean_model_loss": "/19/mean_model_loss",
+            "mean_reference_loss": "/19/mean_reference_loss",
+            "model_breaches": "/19/model_breaches",
+            "reference_breaches": "/19/reference_breaches",
+            "n": "/19/n",
+            "status": "/19/status"
+          }
+        }
+      ],
+      "H6_source_records_all_5W_QR33_QR4": [
+        {
+          "horizon": 6,
+          "window": 2880,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/0",
+          "relative_loss_percent": "-14.766762552613883",
+          "mean_model_loss": "385844.8854897607",
+          "mean_reference_loss": "452692.9834478481",
+          "model_breaches": 376,
+          "reference_breaches": 360,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/0/relative_loss_percent",
+            "mean_model_loss": "/0/mean_model_loss",
+            "mean_reference_loss": "/0/mean_reference_loss",
+            "model_breaches": "/0/model_breaches",
+            "reference_breaches": "/0/reference_breaches",
+            "n": "/0/n",
+            "status": "/0/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 2880,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/1",
+          "relative_loss_percent": "-4.2893706508927965",
+          "mean_model_loss": "433275.30347718514",
+          "mean_reference_loss": "452692.9834478481",
+          "model_breaches": 399,
+          "reference_breaches": 360,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/1/relative_loss_percent",
+            "mean_model_loss": "/1/mean_model_loss",
+            "mean_reference_loss": "/1/mean_reference_loss",
+            "model_breaches": "/1/model_breaches",
+            "reference_breaches": "/1/reference_breaches",
+            "n": "/1/n",
+            "status": "/1/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 360,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/4",
+          "relative_loss_percent": "3.0438186779438983",
+          "mean_model_loss": "470333.9514736848",
+          "mean_reference_loss": "456440.72347869794",
+          "model_breaches": 539,
+          "reference_breaches": 356,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/4/relative_loss_percent",
+            "mean_model_loss": "/4/mean_model_loss",
+            "mean_reference_loss": "/4/mean_reference_loss",
+            "model_breaches": "/4/model_breaches",
+            "reference_breaches": "/4/reference_breaches",
+            "n": "/4/n",
+            "status": "/4/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 360,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/5",
+          "relative_loss_percent": "-0.8754052083818208",
+          "mean_model_loss": "452445.01761218975",
+          "mean_reference_loss": "456440.72347869794",
+          "model_breaches": 395,
+          "reference_breaches": 356,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/5/relative_loss_percent",
+            "mean_model_loss": "/5/mean_model_loss",
+            "mean_reference_loss": "/5/mean_reference_loss",
+            "model_breaches": "/5/model_breaches",
+            "reference_breaches": "/5/reference_breaches",
+            "n": "/5/n",
+            "status": "/5/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 720,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/8",
+          "relative_loss_percent": "-2.1167271486370893",
+          "mean_model_loss": "433246.30769461836",
+          "mean_reference_loss": "442615.265176624",
+          "model_breaches": 531,
+          "reference_breaches": 332,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/8/relative_loss_percent",
+            "mean_model_loss": "/8/mean_model_loss",
+            "mean_reference_loss": "/8/mean_reference_loss",
+            "model_breaches": "/8/model_breaches",
+            "reference_breaches": "/8/reference_breaches",
+            "n": "/8/n",
+            "status": "/8/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 720,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/9",
+          "relative_loss_percent": "1.4764717411070867",
+          "mean_model_loss": "449150.35448878305",
+          "mean_reference_loss": "442615.265176624",
+          "model_breaches": 414,
+          "reference_breaches": 332,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/9/relative_loss_percent",
+            "mean_model_loss": "/9/mean_model_loss",
+            "mean_reference_loss": "/9/mean_reference_loss",
+            "model_breaches": "/9/model_breaches",
+            "reference_breaches": "/9/reference_breaches",
+            "n": "/9/n",
+            "status": "/9/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 1440,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/12",
+          "relative_loss_percent": "-6.5076708350722905",
+          "mean_model_loss": "415585.5609354353",
+          "mean_reference_loss": "444513.0040586647",
+          "model_breaches": 401,
+          "reference_breaches": 341,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/12/relative_loss_percent",
+            "mean_model_loss": "/12/mean_model_loss",
+            "mean_reference_loss": "/12/mean_reference_loss",
+            "model_breaches": "/12/model_breaches",
+            "reference_breaches": "/12/reference_breaches",
+            "n": "/12/n",
+            "status": "/12/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 1440,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/13",
+          "relative_loss_percent": "-3.2812108413789005",
+          "mean_model_loss": "429927.5951781528",
+          "mean_reference_loss": "444513.0040586647",
+          "model_breaches": 355,
+          "reference_breaches": 341,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/13/relative_loss_percent",
+            "mean_model_loss": "/13/mean_model_loss",
+            "mean_reference_loss": "/13/mean_reference_loss",
+            "model_breaches": "/13/model_breaches",
+            "reference_breaches": "/13/reference_breaches",
+            "n": "/13/n",
+            "status": "/13/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 5760,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/16",
+          "relative_loss_percent": "-6.440694459797079",
+          "mean_model_loss": "420341.27979006886",
+          "mean_reference_loss": "449277.89637071005",
+          "model_breaches": 384,
+          "reference_breaches": 344,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/16/relative_loss_percent",
+            "mean_model_loss": "/16/mean_model_loss",
+            "mean_reference_loss": "/16/mean_reference_loss",
+            "model_breaches": "/16/model_breaches",
+            "reference_breaches": "/16/reference_breaches",
+            "n": "/16/n",
+            "status": "/16/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 5760,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/17",
+          "relative_loss_percent": "-4.891469312713009",
+          "mean_model_loss": "427301.6059409342",
+          "mean_reference_loss": "449277.89637071005",
+          "model_breaches": 424,
+          "reference_breaches": 344,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/17/relative_loss_percent",
+            "mean_model_loss": "/17/mean_model_loss",
+            "mean_reference_loss": "/17/mean_reference_loss",
+            "model_breaches": "/17/model_breaches",
+            "reference_breaches": "/17/reference_breaches",
+            "n": "/17/n",
+            "status": "/17/status"
+          }
+        }
+      ],
+      "adverse_higher_loss_rows": [
+        {
+          "horizon": 6,
+          "window": 360,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/4",
+          "relative_loss_percent": "3.0438186779438983",
+          "mean_model_loss": "470333.9514736848",
+          "mean_reference_loss": "456440.72347869794",
+          "model_breaches": 539,
+          "reference_breaches": 356,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/4/relative_loss_percent",
+            "mean_model_loss": "/4/mean_model_loss",
+            "mean_reference_loss": "/4/mean_reference_loss",
+            "model_breaches": "/4/model_breaches",
+            "reference_breaches": "/4/reference_breaches",
+            "n": "/4/n",
+            "status": "/4/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 360,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/6",
+          "relative_loss_percent": "24.346452155465645",
+          "mean_model_loss": "1012670.953280778",
+          "mean_reference_loss": "814394.7299876912",
+          "model_breaches": 1011,
+          "reference_breaches": 466,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/6/relative_loss_percent",
+            "mean_model_loss": "/6/mean_model_loss",
+            "mean_reference_loss": "/6/mean_reference_loss",
+            "model_breaches": "/6/model_breaches",
+            "reference_breaches": "/6/reference_breaches",
+            "n": "/6/n",
+            "status": "/6/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 360,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/7",
+          "relative_loss_percent": "16.590207827669552",
+          "mean_model_loss": "949504.5082302374",
+          "mean_reference_loss": "814394.7299876912",
+          "model_breaches": 822,
+          "reference_breaches": 466,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/7/relative_loss_percent",
+            "mean_model_loss": "/7/mean_model_loss",
+            "mean_reference_loss": "/7/mean_reference_loss",
+            "model_breaches": "/7/model_breaches",
+            "reference_breaches": "/7/reference_breaches",
+            "n": "/7/n",
+            "status": "/7/status"
+          }
+        },
+        {
+          "horizon": 6,
+          "window": 720,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/9",
+          "relative_loss_percent": "1.4764717411070867",
+          "mean_model_loss": "449150.35448878305",
+          "mean_reference_loss": "442615.265176624",
+          "model_breaches": 414,
+          "reference_breaches": 332,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/9/relative_loss_percent",
+            "mean_model_loss": "/9/mean_model_loss",
+            "mean_reference_loss": "/9/mean_reference_loss",
+            "model_breaches": "/9/model_breaches",
+            "reference_breaches": "/9/reference_breaches",
+            "n": "/9/n",
+            "status": "/9/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 720,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/10",
+          "relative_loss_percent": "31.503964246480937",
+          "mean_model_loss": "1035482.7551213254",
+          "mean_reference_loss": "787415.6197911236",
+          "model_breaches": 924,
+          "reference_breaches": 427,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/10/relative_loss_percent",
+            "mean_model_loss": "/10/mean_model_loss",
+            "mean_reference_loss": "/10/mean_reference_loss",
+            "model_breaches": "/10/model_breaches",
+            "reference_breaches": "/10/reference_breaches",
+            "n": "/10/n",
+            "status": "/10/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 720,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/11",
+          "relative_loss_percent": "16.513128710925677",
+          "mean_model_loss": "917442.574577165",
+          "mean_reference_loss": "787415.6197911236",
+          "model_breaches": 701,
+          "reference_breaches": 427,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/11/relative_loss_percent",
+            "mean_model_loss": "/11/mean_model_loss",
+            "mean_reference_loss": "/11/mean_reference_loss",
+            "model_breaches": "/11/model_breaches",
+            "reference_breaches": "/11/reference_breaches",
+            "n": "/11/n",
+            "status": "/11/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 1440,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/14",
+          "relative_loss_percent": "9.238708964820484",
+          "mean_model_loss": "823510.0803566112",
+          "mean_reference_loss": "753862.8826360594",
+          "model_breaches": 650,
+          "reference_breaches": 331,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/14/relative_loss_percent",
+            "mean_model_loss": "/14/mean_model_loss",
+            "mean_reference_loss": "/14/mean_reference_loss",
+            "model_breaches": "/14/model_breaches",
+            "reference_breaches": "/14/reference_breaches",
+            "n": "/14/n",
+            "status": "/14/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/18",
+          "relative_loss_percent": "1.8577089031029423",
+          "mean_model_loss": "772919.1169735254",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 608,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/18/relative_loss_percent",
+            "mean_model_loss": "/18/mean_model_loss",
+            "mean_reference_loss": "/18/mean_reference_loss",
+            "model_breaches": "/18/model_breaches",
+            "reference_breaches": "/18/reference_breaches",
+            "n": "/18/n",
+            "status": "/18/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/19",
+          "relative_loss_percent": "0.15840259366901976",
+          "mean_model_loss": "760024.3999580006",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 526,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/19/relative_loss_percent",
+            "mean_model_loss": "/19/mean_model_loss",
+            "mean_reference_loss": "/19/mean_reference_loss",
+            "model_breaches": "/19/model_breaches",
+            "reference_breaches": "/19/reference_breaches",
+            "n": "/19/n",
+            "status": "/19/status"
+          }
+        }
+      ],
+      "maximum_W_H24_reversal_rows": [
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR33",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/18",
+          "relative_loss_percent": "1.8577089031029423",
+          "mean_model_loss": "772919.1169735254",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 608,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/18/relative_loss_percent",
+            "mean_model_loss": "/18/mean_model_loss",
+            "mean_reference_loss": "/18/mean_reference_loss",
+            "model_breaches": "/18/model_breaches",
+            "reference_breaches": "/18/reference_breaches",
+            "n": "/18/n",
+            "status": "/18/status"
+          }
+        },
+        {
+          "horizon": 24,
+          "window": 5760,
+          "method": "QR4",
+          "scientific_status": "COMPLETE",
+          "source": {
+            "path": "results/revision-v9/wp3/contrasts.json",
+            "sha256": "576e9070644e211d417f84efba6a8b77b295be8e1f5870a5ec42aed7d7362ce4"
+          },
+          "json_pointer": "/19",
+          "relative_loss_percent": "0.15840259366901976",
+          "mean_model_loss": "760024.3999580006",
+          "mean_reference_loss": "758822.4055862104",
+          "model_breaches": 526,
+          "reference_breaches": 361,
+          "n": 6625,
+          "dm_status": "OK",
+          "reason": "Original design/result contents and chronology verified; user supplied anchor precision is two decimals and matches exactly. Stored percentage full precision mismatch is explicitly preserved.",
+          "initial_strict_import_status": "REJECTED",
+          "reconciled_static_import_status": "ELIGIBLE_UNDER_ROOT_DISPLAY_PRECISION_DECISION",
+          "field_json_pointers": {
+            "relative_loss_percent": "/19/relative_loss_percent",
+            "mean_model_loss": "/19/mean_model_loss",
+            "mean_reference_loss": "/19/mean_reference_loss",
+            "model_breaches": "/19/model_breaches",
+            "reference_breaches": "/19/reference_breaches",
+            "n": "/19/n",
+            "status": "/19/status"
+          }
+        }
+      ],
+      "curve_classification_records": [
+        {
+          "horizon": 6,
+          "method": "QR33",
+          "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+          "prediction_status_json_pointer": "/0/prediction_status",
+          "first_crossing": 572.3369815680499,
+          "first_crossing_json_pointer": "/0/first_crossing",
+          "conditional_crossings": [
+            572.3369815680499
+          ],
+          "conditional_crossings_json_pointer": "/0/conditional_crossings",
+          "observed_left_censoring": false,
+          "observed_left_censoring_json_pointer": "/0/observed_left_censoring",
+          "source": {
+            "path": "results/revision-v9/wp3/curve-predictions.json",
+            "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca"
+          }
+        },
+        {
+          "horizon": 6,
+          "method": "QR4",
+          "prediction_status": "NOT_TESTABLE_COMPATIBLE_LEFT_CENSORED",
+          "prediction_status_json_pointer": "/1/prediction_status",
+          "first_crossing": null,
+          "first_crossing_json_pointer": "/1/first_crossing",
+          "conditional_crossings": [
+            943.440642616732
+          ],
+          "conditional_crossings_json_pointer": "/1/conditional_crossings",
+          "observed_left_censoring": true,
+          "observed_left_censoring_json_pointer": "/1/observed_left_censoring",
+          "source": {
+            "path": "results/revision-v9/wp3/curve-predictions.json",
+            "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca"
+          }
+        },
+        {
+          "horizon": 24,
+          "method": "QR33",
+          "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+          "prediction_status_json_pointer": "/2/prediction_status",
+          "first_crossing": 2463.6419536695043,
+          "first_crossing_json_pointer": "/2/first_crossing",
+          "conditional_crossings": [
+            2463.6419536695043
+          ],
+          "conditional_crossings_json_pointer": "/2/conditional_crossings",
+          "observed_left_censoring": false,
+          "observed_left_censoring_json_pointer": "/2/observed_left_censoring",
+          "source": {
+            "path": "results/revision-v9/wp3/curve-predictions.json",
+            "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca"
+          }
+        },
+        {
+          "horizon": 24,
+          "method": "QR4",
+          "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+          "prediction_status_json_pointer": "/3/prediction_status",
+          "first_crossing": 1341.317712918093,
+          "first_crossing_json_pointer": "/3/first_crossing",
+          "conditional_crossings": [
+            1341.317712918093
+          ],
+          "conditional_crossings_json_pointer": "/3/conditional_crossings",
+          "observed_left_censoring": false,
+          "observed_left_censoring_json_pointer": "/3/observed_left_censoring",
+          "source": {
+            "path": "results/revision-v9/wp3/curve-predictions.json",
+            "sha256": "1568fbe4d43b4f93192d554e99bdf489c130f37dc7e89773d4a063b2f477ffca"
+          }
+        }
+      ],
+      "all_four_predictions_numerically_confirmed": false,
+      "all_four_confirmation_source": {
+        "path": "notes/revision-v9/wp3-acceptance.json",
+        "sha256": "d17ae69f33bda05b243873e7eefde84c5f92b7d1778556d736e61eb6f21619e1",
+        "json_pointer": "/all_four_numerical_confirmation"
+      },
+      "no_scientific_execution": true,
+      "no_tolerance_used": true
+    }
+  }
+}

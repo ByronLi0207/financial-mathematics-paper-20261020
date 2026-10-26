@@ -1,0 +1,18 @@
+WARN `--no-project` was provided, but no project was found
+............F                                                            [100%]
+=================================== FAILURES ===================================
+____________ test_paired_failure_precedes_unattempted_other_method _____________
+
+api = <module 'v9_confirmation' from '/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v9_confirmation.py'>
+
+    def test_paired_failure_precedes_unattempted_other_method(api):
+     model=[{'rep':0,'status':'NOT_ATTEMPTED','evaluation':None}]
+     reference=[{'rep':0,'status':'FAILED','evaluation':None}]
+     out=api.aggregate_pair(model,reference,1)
+>    assert out['failed_repetitions']==1 and out['unattempted_repetitions']==0
+E    assert (0 == 1)
+
+test_v9_confirmation.py:104: AssertionError
+=========================== short test summary info ============================
+FAILED test_v9_confirmation.py::test_paired_failure_precedes_unattempted_other_method
+1 failed, 12 passed in 0.15s

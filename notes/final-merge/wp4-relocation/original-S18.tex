@@ -1,0 +1,73 @@
+\section{Untuned forecast combinations}\label{sup:wp3}
+
+The median combination lowers Treasury-bill loss by 4.0\%, while the mean combination raises it by 2.8\%.
+
+Fixed report combinations use the matched historical and original
+regression reports at identical origins. Their arithmetic mean is untuned.
+The median also requires the original selected plain local-quantile report;
+neither a smaller predictor model nor the endpoint plug-in substitutes for
+that missing constituent. Combining floor-respecting reports preserves the floor, but does not guarantee a conditional quantile or a score below that of the best constituent. Identical reports generate an NA equal-loss p value rather
+than a manufactured significance result.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{All original-cell combination comparisons. A report combination can outperform one constituent while losing to the other.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Rule & \shortstack{vs historical\\(\%)} & \shortstack{vs regression\\(\%)} & Breaches \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Rule & \shortstack{vs historical\\(\%)} & \shortstack{vs regression\\(\%)} & Breaches \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & Mean & -6.91 & -4.90 & 338 \\
+FX & 6/720 & Median & -4.81 & -2.75 & 325 \\
+FX & 6/2880 & Mean & -10.61 & 4.87 & 330 \\
+FX & 6/2880 & Median & -11.17 & 4.22 & 327 \\
+FX & 24/720 & Mean & 5.50 & -19.77 & 533 \\
+FX & 24/720 & Median & 5.00 & -20.15 & 514 \\
+FX & 24/2880 & Mean & -8.94 & -5.39 & 345 \\
+FX & 24/2880 & Median & -3.74 & 0.01 & 416 \\
+Bills & 6/52 & Mean & -3.15 & -47.18 & 26 \\
+Bills & 6/52 & Median & 0.00 & -45.46 & 11 \\
+Bills & 6/260 & Mean & 2.77 & -31.84 & 40 \\
+Bills & 6/260 & Median & -3.98 & -36.32 & 28 \\
+Bills & 24/52 & Mean & 18.87 & -63.69 & 54 \\
+Bills & 24/52 & Median & 0.00 & -69.46 & 33 \\
+Bills & 24/260 & Mean & -5.32 & -54.88 & 28 \\
+Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrr}
+\caption{Complete combination counts including the added panel. Missing median constituents remain NA.}\\
+\toprule
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Mean & 56 & 56 & 0 & 14 & 16 & 54 & 0 \\
+Median & 56 & 8 & 48 & 3 & 5 & 6 & 2 \\
+\end{longtable}
+\endgroup
+
+The added panel lacks the specified plain local-quantile
+constituent, so all its median rows remain unavailable. Mean combinations are
+complete, but lower loss than regression alone does not imply lower loss than
+the historical rule. All panel-specific values and every comparison remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp3-combinations.json}{the complete combination record}.

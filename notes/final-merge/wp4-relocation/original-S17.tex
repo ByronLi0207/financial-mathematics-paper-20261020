@@ -1,0 +1,45 @@
+\section{Wrapper comparisons, uncertainty and missing cells}\label{sup:wp2-pairs}
+
+Comparing wrapped regression with wrapped historical reports is a
+different question from comparing either wrapper with its unwrapped base.
+The following table retains every within-cell comparison. A lower coverage distance measures closeness of the empirical hit rate to the target probability, not conditional coverage or lower monetary loss.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Every paired wrapper comparison. Calibration adjustment preserves the long-history short-horizon FX score gain but does not produce universal dominance.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Regression vs\\historical (\%)} & \shortstack{Breaches\\regression / historical} & \shortstack{Regression\\adjustment} & \shortstack{Historical\\adjustment} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Regression vs\\historical (\%)} & \shortstack{Breaches\\regression / historical} & \shortstack{Regression\\adjustment} & \shortstack{Historical\\adjustment} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & -6.98 & 352/331 & 0.00313 & 0.00004 \\
+FX & 6/2880 & -15.00 & 329/328 & 0.00034 & 0.00049 \\
+FX & 24/720 & 10.72 & 393/322 & 0.00932 & 0.00140 \\
+FX & 24/2880 & -4.48 & 294/323 & 0.00562 & 0.00125 \\
+Bills & 6/52 & -8.61 & 29/18 & 0.05469 & 0.01498 \\
+Bills & 6/260 & 7.89 & 6/7 & 0.02834 & 0.02473 \\
+Bills & 24/52 & 43.09 & 47/38 & 0.11968 & 0.08718 \\
+Bills & 24/260 & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The working-reference comparison inventory contains 56 fixed slots,
+with 5 raw p values unavailable.
+The reported Holm bookkeeping keeps those slots; mapping an NA component to a
+bookkeeping value does not create an observed p value or validate failed
+reference assumptions. HLN references remain separately identified.
+Exact update equations, gamma candidates, selection freezes,
+numerical receipts and all comparisons remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{the v6 replay guide} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp2-summary.json}{the complete WP2 inventory}.
+The original primaries are not overwritten by these post-result / exploratory
+extensions. The upper-horizon NA rows and adverse SAV comparisons remain
+visible rather than becoming a favorable subset.

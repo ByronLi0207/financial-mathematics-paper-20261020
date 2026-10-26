@@ -1,0 +1,375 @@
+{
+  "created_utc": "2026-10-23T17:37:27.786899+00:00",
+  "scope": "Directed primary-source positioning evidence only; no empirical reruns or cross-model review.",
+  "not_reported_rule": "n.r. means not reported in the specifically inspected task/passages or not verifiable here; never no such method anywhere in the paper/literature.",
+  "priority_ruling": "These directed sources cannot establish a universal first/unique conjunction. The endpoint predecessor already evaluates scores and coverage jointly.",
+  "rows": [
+    {
+      "id": "wisniewski2020_2024",
+      "short_label": "Wisniewski et al. (2020); Wisniewski (2024), Chapter 6",
+      "verification": "fresh_primary_body",
+      "dimensions": {
+        "target": {
+          "value": "Next-hour signed endpoint intervals",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§1, physical p2",
+              "support": "next-hour position interval"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§6.1, physical p108 / printed p107",
+              "support": "same endpoint task"
+            }
+          ]
+        },
+        "data_unit": {
+          "value": "One market maker; hourly USD client-flow net positions",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§3.1, physical p4",
+              "support": "one dealer, five liquid pairs"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§2.4, physical p34 / printed p33; §6.3.1, p111 / p110",
+              "support": "same aggregate source family"
+            }
+          ]
+        },
+        "known_floor": {
+          "value": "n.r.: projection to current absolute position for a peak target",
+          "status": "not_reported_in_inspected_task",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§2, physical pp3–4; §§3.3–3.4, pp7–8",
+              "support": "signed endpoint intervals"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§6.2, physical pp109–111 / printed pp108–110",
+              "support": "symmetric / normalized endpoint formulas"
+            }
+          ]
+        },
+        "maturity_control": {
+          "value": "Ordered training/calibration/test; multi-record peak maturation n.r.",
+          "status": "partial",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§2 / Fig1, physical p3; §3.2, p7",
+              "support": "rolling sequence and walk-forward"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§6.2 / Fig6.1, physical pp109–110; §6.3.2, pp112–113",
+              "support": "chronological endpoint experiment"
+            }
+          ]
+        },
+        "evaluation": {
+          "value": "Pinball, Winkler, width/coverage; UC, CC and independence",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§3.5, physical pp9–10; §4.3, p14",
+              "support": "scores and coverage jointly"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§6.3.5, physical pp118–119; §6.4.3 / Table6.2, p124",
+              "support": "scores and coverage tests"
+            }
+          ]
+        },
+        "cross_source_transfer": {
+          "value": "n.r. in the endpoint experiment",
+          "status": "not_reported_in_inspected_task",
+          "evidence": [
+            {
+              "source_id": "W20",
+              "locator": "§3.1 and §4, physical pp4,11–15",
+              "support": "one net-position dataset"
+            },
+            {
+              "source_id": "W24",
+              "locator": "§6.3.1 and §§6.4–6.5, physical pp111,119–125",
+              "support": "chapter-specific experiment; other thesis case studies are different tasks"
+            }
+          ]
+        }
+      },
+      "quote_budget": {
+        "W20": "out of rolling sample prediction scheme",
+        "W24": "predict a MM’s net position within the next hour"
+      },
+      "ruling": "Do not claim first joint score/coverage evaluation or absent sequential training; distinguish completed multi-record peak response."
+    },
+    {
+      "id": "boudoukh2004",
+      "short_label": "Boudoukh et al. (2004), MaxVaR",
+      "verification": "fresh_primary_body",
+      "dimensions": {
+        "target": {
+          "value": "Tail threshold for worst cumulative portfolio return before a horizon",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§2, physical/printed pp2–3",
+              "support": "minimum portfolio-value path relative to initial value"
+            }
+          ]
+        },
+        "data_unit": {
+          "value": "Stylized fixed portfolio / asset diffusion",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§§1–2, p2",
+              "support": "fixed composition and lognormal diffusion"
+            }
+          ]
+        },
+        "known_floor": {
+          "value": "n.r.: current-|position| projection; initial portfolio value is explicit",
+          "status": "not_reported_in_inspected_task",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§2, pp2–3",
+              "support": "S0 anchors cumulative return; not the present absolute-position response"
+            }
+          ]
+        },
+        "maturity_control": {
+          "value": "n.r.; analytical/simulation study",
+          "status": "not_reported_in_inspected_task",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§§2–3, pp2–4",
+              "support": "diffusion calculation and discrete-monitoring simulation"
+            }
+          ]
+        },
+        "evaluation": {
+          "value": "Analytical tail probabilities, VaR/MaxVaR ratios and simulated monitoring",
+          "status": "reported",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§3 / Tables1–2, pp3–5",
+              "support": "parameter illustrations"
+            }
+          ]
+        },
+        "cross_source_transfer": {
+          "value": "n.r.; parameter illustrations, not an empirical cross-source benchmark",
+          "status": "not_reported_in_inspected_task",
+          "evidence": [
+            {
+              "source_id": "MAX_FINAL",
+              "locator": "§§3–4, pp3–5",
+              "support": "hypothetical drift/volatility/horizon cases"
+            }
+          ]
+        }
+      },
+      "quote_budget": {
+        "MAX_FINAL": "no change in portfolio composition"
+      },
+      "ruling": "Path-extreme risk and endpoint-to-path probability conversion are established; no universal claim that financial peak studies lack known starting information."
+    },
+    {
+      "id": "hoogen2017",
+      "short_label": "van den Hoogen (2017)",
+      "verification": "historical_body_receipt_only_current_access_failed",
+      "dimensions": {
+        "target": {
+          "value": "Historically documented: conditional quantile of maximum cumulative payment deficit",
+          "status": "historical_not_freshly_verified",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "previous selected physical pp75–94; receipt in notes/revision-20261022/known-cash-peak-precursor-restoration.md",
+              "support": "original body inaccessible this pass"
+            }
+          ]
+        },
+        "data_unit": {
+          "value": "Historically documented: confidential bank payment transactions",
+          "status": "historical_not_freshly_verified",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "previous selected physical pp19–24,75–94; same receipt",
+              "support": "bank transaction inputs; redacted results"
+            }
+          ]
+        },
+        "known_floor": {
+          "value": "n.r.",
+          "status": "unverified_current_access",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "current official resolver/original PDF timeout",
+              "support": "do not infer absence from unread material"
+            }
+          ]
+        },
+        "maturity_control": {
+          "value": "n.r.",
+          "status": "unverified_current_access",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "current official resolver/original PDF timeout",
+              "support": "do not infer absence"
+            }
+          ]
+        },
+        "evaluation": {
+          "value": "Historically documented: path simulation and EVT tail estimation; score/coverage details n.r.",
+          "status": "historical_not_freshly_verified",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "previous selected physical pp75–94,108–110; same receipt",
+              "support": "not a fresh table/body read"
+            }
+          ]
+        },
+        "cross_source_transfer": {
+          "value": "n.r.",
+          "status": "unverified_current_access",
+          "evidence": [
+            {
+              "source_id": "HOOGEN",
+              "locator": "current official resolver/original PDF timeout",
+              "support": "scope remains unresolved"
+            }
+          ]
+        }
+      },
+      "ruling": "Keep the known conditional cash-peak precursor in narrative. The fresh-body positioning-table requirement is not met for this row; either label all unauthenticated cells n.r. with this boundary, or omit the row from the table while retaining narrative citation. Never convert historical notes into new primary read credit."
+    }
+  ],
+  "sources": {
+    "W20": {
+      "title": "Application of Conformal Prediction Interval Estimations to Market Makers’ Net Positions",
+      "authors": [
+        "Wojciech Wisniewski",
+        "David Lindsay",
+        "Siân Lindsay"
+      ],
+      "year": 2020,
+      "url": "https://proceedings.mlr.press/v128/wisniewski20a/wisniewski20a.pdf",
+      "record_url": "https://proceedings.mlr.press/v128/wisniewski20a.html",
+      "venue": "PMLR 128:285–301",
+      "physical_pages": 17,
+      "fresh_reading_scope": "Task/rolling scheme, features/models, benchmark and performance definitions (§§1–3.5); selected §4 calibration prose; original Tables1–2/statistical-testing text physical pp13–14 and conclusion physical pp14–15 newly re-read in extracted text. Not an all-figure visual QA or source-result reproduction.",
+      "doi": "not verified",
+      "bytes": 2431326,
+      "sha256": "b42f3abca77f5913499e59e2efdfc62b2b57e07faaca03fdc3fdd5d59a6d0bf2",
+      "local_private_cache": ".scratch/v5-literature-a/wisniewski2020.pdf"
+    },
+    "W24": {
+      "title": "Net Position and Retail Trader Behaviour: Implications for Market Makers’ Risk Management Strategies",
+      "authors": [
+        "Wojciech Wisniewski"
+      ],
+      "award_year": 2024,
+      "cover_year": 2023,
+      "award_date": "2024-10-01",
+      "url": "https://pure.royalholloway.ac.uk/ws/portalfiles/portal/63018039/2024WisniewskiWJWphd.pdf",
+      "record_url": "https://pure.royalholloway.ac.uk/en/publications/net-position-and-retail-trader-behaviour-implications-for-market-/",
+      "physical_pages": 139,
+      "bytes": 11980603,
+      "sha256": "54856d5cc7353786c05bf411eca02529b9f70734a7dba4a3af1ebc81873943ca",
+      "fresh_reading_scope": "cover physical p1; background physical pp29–35; all Chapter6 text/captions physical pp107–125 (printed pp106–124). Not whole thesis or all-figure QA.",
+      "local_private_cache": ".scratch/v5-literature-a/wisniewski2024.pdf",
+      "doi": "not verified"
+    },
+    "MAX_FINAL": {
+      "title": "MaxVaR: Long-Horizon Value at Risk in a Mark-to-Market Environment",
+      "authors": [
+        "Jacob Boudoukh",
+        "Matthew Richardson",
+        "Richard Stanton",
+        "Robert F. Whitelaw"
+      ],
+      "year": 2004,
+      "url": "https://pages.stern.nyu.edu/~rwhitela/papers/maxvar%20joim04.pdf",
+      "venue": "Journal of Investment Management 2(3):1–6",
+      "physical_pages": 6,
+      "fresh_reading_scope": "all six-page final-layout body/notes via official author PDF; also read earlier nine-page author-manuscript §§1–4",
+      "earlier_manuscript_url": "https://pages.stern.nyu.edu/~rwhitela/papers/maxvar.pdf",
+      "metadata_correction": "Final-layout first page explicitly says pp1–6; historical local notes 14–19 are not followed. v4 current reference omits pages, so no existing empirical number changes.",
+      "doi": "not verified"
+    },
+    "HOOGEN": {
+      "title": "Intraday liquidity risk estimation using transaction data: an extreme value theory approach",
+      "authors": [
+        "Sofie van den Hoogen"
+      ],
+      "year": 2017,
+      "month": "August",
+      "url": "https://repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f?preview=1",
+      "record_url": "https://resolver.tudelft.nl/uuid:1c0c4545-bb07-4916-aa37-1d4bea3b7872",
+      "fresh_reading_scope": "search-index cover/title only; official resolver, new record, original PDF and bounded direct-download attempts failed. Historical local receipts were read but not counted as freshly verified original body.",
+      "historical_identity_only": {
+        "physical_pages": 160,
+        "bytes": 1305967,
+        "sha256": "773faae8edfb4d296762d12ea446c9b1be8fb1c47d5c58be68d8d47609461e4c"
+      },
+      "doi": "not verified"
+    }
+  },
+  "search_log_fragment": [
+    {
+      "date": "2026-10-23",
+      "database": "Web search; official PMLR proceedings",
+      "queries": [
+        "site:proceedings.mlr.press/v128/wisniewski20a \"2020\""
+      ],
+      "result": "Owning record and original PDF found."
+    },
+    {
+      "date": "2026-10-23",
+      "database": "Web search; author NYU site; SSRN metadata",
+      "queries": [
+        "\"MaxVaR\" \"long-horizon\" Boudoukh 2004 Journal Investment Management"
+      ],
+      "result": "Found author-hosted final-layout six-page original; source title and pages authenticated."
+    },
+    {
+      "date": "2026-10-23",
+      "database": "Web search; official Royal Holloway portal",
+      "queries": [
+        "\"Net Position and Retail Trader Behaviour\" \"Chapter 6\""
+      ],
+      "result": "Broad search was noisy; owning institutional record and direct original opened separately; bounded direct PDF download succeeded."
+    },
+    {
+      "date": "2026-10-23",
+      "database": "Web search; official Delft repository/resolver",
+      "queries": [
+        "\"Intraday liquidity risk estimation using transaction data\" \"pdf\"",
+        "site:repository.tudelft.nl \"Hoogen\" \"liquidity\" 2017",
+        "site:repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f \"conditional\"",
+        "site:repository.tudelft.nl/file/File_3c80dabb-c431-47ac-8622-c8709d473c6f \"balance\""
+      ],
+      "result": "Title/cover search-index hit; direct official bodies timed out. Phrase-locator result does not establish absence of concepts."
+    }
+  ]
+}

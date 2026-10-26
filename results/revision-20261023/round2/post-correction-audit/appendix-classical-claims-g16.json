@@ -1,0 +1,191 @@
+{
+  "audit_kind": "Bounded read-only mathematical review of g16 Appendices A-F",
+  "reviewed_at_utc": "2026-10-23T13:09:27.219018+00:00",
+  "status": "NO_CONCLUSION_CHANGING_MATHEMATICAL_INCONSISTENCY_FOUND",
+  "input_content": "manuscript/revision-v3/paper-content.json",
+  "input_content_sha256": "85d14613df8def23104fba35bc6de2369aae18f5dcf383e9ae7eb3f5fecdb86c",
+  "pdf_sha256": "0d09bbdf268c3af139b76378a31f508b065a6aad3c6c1599859d6c1529319edc",
+  "actual_reading_scope": {
+    "source_sections": "Every block of current Appendices A-F, including every prose paragraph, displayed equation, table caption/header and displayed table row",
+    "total_blocks": 89,
+    "prose_paragraphs": 53,
+    "displayed_equations": 15,
+    "tables": 13,
+    "displayed_table_rows": 86,
+    "sections": [
+      {"title": "Appendix A. Finite geometry and its predictive limits", "block_indices_inclusive": [0, 28], "canonical_json_sha256": "850a1b8d8807eb319dad34195ea5f06ecdc88f736865cf950637f414ce02c5b0"},
+      {"title": "Appendix B. Earlier construction and retrieval evidence", "block_indices_inclusive": [0, 5], "canonical_json_sha256": "35dd0e2c96da045e0b9dd4dead985d26f88192c7ea025fbf6c12b14aacdcccf2"},
+      {"title": "Appendix C. Numerical, rank and reproduction conventions", "block_indices_inclusive": [0, 11], "canonical_json_sha256": "31dc04739190ddc22291f804e02a166be783e490163f8a3e15d19699866896c9"},
+      {"title": "Appendix D. Explicitly post-result report diagnostics", "block_indices_inclusive": [0, 19], "canonical_json_sha256": "af3969617c6f3a062159662ebc5aa2a1da7f65b4fba5f05e8a5439e028fb7042"},
+      {"title": "Appendix E. Complete fixed-report preference frontiers", "block_indices_inclusive": [0, 7], "canonical_json_sha256": "7f79f28ee588c17c5884e2467b2d74c45ee0b75cd808e10999a1c46655f21865"},
+      {"title": "Appendix F. Complete original model menus and exploratory replay", "block_indices_inclusive": [0, 13], "canonical_json_sha256": "650b653c8340c763f0ccf8a70251b3e82edf309d67c74dd1cbb60f3ebf136922"}
+    ],
+    "targeted_code_reading": [
+      "ar1_replay.py lines 148-229: mature union, fixed fitted coefficients, phi=1 frozen-S operation order and ordered path replay",
+      "coverage_evalues.py lines 1-102: exact whole-product mixture and globally anchored phase average",
+      "preference_frontier.py lines 90-155: fixed affine loss, pairwise crossings, endpoint and point-only minimizers",
+      "empirical_headroom.py lines 1-124: exact ranks, mature frozen pool and issue-known floor",
+      "conditional_quantile.py selected certificate, feasibility and ADMM lines identified by static search; dual objective and gap were also re-derived directly from the manuscript",
+      "run_rank_ablation.py selected schedule, maturity, scoring and archived-reference lines identified by static search"
+    ],
+    "context_notes_read": [
+      "results/revision-20261023/round2/finite-geometry-frontier-audit.json",
+      "notes/revision-20261022/endpoint-marginals-and-peak-score-comparability.md",
+      "notes/revision-20261022/horizon-rearrangement-pinball-and-coverage.md"
+    ],
+    "reading_limit": "This is direct mathematical reasoning over the supplied claims and selected implementation passages, not a formal proof-assistant verification, new financial readback, PDF visual review or full reading of all cited original papers. Earlier source-reading records are context, not newly credited reading."
+  },
+  "checks": [
+    {
+      "id": "A-common-set-and-rank",
+      "location": "A blocks 0-8",
+      "result": "AGREES",
+      "conditions_checked": "Nonempty common completed episode set J, identical available rank k, same query x, B=|x|, h=0 included, real arithmetic and duplicate-preserving order statistics",
+      "reasoning": "Native P_i>=|N_i| gives A_i=B+P_i-|N_i|>=B, and h=0 gives T_i>=B. The monotone 1-Lipschitz projection C_B commutes with finite order statistics and common translation. Coordinatewise bounds then give |F-K|<=d_abs and |S-K|<=d_signed. The triangle bound is valid; changing historical sets does not inherit it."
+    },
+    {
+      "id": "A-order-statistic-and-pinball-stability",
+      "location": "A blocks 8-9",
+      "result": "AGREES",
+      "conditions_checked": "Paired arrays use the same index set/rank; quantile probability is in (0,1), as fixed by the main study",
+      "reasoning": "The sup-norm order-statistic bound follows from u_i<=v_i+r and its reverse. Reportwise pinball slopes have absolute magnitude at most max(tau,1-tau), so the claimed absolute loss-difference bound follows without a loss ordering or expected-accuracy guarantee."
+    },
+    {
+      "id": "A-signed-neighbor-minimax",
+      "location": "A block 9",
+      "result": "AGREES",
+      "conditions_checked": "One fixed candidate universe, signed distance |x-N_i|, fixed subset count m, declared tie convention",
+      "reasoning": "Every size-m subset has a maximum distance at least the mth smallest candidate distance. The text correctly limits this to the signed radius and declines to infer optimal absolute-anchor radius, radius sum, report gap, multivariate distance or forecast loss."
+    },
+    {
+      "id": "A-envelope-branches-range-and-bound",
+      "location": "A blocks 11-15",
+      "result": "AGREES",
+      "conditions_checked": "u_i=b_i>=0 and v_i=-a_i>=0 because zero is in each increment path; common query floor and same selected set/rank",
+      "reasoning": "For z>=0, g_i=max(u_i,v_i-2z); for z<=0, g_i=max(u_i+2z,v_i). The branches meet at zero, are globally 2-Lipschitz and lie between min(u_i,v_i) and max(u_i,v_i). Combining each row's distance and range bounds before taking the maximum validates max_i min(2|x-N_i|,|u_i-v_i|). Monotonicity gives the same-set R upper ordering, with no score preference implied."
+    },
+    {
+      "id": "A-equality-sufficient-conditions",
+      "location": "A blocks 15-16",
+      "result": "AGREES",
+      "conditions_checked": "The stated branch conditions hold for every selected row and both historical/query anchors have the stated sign",
+      "reasoning": "u_i=v_i makes each g_i anchor-independent. Nonnegative anchors with u_i>=v_i give g_i=u_i; the nonpositive counterpart gives g_i=v_i. These are sufficient rather than necessary, since pooled order statistics may coincide despite unequal paired rows. B_i<=B gives F>=K coordinatewise; B_i>=B gives F<=K. Equal absolute anchors force F=K while leaving S sign-sensitive."
+    },
+    {
+      "id": "A-coherent-alternating-example",
+      "location": "A block 16",
+      "result": "AGREES",
+      "conditions_checked": "H=1, c>0, t=721, J=1..720, tau=19/20, all label ends <=t",
+      "reasoning": "There are 360 positive and 360 negative historical anchors. Native peaks are c and headrooms zero; raw translated peaks are 360 copies each of c and 3c. Corrected rank 685 therefore gives F=K=c, S=3c, d_abs=0 and d_signed=2c. It is a coherent constructed history, not a retrieval-selected or empirical performance claim."
+    },
+    {
+      "id": "A-opposite-futures-and-report-order-counterexamples",
+      "location": "A blocks 18-22, Tables A1-A2",
+      "result": "AGREES",
+      "conditions_checked": "Positive d, H>=1, available corrected rank and historical labels complete by issue; both continuations share the same observed history",
+      "reasoning": "The declining observed path gives all G_i=0, query floor zero, F=0 and S=Hd. The two supplied future paths give opposite strict pinball rankings for 0<tau<1. In the separate H1 history (0,-4,-1,2), G=(4,0,1), translated peaks=(2,5,5), rank=3 and F/S/K=6/5/4. These refute universal deterministic orderings without identifying a population conditional law."
+    },
+    {
+      "id": "A-F-fixed-coefficient-replay-identity",
+      "location": "A blocks 24-28; F blocks 5-11",
+      "result": "AGREES",
+      "conditions_checked": "The same fixed c and phi define historical residuals and their replay within a refit block; initial replay value is x",
+      "reasoning": "Subtracting native and replay recursions gives M_i,h-N_i+h=phi^h(x-N_i), hence raw-translation minus replay is (1-phi^h)(x-N_i). Reverse triangle and max stability give the stated peak gap. The simplification 1-phi^H is explicitly restricted to 0<=phi<=1. Path order generally matters to the dynamic correction. No innovation law or sign of loss improvement follows from the identity."
+    },
+    {
+      "id": "F-unique-transition-OLS-pool",
+      "location": "F blocks 5-10; ar1_replay.py lines 148-224",
+      "result": "AGREES",
+      "conditions_checked": "Mature origins i0=kappa-H-W+1 through kappa-H, H+1 levels per scenario, scheduled coefficients/history frozen until next refit",
+      "reasoning": "The union is levels i0..kappa, containing W+H levels and W+H-1 unique adjacent transitions. OLS on that single union does not multiply observations by overlapping scenario membership. Query uses the observed issue anchor. The phi=1 code explicitly follows frozen-S translated-peak/subtract-floor/rank/add-floor order; finite negative or above-one phi remains eligible without being called true dynamics."
+    },
+    {
+      "id": "C-D-empirical-rank-minimizer",
+      "location": "C block 1; D blocks 14-18",
+      "result": "AGREES",
+      "conditions_checked": "Real arithmetic, tau=19/20, duplicate-preserving order statistics, positive training-response scale, same W mature headrooms and update schedule",
+      "reasoning": "The empirical pinball minimizer criterion is F_W(c-)<=tau<=F_W(c). If W*tau=j is integral, the full interval [G_(j),G_(j+1)] minimizes; otherwise G_(ceil(W*tau)) is a minimizing value. W=720/2880/260 therefore permits I/F as both endpoints, while W=52 has ordinary/corrected ranks 50/51 for distinct values. Ties can collapse differences. Positive scaling and common floor translation preserve the rank/minimizer set. Current text does not call corrected F universally non-ERM or infer evaluation superiority from training optimality."
+    },
+    {
+      "id": "C-ridge-dual-and-gap",
+      "location": "C blocks 3-5; selected conditional_quantile.py certificate lines",
+      "result": "AGREES",
+      "conditions_checked": "Mean pinball objective, unpenalized intercept, lambda>0 from the declared menus, tau in (0,1), feasible nu in [tau-1,tau] with zero sum",
+      "reasoning": "Conjugating pinball and minimizing ridge slopes gives D(nu)=nu^T y/W-||Z^T nu/W||^2/(2 lambda); zero sum is the intercept stationarity condition. The Fenchel complement plus ridge stationarity square yields a nonnegative real-arithmetic gap. Exact dyadic-vector box/zero-sum checks coexist with floating objective/gap evaluation. The text explicitly avoids claiming interval-arithmetic certification or statistical validity from numerical acceptance."
+    },
+    {
+      "id": "C-equivalent-peak-parameterization",
+      "location": "C blocks 7-11",
+      "result": "AGREES",
+      "conditions_checked": "Fixed refit, response scale a>0, standardized magnitude coordinate B_i=mu_B+s_B*z_iB and positive homogeneity of pinball",
+      "reasoning": "With alpha=mu_B+a*beta0 and theta=a*beta+s_B*e_B, peak residual equals a times normalized headroom residual. Multiplying the whole normalized objective by a produces lambda/(2a)*||theta-s_B*e_B||^2, with an unpenalized intercept. It is therefore not ordinary zero-centered ridge on P. The issued report is max(B_t,alpha+z_t^T theta)."
+    },
+    {
+      "id": "C-known-floor-and-conditional-translation",
+      "location": "C block 11 and main issue-known target definition",
+      "result": "AGREES",
+      "conditions_checked": "B_t is measurable in the common issue information and P_tH>=B_t; same quantile probability and conditioning information",
+      "reasoning": "Adding an issue-known constant translates the conditional quantile set of G into that of P. Raising a report below B to B decreases the underprediction part of realized pinball loss. These facts do not make a fitted affine model correct or provide distributional coverage."
+    },
+    {
+      "id": "D-target-order-versus-report-order",
+      "location": "D blocks 0-5",
+      "result": "AGREES",
+      "conditions_checked": "Same source, issue anchor, observation path and nested H6/H24 record windows; separate H-specific fitted/mature pools remain allowed",
+      "reasoning": "The nested path maximum is ordered, while separately fitted reports need not be. A learned short report is not a known lower bound for the long target. In the supplied example, raising long report 1 to 10 at target 1 changes .95 pinball from 0 to .45. This concerns a one-coordinate operation and does not refute a different equal-weight joint rearrangement objective; no universal best repair is asserted. Empty floor-group rates remain undefined rather than zero."
+    },
+    {
+      "id": "D-fixed-terminal-delayed-mixture",
+      "location": "D blocks 7-12; coverage_evalues.py lines 24-100",
+      "result": "AGREES_WITH_EXPLICIT_NULL_AND_SELECTION_LIMITS",
+      "conditions_checked": "Strict hits, fixed causal procedure and family, conditional hit probability <=alpha given full issue information, u in [alpha,1], fixed terminal, H+1 phases with prior same-phase target already resolved",
+      "reasoning": "The hit/no-hit factor has conditional mean at most one because its mean is nondecreasing in the hit probability and equals one at alpha. Within each phase the preceding product is issue-measurable, so iterated expectation applies. Mixing whole products under a normalized uniform prior and averaging all phases preserves the fixed-terminal expectation bound, with empty phases equal to one. The code's positive-sum recurrence matches the stated integral after u=alpha+(1-alpha)v. No independence or magnitude moment is required under that strong conditional null."
+    },
+    {
+      "id": "D-evalue-quantifiers-and-threshold",
+      "location": "D blocks 10-12",
+      "result": "AGREES",
+      "conditions_checked": "A hypothetical genuinely fixed causal procedure, not the retrospectively selected empirical family; 56 labels including aliases and alpha=1/20",
+      "reasoning": "The formal threshold 56/(1/20)=1120 is arithmetically correct and aliases only make that reference conservative. The text expressly declines arbitrary-stopping/full-filtration supermartingale claims, retrospective familywise control and individually calibrated post-selection e/p values. A noncrossing is not coverage certification or an accuracy ranking. Distinct phase allocations can yield different mixtures at the same aggregate hit count."
+    },
+    {
+      "id": "E-affine-loss-and-crossings",
+      "location": "E blocks 0-3; F Table F4",
+      "result": "AGREES",
+      "conditions_checked": "Fixed issued reports and common origins, U/V are means of positive overrun/unused allowance, nonnegative weights; a=0/1 are limiting component objectives",
+      "reasoning": "J_m(a)=aU_m+(1-a)V_m and the affine pair difference have the stated form. Componentwise nonincrease implies weak preference for every nonnegative weighting; strict opposing signs give a unique interior crossing. For 0<a<1, omega=a/(1-a) preserves ordering after multiplication by 1-a. The endpoints are handled separately, rather than assigning a finite ratio at a=1. Changing a does not refit a different quantile or imply dominance over every consistent .95 score."
+    },
+    {
+      "id": "E-rational-exactness-menu-and-endpoints",
+      "location": "E blocks 0 and 4-7; preference_frontier.py lines 90-155",
+      "result": "AGREES",
+      "conditions_checked": "Finite archived eight-report menu in each matched cell, saved decimal aggregate tokens, all intersections and endpoints retained",
+      "reasoning": "The current appendix explicitly limits rational exactness to serialized decimal summaries, not unrounded raw means; the separate normalized-loss column agreement is tolerant. Affine ordering is fixed on each crossing-partition interval, and separate endpoint checks retain point-only winners and ties. Absence from an open-interval sequence is correctly not an endpoint claim. The frontier is a hindsight empirical object on this finite menu, not an operational selector, confidence set or claim over the later D1/D2 universe."
+    },
+    {
+      "id": "B-F-descriptive-versus-stochastic-claims",
+      "location": "B blocks 0-5; F blocks 0-3 and 11-13",
+      "result": "AGREES",
+      "conditions_checked": "Within-source units, matched references identified, original annual/sparse/menu outcomes retained; no new distributional premise inferred from aggregate signs",
+      "reasoning": "The tables separate original rolling, frozen, retrieval and AR contexts. Sparse grids remove overlapping labels but not shared fitting history or dependence. Bootstrap-style profiles do not claim confidence intervals without the stationarity/moment/dependence premises. Below-one fitted level slopes and lower reports do not identify true mean reversion, a stationary increment law, or improved loss. AR remains explicitly distinct from full volatility-filtered FHS."
+    }
+  ],
+  "actionable_conclusion_changing_findings": [],
+  "scope_boundaries_that_remain_essential": [
+    "Common-set finite bounds do not apply automatically after changing rows, ranks, response scaling or multivariate neighbor geometry.",
+    "Training empirical minimizer endpoints do not establish future coverage or a lower evaluation loss.",
+    "Fixed-coefficient algebra and numerical OLS/ADMM acceptance do not establish a true innovation law, mean reversion or statistical calibration.",
+    "The one-sided delayed-evalue proof needs a genuinely fixed causal procedure under the full conditional null; current post-selection records are explicitly outside an automatic empirical validity claim.",
+    "Exact preference boundaries refer to saved decimal mean tokens on a fixed finite menu; no financing prices, universally best quantile fit or deployment selector is identified.",
+    "Observed negative and favorable table entries remain descriptive inspected-sample results. This audit did not reconstruct financial targets, refit any method or independently validate every archived numerical entry."
+  ],
+  "source_hashes": {
+    "ar1_replay.py": "e40a9112f92d44d10812e6b10e0dc3889c3b021cfb3f40016e8fbffc96e4fd78",
+    "coverage_evalues.py": "2d4fc2804d6d781f485751f3dd61756934db51d24e5f71db588441f00d2e203e",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "empirical_headroom.py": "db5d73facae28432bb0617d173e5b4c933d95e52b43f9363543e21194919412e",
+    "preference_frontier.py": "72680f65671a7b7cf4408946b4208a57a9166e4cda253b22aabd8f0f61ba71b5",
+    "run_rank_ablation.py": "8e26639a6bc310b6416e26162dab69817df5f2a9701b780bb996b3fd8bba1d80"
+  },
+  "mutation_and_execution_scope": "Only this new audit JSON was created. No existing source, protocol, state, result, manuscript, registry, CHANGELOG or Git state was changed. No model fit, simulation, pytest, Cloud/Claude operation, installation, deletion or time-filling wait was performed."
+}

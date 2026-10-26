@@ -1,0 +1,139 @@
+{
+  "design_id": "v8-wp3-level-ar1-garch-fixed32",
+  "post_result": true,
+  "exploratory": true,
+  "phi": [
+    0.7,
+    0.9,
+    0.98
+  ],
+  "variance_persistence": [
+    0.0,
+    0.9,
+    0.98
+  ],
+  "windows": [
+    52,
+    260,
+    720,
+    2880
+  ],
+  "horizons": [
+    6,
+    24
+  ],
+  "variance_parameters": {
+    "0": {
+      "omega": 1.0,
+      "alpha": 0.0,
+      "beta": 0.0
+    },
+    "0.9": {
+      "omega": 0.1,
+      "alpha": 0.05,
+      "beta": 0.85
+    },
+    "0.98": {
+      "omega": 0.02,
+      "alpha": 0.05,
+      "beta": 0.93
+    }
+  },
+  "burn_in": 20000,
+  "retained_observations": 3264,
+  "initial_level": 0.0,
+  "initial_variance": 1.0,
+  "retained_clock_first": "2000-01-03T00:00:00",
+  "gap_seconds": 3600,
+  "short_rms": 24,
+  "long_rms": 168,
+  "feature_valid_from": 168,
+  "refit_step": 24,
+  "tau_numerator": 19,
+  "tau_denominator": 20,
+  "validation_first": 3072,
+  "validation_last": 3143,
+  "evaluation_first": 3168,
+  "evaluation_last": 3239,
+  "repetitions": 32,
+  "master_entropy": 2026102408,
+  "rng": "numpy.random.PCG64(SeedSequence(master_entropy,spawn_key=(rep,)))",
+  "common_random_numbers": "same full normal innovation vector within rep across all phi/p/W/H; distinct repetition streams",
+  "methods": [
+    "F",
+    "QR33",
+    "QR4"
+  ],
+  "menus": {
+    "QR33": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "QR4": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "selection": {
+    "QR33": {
+      "validation_failure": "any failed mandatory candidate makes procedure ineligible",
+      "exact_tie": "larger penalty"
+    },
+    "QR4": {
+      "validation_failure": "eligible completed candidates; keep all failed candidate records",
+      "exact_tie": "first increasing menu candidate"
+    }
+  },
+  "solver": {
+    "max_iter": 10000,
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "gap_rtol": 1e-06,
+    "intercept_penalized": false,
+    "failure": "no forecast, no numerical retuning, no evaluation replacement"
+  },
+  "evaluation_failure": "whole procedure/rep/cell missing; no truncated score",
+  "resources": {
+    "numerical_threads": 1,
+    "maximum_observed_os_threads": 2,
+    "internal_rss_bytes": 1610612736,
+    "public_rss_bytes": 2147483648,
+    "worker_internal_wall_seconds": 540,
+    "worker_hard_wall_seconds": 600,
+    "total_study_wall_seconds": 3600,
+    "global_deadline_interrupts_inflight_worker": true,
+    "worker_effective_timeout": "min(600,global_remaining_seconds); internal checkpoint=min(540,global_remaining_seconds)"
+  },
+  "run_order": "rep ascending, phi listed, p listed; within unit W ascending and H listed",
+  "support_screen": {
+    "requires_all_repetitions_complete": true,
+    "clear_gain": "ratio-of-mean-loss relative change plus 2 delta MC SE below zero and strict win fraction >=0.75",
+    "target_region": "H=6,W>=720,p>=0.9",
+    "target_cell_count": 12,
+    "minimum_target_clear_gains": 6,
+    "outside_requirement": "all outside cells fully evaluable and no outside clear gain",
+    "outside_clear_gain": "MISMATCH for claimed restriction",
+    "missing_prevents_classification": "INCONCLUSIVE",
+    "no_target_support": "NOT_SUPPORTED",
+    "inferential_status": "descriptive predeclared screen; pointwise uncertainty only; no family-wide significance guarantee"
+  },
+  "mcse": {
+    "relative_change": "100*(mean(A)/mean(B)-1)",
+    "relative_mcse": "100*sd(A-r*B,ddof=1)/(sqrt(R)*mean(B)); r=mean(A)/mean(B)",
+    "breach_rate": "sd(per_rep_breach_rate,ddof=1)/sqrt(R)",
+    "strict_wins": "mean(A<B); MCSE sqrt(p*(1-p)/R); worst-case bound0.5/sqrt(R)",
+    "missing": "report planned/complete/failed/unattempted; complete-pair values conditional on completion; full-procedure cell NA if any missing"
+  },
+  "original_modules_sha256": {
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "parsimonious_v3.py": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8"
+  },
+  "variance_constants": "Use explicit JSON constants, not binary recomputation of p-alpha or1-p."
+}

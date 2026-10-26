@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T12:26:53.335481+00:00",
+  "purpose": "Display of saved public scalar facts only; no statistical recomputation or private data",
+  "sources": {
+    "short": {
+      "path": "results/v12/decomposition/short-weekly-summary.json",
+      "sha256": "b207ea0f7af25385503fe3d493d416f04adc4ed1d1ba3fb861ff9cf196795d8b",
+      "bytes": 1400
+    },
+    "decomposition": {
+      "path": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "bytes": 3130
+    },
+    "validation": {
+      "path": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "bytes": 267478
+    },
+    "tau": {
+      "path": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "bytes": 142997
+    },
+    "menu": {
+      "path": "results/v12/decomposition/candidates.json",
+      "sha256": "0084338637d8ee0962f002976f41b37996b62c60281b2032864d27ec41b1c658",
+      "bytes": 1854106
+    }
+  },
+  "bindings": [
+    {
+      "id": "short_weekly_planned",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D1/planned_n",
+      "value": 41,
+      "display": "41",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "gap_positive_count",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D1/support_n",
+      "value": 29,
+      "display": "29",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "selection_majority_count",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D2/support_n",
+      "value": 27,
+      "display": "27",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "selection_screen_planned",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D2/planned_n",
+      "value": 41,
+      "display": "41",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "short_actual_median",
+      "source": "results/v12/decomposition/short-weekly-summary.json",
+      "sha256": "b207ea0f7af25385503fe3d493d416f04adc4ed1d1ba3fb861ff9cf196795d8b",
+      "json_pointer": "/methods/QR33/median_actual_excess_pct",
+      "value": 19.435259328148383,
+      "display": "19.44%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "short_selection_median",
+      "source": "results/v12/decomposition/short-weekly-summary.json",
+      "sha256": "b207ea0f7af25385503fe3d493d416f04adc4ed1d1ba3fb861ff9cf196795d8b",
+      "json_pointer": "/methods/QR33/median_selection_component_pct",
+      "value": 18.317455287977513,
+      "display": "18.32%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "short_gap_median",
+      "source": "results/v12/decomposition/short-weekly-summary.json",
+      "sha256": "b207ea0f7af25385503fe3d493d416f04adc4ed1d1ba3fb861ff9cf196795d8b",
+      "json_pointer": "/methods/QR33/median_signal_gap_pct",
+      "value": 4.370845028558574,
+      "display": "4.37%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "long_fx_horizon_count",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D3/planned_n",
+      "value": 2,
+      "display": "Both",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "long_fx_gap_H6",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D3/horizons/6/signal_gap_pct",
+      "value": -14.917351765503492,
+      "display": "negative",
+      "context": "body sign statement; raw percent not displayed",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "long_fx_gap_H24",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D3/horizons/24/signal_gap_pct",
+      "value": -3.7577697957958254,
+      "display": "negative",
+      "context": "body sign statement; raw percent not displayed",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "validation_short_length",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/descriptive_groups/0/validation_n",
+      "value": 52,
+      "display": "52",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "validation_long_length",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/descriptive_groups/1/validation_n",
+      "value": 156,
+      "display": "156",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "training_history_52",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/52/window",
+      "value": 52,
+      "display": "52",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "median_W52_V52",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/52/median_relative_loss_by_validation/52",
+      "value": 19.33471575756462,
+      "display": "19.33%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "median_W52_V156",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/52/median_relative_loss_by_validation/156",
+      "value": 4.030683382999826,
+      "display": "4.03%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "infinite_W52_V52",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/52/known_infinity_count_by_validation/52",
+      "value": 4,
+      "display": "4",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "infinite_W52_V156",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/52/known_infinity_count_by_validation/156",
+      "value": 10,
+      "display": "10",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "training_history_260",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/260/window",
+      "value": 260,
+      "display": "260",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "median_W260_V52",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/260/median_relative_loss_by_validation/52",
+      "value": 10.348281789464425,
+      "display": "10.35%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "median_W260_V156",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/260/median_relative_loss_by_validation/156",
+      "value": 0.5250886760200655,
+      "display": "0.53%",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "infinite_W260_V52",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/260/known_infinity_count_by_validation/52",
+      "value": 4,
+      "display": "4",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "infinite_W260_V156",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/methods/QR33/by_window/260/known_infinity_count_by_validation/156",
+      "value": 5,
+      "display": "5",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "validation_eligible_contracts",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/eligible_contract_count",
+      "value": 17,
+      "display": "17",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_0.9",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/5/tau",
+      "value": 0.9,
+      "display": "90%",
+      "context": "body and table header",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_0.99",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/0/tau",
+      "value": 0.99,
+      "display": "99%",
+      "context": "body and table header",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_fx_periods",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q2/denominator",
+      "value": 2,
+      "display": "Both",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_cftc_known_wins",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q1/support_count",
+      "value": 28,
+      "display": "28",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_cftc_planned_comparisons",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q1/denominator",
+      "value": 34,
+      "display": "34",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_cftc_unresolved_comparison",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q1/unknown_count",
+      "value": 1,
+      "display": "one",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_cftc_required_wins",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q1/minimum_support",
+      "value": 29,
+      "display": "29",
+      "context": "body",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "finite_menu_cardinality",
+      "source": "results/v12/decomposition/candidates.json",
+      "sha256": "0084338637d8ee0962f002976f41b37996b62c60281b2032864d27ec41b1c658",
+      "value": 5,
+      "display": "five",
+      "context": "method definition",
+      "operands": [
+        {
+          "json_pointer": "/0/penalty",
+          "value": 0.001
+        },
+        {
+          "json_pointer": "/1/penalty",
+          "value": 0.01
+        },
+        {
+          "json_pointer": "/2/penalty",
+          "value": 0.1
+        },
+        {
+          "json_pointer": "/3/penalty",
+          "value": 1.0
+        },
+        {
+          "json_pointer": "/4/penalty",
+          "value": 10.0
+        }
+      ],
+      "operation": "Count fixed declared finite penalty identities only; no losses or outcomes used"
+    },
+    {
+      "id": "table_history_5",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/5/window",
+      "value": 52,
+      "display": "52",
+      "context": "tau table label",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_5_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/5/descriptive_complete_row_median_relative_loss_pct",
+      "value": 3.4457514725248743,
+      "display": "+3.45",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_0_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/0/descriptive_complete_row_median_relative_loss_pct",
+      "value": 15.051220141144864,
+      "display": "+15.05",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "table_history_6",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/6/window",
+      "value": 260,
+      "display": "260",
+      "context": "tau table label",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_6_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/6/descriptive_complete_row_median_relative_loss_pct",
+      "value": 1.5760649244213407,
+      "display": "+1.58",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_1_unavailable_group",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/1/counts",
+      "value": {
+        "planned": 17,
+        "received": 17,
+        "complete": 16,
+        "usable": 16,
+        "failed": 1,
+        "resource": 0,
+        "not_run": 0,
+        "missing": 0,
+        "duplicate_slots": 0,
+        "invalid_complete": 0,
+        "unknown": 1,
+        "status_counts": {
+          "COMPLETE": 16,
+          "FAILED": 1
+        }
+      },
+      "display": "NA",
+      "context": "tau table",
+      "operation": "NA when saved usable count differs from planned count; no successful-subset median displayed"
+    },
+    {
+      "id": "tau_7_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/7/descriptive_complete_row_median_relative_loss_pct",
+      "value": -10.145914078498187,
+      "display": "-10.15",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_2_unavailable_group",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/2/counts",
+      "value": {
+        "planned": 1,
+        "received": 1,
+        "complete": 0,
+        "usable": 0,
+        "failed": 1,
+        "resource": 0,
+        "not_run": 0,
+        "missing": 0,
+        "duplicate_slots": 0,
+        "invalid_complete": 0,
+        "unknown": 1,
+        "status_counts": {
+          "FAILED": 1
+        }
+      },
+      "display": "NA",
+      "context": "tau table",
+      "operation": "NA when saved usable count differs from planned count; no successful-subset median displayed"
+    },
+    {
+      "id": "tau_8_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/8/descriptive_complete_row_median_relative_loss_pct",
+      "value": -17.84939757113194,
+      "display": "-17.85",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_3_unavailable_group",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/3/counts",
+      "value": {
+        "planned": 1,
+        "received": 1,
+        "complete": 0,
+        "usable": 0,
+        "failed": 1,
+        "resource": 0,
+        "not_run": 0,
+        "missing": 0,
+        "duplicate_slots": 0,
+        "invalid_complete": 0,
+        "unknown": 1,
+        "status_counts": {
+          "FAILED": 1
+        }
+      },
+      "display": "NA",
+      "context": "tau table",
+      "operation": "NA when saved usable count differs from planned count; no successful-subset median displayed"
+    },
+    {
+      "id": "tau_9_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/9/descriptive_complete_row_median_relative_loss_pct",
+      "value": 0.668087719819157,
+      "display": "+0.67",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "tau_4_full_group_median",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/4/descriptive_complete_row_median_relative_loss_pct",
+      "value": 44.22222331425766,
+      "display": "+44.22",
+      "context": "tau table",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "table_fx_training_history",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/7/window",
+      "value": 2880,
+      "display": "2,880",
+      "context": "tau table note",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "table_bill_training_history",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/descriptive_groups/9/window",
+      "value": 260,
+      "display": "260",
+      "context": "tau table note",
+      "operation": "Copy saved scalar; display formatting only"
+    },
+    {
+      "id": "Q1_unassessable",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q1/status",
+      "value": "UNDETERMINED",
+      "display": "undetermined",
+      "context": "body"
+    },
+    {
+      "id": "Q2_unassessable",
+      "source": "results/v12/tau/predictions.json",
+      "sha256": "a9adbb6d4e939df9ce596b7dbc2355b8c0a94435c9e65da01047a1723a23f654",
+      "json_pointer": "/Q2/status",
+      "value": "UNDETERMINED",
+      "display": "undetermined",
+      "context": "body"
+    },
+    {
+      "id": "D1_supported",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D1/status",
+      "value": "SUPPORTED",
+      "display": "Both criteria hold",
+      "context": "body"
+    },
+    {
+      "id": "D2_supported",
+      "source": "results/v12/decomposition/predictions.json",
+      "sha256": "551ec9f4ab05e38b28c436a7a2c765c095f29ac96a49c4fc6dd0ec18ba4977e4",
+      "json_pointer": "/D2/status",
+      "value": "SUPPORTED",
+      "display": "Both criteria hold",
+      "context": "body"
+    },
+    {
+      "id": "four_feature_failure_inventory",
+      "source": "results/v12/validation-length/predictions.json",
+      "sha256": "03dc2326fb208f73c9b4a464f0e53799a8dee822af997861420d862d05f69520",
+      "json_pointer": "/counts/failed",
+      "value": 4,
+      "display": "Four-feature failures remain unavailable",
+      "context": "body; count not numerically displayed"
+    }
+  ],
+  "style": {
+    "body_word_count": 307,
+    "sentence_count": 18,
+    "mean_sentence_words": 17.055555555555557,
+    "maximum_sentence_words": 24,
+    "sentences_over_40_words": 0
+  },
+  "layout": {
+    "body_paragraphs": 4,
+    "tau_rows": 5,
+    "figure_height_inches": 2.75,
+    "target_section_pages": 1.5,
+    "pagination": "Parent verifies in the assembled manuscript"
+  },
+  "editorial_literals": [
+    {
+      "display": "Supplement Section S36",
+      "authority": "Explicit parent instruction"
+    },
+    {
+      "display": "Short/long history",
+      "authority": "Methods already defined in the paper"
+    }
+  ],
+  "output": {
+    "path": "submission-v10/generated/v12-low-frequency.tex",
+    "sha256": "ffe2a05bd4c553bb81aa7a68765fb594a49825325eadc88ec9650f0dbbcbf26c"
+  },
+  "backups": [
+    "/Users/bingyouli/Research/论文/金融数学论文-v10-20261024/submission-v10/generated/v12-low-frequency.tex.20261025T122653334879Z.bak",
+    "/Users/bingyouli/Research/论文/金融数学论文-v10-20261024/notes/v12/new-paper-number-bindings.json.20261025T122653335189Z.bak"
+  ]
+}

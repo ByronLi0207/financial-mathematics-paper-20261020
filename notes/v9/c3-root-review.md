@@ -1,0 +1,5 @@
+# C3 final root review
+
+The candidate is preserved as a draft. The actual manuscript additionally clarifies the absolute target, same-record daily aggregation, W52/full-regression/across-series median scope in the abstract, and C2 medians in the conclusion. It keeps the explicit W260/N2 unavailable result in Section7.4 while shortening its abstract/conclusion repetition. Hansen is credited for the joint score; the separately fitted bootstrap is named separately, and common uniforms are transformed under each arm’s innovation law. The practical short-weekly recommendation defaults to corrected-rank F for these samples. Both Murphy captions use reader names. The one-SE adaptation has its verified Hastie reference. No experimental value changed.
+
+The original17-page visual review and the six changed-page delta are separate fixed-SHA records. The current C3 result has17pages,145abstract words/10numeric occurrences, and all wording thresholds pass. The numeric audit and delta verify actual complete contexts, not global membership of equal values. Figure1, the combined simulation figure and Table6 still await C4; no final-package claim is made in C3.

@@ -1,0 +1,16 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_acronyms_and_selected_identity_have_explicit_meanings __________
+
+    def test_acronyms_and_selected_identity_have_explicit_meanings():
+        d,s=api().compose(write_outputs=False)
+        for doc in (d,s):
+            text=json.dumps(doc,ensure_ascii=False)
+>           assert 'root-mean-square (RMS)' in text
+E           assert 'root-mean-square (RMS)' in '{"title": "Forecasting Peak Net Positions: Known Floors, Endpoint-to-Peak Bounds and Score–Coverage Disagreement", "s...revision-v6/reference-additions.json", "sha256": "7f0653c9181a434377e36d49ca9f6eae394eada2ed65702dc993b2ca044f9e9d"}]}'
+
+test_v6_submission.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_submission.py::test_acronyms_and_selected_identity_have_explicit_meanings
+1 failed in 0.12s

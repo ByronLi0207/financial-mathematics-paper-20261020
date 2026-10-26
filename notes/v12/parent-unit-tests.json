@@ -1,0 +1,52 @@
+{
+  "scope": "Parent protocol/history/resource orchestration on constructed metadata and temporary toy child only; no financial data/model execution.",
+  "observed_runs": [
+    {
+      "phase": "RED_INITIAL",
+      "tests": 6,
+      "failed": 6,
+      "reason": "Missing parent module, expected feature absence",
+      "elapsed_seconds": 0.03
+    },
+    {
+      "phase": "GREEN_INITIAL",
+      "passed": 6,
+      "elapsed_seconds": 0.15
+    },
+    {
+      "phase": "RED_INTEGRATION",
+      "passed": 6,
+      "failed": 3,
+      "reason": "F2 method job separation, merger, source exclusion absent",
+      "elapsed_seconds": 0.16
+    },
+    {
+      "phase": "GREEN_INTEGRATION",
+      "passed": 9,
+      "elapsed_seconds": 0.15
+    },
+    {
+      "phase": "GREEN_FINAL",
+      "passed": 11,
+      "elapsed_seconds": 0.98
+    },
+    {
+      "phase": "RED_HARD_STOP_CLASSIFICATION",
+      "failed": 2,
+      "reason": "Truncated JSON blocked salvage and method-slot classifier absent",
+      "elapsed_seconds": 0.67
+    },
+    {
+      "phase": "GREEN_HARD_STOP_CLASSIFICATION",
+      "passed": 12,
+      "elapsed_seconds": 0.86
+    }
+  ],
+  "created_utc": "2026-10-25T11:32:36.603962+00:00",
+  "source_sha256": {
+    "run_v12_studies.py": "8baeaba4cb61bea462b201ec6ad81ecff0c51608ee1e2efd27c9423e501c89be",
+    "test_v12_studies.py": "7fadb769890e9f22559fec4381db81d8f5402aadc47d89a11cfb02fbc67baa3f"
+  },
+  "command": "uv run --offline --no-project --no-env-file --python bundled-python --with pytest==9.1.1 --with numpy==2.3.5 python -B -m pytest -q -p no:cacheprovider test_v12_studies.py",
+  "latest_utc": "2026-10-25T11:41:03.779398+00:00"
+}

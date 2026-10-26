@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "actual_utc": "2026-10-25T00:48:58.304033+00:00",
+  "targeted_test_count": 19,
+  "targeted_result": "19 passed in 17.39s",
+  "targeted_full_outputs": [
+    {
+      "path": "notes/revision-v9/wp7-supp-fixture-targeted-red.txt",
+      "sha256": "e646e91e273b6236709658bfc3961b11544bac1f977e507cced1534e32e92e8c"
+    },
+    {
+      "path": "notes/revision-v9/wp7-supp-fixture-targeted-green.txt",
+      "sha256": "87398f05a8298df73a12706ea8a51ec5bcffae3c8761770f1e35288fed05cf47"
+    }
+  ],
+  "current_source_gate": {
+    "path": "notes/revision-v9/wp7-supp-number-audit-after-fixture.json",
+    "sha256": "a54cf9c699851a9e2988377db0c5a3006a9de4a9bb7265d3e41952f47c6c2c5b",
+    "mismatch_count": 0
+  },
+  "preserved_files": {
+    "status": "PASS",
+    "baseline_commit": "32ee58688bac260de322c31cb8945adbf3b53154",
+    "existing_files_checked": 2233,
+    "mismatch_count": 0,
+    "unchanged_files": 2232,
+    "allowed_existing_code_differences": [
+      {
+        "path": "notes/revision-v8/test_v8_supp_numbers.py",
+        "expected_git_blob": "1c8259aeb56adff2708d4027a9bc7cf573df4614",
+        "current_git_blob": "b1aea81fb37bb21bf456406d9bdff3506c18e1ba",
+        "fixture_contract": {
+          "status": "PASS",
+          "path": "notes/revision-v8/test_v8_supp_numbers.py",
+          "baseline_commit": "32ee58688bac260de322c31cb8945adbf3b53154",
+          "old_test_sha256": "936033681396811fa3ff798b7a5e4f6676b42fb6efa26508f610031533547e8c",
+          "current_test_sha256": "08011dbb8dc8c369f9379cabe4d0bafb6d9a345fd3224928d08633fe2a7e7dde",
+          "test_methods": [
+            {
+              "name": "test_current_document_has_no_numeric_residuals",
+              "sha256": "499388015f8eb09ff55002bf4b764ede58c4ef383853405bf4e0035f74887b60",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_swapped_mc_rows_fail_ordered_identity_binding",
+              "sha256": "d097b4a9884b2c976488dfbedbaf38ccc8fb32d096c84d40756bb9636d277045",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_wrong_master_entropy_is_rejected_exactly",
+              "sha256": "3b547a8b91ac9ced15c730ea03374f5e869e3862b6542e5afdb0a6bfe5d52beb",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_unbound_inline_p_is_not_classified_as_math",
+              "sha256": "77965f839969b7508eee19538122c245fce3241e7e52ebe70baef090823f9f96",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_unbound_result_beside_layout_command_is_not_exempt",
+              "sha256": "be1925925e4d864adf4faaf7067231f8bdaf9b1d055b848a84c919b44ef55c12",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_omitted_generated_table_is_rejected",
+              "sha256": "fd5dd99ddd3a6ef1a5e2e8a67cd24bb14be4d24a8c6c97681aa649e1bdd8a7e5",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_changed_old_numeric_row_is_rejected",
+              "sha256": "f59a18dbc50e16dcb84a08c9c639e73e4d84120ee9baf91be03ab9bc2a210faf",
+              "exact_source_identical": true
+            },
+            {
+              "name": "test_numeric_native_types_are_not_coerced",
+              "sha256": "624caf3dbe43f63e7b13aacd85539606924a4a489a2c975710c45dadd248b7a8",
+              "exact_source_identical": true
+            }
+          ],
+          "all_test_methods_and_assertions_byte_identical": true,
+          "other_AST_unchanged_after_only_authorized_fixture_docstring_imports": true,
+          "old_guard_unchanged": true,
+          "old_guard_sha256": "768e69c2e359ca16f52d78a1de3c48f1ea78fb57d06a6e7dd19a433a6489ae33",
+          "scope": "Ordinary version-aware fixture code only; no original test body/assertion, scientific archive, protocol, source field or guard modified"
+        }
+      }
+    ],
+    "prefixes": [
+      "results/",
+      "protocol/",
+      "notes/v7/",
+      "notes/revision-v8/"
+    ],
+    "scope": "Every existing tracked public file under the named prefixes at BASE; exactly the recorded ordinary fixture-code difference is permitted. All real result/protocol/proof bytes remain unchanged; new files separately audited, private/scratch excluded"
+  },
+  "full_suite_rerun_required": true,
+  "original_failed_full_suite_unchanged": true,
+  "no_skips_filters_conditioned_passing": true,
+  "no_old_test_method_or_assertion_changed": true,
+  "old_guard_changes": 0,
+  "scientific_data_protocol_or_proof_changes": 0,
+  "financial_models_run": 0,
+  "new_statistics_run": 0
+}

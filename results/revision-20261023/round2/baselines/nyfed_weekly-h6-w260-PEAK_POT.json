@@ -1,0 +1,1572 @@
+{
+  "source": "nyfed_weekly",
+  "horizon": 6,
+  "window": 260,
+  "method": "PEAK_POT",
+  "native_unit": "USD millions",
+  "source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+  "expected_origin_count": 277,
+  "post_result": true,
+  "exploratory": true,
+  "private_trace": ".scratch/round2/baselines/nyfed_weekly-h6-w260-PEAK_POT/numeric-traces.npz",
+  "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+  "code_sha256": {
+    "round2_baselines_run.py": "35e184aa3fc861024413dad1b454695e11d56a112180a9110626eb10d053fa54",
+    "round2_qrf.py": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4",
+    "round2_filtered.py": "c01b675d5a284ffc92890b78d043362edcc329f5d1ef824e81db43cef3f0aad7"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "arch": "8.0.0",
+    "scikit-learn": "1.9.1"
+  },
+  "status": "COMPLETE",
+  "evaluation": {
+    "origin_count": 277,
+    "mean_pinball": 2473.17729061588,
+    "mean_capacity": 110717.7006079283,
+    "mean_extra_allowance": 54458.13021081639,
+    "strict_breach_count": 17,
+    "strict_breach_rate": 0.061371841155234655,
+    "mean_positive_overrun": 818.1298053458186,
+    "conditional_mean_overrun": 13330.703298870103,
+    "conditional_overrun_denominator": 17,
+    "conditional_overrun_undefined_reason": null,
+    "mean_unused_allowance": 33919.07951074705
+  },
+  "comparisons": [
+    {
+      "source": "nyfed_weekly",
+      "window": 260,
+      "left_method": "PEAK_POT",
+      "right_method": "frozen_F",
+      "contrast_id": "nyfed_weekly-h6-w260-PEAK_POT-minus-frozen_F",
+      "post_result": true,
+      "exploratory": true,
+      "relative_loss_percent": -10.348774383704525,
+      "reference_strict_breaches": 28,
+      "n": 277,
+      "horizon": 6,
+      "bandwidth": 6,
+      "mean_difference": -285.4880523444088,
+      "lrv": 14115886.012722746,
+      "dm_t": -1.2646599082260772,
+      "dm_p": 0.2059932675799434,
+      "hln_t": -1.2395472304221777,
+      "hln_p": 0.2161958424149718,
+      "status": "OK",
+      "double_bandwidth": 12,
+      "double_dm_t": -1.2933796442808123,
+      "double_dm_p": 0.19587978685071222,
+      "double_hln_p": 0.20597473251880039
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 260,
+      "left_method": "PEAK_POT",
+      "right_method": "QR",
+      "contrast_id": "nyfed_weekly-h6-w260-PEAK_POT-minus-QR",
+      "post_result": true,
+      "exploratory": true,
+      "relative_loss_percent": -40.543952016562436,
+      "reference_strict_breaches": 54,
+      "n": 277,
+      "horizon": 6,
+      "bandwidth": 6,
+      "mean_difference": -1686.4959041192005,
+      "lrv": 81116185.7841781,
+      "dm_t": -3.11653073837778,
+      "dm_p": 0.0018299260210323201,
+      "hln_t": -3.0546449841210404,
+      "hln_p": 0.002473580073995523,
+      "status": "OK",
+      "double_bandwidth": 12,
+      "double_dm_t": -3.222396032520129,
+      "double_dm_p": 0.0012712329149785768,
+      "double_hln_p": 0.0017624648621442115
+    }
+  ],
+  "refits": [
+    {
+      "refit_index": 405,
+      "training_first_origin": 140,
+      "training_last_origin": 399,
+      "training_count": 260,
+      "latest_label_end": 405,
+      "increment_first_end": 141,
+      "increment_last_end": 405,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 10208.427840260778,
+        "normalized_parameters": {
+          "mu": 0.021667393861818835,
+          "omega": 0.12925995272392607,
+          "alpha[1]": 0.2362554415714345,
+          "beta[1]": 0.6578794096124063
+        },
+        "native_parameters": {
+          "mu": 221.19002672488688,
+          "omega": 13470438.060103646,
+          "alpha": 0.2362554415714345,
+          "beta": 0.6578794096124063
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 9,
+          "evaluations": 55,
+          "objective": 366.2219603446408
+        },
+        "parameters_sha256": "eb91308050b8ab8ad741c6fb15ecefa86a883c0f7253a8b47c661289729d5d70",
+        "residual_pool_sha256": "d690e02e085005bf722af4074441b805c239eb29c4ead28e5a26c5251aed8ba2",
+        "conditional_variance_sha256": "573ab32dc95b0741978d13a303bca3b033e78ffcd97f41d0261f0650851bbea5",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6681.5245747962335,
+        "maximum_native_sigma": 23173.86908825386
+      },
+      "pot": {
+        "threshold": 2.4267772515813006,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 69,
+          "evaluations": 140,
+          "objective": 29.71844575848621,
+          "initial": [
+            0.1,
+            0.19888927519406366
+          ]
+        },
+        "xi": 0.4933571975689172,
+        "beta": 0.7044485205979196,
+        "quantile": 3.008942763605846,
+        "normalized_headroom_sha256": "8681764a14c67678127a741441dce95be3d5520533dfbaf248f168d7354c6e4e"
+      }
+    },
+    {
+      "refit_index": 418,
+      "training_first_origin": 153,
+      "training_last_origin": 412,
+      "training_count": 260,
+      "latest_label_end": 418,
+      "increment_first_end": 154,
+      "increment_last_end": 418,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 10561.124739809266,
+        "normalized_parameters": {
+          "mu": 0.007389135789767034,
+          "omega": 0.08168910050903963,
+          "alpha[1]": 0.20397819109062332,
+          "beta[1]": 0.7328956926452801
+        },
+        "native_parameters": {
+          "mu": 78.03758479511869,
+          "omega": 9111386.265992628,
+          "alpha": 0.20397819109062332,
+          "beta": 0.7328956926452801
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 61,
+          "objective": 364.2867128252344
+        },
+        "parameters_sha256": "79a800fb27e36cea627c7d075f34fbde915e09f9382e9feb7ddc04389424504e",
+        "residual_pool_sha256": "cfb941eb45ef25b0c2ae2acab3210cef4d73a14bd38de08d58d6efddc94952aa",
+        "conditional_variance_sha256": "aed17171014f5c486f564752c934c2430d0ab35b23eb3a93783b277a85b1025d",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6493.97984925785,
+        "maximum_native_sigma": 21959.022507961225
+      },
+      "pot": {
+        "threshold": 2.456200352845283,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 71,
+          "evaluations": 136,
+          "objective": 29.54558839318227,
+          "initial": [
+            0.1,
+            0.1936671514258725
+          ]
+        },
+        "xi": 0.48991808183209806,
+        "beta": 0.7021913725943363,
+        "quantile": 3.035770116461589,
+        "normalized_headroom_sha256": "7dd81ba312402f8def3bba2eba48cc9468629901629ca2d452a63c5dafa38513"
+      }
+    },
+    {
+      "refit_index": 431,
+      "training_first_origin": 166,
+      "training_last_origin": 425,
+      "training_count": 260,
+      "latest_label_end": 431,
+      "increment_first_end": 167,
+      "increment_last_end": 431,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 10874.321450442192,
+        "normalized_parameters": {
+          "mu": 0.015462925368879438,
+          "omega": 0.07414612933981495,
+          "alpha[1]": 0.19562801762825666,
+          "beta[1]": 0.7499064243873917
+        },
+        "native_parameters": {
+          "mu": 168.1488210253924,
+          "omega": 8767844.07968685,
+          "alpha": 0.19562801762825666,
+          "beta": 0.7499064243873917
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 60,
+          "objective": 364.9956184777726
+        },
+        "parameters_sha256": "c842dcdb1bcde3dde178fde0063cd1fa61e64aea71b98e59c155513feee9f8bf",
+        "residual_pool_sha256": "5ea5735e6fdbac084061f932224246016f48b017e3773da43dfeea556b961fa7",
+        "conditional_variance_sha256": "57d0e2d582466786f74f65202ce5ac0bdce3be5c130a80cbbcf860997b1c86dd",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6626.42619346769,
+        "maximum_native_sigma": 21719.90732059937
+      },
+      "pot": {
+        "threshold": 2.481476236704763,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 61,
+          "evaluations": 120,
+          "objective": 32.91258687683741,
+          "initial": [
+            0.1,
+            0.27645547279776994
+          ]
+        },
+        "xi": 0.2062356215505102,
+        "beta": 1.0614470301269168,
+        "quantile": 3.272400803349458,
+        "normalized_headroom_sha256": "b98a9506ef255d4e45b108843485c107a1e5934d1a790909f76cbab519fd1f4d"
+      }
+    },
+    {
+      "refit_index": 444,
+      "training_first_origin": 179,
+      "training_last_origin": 438,
+      "training_count": 260,
+      "latest_label_end": 444,
+      "increment_first_end": 180,
+      "increment_last_end": 444,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 11019.022545939568,
+        "normalized_parameters": {
+          "mu": 0.009069872564698324,
+          "omega": 0.08438380843831096,
+          "alpha[1]": 0.18751646084650608,
+          "beta[1]": 0.7437942029262965
+        },
+        "native_parameters": {
+          "mu": 99.94113027920956,
+          "omega": 10245785.643125448,
+          "alpha": 0.18751646084650608,
+          "beta": 0.7437942029262965
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 64,
+          "objective": 367.67049891861075
+        },
+        "parameters_sha256": "32942722551390f852ded7f247e9016469127fea80d8f0c428b34b3eb5489fc8",
+        "residual_pool_sha256": "646191d58e92e59b2b5f7ba2b431b3b901a2b08ed29204fcec05d8f070f9b211",
+        "conditional_variance_sha256": "697dacab0f310498badee5713c085ef5b67ba99bf8fe0330dc0fffce7dab3d3c",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6935.768859196298,
+        "maximum_native_sigma": 21346.95942448271
+      },
+      "pot": {
+        "threshold": 2.443158136907155,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 65,
+          "evaluations": 129,
+          "objective": 33.257888314401114,
+          "initial": [
+            0.1,
+            0.28840963903271977
+          ]
+        },
+        "xi": 0.18995812539499152,
+        "beta": 1.0932899359033281,
+        "quantile": 3.2531227236608338,
+        "normalized_headroom_sha256": "dd6c704921bccfaab01dfe03c5ea196cbf8f27c5efd003210c8f090b351d2727"
+      }
+    },
+    {
+      "refit_index": 457,
+      "training_first_origin": 192,
+      "training_last_origin": 451,
+      "training_count": 260,
+      "latest_label_end": 457,
+      "increment_first_end": 193,
+      "increment_last_end": 457,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 11580.9716387751,
+        "normalized_parameters": {
+          "mu": 0.00043901745314419235,
+          "omega": 0.07126837887991667,
+          "alpha[1]": 0.2383288866824569,
+          "beta[1]": 0.7174228043675286
+        },
+        "native_parameters": {
+          "mu": 5.084248673790168,
+          "omega": 9558436.872223541,
+          "alpha": 0.2383288866824569,
+          "beta": 0.7174228043675286
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 64,
+          "objective": 362.7573471253157
+        },
+        "parameters_sha256": "3fb8d9a35d84394917ba03bea5eebeccfd0b3a73c79eab0e172cc5261df04f72",
+        "residual_pool_sha256": "1e8b6509433c5871dc87d88e789a5b8eab3927c3f0ec30c159950106c5e082fc",
+        "conditional_variance_sha256": "7ab3d36bb0c6232cc566c2c32dca1295ccd8458f19340419b6b54b0d270c8767",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6502.8888723687,
+        "maximum_native_sigma": 23462.292013191844
+      },
+      "pot": {
+        "threshold": 2.4846745491643887,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 64,
+          "evaluations": 129,
+          "objective": 32.493553761198434,
+          "initial": [
+            0.1,
+            0.2575593129967272
+          ]
+        },
+        "xi": 0.1779403736892165,
+        "beta": 1.0744529978355346,
+        "quantile": 3.2773051262918513,
+        "normalized_headroom_sha256": "34dd7881f53a68b756e6d1b65e85468b6ee140e3023a7e4f5b19434943afc0b0"
+      }
+    },
+    {
+      "refit_index": 470,
+      "training_first_origin": 205,
+      "training_last_origin": 464,
+      "training_count": 260,
+      "latest_label_end": 470,
+      "increment_first_end": 206,
+      "increment_last_end": 470,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 11805.120917923394,
+        "normalized_parameters": {
+          "mu": 0.009031495299076318,
+          "omega": 0.05151770127186496,
+          "alpha[1]": 0.17832585693115177,
+          "beta[1]": 0.7854892502812563
+        },
+        "native_parameters": {
+          "mu": 106.61789407525264,
+          "omega": 7179552.178992028,
+          "alpha": 0.17832585693115177,
+          "beta": 0.7854892502812563
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 12,
+          "evaluations": 69,
+          "objective": 363.928205869555
+        },
+        "parameters_sha256": "5d507b58397a79bb18140f9f180de40efa8b7a730e77e9740095ae58a2a0507f",
+        "residual_pool_sha256": "d6bf09e52cb551ed17cadcb22f7548d6b3cfe6e1da62b3d727faca665d682988",
+        "conditional_variance_sha256": "13a1401c38ffa6867c662c27dcf6ff87c74fe9d2aaf9aee496923e8a238ab96e",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6724.451385738083,
+        "maximum_native_sigma": 21254.239277607143
+      },
+      "pot": {
+        "threshold": 2.4880500984436504,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 68,
+          "evaluations": 133,
+          "objective": 31.640480972644006,
+          "initial": [
+            0.1,
+            0.2351692756554347
+          ]
+        },
+        "xi": 0.2705006409520341,
+        "beta": 0.9478499587957072,
+        "quantile": 3.2106791631685576,
+        "normalized_headroom_sha256": "0ee18a886b0c44d2b553be6c3641c41d27a93b3bf43035e3b3e2e8d92fb6a1f5"
+      }
+    },
+    {
+      "refit_index": 483,
+      "training_first_origin": 218,
+      "training_last_origin": 477,
+      "training_count": 260,
+      "latest_label_end": 483,
+      "increment_first_end": 219,
+      "increment_last_end": 483,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 11969.98821802355,
+        "normalized_parameters": {
+          "mu": 0.005858436257892851,
+          "omega": 0.053651039331821034,
+          "alpha[1]": 0.1809663266223069,
+          "beta[1]": 0.7831156031330884
+        },
+        "native_parameters": {
+          "mu": 70.1254129830194,
+          "omega": 7687154.068566316,
+          "alpha": 0.1809663266223069,
+          "beta": 0.7831156031330884
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 12,
+          "evaluations": 70,
+          "objective": 365.474950238677
+        },
+        "parameters_sha256": "fa74d89e337b013bf940fc4c7d1f0070fc2ac1959d4124857360da3cb4cd065a",
+        "residual_pool_sha256": "0a2506323a4bcf5daf791638a4393896f854a8b31b14cd1ff11a8a61956c2867",
+        "conditional_variance_sha256": "08458af49ef73e639a33659dae13a986336db83149c446fcb91f6bb2a2ccf024",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6865.463817883266,
+        "maximum_native_sigma": 21372.925102800033
+      },
+      "pot": {
+        "threshold": 2.4496209896363834,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 65,
+          "evaluations": 135,
+          "objective": 31.489998403421062,
+          "initial": [
+            0.1,
+            0.22892190152537417
+          ]
+        },
+        "xi": 0.2647469462687554,
+        "beta": 0.9478176370209838,
+        "quantile": 3.1707414845167046,
+        "normalized_headroom_sha256": "4f8d0d6e2e8121996c6727adeb9711705349973478b98ffed6601cc25ec67235"
+      }
+    },
+    {
+      "refit_index": 496,
+      "training_first_origin": 231,
+      "training_last_origin": 490,
+      "training_count": 260,
+      "latest_label_end": 496,
+      "increment_first_end": 232,
+      "increment_last_end": 496,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 12164.59386738787,
+        "normalized_parameters": {
+          "mu": 0.009104406755955917,
+          "omega": 0.006953510343829576,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9980373257140114
+        },
+        "native_parameters": {
+          "mu": 110.75141058970604,
+          "omega": 1028961.9918677913,
+          "alpha": 0.0,
+          "beta": 0.9980373257140114
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 15,
+          "evaluations": 103,
+          "objective": 361.6830533801522
+        },
+        "parameters_sha256": "90fe98ad74dd6c50bf1701a42eab8bfc000afeeec382d0b45ab7d06abb3e050b",
+        "residual_pool_sha256": "bbc96b14fe7edbaa38a378c3d8b83715ab09d2cf15e3093b3599bcc0dfb7a34c",
+        "conditional_variance_sha256": "3c75250b82de0a5503be46b87c837b0e2644850f1dd2227f3c7075ff21c21c16",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 6572.843182607309,
+        "maximum_native_sigma": 15423.311853776704
+      },
+      "pot": {
+        "threshold": 2.4059480133464883,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 59,
+          "evaluations": 116,
+          "objective": 28.157518967870924,
+          "initial": [
+            0.1,
+            0.08740645487680859
+          ]
+        },
+        "xi": 0.11813137313472644,
+        "beta": 0.9654607142664664,
+        "quantile": 3.103315877222491,
+        "normalized_headroom_sha256": "c9ec3c62022fee37f0e169cd0a720cb248d821904f388697417dd19f50ef1287"
+      }
+    },
+    {
+      "refit_index": 509,
+      "training_first_origin": 244,
+      "training_last_origin": 503,
+      "training_count": 260,
+      "latest_label_end": 509,
+      "increment_first_end": 245,
+      "increment_last_end": 509,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 12367.257138135146,
+        "normalized_parameters": {
+          "mu": 0.011739274877648694,
+          "omega": 0.007455240612969445,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9963292472864866
+        },
+        "native_parameters": {
+          "mu": 145.1826310271314,
+          "omega": 1140271.9627201091,
+          "alpha": 0.0,
+          "beta": 0.9963292472864866
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 15,
+          "evaluations": 92,
+          "objective": 367.74728127568204
+        },
+        "parameters_sha256": "24adc7e86b8c78d7e26126e4d23c8d8fe30e77ef7924a698d8e9da81c747122e",
+        "residual_pool_sha256": "2a9c8a96dfadb6e3b5295dc14a04684fa259538f9908424c95cd094061920e2b",
+        "conditional_variance_sha256": "4c47fc07b892ac9a94c06e1478eee7dbe6d03b148e52c065053647553e085344",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 8151.626959455733,
+        "maximum_native_sigma": 14769.877135472647
+      },
+      "pot": {
+        "threshold": 2.341149137910506,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 62,
+          "evaluations": 122,
+          "objective": 29.919091513208325,
+          "initial": [
+            0.1,
+            0.15117668852102228
+          ]
+        },
+        "xi": 0.037391533467483834,
+        "beta": 1.1200157690194665,
+        "quantile": 3.1276328633182158,
+        "normalized_headroom_sha256": "6aafe777d48a095db759516dd654b317986933c5d4064b447a2d93ddb1948f7d"
+      }
+    },
+    {
+      "refit_index": 522,
+      "training_first_origin": 257,
+      "training_last_origin": 516,
+      "training_count": 260,
+      "latest_label_end": 522,
+      "increment_first_end": 258,
+      "increment_last_end": 522,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 13161.345100581619,
+        "normalized_parameters": {
+          "mu": 0.010752916046579523,
+          "omega": 0.04500478485437673,
+          "alpha[1]": 0.12958030137396706,
+          "beta[1]": 0.8412622023403064
+        },
+        "native_parameters": {
+          "mu": 141.52283892661487,
+          "omega": 7795774.0558303995,
+          "alpha": 0.12958030137396706,
+          "beta": 0.8412622023403064
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 67,
+          "objective": 368.3618555722536
+        },
+        "parameters_sha256": "953a7aa05e6a74e7b39aa0edd6edc2981da3eccfd618ea75ca42091e2223c32f",
+        "residual_pool_sha256": "31b7eeac49b593f8a00b6b86ecc16a92d8279d87e9784ac7b50348ccae1b6c2f",
+        "conditional_variance_sha256": "9e549713d312dd988710338826e366e7577a63a92769bbb872fbd7a733a5b39d",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 8188.617150705338,
+        "maximum_native_sigma": 21804.68482130255
+      },
+      "pot": {
+        "threshold": 2.4398497526299843,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 61,
+          "evaluations": 124,
+          "objective": 36.506895470089304,
+          "initial": [
+            0.1,
+            0.4049573174332686
+          ]
+        },
+        "xi": -0.07099942778817839,
+        "beta": 1.6081923735777202,
+        "quantile": 3.5275789992132687,
+        "normalized_headroom_sha256": "6283eb6ed8f3c500c298d999f2ae3842302d78180cce4941a0b8fc16285554c1"
+      }
+    },
+    {
+      "refit_index": 535,
+      "training_first_origin": 270,
+      "training_last_origin": 529,
+      "training_count": 260,
+      "latest_label_end": 535,
+      "increment_first_end": 271,
+      "increment_last_end": 535,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 13799.391616614092,
+        "normalized_parameters": {
+          "mu": 0.01600259084876539,
+          "omega": 0.008749666461017424,
+          "alpha[1]": 7.741311330158716e-11,
+          "beta[1]": 0.9959505545556285
+        },
+        "native_parameters": {
+          "mu": 220.82601800255847,
+          "omega": 1666139.5650875585,
+          "alpha": 7.741311330158716e-11,
+          "beta": 0.9959505545556285
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 16,
+          "evaluations": 101,
+          "objective": 363.5489419354407
+        },
+        "parameters_sha256": "9e5428820c03a21de211b5dc0ac7b7f35cd3ad43e733965dbb25f92855907e20",
+        "residual_pool_sha256": "8bbc1a9e3373d5a588b025d7fe8732636cc25d30ed687da7fe029e74fbc49c0f",
+        "conditional_variance_sha256": "725d9efca0c751d20554bb546f9c2b19cfedc14fdd5c94464884b6bf46584b16",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 7315.052700539468,
+        "maximum_native_sigma": 16994.79171053506
+      },
+      "pot": {
+        "threshold": 2.691429212701645,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 64,
+          "evaluations": 127,
+          "objective": 26.87565856634521,
+          "initial": [
+            0.1,
+            0.03430693073054961
+          ]
+        },
+        "xi": -0.04340442908265049,
+        "beta": 1.0801323814803883,
+        "quantile": 3.4289696026999574,
+        "normalized_headroom_sha256": "f435df2321bc23e82ab5cd077cbf93f02d2f589b6d469ba1f73e85abb29664d1"
+      }
+    },
+    {
+      "refit_index": 548,
+      "training_first_origin": 283,
+      "training_last_origin": 542,
+      "training_count": 260,
+      "latest_label_end": 548,
+      "increment_first_end": 284,
+      "increment_last_end": 548,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 14025.808934125824,
+        "normalized_parameters": {
+          "mu": 0.009513797675241327,
+          "omega": 0.7689429345451463,
+          "alpha[1]": 0.2324928642238487,
+          "beta[1]": 1.1381917463430603e-15
+        },
+        "native_parameters": {
+          "mu": 133.4387084308653,
+          "omega": 151269004.0958058,
+          "alpha": 0.2324928642238487,
+          "beta": 1.1381917463430603e-15
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 61,
+          "objective": 370.3851804909159
+        },
+        "parameters_sha256": "17bf00adb9c099c6140d84ed3adfa22d858d16bff0b2261ae97dc5ab09450275",
+        "residual_pool_sha256": "b5b819f49a83c853b2980b1d0df8d4b1dfcfaaa50d04c6ac433e59b66a57dc67",
+        "conditional_variance_sha256": "d22e328537c98102f79e779cffd9ed799b30e678e72fbd0a77f11a152ff243f5",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12299.193536714794,
+        "maximum_native_sigma": 23928.284675837145
+      },
+      "pot": {
+        "threshold": 2.570340833059578,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 142,
+          "evaluations": 260,
+          "objective": 31.352542443551194,
+          "initial": [
+            0.1,
+            0.24633536934432626
+          ]
+        },
+        "xi": -0.4999999999999905,
+        "beta": 2.017189991949046,
+        "quantile": 3.7519833724600575,
+        "normalized_headroom_sha256": "c5e07e8eb7982e4833144cd1f6ae3e3864860f9f89234f473c8c61834f1a8668"
+      }
+    },
+    {
+      "refit_index": 561,
+      "training_first_origin": 296,
+      "training_last_origin": 555,
+      "training_count": 260,
+      "latest_label_end": 561,
+      "increment_first_end": 297,
+      "increment_last_end": 561,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 14611.814542955843,
+        "normalized_parameters": {
+          "mu": -0.0008228073674675263,
+          "omega": 0.8341237374596382,
+          "alpha[1]": 0.16347269860163452,
+          "beta[1]": 5.24042266595518e-12
+        },
+        "native_parameters": {
+          "mu": -12.022708658013213,
+          "omega": 178089692.1959646,
+          "alpha": 0.16347269860163452,
+          "beta": 5.24042266595518e-12
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 12,
+          "evaluations": 67,
+          "objective": 372.5644534020588
+        },
+        "parameters_sha256": "28e5211fae6e2d3524771f95036881244e830f838559f781bab03c9b462453aa",
+        "residual_pool_sha256": "f76655d43464409126a9a5da140f51935ef2bc600de5b2c4ba8c5dd809d2aae2",
+        "conditional_variance_sha256": "a06af8c12890faaba07e609eff6983017530e6c786138f8ca0e799d36a3fc080",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13345.027956324755,
+        "maximum_native_sigma": 24234.171951911158
+      },
+      "pot": {
+        "threshold": 2.6826678475165955,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 114,
+          "evaluations": 222,
+          "objective": 28.696938054184507,
+          "initial": [
+            0.1,
+            0.19888592762575272
+          ]
+        },
+        "xi": -0.49999999885383045,
+        "beta": 1.7899246635913364,
+        "quantile": 3.731181440214793,
+        "normalized_headroom_sha256": "b2c0b80092fa9ad037e4a4644e9bc4c4c2084cc298317d68af3c9e773e8a12d5"
+      }
+    },
+    {
+      "refit_index": 574,
+      "training_first_origin": 309,
+      "training_last_origin": 568,
+      "training_count": 260,
+      "latest_label_end": 574,
+      "increment_first_end": 310,
+      "increment_last_end": 574,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 14650.358392550972,
+        "normalized_parameters": {
+          "mu": 0.009484037351464471,
+          "omega": 0.8399828351245894,
+          "alpha[1]": 0.1577801170016499,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": 138.9445462072944,
+          "omega": 180288036.7166368,
+          "alpha": 0.1577801170016499,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 372.74418579829984
+        },
+        "parameters_sha256": "0835e9beeefe1a082e337d2beee8ad5938d8b2f16a0b29d0ae373ebb260399c4",
+        "residual_pool_sha256": "11fa575211516d5d4e5053e35139f9a1e6221a8e0dec5f40501a41c606f953c2",
+        "conditional_variance_sha256": "c7342c994ae0912c9b4859c0a2e9c26fe549d39b82337e9cafef51ecbd9db794",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13427.162934721247,
+        "maximum_native_sigma": 23934.57442741299
+      },
+      "pot": {
+        "threshold": 2.7677812445358887,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 142,
+          "evaluations": 257,
+          "objective": 27.27793141031931,
+          "initial": [
+            0.1,
+            0.12586228617821957
+          ]
+        },
+        "xi": -0.49999999999998324,
+        "beta": 1.720863957841883,
+        "quantile": 3.7758400120406264,
+        "normalized_headroom_sha256": "d8546ca413164ebd74d4ea7ed7fb29c6e309b499bee17a1e9aa4c021849d597c"
+      }
+    },
+    {
+      "refit_index": 587,
+      "training_first_origin": 322,
+      "training_last_origin": 581,
+      "training_count": 260,
+      "latest_label_end": 587,
+      "increment_first_end": 323,
+      "increment_last_end": 587,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 15079.682042216262,
+        "normalized_parameters": {
+          "mu": 0.0037700304888143776,
+          "omega": 0.864008290819772,
+          "alpha[1]": 0.13537115317899795,
+          "beta[1]": 1.3708489376368895e-11
+        },
+        "native_parameters": {
+          "mu": 56.850861060781966,
+          "omega": 196472729.57308197,
+          "alpha": 0.13537115317899795,
+          "beta": 1.3708489376368895e-11
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 13,
+          "evaluations": 70,
+          "objective": 373.6443770675327
+        },
+        "parameters_sha256": "e6bdff377a8c05e1c6fc7b0a606c651f772304d17f36348fc0431a9037e31bb9",
+        "residual_pool_sha256": "fcb4a77fd924c2abd285c9600b7c5d1e424ed1165e248276ca6731518c511325",
+        "conditional_variance_sha256": "5a3946d7096d8e8bfd8b3152846dea0f8fe0efaf0128c26d847478c116eeffb3",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14016.87601344618,
+        "maximum_native_sigma": 23117.135246385642
+      },
+      "pot": {
+        "threshold": 2.9823715340729238,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 69,
+          "evaluations": 137,
+          "objective": 21.733042697498263,
+          "initial": [
+            0.1,
+            -0.14704737877931576
+          ]
+        },
+        "xi": -0.27139529047412725,
+        "beta": 1.1132476414677601,
+        "quantile": 3.685781247073991,
+        "normalized_headroom_sha256": "44f3be560f347b2eceba5e0f39685b5fd1cb695b2a07915e293915a59d7c65f3"
+      }
+    },
+    {
+      "refit_index": 600,
+      "training_first_origin": 335,
+      "training_last_origin": 594,
+      "training_count": 260,
+      "latest_label_end": 600,
+      "increment_first_end": 336,
+      "increment_last_end": 600,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 15446.503391346143,
+        "normalized_parameters": {
+          "mu": 0.012353740627123912,
+          "omega": 0.0041926008199701156,
+          "alpha[1]": 8.960243143270789e-14,
+          "beta[1]": 0.9994858792593276
+        },
+        "native_parameters": {
+          "mu": 190.82209649268015,
+          "omega": 1000331.3580636383,
+          "alpha": 8.960243143270789e-14,
+          "beta": 0.9994858792593276
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 65,
+          "objective": 370.4593018053397
+        },
+        "parameters_sha256": "5ffa98800bc2a2da99a00cc506e5902bf9b5f35d7c93e5be804b2733314bd3c8",
+        "residual_pool_sha256": "e3b0bbcf279224349146b84e2e0b17c836ed7a6df50ff2fd34664505d4cdb6a0",
+        "conditional_variance_sha256": "626efad93a7f4f9b8f46e763d5d57af1990218cff06693c39d16b0dae8f0eb16",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 10944.036697744206,
+        "maximum_native_sigma": 18750.351070941928
+      },
+      "pot": {
+        "threshold": 2.958275611379027,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 72,
+          "evaluations": 143,
+          "objective": 25.37212802759734,
+          "initial": [
+            0.1,
+            -0.020073534279457312
+          ]
+        },
+        "xi": 0.11526945564209357,
+        "beta": 0.8698640312448177,
+        "quantile": 3.585961158310696,
+        "normalized_headroom_sha256": "3960db74f614c7a06901a235b7f749803f6ca033698cd58ca34070d5112027b8"
+      }
+    },
+    {
+      "refit_index": 613,
+      "training_first_origin": 348,
+      "training_last_origin": 607,
+      "training_count": 260,
+      "latest_label_end": 613,
+      "increment_first_end": 349,
+      "increment_last_end": 613,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16115.318830582308,
+        "normalized_parameters": {
+          "mu": 0.0027676676186217425,
+          "omega": 0.8095180590157887,
+          "alpha[1]": 0.18647744964949262,
+          "beta[1]": 3.5808235449666844e-12
+        },
+        "native_parameters": {
+          "mu": 44.60184609116786,
+          "omega": 210234674.05828926,
+          "alpha": 0.18647744964949262,
+          "beta": 3.5808235449666844e-12
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 12,
+          "evaluations": 66,
+          "objective": 371.34321703551683
+        },
+        "parameters_sha256": "eb17fd25c7f7c8fc7d5f2f8ab593e5aafac9a53cd1ecf5fb7389ff5e29d174f9",
+        "residual_pool_sha256": "3540a67a7d7378afa1f3c5538a748416df3afb00fbee2a65ccd04a3bac13be77",
+        "conditional_variance_sha256": "2715b1acb6f80e8cce2602cb94fdb57782bc573ea21ea77724ddf86c5f2f6421",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14499.472530850406,
+        "maximum_native_sigma": 27839.81498199402
+      },
+      "pot": {
+        "threshold": 3.0239656861903152,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 86,
+          "evaluations": 171,
+          "objective": 24.84160162109712,
+          "initial": [
+            0.1,
+            0.007616163846646282
+          ]
+        },
+        "xi": -0.4870290881700432,
+        "beta": 1.5565553890775656,
+        "quantile": 3.939648615027243,
+        "normalized_headroom_sha256": "a1292e260e457087c9ddbd7648d559fe14da412755d4bd9deab0fe01a38a5ac8"
+      }
+    },
+    {
+      "refit_index": 626,
+      "training_first_origin": 361,
+      "training_last_origin": 620,
+      "training_count": 260,
+      "latest_label_end": 626,
+      "increment_first_end": 362,
+      "increment_last_end": 626,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16295.7980994523,
+        "normalized_parameters": {
+          "mu": 0.006718027475627234,
+          "omega": 0.8273337341831006,
+          "alpha[1]": 0.16711631362955717,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": 109.47561936939462,
+          "omega": 219700984.64777824,
+          "alpha": 0.16711631362955717,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 12,
+          "evaluations": 66,
+          "objective": 372.0911627975391
+        },
+        "parameters_sha256": "78860bdeedad26c2c7b6f4def47618c0327841d66f0763dd9653c20e48f614ff",
+        "residual_pool_sha256": "7f3f60ff6cc5fa744d34489d8ef3ba819020eb8e8b84b354ab37eeb2f2f45e20",
+        "conditional_variance_sha256": "3e6912d819f9adf54fec950ecdd839cc7e948131ee018bb56f8ceefef86b8be6",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14822.34757920297,
+        "maximum_native_sigma": 26919.995065309067
+      },
+      "pot": {
+        "threshold": 3.047178297669413,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 77,
+          "evaluations": 150,
+          "objective": 23.355029825201214,
+          "initial": [
+            0.1,
+            -0.05486321218905606
+          ]
+        },
+        "xi": -0.46761130917291616,
+        "beta": 1.4417846565357468,
+        "quantile": 3.9007553595476385,
+        "normalized_headroom_sha256": "c6a82461b5410908433ff5e55c2fa6a2863a972cd0c9b441c839f00db9ac0e8f"
+      }
+    },
+    {
+      "refit_index": 639,
+      "training_first_origin": 374,
+      "training_last_origin": 633,
+      "training_count": 260,
+      "latest_label_end": 639,
+      "increment_first_end": 375,
+      "increment_last_end": 639,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16157.282873221073,
+        "normalized_parameters": {
+          "mu": -0.015498557457497085,
+          "omega": 0.004308581820136032,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9988765792770136
+        },
+        "native_parameters": {
+          "mu": -250.4145769676504,
+          "omega": 1124788.8473322792,
+          "alpha": 0.0,
+          "beta": 0.9988765792770136
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 63,
+          "objective": 371.3120979603693
+        },
+        "parameters_sha256": "b203fb72f3c8b909fda3d38f274f540dacefade96d69e8745a92b89780859d4a",
+        "residual_pool_sha256": "13c6d957606bd3e32cf33eda0376f466854b182f6b8fe79135033a9feeaafb0c",
+        "conditional_variance_sha256": "847a98c9b4b066522d63f4890cc327bbb7a75df13ad3f1d8b399b347d4fdf318",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12132.186027408294,
+        "maximum_native_sigma": 19143.633857448644
+      },
+      "pot": {
+        "threshold": 2.870611066637003,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 147,
+          "evaluations": 268,
+          "objective": 14.592760522417333,
+          "initial": [
+            0.1,
+            -0.3356966266492497
+          ]
+        },
+        "xi": -0.499999999999999,
+        "beta": 1.0236396309770495,
+        "quantile": 3.4702452794807677,
+        "normalized_headroom_sha256": "c64308011c89ea05f0a5ab9ee7a1ee555c02b1ca83c1357fd1df3f08ca9167b3"
+      }
+    },
+    {
+      "refit_index": 652,
+      "training_first_origin": 387,
+      "training_last_origin": 646,
+      "training_count": 260,
+      "latest_label_end": 652,
+      "increment_first_end": 388,
+      "increment_last_end": 652,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16143.406489431494,
+        "normalized_parameters": {
+          "mu": -0.01301433659978175,
+          "omega": 0.8282876026040195,
+          "alpha[1]": 0.1643400049768354,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": -210.0957259205625,
+          "omega": 215859678.50459072,
+          "alpha": 0.1643400049768354,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 61,
+          "objective": 371.94456410340905
+        },
+        "parameters_sha256": "42bf949b6ac17f8d8a668ec8f8946bb01f34f2f9896b6605af4768d07680c440",
+        "residual_pool_sha256": "5687fdf979d584fa8073f2d0c9cadf4f50fbdca0d8241971e247aa5994c5a79f",
+        "conditional_variance_sha256": "f307224c229332842838188b263b110ccdd1228e0e07c5e975d981ef16d1dd3d",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14692.167953010425,
+        "maximum_native_sigma": 26800.11567725668
+      },
+      "pot": {
+        "threshold": 2.960904738672485,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 65,
+          "evaluations": 127,
+          "objective": 20.772908378971827,
+          "initial": [
+            0.1,
+            -0.19793902831435778
+          ]
+        },
+        "xi": -0.11076219335775639,
+        "beta": 0.9136755038301033,
+        "quantile": 3.57051564365364,
+        "normalized_headroom_sha256": "df78fdd49bdfcbba923d1cd5316360a2f007d151f5e19b1d1dc0d524f3566e08"
+      }
+    },
+    {
+      "refit_index": 665,
+      "training_first_origin": 400,
+      "training_last_origin": 659,
+      "training_count": 260,
+      "latest_label_end": 665,
+      "increment_first_end": 401,
+      "increment_last_end": 665,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16596.03901458372,
+        "normalized_parameters": {
+          "mu": 0.006225719881545673,
+          "omega": 0.8051614629124936,
+          "alpha[1]": 0.18774546030461822,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": 103.32229004800152,
+          "omega": 221764422.82330143,
+          "alpha": 0.18774546030461822,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 56,
+          "objective": 371.23747352294424
+        },
+        "parameters_sha256": "c20df4e814693c103746bdd1545cc1f79a618d2e5320368c084b6b42f6aee18c",
+        "residual_pool_sha256": "a74f81068c5202f918b218b40ac4d4635ff7a230c3c7515affe967c171503ea3",
+        "conditional_variance_sha256": "9862a54cd8438f5cee707acaaa6dffaebe89d2281009951aab647702abb0d3b6",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14891.788940885313,
+        "maximum_native_sigma": 28092.93310454012
+      },
+      "pot": {
+        "threshold": 2.977201875024032,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 80,
+          "evaluations": 156,
+          "objective": 22.16716661190003,
+          "initial": [
+            0.1,
+            -0.11282952978124197
+          ]
+        },
+        "xi": -0.35251512090607046,
+        "beta": 1.2276459300852753,
+        "quantile": 3.732154374144213,
+        "normalized_headroom_sha256": "ebe6b8159631e8ade395d6bd7ad32834a4b0cb01cda7163d924e030cefd7c491"
+      }
+    },
+    {
+      "refit_index": 678,
+      "training_first_origin": 413,
+      "training_last_origin": 672,
+      "training_count": 260,
+      "latest_label_end": 678,
+      "increment_first_end": 414,
+      "increment_last_end": 678,
+      "increment_count": 265,
+      "garch": {
+        "normalization_rms": 16767.96080580181,
+        "normalized_parameters": {
+          "mu": 0.0042256022460614205,
+          "omega": 0.7767779431539078,
+          "alpha[1]": 0.21999666440340063,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": 70.854732842866,
+          "omega": 218402389.44324023,
+          "alpha": 0.21999666440340063,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 370.2931199996077
+        },
+        "parameters_sha256": "5e500c9abda08e5c29bbf25287d016fd8068be1c02df40ba21978e982526f083",
+        "residual_pool_sha256": "cbffb9054d251c5048fb0cf62dbfecf68de470448ec9806a5c5fc34d488af945",
+        "conditional_variance_sha256": "7803d54f913f09f32a2e4fa970541f4fac5d255d3aa6cfd74932323bd232869b",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14778.454640795924,
+        "maximum_native_sigma": 29734.048324653166
+      },
+      "pot": {
+        "threshold": 2.9752774178788663,
+        "tail_count": 26,
+        "nominal_tail_count": 26,
+        "tail_fraction": 0.1,
+        "window": 260,
+        "warnings": [],
+        "optimizer": {
+          "method": "Nelder-Mead",
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully.",
+          "iterations": 72,
+          "evaluations": 143,
+          "objective": 22.26254771157668,
+          "initial": [
+            0.1,
+            -0.1162538355168878
+          ]
+        },
+        "xi": -0.3220674674204861,
+        "beta": 1.1952068945878562,
+        "quantile": 3.7177732290500396,
+        "normalized_headroom_sha256": "7b1308f02251aedd56ed821d6fcab385042677c97690b5fd9d2990a40a43b862"
+      }
+    }
+  ],
+  "refit_count": 22,
+  "resources": {
+    "started_utc": "2026-10-23T10:29:37.150740+00:00",
+    "checkpoint_utc": "2026-10-23T10:29:38Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 1.659197417087853,
+    "peak_rss_bytes": 191496192,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 33,
+    "completed_stability_lengths": [],
+    "current_stage": "D1_complete_or_NA",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 277,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 2588470,
+    "private_numeric_output_bytes_at_checkpoint": 14798,
+    "public_analysis_output_bytes_at_checkpoint": 2573672
+  },
+  "private_files": [
+    {
+      "name": "numeric-traces.npz",
+      "bytes": 14798,
+      "sha256": "b2cc7d18ff6a1576f8cd04d7176999607a5e0e2d81d35c0b5e62209234e6d9f3"
+    }
+  ]
+}

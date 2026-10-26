@@ -1,0 +1,43 @@
+{
+  "step": "D1",
+  "command": "env UV_PYTHON_DOWNLOADS=never 'UV_CACHE_DIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache' PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 NUMBA_DISABLE_JIT=1 NUMBA_NUM_THREADS=1 'MPLCONFIGDIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/mpl-d1' MPLBACKEND=Agg 'JOBLIB_TEMP_FOLDER=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/joblib-d1' VECLIB_MAXIMUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with arch --with scikit-learn python -B round2_baselines_verify.py",
+  "argv": [
+    "/Users/bingyouli/.local/bin/uv",
+    "run",
+    "--no-project",
+    "--no-env-file",
+    "--python",
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "--with",
+    "pytest",
+    "--with",
+    "arch",
+    "--with",
+    "scikit-learn",
+    "python",
+    "-B",
+    "round2_baselines_verify.py"
+  ],
+  "environment_delta": {
+    "UV_PYTHON_DOWNLOADS": "never",
+    "UV_CACHE_DIR": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "NUMBA_DISABLE_JIT": "1",
+    "NUMBA_NUM_THREADS": "1",
+    "MPLCONFIGDIR": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/mpl-d1",
+    "MPLBACKEND": "Agg",
+    "JOBLIB_TEMP_FOLDER": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/joblib-d1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "started_utc": "2026-10-23T10:42:23.998108+00:00",
+  "ended_utc": "2026-10-23T10:42:26.034230+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"VERIFIED_SAVED_OUTPUTS_NOT_REFITTING\",\n  \"planned_cells\": 24,\n  \"complete_cells\": 18,\n  \"NA_cells\": 6,\n  \"independently_scored_origins\": 55770,\n  \"verified_refit_receipts\": 2436,\n  \"maturity_or_label_or_floor_mismatches\": 0,\n  \"separate_Holm_slots\": 48,\n  \"scalar_check_max_errors\": {\n    \"mean_pinball\": 0.0,\n    \"mean_difference\": 0.0,\n    \"lrv_relative\": 4.789264714901007e-16,\n    \"dm_t\": 1.7763568394002505e-15,\n    \"dm_p\": 1.3877787807814457e-16,\n    \"hln_p\": 2.2144508449173372e-12\n  },\n  \"failures\": [\n    {\n      \"source\": \"fx_hourly\",\n      \"horizon\": 6,\n      \"window\": 720,\n      \"method\": \"FHS\",\n      \"issued_before_failure\": 240,\n      \"kind\": \"PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS\",\n      \"optimizer_convergence_flag\": 0,\n      \"persistence\": 1.0000000001272118,\n      \"persistence_minus_one\": 1.272117966522046e-10,\n      \"declared_ceiling\": 1.0000000001,\n      \"excess_over_declared_ceiling\": 2.7211788378167512e-11,\n      \"interpretation\": \"No scoring or relaxed-tolerance rerun; this is not optimizer nonconvergence or a performance comparison.\",\n      \"fixed_parameter_readback\": {\n        \"optimizer_called\": false,\n        \"new_forecasts_issued\": false,\n        \"increment_count\": 725,\n        \"variance_shape_matches\": true,\n        \"residual_shape_matches\": true,\n        \"positive_finite_variances\": true,\n        \"finite_residual_pool\": true,\n        \"conditional_variance_sha256_matches\": true,\n        \"residual_pool_sha256_matches\": true\n      },\n      \"all_other_recorded_admissibility_conditions_verified\": true\n    },\n    {\n      \"source\": \"fx_hourly\",\n      \"horizon\": 6,\n      \"window\": 720,\n      \"method\": \"PEAK_POT\",\n      \"issued_before_failure\": 240,\n      \"kind\": \"PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS\",\n      \"optimizer_convergence_flag\": 0,\n      \"persistence\": 1.0000000001272118,\n      \"persistence_minus_one\": 1.272117966522046e-10,\n      \"declared_ceiling\": 1.0000000001,\n      \"excess_over_declared_ceiling\": 2.7211788378167512e-11,\n      \"interpretation\": \"No scoring or relaxed-tolerance rerun; this is not optimizer nonconvergence or a performance comparison.\",\n      \"fixed_parameter_readback\": {\n        \"optimizer_called\": false,\n        \"new_forecasts_issued\": false,\n        \"increment_count\": 725,\n        \"variance_shape_matches\": true,\n        \"residual_shape_matches\": true,\n        \"positive_finite_variances\": true,\n        \"finite_residual_pool\": true,\n        \"conditional_variance_sha256_matches\": true,\n        \"residual_pool_sha256_matches\": true\n      },\n      \"all_other_recorded_admissibility_conditions_verified\": true\n    },\n    {\n      \"source\": \"fx_hourly\",\n      \"horizon\": 24,\n      \"window\": 720,\n      \"method\": \"FHS\",\n      \"issued_before_failure\": 240,\n      \"kind\": \"PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS\",\n      \"optimizer_convergence_flag\": 0,\n      \"persistence\": 1.0000000001298595,\n      \"persistence_minus_one\": 1.2985945652133069e-10,\n      \"declared_ceiling\": 1.0000000001,\n      \"excess_over_declared_ceiling\": 2.9859448247293585e-11,\n      \"interpretation\": \"No scoring or relaxed-tolerance rerun; this is not optimizer nonconvergence or a performance comparison.\",\n      \"fixed_parameter_readback\": {\n        \"optimizer_called\": false,\n        \"new_forecasts_issued\": false,\n        \"increment_count\": 743,\n        \"variance_shape_matches\": true,\n        \"residual_shape_matches\": true,\n        \"positive_finite_variances\": true,\n        \"finite_residual_pool\": true,\n        \"conditional_variance_sha256_matches\": true,\n        \"residual_pool_sha256_matches\": true\n      },\n      \"all_other_recorded_admissibility_conditions_verified\": true\n    },\n    {\n      \"source\": \"fx_hourly\",\n      \"horizon\": 24,\n      \"window\": 720,\n      \"method\": \"PEAK_POT\",\n      \"issued_before_failure\": 240,\n      \"kind\": \"PERSISTENCE_GATE_WITH_OPTIMIZER_SUCCESS\",\n      \"optimizer_convergence_flag\": 0,\n      \"persistence\": 1.0000000001298595,\n      \"persistence_minus_one\": 1.2985945652133069e-10,\n      \"declared_ceiling\": 1.0000000001,\n      \"excess_over_declared_ceiling\": 2.9859448247293585e-11,\n      \"interpretation\": \"No scoring or relaxed-tolerance rerun; this is not optimizer nonconvergence or a performance comparison.\",\n      \"fixed_parameter_readback\": {\n        \"optimizer_called\": false,\n        \"new_forecasts_issued\": false,\n        \"increment_count\": 743,\n        \"variance_shape_matches\": true,\n        \"residual_shape_matches\": true,\n        \"positive_finite_variances\": true,\n        \"finite_residual_pool\": true,\n        \"conditional_variance_sha256_matches\": true,\n        \"residual_pool_sha256_matches\": true\n      },\n      \"all_other_recorded_admissibility_conditions_verified\": true\n    },\n    {\n      \"source\": \"nyfed_weekly\",\n      \"horizon\": 6,\n      \"window\": 52,\n      \"method\": \"PEAK_POT\",\n      \"issued_before_failure\": 0,\n      \"kind\": \"POT_STRUCTURAL_TAIL_SIZE\",\n      \"tail_sample_window\": 52,\n      \"maximum_nominal_tail_count\": 5,\n      \"required_strict_exceedances\": 20\n    },\n    {\n      \"source\": \"nyfed_weekly\",\n      \"horizon\": 24,\n      \"window\": 52,\n      \"method\": \"PEAK_POT\",\n      \"issued_before_failure\": 0,\n      \"kind\": \"POT_STRUCTURAL_TAIL_SIZE\",\n      \"tail_sample_window\": 52,\n      \"maximum_nominal_tail_count\": 5,\n      \"required_strict_exceedances\": 20\n    }\n  ],\n  \"statistical_validity_claim\": false\n}\n",
+  "stderr": "WARN `--no-project` was provided, but no project was found\n"
+}

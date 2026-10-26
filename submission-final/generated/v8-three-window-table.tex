@@ -1,0 +1,18 @@
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{llrrrrrr}
+\caption{Six-step original regression across three inspected windows; the full-prefix window contains the earlier reported backcast, so this is not independent validation. Loss is scaled to USD millions for display; raw normal-HAC p-values are descriptive. Missing archived breach counts remain NA.}\label{tab:v8-backcast}\\
+\toprule
+Window & Reference & \shortstack{Mean loss\\Reg. / hist. (USD m)} & \shortstack{Change\\(\%)} & \shortstack{Breaches\\Reg. / hist.} & DM & Raw $p$ & Issues\\\midrule
+\endfirsthead
+\caption[]{Continued.}\\\toprule
+Window & Reference & \shortstack{Mean loss\\Reg. / hist. (USD m)} & \shortstack{Change\\(\%)} & \shortstack{Breaches\\Reg. / hist.} & DM & Raw $p$ & Issues\\\midrule
+\endhead
+\bottomrule\endfoot
+Full prefix & Matched F2880 & 0.587 / 0.668 & -12.167 & 416 / 282 & -3.518 & <0.001 & 7368\\
+Full prefix & Rolling F720 & 0.587 / 0.619 & -5.296 & 416 / 387 & -1.918 & 0.055 & 7368\\
+Prior backcast & Matched F2880 & 0.287 / 0.344 & -16.624 & 20 / 16 & -4.178 & <0.001 & 1440\\
+Prior backcast & Rolling F720 & 0.287 / 0.278 & 3.168 & 20 / NA & 0.563 & 0.574 & 1440\\
+Original & Matched F2880 & 0.386 / 0.453 & -14.767 & 376 / 360 & -5.866 & <0.001 & 6625\\
+Original & Rolling F720 & 0.386 / 0.442 & -12.660 & 376 / 332 & -5.182 & <0.001 & 6625\\
+\end{longtable}
+\endgroup

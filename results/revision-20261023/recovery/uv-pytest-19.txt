@@ -1,0 +1,44 @@
+WARN `--no-project` was provided, but no project was found
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache/builds-v0/.tmp1ZIvfS/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 19 items
+
+test_inference_tests.py::KnownAnswers::test_bad_inputs PASSED            [  5%]
+test_inference_tests.py::KnownAnswers::test_chi_square_six_known PASSED  [ 10%]
+test_inference_tests.py::KnownAnswers::test_christoffersen_known PASSED  [ 15%]
+test_inference_tests.py::KnownAnswers::test_dm_horizon_two_known PASSED  [ 21%]
+test_inference_tests.py::KnownAnswers::test_dm_known_bartlett_and_hln PASSED [ 26%]
+test_inference_tests.py::KnownAnswers::test_dm_sign_and_degenerate PASSED [ 31%]
+test_inference_tests.py::KnownAnswers::test_dq_unidentified_hits PASSED  [ 36%]
+test_inference_tests.py::KnownAnswers::test_holm_known_and_order PASSED  [ 42%]
+test_inference_tests.py::KnownAnswers::test_kupiec_known PASSED          [ 47%]
+test_inference_tests.py::KnownAnswers::test_murphy_crossing_and_integral PASSED [ 52%]
+test_inference_tests.py::KnownAnswers::test_student_against_closed_forms PASSED [ 57%]
+test_parsimonious_v3.py::CausalFourFeatures::test_current_and_rms_known PASSED [ 63%]
+test_parsimonious_v3.py::CausalFourFeatures::test_future_changes_do_not_change_issued_features PASSED [ 68%]
+test_parsimonious_v3.py::CausalFourFeatures::test_training_transform_constant_and_causal PASSED [ 73%]
+test_v3_math_format.py::MathematicalTypesetting::test_absolute_value_is_not_norm PASSED [ 78%]
+test_v3_math_format.py::MathematicalTypesetting::test_current_source_preserves_input_and_idempotence PASSED [ 84%]
+test_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span FAILED [ 89%]
+test_v3_math_format.py::MathematicalTypesetting::test_notation_cells_use_whole_tex_expressions PASSED [ 94%]
+test_v3_math_format.py::MathematicalTypesetting::test_recovered_parameterization_has_real_symbols PASSED [100%]
+
+=================================== FAILURES ===================================
+_____ MathematicalTypesetting.test_full_inline_formula_is_single_math_span _____
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_full_inline_formula_is_single_math_span>
+
+    def test_full_inline_formula_is_single_math_span(self):
+        c=self.content([dict(type='p',html='Choose k=ceil((n+1)τ)≤n.')])
+        normalize_math(c);prepared,bindings=prepare_tex_math(c)
+        from build_tex import build_source
+        tex=restore_tex_math(build_source(prepared),bindings)
+        self.assertIn(r'\(k=\lceil(n+1)\tau\rceil\le n\)',tex)
+>       self.assertNotIn('ceil(',tex)
+E       AssertionError: 'ceil(' unexpectedly found in '\\documentclass[10pt,a4paper]{article}\n\\usepackage[margin=50pt]{geometry}\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amsmath,amssymb,graphicx,booktabs,array}\n\\usepackage[unicode,breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}\n\\setlength{\\parindent}{0pt}\n\\setlength{\\parskip}{6pt}\n\\setlength{\\emergencystretch}{2em}\n\\setlength{\\tabcolsep}{3pt}\n\\hypersetup{pdftitle={Math fixture},pdfauthor={}}\n\\begin{document}\n\\fontsize{10.5}{14}\\selectfont\n\\begin{center}\n{\\LARGE\\bfseries Math fixture}\\par\\vspace{8pt}\n{\\large }\\par\\vspace{6pt}\n\n\\end{center}\n\\begin{abstract}\n\n\\end{abstract}\n\\section*{Appendix C. Numerical conventions}\nChoose \\(k=\\lceil(n+1)\\tau\\rceil\\le n\\).\n\n\\section*{References}\n\\clearpage\n\\end{document}\n'
+
+test_v3_math_format.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span
+========================= 1 failed, 18 passed in 0.14s =========================

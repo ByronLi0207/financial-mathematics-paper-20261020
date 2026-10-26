@@ -1,0 +1,40 @@
+WARN `--no-project` was provided, but no project was found
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-pytest-cache/builds-v0/.tmpqmdTgs/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 11 items / 9 deselected / 2 selected
+
+test_v3_math_format.py::MathematicalTypesetting::test_canonical_positive_parts_and_equal_window_binding FAILED [ 50%]
+test_v3_math_format.py::MathematicalTypesetting::test_catalog_does_not_bind_inside_larger_identifiers FAILED [100%]
+
+=================================== FAILURES ===================================
+_ MathematicalTypesetting.test_canonical_positive_parts_and_equal_window_binding _
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_canonical_positive_parts_and_equal_window_binding>
+
+    def test_canonical_positive_parts_and_equal_window_binding(self):
+        c=self.content([dict(type='p',html='Mean overrun averages (P−C)₊; unused averages (C−P)₊. The two selected k=W52 reports match.')])
+        normalize_math(c);d,bindings=prepare_tex_math(c)
+        from build_tex import build_source
+        tex=restore_tex_math(build_source(d),bindings)
+>       self.assertIn(r'\((P-C)_+\)',tex)
+E       AssertionError: '\\((P-C)_+\\)' not found in '\\documentclass[10pt,a4paper]{article}\n\\usepackage[margin=50pt]{geometry}\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amsmath,amssymb,graphicx,booktabs,array}\n\\usepackage[unicode,breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}\n\\setlength{\\parindent}{0pt}\n\\setlength{\\parskip}{6pt}\n\\setlength{\\emergencystretch}{2em}\n\\setlength{\\tabcolsep}{3pt}\n\\hypersetup{pdftitle={Math fixture},pdfauthor={}}\n\\begin{document}\n\\fontsize{10.5}{14}\\selectfont\n\\begin{center}\n{\\LARGE\\bfseries Math fixture}\\par\\vspace{8pt}\n{\\large }\\par\\vspace{6pt}\n\n\\end{center}\n\\begin{abstract}\n\n\\end{abstract}\n\\section*{Appendix C. Numerical conventions}\nMean overrun averages (P\\(-\\)C)₊; unused averages (C\\(-\\)P)₊. The two selected \\(k=W\\)52 reports match.\n\n\\section*{References}\n\\clearpage\n\\end{document}\n'
+
+test_v3_math_format.py:68: AssertionError
+_ MathematicalTypesetting.test_catalog_does_not_bind_inside_larger_identifiers _
+
+self = <test_v3_math_format.MathematicalTypesetting testMethod=test_catalog_does_not_bind_inside_larger_identifiers>
+
+    def test_catalog_does_not_bind_inside_larger_identifiers(self):
+        c=self.content([dict(type='p',html='A diagnostic token look=Winter should retain its characters.')])
+        normalize_math(c);d,bindings=prepare_tex_math(c)
+        from build_tex import build_source
+        tex=restore_tex_math(build_source(d),bindings)
+>       self.assertIn('look=Winter',tex)
+E       AssertionError: 'look=Winter' not found in '\\documentclass[10pt,a4paper]{article}\n\\usepackage[margin=50pt]{geometry}\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amsmath,amssymb,graphicx,booktabs,array}\n\\usepackage[unicode,breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}\n\\setlength{\\parindent}{0pt}\n\\setlength{\\parskip}{6pt}\n\\setlength{\\emergencystretch}{2em}\n\\setlength{\\tabcolsep}{3pt}\n\\hypersetup{pdftitle={Math fixture},pdfauthor={}}\n\\begin{document}\n\\fontsize{10.5}{14}\\selectfont\n\\begin{center}\n{\\LARGE\\bfseries Math fixture}\\par\\vspace{8pt}\n{\\large }\\par\\vspace{6pt}\n\n\\end{center}\n\\begin{abstract}\n\n\\end{abstract}\n\\section*{Appendix C. Numerical conventions}\nA diagnostic token loo\\(k=W\\)inter should retain its characters.\n\n\\section*{References}\n\\clearpage\n\\end{document}\n'
+
+test_v3_math_format.py:77: AssertionError
+=========================== short test summary info ============================
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_canonical_positive_parts_and_equal_window_binding
+FAILED test_v3_math_format.py::MathematicalTypesetting::test_catalog_does_not_bind_inside_larger_identifiers
+======================= 2 failed, 9 deselected in 0.02s ========================

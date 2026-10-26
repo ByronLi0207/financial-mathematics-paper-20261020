@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-25T11:13:50.310575+00:00",
+  "scope": "Pure constructed aggregate rows and final F2/F3 protocol JSON; no source observations/traces, actual experiment run, fits, predictions, scores, downloads or Git commands.",
+  "protocol_commits": {
+    "F2": "f8628db",
+    "F3": "185e1ae"
+  },
+  "red": {
+    "command": "bundled python3 -B -m unittest -q test_v12_summaries",
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "reason": "v12_summaries absent before implementation; missing-module assertions failed as expected"
+  },
+  "green": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 uv run --offline --no-project --no-env-file --python BUNDLED_PYTHON --with pytest==9.1.1 --with numpy==2.3.5 python -B -m pytest -q -p no:cacheprovider test_v12_summaries.py",
+    "tests_passed": 14,
+    "pytest_seconds": 0.05,
+    "exit_code": 0,
+    "output": "14 passed in 0.05s"
+  },
+  "combined_verification": {
+    "command": "Same isolated pytest invocation for test_v12_inputs.py and test_v12_summaries.py",
+    "tests_passed": 29,
+    "subtests_passed": 3,
+    "exit_code": 0
+  },
+  "files": {
+    "v12_summaries.py": {
+      "bytes": 15917,
+      "sha256": "78caf8e4ccbe27e98d04311a94a747500b1c6acab5ad73144c9e31323cd70893"
+    },
+    "test_v12_summaries.py": {
+      "bytes": 10884,
+      "sha256": "99ac7d9ccc0baf88343f3df657f7637cfc19b1ebce77ef19d0f386793b6dc883"
+    }
+  },
+  "coverage": [
+    "F2 inclusive -5pp and strict infinity increase",
+    "QR4 separate from QR33 primary",
+    "missing pairs retain eligible denominator",
+    "complete failing W dominates missing other W",
+    "difference of medians versus median paired changes",
+    "pre-gate exclusion metadata",
+    "duplicate/nonfinite rows terminal unknown",
+    "Q1 29/34 fixed support bounds",
+    "strict zero ties do not count",
+    "Q2 complete counterexample dominates missing other period",
+    "tau90 cannot replace tau99",
+    "all planned slots and resource/failure group counts"
+  ],
+  "output_contract": {
+    "F2": "top-level V1,V2 and predictions aliases for QR33; methods QR33/QR4 by_window details; counts, slot_inventory and descriptive_groups",
+    "F3": "top-level Q1,Q2 and predictions aliases; counts, slot_inventory and descriptive_groups; tau90_descriptive_only"
+  },
+  "final_suite": "Root agent owns final whole-tree suite.",
+  "mutations": "Only v12_summaries.py, test_v12_summaries.py and this receipt newly written."
+}

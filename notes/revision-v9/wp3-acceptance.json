@@ -1,0 +1,132 @@
+{
+  "wp": "WP3",
+  "procedural_acceptance": "PASS",
+  "actual_gate_utc": "2026-10-24T23:39:21.096007+00:00",
+  "design_commit": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+  "design_before_new_forecasts": true,
+  "formal_status": "COMPLETE",
+  "completed_units": 10,
+  "complete_conditional_contrasts": 20,
+  "exact_W2880_both_horizons": "PASS",
+  "ordinary_independent_difference_count": 0,
+  "old_gate_exact_difference_count": 0,
+  "prediction_classifications": [
+    {
+      "horizon": 6,
+      "method": "QR33",
+      "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+      "first_crossing": 572.3369815680499,
+      "prediction_range": [
+        195.264769574666,
+        774.9704967161092
+      ]
+    },
+    {
+      "horizon": 6,
+      "method": "QR4",
+      "prediction_status": "NOT_TESTABLE_COMPATIBLE_LEFT_CENSORED",
+      "first_crossing": null,
+      "prediction_range": [
+        92.90675766563821,
+        749.7655536169423
+      ]
+    },
+    {
+      "horizon": 24,
+      "method": "QR33",
+      "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+      "first_crossing": 2463.6419536695043,
+      "prediction_range": [
+        697.3741770523785,
+        2767.7517739861046
+      ]
+    },
+    {
+      "horizon": 24,
+      "method": "QR4",
+      "prediction_status": "FIRST_CUTPOINT_CONSISTENT",
+      "first_crossing": 1341.317712918093,
+      "prediction_range": [
+        331.8098488058507,
+        2677.7341200605083
+      ]
+    }
+  ],
+  "all_four_numerical_confirmation": false,
+  "formal_resources": {
+    "rss_bytes": 94420992,
+    "os_threads": 1,
+    "wall_seconds": 206.27386266598478
+  },
+  "formal_total_wall_seconds": 629.7637939588167,
+  "full_pytest": {
+    "command": [
+      "/Users/bingyouli/.local/bin/uv",
+      "run",
+      "--no-project",
+      "--no-env-file",
+      "--python",
+      "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--with",
+      "pytest",
+      "--with",
+      "arch",
+      "--with",
+      "scikit-learn",
+      "python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "-v",
+      "--basetemp",
+      "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/revision-v9/wp3-full-gate/pytest-temp"
+    ],
+    "cwd": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-\u4fee\u8ba2v3-20261023/.scratch/revision-v9/wp3-full-gate/full-suite-copy",
+    "scope": "Full default discovery; every tracked/indexed file copied; no test filter or skips added",
+    "tracked_files_copied": 3434,
+    "started_utc": "2026-10-24T23:36:53.823043+00:00",
+    "ended_utc": "2026-10-24T23:38:44.875557+00:00",
+    "elapsed_seconds": 111.052542083,
+    "returncode": 0,
+    "child_peak_rss_bytes": 355008512,
+    "sampled_process_tree_peak_rss_bytes": 409878528,
+    "stop_reason": null,
+    "output_sha256": "f5e8986b9354b5c791360570a9e6d31fcb8d14bcb4540a9480d0622e0798fa7f",
+    "numerical_threads": 1,
+    "UV_OFFLINE": true
+  },
+  "full_pytest_summary": "============ 1442 passed, 1068 subtests passed in 110.27s (0:01:50) ============",
+  "targeted_output": "....................................................                     [100%]\n52 passed in 0.27s\n",
+  "package": {
+    "actual_utc": "2026-10-24T23:36:47.665646+00:00",
+    "status": "PASS",
+    "source_members": 206,
+    "uncompressed_bytes": 9903332,
+    "archive_bytes": 1862483,
+    "archive_sha256": "1ee2f4d848e209b882329f98f5ab0cbe21fe7251b4c9ba9854ac54e7d11b9fa0",
+    "index_sha256": "d501493ce9fb8d95b1211c813079eb46e08b8be0e76462c560cf92e85c2ec2b0",
+    "byte_mismatches": 0,
+    "raw_financial_files_included": 0,
+    "private_forecast_vectors_included": 0,
+    "original_files_deleted": 0,
+    "scope": "scalar formal output preservation and byte identity, not independent financial replication",
+    "elapsed_seconds": 0.246355875,
+    "peak_rss_bytes": 16056320
+  },
+  "failure_container_inventory": {
+    "actual_utc": "2026-10-24T23:36:14.050398+00:00",
+    "candidate_status_counts": {
+      "COMPLETE": 80
+    },
+    "failed_candidates": [],
+    "auxiliary_key_list_occurrences": [],
+    "sealed_driver_unchanged": true,
+    "scope": "QA of retained failure records; no model/selection change or new experiment"
+  },
+  "old_scientific_archive_or_code_changes": "",
+  "no_raw_financial_data_published": true,
+  "no_other_WP_started": true,
+  "scope": "Procedural PASS does not mean all predictions SUPPORT; c excludes p, long-W reversals/left censoring preserved; no independent dealer/new holdout/oracle/cost identification"
+}

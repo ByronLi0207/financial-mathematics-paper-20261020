@@ -1,0 +1,100 @@
+{
+  "schema": "cash-liquidity-neighbor-primary-readback-v1",
+  "created_utc": "2026-10-23 13:17:20 UTC",
+  "status": "TWO_TARGET_DESCRIPTIONS_SUPPORTED_NO_MANUSCRIPT_CHANGE_NEEDED",
+  "reviewer_role": "Same-model bounded primary-body target comparison; author of the separately implemented QRF core, not an independent whole-paper or whole-code review.",
+  "audited_manuscript": {
+    "path": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/manuscript/revision-v3/paper-content.json",
+    "bytes": 272270,
+    "sha256": "85d14613df8def23104fba35bc6de2369aae18f5dcf383e9ae7eb3f5fecdb86c"
+  },
+  "audited_location": "Section 2, Related literature, blocks[1]",
+  "audited_sentences": [
+    "Petrunia, Sabetti and Voia (2019) study a cross-participant end-of-day debit maximum.",
+    "Arjani, Li and Sabetti (2020) forecast remaining-day liquidity-demand ratios."
+  ],
+  "prior_notes_read": [
+    {
+      "path": "notes/revision-20261022/known-cash-peak-precursor-restoration.md",
+      "bytes": 3441,
+      "sha256": "8861a6735ec5fb02f7056034e37b250d84a66ff3c4886cd8bd8cdd6b9f38e90d"
+    },
+    {
+      "path": "notes/revision-20261022/root-batch-026-issue-clock-and-economic-neighbors.md",
+      "bytes": 5663,
+      "sha256": "80c49467e13d4f87cf30f9ee03aedebca0e2c14ab0caf3d461b67c27847c7cfa"
+    }
+  ],
+  "prior_note_boundary": "These two local notes were read completely as historical research records. The van den Hoogen thesis body was not newly accessed or reread in this task. The 2017 precursor remains historical selected-body evidence, not a new discovery or a new full-text reading claim.",
+  "sources": [
+    {
+      "id": "arjani2020",
+      "authors": [
+        "Neville Arjani",
+        "Fuchun Li",
+        "Leonard Sabetti"
+      ],
+      "title": "Monitoring Intraday Liquidity Risks in a Real Time Gross Settlement System",
+      "official_pdf": "https://www.payments.ca/sites/default/files/discussion_paper_monitoring_intraday_liquidity_risks_in_a_real_time_gross_settlement_system.pdf",
+      "edition": "Payments Canada discussion-paper PDF currently served at the cited official URL; 36 physical pages. No journal-edition equality or source-PDF hash asserted.",
+      "date_evidence": "The current manuscript cites 23 April 2020. Official Payments Canada 2024 consultation response footnote 9 independently identifies this discussion paper as 2020; this pass did not newly verify the exact 23 April issue day.",
+      "official_year_crosscheck": "https://www.payments.ca/support-risk-mitigation-payments-canadas-response-osfis-consultation",
+      "actual_read": {
+        "title_abstract": "Physical page 2, extracted text.",
+        "target_section": "Section 3.1, physical pages 8–11 / printed pages 6–9, including equations (1)–(5) and associated footnotes.",
+        "additional_selected_body": "Section 3.2.1 opening, physical page 12 / printed page 10, establishing the modeled daily payment totals; Section 3.3, physical page 22 / printed page 20, evaluates forecasted LRI values; Section 4, physical pages 23–24 / printed pages 21–22, equations (14)–(15).",
+        "not_read": "The complete 36-page paper, complete Section 3.2 models/performance discussion, all tables, and all figure pixels were not read or validated."
+      },
+      "paraphrase": "Equation (2) divides remaining-day payment demand by liquidity sources: the issue-time payment position, central-bank credit limit and remaining receipts. Section 3.1 forecasts remaining totals; Section 3.3 evaluates forecasted LRI values. Section 4 additionally estimates the ratio’s conditional threshold-exceedance probability using residual bootstrap draws. Thus ratio forecasting is supported; describing only the probability model would omit Section 3.3. These targets concern forward liquidity monitoring and demand/resource uncertainty, rather than the present two-sided absolute sampled-position peak quantile or an executed same-target baseline.",
+      "target_symbolic_readback": "LRI(i,t,j) = RPD(i,t,j) / [PI(i,t,j) + CL(i,t,j) + RPI(i,t,j)]; risk probability in (14) is Pr[LRI(i,t,j) >= C | I_t]. Symbols are a mathematical readback, not a new estimate.",
+      "verdict": "Current Section 2 sentence is an accurate concise target classification. Replacing it with threshold-exceedance probabilities is not a necessary correction: that describes Section 4, while Section 3.3 separately forecasts LRI values. No source-backed reason to expand the paper's novelty claim follows."
+    },
+    {
+      "id": "petrunia2019",
+      "authors": [
+        "Robert Petrunia",
+        "Leonard Sabetti",
+        "Marcel Voia"
+      ],
+      "title": "Tail Risk in the Automated Clearing Settlement System (ACSS)",
+      "official_pdf": "https://www.paiements.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf",
+      "edition": "Payments Canada Discussion Paper No. 7, official cover identifies September 2018 original and January 2019 update; 28 physical pages. Acknowledgements mention a published journal version, whose body equivalence was not checked.",
+      "actual_read": {
+        "metadata": "Physical pages 1–2, cover and acknowledgements, extracted text.",
+        "target_section": "Section 2, physical page 8 / printed page 8; Section 3(a), physical pages 9–10 / printed pages 9–10; Section 3(d), physical page 11 / printed page 11.",
+        "context_and_qualification": "Selected introduction passages on final multilateral settlement balances and collateral; Section 4b opening on physical page 13 / printed page 13; Figure 4 and 5 captions, physical pages 20–21 / printed pages 20–21.",
+        "not_read": "The complete 28-page paper, all empirical tables, all diagnostics, journal final body and figure pixels were not read or reproduced."
+      },
+      "paraphrase": "Section 2 constructs each day's largest final net debit across direct clearers. Section 3(a) also forms time-block maxima, while POT and inverted tail distributions produce extreme exposure levels; the collateral illustration updates estimates monthly. Thus the current cross-participant end-of-day wording is correct, but saying the paper has no temporal maxima would be wrong. It is substantive precedent for extrema-based financial exposure and collateral quantiles. Its cross-sectional daily settlement object differs from a single signed dealer series' two-sided future sampled-position peak with an issue-known floor.",
+      "verdict": "Current Section 2 sentence is supported. Temporal-block aggregation is an important scope boundary, not a demonstrated error in that concise sentence."
+    }
+  ],
+  "synthesis": {
+    "material_error_found": false,
+    "manuscript_change_required": false,
+    "classification": "These are substantive neighboring financial-risk applications. Neither inspected target is an exact same-target predecessor established by this pass. Existing mature peak/quantile financial precedents prevent treating extrema or buffer forecasting in general as a new method.",
+    "contribution_boundary": "The defensible current contribution remains a controlled application and model-validation comparison with completed-label timing, issue-floor conventions, fixed schedules and retained adverse findings. This two-paper check cannot prove priority or exhaust the literature.",
+    "not_asserted": [
+      "No full-text reading of either paper.",
+      "No exact-predecessor absence claim.",
+      "No novelty or publication-tier guarantee.",
+      "No validation of either paper's estimates or transfer of their assumptions to current records."
+    ]
+  },
+  "access_and_visual_boundary": {
+    "official_pdf_access": "Both official PDF URLs returned readable primary-body text through the web PDF reader.",
+    "pdf_downloaded_to_repository": false,
+    "pdf_hash_verified": false,
+    "screenshot_attempt": "Four PDF screenshot requests returned citation handles through the available wrapper, without visible pixels in this agent's result. No actual visual-page inspection is claimed.",
+    "source_copyright_handling": "No source paragraphs copied. Each source paraphrase is below 140 English words; no direct source-body quotation is included."
+  },
+  "operations": {
+    "existing_files_modified": false,
+    "financial_experiments_or_tests_run": false,
+    "software_installed": false,
+    "claude_or_other_ui_used": false,
+    "push_or_delete": false,
+    "sole_new_file": "results/revision-20261023/round2/post-correction-audit/cash-liquidity-neighbor-primary-readback-g16.json"
+  }
+}
+

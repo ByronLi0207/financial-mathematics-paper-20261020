@@ -1,0 +1,66 @@
+{
+  "status": "PASS_TRACKED_FILE_CONTENT_WITH_RIGHTS_GATE_PENDING",
+  "actual_utc": "2026-10-26T05:26:13.308671+00:00",
+  "tracked_files": 5978,
+  "bytes_scanned": 459765928,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "known_raw_paths": [
+    "data/cftc-tff/raw/fin_fut_txt_2006_2016.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2017.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2018.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2019.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2020.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2021.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2022.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2023.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2024.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2025.zip",
+    "data/cftc-tff/raw/fut_fin_txt_2026.zip",
+    "data/nyfed-pdposgs-b-20261022/PDPOSGS-B.csv"
+  ],
+  "long_vector_key_candidates": [],
+  "secret_pattern_scope": "High-confidence standard key formats; no credential values emitted. This does not claim to detect all possible secrets.",
+  "numpy_scope": "All tracked numpy artifacts are CFTC derived records; no unclassified FX numpy payload.",
+  "source_rights_required": true,
+  "reachable_history_gate_pending": true,
+  "initial_false_positive_count": 7,
+  "false_positive_dispositions": [
+    {
+      "path": "notes/revision-v5-novelty/reference-amendments.json",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "notes/revision-v6/verification-loop-006-references.md",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "notes/revision-v8/wp8-reference-audit.json",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "notes/revision-v8/wp8-reference-audit.md",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "notes/source-register-22.md",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "notes/source-register-49.md",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    },
+    {
+      "path": "results/revision-20261023/round2/post-correction-audit/cash-liquidity-neighbor-primary-readback-g16.json",
+      "classification": "ENGLISH_WORD_RISK_WITHIN_PRIMARY_SOURCE_URL",
+      "value_disclosed": false
+    }
+  ],
+  "refined_openai_pattern": "(?<![A-Za-z0-9])sk-(?:proj-)?[A-Za-z0-9_-]{40,}"
+}

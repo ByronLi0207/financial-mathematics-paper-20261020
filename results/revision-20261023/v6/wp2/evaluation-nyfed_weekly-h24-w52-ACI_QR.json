@@ -1,0 +1,172 @@
+{
+  "status": "COMPLETE",
+  "selected_gamma": 0.01,
+  "selection_freeze_sha256": "e847695a92941bc162b036bc94e0ea72e7d8996df9511d9561229ac3e1762166",
+  "validation_prefix_identical": true,
+  "scores": {
+    "status": "OK",
+    "n": 277,
+    "tau": 0.95,
+    "horizon": 24,
+    "nonfinite_count": 0,
+    "mean_loss": 6250.532003028425,
+    "full_hits": 47,
+    "full_rate": 0.16967509025270758,
+    "coverage_distance": 0.11967509025270757,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 24,
+      "full": {
+        "n": 277,
+        "hits": 47,
+        "rate": 0.16967509025270758,
+        "uc_lr": 52.91840736997818,
+        "uc_p": 3.476957652736579e-13,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 12,
+        "hits": 1,
+        "rate": 0.08333333333333333,
+        "uc_lr": 0.2358534302862374,
+        "uc_p": 0.6272171591486008,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 405,
+          "step": 25,
+          "expected_count": 12,
+          "observed_count": 12
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 11,
+          "n00": 9,
+          "n01": 1,
+          "n10": 1,
+          "n11": 0,
+          "boundary": true,
+          "boundary_cell_count": 1,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 0.5156709670300277,
+          "p": 0.77272234721481,
+          "saturated_log_likelihood": -3.2508297339144825,
+          "fixed_alpha_log_likelihood": -3.5086652174294963,
+          "status": "BOUNDARY_REFERENCE"
+        }
+      },
+      "boundary_count": 1,
+      "na_count": 0
+    }
+  },
+  "diagnostics": {
+    "gamma": 0.01,
+    "initial_calibration_count": 52,
+    "alpha_min": 0.018867924528301886,
+    "alpha_max": 0.07586792452830189,
+    "calibration_min": 52,
+    "calibration_max": 52,
+    "rank_min": 49,
+    "rank_max": 52,
+    "clip_count": 44,
+    "issue_count": 277,
+    "clipped_issue_count": 35,
+    "clipped_issue_fraction": 0.1263537906137184,
+    "matured_wrapped_feedback_consumed": 277,
+    "cumulative_matured_wrapped_feedback": 305
+  },
+  "unwrapped_scores": {
+    "status": "OK",
+    "n": 277,
+    "tau": 0.95,
+    "horizon": 24,
+    "nonfinite_count": 0,
+    "mean_loss": 12165.57410365444,
+    "full_hits": 132,
+    "full_rate": 0.47653429602888087,
+    "coverage_distance": 0.4265342960288809,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 24,
+      "full": {
+        "n": 277,
+        "hits": 132,
+        "rate": 0.47653429602888087,
+        "uc_lr": 422.3551700276262,
+        "uc_p": 7.495817929273592e-94,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 12,
+        "hits": 6,
+        "rate": 0.5,
+        "uc_lr": 19.928774481859815,
+        "uc_p": 8.038138032671832e-06,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 405,
+          "step": 25,
+          "expected_count": 12,
+          "observed_count": 12
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 11,
+          "n00": 2,
+          "n01": 4,
+          "n10": 3,
+          "n11": 2,
+          "boundary": false,
+          "boundary_cell_count": 0,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 22.09343353689308,
+          "p": 1.5939396142959586e-05,
+          "saturated_log_likelihood": -7.184143344815158,
+          "fixed_alpha_log_likelihood": -18.2308601132617,
+          "status": "OK"
+        }
+      },
+      "boundary_count": 0,
+      "na_count": 0
+    }
+  },
+  "source": "nyfed_weekly",
+  "horizon": 24,
+  "window": 52,
+  "method": "ACI_QR",
+  "phase": "evaluation",
+  "analysis_status": "post-result / exploratory",
+  "executable_freeze_sha256": "c9fb8deff4a73ae3c9798de831d5d3a7a1d498b82789731460a09e4ebf1a3399",
+  "started_utc": "2026-10-23T19:07:36.902513+00:00",
+  "ended_utc": "2026-10-23T19:07:36.926050+00:00",
+  "resources": {
+    "started_utc": "2026-10-23T19:07:36.902296+00:00",
+    "ended_utc": "2026-10-23T19:07:36.929082+00:00",
+    "elapsed_seconds": 0.026793750002980232,
+    "peak_rss_bytes": 45924352,
+    "maximum_observed_os_threads": 1,
+    "thread_snapshot_count": 1,
+    "requested_numerical_threads": 1,
+    "internal_wall_seconds": 540,
+    "hard_wall_seconds": 600,
+    "internal_rss_bytes": 1610612736,
+    "hard_rss_bytes": 2147483648
+  },
+  "private_artifact": {
+    "bytes": 20725,
+    "sha256": "acec651544484703cd54d55912c881acd36873a24c4626b91616ed57078a6a72"
+  }
+}

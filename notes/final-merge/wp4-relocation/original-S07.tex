@@ -1,0 +1,48 @@
+\section{AR residual replay and its adverse comparisons}\label{sup:ar}
+
+At each original refit, estimate an intercept-bearing level recursion
+using each unique mature adjacent transition once. Replaying a historical ordered
+residual block from the current position gives the exact algebraic identity
+\[
+M_{i,h}(x)=N_{i+h}+\widehat\phi^{\,h}(x-N_i),\qquad M_{i,0}(x)=x.
+\]
+The empirical peak uses the same completed scenario origins, response rank,
+floor and refit schedule as its matched historical controls. Finite negative or
+above-unit coefficients were eligible, not clipped; all observed fitted
+coefficients in the archived run happened to lie inside the unit interval.
+Their descriptive means are not identified data-generating parameters.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrr}
+\caption{Complete original autoregressive replay comparison. Lower scores can accompany more strict breaches.}\\
+\toprule
+Source & Horizon & History & \shortstack{Mean fitted\\\(\widehat\phi\)} & \shortstack{Replay vs\\translated (\%)} & \shortstack{Replay vs\\regression (\%)} & \shortstack{Breaches\\replay / translated} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Horizon & History & \shortstack{Mean fitted\\\(\widehat\phi\)} & \shortstack{Replay vs\\translated (\%)} & \shortstack{Replay vs\\regression (\%)} & \shortstack{Breaches\\replay / translated} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & 0.981 & -1.54 & 2.45 & 282/255 \\
+FX & 6 & 2880 & 0.985 & -0.55 & 16.20 & 338/268 \\
+FX & 24 & 720 & 0.981 & 2.39 & -25.32 & 401/289 \\
+FX & 24 & 2880 & 0.985 & 5.15 & 8.68 & 444/292 \\
+Bills & 6 & 52 & 0.676 & -13.44 & -52.66 & 22/11 \\
+Bills & 6 & 260 & 0.847 & -18.89 & -47.21 & 31/28 \\
+Bills & 24 & 52 & 0.711 & 35.13 & -59.43 & 56/33 \\
+Bills & 24 & 260 & 0.850 & -24.12 & -63.86 & 59/12 \\
+\end{longtable}
+\endgroup
+
+The replay improves on original regression in every original Treasury
+cell but loses in most FX cells. Its comparisons with the translated-path rule
+have mixed directions, while strict breaches increase in every row above.
+Sparse-grid and annual signs can reverse. The full paired, annual and fixed-grid
+tables remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/ar1-replay/README.md}{the AR archive}.
+These are post-result / exploratory same-data calculations, not independent
+validation.

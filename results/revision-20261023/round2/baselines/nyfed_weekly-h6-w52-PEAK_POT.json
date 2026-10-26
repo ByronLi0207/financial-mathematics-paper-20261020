@@ -1,0 +1,73 @@
+{
+  "source": "nyfed_weekly",
+  "horizon": 6,
+  "window": 52,
+  "method": "PEAK_POT",
+  "native_unit": "USD millions",
+  "source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+  "expected_origin_count": 277,
+  "post_result": true,
+  "exploratory": true,
+  "private_trace": ".scratch/round2/baselines/nyfed_weekly-h6-w52-PEAK_POT/numeric-traces.npz",
+  "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+  "code_sha256": {
+    "round2_baselines_run.py": "35e184aa3fc861024413dad1b454695e11d56a112180a9110626eb10d053fa54",
+    "round2_qrf.py": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4",
+    "round2_filtered.py": "c01b675d5a284ffc92890b78d043362edcc329f5d1ef824e81db43cef3f0aad7"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "arch": "8.0.0",
+    "scikit-learn": "1.9.1"
+  },
+  "status": "NA",
+  "failure_type": "FilteredFitError",
+  "failure_reason": "POT structurally unavailable: top ten percent has fewer than20 rows",
+  "failure_context": {
+    "method": "PEAK_POT",
+    "query_issue": null,
+    "refit_index": null,
+    "issued_origin_count": 0,
+    "detail": {
+      "window": 52,
+      "nominal_tail_count": 5
+    }
+  },
+  "completed_origin_count": 0,
+  "completed_refits": [],
+  "evaluation": null,
+  "comparisons": [],
+  "resources": {
+    "started_utc": "2026-10-23T10:29:36.936309+00:00",
+    "checkpoint_utc": "2026-10-23T10:29:36Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 0.03640324994921684,
+    "peak_rss_bytes": 57180160,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 2,
+    "completed_stability_lengths": [],
+    "current_stage": "D1_complete_or_NA",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 0,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 2572778,
+    "private_numeric_output_bytes_at_checkpoint": 1571,
+    "public_analysis_output_bytes_at_checkpoint": 2571207
+  },
+  "private_files": [
+    {
+      "name": "failure-traceback.txt",
+      "bytes": 1055,
+      "sha256": "e919c7b3abf0d45801504e2b7f76b0659da6b385ec44d3376e5a25732319ac1a"
+    },
+    {
+      "name": "partial-traces.npz",
+      "bytes": 516,
+      "sha256": "24fc996dc6b6c0a5740c8433191dc6876038301e34ca78e3fc65ba2fc3bd261e"
+    }
+  ]
+}

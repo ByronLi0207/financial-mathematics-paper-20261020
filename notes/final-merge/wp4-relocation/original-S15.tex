@@ -1,0 +1,38 @@
+\section{Selection failures and replication boundaries}\label{sup:selection-failures}
+
+Required validation-candidate failure blocks the dependent rule;
+it is neither retried nor replaced by a shorter mean. The complete inventory of non-complete reports is below. Every listed row has the saved reason
+\texttt{REQUIRED\_VALIDATION\_CANDIDATE\_FAILED}. Those failures remain part of
+the evidence even though other rules in the same task can complete.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{All non-complete fixed-rule report rows. Failed mandatory candidates remain failures.}\\
+\toprule
+Phase & Series & \shortstack{Horizon /\\history} & Rule & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Phase & Series & \shortstack{Horizon /\\history} & Rule & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+retro & fx\_hourly & 6/720 & R3 & FAILED \\
+retro & fx\_hourly & 24/720 & R3 & FAILED \\
+inspected & fx\_hourly & 6/720 & R3 & FAILED \\
+inspected & fx\_hourly & 24/720 & R3 & FAILED \\
+\end{longtable}
+\endgroup
+
+The Treasury earlier-period structural comparison uses a shorter
+history than the original primary. It is explicitly an analogue, not an exact
+earlier replication of the long-history primary. The source-reported comparison
+and its definition are preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/primary-replication.csv}{the primary-structure table}.
+All original primary values remain unchanged. Reclassifying the analogue as an
+exact primary replication, or calling familiar retrospective FX data an unseen
+dealer, would change the scientific claim without adding evidence.

@@ -1,0 +1,276 @@
+$ /Library/Developer/CommandLineTools/usr/bin/python3 notes/final-merge/audit_wp5_language.py --source submission-final/manuscript.tex --output notes/final-merge/wp5-language-after.json --enforce
+{
+  "rule_version": "WP5-before-edit-v1",
+  "source_sha256": "720cab5385e1c2734dfc491a4252f425435fc8c53fd404db7cf0b606e2d4571c",
+  "banned_count": 0,
+  "banned_matches": [],
+  "gates": {
+    "abstract_five_sentences": true,
+    "abstract_at_most_170_words": true,
+    "mean_18_to_24": true,
+    "every_sentence_at_most_two_numeric_values": true,
+    "grammatical_negatives_at_most_8_percent": true,
+    "banned_zero": true
+  },
+  "counting_rule_sha256": "47f7bd1b61d08eac0ef7fd6ccc82aced9bb6e5a7cd74818937b3af246d975794",
+  "status": "PASS",
+  "abstract": {
+    "sentence_count": 5,
+    "word_count": 109
+  },
+  "primary": {
+    "sentence_count": 322,
+    "word_count": 6123,
+    "mean_sentence_words": 19.01552795031056,
+    "grammatically_negative_sentences": 2,
+    "grammatically_negative_percent": 0.6211180124223602,
+    "adverse_or_uncertainty_sentences": 58,
+    "max_numeric_values": 2,
+    "overloaded_numeric_sentences": []
+  }
+}
+[exit 0]
+
+$ /Library/Developer/CommandLineTools/usr/bin/python3 notes/final-merge/build_wp5_plain_summary.py
+{"status": "PASS", "source": "submission-final/manuscript.tex", "source_sha256": "ee3c156da9cb7534403a86115b78ed2be7087ce874f45587a1687a6d8b2b6476", "scope": "Every narrative paragraph in Introduction, Results, history-mechanism section and cost section. Tables, captions and displayed identities are separate source/display checks.", "paragraph_count": 46, "missing_summaries": 0}
+[exit 0]
+
+$ /Library/Developer/CommandLineTools/usr/bin/python3 notes/final-merge/check_evidence.py --output notes/final-merge/wp5-evidence-check.json
+{"status": "PASS", "checked": 74, "mismatches": 0, "failures": []}
+[exit 0]
+
+$ /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 notes/final-merge/audit_wp4_documents.py --main-pdf submission-final/manuscript.pdf --supp-pdf submission-final/supplement.pdf --main-log .scratch/final-merge-12h/wp5-native-v3/main/main.log --supp-log .scratch/final-merge-12h/wp4-native-v2/supplement/supplement.log --output notes/final-merge/wp5-document-audit.json
+{
+  "status": "PASS",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "counts": {
+    "main_words_excluding_tables_references": 6004,
+    "per_section_words": [
+      {
+        "section": "Title, abstract and front matter",
+        "words": 137
+      },
+      {
+        "section": "Introduction",
+        "words": 532
+      },
+      {
+        "section": "Related literature",
+        "words": 268
+      },
+      {
+        "section": "The forecast target",
+        "words": 283
+      },
+      {
+        "section": "Data",
+        "words": 513
+      },
+      {
+        "section": "Forecasting methods",
+        "words": 470
+      },
+      {
+        "section": "Evaluation design",
+        "words": 455
+      },
+      {
+        "section": "Results",
+        "words": 1488
+      },
+      {
+        "section": "Why history length matters",
+        "words": 861
+      },
+      {
+        "section": "Limit-cost rankings depend on the stated charges",
+        "words": 249
+      },
+      {
+        "section": "Implications for model validation",
+        "words": 158
+      },
+      {
+        "section": "Limitations",
+        "words": 156
+      },
+      {
+        "section": "Conclusion",
+        "words": 240
+      },
+      {
+        "section": "Data and code availability",
+        "words": 166
+      },
+      {
+        "section": "Author-provided information",
+        "words": 28
+      }
+    ],
+    "conservative_source_tokens_including_table_tex": 8892,
+    "pdf_words_before_references_including_tables_captions_axes": 8274,
+    "main_pages": 22,
+    "supplement_pages": 24,
+    "main_tables": 6,
+    "main_figures": 4
+  },
+  "logs": {
+    "main": {
+      "bad_diagnostics": [],
+      "underfull_warning_count": 0,
+      "sha256": "0358dd7c06789f81c7e8a330e52f3e1b1b7211d1664ab2de8267076ffe73bb52"
+    },
+    "supplement": {
+      "bad_diagnostics": [],
+      "underfull_warning_count": 5,
+      "sha256": "be0f3861abb37c03978d266ab8169c2327ca51cb76a0afbad60d18418834c27e"
+    }
+  },
+  "exact_relocated_sections": 21,
+  "analytic_source_byte_identical": true,
+  "cftc_long_history_rows": 34,
+  "cftc_display_columns_checked": 272,
+  "main_numeric_bindings": [
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/point/r_star",
+      "value": 106.49618468616566,
+      "display": "106.5"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/intervals/all_draw_envelope/lower",
+      "value": 27.894967082095143,
+      "display": "27.89"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/intervals/all_draw_envelope/upper",
+      "value": 110.71007095944418,
+      "display": "110.71"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/point/r_star",
+      "value": 27.324522025270575,
+      "display": "27.3"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/intervals/all_draw_envelope/lower",
+      "value": 13.27239395223403,
+      "display": "13.27"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/intervals/all_draw_envelope/upper",
+      "value": 107.10936480242033,
+      "display": "107.11"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P1_QR33",
+      "value": {
+        "status": "SUPPORT",
+        "planned": 34,
+        "complete": 34,
+        "successes": 29,
+        "unknown": 0,
+        "complete_fraction": 0.8529411764705882,
+        "lower": 0.8529411764705882,
+        "upper": 0.8529411764705882,
+        "threshold": 0.8
+      },
+      "displayed_count": "$29/34$",
+      "displayed_status": "Supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P1_QR4",
+      "value": {
+        "status": "SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 15,
+        "unknown": 0,
+        "complete_fraction": 0.8823529411764706,
+        "lower": 0.8823529411764706,
+        "upper": 0.8823529411764706,
+        "threshold": 0.8
+      },
+      "displayed_count": "$15/17$",
+      "displayed_status": "Supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P2_QR4",
+      "value": {
+        "status": "NOT_SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 10,
+        "unknown": 0,
+        "complete_fraction": 0.5882352941176471,
+        "lower": 0.5882352941176471,
+        "upper": 0.5882352941176471,
+        "threshold": 0.6
+      },
+      "displayed_count": "$10/17$",
+      "displayed_status": "Not supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P2_QR33",
+      "value": {
+        "status": "NOT_TESTABLE",
+        "reason": "NO_REGISTERED_REGION_CELL",
+        "planned": 0
+      },
+      "displayed_count": "NA",
+      "displayed_status": "Not testable"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P3_QR4",
+      "value": {
+        "status": "NOT_SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 6,
+        "unknown": 0,
+        "complete_fraction": 0.35294117647058826,
+        "lower": 0.35294117647058826,
+        "upper": 0.35294117647058826,
+        "threshold": 0.7
+      },
+      "displayed_count": "$6/17$",
+      "displayed_status": "Not supported"
+    },
+    {
+      "original_table": "tab:methods",
+      "numeric_tokens": 10,
+      "unchanged": true
+    },
+    {
+      "original_table": "tab:fx",
+      "numeric_tokens": 18,
+      "unchanged": true
+    },
+    {
+      "original_table": "tab:weekly",
+      "numeric_tokens": 18,
+      "unchanged": true
+    }
+  ],
+  "negative_control_in_memory_miscount_detected": true,
+  "original_main_table_lines_checked": 22,
+  "word_rule": "English words and numeric tokens after TeX/math/citation cleanup; tables and bibliography excluded, headings and figure captions included. Also report conservative counts including table TeX and actual PDF table/figure text.",
+  "scope": "WP4 structure, source fields, exact relocations and native compile diagnostics; WP5 language and full WP8 page-by-page final visual review remain pending.",
+  "pdf_sha256": {
+    "main": "98d3abd0bb5d2c9047f1bdf56083ad4daa5bb80388d497215b80f5cf902deda7",
+    "supplement": "02ee146c3e9812a3a768ccb40a1cb6db6c31e6c5a270c4d1dfc333ca5ba64c76"
+  },
+  "new_model_fits": 0
+}
+[exit 0]

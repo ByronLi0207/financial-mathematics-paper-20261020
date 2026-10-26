@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-24T22:00:48.323433+00:00",
+  "stage": "WP1_POST_HOC_PRECALCULATION_RULE_FREEZE",
+  "parent_wp0_commit": "08170e7eca0fd260acdf87087fc81b6244e632d2",
+  "plan": "revision-plan-v9-mechanism10h.md",
+  "post_hoc": true,
+  "candidate_fit_effects_computed_before_this_freeze": false,
+  "source_results_already_known": true,
+  "inputs": [
+    {
+      "path": "results/revision-v8/wp3/summary.csv",
+      "bytes": 66307,
+      "sha256": "911da26770a687199016b7b6bd17b740f004349365e933ba911bec1736c77be0"
+    },
+    {
+      "path": "results/revision-v8/wp3/wp3-driver-output.tar.gz",
+      "bytes": 14883171,
+      "sha256": "519f442094420053d8160ae07e5612f55ac8fe53d07fa8c689b674cdff7ecdb5"
+    },
+    {
+      "path": "results/revision-v8/wp3/wp3-driver-output-members.csv",
+      "bytes": 4624746,
+      "sha256": "777ff0e09357559b84d5c3e50ae07abb074166e074a76af1069e7f8bdac24d6b"
+    },
+    {
+      "path": "results/revision-v8/wp3/manifest.json",
+      "bytes": 7727,
+      "sha256": "593c336fdd6023b5a78c82e58e527756ddfca5e3b64a53a75195f17ac3ffcf7d"
+    },
+    {
+      "path": "protocol/revision-v8/wp3-mechanism-design.json",
+      "bytes": 4346,
+      "sha256": "ed2bedb5a086615957ea8423d61632edbb9de34549c886b4e2f6a04bb3567d70"
+    },
+    {
+      "path": "results/revision-20261022/evaluation-summary.csv",
+      "bytes": 17416,
+      "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-20261023/parsimonious/summary.csv",
+      "bytes": 2115,
+      "sha256": "4cfcbfb837f67214c5193380afb2bce5fb52083cfbd426777105f1814f633c58",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-v8/wp4/contrasts.csv",
+      "bytes": 1270,
+      "sha256": "169b8e2eb63ebb6265620c9bf9a0e706e4440d7135230f65da52f90a839c8bb1",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-20261023/round2/panel/summary.csv",
+      "bytes": 39771,
+      "sha256": "34134445a00354dcce3dc43de4c2adada7f2ea5403212558f90ef3480ee810f9",
+      "use": "overlay only, never metric/threshold fitting"
+    }
+  ],
+  "coefficient_count_including_intercept": {
+    "QR33": 34,
+    "QR4": 5
+  },
+  "coefficient_count_interpretation": "nominal, not effective rank or regularized degrees of freedom",
+  "candidate_metrics": {
+    "a": "W/p",
+    "b": "W/((H+1)*p)",
+    "c": "W/(H+1)"
+  },
+  "metric_tie_preference": [
+    "c",
+    "a",
+    "b"
+  ],
+  "metric_selection_population": "144 QR33/QR4 cells pooled, each cell equal weight; no F self-reference rows",
+  "source_grid": {
+    "phi_index": [
+      0,
+      1,
+      2
+    ],
+    "p_index": [
+      0,
+      1,
+      2
+    ],
+    "window": [
+      52,
+      260,
+      720,
+      2880
+    ],
+    "horizon": [
+      6,
+      24
+    ],
+    "method": [
+      "F",
+      "QR33",
+      "QR4"
+    ],
+    "rep": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "p_index_in_source_is_volatility_index_not_coefficient_count": true,
+  "loss_delta": "100*(mean_rep_model_loss/mean_rep_F_loss-1)",
+  "cell_status_requirement": "all 32 selected final evaluation reports COMPLETE, finite evaluation.mean_loss, positive F mean; preserve archived candidate failures",
+  "rank_correlation": {
+    "method": "Pearson correlation of scipy.stats.rankdata(...,method=average) ranks",
+    "population": "pooled conditional-model cells; separately report same statistic by method",
+    "p_values": "not computed or used"
+  },
+  "logistic": {
+    "predictor": "natural log(metric), standardized with StandardScaler(with_mean=True,with_std=True), ddof=0",
+    "response": "1 iff cell loss_delta<0; zero retained as no-win 0",
+    "C": 1.0,
+    "l1_ratio": 0.0,
+    "solver": "lbfgs",
+    "max_iter": 10000,
+    "tol": 1e-10,
+    "fit_intercept": true,
+    "class_weight": null,
+    "warm_start": false,
+    "win_prediction": "class1 iff decision_function>0, equality class0",
+    "selection_score": "in-sample integer correct predictions out of exactly 144; largest correct count wins; exact ties use c,a,b",
+    "failure": "nonfinite input, one class, any ConvergenceWarning or optimizer max_iter reached blocks selection; no solver/menu retry",
+    "no_sign_constraint": true
+  },
+  "runtime_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1"
+  },
+  "curve": {
+    "separate_methods": true,
+    "group": "equal metric values within method, preserving exact rational metric keys",
+    "ordinates": "equal-weight mean of cell loss_delta values, not ratio after pooling different cell raw losses",
+    "abscissa": "raw positive metric, not log(metric)",
+    "point": "earliest positive-to-nonpositive segment root using piecewise linear interpolation; exact zero at a right endpoint is retained",
+    "left_boundary": "first ordinate<=0 => UNIDENTIFIED_LEFT_CENSORED; no extrapolation",
+    "no_crossing": "UNIDENTIFIED_NO_CROSSING",
+    "multiple_crossings": "retain all downward crossings and first predeclared primary; never claim all later histories win"
+  },
+  "bootstrap": {
+    "repetitions": 1999,
+    "seed_entropy": 2026102491,
+    "bit_generator": "PCG64",
+    "resampling_unit": "rep cluster; draw 32 rep indices with replacement, identical draw across every grid cell and method; F/QR pairing preserved",
+    "metric_selection": "fixed chosen metric; not reselected in bootstrap",
+    "cell_recalculation": "ratio of resampled mean losses, then equal-cell-mean curve",
+    "retain_all_draws": true,
+    "save_draw_index_hash": true,
+    "finite_interval": "conditional finite-crossing 5%/95% order statistics; report denominator, no unconditional coverage claim",
+    "all_draw_envelope": "for missing positive threshold draw, use 0 for lower-end completion and +infinity for upper-end completion; 5% lower/95% upper empirical inverted-CDF endpoints",
+    "quantile_rule": "sorted sample at index ceil(q*n)-1; no interpolation with infinity",
+    "primary_downstream_interval": "all-draw envelope; if lower=0 or upper unbounded, numerical WP3 range NOT_TESTABLE/non-discriminating; never substitute finite-only interval",
+    "selection_uncertainty": "intervals condition on post-hoc chosen metric and fixed DGP grid; not a universal confidence guarantee"
+  },
+  "empirical_overlay": {
+    "fitting_use": "none; do not select metric or tune r* on real results",
+    "sources": [
+      "results/revision-20261022/evaluation-summary.csv",
+      "results/revision-20261023/parsimonious/summary.csv",
+      "results/revision-v8/wp4/contrasts.csv",
+      "results/revision-20261023/round2/panel/summary.csv"
+    ],
+    "references": "same-window frozen_F / F; never rolling_F or one_state_F",
+    "methods": "original QR33/QR4 only; do not silently use QR33_plus or renamed QR4_plus as new experiments",
+    "failure": "failed/unavailable input cells retained NA; no fabricated coordinate",
+    "claim": "consistent/inconsistent with source post-hoc threshold only; nominal p and clocks differ",
+    "row_inclusion": "Every original QR33/QR4 row in the named source tables; preserve every failed/NA cell. No empirical outcome-based subset.",
+    "pairing": "Original summary: source/horizon/window/refit_step, QR versus frozen_F. QR4: source/horizon/window and original source cadence (FX24,Treasury13); origin_count must agree. Panel: series_key/horizon/window, QR33 or C2_QR4 versus frozen_F. Daily: the sealed QR33/QR4 versus F contrasts.",
+    "ambiguity": "duplicate/unmatched reference or unequal issue count => report mismatch/NA and block claiming complete overlay; do not choose convenient reference"
+  },
+  "future_interfaces": {
+    "W_interval_conversion": {
+      "a": "p*r",
+      "b": "(H+1)*p*r",
+      "c": "(H+1)*r"
+    },
+    "rounding": "retain real endpoints; no enlarging/rounding to hit learning-curve grid",
+    "WP2_P3_same_r": "for a/b no common discrete r support across QR33/QR4 on the requested grid: NOT_TESTABLE, no interpolation or same-W substitution; c permits matching same DGP,phi,W,H",
+    "metric_c_caveat": "c contains no p and cannot by itself confirm a per-parameter complexity mechanism"
+  },
+  "resource_budget": {
+    "numerical_workers": 1,
+    "numerical_threads": 1,
+    "rss_limit_bytes": 2147483648,
+    "single_analysis_limit_seconds": 600,
+    "raw_downloads": 0,
+    "software_installs": 0,
+    "raw_FX_reads_for_this_posthoc_stage": 0
+  },
+  "stop_rules": [
+    "input fingerprint mismatch or incomplete selected-report pairing => BLOCKED, no rerun of old simulations",
+    "any numerical failure retained; no outcome-driven rule change",
+    "original point r* unidentified => dependent numerical predictions cannot use substitute threshold"
+  ],
+  "primary_sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+  ]
+}

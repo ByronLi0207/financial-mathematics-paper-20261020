@@ -1,0 +1,55 @@
+\section{Pre-evaluation stability screen and switching stress simulation}\label{sup:v9-stability}
+
+The separately frozen
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v9/protocol/v9/nonstationarity-design.md}{stability-study protocol}
+uses only pre-evaluation prefixes. Its joint OLS score includes intercept,
+AR slope and centered residual-square channels (Hansen, 1992).
+Each qualified whole-prefix AR--GARCH--t fit generates a plug-in parametric
+bootstrap reference. OLS and the score statistic are re-estimated on each
+bootstrap path; the generator is fitted once. Published iid critical values
+are not used. With the registered \(B=999\) bootstrap paths, the p value is
+\((1+\#\{H_b\ge H_{\rm obs}\})/(B+1)\); the registered draw count and
+all exceedances remain in the archive. The table retains the observed statistic,
+bootstrap p value, Holm adjustment, moment qualification and descriptive cuts.
+Qualified fitted nulls require \(\nu>4\) and
+\(q_4=\alpha^2\{3(\nu-2)/(\nu-4)\}+2\alpha\beta+\beta^2<1-10^{-8}\).
+A successful fit and this fourth-moment gate do not prove that the real law
+has those moments. The plug-in calibration supplies no exact finite-sample
+size guarantee; rejection can also reflect misspecification or outliers.
+
+\input{generated/v9-stability-diagnostics-table.tex}
+
+Candidate cuts minimize a separate-variance Gaussian AR quasi-likelihood
+criterion with penalty \((3+4k)\log M\), where \(M\) counts transitions.
+The fixed search allows at most two cuts and requires each segment to contain
+at least \(\max\{104,\lceil .20M\rceil\}\) transitions.
+These are descriptive calibration partitions, not individually significant
+breaks. Whole-prefix scaling is shared by every segment without demeaning;
+the first target in a segment keeps its preceding observed lag.
+The constrained AR and GARCH fits have one declared start and no retry.
+The daily nonregular null and hourly optimization failure retain unavailable
+primary p values; neither is evidence of stability.
+
+The constant control retains the whole-prefix parameters. The stress arm
+cycles the fitted regimes with their original transition dwell lengths and a
+fixed repetition-phase grid. Level, innovation and variance state continue
+through each switch. The last-to-first wrap is artificial, rather than an
+observed historical break. Common uniforms are transformed through each arm's
+own standardized t law; a no-cut source reuses the identical whole-fit path.
+Both arms retain the forecasting procedures of Section~\ref{sup:v8-mc}.
+The following complete grids retain failed conditional cells and all F cells.
+
+\input{generated/v9-stability-W52-table.tex}
+\input{generated/v9-stability-W260-table.tex}
+\input{generated/v9-stability-F-table.tex}
+
+Loss summaries are medians across repetitions within each source, then equal-weight medians across every required source. They are not the controlled
+grid's ratio-of-means estimand. A required repetition failure makes its whole
+cell unavailable; successful subsets do not replace missing full-grid results.
+The raw weekly screening threshold is met, while multiplicity adjustment
+retains fewer rejections. The near-parity constant-control prediction is
+unsupported. The two-history switching prediction and the daily/hourly
+comparison are unassessable. Constant controls themselves generate large
+losses, so instability is not necessary for losses in these procedures.
+The empirical low-frequency mechanism remains unidentified.
+

@@ -1,0 +1,45 @@
+\section{Monte Carlo mechanisms: original increment persistence}\label{sup:simulation-original}
+
+These are the existing fixed-seed Gaussian experiments, not newly run
+simulations or calibrated replicas of either financial source. Every reported
+rate is a probability, not a percentage. The peak includes the initial level;
+the endpoint event concerns absolute displacement from that initial level.
+Each path cell has 100000 paths.
+L/Stat starts the level AR in stationarity; L/Abs fixes its absolute-level
+tail anchor; L/Sig is the separate signed-level tail-anchor sensitivity.
+I/Zero accumulates stationary AR increments from a zero position.
+M denotes a stationary-marginal endpoint threshold; C denotes a distinct
+fixed-start conditional endpoint oracle. Threshold partners sharing a seed use
+the same paths, not independent repetitions.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{Original increment-autoregression simulation, unchanged. Serial persistence here concerns increments, not fitted position levels.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.00 & I/Zero & 20267023 & 5.490 & 3035 & 0.03035 & 0.00054 & 0.02454 \\
+6 & 0.70 & I/Zero & 20267093 & 10.092 & 2597 & 0.02597 & 0.00050 & 0.02573 \\
+6 & 0.85 & I/Zero & 20267108 & 11.634 & 2550 & 0.02550 & 0.00050 & 0.02550 \\
+6 & 0.98 & I/Zero & 20267121 & 13.190 & 2557 & 0.02557 & 0.00050 & 0.02557 \\
+24 & 0.00 & I/Zero & 20285023 & 10.981 & 3819 & 0.03819 & 0.00061 & 0.02504 \\
+24 & 0.70 & I/Zero & 20285093 & 24.599 & 2772 & 0.02772 & 0.00052 & 0.02475 \\
+24 & 0.85 & I/Zero & 20285108 & 33.394 & 2619 & 0.02619 & 0.00051 & 0.02525 \\
+24 & 0.98 & I/Zero & 20285121 & 49.784 & 2572 & 0.02572 & 0.00050 & 0.02572 \\
+\end{longtable}
+\endgroup
+
+The independent-increment rows satisfy the classical premise.
+Positive increment coefficients violate independence without necessarily causing
+a numerical breach of the bound. Their favorable rates are not a general
+result for serial dependence.

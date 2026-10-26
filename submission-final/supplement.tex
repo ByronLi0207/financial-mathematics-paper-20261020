@@ -1,0 +1,651 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref,placeins}
+\hypersetup{hidelinks,breaklinks=true}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{5pt}
+\setlength{\LTcapwidth}{\textwidth}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-2ex \@plus -.5ex \@minus -.2ex}{.8ex \@plus .2ex}%
+  {\normalfont\large\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1ex \@plus .2ex \@minus .1ex}{-1em}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\title{Online Supplement to When Is History Long Enough? Conditional Quantile Models versus Historical Rules for Peak Net-Position Limits}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+This compact Supplement accompanies the consolidated manuscript. It retains
+proofs, principal comparison inventories and the numerical and information-date
+qualifications. Earlier longer inventories are preserved verbatim in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the extended-results index},
+alongside their original complete PDF and editable source. Their relocation
+does not remove adverse, failed or unavailable outcomes.
+\begingroup\small\setlength{\parskip}{0pt}\setcounter{tocdepth}{1}
+\makeatletter
+\renewcommand*\l@section[2]{\@dottedtocline{1}{0em}{2.5em}{#1}{#2}}
+\makeatother
+\tableofcontents\endgroup\medskip
+\section{Known-floor projection and strict quantile coverage}\label{sup:floor}
+
+We forecast the sampled maximum of the absolute position, including
+the observed issue position. Write \(B=|N_t|\) and let \(Y\ge B\) almost surely,
+with \(B\) measurable at the forecast origin. For \(0<\tau<1\), the pinball score is
+\(\rho_\tau(u)=\tau u_+ +(1-\tau)(-u)_+\). A lower inverse conditional quantile
+is \(q_\tau=\inf\{c:F(c\mid\mathcal F_t)\ge\tau\}\).
+
+\paragraph{Proposition 1: floor projection.}
+Replacing a report \(c\) by \(\max(B,c)\) weakly reduces its score at every possible
+outcome. At the population conditional quantile, the strict breach probability
+is at most \(1-\tau\). These are distinct statements: projection applies to any
+report; the tail qualification requires the true conditional quantile.
+Here \(q=q_\tau\) and \(\alpha=1-\tau\).
+\[
+\rho_\tau(Y-c)-\rho_\tau(Y-\max\{B,c\})=\tau(B-c)_+,\qquad \Pr(Y>q\mid\mathcal F_t)\le\alpha.
+\]
+\paragraph{Proof.}
+If \(c\ge B\), the replacement changes nothing. If \(c<B\), both errors
+\(Y-c\) and \(Y-B\) are nonnegative, so their score difference is
+\(\tau(B-c)\). This proves the pointwise identity without a density assumption.
+Right continuity of the conditional distribution gives
+\(F(q_\tau\mid\mathcal F_t)\ge\tau\), hence
+\(\Pr(Y>q_\tau\mid\mathcal F_t)\le1-\tau\). An atom at the quantile can make
+this strict; exact nominal hit frequency is not required for a valid upper
+quantile. A fitted report does not automatically inherit this population claim.
+\hfill\textit{QED}
+
+\paragraph{Why the floor matters.}
+The sampled maximum equals the current magnitude whenever the recorded future
+path remains inside its current absolute-position band. This can create an atom
+even when later signed observations are continuous. The existence of a floor
+alone does not imply an atom: an outcome uniformly distributed above the floor
+provides a counterexample. Equality-based coverage tests therefore diagnose
+their stated equalities, rather than every possible valid upper-quantile report.
+
+\paragraph{Endpoint marginals do not identify the peak.}
+The exact artificial constructions in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/notes/revision-v5-novelty/theory-source.json}{the formal example record}
+hold each future-time marginal fixed while changing temporal dependence.
+Comonotone and disjoint rare events then give different peak quantiles.
+The example is a logical construction, not another financial dataset or an
+estimated mechanism. Forecast evaluation must use the ordered path response
+and the information available at its actual origin.
+
+\paragraph{Takeaway.}
+Known-floor projection is an elementary pointwise improvement. It does not
+establish empirical calibration, identify the conditional distribution, or turn
+a fitted endpoint forecast into a forecast of a path maximum.
+\section{Classical endpoint-to-peak bound}\label{sup:levy}
+
+\paragraph{Proposition 2: the classical endpoint bound.}
+Let future real increments \(X_1,\ldots,X_H\) be independent and individually
+symmetric about zero. Set \(S_0=0\), \(S_h=\sum_{j=1}^hX_j\), and fix a starting
+position \(x\), with absolute magnitude \(B\). Equal increment laws and finite moments are unnecessary.
+For the population absolute-displacement quantile at level \(1-\alpha/2\),
+\(q=\inf\{c:\Pr(|S_H|\le c)\ge1-\alpha/2\}\), the classical scalar maximal
+inequality and the triangle inequality give
+\[
+\Pr\!\left(\max_{0\le h\le H}|x+S_h|>B+q\right)\le\Pr\!\left(\max_h|S_h|>q\right)\le2\Pr(|S_H|>q)\le\alpha.
+\]
+This is a direct application of the classical L\'evy inequality, not a new
+maximal inequality.
+
+\paragraph{Proof, including strict events and atoms.}
+For \(c\ge0\), let \(\eta\) be the first index with \(|S_\eta|>c\). On
+\(\{\eta=k,S_k>c\}\), the remaining sum \(R_k=S_H-S_k\) is independent of
+the information through \(k\) and is symmetric. Therefore \(\Pr(R_k\ge0)\ge1/2\),
+including a possible atom at zero, and that weak sign keeps \(S_H>c\).
+On the corresponding negative crossing, \(R_k\le0\) keeps \(S_H<-c\), also
+with probability at least one half. Summing over the disjoint crossing events
+gives \(\Pr(\max_h|S_h|>c)\le2\Pr(|S_H|>c)\). The argument covers \(c=0\).
+Finally, \(\max_{0\le h\le H}|x+S_h|\le |x|+\max_h|S_h|\), and right
+continuity gives the required strict tail bound at \(q\). \hfill\textit{QED}
+
+\paragraph{Conditional use and empirical implementation.}
+For an observed random anchor, the same argument must hold under its
+forecast-origin conditional law, with the corresponding conditional population
+endpoint quantile. Conditional independence and symmetry about zero cannot be inferred from unconditional marginals. The empirical endpoint plug-in adds the current
+floor to a historical absolute-displacement order statistic. Overlapping labels,
+estimated quantiles and changing dependent histories provide no automatic
+inheritance of this population bound or a pinball-risk ordering.
+
+\paragraph{Two different failure mechanisms.}
+Dependence can destroy the inequality: take \(X_1=Z\), \(X_2=-Z\), with
+\(Z\in\{-1,1\}\) equally likely. The endpoint is zero, while the sampled
+maximum is one. Separately, replacing the required absolute-displacement
+quantile by a generic one-sided endpoint quantile can fail even for independent
+symmetric increments. The exact finite example is preserved in the formal
+example record. These logical counterexamples are separate from the Gaussian
+Monte Carlo cases below; a nonviolating simulation does not prove a theorem
+extension.
+
+\paragraph{Takeaway.}
+The bound supplies a clear population benchmark under explicit assumptions;
+the empirical report remains a model to validate, not a coverage certificate.
+\section{Ordinary quantile ranks and minimizer endpoints}\label{sup:rank}
+
+The ordinary empirical quantile and the corrected empirical rule use
+the same completed pool, refit times and issue floor. The former takes the
+lower empirical pinball minimizer; the latter uses the specified add-one rank.
+When the product of the probability level and pool size is an integer, adjacent reports can be the two endpoints of the same empirical minimizer interval. Calling the lower report a
+uniquely optimal comparator would therefore be wrong. At the short weekly pool,
+the noninteger rank distinction differs.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Complete ordinary-rank ablation. Lower empirical reports increase breach occasions and need not improve score.}\\
+\toprule
+Source & Horizon & History & \shortstack{Regression vs\\empirical (\%)} & \shortstack{Empirical vs\\historical (\%)} & \shortstack{Breaches\\empirical / historical / regression} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Horizon & History & \shortstack{Regression vs\\empirical (\%)} & \shortstack{Empirical vs\\historical (\%)} & \shortstack{Breaches\\empirical / historical / regression} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & -1.967 & -0.153 & 337/332/531 \\
+FX & 6 & 2880 & -14.773 & 0.008 & 365/360/376 \\
+FX & 24 & 720 & 31.508 & -0.003 & 432/427/924 \\
+FX & 24 & 2880 & -3.783 & 0.026 & 359/357/531 \\
+Bills & 6 & 52 & 87.086 & -1.995 & 14/11/84 \\
+Bills & 6 & 260 & 46.058 & 3.237 & 32/28/54 \\
+Bills & 24 & 52 & 208.258 & 6.213 & 37/33/132 \\
+Bills & 24 & 260 & 105.020 & 2.353 & 15/12/84 \\
+\end{longtable}
+\endgroup
+
+The reconstructed historical summaries match the original controls.
+The lower report increases the number of strict hits and the mean underprediction
+amount in every cell, but its loss direction is mixed. Every Treasury regression remains worse
+than the lower empirical report. This ablation isolates a rank convention on the same inspected record; it neither supplies a fresh validation sample nor
+establishes universal superiority of either finite-sample quantile endpoint.
+Exact counts, annual splits and fixed-grid rows are linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/revision-20261022/rank-ablation/README.md}{the complete rank archive}.
+\section{Horizon coherence and late conditional-hit evidence}\label{sup:coherence}
+
+Realized peaks are ordered as the forecast horizon grows, but
+independently fitted reports use horizon-specific mature peak responses and can
+cross. The following exact strict comparisons keep all common issue origins.
+Raising only the long-horizon report can worsen its marginal pinball loss.
+At a common level and in common units, sorting crossed reports instead weakly
+improves the equally weighted aggregate pinball score. The retained analytic
+qualification below gives the exact samplewise identity and its limitations.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{Every original quantile-regression horizon-coherence comparison. Ordered targets do not force ordered fitted reports.}\\
+\toprule
+Source & History & Issues & Forecast crossings & Target violations \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & History & Issues & Forecast crossings & Target violations \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 720 & 6625 & 640 & 0 \\
+FX & 2880 & 6625 & 140 & 0 \\
+Bills & 52 & 277 & 91 & 0 \\
+Bills & 260 & 277 & 80 & 0 \\
+\end{longtable}
+\endgroup
+
+The late fixed-terminal conditional-hit diagnostic uses the null
+\(E[I_t\mid\mathcal F_t]\le\alpha\), where \(I_t=1\{P_t>C_t\}\).
+Within each globally anchored maturity phase, a fixed upper-probability
+alternative supplies hit/no-hit factors with conditional expectation at most
+one under the stated null. The procedure mixes whole products over its fixed
+prior, then averages dependent phases. It does not multiply phases or select
+their maximum. The fixed-family threshold does not restore retrospective
+error control after viewed-sample diagnostic selection.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrr}
+\caption{Every threshold-crossing cell in the complete late diagnostic. A noncrossing elsewhere is not a calibration certificate.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Breaches /\\issues} & Saved display value \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Breaches /\\issues} & Saved display value \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 24/720 & 924/6625 & 8.499112682788E+7 \\
+Bills & 6/52 & 84/277 & 1.310958812771E+8 \\
+Bills & 6/260 & 54/277 & 2.204375927802E+3 \\
+Bills & 24/52 & 132/277 & 3.814063640027E+4 \\
+\end{longtable}
+\endgroup
+
+The complete summary and phase tables, exact rational identities,
+all noncrossings and the interpretation boundaries remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/revision-20261022/coverage-evalues/README.md}{the e-value archive}.
+This is a fixed-terminal diagnostic, not an anytime p value, optional-stopping
+guarantee, new estimator, or independent validation. Score, breach amount,
+frequency and conditional-hit evidence answer different questions.
+\section{Numerical implementation and inference conventions}\label{sup:implementation}
+
+\paragraph{Completed labels and update clocks.}
+At a scheduled refit \(\kappa\), the latest mature peak response origin is
+\(\kappa-H\). A history of \(W\) mature peak responses therefore uses
+\(\{\kappa-H-W+1,\ldots,\kappa-H\}\), with every target ending by that refit.
+Training transforms, scales, coefficients and historical pools are held until
+the next scheduled refit. The current observed position may still change at
+each forecast issue. Replacing that issue anchor by the refit anchor changes
+the forecasting procedure.
+
+\paragraph{Regression and local quantiles.}
+The regression objective uses a training-normalized headroom response, an
+unpenalized intercept and a ridge penalty on slopes. Projection is applied when
+issuing the report and evaluating its validation score, not inside the fitted
+training objective. Local methods use training-only standardized predictors,
+fixed neighbour menus and duplicate-preserving order statistics. A selected
+whole-pool local quantile is an exact historical identity, not a failed-fit
+fallback. Scale-adjusted neighbours change responses as well as retrieval.
+
+\paragraph{Numerical eligibility.}
+The accepted solver records primal and dual residuals, objectives, feasibility and the gap between the primal and dual objectives. Ill-conditioned, nonfinite, unsupported-rank and failed candidate
+states retain their original statuses under each named selection contract.
+A mandatory-candidate failure blocks a procedure when its contract requires
+every candidate. The original full regression has that requirement; the
+four-feature selector may choose among completed eligible candidates. A failed
+selected evaluation never receives a replacement penalty or a shortened score.
+Changing the ridge menu changes the procedure even when feature definitions
+stay fixed. A numerical certificate does not establish financial accuracy,
+economic relevance, inferential validity or production continuity.
+No production continuity or fallback policy is evaluated here.
+
+\paragraph{Working-reference inference.}
+Saved unconditional loss differences use the recorded Bartlett-HAC convention;
+HLN and doubled-bandwidth sensitivities are labeled separately. Separate
+families and later reporting partitions do not erase the wider selection
+history. Coverage references distinguish full-grid Kupiec from the
+transition-conditional Christoffersen joint likelihood, which conditions on
+the initial hit. Small sparse grids and boundary likelihoods retain their
+original status. Neither a nonrejection nor a small working-reference p value
+proves conditional coverage or supplies selection-adjusted confirmation.
+
+\paragraph{Common-pool construction distances.}
+On one nonempty historical episode set, compare the historical headroom,
+translated-path and historical-peak reports using the same available order
+statistic. Each episode peak includes its starting observation. A translated
+path changes each level by the same anchor difference, so its absolute peak
+changes by at most that difference. Flooring is nonexpansive and commutes with
+the fixed order statistic. The headroom construction has the corresponding
+bound in the difference of anchor magnitudes. Thus
+\[
+|C^{\rm headroom}-C^{\rm peak}|\le\max_i\bigl||N_i|-B\bigr|,\qquad
+|C^{\rm translated}-C^{\rm peak}|\le\max_i|N_i-x|.
+\]
+For a proof of the order-statistic step, paired coordinatewise differences
+bounded by a radius imply that each empirical quantile lies below the other
+plus that radius; reverse the roles for the second inequality. These
+deterministic same-pool bounds do not order financial accuracy or coverage.
+Changing historical rows on one side invalidates the common-pool argument.
+
+Exact menus, numerical tolerances, failures and diagnostic tables remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source archives.
+
+\section{Frozen controlled comparison of inherited procedures}\label{sup:v8-mc}
+
+The simulation compares inherited reports for mean-reverting position levels,
+not positively autocorrelated increments and not a fitted reproduction of either
+financial source. It uses
+\[
+N_t=\phi N_{t-1}+\varepsilon_t,\qquad
+\varepsilon_t=\sqrt{v_t}z_t,\qquad
+v_t=\omega+a\varepsilon_{t-1}^{2}+bv_{t-1},\qquad
+z_t\stackrel{\mathrm{iid}}{\sim}\mathcal N(0,1).
+\]
+The level persistences are \(\phi\in\{0.7,0.9,0.98\}\), variance persistences
+\(p=a+b\in\{0,0.9,0.98\}\), histories \(W\in\{52,260,720,2880\}\), and horizons
+\(H\in\{6,24\}\). For the increasing variance-persistence settings, the
+\((\omega,a,b)\) triples are \((1,0,0)\), \((0.1,0.05,0.85)\), \((0.02,0.05,0.93)\). Each innovation has unit unconditional
+variance under the specified recursion. Initial level and variance are fixed;
+a burn-in of 20000 observations precedes 3264 retained observations.
+This is a long-burn approximation, not an exact stationary initialization.
+The common hourly calendar has no simulated calendar effect.
+
+There are 32 independent repetition streams, with master entropy 2026102408 and
+common normal innovations across conditions within a repetition. Validation
+uses origins 3072--3143; evaluation uses 3168--3239, with
+72 overlapping issues and a refit every 24 records. Repetition, not
+issue or grid cell, is the Monte Carlo uncertainty unit. Training uses exactly
+\(W\) origins \(r-H-W+1,\ldots,r-H\), with every label ending by refit \(r\).
+The current-position floor and query features use the actual issue state.
+The full model keeps its original predictors and the four-feature model its
+original four; their penalty menus and failure rules differ, so their contrast
+is not an isolated intervention on predictor count.
+
+For each cell, let \(A_j\) and \(B_j\) be regression and matched-historical mean losses in repetition \(j\), and \(R\) the planned number of repetitions. The
+reported relative change and its delta-method Monte Carlo standard error are
+\[
+\widehat\Delta=100\left(\dfrac{\overline A}{\overline B}-1\right),\qquad
+\operatorname{MCSE}(\widehat\Delta)=
+\dfrac{100\,s(A_j-\widehat rB_j)}{\sqrt R\,\overline B},\qquad
+\widehat r=\dfrac{\overline A}{\overline B}.
+\]
+Sample standard deviations use divisor \(R-1\). Breach-rate errors use the
+between-repetition standard deviation divided by
+\(\sqrt R\). Strict wins require \(A_j<B_j\), with error
+\(\sqrt{\widehat\pi(1-\widehat\pi)/R}\). At zero or all wins that plug-in error is
+zero without implying certainty; the worst-case error bound is
+\(0.5/\sqrt R\), or 8.84 percentage points here. The short evaluation segments,
+common innovations across cells, and fixed process family limit a regime claim.
+
+The frozen descriptive clear-gain screen requires all 32 paired repetitions,
+\(\widehat\Delta+2\operatorname{MCSE}(\widehat\Delta)<0\), and a strict-win fraction of at least \(0.75\). Its target is \(H=6\), \(W\ge 720\),
+\(p\ge 0.9\). Support additionally requires at least 6 of 12
+clear-gain target cells and none among the 60 outside cells. Each regression
+has only 2 target gains and 6 outside gains. The recorded conclusion
+is \textbf{MISMATCH}: both the target count and the no-outside requirement fail.
+This screen has no family-wide significance guarantee and supplies no new
+population endpoint-bound guarantee under dependent financial paths.
+
+\begingroup
+\renewcommand{\footnotesize}{\fontsize{9}{10.5}\selectfont}
+The complete 72-cell records for each regression remain unchanged in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/revision-v8/wp3/summary.json}{saved controlled-simulation summary}, alongside the matched historical records. All adverse, failed and unavailable statuses retain their original meanings. The preceding design and prediction outcomes refer to that entire grid, not a successful subset. Original numerical fields, rather than a table number that changed across historical documents, identify these records.
+\endgroup
+
+\paragraph{Candidate and procedure statuses.}
+The complete inventory contains 6912 complete method tasks, 18431 complete
+validation candidates and 1 failed candidate. The failure is the four-feature
+candidate at zero-based repetition 23, \(\phi=0.9\), \(p=0\), \(W=52\),
+\(H=24\), and penalty \(0.1\). Its duality-gap criterion fails at 10000
+iterations. The frozen eligible-completed-candidate rule selects penalty
+\(0.01\), whose full evaluation completes; this is not a retry or substitution
+of a failed selected evaluation. The original full-regression selector instead
+requires every declared validation candidate. Incomplete procedures retain NA
+full-procedure performance, with any available-pair summary labeled conditional
+on completion. The saved source summaries retain all cells and their full
+precision in \path{results/revision-v8/wp3/summary.json}; all six loss, breach and
+win heatmaps remain alongside them. Both complete numerical grids retain every cell.
+
+
+
+
+\section{Same-dealer completed-day aggregation}\label{sup:v8-daily}
+
+The pinned hourly FX snapshot produces 930 nonempty source-naive calendar
+days under the frozen last-observation rule, rather than the approximate sample
+size in the planning instruction. Each report is issued only at the end of its
+completed source-naive day; the selected row's original timestamp is not treated
+as an earlier time at which the identity of the last row was already known.
+Missing days stay absent, and partial boundary days remain. The timezone and
+historical first-release availability are unknown. This is a last-record proxy,
+not a verified financial close or a peak over intraday excursions.
+
+History lengths count mature training origins; horizons count subsequent nonempty daily observations. The split
+copies the Treasury observation-index geometry, not its absolute calendar dates
+or a proportional split: validation runs from 2015-02-24 to 2015-04-24 and evaluation from
+2015-05-24 to 2016-12-27 on 501 common issues. Raw or resampled positions
+and per-issue trajectories are not redistributed.
+
+\input{generated/v8-daily-results-table.tex}
+
+Historical headroom wins seven of the eight named comparisons, but the
+four-feature longer-history, shorter-horizon daily exception lowers loss by
+about 3.0\% with 37 regression breaches versus 30 historical breaches.
+Both regressions meet the fixed majority-based descriptive classification,
+not a dominance or coverage theorem. The recorded source identity is held fixed while physical history, horizon, update cadence, calendar predictors, sampled response and evaluation span change jointly. The contrast cannot
+identify a pure frequency effect or supply independent dealer validation.
+
+
+
+\section{Fixed-parameter full-prefix backcast and overlapping windows}\label{sup:v8-backcast}
+
+The additional retrospective backcast uses the complete eligible prefix
+3071--10438, with 7368 common issue origins before the original later
+validation. It retains the original later-selected parameters: full regression: \(H=6,\lambda=0.01\), \(H=24,\lambda=0.001\); four-feature regression: \(H=6,\lambda=0.01\), \(H=24,\lambda=0.01\).
+Coefficients, transformations and training labels obey \(i+H\le r\) at each
+refit, but those fixed penalties were chosen after the historical issue dates.
+Thus this is a fixed-parameter pseudo-out-of-sample backcast with later-selected
+parameters, not a real-time historical validation.
+
+The full prefix contains all 1440 earlier reported backcast origins,
+with inclusive issue indices 8999--10438.
+Actual earlier rolling-validation targets at the longer horizon cover 3071--10462,
+exactly the new prefix's longer-horizon target range. Apparent issue gaps between old validation blocks
+are not untouched target paths. Three displayed overlapping/inspected windows
+therefore do not create a fresh independent third validation period. This
+\textbf{MISMATCH} remains regardless of the direction of the added score
+comparisons. No window effects, p-values or success counts are pooled.
+
+Full-prefix regression lowers matched loss by 12.2\% but records 416 versus 282 breaches. Its rolling-reference DM p-value is 0.055. Longer-horizon gains coexist with reference-sensitive losses in the complete tables.
+
+\input{generated/v8-three-window-table.tex}
+\input{generated/v8-backcast-complete-table.tex}
+
+The frozen short-horizon full-regression descriptive screen retains matched
+score gains across the three inspected windows and a changing rolling-reference
+direction. It is not confirmation after inspection or independent replication.
+The complete longer-horizon results also retain matched score gains, and the
+full regression's loss against the rolling reference. A score gain can coexist
+with more breaches; neither a conditional-coverage certificate nor an economic
+operating benefit follows from these tables.
+
+\begin{samepage}
+The added eight pairwise tests use only raw standard-normal two-sided
+DM-type working references, separate from all original adjusted families.
+For \(n\) paired losses at horizon \(H\),
+\[
+L=\min\!\left(n-1,\max\!\left\{H,
+\left\lfloor4(n/100)^{2/9}\right\rfloor\right\}\right).
+\]
+\end{samepage}
+The centered Bartlett Newey--West covariance uses divisor \(n\), and the
+statistic is the mean regression-minus-reference loss divided by
+\(\sqrt{\widehat{\mathrm{LRV}}/n}\). Nonpositive long-run variance or constant
+loss differences retain an unavailable statistic and their specified status;
+there is no epsilon repair. These p-values receive no multiplicity or full
+selection adjustment and do not establish equivalence, real-time validity or
+independent confirmation. Missing old longer-horizon original-menu, four-feature,
+rolling-DM or breach-count fields stay NA; the old five-menu rule is not relabeled
+as the original three-menu regression. No missing old test was recalculated.
+
+
+\section{Paired menu isolation: full source inventory}\label{sup:v10-menu}
+
+\subsection{Isolating the penalty menu}\label{sec:extensions}
+
+The weekly failures motivate a closer look at the penalty menu in calibrated simulations. Earlier stationary comparisons already produce large short-history regression losses. The fitted constant and switching arms use thirteen pre-evaluation weekly calibrations. The earlier stability screen rejects seven series pointwise and two after Holm correction. \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the original full Supplement: Sections S27--S28} retain the earlier calibrated simulations and stability diagnostics (\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the original full Supplement: Tables S27--S32}).
+
+The paired menu experiment changes only the ridge candidate menu and the stated exact-tie rule. It adds penalties one, ten and the intercept-only limit to full regression. Both regressions use the six-point menu. All paths, innovations, source calibrations and forecasting clocks match the earlier experiment. Thirty-two paired repetitions contribute to each complete source median. This isolates the executed menu comparison within these calibrated laws. The expanded procedure can choose ordinary I. Stronger finite penalties and access to I are not separately identified; near-parity loss alone supplies no evidence of added feature value.
+
+The expanded full-regression medians move close to historical headroom in both arms (Table~\ref{tab:v10-menu-isolation}). Both arms improve in every source. The constant-arm near-parity prediction and the paired-improvement prediction hold. The switching-minus-constant difference misses the registered five-percentage-point increase. This outcome supports the menu explanation for these simulated losses; it leaves the empirical frequency mechanism unresolved.
+
+\input{generated/v10-menu-main.tex}
+
+\begin{figure}[htbp]\centering\includegraphics[width=.98\linewidth]{figures/v10-menu-isolation.pdf}
+\caption{Paired penalty-menu isolation on unchanged calibrated paths. The expanded menu removes the large short-history full-regression loss in both arms. Longer-history full-regression summaries remain unavailable because a required repetition fails in each arm, with no successful-subset replacement.}\label{fig:mechanism}
+\end{figure}
+
+At history 260, one required full-regression repetition fails in each arm under the old low penalty. Both summaries across all thirteen sources remain unavailable. The experiment retains every failed cell and performs no retry. Earlier daily moment-qualification and hourly optimization failures also remain unavailable. Absence of a five-point switching increment is not evidence of equivalence.
+
+The identification qualification above concerns the paired simulated menu intervention. The additional financial finite-menu diagnostic is described in Section~\ref{sup:v12-details}.
+
+\paragraph{Procedure and complete-source inventory.}
+Both QR variants use penalties $\{.001,.01,.1,1,10,\infty\}$; the infinite candidate is ordinary intercept-only I, distinct from corrected-rank F. Full regression requires every candidate to complete. Four-feature regression selects from its completed eligible candidates, as before. Exact ties now prefer stronger shrinkage in both variants; no actual exact tie occurred. The switching-phase denominator remains thirty-two. Two pilot repetitions selected the full thirty-two formal repetitions before launch. The simulated feature clock is inherited hourly geometry despite weekly calibration parameters; it is not a literal weekly-calendar replay.
+
+The design preceded every new path calculation. M1 requires the constant-arm history-52 full-regression median within five percent of F. M2 requires the switching median at least five percentage points higher. M3 requires both aggregate improvements and at least twelve jointly improving sources. M1 and M3 hold; M2 fails. Full history-260 regression summaries remain unavailable after the required TIPS-G11 repetition fails in both arms. Successful repetitions or twelve-source subsets never replace them.
+
+\par\smallskip\noindent\begin{minipage}{\linewidth}\footnotesize Constant=C; switching=S. Positive percentages mean higher loss than F. NA retains the whole failed cell; source medians and old results remain separate.\end{minipage}
+\input{generated/v10-menu-full.tex}
+
+\clearpage
+
+\section{CFTC sources, eligibility and information dates}\label{sup:v10-cftc}
+The source is the CFTC TFF futures-only historical backcast for 2006--2016 plus annual 2017--2026 files. The retained observations begin in 2010. All eleven original source archives remain public; no other new financial data were acquired.
+
+A complete generated calendar contains 877 Monday-labeled report weeks, from 2010-01-04 through 2026-10-19. Economic position dates are retained separately. A code needs one valid observation per week, a stable exchange and stable contract units. Missing weeks, duplicates and changes disqualify a contract rather than trigger interpolation or splicing. Known consolidation prefixes 13874,20974,12460 are excluded before ranking. This conservative rule is broader than the documented plus-suffixed codes. Full-period mean open interest ranks survivors, with literal-code ties. Seventeen of 141 observed codes qualify; the top-twenty cap never changes that count.
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/v10/cftc/eligibility.json}{complete code-level eligibility and exclusions} preserve every screening decision.
+
+Validation indices are 553--604; evaluation indices are 611--870. All labels use horizon six, leaving six unissued origins between the segments. Validation position dates are 2020-08-11--2021-08-03; the last validation label ends 2021-09-14. Evaluation position dates are 2021-09-21--2026-09-08; the last evaluation label ends 2026-10-20. Training labels at refit r span r-H-W+1 through r-H. Monday labels index the inherited feature calendar; they do not claim Monday public availability. Actual positions are normally measured Tuesday and released Friday at 15:30 Eastern. Holiday, shutdown and ION-related publication delays prevent a first-release interpretation.
+
+The selected category series are listed below. Net positions equal dealer long minus short in raw contract counts. Equal-weight median percentage changes preserve within-contract units; they are not common-dollar portfolio risk.
+\input{generated/v10-cftc-universe.tex}
+
+The six methods are corrected-rank F, ordinary I, four- and thirty-three-predictor regression, and finite delayed ACI-style F/QR33. Both regressions use the six-point menu. The paired ACI wrappers retain the existing finite calibration with delayed matured feedback; no asymptotic coverage claim is attached. The original six-procedure, two-history study has 204 complete method cells without a numerical retry. The separate registered extension below adds only the three named procedures at the longer history. The full cell CSV and trace ZIP retain absolute scores, breaches, selected penalties and gamma values.
+
+For the CFTC delayed wrappers, gamma belongs to $\{.001,.005,.01,.05\}$. Completed candidates rank by validation coverage-distance, then pinball loss, then smaller gamma. Initialization requires at least nineteen matured scores. Updates wait for the full six-record label, and evaluation carries the validation state. The six unissued gap origins create no artificial reports or feedback events. These settings accompany histories 52/260, 52 validation origins, 260 evaluation origins and 13-record refits; none is retuned after evaluation.
+
+Two narrow official-format clarifications follow the original design and acquisition but precede every forecast. The first accepts only the official midnight suffix after the date; the second accepts integer counts written with an all-zero decimal suffix. Neither changes a mathematical count, sample threshold, screen or forecast setting. Original failed technical preparation receipts remain visible. This is not a claim of fully observation-blind ingestion design.
+
+\clearpage
+
+\section{Complete model confidence sets}\label{sup:v10-mcs}
+The registered ninety-percent MCS uses the range statistic and 1,000 stationary-bootstrap draws, with block length $\max\{H,\lceil n^{1/3}\rceil\}$ in arch 8.0.0. Deterministic source/grid seeds and method order are recorded in the design. Every claimed complete report uses its entire declared origin grid and common target. Missing stored losses are derived only from saved reports, without issuing forecasts or fitting models. Every one of 98 comparisons completes. The 60 known unavailable slots remain unavailable, not statistical exclusions.
+
+Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact duplicate loss columns enter the library once; all associated procedure labels then receive the same p-value and inclusion partition. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I, 2/98 have a sole literal F/I member, and 4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
+
+\input{generated/v10-mcs-compact.tex}
+
+
+\section{Fixed limit costs and full parameter regions}\label{sup:v10-cost}
+For each comparison, let $B$ be the issue-known floor, $Y$ the realized sampled peak,
+$C_m$ a saved method report, and $m_F=\overline{C_F-B}>0$ the matched F report's
+mean reserved headroom. All four quantities use the same source-native position
+units (currency or contract counts). The normalized per-issue cost is
+\[
+J_m(\kappa,\beta,c)=\kappa\frac{\overline{C_m-B}}{m_F}
++\beta\,\overline{\mathbf 1\{Y>C_m\}}
++c\frac{\overline{(Y-C_m)_+}}{m_F},\qquad b=\beta m_F.
+\]
+Reserve, strict breach frequency and excess enter separately. The fixed breach
+charge $b$ is in those same position-value units; each $\beta$ scales it to that
+comparison's evaluation-sample F headroom. Charges therefore differ across
+comparisons. Costs apply per issued report; overlapping horizons are not
+added as separate cash flows.
+The fixed grid is $\kappa\in\{.01,.025,.05,.1,.2,.5,1\}$,
+$\beta\in\{0,.01,.05,.1,.25,.5,1,2,5\}$ and $c\in\{.5,1,2\}$.
+At $\kappa=.05,\beta=0,c=1$, the cost difference from F is the pinball-loss
+difference divided by $m_F$. Other weights need not preserve that ranking.
+The panels compare fixed reports and do not estimate a cost-optimal policy.
+
+All 98 comparisons have a positive scale and all 976 complete methods enter 189 grid points, giving 184,464 cost rows. Sixteen missing-floor inputs are recovered only from their registered, fingerprinted same-origin F copies. Their complete origin, target and floor arrays match exactly. Other missing or mismatched floors would make the whole comparison unavailable. No missing scale uses an epsilon.
+
+The public \texttt{results/v10/cost/cost-grid.csv.zip} contains every complete method's normalized mean cost, its F reference and strict cheaper/equal status at all coefficients. \texttt{primary-regions.csv} retains all 18,522 planned primary grid rows, including status fields. Primitive reserve amounts, strict breach counts/rates and excess amounts appear in \texttt{primitive-stats.json}. Source-group figures use the full planned comparison denominators. The primary comparison is fixed expanded-menu full regression for hourly/weekly/CFTC sources and the original saved regression for daily FX. Other methods retain separate regions and are never replaced by a minimum-cost oracle.
+
+
+\section{Reproduction, availability and retained extended results}\label{sup:reproduction}
+
+Audit and run records are retained verbatim in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/notes/v10b/supplement-audit-records.md}{v10b audit archive}.
+
+Editable sources, aggregate results, original designs and code accompany the
+paper; favorable, adverse and failed outputs remain accessible.
+
+Document regeneration checks saved aggregates without raw observations; it
+does not establish recomputed forecast accuracy or independent replication.
+
+Code and current reproduction instructions are available at \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/final-jof}{the current repository entry}.
+
+\paragraph{Full financial replay requires compatible inputs.}
+A separately authorized replay requires the original FX member and Treasury
+snapshot to match their recorded fingerprints and definitions. Restricted FX
+observations and private per-origin forecasts or fitted traces are not
+redistributed. Downloaded economic dates do not establish verified first-release
+availability; a matching series name does not establish snapshot identity.
+
+\paragraph{Routes to complete evidence.}
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/protocol/revision-v6/REPLAY.md}{v6 replay guide},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/revision-20261022/README.md}{original conditional archive},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/results/supervisor-20261023/r6/README.md}{supervisor rule archive} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{extended-results index} identify the
+complete retained tables, failure inventories and longer technical discussions.
+Individual-dealer external validation and prospective first-release validation remain unmet.
+
+\FloatBarrier
+
+
+\section{Additional saved evidence on history length}\label{sup:v11-history}
+
+The earlier confirmation exercise applies its frozen pooled criteria to heavy-tailed, regime-switching and compound-Poisson innovation laws. Table~\ref{tab:v11-confirmation} reports every prewritten criterion, including the failed universal ordering prediction. Its history regions use method-specific thresholds estimated in the earlier source study; they are not an oracle rule for the financial data.
+
+\input{generated/v11-confirmation.tex}
+
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/final-jof/evidence/v11/pr5-v9}{unchanged source records} retain the complete synthetic results, counterexamples and candidate failures. The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/evidence/v11/pr5-v9/protocol/revision-v9/wp2-confirmatory.md}{original confirmation design} records the fixed laws, history regions, penalty menus and decision rules. The local design commits precede their numerical runs; the later public file uploads are not public preregistration.
+
+The complete \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/evidence/v11/pr5-v9/results/revision-v9/wp3/contrasts.json}{FX history contrasts} retain both horizons and every tested window. Both longer-horizon methods lose their gain again at the longest history. The four-feature short-horizon first cutpoint is left-censored and not testable, so the original confirmation across all curves is not established. These comparisons use the inspected period and provide neither evidence from an additional dealer nor a fresh financial holdout.
+
+
+\section{Retained scope details and additional empirical checks}\label{sup:v12-details}
+
+\paragraph{Earlier scope, retained verbatim.}
+The following paragraphs reproduce the earlier manuscript's scope discussion verbatim. They describe the evidence available before the additional empirical checks summarized below; statements about untested work retain that historical meaning.
+
+The FX evidence describes a single market maker's client-flow record. Its original evaluation period was viewed before the conditional methods were specified. Rules for the earlier 2015 comparison followed the original results. The full-prefix backcast uses penalties selected after its issue dates and contains the earlier backcast. Its target paths were covered by previous scoring. Both exercises remain retrospective.
+
+The New York Fed weekly categories share a reporting system and economic components; they are related aggregate tasks, not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage. Historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure; sampled net inventory also differs from settlement cash needs. Valuation and reporting-composition changes are not separated from trading. Sampled peaks omit intervening excursions. Daily last records also differ from verified closes or intraday maxima; the source timezone and release vintage are unknown.
+
+Daily aggregation jointly changes physical histories, horizons, update cadence, calendar predictors, evaluation span and sampled targets. The same-record comparison leaves a pure frequency effect unidentified.
+
+The design gives no causal interpretation or individual-predictor effects. The financial procedures provide no coverage guarantee under their dependence and calibration scheme. Trading and funding gains are not measured. Scoring weights are evaluation preferences, not estimated intervention or funding costs. Independent dealer records and prospective observations would broaden validation; finer exposure and cost data would connect reports to inventory actions.
+
+Short overlapping validation samples and research-stage selection limit tuning stability and confirmatory inference. Longer weekly outer validation windows remain untested. The simulation designs use different menus, clocks, calibration laws and summary statistics. The paired menu experiment isolates that procedure change within the calibrated laws; empirical causation remains unresolved. The new parameter-switching process repeats fitted dwell lengths and adds artificial last-to-first transitions. Its stability screen uses a plug-in model-based approximation. Moment qualification and successful optimization leave the assumed law and boundary-estimate uncertainty unresolved. Failed cells and unavailable diagnostic comparisons retain those statuses.
+
+The statement about untested longer weekly validation windows records the earlier scope only. The additional CFTC validation-length comparison now tests longer windows on the unchanged evaluation period, with its complete outcomes and failures linked below. It does not establish prospective tuning stability.
+
+CFTC categories provide an independent reporting system, not independent individual dealers. Full-history continuity creates a retrospective survivor universe. Open-interest ranking only orders the eligible contracts here. Conservative consolidation-family exclusions leave seventeen eligible contracts. Raw contracts have different exposure units; normalized comparisons do not recover common-dollar risks. Downloaded position dates omit actual historical first-release vintages and reporting delays. Two ingestion-schema clarifications followed acquisition but preceded every forecast and model-loss result; their original failed technical attempts remain documented.
+
+Coefficients are fixed preferences; no estimated funding return, optimal intervention policy or trading-profit claim follows. The normalization uses evaluation-sample F headroom; ex ante institutional charges remain untested. MCS inference requires suitable loss dependence. The stationary bootstrap, modest samples and research-stage specification choices limit its nominal interpretation. Membership and cross-task fractions do not certify future coverage or simultaneous best-model status.
+
+\paragraph{Issued-report consistency.}
+Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression produces horizon crossings on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.
+The complete horizon-coherence comparisons remain in Section~\ref{sup:coherence}; autoregressive replay and empirical-rank details remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/final-jof/EXTENDED_RESULTS.md}{the extended AR-residual section} and Section~\ref{sup:rank}.
+
+\paragraph{Additional empirical checks and complete results.}
+Complete source-cell records, candidate means, prewritten decisions and execution receipts are retained in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/final-jof/results/v12/decomposition}{the loss-decomposition results}, \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/final-jof/results/v12/validation-length}{the validation-length results} and \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/final-jof/results/v12/tau}{the tail-level results}. The decomposition evaluates every declared penalty on the same evaluation origins. Its best finite-penalty evaluation score is an optimistic retrospective diagnostic, not a usable selection rule. The infinite candidate is ordinary empirical headroom and is excluded from that finite oracle; the selection component may therefore be negative. Longer validation changes selection rather than evaluation dates or refit schedules. Tail-level checks change empirical ranks, fitted targets and scores together; the declared sample-maximum cap supplies no coverage guarantee. These new empirical checks require all validation candidates to complete, including for four-feature regression; the earlier simulated policy above is unchanged. Required numerical failures remain failed whole procedure cells, without retries or successful-subset substitution. Failed fits leave the highest-level CFTC threshold and two-period FX criterion unresolved; completed lower-level outputs do not replace them.
+
+
+
+\FloatBarrier
+\clearpage
+\section{Retained tail-level comparison table}\label{sup:final-tail}
+\begin{table}[!h]\centering\small
+\caption{Full-regression relative excess loss (\%) at alternative quantile levels. Positive values favor matched historical headroom; NA retains any failed required comparison.}\label{tab:v12-tau}
+\begin{tabular}{lrr}\toprule
+Source / training history & 90\% & 99\% \\\midrule
+CFTC, 52 weeks & +3.45 & +15.05 \\
+CFTC, 260 weeks & +1.58 & \textsc{NA} \\
+FX, original period & -10.15 & \textsc{NA} \\
+FX, earlier period & -17.85 & \textsc{NA} \\
+Treasury bills & +0.67 & +44.22 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}\begin{minipage}{.95\linewidth}\footnotesize
+Contract rows report full-group medians. FX uses 2,880-hour training histories; Treasury uses 260 weeks. Successful subsets never replace a required full group.
+\end{minipage}\end{table}
+
+\FloatBarrier
+\input{generated/final-analytic-qualifications.tex}
+
+\paragraph{Scope of the retained analytic source.}
+The preceding analytic note is copied byte-for-byte from the accepted A-line analytic
+source. References to the earlier or protected Supplement identify that
+historical package. The current combined text adopts the corrected sorting,
+quantile-selection, information-set and calibration qualifications.
+
+\input{generated/final-cftc-extension.tex}
+\input{generated/final-analytic-reference-details.tex}
+\end{document}
+

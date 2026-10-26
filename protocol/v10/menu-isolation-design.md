@@ -1,0 +1,216 @@
+# E1 menu-isolation design (frozen before new computation)
+
+This study changes the QR penalty menu on the already calibrated v9 synthetic paths. No financial observations are downloaded, no calibration is re-estimated and no old outcome is overwritten. The old constant/switching comparisons remain reported, including failed mandatory candidates. The existing conditional forecasting, features, normalization, response scale, solver, maturity pools, horizon, updates and lower projection are reused unchanged.
+
+The only substantive QR33 change is adding penalties1,10 and the exact intercept-only limit. The user also explicitly requires a stronger-penalty exact tie for both methods. Original QR4 used the weaker penalty on exact ties; this directed secondary procedural difference is disclosed and exact-tie counts are reported. We do not pretend the QR4 tie convention stayed unchanged. Original QR33 already used stronger ties. The registered M1–M3 concern QR33.
+
+## Fixed paths, phases and archived control
+
+Use the thirteen weekly calibrations in their original source order. The pilot has original seed tag1 and phase denominator2, so its two repetitions match the old pilot. Formal uses original tag2 and phase denominator32. A timing-selectedR16 takes rep0..15 of the original formal run while preserving denominator32. PassingR16 as the generator's phase denominator would change switching paths and is forbidden. Uniforms, RNG states, regime geometry and all Fpoints are checked against the corresponding archived old unit before recording a complete paired comparison. Original raw-path hashes do not exist; no such evidence is invented.
+
+The old mandatory QR33 low-penalty failure at sourcePDPOSTIPS-G11,rep24,W260 is known from saved receipts. Adding infinity does not override the required-all contract or authorize a retry. Neither this known failure nor future results may influence the timing-basedR choice. QR4 keeps its completed-candidate rule. Every candidate is attempted at most once per exact segment identity, selected evaluation failure has no fallback, all failed/incomplete inventory remains.
+
+## Outcomes and interpretation fixed now
+
+M1 is a closed[-5,+5]percent interval. M2 compares the two across-source medians in percentage points and requires>=5. M3 requires strictly lower group medians in both arms AND at least12sources with strictly lower within-source medians in both arms. The source requirement is the intersection, not a favourable union. All means/medians use the declared complete grids; unmatched old/new repetitions never substitute for pairing.
+
+- If M1 and M2 are supported, describe losses as concentrated in the switching processes once the expanded menu is allowed, limited to these calibrated procedures.
+- If M1 is supported and M2 is not supported, describe the menu as the main short-history source in this comparison and state that the registered switching increment was not established; absence of threshold support is not population equivalence.
+- If M1 is not supported, describe remaining calibrated loss even with the expanded menu. If it lies below-5 rather than above+5, explicitly say it improves and misses near-parity; never call a negative loss change a loss increase.
+- If a needed statement is unassessable, keep that state and do not force it into a supported/not-supported branch. M3 is reported independently in every case.
+
+## Timing and stopping
+
+PilotR2 covers all13sources, both arms, both W and both QR methods. Project with the fixed conservative formula and chooseR32 thenR16 before formal launch. Formal wall-clock cap1800s starts at formal launch. Keep four workers and existing one-thread/worker resource caps. No in-run reduction, QR-only fallback, re-estimation, tolerance change, numerical retry or favourable sample restriction. Timing-ineligible or interrupted output remains unavailable/failed, with full planned inventory. The formal timing plan is committed alone; numerical code is sealed before first pilot.
+
+## Machine-readable fixed settings
+
+```json
+{
+  "schema": "v10-menu-isolation-design-v1",
+  "created_utc": "2026-10-24T22:18:54.259600+00:00",
+  "base_v9_commit": "0d2526cc69092c5158437a0509613bac5e86d47f",
+  "v9_design_path": "protocol/v9/nonstationarity-design.md",
+  "v9_design_sha256": "76df3a3d2c2c5b90d4c3f4b225cc4f879b384c6f3d288b6732f488bda15a3894",
+  "v9_original_design_commit": "5decccb0a13ef1969629cfec695dd3459c412c4e",
+  "v9_formal_plan_commit": "3411a1fee705ef83b070cfd12e110c5d3d9f357f",
+  "v9_forecast_source_sha256": {
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "v8_daily_fx.py": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "conditional_sources.py": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+    "round2_panel_sources.py": "e0b553d370a23f9dcc38caeb649e048bb880c6fcc9b93536d2e9a30402c4c17d"
+  },
+  "v9_generator_sha256": "70309cfe6a055af8503fcb81e07d8a0240d115211f185740a68a1eec3d196731",
+  "v9_exposure_sha256": "735918d05ca1dd80fe0ce5641721b1e984da52cd4396d29c0ff8b0b839cbd5d8",
+  "v9_calibration_path": "results/v9/nonstationarity/diagnostics.json",
+  "v9_calibration_sha256": "9d3be1de5cffdb82b0209cff98a6b360a5036bffedff2ab5363f31a283d0f621",
+  "v9_formal_archive_path": ".scratch/v10/v9-formal-units.zip",
+  "v9_formal_archive_sha256": "7ecc25fe719c5624e8e9774b38eb3a54aa6ed14d6d8756d3cbefbbffe214c1b8",
+  "v9_pilot_archive_path": "results/v9/nonstationarity/pilot/units.zip",
+  "v9_pilot_archive_sha256": "156b31cf3cc9ffebabc442618e6f17894bd12fd780df64d9d9d34fbc3e6e9c01",
+  "sources": [
+    {
+      "source_index": 0,
+      "source_id": "PDPOSGS-B"
+    },
+    {
+      "source_index": 1,
+      "source_id": "PDPOSMBS-TOT"
+    },
+    {
+      "source_index": 2,
+      "source_id": "PDPOSCS-TOT"
+    },
+    {
+      "source_index": 3,
+      "source_id": "PDPOSFGS-TOT"
+    },
+    {
+      "source_index": 4,
+      "source_id": "PDPOSTIPS-L2"
+    },
+    {
+      "source_index": 5,
+      "source_id": "PDPOSTIPS-G11"
+    },
+    {
+      "source_index": 6,
+      "source_id": "PDPOSTIPS-G2"
+    },
+    {
+      "source_index": 7,
+      "source_id": "PDPOSTIPS-G6L11"
+    },
+    {
+      "source_index": 8,
+      "source_id": "PDPOSGSC-L2"
+    },
+    {
+      "source_index": 9,
+      "source_id": "PDPOSGSC-G2L3"
+    },
+    {
+      "source_index": 10,
+      "source_id": "PDPOSGSC-G3L6"
+    },
+    {
+      "source_index": 11,
+      "source_id": "PDPOSGSC-G6L7"
+    },
+    {
+      "source_index": 12,
+      "source_id": "PDPOSGSC-G7L11"
+    }
+  ],
+  "windows": [
+    52,
+    260
+  ],
+  "horizon": 6,
+  "arms": [
+    "constant",
+    "switching"
+  ],
+  "conditional_methods": [
+    "QR33",
+    "QR4"
+  ],
+  "menus": {
+    "QR33": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      "inf"
+    ],
+    "QR4": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      "inf"
+    ]
+  },
+  "infinity": "Existing empirical_headroom.predict I: ordinary lower empirical0.95 minimizer; not correctedF",
+  "candidate_failure_policy": {
+    "QR33": "all six required; any candidate failure makes selection ineligible",
+    "QR4": "select among completed validation candidates; no complete candidate =>ineligible"
+  },
+  "exact_validation_tie": "strongest penalty for both methods; inf ranks last/strongest; no tolerance-based tie",
+  "tau_numerator": 19,
+  "tau_denominator": 20,
+  "refit_step": 24,
+  "master_entropy": 2026102408,
+  "rng_namespace": 9,
+  "burn_in": 20000,
+  "retained_observations": 3264,
+  "validation_first": 3072,
+  "validation_last": 3143,
+  "evaluation_first": 3168,
+  "evaluation_last": 3239,
+  "feature_rms_short": 24,
+  "feature_rms_long": 168,
+  "nominal_gap_seconds": 3600,
+  "pilot_repetitions": 2,
+  "pilot_stream_tag": 1,
+  "pilot_path_phase_repetitions": 2,
+  "formal_stream_tag": 2,
+  "formal_path_phase_repetitions": 32,
+  "formal_repetition_candidates": [
+    32,
+    16
+  ],
+  "repetition_subset_rule": "When timing choosesR16, use exactly original formal rep0..15; never change generator phase denominator32",
+  "worker_count": 4,
+  "worker_internal_seconds": 540,
+  "worker_hard_seconds": 600,
+  "worker_rss_public_cap_bytes": 2147483648,
+  "pilot_max_seconds": 1200,
+  "formal_max_seconds": 1800,
+  "projection_safety_factor": 1.35,
+  "projection_reserve_seconds": 180,
+  "projection_formula": "1.35*(R/2)*max(sum(all26pilot_unit_wall_seconds)/4,max(all26pilot_unit_wall_seconds))+180",
+  "configuration_selection": "ChooseR32 iff projected<=1800; otherwiseR16 iff projected<=1800; otherwise no formal run,record budget-unavailable. Both QR methods always retained. Missing/incomplete pilot timings => no formal run. Freeze chosen run-plan alone before launch.",
+  "samepath_verification": [
+    "same calibration/generator/forecast-source fingerprints",
+    "same per-stage seed/tag/phase and uniform_sha256/rng_initial/rng_final",
+    "identical per-arm regime_ids/transitions/wraps/exposure",
+    "every F evaluation scalar and72-point capacities/losses/breaches exactly equal original corresponding unit"
+  ],
+  "old_path_hash_boundary": "No v9 raw position/variance/innovation path SHA was archived; new path SHA is an additional future baseline, not a match to a nonexistent old path SHA.",
+  "summary_estimand": "per-source median over all R repetition relative mean-loss ratios100*(QR/F-1), then equal-weight median of all13source medians; source IQR descriptive",
+  "whole_cell_failure": "Any required repetition missing/failed makes source/arm/W/method cell FAILED; no partial-source/partial-repetition primary median. A missing requiredsource makes across13 UNASSESSABLE.",
+  "old_menu_pairing": "Old comparison rows for the same stage/source/arm/W/method/rep IDs only; R16 uses matched old first16 receipts, never old full32 summary.",
+  "M1": {
+    "arm": "constant",
+    "window": 52,
+    "method": "QR33",
+    "lower_inclusive_pct": -5.0,
+    "upper_inclusive_pct": 5.0
+  },
+  "M2": {
+    "window": 52,
+    "method": "QR33",
+    "difference": "switching across13 median minus constant across13 median",
+    "minimum_inclusive_percentage_points": 5.0
+  },
+  "M3": {
+    "window": 52,
+    "method": "QR33",
+    "group_condition": "Both arms across13 expanded medians strictly lower than their matched old-menu medians",
+    "source_condition": "At least12of13 sources strictly improve their within-source median in BOTH arms (intersection count).",
+    "minimum_joint_improved_sources": 12
+  },
+  "M_status": "If any required operand/grid incomplete, reportUNASSESSABLE. No substituting successful subsets; M3 unknown counts may be bounded but cannot count as improvements.",
+  "no_retry": true,
+  "no_new_calibration_or_real_forecast": true,
+  "formal_code_seal": "All new adapter/driver/summary code and inherited modules fixed by SHA in manifest after artificial tests; stop if changed after first pilot,except saved-receipt report-only derivation with explicit provenance and no numeric re-execution."
+}
+```

@@ -1,0 +1,14 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ test_additional_method_locators_distinguish_section_s16_from_old_table_s16 __
+
+    def test_additional_method_locators_distinguish_section_s16_from_old_table_s16():
+        d,_=api().compose(write_outputs=False)
+>       assert 'Supplement S16' in table(d,2)['caption']
+E       AssertionError: assert 'Supplement S16' in 'Table 2. Method overview. Parameter menus and fitted choices are retained in Supplement Table S2. All fitted methods use mature training outcomes; controls distinguish per-origin and fixed-at-refit updates.'
+
+test_v6_submission.py:67: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_submission.py::test_additional_method_locators_distinguish_section_s16_from_old_table_s16
+1 failed in 0.10s

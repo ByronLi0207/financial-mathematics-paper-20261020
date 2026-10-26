@@ -1,0 +1,22 @@
+{
+  "status": "PENDING_AUTHENTICATED_GIT_TRANSPORT",
+  "attempts": [
+    {
+      "command": "GIT_TERMINAL_PROMPT=0 git push -u origin revision-v4-jof",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: could not read Username for 'https://github.com': terminal prompts disabled\n"
+    },
+    {
+      "command": "GIT_TERMINAL_PROMPT=0 git -c credential.helper=osxkeychain push -u origin revision-v4-jof",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: could not read Username for 'https://github.com': terminal prompts disabled\n"
+    }
+  ],
+  "existing_connector_identity_confirmed": true,
+  "no_new_token_or_permission_change": true,
+  "remote_branch_created": false,
+  "pull_request_created": false,
+  "cleanup": "Deferred because the plan requires remote verification before Trash moves; no files moved or permanently deleted."
+}

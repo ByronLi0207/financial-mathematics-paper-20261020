@@ -1,0 +1,52 @@
+WARN `--no-project` was provided, but no project was found
+FFFF....FF..F......                                                      [100%]
+=================================== FAILURES ===================================
+________ test_current_v9_full_source_gate_has_no_unclassified_residuals ________
+test_v9_supp_numbers.py:24: in test_current_v9_full_source_gate_has_no_unclassified_residuals
+    result=qa.audit(ROOT,view_root=tmp_path/'replay',legacy_receipt=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: audit() got an unexpected keyword argument 'view_root'
+________ test_exactly_named_fixture_difference_keeps_all_old_assertions ________
+test_v9_supp_numbers.py:39: in test_exactly_named_fixture_difference_keeps_all_old_assertions
+    proof=qa.fixture_contract(ROOT)
+          ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'v9_supp_current_guard' has no attribute 'fixture_contract'
+________ test_changed_current_old_scientific_row_blocks_reconstruction _________
+test_v9_supp_numbers.py:54: in test_changed_current_old_scientific_row_blocks_reconstruction
+    with pytest.raises(ValueError):qa.relocation(ROOT,compact_text=wrong)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: relocation() got an unexpected keyword argument 'compact_text'
+_____ test_omitted_current_extended_adverse_fragment_blocks_reconstruction _____
+test_v9_supp_numbers.py:61: in test_omitted_current_extended_adverse_fragment_blocks_reconstruction
+    with pytest.raises(ValueError):qa.relocation(ROOT,extended_text=original.replace(row,'',1))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: relocation() got an unexpected keyword argument 'extended_text'
+___________ test_changed_new_table_number_or_missing_row_is_rejected ___________
+test_v9_supp_numbers.py:86: in test_changed_new_table_number_or_missing_row_is_rejected
+    with pytest.raises(ValueError):qa.new_tables(ROOT,tex_text=wrong)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: new_tables() got an unexpected keyword argument 'tex_text'
+_________ test_constructed_new_saved_source_field_mutation_is_rejected _________
+test_v9_supp_numbers.py:102: in test_constructed_new_saved_source_field_mutation_is_rejected
+    with pytest.raises(ValueError):qa.check_native_binding(binding,changed)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'v9_supp_current_guard' has no attribute 'check_native_binding'
+___ SupplementNumericControls.test_current_document_has_no_numeric_residuals ___
+notes/revision-v8/test_v8_supp_numbers.py:41: in test_current_document_has_no_numeric_residuals
+    self.assertEqual(report["failures"], [])
+E   AssertionError: Lists differ: [{'gate': 'recursive_input', 'file': 'subm[841 chars]95]}] != []
+E   
+E   First list contains 3 additional elements.
+E   First extra element 0:
+E   {'gate': 'recursive_input', 'file': 'submission-jof/generated/v9-evidence-tables.tex', 'reason': 'missing input'}
+E   
+E   Diff is 1073 characters long. Set self.maxDiff to None to see it.
+=========================== short test summary info ============================
+FAILED test_v9_supp_numbers.py::test_current_v9_full_source_gate_has_no_unclassified_residuals
+FAILED test_v9_supp_numbers.py::test_exactly_named_fixture_difference_keeps_all_old_assertions
+FAILED test_v9_supp_numbers.py::test_changed_current_old_scientific_row_blocks_reconstruction
+FAILED test_v9_supp_numbers.py::test_omitted_current_extended_adverse_fragment_blocks_reconstruction
+FAILED test_v9_supp_numbers.py::test_changed_new_table_number_or_missing_row_is_rejected
+FAILED test_v9_supp_numbers.py::test_constructed_new_saved_source_field_mutation_is_rejected
+FAILED notes/revision-v8/test_v8_supp_numbers.py::SupplementNumericControls::test_current_document_has_no_numeric_residuals
+7 failed, 12 passed in 13.90s

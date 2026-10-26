@@ -1,10 +1,172 @@
+# Final consolidated JoF manuscript — current delivery
+
+From the repository root, using the already available NumPy and Matplotlib environment, rebuild all six main tables and four main figures from saved outputs:
+
+```sh
+python3 reproduce_final_displays.py --output final-display-rebuild
+```
+
+Use a new output directory. This command formats saved results; it does not obtain data or fit models. The complete [source and reproduction guide](submission-final/README.md) states the dependencies, source fingerprints and limits of raw financial replay.
+
+## Current report and release status
+
+Entry-point status prepared at 2026-10-26T22:15:54.270336+00:00. The manuscript release and the nine-item Chinese report have been delivered. Read the [final Chinese report](FINAL_MERGE_REPORT_ZH.md), [actual command/output log](FINAL_MERGE_CHANGELOG.md), [structured acceptance evidence](FINAL_MERGE_ACCEPTANCE.json) and [current author-decision list](USER_DECISIONS_FINAL_MERGE.md). The sole new review vehicle is [Draft PR #6 — Final consolidated JoF submission](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6); existing PRs #3/#4/#5 remain untouched.
+
+The CFTC mechanism verdict remains **PARTLY**, with every failed criterion, counterexample and NA retained. The manuscript, source ZIP and scientific outputs retain the accepted bytes. The latest completed documentary checkpoint before this README correction is public head `3df3bbd6e41e774ed3b79faad8332728cb00251d`, local history merge `a6161188ee2543e7364ec9d0aad954ff41083d2e`, and common 6,058-path tree `d4149cd341a9573b05127bbaf83ea22b8989c394`. Later README-only commit identities are recorded by the Git history and current PR description; this paragraph does not predict them.
+
+The original twelve-hour timing deviations remain disclosed rather than relabelled PASS. Author identity/declarations, private reviewer conflicts/emails, FX rights and any decision to close older PRs remain for the author. No main merge or journal submission has occurred.
+
+## Preserved earlier guide
+
+The complete earlier README follows verbatim. Its first consolidated introduction was written before release, so its statement that WP8 or the timed report was pending is a dated historical checkpoint superseded by the current status above. Later historical branch guides, scientific values, failures and source qualifications are retained, not rewritten.
+
+---
+
+# Final consolidated JoF manuscript — final-jof
+
+Rebuild all six main tables and four main figures from saved public outputs, from this repository root with already available NumPy and Matplotlib:
+
+```sh
+python3 reproduce_final_displays.py --output final-display-rebuild
+```
+
+Use a new output directory. This formats and plots existing results; it acquires no raw data and runs no model, loss/HAC/bootstrap calculation or new scientific summary. The full [current source and reproduction guide](submission-final/README.md) separates this command from rights-dependent raw financial replay.
+
+The combined manuscript is [submission-final/manuscript.tex](submission-final/manuscript.tex), with [current main PDF](submission-final/manuscript.pdf), [Supplement](submission-final/supplement.tex) and [Supplement PDF](submission-final/supplement.pdf). The transported CFTC history verdict is **PARTLY**, retaining failed criteria, all counterexamples and the known-period/aggregate-market limits. The [WP0–WP8 log](FINAL_MERGE_CHANGELOG.md), [three-perspective reading](notes/final-merge/wp6-three-perspective-review.md), [reviewer candidates](notes/final-merge/suggested-reviewers.md), [anticipated questions](notes/final-merge/anticipated-questions.md) and [author decisions](USER_DECISIONS_FINAL_MERGE.md) define the current scope.
+
+This is the final-jof consolidation under the twelve-hour task, with WP8 release acceptance and the timed final report still pending. Existing PRs are untouched; only one new PR is authorized at the release checkpoint. No main merge or journal submission is authorized.
+
+---
+
+Everything below is preserved verbatim as a historical versioned guide. Earlier branch names, uses of current, page limits, test counts, publication labels and hypotheses describe their own checkpoints and do not supersede the consolidated source or its actual acceptance receipts.
+
+# Canonical submission draft: revision-v12
+
+Use [the v12 submission package](submission-v10/README.md), based on `revision-v11` / `4520648`. The native directory remains `submission-v10/`; the branch identifies the revision. New prewritten diagnostics separate finite-penalty hindsight gaps from selection errors, compare validation lengths and report quantile sensitivity, including every numerical failure. Existing data, archived results and designs are unchanged.
+
+See the [F1–F3 protocols](protocol/v12/), [aggregate results](results/v12/), [eleven-item editorial log](notes/v12/edit-log.md), [canonical-version recommendations](notes/v12/CANONICAL.md) and [pending decisions](notes/v12/PENDING.md). Each new protocol was committed separately locally and published separately before any financial computation. Exact design publication and calculation times are retained in `notes/v12/design-publication.jsonl` and the experiment runtime files.
+
+The documents retain author, ORCID, funding and competing-interest placeholders. Restricted FX observations and private prediction vectors remain excluded. No existing branch or PR is changed by this revision.
+
+Everything below is a versioned historical record. Older uses of “current” identify their own revision and do not supersede v12.
+
+---
+
+# Historical submission draft: revision-v11
+
+Use [the v11 submission package](submission-v10/README.md) as the sole current draft, based on frozen v10b `de1a1cf`. The directory name remains `submission-v10/`; the branch identifies this revision. The v10b title, abstract and three findings are retained, with the audited original-period FX learning curve added to the first finding and the saved confirmation summary added to the supplement. No experiment or result was rerun or changed.
+
+Read [the import audit](notes/v11/import-audit.md), [number-to-source bindings](notes/v11/imported-number-bindings.json), [English proofreading log](notes/v11/proofreading-log.md), [canonical-version recommendations](notes/v11/CANONICAL.md) and [pending author decisions](notes/v11/PENDING.md). The WP4 display is excluded because its design commit follows rendering. The audit separately discloses the FX anchors' exact agreement at the specified display precision and their stored percentages' binary64 last-digit differences. Author and declaration placeholders remain unfilled.
+
+The versioned records below describe their named historical revisions. Their use of “current” does not supersede v11.
+
+---
+
+# Historical editorial draft: revision-v10b
+
+The submission copy is in [submission-v10](submission-v10/README.md), on `revision-v10b`, based on frozen v10 `23fd9fa`. This branch changes wording and display style only; archived scientific results, data and designs are unchanged. Read [the v10b delivery record](notes/v10b/DELIVERY.md) and [pending author decisions](notes/v10b/PENDING.md) before submission. Author and declaration placeholders remain unfilled.
+
+# Current revision: v10
+
+The current draft on `revision-v10` is [submission-v10/manuscript.tex](submission-v10/manuscript.tex), with [Online Supplement](submission-v10/supplement.tex), [source package](submission-v10/overleaf-package.zip) and [author actions](submission-v10/AUTHOR-TODO.md). The immutable starting v9 submission remains in `submission-jof/`.
+
+This version adds paired penalty-menu isolation, the official CFTC TFF application, complete model confidence sets and fixed normalized limit-cost regions. See [v10 changes](REVISION_V10_CHANGELOG.md), [protocols](protocol/v10/), [results](results/v10/), [reproduction boundaries](notes/v10/REPRODUCING.md) and [journal sources](notes/v10/target-journals.md). Negative and unavailable results remain; author/declaration fields are unfilled.
+
+The material below is the inherited versioned project record. Its old submission routes refer to those versions.
+
+---
+
+# Current v9 revision: Hard to Beat
+
+Read the [17-page native main PDF](submission-jof/manuscript.pdf), [28-page Online Supplement](submission-jof/supplement.pdf), [editable submission package](submission-jof/README.md), [v9 ledger](REVISION_V9_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md). The only publication branch for this task is `revision-v9`; no existing PR is merged, closed or replaced. PR #5 at `0f1f066843e0c49cf3e24bce7d72032dc189603d` supplies the evidence base, while the separate older v8 supplies selected writing and supplementary results.
+
+The three findings are repeated matched hourly FX gains with reference-sensitive rankings; persistent weekly and same-record daily losses despite expanded/conservative tuning; and large short-history losses already present in stationary designs. New constant-parameter and switching medians at history52 are +116.2% and +121.4%. These results leave the empirical low-frequency mechanism unidentified. The original comparisons, adverse results, failed cells and unassessable diagnostics are retained.
+
+The [new design](protocol/v9/nonstationarity-design.md) was committed alone locally before any new diagnostic or study computation. See the [study receipts](notes/v9/c2-results.md), [complete saved results](results/v9/nonstationarity/README.md), [two-v8 inventory](notes/v9/two-v8-inventory.md), [42-item referee reconciliation](notes/v9/referee-check.md) and [reproduction boundary](notes/v9/REPRODUCING.md). Numerical forecasting tasks finished before the frozen runner encountered a reporting-only scalar serialization error; the separate saved-receipt report preserves that error and changes no research calculation.
+
+Source bindings and the native source package are independently inspectable without private FX observations. Full historical replay and history-dependent checks still require the retained original commit objects and restricted inputs. Browser file publication preserves content rather than those original design-commit identities; no private historical Git bundle is published. Final software, page and publication checks are recorded separately in the v9 ledger, rather than inherited from an older revision.
+
+## Preserved earlier revision records
+
+Everything below is retained verbatim as a historical version record. Page counts, tests, uses of “current,” and branch or publication claims below describe those earlier revisions. Use the v9 links above for this task.
+
+---
+
+# Current v8 revision: Hard to Beat
+
+The current [20-page native main PDF](submission-jof/manuscript.pdf), [30-page Online Supplement](submission-jof/supplement.pdf), [editable source and Overleaf package](submission-jof/README.md), [v8 execution ledger](REVISION_V8_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md) identify this revision. The v8 branch is `revision-v8-goal`; [PR #5](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/5) is open and unmerged; [initial complete remote-tree verification](notes/revision-v8/wp9-initial-remote-tree.json) matches the frozen WP8 file tree. Publication receipts and later review checkpoints are recorded in the [v8 ledger](REVISION_V8_CHANGELOG.md). Main and PR #3 remain outside this task's merge scope.
+
+Three designs were committed before their own new outputs: [controlled mechanism study](protocol/revision-v8/wp3-mechanism-design.json), [same-dealer daily aggregation](protocol/revision-v8/wp4-daily-fx-design.json) and [fixed-parameter expanded backcast](protocol/revision-v8/wp5-fixed-prefix-design.json). Their full [simulation](results/revision-v8/wp3/README.md), [daily](results/revision-v8/wp4/README.md) and [backcast](results/revision-v8/wp5/README.md) archives retain all completed and adverse cases. The simulated restriction fails; aggregation is not a pure frequency intervention; overlapping, previously scored backcast windows are not independent validation. Both original primary comparisons remain unchanged.
+
+The source-field inventories, plotting/display readbacks, bibliography audit, compiled-PDF identities, every-page visual review and complete software-test output are in [notes/revision-v8](notes/revision-v8). These check artifact consistency and bounded retrospective comparisons, rather than independent dealer replication, prospective success or journal acceptance. [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md) indexes every older result archive. Rights restrictions on raw FX data continue to apply.
+
+The [reproduction guide](notes/revision-v8/REPRODUCING.md) distinguishes self-contained document compilation and saved-result inspection from financial replay. Original local design commits are not transferred by browser upload; sealed financial replay/history-dependent checks remain blocked in a fresh public clone pending a safe author-approved provenance route. No guard is bypassed or machine-local identity republished.
+
+Bounded review corrections have separate evidence: the [methods-caption check](notes/revision-v8/review-r9-acceptance.json) changes “predictor menu” to “penalty menu”; the [mixture-weight check](notes/revision-v8/review-r30-acceptance.json) labels exact equal-loss boundaries as weight a, rather than a weight ratio; the [table-pointer check](notes/revision-v8/review-r33-acceptance.json) corrects the methods-table cross-reference; and the [latest notation check](notes/revision-v8/review-r35-acceptance.json) explicitly identifies existing q, alpha and B aliases in the Supplement. Every scientific number, exact fraction, existing displayed formula and original table result value remains unchanged. The native main is 20 pages and the Supplement 30 pages; the source ZIP has 18 members. The latest full local suite passes 1,335 tests and 1,068 subtests. Publication is staged by directory; only named complete remote-tree receipts certify each source cut. The ten-hour window and pending publication work remain tracked in the ledger and state, without treating local validation as remote publication.
+
+Execution cadence has a separate [MISMATCH record](notes/revision-v8/review-commit-cadence-mismatch.json): earlier local completion and native browser mirror commits were limited on separate clocks, while the instruction provides no such exception. Their combined timeline does not fully meet the one-commit-per-hour limit. Later commits use one unified clock. Actual ten-minute checkpoint delays are also retained. Neither these scheduling deviations nor publication waiting time is represented as scientific evidence or uninterrupted active reading.
+
+## Preserved historical revision notes
+
+Everything below this boundary is a retained earlier-revision record. Version-specific words such as “current,” page counts, test counts, source routes and contribution statements below refer to the named historical revision, not to v8. Use the v8 links above for the present artifact. No historical adverse result is removed.
+
+---
+
+# Current v7 revision: Hard to Beat
+
+The current [native LaTeX main PDF](submission-jof/manuscript.pdf), [compact Online Supplement](submission-jof/supplement.pdf), [editable sources and package](submission-jof/README.md), [v7 execution ledger](REVISION_V7_CHANGELOG.md), [evidence table](notes/v7/evidence-table.md) and [author checklist](submission-jof/AUTHOR-TODO.md) describe this revision. The complete earlier outcomes and documents remain indexed by [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md). Both research lines are preserved on revision-v7-final; neither main nor PR #3 is merged by this task.
+
+Historical rules remain strong competitors; the qualified FX gains, reference-dependent period reversal and persistent weekly regression failures are reported together. The data comprise one market-maker record and related aggregate categories, not independent dealer replications. No new financial experiment, data sample or hypothesis test is added by this presentation revision.
+
+## Historical versioned guides preserved verbatim below
+
+## Current Journal of Forecasting revision candidate (v6)
+
+The current candidate is the [main manuscript](submission-jof/manuscript-preview.pdf) (18 preview pages), with the [complete Online Supplement](submission-jof/supplement-preview.pdf) (94 pages), [standard LaTeX/figure package](submission-jof/overleaf-package.zip), [v6 revision ledger](REVISION_V6_CHANGELOG.md) and [author checklist](submission-jof/AUTHOR-TODO.md). PDFs are separately typeset previews; formal TeX export remains distinct from built-in source diagnostics.
+
+The original source primaries and all adverse archives remain unchanged. New finite delayed ACI-style wrappers, headroom SAV, fixed combinations, state diagnostics and target-level checks are post-result / exploratory; failures and upper-target NA remain explicit. Neither independent dealer validation, a canonical method guarantee nor journal acceptance is claimed. The preceding v5 source snapshots and audits remain under notes/revision-v6/ and notes/revision-v5-novelty/; earlier dated records follow below.
+
+The [v6 reproduction guide](protocol/revision-v6/REPLAY.md) separates public document regeneration from exact-byte private-input financial replay. The standard-library setup helper validates and prepares a new isolated tree without fitting models; it does not supply missing private data or bypass frozen gates.
+
+## Journal of Forecasting preparation (revision v4)
+
+The branch `revision-v4-jof` contains the [submission preparation package](submission-jof/README.md), [author checklist](submission-jof/AUTHOR-TODO.md) and [complete revision/evidence ledger](REVISION_V4_CHANGELOG.md). No journal submission or acceptance claim is made. The original primaries, archived numbers and adverse results are retained.
+
+The dated merged-main historical guide follows below; its version labels describe that archived milestone. The [pre-merge v3 guide](notes/revision-v4-jof/readme-v3-before-merge.md) and [v3 manuscript](manuscript/revision-v3/README.md) remain available alongside it.
+
+---
+
 # Historical and Conditional Forecasts of Sampled Net-Position Peaks
 
 An English working paper comparing established forecasting methods for the largest absolute source-reported net position at issue and over the next H records. It uses an individual-market-maker FX record and a separately fitted weekly Treasury-bill position aggregate. The contribution is a bounded retrospective benchmark on a common target, with complete favorable and adverse results.
 
-Read the current [24-page paper](manuscript/working-paper/paper.pdf), [LaTeX source](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [25-reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md). The supplied PDF uses a separate ReportLab/pypdf route; it is not an export of the desktop TeX compiler.
+Read the revised [20-page paper](manuscript/supervisor-revision/main.pdf), [editable TeX](manuscript/supervisor-revision/main.tex), [revision guide](manuscript/supervisor-revision/README.md) and [Chinese R6 research memo](notes/supervisor-20261023/r6-memo.md). The new PDF is the actual Tectonic/XeTeX output: 15 pages including references plus five appendix pages, authored as Byron. The earlier [Chinese change inventory](REVISION_SUPERVISOR_20261023.md) remains a dated E6–C1 record.
 
-## Critical review on 23 October 2026
+## R6: fixed selection rules on an earlier period
+
+The [literature review](notes/supervisor-20261023/r6-literature.md) distinguishes mature one-SE, time-series-validation and shrinkage ideas from this application. The [design](protocol/supervisor-20261023/r6-design.md) was published alone at commit `6c0eef4` before the first new retrospective calculation, with R2 fixed as the main rule. [Execution timestamps](results/supervisor-20261023/r6/run-receipt.json) and the [independent archived-array verification](results/supervisor-20261023/r6/verification.json) confirm the order, selections and preserved inputs.
+
+R2 misses all three success criteria: weekly median excess loss is +5.37% and the worst is +181.39%; FX H6/W2880 retains less than half of R0's gain. The [complete archive](results/supervisor-20261023/r6/summary.csv) retains all 516 retrospective/inspected report rows, including four required-validation-candidate failures without retries. The original FX structure raises loss by +3.17% against its rolling-F reference on the earlier period, so its gain direction does not recur. The Treasury W52 analogue raises loss by +144.30%; exact earlier replication of the original W260 primary is unavailable. These comparisons are [reported separately](results/supervisor-20261023/r6/primary-replication.csv) from same-window frozen-F gains.
+
+The paper therefore adds a robustness paragraph and Table 10, with no R6 abstract or contribution claim. Original primaries and archived results remain. Familiar earlier history had no evaluation role found in the bounded repository audit; it is not prospective or external validation. The [604-test result](results/supervisor-20261023/r6/test-verification.json) and [PDF/page checks](results/supervisor-20261023/r6/document-verification.json) accompany this research result.
+
+## Second supervisor revision on 23 October 2026
+
+The [E6 table](results/supervisor-20261023/e6/table6.csv) adds ordinary empirical-quantile I and expanded-regression breaches, and [fixed ridge paths](results/supervisor-20261023/e6/lambda-path.csv) preserve every diagnostic point without changing selection. The intercept-only minimizer can be an interval; I is not universally the exact corrected-rank historical F.
+
+The [E5 prediction](protocol/supervisor-20261023/e5-panel-prediction.md) was committed alone before new fitting. All [48 panel cells](results/supervisor-20261023/e5/summary.csv) completed. P1=30/45 and P2=24/48 are unsupported; P3=33/48 is supported. The full regression's median excess loss falls from +92.6% to +9.2%, but 34/48 cells still lose to F. This is a post-result extension using twelve archived series with shared dealer reporting and overlapping positions, not independent replication.
+
+The paper centers its contribution on shrinkage and remaining failures, adds practical implications, and [reports the two original primaries separately from the remaining 71 Holm contrasts](results/supervisor-20261023/w3/summary.json). This reporting division was chosen after results; the previous 72-member archive is preserved. The Treasury primary has raw HAC p=.007611 and two-primary Bonferroni p=.015223. [AR comparisons](results/supervisor-20261023/w4/ar-comparison.csv) distinguish original and expanded QR. The [E6–C1 rewritten passages](manuscript/supervisor-revision/round2-rewritten-passages.md) and [that revision's verification](results/supervisor-20261023/round2/document-verification.json) remain historical records; the current wording is in the editable TeX.
+
+## First supervisor revision archive
+
+The revision reorganizes the paper around three empirical contributions, adds checked predictive-ability and coverage diagnostics, and separates predictor changes from the ridge-menu change. The exploratory [E3 results](results/supervisor-20261023/e3/README.md) retain every original comparison: expanding the full regression's penalty menu changes Treasury H6/W260 excess loss from +50.786% to +3.434%, while all four FX forecasts remain identical to the originals. The common-menu full-versus-four-predictor difference is only +1.242% in that Treasury cell (unadjusted DM p=.685); this does not establish equivalence or a causal feature effect.
+
+The checked [inference archive](results/supervisor-20261023/inference/) reports the fixed 72-member Holm family, separate unadjusted FX cross-window comparisons, HLN and bandwidth sensitivity. The original Treasury adverse comparison has raw p=.007611 and Holm p=.319678. Coverage diagnostics consistently condition the Christoffersen joint likelihood on the initial hit while retaining full-grid Kupiec separately. All inference is retrospective and exploratory.
+
+The original [24-page paper](manuscript/working-paper/paper.pdf), [TeX](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md) remain unchanged. That older supplied PDF uses a separate ReportLab/pypdf route; the new revision uses real TeX compilation.
+
+## Earlier critical review of the original working paper
 
 The [review and corrections](REVIEW_20261023.md) explain the substantive changes. The revision clarifies that Treasury models are fitted separately, exposes the downloaded-vintage economic-date convention in the abstract, and limits the loss-weight envelopes to eight archived .95 reports. It separates mean underprediction and overprediction amounts from breach frequency and actual resource allocation. It also distinguishes the stronger short-horizon FX finding from the long-horizon gain concentrated in a short tail segment.
 
@@ -23,7 +185,7 @@ The response is the sampled peak P=max|N|, including the current known floor B=|
 
 The FX H6 tail contribution is only 8.64% for the primary and 6.87% for the matched comparison. Their mean underprediction and overprediction amounts both fall in each existing issue-year group and on the fixed 947-origin grid. The [aggregate decomposition](notes/revision-20261023/annual-decomposition.json) supports this distinction without creating a new validation sample.
 
-Every Treasury QR and scaled-KNN cell loses to its own frozen F control. Short-history plain KNN selects the whole pool and equals F; this is a selected identity, rather than a failure fallback. Later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR lowers loss in five of eight cells while breaches increase in all eight. The original primaries remain unchanged.
+Every original-menu Treasury QR and scaled-KNN cell loses to its own frozen F control. Short-history plain KNN selects the whole pool and equals F; this is a selected identity, rather than a failure fallback. Later exploratory AR replay improves on original QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR lowers loss in five of eight cells while breaches increase in all eight. The original primaries remain unchanged.
 
 The .95 score is .95 U+.05 V, where U=mean(P−C)₊ and V=mean(C−P)₊. These are passive forecast errors under stipulated weights, rather than observed financing costs. The [eight-report loss-weight supplement](results/revision-20261022/preference-robustness/README.md) shows that the FX H24 legacy gain reverses above ratio **20.630898**, near the stipulated 19. Full/sparse menu minimizers at .95 differ in four dependent cells; Treasury H24 grids contain only 12 origins. The envelope excludes feasible reports such as C=B, so its endpoint winners are menu-relative.
 
@@ -97,3 +259,19 @@ The replay creates a new attempt, reruns 24 validation, 24 evaluation and eight 
 The [recorded prior full replay](results/revision-20261022/reproduction-check-20261022.json) reproduced all six aggregate CSVs and selections. It is same-data numerical reproduction, rather than independent scientific replication. Optional [diagnostic reproduction](results/revision-20261022/diagnostic-reproduction-check-20261022.json) uses a successful new attempt and does not refit models.
 
 The [current rendering receipt](manuscript/working-paper/rendering-verification.json) identifies the 24-page artifact and its checks. Earlier [24-hour](RESEARCH_WINDOW_AUDIT.md), [21 October](REVISION_20261021_AUDIT.md) and [22 October](REVISION_20261022_AUDIT.md) work audits cover their own dated windows; their credited time and manuscript counts are not extended by this revision. No journal submission or journal-tier guarantee is represented.
+
+## Additional pre-merge v6 wording (historical record)
+
+The following source passages preserve the earlier line verbatim; their version labels and scope belong to that earlier checkpoint.
+
+Read the current [24-page paper](manuscript/working-paper/paper.pdf), [LaTeX source](manuscript/working-paper/main.tex), [structured content](manuscript/working-paper/paper-content.json), [25-reference catalog](manuscript/working-paper/references.bib) and [document guide](manuscript/working-paper/README.md). The supplied PDF uses a separate ReportLab/pypdf route; it is not an export of the desktop TeX compiler.
+
+## Critical review on 23 October 2026
+
+Every Treasury QR and scaled-KNN cell loses to its own frozen F control. Short-history plain KNN selects the whole pool and equals F; this is a selected identity, rather than a failure fallback. Later exploratory AR replay improves on QR in all four Treasury cells and loses in three of four FX cells. Against matched S, AR lowers loss in five of eight cells while breaches increase in all eight. The original primaries remain unchanged.
+
+## v7 integration: version-specific replay entry points
+
+Both source lines are merged on `revision-v7-final`. The supervisor's `round2_panel_run.py` and `round2_panel_sources.py` remain byte-identical at their canonical paths, preserving its whole-file R6 input gate and E5 execution identity. The earlier panel runner and acquisition loader are preserved byte-identically as `legacy_round2_panel_run.py` and `legacy_round2_panel_sources.py`; their `align_source` function is identical to the supervisor version. The earlier panel tests import the legacy runner while keeping every case and assertion. No financial replay or download is executed by this merge.
+
+The historical prospective parameter binding still describes its original source version and original filenames. Its runner fingerprint now maps to `legacy_round2_panel_run.py` in this merged tree. For exact historical protocol replay use its recorded original commit; the merge does not revise or reactivate that future-data protocol. Both frozen records and their adverse results remain unchanged.

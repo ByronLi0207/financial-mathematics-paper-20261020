@@ -1,0 +1,16 @@
+{
+  "step": "E10",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'from fractions import Fraction\nfrom datetime import datetime,timezone\nimport json\nfrom v3_revision import ROOT,dump\n# One independent symmetric increment Uniform[-1,1], x=0,H=1.\n# Its absolute value and peak both have CDF F(u)=u on[0,1].\ntau=Fraction(95,100);endpoint_level=Fraction(975,1000);L=endpoint_level;peak_target=tau\nassert L>peak_target and 1-L==Fraction(25,1000)\nr=dict(actual_utc=datetime.now(timezone.utc).isoformat(),analytic_fixture='\"'\"'H1,x0,X1 Uniform[-1,1]; peak=abs(X1) Uniform[0,1]'\"'\"',peak_point95_quantile=str(peak_target),endpoint_absolute_point975_quantile_and_L=str(L),L_strict_breach_probability=str(1-L),interpretation='\"'\"'Same peak response and scoring preference permit comparing L, but the endpoint-derived bound is not generally the exact peak .95 quantile.'\"'\"',new_financial_or_Monte_Carlo_experiment=False)\ndump(ROOT/'\"'\"'results/revision-20261023/round2/post-correction-audit/endpoint-bound-estimand-clarification.json'\"'\"',r);print(json.dumps(r,ensure_ascii=False,indent=2))\n'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "from fractions import Fraction\nfrom datetime import datetime,timezone\nimport json\nfrom v3_revision import ROOT,dump\n# One independent symmetric increment Uniform[-1,1], x=0,H=1.\n# Its absolute value and peak both have CDF F(u)=u on[0,1].\ntau=Fraction(95,100);endpoint_level=Fraction(975,1000);L=endpoint_level;peak_target=tau\nassert L>peak_target and 1-L==Fraction(25,1000)\nr=dict(actual_utc=datetime.now(timezone.utc).isoformat(),analytic_fixture='H1,x0,X1 Uniform[-1,1]; peak=abs(X1) Uniform[0,1]',peak_point95_quantile=str(peak_target),endpoint_absolute_point975_quantile_and_L=str(L),L_strict_breach_probability=str(1-L),interpretation='Same peak response and scoring preference permit comparing L, but the endpoint-derived bound is not generally the exact peak .95 quantile.',new_financial_or_Monte_Carlo_experiment=False)\ndump(ROOT/'results/revision-20261023/round2/post-correction-audit/endpoint-bound-estimand-clarification.json',r);print(json.dumps(r,ensure_ascii=False,indent=2))\n"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T13:02:34.997959+00:00",
+  "ended_utc": "2026-10-23T13:02:35.030910+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"actual_utc\": \"2026-10-23T13:02:35.025481+00:00\",\n  \"analytic_fixture\": \"H1,x0,X1 Uniform[-1,1]; peak=abs(X1) Uniform[0,1]\",\n  \"peak_point95_quantile\": \"19/20\",\n  \"endpoint_absolute_point975_quantile_and_L\": \"39/40\",\n  \"L_strict_breach_probability\": \"1/40\",\n  \"interpretation\": \"Same peak response and scoring preference permit comparing L, but the endpoint-derived bound is not generally the exact peak .95 quantile.\",\n  \"new_financial_or_Monte_Carlo_experiment\": false\n}\n",
+  "stderr": ""
+}

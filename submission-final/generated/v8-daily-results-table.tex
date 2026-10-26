@@ -1,0 +1,24 @@
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{rrlrrrr}
+\caption{Same-dealer daily sampled-position results; history and horizon count recorded nonempty calendar days. All methods share the declared evaluation grid; loss is scaled to USD millions for display only. The four-feature report yielding the isolated score gain has more breaches than its historical reference.}\label{tab:daily-fx}\\
+\toprule
+History & Horizon & Procedure & Penalty & \shortstack{Mean loss\\(USD m)} & \shortstack{Loss change\\vs historical (\%)} & \shortstack{Breaches\\count / rate (\%)}\\\midrule
+\endfirsthead
+\caption[]{Continued.}\\\toprule
+History & Horizon & Procedure & Penalty & \shortstack{Mean loss\\(USD m)} & \shortstack{Loss change\\vs historical (\%)} & \shortstack{Breaches\\count / rate (\%)}\\\midrule
+\endhead
+\bottomrule\endfoot
+52 & 6 & Historical headroom & -- & 1.049 & -- & 36 / 7.186\\
+52 & 6 & 33-feature regression & 0.1 & 2.032 & 93.586 & 146 / 29.142\\
+52 & 6 & Four-feature regression & 0.001 & 1.974 & 88.128 & 129 / 25.749\\
+52 & 24 & Historical headroom & -- & 1.553 & -- & 66 / 13.174\\
+52 & 24 & 33-feature regression & 0.01 & 3.456 & 122.589 & 206 / 41.118\\
+52 & 24 & Four-feature regression & 0.01 & 3.163 & 103.719 & 225 / 44.910\\
+260 & 6 & Historical headroom & -- & 0.964 & -- & 30 / 5.988\\
+260 & 6 & 33-feature regression & 0.1 & 1.175 & 21.873 & 54 / 10.778\\
+260 & 6 & Four-feature regression & 0.1 & 0.935 & -2.974 & 37 / 7.385\\
+260 & 24 & Historical headroom & -- & 1.882 & -- & 24 / 4.790\\
+260 & 24 & 33-feature regression & 0.001 & 2.642 & 40.335 & 99 / 19.760\\
+260 & 24 & Four-feature regression & 0.001 & 2.177 & 15.627 & 46 / 9.182\\
+\end{longtable}
+\endgroup

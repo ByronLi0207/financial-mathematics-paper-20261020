@@ -1,0 +1,1972 @@
+{
+  "schema": 1,
+  "audit": "WP2 read-only v11 import audit",
+  "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+  "generated_utc": "2026-10-25T05:04:53.467279+00:00",
+  "overall_status": "UNVERIFIED",
+  "import_allowed": false,
+  "decision": "Do not import any WP2 result/table until required original design and completion Git objects are available and pass UTC/content checks. Preserve all existing failures and missingness.",
+  "scope": {
+    "repo": "/Users/bingyouli/Research/论文/金融数学论文-v10-20261024",
+    "read_mode": "pinned source Git blobs and existing local Git objects only",
+    "source_files_modified": 0,
+    "forbidden_computation_executed": false,
+    "external_old_directory_accessed": false,
+    "claude_or_cross_model_review": false,
+    "comparison_only": "All new calculations were byte hashes, static inventory counts and equality checks. No scientific numerical result was recomputed."
+  },
+  "method": "Receipt-chain preservation and direct Git object provenance. Internal claims remain claims where underlying objects cannot be inspected. Mature-practice/source scope was read from the frozen WP2 protocol and wp2-method-source-reading.md; no new bibliographic claim is made.",
+  "checks": [
+    {
+      "gate": "original_design_commit_object_UTC_and_diff",
+      "status": "UNVERIFIED",
+      "reason": "Required original design object is absent. Original design commit UTC and design-only changed paths cannot be examined."
+    },
+    {
+      "gate": "original_design_commit_precedes_formal_start",
+      "status": "UNVERIFIED",
+      "reason": "Saved metadata are ordered, but cannot substitute for the absent original commit object."
+    },
+    {
+      "gate": "original_completion_commit_object_UTC",
+      "status": "UNVERIFIED",
+      "reason": "Required original WP2 completion object is absent."
+    },
+    {
+      "gate": "public_upload_as_prerun_design_proof",
+      "status": "FAIL",
+      "reason": "Verified public design upload is 2026-10-25T04:00:56+00:00, after the recorded formal start 2026-10-24T22:25:19.696709+00:00, and includes other WP protocols."
+    },
+    {
+      "gate": "own_package_and_summary_receipts",
+      "status": "PASS",
+      "reason": "Full archive and member-index SHA receipt chain verified; all six published member copies equal their tar bytes."
+    },
+    {
+      "gate": "sealed_source_bytes",
+      "status": "PASS",
+      "reason": "All sealed paths match pinned source Git blob bytes; this does not prove when those blobs first existed."
+    },
+    {
+      "gate": "numeric_reproduction",
+      "status": "UNVERIFIED",
+      "reason": "Forbidden by task. Prior independent-audit PASS is retained as a source assertion; no regenerate/fit/score/bootstrap/summary/driver executed."
+    }
+  ],
+  "required_original_commits": [
+    {
+      "role": "design",
+      "oid": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "object_exists": false,
+      "exit_code": 128,
+      "stderr": "fatal: git cat-file: could not get object info",
+      "status": "UNVERIFIED",
+      "author_utc": null,
+      "committer_utc": null,
+      "changed_paths": null
+    },
+    {
+      "role": "WP2_completion",
+      "oid": "1a535efe289254ced5b163361fefee357d13d583",
+      "object_exists": false,
+      "exit_code": 128,
+      "stderr": "fatal: git cat-file: could not get object info",
+      "status": "UNVERIFIED",
+      "author_utc": null,
+      "committer_utc": null,
+      "changed_paths": null
+    },
+    {
+      "role": "WP1_completion",
+      "oid": "9784372d523e93a50f21212e9a10adb55485768c",
+      "object_exists": false,
+      "exit_code": 128,
+      "stderr": "fatal: git cat-file: could not get object info",
+      "status": "UNVERIFIED",
+      "author_utc": null,
+      "committer_utc": null,
+      "changed_paths": null
+    }
+  ],
+  "verified_public_upload_commits": [
+    {
+      "role": "design_upload",
+      "oid": "3b8b994990da774c8abd0e1c28cbcacae3e9d0be",
+      "author_utc": "2026-10-25T04:00:56+00:00",
+      "committer_utc": "2026-10-25T04:00:56+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 07 of 18)",
+      "changed_paths_count": 7,
+      "changed_paths": [
+        "protocol/revision-v9/wp1-posthoc-design.json",
+        "protocol/revision-v9/wp1-posthoc-design.md",
+        "protocol/revision-v9/wp2-confirmatory.json",
+        "protocol/revision-v9/wp2-confirmatory.md",
+        "protocol/revision-v9/wp3-learning-curve.json",
+        "protocol/revision-v9/wp3-learning-curve.md",
+        "protocol/revision-v9/wp4-display.md"
+      ],
+      "is_prerun_design_proof": false
+    },
+    {
+      "role": "results_upload",
+      "oid": "81e9ac550fc27f7412dd2d0df0c3293bd45f2b4a",
+      "author_utc": "2026-10-25T04:03:02+00:00",
+      "committer_utc": "2026-10-25T04:03:02+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 09 of 18)",
+      "changed_paths_count": 9,
+      "changed_paths": [
+        "results/revision-v9/wp2/budget-decision.json",
+        "results/revision-v9/wp2/manifest.json",
+        "results/revision-v9/wp2/package-receipt.json",
+        "results/revision-v9/wp2/study-termination.json",
+        "results/revision-v9/wp2/summary.csv",
+        "results/revision-v9/wp2/summary.json",
+        "results/revision-v9/wp2/support.json",
+        "results/revision-v9/wp2/wp2-driver-output-members.csv",
+        "results/revision-v9/wp2/wp2-driver-output.tar.gz"
+      ],
+      "is_prerun_design_proof": false
+    },
+    {
+      "role": "acceptance_upload",
+      "oid": "9aec7d2ecddb542e7a8e08841a1e585591daa2a1",
+      "author_utc": "2026-10-25T03:55:28+00:00",
+      "committer_utc": "2026-10-25T03:55:28+00:00",
+      "subject": "Publish frozen v9 mechanism revision (batch 03 of 18)",
+      "changed_paths_count": 90,
+      "changed_paths": [
+        "notes/revision-v9/REPRODUCING.md",
+        "notes/revision-v9/audit_wp1.py",
+        "notes/revision-v9/audit_wp2.py",
+        "notes/revision-v9/audit_wp3.py",
+        "notes/revision-v9/audit_wp4.py",
+        "notes/revision-v9/author-decisions.md",
+        "notes/revision-v9/build_wp5_main.py",
+        "notes/revision-v9/build_wp5_supplement.py",
+        "notes/revision-v9/build_wp5_tables.py",
+        "notes/revision-v9/check_document_package.py",
+        "notes/revision-v9/check_main_numbers.py",
+        "notes/revision-v9/check_source_zip_closure.py",
+        "notes/revision-v9/compile_documents.py",
+        "notes/revision-v9/main-number-binding-schema.md",
+        "notes/revision-v9/package_wp2.py",
+        "notes/revision-v9/package_wp3.py",
+        "notes/revision-v9/pr-consolidation.md",
+        "notes/revision-v9/run_full_pytest.py",
+        "notes/revision-v9/run_wp1_bounded.py",
+        "notes/revision-v9/sync_deliverables.py",
+        "notes/revision-v9/wp0-base-files.csv",
+        "notes/revision-v9/wp0-base-sync.json",
+        "notes/revision-v9/wp0-gate-status.json",
+        "notes/revision-v9/wp0-pr-metadata.json",
+        "notes/revision-v9/wp0-sync-command-output.txt",
+        "notes/revision-v9/wp1-acceptance.json",
+        "notes/revision-v9/wp1-analysis-console.txt",
+        "notes/revision-v9/wp1-analysis-receipt.json",
+        "notes/revision-v9/wp1-breakeven.json",
+        "notes/revision-v9/wp1-full-gate-pytest-output.txt",
+        "notes/revision-v9/wp1-full-gate-pytest-receipt.json",
+        "notes/revision-v9/wp1-green-output-1.txt",
+        "notes/revision-v9/wp1-green-output-2.txt",
+        "notes/revision-v9/wp1-green-output-3.txt",
+        "notes/revision-v9/wp1-green-output-4.txt",
+        "notes/revision-v9/wp1-independent-audit-console.txt",
+        "notes/revision-v9/wp1-plot-receipt.json",
+        "notes/revision-v9/wp1-raw-log-whitespace-check.txt",
+        "notes/revision-v9/wp1-readout.md",
+        "notes/revision-v9/wp1-red-output-2.txt",
+        "notes/revision-v9/wp1-red-output-4.txt",
+        "notes/revision-v9/wp1-red-output.txt",
+        "notes/revision-v9/wp1-reproduction.md",
+        "notes/revision-v9/wp1-visual-inspection.json",
+        "notes/revision-v9/wp2-acceptance.json",
+        "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+        "notes/revision-v9/wp2-code-pre-run-binding.json",
+        "notes/revision-v9/wp2-formal-run-console.txt",
+        "notes/revision-v9/wp2-full-gate-pytest-output.txt",
+        "notes/revision-v9/wp2-full-gate-pytest-receipt.json",
+        "notes/revision-v9/wp2-green-output-1.txt",
+        "notes/revision-v9/wp2-green-output-2.txt",
+        "notes/revision-v9/wp2-green-output-3.txt",
+        "notes/revision-v9/wp2-green-output-4.txt",
+        "notes/revision-v9/wp2-independent-audit-console.txt",
+        "notes/revision-v9/wp2-independent-audit.json",
+        "notes/revision-v9/wp2-method-source-reading.md",
+        "notes/revision-v9/wp2-package-console.txt",
+        "notes/revision-v9/wp2-post-run-pytest-output-1.txt",
+        "notes/revision-v9/wp2-pre-result-design-check.json",
+        "notes/revision-v9/wp2-readout.md",
+        "notes/revision-v9/wp2-red-output-1.txt",
+        "notes/revision-v9/wp2-red-output-2.txt",
+        "notes/revision-v9/wp2-running-evidence-binding.json",
+        "notes/revision-v9/wp2-runtime-preflight.json",
+        "notes/revision-v9/wp2-summary-console.txt",
+        "notes/revision-v9/wp3-acceptance.json",
+        "notes/revision-v9/wp3-code-pre-run-binding.json",
+        "notes/revision-v9/wp3-exact-2880-gates.json",
+        "notes/revision-v9/wp3-failure-diagnostics-scope.json",
+        "notes/revision-v9/wp3-failure-record-inventory.json",
+        "notes/revision-v9/wp3-formal-run-console.txt",
+        "notes/revision-v9/wp3-full-gate-pytest-output.txt",
+        "notes/revision-v9/wp3-full-gate-pytest-receipt.json",
+        "notes/revision-v9/wp3-green-persistence-output-2.txt",
+        "notes/revision-v9/wp3-green-persistence-output.txt",
+        "notes/revision-v9/wp3-hac-source-scope.md",
+        "notes/revision-v9/wp3-independent-audit-console.txt",
+        "notes/revision-v9/wp3-independent-audit.json",
+        "notes/revision-v9/wp3-package-console.txt",
+        "notes/revision-v9/wp3-pre-result-design-check.json",
+        "notes/revision-v9/wp3-private-input-copy-receipt.json",
+        "notes/revision-v9/wp3-readout.md",
+        "notes/revision-v9/wp3-red-persistence-output.txt",
+        "notes/revision-v9/wp3-source-preflight.json",
+        "notes/revision-v9/wp3-summary-console.txt",
+        "notes/revision-v9/wp3-targeted-audit-tests-output.txt",
+        "notes/revision-v9/wp4-acceptance.json",
+        "notes/revision-v9/wp4-construct-tests-output.txt",
+        "notes/revision-v9/wp4-final-placement-v5.json"
+      ],
+      "is_prerun_design_proof": false
+    }
+  ],
+  "metadata_timeline": {
+    "design_created_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "protocol/revision-v9/wp2-confirmatory.json",
+      "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "json_pointer": "/created_utc",
+      "value": "2026-10-24T22:17:38.199077+00:00"
+    },
+    "pre_result_design_check_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp2-pre-result-design-check.json",
+      "sha256": "756d0cddc6284e0d8f55c0a56627e41e7dede58b69552a23c1c7567f5b81a707",
+      "json_pointer": "/actual_utc",
+      "value": "2026-10-24T22:19:50.184785+00:00"
+    },
+    "pre_run_binding_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp2-code-pre-run-binding.json",
+      "sha256": "c76814abb49afc313b059900b899365ea5f5bf08734abfa94d7586051363e946",
+      "json_pointer": "/actual_utc",
+      "value": "2026-10-24T22:24:29.735522+00:00"
+    },
+    "formal_start_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/manifest.json",
+      "sha256": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2",
+      "json_pointer": "/started_utc",
+      "value": "2026-10-24T22:25:19.696709+00:00"
+    },
+    "formal_end_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/study-termination.json",
+      "sha256": "6c81132d7af745ce7dbf90cce84a3c332862cf9f73528752b1683be9098bacc4",
+      "json_pointer": "/ended_utc",
+      "value": "2026-10-24T22:50:26.787681+00:00"
+    },
+    "package_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/package-receipt.json",
+      "sha256": "e4d05619a9ce60955524b47d64b3631ec562a4a940f4e8836323a592d7e34487",
+      "json_pointer": "/actual_utc",
+      "value": "2026-10-24T22:54:17.600042+00:00"
+    },
+    "acceptance_utc": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "notes/revision-v9/wp2-acceptance.json",
+      "sha256": "315e06a5cba7339c8ea44c9acd0a9eb786937026367734fdbdbda515730a9e31",
+      "json_pointer": "/actual_gate_utc",
+      "value": "2026-10-24T22:59:15.075948+00:00"
+    },
+    "status": "PASS_INTERNAL_ORDER_ONLY_NOT_COMMIT_PROOF"
+  },
+  "package_integrity": {
+    "status": "PASS",
+    "archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+    "receipt_archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+    "archive_sha_matches_receipt": true,
+    "index_sha256": "9e942726a6c5bec102ad7c25fb2e4a5b000df59694fce87831517ce85fb9a3ba",
+    "receipt_index_sha256": "9e942726a6c5bec102ad7c25fb2e4a5b000df59694fce87831517ce85fb9a3ba",
+    "index_sha_matches_receipt": true,
+    "member_count": 30536,
+    "indexed_members": 30536,
+    "uncompressed_bytes": 83094855,
+    "receipt_uncompressed_bytes": 83094855,
+    "member_mismatches": [],
+    "missing_members": [],
+    "unexpected_members": [],
+    "matching_published_blob_members": [
+      {
+        "path": "results/revision-v9/wp2/budget-decision.json",
+        "member": "budget-decision.json",
+        "sha256": "dbcb5e74a0865a1a9d942c222ae8471b69b96e14b7f9dcf8e8e2df82eeda860c",
+        "matches": true
+      },
+      {
+        "path": "results/revision-v9/wp2/manifest.json",
+        "member": "manifest.json",
+        "sha256": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2",
+        "matches": true
+      },
+      {
+        "path": "results/revision-v9/wp2/study-termination.json",
+        "member": "study-termination.json",
+        "sha256": "6c81132d7af745ce7dbf90cce84a3c332862cf9f73528752b1683be9098bacc4",
+        "matches": true
+      },
+      {
+        "path": "results/revision-v9/wp2/summary.csv",
+        "member": "summary.csv",
+        "sha256": "4aa413e95f4454de603ac8a42733d3896d9ca0e227f7bc4313e29644319400ef",
+        "matches": true
+      },
+      {
+        "path": "results/revision-v9/wp2/summary.json",
+        "member": "summary.json",
+        "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+        "matches": true
+      },
+      {
+        "path": "results/revision-v9/wp2/support.json",
+        "member": "support.json",
+        "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+        "matches": true
+      }
+    ],
+    "summary_hash_chain": "source blob bytes = tar member bytes = member SHA in own members.csv; members.csv SHA and tar SHA = own package-receipt.json"
+  },
+  "sealed_source_bytes": [
+    {
+      "path": "v9_confirmation.py",
+      "expected_sha256": "f8138482e11c574f83a0463ba29702242b0c5118878cc4f413f3888a54cb411c",
+      "source_blob_sha256": "f8138482e11c574f83a0463ba29702242b0c5118878cc4f413f3888a54cb411c",
+      "matches": true
+    },
+    {
+      "path": "run_v9_confirmation.py",
+      "expected_sha256": "4710316ff5827d9ce71566798c2414a8d091e51cd78e4b6e1198b84e983d4edd",
+      "source_blob_sha256": "4710316ff5827d9ce71566798c2414a8d091e51cd78e4b6e1198b84e983d4edd",
+      "matches": true
+    },
+    {
+      "path": "v8_mechanism_mc.py",
+      "expected_sha256": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "source_blob_sha256": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "matches": true
+    },
+    {
+      "path": "run_v8_wp3.py",
+      "expected_sha256": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+      "source_blob_sha256": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+      "matches": true
+    },
+    {
+      "path": "run_study.py",
+      "expected_sha256": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+      "source_blob_sha256": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+      "matches": true
+    },
+    {
+      "path": "conditional_features.py",
+      "expected_sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "source_blob_sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "matches": true
+    },
+    {
+      "path": "conditional_quantile.py",
+      "expected_sha256": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "source_blob_sha256": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "matches": true
+    },
+    {
+      "path": "conditional_study.py",
+      "expected_sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "source_blob_sha256": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "matches": true
+    },
+    {
+      "path": "study_core.py",
+      "expected_sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "source_blob_sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "matches": true
+    },
+    {
+      "path": "parsimonious_v3.py",
+      "expected_sha256": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+      "source_blob_sha256": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8",
+      "matches": true
+    },
+    {
+      "path": "protocol/revision-v9/wp2-confirmatory.md",
+      "expected_sha256": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "source_blob_sha256": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "matches": true
+    },
+    {
+      "path": "protocol/revision-v9/wp2-confirmatory.json",
+      "expected_sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "source_blob_sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "matches": true
+    },
+    {
+      "path": "notes/revision-v9/wp1-breakeven.json",
+      "expected_sha256": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
+      "source_blob_sha256": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
+      "matches": true
+    }
+  ],
+  "static_inventory": {
+    "summary_rows": 144,
+    "summary_status_counts": {
+      "COMPLETE": 144
+    },
+    "summary_methods": {
+      "F": 48,
+      "QR33": 48,
+      "QR4": 48
+    },
+    "summary_all_complete_repetitions_32": true,
+    "summary_failed_repetitions_total": 0,
+    "summary_unattempted_repetitions_total": 0,
+    "inventory_status_counts": {
+      "COMPLETE": 4608
+    },
+    "inventory_noncomplete": [],
+    "selected_report_status_counts": {
+      "COMPLETE": 4608
+    },
+    "candidate_status_counts": {
+      "COMPLETE": 12286,
+      "FAILED": 2
+    },
+    "candidate_noncomplete": [
+      {
+        "member": "units/rep-010_dgp-0_phi-1/W52_H24_QR4.json",
+        "json_pointer": "/candidates/0",
+        "record": {
+          "penalty": 0.001,
+          "status": "FAILED",
+          "origin_count": 0,
+          "mean_loss": null,
+          "reason": "NONCONVERGENCE",
+          "failure_kind": "QUANTILE_FIT_FAILURE",
+          "failure_diagnostics": {
+            "iterations": 10000,
+            "primal_residual": 6.736752037021187e-05,
+            "dual_residual": 1.3241379001211878e-16,
+            "primal_tolerance": 0.00010603448903678189,
+            "dual_tolerance": 2.241715375206243e-06,
+            "primal_objective": 0.015221796479342409,
+            "dual_objective": 0.015220734293599679,
+            "duality_gap": 1.0621857427301317e-06,
+            "gap_tolerance": 1.0152217964793424e-06
+          },
+          "failure_diagnostics_status": "FINITE_SCALARS"
+        },
+        "archive_path": "results/revision-v9/wp2/wp2-driver-output.tar.gz",
+        "archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+        "member_sha256": "99972c898f59753d8895192ee8b79f7dd69b3f5de2f3f231067646963ee4f1c6",
+        "numeric_bindings": {
+          "penalty": {
+            "archive_path": "results/revision-v9/wp2/wp2-driver-output.tar.gz",
+            "archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+            "member_path": "units/rep-010_dgp-0_phi-1/W52_H24_QR4.json",
+            "member_sha256": "99972c898f59753d8895192ee8b79f7dd69b3f5de2f3f231067646963ee4f1c6",
+            "json_pointer": "/candidates/0/penalty",
+            "value": 0.001
+          }
+        }
+      },
+      {
+        "member": "units/rep-014_dgp-0_phi-0/W52_H6_QR4.json",
+        "json_pointer": "/candidates/0",
+        "record": {
+          "penalty": 0.001,
+          "status": "FAILED",
+          "origin_count": 0,
+          "mean_loss": null,
+          "reason": "NONCONVERGENCE",
+          "failure_kind": "QUANTILE_FIT_FAILURE",
+          "failure_diagnostics": {
+            "iterations": 10000,
+            "primal_residual": 4.343096111277781e-05,
+            "dual_residual": 1.6813367889776124e-05,
+            "primal_tolerance": 0.0002653060663104533,
+            "dual_tolerance": 2.2633167759474343e-06,
+            "primal_objective": 0.10810515724837298,
+            "dual_objective": 0.10810405519684477,
+            "duality_gap": 1.1020515281688784e-06,
+            "gap_tolerance": 1.108105157248373e-06
+          },
+          "failure_diagnostics_status": "FINITE_SCALARS"
+        },
+        "archive_path": "results/revision-v9/wp2/wp2-driver-output.tar.gz",
+        "archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+        "member_sha256": "aa50fa9e80a83a2e9ec85f1cbbb0c3f3b30c2ee3efd3f401eb5364aec1ebdfb4",
+        "numeric_bindings": {
+          "penalty": {
+            "archive_path": "results/revision-v9/wp2/wp2-driver-output.tar.gz",
+            "archive_sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a",
+            "member_path": "units/rep-014_dgp-0_phi-0/W52_H6_QR4.json",
+            "member_sha256": "aa50fa9e80a83a2e9ec85f1cbbb0c3f3b30c2ee3efd3f401eb5364aec1ebdfb4",
+            "json_pointer": "/candidates/0/penalty",
+            "value": 0.001
+          }
+        }
+      }
+    ],
+    "worker_status_counts": {
+      "COMPLETE": 192
+    },
+    "worker_noncomplete": [],
+    "removed_windows_saved": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/study-termination.json",
+      "sha256": "6c81132d7af745ce7dbf90cce84a3c332862cf9f73528752b1683be9098bacc4",
+      "json_pointer": "/removed_windows",
+      "value": []
+    }
+  },
+  "recommended_minimal_table": {
+    "disposition": "DO_NOT_IMPORT_NOW; exact source-bound template only",
+    "suggested_columns": [
+      "Prediction",
+      "Saved criterion",
+      "Satisfied / fixed denominator",
+      "Missing",
+      "Required fraction",
+      "Saved screen status"
+    ],
+    "rows": [
+      {
+        "prediction": "P1",
+        "import_allowed": false,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/successes",
+            "value": 47
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/denominator",
+            "value": 48
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/observed_fraction",
+            "value": 0.9791666666666666
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/status",
+            "value": "SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P1/minimum_fraction",
+            "value": 0.8
+          }
+        }
+      },
+      {
+        "prediction": "P2",
+        "import_allowed": false,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/successes",
+            "value": 21
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/denominator",
+            "value": 24
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/observed_fraction",
+            "value": 0.875
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/status",
+            "value": "SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P2/minimum_fraction",
+            "value": 0.6
+          }
+        }
+      },
+      {
+        "prediction": "P3",
+        "import_allowed": false,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/successes",
+            "value": 42
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/denominator",
+            "value": 48
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/minimum_fraction",
+            "value": 1.0
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/observed_fraction",
+            "value": 0.875
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/status",
+            "value": "NOT_SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P3/required_fraction",
+            "value": 1.0
+          }
+        }
+      }
+    ],
+    "required_caption": "Finite-grid pooled synthetic screen. The original design/completion commit objects are unavailable in this audit, so preregistration is unverified. P3 universal simplification fails. The index excludes parameter count; penalty menus differ; no oracle or estimation-cost identification.",
+    "subgroup_backing_without_selection": [
+      {
+        "group": "QR33",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/successes",
+            "value": 29
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/denominator",
+            "value": 30
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/observed_fraction",
+            "value": 0.9666666666666667
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR33",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/successes",
+            "value": 5
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/denominator",
+            "value": 6
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/observed_fraction",
+            "value": 0.8333333333333334
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR4",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/successes",
+            "value": 18
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/denominator",
+            "value": 18
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR4",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/denominator",
+            "value": 18
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/observed_fraction",
+            "value": 0.8888888888888888
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "student_t5",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/successes",
+            "value": 15
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/observed_fraction",
+            "value": 0.9375
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "student_t5",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/successes",
+            "value": 5
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/observed_fraction",
+            "value": 0.625
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "regime_3to1",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "regime_3to1",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/successes",
+            "value": 8
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "compound_poisson",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "compound_poisson",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/successes",
+            "value": 8
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      }
+    ],
+    "auxiliary_design_bindings": {
+      "repetitions": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/repetitions",
+        "value": 32
+      },
+      "QR33_rstar": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/thresholds/QR33/r_star",
+        "value": 106.49618468616566
+      },
+      "QR4_rstar": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/thresholds/QR4/r_star",
+        "value": 27.324522025270575
+      },
+      "P1_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P1_cells",
+        "value": 48
+      },
+      "P2_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P2_cells",
+        "value": 24
+      },
+      "P3_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P3_pairs",
+        "value": 48
+      }
+    }
+  },
+  "all_prediction_counterexamples": [
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 2,
+      "record": {
+        "prediction": "P1",
+        "dgp": "student_t5",
+        "phi": "0.7",
+        "window": "720",
+        "horizon": "24",
+        "method": "QR33",
+        "relative_loss_percent": "-1.346460491424284",
+        "QR4_delta": "",
+        "QR33_delta": "",
+        "source": "results/revision-v9/wp2/summary.json"
+      },
+      "numeric_bindings": {
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/16/phi",
+          "value": 0.7
+        },
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/16/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/16/horizon",
+          "value": 24
+        },
+        "relative_loss_percent": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/16/relative_loss_percent",
+          "value": -1.346460491424284
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 3,
+      "record": {
+        "prediction": "P2",
+        "dgp": "student_t5",
+        "phi": "0.7",
+        "window": "720",
+        "horizon": "6",
+        "method": "QR4",
+        "relative_loss_percent": "7.312975832354329",
+        "QR4_delta": "",
+        "QR33_delta": "",
+        "source": "results/revision-v9/wp2/summary.json"
+      },
+      "numeric_bindings": {
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/14/phi",
+          "value": 0.7
+        },
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/14/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/14/horizon",
+          "value": 6
+        },
+        "relative_loss_percent": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/14/relative_loss_percent",
+          "value": 7.312975832354329
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 4,
+      "record": {
+        "prediction": "P2",
+        "dgp": "student_t5",
+        "phi": "0.9",
+        "window": "720",
+        "horizon": "6",
+        "method": "QR4",
+        "relative_loss_percent": "0.8986970904158786",
+        "QR4_delta": "",
+        "QR33_delta": "",
+        "source": "results/revision-v9/wp2/summary.json"
+      },
+      "numeric_bindings": {
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/38/phi",
+          "value": 0.9
+        },
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/38/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/38/horizon",
+          "value": 6
+        },
+        "relative_loss_percent": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/38/relative_loss_percent",
+          "value": 0.8986970904158786
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 5,
+      "record": {
+        "prediction": "P2",
+        "dgp": "student_t5",
+        "phi": "0.9",
+        "window": "2880",
+        "horizon": "6",
+        "method": "QR33",
+        "relative_loss_percent": "0.03462371888021121",
+        "QR4_delta": "",
+        "QR33_delta": "",
+        "source": "results/revision-v9/wp2/summary.json"
+      },
+      "numeric_bindings": {
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/43/phi",
+          "value": 0.9
+        },
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/43/window",
+          "value": 2880
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/43/horizon",
+          "value": 6
+        },
+        "relative_loss_percent": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/summary.json",
+          "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+          "json_pointer": "/43/relative_loss_percent",
+          "value": 0.03462371888021121
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 6,
+      "record": {
+        "prediction": "P3",
+        "dgp": "student_t5",
+        "phi": "0.7",
+        "window": "720",
+        "horizon": "6",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "7.312975832354329",
+        "QR33_delta": "4.830690418857531",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/4/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/4/horizon",
+          "value": 6
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/4/QR4_delta",
+          "value": 7.312975832354329
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/4/QR33_delta",
+          "value": 4.830690418857531
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/0",
+          "value": 0.7
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 7,
+      "record": {
+        "prediction": "P3",
+        "dgp": "student_t5",
+        "phi": "0.7",
+        "window": "720",
+        "horizon": "24",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "16.02356520538195",
+        "QR33_delta": "-1.346460491424284",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/5/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/5/horizon",
+          "value": 24
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/5/QR4_delta",
+          "value": 16.02356520538195
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/5/QR33_delta",
+          "value": -1.346460491424284
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/0",
+          "value": 0.7
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 8,
+      "record": {
+        "prediction": "P3",
+        "dgp": "student_t5",
+        "phi": "0.9",
+        "window": "720",
+        "horizon": "24",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "2.63174423575232",
+        "QR33_delta": "1.5806851456921622",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/13/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/13/horizon",
+          "value": 24
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/13/QR4_delta",
+          "value": 2.63174423575232
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/13/QR33_delta",
+          "value": 1.5806851456921622
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/1",
+          "value": 0.9
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 9,
+      "record": {
+        "prediction": "P3",
+        "dgp": "student_t5",
+        "phi": "0.9",
+        "window": "2880",
+        "horizon": "24",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "-6.545515431604143",
+        "QR33_delta": "-10.918683141764108",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/15/window",
+          "value": 2880
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/15/horizon",
+          "value": 24
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/15/QR4_delta",
+          "value": -6.545515431604143
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/15/QR33_delta",
+          "value": -10.918683141764108
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/1",
+          "value": 0.9
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 10,
+      "record": {
+        "prediction": "P3",
+        "dgp": "regime_3to1",
+        "phi": "0.7",
+        "window": "2880",
+        "horizon": "6",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "-10.774924657612761",
+        "QR33_delta": "-11.039777078608381",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/22/window",
+          "value": 2880
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/22/horizon",
+          "value": 6
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/22/QR4_delta",
+          "value": -10.774924657612761
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/22/QR33_delta",
+          "value": -11.039777078608381
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/0",
+          "value": 0.7
+        }
+      }
+    },
+    {
+      "csv_path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "csv_sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0",
+      "csv_line": 11,
+      "record": {
+        "prediction": "P3",
+        "dgp": "regime_3to1",
+        "phi": "0.9",
+        "window": "720",
+        "horizon": "24",
+        "method": "QR4_vs_QR33",
+        "relative_loss_percent": "",
+        "QR4_delta": "14.634735498897422",
+        "QR33_delta": "12.44685994746002",
+        "source": "results/revision-v9/wp2/support.json"
+      },
+      "numeric_bindings": {
+        "window": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/29/window",
+          "value": 720
+        },
+        "horizon": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/29/horizon",
+          "value": 24
+        },
+        "QR4_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/29/QR4_delta",
+          "value": 14.634735498897422
+        },
+        "QR33_delta": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "results/revision-v9/wp2/support.json",
+          "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+          "json_pointer": "/P3/pairs/29/QR33_delta",
+          "value": 12.44685994746002
+        },
+        "phi": {
+          "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+          "path": "protocol/revision-v9/wp2-confirmatory.json",
+          "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+          "json_pointer": "/phi/1",
+          "value": 0.9
+        }
+      }
+    }
+  ],
+  "source_assertions_not_rerun": {
+    "prior_audit": {
+      "path": "notes/revision-v9/wp2-independent-audit.json",
+      "sha256": "fdb58d974d05459d583f160cd2bbd878d2777169ed055096c2c4d2423bc52a7e",
+      "saved_status": "PASS",
+      "saved_difference_count": 0,
+      "current_rerun": false,
+      "limitation": "Original report records scalar validation selection checks; saved validation forecast traces were unavailable."
+    },
+    "full_tests": {
+      "path": "notes/revision-v9/wp2-full-gate-pytest-receipt.json",
+      "sha256": "443dea0ddaf5cd153322399bbf4ab33aa3e7e6c1d979bcfcaf4c8b3630df0c9c",
+      "current_rerun": false,
+      "output_hash_matches": true
+    }
+  },
+  "retained_source_blobs": [
+    {
+      "path": "REVISION_V9_CHANGELOG.md",
+      "blob_oid": "b86ca92bde3f168f140d3502c9ec6507e1b7b3d2",
+      "bytes": 138207,
+      "sha256": "7fb25c58f24d6fdf579381f8c18e14ae2c4e2458c48624491f99571bfd73dfed"
+    },
+    {
+      "path": "notes/revision-v9/wp2-acceptance.json",
+      "blob_oid": "6726f3a1cfb23991a0f826fafdf46963d78187db",
+      "bytes": 3855,
+      "sha256": "315e06a5cba7339c8ea44c9acd0a9eb786937026367734fdbdbda515730a9e31"
+    },
+    {
+      "path": "notes/revision-v9/wp2-all-prediction-counterexamples.csv",
+      "blob_oid": "5f12e38e122d96897014af45ef31ba8e1e05d632",
+      "bytes": 1127,
+      "sha256": "b3e557d7826ba6a3e33e571b43c8f8ea77175de15edf7fd590a68e6534588bb0"
+    },
+    {
+      "path": "notes/revision-v9/wp2-code-pre-run-binding.json",
+      "blob_oid": "973a6c17f338b74328c5ba2f5711c4ba2ef60ee2",
+      "bytes": 1761,
+      "sha256": "c76814abb49afc313b059900b899365ea5f5bf08734abfa94d7586051363e946"
+    },
+    {
+      "path": "notes/revision-v9/wp2-formal-run-console.txt",
+      "blob_oid": "1e77942e7a1b1d96e64c7af96061e1e63a774c63",
+      "bytes": 157,
+      "sha256": "34d40146c39f25d5f3ec88bf4631f853c0ce20a414f7d3591daaa06cf4b57151"
+    },
+    {
+      "path": "notes/revision-v9/wp2-full-gate-pytest-output.txt",
+      "blob_oid": "873dee61779761976ec8fb9bdabef9d120b232a8",
+      "bytes": 172160,
+      "sha256": "a29ee2485b67a9c26e18d04af6ec01a8afe2a7f6de4cb7ac4ed6c438e74149d3"
+    },
+    {
+      "path": "notes/revision-v9/wp2-full-gate-pytest-receipt.json",
+      "blob_oid": "173a84edc41bec4aedda5041c7470a91a793b8cc",
+      "bytes": 1289,
+      "sha256": "443dea0ddaf5cd153322399bbf4ab33aa3e7e6c1d979bcfcaf4c8b3630df0c9c"
+    },
+    {
+      "path": "notes/revision-v9/wp2-green-output-1.txt",
+      "blob_oid": "d5269df22215cb117139e324dd76f470c95b784d",
+      "bytes": 158,
+      "sha256": "003de5e7a92638e554f48e5ea4e22d27873a70aab56a56e55c39d444d52a5100"
+    },
+    {
+      "path": "notes/revision-v9/wp2-green-output-2.txt",
+      "blob_oid": "220d62c6d11ff274b3af0d00519a517c1f1c9fb7",
+      "bytes": 158,
+      "sha256": "b1ab1c78bfbb24167c651df76f73bbaaf2ad1e07deab987da07668a86910df83"
+    },
+    {
+      "path": "notes/revision-v9/wp2-green-output-3.txt",
+      "blob_oid": "f9c5c62f5174c97d3811947a885e7b33e08c807f",
+      "bytes": 158,
+      "sha256": "7b28f9362a2c514a374635c0f6ae1340b5468be4ab513aeff0b70dc046bf3883"
+    },
+    {
+      "path": "notes/revision-v9/wp2-green-output-4.txt",
+      "blob_oid": "b6f2ac96d1768ffca9012523aec4906a4a8d6fc2",
+      "bytes": 158,
+      "sha256": "ea82d6d31a88ad16042c135a8f3272067758e89db031f563e44971555eb1c093"
+    },
+    {
+      "path": "notes/revision-v9/wp2-independent-audit-console.txt",
+      "blob_oid": "d955c92c074fd7b4af1731cd977789b27ccc06a5",
+      "bytes": 9441,
+      "sha256": "08579227d5e9e394d081705e808ba2bb394c505b24b85ed229679ac3d73a5748"
+    },
+    {
+      "path": "notes/revision-v9/wp2-independent-audit.json",
+      "blob_oid": "1a429509293f5805f8a27000e13a1f47f34dd7bf",
+      "bytes": 9382,
+      "sha256": "fdb58d974d05459d583f160cd2bbd878d2777169ed055096c2c4d2423bc52a7e"
+    },
+    {
+      "path": "notes/revision-v9/wp2-method-source-reading.md",
+      "blob_oid": "d49c52c62de33fcff3186b5d852e66e941c6c154",
+      "bytes": 6109,
+      "sha256": "d44588c32dae65ff0537d620ec7db0fb02850e9b2a314bea77346d685032aa9e"
+    },
+    {
+      "path": "notes/revision-v9/wp2-package-console.txt",
+      "blob_oid": "0dbf06cb2642cdcb71c19c483ab175acf57673e9",
+      "bytes": 1349,
+      "sha256": "3677fb138b7e73aba313ab3d040bcd65119b6dc0fdd0c4518fb58d531a7be439"
+    },
+    {
+      "path": "notes/revision-v9/wp2-post-run-pytest-output-1.txt",
+      "blob_oid": "fa9bd705a469a08d258b32b82e1183fe64ec0b0c",
+      "bytes": 158,
+      "sha256": "04bbc4217cf26958fb1354ef21131f2289344858ec53db5509eb63244fbc425d"
+    },
+    {
+      "path": "notes/revision-v9/wp2-pre-result-design-check.json",
+      "blob_oid": "22bcec1770e9ca0966adb77280a3617d53cb5de0",
+      "bytes": 733,
+      "sha256": "756d0cddc6284e0d8f55c0a56627e41e7dede58b69552a23c1c7567f5b81a707"
+    },
+    {
+      "path": "notes/revision-v9/wp2-readout.md",
+      "blob_oid": "e2df5637e440844309be3ffb5faadb16eec99c93",
+      "bytes": 2535,
+      "sha256": "001562023df39c77b4ebba4fe9be87b8d6e749187570b00a935894a88f346246"
+    },
+    {
+      "path": "notes/revision-v9/wp2-red-output-1.txt",
+      "blob_oid": "bcec468d707671132dbf7bc457689a8ab7cb91fb",
+      "bytes": 3362,
+      "sha256": "3b4bc5ff055a7df8f335a15522f073e2df0ecce7acbdbcf55d46196e5b10ea1f"
+    },
+    {
+      "path": "notes/revision-v9/wp2-red-output-2.txt",
+      "blob_oid": "61bbc0922356f819f69c890e55db6c071ac06001",
+      "bytes": 1017,
+      "sha256": "0037cc4f86a6eb2dcf908c2f57119c4bf8195bd1fdb263c940ed9a920b7dc04b"
+    },
+    {
+      "path": "notes/revision-v9/wp2-running-evidence-binding.json",
+      "blob_oid": "b26afe3592233debebd72b3fd224535164f6cd9d",
+      "bytes": 784,
+      "sha256": "745a8c33b53a46e7e970b35b64b0cbd1cff93bd599ac1a066a134fabe7def239"
+    },
+    {
+      "path": "notes/revision-v9/wp2-runtime-preflight.json",
+      "blob_oid": "d8b2c007a9201dae8a4486f90014ccdcf8c78240",
+      "bytes": 1709,
+      "sha256": "06ca3cac0e847d99ec53b4d77b22271a3ea67aef5dd237706e71e6ad80bf1050"
+    },
+    {
+      "path": "notes/revision-v9/wp2-summary-console.txt",
+      "blob_oid": "857e0ae254d545b6002238e8aede826814d240b4",
+      "bytes": 42280,
+      "sha256": "8241ca4a87af235ad027feb3979480ddf84cc9eb903dbefbfafb6d4fa4156af5"
+    },
+    {
+      "path": "protocol/revision-v9/wp2-confirmatory.json",
+      "blob_oid": "f8efb043d2bffc2171a5fefd717ce4a0db22330b",
+      "bytes": 7916,
+      "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083"
+    },
+    {
+      "path": "protocol/revision-v9/wp2-confirmatory.md",
+      "blob_oid": "fde0d8c214b28ab89bfe2ccd476f5446a682f1fe",
+      "bytes": 9512,
+      "sha256": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d"
+    },
+    {
+      "path": "results/revision-v9/wp2/budget-decision.json",
+      "blob_oid": "15b9eee340916bb4ba715f240eb29444cd8c2e3e",
+      "bytes": 447,
+      "sha256": "dbcb5e74a0865a1a9d942c222ae8471b69b96e14b7f9dcf8e8e2df82eeda860c"
+    },
+    {
+      "path": "results/revision-v9/wp2/manifest.json",
+      "blob_oid": "87aac16ac8945084292042df384621691f694d4e",
+      "bytes": 11082,
+      "sha256": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2"
+    },
+    {
+      "path": "results/revision-v9/wp2/package-receipt.json",
+      "blob_oid": "be605a59f09371fb9fba27453ed87446976d693d",
+      "bytes": 572,
+      "sha256": "e4d05619a9ce60955524b47d64b3631ec562a4a940f4e8836323a592d7e34487"
+    },
+    {
+      "path": "results/revision-v9/wp2/study-termination.json",
+      "blob_oid": "34874aa4b84437a94a177d959ee3010c90a4113a",
+      "bytes": 275,
+      "sha256": "6c81132d7af745ce7dbf90cce84a3c332862cf9f73528752b1683be9098bacc4"
+    },
+    {
+      "path": "results/revision-v9/wp2/summary.csv",
+      "blob_oid": "09ced528e1d2b49e3e111d4551cb779c3307890f",
+      "bytes": 38649,
+      "sha256": "4aa413e95f4454de603ac8a42733d3896d9ca0e227f7bc4313e29644319400ef"
+    },
+    {
+      "path": "results/revision-v9/wp2/summary.json",
+      "blob_oid": "9286ed24eb5a11d45981e5a89755f1ebc45487b1",
+      "bytes": 137693,
+      "sha256": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc"
+    },
+    {
+      "path": "results/revision-v9/wp2/support.json",
+      "blob_oid": "8b9bf77431a77f968462459b966e04f8b039c91b",
+      "bytes": 42221,
+      "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5"
+    },
+    {
+      "path": "results/revision-v9/wp2/wp2-driver-output-members.csv",
+      "blob_oid": "036374108eb808ad1629a87f3d659ca226057724",
+      "bytes": 3755277,
+      "sha256": "9e942726a6c5bec102ad7c25fb2e4a5b000df59694fce87831517ce85fb9a3ba"
+    },
+    {
+      "path": "results/revision-v9/wp2/wp2-driver-output.tar.gz",
+      "blob_oid": "ecf34daf228d28907cb77532d3d72d7a7bb0f297",
+      "bytes": 20739514,
+      "sha256": "aa794fc6b83c0e4e74f98b11aa4768a90f6f03dfe052fda9d679cd9e88972e7a"
+    }
+  ]
+}

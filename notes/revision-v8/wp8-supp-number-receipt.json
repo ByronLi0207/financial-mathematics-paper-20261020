@@ -1,0 +1,69 @@
+{
+  "generated_utc": "2026-10-24T11:49:32.625756+00:00",
+  "status": "PASS_WITH_SCOPE_LIMITS",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "notes/revision-v8/check_wp8_supp_numbers.py"
+      ],
+      "exit_code": 0,
+      "console": "notes/revision-v8/wp8-supp-number-console.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "notes/revision-v8",
+        "-p",
+        "test_v8_supp_numbers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "console": "notes/revision-v8/wp8-supp-tests-console.txt"
+    }
+  ],
+  "current_supplement_sha256": "01f276a959754d4981c6c2711f0e4fb218e238c526d87a24815ec9217c3aabbe",
+  "protected_hashes_before": {
+    "submission-jof/supplement.tex": "01f276a959754d4981c6c2711f0e4fb218e238c526d87a24815ec9217c3aabbe",
+    "notes/v7/s9-number-check.json": "d087a38b5f5a70e04698f079a5865aeedc1e6b14eebf680d50ef6bf588e6a905",
+    "notes/v7/s9-number-token-inventory.json": "2503864ee2a96fb928388d961ac0819e10a666b3dbe446c76bbfdbb7fa8a8f6c",
+    "notes/v7/s5-supplement-bindings.json": "4e8707c17b1423531c503ae9c90dcc1133b5ae198f1286d9ce6d406fa7416ca1"
+  },
+  "protected_hashes_after": {
+    "submission-jof/supplement.tex": "01f276a959754d4981c6c2711f0e4fb218e238c526d87a24815ec9217c3aabbe",
+    "notes/v7/s9-number-check.json": "d087a38b5f5a70e04698f079a5865aeedc1e6b14eebf680d50ef6bf588e6a905",
+    "notes/v7/s9-number-token-inventory.json": "2503864ee2a96fb928388d961ac0819e10a666b3dbe446c76bbfdbb7fa8a8f6c",
+    "notes/v7/s5-supplement-bindings.json": "4e8707c17b1423531c503ae9c90dcc1133b5ae198f1286d9ce6d406fa7416ca1"
+  },
+  "source_and_old_proofs_unchanged_by_software_checks": true,
+  "checker_sha256": "768e69c2e359ca16f52d78a1de3c48f1ea78fb57d06a6e7dd19a433a6489ae33",
+  "software_tests_sha256": "936033681396811fa3ff798b7a5e4f6676b42fb6efa26508f610031533547e8c",
+  "numeric_report_sha256": "8b5de71ea461716f21060fd77e49b59d3edcfdff072289fe065e6a768fe3575b",
+  "all_2080_new_bindings_located": true,
+  "negative_controls": [
+    "swapped complete Monte Carlo rows",
+    "wrong exact integer master seed",
+    "unbound inline p-value",
+    "omitted generated table input",
+    "changed old numeric result row",
+    "unbound inline result beside a layout command cannot inherit layout exemption"
+  ],
+  "software_test_count": 8,
+  "failures": 0,
+  "unresolved": 0,
+  "ambiguous": 0,
+  "scope_limits": [
+    "This is software/document validation, not a new financial experiment or independent forecasting replication.",
+    "Included figure pixels/annotations and current PDF compilation/page identity are separately verified by the parent WP8 workflow.",
+    "References/source identifiers are classified with their actual role; independent bibliographic verification remains a separate gate.",
+    "Source-level occurrence location does not prove rendered row placement, glyph visibility or legibility; final page-by-page visual QA remains required."
+  ],
+  "financial_tests_run": 0,
+  "private_data_read": 0
+}
