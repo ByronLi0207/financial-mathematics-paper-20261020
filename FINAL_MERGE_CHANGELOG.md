@@ -6291,3 +6291,138 @@ WARN `--no-project` was provided, but no project was found
 ```
 
 Actualselfcheck06:13:24.261853UTCcovered06:11:52slot with92.261853sdelay;actualgap650.400452s isMISMATCH,notretrofilled. Earlier18checkcheckpoint andallongoingactualchecksremain separately recorded;pure research seconds staynull. The previous no-independent-work assessment was too broad:the full-plan audit identified these two writing gaps. They have now been addressed and verified;the full objective and remote/time requirements remain open.
+
+
+## WP8 actual scientific publication and unique PR6 checkpoint
+
+ActualrecordedUTC 2026-10-26T08:36:35.249242+00:00. Earlier blocked/local-only entries above are retained dated checkpoints. After the human explicitly reported the session unlocked, the native route became available and the Goal tool actually returned ACTIVE. Ordinary Git still lacked a write identity and the denied integration write was not retried or expanded. Only final-jof was created/updated; existing PRs #3/#4/#5 and A/B/main/protected branches were not edited, closed or merged.
+
+The58fixed native-directory batches published1793deltafiles,102177070bytes. Each single click was followed by a fresh ordinaryGit fetch verifying its one parent, exact changed-path set, file mode/blob/byte SHA and protected refs. Processing/observation timeouts were resolved by the same UI/actual remote; no duplicate submission was sent. See `notes/final-merge/wp8-native-publication-receipts.json` for all58actual Git receipts. This is a content snapshot; the local merged/preregistered commit identities were not exported.
+
+### Actual whole-tree command and original output
+
+Command executed by the recorded wrapper (no remote writes):
+
+```text
+python3 .scratch/final-merge-12h/read_remote_release_after_requirements.py verify --output .scratch/final-merge-12h/publication-69a8cc8-whole-remote-verified.json
+```
+
+Actual start/end: 2026-10-26T08:28:25.170573+00:00 / 2026-10-26T08:28:27.651784+00:00; exitcode 0. The original stdout follows unchanged; its manifest location identifies the local ignored verification input, not an uploaded private UI record.
+
+```json
+{
+  "actual_start_utc": "2026-10-26T08:28:25.213525+00:00",
+  "stage": "verify",
+  "remote_writes": 0,
+  "manifest": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-final-jof-20261025/.scratch/final-merge-12h/publication-manifest-69a8cc8.json",
+  "mismatches": [],
+  "fresh_refs": {
+    "revision-v8-goal": "60130eec7af2ebb38719b195dbe0e09fcb5796e7",
+    "revision-v12": "80608070e4a6f4207483dc95770e6e5926172b19",
+    "main": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+    "codex/supervisor-revision-20261023": "2328994c44ec02bd731ad556f41fe9821f6de6df",
+    "revision-v7-final": "d119a1fb30c48ceab9000552057882938cfa57a4"
+  },
+  "local_head": "69a8cc84997c4213935135b9b26e328b8f3bd4bf",
+  "actual_remote_head": "909d1efd5c46600732ef5854c1a12ba6aa360976",
+  "actual_remote_tree": "ec91bec61d89cc33f00e26f0660859571bd39088",
+  "actual_remote_path_count": 6047,
+  "extra_paths": [],
+  "missing_paths": [],
+  "full_remote_blob_byte_checks": 6047,
+  "remote_equals_local_commit": false,
+  "publication_history_scope": "CONTENT_SNAPSHOT_ONLY_DISTINCT_COMMITS_REQUIRES_EXPLICIT_DISCLOSURE",
+  "actual_remote_commit": [
+    "909d1efd5c46600732ef5854c1a12ba6aa360976",
+    "098a4cce4b645282eec67fc7231e7012906c5204",
+    "2026-10-26T01:28:04-07:00",
+    "Publish preserved A-line generated evidence sources (58/58)"
+  ],
+  "actual_end_utc": "2026-10-26T08:28:27.643391+00:00",
+  "mismatch_count": 0,
+  "status": "PASS_REMOTE_CONTENT_WITH_EXPLICIT_HISTORY_SCOPE"
+}
+```
+
+### Unique PR creation and independent owning-platform readback
+
+Native UI created exactly one draft PR: https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6 at 2026-10-26T08:33:39Z. The actual read-only tool request was:
+
+```json
+{"tool":"GitHub get_pr_info","repository_full_name":"ByronLi0207/financial-mathematics-paper-20261020","pr_number":6}
+```
+
+The structuredContent was compared exactly with the prepared title/body and expected head/base/status. The sanitized acceptance output is:
+
+```json
+{
+  "status": "PASS_INDEPENDENT_PR6_READBACK",
+  "actual_utc": "2026-10-26T08:34:25.606650+00:00",
+  "source": "GitHub get_pr_info structuredContent",
+  "url": "https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6",
+  "number": 6,
+  "title": "Final consolidated JoF submission",
+  "base": "main",
+  "base_sha": "65feeee801b6b228a608ca3200e0678bb5f62b1c",
+  "head": "final-jof",
+  "head_sha": "909d1efd5c46600732ef5854c1a12ba6aa360976",
+  "draft": true,
+  "state": "open",
+  "merged": false,
+  "created_at": "2026-10-26T08:33:39Z",
+  "body_sha256": "4afad4fdd2752a8923c25a11e2d47dae86d8c5da851cd1b9e954f468f8ea96f1",
+  "checks": {
+    "body_exact": true,
+    "title_exact": true,
+    "base_main": true,
+    "head_final_jof": true,
+    "open_unmerged_draft": true,
+    "unique_new_pr_number": true
+  },
+  "new_pr_count": 1,
+  "goal_complete": false
+}
+```
+
+### Acceptance and remaining full-objective requirements
+
+WP8scientific/document/test/content-tree and uniquePR gates PASS for the named scientific cut. The current end-of-WP8 metadata commit records these actual outputs, the complete batch receipts and the full63requirement update. Its own later remote head/tree cannot be included in its own bytes; independent runtime/PR readback will verify that final metadata publication. No paper/result/protocol/PDF/ZIP byte changed in this closing record. Current source/test/package acceptance remains the same2215passed/1184subtests/48page scope documented above; unchanged gates were not rerun to consume time.
+
+The twelve-hour deadline has not elapsed. SectionIIIone-item review rounds begin only after this closing metadata is actually accepted remotely. Pure research seconds remain null. Actual cadence MISMATCHs, public-clone provenance limits, independent financial replication/FXrights/first-release vintage/source-audit limitations and the NYFedraw exception remain disclosed. See `notes/final-merge/wp8-postpublication-requirement-audit.json` and `notes/final-merge/wp8-publication-timing-checkpoint.json`. Author-specific decisions and oldPRclosures remain with the author; no journal submission or author declaration was made.
+
+### Closing metadata scope check
+
+The first metadata collector stopped on the first historical selfcheck lacking interval_status. It made no remote write. That original first check has no previous interval; its missing status remains null, with a declared count label only. Three partially created receipt files were preserved and exactly matched on resume; none was deleted or replaced with different bytes.
+
+Actual command:
+
+```text
+python3 .scratch/final-merge-12h/prepare_public_wp8_closeout.py
+```
+
+Actual successful scope-check output:
+
+```json
+{
+  "actual_utc": "2026-10-26T08:37:29.040532+00:00",
+  "status": "PASS_METADATA_ONLY_PRECOMMIT",
+  "paths": [
+    "FINAL_MERGE_CHANGELOG.md",
+    "USER_DECISIONS_FINAL_MERGE.md",
+    "notes/final-merge/wp8-native-publication-receipts.json",
+    "notes/final-merge/wp8-postpublication-requirement-audit.json",
+    "notes/final-merge/wp8-pr6-initial-readback.json",
+    "notes/final-merge/wp8-publication-timing-checkpoint.json",
+    "notes/final-merge/wp8-remote-scientific-acceptance.json"
+  ],
+  "scientific_cut": "69a8cc84997c4213935135b9b26e328b8f3bd4bf",
+  "scientific_remote_head": "909d1efd5c46600732ef5854c1a12ba6aa360976",
+  "scientific_tree": "ec91bec61d89cc33f00e26f0660859571bd39088",
+  "new_pr_url": "https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/6",
+  "new_pr_count": 1,
+  "changed_scientific_paths": 0,
+  "deletions": 0,
+  "pure_research_seconds": null,
+  "all_goal_complete": false
+}
+```
