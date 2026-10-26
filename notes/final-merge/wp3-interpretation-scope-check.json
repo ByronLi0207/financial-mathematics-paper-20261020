@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-26T03:49:57.576465+00:00",
+  "cost_scope": {
+    "primary": "CFTC::QR33",
+    "cells": 34,
+    "windows": [
+      52,
+      260
+    ],
+    "horizons": [
+      6
+    ],
+    "fixed_reserve_charge": 1,
+    "all_primary_methods_present": true
+  },
+  "menu_scope": {
+    "registered_M3": {
+      "window": 52,
+      "method": "QR33",
+      "group_condition": "Both arms across13 expanded medians strictly lower than their matched old-menu medians",
+      "source_condition": "At least12of13 sources strictly improve their within-source median in BOTH arms (intersection count).",
+      "minimum_joint_improved_sources": 12
+    },
+    "constant_and_switching_operands_match_saved_across_source_rows": true,
+    "matched_rows": [
+      {
+        "arm": "constant",
+        "window": 52,
+        "method": "QR33",
+        "status": "COMPLETE",
+        "required_sources": 13,
+        "complete_sources": 13,
+        "missing_sources": [],
+        "median_pct": 0.2069371499562489,
+        "q25": -0.5167831488577079,
+        "q75": 0.977340948873151,
+        "q25_pct": -0.5167831488577079,
+        "q75_pct": 0.977340948873151,
+        "original_status": "COMPLETE",
+        "original_complete_sources": 13,
+        "original_missing_sources": [],
+        "original_median_pct": 116.24327967680179,
+        "original_q25": 92.89995539118937,
+        "original_q75": 124.3385564851092
+      },
+      {
+        "arm": "switching",
+        "window": 52,
+        "method": "QR33",
+        "status": "COMPLETE",
+        "required_sources": 13,
+        "complete_sources": 13,
+        "missing_sources": [],
+        "median_pct": -0.22777914491914353,
+        "q25": -1.8831390609477527,
+        "q75": 0.977340948873151,
+        "q25_pct": -1.8831390609477527,
+        "q75_pct": 0.977340948873151,
+        "original_status": "COMPLETE",
+        "original_complete_sources": 13,
+        "original_missing_sources": [],
+        "original_median_pct": 121.40097999787356,
+        "original_q25": 101.91853468487092,
+        "original_q75": 131.2574640787476
+      }
+    ],
+    "full_inventory_methods": [
+      "QR33",
+      "QR4"
+    ]
+  },
+  "source_files": {
+    "results/v10/cost/cells.json": "9b3613c9960e1c6f68dea1562316a3d53541175a5c603ad04178af4a3b239382",
+    "results/v10/cost/report-values.json": "12383327e2cb8d08bfa8a23305b1586ff4be6ca52dddfcde72f7e858d65a28ea",
+    "results/v10/menu/summary.json": "e1ac79325e2f8ef60ede05378c70dbbe5f2fedfdbe5ff021d2ec1e58826689d5",
+    "results/v10/menu/manifest.json": "0a25c7f582e4d3b40e673af1b9cc0b1eef6e8144fcddd284ea83b8ca2b7d1311"
+  },
+  "earlier_scope_assertion": "Failed because it incorrectly required every menu inventory cell to be QR33; both QR33 and QR4 are retained. The displayed M3 operands use the fixed QR33/W52 setting, independently read from the original manifest and matched saved aggregate rows.",
+  "scope": "Identity/attribution readback only; no new cost, median or model calculation"
+}

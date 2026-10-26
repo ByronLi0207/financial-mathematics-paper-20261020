@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "accepted_utc": "2026-10-26T03:56:11.288556+00:00",
+  "supersedes": "notes/final-merge/wp3-acceptance.json",
+  "previous_receipt_semantic_status": "MISMATCH_FIXED_COEFFICIENT_ROLE",
+  "discovery": "While reading the inherited B main cost equation for WP4, before any submission-final source creation",
+  "original_formula": "kappa*mean(C-B)/mF + beta*mean(Y>C) + c*mean(max(Y-C,0))/mF",
+  "coefficient_roles": {
+    "kappa": "reserve/headroom charge, varied",
+    "beta": "fixed breach-event charge, varied",
+    "c": "exceedance-magnitude charge, held at one"
+  },
+  "selected_render": "results/final-merge/wp3-figures/render-v4",
+  "source_audit": {
+    "status": "PASS",
+    "checked_utc": "2026-10-26T03:54:55.176938+00:00",
+    "checks": 4069,
+    "mismatches": 0,
+    "failures": [],
+    "points": 482,
+    "inherited_points": 380,
+    "cftc_points": 102,
+    "actual_artist_offsets": 964,
+    "artists": 36,
+    "diagram_numeric_bindings": 12,
+    "new_model_fits": 0,
+    "new_statistics": 0,
+    "pixel_appearance": "Requires separate actual visual inspection",
+    "scope": "Independent source/pointer/CSV/actual artist/PDF text readback by the sole executor; no plotter import or new statistical result"
+  },
+  "scientific_values_changed": 0,
+  "all12_diagram_numeric_bindings_byte_identical": true,
+  "unified_pdf_byte_identical": true,
+  "visual_review": {
+    "status": "PASS",
+    "generated_png_actually_viewed": "results/final-merge/wp3-figures/render-v4/decision-map.png",
+    "generated_png_sha256": "8e4836006b9396917a8366813ff3d2726173e85f9fc312e85b396a2e75265cce",
+    "independent_pdf_raster_actually_viewed": ".scratch/final-merge-12h/wp3-pdf-render/decision-map-v4-1.png",
+    "raster_sha256": "0ba4bd997a46fec7aa0992c82588de2cd80d9dba89f0c1b04040431cea26b186",
+    "findings": [
+      "Fixed exceedance charge correctly named",
+      "All costs explicitly hypothetical",
+      "Full CFTC regression attribution retained",
+      "Text/arrows fit and remain legible"
+    ]
+  },
+  "verification": {
+    "cost_fixture_tests_passed": 20,
+    "full_merged_prior_tests": 2209,
+    "full_merged_prior_subtests": 1184,
+    "full_suite_rerun_required_at_WP8": true
+  },
+  "new_model_fits": 0,
+  "new_cost_calculations": 0,
+  "remaining_scope": "WP4-WP8 and twelve-hour review cycle pending"
+}
