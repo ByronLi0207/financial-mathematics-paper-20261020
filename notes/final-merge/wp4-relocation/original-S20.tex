@@ -1,0 +1,62 @@
+\section{Training-defined position-change states}\label{sup:wp4}
+
+The states are low, middle and high issue-known RMS position-change
+states, not price volatility or yield regimes. Cutpoints come only from the
+training history. Reports and original primary means stay unchanged; the
+diagnostic divides the already viewed evaluation record without estimating a
+switching policy. Source-native group differences are not pooled.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{All three state groups for each original primary. The FX regression-minus-reference loss difference remains negative in every group, while the weekly evidence remains adverse.}\\
+\toprule
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & low & 1593 & -58761.27 & 16492.94 \\
+FX & middle & 1816 & -27839.43 & 16257.70 \\
+FX & high & 3216 & -70387.91 & 17895.89 \\
+Bills & low & 9 & 6696.66 & 1705.21 \\
+Bills & middle & 25 & 5230.59 & 2608.15 \\
+Bills & high & 243 & 810.88 & 466.48 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{Complete state diagnostic reference family. A joint rejection need not identify a useful state rule.}\\
+\toprule
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & joint\_GW & 1.46298e-06 & 5.8519e-06 & OK \\
+FX & group\_heterogeneity & 0.159383 & 0.159383 & OK \\
+Bills & joint\_GW & 0.0484878 & 0.0969756 & OK \\
+Bills & group\_heterogeneity & 0.000426772 & 0.00128032 & OK \\
+\end{longtable}
+\endgroup
+
+These finite-instrument and group-mean HAC references require
+unverified moment, dependence and covariance assumptions. A joint conditional-moment rejection can be driven by an unconditional mean difference; it is not
+evidence that a state-dependent trading or limit-selection policy works.
+The source-level reconstruction and all cutpoints remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp4-states.json}{the complete state record}.

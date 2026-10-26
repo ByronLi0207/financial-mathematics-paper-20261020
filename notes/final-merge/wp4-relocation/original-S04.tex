@@ -1,0 +1,55 @@
+\section{Mean-reverting levels and negative-increment sensitivities}\label{sup:simulation-primary}
+
+The corrected level process is
+\(N_h=\phi N_{h-1}+\varepsilon_h\), with independent Gaussian innovations
+of variance \(1-\phi^2\) and unit stationary level variance. Its stationary
+increments have lag correlation
+\(\rho_X(k)=-(1-\phi)\phi^{k-1}/2\), so this mechanism differs from a
+positively persistent increment AR. The fitted financial coefficient describes
+levels, making the level equation the relevant illustrative mechanism.
+The negative-increment family is a separate sensitivity, with stationary
+increments and nonstationary cumulative levels.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{All corrected primary cases. Mean-reverting level rates are conservative in these finite cases; the negative-increment result must also be retained.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.68 & L/Stat/M & 20567123 & 3.009 & 175 & 0.00175 & 0.00013 & 0.02462 \\
+6 & 0.68 & L/Abs/M & 20567124 & 3.009 & 0 & 0.00000 & 0.00000 & 0.10447 \\
+6 & 0.85 & L/Stat/M & 20567133 & 2.502 & 300 & 0.00300 & 0.00017 & 0.02553 \\
+6 & 0.85 & L/Abs/M & 20567134 & 2.502 & 14 & 0.00014 & 0.00004 & 0.08227 \\
+6 & 0.98 & L/Stat/M & 20567143 & 1.071 & 913 & 0.00913 & 0.00030 & 0.02434 \\
+6 & 0.98 & L/Abs/M & 20567144 & 1.071 & 372 & 0.00372 & 0.00019 & 0.03623 \\
+6 & -0.30 & I/Zero/M & 20567223 & 4.244 & 3563 & 0.03563 & 0.00059 & 0.02524 \\
+6 & -0.60 & I/Zero/M & 20567233 & 3.127 & 4439 & 0.04439 & 0.00065 & 0.02558 \\
+24 & 0.68 & L/Stat/M & 20585123 & 3.170 & 636 & 0.00636 & 0.00025 & 0.02495 \\
+24 & 0.68 & L/Abs/M & 20585124 & 3.170 & 1 & 0.00001 & 0.00001 & 0.11416 \\
+24 & 0.85 & L/Stat/M & 20585133 & 3.138 & 402 & 0.00402 & 0.00020 & 0.02520 \\
+24 & 0.85 & L/Abs/M & 20585134 & 3.138 & 1 & 0.00001 & 0.00001 & 0.11159 \\
+24 & 0.98 & L/Stat/M & 20585143 & 1.965 & 768 & 0.00768 & 0.00028 & 0.02468 \\
+24 & 0.98 & L/Abs/M & 20585144 & 1.965 & 85 & 0.00085 & 0.00009 & 0.06201 \\
+24 & -0.30 & I/Zero/M & 20585223 & 8.167 & 4281 & 0.04281 & 0.00064 & 0.02476 \\
+24 & -0.60 & I/Zero/M & 20585233 & 5.701 & 5032 & 0.05032 & 0.00069 & 0.02516 \\
+\end{longtable}
+\endgroup
+
+All saved level cases have peak rates below the nominal threshold.
+The largest negative-increment point estimate occurs at the longer horizon and
+the more negative coefficient. Its rate is 0.05032,
+with a saved excess of 0.032
+percentage points and Monte Carlo SE 0.00069.
+This does not demonstrate a population failure. General dependence invalidates the
+classical premise regardless of the observed direction. Zero observed counts
+also do not establish zero population probability.

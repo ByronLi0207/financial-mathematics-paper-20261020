@@ -1,0 +1,13 @@
+\begin{table}[htbp]\centering\small
+\caption{Full-regression relative excess loss (\%) at alternative quantile levels. Positive values favor matched historical headroom; NA retains any failed required comparison.}\label{tab:v12-tau}
+\begin{tabular}{lrr}\toprule
+Source / training history & 90\% & 99\% \\\midrule
+CFTC, 52 weeks & +3.45 & +15.05 \\
+CFTC, 260 weeks & +1.58 & \textsc{NA} \\
+FX, original period & -10.15 & \textsc{NA} \\
+FX, earlier period & -17.85 & \textsc{NA} \\
+Treasury bills & +0.67 & +44.22 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}\begin{minipage}{.95\linewidth}\footnotesize
+Contract rows report full-group medians. FX uses 2,880-hour training histories; Treasury uses 260 weeks. Successful subsets never replace a required full group.
+\end{minipage}\end{table}

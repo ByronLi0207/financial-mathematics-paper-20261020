@@ -1,0 +1,43 @@
+\section{Refitted target-level sensitivities}\label{sup:wp5}
+
+Changing the target quantile requires fitting the specified target-level procedure; it is different from reweighting the errors of a fixed report.
+The following saved sensitivities keep the original horizon and reference
+structure. The weekly primary and matched reference coincide and count once.
+All unavailable upper-target rows remain NA with
+\texttt{VALIDATION\_INELIGIBLE}, rather than being replaced by a lower target
+or a favorable subset. Absolute loss values across different quantile levels
+measure different objectives.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrp{20mm}rrrl}
+\caption{Complete target-level sensitivity. The lower-target directions recur, but upper-target evidence remains unavailable.}\\
+\toprule
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 0.90 & primary & -60715.44 & 686 & 620 & OK \\
+FX & 0.90 & matched & -67628.17 & 686 & 667 & OK \\
+Bills & 0.90 & primary & 1175.03 & 73 & 55 & OK \\
+FX & 0.99 & primary & NA & NA & NA & NA \\
+FX & 0.99 & matched & NA & NA & NA & NA \\
+Bills & 0.99 & primary & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The complete family contains 6 slots,
+with 3 raw p values unavailable.
+The fixed target-specific selections precede their evaluation; full settings
+and results remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp5-tau-summary.json}{the target-level inventory}.
+The saved lower-target directions do not establish robustness to an arbitrary
+tail level, actual shortage costs, or a new economic decision rule. Failed
+eligibility is a result of the specified procedure and remains part of the
+paper's boundary.

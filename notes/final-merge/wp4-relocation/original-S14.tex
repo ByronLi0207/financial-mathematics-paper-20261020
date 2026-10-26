@@ -1,0 +1,83 @@
+\section{Earlier-period fixed selection rules}\label{sup:selection}
+
+The earlier-period experiment applies the saved fixed selection rules
+to familiar historical data. These origins already have validation and
+evaluation roles in the current archive, including actual rolling-fold
+scoring. They cannot now be treated as untouched evidence for the expanded
+backcast. The experiment remains retrospective, not external or prospective
+validation. R0 denotes the fixed minimum-validation-loss rule. R2 is the predesignated main one-standard-error selection rule,
+not a result-dependent replacement chosen for its subsequent performance.
+The rule design precedes its calculations but follows earlier research results.
+
+R1 adds the ordinary empirical quantile to the finite regression candidates.
+R2 compares each candidate's validation losses with the same best-mean
+candidate, using the paired-difference Bartlett-HAC standard error. Candidates
+within that tolerance qualify, and the fixed rule prefers the strongest
+shrinkage, including the empirical report. This paired HAC tolerance is a
+time-series adaptation of a one-standard-error preference, not the textbook
+formula, a significance test or a noninferiority guarantee. It does not account
+for the whole uncertainty from selecting the best candidate on that segment.
+
+R3 applies the same preference to prespecified earlier rolling folds and the
+outer validation segment, with origin-equal weighting and maturity gaps.
+Its HAC pairs use actual source-index distances rather than compressing gaps.
+Without an eligible earlier fold, the saved design makes it identical to R2;
+this is not a numerical fallback. Earlier-period results were sealed before
+the already-inspected-period calculations that could reuse those origins.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{35mm}rrrrr}
+\caption{Every earlier-period minimum-loss and one-standard-error comparison. The one-standard-error rule misses the recorded success conditions.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSGS-B & 6/52 & 11.22 & 7.43 & 10/10 & 7 \\
+PDPOSGS-B & 24/52 & 181.39 & 181.39 & 27/27 & 8 \\
+PDPOSMBS-TOT & 6/52 & -4.11 & 3.83 & 7/6 & 4 \\
+PDPOSMBS-TOT & 24/52 & 48.55 & 26.55 & 14/13 & 10 \\
+PDPOSCS-TOT & 6/52 & -11.56 & -11.56 & 0/0 & 0 \\
+PDPOSCS-TOT & 24/52 & -4.12 & 1.02 & 4/4 & 2 \\
+PDPOSFGS-TOT & 6/52 & -27.32 & -27.32 & 6/6 & 0 \\
+PDPOSFGS-TOT & 24/52 & -3.87 & -3.60 & 4/3 & 2 \\
+PDPOSTIPS-L2 & 6/52 & -7.06 & -7.06 & 2/2 & 1 \\
+PDPOSTIPS-L2 & 24/52 & -23.33 & -1.55 & 4/1 & 1 \\
+PDPOSTIPS-G11 & 6/52 & -5.55 & -5.79 & 5/5 & 4 \\
+PDPOSTIPS-G11 & 24/52 & 5.67 & -0.87 & 15/15 & 15 \\
+PDPOSTIPS-G2 & 6/52 & 15.16 & 15.16 & 8/8 & 0 \\
+PDPOSTIPS-G2 & 24/52 & 30.27 & 30.27 & 14/14 & 10 \\
+PDPOSTIPS-G6L11 & 6/52 & 283.88 & 28.58 & 17/6 & 0 \\
+PDPOSTIPS-G6L11 & 24/52 & -4.03 & -2.70 & 2/1 & 0 \\
+PDPOSGSC-L2 & 6/52 & 48.04 & 16.09 & 17/15 & 14 \\
+PDPOSGSC-L2 & 24/52 & 40.77 & 40.77 & 34/34 & 30 \\
+PDPOSGSC-G2L3 & 6/52 & 1.40 & 11.14 & 12/13 & 8 \\
+PDPOSGSC-G2L3 & 24/52 & -11.22 & 15.48 & 15/20 & 15 \\
+PDPOSGSC-G3L6 & 6/52 & 2.63 & 2.35 & 11/11 & 10 \\
+PDPOSGSC-G3L6 & 24/52 & 15.62 & 6.92 & 29/28 & 26 \\
+PDPOSGSC-G6L7 & 6/52 & 19.03 & 19.03 & 6/6 & 1 \\
+PDPOSGSC-G6L7 & 24/52 & 2.05 & 1.82 & 20/19 & 19 \\
+PDPOSGSC-G7L11 & 6/52 & 19.18 & 12.77 & 13/13 & 10 \\
+PDPOSGSC-G7L11 & 24/52 & 8.48 & 2.70 & 29/29 & 27 \\
+fx\_hourly & 6/720 & 2.44 & 0.62 & 79/73 & 63 \\
+fx\_hourly & 6/2880 & -16.62 & -6.28 & 20/20 & 16 \\
+fx\_hourly & 24/720 & -4.36 & -4.36 & 47/47 & 32 \\
+fx\_hourly & 24/2880 & -1.42 & -1.40 & 1/1 & 0 \\
+\end{longtable}
+\endgroup
+
+All three recorded success criteria are marked NOT\_MET.
+R2's worst weekly excess is 181.39 percent,
+and its weekly median is 5.37 percent.
+The long-history FX gain also fails the prewritten retention criterion.
+This adverse result remains a robustness finding rather than a contribution
+claim. Complete inspected-period and all-rule rows remain linked in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/README.md}{the R6 archive}.

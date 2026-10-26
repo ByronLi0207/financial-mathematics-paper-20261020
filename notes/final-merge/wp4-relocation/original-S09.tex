@@ -1,0 +1,45 @@
+\section{Fixed-report error preferences}\label{sup:preference}
+
+For a fixed report, changing the loss weight traces a line
+\(R_a=aU+(1-a)V\). Here, \(U=\operatorname{mean}(P-C)_+\) is mean underprediction and
+\(V=\operatorname{mean}(C-P)_+\) is mean unused allowance. These are passive error amounts over all
+origins, not observed funding costs. Breach frequency averages an indicator and
+need not rank reports like either amount. The following source-reported monetary
+values are never pooled across FX and weekly aggregates.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{2.50}
+\begin{longtable}{p{30mm}rrrrp{32mm}}
+\caption{The four fixed headline comparisons. The longer-horizon FX result is sensitive to error weights.}\\
+\toprule
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Unused\\allowance\\left} & \shortstack{Unused\\allowance\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+fx\_h6\_primary & 156123.03 & 166531.06 & 4750560.18 & 5671390.59 & none \\
+fx\_h6\_matched & 156123.03 & 185672.23 & 4750560.18 & 5526087.27 & none \\
+fx\_h24\_legacy & 317678.12 & 149813.88 & 8658017.18 & 12121206.97 & \(\dfrac{86579744869851975}{90776350660766843}\) \\
+treasury\_h6\_primary & 3131.86 & 1395.64 & 23688.09 & 28656.17 & \(\dfrac{24840389716843550}{33521504184965797}\) \\
+\end{longtable}
+\endgroup
+
+The equality column gives exact saved rational boundaries for the mixture
+weight defined above, not newly estimated costs. The short-horizon FX primary reduces both mean error amounts;
+its elementary-score curves can nevertheless cross because a Murphy diagram
+varies the elementary score threshold, a different comparison from reweighting
+these two unconditional amounts. The longer-horizon FX legacy pair reverses
+near the loss-weight ratio reported in the main text. Actual decision costs
+were not observed.
+
+The linked complete frontiers include every open region and every boundary tie.
+The full and sparse samples remain separate, and feasible reports outside the
+specified menu are not part of these menu-relative envelopes. All pairwise
+relations, dominated labels and exact arithmetic are additionally preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/preference-robustness/README.md}{the preference archive}.
