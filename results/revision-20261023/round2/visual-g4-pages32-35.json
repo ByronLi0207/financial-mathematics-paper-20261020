@@ -1,0 +1,72 @@
+{
+  "artifact": "manuscript/revision-v3/paper.pdf",
+  "pdf_sha256": "037e44c0997af4a28afb6d1fa5fa0e2be08d8679c46f39aa596489d3e47eb5a6",
+  "pdf_pages": 38,
+  "main_pages_including_references": 15,
+  "assigned_pages": [32, 33, 34, 35],
+  "inspection_method": "All four assigned g4 pages individually opened using functions.view_image with detail=original. No prior-page reuse, extraction-only inspection or contact sheet substituted for actual views.",
+  "render_nominal_dpi": 150,
+  "actual_png_dpi": [149.987, 149.987],
+  "png_pixels": [1241, 1754],
+  "overall": "PASS_WITH_NONBLOCKING_PROSE_SPACING_NOTE",
+  "blocking_defects": [],
+  "scope_limit": "Visual rendering only. This receipt does not independently recalculate numerical results or reperform D1-050 numerical-token/table/equation invariance checks.",
+  "pages": [
+    {
+      "page": 32,
+      "png": ".scratch/round2/pdf-final-g4/page-32.png",
+      "png_sha256": "2dc83f0e56ac1b7a9026788ca987588af3162e20a7fded7d6bb162a120a8b46d",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix J proof text, summation bounds, phi superscripts, inequalities and conditional-law notation are visible without missing glyphs or collisions.",
+        "Tables J1 and J2 have complete captions and aligned headers; all displayed rows and final bottom rule fit inside the margins.",
+        "The lower table remains clear of the page footer."
+      ],
+      "defects": []
+    },
+    {
+      "page": 33,
+      "png": ".scratch/round2/pdf-final-g4/page-33.png",
+      "png_sha256": "0f91cb6a441c70e18aaba3b85fa87864fe777891edec330cff041a9650aec0d2",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix K opening prose and Table K1 caption are kept with the table header and first body rows.",
+        "Widened series-key column accommodates the long visible Treasury keys without truncation or collision with H/W columns.",
+        "Delta-loss columns and four-way hit counts remain readable. The table continues on page34 at a complete row, with no footer clipping."
+      ],
+      "defects": []
+    },
+    {
+      "page": 34,
+      "png": ".scratch/round2/pdf-final-g4/page-34.png",
+      "png_sha256": "3b22c52e0e1660d2416dd22d331f50aa51988b9b8b6cf3119b62f60fe2c28ccf",
+      "actual_viewed": true,
+      "findings": [
+        "Table K1 repeated header, remaining series rows and final bottom rule fit cleanly; long keys and hit columns remain inside their cells.",
+        "Prospective-protocol prose is complete and readable below the table, with no overlap or clipping.",
+        "A few joined month/day tokens remain visible in prose but do not obscure the dates or create a layout defect."
+      ],
+      "defects": [
+        {
+          "severity": "nonblocking",
+          "location": "Prospective-protocol paragraph, date examples",
+          "finding": "Visible strings include December2/public completion December10 and April7 2027/public completion April15. A space between month and day would improve prose readability; this is not clipping or a mathematical-glyph failure."
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "png": ".scratch/round2/pdf-final-g4/page-35.png",
+      "png_sha256": "2a2d02e6b2c190f4214d9c08e338b748c847e2f30709d27913a714b48c8c9495",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix L title, introductory paragraph and FHS/POT/QRF subheadings fit without clipping after spacing changes.",
+        "The native GARCH recursion displays local G subscripts, epsilon and sigma scripts and square superscripts visibly.",
+        "FHS peak/headroom formula shows the h=0 maximum, summation bounds and scenario superscripts without collision; ceiling and floor notation in adjacent prose remains visible.",
+        "POT volatility/shape/scale hats, historical-origin and issue-time subscripts and tail exponent render fully within the line.",
+        "The QRF weighted-CDF formula, tree-count superscript, membership notation and response-scale subscript remain visible, with substantial clearance above the footer."
+      ],
+      "defects": []
+    }
+  ]
+}

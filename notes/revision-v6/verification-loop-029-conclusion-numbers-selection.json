@@ -1,0 +1,488 @@
+{
+  "schema": "verification-loop-029-conclusion-numbers-selection-v1",
+  "loop": 29,
+  "seed": 2026102329,
+  "seed_frozen_utc": "2026-10-23T22:19:42Z",
+  "scope": "Current main Section 11 Conclusion, all four prose blocks; numeric verification only.",
+  "sampling_plan": "Build the ordered unique semantic numerical-prose-claim frame before any owning-output or formatter lookup. Exclude navigation-only section/table/figure identifiers. Select five distinct claim indices with Python random.Random(seed).sample(range(len(frame)), 5); retain the draw order and also report document order.",
+  "claim_unit": "One semantically complete displayed numerical proposition; a jointly stated numerical comparison is one claim. Repeated paraphrases of the same numerical proposition are deduplicated, preserving first document occurrence. Include meaningful numerical percentages, counts, horizons and settings; exclude navigation-only labels.",
+  "insufficient_frame_rule": "If the Conclusion yields fewer than five unique numerical prose claims, record insufficiency and explicitly freeze the next unsampled same-main prose block and its expanded claim frame before any owning-source lookup.",
+  "source_lookup_status": "completed_bounded_static_and_protocol_metadata_readback",
+  "frame_status": "fallback_frame_and_selection_frozen_before_owning_source_lookup",
+  "forbidden": "No new means, models, statistics, proofs, raw/private vectors, tests, UI, analyses, network, nesting, state/ledger edits, commits, pushes or manuscript edits.",
+  "main_json_sha256": "324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186",
+  "conclusion_frame_frozen_utc": "2026-10-23T22:20:11Z",
+  "conclusion_scope": {
+    "json_pointer": [
+      "sections",
+      10
+    ],
+    "title": "11. Conclusion",
+    "block_count": 4,
+    "blocks": [
+      {
+        "pointer": [
+          "sections",
+          10,
+          "blocks",
+          0
+        ],
+        "html": "<b>RQ1 — Accuracy.</b> Conditional regression improves the inspected FX short-horizon score, while the separately fitted Treasury regression primary deteriorates. The exact additive bridge separates the joint history/update contrast from the conditional-procedure contrast, without identifying causal estimator effects. Historical, neighbor and conditional-model rankings depend on the executed comparison."
+      },
+      {
+        "pointer": [
+          "sections",
+          10,
+          "blocks",
+          1
+        ],
+        "html": "<b>RQ2 — Evaluation.</b> A score gain can coexist with more breach occasions, crossed elementary-score curves and horizon-incoherent fitted reports. The floor projection and classical construction properties clarify what can be guaranteed pointwise or under population assumptions; the fitted empirical reports have no automatic coverage guarantee. Score, calibration and report-coherence evidence must retain their distinct nulls and meanings."
+      },
+      {
+        "pointer": [
+          "sections",
+          10,
+          "blocks",
+          2
+        ],
+        "html": "<b>RQ3 — Transport.</b> Parsimonious regression, related aggregate tasks and strong implemented baselines give mixed and frequently adverse outcomes. The observed aggregate failures delimit portability across financial measurement processes; they are not independent dealer replications or proof that all conditional methods fail."
+      },
+      {
+        "pointer": [
+          "sections",
+          10,
+          "blocks",
+          3
+        ],
+        "html": "The evidential next steps are execution of the timestamped prospective public-release protocol, access to a compatible unseen dealer series, and evaluation of the remaining method classes under explicit mature-label timing. The additional finite adaptations and combinations do not close those evidence gaps. Investigator selection, downloaded vintages, unexecuted alternatives and the missing decision-cost mapping constrain interpretation. All original adverse cells and unsuccessful fits remain in the Supplement."
+      }
+    ]
+  },
+  "conclusion_frame": [],
+  "conclusion_frame_count": 0,
+  "excluded_numerals": [
+    {
+      "text": "RQ1 / RQ2 / RQ3",
+      "reason": "Research-question navigation labels, not displayed numerical evidence."
+    }
+  ],
+  "insufficiency": "No quantitative empirical/settings claim occurs in the four Conclusion prose blocks; no five-claim sample can be drawn from this frame.",
+  "fallback_authorization": "Root explicitly specified current main Section 3 Data, all seven blocks, numerical prose only, in document order. If fewer than five eligible claims, record a scope gap.",
+  "fallback_scope": {
+    "pointer": [
+      "sections",
+      2
+    ],
+    "title": "3. Data",
+    "block_count": 7,
+    "blocks": [
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          0
+        ],
+        "html": "The FX input is the one-hour member of the Net Position Time Series Dataset, version 2: 18,576 records from 5 February 2014 01:00 through 24 January 2017 00:00. Wisniewski et al. (2020) attribute these aggregate client-flow positions across five liquid currency pairs to one market maker; this source description does not independently verify a complete dealer book. We use datetime and the signed NetPosUsd scalar, rather than reconstructing raw currency positions, hedge transactions or cash movements. The source has 18,420 one-hour and 155 forty-nine-hour adjacent gaps. We preserve chronology without sorting, removing gap-crossing windows or interpolation. Recorded-clock and vintage limits are collected in Section 10."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          1
+        ],
+        "html": "The Treasury source is New York Fed Primary Dealer Statistics series PDPOSGS-B, Treasury-bill long positions less short positions. FR 2004A supplies Wednesday-close positions at market/fair value. Its instructions use trade-date accounting, with specified buyback treatment on settlement date, and include eligible forward and when-issued outright positions; the series is not settled cash holdings (Board of Governors, March 2013 and July 2024 instructions). The accepted snapshot has 706 seven-day-spaced records from 3 April 2013 through 7 October 2026, in USD millions. It aggregates reporting dealers and can reflect valuation or reporting-composition changes. Taking an absolute value after summing signed positions permits cross-dealer cancellation: a small aggregate can coexist with large individual magnitudes (Duffie et al., 2023). The absolute signed aggregate is not the sum of absolute dealer positions and does not identify gross exposures or pure customer order flow."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          2
+        ],
+        "html": "Treasury validation issue dates are 24 July 2019 to 15 July 2020. The final H=24 validation label ends at index 404 on 30 December 2020, before evaluation begins at 405 on 6 January 2021. The last common issue is 681 on 22 April 2026; its H=6 label ends at 687 on 3 June, and H=24 at 705 on 7 October 2026. FX validation ends at origin 11902; its latest H=24 label ends at 11926, before evaluation origin 11927."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          3
+        ],
+        "html": "All horizons share the source-specific evaluation forecast origins. Horizon H counts subsequent source records, so the response uses H+1 observed positions including issue time. FX gaps are retained in chronological order. Treasury transitions follow the weekly economic-date clock. Exact data identities, access routes and reproduction commands are retained in the repository guide."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          4
+        ],
+        "html": "Economic dates and public releases differ. New York Fed statistics normally update on Thursday for the preceding reporting week; a 2004 announcement established a one-week publication lag. Exact historical release times, holidays and original unrevised observations were not reconstructed. The inspected API routes supplied no verified historical release-vintage selector, which is not proof that no archive exists elsewhere. The Treasury exercise is a downloaded-vintage replay indexed by economic as-of date, treating the current record as known at issue by convention. It is not a live public-information or as-released backtest."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          5
+        ],
+        "html": "Data sources: Lindsay (2020); Federal Reserve Bank of New York (2026)."
+      },
+      {
+        "pointer": [
+          "sections",
+          2,
+          "blocks",
+          6
+        ],
+        "html": "The FX validation and evaluation segments contain 1440 and 6625 origins, with histories 720 or 2880 and scheduled refits every 24 records. Treasury contains 52 and 277 origins, histories 52 or 260 and refits every 13 records. Supplement Table S36 gives the full chronological and computational budgets."
+      }
+    ]
+  },
+  "fallback_exclusions": [
+    {
+      "text": "version 2; FR 2004A; Board instruction/citation years; Section 10; Supplement Table S36; bibliography/source citation years",
+      "reason": "Version/form, bibliographic or navigation identifiers; not sampled empirical/settings claims."
+    },
+    {
+      "text": "6625 evaluation origins",
+      "reason": "Identifiable semantic overlap with the already selected 640/6625 abstract crossing-denominator claim in loop013 selection metadata."
+    }
+  ],
+  "prior_selection_metadata_read": [
+    "verification-loop-013-abstract-number-trace-selection.json frame/selected metadata only",
+    "verification-loop-021-limitations-numbers-selection.json frame/selected metadata only",
+    "verification-loop-001/005/009-numbers.json sampling-frame and displayed/field metadata only"
+  ],
+  "prior_selection_limit": "No prior verdict or prior trace result was used. Other source-count duplication could not be identified from these selection metadata; no invented prior trace is asserted.",
+  "frame": [
+    {
+      "index": 0,
+      "id": "fx_input_cadence",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        0
+      ],
+      "display": "one-hour member",
+      "claim": "The FX input member has one-hour nominal cadence."
+    },
+    {
+      "index": 1,
+      "id": "fx_input_record_span",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        0
+      ],
+      "display": "18,576 records from 5 February 2014 01:00 through 24 January 2017 00:00",
+      "claim": "Accepted FX input record count and timestamp span."
+    },
+    {
+      "index": 2,
+      "id": "fx_attributed_unit_counts",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        0
+      ],
+      "display": "five liquid currency pairs to one market maker",
+      "claim": "Counts are attributed source description, not independent verification of a complete dealer book."
+    },
+    {
+      "index": 3,
+      "id": "fx_adjacent_gap_distribution",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        0
+      ],
+      "display": "18,420 one-hour and 155 forty-nine-hour adjacent gaps",
+      "claim": "Existing FX adjacent-gap counts by duration."
+    },
+    {
+      "index": 4,
+      "id": "treasury_input_record_span",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        1
+      ],
+      "display": "706 seven-day-spaced records from 3 April 2013 through 7 October 2026",
+      "claim": "Accepted Treasury snapshot count, cadence and span."
+    },
+    {
+      "index": 5,
+      "id": "treasury_validation_issue_dates",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "24 July 2019 to 15 July 2020",
+      "claim": "Treasury validation issue-date range."
+    },
+    {
+      "index": 6,
+      "id": "treasury_validation_boundary",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "H=24 validation label ends at index 404 on 30 December 2020, before evaluation begins at 405 on 6 January 2021",
+      "claim": "Longest Treasury validation-label terminal index/date precedes evaluation first index/date."
+    },
+    {
+      "index": 7,
+      "id": "treasury_last_common_issue",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "681 on 22 April 2026",
+      "claim": "Last common Treasury evaluation issue index/date."
+    },
+    {
+      "index": 8,
+      "id": "treasury_last_h6_terminal",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "H=6 label ends at 687 on 3 June",
+      "claim": "Last common Treasury issue plus H6 terminal index/date (2026 context)."
+    },
+    {
+      "index": 9,
+      "id": "treasury_last_h24_terminal",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "H=24 at 705 on 7 October 2026",
+      "claim": "Last common Treasury issue plus H24 terminal index/date."
+    },
+    {
+      "index": 10,
+      "id": "fx_validation_boundary",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "FX validation ends at origin 11902; its latest H=24 label ends at 11926, before evaluation origin 11927",
+      "claim": "FX validation/evaluation completed-label boundary."
+    },
+    {
+      "index": 11,
+      "id": "target_observation_count",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        3
+      ],
+      "display": "H+1 observed positions including issue time",
+      "claim": "An H-record future target includes the origin and H subsequent source-record observations."
+    },
+    {
+      "index": 12,
+      "id": "treasury_publication_lag",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        4
+      ],
+      "display": "a 2004 announcement established a one-week publication lag",
+      "claim": "Historical publication lag, not an asserted reconstructed as-released vintage."
+    },
+    {
+      "index": 13,
+      "id": "fx_validation_origin_count",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "1440",
+      "claim": "FX validation segment contains 1440 origins; evaluation denominator 6625 excluded as prior abstract overlap."
+    },
+    {
+      "index": 14,
+      "id": "fx_history_menu",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "720 or 2880",
+      "claim": "Executed FX training histories."
+    },
+    {
+      "index": 15,
+      "id": "fx_refit_schedule",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "every 24 records",
+      "claim": "Scheduled FX refit spacing in records."
+    },
+    {
+      "index": 16,
+      "id": "treasury_segment_counts",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "52 and 277 origins",
+      "claim": "Treasury validation and evaluation origin counts, respectively."
+    },
+    {
+      "index": 17,
+      "id": "treasury_history_menu",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "52 or 260",
+      "claim": "Executed Treasury training histories."
+    },
+    {
+      "index": 18,
+      "id": "treasury_refit_schedule",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "every 13 records",
+      "claim": "Scheduled Treasury refit spacing in records."
+    }
+  ],
+  "frame_count": 19,
+  "frame_frozen_utc": "2026-10-23T22:21:28Z",
+  "algorithm": "Python random.Random(2026102329).sample(range(19), 5)",
+  "selected_indices_draw_order": [
+    5,
+    2,
+    18,
+    8,
+    9
+  ],
+  "selected_indices_document_order": [
+    2,
+    5,
+    8,
+    9,
+    18
+  ],
+  "selected": [
+    {
+      "index": 5,
+      "id": "treasury_validation_issue_dates",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "24 July 2019 to 15 July 2020",
+      "claim": "Treasury validation issue-date range."
+    },
+    {
+      "index": 2,
+      "id": "fx_attributed_unit_counts",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        0
+      ],
+      "display": "five liquid currency pairs to one market maker",
+      "claim": "Counts are attributed source description, not independent verification of a complete dealer book."
+    },
+    {
+      "index": 18,
+      "id": "treasury_refit_schedule",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        6
+      ],
+      "display": "every 13 records",
+      "claim": "Scheduled Treasury refit spacing in records."
+    },
+    {
+      "index": 8,
+      "id": "treasury_last_h6_terminal",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "H=6 label ends at 687 on 3 June",
+      "claim": "Last common Treasury issue plus H6 terminal index/date (2026 context)."
+    },
+    {
+      "index": 9,
+      "id": "treasury_last_h24_terminal",
+      "pointer": [
+        "sections",
+        2,
+        "blocks",
+        2
+      ],
+      "display": "H=24 at 705 on 7 October 2026",
+      "claim": "Last common Treasury issue plus H24 terminal index/date."
+    }
+  ],
+  "frame_sha256": "26f1506a0fdc10afde0ac36ae60d5d9892b31a26cb1a40386000bb4964eb8ad8",
+  "trace_readback_utc": "2026-10-23T22:23:15Z",
+  "completion_utc": "2026-10-23T22:24:09Z",
+  "source_commit_at_initial_read": "ed4bfc26850af5564b8fe8047693196e15975d99",
+  "source_commit_at_completion": "e19550e18e6364e0e99d458d91b6f4fcbb002683",
+  "claim_source_sha256": {
+    "submission-jof/manuscript-content.json": "324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186",
+    "submission-jof/manuscript.tex": "57b2915d29c0ec84334097bca5ddfd125f46b9429fe07fabf0b168d9391c2ade",
+    "submission-jof/manuscript-preview.pdf": "c1c55699b53bb1a7ab3f1c4e131b4d45bc88965c6f22571ebc02c2ab7cd351d6",
+    "protocol/revision-20261022/study-spec.json": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+    "results/revision-20261022/evaluation-summary.csv": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15",
+    "v6_submission.py": "9f4984fc802f8a2e1375760d78cbe59ae04aa814bb83114d6707b70ac01b61c8",
+    "notes/revision-v6/v5-manuscript-before.json": "2134c14e0b7e9ab3a3c20683251cb99d89bae64541d30ea804296bccd6f10ac7",
+    "manuscript/revision-v3/paper-content.json": "3a35590321c752186ab6dbfb46d115b725cdad3528b0dae73cf2c209f555dcb7",
+    "notes/revision-v5-novelty/literature-a.json": "63295aa04ecc18b9688ac171d857fe74c3b71b071a90faf9fc36bbbeee71a85b",
+    "submission-jof/supplement-content.json": "738bb71afab319e52b5296328858f890bf692692c97a3ab2a35a78f4d3ae6e28"
+  },
+  "scope_gap": "Original Conclusion contains zero eligible numerical claims. The authorized Data fallback has 19 unique eligible claims and supplies five sampled claims; no conclusion numerical claim was invented.",
+  "verification_limit": "Date/index readback uses only frozen scalar protocol anchors and weekly clock metadata. FX five/one remains an attributed source description via static formatter and existing passage map; no raw timestamps, complete dealer book, external original body, model or financial statistic was freshly verified."
+}

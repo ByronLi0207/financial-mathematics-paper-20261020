@@ -1,0 +1,30 @@
+test_aggregate_aci_requires_all_indices (test_v6_worker.WorkerTests.test_aggregate_aci_requires_all_indices) ... ok
+test_all_json_nonfinite_rejected (test_v6_worker.WorkerTests.test_all_json_nonfinite_rejected) ... ok
+test_failed_sav_start_serializes_to_na_receipt (test_v6_worker.WorkerTests.test_failed_sav_start_serializes_to_na_receipt) ... ERROR
+test_frozen_f_is_original_component (test_v6_worker.WorkerTests.test_frozen_f_is_original_component) ... ok
+test_new_write_refuses_overwrite (test_v6_worker.WorkerTests.test_new_write_refuses_overwrite) ... ok
+test_public_aci_is_scalar_aggregate (test_v6_worker.WorkerTests.test_public_aci_is_scalar_aggregate) ... ok
+test_worker_gamma_row_contract_selects_without_key_translation (test_v6_worker.WorkerTests.test_worker_gamma_row_contract_selects_without_key_translation) ... ERROR
+
+======================================================================
+ERROR: test_failed_sav_start_serializes_to_na_receipt (test_v6_worker.WorkerTests.test_failed_sav_start_serializes_to_na_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_worker.py", line 25, in test_failed_sav_start_serializes_to_na_receipt
+    z=w.sav_failure_public({'starts':(start,), 'scale':2.})
+      ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'v6_worker' has no attribute 'sav_failure_public'
+
+======================================================================
+ERROR: test_worker_gamma_row_contract_selects_without_key_translation (test_v6_worker.WorkerTests.test_worker_gamma_row_contract_selects_without_key_translation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_worker.py", line 30, in test_worker_gamma_row_contract_selects_without_key_translation
+    rows=[w.gamma_row(g,{'n':20,'full_hits':1,'mean_loss':2.}, {}) for g in w.aci.GAMMAS]
+          ^^^^^^^^^^^
+AttributeError: module 'v6_worker' has no attribute 'gamma_row'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.014s
+
+FAILED (errors=2)

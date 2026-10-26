@@ -1,0 +1,262 @@
+FFFFFFFFFFFF.                                                            [100%]
+=================================== FAILURES ===================================
+_________ test_unterminated_study_is_rejected_without_creating_scratch _________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_unterminated_study_is_rej0')
+
+    def test_unterminated_study_is_rejected_without_creating_scratch(tmp_path):
+        root,formal,audit=fixture_source(tmp_path,terminated=False)
+>       with pytest.raises(ValueError,match='STUDY_NOT_TERMINATED'):pack.package_bundle(root,formal,audit)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_unterminated_s...rs/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_unterminated_study_is_rej0/repo/audit.json'))
+kwargs = {}
+
+>   def package_bundle(*args,**kwargs):raise NotImplementedError
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:14: NotImplementedError
+___________________ test_nonpass_or_stale_audit_is_rejected ____________________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_nonpass_or_stale_audit_is0')
+
+    def test_nonpass_or_stale_audit_is_rejected(tmp_path):
+        root,formal,audit=fixture_source(tmp_path,audit_status='FAIL')
+>       with pytest.raises(ValueError,match='AUDIT_NOT_PASS'):pack.package_bundle(root,formal,audit)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_nonpass_or_sta...rs/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_nonpass_or_stale_audit_is0/repo/audit.json'))
+kwargs = {}
+
+>   def package_bundle(*args,**kwargs):raise NotImplementedError
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:14: NotImplementedError
+_________ test_collects_exact_driver_outputs_empty_logs_and_no_figures _________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_collects_exact_driver_out0')
+
+    def test_collects_exact_driver_outputs_empty_logs_and_no_figures(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+        (formal/'heatmap.png').write_bytes(b'excluded figure')
+>       rows=pack.collect_members(formal)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_collects_exact_driver_out0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+___________________ test_symlink_to_external_file_is_refused ___________________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_symlink_to_external_file_0')
+
+    def test_symlink_to_external_file_is_refused(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+        outside=tmp_path/'unrelated';outside.write_bytes(b'do not include')
+        (formal/'units'/'link.json').symlink_to(outside)
+>       with pytest.raises(ValueError,match='SYMLINK'):pack.collect_members(formal)
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_symlink_to_external_file_0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+_____________ test_private_cache_and_raw_source_paths_are_refused ______________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_private_cache_and_raw_sou0')
+
+    def test_private_cache_and_raw_source_paths_are_refused(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+        private=formal/'units'/'.scratch';private.mkdir();(private/'private.json').write_text('{}')
+>       with pytest.raises(ValueError,match='FORBIDDEN_MEMBER'):pack.collect_members(formal)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_private_cache_and_raw_sou0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+______ test_archive_is_deterministic_despite_source_times_and_permissions ______
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_archive_is_deterministic_0')
+
+    def test_archive_is_deterministic_despite_source_times_and_permissions(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       members=pack.collect_members(formal)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_archive_is_deterministic_0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+_ test_complete_fixture_packaging_preserves_sources_and_verifies_every_member __
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_complete_fixture_packagin0')
+
+    def test_complete_fixture_packaging_preserves_sources_and_verifies_every_member(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       before=pack.collect_members(formal)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_complete_fixture_packagin0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+_ test_archive_cap_failure_leaves_scratch_and_never_publishes_partial_package __
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_archive_cap_failure_leave0')
+
+    def test_archive_cap_failure_leaves_scratch_and_never_publishes_partial_package(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       with pytest.raises(ValueError,match='ARCHIVE_EXCEEDS_LIMIT'):pack.package_bundle(root,formal,audit,maximum_bytes=32)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_archive_cap_fa...rs/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_archive_cap_failure_leave0/repo/audit.json'))
+kwargs = {'maximum_bytes': 32}
+
+>   def package_bundle(*args,**kwargs):raise NotImplementedError
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:14: NotImplementedError
+______________________ test_public_limit_cannot_be_raised ______________________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_public_limit_cannot_be_ra0')
+
+    def test_public_limit_cannot_be_raised(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       with pytest.raises(ValueError,match='INVALID_ARCHIVE_LIMIT'):pack.package_bundle(root,formal,audit,maximum_bytes=25*1024*1024)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_public_limit_c...rs/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_public_limit_cannot_be_ra0/repo/audit.json'))
+kwargs = {'maximum_bytes': 26214400}
+
+>   def package_bundle(*args,**kwargs):raise NotImplementedError
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:14: NotImplementedError
+________ test_member_readback_rejects_wrong_hash_and_unlisted_duplicate ________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_member_readback_rejects_w0')
+
+    def test_member_readback_rejects_wrong_hash_and_unlisted_duplicate(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       rows=pack.collect_members(formal);target=tmp_path/'archive.tar.gz'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_member_readback_rejects_w0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+______________ test_source_change_is_detected_without_altering_it ______________
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_source_change_is_detected0')
+
+    def test_source_change_is_detected_without_altering_it(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+>       rows=pack.collect_members(formal)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_source_change_is_detected0/repo/results/revision-v8/wp3'),)
+kwargs = {}
+
+>   def collect_members(*args,**kwargs):raise NotImplementedError
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:6: NotImplementedError
+_______ test_existing_public_package_is_preserved_and_no_scratch_created _______
+
+tmp_path = PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_existing_public_package_i0')
+
+    def test_existing_public_package_is_preserved_and_no_scratch_created(tmp_path):
+        root,formal,audit=fixture_source(tmp_path)
+        (formal/pack.ARCHIVE_NAME).write_bytes(b'existing')
+>       with pytest.raises(FileExistsError):pack.package_bundle(root,formal,audit)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_package.py:153: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/private/var/folders/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_existing_publi...rs/4g/4pc4x_0x10dcd_t1wwhqss980000gn/T/pytest-of-bingyouli/pytest-41/test_existing_public_package_i0/repo/audit.json'))
+kwargs = {}
+
+>   def package_bundle(*args,**kwargs):raise NotImplementedError
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError
+
+notes/revision-v8/package_wp3.py:14: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_v8_wp3_package.py::test_unterminated_study_is_rejected_without_creating_scratch
+FAILED test_v8_wp3_package.py::test_nonpass_or_stale_audit_is_rejected - NotI...
+FAILED test_v8_wp3_package.py::test_collects_exact_driver_outputs_empty_logs_and_no_figures
+FAILED test_v8_wp3_package.py::test_symlink_to_external_file_is_refused - Not...
+FAILED test_v8_wp3_package.py::test_private_cache_and_raw_source_paths_are_refused
+FAILED test_v8_wp3_package.py::test_archive_is_deterministic_despite_source_times_and_permissions
+FAILED test_v8_wp3_package.py::test_complete_fixture_packaging_preserves_sources_and_verifies_every_member
+FAILED test_v8_wp3_package.py::test_archive_cap_failure_leaves_scratch_and_never_publishes_partial_package
+FAILED test_v8_wp3_package.py::test_public_limit_cannot_be_raised - NotImplem...
+FAILED test_v8_wp3_package.py::test_member_readback_rejects_wrong_hash_and_unlisted_duplicate
+FAILED test_v8_wp3_package.py::test_source_change_is_detected_without_altering_it
+FAILED test_v8_wp3_package.py::test_existing_public_package_is_preserved_and_no_scratch_created
+12 failed, 1 passed in 0.09s
+WARN `--no-project` was provided, but no project was found

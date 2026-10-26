@@ -1,0 +1,139 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_exact_binding_accepts_and_resource_evaluation_na_does_not_invent_parameter _
+
+    def test_exact_binding_accepts_and_resource_evaluation_na_does_not_invent_parameter():
+>       c,v,e=fixture();assert api()(c,v,e) is None
+                               ^^^^^
+
+test_v6_tau_selection_binding.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+____ test_changed_selected_status_reason_or_parameter_stops[cell-status-NA] ____
+
+where = 'cell', field = 'status', value = 'NA'
+
+    @pytest.mark.parametrize('where,field,value',[
+        ('cell','status','NA'),('cell','reason','bad'),('cell','selected_parameter',.1),
+        ('evaluation','selected_parameter',.1)])
+    def test_changed_selected_status_reason_or_parameter_stops(where,field,value):
+        c,v,e=fixture();(c if where=='cell' else e)[field]=value
+>       with pytest.raises(ValueError):api()(c,v,e)
+                                       ^^^^^
+
+test_v6_tau_selection_binding.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+___ test_changed_selected_status_reason_or_parameter_stops[cell-reason-bad] ____
+
+where = 'cell', field = 'reason', value = 'bad'
+
+    @pytest.mark.parametrize('where,field,value',[
+        ('cell','status','NA'),('cell','reason','bad'),('cell','selected_parameter',.1),
+        ('evaluation','selected_parameter',.1)])
+    def test_changed_selected_status_reason_or_parameter_stops(where,field,value):
+        c,v,e=fixture();(c if where=='cell' else e)[field]=value
+>       with pytest.raises(ValueError):api()(c,v,e)
+                                       ^^^^^
+
+test_v6_tau_selection_binding.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+_ test_changed_selected_status_reason_or_parameter_stops[cell-selected_parameter-0.1] _
+
+where = 'cell', field = 'selected_parameter', value = 0.1
+
+    @pytest.mark.parametrize('where,field,value',[
+        ('cell','status','NA'),('cell','reason','bad'),('cell','selected_parameter',.1),
+        ('evaluation','selected_parameter',.1)])
+    def test_changed_selected_status_reason_or_parameter_stops(where,field,value):
+        c,v,e=fixture();(c if where=='cell' else e)[field]=value
+>       with pytest.raises(ValueError):api()(c,v,e)
+                                       ^^^^^
+
+test_v6_tau_selection_binding.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+_ test_changed_selected_status_reason_or_parameter_stops[evaluation-selected_parameter-0.1] _
+
+where = 'evaluation', field = 'selected_parameter', value = 0.1
+
+    @pytest.mark.parametrize('where,field,value',[
+        ('cell','status','NA'),('cell','reason','bad'),('cell','selected_parameter',.1),
+        ('evaluation','selected_parameter',.1)])
+    def test_changed_selected_status_reason_or_parameter_stops(where,field,value):
+        c,v,e=fixture();(c if where=='cell' else e)[field]=value
+>       with pytest.raises(ValueError):api()(c,v,e)
+                                       ^^^^^
+
+test_v6_tau_selection_binding.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+_________ test_ineligible_validation_never_admits_complete_evaluation __________
+
+    def test_ineligible_validation_never_admits_complete_evaluation():
+        c={'status':'NA','reason':'FAILED','selected_parameter':None}
+        v={'status':'NA','reason':'FAILED','selection':{'status':'INELIGIBLE','parameter':None}}
+>       with pytest.raises(ValueError):api()(c,v,{'status':'COMPLETE','selected_parameter':None})
+                                       ^^^^^
+
+test_v6_tau_selection_binding.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        helper=getattr(importlib.import_module('v6_tau_worker'),'validate_selection_binding',None)
+>       assert callable(helper),'selection binding helper missing'
+E       AssertionError: selection binding helper missing
+E       assert False
+E        +  where False = callable(None)
+
+test_v6_tau_selection_binding.py:6: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_tau_selection_binding.py::test_exact_binding_accepts_and_resource_evaluation_na_does_not_invent_parameter
+FAILED test_v6_tau_selection_binding.py::test_changed_selected_status_reason_or_parameter_stops[cell-status-NA]
+FAILED test_v6_tau_selection_binding.py::test_changed_selected_status_reason_or_parameter_stops[cell-reason-bad]
+FAILED test_v6_tau_selection_binding.py::test_changed_selected_status_reason_or_parameter_stops[cell-selected_parameter-0.1]
+FAILED test_v6_tau_selection_binding.py::test_changed_selected_status_reason_or_parameter_stops[evaluation-selected_parameter-0.1]
+FAILED test_v6_tau_selection_binding.py::test_ineligible_validation_never_admits_complete_evaluation
+6 failed in 0.12s

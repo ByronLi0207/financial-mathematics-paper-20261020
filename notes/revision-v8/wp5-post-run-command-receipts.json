@@ -1,0 +1,49 @@
+[
+  {
+    "name": "summary",
+    "command": [
+      "/Users/bingyouli/.local/bin/uv",
+      "run",
+      "--offline",
+      "--no-project",
+      "--no-env-file",
+      "--python",
+      "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--with",
+      "numpy==2.3.5",
+      "python",
+      "-B",
+      "run_v8_wp5.py",
+      "--summarize"
+    ],
+    "started_utc": "2026-10-24T10:59:55.235065+00:00",
+    "ended_utc": "2026-10-24T10:59:55.613329+00:00",
+    "elapsed_seconds": 0.37818179199999996,
+    "returncode": 0,
+    "output": "notes/revision-v8/wp5-summary-console.txt"
+  },
+  {
+    "name": "audit",
+    "command": [
+      "/Users/bingyouli/.local/bin/uv",
+      "run",
+      "--offline",
+      "--no-project",
+      "--no-env-file",
+      "--python",
+      "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--with",
+      "numpy==2.3.5",
+      "python",
+      "-B",
+      "notes/revision-v8/audit_wp5.py",
+      "--output",
+      "notes/revision-v8/wp5-independent-audit.json"
+    ],
+    "started_utc": "2026-10-24T10:59:55.613802+00:00",
+    "ended_utc": "2026-10-24T10:59:57.128283+00:00",
+    "elapsed_seconds": 1.5145387920000002,
+    "returncode": 1,
+    "output": "notes/revision-v8/wp5-audit-console.txt"
+  }
+]

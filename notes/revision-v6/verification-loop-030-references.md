@@ -1,0 +1,15 @@
+# Verification loop30 — official cover and publisher metadata
+
+Selection seed2026102330 and the explicit remaining-reference frame were frozen before opening sources, in verification-loop-030-references-selection.json. Metadata check completed 2026-10-23T22:20:52.227987+00:00. This is a limited reference audit, not a fresh full-paper reading, broad literature search, theorem verification, analysis or novelty finding.
+
+| Selected reference | Primary source actually read | Metadata assessment |
+|---|---|---|
+| Petrunia/Sabetti/Voia2019 | [Payments Canada official report](https://www.paiements.ca/sites/default/files/tail_risk_in_the_automated_clearing_settlement_system_acss.pdf), extracted PDF cover/page1 title and author fields | Title, three authors and DiscussionPaperNo.7 agree. The cover labels an originalSeptember2018 and updatedJanuary2019 version, matching the current edition distinction. The text-reader concatenation of2019 with the next page number is not a different publication year. Only cover/author metadata is used; source-body snippets returned incidentally are not a new reading/evaluation claim. |
+| Sussman2023 | [Springer official article page](https://link.springer.com/article/10.1007/s43034-022-00225-1), title/author/date/volume/article fields and Proposition3.4 heading/statement locator | Ethan Sussman, title, Annals of Functional Analysis14,article22,2023 agree. Publisher date is3January2023 despite2022 in the DOI suffix. Proposition3.4 is explicitly the classical Lévy maximal inequality, confirming the retained locator. No new proof or financial applicability conclusion was derived. |
+| Sözen2026 | [AIMS official article page](https://www.aimspress.com/article/doi/10.3934/math.20261106), title/author/published/citation fields | Çağlar Sözen, title, AIMS Mathematics11(9),27665–27688, DOI10.3934/math.20261106 and published1September2026 agree. The current reference is to this journal article, not an inferred preprint edition. Its abstract was incidentally returned; no method/novelty/coverage claim is newly inferred from it. |
+
+All three selected metadata/edition statements agree within the stated scope. The Sussman DOI-resolver route failed through the text reader, but the direct official Springer article page succeeded; the Crossref route through the same reader was inaccessible and is not represented as successful. No bypass, login or software installation was attempted. The reference DOI source is retained despite the resolver's present access limitation.
+
+No manuscript/reference/result/conclusion change was needed or made. No third-party full PDF or financial observation was saved into the public repository; no contact fields, credentials or account/UI records are included. No new model/test/statistical output, raw/private vector or full-paper reading time is claimed. A locator/metadata match is not independent replication, an exhaustive priority search or a guarantee for this paper's finite adaptations.
+
+Current main JSON SHA-256: `324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186`.

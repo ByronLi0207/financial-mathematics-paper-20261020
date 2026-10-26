@@ -1,0 +1,154 @@
+{
+  "audit_id": "D2-classical-Levy-assumption-source-audit",
+  "created_at_utc": "2026-10-23T11:09:36.632191+00:00",
+  "status": "NO_MATERIAL_MATH_OR_ASSUMPTION_ERROR_FOUND",
+  "scope": "Current Proposition1 and AppendixJ proof/interpretation; frozen D2 protocol; source-free L issuer and simulation code; existing saved simulation aggregates and TableJ1. No financial or Monte Carlo experiment rerun.",
+  "primary_source": {
+    "title": "A strengthened Orlicz-Pettis theorem via Ito-Nisio",
+    "author": "Ethan Sussman",
+    "year": 2023,
+    "journal": "Annals of Functional Analysis",
+    "volume": 14,
+    "article": 22,
+    "doi": "10.1007/s43034-022-00225-1",
+    "url": "https://link.springer.com/article/10.1007/s43034-022-00225-1",
+    "actual_reading_scope": "Official publisher HTML Proposition3.4, equation3.11, footnote4, and publication metadata reopened in this audit.",
+    "source_match": "Independent symmetric Banach-space-valued summands; scalar specialization valid. The published display uses nonstrict threshold events and R>0; footnote4 discusses strict/nonstrict variants. The supplied scalar first-crossing argument separately handles the strict events and c=0 used in the manuscript.",
+    "underlying_textbook_read_in_this_audit": false,
+    "Durrett_theorem_not_claimed": true
+  },
+  "proof_checks": [
+    {
+      "topic": "independence and symmetry",
+      "agreement": "Independence makes the remaining sum independent of each finite-history first-crossing event; individual zero-symmetry makes its two closed half-axis probabilities at least one half. Equal summand laws and finite moments are unnecessary."
+    },
+    {
+      "topic": "strict event and zero atoms",
+      "agreement": "For c>=0 a first crossing is strictly positive or strictly negative. A remaining sum with the same weak sign keeps the terminal sum strictly beyond c. Residual atoms at zero do not invalidate the half-probability argument. The same proof covers c=0."
+    },
+    {
+      "topic": "population quantile and triangle",
+      "agreement": "For the finite .975 lower quantile q of |S_H|, right continuity yields P(|S_H|>q)<=.025 even at an atom. Since max_h|x+S_h|<=|x|+max_h|S_h|, strict breach of |x|+q has probability at most.05."
+    },
+    {
+      "topic": "conditional issue interpretation",
+      "agreement": "The fixed-x population statement is unconditional. A random observed issue anchor becomes fixed only under its issue-information conditional law; the manuscript explicitly requires conditional independence/symmetry and the corresponding conditional endpoint quantile rather than inferring them from unconditional marginals."
+    },
+    {
+      "topic": "population versus empirical plugin",
+      "agreement": "Code uses completed origins r-H-W+1 throughr-H, endpoint sample |N[i+H]-N[i]|, rank ceil(39(W+1)/40), then actual |N[t]| plus the frozen endpoint order statistic. This is a declared empirical plugin, not the known population quantile; dependent overlapping changing samples have no inherited population guarantee."
+    },
+    {
+      "topic": "dependence counterexample",
+      "agreement": "The stated X1=Z, X2=-Z example has symmetric marginals, zero terminal sum and unit maximum, so population q=0 and the strict peak breach is certain. It correctly shows general failure without independence and is separate from the positive-AR experiment."
+    },
+    {
+      "topic": "AR oracle experiment",
+      "agreement": "Code initializes each path increment at N(0,1), then uses independent Gaussian innovations with variance1-phi^2, so marginal increment variance1 and covariance phi^lag hold. The oracle endpoint variance is the sum of that covariance matrix and its absolute .975 quantile uses normal .9875. Starting x=0 makes this an unconditional population-threshold experiment; finite empirical calibration uncertainty is intentionally absent."
+    },
+    {
+      "topic": "interpretation limits",
+      "agreement": "Positive phi invalidates the independence premise, but need not violate the numerical bound. All eight retained observed simulation rates are below5%; the manuscript does not treat those finite settings as a general theorem extension, an empirical coverage guarantee or a pinball-risk ordering."
+    }
+  ],
+  "numeric_readback": {
+    "existing_saved_simulation_cells": 8,
+    "Monte_Carlo_paths_regenerated": 0,
+    "TableJ1_fields_checked": 56,
+    "all_table_rounding_matches": true,
+    "oracle_variance_checked_by_independent_covariance_double_sum": true,
+    "oracle_quantile_probability": 0.9875,
+    "rate_and_binomial_SE_recomputed_from_saved_counts": true,
+    "all_retained_maximum_rates_below_point05": true,
+    "rows": [
+      {
+        "horizon": 6,
+        "phi": 0.0,
+        "paths": 100000,
+        "max_exceedance_rate": 0.03035,
+        "endpoint_exceedance_rate": 0.02454,
+        "MC_standard_error": 0.0005424838937701284,
+        "independence_premise": true
+      },
+      {
+        "horizon": 6,
+        "phi": 0.7,
+        "paths": 100000,
+        "max_exceedance_rate": 0.02597,
+        "endpoint_exceedance_rate": 0.02573,
+        "MC_standard_error": 0.0005029469067406618,
+        "independence_premise": false
+      },
+      {
+        "horizon": 6,
+        "phi": 0.85,
+        "paths": 100000,
+        "max_exceedance_rate": 0.0255,
+        "endpoint_exceedance_rate": 0.0255,
+        "MC_standard_error": 0.0004984952356843544,
+        "independence_premise": false
+      },
+      {
+        "horizon": 6,
+        "phi": 0.98,
+        "paths": 100000,
+        "max_exceedance_rate": 0.02557,
+        "endpoint_exceedance_rate": 0.02557,
+        "MC_standard_error": 0.0004991610471581291,
+        "independence_premise": false
+      },
+      {
+        "horizon": 24,
+        "phi": 0.0,
+        "paths": 100000,
+        "max_exceedance_rate": 0.03819,
+        "endpoint_exceedance_rate": 0.02504,
+        "MC_standard_error": 0.0006060653751865389,
+        "independence_premise": true
+      },
+      {
+        "horizon": 24,
+        "phi": 0.7,
+        "paths": 100000,
+        "max_exceedance_rate": 0.02772,
+        "endpoint_exceedance_rate": 0.02475,
+        "MC_standard_error": 0.0005191493195603747,
+        "independence_premise": false
+      },
+      {
+        "horizon": 24,
+        "phi": 0.85,
+        "paths": 100000,
+        "max_exceedance_rate": 0.02619,
+        "endpoint_exceedance_rate": 0.02525,
+        "MC_standard_error": 0.0005050156819347296,
+        "independence_premise": false
+      },
+      {
+        "horizon": 24,
+        "phi": 0.98,
+        "paths": 100000,
+        "max_exceedance_rate": 0.02572,
+        "endpoint_exceedance_rate": 0.02572,
+        "MC_standard_error": 0.0005005844743896878,
+        "independence_premise": false
+      }
+    ]
+  },
+  "findings": [],
+  "input_sha256": {
+    "round2_levy.py": "36110d48f1e554b1ea202a61ed698f965229a9e5f8c8a46f22af8eacbe7a3885",
+    "run_round2_levy.py": "4fbee26f3a490756602824cb6fd148771747b6256b3de6adfd41d183065b8668",
+    "protocol/revision-20261023/round2-D2-levy.md": "99a70e7406d5e1077bee436a5c388c74d3473bf78dbe33f76c3e2d6a92ea57b2",
+    "results/revision-20261023/round2/levy/theorem-source.json": "790ca04ffc006c33eba917160b6627b10f1ccf9b0ee41180ca908131bf4dc379",
+    "results/revision-20261023/round2/levy/simulation.json": "931ace42110cd074e277303e832f66535a05cb30327a302afbac682f9b4a3829"
+  },
+  "manuscript_content_snapshot_sha256": "f171b39125d46e85f28f58d047c846dbd580836cba26c23f4014250368012bc8",
+  "limits": [
+    "This is a finite source/proof/code-consistency audit, not verification of the financial data law or the empirical calibration quantile.",
+    "No claim of conditional independence/symmetry for real FX or Treasury increments was empirically established here.",
+    "Saved Monte Carlo aggregate arithmetic was checked, but RNG paths were not regenerated and finite simulation does not prove a universal probability inequality.",
+    "Working-reference financial DM/HLN/Holm outputs were outside this proof-focused audit.",
+    "No source, financial result, CHANGELOG or registry file was edited."
+  ]
+}

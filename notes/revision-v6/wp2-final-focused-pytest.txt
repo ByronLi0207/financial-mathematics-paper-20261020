@@ -1,0 +1,72 @@
+WARN `--no-project` was provided, but no project was found
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache/builds-v0/.tmpqGgkcQ/bin/python
+rootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023
+collecting ... collected 59 items
+
+test_v6_aci.py::FiniteDelayedACI::test_checkpoint_failure_propagates_without_partial_scoring PASSED [  1%]
+test_v6_aci.py::FiniteDelayedACI::test_corrected_rank_exactly_at_finite_lower_boundary PASSED [  3%]
+test_v6_aci.py::FiniteDelayedACI::test_exact_warm_grid_boundary_uses_latest_sufficient_start PASSED [  5%]
+test_v6_aci.py::FiniteDelayedACI::test_feedback_waits_for_the_issued_outcome_and_uses_old_report PASSED [  6%]
+test_v6_aci.py::FiniteDelayedACI::test_future_peak_perturbation_cannot_change_pre_maturity_reports PASSED [  8%]
+test_v6_aci.py::FiniteDelayedACI::test_gap_consumes_each_matured_wrapped_hit_once PASSED [ 10%]
+test_v6_aci.py::FiniteDelayedACI::test_inadequate_initial_calibration_is_whole_stream_failure PASSED [ 11%]
+test_v6_aci.py::FiniteDelayedACI::test_missing_validation_candidate_is_not_silently_omitted PASSED [ 13%]
+test_v6_aci.py::FiniteDelayedACI::test_negative_corrections_reach_floor_then_use_new_matured_score PASSED [ 15%]
+test_v6_aci.py::FiniteDelayedACI::test_nonfinite_candidate_visible_but_other_gammas_remain_eligible PASSED [ 16%]
+test_v6_aci.py::FiniteDelayedACI::test_original_treasury_grid_admission_is_value_free PASSED [ 18%]
+test_v6_aci.py::FiniteDelayedACI::test_private_threshold_survives_floor_projection PASSED [ 20%]
+test_v6_aci.py::FiniteDelayedACI::test_unsigned_descending_clock_rejected_before_cast PASSED [ 22%]
+test_v6_aci.py::FiniteDelayedACI::test_validation_selection_is_coverage_first_with_visible_failure PASSED [ 23%]
+test_v6_sav.py::test_recurrence_matches_independently_hand_calculated_values PASSED [ 25%]
+test_v6_sav.py::test_constant_training_response_has_analytic_zero_loss_without_numeric_claim PASSED [ 27%]
+test_v6_sav.py::test_training_pool_initialization_and_shocks_all_obey_h_maturity PASSED [ 28%]
+test_v6_sav.py::test_initialization_uses_uncorrected_inverse_empirical_cdf_quantile PASSED [ 30%]
+test_v6_sav.py::test_no_pretraining_mature_labels_is_terminal_na_even_for_constant_response PASSED [ 32%]
+test_v6_sav.py::test_query_uses_newly_mature_h_lag_and_future_labels_cannot_change_earlier_issue PASSED [ 33%]
+test_v6_sav.py::test_original_segment_grid_applies_when_first_requested_issue_is_between_refits PASSED [ 35%]
+test_v6_sav.py::test_nonconstant_fit_retains_six_success_or_failure_receipts_and_bounded_coefficients PASSED [ 37%]
+test_v6_sav.py::test_all_start_nonconvergence_is_explicit_and_never_substitutes_a_forecast PASSED [ 38%]
+test_v6_sav.py::test_later_refit_failure_returns_no_partial_cell_metrics PASSED [ 40%]
+test_v6_sav.py::test_guard_checkpoint_abort_propagates_without_a_fallback PASSED [ 42%]
+test_v6_sav.py::test_normalization_preserves_forecasts_under_a_change_of_source_units PASSED [ 44%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins0] PASSED [ 45%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins1] PASSED [ 47%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins2] PASSED [ 49%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins3] PASSED [ 50%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins4] PASSED [ 52%]
+test_v6_sav.py::test_invalid_or_incomplete_issue_vectors_are_rejected[origins5] PASSED [ 54%]
+test_v6_sav.py::test_only_mature_read_slices_must_be_finite_and_nonnegative PASSED [ 55%]
+test_v6_sav.py::test_selection_ignores_failed_starts_and_uses_first_exact_objective_tie PASSED [ 57%]
+test_v6_sav.py::test_success_flag_cannot_admit_a_nonfinite_solver_result PASSED [ 59%]
+test_v6_inference.py::V6InferenceTests::test_decimal_tau_nulls_and_coverage_distances_are_nominal_exact 
+test_v6_inference.py::V6InferenceTests::test_decimal_tau_nulls_and_coverage_distances_are_nominal_exact PASSED [ 61%]
+test_v6_inference.py::V6InferenceTests::test_dm_hln_preserves_original_bandwidth_known_answer_and_direction PASSED [ 62%]
+test_v6_inference.py::V6InferenceTests::test_dm_nonfinite_short_and_zero_variance_keep_na_status 
+test_v6_inference.py::V6InferenceTests::test_dm_nonfinite_short_and_zero_variance_keep_na_status PASSED [ 64%]
+test_v6_inference.py::V6InferenceTests::test_explicit_tau_controls_pinball_weight_and_strict_hits 
+test_v6_inference.py::V6InferenceTests::test_explicit_tau_controls_pinball_weight_and_strict_hits PASSED [ 66%]
+test_v6_inference.py::V6InferenceTests::test_fixed_inventory_holm_retains_every_frozen_family_slot PASSED [ 67%]
+test_v6_inference.py::V6InferenceTests::test_grid_gaps_are_not_silently_compressed_or_dropped PASSED [ 69%]
+test_v6_inference.py::V6InferenceTests::test_holm_known_order_and_nonfinite_na_are_distinct_from_raw_one PASSED [ 71%]
+test_v6_inference.py::V6InferenceTests::test_identical_scores_are_valid_but_dm_p_is_raw_na PASSED [ 72%]
+test_v6_inference.py::V6InferenceTests::test_invalid_contract_inputs_fail_explicitly 
+test_v6_inference.py::V6InferenceTests::test_invalid_contract_inputs_fail_explicitly PASSED [ 74%]
+test_v6_inference.py::V6InferenceTests::test_missing_transition_row_keeps_uc_but_marks_cc_na PASSED [ 76%]
+test_v6_inference.py::V6InferenceTests::test_nonfinite_scores_fail_whole_summary_without_row_deletion PASSED [ 77%]
+test_v6_inference.py::V6InferenceTests::test_point_ninety_five_losses_are_exactly_source_native PASSED [ 79%]
+test_v6_inference.py::V6InferenceTests::test_tau_point_nine_and_point_ninety_nine_set_hit_nulls 
+test_v6_inference.py::V6InferenceTests::test_tau_point_nine_and_point_ninety_nine_set_hit_nulls PASSED [ 81%]
+test_v6_inference.py::V6InferenceTests::test_too_short_grid_preserves_its_full_sample_uc PASSED [ 83%]
+test_v6_inference.py::V6InferenceTests::test_transition_cc_uses_literal_same_pair_likelihood_and_fixed_origin_grid PASSED [ 84%]
+test_v6_inference.py::V6InferenceTests::test_unrepresentable_interior_hit_null_is_rejected PASSED [ 86%]
+test_v6_worker.py::WorkerTests::test_aggregate_aci_requires_all_indices PASSED [ 88%]
+test_v6_worker.py::WorkerTests::test_all_json_nonfinite_rejected PASSED  [ 89%]
+test_v6_worker.py::WorkerTests::test_failed_sav_start_serializes_to_na_receipt PASSED [ 91%]
+test_v6_worker.py::WorkerTests::test_frozen_f_is_original_component PASSED [ 93%]
+test_v6_worker.py::WorkerTests::test_initial_and_final_resource_probe_failures_are_recorded_na PASSED [ 94%]
+test_v6_worker.py::WorkerTests::test_new_write_refuses_overwrite PASSED  [ 96%]
+test_v6_worker.py::WorkerTests::test_public_aci_is_scalar_aggregate PASSED [ 98%]
+test_v6_worker.py::WorkerTests::test_worker_gamma_row_contract_selects_without_key_translation PASSED [100%]
+
+==================== 59 passed, 25 subtests passed in 1.62s ====================

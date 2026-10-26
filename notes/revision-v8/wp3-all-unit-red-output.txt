@@ -1,0 +1,1511 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF             [100%]
+=================================== FAILURES ===================================
+_____________ test_garch_recursion_and_burnin_are_not_increment_ar _____________
+
+    def test_garch_recursion_and_burnin_are_not_increment_ar():
+        z = np.array([1., 0., -2., 1.])
+>       got = simulate_level_garch(z, .7, .1, .05, .85, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([ 1.,  0., -2.,  1.]), phi = 0.7, omega = 0.1, alpha = 0.05
+beta = 0.85, burn_in = 1
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+__________ test_homoskedastic_case_preserves_unit_innovation_variance __________
+
+    def test_homoskedastic_case_preserves_unit_innovation_variance():
+        z = np.array([1., -2., .5, 0.])
+>       got = simulate_level_garch(z, .5, 1., 0., 0., 0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([ 1. , -2. ,  0.5,  0. ]), phi = 0.5, omega = 1.0, alpha = 0.0
+beta = 0.0, burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad0] __________________
+
+bad = {'phi': 1.0}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 1.0, omega = 0.1, alpha = 0.05, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad1] __________________
+
+bad = {'omega': 0.0}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.0, alpha = 0.05, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad2] __________________
+
+bad = {'alpha': -0.01}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = -0.01, beta = 0.85
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad3] __________________
+
+bad = {'alpha': 0.2, 'beta': 0.9}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = 0.2, beta = 0.9
+burn_in = 0
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_________________ test_invalid_dgp_contract_is_rejected[bad4] __________________
+
+bad = {'burn_in': 4}
+
+    @pytest.mark.parametrize('bad', [dict(phi=1.), dict(omega=0.), dict(alpha=-.01),
+                                     dict(alpha=.2, beta=.9), dict(burn_in=4)])
+    def test_invalid_dgp_contract_is_rejected(bad):
+        options = dict(phi=.7, omega=.1, alpha=.05, beta=.85, burn_in=0)
+        options.update(bad)
+        with pytest.raises(ValueError):
+>           simulate_level_garch(np.ones(4), **options)
+
+test_v8_wp3_core.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = array([1., 1., 1., 1.]), phi = 0.7, omega = 0.1, alpha = 0.05, beta = 0.85
+burn_in = 4
+
+    def simulate_level_garch(z, phi, omega, alpha, beta, burn_in):
+>       raise NotImplementedError("WP3 generator not implemented")
+E       NotImplementedError: WP3 generator not implemented
+
+v8_mechanism_mc.py:5: NotImplementedError
+_____________ test_repetition_stream_is_reproducible_and_distinct ______________
+
+    def test_repetition_stream_is_reproducible_and_distinct():
+        design = dict(master_entropy=2026102408, burn_in=2, retained_observations=5,
+                      repetitions=32)
+>       a, initial, final = repetition_normals(0, design)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rep = 0
+design = {'master_entropy': 2026102408, 'burn_in': 2, 'retained_observations': 5, 'repetitions': 32}
+
+    def repetition_normals(rep, design):
+>       raise NotImplementedError("WP3 RNG contract not implemented")
+E       NotImplementedError: WP3 RNG contract not implemented
+
+v8_mechanism_mc.py:9: NotImplementedError
+____________ test_original_selectors_keep_different_exact_tie_rules ____________
+
+    def test_original_selectors_keep_different_exact_tie_rules():
+>       assert select_candidate(candidates('QR33'), 'QR33', 2, MENUS)['penalty'] == .1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+________ test_original_qr33_failed_mandatory_candidate_blocks_selection ________
+
+    def test_original_qr33_failed_mandatory_candidate_blocks_selection():
+        rows = candidates('QR33')
+        rows[1] = dict(penalty=.01, status='FAILED', reason='NONCONVERGENCE')
+>       selected = select_candidate(rows, 'QR33', 2, MENUS)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.01, 'status': 'FAILED', 'reason': 'NONCONVERGENCE'}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+___ test_original_qr4_selects_completed_candidates_without_erasing_failures ____
+
+    def test_original_qr4_selects_completed_candidates_without_erasing_failures():
+        rows = candidates('QR4')
+        rows[0] = dict(penalty=.001, status='FAILED', reason='NONCONVERGENCE')
+>       selected = select_candidate(rows, 'QR4', 2, MENUS)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'FAILED', 'reason': 'NONCONVERGENCE'}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_los...E', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 10.0, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR4', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+_________ test_wrong_or_nonfinite_validation_score_cannot_be_complete __________
+
+    def test_wrong_or_nonfinite_validation_score_cannot_be_complete():
+        rows = candidates('QR33')
+        rows[0]['mean_loss'] = float('nan')
+        with pytest.raises(ValueError):
+>           select_candidate(rows, 'QR33', 2, MENUS)
+
+test_v8_wp3_core.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+records = [{'penalty': 0.001, 'status': 'COMPLETE', 'mean_loss': nan, 'origin_count': 2}, {'penalty': 0.01, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}, {'penalty': 0.1, 'status': 'COMPLETE', 'mean_loss': 1.0, 'origin_count': 2}]
+method = 'QR33', expected_origins = 2
+menus = {'QR33': [0.001, 0.01, 0.1], 'QR4': [0.001, 0.01, 0.1, 1.0, 10.0]}
+
+    def select_candidate(records, method, expected_origins, menus):
+>       raise NotImplementedError("WP3 original method selectors not implemented")
+E       NotImplementedError: WP3 original method selectors not implemented
+
+v8_mechanism_mc.py:13: NotImplementedError
+________ test_historical_report_freezes_pool_but_reanchors_every_issue _________
+
+    def test_historical_report_freezes_pool_but_reanchors_every_issue():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 231)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'F')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230]), horizon = 6, window = 52
+refit_step = 24, method = 'F', penalty = None, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+____________ test_qr33_matches_original_fixed_parameter_arithmetic _____________
+
+    def test_qr33_matches_original_fixed_parameter_arithmetic():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 231)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'QR33', .1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230]), horizon = 6, window = 52
+refit_step = 24, method = 'QR33', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+__________ test_future_positions_do_not_change_the_current_report[F] ___________
+
+method = 'F'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24, method = 'F'
+penalty = None, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+_________ test_future_positions_do_not_change_the_current_report[QR33] _________
+
+method = 'QR33'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24
+method = 'QR33', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+_________ test_future_positions_do_not_change_the_current_report[QR4] __________
+
+method = 'QR4'
+
+    @pytest.mark.parametrize('method', ['F', 'QR33', 'QR4'])
+    def test_future_positions_do_not_change_the_current_report(method):
+        x, clock, features, cache = fixture()
+        origins = np.array([225])
+        penalty = .1 if method != 'F' else None
+>       first = forecast_report(x, clock, features, cache, origins, 6, 52, 24, method, penalty)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225]), horizon = 6, window = 52, refit_step = 24
+method = 'QR4', penalty = 0.1, checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+___________ test_refit_maturity_and_frozen_query_blocks_are_explicit ___________
+
+    def test_refit_maturity_and_frozen_query_blocks_are_explicit():
+        x, clock, features, cache = fixture()
+        origins = np.arange(225, 255)
+>       got = forecast_report(x, clock, features, cache, origins, 6, 52, 24, 'F')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_core.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = array([ 2.00000000e-01,  3.16666123e-01,  4.10581411e-01,  4.83332990e-01,
+        5.38473053e-01,  5.80952563e-01,  6...0,
+        1.38125310e+00,  1.19935371e+00,  1.01297850e+00,  8.31310783e-01,
+        6.62882118e-01,  5.14817172e-01])
+times = array(['2000-01-03T00:00', '2000-01-03T01:00', '2000-01-03T02:00',
+       '2000-01-03T03:00', '2000-01-03T04:00', '200...', '2000-01-16T14:00',
+       '2000-01-16T15:00', '2000-01-16T16:00', '2000-01-16T17:00'],
+      dtype='datetime64[m]')
+features = FeatureSeries(values=array([[        nan,         nan,         nan, ...,         nan,
+                nan,         nan....08501468, 0.08271513, 0.08289368,
+       0.08548405, 0.08972771, 0.09458314, 0.09913141, 0.10278201]), valid_from=168)
+cache = LabelCache(horizon=6, origins=array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+        13,  14,... 308, 309, 310, 311, 312, 313, 314, 315, 316, 317,
+       318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329]))
+origins = array([225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237,
+       238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250,
+       251, 252, 253, 254])
+horizon = 6, window = 52, refit_step = 24, method = 'F', penalty = None
+checkpoint = None
+
+    def forecast_report(position, times, features, cache, origins, horizon, window,
+                        refit_step, method, penalty=None, checkpoint=None):
+>       raise NotImplementedError("WP3 mature-label report not implemented")
+E       NotImplementedError: WP3 mature-label report not implemented
+
+v8_mechanism_mc.py:18: NotImplementedError
+_______ test_complete_summary_uses_ratio_of_means_and_paired_delta_mcse ________
+
+    def test_complete_summary_uses_ratio_of_means_and_paired_delta_mcse():
+        rows = _unequal_loss_fixture()
+>       result = summary_from_repetitions(rows, planned_repetitions=4)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 2.0, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 2.0, 'model_loss': 2.0, ...}, {'rep': 3, 'status': 'COMPLETE', 'reference_loss': 9.0, 'model_loss': 4.0, ...}]
+planned_repetitions = 4
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+______ test_breach_mcse_uses_sample_sd_across_repetitions_not_origin_iid _______
+
+    def test_breach_mcse_uses_sample_sd_across_repetitions_not_origin_iid():
+        rows = _unequal_loss_fixture()
+>       result = summary_from_repetitions(rows, planned_repetitions=4)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 2.0, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 2.0, 'model_loss': 2.0, ...}, {'rep': 3, 'status': 'COMPLETE', 'reference_loss': 9.0, 'model_loss': 4.0, ...}]
+planned_repetitions = 4
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+__________ test_strict_win_fraction_excludes_ties_and_has_plugin_mcse __________
+
+    def test_strict_win_fraction_excludes_ties_and_has_plugin_mcse():
+>       result = summary_from_repetitions(_unequal_loss_fixture(), planned_repetitions=4)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 2.0, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 2.0, 'model_loss': 2.0, ...}, {'rep': 3, 'status': 'COMPLETE', 'reference_loss': 9.0, 'model_loss': 4.0, ...}]
+planned_repetitions = 4
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+________ test_proportional_paired_losses_have_zero_relative_delta_mcse _________
+
+    def test_proportional_paired_losses_have_zero_relative_delta_mcse():
+        rows = [
+            _complete(0, 1.0, 0.5, 0.25, 0.0),
+            _complete(1, 2.0, 1.0, 0.5, 0.25),
+            _complete(2, 8.0, 4.0, 0.0, 0.5),
+        ]
+>       result = summary_from_repetitions(rows, planned_repetitions=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 2.0, 'model_loss': 1.0, ...}, {'rep': 2, 'status': 'COMPLETE', 'reference_loss': 8.0, 'model_loss': 4.0, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_missing_reports_keep_planned_counts_and_mark_available_pairs_conditional _
+
+    def test_missing_reports_keep_planned_counts_and_mark_available_pairs_conditional():
+        completed = [
+            _complete(0, 2.0, 1.0, 0.5, 0.25),
+            _complete(2, 6.0, 9.0, 1.0, 0.75),
+        ]
+        rows = [
+            completed[0],
+            {"rep": 1, "status": "FAILED"},
+            completed[1],
+            {"rep": 3, "status": "NOT_ATTEMPTED"},
+            {"rep": 4, "status": "FAILED"},
+        ]
+>       result = summary_from_repetitions(rows, planned_repetitions=5)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 2.0, 'model_loss': 1.0, ...}, {'rep': 1, 'status': 'FAILED'}, {'re... 'reference_loss': 6.0, 'model_loss': 9.0, ...}, {'rep': 3, 'status': 'NOT_ATTEMPTED'}, {'rep': 4, 'status': 'FAILED'}]
+planned_repetitions = 5
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+___ test_no_completed_pairs_has_counts_and_no_invented_estimates[all-failed] ___
+
+statuses = ['FAILED', 'FAILED', 'FAILED'], failed = 3, unattempted = 0
+
+    @pytest.mark.parametrize(
+        "statuses,failed,unattempted",
+        [
+            (["FAILED", "FAILED", "FAILED"], 3, 0),
+            (["NOT_ATTEMPTED", "NOT_ATTEMPTED", "NOT_ATTEMPTED"], 0, 3),
+            (["FAILED", "NOT_ATTEMPTED", "FAILED"], 2, 1),
+        ],
+        ids=["all-failed", "all-unattempted", "mixed-missing"],
+    )
+    def test_no_completed_pairs_has_counts_and_no_invented_estimates(
+        statuses, failed, unattempted
+    ):
+        rows = [{"rep": rep, "status": status} for rep, status in enumerate(statuses)]
+>       result = summary_from_repetitions(rows, planned_repetitions=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'FAILED'}, {'rep': 1, 'status': 'FAILED'}, {'rep': 2, 'status': 'FAILED'}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_no_completed_pairs_has_counts_and_no_invented_estimates[all-unattempted] _
+
+statuses = ['NOT_ATTEMPTED', 'NOT_ATTEMPTED', 'NOT_ATTEMPTED'], failed = 0
+unattempted = 3
+
+    @pytest.mark.parametrize(
+        "statuses,failed,unattempted",
+        [
+            (["FAILED", "FAILED", "FAILED"], 3, 0),
+            (["NOT_ATTEMPTED", "NOT_ATTEMPTED", "NOT_ATTEMPTED"], 0, 3),
+            (["FAILED", "NOT_ATTEMPTED", "FAILED"], 2, 1),
+        ],
+        ids=["all-failed", "all-unattempted", "mixed-missing"],
+    )
+    def test_no_completed_pairs_has_counts_and_no_invented_estimates(
+        statuses, failed, unattempted
+    ):
+        rows = [{"rep": rep, "status": status} for rep, status in enumerate(statuses)]
+>       result = summary_from_repetitions(rows, planned_repetitions=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'NOT_ATTEMPTED'}, {'rep': 1, 'status': 'NOT_ATTEMPTED'}, {'rep': 2, 'status': 'NOT_ATTEMPTED'}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_no_completed_pairs_has_counts_and_no_invented_estimates[mixed-missing] __
+
+statuses = ['FAILED', 'NOT_ATTEMPTED', 'FAILED'], failed = 2, unattempted = 1
+
+    @pytest.mark.parametrize(
+        "statuses,failed,unattempted",
+        [
+            (["FAILED", "FAILED", "FAILED"], 3, 0),
+            (["NOT_ATTEMPTED", "NOT_ATTEMPTED", "NOT_ATTEMPTED"], 0, 3),
+            (["FAILED", "NOT_ATTEMPTED", "FAILED"], 2, 1),
+        ],
+        ids=["all-failed", "all-unattempted", "mixed-missing"],
+    )
+    def test_no_completed_pairs_has_counts_and_no_invented_estimates(
+        statuses, failed, unattempted
+    ):
+        rows = [{"rep": rep, "status": status} for rep, status in enumerate(statuses)]
+>       result = summary_from_repetitions(rows, planned_repetitions=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'FAILED'}, {'rep': 1, 'status': 'NOT_ATTEMPTED'}, {'rep': 2, 'status': 'FAILED'}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+______ test_single_completion_reports_means_but_sample_mcse_is_undefined _______
+
+    def test_single_completion_reports_means_but_sample_mcse_is_undefined():
+        rows = [_complete(0, 4.0, 1.0, 0.5, 0.25)]
+>       result = summary_from_repetitions(rows, planned_repetitions=1)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 4.0, 'model_loss': 1.0, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+________ test_zero_reference_loss_disables_only_relative_loss_estimates ________
+
+    def test_zero_reference_loss_disables_only_relative_loss_estimates():
+        rows = [
+            _complete(0, 0.0, 1.0, 0.0, 0.5),
+            _complete(1, 0.0, 0.0, 0.25, 0.0),
+            _complete(2, 0.0, 3.0, 0.5, 1.0),
+        ]
+>       result = summary_from_repetitions(rows, planned_repetitions=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 0.0, 'model_loss': 1.0, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 0.0, 'model_loss': 0.0, ...}, {'rep': 2, 'status': 'COMPLETE', 'reference_loss': 0.0, 'model_loss': 3.0, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+______ test_summary_accepts_any_row_order_with_the_exact_planned_rep_set _______
+
+    def test_summary_accepts_any_row_order_with_the_exact_planned_rep_set():
+        rows = _unequal_loss_fixture()
+>       result = summary_from_repetitions([rows[2], rows[0], rows[3], rows[1]], 4)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v8_wp3_summary.py:248: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 2, 'status': 'COMPLETE', 'reference_loss': 2.0, 'model_loss': 2.0, ...}, {'rep': 0, 'status': 'COMPLETE', 're...e_loss': 9.0, 'model_loss': 4.0, ...}, {'rep': 1, 'status': 'COMPLETE', 'reference_loss': 4.0, 'model_loss': 1.0, ...}]
+planned_repetitions = 4
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+______ test_repetition_inventory_must_be_exactly_the_planned_set[missing] ______
+
+reps = [0, 1]
+
+    @pytest.mark.parametrize(
+        "reps",
+        [[0, 1], [0, 0, 2], [0, 1, 3], [-1, 1, 2], [0, 1, 2, 3]],
+        ids=["missing", "duplicate", "out-of-range", "negative", "extra"],
+    )
+    def test_repetition_inventory_must_be_exactly_the_planned_set(reps):
+        rows = [_complete(rep, 1.0, 0.5, 0.0, 0.0) for rep in reps]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=3)
+
+test_v8_wp3_summary.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 1, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_____ test_repetition_inventory_must_be_exactly_the_planned_set[duplicate] _____
+
+reps = [0, 0, 2]
+
+    @pytest.mark.parametrize(
+        "reps",
+        [[0, 1], [0, 0, 2], [0, 1, 3], [-1, 1, 2], [0, 1, 2, 3]],
+        ids=["missing", "duplicate", "out-of-range", "negative", "extra"],
+    )
+    def test_repetition_inventory_must_be_exactly_the_planned_set(reps):
+        rows = [_complete(rep, 1.0, 0.5, 0.0, 0.0) for rep in reps]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=3)
+
+test_v8_wp3_summary.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 0, 'status': 'COMPLETE', 're...e_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 2, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+___ test_repetition_inventory_must_be_exactly_the_planned_set[out-of-range] ____
+
+reps = [0, 1, 3]
+
+    @pytest.mark.parametrize(
+        "reps",
+        [[0, 1], [0, 0, 2], [0, 1, 3], [-1, 1, 2], [0, 1, 2, 3]],
+        ids=["missing", "duplicate", "out-of-range", "negative", "extra"],
+    )
+    def test_repetition_inventory_must_be_exactly_the_planned_set(reps):
+        rows = [_complete(rep, 1.0, 0.5, 0.0, 0.0) for rep in reps]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=3)
+
+test_v8_wp3_summary.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 3, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_____ test_repetition_inventory_must_be_exactly_the_planned_set[negative] ______
+
+reps = [-1, 1, 2]
+
+    @pytest.mark.parametrize(
+        "reps",
+        [[0, 1], [0, 0, 2], [0, 1, 3], [-1, 1, 2], [0, 1, 2, 3]],
+        ids=["missing", "duplicate", "out-of-range", "negative", "extra"],
+    )
+    def test_repetition_inventory_must_be_exactly_the_planned_set(reps):
+        rows = [_complete(rep, 1.0, 0.5, 0.0, 0.0) for rep in reps]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=3)
+
+test_v8_wp3_summary.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': -1, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 1, 'status': 'COMPLETE', 'r...e_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 2, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_______ test_repetition_inventory_must_be_exactly_the_planned_set[extra] _______
+
+reps = [0, 1, 2, 3]
+
+    @pytest.mark.parametrize(
+        "reps",
+        [[0, 1], [0, 0, 2], [0, 1, 3], [-1, 1, 2], [0, 1, 2, 3]],
+        ids=["missing", "duplicate", "out-of-range", "negative", "extra"],
+    )
+    def test_repetition_inventory_must_be_exactly_the_planned_set(reps):
+        rows = [_complete(rep, 1.0, 0.5, 0.0, 0.0) for rep in reps]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=3)
+
+test_v8_wp3_summary.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 1, 'status': 'COMPLETE', 're...e_loss': 1.0, 'model_loss': 0.5, ...}, {'rep': 3, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 3
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+__________________ test_unrecognized_status_is_rejected[case] __________________
+
+status = 'complete'
+
+    @pytest.mark.parametrize("status", ["complete", "BROKEN", ""], ids=["case", "unknown", "empty"])
+    def test_unrecognized_status_is_rejected(status):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0]["status"] = status
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'complete', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+________________ test_unrecognized_status_is_rejected[unknown] _________________
+
+status = 'BROKEN'
+
+    @pytest.mark.parametrize("status", ["complete", "BROKEN", ""], ids=["case", "unknown", "empty"])
+    def test_unrecognized_status_is_rejected(status):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0]["status"] = status
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'BROKEN', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_________________ test_unrecognized_status_is_rejected[empty] __________________
+
+status = ''
+
+    @pytest.mark.parametrize("status", ["complete", "BROKEN", ""], ids=["case", "unknown", "empty"])
+    def test_unrecognized_status_is_rejected(status):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0]["status"] = status
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': '', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+___ test_completed_losses_must_be_finite_and_nonnegative[nan-reference_loss] ___
+
+field = 'reference_loss', value = nan
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': nan, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_____ test_completed_losses_must_be_finite_and_nonnegative[nan-model_loss] _____
+
+field = 'model_loss', value = nan
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': nan, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_losses_must_be_finite_and_nonnegative[infinity-reference_loss] _
+
+field = 'reference_loss', value = inf
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': inf, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+__ test_completed_losses_must_be_finite_and_nonnegative[infinity-model_loss] ___
+
+field = 'model_loss', value = inf
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': inf, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_losses_must_be_finite_and_nonnegative[negative-infinity-reference_loss] _
+
+field = 'reference_loss', value = -inf
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': -inf, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_losses_must_be_finite_and_nonnegative[negative-infinity-model_loss] _
+
+field = 'model_loss', value = -inf
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': -inf, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_losses_must_be_finite_and_nonnegative[negative-reference_loss] _
+
+field = 'reference_loss', value = -0.1
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': -0.1, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+__ test_completed_losses_must_be_finite_and_nonnegative[negative-model_loss] ___
+
+field = 'model_loss', value = -0.1
+
+    @pytest.mark.parametrize("field", ["reference_loss", "model_loss"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.1], ids=["nan", "infinity", "negative-infinity", "negative"])
+    def test_completed_losses_must_be_finite_and_nonnegative(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': -0.1, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[nan-reference_breach_rate] _
+
+field = 'reference_breach_rate', value = nan
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[nan-model_breach_rate] _
+
+field = 'model_breach_rate', value = nan
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[infinity-reference_breach_rate] _
+
+field = 'reference_breach_rate', value = inf
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[infinity-model_breach_rate] _
+
+field = 'model_breach_rate', value = inf
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[negative-infinity-reference_breach_rate] _
+
+field = 'reference_breach_rate', value = -inf
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[negative-infinity-model_breach_rate] _
+
+field = 'model_breach_rate', value = -inf
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[below-zero-reference_breach_rate] _
+
+field = 'reference_breach_rate', value = -0.01
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[below-zero-model_breach_rate] _
+
+field = 'model_breach_rate', value = -0.01
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[above-one-reference_breach_rate] _
+
+field = 'reference_breach_rate', value = 1.01
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_completed_breach_rates_must_be_finite_probabilities[above-one-model_breach_rate] _
+
+field = 'model_breach_rate', value = 1.01
+
+    @pytest.mark.parametrize("field", ["reference_breach_rate", "model_breach_rate"])
+    @pytest.mark.parametrize("value", [float("nan"), float("inf"), -float("inf"), -0.01, 1.01], ids=["nan", "infinity", "negative-infinity", "below-zero", "above-one"])
+    def test_completed_breach_rates_must_be_finite_probabilities(field, value):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        rows[0][field] = value
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+__ test_complete_status_cannot_hide_a_missing_numeric_report[reference_loss] ___
+
+field = 'reference_loss'
+
+    @pytest.mark.parametrize(
+        "field",
+        ["reference_loss", "model_loss", "reference_breach_rate", "model_breach_rate"],
+    )
+    def test_complete_status_cannot_hide_a_missing_numeric_report(field):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        del rows[0][field]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:300: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'model_loss': 0.5, 'reference_breach_rate': 0.0, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+____ test_complete_status_cannot_hide_a_missing_numeric_report[model_loss] _____
+
+field = 'model_loss'
+
+    @pytest.mark.parametrize(
+        "field",
+        ["reference_loss", "model_loss", "reference_breach_rate", "model_breach_rate"],
+    )
+    def test_complete_status_cannot_hide_a_missing_numeric_report(field):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        del rows[0][field]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:300: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'reference_breach_rate': 0.0, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_complete_status_cannot_hide_a_missing_numeric_report[reference_breach_rate] _
+
+field = 'reference_breach_rate'
+
+    @pytest.mark.parametrize(
+        "field",
+        ["reference_loss", "model_loss", "reference_breach_rate", "model_breach_rate"],
+    )
+    def test_complete_status_cannot_hide_a_missing_numeric_report(field):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        del rows[0][field]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:300: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_ test_complete_status_cannot_hide_a_missing_numeric_report[model_breach_rate] _
+
+field = 'model_breach_rate'
+
+    @pytest.mark.parametrize(
+        "field",
+        ["reference_loss", "model_loss", "reference_breach_rate", "model_breach_rate"],
+    )
+    def test_complete_status_cannot_hide_a_missing_numeric_report(field):
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        del rows[0][field]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:300: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'rep': 0, 'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+_________________ test_row_without_a_repetition_id_is_rejected _________________
+
+    def test_row_without_a_repetition_id_is_rejected():
+        rows = [_complete(0, 1.0, 0.5, 0.0, 0.0)]
+        del rows[0]["rep"]
+        with pytest.raises(ValueError):
+>           summary_from_repetitions(rows, planned_repetitions=1)
+
+test_v8_wp3_summary.py:307: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'status': 'COMPLETE', 'reference_loss': 1.0, 'model_loss': 0.5, 'reference_breach_rate': 0.0, ...}]
+planned_repetitions = 1
+
+    def summary_from_repetitions(rows, planned_repetitions):
+>       raise NotImplementedError("WP3 independent-repetition summaries not implemented")
+E       NotImplementedError: WP3 independent-repetition summaries not implemented
+
+v8_mechanism_mc.py:22: NotImplementedError
+=========================== short test summary info ============================
+FAILED test_v8_wp3_core.py::test_garch_recursion_and_burnin_are_not_increment_ar
+FAILED test_v8_wp3_core.py::test_homoskedastic_case_preserves_unit_innovation_variance
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad0] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad1] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad2] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad3] - Not...
+FAILED test_v8_wp3_core.py::test_invalid_dgp_contract_is_rejected[bad4] - Not...
+FAILED test_v8_wp3_core.py::test_repetition_stream_is_reproducible_and_distinct
+FAILED test_v8_wp3_core.py::test_original_selectors_keep_different_exact_tie_rules
+FAILED test_v8_wp3_core.py::test_original_qr33_failed_mandatory_candidate_blocks_selection
+FAILED test_v8_wp3_core.py::test_original_qr4_selects_completed_candidates_without_erasing_failures
+FAILED test_v8_wp3_core.py::test_wrong_or_nonfinite_validation_score_cannot_be_complete
+FAILED test_v8_wp3_core.py::test_historical_report_freezes_pool_but_reanchors_every_issue
+FAILED test_v8_wp3_core.py::test_qr33_matches_original_fixed_parameter_arithmetic
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[F]
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[QR33]
+FAILED test_v8_wp3_core.py::test_future_positions_do_not_change_the_current_report[QR4]
+FAILED test_v8_wp3_core.py::test_refit_maturity_and_frozen_query_blocks_are_explicit
+FAILED test_v8_wp3_summary.py::test_complete_summary_uses_ratio_of_means_and_paired_delta_mcse
+FAILED test_v8_wp3_summary.py::test_breach_mcse_uses_sample_sd_across_repetitions_not_origin_iid
+FAILED test_v8_wp3_summary.py::test_strict_win_fraction_excludes_ties_and_has_plugin_mcse
+FAILED test_v8_wp3_summary.py::test_proportional_paired_losses_have_zero_relative_delta_mcse
+FAILED test_v8_wp3_summary.py::test_missing_reports_keep_planned_counts_and_mark_available_pairs_conditional
+FAILED test_v8_wp3_summary.py::test_no_completed_pairs_has_counts_and_no_invented_estimates[all-failed]
+FAILED test_v8_wp3_summary.py::test_no_completed_pairs_has_counts_and_no_invented_estimates[all-unattempted]
+FAILED test_v8_wp3_summary.py::test_no_completed_pairs_has_counts_and_no_invented_estimates[mixed-missing]
+FAILED test_v8_wp3_summary.py::test_single_completion_reports_means_but_sample_mcse_is_undefined
+FAILED test_v8_wp3_summary.py::test_zero_reference_loss_disables_only_relative_loss_estimates
+FAILED test_v8_wp3_summary.py::test_summary_accepts_any_row_order_with_the_exact_planned_rep_set
+FAILED test_v8_wp3_summary.py::test_repetition_inventory_must_be_exactly_the_planned_set[missing]
+FAILED test_v8_wp3_summary.py::test_repetition_inventory_must_be_exactly_the_planned_set[duplicate]
+FAILED test_v8_wp3_summary.py::test_repetition_inventory_must_be_exactly_the_planned_set[out-of-range]
+FAILED test_v8_wp3_summary.py::test_repetition_inventory_must_be_exactly_the_planned_set[negative]
+FAILED test_v8_wp3_summary.py::test_repetition_inventory_must_be_exactly_the_planned_set[extra]
+FAILED test_v8_wp3_summary.py::test_unrecognized_status_is_rejected[case] - N...
+FAILED test_v8_wp3_summary.py::test_unrecognized_status_is_rejected[unknown]
+FAILED test_v8_wp3_summary.py::test_unrecognized_status_is_rejected[empty] - ...
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[nan-reference_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[nan-model_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[infinity-reference_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[infinity-model_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[negative-infinity-reference_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[negative-infinity-model_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[negative-reference_loss]
+FAILED test_v8_wp3_summary.py::test_completed_losses_must_be_finite_and_nonnegative[negative-model_loss]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[nan-reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[nan-model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[infinity-reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[infinity-model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[negative-infinity-reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[negative-infinity-model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[below-zero-reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[below-zero-model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[above-one-reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_completed_breach_rates_must_be_finite_probabilities[above-one-model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_complete_status_cannot_hide_a_missing_numeric_report[reference_loss]
+FAILED test_v8_wp3_summary.py::test_complete_status_cannot_hide_a_missing_numeric_report[model_loss]
+FAILED test_v8_wp3_summary.py::test_complete_status_cannot_hide_a_missing_numeric_report[reference_breach_rate]
+FAILED test_v8_wp3_summary.py::test_complete_status_cannot_hide_a_missing_numeric_report[model_breach_rate]
+FAILED test_v8_wp3_summary.py::test_row_without_a_repetition_id_is_rejected
+60 failed in 0.28s
+WARN `--no-project` was provided, but no project was found

@@ -1,0 +1,16 @@
+{
+  "step": "E6",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import json,re;from v3_revision import ROOT;c=json.loads((ROOT/'\"'\"'manuscript/revision-v3/paper-content.json'\"'\"').read_text());print('\"'\"'Subtitle:'\"'\"',c['\"'\"'subtitle'\"'\"']);n=len(re.findall(r'\"'\"'Readability revision|revision v3'\"'\"',c['\"'\"'subtitle'\"'\"'],re.I));print('\"'\"'Internal subtitle label matches:'\"'\"',n);assert n==0'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import json,re;from v3_revision import ROOT;c=json.loads((ROOT/'manuscript/revision-v3/paper-content.json').read_text());print('Subtitle:',c['subtitle']);n=len(re.findall(r'Readability revision|revision v3',c['subtitle'],re.I));print('Internal subtitle label matches:',n);assert n==0"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T11:20:42.194431+00:00",
+  "ended_utc": "2026-10-23T11:20:42.224091+00:00",
+  "returncode": 0,
+  "stdout": "Subtitle: Common targets, source-specific results and exploratory diagnostics\nInternal subtitle label matches: 0\n",
+  "stderr": ""
+}

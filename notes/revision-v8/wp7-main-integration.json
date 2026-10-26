@@ -1,0 +1,359 @@
+{
+  "generated_utc": "2026-10-24T11:21:59.643615+00:00",
+  "operation": "Existing saved fields and prose integration only; no new financial calculation",
+  "baseline_commit": "642d6af",
+  "before_sha256": "8573730bff5980e141a12bbdf0cc981ad09336ba314febd464cde7a93ca6473c",
+  "after_sha256": "3769d9ea4e342ebc2fb8dd2ff0239cbc3ab508dbc1ce9925d5808406e7135814",
+  "edits": [
+    {
+      "before": "A position can finish inside its limit after exceeding that limit during the intervening period, as Figure~\\ref{fig:example} illustrates. For a market maker, the relevant forecast therefore concerns the largest exposure before the next review, rather than the endpoint alone. The distinction changes the response variable, the observations available for training, and the interpretation of successful prediction. We ask whether conditional forecasts can improve on historical rules for this sampled absolute-position peak.",
+      "after": "A dealer's recorded net position can finish inside its limit after exceeding it earlier in the monitoring period, as Figure~\\ref{fig:example} illustrates. The forecasting question concerns the largest sampled exposure before the next review, rather than the endpoint alone. This changes the response and when its training label becomes available. We ask whether additional conditioning improves that peak forecast once historical information is matched, and whether the gain survives alternative references and breach assessment.",
+      "reason": "R1: lead with one forecasting question and its matched-reference/breach criteria"
+    },
+    {
+      "before": "in the later and earlier periods. Its later advantage survives",
+      "after": "in the previously reported later and earlier windows. Its later advantage survives",
+      "reason": "R4: retain exact original abstract values and distinguish them from the expanded overlapping window"
+    },
+    {
+      "before": "The results support joint validation of accuracy, breach behavior, and stability across reference rules, periods, and related series.\\end{abstract}",
+      "after": "The results support joint validation of accuracy, breach behavior, and stability across reference rules, periods, and related series. A controlled simulation rejects a universal narrow-regime explanation, while aggregation and the overlapping backcast further qualify the empirical pattern.\\end{abstract}",
+      "reason": "R2/R3/R4: add exactly one abstract sentence, honest non-support without a causal-frequency or fresh-validation claim"
+    },
+    {
+      "before": "Historical rules, regression and local quantiles compete to predict the same peak within each series, using only information available at issue.",
+      "after": "In the original ordered comparisons, historical rules, regression and local quantiles compete for the same peak using issue-known observations.",
+      "reason": "R4: do not extend a real-time-information claim to a backcast whose fixed penalties were selected later"
+    },
+    {
+      "before": "We establish loss-improving floor projection and a strict-tail bound for true conditional quantiles, and apply the classical Lévy bound under independent symmetric increments.",
+      "after": "We record an elementary loss-improving floor projection and the true-quantile strict-tail bound, then apply the classical Lévy inequality under independent symmetric increments.",
+      "reason": "R1: elementary/classical results support target implementation rather than a new-method claim"
+    },
+    {
+      "before": "We find that historical rules win most weekly comparisons; repeated regression gains appear in long-history FX data at the shorter horizon.",
+      "after": "We find that historical rules win most weekly comparisons, while the original long-history FX gain depends on the chosen reference.",
+      "reason": "R1/R2: judge observed comparisons rather than announce a universal horizon or frequency boundary"
+    },
+    {
+      "before": "Section~\\ref{sec:results} reports the gains and failures, and Table~\\ref{tab:map} organizes the frequency--history--horizon decision map.",
+      "after": "Section~\\ref{sec:results} reports the gains and failures, and Table~\\ref{tab:map} organizes the observed settings and validation questions. The controlled study rejects the proposed regime restriction, while aggregation supplies a same-dealer contrast without isolating frequency.",
+      "reason": "R2/R3: C2 includes negative mechanism evidence and the noncausal daily contrast"
+    },
+    {
+      "before": "We show why peak-limit validation must compare scores, breaches and stability against explicitly matched reference rules.",
+      "after": "We show how peak-limit rankings change with the historical reference and breach assessment in these observed forecasting tasks.",
+      "reason": "R1: established joint evaluation tools are not themselves claimed as the novelty"
+    },
+    {
+      "before": "We compare same-history and shorter-history rolling controls across two periods, using Murphy diagrams and error-weight preferences to interpret the rankings.",
+      "after": "We compare same-history and shorter-history rolling controls across three windows with previously examined outcomes, using established score diagrams and error-weight preferences.",
+      "reason": "R4/R5: extra displayed window is not an independent period; existing diagnostic lineage remains acknowledged"
+    },
+    {
+      "before": "We evaluate the latter through pinball loss and count a breach precisely when the observed peak strictly exceeds the reported limit.",
+      "after": "We evaluate the latter through pinball loss and count a breach precisely when the observed peak strictly exceeds the reported limit. This report monitors sampled net inventory; its known floor neither measures settlement cash needs nor establishes an optimal operating limit.",
+      "reason": "R6: measurement/use boundary adjacent to the target"
+    },
+    {
+      "before": "The data design makes frequency and measurement differences visible instead of treating every sequence as an interchangeable dealer history.",
+      "after": "The data design makes frequency and measurement differences visible instead of treating every sequence as an interchangeable dealer history.\n\nDaily aggregation of the same dealer produces 930 nonempty source-naive calendar days and 501 common evaluation issues. Each day contributes its last record, including partial boundary days, and the report clock follows the end of that day. The timezone and historical release vintage remain unknown; this last-record proxy is distinct from a verified market close or intraday maximum.",
+      "reason": "R3: retain actual daily counts and the information/measurement clock near the data definition"
+    },
+    {
+      "before": "The primary forecasts target the conditional quantile at \\(\\tau=19/20\\), with its upper tail defining the strict-breach event.",
+      "after": "The primary forecasts target the conditional quantile at \\(\\tau=19/20\\), with its upper tail defining the strict-breach event. Its nineteen-to-one error preference is hypothetical and is separate from measured funding, trading or settlement costs.",
+      "reason": "R6: score weights are not measured operating costs"
+    },
+    {
+      "before": "Parameter selection uses the preceding validation segment, after which the evaluation proceeds on the complete specified issue grid.",
+      "after": "The original chronological comparisons select parameters in the preceding validation segment and evaluate the complete specified issue grid. The expanded backcast instead retains penalties selected later, although each coefficient fit and transformation still uses only mature training labels.",
+      "reason": "R4: label maturity and historical availability of hyperparameters are different conditions"
+    },
+    {
+      "before": "The earlier FX origins reuse familiar source history, and the later writing-stage HAC comparisons are descriptive rather than independent or prospective confirmation.",
+      "after": "The expanded prefix reuses familiar source observations, overlaps the earlier backcast, and follows previous rolling-validation scoring of its target paths. The new extensions were fixed before their own calculations within an already inspected research program. Their tests and the writing-stage HAC comparisons remain descriptive rather than independent or prospective confirmation.",
+      "reason": "R2/R4/R5/R8: local design freezes do not erase prior inspection or research selection"
+    },
+    {
+      "before": "\\FloatBarrier\n\n\\section{Implications for model validation}",
+      "after": "\\subsection{Controlled and within-record extensions}\\label{sec:extensions}\n\nThe controlled mean-reverting level study with GARCH innovations rejects the proposed narrow-regime explanation \\citep{bollerslev1986}. Each regression shows clear gains in only 2 of 12 target cells. Both also show clear gains in 6 of 60 outside cells, including homoskedastic and longer-horizon cases. The experiment uses 32 independent repetition streams with common innovations across conditions and 72 evaluation issues per repetition. Figure~\\ref{fig:mechanism} reports relative mean losses with Monte Carlo standard errors. These specified processes therefore do not establish a universal history, volatility or horizon boundary.\n\n\\begin{figure}[htbp]\\centering\\includegraphics[width=.98\\linewidth]{figures/v8-wp3-qr33-loss.pdf}\n\\caption{Relative mean loss of the original regression against matched historical headroom in the controlled level-persistence and volatility-clustering grid. Annotations give the relative change with its Monte Carlo standard error. Panels vary horizon and level persistence; cells vary history and variance persistence. Gains outside the prespecified region contradict a universal narrow-condition explanation.}\\label{fig:mechanism}\n\\end{figure}\n\nSame-dealer daily aggregation produces predominantly historical-rule score wins. Historical headroom wins 7 of the 8 specified comparisons. The exception is the longer-history four-predictor regression at the shorter daily horizon, with about a 3.0\\% score reduction. It records 37 breaches versus 30 for historical headroom. Aggregation changes physical histories, horizons, update cadence, predictors, evaluation span and the sampled peak together. Source identity is held fixed, but this contrast does not identify a pure frequency effect.\n\nAn expanded fixed-parameter backcast preserves the reference-sensitive pattern but supplies no fresh independent validation. For original short-horizon FX regression, matched score falls about 12.2\\%, while its rolling-reference advantage is about 5.3\\%. Matched breaches are 416 for regression and 282 for historical headroom. The raw rolling-reference DM p-value is about 0.055 and remains descriptive. Earlier rolling-validation scoring already covered these target paths, and the smaller backcast is fully nested. Penalties were chosen later, so these overlapping windows cannot be interpreted as independent replications.\n\n\\FloatBarrier\n\n\\section{Implications for model validation}",
+      "reason": "R2/R3/R4/R5: exactly one MC paragraph/figure and existing daily/backcast results; no new analysis"
+    },
+    {
+      "before": "Report the mean quantile loss together with strict-hit frequency, overrun amounts, and the magnitude of unused headroom under the same issue grid.",
+      "after": "Report the mean quantile loss together with breach frequency, overrun amounts, and unused headroom under the same issue grid.",
+      "reason": "R6: direct reader-facing language for the measured diagnostics"
+    },
+    {
+      "before": "Table~\\ref{tab:map} summarizes this checklist and maps the observed frequency, history, and horizon conditions to their principal comparative outcomes.",
+      "after": "Table~\\ref{tab:map} organizes observed comparison settings and the validation questions they raise, including the daily and longer-horizon exceptions.",
+      "reason": "R2/R3/R6: map remains descriptive and does not become a universal eligibility or deployment rule"
+    },
+    {
+      "before": "The hourly FX result motivates further evaluation of long-history short-horizon regression, while the weekly results support a demanding historical starting benchmark.",
+      "after": "The original hourly FX result motivates further evaluation of its named regression, while the weekly and daily comparisons support demanding historical benchmarks.",
+      "reason": "R3/R6: retain benchmark role without certifying F as an operating limit"
+    },
+    {
+      "before": "\\caption{Frequency, history and horizon as a validation decision map. Each entry describes executed comparisons rather than a causal frequency effect. Keep the historical rule until the named advantage survives joint validation.}",
+      "after": "\\caption{Observed comparison settings and validation questions. Entries organize retrospective evidence rather than a causal frequency effect or deployment policy. A winning score leaves breach behavior and operating suitability to be assessed.}",
+      "reason": "R3/R6: remove an unsupported imperative to keep/deploy the historical report"
+    },
+    {
+      "before": "Hourly / either history & Longer & Losses or weaker gains; coherence and preference sensitivity & Check horizon order and loss preferences\\\\",
+      "after": "Hourly / either history & Longer & Matched backcast gains coexist with reference-sensitive losses; coherence and preference sensitivity remain & Check the named reference, horizon order and loss preferences\\\\",
+      "reason": "R2/R4: retain longer-horizon backcast gains rather than a literal short-horizon-only rule"
+    },
+    {
+      "before": "Weekly / short or long history & Short or longer & Frequent regression losses despite expanded penalties & Keep historical and parsimonious controls\\\\",
+      "after": "Daily / same dealer & Recorded-day horizons & Historical score wins predominate; one four-predictor gain has more breaches & Retain both controls and assess their own breaches\\\\\nWeekly / short or long history & Short or longer & Frequent regression losses despite expanded penalties & Compare historical and parsimonious controls\\\\",
+      "reason": "R3/R6: add daily row, keep exception, do not turn relative accuracy into nominal safety"
+    },
+    {
+      "before": "Those periods provide a stability check within this record rather than independent dealer replication or a prospective test on unseen future outcomes.",
+      "after": "These overlapping windows and the previously viewed later period describe stability within the record rather than independent dealer replication or prospective performance. The expanded prefix includes the earlier backcast and uses penalties selected after its issue dates.",
+      "reason": "R4: explicitly retain nesting, past inspection and later-selected hyperparameters"
+    },
+    {
+      "before": "Simple historical rules are strong competitors for predicting the largest sampled absolute position before a monitoring horizon ends. The clearest repeated conditional gain occurs for long-history FX regression at the shorter horizon, where same-history comparisons favor regression in both periods. The later gain survives the evaluated calibration wrapper, but unwrapped regression breaches more frequently and its comparison with a shorter-history rolling rule changes direction. The useful gain is therefore specific: long-history short-horizon FX regression beats matched headroom, while its broader ranking depends on the reference.",
+      "after": "Simple historical rules are strong competitors for predicting the largest sampled absolute position before a monitoring horizon ends. The original long-history FX regression gains against matched headroom survive in the broader backcast on previously examined observations, although score reductions coexist with more breaches. Longer-horizon backcast gains and the daily exception prevent a literal short-horizon or hourly-only interpretation. The controlled simulation also rejects the proposed narrow-regime restriction, while the same-dealer aggregation contrast leaves frequency mixed with measurement and clock changes. The defensible result is reference-sensitive comparative accuracy in these records, rather than a universal mechanism or validated operating-limit rule.",
+      "reason": "R1–R6: conclusion follows all adverse and qualifying evidence, not only original favorable pattern"
+    },
+    {
+      "before": "This revision adds no new financial experiment. The completed results include adverse, failed and unavailable cases.",
+      "after": "This revision adds three design-frozen exploratory extensions: a controlled simulation, a same-dealer daily aggregation contrast and an expanded inspected backcast. The completed results include adverse, failed and unavailable cases; arithmetic readback establishes artifact consistency rather than independent scientific replication.",
+      "reason": "R8: remove stale pre-v8 provenance statement without claiming independent reproduction"
+    },
+    {
+      "before": "\\bibitem[Boudoukh et al.(2004)]",
+      "after": "\\bibitem[Bollerslev(1986)]{bollerslev1986} Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. \\emph{Journal of Econometrics}, \\emph{31}(3), 307--327. \\url{https://doi.org/10.1016/0304-4076(86)90063-1}.\n\n\\bibitem[Boudoukh et al.(2004)]",
+      "reason": "Verified original GARCH reference, not the later reprint"
+    }
+  ],
+  "new_reader_numeric_bindings": [
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/source_consistency/daily_metadata/n_daily",
+      "raw_value": 930,
+      "display": "930",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/cells/0/evaluation/n",
+      "raw_value": 501,
+      "display": "501",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp3/support.json",
+      "source_sha256": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc",
+      "pointer": "/procedures/QR33/target_clear_gain_count",
+      "raw_value": 2,
+      "display": "2",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp3/support.json",
+      "source_sha256": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc",
+      "pointer": "/procedures/QR33/target_cell_count",
+      "raw_value": 12,
+      "display": "12",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp3/support.json",
+      "source_sha256": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc",
+      "pointer": "/procedures/QR33/outside_clear_gain_count",
+      "raw_value": 6,
+      "display": "6",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp3/support.json",
+      "source_sha256": "274f2a67f012b5475809a1b12fa5b287525f3b40d3aed4b09c653d007bb4cfbc",
+      "pointer": "/procedures/QR33/outside_cell_count",
+      "raw_value": 60,
+      "display": "60",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "protocol/revision-v8/wp3-mechanism-design.json",
+      "source_sha256": "ed2bedb5a086615957ea8423d61632edbb9de34549c886b4e2f6a04bb3567d70",
+      "pointer": "/repetitions",
+      "raw_value": 32,
+      "display": "32",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "protocol/revision-v8/wp3-mechanism-design.json",
+      "source_sha256": "ed2bedb5a086615957ea8423d61632edbb9de34549c886b4e2f6a04bb3567d70",
+      "pointer": "/evaluation_first,/evaluation_last",
+      "raw_value": [
+        3168,
+        3239
+      ],
+      "display": "72",
+      "derivation": "last-first+1"
+    },
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/classifications/QR33,/classifications/QR4",
+      "raw_value": {
+        "QR33": {
+          "historical_wins": 4,
+          "planned_comparisons": 4
+        },
+        "QR4": {
+          "historical_wins": 3,
+          "planned_comparisons": 4
+        }
+      },
+      "display": "7 / 8",
+      "derivation": "sum both frozen regression counts"
+    },
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/contrasts/5/relative_loss_percent",
+      "raw_value": -2.9739933765508653,
+      "display": "3.0",
+      "absolute_display": true,
+      "format": ".1f"
+    },
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/cells/8/evaluation/strict_breach_count",
+      "raw_value": 37,
+      "display": "37",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp4/summary.json",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12",
+      "pointer": "/cells/6/evaluation/strict_breach_count",
+      "raw_value": 30,
+      "display": "30",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp5/summary.json",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629",
+      "pointer": "/contrasts/0/relative_change_percent",
+      "raw_value": -12.166526643171782,
+      "display": "12.2",
+      "absolute_display": true,
+      "format": ".1f"
+    },
+    {
+      "source": "results/revision-v8/wp5/summary.json",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629",
+      "pointer": "/contrasts/1/relative_change_percent",
+      "raw_value": -5.29573502748879,
+      "display": "5.3",
+      "absolute_display": true,
+      "format": ".1f"
+    },
+    {
+      "source": "results/revision-v8/wp5/summary.json",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629",
+      "pointer": "/contrasts/0/model_breaches",
+      "raw_value": 416,
+      "display": "416",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp5/summary.json",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629",
+      "pointer": "/contrasts/0/reference_breaches",
+      "raw_value": 282,
+      "display": "282",
+      "absolute_display": false,
+      "format": null
+    },
+    {
+      "source": "results/revision-v8/wp5/summary.json",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629",
+      "pointer": "/contrasts/1/dm/dm_p",
+      "raw_value": 0.05505865409429612,
+      "display": "0.055",
+      "absolute_display": false,
+      "format": ".3f"
+    }
+  ],
+  "all6_original_table_numeric_vectors_unchanged": true,
+  "all_original_display_math_blocks_byte_identical": true,
+  "main_figures": 4,
+  "main_tables": 6,
+  "source_figure_sha256": "32360d7fb820edc41b60f92c627db5d52a90934aa28fdf7a7242681a22fb8865",
+  "abstract_added_sentences": 1,
+  "main_MC_result_paragraphs": 1,
+  "scientific_results_modified": false,
+  "original_primaries_modified": false,
+  "plain_language_followup": {
+    "checked_utc": "2026-10-24T11:23:30.397206+00:00",
+    "before_sha256": "7332d30edbbb717ae431819f7dcd45ea28556265257b41c72b7d1aa3effc3232",
+    "changes": [
+      {
+        "before": "We compare same-history and shorter-history rolling controls across three overlapping or inspected windows, using established score diagrams and error-weight preferences.",
+        "after": "We compare same-history and shorter-history rolling controls across three windows with previously examined outcomes, using established score diagrams and error-weight preferences.",
+        "occurrences": 1
+      },
+      {
+        "before": "and reports are issued only after that day ends.",
+        "after": "and the report clock follows the end of that day.",
+        "occurrences": 1
+      },
+      {
+        "before": "Historical headroom wins 7 of the 8 declared comparisons.",
+        "after": "Historical headroom wins 7 of the 8 specified comparisons.",
+        "occurrences": 1
+      },
+      {
+        "before": "these overlapping inspected windows cannot be interpreted as independent replications.",
+        "after": "these overlapping windows cannot be interpreted as independent replications.",
+        "occurrences": 1
+      },
+      {
+        "before": "including the retained daily and longer-horizon exceptions.",
+        "after": "including the daily and longer-horizon exceptions.",
+        "occurrences": 1
+      },
+      {
+        "before": "These overlapping or inspected windows describe stability within the record rather than independent dealer replication or a prospective test on unseen outcomes.",
+        "after": "These overlapping windows and the previously viewed later period describe stability within the record rather than independent dealer replication or prospective performance.",
+        "occurrences": 1
+      },
+      {
+        "before": "survive in the broader inspected backcast, although score reductions coexist with more breaches.",
+        "after": "survive in the broader backcast on previously examined observations, although score reductions coexist with more breaches.",
+        "occurrences": 1
+      }
+    ],
+    "purpose": "Meet inherited prose-word exclusions while explicitly retaining prior observation/overlap/later-selection evidence; no numbers or scientific conclusions changed."
+  },
+  "layout_followup": {
+    "checked_utc": "2026-10-24T11:27:26.362103+00:00",
+    "reason": "ActualrenderfirstlayoutletoldMurphyfloatsinterruptnewMCparagraph;flushprecedingfloatsbefore7.4. Mainfigureannotationsarelegible; no needtoreplot/reducefont.",
+    "changes": [
+      "FloatBarrierbefore7.4",
+      "Dailyhorizonlabelplainnonemptydays"
+    ],
+    "scientific_numbers_changed": false
+  }
+}

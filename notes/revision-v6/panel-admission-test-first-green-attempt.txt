@@ -1,0 +1,34 @@
+test_complete_selected_qr_and_original_refit_grid_are_required (test_v6_panel_admission.PanelAdmissionTests.test_complete_selected_qr_and_original_refit_grid_are_required) ... ok
+test_every_original_mean_hit_and_count_scalar_is_exactly_checked (test_v6_panel_admission.PanelAdmissionTests.test_every_original_mean_hit_and_count_scalar_is_exactly_checked) ... ok
+test_false_admission_flag_and_unexpected_knn_stop_without_substitution (test_v6_panel_admission.PanelAdmissionTests.test_false_admission_flag_and_unexpected_knn_stop_without_substitution) ... ok
+test_grid_interior_dtype_geometry_and_nonfinite_arrays_are_checked (test_v6_panel_admission.PanelAdmissionTests.test_grid_interior_dtype_geometry_and_nonfinite_arrays_are_checked) ... ok
+test_public_digest_change_is_identity_error (test_v6_panel_admission.PanelAdmissionTests.test_public_digest_change_is_identity_error) ... ok
+test_rehashed_wrong_bindings_or_units_or_status_cannot_be_admitted (test_v6_panel_admission.PanelAdmissionTests.test_rehashed_wrong_bindings_or_units_or_status_cannot_be_admitted) ... ok
+test_source_and_provenance_and_selection_hashes_are_rechecked (test_v6_panel_admission.PanelAdmissionTests.test_source_and_provenance_and_selection_hashes_are_rechecked) ... ok
+test_supplied_entry_and_method_inventory_cannot_be_rewritten (test_v6_panel_admission.PanelAdmissionTests.test_supplied_entry_and_method_inventory_cannot_be_rewritten) ... ok
+test_trace_digest_and_size_change_are_identity_errors (test_v6_panel_admission.PanelAdmissionTests.test_trace_digest_and_size_change_are_identity_errors) ... ok
+test_valid_cell_reproduces_both_scalar_summaries_and_knn_is_absent (test_v6_panel_admission.PanelAdmissionTests.test_valid_cell_reproduces_both_scalar_summaries_and_knn_is_absent) ... ERROR
+
+======================================================================
+ERROR: test_valid_cell_reproduces_both_scalar_summaries_and_knn_is_absent (test_v6_panel_admission.PanelAdmissionTests.test_valid_cell_reproduces_both_scalar_summaries_and_knn_is_absent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_panel_admission.py", line 128, in test_valid_cell_reproduces_both_scalar_summaries_and_knn_is_absent
+    z = self._load()
+        ^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_panel_admission.py", line 124, in _load
+    return self.api.load_panel_cell(deepcopy(self.entry), root=self.root)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_panel_admission.py", line 211, in load_panel_cell
+    return _load_panel_cell(entry, Path(root).resolve())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_panel_admission.py", line 183, in _load_panel_cell
+    _require(records[name]["percent_vs_frozen_F"] == percent
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/v6_panel_admission.py", line 26, in _require
+    raise DataIdentityError(code)
+v6_panel_admission.DataIdentityError: PAIRED_F_SUMMARY_IDENTITY:QR33
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.094s
+
+FAILED (errors=1)

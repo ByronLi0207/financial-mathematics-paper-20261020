@@ -1,0 +1,136 @@
+test_checkpoint_failure_propagates_without_partial_scoring (test_v6_aci.FiniteDelayedACI.test_checkpoint_failure_propagates_without_partial_scoring) ... FAIL
+test_corrected_rank_exactly_at_finite_lower_boundary (test_v6_aci.FiniteDelayedACI.test_corrected_rank_exactly_at_finite_lower_boundary) ... FAIL
+test_feedback_waits_for_the_issued_outcome_and_uses_old_report (test_v6_aci.FiniteDelayedACI.test_feedback_waits_for_the_issued_outcome_and_uses_old_report) ... FAIL
+test_future_peak_perturbation_cannot_change_pre_maturity_reports (test_v6_aci.FiniteDelayedACI.test_future_peak_perturbation_cannot_change_pre_maturity_reports) ... FAIL
+test_gap_consumes_each_matured_wrapped_hit_once (test_v6_aci.FiniteDelayedACI.test_gap_consumes_each_matured_wrapped_hit_once) ... FAIL
+test_inadequate_initial_calibration_is_whole_stream_failure (test_v6_aci.FiniteDelayedACI.test_inadequate_initial_calibration_is_whole_stream_failure) ... FAIL
+test_missing_validation_candidate_is_not_silently_omitted (test_v6_aci.FiniteDelayedACI.test_missing_validation_candidate_is_not_silently_omitted) ... FAIL
+test_negative_scores_project_to_observed_floor (test_v6_aci.FiniteDelayedACI.test_negative_scores_project_to_observed_floor) ... FAIL
+test_original_treasury_grid_admission_is_value_free (test_v6_aci.FiniteDelayedACI.test_original_treasury_grid_admission_is_value_free) ... FAIL
+test_validation_selection_is_coverage_first_with_visible_failure (test_v6_aci.FiniteDelayedACI.test_validation_selection_is_coverage_first_with_visible_failure) ... FAIL
+
+======================================================================
+FAIL: test_checkpoint_failure_propagates_without_partial_scoring (test_v6_aci.FiniteDelayedACI.test_checkpoint_failure_propagates_without_partial_scoring)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 84, in test_checkpoint_failure_propagates_without_partial_scoring
+    self.api()
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_corrected_rank_exactly_at_finite_lower_boundary (test_v6_aci.FiniteDelayedACI.test_corrected_rank_exactly_at_finite_lower_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 24, in test_corrected_rank_exactly_at_finite_lower_boundary
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_feedback_waits_for_the_issued_outcome_and_uses_old_report (test_v6_aci.FiniteDelayedACI.test_feedback_waits_for_the_issued_outcome_and_uses_old_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 31, in test_feedback_waits_for_the_issued_outcome_and_uses_old_report
+    r=self.stream()
+      ^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 21, in stream
+    return self.api().aci_stream(**args)
+           ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_future_peak_perturbation_cannot_change_pre_maturity_reports (test_v6_aci.FiniteDelayedACI.test_future_peak_perturbation_cannot_change_pre_maturity_reports)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 37, in test_future_peak_perturbation_cannot_change_pre_maturity_reports
+    a=self.stream();b=self.stream(peak=(1e8,20.,10.))
+      ^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 21, in stream
+    return self.api().aci_stream(**args)
+           ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_gap_consumes_each_matured_wrapped_hit_once (test_v6_aci.FiniteDelayedACI.test_gap_consumes_each_matured_wrapped_hit_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 42, in test_gap_consumes_each_matured_wrapped_hit_once
+    r=self.stream(origins=(20,21,24,25),peak=(20.,20.,20.,20.),gamma=.001,window=100)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 21, in stream
+    return self.api().aci_stream(**args)
+           ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_inadequate_initial_calibration_is_whole_stream_failure (test_v6_aci.FiniteDelayedACI.test_inadequate_initial_calibration_is_whole_stream_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 54, in test_inadequate_initial_calibration_is_whole_stream_failure
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_missing_validation_candidate_is_not_silently_omitted (test_v6_aci.FiniteDelayedACI.test_missing_validation_candidate_is_not_silently_omitted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 79, in test_missing_validation_candidate_is_not_silently_omitted
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_negative_scores_project_to_observed_floor (test_v6_aci.FiniteDelayedACI.test_negative_scores_project_to_observed_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 49, in test_negative_scores_project_to_observed_floor
+    r=self.stream(base=np.full(3,20.),floor=np.full(3,5.),peak=np.full(3,6.),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 21, in stream
+    return self.api().aci_stream(**args)
+           ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_original_treasury_grid_admission_is_value_free (test_v6_aci.FiniteDelayedACI.test_original_treasury_grid_admission_is_value_free)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 59, in test_original_treasury_grid_admission_is_value_free
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+======================================================================
+FAIL: test_validation_selection_is_coverage_first_with_visible_failure (test_v6_aci.FiniteDelayedACI.test_validation_selection_is_coverage_first_with_visible_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 68, in test_validation_selection_is_coverage_first_with_visible_failure
+    a=self.api()
+      ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_aci.py", line 11, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_aci'),
+AssertionError: unexpectedly None : finite delayed ACI implementation is missing
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=10)

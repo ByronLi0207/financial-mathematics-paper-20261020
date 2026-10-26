@@ -1,0 +1,1132 @@
+{
+  "source": "nyfed_weekly",
+  "horizon": 6,
+  "window": 52,
+  "method": "FHS",
+  "native_unit": "USD millions",
+  "source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+  "expected_origin_count": 277,
+  "post_result": true,
+  "exploratory": true,
+  "private_trace": ".scratch/round2/baselines/nyfed_weekly-h6-w52-FHS/numeric-traces.npz",
+  "protocol_sha256": "cec3a4df77c2d7f749361bdcb1a1e5e87be1f4aec460696959831a968ab873db",
+  "code_sha256": {
+    "round2_baselines_run.py": "35e184aa3fc861024413dad1b454695e11d56a112180a9110626eb10d053fa54",
+    "round2_qrf.py": "52a3cffc2367fec54613d8a2eb47cd7dc0f335f48958565ea300dd5165d96db4",
+    "round2_filtered.py": "c01b675d5a284ffc92890b78d043362edcc329f5d1ef824e81db43cef3f0aad7"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "arch": "8.0.0",
+    "scikit-learn": "1.9.1"
+  },
+  "status": "COMPLETE",
+  "evaluation": {
+    "origin_count": 277,
+    "mean_pinball": 2726.7147892944545,
+    "mean_capacity": 126714.31671538514,
+    "mean_extra_allowance": 70454.7463182732,
+    "strict_breach_count": 7,
+    "strict_breach_rate": 0.02527075812274368,
+    "mean_positive_overrun": 271.83649865155223,
+    "conditional_mean_overrun": 10756.958589497139,
+    "conditional_overrun_denominator": 7,
+    "conditional_overrun_undefined_reason": null,
+    "mean_unused_allowance": 49369.4023115096
+  },
+  "comparisons": [
+    {
+      "source": "nyfed_weekly",
+      "window": 52,
+      "left_method": "FHS",
+      "right_method": "frozen_F",
+      "contrast_id": "nyfed_weekly-h6-w52-FHS-minus-frozen_F",
+      "post_result": true,
+      "exploratory": true,
+      "relative_loss_percent": -1.8833325353449832,
+      "reference_strict_breaches": 11,
+      "n": 277,
+      "horizon": 6,
+      "bandwidth": 6,
+      "mean_difference": -52.33882081384867,
+      "lrv": 18252138.536063187,
+      "dm_t": -0.20389517097137774,
+      "dm_p": 0.8384354188201796,
+      "hln_t": -0.19984637200094352,
+      "hln_p": 0.8417478963266243,
+      "status": "OK",
+      "double_bandwidth": 12,
+      "double_dm_t": -0.2077245158812828,
+      "double_dm_p": 0.8354440742863988,
+      "double_hln_p": 0.8388163774700881
+    },
+    {
+      "source": "nyfed_weekly",
+      "window": 52,
+      "left_method": "FHS",
+      "right_method": "QR",
+      "contrast_id": "nyfed_weekly-h6-w52-FHS-minus-QR",
+      "post_result": true,
+      "exploratory": true,
+      "relative_loss_percent": -46.4879910971387,
+      "reference_strict_breaches": 84,
+      "n": 277,
+      "horizon": 6,
+      "bandwidth": 6,
+      "mean_difference": -2368.804600090041,
+      "lrv": 219704504.69963026,
+      "dm_t": -2.6598040411059225,
+      "dm_p": 0.007818612634059162,
+      "hln_t": -2.606987626612721,
+      "hln_p": 0.009630877955336296,
+      "status": "OK",
+      "double_bandwidth": 12,
+      "double_dm_t": -2.530507737131458,
+      "double_dm_p": 0.011389757287552925,
+      "double_hln_p": 0.013725295440412953
+    }
+  ],
+  "refits": [
+    {
+      "refit_index": 405,
+      "training_first_origin": 348,
+      "training_last_origin": 399,
+      "training_count": 52,
+      "latest_label_end": 405,
+      "increment_first_end": 349,
+      "increment_last_end": 405,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 13261.31808629764,
+        "normalized_parameters": {
+          "mu": 0.04136477181208772,
+          "omega": 0.17256766558273126,
+          "alpha[1]": 0.11304697950018418,
+          "beta[1]": 0.7293632251220877
+        },
+        "native_parameters": {
+          "mu": 548.5513965672137,
+          "omega": 30348190.99150508,
+          "alpha": 0.11304697950018418,
+          "beta": 0.7293632251220877
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 13,
+          "evaluations": 74,
+          "objective": 80.06641154960191
+        },
+        "parameters_sha256": "fce2fcd743162ef7f700e679f2807e4d1094bb9cf757acff2daa119ca5c53bf8",
+        "residual_pool_sha256": "65ea392a73261118067a792b07e00f1f5036c01dd0156a558c87acbd2b379913",
+        "conditional_variance_sha256": "9cb321ad1d0cb3870ec3cc69aff0cb05fcd01a254a416de38da635315182cc0e",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 11530.462248792915,
+        "maximum_native_sigma": 18251.153932717596
+      },
+      "scenarios": 2048,
+      "seed": 3533703836122288045,
+      "seed_input": "20261023|nyfed_weekly|6|52|405",
+      "draws_sha256": "4946cfbd0e4d4b21f5bbacd9c86bb844324699225b2eb6e8a92cb96f08790b51",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 418,
+      "training_first_origin": 361,
+      "training_last_origin": 412,
+      "training_count": 52,
+      "latest_label_end": 418,
+      "increment_first_end": 362,
+      "increment_last_end": 418,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 14621.517538899678,
+        "normalized_parameters": {
+          "mu": -0.008875865831554884,
+          "omega": 0.06543099768259973,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9253978700535097
+        },
+        "native_parameters": {
+          "mu": -129.77862792900012,
+          "omega": 13988412.850774134,
+          "alpha": 0.0,
+          "beta": 0.9253978700535097
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 9,
+          "evaluations": 50,
+          "objective": 80.52241862759546
+        },
+        "parameters_sha256": "eb98ab30cb1b957bd6fde5205cac946d85359193ec6d1030b3ece8886251eaa7",
+        "residual_pool_sha256": "81318dacb80f8bb5b918197245bb78d23935f240c9748637ae9a7a7d2aad6f7d",
+        "conditional_variance_sha256": "6dd3916e699d1935c3a2fbbe47467c089069d3d418f9ef5d60366b3e796c513a",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13723.17989456271,
+        "maximum_native_sigma": 15824.811173964312
+      },
+      "scenarios": 2048,
+      "seed": 2750249566214447775,
+      "seed_input": "20261023|nyfed_weekly|6|52|418",
+      "draws_sha256": "eaa16a98bc5909112ea5c8b174ba1add66f50493e231bb22a30e1aec191a07b2",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 431,
+      "training_first_origin": 374,
+      "training_last_origin": 425,
+      "training_count": 52,
+      "latest_label_end": 431,
+      "increment_first_end": 375,
+      "increment_last_end": 431,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 13322.338694772987,
+        "normalized_parameters": {
+          "mu": -0.045225093038468736,
+          "omega": 0.007401171811989391,
+          "alpha[1]": 0.0,
+          "beta[1]": 1.0
+        },
+        "native_parameters": {
+          "mu": -602.5040069611005,
+          "omega": 1313594.820116135,
+          "alpha": 0.0,
+          "beta": 1.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 8,
+          "evaluations": 47,
+          "objective": 80.33706242628112
+        },
+        "parameters_sha256": "c94676d775ae4a663801542f7035eb51d3de3eb02347a8424250e2828da76757",
+        "residual_pool_sha256": "eed3fe4fc5ce2564f493841ada60755753f634616b63d0d8650d6c369530e62d",
+        "conditional_variance_sha256": "6bdc9c1ca0c10134c0c2a72d9ceaa4e836385821cea25e4668247edd8d1b9cae",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": true,
+        "minimum_native_sigma": 12127.649506359106,
+        "maximum_native_sigma": 14853.995842048542
+      },
+      "scenarios": 2048,
+      "seed": 10387687974038083231,
+      "seed_input": "20261023|nyfed_weekly|6|52|431",
+      "draws_sha256": "4bc2f9ed3b56d004194d55e679519f89babb22f0ce4c8a1cd7d69fc4d3833c16",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 444,
+      "training_first_origin": 387,
+      "training_last_origin": 438,
+      "training_count": 52,
+      "latest_label_end": 444,
+      "increment_first_end": 388,
+      "increment_last_end": 444,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 13222.190859415357,
+        "normalized_parameters": {
+          "mu": -0.06096103569589374,
+          "omega": 0.11135920726201862,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.892371789755683
+        },
+        "native_parameters": {
+          "mu": -806.0384489587395,
+          "omega": 19468521.642362963,
+          "alpha": 0.0,
+          "beta": 0.892371789755683
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 66,
+          "objective": 80.71639502125437
+        },
+        "parameters_sha256": "9fcbc24b91a208eb894c6eeae59e1a67f45d6039a4a78f46eeedd28a3b1bbf54",
+        "residual_pool_sha256": "8780fc8f389309b4be2061a9656d7d44c6c9d08ffa0b2009651a779c97f805cb",
+        "conditional_variance_sha256": "31d98b3319d060b8828d323888d33d2e4b8663f17ef06a41a125759e62cc2e89",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12821.631153815286,
+        "maximum_native_sigma": 13448.373384529674
+      },
+      "scenarios": 2048,
+      "seed": 15122070075603998337,
+      "seed_input": "20261023|nyfed_weekly|6|52|444",
+      "draws_sha256": "8a72df1355b8b3f43229e2a517fac091124c59cb1dbcb0cb0b0a40bddd921bf9",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 457,
+      "training_first_origin": 400,
+      "training_last_origin": 451,
+      "training_count": 52,
+      "latest_label_end": 457,
+      "increment_first_end": 401,
+      "increment_last_end": 457,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 15360.039861402041,
+        "normalized_parameters": {
+          "mu": -0.03574695239324752,
+          "omega": 0.12574153255341383,
+          "alpha[1]": 1.224794263689208e-15,
+          "beta[1]": 0.8714396224687421
+        },
+        "native_parameters": {
+          "mu": -549.0746136839231,
+          "omega": 29666303.454735495,
+          "alpha": 1.224794263689208e-15,
+          "beta": 0.8714396224687421
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 23,
+          "evaluations": 129,
+          "objective": 80.82878504507694
+        },
+        "parameters_sha256": "bbc06bf3ace020a8399c6131dfcec4254a1f5a5e13e1e5cda1ef8b81015aaf22",
+        "residual_pool_sha256": "0a82d3f03183c99f281571d55501e585ce08b6a1c82741b5c3ae0765dbea273d",
+        "conditional_variance_sha256": "75cec172d7345ab7a79fc5a1dd043d77664ee47f18022d071c5e37115d18679f",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 15190.847569015052,
+        "maximum_native_sigma": 15487.640847819806
+      },
+      "scenarios": 2048,
+      "seed": 12808046585285844039,
+      "seed_input": "20261023|nyfed_weekly|6|52|457",
+      "draws_sha256": "9fd5436d777394a91021c1b91dd16355c9646fbd207d94629e286e0c2c09e253",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 470,
+      "training_first_origin": 413,
+      "training_last_origin": 464,
+      "training_count": 52,
+      "latest_label_end": 470,
+      "increment_first_end": 414,
+      "increment_last_end": 470,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 14735.862908790468,
+        "normalized_parameters": {
+          "mu": -0.011169846508657589,
+          "omega": 0.8239796264214959,
+          "alpha[1]": 0.17807012983699155,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": -164.59732686381008,
+          "omega": 178923596.2352708,
+          "alpha": 0.17807012983699155,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 59,
+          "objective": 80.36016093238669
+        },
+        "parameters_sha256": "46f4f23b3356a6c412cf39eb0f76beb298710a719148c9108fb1b14a72a8a25a",
+        "residual_pool_sha256": "a8ebd5533d967d1f96307f7dc8d037c4aa5f7cd78611001d30b615b08833013a",
+        "conditional_variance_sha256": "ab0adaa7418333f01a906fc922a0aa139bd35b7c39b25d634548063c60f01512",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13376.288358740494,
+        "maximum_native_sigma": 20647.78119195177
+      },
+      "scenarios": 2048,
+      "seed": 12682182937151692773,
+      "seed_input": "20261023|nyfed_weekly|6|52|470",
+      "draws_sha256": "a77e9227b287aa3cd9a4bef26ae2e1a8b9cf8951491df2a0e9e0be2e418f7809",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 483,
+      "training_first_origin": 426,
+      "training_last_origin": 477,
+      "training_count": 52,
+      "latest_label_end": 483,
+      "increment_first_end": 427,
+      "increment_last_end": 483,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 14359.151216179973,
+        "normalized_parameters": {
+          "mu": 0.03614000750193614,
+          "omega": 0.7048884544278359,
+          "alpha[1]": 0.24292799828728454,
+          "beta[1]": 0.06807263394699614
+        },
+        "native_parameters": {
+          "mu": 518.9398326741797,
+          "omega": 145337583.62388784,
+          "alpha": 0.24292799828728454,
+          "beta": 0.06807263394699614
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 80.13890904121227
+        },
+        "parameters_sha256": "70c250dae09f3ecd925d37ab7441ffb30ec787dc687f3587063e4671e9332246",
+        "residual_pool_sha256": "53c9edcd5826de8786ce6af78e1a8a4b8994140bffb8640182c3b8a310c2b7b0",
+        "conditional_variance_sha256": "15ca38c9bbd111a1d449e7f3fb4af6fd1e84ac319aeb4a93d3980721a60dc4b6",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12500.237567297461,
+        "maximum_native_sigma": 22639.921977025322
+      },
+      "scenarios": 2048,
+      "seed": 14807088576314981019,
+      "seed_input": "20261023|nyfed_weekly|6|52|483",
+      "draws_sha256": "4ad08b6832e0360068930eebf3d0519a1d3150edffbfccac0d015f79e56bb4d0",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 496,
+      "training_first_origin": 439,
+      "training_last_origin": 490,
+      "training_count": 52,
+      "latest_label_end": 496,
+      "increment_first_end": 440,
+      "increment_last_end": 496,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 14925.971536747264,
+        "normalized_parameters": {
+          "mu": 0.0064056073937503325,
+          "omega": 0.011157039431705025,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9783493211423968
+        },
+        "native_parameters": {
+          "mu": 95.60991363469529,
+          "omega": 2485616.8605829324,
+          "alpha": 0.0,
+          "beta": 0.9783493211423968
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 15,
+          "evaluations": 84,
+          "objective": 80.09593948716564
+        },
+        "parameters_sha256": "f91495c07ed88f175d62b2b4e8db1b713588552546d6aabbd906c61a687c7f93",
+        "residual_pool_sha256": "dfcb9e6400fae253ebfc6e66c7ef74ec14604dfa424338eead927e3b06d5f833",
+        "conditional_variance_sha256": "dfccf3e14145a19d85c4d5791c0b5960d1929ec7dc74a23ffeb4f684f738247e",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12737.784929211635,
+        "maximum_native_sigma": 16626.500906019268
+      },
+      "scenarios": 2048,
+      "seed": 4687448950831506623,
+      "seed_input": "20261023|nyfed_weekly|6|52|496",
+      "draws_sha256": "83ca3f95fde1a3d51f68aeb5a44090245ab0f15ea3e30cb354371697b18dea66",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 509,
+      "training_first_origin": 452,
+      "training_last_origin": 503,
+      "training_count": 52,
+      "latest_label_end": 509,
+      "increment_first_end": 453,
+      "increment_last_end": 509,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 13625.432544880463,
+        "normalized_parameters": {
+          "mu": -0.03554056350125355,
+          "omega": 0.06979056608597274,
+          "alpha[1]": 7.04840515782535e-13,
+          "beta[1]": 0.9142396870317856
+        },
+        "native_parameters": {
+          "mu": -484.25555059337086,
+          "omega": 12956786.931155028,
+          "alpha": 7.04840515782535e-13,
+          "beta": 0.9142396870317856
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 56,
+          "objective": 79.87044064779218
+        },
+        "parameters_sha256": "2a0aa4c2a67ccd5a71016f27c93026c4f53260a9ae1b93467d3c0e59488d7d3c",
+        "residual_pool_sha256": "eb32c9389e76fe09e80f7b96ae099a63b89723f0727d814b053c5a3da65291d8",
+        "conditional_variance_sha256": "e122b8be0ff600bf8f9d0d7185b3363e70e76b571c9600ba481f2b5cc194ee92",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12315.483258250091,
+        "maximum_native_sigma": 15507.201217696458
+      },
+      "scenarios": 2048,
+      "seed": 15152547588391409938,
+      "seed_input": "20261023|nyfed_weekly|6|52|509",
+      "draws_sha256": "eeed556c07e12832bf7349b2fb1f0a92c69de3674a0882b79135aba48aa34438",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 522,
+      "training_first_origin": 465,
+      "training_last_origin": 516,
+      "training_count": 52,
+      "latest_label_end": 522,
+      "increment_first_end": 466,
+      "increment_last_end": 522,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 15333.031171698593,
+        "normalized_parameters": {
+          "mu": 0.07596649940331608,
+          "omega": 0.6659073624167127,
+          "alpha[1]": 0.32383243622118973,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": 1164.796703355868,
+          "omega": 156556049.4448399,
+          "alpha": 0.32383243622118973,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 54,
+          "objective": 77.82284709263547
+        },
+        "parameters_sha256": "cfcff594a83e7fb5c2d69d13eb605a1e417f6ca3cdc694a79809366050fb96ef",
+        "residual_pool_sha256": "79117fcd7bf2d5a34d63b350aeb3f64d527cfecff7e87228027244b727dca708",
+        "conditional_variance_sha256": "6cbb8503bcb48aefa1288b582042ee751feafd5d1ddcc4a654537ee803a7efc2",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 12514.226402762435,
+        "maximum_native_sigma": 26350.176614298063
+      },
+      "scenarios": 2048,
+      "seed": 5432474260390176736,
+      "seed_input": "20261023|nyfed_weekly|6|52|522",
+      "draws_sha256": "b2a200f28cc1013aeb085e437f2d2d290b0fc4332dc52f1c10d2f1ad9b3e3cef",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 535,
+      "training_first_origin": 478,
+      "training_last_origin": 529,
+      "training_count": 52,
+      "latest_label_end": 535,
+      "increment_first_end": 479,
+      "increment_last_end": 535,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 17280.306396020613,
+        "normalized_parameters": {
+          "mu": 0.07613155163059879,
+          "omega": 0.7298045188405597,
+          "alpha[1]": 0.25008601520294393,
+          "beta[1]": 5.149000682259985e-16
+        },
+        "native_parameters": {
+          "mu": 1315.5765385812097,
+          "omega": 217926189.6410397,
+          "alpha": 0.25008601520294393,
+          "beta": 5.149000682259985e-16
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 54,
+          "objective": 79.06366678599977
+        },
+        "parameters_sha256": "80a332ec58b8fff86a8eee74f7455ae2501b91f5497f02c51329ad895ffc42a0",
+        "residual_pool_sha256": "7ace379794af7302e91fe8003babb2e7eab9ed4b40db302513be8dc8a338bbab",
+        "conditional_variance_sha256": "f3bb1816c169cc0b29cf31eed37fe668d1576451e855aa9de612a593bcc2f43e",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14764.582143717607,
+        "maximum_native_sigma": 25103.118788912463
+      },
+      "scenarios": 2048,
+      "seed": 7434629757085232122,
+      "seed_input": "20261023|nyfed_weekly|6|52|535",
+      "draws_sha256": "5c4a87d3b1a003e21c8053ab6631697d17a5b8f27aa7caef79edf360e2a7ed08",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 548,
+      "training_first_origin": 491,
+      "training_last_origin": 542,
+      "training_count": 52,
+      "latest_label_end": 548,
+      "increment_first_end": 492,
+      "increment_last_end": 548,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 16806.648208894712,
+        "normalized_parameters": {
+          "mu": 0.05076469255397795,
+          "omega": 0.6797322724320637,
+          "alpha[1]": 0.3012711434650685,
+          "beta[1]": 3.9179680575455843e-16
+        },
+        "native_parameters": {
+          "mu": 853.1843291874042,
+          "omega": 191999505.08638662,
+          "alpha": 0.3012711434650685,
+          "beta": 3.9179680575455843e-16
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 78.3668742043192
+        },
+        "parameters_sha256": "871285839e7b2960798da82b9ec9499fd286f2c795b2fb08413b351932d629fb",
+        "residual_pool_sha256": "78d19e2b219d864f6ebab60a75c8c109fc591acf4eab6e2497d3b0b40b14ab99",
+        "conditional_variance_sha256": "6055e8b8db476ffd6184ac330506e5f410c35d55923f86366e582ac793624f4b",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13857.04211252212,
+        "maximum_native_sigma": 26457.310880458183
+      },
+      "scenarios": 2048,
+      "seed": 193362412731486510,
+      "seed_input": "20261023|nyfed_weekly|6|52|548",
+      "draws_sha256": "3ce101b9168e43aa4d27c509cae711ef4e20f2f9480de25f34ab5cc533e0d225",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 561,
+      "training_first_origin": 504,
+      "training_last_origin": 555,
+      "training_count": 52,
+      "latest_label_end": 561,
+      "increment_first_end": 505,
+      "increment_last_end": 561,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 18306.435241346528,
+        "normalized_parameters": {
+          "mu": 0.017657421572326113,
+          "omega": 0.8046411529821735,
+          "alpha[1]": 0.18584555185156607,
+          "beta[1]": 1.170488226448024e-11
+        },
+        "native_parameters": {
+          "mu": 323.2444445429432,
+          "omega": 269655826.04088044,
+          "alpha": 0.18584555185156607,
+          "beta": 1.170488226448024e-11
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 13,
+          "evaluations": 70,
+          "objective": 79.83338673604638
+        },
+        "parameters_sha256": "0823f55713faccfca68acf972c9ed7de75094104bbe8668ccfc9ca3bf6a9a081",
+        "residual_pool_sha256": "81d8f92ed65992afd7655da33985fef152f45c6693e5d32596b0cdc4941a7618",
+        "conditional_variance_sha256": "614ac43b4f5ba52f6c09cc4e8ad025c205cd07aa84818117246f3c40d10b4af1",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 16421.385389104296,
+        "maximum_native_sigma": 26993.53871566477
+      },
+      "scenarios": 2048,
+      "seed": 6449444920822319014,
+      "seed_input": "20261023|nyfed_weekly|6|52|561",
+      "draws_sha256": "abdd017158edfbded22bf2dfc8b599038c36b57527ed842f0e935d8952c3b407",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 574,
+      "training_first_origin": 517,
+      "training_last_origin": 568,
+      "training_count": 52,
+      "latest_label_end": 574,
+      "increment_first_end": 518,
+      "increment_last_end": 574,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 18231.998424786118,
+        "normalized_parameters": {
+          "mu": 0.0009629813665491544,
+          "omega": 9.995921280394974e-09,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.9862518918417176
+        },
+        "native_parameters": {
+          "mu": 17.557074758022566,
+          "omega": 3.3227018756971374,
+          "alpha": 0.0,
+          "beta": 0.9862518918417176
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 56,
+          "objective": 79.48861426704899
+        },
+        "parameters_sha256": "8a9fdbba1712b6211e17b771fe0fcaa174c1b5785ccd90ae7909d5c0ec88f151",
+        "residual_pool_sha256": "eba4ff05a96b5dfac8f050cffbdc436aa7ebb0659f5632935e7addc22b80b8bf",
+        "conditional_variance_sha256": "3512353780240c918532622d3c04da454239fec42d435105ead47f0cbbc84cb2",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 14199.367757231506,
+        "maximum_native_sigma": 20922.28370949212
+      },
+      "scenarios": 2048,
+      "seed": 6813365012569827003,
+      "seed_input": "20261023|nyfed_weekly|6|52|574",
+      "draws_sha256": "14c3910e31ca216e75450593dbe27a6d7025a301672fa5dd647bc75c5cfb9a02",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 587,
+      "training_first_origin": 530,
+      "training_last_origin": 581,
+      "training_count": 52,
+      "latest_label_end": 587,
+      "increment_first_end": 531,
+      "increment_last_end": 587,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 17322.986712215043,
+        "normalized_parameters": {
+          "mu": -0.004207623732932115,
+          "omega": 0.16934420562085697,
+          "alpha[1]": 0.0,
+          "beta[1]": 0.8135353825343963
+        },
+        "native_parameters": {
+          "mu": -72.88861001558368,
+          "omega": 50817803.041459575,
+          "alpha": 0.0,
+          "beta": 0.8135353825343963
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 80.47818614672053
+        },
+        "parameters_sha256": "50cc3fb0995ea418c2008b7fb7951e0ddfad903fb3fbeb6eff4b414cd55f02f9",
+        "residual_pool_sha256": "b7de080a639899b27c785fe1cf1604e79bf760d8b3c4fffecf57ea32094b7aac",
+        "conditional_variance_sha256": "66e170b086136e59e215e7f33fc07e2a2a2882e3df0d735d03c966766605a51a",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 16508.599457052438,
+        "maximum_native_sigma": 18404.593404170457
+      },
+      "scenarios": 2048,
+      "seed": 14727153928079805047,
+      "seed_input": "20261023|nyfed_weekly|6|52|587",
+      "draws_sha256": "c647871679f53d00f8c7e51184c2b2dc938ed4746ab2c12d4a52d4889926e20c",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 600,
+      "training_first_origin": 543,
+      "training_last_origin": 594,
+      "training_count": 52,
+      "latest_label_end": 600,
+      "increment_first_end": 544,
+      "increment_last_end": 600,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 17888.685343417204,
+        "normalized_parameters": {
+          "mu": -0.013576536966506398,
+          "omega": 0.8825467344996637,
+          "alpha[1]": 0.10894763943442111,
+          "beta[1]": 2.219068007795731e-13
+        },
+        "native_parameters": {
+          "mu": -242.86639784710488,
+          "omega": 282419423.6527082,
+          "alpha": 0.10894763943442111,
+          "beta": 2.219068007795731e-13
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 11,
+          "evaluations": 60,
+          "objective": 80.26495153092614
+        },
+        "parameters_sha256": "63ef3908df29f864a7892cedeb186d47da25e9b52262bc5d94165c7fe9a814ae",
+        "residual_pool_sha256": "92f66dd3f619bf6f13db415536f2b56063f8978a5903f3032bd2be2bbf283651",
+        "conditional_variance_sha256": "4ef5da9bbd284f4d0d6c8ad5537d6a215a293c606c2a5e4be88f8fe0c12e6ecd",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 16805.350758599066,
+        "maximum_native_sigma": 23614.824109804027
+      },
+      "scenarios": 2048,
+      "seed": 2369303207900410239,
+      "seed_input": "20261023|nyfed_weekly|6|52|600",
+      "draws_sha256": "92d2ddf35a2387c1acb1b89934e9bc15c6c4fb0e3ef0f04d1c29bed591cc632a",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 613,
+      "training_first_origin": 556,
+      "training_last_origin": 607,
+      "training_count": 52,
+      "latest_label_end": 613,
+      "increment_first_end": 557,
+      "increment_last_end": 613,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 19221.72651527615,
+        "normalized_parameters": {
+          "mu": -0.03741389212571669,
+          "omega": 0.8024268190598821,
+          "alpha[1]": 0.19590966999572842,
+          "beta[1]": 2.3284037673733384e-11
+        },
+        "native_parameters": {
+          "mu": -719.1596023125701,
+          "omega": 296476464.5969912,
+          "alpha": 0.19590966999572842,
+          "beta": 2.3284037673733384e-11
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 8,
+          "evaluations": 43,
+          "objective": 79.87056249974496
+        },
+        "parameters_sha256": "b6c761378b94c3893a8f5b513871c6ecf295e8fa028646a2e3d026ff0be6436c",
+        "residual_pool_sha256": "b9f20fe9f89ef7ea66ef5fc358e1991642bd2ea49452e520db41e10ec5d6378e",
+        "conditional_variance_sha256": "e6daad9af558fb2a9b221ee8fbfa90abe2cae3aa1176da865328925e5c4f3bf9",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 17218.562232485645,
+        "maximum_native_sigma": 30107.31265952799
+      },
+      "scenarios": 2048,
+      "seed": 12141831412936489894,
+      "seed_input": "20261023|nyfed_weekly|6|52|613",
+      "draws_sha256": "a7517f6206bac54ad225d12cdb3bb2a35de0a70b2966eb93012136734c8b2289",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 626,
+      "training_first_origin": 569,
+      "training_last_origin": 620,
+      "training_count": 52,
+      "latest_label_end": 626,
+      "increment_first_end": 570,
+      "increment_last_end": 626,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 18901.3252264435,
+        "normalized_parameters": {
+          "mu": -0.006173923780626501,
+          "omega": 0.7772966604787351,
+          "alpha[1]": 0.21417763214895277,
+          "beta[1]": 1.547928118172228e-15
+        },
+        "native_parameters": {
+          "mu": -116.69534130089511,
+          "omega": 277697079.0112777,
+          "alpha": 0.21417763214895277,
+          "beta": 1.547928118172228e-15
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 9,
+          "evaluations": 50,
+          "objective": 79.60206470272387
+        },
+        "parameters_sha256": "70b4f28f2f4c457484ab92432eb1b0b5d61fcf1a7fbbdb870832362508746b5b",
+        "residual_pool_sha256": "1ebfd475ed0fdd5fdf2c612d898726558cbb3cb111000df0a8396a8647f3f635",
+        "conditional_variance_sha256": "27018d48e4826d54148417df1582586b7705083f6301716af3f49fafc435f717",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 16664.337596460336,
+        "maximum_native_sigma": 30499.618919956065
+      },
+      "scenarios": 2048,
+      "seed": 8712610010565594932,
+      "seed_input": "20261023|nyfed_weekly|6|52|626",
+      "draws_sha256": "b4988be1ddabac166382f356cac98ea0c9e302113e9413470b28957a0af42eb7",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 639,
+      "training_first_origin": 582,
+      "training_last_origin": 633,
+      "training_count": 52,
+      "latest_label_end": 639,
+      "increment_first_end": 583,
+      "increment_last_end": 639,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 19343.556944902914,
+        "normalized_parameters": {
+          "mu": -0.06517283812560404,
+          "omega": 0.7665082471358953,
+          "alpha[1]": 0.22426748861442275,
+          "beta[1]": 5.456733547881088e-16
+        },
+        "native_parameters": {
+          "mu": -1260.6745055435613,
+          "omega": 286806840.03984773,
+          "alpha": 0.22426748861442275,
+          "beta": 5.456733547881088e-16
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 9,
+          "evaluations": 50,
+          "objective": 79.50993376748609
+        },
+        "parameters_sha256": "708d0bd25c8098c20754bd7aa9a25d9114c5cb06b16e87a0b73cc8a9ad99350a",
+        "residual_pool_sha256": "260da32c2905c284e9908bf23afb8638f393c559631345c42a6d19c78aaaf0f5",
+        "conditional_variance_sha256": "be090130015644b69345424f8fb6098876a58387199fc55def051cfa1f2e6b6e",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 16937.010028678047,
+        "maximum_native_sigma": 31602.100575604236
+      },
+      "scenarios": 2048,
+      "seed": 18309505086566999094,
+      "seed_input": "20261023|nyfed_weekly|6|52|639",
+      "draws_sha256": "189dec1b19a430ebf6bceca20f9c705d53414990f005b416e4e40006f831c0a6",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 652,
+      "training_first_origin": 595,
+      "training_last_origin": 646,
+      "training_count": 52,
+      "latest_label_end": 652,
+      "increment_first_end": 596,
+      "increment_last_end": 652,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 16132.363517682914,
+        "normalized_parameters": {
+          "mu": -0.08194583598734358,
+          "omega": 0.6882695600142301,
+          "alpha[1]": 0.3318634589697741,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": -1321.9800149082491,
+          "omega": 179124322.87820292,
+          "alpha": 0.3318634589697741,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 8,
+          "evaluations": 44,
+          "objective": 79.21875094422026
+        },
+        "parameters_sha256": "c6f66dc3e32f4a88443d55c5cac456f55b68da162d069207244414bd09384044",
+        "residual_pool_sha256": "4f1102730e7a63aac0932c7ece4fab95d9265c0e20b09f6ae35d9e27ed4d4618",
+        "conditional_variance_sha256": "2b0a5d07cc6310a1e40527c378aa2ef1064e5c107b4c0d82eb06b8ea69302690",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13386.090339520957,
+        "maximum_native_sigma": 35140.330574629086
+      },
+      "scenarios": 2048,
+      "seed": 6068137520675691746,
+      "seed_input": "20261023|nyfed_weekly|6|52|652",
+      "draws_sha256": "3394c0716bf26aecb20111c09b537697f4ebfa24df7bb15e9b7107e0d48490d6",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 665,
+      "training_first_origin": 608,
+      "training_last_origin": 659,
+      "training_count": 52,
+      "latest_label_end": 665,
+      "increment_first_end": 609,
+      "increment_last_end": 665,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 16353.229984082065,
+        "normalized_parameters": {
+          "mu": -0.012780847968979415,
+          "omega": 0.6413078127168673,
+          "alpha[1]": 0.31484392932266697,
+          "beta[1]": 0.043112643608583925
+        },
+        "native_parameters": {
+          "mu": -209.00814622830853,
+          "omega": 171503749.6943148,
+          "alpha": 0.31484392932266697,
+          "beta": 0.043112643608583925
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 10,
+          "evaluations": 55,
+          "objective": 79.24538768865908
+        },
+        "parameters_sha256": "234cffa19090d03543099913cfb208c21d68c8932a4a1175ae061712578498df",
+        "residual_pool_sha256": "1f72c03053f3026ca650702f90bc96e7e03b07c493df193199909b7e3a43a05e",
+        "conditional_variance_sha256": "eacf859a14385b5065cd142ff41aec94939304594e8e64c94d50eca5c45959b7",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13407.536554489003,
+        "maximum_native_sigma": 29879.451669583497
+      },
+      "scenarios": 2048,
+      "seed": 10263232382407199696,
+      "seed_input": "20261023|nyfed_weekly|6|52|665",
+      "draws_sha256": "2eb8f4473ead96043deda2c7ab13eab2a15bf18ca2a82607ae69c35cfb2516c8",
+      "sampling": "iid with replacement; frozen within refit block"
+    },
+    {
+      "refit_index": 678,
+      "training_first_origin": 621,
+      "training_last_origin": 672,
+      "training_count": 52,
+      "latest_label_end": 678,
+      "increment_first_end": 622,
+      "increment_last_end": 678,
+      "increment_count": 57,
+      "garch": {
+        "normalization_rms": 16727.94455657118,
+        "normalized_parameters": {
+          "mu": -0.012159428632194415,
+          "omega": 0.6732027174772744,
+          "alpha[1]": 0.3357369722255311,
+          "beta[1]": 0.0
+        },
+        "native_parameters": {
+          "mu": -203.4022479989323,
+          "omega": 188378364.1175643,
+          "alpha": 0.3357369722255311,
+          "beta": 0.0
+        },
+        "warnings": [],
+        "optimizer": {
+          "convergence_flag": 0,
+          "status": 0,
+          "message": "Optimization terminated successfully",
+          "iterations": 9,
+          "evaluations": 50,
+          "objective": 78.79679860201088
+        },
+        "parameters_sha256": "38426ac58ddb0de6d80ddf6df93cbda06f91990b6b7aae3da8879ded4055840a",
+        "residual_pool_sha256": "5c0ce2d26aa7a103c72b3e9f0df54d8c5ec77874dafdf57da8f8f6a05b93ecac",
+        "conditional_variance_sha256": "7e0efbb6551fd41e56998c9dcc4ff3ebf7a3303b096d83318c2342726c239d77",
+        "historical_volatility_is_in_sample_at_refit": true,
+        "persistence_boundary": false,
+        "minimum_native_sigma": 13725.17154569549,
+        "maximum_native_sigma": 31108.129927162387
+      },
+      "scenarios": 2048,
+      "seed": 12518129052139389481,
+      "seed_input": "20261023|nyfed_weekly|6|52|678",
+      "draws_sha256": "29680b2e8bcb05bdd8d5ea8297cde9c06b50245f0d38d7895be845595c519255",
+      "sampling": "iid with replacement; frozen within refit block"
+    }
+  ],
+  "refit_count": 22,
+  "resources": {
+    "started_utc": "2026-10-23T10:29:08.251392+00:00",
+    "checkpoint_utc": "2026-10-23T10:29:09Z",
+    "measurement_point": "final_checkpoint_before_manifest",
+    "requested_numerical_threads": 1,
+    "elapsed_seconds": 1.6163071251939982,
+    "peak_rss_bytes": 190496768,
+    "maximum_observed_os_threads": 1,
+    "thread_probe_status": "PASS",
+    "thread_snapshot_count": 33,
+    "completed_stability_lengths": [],
+    "current_stage": "D1_complete_or_NA",
+    "current_cell_id": null,
+    "current_length": null,
+    "completed_origins_current_cell": 277,
+    "completed_replicates_current_length": 0,
+    "new_output_bytes_at_checkpoint": 1068155,
+    "private_numeric_output_bytes_at_checkpoint": 14798,
+    "public_analysis_output_bytes_at_checkpoint": 1053357
+  },
+  "private_files": [
+    {
+      "name": "numeric-traces.npz",
+      "bytes": 14798,
+      "sha256": "cccec3e6b52415d2f33610686174b8762ff69825c159889369fa774f84908ed1"
+    }
+  ]
+}

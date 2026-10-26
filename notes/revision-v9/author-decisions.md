@@ -1,0 +1,5 @@
+# Decisions reserved for the author
+
+The current title asks when history is long enough. The alternative estimation-cost subtitle is unselected: the selected coordinate omits parameter count and the design does not identify a pure estimation-cost channel. Keeping a question-form title is a positioning choice, not a general threshold claim.
+
+The author controls submission, personal declarations, permissions and journal forms. No such action is performed here. The author may decide whether to close PR #3 or #4; PR #5 remains the single proposed line, with protected branches unchanged. No merge is performed. Independent compatible dealer acquisition, actual historical release-vintage evidence, a future issue protocol, evaluated horizon/action policy and capture/failure continuity are still required for stronger claims. Cleanup and new software remain outside this revision. Public original design provenance needs a safe separately authorized route; no private identity bundle or guard bypass is supplied.
