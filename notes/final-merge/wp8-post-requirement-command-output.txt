@@ -1,0 +1,402 @@
+["python3", "notes/final-merge/audit_wp5_language.py", "--source", "submission-final/manuscript.tex", "--output", "notes/final-merge/wp8-post-requirement-language-audit.json", "--enforce"]
+{
+  "rule_version": "WP5-before-edit-v1",
+  "source_sha256": "83359df5e704ecc4f7802c399f4e083730faf13c7fcc46e8d5289bd14f1c646b",
+  "banned_count": 0,
+  "banned_matches": [],
+  "gates": {
+    "abstract_five_sentences": true,
+    "abstract_at_most_170_words": true,
+    "mean_18_to_24": true,
+    "every_sentence_at_most_two_numeric_values": true,
+    "grammatical_negatives_at_most_8_percent": true,
+    "banned_zero": true
+  },
+  "counting_rule_sha256": "47f7bd1b61d08eac0ef7fd6ccc82aced9bb6e5a7cd74818937b3af246d975794",
+  "status": "PASS",
+  "abstract": {
+    "sentence_count": 5,
+    "word_count": 109
+  },
+  "primary": {
+    "sentence_count": 329,
+    "word_count": 6279,
+    "mean_sentence_words": 19.085106382978722,
+    "grammatically_negative_sentences": 3,
+    "grammatically_negative_percent": 0.9118541033434651,
+    "adverse_or_uncertainty_sentences": 60,
+    "max_numeric_values": 2,
+    "overloaded_numeric_sentences": []
+  }
+}
+
+[exit 0]
+
+["/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3", "notes/final-merge/audit_wp4_documents.py", "--main-pdf", "submission-final/manuscript.pdf", "--supp-pdf", "submission-final/supplement.pdf", "--main-log", ".scratch/final-merge-12h/wp8-post-requirement-v6/workspace-main/main.log", "--supp-log", ".scratch/final-merge-12h/wp8-fresh-package-v5/supplement/supplement.log", "--output", "notes/final-merge/wp8-post-requirement-document-audit.json"]
+{
+  "status": "PASS",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "counts": {
+    "main_words_excluding_tables_references": 6160,
+    "per_section_words": [
+      {
+        "section": "Title, abstract and front matter",
+        "words": 137
+      },
+      {
+        "section": "Introduction",
+        "words": 532
+      },
+      {
+        "section": "Related literature",
+        "words": 268
+      },
+      {
+        "section": "The forecast target",
+        "words": 283
+      },
+      {
+        "section": "Data",
+        "words": 533
+      },
+      {
+        "section": "Forecasting methods",
+        "words": 470
+      },
+      {
+        "section": "Evaluation design",
+        "words": 455
+      },
+      {
+        "section": "Results",
+        "words": 1531
+      },
+      {
+        "section": "Why history length matters",
+        "words": 904
+      },
+      {
+        "section": "Limit-cost rankings depend on the stated charges",
+        "words": 270
+      },
+      {
+        "section": "Implications for model validation",
+        "words": 158
+      },
+      {
+        "section": "Limitations",
+        "words": 185
+      },
+      {
+        "section": "Conclusion",
+        "words": 240
+      },
+      {
+        "section": "Data and code availability",
+        "words": 166
+      },
+      {
+        "section": "Author-provided information",
+        "words": 28
+      }
+    ],
+    "conservative_source_tokens_including_table_tex": 9051,
+    "pdf_words_before_references_including_tables_captions_axes": 8433,
+    "main_pages": 21,
+    "supplement_pages": 25,
+    "main_tables": 6,
+    "main_figures": 4
+  },
+  "logs": {
+    "main": {
+      "bad_diagnostics": [],
+      "underfull_warning_count": 0,
+      "sha256": "9aab23152cdfced013dbd4643de1e5e1e063e27a1ac2f7b7657651fbd536c843"
+    },
+    "supplement": {
+      "bad_diagnostics": [],
+      "underfull_warning_count": 5,
+      "sha256": "d1a84dd40c8b49fd802f5a8647f6b1ce74b7d94aef49ee70af1acb7b8d0b0947"
+    }
+  },
+  "exact_relocated_sections": 21,
+  "analytic_source_byte_identical": true,
+  "cftc_long_history_rows": 34,
+  "cftc_display_columns_checked": 272,
+  "main_numeric_bindings": [
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/point/r_star",
+      "value": 106.49618468616566,
+      "display": "106.5"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/intervals/all_draw_envelope/lower",
+      "value": 27.894967082095143,
+      "display": "27.89"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR33/intervals/all_draw_envelope/upper",
+      "value": 110.71007095944418,
+      "display": "110.71"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/point/r_star",
+      "value": 27.324522025270575,
+      "display": "27.3"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/intervals/all_draw_envelope/lower",
+      "value": 13.27239395223403,
+      "display": "13.27"
+    },
+    {
+      "source": "notes/revision-v9/wp1-breakeven.json",
+      "pointer": "/methods/QR4/intervals/all_draw_envelope/upper",
+      "value": 107.10936480242033,
+      "display": "107.11"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P1_QR33",
+      "value": {
+        "status": "SUPPORT",
+        "planned": 34,
+        "complete": 34,
+        "successes": 29,
+        "unknown": 0,
+        "complete_fraction": 0.8529411764705882,
+        "lower": 0.8529411764705882,
+        "upper": 0.8529411764705882,
+        "threshold": 0.8
+      },
+      "displayed_count": "$29/34$",
+      "displayed_status": "Supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P1_QR4",
+      "value": {
+        "status": "SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 15,
+        "unknown": 0,
+        "complete_fraction": 0.8823529411764706,
+        "lower": 0.8823529411764706,
+        "upper": 0.8823529411764706,
+        "threshold": 0.8
+      },
+      "displayed_count": "$15/17$",
+      "displayed_status": "Supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P2_QR4",
+      "value": {
+        "status": "NOT_SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 10,
+        "unknown": 0,
+        "complete_fraction": 0.5882352941176471,
+        "lower": 0.5882352941176471,
+        "upper": 0.5882352941176471,
+        "threshold": 0.6
+      },
+      "displayed_count": "$10/17$",
+      "displayed_status": "Not supported"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P2_QR33",
+      "value": {
+        "status": "NOT_TESTABLE",
+        "reason": "NO_REGISTERED_REGION_CELL",
+        "planned": 0
+      },
+      "displayed_count": "NA",
+      "displayed_status": "Not testable"
+    },
+    {
+      "source": "results/final-merge/wp2-cftc-mechanism/summary.json",
+      "pointer": "/tests/P3_QR4",
+      "value": {
+        "status": "NOT_SUPPORT",
+        "planned": 17,
+        "complete": 17,
+        "successes": 6,
+        "unknown": 0,
+        "complete_fraction": 0.35294117647058826,
+        "lower": 0.35294117647058826,
+        "upper": 0.35294117647058826,
+        "threshold": 0.7
+      },
+      "displayed_count": "$6/17$",
+      "displayed_status": "Not supported"
+    },
+    {
+      "original_table": "tab:methods",
+      "numeric_tokens": 10,
+      "unchanged": true
+    },
+    {
+      "original_table": "tab:fx",
+      "numeric_tokens": 18,
+      "unchanged": true
+    },
+    {
+      "original_table": "tab:weekly",
+      "numeric_tokens": 18,
+      "unchanged": true
+    }
+  ],
+  "negative_control_in_memory_miscount_detected": true,
+  "original_main_table_lines_checked": 22,
+  "word_rule": "English words and numeric tokens after TeX/math/citation cleanup; tables and bibliography excluded, headings and figure captions included. Also report conservative counts including table TeX and actual PDF table/figure text.",
+  "scope": "Current source structure, source fields, exact relocations and native compile diagnostics only. Language acceptance, full-page visual QA and broader release checks have separate phase-specific receipts.",
+  "pdf_sha256": {
+    "main": "ad459bc83b75ebe09c55708e14fa748d0b9860ae2bda84df5dba4450813c5ac0",
+    "supplement": "39d731dae180bdc12ad1fb2d870936ee3f547a957262a19f4b2eff2df8bd085b"
+  },
+  "new_model_fits": 0
+}
+
+[exit 0]
+
+["python3", ".scratch/final-merge-12h/build_full_requirement_audit.py"]
+{
+  "schema": "final-merge-full-plan-prepublication-requirements-v1",
+  "status": "COMPLETION_UNPROVEN_LOCAL_REQUIREMENTS_AUDITED",
+  "actual_utc": "2026-10-26T06:13:24.693368+00:00",
+  "source_plan_sha256": "92430a41ddabe711ec839886bb2928f921d4e400744e12232df2eee7657b23b9",
+  "scope": "Full original twelve-hour research, writing, verification, publication and reporting objective. This is a sole-executor requirement-by-requirement assessment, not independent review or a replacement for underlying evidence. It is prepublication and cannot prove future timing, remote delivery, uninterrupted effective research or disappearance of old scientific limitations.",
+  "requirement_count": 63,
+  "status_counts": {
+    "PASS": 31,
+    "PENDING_TIME_WINDOW": 1,
+    "MISMATCH": 1,
+    "PASS_WITH_DECLARED_SCOPE": 1,
+    "PASS_AT_LAST_READ": 1,
+    "PASS_WP0_TO_WP7_WP8_OPEN": 1,
+    "PASS_WITH_EXECUTION_SCOPE": 1,
+    "PASS_QUALIFIED_LOCAL_ENVIRONMENT": 2,
+    "PASS_WITH_RETAINED_MISMATCH": 1,
+    "PASS_SCIENTIFIC_SUPPORT": 1,
+    "PASS_SCIENTIFIC_NOT_SUPPORT": 2,
+    "PASS_SCIENTIFIC_PARTLY": 1,
+    "PASS_WITH_DISCLOSED_SCOPE": 1,
+    "PASS_WITH_INFORMATION_SCOPE": 1,
+    "PASS_WITH_NUMERICAL_SCOPE": 1,
+    "PASS_WITH_SCOPE_QUALIFICATION": 1,
+    "PASS_WITH_CORRECTED_ROLE": 1,
+    "PASS_AFTER_DOCUMENTATION_FIX": 1,
+    "PASS_UNDER_FIXED_RULE": 2,
+    "PASS_WITH_RETAINED_LIMITATIONS": 1,
+    "PASS_AUTHOR_DECISION_PENDING": 1,
+    "PASS_WITH_RUNTIME_AND_REPLAY_SCOPE": 1,
+    "PASS_WITH_DECLARED_CHECK_SCOPE": 1,
+    "PASS_WITH_ACCESS_BOUNDARIES": 1,
+    "PASS_WITH_EXACT_IDENTITY_TRANSFER": 1,
+    "PASS_WITH_LEGACY_EXCEPTION_AND_SCAN_SCOPE": 1,
+    "PASS_AT_LAST_READ_RECHECK_REQUIRED": 1,
+    "BLOCKED": 1,
+    "PENDING_DEPENDENCY": 1,
+    "PENDING_TIME_AND_DELIVERY_STATE": 1
+  },
+  "all_goal_complete": false,
+  "wp8_delivered": false,
+  "new_pr_count": 0,
+  "unresolved_requirement_ids": [
+    "G02",
+    "G03",
+    "W8h",
+    "L01",
+    "R01"
+  ],
+  "new_scientific_analyses": 0,
+  "automatic_semantic_entailment_claimed": false
+}
+
+[exit 0]
+["python3", "notes/final-merge/verify_post_requirement_sources.py", "--output", "notes/final-merge/wp8-post-requirement-source-integrity.json"]
+{
+  "status": "PASS",
+  "actual_utc": "2026-10-26T06:14:51.881591+00:00",
+  "comparison_commit": "5f9a5cbe6ec8fe7229a0bed2a58b61ffe21e7e11",
+  "main_delta": "One evidence-bound conclusion sentence in Figure2caption only",
+  "all_original_main_numeric_tokens_exact": true,
+  "all_original_main_label_reference_citation_link_tokens_exact": true,
+  "current_evidence_fields_checked": 74,
+  "evidence_mismatch_count": 0,
+  "historical_result_protocol_paths_exact": 2962,
+  "historical_wp1_thesis_exact_suffix_retained": true,
+  "historical_wp1_clauses_checked": 8,
+  "new_current_C9_evidence_ids_checked": 15,
+  "separate_figure_legend_synced": true,
+  "new_result_or_protocol_computations": 0,
+  "scope": "Exact saved-source and bounded current-document checks. Earlier scientific/reference/rights results retain their own evidence and limitations; original local commit availability is an explicit requirement, not fresh-public-clone provenance proof."
+}
+
+[exit 0]
+
+["python3", ".scratch/final-merge-12h/build_full_requirement_audit.py"]
+{
+  "schema": "final-merge-full-plan-prepublication-requirements-v1",
+  "status": "COMPLETION_UNPROVEN_LOCAL_REQUIREMENTS_AUDITED",
+  "actual_utc": "2026-10-26T06:14:51.922015+00:00",
+  "source_plan_sha256": "92430a41ddabe711ec839886bb2928f921d4e400744e12232df2eee7657b23b9",
+  "scope": "Full original twelve-hour research, writing, verification, publication and reporting objective. This is a sole-executor requirement-by-requirement assessment, not independent review or a replacement for underlying evidence. It is prepublication and cannot prove future timing, remote delivery, uninterrupted effective research or disappearance of old scientific limitations.",
+  "requirement_count": 63,
+  "status_counts": {
+    "PASS": 31,
+    "PENDING_TIME_WINDOW": 1,
+    "MISMATCH": 1,
+    "PASS_WITH_DECLARED_SCOPE": 1,
+    "PASS_AT_LAST_READ": 1,
+    "PASS_WP0_TO_WP7_WP8_OPEN": 1,
+    "PASS_WITH_EXECUTION_SCOPE": 1,
+    "PASS_QUALIFIED_LOCAL_ENVIRONMENT": 2,
+    "PASS_WITH_RETAINED_MISMATCH": 1,
+    "PASS_SCIENTIFIC_SUPPORT": 1,
+    "PASS_SCIENTIFIC_NOT_SUPPORT": 2,
+    "PASS_SCIENTIFIC_PARTLY": 1,
+    "PASS_WITH_DISCLOSED_SCOPE": 1,
+    "PASS_WITH_INFORMATION_SCOPE": 1,
+    "PASS_WITH_NUMERICAL_SCOPE": 1,
+    "PASS_WITH_SCOPE_QUALIFICATION": 1,
+    "PASS_WITH_CORRECTED_ROLE": 1,
+    "PASS_AFTER_DOCUMENTATION_FIX": 1,
+    "PASS_UNDER_FIXED_RULE": 2,
+    "PASS_WITH_RETAINED_LIMITATIONS": 1,
+    "PASS_AUTHOR_DECISION_PENDING": 1,
+    "PASS_WITH_RUNTIME_AND_REPLAY_SCOPE": 1,
+    "PASS_WITH_DECLARED_CHECK_SCOPE": 1,
+    "PASS_WITH_ACCESS_BOUNDARIES": 1,
+    "PASS_WITH_EXACT_IDENTITY_TRANSFER": 1,
+    "PASS_WITH_LEGACY_EXCEPTION_AND_SCAN_SCOPE": 1,
+    "PASS_AT_LAST_READ_RECHECK_REQUIRED": 1,
+    "BLOCKED": 1,
+    "PENDING_DEPENDENCY": 1,
+    "PENDING_TIME_AND_DELIVERY_STATE": 1
+  },
+  "all_goal_complete": false,
+  "wp8_delivered": false,
+  "new_pr_count": 0,
+  "unresolved_requirement_ids": [
+    "G02",
+    "G03",
+    "W8h",
+    "L01",
+    "R01"
+  ],
+  "new_scientific_analyses": 0,
+  "automatic_semantic_entailment_claimed": false
+}
+
+[exit 0]

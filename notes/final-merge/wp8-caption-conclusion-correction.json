@@ -1,0 +1,117 @@
+{
+  "actual_utc": "2026-10-26T06:04:17.226334+00:00",
+  "status": "PASS_AFTER_CURRENT_CUT_VALIDATION",
+  "requirement": "WP3 figure caption final sentence states its evidence-bound conclusion",
+  "affected_figure": "fig:v12-decomposition",
+  "source_before_sha256": "16ce1f0309c48a0f2e1faad1180dfeb42b871fa69e528a9a819a41a719839a87",
+  "source_after_sha256": "3c359df85af21affbe43f72d51a8d282fb7e0de67935ddd8363641a180332378",
+  "before": "Crosses retain unavailable comparisons; the text focuses on short-history weekly cells while all planned comparisons remain plotted.",
+  "after": "Crosses retain unavailable comparisons; the text focuses on short-history weekly cells while all planned comparisons remain plotted. The weekly comparisons retain both selection losses and a remaining gap within the tested menu, so hindsight selection alone need not recover historical performance.",
+  "evidence": [
+    "notes/final-merge/evidence-bindings.json:E041-E050",
+    "submission-final/manuscript.tex: Weekly losses reflect both the menu and its selection"
+  ],
+  "new_scientific_conclusion": false,
+  "data_or_figure_bytes_changed": false,
+  "reason": "Existing caption ended with plotting scope rather than the already established substantive takeaway.",
+  "source_rows": [
+    {
+      "id": "E041",
+      "line": "B",
+      "claim": "Finite-menu short-weekly losses",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D1/support_n",
+      "expected": 29,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E042",
+      "line": "B",
+      "claim": "Finite-menu weekly denominator",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D1/planned_n",
+      "expected": 41,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E043",
+      "line": "B",
+      "claim": "Selection explains majority of positive excess count",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D2/support_n",
+      "expected": 27,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E044",
+      "line": "B",
+      "claim": "Selection-component denominator",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D2/planned_n",
+      "expected": 41,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E045",
+      "line": "B",
+      "claim": "Original FX H6 finite-menu diagnostic",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D3/horizons/6/signal_gap_pct",
+      "expected": -14.917351765503492,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E046",
+      "line": "B",
+      "claim": "Original FX H24 finite-menu diagnostic",
+      "source": "results/v12/decomposition/predictions.json",
+      "pointer": "/D3/horizons/24/signal_gap_pct",
+      "expected": -3.7577697957958254,
+      "boundary": "Retrospective finite tested menu; evaluation hindsight, not deployable selection or universal absence of signal."
+    },
+    {
+      "id": "E047",
+      "line": "B",
+      "claim": "Longer-validation QR33 median W52",
+      "source": "results/v12/validation-length/predictions.json",
+      "pointer": "/methods/QR33/by_window/52/median_relative_loss_by_validation/156",
+      "expected": 4.030683382999826,
+      "boundary": "Post-result validation sensitivity; across-market median differences are not median paired changes or causal effects."
+    },
+    {
+      "id": "E048",
+      "line": "B",
+      "claim": "Longer-validation intercept selections W52",
+      "source": "results/v12/validation-length/predictions.json",
+      "pointer": "/methods/QR33/by_window/52/known_infinity_count_by_validation/156",
+      "expected": 10,
+      "boundary": "Out of17 eligible contracts; failures in other methods retained."
+    },
+    {
+      "id": "E049",
+      "line": "B",
+      "claim": "Longer-validation QR33 median W260",
+      "source": "results/v12/validation-length/predictions.json",
+      "pointer": "/methods/QR33/by_window/260/median_relative_loss_by_validation/156",
+      "expected": 0.5250886760200655,
+      "boundary": "Post-result validation sensitivity; across-market median differences are not median paired changes or causal effects."
+    },
+    {
+      "id": "E050",
+      "line": "B",
+      "claim": "Longer-validation intercept selections W260",
+      "source": "results/v12/validation-length/predictions.json",
+      "pointer": "/methods/QR33/by_window/260/known_infinity_count_by_validation/156",
+      "expected": 5,
+      "boundary": "Out of17 eligible contracts; failures in other methods retained."
+    }
+  ],
+  "initial_status": "WRITING_FIX_PENDING_CURRENT_CUT_VALIDATION",
+  "accepted_utc": "2026-10-26T06:13:24.322190+00:00",
+  "validation": [
+    "wp8-post-requirement-document-audit.json",
+    "wp8-post-requirement-language-audit.json",
+    "wp8-post-requirement-page-review.json",
+    "wp8-post-requirement-full-pytest.json"
+  ]
+}
