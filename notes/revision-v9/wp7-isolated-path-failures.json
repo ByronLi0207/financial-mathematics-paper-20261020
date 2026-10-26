@@ -1,0 +1,22 @@
+{
+  "actual_utc": "2026-10-25T00:55:16.485100+00:00",
+  "full_suite": "notes/revision-v9/wp7-final-gate-pytest-output.txt",
+  "summary": "3failed1531passed1068subtests106.15s",
+  "observed_causes": [
+    {
+      "tests": [
+        "test_current_v9_full_source_gate_has_no_unclassified_residuals",
+        "test_exactly_named_fixture_difference_keeps_all_old_assertions"
+      ],
+      "cause": "git ls-tree lacked --full-tree when called inside nested copied workspace; basename census became empty and failed closed",
+      "fix": "Explicit Git repository-root tree enumeration; exact input files and comparisons unchanged"
+    },
+    {
+      "test": "test_fresh_receipt_preserves_three_source_snapshots_and_four_pdf_aliases",
+      "cause": "ZIP-member exclusion checked absolute ancestor .scratch rather than archive-relative member name",
+      "fix": "Check Path(name).parts; existing resolve() containment remains, no hidden member allowance"
+    }
+  ],
+  "scientific_values_or_PDFs_changed": 0,
+  "no_tests_filtered_or_skipped": true
+}
