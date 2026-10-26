@@ -1,0 +1,240 @@
+{
+  "stage": "WP1_POST_HOC",
+  "post_hoc": true,
+  "design_commit": "7f0fee8f1cfdeed584098bbc27570e88eafaea43",
+  "design_sha256": "fddbd6ffd1c08dbd44a6dd2bbbfe3ce1dfb8de3329c515d30a5754eb6db14b48",
+  "selected_metric": "c",
+  "definition": "W/(H+1)",
+  "candidate_scores": {
+    "a": {
+      "correct": 117,
+      "total": 144,
+      "accuracy": 0.8125,
+      "spearman": {
+        "pooled": -0.8824487508206883,
+        "QR33": -0.956384432566545,
+        "QR4": -0.8631369503913067
+      },
+      "standardized_log_coefficient": 2.514124495949891,
+      "intercept": -1.5936168537269069,
+      "iterations": 10,
+      "target_wins": 45,
+      "classification": "in-sample descriptive; not predictive validation"
+    },
+    "b": {
+      "correct": 119,
+      "total": 144,
+      "accuracy": 0.8263888888888888,
+      "spearman": {
+        "pooled": -0.8639059384279735,
+        "QR33": -0.9350856418288611,
+        "QR4": -0.8117103372457021
+      },
+      "standardized_log_coefficient": 1.95233232988002,
+      "intercept": -1.3205403006104632,
+      "iterations": 9,
+      "target_wins": 45,
+      "classification": "in-sample descriptive; not predictive validation"
+    },
+    "c": {
+      "correct": 119,
+      "total": 144,
+      "accuracy": 0.8263888888888888,
+      "spearman": {
+        "pooled": -0.8405245971627608,
+        "QR33": -0.9350856418288611,
+        "QR4": -0.8117103372457021
+      },
+      "standardized_log_coefficient": 1.951744391321726,
+      "intercept": -1.3560990299224327,
+      "iterations": 9,
+      "target_wins": 45,
+      "classification": "in-sample descriptive; not predictive validation"
+    }
+  },
+  "methods": {
+    "QR33": {
+      "point": {
+        "status": "IDENTIFIED",
+        "r_star": 106.49618468616566,
+        "crossings": [
+          106.49618468616566
+        ],
+        "multiple_crossings": false,
+        "x": [
+          2.08,
+          7.428571428571429,
+          10.4,
+          28.8,
+          37.142857142857146,
+          102.85714285714286,
+          115.2,
+          411.42857142857144
+        ],
+        "y": [
+          165.4702447028972,
+          121.96828714694902,
+          74.5195492236361,
+          12.760936989150403,
+          24.995064434611347,
+          4.775394748085297,
+          -11.421730194607356,
+          -4.736030394414015
+        ]
+      },
+      "intervals": {
+        "draw_count": 1999,
+        "finite_count": 1999,
+        "missing_count": 0,
+        "finite_only": {
+          "lower": 27.894967082095143,
+          "upper": 110.71007095944418,
+          "conditional_on_finite_crossing": true
+        },
+        "all_draw_envelope": {
+          "lower": 27.894967082095143,
+          "upper": 110.71007095944418,
+          "upper_unbounded": false,
+          "coverage_guarantee": false
+        },
+        "conditions": "post-hoc chosen metric and fixed DGP grid; metric-selection uncertainty excluded"
+      },
+      "multiple_crossing_draws": 199,
+      "status_counts": {
+        "IDENTIFIED": 1999
+      }
+    },
+    "QR4": {
+      "point": {
+        "status": "IDENTIFIED",
+        "r_star": 27.324522025270575,
+        "crossings": [
+          27.324522025270575,
+          96.14359179687757
+        ],
+        "multiple_crossings": true,
+        "x": [
+          2.08,
+          7.428571428571429,
+          10.4,
+          28.8,
+          37.142857142857146,
+          102.85714285714286,
+          115.2,
+          411.42857142857144
+        ],
+        "y": [
+          56.18286187081292,
+          25.45835240191895,
+          20.362213315978043,
+          -1.775175524579553,
+          8.234728660523391,
+          -0.9370098805386085,
+          -9.122534506479017,
+          -5.1015448314258505
+        ]
+      },
+      "intervals": {
+        "draw_count": 1999,
+        "finite_count": 1999,
+        "missing_count": 0,
+        "finite_only": {
+          "lower": 13.27239395223403,
+          "upper": 107.10936480242033,
+          "conditional_on_finite_crossing": true
+        },
+        "all_draw_envelope": {
+          "lower": 13.27239395223403,
+          "upper": 107.10936480242033,
+          "upper_unbounded": false,
+          "coverage_guarantee": false
+        },
+        "conditions": "post-hoc chosen metric and fixed DGP grid; metric-selection uncertainty excluded"
+      },
+      "multiple_crossing_draws": 1234,
+      "status_counts": {
+        "IDENTIFIED": 1999
+      }
+    }
+  },
+  "simulation_cells": 144,
+  "final_reports": 6912,
+  "source_summary_mismatches": 0,
+  "source_summary_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-12
+  },
+  "empirical_overlay_cells": 120,
+  "empirical_overlay_status_counts": {
+    "COMPLETE": 120
+  },
+  "empirical_consistency_counts": {
+    "CONSISTENT": 95,
+    "INCONSISTENT": 25
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1"
+  },
+  "inputs": [
+    {
+      "path": "results/revision-v8/wp3/summary.csv",
+      "bytes": 66307,
+      "sha256": "911da26770a687199016b7b6bd17b740f004349365e933ba911bec1736c77be0"
+    },
+    {
+      "path": "results/revision-v8/wp3/wp3-driver-output.tar.gz",
+      "bytes": 14883171,
+      "sha256": "519f442094420053d8160ae07e5612f55ac8fe53d07fa8c689b674cdff7ecdb5"
+    },
+    {
+      "path": "results/revision-v8/wp3/wp3-driver-output-members.csv",
+      "bytes": 4624746,
+      "sha256": "777ff0e09357559b84d5c3e50ae07abb074166e074a76af1069e7f8bdac24d6b"
+    },
+    {
+      "path": "results/revision-v8/wp3/manifest.json",
+      "bytes": 7727,
+      "sha256": "593c336fdd6023b5a78c82e58e527756ddfca5e3b64a53a75195f17ac3ffcf7d"
+    },
+    {
+      "path": "protocol/revision-v8/wp3-mechanism-design.json",
+      "bytes": 4346,
+      "sha256": "ed2bedb5a086615957ea8423d61632edbb9de34549c886b4e2f6a04bb3567d70"
+    },
+    {
+      "path": "results/revision-20261022/evaluation-summary.csv",
+      "bytes": 17416,
+      "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-20261023/parsimonious/summary.csv",
+      "bytes": 2115,
+      "sha256": "4cfcbfb837f67214c5193380afb2bce5fb52083cfbd426777105f1814f633c58",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-v8/wp4/contrasts.csv",
+      "bytes": 1270,
+      "sha256": "169b8e2eb63ebb6265620c9bf9a0e706e4440d7135230f65da52f90a839c8bb1",
+      "use": "overlay only, never metric/threshold fitting"
+    },
+    {
+      "path": "results/revision-20261023/round2/panel/summary.csv",
+      "bytes": 39771,
+      "sha256": "34134445a00354dcce3dc43de4c2adada7f2ea5403212558f90ef3480ee810f9",
+      "use": "overlay only, never metric/threshold fitting"
+    }
+  ],
+  "caveats": [
+    "Post-hoc metric selection: resubstitution accuracy is descriptive, not out-of-sample validation.",
+    "Nominal p is not effective degrees of freedom; method menus and failure policies differ.",
+    "Intervals condition on fixed chosen metric and fixed simulation grid; no metric-selection uncertainty or universal coverage guarantee.",
+    "The empirical overlay is consistency checking only, not independent metric selection.",
+    "If c is selected, it has no p and cannot alone identify a per-parameter mechanism.",
+    "Multiple crossings cannot justify a claim of universal improvement above the first crossing."
+  ]
+}
