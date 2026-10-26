@@ -6426,3 +6426,156 @@ Actual successful scope-check output:
   "all_goal_complete": false
 }
 ```
+
+
+## SectionIII review round7: make the existing tail-bound notation explicit
+
+Actual recordedUTC 2026-10-26T09:20:32.221103+00:00. A same-executor econometric-role review of the forecast-target section and its supporting proofs found a minor local notation gap in SupplementS1. The proof already bounds the true quantile tail by1-tau and the main proposition uses level1-alpha, but the Supplement display did not explicitly identify alpha=1-tau at that point. This is a clarification of the existing result, not a new bound or scientific analysis. The original source/PDF/ZIP cut remains preserved in Git and in the ignored prechange snapshot.
+
+Exact source replacement:
+
+```text
+Here \(q=q_\tau\), and \(\alpha\) denotes the stated nominal tail bound.
+```
+
+with:
+
+```text
+Here \(q=q_\tau\) and \(\alpha=1-\tau\).
+```
+
+All result/protocol/Python/main/generated/figure paths remain unchanged relative to local68c98f2. Only the Supplement source, compiledPDF, sourceZIP and these review records change. No empirical value, model, denominator, criterion, failure, counterexample or NA was revised.
+
+Actual canonical compile command:
+
+```json
+[
+  "/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic",
+  "-X",
+  "compile",
+  "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-final-jof-20261025/submission-final/supplement.tex",
+  "--outdir",
+  "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement",
+  "--keep-logs",
+  "--keep-intermediates"
+]
+```
+
+Original compiler output:
+
+```text
+note: "version 2" Tectonic command-line interface activated
+note: Running TeX ...
+note: Rerunning TeX because "supplement.out" changed ...
+note: Rerunning TeX because "supplement.toc" changed ...
+note: Running xdvipdfmx ...
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement/supplement.toc` (3.8525390625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement/supplement.log` (14.111328125 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement/supplement.pdf` (235.9931640625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement/supplement.out` (5.2900390625 KiB)
+note: Writing `/Users/bingyouli/Research/论文/金融数学论文-final-jof-20261025/.scratch/final-merge-12h/review007-current-supplement/supplement.aux` (21.1552734375 KiB)
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+warning: generated/v10-menu-full.tex:2: Underfull \hbox (badness 10000) in paragraph at lines 493--2
+warning: generated/v10-cftc-universe.tex:10: Underfull \hbox (badness 2689) in paragraph at lines 10--10
+warning: generated/v10-cftc-universe.tex:11: Underfull \hbox (badness 1472) in paragraph at lines 11--11
+warning: generated/v10-cftc-universe.tex:12: Underfull \hbox (badness 2197) in paragraph at lines 12--12
+warning: generated/v10-cftc-universe.tex:17: Underfull \hbox (badness 6001) in paragraph at lines 17--17
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+```
+
+Supplement remains25pages. Only page1text/pixels changed and was directly viewed; pages2–25are exact100dpiRGBmatches to the previously reviewed acceptedPDF. A new27member ZIP changes onlysupplement.tex andSOURCE-MANIFEST.json; an independent freshZIPcompile matches all25canonicalpages in text and pixels. Existing main/title/coverPDFs and their reviewed bytes remain unchanged, retaining48editorialpage coverage. NewsourceZIP SHA256 a9309cb230e6fc59a89897db47c4a3dce4b9c2584635294f716ea7563a3c1736. Fullpackage andpagebindings are in`notes/final-merge/review007-notation-clarification.json`.
+
+Actual code-check command:
+
+```json
+[
+  "/Users/bingyouli/.local/bin/uv",
+  "run",
+  "--no-sync",
+  "--offline",
+  "--no-project",
+  "--no-env-file",
+  "--python",
+  "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "--with",
+  "arch==8.0.0",
+  "--with",
+  "numpy==2.3.5",
+  "--with",
+  "scikit-learn==1.9.1",
+  "--with",
+  "pytest==9.1.1",
+  "--with",
+  "matplotlib==3.11.2",
+  "--with",
+  "pypdf",
+  "--with",
+  "pillow",
+  "python",
+  "-B",
+  "-m",
+  "pytest",
+  "-q",
+  "-p",
+  "no:cacheprovider"
+]
+```
+
+Original code-check output:
+
+```text
+WARN `--no-project` was provided, but no project was found
+warning: `--no-sync` has no effect when used alongside `--no-project`
+.................................................... [  2%]
+..................................................................................... [  6%]
+..................................................................................... [ 10%]
+....................... [ 11%]
+.............................. [ 12%]
+............................................................................ [ 15%]
+............................................................................................ [ 20%]
+.................................................. [ 22%]
+....................................................... [ 24%]
+........................................................................ [ 27%]
+...................................................................................................... [ 32%]
+.............................................................. [ 35%]
+.................................................................. [ 38%]
+............................................................... [ 41%]
+................................................................................................................................ [ 46%]
+........................................................................ [ 50%]
+..................................................................... [ 53%]
+........................................................................ [ 56%]
+................................................................ [ 59%]
+......................................... [ 61%]
+...................................................................... [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+........................................................................ [ 77%]
+........................................................................ [ 80%]
+........................................................................ [ 84%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 93%]
+........................................................................ [ 97%]
+................................................... [ 99%]
+...............                                                          [100%]
+2215 passed, 1184 subtests passed in 198.68s (0:03:18)
+```
+
+The run completed2026-10-26T09:14:29.119835+00:00–2026-10-26T09:17:50.289996+00:00 with2215passed/1184subtests and unchanged monitored source/artifact hashes. The raw warning thatno-sync is ignored alongside no-project is retained. Inspection confirmed a new empty overlay framework containing only reference/shim files, referring to existing dependency caches dated24October; no distribution metadata or package-install/download message was observed. Do not describe no-sync as an enforced guarantee. The inherited local historicalGitobject qualification remains; this is not independent data replication or a fresh public-clone provenance test.
+
+Current acceptance is localonly. The hourly review-loop commit gate is09:38:12UTC; no commit or remote publication is claimed before it. The next commit, remote exacttree/blob/byte acceptance and PR6readback will be recorded independently to avoid self-referential identities. Existing PRs and protected branches remain untouched. The fulltwelve-hourobjective and finalreport remain open.
+
+
+### Review-loop commit cadence interpretation corrected before any new commit
+
+At 2026-10-26T09:30:08.920616+00:00, rereading mentor Section I.26 confirmed that its hourly limit has no local/browser route exception. The earlier09:38:12 local-only gate was too narrow. One rolling-hour gate now covers every actual local or browser Git commit. The last actual WP8 platform commit was 2026-10-26T08:41:47+00:00; conservatively carrying it into the loop makes the next allowed commit 2026-10-26T09:41:47+00:00. No review-loop commit has occurred yet, so this corrects the planned route before violating the limit. Later native directory batches must each wait at least one hour from the preceding actual commit, including a local commit. Posting or reading PR6 text is recorded separately from Git commits. The correction changes no scientific result, protocol or manuscript claim. Timing waits are excluded from research time.
