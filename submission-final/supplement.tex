@@ -1,0 +1,1653 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,hyperref,placeins}
+\hypersetup{hidelinks,breaklinks=true}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{5pt}
+\setlength{\LTcapwidth}{\textwidth}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-2ex \@plus -.5ex \@minus -.2ex}{.8ex \@plus .2ex}%
+  {\normalfont\large\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1ex \@plus .2ex \@minus .1ex}{-1em}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\title{Online Supplement to Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+This supplement retains the existing proofs and complete principal adverse-result
+inventories, with links to the unchanged longer records. It accompanies the
+submission-final manuscript and retains the accepted fixed simulation, same-dealer daily
+aggregation and fixed-parameter full-prefix backcast. Each addition was fixed
+before its own new output within a post-result / exploratory revision. The
+two original primary comparisons retain their values and roles.
+The earlier calibrated design and stability screen retain separate sections. The v10 additions report paired menu isolation, independently reported CFTC categories, complete model confidence sets and fixed limit-cost regions.
+
+Tables format saved native fields. Loss percentages are the existing relative
+differences against the named reference; probabilities are labeled as such.
+Different source-reported monetary units are not pooled. NA and failed rows
+remain distinct from complete results.
+
+The complete earlier supplement, full comparison families, all candidate
+tables, annual and sparse sensitivities, numerical details and source guides
+remain accessible through \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS}.
+This index is an access route, not a substitute for compatible input data or
+independent validation.
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{1}
+\makeatletter
+\renewcommand*\l@section[2]{\@dottedtocline{1}{0em}{2.5em}{#1}{#2}}
+\makeatother
+\tableofcontents
+\endgroup
+\medskip
+\section{Known-floor projection and strict quantile coverage}\label{sup:floor}
+
+We forecast the sampled maximum of the absolute position, including
+the observed issue position. Write \(B=|N_t|\) and let \(Y\ge B\) almost surely,
+with \(B\) measurable at the forecast origin. For \(0<\tau<1\), the pinball score is
+\(\rho_\tau(u)=\tau u_+ +(1-\tau)(-u)_+\). A lower inverse conditional quantile
+is \(q_\tau=\inf\{c:F(c\mid\mathcal F_t)\ge\tau\}\).
+
+\paragraph{Proposition 1: floor projection.}
+Replacing a report \(c\) by \(\max(B,c)\) weakly reduces its score at every possible
+outcome. At the population conditional quantile, the strict breach probability
+is at most \(1-\tau\). These are distinct statements: projection applies to any
+report; the tail qualification requires the true conditional quantile.
+Here \(q=q_\tau\), and \(\alpha\) denotes the stated nominal tail bound.
+\[
+\rho_\tau(Y-c)-\rho_\tau(Y-\max\{B,c\})=\tau(B-c)_+,\qquad \Pr(Y>q\mid\mathcal F_t)\le\alpha.
+\]
+\paragraph{Proof.}
+If \(c\ge B\), the replacement changes nothing. If \(c<B\), both errors
+\(Y-c\) and \(Y-B\) are nonnegative, so their score difference is
+\(\tau(B-c)\). This proves the pointwise identity without a density assumption.
+Right continuity of the conditional distribution gives
+\(F(q_\tau\mid\mathcal F_t)\ge\tau\), hence
+\(\Pr(Y>q_\tau\mid\mathcal F_t)\le1-\tau\). An atom at the quantile can make
+this strict; exact nominal hit frequency is not required for a valid upper
+quantile. A fitted report does not automatically inherit this population claim.
+\hfill\textit{QED}
+
+\paragraph{Why the floor matters.}
+The sampled maximum equals the current magnitude whenever the recorded future
+path remains inside its current absolute-position band. This can create an atom
+even when later signed observations are continuous. The existence of a floor
+alone does not imply an atom: an outcome uniformly distributed above the floor
+provides a counterexample. Equality-based coverage tests therefore diagnose
+their stated equalities, rather than every possible valid upper-quantile report.
+
+\paragraph{Endpoint marginals do not identify the peak.}
+The exact artificial constructions in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/notes/revision-v5-novelty/theory-source.json}{the formal example record}
+hold each future-time marginal fixed while changing temporal dependence.
+Comonotone and disjoint rare events then give different peak quantiles.
+The example is a logical construction, not another financial dataset or an
+estimated mechanism. Forecast evaluation must use the ordered path response
+and the information available at its actual origin.
+
+\paragraph{Takeaway.}
+Known-floor projection is an elementary pointwise improvement. It does not
+establish empirical calibration, identify the conditional distribution, or turn
+a fitted endpoint forecast into a forecast of a path maximum.\section{Classical endpoint-to-peak bound}\label{sup:levy}
+
+\paragraph{Proposition 2: the classical endpoint bound.}
+Let future real increments \(X_1,\ldots,X_H\) be independent and individually
+symmetric about zero. Set \(S_0=0\), \(S_h=\sum_{j=1}^hX_j\), and fix a starting
+position \(x\), with absolute magnitude \(B\). Equal increment laws and finite moments are unnecessary.
+For the population absolute-displacement quantile at level \(1-\alpha/2\),
+\(q=\inf\{c:\Pr(|S_H|\le c)\ge1-\alpha/2\}\), the classical scalar maximal
+inequality and the triangle inequality give
+\[
+\Pr\!\left(\max_{0\le h\le H}|x+S_h|>B+q\right)\le\Pr\!\left(\max_h|S_h|>q\right)\le2\Pr(|S_H|>q)\le\alpha.
+\]
+This is a direct application of the classical L\'evy inequality, not a new
+maximal inequality.
+
+\paragraph{Proof, including strict events and atoms.}
+For \(c\ge0\), let \(\eta\) be the first index with \(|S_\eta|>c\). On
+\(\{\eta=k,S_k>c\}\), the remaining sum \(R_k=S_H-S_k\) is independent of
+the information through \(k\) and is symmetric. Therefore \(\Pr(R_k\ge0)\ge1/2\),
+including a possible atom at zero, and that weak sign keeps \(S_H>c\).
+On the corresponding negative crossing, \(R_k\le0\) keeps \(S_H<-c\), also
+with probability at least one half. Summing over the disjoint crossing events
+gives \(\Pr(\max_h|S_h|>c)\le2\Pr(|S_H|>c)\). The argument covers \(c=0\).
+Finally, \(\max_{0\le h\le H}|x+S_h|\le |x|+\max_h|S_h|\), and right
+continuity gives the required strict tail bound at \(q\). \hfill\textit{QED}
+
+\paragraph{Conditional use and empirical implementation.}
+For an observed random anchor, the same argument must hold under its
+forecast-origin conditional law, with the corresponding conditional population
+endpoint quantile. Conditional independence and symmetry about zero cannot be inferred from unconditional marginals. The empirical endpoint plug-in adds the current
+floor to a historical absolute-displacement order statistic. Overlapping labels,
+estimated quantiles and changing dependent histories provide no automatic
+inheritance of this population bound or a pinball-risk ordering.
+
+\paragraph{Two different failure mechanisms.}
+Dependence can destroy the inequality: take \(X_1=Z\), \(X_2=-Z\), with
+\(Z\in\{-1,1\}\) equally likely. The endpoint is zero, while the sampled
+maximum is one. Separately, replacing the required absolute-displacement
+quantile by a generic one-sided endpoint quantile can fail even for independent
+symmetric increments. The exact finite example is preserved in the formal
+example record. These logical counterexamples are separate from the Gaussian
+Monte Carlo cases below; a nonviolating simulation does not prove a theorem
+extension.
+
+\paragraph{Takeaway.}
+The bound supplies a clear population benchmark under explicit assumptions;
+the empirical report remains a model to validate, not a coverage certificate.\section{Monte Carlo mechanisms: original increment persistence}\label{sup:simulation-original}
+
+These are the existing fixed-seed Gaussian experiments, not newly run
+simulations or calibrated replicas of either financial source. Every reported
+rate is a probability, not a percentage. The peak includes the initial level;
+the endpoint event concerns absolute displacement from that initial level.
+Each path cell has 100000 paths.
+L/Stat starts the level AR in stationarity; L/Abs fixes its absolute-level
+tail anchor; L/Sig is the separate signed-level tail-anchor sensitivity.
+I/Zero accumulates stationary AR increments from a zero position.
+M denotes a stationary-marginal endpoint threshold; C denotes a distinct
+fixed-start conditional endpoint oracle. Threshold partners sharing a seed use
+the same paths, not independent repetitions.
+Tables S1--S3 retain the original increment, corrected primary and secondary simulation results.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{Original increment-autoregression simulation, unchanged. Serial persistence here concerns increments, not fitted position levels.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.00 & I/Zero & 20267023 & 5.490 & 3035 & 0.03035 & 0.00054 & 0.02454 \\
+6 & 0.70 & I/Zero & 20267093 & 10.092 & 2597 & 0.02597 & 0.00050 & 0.02573 \\
+6 & 0.85 & I/Zero & 20267108 & 11.634 & 2550 & 0.02550 & 0.00050 & 0.02550 \\
+6 & 0.98 & I/Zero & 20267121 & 13.190 & 2557 & 0.02557 & 0.00050 & 0.02557 \\
+24 & 0.00 & I/Zero & 20285023 & 10.981 & 3819 & 0.03819 & 0.00061 & 0.02504 \\
+24 & 0.70 & I/Zero & 20285093 & 24.599 & 2772 & 0.02772 & 0.00052 & 0.02475 \\
+24 & 0.85 & I/Zero & 20285108 & 33.394 & 2619 & 0.02619 & 0.00051 & 0.02525 \\
+24 & 0.98 & I/Zero & 20285121 & 49.784 & 2572 & 0.02572 & 0.00050 & 0.02572 \\
+\end{longtable}
+\endgroup
+
+The independent-increment rows satisfy the classical premise.
+Positive increment coefficients violate independence without necessarily causing
+a numerical breach of the bound. Their favorable rates are not a general
+result for serial dependence.\section{Mean-reverting levels and negative-increment sensitivities}\label{sup:simulation-primary}
+
+The corrected level process is
+\(N_h=\phi N_{h-1}+\varepsilon_h\), with independent Gaussian innovations
+of variance \(1-\phi^2\) and unit stationary level variance. Its stationary
+increments have lag correlation
+\(\rho_X(k)=-(1-\phi)\phi^{k-1}/2\), so this mechanism differs from a
+positively persistent increment AR. The fitted financial coefficient describes
+levels, making the level equation the relevant illustrative mechanism.
+The negative-increment family is a separate sensitivity, with stationary
+increments and nonstationary cumulative levels.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{All corrected primary cases. Mean-reverting level rates are conservative in these finite cases; the negative-increment result must also be retained.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.68 & L/Stat/M & 20567123 & 3.009 & 175 & 0.00175 & 0.00013 & 0.02462 \\
+6 & 0.68 & L/Abs/M & 20567124 & 3.009 & 0 & 0.00000 & 0.00000 & 0.10447 \\
+6 & 0.85 & L/Stat/M & 20567133 & 2.502 & 300 & 0.00300 & 0.00017 & 0.02553 \\
+6 & 0.85 & L/Abs/M & 20567134 & 2.502 & 14 & 0.00014 & 0.00004 & 0.08227 \\
+6 & 0.98 & L/Stat/M & 20567143 & 1.071 & 913 & 0.00913 & 0.00030 & 0.02434 \\
+6 & 0.98 & L/Abs/M & 20567144 & 1.071 & 372 & 0.00372 & 0.00019 & 0.03623 \\
+6 & -0.30 & I/Zero/M & 20567223 & 4.244 & 3563 & 0.03563 & 0.00059 & 0.02524 \\
+6 & -0.60 & I/Zero/M & 20567233 & 3.127 & 4439 & 0.04439 & 0.00065 & 0.02558 \\
+24 & 0.68 & L/Stat/M & 20585123 & 3.170 & 636 & 0.00636 & 0.00025 & 0.02495 \\
+24 & 0.68 & L/Abs/M & 20585124 & 3.170 & 1 & 0.00001 & 0.00001 & 0.11416 \\
+24 & 0.85 & L/Stat/M & 20585133 & 3.138 & 402 & 0.00402 & 0.00020 & 0.02520 \\
+24 & 0.85 & L/Abs/M & 20585134 & 3.138 & 1 & 0.00001 & 0.00001 & 0.11159 \\
+24 & 0.98 & L/Stat/M & 20585143 & 1.965 & 768 & 0.00768 & 0.00028 & 0.02468 \\
+24 & 0.98 & L/Abs/M & 20585144 & 1.965 & 85 & 0.00085 & 0.00009 & 0.06201 \\
+24 & -0.30 & I/Zero/M & 20585223 & 8.167 & 4281 & 0.04281 & 0.00064 & 0.02476 \\
+24 & -0.60 & I/Zero/M & 20585233 & 5.701 & 5032 & 0.05032 & 0.00069 & 0.02516 \\
+\end{longtable}
+\endgroup
+
+All saved level cases have peak rates below the nominal threshold.
+The largest negative-increment point estimate occurs at the longer horizon and
+the more negative coefficient. Its rate is 0.05032,
+with a saved excess of 0.032
+percentage points and Monte Carlo SE 0.00069.
+This does not demonstrate a population failure. General dependence invalidates the
+classical premise regardless of the observed direction. Zero observed counts
+also do not establish zero population probability.\section{All secondary simulation sensitivities}\label{sup:simulation-secondary}
+
+For stationary random starts, absolute endpoint displacement has
+variance \(2(1-\phi^H)\). At a fixed start \(x\), its conditional Gaussian
+mean and variance are \((\phi^H-1)x\) and \(1-\phi^{2H}\). Thus holding the
+stationary-marginal endpoint threshold across starts does not condition on a
+large anchor. The conditional-oracle sensitivities below are distinct thresholds
+on shared paths; neither is an oracle for the maximum.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrrr}
+\caption{All secondary anchor and conditional-threshold sensitivities. Conditional and marginal endpoint calibration remain distinct.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Horizon & \shortstack{Persistence\\\(\phi\)} & Process & Seed & \shortstack{Endpoint\\threshold} & \shortstack{Peak\\breaches} & \shortstack{Peak breach\\probability} & \shortstack{Monte Carlo\\standard error} & \shortstack{Endpoint breach\\probability} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+6 & 0.68 & L/Abs/C & 20567124 & 3.717 & 0 & 0.00000 & 0.00000 & 0.02411 \\
+6 & 0.68 & L/Sig/M & 20567125 & 3.009 & 2 & 0.00002 & 0.00001 & 0.06261 \\
+6 & 0.68 & L/Sig/C & 20567125 & 3.433 & 1 & 0.00001 & 0.00001 & 0.02476 \\
+6 & 0.85 & L/Abs/C & 20567134 & 3.036 & 0 & 0.00000 & 0.00000 & 0.02488 \\
+6 & 0.85 & L/Sig/M & 20567135 & 2.502 & 21 & 0.00021 & 0.00005 & 0.05689 \\
+6 & 0.85 & L/Sig/C & 20567135 & 2.840 & 4 & 0.00004 & 0.00002 & 0.02607 \\
+6 & 0.98 & L/Abs/C & 20567144 & 1.146 & 215 & 0.00215 & 0.00015 & 0.02503 \\
+6 & 0.98 & L/Sig/M & 20567145 & 1.071 & 464 & 0.00464 & 0.00021 & 0.03184 \\
+6 & 0.98 & L/Sig/C & 20567145 & 1.117 & 340 & 0.00340 & 0.00018 & 0.02521 \\
+24 & 0.68 & L/Abs/C & 20585124 & 3.920 & 0 & 0.00000 & 0.00000 & 0.02567 \\
+24 & 0.68 & L/Sig/M & 20585125 & 3.170 & 9 & 0.00009 & 0.00003 & 0.06486 \\
+24 & 0.68 & L/Sig/C & 20585125 & 3.605 & 1 & 0.00001 & 0.00001 & 0.02514 \\
+24 & 0.85 & L/Abs/C & 20585134 & 3.880 & 0 & 0.00000 & 0.00000 & 0.02495 \\
+24 & 0.85 & L/Sig/M & 20585135 & 3.138 & 3 & 0.00003 & 0.00002 & 0.06306 \\
+24 & 0.85 & L/Sig/C & 20585135 & 3.571 & 0 & 0.00000 & 0.00000 & 0.02484 \\
+24 & 0.98 & L/Abs/C & 20585144 & 2.298 & 20 & 0.00020 & 0.00004 & 0.02518 \\
+24 & 0.98 & L/Sig/M & 20585145 & 1.965 & 146 & 0.00146 & 0.00012 & 0.04607 \\
+24 & 0.98 & L/Sig/C & 20585145 & 2.179 & 56 & 0.00056 & 0.00007 & 0.02556 \\
+\end{longtable}
+\endgroup
+
+The complete correction contains 34 threshold rows on 22 initialized path samples.
+The retained CSV and portable data record provide exact endpoint moments,
+deviations from the nominal probability, and the single-prespecified-row bound
+for zero counts. None estimates financial innovation laws, changing fitted
+parameters or empirical-quantile uncertainty.\section{Empirical endpoint plug-in: all original cells}\label{sup:levy-empirical}
+
+The endpoint plug-in uses each completed historical episode's
+absolute endpoint displacement and adds its specified empirical quantile to
+the actual current-position floor. It shares the historical rule's completed
+origin pool and fixed refit schedule, with no fitted tuning parameter.
+The operational empirical rank and overlapping financial history are distinct
+from the known population quantile in the classical proposition. The report
+therefore has to earn its financial coverage and score performance empirically.
+Tables S4--S5 report every endpoint plug-in comparison and the separate working-reference contrasts.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{Every original-cell endpoint plug-in comparison. A population bound does not imply a lower empirical pinball score.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Endpoint vs\\historical (\%)} & \shortstack{Endpoint vs\\regression (\%)} & \shortstack{Breaches\\endpoint / historical} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Endpoint vs\\historical (\%)} & \shortstack{Endpoint vs\\regression (\%)} & \shortstack{Breaches\\endpoint / historical} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & 30.93 & 33.76 & 101/332 \\
+FX & 6/2880 & 30.39 & 52.98 & 75/360 \\
+FX & 24/720 & 10.85 & -15.71 & 136/427 \\
+FX & 24/2880 & 7.94 & 12.16 & 174/357 \\
+Bills & 6/52 & 3.37 & -43.62 & 10/11 \\
+Bills & 6/260 & -11.77 & -41.49 & 15/28 \\
+Bills & 24/52 & 26.32 & -61.42 & 42/33 \\
+Bills & 24/260 & 9.87 & -47.64 & 22/12 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrr}
+\caption{All separate endpoint-plug-in working-reference contrasts. Adverse score comparisons remain alongside lower-breach reports.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Reference & \shortstack{Loss-test\\statistic} & \shortstack{Normal\\p-value} & \shortstack{Small-sample\\p-value} & \shortstack{Holm-adjusted\\p-value} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Reference & \shortstack{Loss-test\\statistic} & \shortstack{Normal\\p-value} & \shortstack{Small-sample\\p-value} & \shortstack{Holm-adjusted\\p-value} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & F & 7.891 & 2.988e-15 & 3.658e-15 & 4.483e-14 \\
+FX & 6/720 & QR & 6.608 & 3.908e-11 & 4.37e-11 & 5.081e-10 \\
+FX & 6/2880 & F & 7.790 & 6.695e-15 & 8.123e-15 & 9.373e-14 \\
+FX & 6/2880 & QR & 12.832 & 1.089e-37 & 3.451e-37 & 1.743e-36 \\
+FX & 24/720 & F & 1.848 & 0.06462 & 0.06562 & 0.5169 \\
+FX & 24/720 & QR & -1.673 & 0.09434 & 0.09556 & 0.6604 \\
+FX & 24/2880 & F & 2.058 & 0.03958 & 0.04032 & 0.3958 \\
+FX & 24/2880 & QR & 1.530 & 0.1259 & 0.1273 & 0.7002 \\
+Bills & 6/52 & F & 0.971 & 0.3317 & 0.3422 & 0.7002 \\
+Bills & 6/52 & QR & -2.778 & 0.005471 & 0.006887 & 0.06018 \\
+Bills & 6/260 & F & -1.345 & 0.1785 & 0.1884 & 0.7002 \\
+Bills & 6/260 & QR & -3.031 & 0.002441 & 0.003236 & 0.02929 \\
+Bills & 24/52 & F & 1.569 & 0.1167 & 0.1522 & 0.7002 \\
+Bills & 24/52 & QR & -1.991 & 0.04645 & 0.06948 & 0.418 \\
+Bills & 24/260 & F & 1.092 & 0.2746 & 0.3183 & 0.7002 \\
+Bills & 24/260 & QR & -1.516 & 0.1294 & 0.1664 & 0.7002 \\
+\end{longtable}
+\endgroup
+
+The family and its doubled-bandwidth sensitivities are separate
+from the original regression family. The complete tables keep every adverse
+direction; no negative comparison is removed by describing the population
+inequality as conservative. The linked records preserve source-reported mean
+error amounts and every numerical status.\section{AR residual replay and its adverse comparisons}\label{sup:ar}
+
+At each original refit, estimate an intercept-bearing level recursion
+using each unique mature adjacent transition once. Replaying a historical ordered
+residual block from the current position gives the exact algebraic identity
+\[
+M_{i,h}(x)=N_{i+h}+\widehat\phi^{\,h}(x-N_i),\qquad M_{i,0}(x)=x.
+\]
+The empirical peak uses the same completed scenario origins, response rank,
+floor and refit schedule as its matched historical controls. Finite negative or
+above-unit coefficients were eligible, not clipped; all observed fitted
+coefficients in the saved run happened to lie inside the unit interval.
+Their descriptive means are not identified data-generating parameters.
+Table S6 retains every autoregressive replay comparison, including its adverse breach counts.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrr}
+\caption{Complete original autoregressive replay comparison. Lower scores can accompany more strict breaches.}\\
+\toprule
+Source & Horizon & History & \shortstack{Mean fitted\\\(\widehat\phi\)} & \shortstack{Replay vs\\translated (\%)} & \shortstack{Replay vs\\regression (\%)} & \shortstack{Breaches\\replay / translated} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Horizon & History & \shortstack{Mean fitted\\\(\widehat\phi\)} & \shortstack{Replay vs\\translated (\%)} & \shortstack{Replay vs\\regression (\%)} & \shortstack{Breaches\\replay / translated} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & 0.981 & -1.54 & 2.45 & 282/255 \\
+FX & 6 & 2880 & 0.985 & -0.55 & 16.20 & 338/268 \\
+FX & 24 & 720 & 0.981 & 2.39 & -25.32 & 401/289 \\
+FX & 24 & 2880 & 0.985 & 5.15 & 8.68 & 444/292 \\
+Bills & 6 & 52 & 0.676 & -13.44 & -52.66 & 22/11 \\
+Bills & 6 & 260 & 0.847 & -18.89 & -47.21 & 31/28 \\
+Bills & 24 & 52 & 0.711 & 35.13 & -59.43 & 56/33 \\
+Bills & 24 & 260 & 0.850 & -24.12 & -63.86 & 59/12 \\
+\end{longtable}
+\endgroup
+
+The replay improves on original regression in every original Treasury
+cell but loses in most FX cells. Its comparisons with the translated-path rule
+have mixed directions, while strict breaches increase in every row above.
+Sparse-grid and annual signs can reverse. The full paired, annual and fixed-grid
+tables remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/ar1-replay/README.md}{the AR records}.
+These are post-result / exploratory same-data calculations, not independent
+validation.\section{Ordinary quantile ranks and minimizer endpoints}\label{sup:rank}
+
+The ordinary empirical quantile and the corrected empirical rule use
+the same completed pool, refit times and issue floor. The former takes the
+lower empirical pinball minimizer; the latter uses the specified add-one rank.
+When the product of the probability level and pool size is an integer, adjacent reports can be the two endpoints of the same empirical minimizer interval. Calling the lower report a
+uniquely optimal comparator would therefore be wrong. At the short weekly pool,
+the noninteger rank distinction differs.
+Table S7 reports the complete rank ablation and its breach counts.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Complete ordinary-rank ablation. Lower empirical reports increase breach occasions and need not improve score.}\\
+\toprule
+Source & Horizon & History & \shortstack{Regression vs\\empirical (\%)} & \shortstack{Empirical vs\\historical (\%)} & \shortstack{Breaches\\empirical / historical / regression} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Horizon & History & \shortstack{Regression vs\\empirical (\%)} & \shortstack{Empirical vs\\historical (\%)} & \shortstack{Breaches\\empirical / historical / regression} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6 & 720 & -1.967 & -0.153 & 337/332/531 \\
+FX & 6 & 2880 & -14.773 & 0.008 & 365/360/376 \\
+FX & 24 & 720 & 31.508 & -0.003 & 432/427/924 \\
+FX & 24 & 2880 & -3.783 & 0.026 & 359/357/531 \\
+Bills & 6 & 52 & 87.086 & -1.995 & 14/11/84 \\
+Bills & 6 & 260 & 46.058 & 3.237 & 32/28/54 \\
+Bills & 24 & 52 & 208.258 & 6.213 & 37/33/132 \\
+Bills & 24 & 260 & 105.020 & 2.353 & 15/12/84 \\
+\end{longtable}
+\endgroup
+
+The reconstructed historical summaries match the original controls.
+The lower report increases the number of strict hits and the mean underprediction
+amount in every cell, but its loss direction is mixed. Every Treasury regression remains worse
+than the lower empirical report. This ablation isolates a rank convention on the same inspected record; it neither supplies a fresh validation sample nor
+establishes universal superiority of either finite-sample quantile endpoint.
+Exact counts, annual splits and fixed-grid rows are linked in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/rank-ablation/README.md}{the complete rank records}.\section{Fixed-report error preferences}\label{sup:preference}
+
+For a fixed report, changing the loss weight traces a line
+\(R_a=aU+(1-a)V\). Here, \(U=\operatorname{mean}(P-C)_+\) is mean underprediction and
+\(V=\operatorname{mean}(C-P)_+\) is mean overprediction. These are passive error amounts over all
+origins, not observed funding costs. Breach frequency averages an indicator and
+need not rank reports like either amount. The following source-reported monetary
+values are never pooled across FX and weekly aggregates.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{2.50}
+\begin{longtable}{p{30mm}rrrrp{32mm}}
+\caption{The four fixed headline comparisons. The longer-horizon FX result is sensitive to error weights.}\\
+\toprule
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Mean\\overprediction\\left} & \shortstack{Mean\\overprediction\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Comparison & \shortstack{Under-\\prediction\\left} & \shortstack{Under-\\prediction\\right} & \shortstack{Mean\\overprediction\\left} & \shortstack{Mean\\overprediction\\right} & \shortstack{Equal-loss\\weight \(a\)} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+fx\_h6\_primary & 156123.03 & 166531.06 & 4750560.18 & 5671390.59 & none \\
+fx\_h6\_matched & 156123.03 & 185672.23 & 4750560.18 & 5526087.27 & none \\
+fx\_h24\_legacy & 317678.12 & 149813.88 & 8658017.18 & 12121206.97 & \(\dfrac{86579744869851975}{90776350660766843}\) \\
+treasury\_h6\_primary & 3131.86 & 1395.64 & 23688.09 & 28656.17 & \(\dfrac{24840389716843550}{33521504184965797}\) \\
+\end{longtable}
+\endgroup
+
+The equality column gives exact saved rational boundaries for the mixture
+weight defined above, not newly estimated costs. The short-horizon FX primary reduces both mean error amounts;
+its elementary-score curves can nevertheless cross because a Murphy diagram
+varies the elementary score threshold, a different comparison from reweighting
+these two unconditional amounts. The longer-horizon FX legacy pair reverses
+near the loss-weight ratio reported in the main text. Actual decision costs
+were not observed.
+
+The linked complete frontiers include every open region and every boundary tie.
+The full and sparse samples remain separate, and feasible reports outside the
+specified menu are not part of these menu-relative envelopes. All pairwise
+relations, dominated labels and exact arithmetic are additionally preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/preference-robustness/README.md}{the preference records}.\section{Complete preference-frontier source}\label{sup:frontier-0}\label{sup:frontier-8}
+The complete full-sample and fixed sparse-grid frontiers retain every boundary tie and open region. Their unchanged tables appear in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/0d2526cc69092c5158437a0509613bac5e86d47f/submission-jof/supplement.pdf}{v9 Supplement, Tables S9--S10}, and the exact rational source fields remain in the linked preference results. This supplement retains the error amounts and reversal above, while allocating the full new-method comparison tables below. No preference result was recomputed or removed from the repository.
+
+\section{Complete weekly panel: definitions and first half}\label{sup:panel}
+
+Each cell compares the same peak target, completed-label pool,
+origin sequence, fixed refit schedule and native monetary units. The original
+full regression, smaller predictor regression, expanded-ridge full regression
+and ordinary empirical report all remain visible. The additional series are
+related weekly aggregates, not independent individual-dealer replications.
+Changes in predictors and changes in the ridge menu are distinct interventions.
+Every listed comparison is post-result / exploratory.
+
+The historical column gives mean pinball loss and strict hits. Other columns
+give the saved percentage loss difference against that same historical rule and
+strict hits; negative percentages favor the column method. Original full
+regression, four-feature regression and expanded-menu full regression are
+distinct fitted procedures.
+I is the ordinary
+empirical-quantile report, with the endpoint qualification in Section~\ref{sup:rank}.
+Across the saved panel, expanded full-regression median excess
+loss is 9.22 percent,
+compared with 92.63 percent for the original menu. Expanded regression still loses in 34 cells.
+This improvement does not erase the remaining failures or identify a causal
+feature effect.\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{26mm}rrrrrr}
+\caption{Complete panel, first half. Additional regularization leaves substantial adverse cases.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Historical\\loss / breaches} & \shortstack{Original\\regression\\\% / hits} & \shortstack{Four-feature\\regression\\\% / hits} & \shortstack{Expanded-menu\\regression\\\% / hits} & \shortstack{Empirical\\\% / breaches} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Historical\\loss / breaches} & \shortstack{Original\\regression\\\% / hits} & \shortstack{Four-feature\\regression\\\% / hits} & \shortstack{Expanded-menu\\regression\\\% / hits} & \shortstack{Empirical\\\% / breaches} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSMBS-TOT & 6/52 & 921.7 / 21 & 170.97 / 101 & 3.24 / 27 & 5.82 / 28 & 3.26 / 27 \\
+PDPOSMBS-TOT & 6/260 & 945.6 / 26 & 7.36 / 19 & 1.17 / 27 & 7.36 / 19 & 1.96 / 27 \\
+PDPOSMBS-TOT & 24/52 & 1753.7 / 39 & 215.55 / 145 & 5.09 / 43 & 66.24 / 104 & 3.49 / 42 \\
+PDPOSMBS-TOT & 24/260 & 1611.9 / 25 & 26.79 / 29 & 1.04 / 26 & 0.72 / 24 & 1.14 / 26 \\
+PDPOSCS-TOT & 6/52 & 530.3 / 16 & 52.75 / 48 & -5.79 / 23 & -4.70 / 23 & -6.28 / 23 \\
+PDPOSCS-TOT & 6/260 & 399.7 / 6 & 1.90 / 15 & -1.10 / 6 & -0.95 / 8 & -1.56 / 7 \\
+PDPOSCS-TOT & 24/52 & 579.4 / 16 & 73.78 / 63 & 1.85 / 24 & 2.97 / 25 & 2.12 / 23 \\
+PDPOSCS-TOT & 24/260 & 569.9 / 6 & 27.46 / 3 & -3.38 / 6 & -3.06 / 5 & -4.68 / 6 \\
+PDPOSFGS-TOT & 6/52 & 400.7 / 16 & 107.22 / 77 & -4.15 / 24 & -4.29 / 20 & -4.98 / 18 \\
+PDPOSFGS-TOT & 6/260 & 358.3 / 6 & -1.08 / 14 & 4.88 / 9 & -6.04 / 6 & -1.54 / 6 \\
+PDPOSFGS-TOT & 24/52 & 476.2 / 36 & 128.67 / 64 & 13.36 / 37 & 10.67 / 37 & 4.52 / 38 \\
+PDPOSFGS-TOT & 24/260 & 354.0 / 9 & 30.02 / 21 & 72.24 / 26 & -0.97 / 10 & -1.50 / 9 \\
+PDPOSTIPS-L2 & 6/52 & 287.3 / 26 & 217.18 / 125 & 6.74 / 29 & 2.64 / 28 & 1.69 / 26 \\
+PDPOSTIPS-L2 & 6/260 & 269.3 / 24 & 66.28 / 45 & 1.78 / 25 & 66.28 / 45 & 1.63 / 25 \\
+PDPOSTIPS-L2 & 24/52 & 641.0 / 48 & 307.36 / 181 & 24.88 / 69 & 152.16 / 146 & 1.88 / 49 \\
+PDPOSTIPS-L2 & 24/260 & 532.2 / 47 & 226.91 / 147 & 11.41 / 59 & 226.91 / 147 & 1.84 / 51 \\
+PDPOSTIPS-G11 & 6/52 & 42.3 / 23 & 196.70 / 118 & 1.71 / 29 & 6.68 / 41 & -1.13 / 26 \\
+PDPOSTIPS-G11 & 6/260 & 41.8 / 14 & 90.31 / 38 & 63.18 / 29 & -1.52 / 13 & -2.53 / 14 \\
+PDPOSTIPS-G11 & 24/52 & 80.8 / 61 & 218.69 / 123 & 135.59 / 103 & 64.63 / 78 & -0.01 / 63 \\
+PDPOSTIPS-G11 & 24/260 & 51.2 / 9 & 98.59 / 33 & 37.18 / 30 & 98.59 / 33 & -1.09 / 10 \\
+PDPOSTIPS-G2 & 6/52 & 181.3 / 16 & 208.61 / 96 & 8.58 / 21 & 35.47 / 41 & 3.33 / 19 \\
+PDPOSTIPS-G2 & 6/260 & 179.4 / 19 & 63.47 / 36 & 10.78 / 24 & 63.47 / 36 & -0.29 / 19 \\
+PDPOSTIPS-G2 & 24/52 & 377.9 / 31 & 277.81 / 131 & 11.77 / 42 & 40.47 / 60 & -3.63 / 33 \\
+PDPOSTIPS-G2 & 24/260 & 286.0 / 23 & 109.33 / 66 & 120.12 / 58 & 109.33 / 66 & 0.29 / 23 \\
+\end{longtable}
+\endgroup
+
+\section{Complete weekly panel: second half}\label{sup:panel-second}
+
+The second half follows the identical convention. All original
+and expanded results remain unchanged. Cross-series dependence, aggregation
+offsets, native-unit differences and overlapping economic positions preclude
+treating these cells as independent replications. Forecasts are fitted
+separately; observations and losses are not pooled into a single financial
+population.\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{26mm}rrrrrr}
+\caption{Complete panel, second half. The enlarged penalty menu is not uniformly better than historical rules.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Historical\\loss / breaches} & \shortstack{Original\\regression\\\% / hits} & \shortstack{Four-feature\\regression\\\% / hits} & \shortstack{Expanded-menu\\regression\\\% / hits} & \shortstack{Empirical\\\% / breaches} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Historical\\loss / breaches} & \shortstack{Original\\regression\\\% / hits} & \shortstack{Four-feature\\regression\\\% / hits} & \shortstack{Expanded-menu\\regression\\\% / hits} & \shortstack{Empirical\\\% / breaches} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSTIPS-G6L11 & 6/52 & 133.6 / 9 & 59.30 / 73 & -1.65 / 12 & -2.52 / 13 & -0.79 / 12 \\
+PDPOSTIPS-G6L11 & 6/260 & 114.9 / 4 & -5.72 / 14 & -1.11 / 4 & -1.17 / 4 & -1.00 / 4 \\
+PDPOSTIPS-G6L11 & 24/52 & 147.0 / 10 & 76.48 / 92 & -0.97 / 16 & -2.43 / 17 & 0.44 / 15 \\
+PDPOSTIPS-G6L11 & 24/260 & 133.8 / 2 & -26.42 / 1 & -1.30 / 2 & -1.33 / 2 & -0.55 / 2 \\
+PDPOSGSC-L2 & 6/52 & 1232.9 / 15 & 215.90 / 129 & -3.85 / 23 & 215.90 / 129 & -2.12 / 19 \\
+PDPOSGSC-L2 & 6/260 & 1247.4 / 15 & 64.40 / 40 & 9.04 / 20 & 2.20 / 20 & 0.61 / 17 \\
+PDPOSGSC-L2 & 24/52 & 2270.8 / 46 & 276.55 / 165 & 182.80 / 96 & 131.63 / 93 & 5.02 / 55 \\
+PDPOSGSC-L2 & 24/260 & 2918.7 / 33 & 41.60 / 55 & -0.19 / 33 & 0.12 / 32 & 0.14 / 34 \\
+PDPOSGSC-G2L3 & 6/52 & 792.4 / 24 & 121.15 / 93 & 145.25 / 112 & 25.51 / 40 & 3.86 / 28 \\
+PDPOSGSC-G2L3 & 6/260 & 1004.0 / 28 & 21.31 / 44 & 22.62 / 59 & 21.31 / 44 & 0.23 / 30 \\
+PDPOSGSC-G2L3 & 24/52 & 2101.9 / 47 & 112.95 / 135 & 129.55 / 151 & 112.95 / 135 & 1.78 / 54 \\
+PDPOSGSC-G2L3 & 24/260 & 2677.0 / 55 & 11.60 / 64 & 39.73 / 91 & -2.06 / 52 & 1.93 / 55 \\
+PDPOSGSC-G3L6 & 6/52 & 764.9 / 12 & 87.61 / 82 & 75.44 / 72 & 10.10 / 29 & -4.25 / 15 \\
+PDPOSGSC-G3L6 & 6/260 & 699.1 / 20 & 0.79 / 15 & 1.91 / 21 & 0.79 / 15 & 2.27 / 22 \\
+PDPOSGSC-G3L6 & 24/52 & 977.4 / 38 & 544.34 / 137 & 299.12 / 120 & 19.44 / 47 & 9.23 / 45 \\
+PDPOSGSC-G3L6 & 24/260 & 931.0 / 20 & 15.52 / 37 & 0.13 / 20 & -5.76 / 17 & 0.56 / 20 \\
+PDPOSGSC-G6L7 & 6/52 & 542.3 / 16 & 253.66 / 142 & 89.00 / 79 & 48.88 / 63 & -1.24 / 24 \\
+PDPOSGSC-G6L7 & 6/260 & 564.9 / 20 & 31.61 / 42 & 71.05 / 49 & 31.61 / 42 & 0.43 / 21 \\
+PDPOSGSC-G6L7 & 24/52 & 993.4 / 43 & 264.80 / 217 & 264.77 / 215 & 264.80 / 217 & 11.08 / 47 \\
+PDPOSGSC-G6L7 & 24/260 & 699.0 / 22 & 146.41 / 77 & 142.57 / 67 & 146.41 / 77 & 0.98 / 23 \\
+PDPOSGSC-G7L11 & 6/52 & 505.7 / 25 & 175.62 / 83 & 15.72 / 34 & 86.69 / 55 & 14.85 / 34 \\
+PDPOSGSC-G7L11 & 6/260 & 506.2 / 25 & 8.34 / 31 & -0.06 / 25 & 8.34 / 31 & 0.44 / 26 \\
+PDPOSGSC-G7L11 & 24/52 & 1653.9 / 36 & 94.95 / 105 & 62.40 / 91 & -0.51 / 39 & 2.38 / 36 \\
+PDPOSGSC-G7L11 & 24/260 & 1002.9 / 32 & 229.96 / 94 & 202.78 / 99 & 229.96 / 94 & 8.62 / 35 \\
+\end{longtable}
+\endgroup
+
+The expanded-menu selection precedes its evaluation, as documented in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/e5/README.md}{the E5 records}. The original panel's entire candidate/status inventory remains in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/round2/panel/summary.csv}{the original panel records},
+and the fitted expanded-menu predictions are not substitutes for unavailable
+methods or independent dealer data.\section{Complete added-panel endpoint-plug-in comparison}\label{sup:panel-levy}
+
+The original added-panel endpoint plug-in was evaluated on the
+same task grids as the historical and regression reports. Each entry gives
+the saved loss percentage against the historical rule, followed by strict
+hits for the endpoint plug-in and historical report. These are all related
+aggregate tasks, not independent replications or source-pooled monetary losses.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{30mm}rrrr}
+\caption{Every additional-panel endpoint-plug-in result. Fewer breaches do not guarantee a better score.}\\
+\toprule
+Series & \shortstack{Horizon 6\\history 52} & \shortstack{Horizon 6\\history 260} & \shortstack{Horizon 24\\history 52} & \shortstack{Horizon 24\\history 260} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Series & \shortstack{Horizon 6\\history 52} & \shortstack{Horizon 6\\history 260} & \shortstack{Horizon 24\\history 52} & \shortstack{Horizon 24\\history 260} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSMBS-TOT & 7.17; 11/21 & 7.33; 5/26 & -17.87; 27/39 & -3.92; 22/25 \\
+PDPOSCS-TOT & 18.28; 11/16 & 17.56; 2/6 & -5.06; 11/16 & 19.63; 4/6 \\
+PDPOSFGS-TOT & -4.74; 13/16 & 16.77; 0/6 & -3.72; 37/36 & -4.06; 12/9 \\
+PDPOSTIPS-L2 & -1.89; 12/26 & -7.42; 19/24 & -34.60; 30/48 & -4.52; 46/47 \\
+PDPOSTIPS-G11 & 13.93; 3/23 & 27.71; 1/14 & -16.39; 16/61 & 27.11; 0/9 \\
+PDPOSTIPS-G2 & 19.45; 4/16 & 23.00; 4/19 & 6.36; 27/31 & 2.09; 20/23 \\
+PDPOSTIPS-G6L11 & 9.67; 5/9 & 36.27; 0/4 & 5.03; 4/10 & 12.63; 0/2 \\
+PDPOSGSC-L2 & 20.65; 6/15 & -2.64; 6/15 & 0.93; 27/46 & -22.23; 24/33 \\
+PDPOSGSC-G2L3 & 17.31; 15/24 & -14.81; 12/28 & 22.35; 49/47 & -9.35; 40/55 \\
+PDPOSGSC-G3L6 & 20.57; 9/12 & 3.66; 8/20 & -11.37; 20/38 & -5.73; 17/20 \\
+PDPOSGSC-G6L7 & 0.95; 12/16 & -10.15; 15/20 & 1.69; 49/43 & 5.19; 21/22 \\
+PDPOSGSC-G7L11 & 4.92; 11/25 & 1.05; 12/25 & -20.33; 26/36 & 1.88; 26/32 \\
+\end{longtable}
+\endgroup
+
+The complete original panel CSV also preserves every original
+regression candidate, selection result, native-unit mean error amount and
+failure status. This table adds no refit or parameter selection and does not
+extend the independent-increment population guarantee to these financial
+series.\section{Earlier-period fixed selection rules}\label{sup:selection}
+
+The earlier-period experiment applies the saved fixed selection rules
+to familiar historical data. These origins already have validation and
+evaluation roles in the current records, including actual rolling-fold
+scoring. They cannot now be treated as untouched evidence for the expanded
+backcast. The experiment remains retrospective, not external or prospective
+validation. R0 denotes the fixed minimum-validation-loss rule. R2 is the predesignated main one-standard-error selection rule,
+not a result-dependent replacement chosen for its subsequent performance.
+The rule design precedes its calculations but follows earlier research results.
+
+R1 adds the ordinary empirical quantile to the finite regression candidates.
+R2 compares each candidate's validation losses with the same best-mean
+candidate, using the paired-difference Bartlett-HAC standard error. Candidates
+within that tolerance qualify, and the fixed rule prefers the strongest
+shrinkage, including the empirical report. This paired HAC tolerance is a
+time-series adaptation of a one-standard-error preference, not the textbook
+formula, a significance test or a noninferiority guarantee. It does not account
+for the whole uncertainty from selecting the best candidate on that segment.
+
+R3 applies the same preference to prespecified earlier rolling folds and the
+outer validation segment, with origin-equal weighting and maturity gaps.
+Its HAC pairs use actual source-index distances rather than compressing gaps.
+Without an eligible earlier fold, the saved design makes it identical to R2;
+this is not a numerical fallback. Earlier-period results were sealed before
+the already-inspected-period calculations that could reuse those origins.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{p{35mm}rrrrr}
+\caption{Every earlier-period minimum-loss and one-standard-error comparison. The one-standard-error rule misses the recorded success conditions.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Series & \shortstack{Horizon /\\history} & \shortstack{Minimum-loss\\rule (\%)} & \shortstack{One-standard-\\error rule (\%)} & \shortstack{Breaches\\minimum-loss /\\one-standard-error} & \shortstack{Historical\\breaches} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PDPOSGS-B & 6/52 & 11.22 & 7.43 & 10/10 & 7 \\
+PDPOSGS-B & 24/52 & 181.39 & 181.39 & 27/27 & 8 \\
+PDPOSMBS-TOT & 6/52 & -4.11 & 3.83 & 7/6 & 4 \\
+PDPOSMBS-TOT & 24/52 & 48.55 & 26.55 & 14/13 & 10 \\
+PDPOSCS-TOT & 6/52 & -11.56 & -11.56 & 0/0 & 0 \\
+PDPOSCS-TOT & 24/52 & -4.12 & 1.02 & 4/4 & 2 \\
+PDPOSFGS-TOT & 6/52 & -27.32 & -27.32 & 6/6 & 0 \\
+PDPOSFGS-TOT & 24/52 & -3.87 & -3.60 & 4/3 & 2 \\
+PDPOSTIPS-L2 & 6/52 & -7.06 & -7.06 & 2/2 & 1 \\
+PDPOSTIPS-L2 & 24/52 & -23.33 & -1.55 & 4/1 & 1 \\
+PDPOSTIPS-G11 & 6/52 & -5.55 & -5.79 & 5/5 & 4 \\
+PDPOSTIPS-G11 & 24/52 & 5.67 & -0.87 & 15/15 & 15 \\
+PDPOSTIPS-G2 & 6/52 & 15.16 & 15.16 & 8/8 & 0 \\
+PDPOSTIPS-G2 & 24/52 & 30.27 & 30.27 & 14/14 & 10 \\
+PDPOSTIPS-G6L11 & 6/52 & 283.88 & 28.58 & 17/6 & 0 \\
+PDPOSTIPS-G6L11 & 24/52 & -4.03 & -2.70 & 2/1 & 0 \\
+PDPOSGSC-L2 & 6/52 & 48.04 & 16.09 & 17/15 & 14 \\
+PDPOSGSC-L2 & 24/52 & 40.77 & 40.77 & 34/34 & 30 \\
+PDPOSGSC-G2L3 & 6/52 & 1.40 & 11.14 & 12/13 & 8 \\
+PDPOSGSC-G2L3 & 24/52 & -11.22 & 15.48 & 15/20 & 15 \\
+PDPOSGSC-G3L6 & 6/52 & 2.63 & 2.35 & 11/11 & 10 \\
+PDPOSGSC-G3L6 & 24/52 & 15.62 & 6.92 & 29/28 & 26 \\
+PDPOSGSC-G6L7 & 6/52 & 19.03 & 19.03 & 6/6 & 1 \\
+PDPOSGSC-G6L7 & 24/52 & 2.05 & 1.82 & 20/19 & 19 \\
+PDPOSGSC-G7L11 & 6/52 & 19.18 & 12.77 & 13/13 & 10 \\
+PDPOSGSC-G7L11 & 24/52 & 8.48 & 2.70 & 29/29 & 27 \\
+fx\_hourly & 6/720 & 2.44 & 0.62 & 79/73 & 63 \\
+fx\_hourly & 6/2880 & -16.62 & -6.28 & 20/20 & 16 \\
+fx\_hourly & 24/720 & -4.36 & -4.36 & 47/47 & 32 \\
+fx\_hourly & 24/2880 & -1.42 & -1.40 & 1/1 & 0 \\
+\end{longtable}
+\endgroup
+
+All three recorded success criteria are marked NOT\_MET.
+R2's worst weekly excess is 181.39 percent,
+and its weekly median is 5.37 percent.
+The long-history FX gain also fails the prewritten retention criterion.
+This adverse result remains a robustness finding rather than a contribution
+claim. Complete inspected-period and all-rule rows remain linked in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/README.md}{the R6 records}.\section{Selection failures and replication boundaries}\label{sup:selection-failures}
+
+Required validation-candidate failure blocks the dependent rule;
+it is neither retried nor replaced by a shorter mean. The complete inventory of non-complete reports is below. Every listed row has the saved reason
+\texttt{REQUIRED\_VALIDATION\_CANDIDATE\_FAILED}. Those failures remain part of
+the evidence even though other rules in the same task can complete.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{All non-complete fixed-rule report rows. Failed mandatory candidates remain failures.}\\
+\toprule
+Phase & Series & \shortstack{Horizon /\\history} & Rule & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Phase & Series & \shortstack{Horizon /\\history} & Rule & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+retro & fx\_hourly & 6/720 & R3 & FAILED \\
+retro & fx\_hourly & 24/720 & R3 & FAILED \\
+inspected & fx\_hourly & 6/720 & R3 & FAILED \\
+inspected & fx\_hourly & 24/720 & R3 & FAILED \\
+\end{longtable}
+\endgroup
+
+The Treasury earlier-period structural comparison uses a shorter
+history than the original primary. It is explicitly an analogue, not an exact
+earlier replication of the long-history primary. The source-reported comparison
+and its definition are preserved in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/primary-replication.csv}{the primary-structure table}.
+All original primary values remain unchanged. Reclassifying the analogue as an
+exact primary replication, or calling familiar retrospective FX data an unseen
+dealer, would change the scientific claim without adding evidence.\section{Finite delayed calibration and headroom SAV}\label{sup:wp2}
+
+The finite delayed ACI-style wrapper adapts to past strict hits after their entire peak labels mature. Its score pool contains only completed residual
+scores and uses the specified finite memory. The base-plus-score quantile is
+projected onto the known floor. The adaptive alpha state is projected to the
+current feasible range; the rank-zero convention issues the floor. Gamma was
+selected by coverage distance, then pinball loss and the fixed tie rule, a
+coverage-first selection criterion distinct from original regression fitting.
+No canonical ACI theorem is imported to this modified procedure.
+
+The headroom SAV method adapts a CAViaR recursion, rather than replicating a
+return-VaR model. The completed headroom response is normalized by its
+training-only scale; the recursive report is multiplied back by that same
+scale and then floor-projected. Its fixed bounded optimizer and starts retain
+all eligibility and convergence failures; a complete fit is not a proof of a
+global optimum. Selection state carries across the unissued chronological gap.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrlrrl}
+\caption{Complete delayed-wrapper and headroom-recursion inventory. Two long-horizon wrapper cells remain unavailable.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Method & Mean loss & Breaches & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Method & Mean loss & Breaches & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & ACI\_F & 472677.77 & 331 & COMPLETE \\
+FX & 6/720 & ACI\_QR & 439672.91 & 352 & COMPLETE \\
+FX & 6/720 & SAV & 449237.37 & 349 & COMPLETE \\
+FX & 6/2880 & ACI\_F & 463271.47 & 328 & COMPLETE \\
+FX & 6/2880 & ACI\_QR & 393795.06 & 329 & COMPLETE \\
+FX & 6/2880 & SAV & 456696.22 & 364 & COMPLETE \\
+FX & 24/720 & ACI\_F & 921402.08 & 322 & COMPLETE \\
+FX & 24/720 & ACI\_QR & 1020220.09 & 393 & COMPLETE \\
+FX & 24/720 & SAV & 781586.36 & 439 & COMPLETE \\
+FX & 24/2880 & ACI\_F & 791441.18 & 323 & COMPLETE \\
+FX & 24/2880 & ACI\_QR & 755982.70 & 294 & COMPLETE \\
+FX & 24/2880 & SAV & 756811.00 & 333 & COMPLETE \\
+Bills & 6/52 & ACI\_F & 3818.40 & 18 & COMPLETE \\
+Bills & 6/52 & ACI\_QR & 3489.82 & 29 & COMPLETE \\
+Bills & 6/52 & SAV & 2974.32 & 16 & COMPLETE \\
+Bills & 6/260 & ACI\_F & 2792.91 & 7 & COMPLETE \\
+Bills & 6/260 & ACI\_QR & 3013.16 & 6 & COMPLETE \\
+Bills & 6/260 & SAV & 2892.23 & 29 & COMPLETE \\
+Bills & 24/52 & ACI\_F & 4368.10 & 38 & COMPLETE \\
+Bills & 24/52 & ACI\_QR & 6250.53 & 47 & COMPLETE \\
+Bills & 24/52 & SAV & 4182.40 & 35 & COMPLETE \\
+Bills & 24/260 & ACI\_F & NA & NA & NA \\
+Bills & 24/260 & ACI\_QR & NA & NA & NA \\
+Bills & 24/260 & SAV & 3100.97 & 25 & COMPLETE \\
+\end{longtable}
+\endgroup
+
+The NA wrapper rows have the saved reason
+\texttt{VALIDATION\_INELIGIBLE}; no test is substituted for the absent forecasts.
+All losses are in each source's native units and must not be pooled.\section{Wrapper comparisons, uncertainty and missing cells}\label{sup:wp2-pairs}
+
+Comparing wrapped regression with wrapped historical reports is a
+different question from comparing either wrapper with its unwrapped base.
+The following table retains every within-cell comparison. A lower coverage distance measures closeness of the empirical hit rate to the target probability, not conditional coverage or lower monetary loss.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{Every paired wrapper comparison. Calibration adjustment preserves the long-history short-horizon FX score gain but does not produce universal dominance.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Regression vs\\historical (\%)} & \shortstack{Breaches\\regression / historical} & \shortstack{Regression\\adjustment} & \shortstack{Historical\\adjustment} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Regression vs\\historical (\%)} & \shortstack{Breaches\\regression / historical} & \shortstack{Regression\\adjustment} & \shortstack{Historical\\adjustment} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & -6.98 & 352/331 & 0.00313 & 0.00004 \\
+FX & 6/2880 & -15.00 & 329/328 & 0.00034 & 0.00049 \\
+FX & 24/720 & 10.72 & 393/322 & 0.00932 & 0.00140 \\
+FX & 24/2880 & -4.48 & 294/323 & 0.00562 & 0.00125 \\
+Bills & 6/52 & -8.61 & 29/18 & 0.05469 & 0.01498 \\
+Bills & 6/260 & 7.89 & 6/7 & 0.02834 & 0.02473 \\
+Bills & 24/52 & 43.09 & 47/38 & 0.11968 & 0.08718 \\
+Bills & 24/260 & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The working-reference comparison inventory contains 56 fixed slots,
+with 5 raw p values unavailable.
+The reported Holm bookkeeping keeps those slots; mapping an NA component to a
+bookkeeping value does not create an observed p value or validate failed
+reference assumptions. HLN references remain separately identified.
+Exact update equations, gamma candidates, selection freezes,
+numerical receipts and all comparisons remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{the v6 replay guide} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp2-summary.json}{the complete WP2 inventory}.
+The original primaries are not overwritten by these post-result / exploratory
+extensions. The upper-horizon NA rows and adverse SAV comparisons remain
+visible rather than becoming a favorable subset.\section{Untuned forecast combinations}\label{sup:wp3}
+
+The median combination lowers Treasury-bill loss by 4.0\%, while the mean combination raises it by 2.8\%.
+
+Fixed report combinations use the matched historical and original
+regression reports at identical origins. Their arithmetic mean is untuned.
+The median also requires the original selected plain local-quantile report;
+neither a smaller predictor model nor the endpoint plug-in substitutes for
+that missing constituent. Combining floor-respecting reports preserves the floor, but does not guarantee a conditional quantile or a score below that of the best constituent. Identical reports generate an NA equal-loss p value rather
+than a manufactured significance result.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrr}
+\caption{All original-cell combination comparisons. A report combination can outperform one constituent while losing to the other.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Rule & \shortstack{vs historical\\(\%)} & \shortstack{vs regression\\(\%)} & Breaches \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & Rule & \shortstack{vs historical\\(\%)} & \shortstack{vs regression\\(\%)} & Breaches \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 6/720 & Mean & -6.91 & -4.90 & 338 \\
+FX & 6/720 & Median & -4.81 & -2.75 & 325 \\
+FX & 6/2880 & Mean & -10.61 & 4.87 & 330 \\
+FX & 6/2880 & Median & -11.17 & 4.22 & 327 \\
+FX & 24/720 & Mean & 5.50 & -19.77 & 533 \\
+FX & 24/720 & Median & 5.00 & -20.15 & 514 \\
+FX & 24/2880 & Mean & -8.94 & -5.39 & 345 \\
+FX & 24/2880 & Median & -3.74 & 0.01 & 416 \\
+Bills & 6/52 & Mean & -3.15 & -47.18 & 26 \\
+Bills & 6/52 & Median & 0.00 & -45.46 & 11 \\
+Bills & 6/260 & Mean & 2.77 & -31.84 & 40 \\
+Bills & 6/260 & Median & -3.98 & -36.32 & 28 \\
+Bills & 24/52 & Mean & 18.87 & -63.69 & 54 \\
+Bills & 24/52 & Median & 0.00 & -69.46 & 33 \\
+Bills & 24/260 & Mean & -5.32 & -54.88 & 28 \\
+Bills & 24/260 & Median & -11.51 & -57.83 & 14 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrrrrr}
+\caption{Complete combination counts including the added panel. Missing median constituents remain NA.}\\
+\toprule
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Rule & Total & Complete & Unavailable & \shortstack{Lower loss\\than both} & \shortstack{Lower loss\\than historical} & \shortstack{Lower loss\\than regression} & \shortstack{Equal loss\\to historical} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Mean & 56 & 56 & 0 & 14 & 16 & 54 & 0 \\
+Median & 56 & 8 & 48 & 3 & 5 & 6 & 2 \\
+\end{longtable}
+\endgroup
+
+The added panel lacks the specified plain local-quantile
+constituent, so all its median rows remain unavailable. Mean combinations are
+complete, but lower loss than regression alone does not imply lower loss than
+the historical rule. All panel-specific values and every comparison remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp3-combinations.json}{the complete combination record}.\section{Combination Murphy diagrams and comparison families}\label{sup:wp3-murphy}
+
+Elementary-score comparisons vary the score threshold while
+keeping the quantile level fixed. Exact integer-event signs at every unique
+breakpoint determine sample crossing before display interpolation. A picture
+is not used to select favorable thresholds. These matched combination
+contexts are distinct from the original FX primary with its shorter rolling
+reference.
+Table S18 reports every combination's elementary-score crossing diagnostic.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{34mm}p{18mm}lrr}
+\caption{Every combination Murphy comparison in the original-primary contexts. Crossing prevents threshold-uniform sample dominance.}\\
+\toprule
+Source & \shortstack{Left-hand\\method} & \shortstack{Right-hand\\method} & Ranking & \shortstack{Positive\\breakpoints} & \shortstack{Negative\\breakpoints} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Left-hand\\method} & \shortstack{Right-hand\\method} & Ranking & \shortstack{Positive\\breakpoints} & \shortstack{Negative\\breakpoints} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & MEAN\_F\_QR & F & CROSSING & 217 & 15628 \\
+FX & MEAN\_F\_QR & QR & CROSSING & 13562 & 2343 \\
+FX & MEDIAN\_F\_QR\_KNN & F & CROSSING & 909 & 13572 \\
+FX & MEDIAN\_F\_QR\_KNN & QR & CROSSING & 10827 & 2575 \\
+Bills & MEAN\_F\_QR & F & CROSSING & 336 & 291 \\
+Bills & MEAN\_F\_QR & QR & CROSSING & 179 & 454 \\
+Bills & MEDIAN\_F\_QR\_KNN & F & CROSSING & 262 & 274 \\
+Bills & MEDIAN\_F\_QR\_KNN & QR & CROSSING & 147 & 446 \\
+\end{longtable}
+\endgroup
+
+The complete normal-DM comparison family has 224 slots,
+of which 98 have NA raw p values.
+The family adjustment is bookkeeping for those saved working references, not
+error control over the complete historical analysis search. The inspected
+record, overlapping labels, repeated fitting and related aggregate series
+remain common to the methods. All original and adverse rows remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp3-findings.json}{the combination findings}.
+Exact breakpoint signs support only the stated finite-sample score comparison;
+they do not certify general forecast dominance, optimal funding, or a causal
+benefit from acting on the limits.\section{Training-defined position-change states}\label{sup:wp4}
+
+The states are low, middle and high issue-known RMS position-change
+states, not price volatility or yield regimes. Cutpoints come only from the
+training history. Reports and original primary means stay unchanged; the
+diagnostic divides the already viewed evaluation record without estimating a
+switching policy. Source-native group differences are not pooled.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{All three state groups for each original primary. The FX regression-minus-reference loss difference remains negative in every group, while the weekly evidence remains adverse.}\\
+\toprule
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & State & Issues & \shortstack{Regression minus\\reference loss} & \shortstack{Dependence-adjusted\\standard error} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & low & 1593 & -58761.27 & 16492.94 \\
+FX & middle & 1816 & -27839.43 & 16257.70 \\
+FX & high & 3216 & -70387.91 & 17895.89 \\
+Bills & low & 9 & 6696.66 & 1705.21 \\
+Bills & middle & 25 & 5230.59 & 2608.15 \\
+Bills & high & 243 & 810.88 & 466.48 \\
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lp{35mm}rrl}
+\caption{Complete state diagnostic reference family. A joint rejection need not identify a useful state rule.}\\
+\toprule
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & Diagnostic & \shortstack{Unadjusted\\p-value} & \shortstack{Holm-adjusted\\p-value} & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & joint\_GW & 1.46298e-06 & 5.8519e-06 & OK \\
+FX & group\_heterogeneity & 0.159383 & 0.159383 & OK \\
+Bills & joint\_GW & 0.0484878 & 0.0969756 & OK \\
+Bills & group\_heterogeneity & 0.000426772 & 0.00128032 & OK \\
+\end{longtable}
+\endgroup
+
+These finite-instrument and group-mean HAC references require
+unestablished moment, dependence and covariance assumptions. A joint conditional-moment rejection can be driven by an unconditional mean difference; it is not
+evidence that a state-dependent trading or limit-selection policy works.
+The source-level reconstruction and all cutpoints remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp4-states.json}{the complete state record}.\section{Refitted target-level sensitivities}\label{sup:wp5}
+
+Changing the target quantile requires fitting the specified target-level procedure; it is different from reweighting the errors of a fixed report.
+The following saved sensitivities keep the original horizon and reference
+structure. The weekly primary and matched reference coincide and count once.
+All unavailable upper-target rows remain NA with
+\texttt{VALIDATION\_INELIGIBLE}, rather than being replaced by a lower target
+or a favorable subset. Absolute loss values across different quantile levels
+measure different objectives.
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrp{20mm}rrrl}
+\caption{Complete target-level sensitivity. The lower-target directions recur, but upper-target evidence remains unavailable.}\\
+\toprule
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Target\\\(\tau\)} & Reference & \shortstack{Mean loss\\difference} & \shortstack{Regression\\breaches} & \shortstack{Reference\\breaches} & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 0.90 & primary & -60715.44 & 686 & 620 & OK \\
+FX & 0.90 & matched & -67628.17 & 686 & 667 & OK \\
+Bills & 0.90 & primary & 1175.03 & 73 & 55 & OK \\
+FX & 0.99 & primary & NA & NA & NA & NA \\
+FX & 0.99 & matched & NA & NA & NA & NA \\
+Bills & 0.99 & primary & NA & NA & NA & NA \\
+\end{longtable}
+\endgroup
+
+The complete family contains 6 slots,
+with 3 raw p values unavailable.
+The fixed target-specific selections precede their evaluation; full settings
+and results remain in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261023/v6/wp5-tau-summary.json}{the target-level inventory}.
+The saved lower-target directions do not establish robustness to an arbitrary
+tail level, actual shortage costs, or a new economic decision rule. Failed
+eligibility is a result of the specified procedure and remains part of the
+paper's boundary.\section{Horizon coherence and late conditional-hit evidence}\label{sup:coherence}
+
+Realized peaks are ordered as the forecast horizon grows, but
+independently fitted reports use horizon-specific mature peak responses and can
+cross. The following exact strict comparisons keep all common issue origins.
+Repairing a long-horizon report upward can worsen pinball loss; target ordering
+alone does not identify a universally beneficial repair.
+Tables S22--S23 retain horizon-coherence results and the complete late diagnostic.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrrr}
+\caption{Every original quantile-regression horizon-coherence comparison. Ordered targets do not force ordered fitted reports.}\\
+\toprule
+Source & History & Issues & Forecast crossings & Target violations \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & History & Issues & Forecast crossings & Target violations \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 720 & 6625 & 640 & 0 \\
+FX & 2880 & 6625 & 140 & 0 \\
+Bills & 52 & 277 & 91 & 0 \\
+Bills & 260 & 277 & 80 & 0 \\
+\end{longtable}
+\endgroup
+
+The late fixed-terminal conditional-hit diagnostic uses the null
+\(E[I_t\mid\mathcal F_t]\le\alpha\), where \(I_t=1\{P_t>C_t\}\).
+Within each globally anchored maturity phase, a fixed upper-probability
+alternative supplies hit/no-hit factors with conditional expectation at most
+one under the stated null. The procedure mixes whole products over its fixed
+prior, then averages dependent phases. It does not multiply phases or select
+their maximum. The fixed-family threshold does not restore retrospective
+error control after viewed-sample diagnostic selection.
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{lrrr}
+\caption{Every threshold-crossing cell in the complete late diagnostic. A noncrossing elsewhere is not a calibration certificate.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Breaches /\\issues} & Saved display value \\
+\midrule
+\endfirsthead
+\caption[]{Continued.}\\
+\toprule
+Source & \shortstack{Horizon /\\history} & \shortstack{Breaches /\\issues} & Saved display value \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+FX & 24/720 & 924/6625 & 8.499112682788E+7 \\
+Bills & 6/52 & 84/277 & 1.310958812771E+8 \\
+Bills & 6/260 & 54/277 & 2.204375927802E+3 \\
+Bills & 24/52 & 132/277 & 3.814063640027E+4 \\
+\end{longtable}
+\endgroup
+
+The complete summary and phase tables, exact rational identities,
+all noncrossings and the interpretation boundaries remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/coverage-evalues/README.md}{the e-value records}.
+This is a fixed-terminal diagnostic, not an anytime p value, optional-stopping
+guarantee, new estimator, or independent validation. Score, breach amount,
+frequency and conditional-hit evidence answer different questions.\section{Numerical implementation and inference conventions}\label{sup:implementation}
+
+\paragraph{Completed labels and update clocks.}
+At a scheduled refit \(\kappa\), the latest mature peak response origin is
+\(\kappa-H\). A history of \(W\) mature peak responses therefore uses
+\(\{\kappa-H-W+1,\ldots,\kappa-H\}\), with every target ending by that refit.
+Training transforms, scales, coefficients and historical pools are held until
+the next scheduled refit. The current observed position may still change at
+each forecast issue. Replacing that issue anchor by the refit anchor changes
+the forecasting procedure.
+
+\paragraph{Regression and local quantiles.}
+The regression objective uses a training-normalized headroom response, an
+unpenalized intercept and a ridge penalty on slopes. Projection is applied when
+issuing the report and evaluating its validation score, not inside the fitted
+training objective. Local methods use training-only standardized predictors,
+fixed neighbour menus and duplicate-preserving order statistics. A selected
+whole-pool local quantile is an exact historical identity, not a failed-fit
+fallback. Scale-adjusted neighbours change responses as well as retrieval.
+
+\paragraph{Numerical eligibility.}
+The accepted solver records primal and dual residuals, objectives, feasibility and the gap between the primal and dual objectives. Ill-conditioned, nonfinite, unsupported-rank and failed candidate
+states retain their original statuses under each named selection contract.
+A mandatory-candidate failure blocks a procedure when its contract requires
+every candidate. The original full regression has that requirement; the
+four-feature selector may choose among completed eligible candidates. A failed
+selected evaluation never receives a replacement penalty or a shortened score.
+Changing the ridge menu changes the procedure even when feature definitions
+stay fixed. A numerical certificate does not establish financial accuracy,
+economic relevance, inferential validity or production continuity.
+No production continuity or fallback policy is evaluated here.
+
+\paragraph{Working-reference inference.}
+Saved unconditional loss differences use the recorded Bartlett-HAC convention;
+HLN and doubled-bandwidth sensitivities are labeled separately. Separate
+families and later reporting partitions do not erase the wider selection
+history. Coverage references distinguish full-grid Kupiec from the
+transition-conditional Christoffersen joint likelihood, which conditions on
+the initial hit. Small sparse grids and boundary likelihoods retain their
+original status. Neither a nonrejection nor a small working-reference p value
+proves conditional coverage or supplies selection-adjusted confirmation.
+
+\paragraph{Common-pool construction distances.}
+On one nonempty historical episode set, compare the historical headroom,
+translated-path and historical-peak reports using the same available order
+statistic. Each episode peak includes its starting observation. A translated
+path changes each level by the same anchor difference, so its absolute peak
+changes by at most that difference. Flooring is nonexpansive and commutes with
+the fixed order statistic. The headroom construction has the corresponding
+bound in the difference of anchor magnitudes. Thus
+\[
+|C^{\rm headroom}-C^{\rm peak}|\le\max_i\bigl||N_i|-B\bigr|,\qquad
+|C^{\rm translated}-C^{\rm peak}|\le\max_i|N_i-x|.
+\]
+For a proof of the order-statistic step, paired coordinatewise differences
+bounded by a radius imply that each empirical quantile lies below the other
+plus that radius; reverse the roles for the second inequality. These
+deterministic same-pool bounds do not order financial accuracy or coverage.
+Changing historical rows on one side invalidates the common-pool argument.
+
+Exact menus, numerical tolerances, failures and diagnostic tables remain in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{EXTENDED RESULTS} and the dated source records.
+\section{Fixed controlled comparison of inherited procedures}\label{sup:v8-mc}
+
+The simulation compares inherited reports for mean-reverting position levels,
+not positively autocorrelated increments and not a fitted reproduction of either
+financial source. It uses
+\[
+N_t=\phi N_{t-1}+\varepsilon_t,\qquad
+\varepsilon_t=\sqrt{v_t}z_t,\qquad
+v_t=\omega+a\varepsilon_{t-1}^{2}+bv_{t-1},\qquad
+z_t\stackrel{\mathrm{iid}}{\sim}\mathcal N(0,1).
+\]
+The level persistences are \(\phi\in\{0.7,0.9,0.98\}\), variance persistences
+\(p=a+b\in\{0,0.9,0.98\}\), histories \(W\in\{52,260,720,2880\}\), and horizons
+\(H\in\{6,24\}\). For the increasing variance-persistence settings, the
+\((\omega,a,b)\) triples are \((1,0,0)\), \((0.1,0.05,0.85)\), \((0.02,0.05,0.93)\). Each innovation has unit unconditional
+variance under the specified recursion. Initial level and variance are fixed;
+a burn-in of 20000 observations precedes 3264 retained observations.
+This is a long-burn approximation, not an exact stationary initialization.
+The common hourly calendar has no simulated calendar effect.
+
+There are 32 independent repetition streams, with master entropy 2026102408 and
+common normal innovations across conditions within a repetition. Validation
+uses origins 3072--3143; evaluation uses 3168--3239, with
+72 overlapping issues and a refit every 24 records. Repetition, not
+issue or grid cell, is the Monte Carlo uncertainty unit. Training uses exactly
+\(W\) origins \(r-H-W+1,\ldots,r-H\), with every label ending by refit \(r\).
+The current-position floor and query features use the actual issue state.
+The full model keeps its original predictors and the four-feature model its
+original four; their penalty menus and failure rules differ, so their contrast
+is not an isolated intervention on predictor count.
+
+For each cell, let \(A_j\) and \(B_j\) be regression and matched-historical mean losses in repetition \(j\), and \(R\) the planned number of repetitions. The
+reported relative change and its delta-method Monte Carlo standard error are
+\[
+\widehat\Delta=100\left(\dfrac{\overline A}{\overline B}-1\right),\qquad
+\operatorname{MCSE}(\widehat\Delta)=
+\dfrac{100\,s(A_j-\widehat rB_j)}{\sqrt R\,\overline B},\qquad
+\widehat r=\dfrac{\overline A}{\overline B}.
+\]
+Sample standard deviations use divisor \(R-1\). Breach-rate errors use the
+between-repetition standard deviation divided by
+\(\sqrt R\). Strict wins require \(A_j<B_j\), with error
+\(\sqrt{\widehat\pi(1-\widehat\pi)/R}\). At zero or all wins that plug-in error is
+zero without implying certainty; the worst-case error bound is
+\(0.5/\sqrt R\), or 8.84 percentage points here. The short evaluation segments,
+common innovations across cells, and fixed process family limit a regime claim.
+
+The fixed descriptive clear-gain screen requires all 32 paired repetitions,
+\(\widehat\Delta+2\operatorname{MCSE}(\widehat\Delta)<0\), and a strict-win fraction of at least \(0.75\). Its target is \(H=6\), \(W\ge 720\),
+\(p\ge 0.9\). Support additionally requires at least 6 of 12
+clear-gain target cells and none among the 60 outside cells. Each regression
+has only 2 target gains and 6 outside gains. The recorded conclusion
+is \textbf{MISMATCH}: both the target count and the no-outside requirement fail.
+This screen has no family-wide significance guarantee and supplies no new
+population endpoint-bound guarantee under dependent financial paths.
+
+\begingroup
+\renewcommand{\footnotesize}{\fontsize{9}{10.5}\selectfont}
+The complete two-regression 72-cell tables remain unchanged in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/0d2526cc69092c5158437a0509613bac5e86d47f/submission-jof/supplement.pdf}{v9 Tables S26--S27} and their native fields in the saved controlled simulation. All adverse, failed and unavailable statuses retain their original meanings. The preceding design and prediction outcomes refer to that entire grid, not a successful subset.
+\endgroup
+
+\paragraph{Candidate and procedure statuses.}
+The complete inventory contains 6912 complete method tasks, 18431 complete
+validation candidates and 1 failed candidate. The failure is the four-feature
+candidate at zero-based repetition 23, \(\phi=0.9\), \(p=0\), \(W=52\),
+\(H=24\), and penalty \(0.1\). Its duality-gap criterion fails at 10000
+iterations. The fixed eligible-completed-candidate rule selects penalty
+\(0.01\), whose full evaluation completes; this is not a retry or substitution
+of a failed selected evaluation. The original full-regression selector instead
+requires every declared validation candidate. Incomplete procedures retain NA
+full-procedure performance, with any available-pair summary labeled conditional
+on completion. The saved source summaries retain all cells and their full
+precision in \path{results/revision-v8/wp3/summary.json}; all six loss, breach and
+win heatmaps remain alongside them. Both complete numerical grids retain every cell.
+
+
+
+\section{Same-dealer completed-day aggregation}\label{sup:v8-daily}
+
+The pinned hourly FX snapshot produces 930 nonempty source-naive calendar
+days under the fixed last-observation rule, rather than the approximate sample
+size in the planning instruction. Each report is issued only at the end of its
+completed source-naive day; the selected row's original timestamp is not treated
+as an earlier time at which the identity of the last row was already known.
+Missing days stay absent, and partial boundary days remain. The timezone and
+historical first-release availability are unknown. This is a last-record proxy,
+not a verified financial close or a peak over intraday excursions.
+
+Histories and horizons count subsequent nonempty daily observations. The split
+copies the Treasury observation-index geometry, not its absolute calendar dates
+or a proportional split: validation runs from 2015-02-24 to 2015-04-24 and evaluation from
+2015-05-24 to 2016-12-27 on 501 common issues. Raw or resampled positions
+and per-issue trajectories are not redistributed.
+
+Table~\ref{tab:daily-fx} reports every same-dealer daily comparison.
+\input{generated/v8-daily-results-table.tex}
+
+Historical headroom wins seven of the eight named comparisons, but the
+four-feature longer-history, shorter-horizon daily exception lowers loss by
+about 3.0\% with 37 regression breaches versus 30 historical breaches.
+Both regressions meet the fixed majority-based descriptive classification,
+not a dominance or coverage theorem. The recorded source identity is held fixed while physical history, horizon, update cadence, calendar predictors, sampled response and evaluation span change jointly. The contrast cannot
+identify a pure frequency effect or supply independent dealer validation.
+
+
+\section{Fixed-parameter full-prefix backcast and overlapping windows}\label{sup:v8-backcast}
+
+The additional retrospective backcast uses the complete eligible prefix
+3071--10438, with 7368 common issue origins before the original later
+validation. It retains the original later-selected parameters: full regression: \(H=6,\lambda=0.01\), \(H=24,\lambda=0.001\); four-feature regression: \(H=6,\lambda=0.01\), \(H=24,\lambda=0.01\).
+Coefficients, transformations and training labels obey \(i+H\le r\) at each
+refit, but those fixed penalties were chosen after the historical issue dates.
+Thus this is a fixed-parameter pseudo-out-of-sample backcast with later-selected
+parameters, not a real-time historical validation.
+
+The full prefix contains all 1440 earlier reported backcast origins,
+with inclusive issue indices 8999--10438.
+Actual earlier rolling-validation targets at the longer horizon cover 3071--10462,
+exactly the new prefix's longer-horizon target range. Apparent issue gaps between old validation blocks
+are not untouched target paths. Three displayed overlapping/inspected windows
+therefore do not create a fresh independent third validation period. This
+\textbf{MISMATCH} remains regardless of the direction of the added score
+comparisons. No window effects, p-values or success counts are pooled.
+
+Full-prefix regression lowers matched loss by 12.2\% but records 416 versus 282 breaches. Its rolling-reference DM p-value is 0.055. Longer-horizon gains coexist with reference-sensitive losses in the complete tables.
+
+\input{generated/v8-three-window-table.tex}
+\input{generated/v8-backcast-complete-table.tex}
+
+The fixed short-horizon full-regression descriptive screen retains matched
+score gains across the three inspected windows and a changing rolling-reference
+direction. It is not confirmation after inspection or independent replication.
+The complete longer-horizon results also retain matched score gains, and the
+full regression's loss against the rolling reference. A score gain can coexist
+with more breaches; neither a conditional-coverage certificate nor an economic
+operating benefit follows from these tables.
+
+\begin{samepage}
+The added eight pairwise tests use only raw standard-normal two-sided
+DM-type working references, separate from all original adjusted families.
+For \(n\) paired losses at horizon \(H\),
+\[
+L=\min\!\left(n-1,\max\!\left\{H,
+\left\lfloor4(n/100)^{2/9}\right\rfloor\right\}\right).
+\]
+\end{samepage}
+The centered Bartlett Newey--West covariance uses divisor \(n\), and the
+statistic is the mean regression-minus-reference loss divided by
+\(\sqrt{\widehat{\mathrm{LRV}}/n}\). Nonpositive long-run variance or constant
+loss differences retain an unavailable statistic and their specified status;
+there is no epsilon repair. These p-values receive no multiplicity or full
+selection adjustment and do not establish equivalence, real-time validity or
+independent confirmation. Missing old longer-horizon original-menu, four-feature,
+rolling-DM or breach-count fields stay NA; the old five-menu rule is not relabeled
+as the original three-menu regression. No missing old test was recalculated.
+
+\section{Earlier calibrated simulation and numerical failures}\label{sup:v9-legacy-mc}
+
+This distinct calibrated design uses constant-variance AR(1) levels, where the
+peak depends on the current position (D0), an hourly AR--GARCH--t law with a
+known hour shape (D1), and a weekly AR--GARCH--t law (D2).
+D0/D2 share the original pre-validation Treasury calibration; D1 uses the
+original pre-validation FX prefix. Levels are divided by the prefix standard
+deviation without demeaning. The fixed calibration, clocks, origin geometry,
+parameters and numerical rules are retained in
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v10/results/v9/legacy-calibrated}{the imported calibrated records}.
+The weekly clock, validation span, refit schedule and six-candidate menu,
+including the intercept-only limit, differ from Section~\ref{sup:v8-mc}.
+Their short-history outcomes cannot be treated as replications of one design.
+
+Each completed cell reports repetition medians and quartiles of the
+within-repetition relative loss against F. These differ from the ratio of
+across-repetition mean losses in Section~\ref{sup:v8-mc}.
+Quartiles describe dispersion under fixed fitted laws, not confidence limits.
+The known-state oracle is a finite future-path approximation; its realized
+score need not beat F in every repetition. Ordinary-rank I, oracle results,
+strict breaches and intercept-only selections remain separate diagnostics.
+
+\input{generated/v9-legacy-simulation-table.tex}
+
+A required numerical failure blocks the whole cell. Partial repetitions do
+not supply a replacement median, quartile, win rate or breach rate.
+The retained nonconvergence exceptions mean that the unchanged solver did not
+obtain its joint residual-and-gap acceptance certificate within its iteration
+budget. They establish neither nonexistence of an optimum nor poor predictive
+accuracy of an unavailable report. Final residuals and gaps were not retained;
+the four-feature exceptions also lack exact refit context. These quantities
+remain unknown. The original constant-variance and short-weekly predictions
+are unsupported; the hourly and history-order predictions are unassessable.
+These outcomes identify neither the financial loss mechanism nor a pure
+frequency effect.
+
+\section{Pre-evaluation stability screen and switching stress simulation}\label{sup:v9-stability}
+
+The separately fixed
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v9/protocol/v9/nonstationarity-design.md}{stability-study protocol}
+uses only pre-evaluation prefixes. Its joint OLS score includes intercept,
+AR slope and centered residual-square channels (Hansen, 1992).
+Each qualified whole-prefix AR--GARCH--t fit generates a plug-in parametric
+bootstrap reference. OLS and the score statistic are re-estimated on each
+bootstrap path; the generator is fitted once. Published iid critical values
+are not used. With the pre-specified \(B=999\) bootstrap paths, the p value is
+\((1+\#\{H_b\ge H_{\rm obs}\})/(B+1)\); the pre-specified draw count and
+all exceedances remain in the records. The table retains the observed statistic,
+bootstrap p value, Holm adjustment, moment qualification and descriptive cuts.
+Qualified fitted nulls require \(\nu>4\) and
+\(q_4=\alpha^2\{3(\nu-2)/(\nu-4)\}+2\alpha\beta+\beta^2<1-10^{-8}\).
+A successful fit and this fourth-moment gate do not prove that the real law
+has those moments. The plug-in calibration supplies no exact finite-sample
+size guarantee; rejection can also reflect misspecification or outliers.
+
+\input{generated/v9-stability-diagnostics-table.tex}
+
+Candidate cuts minimize a separate-variance Gaussian AR quasi-likelihood
+criterion with penalty \((3+4k)\log M\), where \(M\) counts transitions.
+The fixed search allows at most two cuts and requires each segment to contain
+at least \(\max\{104,\lceil .20M\rceil\}\) transitions.
+These are descriptive calibration partitions, not individually significant
+breaks. Whole-prefix scaling is shared by every segment without demeaning;
+the first target in a segment keeps its preceding observed lag.
+The constrained AR and GARCH fits have one declared start and no retry.
+The daily nonregular null and hourly optimization failure retain unavailable
+primary p values; neither is evidence of stability.
+
+The constant control retains the whole-prefix parameters. The stress arm
+cycles the fitted regimes with their original transition dwell lengths and a
+fixed repetition-phase grid. Level, innovation and variance state continue
+through each switch. The last-to-first wrap is artificial, rather than an
+observed historical break. Common uniforms are transformed through each arm's
+own standardized t law; a no-cut source reuses the identical whole-fit path.
+Both arms retain the forecasting procedures of Section~\ref{sup:v8-mc}.
+The following complete grids retain failed conditional cells and all F cells.
+
+\input{generated/v9-stability-W52-table.tex}
+\input{generated/v9-stability-W260-table.tex}
+\input{generated/v9-stability-F-table.tex}
+
+Loss summaries are medians across repetitions within each source, then equal-weight medians across every required source. They are not the controlled
+grid's ratio-of-means estimand. A required repetition failure makes its whole
+cell unavailable; successful subsets do not replace missing full-grid results.
+The raw weekly screening threshold is met, while multiplicity adjustment
+retains fewer rejections. The near-parity constant-control prediction is
+unsupported. The two-history switching prediction and the daily/hourly
+comparison are unassessable. Constant controls themselves generate large
+losses, so instability is not necessary for losses in these procedures.
+The empirical low-frequency mechanism remains unidentified.
+
+\section{Paired menu isolation: full source inventory}\label{sup:v10-menu}
+
+\subsection{Isolating the penalty menu}\label{sec:extensions}
+
+The weekly failures motivate a closer look at the penalty menu in calibrated simulations. Earlier stationary comparisons already produce large short-history regression losses. The fitted constant and switching arms use thirteen pre-evaluation weekly calibrations. The earlier stability screen rejects seven series pointwise and two after Holm correction. Supplement Sections S27--S28 retain the earlier calibrated simulations and stability diagnostics (Tables S27--S32).
+
+The paired menu experiment changes only the ridge candidate menu and the stated exact-tie rule. It adds penalties one, ten and the intercept-only limit to full regression. Both regressions use the six-point menu. All paths, innovations, source calibrations and forecasting clocks match the earlier experiment. Thirty-two paired repetitions contribute to each complete source median. This isolates the executed menu comparison within these calibrated laws. The expanded procedure can choose ordinary I. Stronger finite penalties and access to I are not separately identified; near-parity loss alone supplies no evidence of added feature value.
+
+The expanded full-regression medians move close to historical headroom in both arms (Table~\ref{tab:v10-menu-isolation}). Figure~\ref{fig:mechanism} displays these across-source medians and their descriptive spread. Both arms improve in every source. The constant-arm near-parity prediction and the paired-improvement prediction hold. The switching-minus-constant difference misses the pre-specified five-percentage-point increase. This outcome supports the menu explanation for these simulated losses; it leaves the empirical frequency mechanism unresolved.
+
+\input{generated/v10-menu-main.tex}
+
+\begin{figure}[htbp]\centering\includegraphics[width=.98\linewidth]{figures/v10-menu-isolation.pdf}
+\caption{Paired penalty-menu isolation on unchanged calibrated paths. The expanded menu removes the large short-history full-regression loss in both arms. Longer-history full-regression summaries remain unavailable because a required repetition fails in each arm, with no successful-subset replacement.}\label{fig:mechanism}
+\end{figure}
+
+At history 260, one required full-regression repetition fails in each arm under the old low penalty. Both summaries across all thirteen sources remain unavailable. The experiment retains every failed cell and performs no retry. Earlier daily moment-qualification and hourly optimization failures also remain unavailable. Absence of a five-point switching increment is not evidence of equivalence.
+
+The identification qualification above concerns the paired simulated menu intervention. The additional financial finite-menu diagnostic is described in Section~\ref{sup:v12-details}.
+
+\paragraph{Procedure and complete-source inventory.}
+Both QR variants use penalties $\{.001,.01,.1,1,10,\infty\}$; the infinite candidate is ordinary intercept-only I, distinct from corrected-rank F. Full regression requires every candidate to complete. Four-feature regression selects from its completed eligible candidates, as before. Exact ties now prefer stronger shrinkage in both variants; no actual exact tie occurred. The switching-phase denominator remains thirty-two. Two pilot repetitions selected the full thirty-two formal repetitions before launch. The simulated feature clock is inherited hourly geometry despite weekly calibration parameters; it is not a literal weekly-calendar replay.
+
+The design preceded every new path calculation. M1 requires the constant-arm history-52 full-regression median within five percent of F. M2 requires the switching median at least five percentage points higher. M3 requires both aggregate improvements and at least twelve jointly improving sources. M1 and M3 hold; M2 fails. Full history-260 regression summaries remain unavailable after the required TIPS-G11 repetition fails in both arms. Successful repetitions or twelve-source subsets never replace them.
+
+\par\smallskip\noindent\begin{minipage}{\linewidth}\footnotesize Constant=C; switching=S. Positive percentages mean higher loss than F. NA retains the whole failed cell; source medians and old results remain separate.\end{minipage}
+Table~\ref{tab:v10-menu-full} retains the complete source, arm, history and method inventory.
+\input{generated/v10-menu-full.tex}
+
+\clearpage
+\section{CFTC sources, eligibility and information dates}\label{sup:v10-cftc}
+The source is the CFTC TFF futures-only historical backcast for 2006--2016 plus annual 2017--2026 files. The retained observations begin in 2010. All eleven original source records remain public; no other new financial data were acquired.
+
+A complete generated calendar contains 877 Monday-labeled report weeks, from 2010-01-04 through 2026-10-19. Economic position dates are retained separately. A code needs one valid observation per week, a stable exchange and stable contract units. Missing weeks, duplicates and changes disqualify a contract rather than trigger interpolation or splicing. Known consolidation prefixes 13874,20974,12460 are excluded before ranking. This conservative rule is broader than the documented plus-suffixed codes. Full-period mean open interest ranks survivors, with literal-code ties. Seventeen of 141 observed codes qualify; the top-twenty cap never changes that count.
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v10b/results/v10/cftc/eligibility.json}{complete code-level eligibility and exclusions} preserve every screening decision.
+
+Validation indices are 553--604; evaluation indices are 611--870. All labels use horizon six, leaving six unissued origins between the segments. Validation position dates are 2020-08-11--2021-08-03; the last validation label ends 2021-09-14. Evaluation position dates are 2021-09-21--2026-09-08; the last evaluation label ends 2026-10-20. Training labels at refit r span r-H-W+1 through r-H. Monday labels index the inherited feature calendar; they do not claim Monday public availability. Actual positions are normally measured Tuesday and released Friday at 15:30 Eastern. Holiday, shutdown and ION-related publication delays prevent a first-release interpretation.
+
+The selected category series are listed below. Net positions equal dealer long minus short in raw contract counts. Equal-weight median percentage changes preserve within-contract units; they are not common-dollar portfolio risk.
+\input{generated/v10-cftc-universe.tex}
+
+The six methods are corrected-rank F, ordinary I, four- and thirty-three-predictor regression, and finite delayed calibration of historical headroom and full regression. Both regressions use the six-point menu. The paired ACI wrappers retain the existing finite calibration with delayed matured feedback; no asymptotic coverage claim is attached. The complete 204 method cells finish without a numerical retry. The full cell CSV and trace ZIP retain absolute scores, breaches, selected penalties and gamma values.
+
+For the CFTC delayed wrappers, gamma belongs to $\{.001,.005,.01,.05\}$. Completed candidates rank by validation coverage-distance, then pinball loss, then smaller gamma. Initialization requires at least nineteen matured scores. Updates wait for the full six-record label, and evaluation carries the validation state. The six unissued gap origins create no artificial reports or feedback events. These settings accompany histories 52/260, 52 validation origins, 260 evaluation origins and 13-record refits; none is retuned after evaluation.
+
+Two narrow official-format clarifications follow the original design and acquisition but precede every forecast. The first accepts only the official midnight suffix after the date; the second accepts integer counts written with an all-zero decimal suffix. Neither changes a mathematical count, sample threshold, screen or forecast setting. Original failed technical preparation receipts remain visible. This is not a claim of fully observation-blind ingestion design.
+
+\clearpage
+\section{Complete model confidence sets}\label{sup:v10-mcs}
+The pre-specified ninety-percent MCS uses the range statistic and 1,000 stationary-bootstrap draws, with block length $\max\{H,\lceil n^{1/3}\rceil\}$ in arch 8.0.0. Deterministic source/grid seeds and method order are recorded in the design. Every claimed complete report uses its entire declared origin grid and common target. Missing stored losses are derived only from saved reports, without issuing forecasts or fitting models. Every one of 98 comparisons completes. The 60 known unavailable slots remain unavailable, not statistical exclusions.
+
+Distinct procedure labels retain their classification even when a selected penalty is infinite or reports coincide. Exact duplicate loss columns enter the library once; all associated procedure labels then receive the same p-value and inclusion partition. Conditional slots use their declared procedure identity. Matched F/I membership, literal uniqueness and unique-loss-class membership differ. Across the entire inventory, 90/98 sets contain matched F/I, 2/98 have a sole literal F/I member, and 4/98 have a sole loss class containing F/I. Conditional exclusion is 197/683 complete slots. Related sources and overlapping tasks provide no independent cross-grid test or simultaneous future guarantee.
+
+Tables S36--S45 retain every source-specific membership result and method p-value, including unavailable procedures.
+\input{generated/v10-mcs-compact.tex}
+
+\section{Fixed limit costs and full parameter regions}\label{sup:v10-cost}
+For each comparison, let $B$ be the issue-known floor, $Y$ the realized sampled peak,
+$C_m$ a saved method report, and $m_F=\overline{C_F-B}>0$ the matched F report's
+mean reserved headroom. All four quantities use the same source-native position
+units (currency or contract counts). The normalized per-issue cost is
+\[
+J_m(\kappa,\beta,c)=\kappa\frac{\overline{C_m-B}}{m_F}
++\beta\,\overline{\mathbf 1\{Y>C_m\}}
++c\frac{\overline{(Y-C_m)_+}}{m_F},\qquad b=\beta m_F.
+\]
+Reserve, strict breach frequency and excess enter separately. The fixed breach
+charge $b$ is in those same position-value units; each $\beta$ scales it to that
+comparison's evaluation-sample F headroom. Charges therefore differ across
+comparisons. Costs apply per issued report; overlapping horizons are not
+added as separate cash flows.
+The fixed grid is $\kappa\in\{.01,.025,.05,.1,.2,.5,1\}$,
+$\beta\in\{0,.01,.05,.1,.25,.5,1,2,5\}$ and $c\in\{.5,1,2\}$.
+At $\kappa=.05,\beta=0,c=1$, the cost difference from F is the pinball-loss
+difference divided by $m_F$. Other weights need not preserve that ranking.
+The panels compare fixed reports and do not estimate a cost-optimal policy.
+
+All 98 comparisons have a positive scale and all 976 complete methods enter 189 grid points, giving 184,464 cost rows. Sixteen missing-floor inputs are recovered only from their pre-specified, fingerprinted same-origin F copies. Their complete origin, target and floor arrays match exactly. Other missing or mismatched floors would make the whole comparison unavailable. No missing scale uses an epsilon.
+
+The public \texttt{results/v10/cost/cost-grid.csv.zip} contains every complete method's normalized mean cost, its F reference and strict cheaper/equal status at all coefficients. \texttt{primary-regions.csv} retains all 18,522 planned primary grid rows, including status fields. Primitive reserve amounts, strict breach counts/rates and excess amounts appear in \texttt{primitive-stats.json}. Source-group figures use the full planned comparison denominators. The primary comparison is fixed expanded-menu full regression for hourly/weekly/CFTC sources and the original saved regression for daily FX. Other methods retain separate regions and are never replaced by a minimum-cost oracle.
+
+\section{Retained accuracy and hit diagnostics}\label{sup:v10-diagnostics}
+These are the unchanged earlier tests and Murphy plots moved from the main article. The p-values retain their original named adjustment families; no MCS adjustment is retroactively assigned to them.
+\input{generated/v10-moved-diagnostics.tex}
+
+\section{Reproduction, availability and retained extended results}\label{sup:reproduction}
+
+Reproduction and run records are retained verbatim in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v10b/notes/v10b/supplement-audit-records.md}{v10b reproduction records}.
+
+Editable sources, aggregate results, original designs and code accompany the
+paper; favorable, adverse and failed outputs remain accessible.
+
+Document regeneration checks saved aggregates without raw observations; it
+does not establish recomputed forecast accuracy or independent replication.
+
+Code is available at \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v13}{the current repository entry}; the root \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v13/REPRODUCING.md}{reproduction instructions} identify required raw inputs and executable checks.
+
+\paragraph{Full financial replay requires compatible inputs.}
+A separately authorized replay requires the original FX member and Treasury
+snapshot to match their recorded fingerprints and definitions. Restricted FX
+observations and private per-origin forecasts or fitted traces are not
+redistributed. Downloaded economic dates do not establish verified first-release
+availability; a matching series name does not establish snapshot identity.
+
+\paragraph{Routes to complete evidence.}
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/protocol/revision-v6/REPLAY.md}{v6 replay guide},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/revision-20261022/README.md}{original conditional records},
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/results/supervisor-20261023/r6/README.md}{supervisor rule records} and
+\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v7-final/EXTENDED_RESULTS.md}{extended-results index} identify the
+complete retained tables, failure inventories and longer technical discussions.
+Individual-dealer external validation and prospective first-release validation remain unmet.
+
+\FloatBarrier
+
+\section{Additional saved evidence on history length}\label{sup:v11-history}
+
+The earlier confirmation exercise applies its fixed pooled criteria to heavy-tailed, regime-switching and compound-Poisson innovation laws. Table~\ref{tab:v11-confirmation} reports every prewritten criterion, including the failed universal ordering prediction. Its history regions use method-specific thresholds estimated in the earlier source study; they are not an oracle rule for the financial data.
+
+\input{generated/v11-confirmation.tex}
+
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v11/evidence/v11/pr5-v9}{unchanged source records} retain the complete synthetic results, counterexamples and candidate failures. The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v11/evidence/v11/pr5-v9/protocol/revision-v9/wp2-confirmatory.md}{original confirmation design} records the fixed laws, history regions, penalty menus and decision rules. The local design commits precede their numerical runs; the later public file uploads are not public preregistration.
+
+The complete \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/revision-v11/evidence/v11/pr5-v9/results/revision-v9/wp3/contrasts.json}{FX history contrasts} retain both horizons and every tested window. Both longer-horizon methods lose their gain again at the longest history. The four-feature short-horizon first cutpoint is left-censored and not testable, so the original confirmation across all curves is not established. These comparisons use the inspected period and provide neither evidence from an additional dealer nor a fresh financial holdout.
+
+\section{Retained scope details and additional empirical checks}\label{sup:v12-details}
+
+\paragraph{Earlier scope, retained verbatim.}
+The following paragraphs reproduce the earlier manuscript's scope discussion verbatim. They describe the evidence available before the additional empirical checks summarized below; statements about untested work retain that historical meaning.
+
+The FX evidence describes a single market maker's client-flow record. Its original evaluation period was viewed before the conditional methods were specified. Rules for the earlier 2015 comparison followed the original results. The full-prefix backcast uses penalties selected after its issue dates and contains the earlier backcast. Its target paths were covered by previous scoring. Both exercises remain retrospective.
+
+The New York Fed weekly categories share a reporting system and economic components; they are related aggregate tasks, not independent dealer replications. Treasury comparisons replay the downloaded economic-date vintage. Historical publication-time information is not reconstructed. Aggregation can offset gross dealer exposure; sampled net inventory also differs from settlement cash needs. Valuation and reporting-composition changes are not separated from trading. Sampled peaks omit intervening excursions. Daily last records also differ from verified closes or intraday maxima; the source timezone and release vintage are unknown.
+
+Daily aggregation jointly changes physical histories, horizons, update cadence, calendar predictors, evaluation span and sampled targets. The same-record comparison leaves a pure frequency effect unidentified.
+
+The design gives no causal interpretation or individual-predictor effects. The financial procedures provide no coverage guarantee under their dependence and calibration scheme. Trading and funding gains are not measured. Scoring weights are evaluation preferences, not estimated intervention or funding costs. Independent dealer records and prospective observations would broaden validation; finer exposure and cost data would connect reports to inventory actions.
+
+Short overlapping validation samples and research-stage selection limit tuning stability and confirmatory inference. Longer weekly outer validation windows remain untested. The simulation designs use different menus, clocks, calibration laws and summary statistics. The paired menu experiment isolates that procedure change within the calibrated laws; empirical causation remains unresolved. The new parameter-switching process repeats fitted dwell lengths and adds artificial last-to-first transitions. Its stability screen uses a plug-in model-based approximation. Moment qualification and successful optimization leave the assumed law and boundary-estimate uncertainty unresolved. Failed cells and unavailable diagnostic comparisons retain those statuses.
+
+The statement about untested longer weekly validation windows records the earlier scope only. The additional CFTC validation-length comparison now tests longer windows on the unchanged evaluation period, with its complete outcomes and failures linked below. It does not establish prospective tuning stability.
+
+CFTC categories provide an independent reporting system, not independent individual dealers. Full-history continuity creates a retrospective survivor universe. Open-interest ranking only orders the eligible contracts here. Conservative consolidation-family exclusions leave seventeen eligible contracts. Raw contracts have different exposure units; normalized comparisons do not recover common-dollar risks. Downloaded position dates omit actual historical first-release vintages and reporting delays. Two ingestion-schema clarifications followed acquisition but preceded every forecast and model-loss result; their original failed technical attempts remain documented.
+
+Coefficients are fixed preferences; no estimated funding return, optimal intervention policy or trading-profit claim follows. The normalization uses evaluation-sample F headroom; ex ante institutional charges remain untested. MCS inference requires suitable loss dependence. The stationary bootstrap, modest samples and research-stage specification choices limit its nominal interpretation. Membership and cross-task fractions do not certify future coverage or simultaneous best-model status.
+
+\paragraph{Issued-report consistency.}
+Separately fitted horizon forecasts can violate the ordering of true peak quantiles. Short-history FX regression produces horizon crossings on 640 evaluation origins. Label nesting, floor coverage and strict-breach definitions provide additional checks on the issued reports.
+The complete horizon-coherence comparisons remain in Section~\ref{sup:coherence}; autoregressive replay and empirical-rank details remain in Sections~\ref{sup:ar} and~\ref{sup:rank}.
+
+\paragraph{Additional empirical checks and complete results.}
+Complete source-cell records, candidate means, prewritten decisions and execution receipts are retained in \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v12/results/v12/decomposition}{the loss-decomposition results}, \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v12/results/v12/validation-length}{the validation-length results} and \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v12/results/v12/tau}{the tail-level results}. The decomposition evaluates every declared penalty on the same evaluation origins. Its best finite-penalty evaluation score is an optimistic retrospective diagnostic, not a usable selection rule. The infinite candidate is ordinary empirical headroom and is excluded from that finite oracle; the selection component may therefore be negative. Longer validation changes selection rather than evaluation dates or refit schedules. Tail-level checks change empirical ranks, fitted targets and scores together; the declared sample-maximum cap supplies no coverage guarantee. These new empirical checks require all validation candidates to complete, including for four-feature regression; the earlier simulated policy above is unchanged. Required numerical failures remain failed whole procedure cells, without retries or successful-subset substitution. Failed fits leave the highest-level CFTC threshold and two-period FX criterion unresolved; completed lower-level outputs do not replace them.
+
+\input{generated/v13-supplement.tex}
+
+\input{generated/submission-wp2.tex}
+\end{document}

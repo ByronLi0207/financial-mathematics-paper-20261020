@@ -1,0 +1,51 @@
+WARN `--no-project` was provided, but no project was found
+.................................................... [  2%]
+.............................................. [  5%]
+.......................................................... [  8%]
+............................................................................. [ 12%]
+............................................... [ 14%]
+............................................ [ 16%]
+............................................................................................. [ 21%]
+.................................................. [ 24%]
+................................................................................. [ 28%]
+.......................................................................................................... [ 33%]
+................................................................... [ 37%]
+......................................................... [ 40%]
+.................................................................. [ 43%]
+..................................................................... [ 47%]
+........................................................ [ 50%]
+........................................................................ [ 53%]
+..................................................................... [ 57%]
+........................................................................ [ 61%]
+........................................................................................................................................ [ 68%]
+....................................... [ 70%]
+........................................................................ [ 74%]
+........................................................................ [ 77%]
+........................................................................ [ 81%]
+........................................................................ [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 96%]
+...................................... [ 98%]
+............. [ 99%]
+...............F                                                         [100%]
+=================================== FAILURES ===================================
+_ CompleteSyntheticAttemptTests.test_complete_synthetic_readback_is_arithmetic_only_and_records_actual_resources _
+
+self = <test_verify_rank_ablation.CompleteSyntheticAttemptTests testMethod=test_complete_synthetic_readback_is_arithmetic_only_and_records_actual_resources>
+
+    def test_complete_synthetic_readback_is_arithmetic_only_and_records_actual_resources(self):
+        v=self.verifier()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory).resolve(); attempt=self.make_attempt(root)
+            result=v.verify_attempt(attempt,root=root)
+>           self.assertEqual(result['status'],'VERIFIED',result.get('errors'))
+E           AssertionError: 'FAILED' != 'VERIFIED'
+E           - FAILED
+E           + VERIFIED
+E            : ['fx_hourly-h1-w20:ValueError:THREAD_SNAPSHOT', 'fx_hourly-h1-w40:ValueError:THREAD_SNAPSHOT', 'fx_hourly-h2-w20:ValueError:THREAD_SNAPSHOT', 'fx_hourly-h2-w40:ValueError:THREAD_SNAPSHOT', 'nyfed_weekly-h1-w20:ValueError:THREAD_SNAPSHOT', 'nyfed_weekly-h1-w40:ValueError:THREAD_SNAPSHOT', 'nyfed_weekly-h2-w20:ValueError:THREAD_SNAPSHOT', 'nyfed_weekly-h2-w40:ValueError:THREAD_SNAPSHOT', 'FINAL_THREAD_SNAPSHOT:ValueError', 'VERIFIER_THREAD_LIMIT']
+
+test_verify_rank_ablation.py:270: AssertionError
+=========================== short test summary info ============================
+FAILED test_verify_rank_ablation.py::CompleteSyntheticAttemptTests::test_complete_synthetic_readback_is_arithmetic_only_and_records_actual_resources
+1 failed, 1927 passed, 1184 subtests passed in 175.17s (0:02:55)
