@@ -8,9 +8,9 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 
 | File | Upload column / use | Actual pages | Instructions |
 |---|---|---:|---|
-| [ASMBI/manuscript.pdf](ASMBI/manuscript.pdf) | Main document | 26 | PDF for editor/system preview; fill personal placeholders before submission |
+| [ASMBI/manuscript.pdf](ASMBI/manuscript.pdf) | Main document | 25 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/manuscript.tex](ASMBI/manuscript.tex) | Main document source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
-| [ASMBI/supplement.pdf](ASMBI/supplement.pdf) | Supporting information | 54 | PDF for editor/system preview; fill personal placeholders before submission |
+| [ASMBI/supplement.pdf](ASMBI/supplement.pdf) | Supporting information | 21 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/supplement.tex](ASMBI/supplement.tex) | Supporting information source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
 | [ASMBI/title-page.pdf](ASMBI/title-page.pdf) | Title page | 1 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/title-page.tex](ASMBI/title-page.tex) | Title page source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
@@ -31,8 +31,6 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | [ASMBI/figures-upload/v12-decomposition.tif](ASMBI/figures-upload/v12-decomposition.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [ASMBI/figures-upload/v13-rp.pdf](ASMBI/figures-upload/v13-rp.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [ASMBI/figures-upload/v13-rp.tif](ASMBI/figures-upload/v13-rp.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
-| [ASMBI/figures-upload/v13-validation-length.pdf](ASMBI/figures-upload/v13-validation-length.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
-| [ASMBI/figures-upload/v13-validation-length.tif](ASMBI/figures-upload/v13-validation-length.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [ASMBI/figures-upload/v7-murphy-fx_hourly.pdf](ASMBI/figures-upload/v7-murphy-fx_hourly.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [ASMBI/figures-upload/v7-murphy-fx_hourly.tif](ASMBI/figures-upload/v7-murphy-fx_hourly.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [ASMBI/figures-upload/v7-murphy-nyfed_weekly.pdf](ASMBI/figures-upload/v7-murphy-nyfed_weekly.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
@@ -41,7 +39,7 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | [ASMBI/figures-upload/v9-endpoint-peak-example.tif](ASMBI/figures-upload/v9-endpoint-peak-example.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/main.pdf](QF/main.pdf) | Main document | 22 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/main.tex](QF/main.tex) | Main document source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
-| [QF/supplement.pdf](QF/supplement.pdf) | Supporting information | 43 | PDF for editor/system preview; fill personal placeholders before submission |
+| [QF/supplement.pdf](QF/supplement.pdf) | Supporting information | 15 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/supplement.tex](QF/supplement.tex) | Supporting information source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
 | [QF/title-page.pdf](QF/title-page.pdf) | Title page | 1 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/title-page.tex](QF/title-page.tex) | Title page source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
@@ -62,8 +60,6 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | [QF/figures-upload/v12-decomposition.tif](QF/figures-upload/v12-decomposition.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/figures-upload/v13-rp.pdf](QF/figures-upload/v13-rp.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/figures-upload/v13-rp.tif](QF/figures-upload/v13-rp.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
-| [QF/figures-upload/v13-validation-length.pdf](QF/figures-upload/v13-validation-length.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
-| [QF/figures-upload/v13-validation-length.tif](QF/figures-upload/v13-validation-length.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/figures-upload/v7-murphy-fx_hourly.pdf](QF/figures-upload/v7-murphy-fx_hourly.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/figures-upload/v7-murphy-fx_hourly.tif](QF/figures-upload/v7-murphy-fx_hourly.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/figures-upload/v7-murphy-nyfed_weekly.pdf](QF/figures-upload/v7-murphy-nyfed_weekly.pdf) | Figure / Supporting figure | 1 | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
@@ -96,10 +92,9 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | S1 | `v10-menu-isolation.tif` (upload) / `v10-menu-isolation.pdf` (vector copy) |
 | S2 | `v7-murphy-fx_hourly.tif` (upload) / `v7-murphy-fx_hourly.pdf` (vector copy) |
 | S3 | `v7-murphy-nyfed_weekly.tif` (upload) / `v7-murphy-nyfed_weekly.pdf` (vector copy) |
-| S4 | `v13-validation-length.tif` (upload) / `v13-validation-length.pdf` (vector copy) |
 
 Use the TIFF and vector PDF as alternatives if the portal asks for one format, rather than registering the same figure twice. Main tables 1–8 are editable TeX in both source ZIPs and in SHARED/editable-tables.tex; ASMBI places each after the references on a separate page. Supplement tables and equations remain editable in its source ZIP.
 
 The hashes, byte counts and page counts of all listed active files are in [MANIFEST.json](MANIFEST.json). Historical attempts, backups, `.scratch/` and unused template examples are not upload files. Final visual coverage and compilation are recorded separately under notes/submission; file existence alone is not visual approval.
 
-For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots.
+For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under ../publisher-templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots. The earlier validation-length figure remains in the extended results and is outside the compact supplement upload set.
