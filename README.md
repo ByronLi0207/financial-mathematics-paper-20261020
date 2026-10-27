@@ -4,7 +4,7 @@ This study asks whether conditional quantile models forecast the largest absolut
 
 The only current submission entrance is [submission-package/MANIFEST.md](submission-package/MANIFEST.md), on **submission-final**. The primary package targets Applied Stochastic Models in Business and Industry; [Quantitative Finance](submission-package/QF/README.md) is an alternative format of the same study. The [MJL and publisher audit](notes/submission/journal-shortlist.md) verifies SCIE coverage and separates unverified quartiles and policy details. No manuscript has been submitted by this task.
 
-The current ASMBI editorial revision has passed writing, numerical-provenance, source-archive compilation and page-review checks. The complete test suite also passed using a temporary dependency environment explicitly authorized by the author. Publication and local cleanup are checked separately after R8. See [the execution ledger](ASMBI_FINAL_CHANGELOG.md). Complete earlier supplementary results remain in [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md).
+The current ASMBI editorial revision has passed writing, numerical-provenance, source-archive compilation and page-review checks. The complete test suite also passed using a temporary dependency environment explicitly authorized by the author. The verified files are published in [PR #7](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/7), with an exact 6,049-entry tree comparison at the R9 publication cut. Local archival and recoverable cleanup have separate receipts in the final local folder. See [the execution ledger](ASMBI_FINAL_CHANGELOG.md). Complete earlier supplementary results remain in [EXTENDED_RESULTS.md](EXTENDED_RESULTS.md).
 
 ## Reproduction and scope
 

@@ -2,7 +2,7 @@
 
 **`submission-final` 是本研究唯一的最终投稿入口。** 使用 [MANIFEST](submission-package/MANIFEST.md) 选择文件；固定发布标签为 `submission-2026-10`。首选 Applied Stochastic Models in Business and Industry，备选格式为 Quantitative Finance，第二备选为 Computational Statistics。三刊的 SCIE 依据、未核实分区及现行政策均在 [官方期刊核查](notes/submission/journal-shortlist.md)。
 
-**当前写法与排版修订已通过 R8，发布与清理另行验收。** R0–R7 已通过；R8 的编译、逐页检查、数字来源和完整 pytest 均已通过。测试依赖使用作者明确允许的临时环境，系统 Python 未改。R9 与 C1–C3 尚待顺序执行；旧标签仅代表此前发布的版本。详见 [本轮执行日志](ASMBI_FINAL_CHANGELOG.md) 和 [R8 验收](notes/asmbi-final-20261027/R8-verification.json)。
+**当前写法与排版修订已通过 R8，发布与清理另行验收。** R0–R7 已通过；R8 的编译、逐页检查、数字来源和完整 pytest 均已通过。测试依赖使用作者明确允许的临时环境，系统 Python 未改。R9 已通过：[PR #7](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/7) 已建立，发布切片的 6,049 个文件逐项一致。C1–C3 是之后单独验收的本地存档与可恢复清理，最终回执保存在本地终版文件夹；旧标签仅代表此前发布的版本。详见 [本轮执行日志](ASMBI_FINAL_CHANGELOG.md) 和 [R8 验收](notes/asmbi-final-20261027/R8-verification.json)。
 
 科学基线为 `revision-v13` / `8c4b2b1572eea9b8fa6aabf9074a1aa86c2008f6`。从只读 `final-jof` / `6192ec370d131c60d05e9fb103150e0e9db6aa23` 仅导入审计通过的保存证据及投稿准备材料。没有采用其标题和摘要，没有新增实验，也没有改旧结果。所有数值失败、反例、部分支持和无法判定均保留。
 
