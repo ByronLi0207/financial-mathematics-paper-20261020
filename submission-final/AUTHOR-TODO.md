@@ -1,12 +1,19 @@
-# Author actions for submission-final
+# 作者投稿前待办
 
-Read `notes/submission/投稿操作清单.md` and `submission-package/MANIFEST.md` before uploading anything. The primary target is Applied Stochastic Models in Business and Industry; Quantitative Finance is the prepared first alternative. Both are verified as SCIE in MJL; quartiles require the author's university access.
+当前目标期刊为 Applied Stochastic Models in Business and Industry（ASMBI）；QF 文件包仅作为备用，不能同时投稿。本文仍是回溯性研究；保留所有不利、失败及无法判定结果。
 
-1. Complete author names and order, affiliations, corresponding contact and ORCID.
-2. Complete actual funding, competing interests, CRediT contributions and applicable permissions. Do not replace these fields with unverified negative declarations.
-3. Confirm restricted FX rights, the exact required raw inputs and the intended data-sharing exception. Public aggregate results do not replace the raw observations needed for independent financial replay.
-4. Confirm the publication route, any APC or submission fee, recommended reviewers and all author relationships. Nobody has been contacted or nominated by this task.
-5. Review the public-version disclosure and all-author approval/exclusive-submission statements before signing journal forms. No publication or originality warranty has been made for the author.
-6. Choose a software licence before public reuse or a Zenodo deposit, and add the actual DOI after completing the account operation personally. No licence is selected on the author's behalf.
-7. Confirm the primary title; the final-jof alternative remains in the pending list. Decide the future handling of old branches and PRs only after submission.
-8. Retain numerical failures, partial support, indeterminate tail screens and retrospective qualifiers. Further experiments would require a separate authorized design and are outside this submission round.
+1. AI 使用声明由作者投稿前自行添加（Wiley 要求披露）。
+2. 补作者姓名和顺序、单位、通讯方式、ORCID；所有个人信息占位均需作者核实。
+3. 补真实的基金、利益冲突、CRediT 贡献声明及适用的权限信息，不默认填写“无”。
+4. 确认论文标题，以及 GitHub 预印本、其他公开版本和全体作者同意；亲自确认没有一稿多投。
+5. 决定是否在 Zenodo 存档代码并获取 DOI，选择软件许可证；检查 FX 使用权、共享例外和复算所需原输入。
+6. 决定是否关闭旧 PR #3–#6 或归档旧分支；本轮不代为关闭或合并。
+7. 决定是否安排额外英文润色；不因此改动数字、结论或失败判定。
+8. 核对费用、投稿方式、审稿人关系及期刊表单，补完材料后由作者本人在 Wiley 系统提交。
+9. 只有 GitHub 完整性核查和本地终版核查通过、确认旧副本可以恢复后，才自行清空废纸篓释放空间。
+
+## 待用户决定
+
+- 是否使用已核实可接受的 Free Format 初次投稿格式，或另行准备完整的 NJDv5 排版环境；当前 PDF 不宣称由原 NJDv5 类直接排成。
+- 作者须确认独家投稿、全体作者同意及数据权限，投稿信保留明确待确认文字。
+- 单盲或双盲方式未在已查阅的当前作者须知中确认，不作推断。
