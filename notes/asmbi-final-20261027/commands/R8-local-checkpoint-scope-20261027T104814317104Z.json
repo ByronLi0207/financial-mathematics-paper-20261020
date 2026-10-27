@@ -1,0 +1,15 @@
+{
+  "step": "R8",
+  "label": "local-checkpoint-scope",
+  "command": [
+    "python3",
+    "-c",
+    "import json,subprocess; print(json.dumps({\"branch\":subprocess.check_output([\"git\",\"branch\",\"--show-current\"],text=True).strip(),\"base_head\":subprocess.check_output([\"git\",\"rev-parse\",\"HEAD\"],text=True).strip(),\"publication\":\"NOT_STARTED_R8_BLOCKED\",\"cleanup\":\"NOT_STARTED_R8_BLOCKED\"},indent=2))"
+  ],
+  "started_utc": "2026-10-27T10:48:14.317104+00:00",
+  "ended_utc": "2026-10-27T10:48:14.360854+00:00",
+  "seconds": 0.04375,
+  "returncode": 0,
+  "stdout": "{\n  \"branch\": \"submission-final\",\n  \"base_head\": \"3dba6d906fc181be116c0b630ea97fd1a79fee7c\",\n  \"publication\": \"NOT_STARTED_R8_BLOCKED\",\n  \"cleanup\": \"NOT_STARTED_R8_BLOCKED\"\n}\n",
+  "stderr": ""
+}

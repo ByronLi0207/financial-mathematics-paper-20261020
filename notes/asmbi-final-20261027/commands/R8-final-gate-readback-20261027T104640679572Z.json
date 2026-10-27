@@ -1,0 +1,16 @@
+{
+  "step": "R8",
+  "label": "final-gate-readback",
+  "command": [
+    "cat",
+    "notes/asmbi-final-20261027/R8-verification.json",
+    "notes/asmbi-final-20261027/R8-pytest-console.txt",
+    "notes/asmbi-final-20261027/R8-dependency-inventory-final.json"
+  ],
+  "started_utc": "2026-10-27T10:46:40.679572+00:00",
+  "ended_utc": "2026-10-27T10:46:40.683329+00:00",
+  "seconds": 0.003757,
+  "returncode": 0,
+  "stdout": "{\n  \"step\": \"R8\",\n  \"status\": \"BLOCKED\",\n  \"checked_utc\": \"2026-10-27T10:46:40.642097+00:00\",\n  \"writing_build_provenance\": \"PASS\",\n  \"package_receipt\": \"notes/asmbi-final-20261027/R8-package-audit.json\",\n  \"package_receipt_sha256\": \"0971acf75c9715a110f06a9aebc9aa299cefd6c1a40108e403433f1102bd3e01\",\n  \"visual_pages\": 101,\n  \"visual_pdf_count\": 12,\n  \"numeric_mismatches\": 0,\n  \"frozen_files_unchanged\": 2527,\n  \"main_pages\": 25,\n  \"supplement_pages\": 21,\n  \"supplement_sections\": 12,\n  \"pytest\": \"BLOCKED_BEFORE_COLLECTION\",\n  \"pytest_receipt\": \"notes/asmbi-final-20261027/R8-pytest.json\",\n  \"pytest_returncode\": 1,\n  \"reason\": \"Existing pytest/arch/sklearn/cvxpy/clarabel runtime is absent; offline cache cannot resolve archived requirements. The task prohibits software installation. No tests have run in this round.\",\n  \"prior_test_receipt_not_substituted\": true,\n  \"new_experiments\": 0,\n  \"software_installations\": 0,\n  \"publication_permitted\": false,\n  \"cleanup_permitted\": false\n}\nWARN `--no-project` was provided, but no project was found\n  × No solution found when resolving `--with` dependencies:\n  ╰─▶ Because arch was not found in the cache and you require arch==8.0.0, we\n      can conclude that your requirements are unsatisfiable.\n\nhint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache.{\n  \"checked_utc\": \"2026-10-27T10:40:33.445313+00:00\",\n  \"existing_python_probes\": [\n    {\n      \"path\": \"/usr/bin/python3\",\n      \"returncode\": 0,\n      \"output\": \"{\\\"executable\\\": \\\"/Library/Developer/CommandLineTools/usr/bin/python3\\\", \\\"modules\\\": {\\\"pytest\\\": false, \\\"arch\\\": false, \\\"sklearn\\\": false, \\\"cvxpy\\\": false, \\\"clarabel\\\": false}}\",\n      \"stderr\": \"\"\n    },\n    {\n      \"path\": \"/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n      \"returncode\": 0,\n      \"output\": \"{\\\"executable\\\": \\\"/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3\\\", \\\"modules\\\": {\\\"pytest\\\": false, \\\"arch\\\": false, \\\"sklearn\\\": false, \\\"cvxpy\\\": false, \\\"clarabel\\\": false}}\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"pip_wheels_matching_required_packages\": [],\n  \"new_installations\": 0,\n  \"downloads\": 0,\n  \"boundary\": \"Read-only import-spec and existing wheel-name inventory; no package installation, unpacking or network request.\"\n}\n",
+  "stderr": ""
+}

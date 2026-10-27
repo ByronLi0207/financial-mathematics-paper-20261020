@@ -1,0 +1,12 @@
+$ python3 -c 'import json,subprocess; print(json.dumps({"branch":subprocess.check_output(["git","branch","--show-current"],text=True).strip(),"base_head":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"publication":"NOT_STARTED_R8_BLOCKED","cleanup":"NOT_STARTED_R8_BLOCKED"},indent=2))'
+[stdout]
+{
+  "branch": "submission-final",
+  "base_head": "3dba6d906fc181be116c0b630ea97fd1a79fee7c",
+  "publication": "NOT_STARTED_R8_BLOCKED",
+  "cleanup": "NOT_STARTED_R8_BLOCKED"
+}
+
+[stderr]
+
+[exit] 0
