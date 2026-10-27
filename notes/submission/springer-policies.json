@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "task": "Submission H1: Springer official publisher policy collection",
+  "accessed_utc_window": [
+    "2026-10-27 00:53:41 UTC",
+    "2026-10-27 00:55:15 UTC"
+  ],
+  "source_boundary": "Only official Springer/Springer Nature journal and publisher pages. No downloads, login, registration, contact, settings changes or manuscript changes.",
+  "short_quote_policy": "Each source entry contains at most 25 quoted words; summaries are paraphrases. Source quotes occur once in this JSON registry.",
+  "common_policies": {
+    "preprint_policy": {
+      "status": "verified_publisher_policy",
+      "summary_zh": "鼓励公开预印本；不视为先前正式发表。投稿时披露 DOI 与许可，正式发表后更新预印本记录和论文链接。",
+      "sources": [
+        "springer_policies"
+      ]
+    },
+    "data_policy": {
+      "status": "verified_journal_guidelines",
+      "summary_zh": "原创研究须有数据可用性声明，说明获取方式与限制；鼓励把支持结果的数据存入公共仓库。",
+      "sources": [
+        "ce_guide",
+        "cs_guide",
+        "sc_guide"
+      ]
+    },
+    "code_policy": {
+      "status": "partly_verified",
+      "summary_zh": "编辑或审稿人可要求获取底层数据与代码。未在三刊指南中核实一律公开全部代码的强制条款；应据实交代代码可用性。",
+      "sources": [
+        "data_policy",
+        "ce_guide",
+        "cs_guide",
+        "sc_guide"
+      ],
+      "mandatory_public_code_release_verified": false
+    },
+    "blind_review": {
+      "status": "unverified",
+      "summary_zh": "所读期刊指南未明确单盲或双盲。出版社通用政策说各刊可能不同，不能从标题页或数据匿名化条件句推断。",
+      "sources": [
+        "ce_guide",
+        "cs_guide",
+        "sc_guide",
+        "springer_policies"
+      ],
+      "journal_specific_model": null
+    },
+    "ai_policy_archive_only": {
+      "status": "verified_policy_archived_no_manuscript_change",
+      "summary_zh": "LLM 不能列为作者；超出单纯文字润色的使用应在方法或合适位置说明；仅改善人写文本的可读性、语法等可免披露，人类须负责最终文本。本档案如实记录政策，本任务稿件未增加相关文字。",
+      "sources": [
+        "ce_guide",
+        "cs_guide",
+        "sc_guide"
+      ]
+    },
+    "unknown_fields_boundary": "未核实的页数、总字数、参考文献数量或盲审规则，均不转写为“无限制”或“单盲”。未进入投稿系统，系统内独有必填项未核实。",
+    "latex_platform_note": {
+      "summary": "Snapp requires pdflatex-compilable ZIP.",
+      "sources": [
+        "latex_support"
+      ]
+    }
+  },
+  "journals": [
+    {
+      "name": "Computational Economics",
+      "journal_id": "10614",
+      "accessed_utc_date": "2026-10-27",
+      "scope": {
+        "summary_zh": "计算方法解决经济学复杂问题；涵盖计量计算、Markov/Monte Carlo、机器学习、动态系统、优化和软件。",
+        "sources": [
+          "ce_scope"
+        ]
+      },
+      "publishing": {
+        "model": "Hybrid",
+        "gold_oa_only": false,
+        "subscription_route_no_apc": true,
+        "apc_current": {
+          "GBP": 2490,
+          "USD": 3390,
+          "EUR": 2790
+        },
+        "pricing_basis": "接受日确定；VAT/当地税另计；未来接受价须重核。",
+        "sources": [
+          "ce_fees"
+        ]
+      },
+      "format": {
+        "template": "推荐 Springer Nature LaTeX 模板；Word 也接受。",
+        "editable_sources_and_compiled_pdf": "要求提交可编辑源文件；LaTeX 需原始源、样式、图和编译 PDF。",
+        "citations": "作者–年份；指南鼓励 APA 7 作者列表规则，参考文献按作者姓排序，有 DOI 时给完整链接。",
+        "abstract_words": [
+          150,
+          250
+        ],
+        "keywords": [
+          4,
+          6
+        ],
+        "main_text_word_limit": null,
+        "page_limit": null,
+        "reference_count_limit": null,
+        "limits_status": "未在公开指南核实正文总字数、页数或参考文献数量上限。",
+        "sources": [
+          "ce_guide"
+        ]
+      },
+      "materials": {
+        "required_or_conditionally_required": [
+          "带作者、单位、通讯作者有效邮箱的标题页",
+          "稿件可编辑源与编译 PDF；相关图、样式和参考文献文件",
+          "Funding 与 Competing Interests 声明，置于参考文献后 Statements and Declarations；系统另填作者贡献与利益冲突",
+          "原创研究的数据可用性声明",
+          "复用材料的授权证明（适用时）；补充材料说明和引用（如有）",
+          "原创、共同作者同意、无同时一稿多投"
+        ],
+        "recommended": [
+          "可用时提供 ORCID；作者贡献声明"
+        ],
+        "cover_letter_mandatory_status": "未核实统一强制上传；涉及复用或未发表相关材料时须在给编辑的信中透明说明。",
+        "system_only_fields": "未核实，未登录投稿系统。",
+        "sources": [
+          "ce_guide",
+          "springer_policies"
+        ]
+      },
+      "preprints_ref": "preprint_policy",
+      "data_ref": "data_policy",
+      "code_ref": "code_policy",
+      "review_ref": "blind_review",
+      "ai_ref": "ai_policy_archive_only"
+    },
+    {
+      "name": "Computational Statistics",
+      "journal_id": "180",
+      "accessed_utc_date": "2026-10-27",
+      "scope": {
+        "summary_zh": "计算统计和数据科学的方法与应用，强调计算和统计的相互贡献；涵盖模拟、算法、计量、非/半参数、Bayesian 计算，接受软件文章。",
+        "sources": [
+          "cs_scope"
+        ]
+      },
+      "publishing": {
+        "model": "Hybrid",
+        "gold_oa_only": false,
+        "subscription_route_no_apc": true,
+        "apc_current": {
+          "GBP": 2390,
+          "USD": 3390,
+          "EUR": 2790
+        },
+        "pricing_basis": "接受日确定；VAT/当地税另计；未来接受价须重核。",
+        "sources": [
+          "cs_fees"
+        ]
+      },
+      "format": {
+        "template": "推荐 Springer Nature LaTeX 模板；Word 也接受。",
+        "editable_sources_and_compiled_pdf": "要求可编辑源文件及编译 PDF；明确 LaTeX 上传不使用子目录，图和文献文件也平放。",
+        "citations": "作者–年份；作者姓字母顺序参考文献，含完整 DOI 链接。",
+        "abstract_words": [
+          150,
+          250
+        ],
+        "keywords": [
+          4,
+          6
+        ],
+        "main_text_word_limit": null,
+        "page_limit": null,
+        "reference_count_limit": null,
+        "limits_status": "未在公开指南核实正文总字数、页数或参考文献数量上限。",
+        "sources": [
+          "cs_guide"
+        ]
+      },
+      "materials": {
+        "required_or_conditionally_required": [
+          "带作者、单位、通讯作者有效邮箱的标题页",
+          "完整可编辑源、图、样式/参考文献文件及编译 PDF",
+          "Funding/Competing Interests 等适用声明；Declarations 放参考文献前",
+          "原创研究的数据可用性声明",
+          "复用材料授权（适用时）；补充材料及说明（如有），可提供 .R 文件",
+          "原创、共同作者同意、无同时一稿多投"
+        ],
+        "recommended": [
+          "可用时 ORCID；作者贡献说明"
+        ],
+        "cover_letter_mandatory_status": "未核实统一强制上传；涉及复用或未发表相关材料时须在给编辑的信中透明说明。",
+        "system_only_fields": "未核实，未登录 Editorial Manager。",
+        "sources": [
+          "cs_guide",
+          "springer_policies"
+        ]
+      },
+      "preprints_ref": "preprint_policy",
+      "data_ref": "data_policy",
+      "code_ref": "code_policy",
+      "review_ref": "blind_review",
+      "ai_ref": "ai_policy_archive_only"
+    },
+    {
+      "name": "Statistics and Computing",
+      "journal_id": "11222",
+      "accessed_utc_date": "2026-10-27",
+      "scope": {
+        "summary_zh": "统计与计算交叉；含预测、数据建模、Monte Carlo、优化、机器学习、计算困难问题与不确定性量化。",
+        "sources": [
+          "sc_scope"
+        ]
+      },
+      "publishing": {
+        "model": "Hybrid page label with dated transition to fully OA",
+        "gold_oa_only_from_publication_date": "2027-01-01",
+        "oa_only_submissions_from": "2026-07-01",
+        "subscription_route_no_apc": null,
+        "apc_current": {
+          "GBP": 2090,
+          "USD": 2990,
+          "EUR": 2390
+        },
+        "apc_2027_faq": {
+          "GBP": 2090,
+          "USD": 2990,
+          "EUR": 2390
+        },
+        "pricing_basis": "费用页说按接受日定价且税另计；FAQ明确2027价格同额。",
+        "transition": "公告和FAQ说明2026-07-01起仅接OA投稿，2027-01-01起只发表OA。FAQ同时保留：2026年末前接受的文章，签约选订阅仍可走订阅；不能保证本次投稿免APC。",
+        "source_conflict": "通用费用页与指南仍有Hybrid、可选订阅无APC/无发表费的旧式文字，与有日期的公告/FAQ存在条件差异；本档案保留并以日期公告界定当前投稿预算。",
+        "waivers": "FAQ说明可在投稿流程申请折扣或豁免，机构协议亦可能覆盖；个人资格未核实。",
+        "sources": [
+          "sc_fees",
+          "sc_scope",
+          "sc_oa_announcement",
+          "sc_oa_faq"
+        ]
+      },
+      "format": {
+        "template": "推荐 Springer Nature LaTeX 模板并用 [iicol]；Word 也接受，指南说无专用 Word 模板。",
+        "editable_sources_and_compiled_pdf": "LaTeX 提交完整源、样式、图和编译 PDF。",
+        "citations": "作者–年份；作者姓字母顺序参考文献，有 DOI 时给完整链接。",
+        "abstract_words": [
+          150,
+          250
+        ],
+        "keywords": [
+          4,
+          6
+        ],
+        "main_text_word_limit": null,
+        "page_limit": null,
+        "reference_count_limit": null,
+        "limits_status": "未在公开指南核实正文总字数、页数或参考文献数量上限。",
+        "sources": [
+          "sc_guide"
+        ]
+      },
+      "materials": {
+        "required_or_conditionally_required": [
+          "带作者、单位、通讯作者有效邮箱的标题页",
+          "稿件可编辑源、相关图和样式/文献文件及编译 PDF",
+          "适用的 Funding/Competing Interests/作者贡献信息；Declarations 放参考文献前，系统须填贡献与利益冲突",
+          "原创研究的数据可用性声明",
+          "复用材料授权（适用时）；补充材料及说明（如有）",
+          "原创、共同作者同意、无同时一稿多投"
+        ],
+        "recommended": [
+          "可用时 ORCID"
+        ],
+        "cover_letter_mandatory_status": "未核实统一强制上传；涉及复用或未发表相关材料时须在给编辑的信中透明说明。",
+        "system_only_fields": "未核实，未登录投稿系统。",
+        "sources": [
+          "sc_guide",
+          "springer_policies"
+        ]
+      },
+      "preprints_ref": "preprint_policy",
+      "data_ref": "data_policy",
+      "code_ref": "code_policy",
+      "review_ref": "blind_review",
+      "ai_ref": "ai_policy_archive_only"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ce_guide",
+      "url": "https://link.springer.com/journal/10614/submission-guidelines",
+      "title": "Computational Economics: Submission guidelines",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "150 to 250 words",
+      "short_quote_word_count": 4,
+      "sections_read": [
+        "Manuscript Submission / Source Files",
+        "Title Page / Abstract / Keywords",
+        "Text / References",
+        "Statements and Declarations / Compliance with Ethical Standards",
+        "Research Data Policy and Data Availability Statements",
+        "Authorship principles / LLM clauses"
+      ]
+    },
+    {
+      "id": "ce_scope",
+      "url": "https://link.springer.com/journal/10614/aims-and-scope",
+      "title": "Computational Economics: Aims and scope",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "advanced computing capabilities",
+      "short_quote_word_count": 3,
+      "sections_read": [
+        "Aims and scope",
+        "Statistics and Computing dated OA announcement where applicable"
+      ]
+    },
+    {
+      "id": "ce_fees",
+      "url": "https://link.springer.com/journal/10614/how-to-publish-with-us",
+      "title": "Computational Economics: How to publish with us",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "£2490.00 GBP / $3390.00 USD / €2790.00 EUR",
+      "short_quote_word_count": 8,
+      "sections_read": [
+        "Publishing options",
+        "Fees and funding / Publication fee"
+      ]
+    },
+    {
+      "id": "cs_guide",
+      "url": "https://link.springer.com/journal/180/submission-guidelines",
+      "title": "Computational Statistics: Submission guidelines",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "150 to 250 words",
+      "short_quote_word_count": 4,
+      "sections_read": [
+        "Manuscript Submission / Source Files",
+        "Title Page / Abstract / Keywords",
+        "Text / References",
+        "Statements and Declarations / Compliance with Ethical Standards",
+        "Research Data Policy and Data Availability Statements",
+        "Authorship principles / LLM clauses"
+      ]
+    },
+    {
+      "id": "cs_scope",
+      "url": "https://link.springer.com/journal/180/aims-and-scope",
+      "title": "Computational Statistics: Aims and scope",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "Computational Statistics and Data Science",
+      "short_quote_word_count": 5,
+      "sections_read": [
+        "Aims and scope",
+        "Statistics and Computing dated OA announcement where applicable"
+      ]
+    },
+    {
+      "id": "cs_fees",
+      "url": "https://link.springer.com/journal/180/how-to-publish-with-us",
+      "title": "Computational Statistics: How to publish with us",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "£2390.00 GBP / $3390.00 USD / €2790.00 EUR",
+      "short_quote_word_count": 8,
+      "sections_read": [
+        "Publishing options",
+        "Fees and funding / Publication fee"
+      ]
+    },
+    {
+      "id": "sc_guide",
+      "url": "https://link.springer.com/journal/11222/submission-guidelines",
+      "title": "Statistics and Computing: Submission guidelines",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "150 to 250 words",
+      "short_quote_word_count": 4,
+      "sections_read": [
+        "Manuscript Submission / Source Files",
+        "Title Page / Abstract / Keywords",
+        "Text / References",
+        "Statements and Declarations / Compliance with Ethical Standards",
+        "Research Data Policy and Data Availability Statements",
+        "Authorship principles / LLM clauses"
+      ]
+    },
+    {
+      "id": "sc_scope",
+      "url": "https://link.springer.com/journal/11222/aims-and-scope",
+      "title": "Statistics and Computing: Aims and scope",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "interface between the statistical and computing sciences",
+      "short_quote_word_count": 7,
+      "sections_read": [
+        "Aims and scope",
+        "Statistics and Computing dated OA announcement where applicable"
+      ]
+    },
+    {
+      "id": "sc_fees",
+      "url": "https://link.springer.com/journal/11222/how-to-publish-with-us",
+      "title": "Statistics and Computing: How to publish with us",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "£2090.00 GBP / $2990.00 USD / €2390.00 EUR",
+      "short_quote_word_count": 8,
+      "sections_read": [
+        "Publishing options",
+        "Fees and funding / Publication fee"
+      ]
+    },
+    {
+      "id": "springer_policies",
+      "url": "https://link.springer.com/brands/springer/journal-policies",
+      "title": "Springer: Journal policies",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "Posting of preprints is not considered prior publication",
+      "short_quote_word_count": 8,
+      "sections_read": [
+        "Preprint sharing",
+        "Peer review",
+        "Data transparency"
+      ]
+    },
+    {
+      "id": "data_policy",
+      "url": "https://www.springernature.com/gp/authors/research-data-policy",
+      "title": "Springer Nature: Research data policy",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "underlying data (and code)",
+      "short_quote_word_count": 4,
+      "sections_read": [
+        "Policy point 3"
+      ]
+    },
+    {
+      "id": "latex_support",
+      "url": "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+      "title": "Springer Nature: LaTeX Author Support",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "compile using pdflatex",
+      "short_quote_word_count": 3,
+      "sections_read": [
+        "Submitting your research"
+      ]
+    },
+    {
+      "id": "sc_oa_announcement",
+      "url": "https://link.springer.com/journal/11222/updates/52895072",
+      "title": "Statistics and Computing is transitioning to full open access!",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "1st July 2026",
+      "short_quote_word_count": 3,
+      "sections_read": [
+        "Announcement dated 1 July 2026"
+      ]
+    },
+    {
+      "id": "sc_oa_faq",
+      "url": "https://link.springer.com/journal/11222/updates/52895102",
+      "title": "Statistics and Computing: Transition to fully OA FAQ",
+      "accessed_utc_date": "2026-10-27",
+      "accessed_utc_window": [
+        "2026-10-27 00:53:41 UTC",
+        "2026-10-27 00:55:15 UTC"
+      ],
+      "short_quote": "open for OA submissions only",
+      "short_quote_word_count": 5,
+      "sections_read": [
+        "Why no longer a non-OA option at submission",
+        "When will non-OA publishing stop",
+        "2027 APC",
+        "Funding and waiver options"
+      ]
+    }
+  ]
+}

@@ -17,3 +17,5 @@
 已记录远端全部分支和标签，核对基线及只读来源完整提交号。
 
 H0 complete: 747 evidence files imported; 1288 shared bindings exact; v13 title and abstract retained. H1 in progress.
+
+H1 complete: 12 journals verified from MJL public result cards, 6 SCIE. Primary ASMBI; alternatives QF and Computational Statistics. Detailed-profile login, quartile and unresolved policy limits disclosed. H2 in progress.
