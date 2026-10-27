@@ -57,20 +57,20 @@ CFTC panel & Contracts & 60,200 & 46,000 & 148,000 & 81,800 & 45,600 & 169,000 &
 \clearpage
 
 \begin{table}[p]\centering\small
-\caption{Forecast definitions and executed menus. Codes occur here to connect with the result files. Matched histories and update schedules make the reference explicit.}\label{tab:methods}
+\caption{Forecast definitions and executed menus. Codes occur here to connect with the result files. Matched comparisons make the historical reference explicit.}\label{tab:methods}
 \begin{tabular}{>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{5.3cm}}\toprule
 Method & Forecast definition & Executed menu / setting\\\midrule
 Historical headroom (F) & Current floor plus a quantile of completed peak headrooms & Original FX histories \{720,2880\}; weekly \{52,260\}\\
-Translated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed-label pools; fixed-window and rolling-window controls\\
+Translated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed past outcomes; fixed-window and rolling-window controls\\
 Historical peak (K) & Historical absolute-peak quantile projected to the current floor & Same histories and update controls\\
 Quantile regression (QR) & Training-scaled headroom regression with ridge slopes and an unpenalized intercept & Original three-point menu; initial panel five-point expansion; six-point menu $\{0.001,0.01,0.1,1,10,\infty\}$\\
-Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Sections S8 and S23\\
+Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Section S2\\
 Four-feature regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\
 Endpoint plug-in (L) & Floor plus a high absolute-displacement endpoint quantile & Proposition~2; empirical plug-in evaluated separately\\
-Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications; results and complete failures linked from Supplement Sections S7 and S34\\
+Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Methods in Supplement Section S2; complete results and failures in the extended results\\
 Coverage and combinations & Delayed projected adaptive conformal inference (ACI) wrappers; symmetric absolute value (SAV) headroom recursion; fixed forecast combinations & Original-source wrapper/SAV inventory and broader combination inventory are separate\\
 \bottomrule\end{tabular}
-\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Training histories count completed labels. Fixed-window models refit every 24 FX records or 13 weekly records. Quantile and normalization conventions are detailed in Supplement Sections S8 and S23; this table retains the executed menus.\end{minipage}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Training histories count completed labels. Fixed-window models refit every 24 FX records or 13 weekly records. Quantile and normalization conventions are detailed in Supplement Section S2; this table retains the executed menus.\end{minipage}
 \end{table}
 
 \clearpage
@@ -103,7 +103,7 @@ Additional panel & Ordinary empirical headroom quantile & +0.50 & 30 / 48\\
 Earlier weekly groups & Validation-minimum expanded rule & +4.15 & 26 groups\\
 Earlier weekly groups & One-standard-error rule & +5.37 & 26 groups\\
 \bottomrule\end{tabular}
-\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The original bill main comparison has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results use a different history; the one-standard-error worst excess is +181.39\%, and all its prewritten success criteria remain unmet. Supplement Sections S11--S15 list all panel and selection results (Tables S9--S13).\end{minipage}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The original bill main comparison has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results use a different history; the one-standard-error worst excess is +181.39\%, and all its prewritten success criteria remain unmet. Supplement Section S6 summarizes the panel and selection comparisons; the extended results retain all rows.\end{minipage}
 \end{table}
 
 \clearpage
@@ -138,7 +138,7 @@ code & \multicolumn{2}{c}{\shortstack{Intercept\\only}} & \multicolumn{2}{c}{\sh
 \par\vspace{2pt}\begin{minipage}{.98\linewidth}\footnotesize
 Entries are percentage loss differences from matched corrected historical headroom; positive values mean higher loss, and unavailable entries retain failed or incomplete comparisons.
 The pre-specified conditions require historical superiority in at least 60\% of all 34 comparisons, full-regression medians within ten percent at both histories, and a strictly smaller four-feature median with longer history.
-Full-precision results determine the comparisons, with all scores, breaches, selections and failures retained in Supplement Section S30.
+Full-precision results determine the comparisons, with all scores, breaches, selections and failures retained in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/submission-final/results/v10/cftc/cells.csv}{saved CFTC cells}.
 \end{minipage}\end{table}
 
 \clearpage
@@ -153,8 +153,8 @@ New York Fed & 6 & 52 & 13 & +6.68 & -1.13 & 6 to 9 \\
 New York Fed & 24 & 52 & 13 & +40.47 & +5.02 & 3 to 9 \\
 \bottomrule\end{tabular}
 \par\vspace{2pt}\begin{minipage}{.98\linewidth}\footnotesize
-Lengths count weekly records; evaluation dates remain unchanged. New York Fed horizon six also moves the validation endpoint and refit phase; across-arm medians are not typical paired changes.
-Supplement Section S38 gives individual series, four-feature results and the complete figure.
+Lengths count weekly records; evaluation dates remain unchanged. New York Fed horizon six also moves the validation endpoint and refit phase; medians across tasks within each design are not typical paired changes.
+The \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/submission-final/EXTENDED_RESULTS.md#asmbi-extended-s38}{extended validation results} retain individual series, four-feature results and the complete figure.
 \end{minipage}\end{table}
 
 \clearpage
@@ -171,6 +171,6 @@ Treasury bills & +0.67 & +44.22 \\
 \bottomrule\end{tabular}
 \par\vspace{2pt}\begin{minipage}{.95\linewidth}\footnotesize
 Contract rows give full-group medians; histories are 2,880 hours for FX and 260 weeks for Treasury.
-The rejected post-failure repair leaves original NA entries unchanged (Supplement Section S38).
+The rejected post-failure repair leaves original NA entries unchanged (Supplement Section S11).
 \end{minipage}\end{table}
 \end{document}
