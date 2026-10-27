@@ -1,0 +1,15 @@
+{
+  "step": "R1",
+  "label": "acceptance",
+  "command": [
+    "python3",
+    "-B",
+    "notes/asmbi-final-20261027/verify_R1.py"
+  ],
+  "started_utc": "2026-10-27T08:38:45.610988+00:00",
+  "ended_utc": "2026-10-27T08:38:45.684765+00:00",
+  "seconds": 0.073777,
+  "returncode": 0,
+  "stdout": "{\n  \"step\": \"R1\",\n  \"status\": \"PASS\",\n  \"before\": {\n    \"text\": \"Dealers monitor the largest absolute position reached before a review horizon ends. We compare conditional quantile models with historical rules on hourly foreign exchange (FX) positions, weekly New York Fed positions and Commodity Futures Trading Commission (CFTC) dealer positions, matching histories and update schedules. Historical rules are hard to beat. First, FX regression lowers matched loss by 14.8% and 16.6% in two periods, but its ranking against a shorter rolling rule changes. Second, in the initial weekly comparisons, historical headroom beats full regression in 34 of 48 New York Fed cases; the better realized historical score wins 29 of 34 CFTC cases. Longer validation improves full regression medians in both reporting systems; CFTC short-history excess falls from 19.3% to 4.0%. A benchmark-default gate retains FX gains and improves weekly median performance, but leaves large individual losses. Third, lower scores need not mean lower limit costs: higher reserve charges and lower fixed breach charges generally favor regression in CFTC. Costs are illustrative, and the evidence is retrospective; the original FX evaluation period had been inspected beforehand.\",\n    \"words\": 175,\n    \"numeric_occurrences\": 8,\n    \"sentences\": 9,\n    \"sentence_word_counts\": [\n      12,\n      32,\n      6,\n      22,\n      30,\n      18,\n      16,\n      22,\n      17\n    ]\n  },\n  \"after\": {\n    \"text\": \"Position limits must cover the largest absolute position reached during a review period, since an acceptable endpoint can conceal an earlier breach. We retrospectively compare historical and conditional quantile forecasts using hourly positions from one foreign exchange (FX) market maker and weekly dealer aggregates from the New York Fed and the Commodity Futures Trading Commission. Historical rules are hard to beat: regression improves FX peak forecasts with long training histories, but the measured gain depends on the historical reference. In the weekly comparisons, short training or validation histories favor historical rules; longer validation narrows median loss gaps, while large individual losses remain. Lower forecast scores need not imply lower limit costs, so model validation should report scores, breach counts and costs together.\",\n    \"words\": 122,\n    \"numeric_occurrences\": 0,\n    \"sentences\": 5,\n    \"sentence_word_counts\": [\n      22,\n      33,\n      24,\n      23,\n      20\n    ]\n  },\n  \"non_abstract_source_unchanged\": true,\n  \"new_numeric_findings_added\": false\n}\n",
+  "stderr": ""
+}
