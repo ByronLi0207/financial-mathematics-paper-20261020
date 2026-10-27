@@ -2,6 +2,8 @@
 
 **`submission-final` 是本研究唯一的最终投稿入口。** 使用 [MANIFEST](submission-package/MANIFEST.md) 选择文件；固定发布标签为 `submission-2026-10`。首选 Applied Stochastic Models in Business and Industry，备选格式为 Quantitative Finance，第二备选为 Computational Statistics。三刊的 SCIE 依据、未核实分区及现行政策均在 [官方期刊核查](notes/submission/journal-shortlist.md)。
 
+**当前写法与排版修订已通过 R8，发布与清理另行验收。** R0–R7 已通过；R8 的编译、逐页检查、数字来源和完整 pytest 均已通过。测试依赖使用作者明确允许的临时环境，系统 Python 未改。R9 与 C1–C3 尚待顺序执行；旧标签仅代表此前发布的版本。详见 [本轮执行日志](ASMBI_FINAL_CHANGELOG.md) 和 [R8 验收](notes/asmbi-final-20261027/R8-verification.json)。
+
 科学基线为 `revision-v13` / `8c4b2b1572eea9b8fa6aabf9074a1aa86c2008f6`。从只读 `final-jof` / `6192ec370d131c60d05e9fb103150e0e9db6aa23` 仅导入审计通过的保存证据及投稿准备材料。没有采用其标题和摘要，没有新增实验，也没有改旧结果。所有数值失败、反例、部分支持和无法判定均保留。
 
 `submission-final/` 是共同科学源；`submission-package/ASMBI/` 是首选上传稿；`QF/` 是另一期刊的切换版，不作同时投稿。个人资料、数据权利、软件许可、DOI、费用、审稿人和独家投稿确认仍由作者完成，见 [中文清单](notes/submission/投稿操作清单.md) 和 [待决定事项](notes/submission/PENDING.md)。本轮只准备与发布文件，不代作者提交。
@@ -23,4 +25,4 @@
 | `codex/critical-review-20261023`、`codex/preference-robustness-20261022` | 早期审查/稳健性记录 | 保留，不当成最终稿 |
 | `main` | 原默认分支 | 本轮保持原指向；是否以后整合由作者另行决定 |
 
-原始分支指向在 `notes/submission/remote-before.txt`，公开PDF与PR完整清单在 `notes/submission/public-versions.md/.json`。最终本地编译、逐页图像、测试与数值核查由 H8 回执绑定；推送后的分支与标签读回由独立的发布后回执记录，避免把提交尚未发生时的计划写成已经发布。
+原始分支指向在 `notes/submission/remote-before.txt`，公开PDF与PR完整清单在 `notes/submission/public-versions.md/.json`。此前发布版本的编译、逐页图像、测试与数值核查由 H8 回执绑定；当前修订的证据另存于 `notes/asmbi-final-20261027/`，不能把旧测试通过记录当成本轮重新通过。推送后的分支与标签读回须另行记录，避免把提交尚未发生时的计划写成已经发布。
