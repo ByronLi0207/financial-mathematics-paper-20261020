@@ -56,13 +56,13 @@ def main():
 
 \textbf{Competing interests:} [TO BE COMPLETED BY AUTHOR].
 
-\textbf{CRediT author contributions:} [TO BE COMPLETED BY AUTHOR: assign only applicable roles and identify the responsible authors].
+\textbf{CRediT author contributions:} [TO BE COMPLETED BY AUTHOR].
 
 \textbf{Permissions and ethics applicability:} [TO BE CONFIRMED BY AUTHOR].
 
 \textbf{Data availability.} The financial sources and exact input identities are documented in the manuscript and reproduction guide. Obtain the FX dataset from its original Kaggle source subject to the rights holders' terms; raw FX observations and private prediction vectors are excluded. New York Fed and CFTC data are publicly accessible from the named official services, with source conditions and vintage limitations retained. [AUTHOR TO CONFIRM ACCESS RIGHTS AND ANY EDITORIAL SHARING EXCEPTION].
 
-\textbf{Code availability.} Code, written protocols and public aggregate outputs are available in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/submission-final}{versioned submission-final repository}. Full financial replay additionally requires the exact original inputs and documented historical Git objects. [AUTHOR TO ADD ZENODO DOI AND CONFIRM SOFTWARE LICENSE].
+\textbf{Code availability.} Code, protocols, aggregate results and reproduction instructions are available in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/submission-final}{versioned GitHub repository}; [Zenodo DOI to be added by the author].
 
 \textbf{Existing versions and exclusive submission:} GitHub working versions are disclosed in the cover letter. [AUTHOR TO CONFIRM OTHER VERSIONS, ALL-AUTHOR APPROVAL AND EXCLUSIVE SUBMISSION].
 '''
@@ -88,7 +88,7 @@ def main():
     for paragraph in re.split(r'\n\s*\n',md):
         if paragraph.startswith('# '):parts.append(r'\section*{'+inline(paragraph[2:])+'}')
         elif paragraph.startswith('## '):parts.append(r'\subsection*{'+inline(paragraph[3:])+'}')
-        else:parts.append(inline(paragraph.replace('\n',' ')))
+        else:parts.append(inline(paragraph.replace('\n',' ').strip()))
     cjk_pre=PRE.replace(r'\usepackage[T1]{fontenc}',
         r'\usepackage{fontspec}'+'\n'+
         r'\setmainfont{Arial Unicode.ttf}[Path=/System/Library/Fonts/Supplemental/]'+'\n'+

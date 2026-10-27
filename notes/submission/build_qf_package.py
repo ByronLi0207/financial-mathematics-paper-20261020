@@ -111,7 +111,7 @@ def main() -> None:
     if canonical != (ROOT / 'submission-final').resolve():
         raise ValueError('The frozen shared word metric is bound to submission-final/')
     out = ROOT / 'submission-package/QF'
-    templates = ROOT / 'submission-package/templates/rqufLatex'
+    templates = ROOT / 'publisher-templates/rqufLatex'
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     logs = ROOT / '.scratch/submission/qf' / stamp
     logs.mkdir(parents=True, exist_ok=False)
@@ -307,7 +307,7 @@ def main() -> None:
 \setlength{\tabcolsep}{3pt}
 \clubpenalty=10000\widowpenalty=10000
 \newcounter{proposition}
-\newcommand{\vthirteenMCSTable}{S49}
+\newcommand{\vthirteenMCSTable}{S7}
 \bibpunct{(}{)}{,}{a}{}{,}
 \makeatletter
 \def\ps@qfsubmission{%
@@ -337,7 +337,7 @@ def main() -> None:
     count_metadata = ('\\textbf{Narrative word count:} ' + str(narrative_words)
                       + '.\\par\n{\\small ' + word_count_scope + '}\\par\\medskip\n'
                       '\\textbf{Keywords:} ' + keywords + '.\\par\\medskip\n')
-    marker = 'Authors and affiliations:'
+    marker = 'Authors:'
     if marker not in title_page:
         raise ValueError('Canonical title-page author marker changed; inspect the metadata placement')
     title_page = title_page.replace(marker, count_metadata + marker, 1)
@@ -426,7 +426,7 @@ def main() -> None:
 
 Dear Editors,
 
-Matched foreign exchange (FX) gains depend on the reference; longer validation narrows weekly regression losses, but a benchmark-default protocol leaves adverse cases; illustrative costs depend on reserve and breach charges.
+Matched foreign exchange (FX) gains depend on the reference; longer validation narrows weekly regression losses, but the historical default rule leaves adverse cases; illustrative costs depend on reserve and breach charges.
 
 The manuscript offers matched empirical forecast comparisons for peak inventory limits and separates average accuracy, breaches and illustrative cost preferences. This fits the journal's scope of ``both theoretical and empirical approaches'' and its coverage of financial econometrics, liquidity modelling, market prediction and operational risk. The scope is stated on the journal's \href{https://www.tandfonline.com/journals/rquf20/about-this-journal}{official journal page}.
 
@@ -541,7 +541,7 @@ The abstract is unchanged ({abstract_words} source words); there are {len(keywor
 Existing institution fields are mapped to school/howpublished where the publisher style requires them, and existing URL/DOI values are repeated in notes so the old style does not silently omit access routes. No bibliographic fact is acquired or invented. Original missing publication addresses, if any, remain warnings in the receipt.
 The derived Wisniewski2020 booktitle omits only its existing literal `Proceedings of the ` prefix, which the unchanged publisher bibliography style adds automatically. Only the exact `Data availability.`, `Code availability.` and `A fixed CFTC history-length extension.` paragraph labels lose their trailing source full stops, because the unchanged class adds those stops. The scientific-body equivalence check permits exactly these three label-punctuation conversions and citation-group ordering; it performs no general punctuation normalization.
 
-Final full-page visual QA is assigned to the root task and is not asserted by this builder. Complete author names, affiliations, corresponding contact, ORCID, funding, competing interests and CRediT roles before any actual submission. The official template requests a JEL classification; its choice remains the author's decision, with a placeholder rather than an invented code. The actual narrative count and keywords update automatically on each build. The author must separately resolve applicable disclosure requirements against the policy record; this package contains no AI declaration. No claim of permission to redistribute restricted inputs, acceptance, fee payment or completed submission is made.
+Final full-page visual QA is assigned to the root task and is not asserted by this builder. Complete author names, affiliations, corresponding contact, ORCID, funding, competing interests and CRediT roles before any actual submission. The official template requests a JEL classification; its choice remains the author's decision, with a placeholder rather than an invented code. The actual narrative count and keywords update automatically on each build. The author must separately resolve applicable disclosure requirements against the policy record. No claim of permission to redistribute restricted inputs, acceptance, fee payment or completed submission is made.
 '''
     put('README.md', readme)
     source_names.add('README.md')

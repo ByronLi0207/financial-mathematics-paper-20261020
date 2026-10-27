@@ -470,7 +470,7 @@ def main() -> int:
     parser.add_argument('--repack', action='store_true', help='Repack verified existing PDFs without changing them')
     args = parser.parse_args()
     canonical = ROOT / 'submission-final'
-    template = ROOT / 'submission-package/templates/WileyNJDv5_Template'
+    template = ROOT / 'publisher-templates/WileyNJDv5_Template'
     out = ROOT / 'submission-package/ASMBI'
     scratch = ROOT / '.scratch/submission/asmbi'
     out.mkdir(parents=True, exist_ok=True)
@@ -501,7 +501,7 @@ def main() -> int:
     if digest(archive) != downloaded['sha256']:
         raise ValueError('Official template ZIP does not match download receipt')
     for p in template.iterdir():
-        if p.is_file() and (p.suffix.lower() in {'.cls', '.sty', '.bst'} or p.name == 'rhlogo.jpg'):
+        if p.is_file() and (p.suffix.lower() in {'.cls', '.sty'} or p.name.lower() == 'wileynjd-ama.bst' or p.name == 'rhlogo.jpg'):
             write(out / p.name, read_input(p))
     for name in ('MinionPro-Regular.otf', 'MinionPro-It.otf', 'MinionPro-Bold.otf', 'MinionPro-BoldIt.otf'):
         write(out / 'Fonts/MinionPro' / name, read_input(template / 'Fonts/MinionPro' / name))
@@ -586,7 +586,7 @@ def main() -> int:
     write(audit / 'supplement-njd.tex', supp_tex)
     write(audit / 'supplement-njd-original.tex', supp_tex.replace('\\input{asmbi-template-compat.tex}\n', '', 1).replace('\\let\\LoadClass\\ASMBIoriginalLoadClass\n', '', 1))
     write(out / 'supplement.tex', supp_tex)
-    repository = re.search(r'\\href\{(https://github\.com/[^}]+)\}\{versioned repository\}', body).group(1)
+    repository = re.search(r'\\href\{(https://github\.com/[^}]+)\}\{versioned GitHub repository\}', body).group(1)
     title_tex = free_format_preamble() + '\n\\begin{document}\n\\pagestyle{empty}\n'
     title_tex += '\\section*{' + title + '}\n'
     for label in ('Authors', 'Affiliations', 'Corresponding author and contact', 'ORCID', 'Funding', 'Competing interests', 'CRediT contributions'):

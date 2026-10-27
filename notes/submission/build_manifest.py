@@ -30,6 +30,7 @@ for journal,main,master in [('ASMBI','manuscript','ASMBI-source-and-pdf.zip'),('
     add(f'{journal}/{master}','Author working archive','Complete authoring backup; do not upload as a second scientific manuscript')
     for p in sorted((OUT/journal/'figures-upload').glob('*')):
         if '.bak' in p.name:continue
+        if p.stem == 'v13-validation-length':continue  # retained in extended results, outside the compact supplement
         add(str(p.relative_to(OUT)),'Figure / Supporting figure','TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below')
 for stem,col in [('declarations','Declarations / statements'),('suggested-reviewers','Suggested reviewers, if requested'),('author-qa','Author preparation only'),('editable-tables','Tables / editable source if requested')]:
     for suffix in ['pdf','tex']:
@@ -46,11 +47,11 @@ for r in items:
     rel=r['path'].removeprefix('submission-package/')
     lines.append(f"| [{rel}]({rel}) | {r['column']} | {r['pages'] if r['pages'] is not None else '—'} | {r['role']} |")
 lines += ['', '## Figure-number mapping', '', '| Number | File stem |', '|---|---|']
-for number,stem in [('1','v9-endpoint-peak-example'),('2','v11-fx-history'),('3','v10-cftc-contract-changes'),('4','v12-decomposition'),('5','v10-cost-regions'),('6','v13-rp'),('S1','v10-menu-isolation'),('S2','v7-murphy-fx_hourly'),('S3','v7-murphy-nyfed_weekly'),('S4','v13-validation-length')]:
+for number,stem in [('1','v9-endpoint-peak-example'),('2','v11-fx-history'),('3','v10-cftc-contract-changes'),('4','v12-decomposition'),('5','v10-cost-regions'),('6','v13-rp'),('S1','v10-menu-isolation'),('S2','v7-murphy-fx_hourly'),('S3','v7-murphy-nyfed_weekly')]:
     lines.append(f'| {number} | `{stem}.tif` (upload) / `{stem}.pdf` (vector copy) |')
 lines += ['', 'Use the TIFF and vector PDF as alternatives if the portal asks for one format, rather than registering the same figure twice. Main tables 1–8 are editable TeX in both source ZIPs and in SHARED/editable-tables.tex; ASMBI places each after the references on a separate page. Supplement tables and equations remain editable in its source ZIP.', '',
 'The hashes, byte counts and page counts of all listed active files are in [MANIFEST.json](MANIFEST.json). Historical attempts, backups, `.scratch/` and unused template examples are not upload files. Final visual coverage and compilation are recorded separately under notes/submission; file existence alone is not visual approval.', '']
-lines += ['For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots.', '']
+lines += ['For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under ../publisher-templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots. The earlier validation-length figure remains in the extended results and is outside the compact supplement upload set.', '']
 save(OUT/'MANIFEST.json',json.dumps(dict(created_utc=datetime.now(timezone.utc).isoformat(),files=items),ensure_ascii=False,indent=2)+'\n')
 save(OUT/'MANIFEST.md','\n'.join(lines))
 print(json.dumps(dict(files=len(items),pdf_pages=sum(x['pages'] or 0 for x in items)),indent=2))
