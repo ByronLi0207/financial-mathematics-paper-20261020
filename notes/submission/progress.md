@@ -27,3 +27,5 @@ H2 complete: all 156 current document pages covered by direct views or exact PNG
 H3 complete: reviewer-facing README/reproduction routes, placeholder CITATION, rights-limited availability text and 488-member bounded release ZIP. Eight raw/archive/mixed-detail candidates explicitly excluded; CRC/member/hash readback PASS. No license/DOI/account chosen. H4 starts.
 
 H4 complete: S40/Table S54 with 36 rows/216 display cells, 172 exact saved-source bindings; 58 substantive claim groups mapped, 0 P1 unresolved, six wording/interpretation qualifications assigned to H5. G1 four-sentence explanation and limitation added. Cached supplement 43 pages, new pages 41–43 directly viewed; 63 old aux numbers unchanged. H5 starts.
+
+H5 complete: 15 simulated-review responses; 30 exact editorial groups; three verified ASMBI references; 61 claim groups and 0 narrative omissions. All 243 literal pre-bibliography source numeric tokens unchanged. Frozen metrics: 7.7869%, mean16.8893 words,0>40; abstract175 words/8 numbers. Both packages cache-compile; their full updated page review continues as preparation for final H8 acceptance. H6 starts.

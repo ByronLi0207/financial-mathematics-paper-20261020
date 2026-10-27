@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "task": "H5 preparatory internal simulated review",
+  "status": "DRAFT_READ_ONLY_PREPARATION_NOT_H5_ACCEPTANCE",
+  "generated_utc": "2026-10-27T04:20:27.430382+00:00",
+  "repo_root": "/Users/bingyouli/Research/论文/金融数学论文-v10-20261024",
+  "review_identity": "内部模拟编辑初审/方法学/领域审读；不是期刊编辑、外部审稿人、人类专家或 Claude 的评价。未启动跨模型复审。",
+  "workflow_boundary": "H4 尚未正式开始；本档案是并行阅读准备。正式验收仍按 H0–H8 顺序，不能据此宣称 H5 完成。",
+  "scope": "仅阅读当前 canonical 主文、补充及所列现有证据档案；仅新建本 Markdown/JSON 两文件。未修改论文、科学结果或投稿包；未重跑研究、下载论文、联系外部人、调用外部模型、提交 Git 或另派代理。",
+  "methods_boundary": "意见来自文本与已保存证据的一致性审读；未独立验证全部底层数值、推导、程序或公开远端状态。行号与 SHA 绑定当前快照，后续 H4/H5 改稿后需刷新定位。",
+  "source_snapshot": {
+    "submission-final/manuscript.tex": {
+      "sha256": "34b05fe4df73f31ecdce76b6a58a960c7e5afd21b18340003234d3dff2fb4744",
+      "bytes": 56236,
+      "lines": 484
+    },
+    "submission-final/supplement.tex": {
+      "sha256": "8084fe5365b1f904841174285d5985deba6b5aa69183b109817259771633b0b2",
+      "bytes": 108847,
+      "lines": 1653
+    },
+    "submission-final/generated/v13-supplement.tex": {
+      "sha256": "f2518eeb459e44c4a331731e19b99186b47b3872ec2af73e91902d3a56742621",
+      "bytes": 7476,
+      "lines": 58
+    },
+    "submission-final/generated/submission-wp2.tex": {
+      "sha256": "a2f4f1372c541e78383780c94ed0f60f5ed86b501f1c947bfdf8902d61265fb2",
+      "bytes": 4319,
+      "lines": 93
+    },
+    "notes/submission/asmbi-recent-literature.json": {
+      "sha256": "dec23716ffe3b1c1fbd7d4b2e12114acfa6f9eff49a0cab7714b4a3fd9851d9d",
+      "bytes": 10890,
+      "lines": 190
+    },
+    "notes/submission/prediction-register.md": {
+      "sha256": "7041a7f545a30a360c19dd0f2e453340ecf7cf5d0acbf147e4ab63fe939b5b3c",
+      "bytes": 74434,
+      "lines": 652
+    },
+    "notes/submission/wp2-import-audit.md": {
+      "sha256": "7cedaadeb048cb0891cac87d3df91d6441f72bcd21ba7aa2ea59782d8a193e75",
+      "bytes": 10456,
+      "lines": 112
+    },
+    "notes/submission/wiley-risk-policies.md": {
+      "sha256": "33e76e6faf6b37bfdf45d2afcf997658fcf57c19304c59b7e865d7273b185dad",
+      "bytes": 5398,
+      "lines": 47
+    }
+  },
+  "roles": [
+    {
+      "id": "editorial",
+      "name": "编辑初审（内部模拟）",
+      "overall": "优先判断贡献是否足以送审、主张是否可信，以及数据与审查入口是否清楚。以下是可能触发退修或拒稿的具体风险，不是对期刊编辑决定的预测。",
+      "findings": [
+        {
+          "id": "E1",
+          "priority": "高",
+          "title": "“受基准保护”标题与失败的尾部标准冲突",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 353,
+              "label": "sec:v13-rp：小节标题"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 354,
+              "label": "8/60 与最坏 80.98%"
+            },
+            {
+              "path": "notes/submission/prediction-register.md",
+              "line": 40,
+              "label": "G3.R2.RP = NOT_SUPPORTED"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 41,
+              "label": "中位数通过、尾部失败"
+            }
+          ],
+          "issue": "小节标题把 benchmark-protected 当作已实现的性质，而正文与登记表明确显示尾部标准失败：预定允许至多 3/60 个大于 10% 的损失，实际为 8/60。读者先见标题，容易把零中位数误读为保护有效；摘要只说仍有大损失，也没有给失败判定。",
+          "writing_repair": "将标题改为中性的“基准默认验证规则的回顾性检验”，并在摘要或首个结论句直接说尾部保护标准未满足；保留 32/60 回退历史规则、0.00% 中位数及 8/60 的完整关系。不要把 G3.R2 与 RQ2 混为一个检验。",
+          "irreducible_boundary": "写作不能消除 8/60 和 +80.98% 的实际结果，不能把规则重新命名后称为满足原保护目标。",
+          "repair_class": "写作可修复主张；失败结果不可消除"
+        },
+        {
+          "id": "E2",
+          "priority": "高",
+          "title": "WP2 留档时序须与“预先承诺/注册”用语同时呈现",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 245,
+              "label": "par:wp2-history"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 246,
+              "label": "precommitted / registered"
+            },
+            {
+              "path": "submission-final/generated/submission-wp2.tex",
+              "line": 3,
+              "label": "本地先行、公开后行、非外部注册"
+            },
+            {
+              "path": "notes/submission/wp2-import-audit.md",
+              "line": 9,
+              "label": "原设计提交时间"
+            },
+            {
+              "path": "notes/submission/wp2-import-audit.md",
+              "line": 10,
+              "label": "提前 13.372451 秒"
+            },
+            {
+              "path": "notes/submission/wp2-import-audit.md",
+              "line": 15,
+              "label": "公开上传发生在运行后"
+            }
+          ],
+          "issue": "主文使用 precommitted 和 registered，而关键时序限定埋在 S39。可核实的本地设计提交仅早于正式运行 13.372451 秒，公开上传在计算之后；且 W52/W260 已知。这些事实支持本地运行前封存，不能支持外部公开预注册或全新金融确认。",
+          "writing_repair": "正文首次出现 WP2 时写清“本地运行前封存、公开运行后上传；仅 W520 新算”；统一用 fixed/prewritten/local design 等准确措辞。保留原提交、UTC 时刻和来源分支审计入口，明确短历史结果此前已查看。",
+          "irreducible_boundary": "已经发生的公开 after-run 和研究阶段检视不能通过语言变成外部预注册、独立预先确认或未见测试集。",
+          "repair_class": "写作可修复透明度；时间与观察历史不可消除"
+        },
+        {
+          "id": "E3",
+          "priority": "较高",
+          "title": "贡献需要和本刊近期分布预测应用形成准确关系",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 54,
+              "label": "sec:literature"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 59,
+              "label": "路径风险先例"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 62,
+              "label": "分位模型与评价文献"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 76,
+              "label": "三个经验发现"
+            },
+            {
+              "path": "notes/submission/wiley-risk-policies.md",
+              "line": 9,
+              "label": "ASMBI 官方范围档案"
+            }
+          ],
+          "issue": "稿件使用成熟预测工具，两个命题也是已知性质；若只靠目标更换和大批对照表，编辑可能难以识别对应用随机建模读者的新经验知识。现有综述尚未联系已核实的三篇近期本刊论文，但这不是要求为凑本刊引用而全部加入。",
+          "writing_repair": "用一段说明“已观察路径峰值、严格匹配历史基准、验证失败边界、评分与成本分离”共同补充什么现有证据。Lee–Kim 可接时序稳定性，Pagnottoni 可接分布/分位差异，Muddana 等可接递归评价与基准；按真正相关点择用，并承认响应与模型不同。",
+          "irreducible_boundary": "这轮证据不建立新模型族、普遍优越性或新覆盖理论；三篇来源只核对了官网元数据和摘要，不能据此声称全面方法比较或已读全文。",
+          "repair_class": "写作可强化定位；方法创新与全文比较边界不可消除",
+          "literature_refs": [
+            "LeeKim2024ASMBI",
+            "Pagnottoni2026ASMBI",
+            "MuddanaEtAl2025ASMBI"
+          ]
+        },
+        {
+          "id": "E4",
+          "priority": "高",
+          "title": "“跨频率/独立系统”必须限定为相关的聚合任务",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 32,
+              "label": "数据系统概述"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 38,
+              "label": "RQ2"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 126,
+              "label": "CFTC survivor universe"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 276,
+              "label": "independent reporting-system evidence"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 375,
+              "label": "一个市场商"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 377,
+              "label": "相关聚合任务"
+            }
+          ],
+          "issue": "一个市场商 FX、同一 FX 日度聚合、13 个纽约联储类别与 17 个 CFTC 合约并不是独立机构样本。跨频率还同时改变响应、物理跨度与时钟，CFTC 则是回顾性连续存续样本。宽泛“financial forecasting”或“independent evidence”易被看成超出观测对象。",
+          "writing_repair": "在 RQ2 首次说明独立的是报告系统；把一般结论限定于所选的采样净头寸、固定菜单和聚合任务。将频率变化描述为同源再聚合比较，避免由任务数暗示样本外机构复制。",
+          "irreducible_boundary": "无新增独立 dealer 数据或真实首发时点样本，就不能消除单一机构、相关类别、幸存者选择及纯频率效应未识别的局限。",
+          "repair_class": "写作可限定外推；外部有效性边界不可消除"
+        },
+        {
+          "id": "E5",
+          "priority": "高",
+          "title": "数据权限和复现层级需能让编辑迅速核验",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 398,
+              "label": "FX 版权与排除范围"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 400,
+              "label": "NY Fed 源条款"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 404,
+              "label": "code availability"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1590,
+              "label": "文档再生不等于预测复算"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1595,
+              "label": "完整 replay 输入条件"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1608,
+              "label": "尚无独立/前瞻验证"
+            }
+          ],
+          "issue": "公开代码和已保存结果并不等于任何审稿人可独立复算全部 FX 预测。FX 元数据仅指向原作者版权，原始数据与逐期私有预测未再分发；纽约联储数据另受源条款约束。若摘要/投稿信只写可复现，编辑会高估公开材料的闭包。",
+          "writing_repair": "保持现有权限说明，在复现入口用简短表或段落区分：保存结果/文档再生、持合法匹配输入的全量 replay、真正独立复现。明确需要匹配版本和 fingerprint，并给可访问的公开 CFTC 路径；权限核实仍交作者完成。",
+          "irreducible_boundary": "不得把 Kaggle 可下载等同于再分发许可，也不能由代码许可替代数据条款；未取得授权输入者的完整 FX 独立复算仍有实际边界。",
+          "repair_class": "写作可明确复现承诺；权限与独立复算限制不可消除"
+        }
+      ]
+    },
+    {
+      "id": "methodology",
+      "name": "方法学审稿人（内部模拟）",
+      "overall": "重点审查比较对象、选择过程和不确定性解释。可建议重写和补充已保存证据的说明；本草案不要求重跑实验或改变任何冻结阈值。",
+      "findings": [
+        {
+          "id": "M1",
+          "priority": "高",
+          "title": "同一验证段选候选再设一标准误门槛，不产生保护概率",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 354,
+              "label": "候选选择与 HAC 门槛"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 39,
+              "label": "selection and gate share validation data"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 58,
+              "label": "评估期已查看"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 366,
+              "label": "保护不足"
+            }
+          ],
+          "issue": "在六点菜单中先取验证均值最小者，再用同一段数据判断其胜过历史基准一个 HAC 标准误，门槛会受到候选选择和验证噪声影响。一标准误是规则参数，不是显著性水平；此处又使用已查看的评估期。零中位数与 FX 留益不能解释为事前非劣或风险保证。",
+          "writing_repair": "把它明确称为固定的启发式决策规则，说明候选选择与 gate 共用数据、决策在评估段固定；删去任何暗示名义保护概率的词。联合报告中位数、尾部失败与回退比例，避免只展示选中回归的子集。",
+          "irreducible_boundary": "没有未查看的前瞻数据或独立校准设计，不能把这次回顾性规则检验升级为确认性保护；一标准误阈值也不能事后解释为某个检验大小。",
+          "repair_class": "写作可说明规则性质；名义/前瞻保护未建立"
+        },
+        {
+          "id": "M2",
+          "priority": "高",
+          "title": "验证长度对比混入端点变化，组中位数不等于典型配对改善",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 293,
+              "label": "两系统中位数改善"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 304,
+              "label": "端点与配对中位数限定"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 24,
+              "label": "QR4 H6 median screen Fail"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 30,
+              "label": "验证索引与 +0.00 配对中位数"
+            },
+            {
+              "path": "notes/submission/prediction-register.md",
+              "line": 37,
+              "label": "G2.V3.QR4 不成立"
+            }
+          ],
+          "issue": "纽约联储 H6 延长验证还把终点前移 18 周并改变 refit phase，因此不能只归因于样本长度。全回归 H6 两臂中位数下降 7.81pp，配对变化中位数却为 0；QR4 H6 的 -4.22pp 未达预定 -5pp。泛称“longer validation improves regression”会遮蔽这些差别。",
+          "writing_repair": "每个总述都限定为 full-regression across-series arm medians，并就近指向端点变化和 QR4 失败；区分“中位数之差”和“配对变化的中位数”。沿用原阈值，不用改变成功定义来保住方向性叙述。",
+          "irreducible_boundary": "当前已保存对照无法识别纯长度因果效应；未达 QR4 阈值的结果仍是不成立，不能用另一方法或另一 horizon 的成功替代。",
+          "repair_class": "写作可修复统计对象；长度因果效应未识别"
+        },
+        {
+          "id": "M3",
+          "priority": "较高",
+          "title": "事后有限菜单分解不证明特征缺乏信息的机制",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 292,
+              "label": "Why does regression lose 标题"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 293,
+              "label": "27/41 与 29/41"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 295,
+              "label": "有限五惩罚且排除 infinite"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1648,
+              "label": "diagnostic 与 negative component"
+            }
+          ],
+          "issue": "分解的“最佳有限惩罚”用评估结果事后选取，并排除普通经验分位候选；它是测试菜单内的乐观诊断。余差仍为正，只说明这一特征/惩罚菜单未超过基准，不能区分真实信息不足、模型错设、估计误差或遗漏非线性结构。",
+          "writing_repair": "将“why”与“indicates limited incremental information”限定为菜单内诊断或与某解释一致；给出分解定义和负选择项的原因。保留 component medians 不可相加、finite 候选不含 infinite 的说明，不把该对象称为所有可行方法的下界。",
+          "irreducible_boundary": "不增加新的识别设计或模型族，不能获得因果估计成本机制、单个特征作用或条件信息不存在的结论。",
+          "repair_class": "写作可收紧机制主张；因果与全模型结论不可得"
+        },
+        {
+          "id": "M4",
+          "priority": "高",
+          "title": "99% 的数值失败不能被读成经济预测失败",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 308,
+              "label": "Both FX periods fail"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 315,
+              "label": "CFTC W260 NA"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 316,
+              "label": "两 FX NA"
+            },
+            {
+              "path": "submission-final/generated/v13-supplement.tex",
+              "line": 13,
+              "label": "G1 仅 6/10 兼容检查通过"
+            },
+            {
+              "path": "notes/submission/prediction-register.md",
+              "line": 34,
+              "label": "F3.Q2 UNDETERMINED"
+            }
+          ],
+          "issue": "正文“Both FX periods fail”缺少失败类型。这里是所需 99% 数值拟合/完整程序单元未完成，预测损失为空；G1 修复在 10 个既收敛拟合中仅 6 个满足保真标准，因而未采用。它既不是 QR 已被证明在 FX 经济上输掉，也不是修复后 60% 的经济成功率。",
+          "writing_repair": "明确写“required numerical fits/procedure cells failed, leaving comparative performance undetermined”，将原始求解失败与后续兼容 gate 失败分开。CFTC 保留 28/34 已知胜、1 个未知及 29 胜阈值未决；不要对成功子集求完整组结论。",
+          "irreducible_boundary": "原 NA、三项失败单元和无法判定状态必须保留；不允许放松容差、替换求解器后冒充原预定结果，或将未跑修复后的比较当成失败评分。",
+          "repair_class": "写作可消除歧义；尾部比较仍无法判定"
+        },
+        {
+          "id": "M5",
+          "priority": "较高",
+          "title": "重叠损失和研究阶段选择限制名义推断与任务计数",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 185,
+              "label": "完成标签与重叠验证"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 189,
+              "label": "HAC 与 multiplicity families"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 204,
+              "label": "90% MCS / 1000 bootstrap"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 206,
+              "label": "重复损失和相关任务"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1641,
+              "label": "名义解释边界"
+            }
+          ],
+          "issue": "horizon 重叠、同源类别相关和已有研究阶段模型发展，使 DM/HAC、MCS 和跨任务胜率回答不同问题。MCS 未剔除不能读成预测风险相等；29/34、8/60 也不是独立伯努利样本。当前部分解释已经到位，但结果总述仍可能被胜率和“confidence”术语带走。",
+          "writing_repair": "在核心表/图注重申检验的逐格比较单位、原有 Holm family 和未涵盖的研究阶段选择；把 MCS 表述为固定近似下的存活集合。保持完整分母、重复列等价处理与所有 unavailable 方法，避免追加未经设计的 pooled p 值。",
+          "irreducible_boundary": "现有固定块长、1000 次 bootstrap 和样本无法建立同时最优、未来覆盖或独立市场总体概率；不能通过重新包装名义 90% 扩张适用范围。",
+          "repair_class": "写作可解释推断单位；同时/前瞻推断未建立"
+        }
+      ]
+    },
+    {
+      "id": "domain",
+      "name": "金融风险与预测领域审稿人（内部模拟）",
+      "overall": "重点审查预测响应与真实风控决策之间的距离，以及基准和跨市场解释是否具有可执行含义。现有负面结果有价值，但需要把操作性建议限制在其观测范围内。",
+      "findings": [
+        {
+          "id": "D1",
+          "priority": "高",
+          "title": "采样绝对净头寸峰值不是损失、总风险或真实资金需求",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 82,
+              "label": "Y/B/Z 响应定义"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 96,
+              "label": "known-floor 命题"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 103,
+              "label": "Lévy 独立对称假设"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 147,
+              "label": "无经验覆盖保证"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1629,
+              "label": "gross exposure / cash needs / sampled peak"
+            }
+          ],
+          "issue": "当前对象是采样时点的绝对净头寸峰值。净额抵消、遗漏区间内极值、估值与报告构成变化，使它不能直接代表 gross exposure、PnL 尾损失或结算流动性。两个命题分别是已知 floor 投影和强假设下的经典概率界，不自动为实证报告赋予监管式覆盖保证。",
+          "writing_repair": "首次解释“position limits”时明确 sampled passive-report benchmark；在金融解释中区分头寸、损益与现金需求。保持 Lévy 条件和经验 plug-in 分离，指出理论分位覆盖陈述针对真实条件分位，不是拟合预测的既得性质。",
+          "irreducible_boundary": "缺少更细交易、总敞口、估值和资金流数据，不能把本稿评分或 breach 直接换算成资本节省、资金需求或损失风险。",
+          "repair_class": "写作可明确经济对象；风险映射与覆盖未建立"
+        },
+        {
+          "id": "D2",
+          "priority": "高",
+          "title": "周报经济日期不构成当时可交易的信息集",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 124,
+              "label": "日末记录聚合"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 128,
+              "label": "Tuesday positions / Friday release"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1534,
+              "label": "实际发布时间与延迟"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1631,
+              "label": "频率同时改变多个设计要素"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 378,
+              "label": "first-release 与区间极值缺失"
+            }
+          ],
+          "issue": "按当时公开信息进行实时预测的理解会与经济日期回放发生冲突：CFTC 通常周二测量周五公布，纽约联储历史首发与修订版本未重建，日 FX“最后记录”也非已验证收盘。相同完成标签条件保证回放一致，却不能补齐当时公开信息集。",
+          "writing_repair": "将所有操作性建议表述为对 downloaded economic-date vintages 的回顾性结果；避免“实时可部署”或纯频率效果。说明同源日度聚合还改变物理跨度、时钟、训练/评估范围与响应采样。",
+          "irreducible_boundary": "没有带真实发布时间与修订轨迹的数据，无法验证 public-information-clock 策略；仅重排文字或加发布日期滞后也不能证明历史首发可用性。",
+          "repair_class": "写作可限定时钟；实时可部署性仍未验证"
+        },
+        {
+          "id": "D3",
+          "priority": "高",
+          "title": "评分改善与风控改善之间仍缺实测经济价格",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 216,
+              "label": "短历史 FX 的 loss 与 breaches"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 258,
+              "label": "日度 3.0% 降损但 37/30 breaches"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 328,
+              "label": "score 与 breach 区分"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 334,
+              "label": "归一化成本定义"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 342,
+              "label": "CFTC 5/34、32/34、1/34"
+            },
+            {
+              "path": "submission-final/supplement.tex",
+              "line": 1641,
+              "label": "评价样本归一化"
+            }
+          ],
+          "issue": "较低 pinball 分数可以伴随更多 breach；成本角点又由固定偏好决定。以评估样本历史 headroom 作归一化提供可比较图示，但不是事前机构收费。因而“cheaper”只在给定偏好网格中成立，不能直接转成风险降低、盈利或资金效率提升。",
+          "writing_repair": "把 score、breach 次数、reserve/headroom、exceedance amount 并列解释，并保留 5/34 与两个相反角点，避免只引用有利角落。明确参数是规定偏好、归一化是描述性的，未估计实际损失/融资成本，也未识别限额改变交易行为后的效果。",
+          "irreducible_boundary": "缺少机构价格、干预决策和反事实交易响应，无法证明真实成本节省或最优政策；无需为追求积极结论重新选择偏好网格。",
+          "repair_class": "写作可解释偏好依赖；实际经济收益未测量"
+        },
+        {
+          "id": "D4",
+          "priority": "较高",
+          "title": "“历史规则胜出”计数与可执行历史默认要分开",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 140,
+              "label": "corrected-rank 历史 headroom"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 157,
+              "label": "infinite = ordinary empirical"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 278,
+              "label": "29/34 用两历史规则较佳 realised score"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 366,
+              "label": "ordinary 最大恶化 36.5%"
+            }
+          ],
+          "issue": "29/34 的阈值对照使用 corrected 与 ordinary 两种历史报告中事后较好者，不是实时可执行 selector；而主要曲线与推荐默认固定为 corrected F。infinite shrinkage 又只是 ordinary empirical，不能称为已经回到完全相同的历史基准。这些细节直接影响金融读者能否照做。",
+          "writing_repair": "在摘要所用 29/34 计数旁或主表注明确“better realized historical score”判定与固定 F 评分的差别；统一历史默认名称。把匹配 F、短滚动 FX reference、ordinary I 和 infinite 候选四者关系写清，保留各自菜单、历史和 refit clock。",
+          "irreducible_boundary": "不能把事后历史赢家冒充可执行选择器，也不能由历史胜率推断所有简单规则可靠；比较只覆盖这些已执行参考程序。",
+          "repair_class": "写作可明确基准；事后赢家不具可执行性"
+        },
+        {
+          "id": "D5",
+          "priority": "较高",
+          "title": "历史长度扩展只支持部分运输，不能给一般“足够历史”门槛",
+          "anchors": [
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 238,
+              "label": "FX history learning curve"
+            },
+            {
+              "path": "submission-final/manuscript.tex",
+              "line": 246,
+              "label": "WP2 partial support"
+            },
+            {
+              "path": "submission-final/generated/submission-wp2.tex",
+              "line": 15,
+              "label": "低历史 QR4 15/17"
+            },
+            {
+              "path": "submission-final/generated/submission-wp2.tex",
+              "line": 19,
+              "label": "高历史 QR4 10/17 未达 60%"
+            },
+            {
+              "path": "submission-final/generated/submission-wp2.tex",
+              "line": 21,
+              "label": "Full P2 not testable"
+            },
+            {
+              "path": "submission-final/generated/submission-wp2.tex",
+              "line": 23,
+              "label": "P3 6/17 未达 70%"
+            },
+            {
+              "path": "notes/submission/prediction-register.md",
+              "line": 45,
+              "label": "Full P2 planned=0"
+            }
+          ],
+          "issue": "WP2 低历史结果支持既定不利屏，但主要来自此前已知 W52/W260；唯一新 W520 在 QR4 上仅 10/17 获胜，严格递减仅 6/17，QR33 高区间计划格数为 0 而不可检验。不能由部分支持推论更多金融历史最终必胜，或证实样本/维度阈值的估计成本机制。",
+          "writing_repair": "主文在 partial support 后补一句 full-regression 高区间结构性不可检验，并保持 fixed denominator；区分低区间既有验证和长区间新增预测。将“sufficient history”改为与测试范围相称的经验条件，保留 S39 全部反例，不对成功市场再筛选。",
+          "irreducible_boundary": "计划 0 的 QR33 P2 无法判定、QR4 的失败与非单调性仍在；现有 dependent aggregate markets 不能确定一般机构或市场的充分历史长度与因果机制。",
+          "repair_class": "写作可呈现完整判定；充分历史阈值与机制未建立"
+        }
+      ]
+    }
+  ],
+  "literature_context": [
+    {
+      "id": "LeeKim2024ASMBI",
+      "json_pointer": "/records/0",
+      "source_file": "notes/submission/asmbi-recent-literature.json",
+      "title": "Sequential monitoring for conditional quantiles of general conditional heteroscedastic time series models",
+      "authors": [
+        {
+          "given": "Sangyeol",
+          "family": "Lee"
+        },
+        {
+          "given": "Chang Kyeom",
+          "family": "Kim"
+        }
+      ],
+      "year": 2024,
+      "volume": "40",
+      "issue": "4",
+      "pages": "1012--1038",
+      "article_number": null,
+      "doi": "10.1002/asmb.2865",
+      "official_url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asmb.2865",
+      "abstract_supported_relevance_zh": "在线顺序监测位置–尺度异方差时序的条件分位数变点，摘要明确联系 VaR/ES 风险管理；用 KOSPI 与 EuroStoxx 50 日收益实证。",
+      "boundary_zh": "这是变点监测研究；摘要不能支持本稿模型优于其方法，或本稿静态评价量具有新颖性的结论。",
+      "verification_status": "verified_from_official_Wiley_article_metadata_and_abstract",
+      "accessed_utc_date": "2026-10-27"
+    },
+    {
+      "id": "Pagnottoni2026ASMBI",
+      "json_pointer": "/records/1",
+      "source_file": "notes/submission/asmbi-recent-literature.json",
+      "title": "Optimal Transport Autoregression to Forecast High-Frequency Financial Data Distributions",
+      "authors": [
+        {
+          "given": "Paolo",
+          "family": "Pagnottoni"
+        }
+      ],
+      "year": 2026,
+      "volume": "42",
+      "issue": "1",
+      "pages": null,
+      "article_number": "e70067",
+      "doi": "10.1002/asmb.70067",
+      "official_url": "https://onlinelibrary.wiley.com/doi/10.1002/asmb.70067",
+      "abstract_supported_relevance_zh": "用最优传输自回归预测 Bitcoin 高频收益与波动分布；摘要报告误差依赖时间与分位数，极端分位附近误差上升且不单调。",
+      "boundary_zh": "摘要针对其最优传输模型和 Bitcoin 数据；不能外推为所有金融模型的普遍定理，也不能据此声称本稿已解决极端分位问题。",
+      "verification_status": "verified_from_official_Wiley_article_metadata_and_abstract",
+      "accessed_utc_date": "2026-10-27"
+    },
+    {
+      "id": "MuddanaEtAl2025ASMBI",
+      "json_pointer": "/records/2",
+      "source_file": "notes/submission/asmbi-recent-literature.json",
+      "title": "Forecasting Gold Returns Volatility Over 1258–2023: The Role of Moments",
+      "authors": [
+        {
+          "given": "Thanoj K.",
+          "family": "Muddana"
+        },
+        {
+          "given": "Komal S. R.",
+          "family": "Bhimireddy"
+        },
+        {
+          "given": "Anandamayee",
+          "family": "Majumdar"
+        },
+        {
+          "given": "Rangan",
+          "family": "Gupta"
+        }
+      ],
+      "year": 2025,
+      "volume": "41",
+      "issue": "5",
+      "pages": null,
+      "article_number": "e70042",
+      "doi": "10.1002/asmb.70042",
+      "official_url": "https://onlinelibrary.wiley.com/doi/10.1002/asmb.70042",
+      "abstract_supported_relevance_zh": "先用 Bayesian 时变参数分位回归构建波动、尾风险和矩指标，再作递归样本外线性预测并比较自回归基准。",
+      "boundary_zh": "研究目标是波动预测，不能将其等同于本稿的分位损失目标或宣称摘要证明某种分位评价标准有效。",
+      "verification_status": "verified_from_official_Wiley_article_metadata_and_abstract",
+      "accessed_utc_date": "2026-10-27"
+    }
+  ],
+  "literature_boundary": "Relevance and suggested context sentences rely only on abstracts. Full-text methods, theorem details, numerical tables and universal comparative claims are not asserted.",
+  "required_retained_boundaries": [
+    "G3.R2.RP tail screen NOT_SUPPORTED; 8/60 lose >10%, worst +80.98%; heading cannot assert achieved benchmark protection.",
+    "WP2 local commit 13.372451 seconds before execution; public upload after run; not externally preregistered; W52/W260 inspected and W520 only new.",
+    "99% FX numerical/procedure failure is not observed economic loss or demonstrated comparative inferiority; original unavailable and UNDETERMINED remain.",
+    "FX raw-data rights and matching-input requirement remain; code/document regeneration is not full independent forecast replication.",
+    "WP2 overall PARTLY; QR4 P2/P3 NOT_SUPPORT and QR33 P2 planned=0 / NOT_TESTABLE remain."
+  ],
+  "validation": {
+    "roles": 3,
+    "findings": 15,
+    "findings_per_role": 5,
+    "source_snapshot_unchanged_during_write": true
+  }
+}

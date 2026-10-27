@@ -26,12 +26,14 @@ ROOT = Path(__file__).resolve().parents[2]
 CITE = re.compile(r"(\\cite(?:p|t|alp|alt|author|year|yearpar)?\*?(?:\[[^\]]*\]){0,2})\{([^}]+)\}")
 LOCAL = re.compile(r"\\(input|include|includegraphics)(?:\[[^\]]*\])?\{([^}]+)\}")
 TECTONIC = Path('/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic')
-# Only these exact two availability labels omit their source full stop: the
+# Only these exact three paragraph labels omit their source full stop: the
 # publisher class supplies its own paragraph-heading stop. No other body
 # punctuation or paragraph-heading normalization is permitted.
 ALLOWED_BODY_LABEL_PUNCTUATION = (
     (r'\paragraph{Data availability.}', r'\paragraph{Data availability}'),
     (r'\paragraph{Code availability.}', r'\paragraph{Code availability}'),
+    (r'\paragraph{A fixed CFTC history-length extension.}',
+     r'\paragraph{A fixed CFTC history-length extension}'),
 )
 
 
@@ -93,7 +95,7 @@ def normalize_citations(text: str) -> str:
 
 
 def normalize_explicit_packaging_only(text: str) -> str:
-    """Citation ordering plus the two named label stops, never general prose."""
+    """Citation ordering plus the three named label stops, never general prose."""
     for source, derived in ALLOWED_BODY_LABEL_PUNCTUATION:
         text = text.replace(source, derived)
     return normalize_citations(text)
@@ -274,7 +276,7 @@ def main() -> None:
     for source, derived in ALLOWED_BODY_LABEL_PUNCTUATION:
         count = qf_body.count(source)
         if count > 1:
-            raise ValueError(f'Unexpected duplicate availability label: {source}')
+            raise ValueError(f'Unexpected duplicate exact paragraph label: {source}')
         if count:
             qf_body = qf_body.replace(source, derived, 1)
             label_punctuation_changes.append({'before': source, 'after': derived,
@@ -537,7 +539,7 @@ Changed PDF outputs and build receipts are backed up even if tracked. Rejected p
 
 The abstract is unchanged ({abstract_words} source words); there are {len(keywords_list)} unchanged keywords. The title page reports the actual canonical narrative count ({narrative_words} words), read from the shared frozen `notes/submission/writing_metrics.py` definition, together with its exclusions and the canonical keywords. Main, title-page and cover-letter page caps are checked automatically. Citation groups are ordered by the inherited bibliography years without changing their membership. Only cited references are printed; historical uncited database entries remain in the database. An explicit canonical `(n.d.)` label is supplied as a packaging-only BibTeX date where the database omitted its date.
 Existing institution fields are mapped to school/howpublished where the publisher style requires them, and existing URL/DOI values are repeated in notes so the old style does not silently omit access routes. No bibliographic fact is acquired or invented. Original missing publication addresses, if any, remain warnings in the receipt.
-The derived Wisniewski2020 booktitle omits only its existing literal `Proceedings of the ` prefix, which the unchanged publisher bibliography style adds automatically. Only the exact `Data availability.` and `Code availability.` paragraph labels lose their trailing source full stops, because the unchanged class adds those stops. The scientific-body equivalence check permits exactly these two label-punctuation conversions and citation-group ordering; it performs no general punctuation normalization.
+The derived Wisniewski2020 booktitle omits only its existing literal `Proceedings of the ` prefix, which the unchanged publisher bibliography style adds automatically. Only the exact `Data availability.`, `Code availability.` and `A fixed CFTC history-length extension.` paragraph labels lose their trailing source full stops, because the unchanged class adds those stops. The scientific-body equivalence check permits exactly these three label-punctuation conversions and citation-group ordering; it performs no general punctuation normalization.
 
 Final full-page visual QA is assigned to the root task and is not asserted by this builder. Complete author names, affiliations, corresponding contact, ORCID, funding, competing interests and CRediT roles before any actual submission. The official template requests a JEL classification; its choice remains the author's decision, with a placeholder rather than an invented code. The actual narrative count and keywords update automatically on each build. The author must separately resolve applicable disclosure requirements against the policy record; this package contains no AI declaration. No claim of permission to redistribute restricted inputs, acceptance, fee payment or completed submission is made.
 '''
@@ -590,6 +592,7 @@ Final full-page visual QA is assigned to the root task and is not asserted by th
         'body_equal_after_explicit_packaging_normalization': True,
         'science_text_equivalence_rules': {
             'citation_group_order': 'Same key membership; order only',
+            'allowed_exact_label_punctuation_pair_count': len(ALLOWED_BODY_LABEL_PUNCTUATION),
             'allowed_exact_label_punctuation_pairs': [
                 {'source': source, 'derived': derived}
                 for source, derived in ALLOWED_BODY_LABEL_PUNCTUATION],
