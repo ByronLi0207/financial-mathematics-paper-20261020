@@ -1,8 +1,8 @@
-# 投稿前十问十答 — 按 v13 校正
+# 投稿前十问十答 — submission-final
 
 整理日期：2026-10-26。本文档为作者准备材料，不属于正文或 Online Supplement；不是独立外审报告，不新增实验、分析或科学结论。依据为当前 v13 科学基线 `8c4b2b1572eea9b8fa6aabf9074a1aa86c2008f6` 的 `submission-v10/`。作者姓名和单位保持待填写。
 
-问题主题来自只读对象 `6192ec370d131c60d05e9fb103150e0e9db6aa23` 的 `notes/final-merge/anticipated-questions.md`。该来源的 WP2/PARTLY 叙述不属于当前 v13；以下用当前稿件结果和定位替换，不能将旧分支的数值、代码或章节号作为 v13 投稿答复。
+问题主题来自只读对象 `6192ec370d131c60d05e9fb103150e0e9db6aa23` 的 `notes/final-merge/anticipated-questions.md`。答复以 v13 科学基线为准，并明确区分本轮核查后导入的 WP2；当前投稿稿源为 `submission-final/`，不能把来源分支的旧章节号当作当前定位。
 
 ## 1. 为什么预测期间峰值，而不是期末持仓？
 
@@ -21,6 +21,8 @@
 没有。匹配历史和更新安排使比较更明确，但历史长度、候选菜单、非平稳性和选择程序仍不能统一归因。较长验证将 CFTC 的跨合约中位超额损失从 19.33% 降至 4.03%（短历史）及 10.35% 降至 0.53%（长历史）；New York Fed 完整回归两个 horizon 的中位数也降低。但其 H6 长验证同时把验证终点推进 18 周并改变重估相位，而且配对变化的中位数为 0，不能把两臂中位数差解释为典型序列改善。四特征 H6 的预写中位改善标准仍未通过。日频聚合也同时改变多个任务维度，无法识别纯频率效应。
 
 **v13 依据：** 主文 §7.2、§7.4、Table 7、§10；补充 S36、S38；`submission-v10/generated/v13-supplement.tex` 的 `sup:v13-checks`；`protocol/v13/nyfed-validation-length-design.md`。本文保留的是有限菜单内的诊断和回溯比较。
+
+本轮另导入的 CFTC 历史长度机制检验只获部分支持：两个低历史屏分别为 15/17 与 29/34，高历史 QR4 为 10/17，未达到预设 60%；严格连续改善为 6/17，未达到 70%。QR33 高区没有预先指定单元，保持无法检验。只有 W520 是新增预测，W52/W260 早已看过；原设计虽在本地先提交，公开上传发生在运行后。依据为当前正文 `par:wp2-history`、补充 `sup:submission-wp2` 和 `notes/submission/import-audit.md`，不把它称作外部公开预注册或一般充分历史阈值。
 
 ## 4. 哪些 v13 内容在执行前固定，99% 分位数修复是否解决了缺失结果？
 
@@ -68,4 +70,4 @@ v13 的 G1–G3 各有独立设计文件，固定相容性门槛、验证几何�
 
 这些是同数据数值复现，不能替代新交易商或前瞻验证。公共仓库包含原 CFTC ZIP 与 Treasury-bill CSV，但不包含私有 FX 原 CSV 或指定 panel 原 CSV；FX 在 G4 中只核对输入身份，没有新增 FX 拟合。运行完整历史测试还可能需要原设计 Git 对象。独立个体交易商、历史首发信息、实际成本与前瞻部署证据仍不足。
 
-**v13 依据：** 主文 Data and code availability、§10；补充 S34、S36；根 `REPRODUCING.md` 和 `notes/v13/independent-reproduction.md`。此处只是读取既有凭证，本次投稿整理未重跑实验、测试或复现。
+**v13 依据：** 主文 Data and code availability、§10；补充 S34、S36；根 `REPRODUCING.md` 和 `notes/v13/independent-reproduction.md`。此处只是读取既有凭证，本次没有重跑金融实验或独立金融复现；软件测试与文档编译另有本轮回执。

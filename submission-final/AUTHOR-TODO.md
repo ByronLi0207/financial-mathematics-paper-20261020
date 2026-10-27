@@ -1,13 +1,12 @@
-# Author actions before submission — v13
+# Author actions for submission-final
 
-The current draft is on `revision-v13`. This revision neither submits the paper nor changes any existing PR. Other author-information placeholders remain unfilled.
+Read `notes/submission/投稿操作清单.md` and `submission-package/MANIFEST.md` before uploading anything. The primary target is Applied Stochastic Models in Business and Industry; Quantitative Finance is the prepared first alternative. Both are verified as SCIE in MJL; quartiles require the author's university access.
 
-1. Complete author names, affiliations, contact, ORCID, funding and competing interests in the manuscript, title page and journal forms. Confirm coauthor approval, originality, exclusive submission and source permissions.
-2. Confirm the original FX rights holders' terms. Kaggle metadata states “Data files © Original Authors”; raw FX and private prediction vectors remain excluded. Retain New York Fed attribution and continuing source conditions. The code license does not replace those rights.
-3. Decide whether to collect independent individual-dealer records or register a prospective first-release evaluation. The hourly FX record and its daily aggregation describe one dealer; weekly categories are related aggregate tasks.
-4. Review the retrospective diagnostics as diagnostics. The finite-penalty hindsight bound uses evaluation information and cannot be deployed. Longer weekly validation improves the reported full-regression medians but does not establish a protective selector, independent-sample effect or prospective guarantee. The 99% FX comparisons and one CFTC comparison remain unavailable after the candidate repair failed its forecast-compatibility check. The benchmark-default protocol has zero median weekly excess but fails its large-loss criterion; it is not a prospective protection guarantee.
-5. Preserve all adverse results, failed cells, moment-qualification failures and unavailable simulations. The expanded-menu simulation's switching-minus-constant difference is a difference between arm-level medians, not proof of equivalence or absence of time variation.
-6. Institutional reserve charges, gross dealer exposures, trading returns, funding gains and intervention policies remain unevaluated. Fixed cost coefficients express illustrative preferences, and model-confidence-set membership does not establish equal population risks or future coverage.
-7. Decide how to provide the three original historical Git objects required by legacy software checks. Public document compilation and aggregate verification are separate from private-input financial replay; the v11 testing record preserves the missing-prerequisite failure and qualified full pass. The v12 protocols were also published individually before calculation, and their exact local/public bytes are recorded.
-8. Review the retained title and Journal of Forecasting target. Earlier title alternatives remain in historical decision notes; journal scope and acceptance remain editorial decisions. No unverified quartile classification is asserted.
-9. Decide future handling of old branches and PR #3, #4 and #5 using `notes/v13/CANONICAL.md`. No cleanup, merge, PR creation or PR closure is performed by this revision. Keep all private inputs, `.bak` and other local intermediates unless a separate scoped cleanup is authorized.
+1. Complete author names and order, affiliations, corresponding contact and ORCID.
+2. Complete actual funding, competing interests, CRediT contributions and applicable permissions. Do not replace these fields with unverified negative declarations.
+3. Confirm restricted FX rights, the exact required raw inputs and the intended data-sharing exception. Public aggregate results do not replace the raw observations needed for independent financial replay.
+4. Confirm the publication route, any APC or submission fee, recommended reviewers and all author relationships. Nobody has been contacted or nominated by this task.
+5. Review the public-version disclosure and all-author approval/exclusive-submission statements before signing journal forms. No publication or originality warranty has been made for the author.
+6. Choose a software licence before public reuse or a Zenodo deposit, and add the actual DOI after completing the account operation personally. No licence is selected on the author's behalf.
+7. Confirm the primary title; the final-jof alternative remains in the pending list. Decide the future handling of old branches and PRs only after submission.
+8. Retain numerical failures, partial support, indeterminate tail screens and retrospective qualifiers. Further experiments would require a separate authorized design and are outside this submission round.

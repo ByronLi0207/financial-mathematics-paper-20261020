@@ -1,0 +1,333 @@
+{
+  "report": "H2 direct visual inspection - ASMBI manuscript",
+  "created_utc": "2026-10-27T03:37:02.843429+00:00",
+  "scope": "Read-only inspection of the ASMBI manuscript PDF and all 25 page PNGs. Only this JSON and companion Markdown were written.",
+  "pdf": "submission-package/ASMBI/manuscript.pdf",
+  "pdf_sha256_expected": "385f69b90557e975586df35f6bf7c220518a63cf0b098c502f928ce18ac25166",
+  "pdf_sha256_actual": "385f69b90557e975586df35f6bf7c220518a63cf0b098c502f928ce18ac25166",
+  "pdf_sha256_matches_manifest": true,
+  "manifest": "notes/submission/renders-h2-all-pages.json",
+  "expected_pages": 25,
+  "directly_viewed_pages": 25,
+  "page_images_sha256_matched": 25,
+  "format_boundary": "Inspected actual Free Format + AMA product. This report does not claim the offline-incomplete original NJD template/class was reproduced unchanged.",
+  "review_method": "Every page-01.png through page-25.png was separately returned by tools.view_image and directly visually inspected. Four-page batches were used. Page 19 was directly re-viewed with detail=original. No contact sheet or text extraction substituted for page inspection.",
+  "checks": {
+    "clipping_or_occlusion": "None observed on any of 25 directly viewed pages.",
+    "fonts_math": "Body text, math, superscripts and symbols readable. Table 2 uses visibly smaller but readable type.",
+    "ama_citations": "Superscript numeric citations readable. Numbered references [1]-[31] rendered. Punctuation exceptions in E02; no bibliographic fact audit claimed.",
+    "after_references_tables": "References end on page 17. Tables 1-8 each occupy one independent page on pages 18-25.",
+    "numeric_columns": "All table numeric columns, signs, percentage signs and NA entries inspected and readable. This is visual verification, not numerical recomputation.",
+    "figure_legends_units": "Figures 1-6 axes, legends, units and captions inspected; no clipping or unreadable label observed.",
+    "wp2_and_s39": "Page 7 WP2 history-length extension is one complete paragraph. Supplement Section S39 prints clearly at its end. No supplement-target semantic audit performed in this main-manuscript-only task."
+  },
+  "findings": [
+    {
+      "id": "E01",
+      "category": "author_completion",
+      "severity": "author_action_before_submission",
+      "pages": [
+        1,
+        15
+      ],
+      "location": "Page 1 below title; page 15 Author-provided information block",
+      "observed": "Page 1 has [AUTHOR INFORMATION TO BE COMPLETED]. Page 15 has [TO BE COMPLETED BY AUTHOR] for author information, ORCID, funding, and competing interests.",
+      "recommendation_to_root": "Retain the known author-input boundary. These unresolved fields need actual author inputs through the parent workflow; they are not clipping or rendering defects.",
+      "scientific_change_required": false
+    },
+    {
+      "id": "E02",
+      "category": "bibliography_punctuation",
+      "severity": "minor_editorial",
+      "pages": [
+        15,
+        16
+      ],
+      "location": "Reference [4] on page 15; references [18]-[21] and [25] on page 16",
+      "observed": "[4] ends with Delft University of Technology. : 2017.; [18]-[21] have a space before the period after the institutional author; [21] contains Historical compressed. : . Retrieved October 24, 2026.; [25] contains Walter Vaughn J. ., eds.",
+      "recommendation_to_root": "Review bibliography-output punctuation without changing scientific numbers or adding unverified bibliographic facts.",
+      "scientific_change_required": false
+    }
+  ],
+  "scientific_numbers_changed": false,
+  "source_or_pdf_changed": false,
+  "overall_verdict": "VISUAL_PASS_WITH_EDITORIAL_FINDINGS",
+  "overall_explanation": "All 25 page images passed clipping, occlusion and legibility inspection. Parent workflow should handle known author completion placeholders and minor bibliography punctuation. This verdict is not final submission authorization and does not erase the author-input boundary.",
+  "pages": [
+    {
+      "page": 1,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-01.png",
+      "image_sha256": "aa7d69090e284dd2e904fc453dedaf4dc78744f43fc52ccdbe207ff780859f73",
+      "manifest_sha256": "aa7d69090e284dd2e904fc453dedaf4dc78744f43fc52ccdbe207ff780859f73",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Title, abstract, keywords and RQ1-RQ3 are complete and legible. No clipping or overlap. Visible author placeholder below title: [AUTHOR INFORMATION TO BE COMPLETED]; see E01.",
+      "verdict": "PASS_WITH_EDITORIAL_FINDING"
+    },
+    {
+      "page": 2,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-02.png",
+      "image_sha256": "6e9eb96c580520d28131360ba8d199d30954a3823e7bdcc3ed0029603d236252",
+      "manifest_sha256": "6e9eb96c580520d28131360ba8d199d30954a3823e7bdcc3ed0029603d236252",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Figure 1 axis labels, USD millions unit, dates, line legend and caption are clear. Body and numeric superscript citations are legible with no clipping.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 3,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-03.png",
+      "image_sha256": "29ea54019ea4813271bd21ae2537e2d0dfca9fc3b046df76e676e17bdd85b7d6",
+      "manifest_sha256": "29ea54019ea4813271bd21ae2537e2d0dfca9fc3b046df76e676e17bdd85b7d6",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Related-literature numeric superscripts are legible. Target definitions, pinball loss, propositions and bottom probability formula are complete and unobscured.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 4,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-04.png",
+      "image_sha256": "c97ba69eee4f547f901c9498fd5f8115e2fa415a32992c210bfa514174353485",
+      "manifest_sha256": "c97ba69eee4f547f901c9498fd5f8115e2fa415a32992c210bfa514174353485",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Data and Forecasting methods text, superscript citations, H and tau symbols are complete. No clipping or broken section transition.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 5,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-05.png",
+      "image_sha256": "075cd2eed976aa9659437443e0edb5f5c8f79885a456fb073589a44fe467b04b",
+      "manifest_sha256": "075cd2eed976aa9659437443e0edb5f5c8f79885a456fb073589a44fe467b04b",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Historical-rule and ridge-quantile formulas are legible. Wide regression formula stays within the page. Citations and section transition are complete.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 6,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-06.png",
+      "image_sha256": "d1144e89d2fda142eb977543424a3cae964536e178fd291be2b977b7c4a20e6e",
+      "manifest_sha256": "d1144e89d2fda142eb977543424a3cae964536e178fd291be2b977b7c4a20e6e",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "DM and HAC bandwidth formulas, Sections 6.1-6.2 and 7.1 are complete. Subscripts and superscripts are clear, with no clipping.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 7,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-07.png",
+      "image_sha256": "ca546f8b529122c3d1c28d525ea22fdc6a9309c84eba595900c789bee18c5d1e",
+      "manifest_sha256": "ca546f8b529122c3d1c28d525ea22fdc6a9309c84eba595900c789bee18c5d1e",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Figure 2 training-history axis, percentage loss axis and two-method legend are clear. The WP2 paragraph headed A fixed CFTC history-length extension is one continuous complete paragraph; its final Supplement Section S39 citation is legible. Counts, partial-support verdict and limitations remain visible.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 8,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-08.png",
+      "image_sha256": "e5969f146884a35c54270b54efebd767fff85411c5ff29ee7887e3de55291d80",
+      "manifest_sha256": "e5969f146884a35c54270b54efebd767fff85411c5ff29ee7887e3de55291d80",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Sections 7.3, 7.3.1 and 7.3.2 and references to Tables 5/6, Figure 3 and Supplement Table S49 are legible. Bottom whitespace precedes a separate figure page; no clipped continuation.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 9,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-09.png",
+      "image_sha256": "467f072f431f6c4c3a1fc9220bdd466814e6e0bede686a81b53325d54c6b1bc8",
+      "manifest_sha256": "467f072f431f6c4c3a1fc9220bdd466814e6e0bede686a81b53325d54c6b1bc8",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Figure 3 occupies a separate page. All 17 contract codes, 52/260-week panel titles, Relative loss change (%) axis, zero lines, unit caveats and caption are legible.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 10,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-10.png",
+      "image_sha256": "6759e30eb53f7b0b3b64d52b2d977f7cc467274cf6c9232ff691ac65f1cf0f9b",
+      "manifest_sha256": "6759e30eb53f7b0b3b64d52b2d977f7cc467274cf6c9232ff691ac65f1cf0f9b",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Section 7.4 and Figure 4 panels are complete. Color/hatch/dot/cross legend, planned comparison index and percentage vertical axis are clear; caption and following text do not overlap.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 11,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-11.png",
+      "image_sha256": "9debc8cc2c44ff1fcfd50974af114276657b16811ffc3319589219d1ae3131b2",
+      "manifest_sha256": "9debc8cc2c44ff1fcfd50974af114276657b16811ffc3319589219d1ae3131b2",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Section 7.5 and Section 8 cost formula are legible, including math accents and indices. References to S47, S32, Figure 5 and Table 8 are visible. Formula stays inside page.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 12,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-12.png",
+      "image_sha256": "fc00b9ba4df9a5555d6bfe2ac86f82afed12031ded72e86d52a54d47c9d5581c",
+      "manifest_sha256": "fc00b9ba4df9a5555d6bfe2ac86f82afed12031ded72e86d52a54d47c9d5581c",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Figure 5 six-panel page is complete. Kappa/beta axes, complete counts, 0-1 color bar and caption caveats are legible. No clipping or occlusion.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 13,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-13.png",
+      "image_sha256": "728aa290ec614b7acb5df8c770ee40b1bd9b60e554fde6c6b2ab3d999920236b",
+      "manifest_sha256": "728aa290ec614b7acb5df8c770ee40b1bd9b60e554fde6c6b2ab3d999920236b",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Sections 9.1-9.2 and Figure 6 three panels are legible. Independent vertical scales are visible and explained in the caption. Body text and superscript citation are unobscured.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 14,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-14.png",
+      "image_sha256": "8c2bbaafae6a5b59561a31175d7e4bcfb6d676664cc134eb130824652be6cb37",
+      "manifest_sha256": "8c2bbaafae6a5b59561a31175d7e4bcfb6d676664cc134eb130824652be6cb37",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Limitations, Conclusion and start of Data and code availability are complete. Long Kaggle URL wraps within page; no clipping.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 15,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-15.png",
+      "image_sha256": "f5c95966664522966c36b635d79a52f130ea32653200b3282387d65451534219",
+      "manifest_sha256": "f5c95966664522966c36b635d79a52f130ea32653200b3282387d65451534219",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Data/code availability, author-input block and References [1]-[8] are complete. Four author-input placeholders remain (E01). Reference [4] has malformed punctuation . : 2017. (E02).",
+      "verdict": "PASS_WITH_EDITORIAL_FINDING"
+    },
+    {
+      "page": 16,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-16.png",
+      "image_sha256": "0bcd96adc5b3bf435d8668d3a798ad12ab6e0217c6f8dd1fec6e5c33bbc681cf",
+      "manifest_sha256": "0bcd96adc5b3bf435d8668d3a798ad12ab6e0217c6f8dd1fec6e5c33bbc681cf",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "References [9]-[25], DOI strings and wrapped titles are legible and unclipped. Institutional-author space-before-period artifacts, reference [21] . : . and reference [25] J. ., are recorded in E02.",
+      "verdict": "PASS_WITH_EDITORIAL_FINDING"
+    },
+    {
+      "page": 17,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-17.png",
+      "image_sha256": "914690966a9e4d7bd1c65f28b0c44872f27af1e7d2f7d7440d77d0a6887996fb",
+      "manifest_sha256": "914690966a9e4d7bd1c65f28b0c44872f27af1e7d2f7d7440d77d0a6887996fb",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "References [26]-[31] are complete and legible, with intact numbering, book title and DOIs. References end on this page; bottom whitespace is intentional.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 18,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-18.png",
+      "image_sha256": "d60a63a09c23555c10793fc05195b389af697e543a98b60233f9c94c58040ea0",
+      "manifest_sha256": "d60a63a09c23555c10793fc05195b389af697e543a98b60233f9c94c58040ea0",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 1 is on its own page after references. Study, Response, Data unit and Evaluation columns are complete, readable and within page.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 19,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-19.png",
+      "image_sha256": "8c228b52a5333e7cd5330ea828de534a4f77244e76d4fd25c10e1409ef47b0ee",
+      "manifest_sha256": "8c228b52a5333e7cd5330ea828de534a4f77244e76d4fd25c10e1409ef47b0ee",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 2 is on its own page. Panels A/B, date columns, USD mn/Contracts, mean/SD/95th columns and notes are complete. Table type is visibly smaller than body type but numeric columns remain readable. Re-viewed with original detail; no overlap or clipping.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 20,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-20.png",
+      "image_sha256": "d310907ba89ebb68a7fee49a5c2470714a6dd947b5b856ef3fb45901abc327ac",
+      "manifest_sha256": "d310907ba89ebb68a7fee49a5c2470714a6dd947b5b856ef3fb45901abc327ac",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 3 is on its own page. Method/definition/executed-menu columns, six-point lambda menu and notes are complete and readable.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 21,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-21.png",
+      "image_sha256": "3a9d8c8212423beba06a1d81d7a7b4ac4172815bca3d57c764b44c21114d43c5",
+      "manifest_sha256": "3a9d8c8212423beba06a1d81d7a7b4ac4172815bca3d57c764b44c21114d43c5",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 4 is on its own page. Loss change (%), Issues and Strict breaches numeric columns and comparison labels are readable. Multiline cells and notes do not collide.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 22,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-22.png",
+      "image_sha256": "3ff9a8f0a599da2085d96411d24e5960fd141a2c3b32d501bf2fc0b899f8622e",
+      "manifest_sha256": "3ff9a8f0a599da2085d96411d24e5960fd141a2c3b32d501bf2fc0b899f8622e",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 5 is on its own page. Procedure, percentage and higher-loss-cell columns and notes are complete and readable.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 23,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-23.png",
+      "image_sha256": "013cf064ee50f18dc4dcd3ae45947c098085057357c3df384512141f4f993fdd",
+      "manifest_sha256": "013cf064ee50f18dc4dcd3ae45947c098085057357c3df384512141f4f993fdd",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 6 is on its own page. All 17 contract rows and both five-column History 52/260 groups are readable, including signed numbers. Rightmost Calibrated regression column and full notes remain within page.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 24,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-24.png",
+      "image_sha256": "9eab361c08085aac48a9f12759cad6ae8b5cdd6c09c27619dd08414def0f7558",
+      "manifest_sha256": "9eab361c08085aac48a9f12759cad6ae8b5cdd6c09c27619dd08414def0f7558",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 7 is on its own page. Validation 52/156 percentages, Limit selections and Horizon/History/Series headers are readable and notes are intact.",
+      "verdict": "PASS"
+    },
+    {
+      "page": 25,
+      "image": ".scratch/submission/h2-all-pages/ASMBI/manuscript/page-25.png",
+      "image_sha256": "fd41be1089fb98f3f362758061a4ba5a71bd5903dde33aaa28288bf7399f876b",
+      "manifest_sha256": "fd41be1089fb98f3f362758061a4ba5a71bd5903dde33aaa28288bf7399f876b",
+      "sha256_matches_manifest": true,
+      "directly_viewed": true,
+      "view_method": "tools.view_image, complete individual page image; no contact sheet",
+      "observations": "Table 8 is on its own page. 90%/99% columns, signs and NA failed entries are intact. Notes preserve rejected post-failure repair and Supplement Section S38 reference. No clipping.",
+      "verdict": "PASS"
+    }
+  ]
+}

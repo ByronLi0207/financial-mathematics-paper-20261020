@@ -19,3 +19,7 @@
 H0 complete: 747 evidence files imported; 1288 shared bindings exact; v13 title and abstract retained. H1 in progress.
 
 H1 complete: 12 journals verified from MJL public result cards, 6 SCIE. Primary ASMBI; alternatives QF and Computational Statistics. Detailed-profile login, quartile and unresolved policy limits disclosed. H2 in progress.
+
+H2 checkpoint: official NJDv5 cannot compile unchanged in cache-only mode (fleqn.clo, then etex.sty); actual ASMBI package uses the official Free Format route with AMA. QF official class/bst retained with documented modern-kernel/page-geometry fixes. All archived scientific bytes retained. Plot-label changes preserve all 166 numeric text tokens across three styled copies. Initial all-page QA caught and fixed footer collision and bibliography punctuation; old failures are retained. Current ASMBI 25/51/1/1 pages; QF 22/40/1/1. Main-document and supplement upload ZIPs are being independently rebuilt. Final H2 ancillary-page QA and MANIFEST pending.
+
+H2 complete: all 156 current document pages covered by direct views or exact PNG identity to a direct view; 10 standalone figures exported at 1000 dpi. Four single-document source ZIPs independently compile, 138 pages of text exact. ASMBI 25/51/1/1; QF 22/40/1/1; shared 1/2/3/8. H3 starts. Stage elapsed time is non-overlapping wall time; earlier parallel research preparation is included in the overall clock, not added again.

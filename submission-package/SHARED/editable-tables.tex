@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,caption}
+\usepackage[unicode,hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{3pt}\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+\begin{document}
+\begin{table}[p]\centering\footnotesize
+\caption{Related studies: reported targets, data units and evaluation approaches.}\label{tab:literature}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{4.2cm}}\toprule
+Study & Response & Data unit & Evaluation\\\midrule
+\shortstack[l]{Wisniewski\\et al. (2020)} & Next-hour signed-position interval & One market maker's hourly FX positions & Pinball and interval scores; coverage tests\\
+\shortstack[l]{Boudoukh\\et al. (2004)} & Worst cumulative portfolio-return quantile & Fixed portfolio under a lognormal diffusion & MaxVaR/VaR ratios; discrete-monitoring simulation\\
+\shortstack[l]{van den\\Hoogen (2017)} & Conditional quantile of cumulative payment-deficit peak & ABN AMRO transaction accounts & Coverage and independence backtests\\
+This study & Sampled absolute-position peak & FX positions; weekly position aggregates & Pinball loss, breaches, model confidence sets and costs\\
+\bottomrule\end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{table}[p]
+\centering
+\caption{Data and matched six-record peak summaries.}\label{tab:v12-data}
+\begingroup\fontsize{7.5}{9}\selectfont\setlength{\tabcolsep}{2pt}
+\textit{Panel A. Sources, aligned samples and existing split dates}\\[3pt]
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Data & Frequency & Series / records & Unit & Sample & Validation & Evaluation \\
+\midrule
+FX, hourly & Hourly & 1 / 18,576 & USD mn & 2014-02 to 2017-01 & 2015-10 to 2015-12 & 2016-01 to 2017-01 \\
+FX, daily & Day end & 1 / 930 & USD mn & 2014-02 to 2017-01 & 2015-02 to 2015-04 & 2015-05 to 2016-12 \\
+Treasury bills & Weekly & 1 / 706 & USD mn & 2013-04 to 2026-10 & 2019-07 to 2020-07 & 2021-01 to 2026-04 \\
+NY Fed panel & Weekly & 12 / 706 & USD mn & 2013-04 to 2026-10 & 2019-07 to 2020-07 & 2021-01 to 2026-04 \\
+CFTC panel & Weekly & 17 / 877 & Contracts & 2010-01 to 2026-10 & 2020-08 to 2021-08 & 2021-09 to 2026-09 \\
+\bottomrule
+\end{tabular}
+\par\vspace{7pt}
+\textit{Panel B. Within-series mean, sample SD and empirical 95th percentile}\\[3pt]
+\begin{tabular}{@{}ll*{9}{r}@{}}
+\toprule
+ & & \multicolumn{3}{c}{$|N|$} & \multicolumn{3}{c}{Peak $Y$} & \multicolumn{3}{c}{Headroom $Z$} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+Data & Unit & Mean & SD & 95th & Mean & SD & 95th & Mean & SD & 95th \\
+\midrule
+FX, hourly & USD mn & 8.92 & 10.2 & 27.6 & 11.1 & 11.7 & 30.2 & 2.15 & 5.92 & 7.96 \\
+FX, daily & USD mn & 9.00 & 10.5 & 27.5 & 17.9 & 16.6 & 41.0 & 8.91 & 14.8 & 24.9 \\
+Treasury bills & USD mn & 39,500 & 27,200 & 92,600 & 55,300 & 30,400 & 108,000 & 15,800 & 16,000 & 50,000 \\
+NY Fed panel & USD mn & 12,400 & 8,340 & 33,300 & 16,000 & 9,040 & 37,400 & 3,750 & 3,560 & 10,500 \\
+CFTC panel & Contracts & 60,200 & 46,000 & 148,000 & 81,800 & 45,600 & 169,000 & 19,900 & 20,900 & 60,600 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\begin{minipage}{.98\linewidth}\footnotesize\emph{Notes.} Records are per series; complete $H=6$ peak counts are 18,570, 924, 700, 700 and 871, respectively, including the issue anchor. Earlier hourly FX validation spans 2015-04 to 2015-07 and evaluation spans 2015-07 to 2015-10; daily FX uses each nonempty source-naive day\textquotesingle s last record, and both FX periods had been inspected. SD uses $m-1$ and the empirical 95th percentile has rank $\lceil95m/100\rceil$; dollar values are in millions, panel entries are separate within-series medians without exposure pooling, and CFTC retains heterogeneous native contract counts.\end{minipage}
+\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\small
+\caption{Forecast definitions and executed menus. Codes occur here to connect with the result files. Matched histories and update schedules make the reference explicit.}\label{tab:methods}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{5.3cm}}\toprule
+Method & Forecast definition & Executed menu / setting\\\midrule
+Historical headroom (F) & Current floor plus a quantile of completed peak headrooms & Original FX histories \{720,2880\}; weekly \{52,260\}\\
+Translated path (S) & Translate completed signed paths to the current position before taking their peaks & Same completed-label pools; fixed-window and rolling-window controls\\
+Historical peak (K) & Historical absolute-peak quantile projected to the current floor & Same histories and update controls\\
+Quantile regression (QR) & Training-scaled headroom regression with ridge slopes and an unpenalized intercept & Original three-point menu; initial panel five-point expansion; six-point menu $\{0.001,0.01,0.1,1,10,\infty\}$\\
+Local quantiles (KNN) & Neighbor headroom quantile, with a separate increment-scale variant & Training-only transforms and fixed neighbor menus; Supplement Sections S8 and S23\\
+Four-feature regression (QR4) & Current signed/magnitude positions and short/long increment RMS & Original five-point menu; six-point paired comparison below\\
+Endpoint plug-in (L) & Floor plus a high absolute-displacement endpoint quantile & Proposition~2; empirical plug-in evaluated separately\\
+Further benchmarks & Autoregressive replay; filtered paths; peak-tail fit; quantile forest & Existing bounded specifications; results and complete failures linked from Supplement Sections S7 and S34\\
+Coverage and combinations & Delayed projected ACI-style wrappers; headroom SAV; fixed forecast combinations & Original-source wrapper/SAV inventory and broader combination inventory are separate\\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Training histories count completed labels. Fixed-window models refit every 24 FX records or 13 weekly records. Quantile and normalization conventions are detailed in Supplement Sections S8 and S23; this table retains the executed menus.\end{minipage}
+\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\small
+\caption{Long-history short-horizon FX regression under two references and periods. Negative percentages favor regression. Matched gains recur while the rolling-reference direction changes.}\label{tab:fx}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedleft\arraybackslash}p{2.5cm}>{\raggedleft\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{3.2cm}}\toprule
+Period / procedure & Reference & Loss change (\%) & Issues & Strict breaches (regression / reference)\\\midrule
+Later / original main comparison & Shorter-history rolling headroom & -12.66 & 6625 & 376 / 332\\
+Later / matched & Same-history fixed-window headroom & -14.77 & 6625 & 376 / 360\\
+Earlier / original structure & Shorter-history rolling headroom & +3.17 & 1440 & See complete earlier-period tables\\
+Earlier / matched & Same-history fixed-window headroom & -16.62 & 1440 & 20 / 16\\
+Later / coverage-wrapped & Same-history wrapped headroom & -15.00 & 6625 & 329 / 328\\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize Regression uses history 2880 and horizon 6; the original rolling reference uses 720. The earlier matched comparison is the original three-penalty regression, not the later one-standard-error selection rule. The wrapper comparison is a separate finite projected delayed ACI-style exercise.\end{minipage}
+\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\small
+\caption{Weekly evidence across the original main comparison, added panel and earlier-period comparisons. Counts refer to related tasks rather than independent dealers. Stronger regularization narrows losses while leaving substantial failures.}\label{tab:weekly}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedleft\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.5cm}}\toprule
+Comparison set & Procedure & Loss change / median (\%) & Higher-loss cells\\\midrule
+Original Treasury-bill main comparison & Original regression, long history & +50.79 & Original main comparison\\
+Earlier Treasury-bill short-window version & Short-history short-window version & +144.30 & Different history\\
+Additional panel & Original full regression & +92.63 & 45 / 48\\
+Additional panel & Four-feature regression & +9.91 & 37 / 48\\
+Additional panel & Full regression, expanded penalties & +9.22 & 34 / 48\\
+Additional panel & Ordinary empirical headroom quantile & +0.50 & 30 / 48\\
+Earlier weekly groups & Validation-minimum expanded rule & +4.15 & 26 groups\\
+Earlier weekly groups & One-standard-error rule & +5.37 & 26 groups\\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{.98\linewidth}\footnotesize The original bill main comparison has 54 versus 28 strict breaches among 277 issues. Earlier short-history bill results use a different history; the one-standard-error worst excess is +181.39\%, and all its prewritten success criteria remain unmet. Supplement Sections S11--S15 list all panel and selection results (Tables S9--S13).\end{minipage}
+\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\scriptsize
+\setlength{\tabcolsep}{2pt}
+\caption{CFTC dealer-category futures: relative loss versus matched historical headroom (\%). All 17 selected literal contract codes are retained.}
+\label{tab:v10-cftc-contracts}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l*{10}{r@{.}l}}\toprule
+Contract & \multicolumn{10}{c}{History 52} & \multicolumn{10}{c}{History 260} \\
+\cmidrule(lr){2-11}\cmidrule(lr){12-21}
+code & \multicolumn{2}{c}{\shortstack{Intercept\\only}} & \multicolumn{2}{c}{\shortstack{Four-\\feature}} & \multicolumn{2}{c}{\shortstack{Full\\regression}} & \multicolumn{2}{c}{\shortstack{Calibrated\\history}} & \multicolumn{2}{c}{\shortstack{Calibrated\\regression}} & \multicolumn{2}{c}{\shortstack{Intercept\\only}} & \multicolumn{2}{c}{\shortstack{Four-\\feature}} & \multicolumn{2}{c}{\shortstack{Full\\regression}} & \multicolumn{2}{c}{\shortstack{Calibrated\\history}} & \multicolumn{2}{c}{\shortstack{Calibrated\\regression}} \\ \midrule
+044601 & 5 & 26 & 128 & 00 & 41 & 38 & 15 & 01 & 18 & 80 & 0 & 51 & 7 & 82 & 43 & 88 & 13 & 87 & 42 & 41 \\
+043602 & 3 & 37 & 9 & 35 & 3 & 37 & 37 & 79 & 24 & 64 & 2 & 30 & 8 & 95 & 20 & 97 & -11 & 22 & -12 & 64 \\
+042601 & 4 & 64 & 9 & 48 & 35 & 65 & 26 & 69 & 41 & 21 & -0 & 15 & 74 & 23 & 16 & 63 & 1 & 46 & 9 & 39 \\
+045601 & -2 & 04 & 0 & 31 & -2 & 04 & 21 & 83 & 6 & 14 & 1 & 85 & 1 & 85 & 1 & 85 & 2 & 40 & 2 & 58 \\
+020601 & 4 & 77 & 79 & 72 & 111 & 12 & 25 & 66 & -5 & 34 & 0 & 92 & 43 & 38 & 29 & 70 & -15 & 12 & -12 & 32 \\
+099741 & 0 & 69 & 13 & 97 & 14 & 56 & 77 & 33 & -13 & 28 & 0 & 22 & 0 & 22 & 0 & 22 & 27 & 72 & 27 & 73 \\
+1170E1 & 6 & 42 & 6 & 82 & 46 & 30 & -0 & 22 & 12 & 77 & 0 & 92 & -28 & 44 & -16 & 22 & -1 & 12 & 1 & 00 \\
+097741 & -0 & 83 & 23 & 76 & 68 & 71 & 29 & 77 & 33 & 79 & 0 & 53 & -6 & 54 & 14 & 69 & -0 & 41 & -5 & 43 \\
+096742 & 2 & 93 & 3 & 41 & 6 & 13 & 49 & 54 & 30 & 46 & 5 & 30 & 4 & 82 & 62 & 68 & 37 & 12 & -0 & 49 \\
+095741 & 7 & 39 & 19 & 55 & 19 & 33 & 41 & 27 & 42 & 98 & -0 & 70 & 2 & 13 & 10 & 35 & 19 & 30 & 55 & 39 \\
+090741 & 4 & 03 & 10 & 28 & 4 & 03 & 15 & 58 & 13 & 13 & 3 & 28 & -5 & 35 & -3 & 60 & -2 & 02 & -5 & 66 \\
+232741 & 0 & 11 & 123 & 33 & 37 & 53 & 63 & 84 & 36 & 35 & 1 & 94 & -3 & 35 & 7 & 68 & -0 & 65 & -3 & 86 \\
+33874A & 6 & 95 & 88 & 57 & 38 & 30 & 30 & 15 & 44 & 07 & -2 & 38 & -3 & 21 & -4 & 78 & 6 & 98 & 9 & 52 \\
+240743 & -3 & 04 & -7 & 32 & 183 & 12 & 33 & 14 & 49 & 77 & -2 & 28 & -2 & 28 & -2 & 28 & 32 & 91 & 26 & 37 \\
+092741 & 0 & 54 & 0 & 54 & 0 & 54 & -1 & 74 & -0 & 68 & 0 & 17 & -6 & 98 & 26 & 22 & 5 & 58 & 13 & 94 \\
+098662 & -0 & 44 & -0 & 44 & 0 & 90 & 44 & 89 & 38 & 90 & 2 & 45 & -39 & 44 & 2 & 45 & 15 & 12 & 20 & 45 \\
+112741 & 11 & 06 & 38 & 76 & 10 & 05 & 33 & 72 & 24 & 10 & 2 & 24 & 2 & 82 & 80 & 98 & 8 & 36 & 16 & 37 \\
+\bottomrule\end{tabular}}
+\par\vspace{2pt}\begin{minipage}{.98\linewidth}\footnotesize
+Entries are percentage loss differences from matched corrected historical headroom; positive values mean higher loss, and unavailable entries retain failed or incomplete comparisons.
+The pre-specified conditions require historical superiority in at least 60\% of all 34 comparisons, full-regression medians within ten percent at both histories, and a strictly smaller four-feature median with longer history.
+Full-precision results determine the comparisons, with all scores, breaches, selections and failures retained in Supplement Section S30.
+\end{minipage}\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\small
+\caption{Full-regression excess loss versus matched historical headroom under longer validation. Entries are source medians in percent; the final column counts selections of the intercept-only limit.}\label{tab:v13-validation}
+\begin{tabular}{lrrrrrr}\toprule
+Reporting system & Horizon & History & Series & Validation 52 & Validation 156 & Limit selections\\\midrule
+CFTC & 6 & 52 & 17 & +19.33 & +4.03 & 4 to 10 \\
+CFTC & 6 & 260 & 17 & +10.35 & +0.53 & 4 to 5 \\
+New York Fed & 6 & 52 & 13 & +6.68 & -1.13 & 6 to 9 \\
+New York Fed & 24 & 52 & 13 & +40.47 & +5.02 & 3 to 9 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}\begin{minipage}{.98\linewidth}\footnotesize
+Lengths count weekly records; evaluation dates remain unchanged. New York Fed horizon six also moves the validation endpoint and refit phase; across-arm medians are not typical paired changes.
+Supplement Section S38 gives individual series, four-feature results and the complete figure.
+\end{minipage}\end{table}
+
+\clearpage
+
+\begin{table}[p]\centering\small
+\caption{Full-regression relative excess loss (\%) at alternative quantile levels. Positive values favor matched historical headroom; NA retains any failed required comparison.}\label{tab:v12-tau}
+\begin{tabular}{lrr}\toprule
+Source / training history & 90\% & 99\% \\\midrule
+CFTC, 52 weeks & +3.45 & +15.05 \\
+CFTC, 260 weeks & +1.58 & \textsc{NA} \\
+FX, original period & -10.15 & \textsc{NA} \\
+FX, earlier period & -17.85 & \textsc{NA} \\
+Treasury bills & +0.67 & +44.22 \\
+\bottomrule\end{tabular}
+\par\vspace{2pt}\begin{minipage}{.95\linewidth}\footnotesize
+Contract rows give full-group medians; histories are 2,880 hours for FX and 260 weeks for Treasury.
+The rejected post-failure repair leaves original NA entries unchanged (Supplement Section S38).
+\end{minipage}\end{table}
+\end{document}

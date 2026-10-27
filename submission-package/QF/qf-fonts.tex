@@ -1,0 +1,18 @@
+% Cached Latin Modern OpenType faces; no font download or system install.
+% Scalable Computer Modern-derived faces avoid absent optical-size TFM files.
+\usepackage[TU]{fontenc}
+\DeclareFontFamily{TU}{qflmr}{}
+\DeclareFontShape{TU}{qflmr}{m}{n}{<->\UnicodeFontFile{lmroman10-regular}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{qflmr}{m}{it}{<->\UnicodeFontFile{lmroman10-italic}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{qflmr}{m}{sl}{<->ssub*qflmr/m/it}{}
+\DeclareFontShape{TU}{qflmr}{m}{sc}{<->ssub*qflmr/m/n}{}
+\DeclareFontShape{TU}{qflmr}{bx}{n}{<->\UnicodeFontFile{lmroman10-bold}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{qflmr}{bx}{it}{<->\UnicodeFontFile{lmroman10-italic}{\UnicodeFontTeXLigatures embolden=1.8;}}{}
+\DeclareFontShape{TU}{qflmr}{b}{n}{<->ssub*qflmr/bx/n}{}
+\DeclareFontShape{TU}{qflmr}{b}{it}{<->ssub*qflmr/bx/it}{}
+\DeclareFontFamily{TU}{qflmtt}{}
+\DeclareFontShape{TU}{qflmtt}{m}{n}{<->\UnicodeFontFile{lmmono10-regular}{}}{}
+\DeclareFontShape{TU}{qflmtt}{m}{it}{<->ssub*qflmtt/m/n}{}
+\DeclareFontShape{TU}{qflmtt}{bx}{n}{<->ssub*qflmtt/m/n}{}
+\renewcommand{\rmdefault}{qflmr}\renewcommand{\ttdefault}{qflmtt}
+\normalfont
