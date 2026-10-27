@@ -1,21 +1,11 @@
 # ASMBI submission package
 
-Status: COMPILED_PENDING_VISUAL_QA
+Status: VERIFIED_PUBLICATION_CUT. The current files passed R8 compilation, fresh-source-ZIP compilation, complete software tests, numerical-provenance checks and visual review. The package is published on `submission-final` in [PR #7](https://github.com/ByronLi0207/financial-mathematics-paper-20261020/pull/7). Validation receipts are under `notes/asmbi-final-20261027/`; the earlier generated build receipts certify compilation, while R8 supplies final visual and test acceptance.
 
-Rebuild from current canonical sources with `python3 notes/submission/build_asmbi_package.py`.
-Actual PDF route: ASMBI_OFFICIAL_FREE_FORMAT_INITIAL_SUBMISSION.
+Actual PDF route: journal-permitted 12pt Free Format initial submission, with the unmodified official Wiley AMA bibliography style. The original NJDv5 class could not compile with the previously cached dependencies; these PDFs do not claim NJDv5 typesetting. Official template archives remain under `publisher-templates/`, outside upload ZIPs.
 
-The official Wiley NJDv5 class and bibliography style files are unmodified; `WileyNJD-AMA.bst` is a case-portable byte-identical alias. Uncompiled original/compatible NJD sources and failure logs are audit records in `.scratch/submission/asmbi/`; they are excluded from the actual upload ZIP. NJDv5 could not compile with offline dependencies, so actual PDFs must not be described as unmodified NJD typesetting.
+Upload `manuscript.pdf`, `main-document-source.zip`, `supplement.pdf`, `supplement-document-source.zip`, `title-page.pdf` and `cover-letter.pdf`. Separate TIFF figures are in `figures-upload/`; select the nine figures actually cited in the current main/supplement, excluding the superseded `v13-validation-length` figure. PDF previews are alternatives for inspection, not duplicate required uploads.
 
-Standalone compile targets: `manuscript.tex`, `supplement.tex`, `title-page.tex`, `cover-letter.tex`; use `tectonic -X compile -C <target>` in this directory.
+The main article has 25 pages, the supplement 21 pages and 12 sections; title page and cover letter have one page each. All pages were visually checked. Earlier complete supplementary results and all adverse judgments remain in the repository's `EXTENDED_RESULTS.md` and frozen scientific archives. Figure export checks, label preflight and source identities are recorded in `notes/submission/`.
 
-- All final PDF pages require root visual QA; this script certifies source closure and compilation only.
-- Author, affiliation, contact, ORCID, funding, competing interests, CRediT and permissions remain author-verification placeholders.
-- Figures retain canonical PDF previews and widths. Independent EPS/high-DPI exports and >=7pt label preflight are pending root.
-- Supplement long tables retain native S-section positions; main-article tables alone are moved after references.
-- Actual PDFs use the journal-permitted Free Format initial-submission route with official Wiley AMA BST. NJDv5 original/compatible sources are retained; NJDv5 PDF did not compile because required packages are not cached.
-
-- manuscript.pdf: 25 pages; COMPILED
-- supplement.pdf: 21 pages; COMPILED
-- title-page.pdf: 1 pages; COMPILED
-- cover-letter.pdf: 1 pages; COMPILED
+Standalone compilation targets inside each clean source ZIP are `manuscript.tex` and `supplement.tex`, respectively. Source archives contain no backup, temporary build or scratch files. Personal details and factual author confirmations remain for the author to complete, as listed in `submission-final/AUTHOR-TODO.md`. The task has not submitted a manuscript to a journal.
