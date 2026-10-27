@@ -8,3 +8,34 @@ outputs/
 *.log
 *.out
 *.synctex.gz
+# Complete original WP3 bytes are delivered in the verified public archive/index.
+# The loose originals remain intact locally; no outcome or failed candidate is dropped.
+/results/revision-v8/wp3/units/
+/results/revision-v8/wp3/inventory.json
+# Every v9 unit byte is retained locally and published through its ZIP plus SHA index.
+/results/v9/nonstationarity/*/units/
+# Lossless <=20MiB public parts reconstruct this intact local archive.
+/results/v9/nonstationarity/formal/units.zip
+# Incomplete writer bytes are retained here and published verbatim as postrun/*.txt.
+/results/v9/nonstationarity/predictions.json
+# Intermediate v9 table backups stay local and outside the submission package.
+/submission-jof/generated/v9-*.bak
+
+# v10 retains complete loose receipts locally and publishes lossless ZIP/parts.
+/results/v10/menu/*/units/
+/results/v10/menu/formal/units.zip
+
+# v10 CFTC complete traces are public; all loose candidate bytes are in the ZIP.
+/results/v10/cftc/formal/units/
+
+# All98E3unitreceipts are published intact in units.zip and SHA index.
+/results/v10/mcs/formal/units/
+
+# v10 keeps unneeded copied display dependencies/backups locally; active ones are force-added.
+/submission-v10/generated/*
+/submission-v10/figures/*
+/submission-v10/*.bak
+/notes/v10/*.bak
+/notes/v10/target-journals-draft.md
+/notes/v10/prose-draft.md
+/notes/v10/rewrite_main.py

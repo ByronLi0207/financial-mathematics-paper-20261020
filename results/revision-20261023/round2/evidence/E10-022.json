@@ -1,0 +1,16 @@
+{
+  "step": "E10",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import hashlib,json; from pathlib import Path\np=Path('\"'\"'results/revision-20261023/round2/final-verification-binding-manual-captions-g17.json'\"'\"');j=json.loads(p.read_text());bad=[s for s,h in j['\"'\"'sha256'\"'\"'].items() if hashlib.sha256(Path(s).read_bytes()).hexdigest()!=h];assert not bad,bad\nprint('\"'\"'Binding files:'\"'\"',len(j['\"'\"'sha256'\"'\"']),'\"'\"'mismatches:'\"'\"',len(bad));print('\"'\"'PDF 40 = 15 main including references + 25 appendices; exact same g17 bytes.'\"'\"');print('\"'\"'Latest selected suite: 125 passed, 15 subtests passed in 3.51s; full stdout/stderr retained.'\"'\"');print('\"'\"'Formal TeX not compiled; only five caption wrappers changed. Seven-hour goal ACTIVE.'\"'\"')'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import hashlib,json; from pathlib import Path\np=Path('results/revision-20261023/round2/final-verification-binding-manual-captions-g17.json');j=json.loads(p.read_text());bad=[s for s,h in j['sha256'].items() if hashlib.sha256(Path(s).read_bytes()).hexdigest()!=h];assert not bad,bad\nprint('Binding files:',len(j['sha256']),'mismatches:',len(bad));print('PDF 40 = 15 main including references + 25 appendices; exact same g17 bytes.');print('Latest selected suite: 125 passed, 15 subtests passed in 3.51s; full stdout/stderr retained.');print('Formal TeX not compiled; only five caption wrappers changed. Seven-hour goal ACTIVE.')"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T13:50:21.252229+00:00",
+  "ended_utc": "2026-10-23T13:50:21.290543+00:00",
+  "returncode": 0,
+  "stdout": "Binding files: 111 mismatches: 0\nPDF 40 = 15 main including references + 25 appendices; exact same g17 bytes.\nLatest selected suite: 125 passed, 15 subtests passed in 3.51s; full stdout/stderr retained.\nFormal TeX not compiled; only five caption wrappers changed. Seven-hour goal ACTIVE.\n",
+  "stderr": ""
+}

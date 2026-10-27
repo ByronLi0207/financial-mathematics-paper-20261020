@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{article}
+% Official ASMBI Free Format initial-submission route. This is explicitly
+% distinct from an NJDv5 typeset PDF; the original NJDv5 sources accompany it.
+\usepackage[margin=20mm]{geometry}
+% XeTeX uses the cached default Computer Modern fonts. Loading T1 here
+% would select uncached Latin Modern Type1 metrics/physical fonts.
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,longtable,placeins}
+\usepackage[numbers,super,sort&compress]{natbib}
+\usepackage{caption}
+\usepackage[unicode,breaklinks=true,hidelinks]{hyperref}
+\bibliographystyle{WileyNJD-AMA}
+% Four font files come from the downloaded official Wiley template. Direct
+% Unicode font declarations avoid uncached Latin Modern optical-size files.
+\DeclareFontFamily{TU}{asmbifree}{}
+\DeclareFontShape{TU}{asmbifree}{m}{n}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-Regular}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{m}{it}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-It}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{bx}{n}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-Bold}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{bx}{it}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-BoldIt}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{b}{n}{<->ssub*asmbifree/bx/n}{}
+\DeclareFontShape{TU}{asmbifree}{b}{it}{<->ssub*asmbifree/bx/it}{}
+\DeclareFontShape{TU}{asmbifree}{m}{sl}{<->ssub*asmbifree/m/it}{}
+\renewcommand\rmdefault{asmbifree}
+\normalfont
+% The template's natbib file expects an NJD section command. Free Format
+% supplies the ordinary article bibliography heading instead.
+\renewcommand\bibsection{\section*{References}}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\clubpenalty=10000\widowpenalty=10000
+\captionsetup{font=small,labelfont=bf}
+\AtBeginDocument{\typeout{ASMBI_BODY_FONT_PT=12}}
+\raggedbottom
+
+\begin{document}
+\pagestyle{empty}
+\section*{Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
+\noindent\textbf{Authors:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{Affiliations:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{Corresponding author and contact:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{ORCID:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{Funding:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{Competing interests:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{CRediT contributions:} [TO BE COMPLETED BY AUTHOR].\par\medskip
+\noindent\textbf{Running title:} Historical Rules and Peak Limits.\par\medskip
+\noindent\textbf{Main-text narrative word count:} 4,142.\par
+Excludes the abstract, citations and references, declarations, tables and figures (including captions), and displayed equations; uses the frozen narrative-count definition.\par\medskip
+\noindent\textbf{Keywords:} Peak net positions; Quantile forecasting; Historical benchmarks; Forecast comparison; Calibration.\par\medskip
+\noindent\textbf{Data and code:} Source rights, excluded raw inputs and reproduction information are stated in the manuscript and the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/submission-final}{versioned repository}.\par\medskip
+\noindent\textbf{Data permissions and license compliance:} [TO BE VERIFIED BY AUTHOR].
+\end{document}

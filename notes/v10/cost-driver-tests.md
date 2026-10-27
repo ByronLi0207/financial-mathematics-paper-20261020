@@ -1,0 +1,7 @@
+# E4 driver and report pre-run checks
+
+Artificial-only driver tests verify all coefficients/method rows, a whole-comparison input failure with every planned primary parameter row retained, fixed-input changes blocked before real loading, no second run into an existing output, and before/after source validation. Combined new E4 artificial suite:45passed,0.16s,exit0. No financial cost calculation occurred in those tests.
+
+Same-model read-only review identified three specific issues before the first run: E4-fixed upstream index/inventory/MCS-manifest binding, unknown bounds in the figure, and complete planned-cell parameter inventory for unavailable primary comparisons. Root added explicit before/after bindings, labeled lower bounds with uncertainty intervals when present, and null/status rows for every unavailable planned primary grid point. The regression tests exercise input pin changes and unknown-region row retention. No grid, formula, comparator or scientific threshold changed.
+
+The driver records one run marker before reading any actual group, publishes all complete methods in a compressed full CSV, and retains all98planned primary regions with189registered points each. Any method input failure makes its entire comparison unavailable. All original complete/unavailable procedure identities remain visible in cells.json. There is no MCS membership filter, conditional model optimization, new forecast or scientific retry.

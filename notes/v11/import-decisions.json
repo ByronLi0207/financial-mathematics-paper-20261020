@@ -1,0 +1,37 @@
+{
+  "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+  "utc": "2026-10-25T05:11:01.103444+00:00",
+  "WP2": {
+    "decision": "IMPORT",
+    "scope": "Saved confirmation support table; no new experiment",
+    "design_commit": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+    "design_utc": "2026-10-24T22:19:50Z",
+    "formal_start_utc": "2026-10-24T22:25:19.696709Z",
+    "result_commit": "1a535efe289254ced5b163361fefee357d13d583",
+    "result_commit_utc": "2026-10-24T22:59:15Z",
+    "own_receipt_hashes": "PASS"
+  },
+  "WP3": {
+    "decision": "IMPORT_AT_USER_SPECIFIED_DISPLAY_PRECISION",
+    "design_commit": "b26628fbc3950be0a3aaa1aa53b7f8de7dbb896a",
+    "design_utc": "2026-10-24T23:13:51Z",
+    "formal_start_utc": "2026-10-24T23:24:51.666335Z",
+    "result_commit": "bfd0493f4237b6b99ca4370a2e6cf2195f653b28",
+    "result_commit_utc": "2026-10-24T23:39:27Z",
+    "own_receipt_hashes": "PASS",
+    "anchors_user_supplied_2decimal_exact": "PASS",
+    "underlying_saved_loss_means_breaches_paired_mean_difference_exact": "PASS",
+    "stored_unrounded_percent_binary64_exact": "FAIL_RETAINED",
+    "reason": "User anchors are explicitly -2.12%/-14.77%; both match exactly at that supplied precision. The original score means, hit counts and paired mean differences match bit-for-bit. Stored percent expressions differ by floating aggregation order. No tolerance, substitution, recomputation or archived-value change is used. Initial stricter binary64 audit remains public; no claim of bitwise percentage equality is made."
+  },
+  "WP4": {
+    "decision": "DO_NOT_IMPORT",
+    "reason": "The original display contract first committed at32ee586 UTC23:49:08, after first render23:42:24.685879 and selected v5render23:46:39.218742. Although pure saved-result display with passing hashes, the user-specific pre-render commit gate is not passed. No exemption or replacement plot is used."
+  },
+  "excluded_editorial_material": [
+    "PR5 title When Is History Long Enough?",
+    "PR5 abstract",
+    "PR5 rewritten main narrative"
+  ],
+  "scope_boundary": "Original local commit objects were examined read-only with optional locks disabled; old working-tree files/index/refs untouched and HEAD equal before/after. Published file bytes are obtained only from fixedsource60e03b8. No studies are executed."
+}

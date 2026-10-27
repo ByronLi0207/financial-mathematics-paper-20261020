@@ -1,0 +1,47 @@
+--- v6_tau_worker.py
++++ v6_tau_worker_v2.py
+@@ -8,7 +8,7 @@
+ import v6_worker as w
+ import v6_inference as inf
+ 
+-OUT=w.PUBLIC/'wp5';PRIVATE=w.PRIVATE/'wp5'
++OUT=w.PUBLIC/'wp5-v2';PRIVATE=w.PRIVATE/'wp5-v2'
+ LEVELS={'90':.9,'99':.99}
+ 
+ def select_declared_menu(candidates,menu,count):
+@@ -25,7 +25,7 @@
+ def config_w(config,win):return StudyConfig(config.horizon,win,config.refit_step,config.short_scale,config.long_scale,config.nominal_gap_seconds)
+ def key(source,level):return f'{source}-tau{level}'
+ def check_freeze():
+-    p=w.ROOT/'protocol/revision-v6/wp5-executable-freeze.json';x=w.read_json(p)
++    p=w.ROOT/'protocol/revision-v6/wp5-executable-freeze-v2.json';x=w.read_json(p)
+     for path,digest in x['files'].items():
+         if w.sha(w.ROOT/path)!=digest:raise ValueError('WP5_EXECUTABLE_CHANGED:'+path)
+     w.check_execution_freeze();return w.sha(p)
+@@ -139,7 +139,7 @@
+                     if isinstance(exc,RuntimeError) and str(exc).startswith('RESOURCE_'):
+                         resource_failure=str(exc);menu.append(dict(parameter=p,status='FAILED_RESOURCE',origin_count=None,mean_pinball=None,reason=resource_failure))
+                     elif hasattr(exc,'code'):
+-                        menu.append(dict(parameter=p,status='FAILED',origin_count=None,mean_pinball=None,reason=exc.code,diagnostics=getattr(exc,'diagnostics',{}),failure_context=getattr(exc,'failure_context',None)))
++                        menu.append(dict(parameter=p,status='FAILED',origin_count=None,mean_pinball=None,reason=exc.code,diagnostics=dict(getattr(exc,'diagnostics',{})),failure_context=getattr(exc,'failure_context',None)))
+                     else:raise
+             selected=select_declared_menu(menu,penalties,len(ids))
+             z=dict(status='COMPLETE' if selected['status']=='SELECTED' else 'NA',reason=None if selected['status']=='SELECTED' else 'DECLARED_VALIDATION_MENU_INELIGIBLE',screen=screen,candidates=menu,selection=selected)
+@@ -194,7 +194,7 @@
+                 arrays=dict(origins=ids,peak=cache.peak[ids],floor=np.abs(s.position[ids]),**reports)
+             except Exception as exc:
+                 if isinstance(exc,RuntimeError) and str(exc).startswith('RESOURCE_'):z=dict(status='NA',reason=str(exc))
+-                elif hasattr(exc,'code'):z=dict(status='NA',reason=exc.code,diagnostics=getattr(exc,'diagnostics',{}),failure_context=getattr(exc,'failure_context',None))
++                elif hasattr(exc,'code'):z=dict(status='NA',reason=exc.code,diagnostics=dict(getattr(exc,'diagnostics',{})),failure_context=getattr(exc,'failure_context',None))
+                 else:raise
+         z.update(source=source,tau=tau,level=level,phase='evaluation',analysis_status='post-result / exploratory',point95_controls=controls,selection_freeze_sha256=w.sha(OUT/'selection-freeze.json'),executable_freeze_sha256=freeze,resources=g.summary())
+         if arrays:z['private_artifact']=w.save_private(PRIVATE/f'evaluation-{key(source,level)}.npz',**arrays)
+@@ -243,7 +243,7 @@
+                     mean_loss_change_percent=100*result['mean_difference']/rscore['mean_loss'] if rscore['mean_loss'] else None,
+                     point95_mean_difference=old_diff,point95_contrast_id=orig[0]['contrast_id'],direction_reversal=direction_reversal(result['mean_difference'],old_diff))
+             rows.append(row)
+-    slots=[r['slot_id'] for r in rows];design=w.read_json(w.ROOT/'protocol/revision-v6/wp5-executable-freeze.json')
++    slots=[r['slot_id'] for r in rows];design=w.read_json(w.ROOT/'protocol/revision-v6/wp5-executable-freeze-v2.json')
+     if slots!=design['contrast_slots']:raise ValueError('SIX_FIXED_TAU_SLOTS_CHANGED')
+     adjusted=inf.fixed_slot_holm(slots,{r['slot_id']:r['raw_p'] for r in rows})
+     for row,a in zip(rows,adjusted['slots']):row.update(bookkeeping_p=a['bookkeeping_p'],holm_p=a['holm_p'],holm_component_status=a['status'])

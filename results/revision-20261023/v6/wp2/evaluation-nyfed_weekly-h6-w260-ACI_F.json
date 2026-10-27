@@ -1,0 +1,172 @@
+{
+  "status": "COMPLETE",
+  "selected_gamma": 0.005,
+  "selection_freeze_sha256": "e847695a92941bc162b036bc94e0ea72e7d8996df9511d9561229ac3e1762166",
+  "validation_prefix_identical": true,
+  "scores": {
+    "status": "OK",
+    "n": 277,
+    "tau": 0.95,
+    "horizon": 6,
+    "nonfinite_count": 0,
+    "mean_loss": 2792.912815884477,
+    "full_hits": 7,
+    "full_rate": 0.02527075812274368,
+    "coverage_distance": 0.024729241877256322,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 6,
+      "full": {
+        "n": 277,
+        "hits": 7,
+        "rate": 0.02527075812274368,
+        "uc_lr": 4.323532317144398,
+        "uc_p": 0.03758881708829015,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 40,
+        "hits": 1,
+        "rate": 0.025,
+        "uc_lr": 0.6397935783344408,
+        "uc_p": 0.4237855553189643,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 405,
+          "step": 7,
+          "expected_count": 40,
+          "observed_count": 40
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 39,
+          "n00": 37,
+          "n01": 1,
+          "n10": 1,
+          "n11": 0,
+          "boundary": true,
+          "boundary_cell_count": 1,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 0.641132317029113,
+          "p": 0.7257380379698141,
+          "saturated_log_likelihood": -4.624311301766355,
+          "fixed_alpha_log_likelihood": -4.944877460280911,
+          "status": "BOUNDARY_REFERENCE"
+        }
+      },
+      "boundary_count": 1,
+      "na_count": 0
+    }
+  },
+  "diagnostics": {
+    "gamma": 0.005,
+    "initial_calibration_count": 47,
+    "alpha_min": 0.023,
+    "alpha_max": 0.05575,
+    "calibration_min": 104,
+    "calibration_max": 260,
+    "rank_min": 103,
+    "rank_max": 251,
+    "clip_count": 0,
+    "issue_count": 277,
+    "clipped_issue_count": 0,
+    "clipped_issue_fraction": 0.0,
+    "matured_wrapped_feedback_consumed": 277,
+    "cumulative_matured_wrapped_feedback": 323
+  },
+  "unwrapped_scores": {
+    "status": "OK",
+    "n": 277,
+    "tau": 0.95,
+    "horizon": 6,
+    "nonfinite_count": 0,
+    "mean_loss": 2758.665342960289,
+    "full_hits": 28,
+    "full_rate": 0.10108303249097472,
+    "coverage_distance": 0.05108303249097472,
+    "coverage": {
+      "status": "OK",
+      "tau": 0.95,
+      "null_probability": 0.05,
+      "horizon": 6,
+      "full": {
+        "n": 277,
+        "hits": 28,
+        "rate": 0.10108303249097472,
+        "uc_lr": 11.89436450547393,
+        "uc_p": 0.0005630403457820184,
+        "uc_status": "OK",
+        "boundary": false
+      },
+      "fixed_grid": {
+        "n": 40,
+        "hits": 4,
+        "rate": 0.1,
+        "uc_lr": 1.652337513019706,
+        "uc_p": 0.1986410814587244,
+        "uc_status": "OK",
+        "boundary": false,
+        "origins": {
+          "start": 405,
+          "step": 7,
+          "expected_count": 40,
+          "observed_count": 40
+        },
+        "missing_origin_count": 0,
+        "transition_cc": {
+          "definition": "TRANSITION_CONDITIONAL",
+          "conditioning": "FIRST_HIT",
+          "transition_n": 39,
+          "n00": 31,
+          "n01": 4,
+          "n10": 4,
+          "n11": 0,
+          "boundary": true,
+          "boundary_cell_count": 1,
+          "absent_row_count": 0,
+          "reference_df": 2,
+          "lr": 2.679586058339698,
+          "p": 0.26189986860444203,
+          "saturated_log_likelihood": -12.438401368610384,
+          "fixed_alpha_log_likelihood": -13.778194397780233,
+          "status": "BOUNDARY_REFERENCE"
+        }
+      },
+      "boundary_count": 1,
+      "na_count": 0
+    }
+  },
+  "source": "nyfed_weekly",
+  "horizon": 6,
+  "window": 260,
+  "method": "ACI_F",
+  "phase": "evaluation",
+  "analysis_status": "post-result / exploratory",
+  "executable_freeze_sha256": "c9fb8deff4a73ae3c9798de831d5d3a7a1d498b82789731460a09e4ebf1a3399",
+  "started_utc": "2026-10-23T19:07:32.793296+00:00",
+  "ended_utc": "2026-10-23T19:07:32.817488+00:00",
+  "resources": {
+    "started_utc": "2026-10-23T19:07:32.793089+00:00",
+    "ended_utc": "2026-10-23T19:07:32.820446+00:00",
+    "elapsed_seconds": 0.027364749927073717,
+    "peak_rss_bytes": 46104576,
+    "maximum_observed_os_threads": 1,
+    "thread_snapshot_count": 1,
+    "requested_numerical_threads": 1,
+    "internal_wall_seconds": 540,
+    "hard_wall_seconds": 600,
+    "internal_rss_bytes": 1610612736,
+    "hard_rss_bytes": 2147483648
+  },
+  "private_artifact": {
+    "bytes": 17405,
+    "sha256": "c355e5ff8309ba08eed7e563dd374407d8c1263cd76beba8715213f0626ffdcf"
+  }
+}

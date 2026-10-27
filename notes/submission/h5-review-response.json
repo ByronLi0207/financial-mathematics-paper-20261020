@@ -1,0 +1,1378 @@
+{
+  "schema_version": 1,
+  "task": "H5 response to 15 internal simulated review findings",
+  "status": "COMPLETE_WRITING_RESPONSE_WITH_MATERIAL_LIMITS_RETAINED",
+  "generated_utc": "2026-10-27T05:00:10.078723+00:00",
+  "review_identity": "仅回应内部模拟的编辑初审/方法学/领域三视角意见；不是外部审稿人、期刊编辑或Claude评价。未调用外部模型。",
+  "main_sha256": "6f9f196f4bc9637674e253b5194bc0717a0c8b4436ca61047a96dc8736519cc8",
+  "review_source": "notes/submission/h5-review-draft.json",
+  "edit_log_source": "notes/submission/h5-edit-log.json",
+  "claim_map_source": "notes/submission/claim-map.json",
+  "h4_baseline_commit": "b4c7eb1",
+  "response_count": 15,
+  "roles": {
+    "editorial": 5,
+    "methodology": 5,
+    "domain": 5
+  },
+  "responses": [
+    {
+      "id": "E1",
+      "stage": "H4",
+      "status": "H4_WRITING_CORRECTION_WITH_TAIL_FAILURE_RETAINED",
+      "claims": [
+        "C46",
+        "C47"
+      ],
+      "changes": [],
+      "action": "H4 已将小节标题改为 benchmark-default，避免把保护当作已达成性质。当前摘要仍说 gate 留下大损失，结果和结论继续明确原尾部标准失败。",
+      "remaining": "8/60 大于10%的损失、最坏+80.98%与 G3.R2 NOT_SUPPORTED 均保留；零中位数和FX留益不能覆盖失败判定。",
+      "role_id": "editorial",
+      "role_name": "编辑初审（内部模拟）",
+      "original_title": "“受基准保护”标题与失败的尾部标准冲突",
+      "original_issue": "小节标题把 benchmark-protected 当作已实现的性质，而正文与登记表明确显示尾部标准失败：预定允许至多 3/60 个大于 10% 的损失，实际为 8/60。读者先见标题，容易把零中位数误读为保护有效；摘要只说仍有大损失，也没有给失败判定。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/0/findings/0",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 353,
+          "label": "sec:v13-rp：小节标题"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 354,
+          "label": "8/60 与最坏 80.98%"
+        },
+        {
+          "path": "notes/submission/prediction-register.md",
+          "line": 40,
+          "label": "G3.R2.RP = NOT_SUPPORTED"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 41,
+          "label": "中位数通过、尾部失败"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 355,
+          "matched_text": "A benchmark-default validation protocol",
+          "current_text": "\\subsection{A benchmark-default validation protocol}\\label{sec:v13-rp}",
+          "paragraph_sha256": "8704b114f0ede86a913cbf2c8660c57cb66eecd5adf780a9171b7af79dfc20f4"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 356,
+          "matched_text": "8 cases lose by over ten percent",
+          "current_text": "The protocol combines the six-point menu in Table~\\ref{tab:methods}, longer validation and a corrected-rank historical default. It selects the lowest mean validation loss over 156 weekly observations or 5,760 FX records. The selected candidate replaces historical headroom only when its paired validation improvement strictly exceeds one HAC standard error \\citep{nw1987}. Across 60 weekly comparisons, the protocol retains historical headroom in 32 and has 0.00\\% median excess, compared with 14.63\\% for ordinary regression. This zero median reflects the majority of decisions retaining historical headroom. However, 8 cases lose by over ten percent, exceeding the prewritten five-percent ceiling for such cases; the worst excess is 80.98\\% (Figure~\\ref{fig:v13-rp}). Both FX periods retain the ordinary regression gains, meeting the criterion for retaining gains. The rule was designed after earlier findings and uses inspected evaluation periods, so this check is retrospective.",
+          "paragraph_sha256": "c1d89b6c76c9527096e43d0ca3fc7e142ab54ac2ff7c0470e0c35ec0165f3ea7"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 394,
+          "matched_text": "This failed tail criterion limits",
+          "current_text": "For RQ2, longer validation reduces full regression medians in both weekly reporting systems, but across-arm differences need not describe typical paired improvements (Table~\\ref{tab:v13-validation}). These dealer aggregates remain related tasks, and the horizon-six New York Fed extension also moves the validation endpoint. The benchmark-default protocol cuts weekly median excess to 0.00\\% and preserves FX gains, yet 8 of 60 cases still lose by over ten percent, with a worst excess of 80.98\\% (Section~\\ref{sec:v13-rp}). This failed tail criterion limits the protocol's risk-management recommendation, and the rejected high-quantile repair leaves its original judgments unresolved.",
+          "paragraph_sha256": "bad50b2b9e3eec8e7a98464e2b7ff067fc0657731cafaf7aacd5c87bce70412c"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "E2",
+      "stage": "H4+H5",
+      "status": "H4_TIMING_CORRECTION_PLUS_H5_ROUND_SPECIFIC_DISCLOSURE",
+      "claims": [
+        "C19",
+        "C26",
+        "C27"
+      ],
+      "changes": [
+        15,
+        29
+      ],
+      "action": "H4 已在WP2开头明示本地运行前提交、公开运行后上传，并改用 prewritten；H5 把原文 each new analysis 的总括改为逐轮保留现有 local/public 时序和原设计对象可用性。",
+      "remaining": "WP2 本地提前13.372451秒、公开after-run、W52/W260已查看及仅W520新算均不改变；不是外部公开预注册或未见金融确认，E5原对象缺失仍按回执精度。",
+      "role_id": "editorial",
+      "role_name": "编辑初审（内部模拟）",
+      "original_title": "WP2 留档时序须与“预先承诺/注册”用语同时呈现",
+      "original_issue": "主文使用 precommitted 和 registered，而关键时序限定埋在 S39。可核实的本地设计提交仅早于正式运行 13.372451 秒，公开上传在计算之后；且 W52/W260 已知。这些事实支持本地运行前封存，不能支持外部公开预注册或全新金融确认。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/0/findings/1",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 245,
+          "label": "par:wp2-history"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 246,
+          "label": "precommitted / registered"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 3,
+          "label": "本地先行、公开后行、非外部注册"
+        },
+        {
+          "path": "notes/submission/wp2-import-audit.md",
+          "line": 9,
+          "label": "原设计提交时间"
+        },
+        {
+          "path": "notes/submission/wp2-import-audit.md",
+          "line": 10,
+          "label": "提前 13.372451 秒"
+        },
+        {
+          "path": "notes/submission/wp2-import-audit.md",
+          "line": 15,
+          "label": "公开上传发生在运行后"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 248,
+          "matched_text": "A fixed extension, committed locally",
+          "current_text": "A fixed extension, committed locally before calculation and uploaded publicly afterward, examines the short-history pattern across 17 CFTC aggregate dealer-position markets. Its fixed horizon is six weeks. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both prewritten low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\\%) fall below the fixed 60\\% rule; strict improvement over all three windows holds in only 6 of 17 markets. Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.",
+          "paragraph_sha256": "87e325b9211d0e02d51bc7231b4766d0bcea15c35a151a35366e41131abf49a8"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 202,
+          "matched_text": "Original design-object availability is reported by round.",
+          "current_text": "The original protocol fixes the two main comparisons and their reference procedures; the original FX evaluation period had already been inspected. Later analyses retain prewritten thresholds and the available local and public timing records (Supplement Sections S36, S38 and S40). Original design-object availability is reported by round. These later checks remain retrospective, and their descriptive fractions do not treat related markets as independent replications.",
+          "paragraph_sha256": "d3a81d584bd884dad8ff5adfced1d4320235b9b18b285cfef2f9969cba5c6069"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 3,
+          "matched_text": "public upload occurred after calculation",
+          "current_text": "This section imports saved results from the separately developed final-jof branch. The local design commit precedes calculation; public upload occurred after calculation. This is not an externally registered or prospective financial confirmation.",
+          "paragraph_sha256": "095a62c755c19458e7f1ff112d5df6090bf1bb2c5e8e68cf9199bb946441da43"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/15",
+          "before": "Each new analysis states its prediction thresholds before computation (Supplement Sections S36 and S38), with chronological records retained separately from the results.",
+          "after": "Later analyses retain prewritten thresholds and the available local and public timing records (Supplement Sections S36, S38 and S40). Original design-object availability is reported by round.",
+          "reason": "C19: distinguish documented local/public timing and missing original objects from external registration."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/29",
+          "before": "An archived extension, committed locally before calculation and uploaded publicly afterward",
+          "after": "A fixed extension, committed locally before calculation and uploaded publicly afterward",
+          "reason": "Use direct language while retaining the full local-before/public-after timing qualification."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "stage": "H5",
+      "status": "H5_CONTEXT_ADDED_WITH_ABSTRACT_ONLY_SOURCE_BOUNDARY",
+      "claims": [
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C59",
+        "C60",
+        "C61"
+      ],
+      "changes": [
+        25,
+        26
+      ],
+      "action": "补入 Lee–Kim 条件分位变点监测、Pagnottoni 高频分布预测、Muddana等递归波动预测的有界语境，说明本稿的采样头寸峰值和匹配历史对照。新三组文献主张分别连接本地已核实官方记录。",
+      "remaining": "论文仍使用成熟工具和既知性质，不据这三篇摘要主张新模型族、覆盖理论、全面方法优越性或已读全文；是否足以满足期刊新颖性属于编辑判断。",
+      "role_id": "editorial",
+      "role_name": "编辑初审（内部模拟）",
+      "original_title": "贡献需要和本刊近期分布预测应用形成准确关系",
+      "original_issue": "稿件使用成熟预测工具，两个命题也是已知性质；若只靠目标更换和大批对照表，编辑可能难以识别对应用随机建模读者的新经验知识。现有综述尚未联系已核实的三篇近期本刊论文，但这不是要求为凑本刊引用而全部加入。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/0/findings/2",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 54,
+          "label": "sec:literature"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 59,
+          "label": "路径风险先例"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 62,
+          "label": "分位模型与评价文献"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 76,
+          "label": "三个经验发现"
+        },
+        {
+          "path": "notes/submission/wiley-risk-policies.md",
+          "line": 9,
+          "label": "ASMBI 官方范围档案"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 65,
+          "matched_text": "Recent financial applications in",
+          "current_text": "Recent financial applications in \\emph{Applied Stochastic Models in Business and Industry} study conditional quantiles and changing distributions. \\citet{LeeKim2024ASMBI} develop sequential monitoring procedures for changes in conditional quantiles of heteroscedastic time series, with applications to financial return data. \\citet{Pagnottoni2026ASMBI} study distributional forecasts of high-frequency Bitcoin returns and volatility, reporting forecast errors that vary across time and quantile levels. \\citet{MuddanaEtAl2025ASMBI} use quantile-regression-derived measures of tail risk and higher moments in recursive out-of-sample forecasts of gold-return volatility. The present study instead evaluates sampled position peaks against matched historical controls.",
+          "paragraph_sha256": "57e76dd859d7bbf4d11e2835b79a2ad37e3508dbd0864ce94f92dc329e82ad8c"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 65,
+          "matched_text": "The present study instead evaluates",
+          "current_text": "Recent financial applications in \\emph{Applied Stochastic Models in Business and Industry} study conditional quantiles and changing distributions. \\citet{LeeKim2024ASMBI} develop sequential monitoring procedures for changes in conditional quantiles of heteroscedastic time series, with applications to financial return data. \\citet{Pagnottoni2026ASMBI} study distributional forecasts of high-frequency Bitcoin returns and volatility, reporting forecast errors that vary across time and quantile levels. \\citet{MuddanaEtAl2025ASMBI} use quantile-regression-derived measures of tail risk and higher moments in recursive out-of-sample forecasts of gold-return volatility. The present study instead evaluates sampled position peaks against matched historical controls.",
+          "paragraph_sha256": "57e76dd859d7bbf4d11e2835b79a2ad37e3508dbd0864ce94f92dc329e82ad8c"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 50,
+          "matched_text": "The forecasting, comparison and cost-accounting",
+          "current_text": "Section~\\ref{sec:target} defines the response. Section~\\ref{sec:results} answers RQ1 and RQ2; Section~\\ref{sec:cost} answers RQ3. Elementary floor and endpoint properties support the forecast definitions. The forecasting, comparison and cost-accounting procedures use standard methods.",
+          "paragraph_sha256": "df8a495bb95d47cca033eaa93904283f76f61bd744131438ea634cde6ce70953"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/25",
+          "before": "\\begin{table}[htbp]\\centering\\footnotesize\n\\caption{Related studies:",
+          "after": "Recent financial applications in \\emph{Applied Stochastic Models in Business and Industry} study conditional quantiles and changing distributions. \\citet{LeeKim2024ASMBI} develop sequential monitoring procedures for changes in conditional quantiles of heteroscedastic time series, with applications to financial return data. \\citet{Pagnottoni2026ASMBI} study distributional forecasts of high-frequency Bitcoin returns and volatility, reporting forecast errors that vary across time and quantile levels. \\citet{MuddanaEtAl2025ASMBI} use quantile-regression-derived measures of tail risk and higher moments in recursive out-of-sample forecasts of gold-return volatility. The present study instead evaluates sampled position peaks against matched historical controls.\n\n\\begin{table}[htbp]\\centering\\footnotesize\n\\caption{Related studies:",
+          "reason": "Add three official-metadata/abstract-verified target-journal studies in a bounded literature context."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/26",
+          "before": "\\end{thebibliography}",
+          "after": "\\bibitem[Lee \\& Kim(2024)]{LeeKim2024ASMBI} Lee, S. \\& Kim, C. K. (2024). Sequential monitoring for conditional quantiles of general conditional heteroscedastic time series models. \\emph{Applied Stochastic Models in Business and Industry}, \\emph{40}(4), 1012--1038. \\url{https://doi.org/10.1002/asmb.2865}\n\n\\bibitem[Pagnottoni(2026)]{Pagnottoni2026ASMBI} Pagnottoni, P. (2026). Optimal Transport Autoregression to Forecast High-Frequency Financial Data Distributions. \\emph{Applied Stochastic Models in Business and Industry}, \\emph{42}(1), e70067. \\url{https://doi.org/10.1002/asmb.70067}\n\n\\bibitem[Muddana et al.(2025)]{MuddanaEtAl2025ASMBI} Muddana, T. K., Bhimireddy, K. S. R., Majumdar, A., \\& Gupta, R. (2025). Forecasting Gold Returns Volatility Over 1258--2023: The Role of Moments. \\emph{Applied Stochastic Models in Business and Industry}, \\emph{41}(5), e70042. \\url{https://doi.org/10.1002/asmb.70042}\n\\end{thebibliography}",
+          "reason": "Add only the three verified official author/year/volume/issue/page-or-article-number/DOI records."
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "stage": "H5+EXISTING_SCOPE",
+      "status": "H5_GENERALIZATION_NARROWED_WITH_EXTERNAL_VALIDITY_LIMIT_RETAINED",
+      "claims": [
+        "C09",
+        "C10",
+        "C25",
+        "C27",
+        "C49"
+      ],
+      "changes": [
+        16,
+        17,
+        21,
+        23
+      ],
+      "action": "将历史/菜单解释限定于 tested configurations；正文补出 full regression 高区间不可检验；新增净头寸不识别gross portfolio、hedging和economic capital。原相关聚合任务、survivor universe、单一市场商和频率混杂说明保留。",
+      "remaining": "没有新增独立dealer或真实首发时点数据；同FX日度聚合不构成外部复制，17合约与13类别也不是独立机构样本。",
+      "role_id": "editorial",
+      "role_name": "编辑初审（内部模拟）",
+      "original_title": "“跨频率/独立系统”必须限定为相关的聚合任务",
+      "original_issue": "一个市场商 FX、同一 FX 日度聚合、13 个纽约联储类别与 17 个 CFTC 合约并不是独立机构样本。跨频率还同时改变响应、物理跨度与时钟，CFTC 则是回顾性连续存续样本。宽泛“financial forecasting”或“independent evidence”易被看成超出观测对象。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/0/findings/3",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 32,
+          "label": "数据系统概述"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 38,
+          "label": "RQ2"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 126,
+          "label": "CFTC survivor universe"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 276,
+          "label": "independent reporting-system evidence"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 375,
+          "label": "一个市场商"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 377,
+          "label": "相关聚合任务"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 240,
+          "matched_text": "Within the tested configurations",
+          "current_text": "The fixed-period, short-horizon learning curve shows that more history helps only over part of the tested range (Figure~\\ref{fig:v11-history}). Full regression moves from higher loss at the shortest history to its largest matched gain at an intermediate history. The gain is smaller at the longest history, while the four-feature curve changes sign within the tested range. Both curves use the original FX period and their original penalty menus; regression is compared with its own matched historical reference at each history length. Supplement Section S35 retains the full contrasts and synthetic confirmation summary. Within the tested configurations, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "paragraph_sha256": "1a090e8b7f26a4e2e2bcbfd066dcc304b5c15bb49797867ef4dbbe5733620cb2"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 248,
+          "matched_text": "Full regression has no prewritten high-region cell",
+          "current_text": "A fixed extension, committed locally before calculation and uploaded publicly afterward, examines the short-history pattern across 17 CFTC aggregate dealer-position markets. Its fixed horizon is six weeks. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both prewritten low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\\%) fall below the fixed 60\\% rule; strict improvement over all three windows holds in only 6 of 17 markets. Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.",
+          "paragraph_sha256": "87e325b9211d0e02d51bc7231b4766d0bcea15c35a151a35366e41131abf49a8"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 379,
+          "matched_text": "gross portfolios, hedging arrangements",
+          "current_text": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications. Net-position peaks summarize exposure; gross portfolios, hedging arrangements and economic capital requirements remain unidentified.",
+          "paragraph_sha256": "ba8d40c0691feb17cae9b111610a7f4bf7a343a8da34d9f3adb8383a0737bf53"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/16",
+          "before": "Together, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "after": "Within the tested configurations, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "reason": "C25: restrict the learning-curve/menu interpretation to the tested configurations."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/17",
+          "before": "The primary verdict is therefore partial support.",
+          "after": "Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support.",
+          "reason": "C27: make the missing QR33 high-region screen explicit in the main paragraph."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/21",
+          "before": "The simulation menu comparison also brings short-history regression closer to history, linking useful conditional reports to sufficient history, validation evidence and adequate shrinkage.",
+          "after": "The simulation menu comparison also brings short-history regression closer to history, linking these outcomes to the tested histories, validation windows and shrinkage menus.",
+          "reason": "C25/C35: avoid a universal sufficient-history or causal interpretation."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/23",
+          "before": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications.",
+          "after": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications. Net-position peaks summarize exposure; gross portfolios, hedging arrangements and economic capital requirements remain unidentified.",
+          "reason": "Domain-review boundary: these reported positions do not identify whole-book risk or economic capital."
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "stage": "EXISTING_H3_DISCLOSURE_RETAINED",
+      "status": "EXISTING_RIGHTS_AND_REPLAY_LIMITS_RETAINED_NO_NEW_PERMISSION_CLAIM",
+      "claims": [
+        "C54",
+        "C55",
+        "C56",
+        "C57"
+      ],
+      "changes": [],
+      "action": "沿用H3的分层披露：公开代码/协议/汇总可检查；FX原观察和private vectors不分发，原panel输入不分发，完整replay需匹配原输入和历史Git对象。DOI、软件许可及作者权限确认保持待填。",
+      "remaining": "本轮没有取得数据再分发许可、公开历史私有输入或完成外部独立预测复算；文档再生与独立金融复算不可混称。",
+      "role_id": "editorial",
+      "role_name": "编辑初审（内部模拟）",
+      "original_title": "数据权限和复现层级需能让编辑迅速核验",
+      "original_issue": "公开代码和已保存结果并不等于任何审稿人可独立复算全部 FX 预测。FX 元数据仅指向原作者版权，原始数据与逐期私有预测未再分发；纽约联储数据另受源条款约束。若摘要/投稿信只写可复现，编辑会高估公开材料的闭包。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/0/findings/4",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 398,
+          "label": "FX 版权与排除范围"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 400,
+          "label": "NY Fed 源条款"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 404,
+          "label": "code availability"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1590,
+          "label": "文档再生不等于预测复算"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1595,
+          "label": "完整 replay 输入条件"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1608,
+          "label": "尚无独立/前瞻验证"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 401,
+          "matched_text": "Data files \\copyright\\ Original Authors",
+          "current_text": "\\paragraph{Data availability.} The FX input is the specified version of the Kaggle Net Position Time Series Dataset. The owning metadata labels its license ``Data files \\copyright\\ Original Authors.'' This repository supplies the acquisition route and input fingerprint, but excludes raw FX observations and private per-issue prediction vectors. Obtain the source from \\url{https://www.kaggle.com/datasets/davidlindsay1979/net-position-time-series-dataset} subject to the original rights holders' terms.",
+          "paragraph_sha256": "f63c0a2589df60c358377941771489accbc9318bba9af668eb6b25344b7fde01"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 403,
+          "matched_text": "The original panel CSV is not redistributed",
+          "current_text": "The New York Fed aggregates are available from its Primary Dealer Statistics service under the Bank's Terms of Use. The repository preserves the unchanged accepted Treasury snapshot with attribution and identifies study calculations separately. Copying or distributing that content remains subject to its source notices, attribution, modification labeling, continuing conditions and endorsement restrictions: \\url{https://www.newyorkfed.org/privacy/termsofuse.html}. Software availability does not replace those source conditions. The original panel CSV is not redistributed, and current public vintages need not reproduce its exact input bytes.",
+          "paragraph_sha256": "238197b0ea2bd75dc5276960b30f64c80ede56d961bcb372343659a37fa324c5"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 407,
+          "matched_text": "Full financial replay also requires",
+          "current_text": "\\paragraph{Code availability.} Code, written protocols, aggregate results and reproduction instructions are available in the \\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/submission-final}{versioned repository}. Full financial replay also requires the documented original inputs and historical Git objects. [AUTHOR TO ADD ZENODO DOI AND CONFIRM SOFTWARE LICENSE].",
+          "paragraph_sha256": "a06a12e970994ac50ead9784c4858f5e6e25141fb79f2a2167f83821da6a64be"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "M1",
+      "stage": "H4+EXISTING_METHOD_DISCLOSURE",
+      "status": "HEURISTIC_RULE_DISCLOSED_PROTECTION_NOT_ESTABLISHED",
+      "claims": [
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "changes": [],
+      "action": "保留同一validation段先选候选再gate、1个paired HAC标准误和评估段固定决策的原规则。H4中性标题及结果/实务说明共同避免把启发式门槛写成名义保护概率。",
+      "remaining": "选择噪声、共享validation和已查看评估期仍在；没有新增独立校准或前瞻测试，一标准误没有被重新解释为显著性水平。",
+      "role_id": "methodology",
+      "role_name": "方法学审稿人（内部模拟）",
+      "original_title": "同一验证段选候选再设一标准误门槛，不产生保护概率",
+      "original_issue": "在六点菜单中先取验证均值最小者，再用同一段数据判断其胜过历史基准一个 HAC 标准误，门槛会受到候选选择和验证噪声影响。一标准误是规则参数，不是显著性水平；此处又使用已查看的评估期。零中位数与 FX 留益不能解释为事前非劣或风险保证。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/1/findings/0",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 354,
+          "label": "候选选择与 HAC 门槛"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 39,
+          "label": "selection and gate share validation data"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 58,
+          "label": "评估期已查看"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 366,
+          "label": "保护不足"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 356,
+          "matched_text": "The protocol combines the six-point",
+          "current_text": "The protocol combines the six-point menu in Table~\\ref{tab:methods}, longer validation and a corrected-rank historical default. It selects the lowest mean validation loss over 156 weekly observations or 5,760 FX records. The selected candidate replaces historical headroom only when its paired validation improvement strictly exceeds one HAC standard error \\citep{nw1987}. Across 60 weekly comparisons, the protocol retains historical headroom in 32 and has 0.00\\% median excess, compared with 14.63\\% for ordinary regression. This zero median reflects the majority of decisions retaining historical headroom. However, 8 cases lose by over ten percent, exceeding the prewritten five-percent ceiling for such cases; the worst excess is 80.98\\% (Figure~\\ref{fig:v13-rp}). Both FX periods retain the ordinary regression gains, meeting the criterion for retaining gains. The rule was designed after earlier findings and uses inspected evaluation periods, so this check is retrospective.",
+          "paragraph_sha256": "c1d89b6c76c9527096e43d0ca3fc7e142ab54ac2ff7c0470e0c35ec0165f3ea7"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 39,
+          "matched_text": "Selection and the gate share validation data",
+          "current_text": "The rule uses the six-point penalty menu, longer validation, and a historical default. Weekly validation contains 156 issues and FX validation contains 5,760; regression replaces corrected historical headroom only when its validation advantage exceeds one paired HAC standard error. Selection and the gate share validation data, and the decision stays fixed over the evaluation segment. Infinite shrinkage gives ordinary empirical headroom, so it must pass the same gate to replace the corrected-rank reference. These settings combine existing forecasting and validation methods without a nominal protection guarantee.",
+          "paragraph_sha256": "f0928e089b429ba9f4e062d9c6d9f202060d4ad880253954f7e2f05fc6c0fff3"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 39,
+          "matched_text": "without a nominal protection guarantee",
+          "current_text": "The rule uses the six-point penalty menu, longer validation, and a historical default. Weekly validation contains 156 issues and FX validation contains 5,760; regression replaces corrected historical headroom only when its validation advantage exceeds one paired HAC standard error. Selection and the gate share validation data, and the decision stays fixed over the evaluation segment. Infinite shrinkage gives ordinary empirical headroom, so it must pass the same gate to replace the corrected-rank reference. These settings combine existing forecasting and validation methods without a nominal protection guarantee.",
+          "paragraph_sha256": "f0928e089b429ba9f4e062d9c6d9f202060d4ad880253954f7e2f05fc6c0fff3"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "M2",
+      "stage": "H5",
+      "status": "H5_STATISTICAL_OBJECT_CLARIFIED_WITH_LENGTH_CONFOUNDING_RETAINED",
+      "claims": [
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "changes": [
+        2,
+        4,
+        5,
+        8,
+        20,
+        22
+      ],
+      "action": "摘要、finding、综述和结论统一 full regression；正文明确QR4 H6 median-improvement screen失败。既有arm-median与paired-change区别、H6端点提前18周和refit phase变化均保留。",
+      "remaining": "未识别纯validation长度因果效果，paired median0不因arm median降低而变成典型系列改善；QR4失败及CFTC不可用结果未改判。",
+      "role_id": "methodology",
+      "role_name": "方法学审稿人（内部模拟）",
+      "original_title": "验证长度对比混入端点变化，组中位数不等于典型配对改善",
+      "original_issue": "纽约联储 H6 延长验证还把终点前移 18 周并改变 refit phase，因此不能只归因于样本长度。全回归 H6 两臂中位数下降 7.81pp，配对变化中位数却为 0；QR4 H6 的 -4.22pp 未达预定 -5pp。泛称“longer validation improves regression”会遮蔽这些差别。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/1/findings/1",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 293,
+          "label": "两系统中位数改善"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 304,
+          "label": "端点与配对中位数限定"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 24,
+          "label": "QR4 H6 median screen Fail"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 30,
+          "label": "验证索引与 +0.00 配对中位数"
+        },
+        {
+          "path": "notes/submission/prediction-register.md",
+          "line": 37,
+          "label": "G2.V3.QR4 不成立"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 18,
+          "matched_text": "Longer validation improves full regression medians",
+          "current_text": "\\begin{abstract}Dealers monitor the largest absolute position reached before a review horizon ends. We compare conditional quantile models with historical rules on hourly foreign exchange (FX) positions, weekly New York Fed positions and Commodity Futures Trading Commission (CFTC) dealer positions, matching histories and update schedules. Historical rules are hard to beat. First, FX regression lowers matched loss by 14.8\\% and 16.6\\% in two periods, but its ranking against a shorter rolling rule changes. Second, in the initial weekly comparisons, historical headroom beats full regression in 34 of 48 New York Fed cases; the better realized historical score wins 29 of 34 CFTC cases. Longer validation improves full regression medians in both reporting systems; CFTC short-history excess falls from 19.3\\% to 4.0\\%. A benchmark-default gate retains FX gains and improves weekly median performance, but leaves large individual losses. Third, lower scores need not mean lower limit costs: higher reserve charges and lower fixed breach charges generally favor regression in CFTC. Costs are illustrative, and the evidence is retrospective; the original FX evaluation period had been inspected beforehand.\\end{abstract}",
+          "paragraph_sha256": "bd4f6ac47dc91173389d0b0d466de97bfea5c88452fb21607e2564f7aea5d9ba"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 306,
+          "matched_text": "The four-feature short-horizon New York Fed median-improvement screen fails.",
+          "current_text": "Longer validation selects the intercept-only limit more often in both reporting systems, consistent with less aggressive conditional fitting (Table~\\ref{tab:v13-validation}). The New York Fed horizon-six endpoint also advances eighteen weeks and changes the refit phase, leaving a causal length-only effect unidentified. Its median paired change is zero despite the lower long-validation arm median, so differences between arm medians need not represent typical improvements. The four-feature short-horizon New York Fed median-improvement screen fails. Its complete results and original CFTC failures remain available in Supplement Sections S36 and S38. The simulation menu comparison also brings short-history regression closer to history, linking these outcomes to the tested histories, validation windows and shrinkage menus.",
+          "paragraph_sha256": "f4c0280e4b82b2e5ee2bf0af0479b34c95940d5949beeed8973dcd4c393dd9ce"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 306,
+          "matched_text": "Its median paired change is zero",
+          "current_text": "Longer validation selects the intercept-only limit more often in both reporting systems, consistent with less aggressive conditional fitting (Table~\\ref{tab:v13-validation}). The New York Fed horizon-six endpoint also advances eighteen weeks and changes the refit phase, leaving a causal length-only effect unidentified. Its median paired change is zero despite the lower long-validation arm median, so differences between arm medians need not represent typical improvements. The four-feature short-horizon New York Fed median-improvement screen fails. Its complete results and original CFTC failures remain available in Supplement Sections S36 and S38. The simulation menu comparison also brings short-history regression closer to history, linking these outcomes to the tested histories, validation windows and shrinkage menus.",
+          "paragraph_sha256": "f4c0280e4b82b2e5ee2bf0af0479b34c95940d5949beeed8973dcd4c393dd9ce"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/2",
+          "before": "Longer validation improves regression medians in both reporting systems;",
+          "after": "Longer validation improves full regression medians in both reporting systems;",
+          "reason": "C38: do not generalize the full-regression median finding to every four-feature screen."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/4",
+          "before": "Second, longer validation improves weekly regression medians while leaving large losses on individual tasks.",
+          "after": "Second, longer validation improves weekly full regression medians while leaving large losses on individual tasks.",
+          "reason": "C38: keep the second finding specific to the full regression."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/5",
+          "before": "while extended validation reduces regression medians (Section~\\ref{sec:v12-low-frequency}).",
+          "after": "while extended validation reduces full regression medians (Section~\\ref{sec:v12-low-frequency}).",
+          "reason": "Keep the introductory second finding consistent with the abstract and result table."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/8",
+          "before": "longer validation reduces weekly regression medians in two reporting systems.",
+          "after": "longer validation reduces weekly full regression medians in two reporting systems.",
+          "reason": "C38: align the literature-section synthesis with the full-regression result."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/20",
+          "before": "Four-feature results and original CFTC failures remain available in Supplement Sections S36 and S38.",
+          "after": "The four-feature short-horizon New York Fed median-improvement screen fails. Its complete results and original CFTC failures remain available in Supplement Sections S36 and S38.",
+          "reason": "C38: preserve the unsupported four-feature screen beside the full-regression finding."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/22",
+          "before": "For RQ2, longer validation reduces full-regression medians",
+          "after": "For RQ2, longer validation reduces full regression medians",
+          "reason": "Use the same full-regression method name in the abstract, findings and conclusion."
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "stage": "H5",
+      "status": "H5_FINITE_MENU_INTERPRETATION_NARROWED_WITH_CAUSAL_LIMIT_RETAINED",
+      "claims": [
+        "C25",
+        "C35",
+        "C36"
+      ],
+      "changes": [
+        18,
+        19,
+        21
+      ],
+      "action": "将“Why does regression lose”改成有限菜单分解/验证长度；移除由余差推断conditional information不足的句子，明确不证明信息不存在。simulation解释也限定tested histories/windows/menus。",
+      "remaining": "事后最佳有限候选仍非deployable selector、全模型下界或因果估计成本机制；排除infinite和component medians不可相加的原定义保留。",
+      "role_id": "methodology",
+      "role_name": "方法学审稿人（内部模拟）",
+      "original_title": "事后有限菜单分解不证明特征缺乏信息的机制",
+      "original_issue": "分解的“最佳有限惩罚”用评估结果事后选取，并排除普通经验分位候选；它是测试菜单内的乐观诊断。余差仍为正，只说明这一特征/惩罚菜单未超过基准，不能区分真实信息不足、模型错设、估计误差或遗漏非线性结构。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/1/findings/2",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 292,
+          "label": "Why does regression lose 标题"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 293,
+          "label": "27/41 与 29/41"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 295,
+          "label": "有限五惩罚且排除 infinite"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1648,
+          "label": "diagnostic 与 negative component"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 294,
+          "matched_text": "Finite-menu loss decomposition and validation length",
+          "current_text": "\\subsection{Finite-menu loss decomposition and validation length}\\label{sec:v12-low-frequency}",
+          "paragraph_sha256": "3d3eddb8c422df347682ca5e6469f61af1fe603fc64698a84b0424e1563a561a"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 295,
+          "matched_text": "This gap describes the tested finite procedures",
+          "current_text": "Loss from penalty selection exceeds half of positive actual excess loss in 27 of 41 short-history weekly comparisons (Figure~\\ref{fig:v12-decomposition}). Extending validation lowers CFTC median excess loss from 19.33\\% to 4.03\\% with short histories, and from 10.35\\% to 0.53\\% with longer histories. The New York Fed medians fall from 6.68\\% to -1.13\\% at horizon six and from 40.47\\% to 5.02\\% at horizon twenty-four (Table~\\ref{tab:v13-validation}). Yet the best finite penalty selected with evaluation hindsight still loses to historical headroom in 29 of 41 comparisons. This gap describes the tested finite procedures; it does not establish that conditional information is absent.",
+          "paragraph_sha256": "0300b8967baab2e627516188d1d848a059f139d59cee712ca49a1c7d1fb27d4b"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 297,
+          "matched_text": "The retrospective finite candidate uses five penalties",
+          "current_text": "The decomposition separates the selected report's gap from the best finite candidate and that candidate's gap from historical headroom. The retrospective finite candidate uses five penalties and excludes the ordinary empirical limit, supplying a diagnostic rather than a deployable selection rule. Separate component medians need not add: actual excess is 19.44\\%, selection 18.32\\%, and the diagnostic gap 4.37\\%. An empirical-limit selection can beat every finite candidate, making its selection component negative; both long-history FX horizons have negative finite-menu gaps.",
+          "paragraph_sha256": "9cd5adf1c804e69aa511a4e886e1fccb2447fe4ef058a62f8585b9d796e5767d"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/18",
+          "before": "\\subsection{Why does regression lose at low frequency?}",
+          "after": "\\subsection{Finite-menu loss decomposition and validation length}",
+          "reason": "C35: a finite-menu diagnostic does not identify a general causal mechanism."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/19",
+          "before": "This residual gap indicates limited incremental information within the tested feature set and finite menu.",
+          "after": "This gap describes the tested finite procedures; it does not establish that conditional information is absent.",
+          "reason": "C35: retain the adverse finite-menu result without claiming that the features contain no information."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/21",
+          "before": "The simulation menu comparison also brings short-history regression closer to history, linking useful conditional reports to sufficient history, validation evidence and adequate shrinkage.",
+          "after": "The simulation menu comparison also brings short-history regression closer to history, linking these outcomes to the tested histories, validation windows and shrinkage menus.",
+          "reason": "C25/C35: avoid a universal sufficient-history or causal interpretation."
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "stage": "H4",
+      "status": "H4_NUMERICAL_FAILURE_TYPE_CORRECTED_UNDETERMINED_RETAINED",
+      "claims": [
+        "C40",
+        "C41"
+      ],
+      "changes": [],
+      "action": "H4 已在主文和补充明确required numerical fits失败，G1仅6/10保真兼容通过导致修复拒绝，三原失败单元保持未重跑/不可用。",
+      "remaining": "两FX经济比较和原F3 Q1/Q2仍undetermined；6/10不是经济成功率，也没有把NA当成观察到的经济失败或放松容差补值。",
+      "role_id": "methodology",
+      "role_name": "方法学审稿人（内部模拟）",
+      "original_title": "99% 的数值失败不能被读成经济预测失败",
+      "original_issue": "正文“Both FX periods fail”缺少失败类型。这里是所需 99% 数值拟合/完整程序单元未完成，预测损失为空；G1 修复在 10 个既收敛拟合中仅 6 个满足保真标准，因而未采用。它既不是 QR 已被证明在 FX 经济上输掉，也不是修复后 60% 的经济成功率。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/1/findings/3",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 308,
+          "label": "Both FX periods fail"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 315,
+          "label": "CFTC W260 NA"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 316,
+          "label": "两 FX NA"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 13,
+          "label": "G1 仅 6/10 兼容检查通过"
+        },
+        {
+          "path": "notes/submission/prediction-register.md",
+          "line": 34,
+          "label": "F3.Q2 UNDETERMINED"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 310,
+          "matched_text": "Required numerical fits fail in both FX periods",
+          "current_text": "Tail-level sensitivity remains incomplete (Table~\\ref{tab:v12-tau}). At 99\\%, one CFTC failure leaves the 29-win criterion unresolved despite 28 historical wins in 34 comparisons. Required numerical fits fail in both FX periods, leaving joint improvement undetermined. After a solver repair designed after the failure, only 6 of 10 compatibility fits met the forecast-preservation criterion. The rejected repair leaves all three failed cells and original judgments unchanged.",
+          "paragraph_sha256": "3a60b8c48a78a4764741a67c95b7c15ad69c3b5a8a8a49080ae55466c6716db4"
+        },
+        {
+          "path": "submission-final/generated/v13-supplement.tex",
+          "line": 13,
+          "matched_text": "At the 99\\% quantile, required numerical fits fail",
+          "current_text": "At the 99\\% quantile, required numerical fits fail in one CFTC comparison and both FX periods. A post-failure solver repair reproduces forecasts within $10^{-6}$ pointwise relative error in only 6 of 10 previously converged fits. Unchanged residual and duality-gap thresholds reject this repair, preventing all three failed comparisons from running with the change. Their original unavailable values and both undetermined tail-level judgments remain in the \\href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/revision-v13/results/v13/tau-repair}{complete numerical check}, including every compatibility failure and unrun comparison.",
+          "paragraph_sha256": "72e1f962c9e52e19c54f9895eac4684a0bde4475c700140fb519ab2e77c2f549"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 384,
+          "matched_text": "Only 6 of 10 high-quantile compatibility fits pass",
+          "current_text": "\\item Only 6 of 10 high-quantile compatibility fits pass, so the rejected repair leaves both FX comparisons unavailable.",
+          "paragraph_sha256": "9a89bb9a086f694c225e2e13164e6359370d0fcb90819c0d9b6d704f8b6c0384"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "M5",
+      "stage": "EXISTING_INFERENCE_LIMITS+H5_TRANSPARENCY",
+      "status": "WORKING_REFERENCE_INFERENCE_SCOPE_RETAINED_NO_NEW_CONFIRMATION",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "changes": [
+        15
+      ],
+      "action": "保留逐格HAC/HLN/Holm family、MCS固定bootstrap及duplicate loss处理；明确nominal level不调整研究阶段发展，non-elimination不等于同风险，相关任务不作独立pooled test。H5补充逐轮时序/对象可用性。",
+      "remaining": "重叠损失、有限样本、固定bootstrap规则和研究阶段选择仍限制推断；没有新增selection-adjusted、同时最优或未来coverage结论。",
+      "role_id": "methodology",
+      "role_name": "方法学审稿人（内部模拟）",
+      "original_title": "重叠损失和研究阶段选择限制名义推断与任务计数",
+      "original_issue": "horizon 重叠、同源类别相关和已有研究阶段模型发展，使 DM/HAC、MCS 和跨任务胜率回答不同问题。MCS 未剔除不能读成预测风险相等；29/34、8/60 也不是独立伯努利样本。当前部分解释已经到位，但结果总述仍可能被胜率和“confidence”术语带走。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/1/findings/4",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 185,
+          "label": "完成标签与重叠验证"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 189,
+          "label": "HAC 与 multiplicity families"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 204,
+          "label": "90% MCS / 1000 bootstrap"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 206,
+          "label": "重复损失和相关任务"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1641,
+          "label": "名义解释边界"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 206,
+          "matched_text": "The nominal level presumes suitable loss dependence",
+          "current_text": "We form a 90\\% model confidence set separately for each complete source, period, horizon and history grid \\citep{mcs2011}. The range statistic uses 1,000 stationary-bootstrap replications in arch 8.0.0, with block length $\\max\\{H,\\lceil n^{1/3}\\rceil\\}$. All complete saved procedures enter on matching origin grids and targets, while incomplete prior methods remain explicitly unavailable. The nominal level presumes suitable loss dependence; it does not account for earlier research-stage model development.",
+          "paragraph_sha256": "2e21e1376959cc0a0f1905306db1eb0fb789ed76b495e3ba41149b9309cbda09"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 208,
+          "matched_text": "no independent cross-market pooled test",
+          "current_text": "Exact duplicate loss columns enter the bootstrap once, and their procedure labels are restored afterward. Historical reports are merged only after their full forecasts and targets match, while rolling references remain distinct. Several methods can produce identical losses, so one surviving loss pattern need not mean that only one method survives. The fractions summarize related tasks, with no independent cross-market pooled test.",
+          "paragraph_sha256": "050aae2b54d2304e4b315e6a279351b72cf5371f935b7ab256cd5cdea2e19a67"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 290,
+          "matched_text": "Non-elimination establishes neither equal predictive risk",
+          "current_text": "Matched historical methods remain in most confidence sets, usually alongside alternatives (Supplement Table~\\vthirteenMCSTable{}). Non-elimination establishes neither equal predictive risk nor a uniquely preferred method, supporting the retention of historical controls as comparators.",
+          "paragraph_sha256": "f26535e7ffbbfa2555e18acbf3a46c6d50f5e13c771f70452b58fc0858a37ca0"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/15",
+          "before": "Each new analysis states its prediction thresholds before computation (Supplement Sections S36 and S38), with chronological records retained separately from the results.",
+          "after": "Later analyses retain prewritten thresholds and the available local and public timing records (Supplement Sections S36, S38 and S40). Original design-object availability is reported by round.",
+          "reason": "C19: distinguish documented local/public timing and missing original objects from external registration."
+        }
+      ]
+    },
+    {
+      "id": "D1",
+      "stage": "H5",
+      "status": "H5_ECONOMIC_OBJECT_LIMIT_ADDED_WITH_RISK_MAPPING_UNIDENTIFIED",
+      "claims": [
+        "C01",
+        "C03",
+        "C04",
+        "C10",
+        "C49"
+      ],
+      "changes": [
+        23
+      ],
+      "action": "新增净头寸峰值只概括所观测exposure、不能识别gross portfolios、hedging和economic capital的限制，配合既有采样峰值、Lévy强假设及真实分位/拟合报告区分。",
+      "remaining": "没有更细交易、gross敞口、资金流或资本模型；不能把评分或breach换算为资本节省、真实尾损失或资金需求，理论界不赋予实证覆盖。",
+      "role_id": "domain",
+      "role_name": "金融风险与预测领域审稿人（内部模拟）",
+      "original_title": "采样绝对净头寸峰值不是损失、总风险或真实资金需求",
+      "original_issue": "当前对象是采样时点的绝对净头寸峰值。净额抵消、遗漏区间内极值、估值与报告构成变化，使它不能直接代表 gross exposure、PnL 尾损失或结算流动性。两个命题分别是已知 floor 投影和强假设下的经典概率界，不自动为实证报告赋予监管式覆盖保证。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/2/findings/0",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 82,
+          "label": "Y/B/Z 响应定义"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 96,
+          "label": "known-floor 命题"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 103,
+          "label": "Lévy 独立对称假设"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 147,
+          "label": "无经验覆盖保证"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1629,
+          "label": "gross exposure / cash needs / sampled peak"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 379,
+          "matched_text": "gross portfolios, hedging arrangements",
+          "current_text": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications. Net-position peaks summarize exposure; gross portfolios, hedging arrangements and economic capital requirements remain unidentified.",
+          "paragraph_sha256": "ba8d40c0691feb17cae9b111610a7f4bf7a343a8da34d9f3adb8383a0737bf53"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 84,
+          "matched_text": "The target is the largest sampled absolute position",
+          "current_text": "The target is the largest sampled absolute position from issue time through the stated horizon, with \\(N_t\\) denoting signed position and \\(\\mathcal F_t\\) the issue-time information. The peak \\(Y_{t,H}\\), observed floor \\(B_t\\) and nonnegative headroom \\(Z_{t,H}\\) satisfy the following identities.",
+          "paragraph_sha256": "71c6b986f5a8fbec6841cc999169a043fe9b77c7b46e020626bbabcd24ec08dd"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 149,
+          "matched_text": "This finite-sample reporting convention supplies no coverage guarantee",
+          "current_text": "This finite-sample reporting convention supplies no coverage guarantee under the observed dependence. Translated paths reanchor historical signed paths, while historical-peak quantiles are projected to the observed floor. The endpoint plug-in uses an absolute-displacement quantile; Table~\\ref{tab:methods} gives the executed menus and schedules.",
+          "paragraph_sha256": "c69c754b4075f6d327b9de5f2c3ec69a0d2021a3a3e64509c4d4dc067e9744f4"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/23",
+          "before": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications.",
+          "after": "\\item Weekly reports aggregate positions across dealers; related categories and the CFTC survivor universe do not provide independent dealer replications. Net-position peaks summarize exposure; gross portfolios, hedging arrangements and economic capital requirements remain unidentified.",
+          "reason": "Domain-review boundary: these reported positions do not identify whole-book risk or economic capital."
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "stage": "EXISTING_DATA_CLOCK_LIMIT_RETAINED",
+      "status": "PUBLIC_INFORMATION_CLOCK_AND_PURE_FREQUENCY_EFFECT_UNVERIFIED",
+      "claims": [
+        "C09",
+        "C11",
+        "C49"
+      ],
+      "changes": [],
+      "action": "保留economic-date replay与public information clock差别、首发/修订缺失、日末最后记录及同时改变多设计要素的说明；没有写成实时部署验证或纯频率实验。",
+      "remaining": "没有首发发布时间/修订轨迹和已验证close，不能认证历史实时可执行性或纯频率效果。",
+      "role_id": "domain",
+      "role_name": "金融风险与预测领域审稿人（内部模拟）",
+      "original_title": "周报经济日期不构成当时可交易的信息集",
+      "original_issue": "按当时公开信息进行实时预测的理解会与经济日期回放发生冲突：CFTC 通常周二测量周五公布，纽约联储历史首发与修订版本未重建，日 FX“最后记录”也非已验证收盘。相同完成标签条件保证回放一致，却不能补齐当时公开信息集。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/2/findings/1",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 124,
+          "label": "日末记录聚合"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 128,
+          "label": "Tuesday positions / Friday release"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1534,
+          "label": "实际发布时间与延迟"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1631,
+          "label": "频率同时改变多个设计要素"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 378,
+          "label": "first-release 与区间极值缺失"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 130,
+          "matched_text": "Positions usually refer to Tuesday and are released Friday",
+          "current_text": "There are 877 weekly positions through 20 October 2026. Validation uses 52 origins; evaluation uses the last 260 eligible origins with horizon six. The evaluation position dates run from 21 September 2021 to 8 September 2026, with the final peak label completing on 20 October 2026. Refits occur every thirteen records with histories of 52 and 260, using downloaded economic dates; first-release vintages remain unobserved. Positions usually refer to Tuesday and are released Friday, so the recorded position clock differs from the public information clock.",
+          "paragraph_sha256": "c0a1f4a3ae26ea933687a6581ce37cc50d72649933d21c1b045fee3cc2eb2f74"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 380,
+          "matched_text": "Downloaded economic-date vintages omit",
+          "current_text": "\\item Downloaded economic-date vintages omit historical first-release information, reporting delays and unrecorded within-interval excursions.",
+          "paragraph_sha256": "8dad2e1f8784e290cc86c62825cc15161d6156fb921a64f4ba873d60b0e1353a"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1631,
+          "matched_text": "Daily aggregation jointly changes",
+          "current_text": "Daily aggregation jointly changes physical histories, horizons, update cadence, calendar predictors, evaluation span and sampled targets. The same-record comparison leaves a pure frequency effect unidentified.",
+          "paragraph_sha256": "9be2e8b0e0ee155dc38ca934a2fd15dee5dfc7e49eb3281fd610bbe4e2e88be3"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "D3",
+      "stage": "EXISTING_COST_LIMIT_RETAINED",
+      "status": "SCORE_BREACH_AND_STIPULATED_COST_SEPARATED_NO_MEASURED_PROFIT",
+      "claims": [
+        "C24",
+        "C32",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "changes": [],
+      "action": "保留score与strict breaches的相反案例，固定网格center及两相反角点，reserve/breach/exceedance联合报告和评价样本归一化说明。",
+      "remaining": "价格是规定偏好，缺少机构成本与干预后的反事实交易响应；没有新增实际profit、funding或最优政策证据。",
+      "role_id": "domain",
+      "role_name": "金融风险与预测领域审稿人（内部模拟）",
+      "original_title": "评分改善与风控改善之间仍缺实测经济价格",
+      "original_issue": "较低 pinball 分数可以伴随更多 breach；成本角点又由固定偏好决定。以评估样本历史 headroom 作归一化提供可比较图示，但不是事前机构收费。因而“cheaper”只在给定偏好网格中成立，不能直接转成风险降低、盈利或资金效率提升。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/2/findings/2",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 216,
+          "label": "短历史 FX 的 loss 与 breaches"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 258,
+          "label": "日度 3.0% 降损但 37/30 breaches"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 328,
+          "label": "score 与 breach 区分"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 334,
+          "label": "归一化成本定义"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 342,
+          "label": "CFTC 5/34、32/34、1/34"
+        },
+        {
+          "path": "submission-final/supplement.tex",
+          "line": 1641,
+          "label": "评价样本归一化"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 330,
+          "matched_text": "Lower pinball loss leaves breach behavior unresolved",
+          "current_text": "Lower pinball loss leaves breach behavior unresolved: matched FX gains accompany more breaches before calibration (Table~\\ref{tab:fx}). Elementary-score curves cross in both original comparisons (Supplement Figures S2--S3); the separate 24-step comparison reverses near 20.6:1 (Section S9, Table S8). Both six-step FX comparisons reduce mean underprediction and overprediction, so that weight reversal belongs to the longer-horizon reference. Average-loss tests, strict-hit diagnostics and RMS-state comparisons therefore answer distinct questions (Supplement Table S47; \\citealp{gw2006}).",
+          "paragraph_sha256": "2b4d54ee6108544adf1087ba4d919bd377303d4c38212e69f3022c685b23f635"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 345,
+          "matched_text": "These are illustrative costs, not observed operating costs",
+          "current_text": "These are illustrative costs, not observed operating costs; Supplement Section S32 gives the normalization, fixed grid and complete-method results.",
+          "paragraph_sha256": "b445692b8d3d7ed68099176574bc44dbe0e99d3773667586f055a88b27d964da"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 382,
+          "matched_text": "Costs illustrate fixed preferences",
+          "current_text": "\\item Costs illustrate fixed preferences; trading returns, funding gains and institutional intervention costs are not measured.",
+          "paragraph_sha256": "fe0900d356e6a46bb891148d283277417511cac649ddecd0ce43a5e64d3404b9"
+        }
+      ],
+      "edit_log_bindings": []
+    },
+    {
+      "id": "D4",
+      "stage": "H5",
+      "status": "H5_ABSTRACT_BASELINE_SELECTION_CLARIFIED_EXECUTABLE_DEFAULT_DISTINCT",
+      "claims": [
+        "C13",
+        "C14",
+        "C22",
+        "C33",
+        "C48"
+      ],
+      "changes": [
+        1
+      ],
+      "action": "摘要29/34明确为better realized historical score；结果继续说明两种历史报告事后较好者不是可执行selector。corrected F、ordinary I/infinite和短rolling reference的定义保持区分。",
+      "remaining": "没有将事后历史赢家转成部署算法，历史胜率只覆盖已执行程序，也不证明所有简单规则可靠。",
+      "role_id": "domain",
+      "role_name": "金融风险与预测领域审稿人（内部模拟）",
+      "original_title": "“历史规则胜出”计数与可执行历史默认要分开",
+      "original_issue": "29/34 的阈值对照使用 corrected 与 ordinary 两种历史报告中事后较好者，不是实时可执行 selector；而主要曲线与推荐默认固定为 corrected F。infinite shrinkage 又只是 ordinary empirical，不能称为已经回到完全相同的历史基准。这些细节直接影响金融读者能否照做。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/2/findings/3",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 140,
+          "label": "corrected-rank 历史 headroom"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 157,
+          "label": "infinite = ordinary empirical"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 278,
+          "label": "29/34 用两历史规则较佳 realised score"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 366,
+          "label": "ordinary 最大恶化 36.5%"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 18,
+          "matched_text": "the better realized historical score wins 29 of 34 CFTC cases",
+          "current_text": "\\begin{abstract}Dealers monitor the largest absolute position reached before a review horizon ends. We compare conditional quantile models with historical rules on hourly foreign exchange (FX) positions, weekly New York Fed positions and Commodity Futures Trading Commission (CFTC) dealer positions, matching histories and update schedules. Historical rules are hard to beat. First, FX regression lowers matched loss by 14.8\\% and 16.6\\% in two periods, but its ranking against a shorter rolling rule changes. Second, in the initial weekly comparisons, historical headroom beats full regression in 34 of 48 New York Fed cases; the better realized historical score wins 29 of 34 CFTC cases. Longer validation improves full regression medians in both reporting systems; CFTC short-history excess falls from 19.3\\% to 4.0\\%. A benchmark-default gate retains FX gains and improves weekly median performance, but leaves large individual losses. Third, lower scores need not mean lower limit costs: higher reserve charges and lower fixed breach charges generally favor regression in CFTC. Costs are illustrative, and the evidence is retrospective; the original FX evaluation period had been inspected beforehand.\\end{abstract}",
+          "paragraph_sha256": "bd4f6ac47dc91173389d0b0d466de97bfea5c88452fb21607e2564f7aea5d9ba"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 280,
+          "matched_text": "rather than an executable selector",
+          "current_text": "The independent reporting system gives a similar overall ranking: a historical headroom rule has lower loss in 29 of 34 contract/history comparisons. This meets the pre-specified 60\\% threshold, using the better realized score of corrected and ordinary empirical historical reports rather than an executable selector. Corrected historical headroom remains the fixed matched reference, with the ordinary empirical version reported separately. Both full-regression medians exceed the pre-specified ten-percent tolerance, whereas four-feature regression moves closer to history with the longer window. These comparisons extend the benchmark pattern to a separate reporting system while retaining substantial contract-level variation (Table~\\ref{tab:v10-cftc-contracts}; Figure~\\ref{fig:v10-cftc}).",
+          "paragraph_sha256": "17618562170195b54115e8adca1fce1e5872ed6a08954d795179fc13c35b2f1b"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 159,
+          "matched_text": "The infinite-penalty candidate fixes zero slopes",
+          "current_text": "Reports are \\(B_t+s\\max\\{0,\\hat a+x_t^\\top\\hat b\\}\\). The infinite-penalty candidate fixes zero slopes and chooses the lower ordinary empirical headroom quantile, also fixing the choice when intercept minimizers are nonunique.",
+          "paragraph_sha256": "a7667e30b938addeefd516cc5afa0c887e4a684984054384ebb875445bfce3af"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/1",
+          "before": "Second, in the initial weekly comparisons, historical rules beat regression in 34 of 48 New York Fed and 29 of 34 CFTC cases.",
+          "after": "Second, in the initial weekly comparisons, historical headroom beats full regression in 34 of 48 New York Fed cases; the better realized historical score wins 29 of 34 CFTC cases.",
+          "reason": "C33: disclose the descriptive best-realized historical comparison, not an executable selector; C38: specify full regression."
+        }
+      ]
+    },
+    {
+      "id": "D5",
+      "stage": "H5",
+      "status": "H5_TRANSPORT_SCOPE_CLARIFIED_PARTIAL_AND_UNTESTABLE_RETAINED",
+      "claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "changes": [
+        16,
+        17,
+        21
+      ],
+      "action": "历史曲线/菜单关联限定tested configurations，移除一般sufficient-history推断；主文补出full高区间不可测，S39全反例、固定分母和partial verdict保留。",
+      "remaining": "QR4 P2 10/17未达60%、P3 6/17未达70%、QR33 planned0不可检验均未改；不能确定一般金融充分历史长度或因果机制。",
+      "role_id": "domain",
+      "role_name": "金融风险与预测领域审稿人（内部模拟）",
+      "original_title": "历史长度扩展只支持部分运输，不能给一般“足够历史”门槛",
+      "original_issue": "WP2 低历史结果支持既定不利屏，但主要来自此前已知 W52/W260；唯一新 W520 在 QR4 上仅 10/17 获胜，严格递减仅 6/17，QR33 高区间计划格数为 0 而不可检验。不能由部分支持推论更多金融历史最终必胜，或证实样本/维度阈值的估计成本机制。",
+      "original_review_source": {
+        "path": "notes/submission/h5-review-draft.json",
+        "json_pointer": "/roles/2/findings/4",
+        "source_sha256": "5bdc1f71417830eded5e5126efa989b4e05064daea1845c2c44f365d6990b57d",
+        "historical_snapshot": true
+      },
+      "original_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 238,
+          "label": "FX history learning curve"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 246,
+          "label": "WP2 partial support"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 15,
+          "label": "低历史 QR4 15/17"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 19,
+          "label": "高历史 QR4 10/17 未达 60%"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 21,
+          "label": "Full P2 not testable"
+        },
+        {
+          "path": "submission-final/generated/submission-wp2.tex",
+          "line": 23,
+          "label": "P3 6/17 未达 70%"
+        },
+        {
+          "path": "notes/submission/prediction-register.md",
+          "line": 45,
+          "label": "Full P2 planned=0"
+        }
+      ],
+      "current_anchors": [
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 240,
+          "matched_text": "Within the tested configurations",
+          "current_text": "The fixed-period, short-horizon learning curve shows that more history helps only over part of the tested range (Figure~\\ref{fig:v11-history}). Full regression moves from higher loss at the shortest history to its largest matched gain at an intermediate history. The gain is smaller at the longest history, while the four-feature curve changes sign within the tested range. Both curves use the original FX period and their original penalty menus; regression is compared with its own matched historical reference at each history length. Supplement Section S35 retains the full contrasts and synthetic confirmation summary. Within the tested configurations, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "paragraph_sha256": "1a090e8b7f26a4e2e2bcbfd066dcc304b5c15bb49797867ef4dbbe5733620cb2"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 248,
+          "matched_text": "Full regression has no prewritten high-region cell",
+          "current_text": "A fixed extension, committed locally before calculation and uploaded publicly afterward, examines the short-history pattern across 17 CFTC aggregate dealer-position markets. Its fixed horizon is six weeks. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both prewritten low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\\%) fall below the fixed 60\\% rule; strict improvement over all three windows holds in only 6 of 17 markets. Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.",
+          "paragraph_sha256": "87e325b9211d0e02d51bc7231b4766d0bcea15c35a151a35366e41131abf49a8"
+        },
+        {
+          "path": "submission-final/manuscript.tex",
+          "line": 248,
+          "matched_text": "The primary verdict is therefore partial support.",
+          "current_text": "A fixed extension, committed locally before calculation and uploaded publicly afterward, examines the short-history pattern across 17 CFTC aggregate dealer-position markets. Its fixed horizon is six weeks. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both prewritten low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\\%) fall below the fixed 60\\% rule; strict improvement over all three windows holds in only 6 of 17 markets. Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.",
+          "paragraph_sha256": "87e325b9211d0e02d51bc7231b4766d0bcea15c35a151a35366e41131abf49a8"
+        }
+      ],
+      "edit_log_bindings": [
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/16",
+          "before": "Together, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "after": "Within the tested configurations, the history and menu comparisons link conditional gains to history length and the availability of strong shrinkage.",
+          "reason": "C25: restrict the learning-curve/menu interpretation to the tested configurations."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/17",
+          "before": "The primary verdict is therefore partial support.",
+          "after": "Full regression has no prewritten high-region cell, leaving its high-history screen untestable. The primary verdict is therefore partial support.",
+          "reason": "C27: make the missing QR33 high-region screen explicit in the main paragraph."
+        },
+        {
+          "path": "notes/submission/h5-edit-log.json",
+          "json_pointer": "/changes/21",
+          "before": "The simulation menu comparison also brings short-history regression closer to history, linking useful conditional reports to sufficient history, validation evidence and adequate shrinkage.",
+          "after": "The simulation menu comparison also brings short-history regression closer to history, linking these outcomes to the tested histories, validation windows and shrinkage menus.",
+          "reason": "C25/C35: avoid a universal sufficient-history or causal interpretation."
+        }
+      ]
+    }
+  ],
+  "meaning_of_addressed": "写作主张已纠正或现有边界已明确保留；不表示数据、首发时点、前瞻、独立复制、风险映射、真实成本或因果识别限制被消除。",
+  "h4_corrected_items": [
+    "E1 benchmark-default heading",
+    "E2 local before/public after and prewritten screens",
+    "M4 required numerical fits / G1 compatibility failure"
+  ],
+  "h5_resolved_P2_claims": [
+    "C19",
+    "C25",
+    "C27",
+    "C33",
+    "C35",
+    "C38"
+  ],
+  "retained_material_limits": [
+    "G3.R2 NOT_SUPPORTED:8/60 adverse, worst+80.9839698693%, R1/R3 success cannot override.",
+    "F3 original Q1/Q2 UNDETERMINED; G1 compatibility FAIL6/10 leaves three original cells unavailable, not an observed economic defeat.",
+    "WP2 overall partial, QR4 P2/P3 not supported, QR33 P2 planned0/not testable; local prior and public after run, not external preregistration.",
+    "QR4 validation failures/undetermined and H6 failed median screen retained; arm medians not paired-change medians, endpoint confounding retained.",
+    "Raw FX rights, absent original panel input and historical Git-object requirements constrain independent financial replay.",
+    "Gross portfolio/hedging/economic capital not identified.",
+    "No new full-text review or method comparison beyond three official abstracts."
+  ],
+  "scope": "Only refreshed claim-map.md/.json and created h5-review-response.md/.json; no canonical/science/package edits, old numerical rereads, fit, financial calculation, commit, external model or subagent."
+}

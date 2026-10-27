@@ -1,0 +1,65 @@
+$ python3 -B notes/asmbi-final-20261027/run_R8_tests.py
+[stdout]
+{
+  "command": [
+    "/Users/bingyouli/.local/bin/uv",
+    "run",
+    "--offline",
+    "--no-project",
+    "--no-env-file",
+    "--python",
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "--with",
+    "arch==8.0.0",
+    "--with",
+    "numpy==2.3.5",
+    "--with",
+    "scikit-learn==1.9.1",
+    "--with",
+    "pytest==9.1.1",
+    "--with",
+    "matplotlib==3.11.2",
+    "--with",
+    "pypdf",
+    "--with",
+    "pillow",
+    "--with",
+    "cvxpy==1.9.3",
+    "--with",
+    "clarabel==0.11.1",
+    "python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "NUMBA_NUM_THREADS": "1"
+  },
+  "started_utc": "2026-10-27T09:30:13.896420+00:00",
+  "ended_utc": "2026-10-27T09:30:14.010173+00:00",
+  "seconds": 0.11362620899999999,
+  "returncode": 1,
+  "log": "notes/asmbi-final-20261027/R8-pytest-console.txt",
+  "sha256": "116459997b85d86c251cedbaf0b38be7c2d6564ce141c112ba2314b74b28e20d",
+  "tail": [
+    "WARN `--no-project` was provided, but no project was found",
+    "  \u00d7 No solution found when resolving `--with` dependencies:",
+    "  \u2570\u2500\u25b6 Because arch was not found in the cache and you require arch==8.0.0, we",
+    "      can conclude that your requirements are unsatisfiable.",
+    "",
+    "hint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache."
+  ]
+}
+
+[stderr]
+
+[exit] 1

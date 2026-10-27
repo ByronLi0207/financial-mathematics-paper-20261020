@@ -1,0 +1,18 @@
+WARN `--no-project` was provided, but no project was found
+.................F.                                                      [100%]
+=================================== FAILURES ===================================
+____________ test_nonfinite_eigendecomposition_remains_json_safe_na ____________
+
+    def test_nonfinite_eigendecomposition_remains_json_safe_na():
+        # Catches storing inf eigen diagnostics after a finite huge covariance input.
+        result=api()._reference(np.ones(3),np.full((3,3),1e308),n=6,df=3,bandwidth=2)
+>       assert result['status']=='NONFINITE_EIGENVALUES'
+E       AssertionError: assert 'RANK_DEFICIENT_COVARIANCE' == 'NONFINITE_EIGENVALUES'
+E         
+E         - NONFINITE_EIGENVALUES
+E         + RANK_DEFICIENT_COVARIANCE
+
+test_v6_states.py:224: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_states.py::test_nonfinite_eigendecomposition_remains_json_safe_na
+1 failed, 18 passed in 0.23s

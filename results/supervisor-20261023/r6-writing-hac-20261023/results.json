@@ -1,0 +1,143 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-24T00:11:06.691724+00:00",
+  "scope": "Post-result descriptive, nonconfirmatory paired unconditional HAC comparisons of two fixed references for the same retrospective conditional QR report. The original-three-menu validation selected lambda 0.01, also selected by R0 in this group. These are QR-versus-F comparisons, not R2 results. The R6 rules followed earlier inspected results; the bounded repository audit found no prior evaluation role for these earlier origins, but the raw history was familiar. These p-values are a later writing-stage readback and do not account for the whole selection and inspection process or supply confirmatory error control, prospective validation, or external replication.",
+  "experiment_or_refit": false,
+  "labels_or_source_data_loaded": false,
+  "candidate_reselection": false,
+  "comparison_count": 2,
+  "input_identities": [
+    {
+      "path": "results/supervisor-20261023/r6/private-archive-manifest.json",
+      "bytes": 4703088,
+      "sha256": "926747a8d140b78112bf00793f1c42a2c4914883e93401d1c14fb265d5af9b9e"
+    },
+    {
+      "path": "results/supervisor-20261023/r6/retro-seal.json",
+      "bytes": 1707550,
+      "sha256": "bf20128698618ce7d843d3a8069ac776ef20ced85a5f2e9540f1865141599638"
+    },
+    {
+      "path": "results/supervisor-20261023/r6/verification.json",
+      "bytes": 5002,
+      "sha256": "83522d3577274486cded6449bbb36ae3475051f24bb804f85ddc7860bbef1862"
+    },
+    {
+      "path": "inference_tests.py",
+      "bytes": 7369,
+      "sha256": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c"
+    },
+    {
+      "path": ".scratch/r6-20261023/run/retro/retro-fx_hourly-h6-w2880/0.01-8999-10438-w2880-d24.npz",
+      "bytes": 48255,
+      "sha256": "c29e6a17459cf59f0af04bba839cc5711d06c9b0b4ac31ddbdbcfc7cb8c0d831"
+    },
+    {
+      "path": ".scratch/r6-20261023/run/retro/retro-fx_hourly-h6-w2880/F-8999-10438-w2880-d24.npz",
+      "bytes": 39107,
+      "sha256": "1d2f318eebe1f34c1aced3016e431d10e88889fba6615231565db7e8f2e9a65c"
+    },
+    {
+      "path": ".scratch/r6-20261023/run/retro/retro-fx_hourly-h6-w2880/F-8999-10438-w720-d1.npz",
+      "bytes": 41860,
+      "sha256": "8070df82a33bb635432173f86b6cec02142875947836df85ec26e0e197e9c518"
+    },
+    {
+      "path": ".scratch/r6-20261023/run/retro/retro-fx_hourly-h6-w2880/selection-before-evaluation.json",
+      "bytes": 15485,
+      "sha256": "ff33414a245e93b36f93dcbc2b20cd3fafcb8c66b16f160f3c9e6e0ca9d892bf"
+    },
+    {
+      "path": "results/supervisor-20261023/r6/primary-replication.csv",
+      "bytes": 855,
+      "sha256": "6bb428de35651ac0010b21ebf119c2b5cbec7853836fea9a2ca69d592ba7c0f3"
+    },
+    {
+      "path": "results/supervisor-20261023/r6/summary.csv",
+      "bytes": 140351,
+      "sha256": "2b65b80ed7e0b74948455b61e58e825165ab23cc81cde6615de29a3c7d6be82d"
+    }
+  ],
+  "code_identity": {
+    "path": "supervisor_r6_hac_readback.py",
+    "bytes": 13379,
+    "sha256": "fb50d0084eaf98dda3fe331b1eced2865b1dca911995431172684b4007c11a23"
+  },
+  "method": {
+    "function": "inference_tests.dm_test",
+    "bandwidth_function": "inference_tests.bandwidth",
+    "difference": "saved QR pinball loss minus saved F pinball loss",
+    "bandwidth": "max(H,floor(4*(n/100)**(2/9)))",
+    "n": 1440,
+    "H": 6,
+    "L": 7,
+    "reference_distribution": "two-sided standard normal",
+    "estimator": "Bartlett Newey-West, centered covariance divided by n",
+    "negative_or_zero_LRV": "Retain raw LRV and undefined statistic/p; no fabricated zero p-value",
+    "additional_sensitivities_reported": false
+  },
+  "comparisons": [
+    {
+      "comparison": "matched_frozen_F2880_d24",
+      "phase": "retro",
+      "source": "fx_hourly",
+      "horizon": 6,
+      "conditional_report": "QR_original_three_menu_also_R0_NOT_R2",
+      "selected_lambda": "0.01",
+      "QR_window": 2880,
+      "QR_refit_step": 24,
+      "F_window": 2880,
+      "F_refit_step": 24,
+      "n": 1440,
+      "H": 6,
+      "L": 7,
+      "origin_first": 8999,
+      "origin_last": 10438,
+      "exact_shared_origins": true,
+      "QR_mean_loss": 286562.4725431636,
+      "F_mean_loss": 343697.20137447916,
+      "mean_loss_difference_QR_minus_F": -57134.728831315566,
+      "ratio_change_percent": -16.62356533682211,
+      "raw_LRV": 269258499037.02097,
+      "HAC_statistic": -4.178271978163359,
+      "two_sided_normal_HAC_p": 2.937322779608827e-05,
+      "status": "OK",
+      "reference_distribution": "standard_normal_two_sided",
+      "covariance": "Bartlett_Newey_West_divisor_n",
+      "multiplicity_adjustment": "none_descriptive_only",
+      "QR_trace_sha256": "c29e6a17459cf59f0af04bba839cc5711d06c9b0b4ac31ddbdbcfc7cb8c0d831",
+      "F_trace_sha256": "1d2f318eebe1f34c1aced3016e431d10e88889fba6615231565db7e8f2e9a65c"
+    },
+    {
+      "comparison": "original_primary_rolling_F720_d1",
+      "phase": "retro",
+      "source": "fx_hourly",
+      "horizon": 6,
+      "conditional_report": "QR_original_three_menu_also_R0_NOT_R2",
+      "selected_lambda": "0.01",
+      "QR_window": 2880,
+      "QR_refit_step": 24,
+      "F_window": 720,
+      "F_refit_step": 1,
+      "n": 1440,
+      "H": 6,
+      "L": 7,
+      "origin_first": 8999,
+      "origin_last": 10438,
+      "exact_shared_origins": true,
+      "QR_mean_loss": 286562.4725431636,
+      "F_mean_loss": 277762.40801736113,
+      "mean_loss_difference_QR_minus_F": 8800.064525802492,
+      "ratio_change_percent": 3.1681985293173343,
+      "raw_LRV": 352089975496.09106,
+      "HAC_statistic": 0.5627820958725974,
+      "two_sided_normal_HAC_p": 0.5735832734537913,
+      "status": "OK",
+      "reference_distribution": "standard_normal_two_sided",
+      "covariance": "Bartlett_Newey_West_divisor_n",
+      "multiplicity_adjustment": "none_descriptive_only",
+      "QR_trace_sha256": "c29e6a17459cf59f0af04bba839cc5711d06c9b0b4ac31ddbdbcfc7cb8c0d831",
+      "F_trace_sha256": "8070df82a33bb635432173f86b6cec02142875947836df85ec26e0e197e9c518"
+    }
+  ]
+}

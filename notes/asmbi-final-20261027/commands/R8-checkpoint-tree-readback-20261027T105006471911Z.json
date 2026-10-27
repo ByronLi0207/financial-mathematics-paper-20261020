@@ -1,0 +1,15 @@
+{
+  "step": "R8",
+  "label": "checkpoint-tree-readback",
+  "command": [
+    "python3",
+    "-c",
+    "import json,subprocess,pathlib; files=[x.decode() for x in subprocess.check_output([\"git\",\"diff-tree\",\"--no-commit-id\",\"--name-only\",\"-r\",\"-z\",\"HEAD\"]).split(b\"\\0\") if x]; bad=[p for p in files if p.startswith((\"data/\",\"results/\",\"protocol/\")) or pathlib.Path(p).name.startswith(\"test_\") or \".scratch\" in pathlib.Path(p).parts or \".bak\" in pathlib.Path(p).name]; assert not bad,bad; print(json.dumps({\"branch\":subprocess.check_output([\"git\",\"branch\",\"--show-current\"],text=True).strip(),\"local_checkpoint\":subprocess.check_output([\"git\",\"rev-parse\",\"HEAD\"],text=True).strip(),\"changed_paths\":len(files),\"forbidden_paths\":bad,\"publication\":\"NOT_STARTED_R8_BLOCKED\",\"cleanup\":\"NOT_STARTED_R8_BLOCKED\"},indent=2))"
+  ],
+  "started_utc": "2026-10-27T10:50:06.471911+00:00",
+  "ended_utc": "2026-10-27T10:50:06.534783+00:00",
+  "seconds": 0.062872,
+  "returncode": 0,
+  "stdout": "{\n  \"branch\": \"submission-final\",\n  \"local_checkpoint\": \"99e0c16929dabcba8104bc71e89b3a1be391cafa\",\n  \"changed_paths\": 522,\n  \"forbidden_paths\": [],\n  \"publication\": \"NOT_STARTED_R8_BLOCKED\",\n  \"cleanup\": \"NOT_STARTED_R8_BLOCKED\"\n}\n",
+  "stderr": ""
+}

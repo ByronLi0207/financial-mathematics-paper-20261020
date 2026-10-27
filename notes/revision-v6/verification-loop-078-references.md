@@ -1,0 +1,13 @@
+# Loop78 — original references, editions and access boundaries
+
+Seed2026102378 froze38eligiblecurrentreferenceIDs beforelookup, excludingonlyprevious3drawfrom41uniqueIDs. SelectedFR2004framework,Gibbs/Candes2021,Sussman2023. Prior-exposedmetadataaudit, notblinded/fullpaperreading.
+
+FR2004: officialBoardframeworkheader andhistoricalindexlabelmatchGovernmentSecuritiesDealersReports andMarch2013exactattachment; the2013coverdoesnotitselfshowthatdateinparsedfirstlines. ItsTOC locatesFR2004A atprinted13. Theexactcurrentlylinked56pageinstructionscoverstatesEffectiveJuly2024, whiletheA-1componentfooterdatesJanuary2022. Thesearecompilationversuscomponentdates, notacitationconflict. No42/56pagefullread. SourcesandGUIDs retained inpairedJSON. Aseparateboundedurllibbytefetchfailed403(return1)beforeanyPDFbytehash, noretry; thatfailureisnotrewrittenasanaccesssuccess. Webtoolparsedcover/TOCaccessisaseparateobservation; no rawlocalPDFidentityclaim.
+
+Gibbs/Candes: officialproceedingslandingconfirms exacttitle/authors,NeurIPS2021/volume34. WebBibtexclickgaveinternalerror. TheactualoriginalHTMLhrefwasthenreadthroughboundedurllib, andthatobservedofficialBibtexrecordconfirms1660–1672/year2021/volume34. Actualrecordinverification-loop-078-gibbs-bibtex-readback.json. Thisismetadataonly,notfullpaperorcanonicaltheoremapplicationverification. Source: https://papers.nips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html .
+
+Sussman: originalpublisherheader/locatorconfirms exacttitle,EthanSussman,AnnalsFunctionalAnalysis14article22,3January2023,Prop3.4label. No newprooforfinancial-premisevalidation. Source: https://link.springer.com/article/10.1007/s43034-022-00225-1 .
+
+No establishedcitationconflict, source/manuscript/referenceedit, newfinancialanalysis/statistic/count/model/proof/test, raw/privatevector,UI/Claude,installationordelete. PDF/bibbyteswerenotpublished; onlyboundedmetadata/shortoriginalBibtexrecordandfailureevidence retained. Exactstartofseparate403attemptnotcaptured; observationrecordedtimeisnotitsstart. Goalactive to00:31:50UTC.
+
+Finished 2026-10-23T23:24:06.146522+00:00

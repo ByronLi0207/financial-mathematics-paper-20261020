@@ -1,0 +1,100 @@
+{
+  "round": 9,
+  "task": "Trace five random existing main coverage-table p-value cells to the archived script-output CSV; no diagnostic recomputation or new analysis",
+  "seed": 2026102309,
+  "sampling_frame": "28 existing p-value cells from main Table5, four diagnostic columns across seven named reports",
+  "started_utc": "2026-10-23T21:15:21.533808+00:00",
+  "ended_utc": "2026-10-23T21:15:21.536263+00:00",
+  "source_file": "results/revision-20261023/inference/coverage.csv",
+  "source_sha256": "58db76faaeb3250f66bbc90ab0be3f87f674e2022e3374961f73a27a935a2419",
+  "source_selector_definition": "v3_additions.py augment labels lines23–27; old archived mixed CC convention, not new v6 CC",
+  "records": [
+    {
+      "main_table": 5,
+      "row": "FX QR H6",
+      "column": "POF p",
+      "selector": {
+        "source": "fx_hourly",
+        "horizon": 6,
+        "window": 2880,
+        "method": "QR"
+      },
+      "raw_field": "pof_p",
+      "raw_value": "0.6952768918173253",
+      "format": ".3g",
+      "expected": "0.695",
+      "displayed": "0.695",
+      "equal": true
+    },
+    {
+      "main_table": 5,
+      "row": "FX QR H24",
+      "column": "CC p",
+      "selector": {
+        "source": "fx_hourly",
+        "horizon": 24,
+        "window": 2880,
+        "method": "QR"
+      },
+      "raw_field": "cc_p",
+      "raw_value": "0.02990719436707465",
+      "format": ".3g",
+      "expected": "0.0299",
+      "displayed": "0.0299",
+      "equal": true
+    },
+    {
+      "main_table": 5,
+      "row": "FX legacy S H24",
+      "column": "Ind p",
+      "selector": {
+        "source": "fx_hourly",
+        "horizon": 24,
+        "window": 720,
+        "method": "rolling_S"
+      },
+      "raw_field": "ind_p",
+      "raw_value": "0.045394000613665185",
+      "format": ".3g",
+      "expected": "0.0454",
+      "displayed": "0.0454",
+      "equal": true
+    },
+    {
+      "main_table": 5,
+      "row": "FX matched F H6",
+      "column": "Ind p",
+      "selector": {
+        "source": "fx_hourly",
+        "horizon": 6,
+        "window": 2880,
+        "method": "frozen_F"
+      },
+      "raw_field": "ind_p",
+      "raw_value": "0.3678915415986063",
+      "format": ".3g",
+      "expected": "0.368",
+      "displayed": "0.368",
+      "equal": true
+    },
+    {
+      "main_table": 5,
+      "row": "FX QR H24",
+      "column": "Ind p",
+      "selector": {
+        "source": "fx_hourly",
+        "horizon": 24,
+        "window": 2880,
+        "method": "QR"
+      },
+      "raw_field": "ind_p",
+      "raw_value": "0.08661423917492746",
+      "format": ".3g",
+      "expected": "0.0866",
+      "displayed": "0.0866",
+      "equal": true
+    }
+  ],
+  "status": "PASS",
+  "inference_limit": "Correct transcription/formatting is not reference-distribution validity, selection-adjusted inference or population coverage certification."
+}

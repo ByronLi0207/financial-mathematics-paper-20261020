@@ -1,0 +1,615 @@
+{
+  "title": "CFTC TFF official source verification before E2 data access",
+  "prepared_at_utc": "2026-10-24T22:08:17Z",
+  "scope": "Official HTML, variable descriptions, explanatory notes and historical link index only; no dataset access or empirical analysis.",
+  "source_domain_allowlist": [
+    "www.cftc.gov",
+    "official CFTC subdomains only"
+  ],
+  "dataset_access_authorized_in_this_task": false,
+  "dataset_requests_made": 0,
+  "dataset_downloads_made": 0,
+  "actual_dataset_headers_verified": false,
+  "real_data_statistics_computed": false,
+  "writes_limited_to": [
+    "notes/v10/cftc-source-verification.md",
+    "notes/v10/cftc-source-verification.json"
+  ],
+  "design_or_thresholds_frozen_by_this_record": false,
+  "design_context_from_parent": "Futures Only is intended for E2; root will separately freeze exact source selection. Candidate coverage is 2010 January onward using official 2006-2016 archive plus 2017-2026 annual files. This record does not select sources or claim coverage.",
+  "cross_model_review_enabled": false,
+  "access_evidence": [
+    {
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm",
+      "access_date_utc": "2026-10-24",
+      "method": "Python urllib.request.urlopen default GET of official HTML index only",
+      "result": "HTTP Error 403: Forbidden",
+      "dataset_url_requested": false
+    },
+    {
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm",
+      "access_date_utc": "2026-10-24",
+      "method": "normal in-app browser (IAB) page display and read-only DOM href access",
+      "result": "Historical Compressed page displayed, annual/archive links read; no ZIP click or navigation",
+      "dataset_url_requested": false
+    },
+    {
+      "method": "web search/open/find",
+      "result": "Official descriptions and notices readable; search result snippets are not proof of archive contents",
+      "dataset_url_requested": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "history_index",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm",
+      "kind": "official_html_index",
+      "checked_via": [
+        "web_open",
+        "iab_rendered_page_and_read_only_anchor_attributes"
+      ],
+      "facts": [
+        "TFF Futures Only and Combined annual links 2010 through 2026 are listed.",
+        "2010 link label is Starting July 20, 2010.",
+        "A separate 2006-2016 archive is listed for each report type."
+      ],
+      "limit": "Links only; no archive requested or opened; no content or download completeness assertion.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "tff_fields",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalViewable/cotvariablestfm.html",
+      "kind": "official_html_field_description",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "Official static TFF variable-name description."
+      ],
+      "limit": "Actual archive headers and field values were not inspected; legacy field naming may differ from an eventual file header.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "tff_explanatory_notes",
+      "url": "https://www.cftc.gov/idc/groups/public/%40commitmentsoftraders/documents/file/tfmexplanatorynotes.pdf",
+      "kind": "official_explanatory_document_not_dataset",
+      "checked_via": [
+        "web_open_document_text"
+      ],
+      "facts": [
+        "Four reportable trader categories include Dealer/Intermediary.",
+        "Residual long/short and spreading are separately reported.",
+        "Historical classifications use backcasting; accuracy weakens further back.",
+        "Classification can change; trader counts can overlap positions and counts below four are suppressed."
+      ],
+      "limit": "Explanatory document only; no real position data opened.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "cot_main_faq",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "kind": "official_html_description_and_faq",
+      "checked_via": [
+        "web_open",
+        "web_find"
+      ],
+      "facts": [
+        "Generally Tuesday positions, Friday release.",
+        "Market may be dropped below 20 reportable large traders and added again at 20.",
+        "Individual trader classifications are not published.",
+        "FAQ says no complete list of historical release dates, only approximately 13 months of release dates on site.",
+        "FAQ says historical data is not updated once published."
+      ],
+      "limit": "Current FAQ does not supply a complete historical release calendar or individual dealer identities.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "cot_explanatory_notes",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ExplanatoryNotes/index.htm",
+      "kind": "official_html_methodology",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "Aggregate market long open interest equals aggregate short open interest.",
+        "Combined report uses exchange delta factors to convert options to futures-equivalent positions.",
+        "Percent-of-open-interest denominators differ between Futures Only and Combined."
+      ],
+      "limit": "Does not turn contract counts into comparable dollar risks across markets.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "release_schedule",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm",
+      "kind": "official_html_current_schedule",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "Usually Friday at 15:30 Eastern time, for previous Tuesday.",
+        "Federal holidays may delay releases by one or two days; 2026 dates are listed."
+      ],
+      "limit": "Tentative current schedule is not a full historical availability table.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "special_announcements",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalSpecialAnnouncements/index.htm",
+      "kind": "official_html_notices",
+      "checked_via": [
+        "web_open",
+        "web_find"
+      ],
+      "facts": [
+        "December 2018 notice uses Monday positions for weeks containing Tuesday Christmas and New Year holidays.",
+        "2023 ION incident delayed sequential releases and generated some reporting adjustments.",
+        "May 5, 2023 notice: consolidated S&P 500 (13874+), Nasdaq100 (20974+), DJIA (12460+) reports combine associated e-micro contracts.",
+        "2024 MGEX to MIAX name change is noted."
+      ],
+      "limit": "Contract economic scope and names may change. Archive rows cannot be assumed invariant purely by code or label.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "shutdown_2013",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/6745-13",
+      "kind": "official_html_press_release",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "2013 shutdown delayed publication; the October 23 announcement planned to start catch-up publication on October 25 for a report originally due October 4."
+      ],
+      "limit": "Announced schedule is evidence of interruption, not a receipt for every historical release.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "shutdown_2018_2019",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/7864-19",
+      "kind": "official_html_press_release",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "Publication suspended after December 21, 2018.",
+        "Monday December 24, 2018 data originally scheduled December 28, later expected February 1, 2019."
+      ],
+      "limit": "As-of date and actual publication date can be many weeks apart.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "shutdown_2025_updated",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/9147-25",
+      "kind": "official_html_updated_press_release",
+      "checked_via": [
+        "web_open"
+      ],
+      "facts": [
+        "December 9, 2025 update accelerates backlog schedule, superseding the earlier November 18 planned dates.",
+        "The updated table includes November 10, 2025 Monday report date."
+      ],
+      "limit": "Use updated table rather than the superseded announcement 9138-25 if constructing an override calendar.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    },
+    {
+      "id": "web_policy",
+      "url": "https://www.cftc.gov/WebPolicy/index.htm",
+      "kind": "official_html_rights_policy",
+      "checked_via": [
+        "web_open",
+        "web_find"
+      ],
+      "facts": [
+        "Government information is public domain; CFTC asks for appropriate acknowledgement.",
+        "Third-party contributed/licensed material may have separate copyright."
+      ],
+      "limit": "Public-domain status does not imply endorsement or independent empirical validation.",
+      "access_date_utc": "2026-10-24",
+      "accessed_at_utc": null,
+      "access_time_precision": "day; exact per-request timestamp was not captured"
+    }
+  ],
+  "fields_from_official_static_document": [
+    {
+      "name": "Market_and_Exchange_Names",
+      "position": 1,
+      "role": "market_label"
+    },
+    {
+      "name": "As_of_Date_In_Form_YYMMDD",
+      "position": 2,
+      "role": "position_date"
+    },
+    {
+      "name": "Report_Date_as_MM_DD_YYYY",
+      "position": 3,
+      "role": "position_date_static_document_name"
+    },
+    {
+      "name": "CFTC_Contract_Market_Code",
+      "position": 4,
+      "role": "market_identifier_preserve_as_string"
+    },
+    {
+      "name": "CFTC_Market_Code",
+      "position": 5,
+      "role": "market_code"
+    },
+    {
+      "name": "CFTC_Region_Code",
+      "position": 6,
+      "role": "region_code"
+    },
+    {
+      "name": "CFTC_Commodity_Code",
+      "position": 7,
+      "role": "commodity_code"
+    },
+    {
+      "name": "Open_Interest_All",
+      "position": 8,
+      "role": "market_open_interest"
+    },
+    {
+      "name": "Dealer_Positions_Long_All",
+      "position": 9,
+      "role": "dealer_category_residual_long"
+    },
+    {
+      "name": "Dealer_Positions_Short_All",
+      "position": 10,
+      "role": "dealer_category_residual_short"
+    },
+    {
+      "name": "Dealer_Positions_Spread_All",
+      "position": 11,
+      "role": "dealer_category_spreading"
+    },
+    {
+      "name": "Traders_Tot_All",
+      "position": 59,
+      "role": "total_reportable_trader_count"
+    },
+    {
+      "name": "Traders_Dealer_Long_All",
+      "position": 60,
+      "role": "dealer_long_count_not_individual_identifiers"
+    },
+    {
+      "name": "Traders_Dealer_Short_All",
+      "position": 61,
+      "role": "dealer_short_count_not_individual_identifiers"
+    },
+    {
+      "name": "Traders_Dealer_Spread_All",
+      "position": 62,
+      "role": "dealer_spread_count_can_overlap_direction_counts"
+    },
+    {
+      "name": "Contract_Units",
+      "position": 82,
+      "role": "contract_unit_label"
+    },
+    {
+      "name": "CFTC_Contract_Market_Code_Quotes",
+      "position": 83,
+      "role": "quoted_contract_code"
+    },
+    {
+      "name": "FutOnly_or_Combined",
+      "position": 87,
+      "role": "report_type_marker_actual_values_not_inspected"
+    }
+  ],
+  "derived_quantity": {
+    "name": "dealer_category_net_contracts",
+    "formula": "Dealer_Positions_Long_All - Dealer_Positions_Short_All",
+    "is_official_raw_column": false,
+    "meaning": "market-level aggregate dealer-category net futures position; spreading cancels in the directional difference",
+    "unit": "contracts for Futures Only; units must be audited using Contract_Units",
+    "computed_on_real_data": false
+  },
+  "annual_links_verified_as_index_anchors": [
+    {
+      "year": 2010,
+      "official_index_label": "Starting July 20, 2010",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2010.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2010.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2010.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2010.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2011,
+      "official_index_label": "2011",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2011.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2011.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2011.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2011.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2012,
+      "official_index_label": "2012",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2012.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2012.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2012.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2012.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2013,
+      "official_index_label": "2013",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2013.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2013.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2013.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2013.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2014,
+      "official_index_label": "2014",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2014.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2014.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2014.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2014.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2015,
+      "official_index_label": "2015",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2015.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2015.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2015.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2015.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2016,
+      "official_index_label": "2016",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2016.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2016.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2016.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2016.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2017,
+      "official_index_label": "2017",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2017.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2017.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2017.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2017.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2018,
+      "official_index_label": "2018",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2018.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2018.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2018.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2018.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2019,
+      "official_index_label": "2019",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2019.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2019.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2019.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2019.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2020,
+      "official_index_label": "2020",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2020.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2020.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2020.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2020.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2021,
+      "official_index_label": "2021",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2021.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2021.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2021.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2021.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2022,
+      "official_index_label": "2022",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2022.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2022.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2022.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2022.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2023,
+      "official_index_label": "2023",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2023.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2023.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2023.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2023.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2024,
+      "official_index_label": "2024",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2024.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2024.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2024.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2024.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2025,
+      "official_index_label": "2025",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2025.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2025.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2025.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2025.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "year": 2026,
+      "official_index_label": "2026",
+      "futures_only_text_url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2026.zip",
+      "futures_only_excel_url": "https://www.cftc.gov/files/dea/history/fut_fin_xls_2026.zip",
+      "combined_text_url": "https://www.cftc.gov/files/dea/history/com_fin_txt_2026.zip",
+      "combined_excel_url": "https://www.cftc.gov/files/dea/history/com_fin_xls_2026.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    }
+  ],
+  "historical_archives_verified_as_index_anchors": [
+    {
+      "label": "2006-2016",
+      "report_type": "futures_only",
+      "format": "txt",
+      "url": "https://www.cftc.gov/files/dea/history/fin_fut_txt_2006_2016.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "label": "2006-2016",
+      "report_type": "futures_only",
+      "format": "xls",
+      "url": "https://www.cftc.gov/files/dea/history/fin_fut_xls_2006_2016.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "label": "2006-2016",
+      "report_type": "combined",
+      "format": "txt",
+      "url": "https://www.cftc.gov/files/dea/history/fin_com_txt_2006_2016.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    },
+    {
+      "label": "2006-2016",
+      "report_type": "combined",
+      "format": "xls",
+      "url": "https://www.cftc.gov/files/dea/history/fin_com_xls_2006_2016.zip",
+      "evidence": "read-only href extraction from official rendered index",
+      "requested": false,
+      "downloaded": false,
+      "contents_verified": false
+    }
+  ],
+  "full_archive_through_2026_found": false,
+  "limitations": [
+    "TFF is a category aggregate for a contract market and report date, not a panel of named independent dealers.",
+    "Dealer membership, classifications and economic contract scope can change over time.",
+    "May 2023 consolidated equity-index reports include associated e-micro contracts; this can change economic coverage and comparability.",
+    "Contract market code is a useful literal identifier, but the reviewed documentation gives no guarantee that economic meaning is immutable across history. Preserve leading zeros and non-numeric characters.",
+    "2010 annual link label begins July 20; full 2010 coverage has not been verified. Historical archive coverage and backcasting must be documented after authorized access.",
+    "Monday holiday position dates exist; consecutive weekly records cannot be defined as weekday Tuesday plus date difference exactly seven days.",
+    "Position date, release date, and first-vintage availability are different; annual archives do not prove complete historical point-in-time availability.",
+    "Official FAQ says no complete historical release-date list, only approximately thirteen months of release dates.",
+    "Official FAQ says historical data is not updated after publication, while special notices separately describe corrections/reclassifications; preserve download bytes and notice evidence rather than assuming a complete vintage history.",
+    "Futures Only contract counts are not dollar risk, total balance-sheet inventory, or counterparty-level bilateral exposures.",
+    "CFTC reportability threshold of twenty traders does not imply twenty qualifying markets. If fewer than twenty contracts pass the frozen research filters, report all qualifying contracts and the shortfall without relaxing filters.",
+    "Actual archives, headers, report-type marker values, dates, duplicate keys and completeness remain unverified until E2 is independently committed and data access is authorized."
+  ],
+  "calendar_design_considerations_not_frozen": [
+    "Freeze a global expected report-week calendar for the selected interval, separately from individual contract observations.",
+    "Map official as-of dates to report-week slots with documented holiday exceptions; do not silently collapse missing weeks.",
+    "Separate government shutdown or ION publication delays from genuinely missing position-week records.",
+    "If modeling availability, separately specify and audit release-date overrides and unresolved historical availability; do not label position-date analysis as a fully verified point-in-time release backtest."
+  ],
+  "rights": {
+    "source_id": "web_policy",
+    "status": "Government information public domain; acknowledge CFTC; third-party resources can have separate rights.",
+    "recommended_source_manifest_fields": [
+      "source_url",
+      "downloaded_at_utc",
+      "sha256",
+      "file_size",
+      "report_type",
+      "official_index_url",
+      "source_note"
+    ],
+    "dataset_download_manifest_created": false
+  },
+  "nyfed_comparison_boundary": "This task consulted no non-CFTC sources. The CFTC measure is a futures-contract category aggregate, not a matched NYFed dealer sample. NYFed units/universe must be supported separately by its owning source."
+}

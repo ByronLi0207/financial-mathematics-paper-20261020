@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{article}
+% Official ASMBI Free Format initial-submission route. This is explicitly
+% distinct from an NJDv5 typeset PDF; the original NJDv5 sources accompany it.
+\usepackage[margin=20mm]{geometry}
+% XeTeX uses the cached default Computer Modern fonts. Loading T1 here
+% would select uncached Latin Modern Type1 metrics/physical fonts.
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,longtable,placeins}
+\usepackage[numbers,super,sort&compress]{natbib}
+\usepackage{caption}
+\usepackage[unicode,breaklinks=true,hidelinks]{hyperref}
+\bibliographystyle{WileyNJD-AMA}
+% Four font files come from the downloaded official Wiley template. Direct
+% Unicode font declarations avoid uncached Latin Modern optical-size files.
+\DeclareFontFamily{TU}{asmbifree}{}
+\DeclareFontShape{TU}{asmbifree}{m}{n}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-Regular}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{m}{it}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-It}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{bx}{n}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-Bold}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{bx}{it}{<->\UnicodeFontFile{Fonts/MinionPro/MinionPro-BoldIt}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{asmbifree}{b}{n}{<->ssub*asmbifree/bx/n}{}
+\DeclareFontShape{TU}{asmbifree}{b}{it}{<->ssub*asmbifree/bx/it}{}
+\DeclareFontShape{TU}{asmbifree}{m}{sl}{<->ssub*asmbifree/m/it}{}
+\renewcommand\rmdefault{asmbifree}
+\normalfont
+% The template's natbib file expects an NJD section command. Free Format
+% supplies the ordinary article bibliography heading instead.
+\renewcommand\bibsection{\section*{References}}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\clubpenalty=10000\widowpenalty=10000
+\captionsetup{font=small,labelfont=bf}
+\AtBeginDocument{\typeout{ASMBI_BODY_FONT_PT=12}}
+\raggedbottom
+
+\begin{document}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\textbf{Submission to Applied Stochastic Models in Business and Industry}\par
+\textbf{Hard to Beat: Historical Rules versus Conditional Quantile Models for Peak Net-Position Limits}
+
+Dear Editors,
+
+Please consider this manuscript on forecasting the largest absolute dealer position reached during a review period.
+
+The paper connects stochastic forecasting with a practical business decision: setting position limits before the review period ends. Its comparisons across hourly foreign exchange (FX) positions and weekly dealer aggregates fit your journal's applications of stochastic models in finance.
+
+Three findings guide limit validation. Historical rules generally perform well; FX regression benefits from long histories, with gains that depend on the reference. Short training or validation histories favor historical rules in weekly comparisons; longer validation narrows median gaps, leaving large individual losses. Lower forecast scores need not reduce limit costs, since reserve and breach charges can change the preferred rule.
+
+Preprint working versions are publicly available on \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/blob/submission-final/notes/submission/public-versions.md}{GitHub}, as disclosed in the public-version inventory. Code, protocols and aggregate results are available in the \href{https://github.com/ByronLi0207/financial-mathematics-paper-20261020/tree/submission-final}{submission-final repository}; the manuscript explains data access, source terms and excluded inputs.
+
+[TO BE CONFIRMED BY AUTHOR: This manuscript is not under consideration elsewhere, all authors approve submission, and required data permissions have been obtained.]
+
+Sincerely,\par
+[TO BE COMPLETED BY AUTHOR]
+\end{document}

@@ -1,0 +1,29 @@
+test_primary_vector_reproduces_fixed_old_paired_row (test_v6_wp4.WP4Admission.test_primary_vector_reproduces_fixed_old_paired_row) ... FAIL
+test_reference_target_or_paired_direction_change_stops (test_v6_wp4.WP4Admission.test_reference_target_or_paired_direction_change_stops) ... FAIL
+
+======================================================================
+FAIL: test_primary_vector_reproduces_fixed_old_paired_row (test_v6_wp4.WP4Admission.test_primary_vector_reproduces_fixed_old_paired_row)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp4.py", line 19, in test_primary_vector_reproduces_fixed_old_paired_row
+    q,r,row,d=self.fixture();got=self.api().admit_primary(q,r,row)
+                                 ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp4.py", line 7, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_wp4'),'WP4 primary admission API missing')
+AssertionError: unexpectedly None : WP4 primary admission API missing
+
+======================================================================
+FAIL: test_reference_target_or_paired_direction_change_stops (test_v6_wp4.WP4Admission.test_reference_target_or_paired_direction_change_stops)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp4.py", line 23, in test_reference_target_or_paired_direction_change_stops
+    with self.assertRaises(ValueError):self.api().admit_primary(q,r,row)
+                                       ^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/test_v6_wp4.py", line 7, in api
+    self.assertIsNotNone(importlib.util.find_spec('v6_wp4'),'WP4 primary admission API missing')
+AssertionError: unexpectedly None : WP4 primary admission API missing
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)

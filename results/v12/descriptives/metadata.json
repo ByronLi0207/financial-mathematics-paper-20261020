@@ -1,0 +1,2341 @@
+{
+  "created_utc": "2026-10-25T12:15:20.881414+00:00",
+  "F3_gate": {
+    "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v12/tau/runtime.json",
+    "sha256": "f83585a5d65b92b353e39ccc11e567be1f41839add50ad0396916a83ebc03e8c",
+    "started_utc": "2026-10-25T12:03:29.365026+00:00",
+    "completed_utc": "2026-10-25T12:05:47.564774+00:00"
+  },
+  "definitions": {
+    "horizon": 6,
+    "first_origin": 0,
+    "last_origin": "N-H-1 inclusive",
+    "sample": "All N-H origins with complete six-record future peak, including the issue anchor.",
+    "abs_N": "B_t=abs(N_t) on the matched origins",
+    "peak_Y": "Y_t=max(abs(N_t),...,abs(N_(t+H))) on the matched origins",
+    "headroom_Z": "Z_t=Y_t-B_t on exactly the same origins",
+    "mean": "Constant-preserving stable_mean; otherwise math.fsum(values)/m",
+    "sd": "Sample standard deviation sqrt(math.fsum((x-mean)^2)/(m-1))",
+    "sd_ddof": 1,
+    "p95": "Lower empirical/inverted-CDF order statistic at one-based rank ceil(95*m/100); no interpolation",
+    "quantile_numerator": 95,
+    "quantile_denominator": 100,
+    "FX_display_divisor": 1000000,
+    "table_significant_digits": 3,
+    "multi_series": "Median of each within-series mean, sample SD and p95; nine separate medians. No pooled exposure or independence inference."
+  },
+  "series": [
+    {
+      "family": "cftc",
+      "source_key": "044601",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "15301fe97329711d1a7bf93546c9252bd71a9787215a286a1e28297494b86e32",
+      "source_bytes": 9573,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s00.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "044601"
+    },
+    {
+      "family": "cftc",
+      "source_key": "043602",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "70e0354eaa93982a21890dec5ce81cdd4887cc7c56898390140e2471211e479e",
+      "source_bytes": 9612,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s01.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "043602"
+    },
+    {
+      "family": "cftc",
+      "source_key": "042601",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "aa865f0a0cbeb77d71c644d94ed49ea4549ec5f5f0d66dc3645f79f39559196b",
+      "source_bytes": 9520,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s02.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "042601"
+    },
+    {
+      "family": "cftc",
+      "source_key": "045601",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "eb7d6bb259637b65aca2cdb4b31e18c237d9c486c0fbce2f8916a49a6b19eb8f",
+      "source_bytes": 9599,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s03.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "045601"
+    },
+    {
+      "family": "cftc",
+      "source_key": "020601",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "f49b35626eda89da64ba05f6cad7e144b34b897b45b119c102d6a4f51bb2eb96",
+      "source_bytes": 9365,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s04.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "020601"
+    },
+    {
+      "family": "cftc",
+      "source_key": "099741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "96a6ded494961a95225bb967f92f791998077de459e84dac8cee6129bd6d5014",
+      "source_bytes": 9466,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s05.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "099741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "1170E1",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "e378513803e88b245daf7131ff01ed262b32a28cc5e40607a6275d6fd3c4577b",
+      "source_bytes": 9375,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s06.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "1170E1"
+    },
+    {
+      "family": "cftc",
+      "source_key": "097741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "cd37daf92427cb6f17fe3c0207b830ecd575592c00f05f2247e2a9433572ed56",
+      "source_bytes": 9513,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s07.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "097741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "096742",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "73ff25092f9270894000baea23b24343ec01d998306104c610f3ab97c9faaae9",
+      "source_bytes": 9491,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s08.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "096742"
+    },
+    {
+      "family": "cftc",
+      "source_key": "095741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "c1cf66bb346bc38abe8554ce4e5fd09b6e41a53d4f826ef71869ed1ae5304f15",
+      "source_bytes": 9387,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s09.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "095741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "090741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "cf543927636b6d93e35e928cffe0ef7b254b4e8915a9071de073514bfad9d5f8",
+      "source_bytes": 9465,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s10.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "090741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "232741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "0eeaf81d454f2f7d8bb842ffc52f9548f111a5dd945b7770dbdebd5fee3d6fd5",
+      "source_bytes": 9457,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s11.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "232741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "33874A",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "ce7484a6fa2167788e3ee1cf978e2a3b6059465ef49134b2887799c77859d2a1",
+      "source_bytes": 9138,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s12.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "33874A"
+    },
+    {
+      "family": "cftc",
+      "source_key": "240743",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "e09931c22d291f48feeaffe30d8e34bd93ba63d1fa0a76bfb50e0541c6827ef7",
+      "source_bytes": 9113,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s13.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "240743"
+    },
+    {
+      "family": "cftc",
+      "source_key": "092741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "791819f3b1605d62cf56337fbe316cdd1c47bc6eed4b54e3802fef8d56d7cea5",
+      "source_bytes": 9242,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s14.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "092741"
+    },
+    {
+      "family": "cftc",
+      "source_key": "098662",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "604483e315fe10a251cdb36eb1b58fa2217acbcdd00099765df5238e7f3feb41",
+      "source_bytes": 8943,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s15.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "098662"
+    },
+    {
+      "family": "cftc",
+      "source_key": "112741",
+      "frequency": "Weekly",
+      "N": 877,
+      "raw_N": 877,
+      "matched_origin_count": 871,
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_actual_first": "2010-01-05T00:00:00.000000",
+      "aligned_actual_last": "2026-10-20T00:00:00.000000",
+      "aligned_model_first": "2010-01-04T00:00:00.000000",
+      "aligned_model_last": "2026-10-19T00:00:00.000000",
+      "matched_first": "2010-01-04T00:00:00.000000",
+      "matched_last": "2026-09-07T00:00:00.000000",
+      "source_sha256": "7e497c720c7d7579410bc83404a44c978eb2c2e41f4ded8fbe9fe92e16fa2471",
+      "source_bytes": 9199,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s16.npz",
+      "native_unit": "contracts",
+      "display_unit": "contracts",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "112741"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSMBS-TOT",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "2e493d17890870eff6eca247c62b9175fcf7564a70d87e63ee520561bb71efcb",
+      "source_bytes": 25680,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSMBS-TOT.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSMBS-TOT"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSCS-TOT",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "169fdb5201f6a34152936f0aa2b444d9ea0f8814d39750bfd4a4bc942a41fade",
+      "source_bytes": 24713,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSCS-TOT.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSCS-TOT"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSFGS-TOT",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "00f321abeebf1aaee1af68dc7ab41bb403eafe770c915f4229fc80e18e3586de",
+      "source_bytes": 25495,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSFGS-TOT.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSFGS-TOT"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSTIPS-L2",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "dc3dd1ef3f9a364c25789523a5b2f0d46860681808005620055db4a47c996995",
+      "source_bytes": 24883,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-L2.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSTIPS-L2"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSTIPS-G11",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "810355b1cf4c93282dcc76fa6fdc41bbccc1ec7d3675024a2400e2c27c695d5d",
+      "source_bytes": 25017,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G11.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSTIPS-G11"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSTIPS-G2",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "8e54675071813501a240c1ea3a2ca4fda0f2e2aa88b1ea1bb2852fe6a9f6c894",
+      "source_bytes": 24761,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G2.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSTIPS-G2"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSTIPS-G6L11",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "1e3ee3a336be321f47a3f7481591b15650607baa3fb46be7da99968ccbea7845",
+      "source_bytes": 26797,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G6L11.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSTIPS-G6L11"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSGSC-L2",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "7ab08e2b39534ca67f43006949a7504334d90b63034b9ed3cd5248e59c9126bf",
+      "source_bytes": 24714,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-L2.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGSC-L2"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSGSC-G2L3",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "10c35a9516154011c0821d12eb86052f7d4df01a4c7b0cddee4878b72868678c",
+      "source_bytes": 25930,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G2L3.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGSC-G2L3"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSGSC-G3L6",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "453f1a2458a2c9c7049d9128ccc9d1945b5a61e469ab1c8112577b3ad7539fa5",
+      "source_bytes": 26090,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G3L6.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGSC-G3L6"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSGSC-G6L7",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "429d542e2cda305d8d5c458592b57b4042c9f479ce4135e3ab3610951ae6b35d",
+      "source_bytes": 25967,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G6L7.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGSC-G6L7"
+    },
+    {
+      "family": "panel",
+      "source_key": "PDPOSGSC-G7L11",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 707,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "0b102760c5e4cc181d438d9c8618f8990d047ac8ecb9bd85bac63851742199d0",
+      "source_bytes": 26639,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G7L11.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGSC-G7L11"
+    },
+    {
+      "family": "bill",
+      "source_key": "PDPOSGS-B",
+      "frequency": "Weekly",
+      "N": 706,
+      "raw_N": 706,
+      "matched_origin_count": 700,
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-07",
+      "aligned_actual_first": "2013-04-03T00:00:00.000000",
+      "aligned_actual_last": "2026-10-07T00:00:00.000000",
+      "aligned_model_first": "2013-04-03T00:00:00.000000",
+      "aligned_model_last": "2026-10-07T00:00:00.000000",
+      "matched_first": "2013-04-03T00:00:00.000000",
+      "matched_last": "2026-08-26T00:00:00.000000",
+      "source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+      "source_bytes": 23315,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/data/nyfed-pdposgs-b-20261022/PDPOSGS-B.csv",
+      "native_unit": "USD millions",
+      "display_unit": "USD millions",
+      "display_divisor": 1.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ],
+      "scope": "PDPOSGS-B"
+    },
+    {
+      "family": "fx_hourly",
+      "source_key": "fx_hourly",
+      "frequency": "Hourly records",
+      "N": 18576,
+      "raw_N": 18576,
+      "matched_origin_count": 18570,
+      "raw_first": "2014.02.05T01:00:00.000",
+      "raw_last": "2017.01.24T00:00:00.000",
+      "aligned_actual_first": "2014-02-05T01:00:00.000000",
+      "aligned_actual_last": "2017-01-24T00:00:00.000000",
+      "aligned_model_first": "2014-02-05T01:00:00.000000",
+      "aligned_model_last": "2017-01-24T00:00:00.000000",
+      "matched_first": "2014-02-05T01:00:00.000000",
+      "matched_last": "2017-01-23T18:00:00.000000",
+      "source_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "source_bytes": 1286391,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/1hourNetPositionsKaggle.csv",
+      "native_unit": "USD",
+      "display_unit": "USD millions",
+      "display_divisor": 1000000.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 10463,
+            "last_index": 11902,
+            "n": 1440,
+            "first": "2015-10-08T00:00:00.000000",
+            "last": "2015-12-30T23:00:00.000000",
+            "model_first": "2015-10-08T00:00:00.000000",
+            "model_last": "2015-12-30T23:00:00.000000",
+            "actual_first": "2015-10-08T00:00:00.000000",
+            "actual_last": "2015-12-30T23:00:00.000000",
+            "last_H6_label_end": "2015-12-31T05:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 11927,
+            "last_index": 18551,
+            "n": 6625,
+            "first": "2016-01-01T00:00:00.000000",
+            "last": "2017-01-23T00:00:00.000000",
+            "model_first": "2016-01-01T00:00:00.000000",
+            "model_last": "2017-01-23T00:00:00.000000",
+            "actual_first": "2016-01-01T00:00:00.000000",
+            "actual_last": "2017-01-23T00:00:00.000000",
+            "last_H6_label_end": "2017-01-23T06:00:00.000000"
+          }
+        },
+        {
+          "period": "early2015",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 7535,
+            "last_index": 8974,
+            "n": 1440,
+            "first": "2015-04-21T00:00:00.000000",
+            "last": "2015-07-13T23:00:00.000000",
+            "model_first": "2015-04-21T00:00:00.000000",
+            "model_last": "2015-07-13T23:00:00.000000",
+            "actual_first": "2015-04-21T00:00:00.000000",
+            "actual_last": "2015-07-13T23:00:00.000000",
+            "last_H6_label_end": "2015-07-14T05:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 8999,
+            "last_index": 10438,
+            "n": 1440,
+            "first": "2015-07-15T00:00:00.000000",
+            "last": "2015-10-06T23:00:00.000000",
+            "model_first": "2015-07-15T00:00:00.000000",
+            "model_last": "2015-10-06T23:00:00.000000",
+            "actual_first": "2015-07-15T00:00:00.000000",
+            "actual_last": "2015-10-06T23:00:00.000000",
+            "last_H6_label_end": "2015-10-07T05:00:00.000000"
+          }
+        }
+      ],
+      "scope": "fx_hourly"
+    },
+    {
+      "family": "fx_daily",
+      "source_key": "fx_daily",
+      "frequency": "Day-end records",
+      "N": 930,
+      "raw_N": 18576,
+      "matched_origin_count": 924,
+      "raw_first": "2014.02.05T01:00:00.000",
+      "raw_last": "2017.01.24T00:00:00.000",
+      "aligned_actual_first": "2014-02-05T23:00:00.000000",
+      "aligned_actual_last": "2017-01-24T00:00:00.000000",
+      "aligned_model_first": "2014-02-05T23:59:59.999999",
+      "aligned_model_last": "2017-01-24T23:59:59.999999",
+      "matched_first": "2014-02-05T23:59:59.999999",
+      "matched_last": "2017-01-17T23:59:59.999999",
+      "source_sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "source_bytes": 1286391,
+      "source_path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/1hourNetPositionsKaggle.csv",
+      "native_unit": "USD",
+      "display_unit": "USD millions",
+      "display_divisor": 1000000.0,
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2015-02-24T23:59:59.999999",
+            "last": "2015-04-24T23:59:59.999999",
+            "model_first": "2015-02-24T23:59:59.999999",
+            "model_last": "2015-04-24T23:59:59.999999",
+            "actual_first": "2015-02-24T23:00:00.000000",
+            "actual_last": "2015-04-24T21:00:00.000000",
+            "last_H6_label_end": "2015-05-01T23:59:59.999999"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 905,
+            "n": 501,
+            "first": "2015-05-24T23:59:59.999999",
+            "last": "2016-12-27T23:59:59.999999",
+            "model_first": "2015-05-24T23:59:59.999999",
+            "model_last": "2016-12-27T23:59:59.999999",
+            "actual_first": "2015-05-24T23:00:00.000000",
+            "actual_last": "2016-12-27T23:00:00.000000",
+            "last_H6_label_end": "2017-01-03T23:59:59.999999"
+          }
+        }
+      ],
+      "scope": "Same-dealer deterministic calendar aggregation",
+      "resampling_metadata": {
+        "schema": "wp4-daily-resampling-v1",
+        "n_original": 18576,
+        "n_daily": 930,
+        "n_discarded_original": 17646,
+        "source_first_timestamp": "2014-02-05T01:00:00.000000",
+        "source_last_timestamp": "2017-01-24T00:00:00.000000",
+        "first_issue_time": "2014-02-05T23:59:59.999999",
+        "last_issue_time": "2017-01-24T23:59:59.999999",
+        "daily_gap_seconds_histogram": {
+          "86400": 774,
+          "172800": 155
+        },
+        "fingerprints": {
+          "selected_indices_sha256": "f57f0f4ffd6ff76b7e5d08bcef386b08c0c5827f5e6059529b160caab06cad16",
+          "selected_raw_times_sha256": "d4ddf006249fe3734793c5f8a72c21e744c25ed16f3ba87b5aa946bad7c3ecf7",
+          "issue_times_sha256": "923e3a8676a7f5f5cbb5965f73d663f37282209dbda16bcf1d7ef5dbd87ee004",
+          "position_sha256": "6efa0b259b71f364cf747d3b32084eb1e1ea528dd63ba5c7f2344d4459a63668",
+          "combined_sha256": "a8638f97370b14308212cbaa2d82defaf7152e0f240ff9f950414a035ae744d1"
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "family": "fx_hourly",
+      "label": "FX, hourly",
+      "frequency": "Hourly records",
+      "series_count": 1,
+      "N_per_series": [
+        18576
+      ],
+      "matched_origin_count_per_series": [
+        18570
+      ],
+      "raw_N_per_series": [
+        18576
+      ],
+      "display_unit": "USD millions",
+      "raw_first": "2014-02-05",
+      "raw_last": "2017-01-24",
+      "aligned_first": "2014-02-05",
+      "aligned_last": "2017-01-24",
+      "display_sample_clock": "model issue times",
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 10463,
+            "last_index": 11902,
+            "n": 1440,
+            "first": "2015-10-08T00:00:00.000000",
+            "last": "2015-12-30T23:00:00.000000",
+            "model_first": "2015-10-08T00:00:00.000000",
+            "model_last": "2015-12-30T23:00:00.000000",
+            "actual_first": "2015-10-08T00:00:00.000000",
+            "actual_last": "2015-12-30T23:00:00.000000",
+            "last_H6_label_end": "2015-12-31T05:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 11927,
+            "last_index": 18551,
+            "n": 6625,
+            "first": "2016-01-01T00:00:00.000000",
+            "last": "2017-01-23T00:00:00.000000",
+            "model_first": "2016-01-01T00:00:00.000000",
+            "model_last": "2017-01-23T00:00:00.000000",
+            "actual_first": "2016-01-01T00:00:00.000000",
+            "actual_last": "2017-01-23T00:00:00.000000",
+            "last_H6_label_end": "2017-01-23T06:00:00.000000"
+          }
+        },
+        {
+          "period": "early2015",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 7535,
+            "last_index": 8974,
+            "n": 1440,
+            "first": "2015-04-21T00:00:00.000000",
+            "last": "2015-07-13T23:00:00.000000",
+            "model_first": "2015-04-21T00:00:00.000000",
+            "model_last": "2015-07-13T23:00:00.000000",
+            "actual_first": "2015-04-21T00:00:00.000000",
+            "actual_last": "2015-07-13T23:00:00.000000",
+            "last_H6_label_end": "2015-07-14T05:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 8999,
+            "last_index": 10438,
+            "n": 1440,
+            "first": "2015-07-15T00:00:00.000000",
+            "last": "2015-10-06T23:00:00.000000",
+            "model_first": "2015-07-15T00:00:00.000000",
+            "model_last": "2015-10-06T23:00:00.000000",
+            "actual_first": "2015-07-15T00:00:00.000000",
+            "actual_last": "2015-10-06T23:00:00.000000",
+            "last_H6_label_end": "2015-10-07T05:00:00.000000"
+          }
+        }
+      ]
+    },
+    {
+      "family": "fx_daily",
+      "label": "FX, daily",
+      "frequency": "Day-end records",
+      "series_count": 1,
+      "N_per_series": [
+        930
+      ],
+      "matched_origin_count_per_series": [
+        924
+      ],
+      "raw_N_per_series": [
+        18576
+      ],
+      "display_unit": "USD millions",
+      "raw_first": "2014-02-05",
+      "raw_last": "2017-01-24",
+      "aligned_first": "2014-02-05",
+      "aligned_last": "2017-01-24",
+      "display_sample_clock": "model issue times",
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "times",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2015-02-24T23:59:59.999999",
+            "last": "2015-04-24T23:59:59.999999",
+            "model_first": "2015-02-24T23:59:59.999999",
+            "model_last": "2015-04-24T23:59:59.999999",
+            "actual_first": "2015-02-24T23:00:00.000000",
+            "actual_last": "2015-04-24T21:00:00.000000",
+            "last_H6_label_end": "2015-05-01T23:59:59.999999"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 905,
+            "n": 501,
+            "first": "2015-05-24T23:59:59.999999",
+            "last": "2016-12-27T23:59:59.999999",
+            "model_first": "2015-05-24T23:59:59.999999",
+            "model_last": "2016-12-27T23:59:59.999999",
+            "actual_first": "2015-05-24T23:00:00.000000",
+            "actual_last": "2016-12-27T23:00:00.000000",
+            "last_H6_label_end": "2017-01-03T23:59:59.999999"
+          }
+        }
+      ]
+    },
+    {
+      "family": "bill",
+      "label": "Treasury bills",
+      "frequency": "Weekly",
+      "series_count": 1,
+      "N_per_series": [
+        706
+      ],
+      "matched_origin_count_per_series": [
+        700
+      ],
+      "raw_N_per_series": [
+        706
+      ],
+      "display_unit": "USD millions",
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-07",
+      "aligned_first": "2013-04-03",
+      "aligned_last": "2026-10-07",
+      "display_sample_clock": "model issue times",
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ]
+    },
+    {
+      "family": "panel",
+      "label": "NY Fed panel",
+      "frequency": "Weekly",
+      "series_count": 12,
+      "N_per_series": [
+        706
+      ],
+      "matched_origin_count_per_series": [
+        700
+      ],
+      "raw_N_per_series": [
+        707
+      ],
+      "display_unit": "USD millions",
+      "raw_first": "2013-04-03",
+      "raw_last": "2026-10-14",
+      "aligned_first": "2013-04-03",
+      "aligned_last": "2026-10-07",
+      "display_sample_clock": "model issue times",
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 329,
+            "last_index": 380,
+            "n": 52,
+            "first": "2019-07-24T00:00:00.000000",
+            "last": "2020-07-15T00:00:00.000000",
+            "model_first": "2019-07-24T00:00:00.000000",
+            "model_last": "2020-07-15T00:00:00.000000",
+            "actual_first": "2019-07-24T00:00:00.000000",
+            "actual_last": "2020-07-15T00:00:00.000000",
+            "last_H6_label_end": "2020-08-26T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 405,
+            "last_index": 681,
+            "n": 277,
+            "first": "2021-01-06T00:00:00.000000",
+            "last": "2026-04-22T00:00:00.000000",
+            "model_first": "2021-01-06T00:00:00.000000",
+            "model_last": "2026-04-22T00:00:00.000000",
+            "actual_first": "2021-01-06T00:00:00.000000",
+            "actual_last": "2026-04-22T00:00:00.000000",
+            "last_H6_label_end": "2026-06-03T00:00:00.000000"
+          }
+        }
+      ]
+    },
+    {
+      "family": "cftc",
+      "label": "CFTC panel",
+      "frequency": "Weekly",
+      "series_count": 17,
+      "N_per_series": [
+        877
+      ],
+      "matched_origin_count_per_series": [
+        871
+      ],
+      "raw_N_per_series": [
+        877
+      ],
+      "display_unit": "contracts",
+      "raw_first": "2010-01-05",
+      "raw_last": "2026-10-20",
+      "aligned_first": "2010-01-05",
+      "aligned_last": "2026-10-20",
+      "display_sample_clock": "actual economic dates",
+      "periods": [
+        {
+          "period": "original",
+          "horizon": 6,
+          "display_clock": "actual_dates",
+          "validation": {
+            "first_index": 553,
+            "last_index": 604,
+            "n": 52,
+            "first": "2020-08-11T00:00:00.000000",
+            "last": "2021-08-03T00:00:00.000000",
+            "model_first": "2020-08-10T00:00:00.000000",
+            "model_last": "2021-08-02T00:00:00.000000",
+            "actual_first": "2020-08-11T00:00:00.000000",
+            "actual_last": "2021-08-03T00:00:00.000000",
+            "last_H6_label_end": "2021-09-14T00:00:00.000000"
+          },
+          "evaluation": {
+            "first_index": 611,
+            "last_index": 870,
+            "n": 260,
+            "first": "2021-09-21T00:00:00.000000",
+            "last": "2026-09-08T00:00:00.000000",
+            "model_first": "2021-09-20T00:00:00.000000",
+            "model_last": "2026-09-07T00:00:00.000000",
+            "actual_first": "2021-09-21T00:00:00.000000",
+            "actual_last": "2026-09-08T00:00:00.000000",
+            "last_H6_label_end": "2026-10-20T00:00:00.000000"
+          }
+        }
+      ]
+    }
+  ],
+  "input_files": [
+    {
+      "path": "protocol/v12/loss-decomposition-design.md",
+      "sha256": "cf8a38f734fc22ffa0e8895c2ea34d698ec26c92c31a2835888c464161b858d1"
+    },
+    {
+      "path": "protocol/v12/tau-design.md",
+      "sha256": "366c56a57983cbe8c9569abf626f2d5947166b66fd0a2ca2fa23a444dcd8943c"
+    },
+    {
+      "path": "protocol/revision-v8/wp4-daily-fx-design.json",
+      "sha256": "e1c00c57dea3c4a03e839bda34fef60046042876675d3612f005cddab277e5e3"
+    },
+    {
+      "path": "results/revision-v8/wp4/readout-bindings.json",
+      "sha256": "5fcb1a695be76914abb62485fddb4b7a8c3f58ea94e2d607449ad6bd32d88e7b"
+    },
+    {
+      "path": "results/revision-v8/wp4/cells/W260_H6/cell-geometry.json",
+      "sha256": "6b4340f6f0066440f5b7d30516c9b26d39ba4595fdf786f27b0297217903eacb"
+    },
+    {
+      "path": "results/revision-v8/wp4/cells/W260_H6/worker-source.json",
+      "sha256": "d6fdc8704f1fc95fd549e24063f5ae6f5771f6092dbdf3372c589e56977e1e90"
+    },
+    {
+      "path": "results/v10/cftc/splits.json",
+      "sha256": "0d2fd6175b049f49d06a5fa845dabaaa5ad4bda43760eb82529255e434b28198"
+    }
+  ],
+  "code_files": [
+    {
+      "path": "report_v12_descriptives.py",
+      "sha256": "097d621285bdd5daac6686ee4b9388212db000a4784834a720c376837dedf81a"
+    },
+    {
+      "path": "v12_inputs.py",
+      "sha256": "819087f0055fae722f9870378246d8e1dd7c45ecbe1484ef23d1fef21b7c8e0b"
+    },
+    {
+      "path": "v8_daily_fx.py",
+      "sha256": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36"
+    },
+    {
+      "path": "study_core.py",
+      "sha256": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf"
+    }
+  ],
+  "caveats": [
+    "Both hourly FX periods were already inspected; the daily series is the same dealer.",
+    "Descriptions use the full complete-H6 source sample, not only validation or evaluation.",
+    "Panel medians summarize related series and do not pool dollar exposure or independent observations.",
+    "CFTC retains heterogeneous native contract counts; there is no common dollar interpretation.",
+    "Economic-date downloaded-vintage replays do not establish historical public availability."
+  ],
+  "verified_input_bytes": [
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/data/nyfed-pdposgs-b-20261022/PDPOSGS-B.csv",
+      "bytes": 23315,
+      "sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s00.npz",
+      "bytes": 9573,
+      "sha256": "15301fe97329711d1a7bf93546c9252bd71a9787215a286a1e28297494b86e32",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s01.npz",
+      "bytes": 9612,
+      "sha256": "70e0354eaa93982a21890dec5ce81cdd4887cc7c56898390140e2471211e479e",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s02.npz",
+      "bytes": 9520,
+      "sha256": "aa865f0a0cbeb77d71c644d94ed49ea4549ec5f5f0d66dc3645f79f39559196b",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s03.npz",
+      "bytes": 9599,
+      "sha256": "eb7d6bb259637b65aca2cdb4b31e18c237d9c486c0fbce2f8916a49a6b19eb8f",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s04.npz",
+      "bytes": 9365,
+      "sha256": "f49b35626eda89da64ba05f6cad7e144b34b897b45b119c102d6a4f51bb2eb96",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s05.npz",
+      "bytes": 9466,
+      "sha256": "96a6ded494961a95225bb967f92f791998077de459e84dac8cee6129bd6d5014",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s06.npz",
+      "bytes": 9375,
+      "sha256": "e378513803e88b245daf7131ff01ed262b32a28cc5e40607a6275d6fd3c4577b",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s07.npz",
+      "bytes": 9513,
+      "sha256": "cd37daf92427cb6f17fe3c0207b830ecd575592c00f05f2247e2a9433572ed56",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s08.npz",
+      "bytes": 9491,
+      "sha256": "73ff25092f9270894000baea23b24343ec01d998306104c610f3ab97c9faaae9",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s09.npz",
+      "bytes": 9387,
+      "sha256": "c1cf66bb346bc38abe8554ce4e5fd09b6e41a53d4f826ef71869ed1ae5304f15",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s10.npz",
+      "bytes": 9465,
+      "sha256": "cf543927636b6d93e35e928cffe0ef7b254b4e8915a9071de073514bfad9d5f8",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s11.npz",
+      "bytes": 9457,
+      "sha256": "0eeaf81d454f2f7d8bb842ffc52f9548f111a5dd945b7770dbdebd5fee3d6fd5",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s12.npz",
+      "bytes": 9138,
+      "sha256": "ce7484a6fa2167788e3ee1cf978e2a3b6059465ef49134b2887799c77859d2a1",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s13.npz",
+      "bytes": 9113,
+      "sha256": "e09931c22d291f48feeaffe30d8e34bd93ba63d1fa0a76bfb50e0541c6827ef7",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s14.npz",
+      "bytes": 9242,
+      "sha256": "791819f3b1605d62cf56337fbe316cdd1c47bc6eed4b54e3802fef8d56d7cea5",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s15.npz",
+      "bytes": 8943,
+      "sha256": "604483e315fe10a251cdb36eb1b58fa2217acbcdd00099765df5238e7f3feb41",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v10-20261024/results/v10/cftc/sources/s16.npz",
+      "bytes": 9199,
+      "sha256": "7e497c720c7d7579410bc83404a44c978eb2c2e41f4ded8fbe9fe92e16fa2471",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/1hourNetPositionsKaggle.csv",
+      "bytes": 1286391,
+      "sha256": "b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSCS-TOT.csv",
+      "bytes": 24713,
+      "sha256": "169fdb5201f6a34152936f0aa2b444d9ea0f8814d39750bfd4a4bc942a41fade",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSFGS-TOT.csv",
+      "bytes": 25495,
+      "sha256": "00f321abeebf1aaee1af68dc7ab41bb403eafe770c915f4229fc80e18e3586de",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G2L3.csv",
+      "bytes": 25930,
+      "sha256": "10c35a9516154011c0821d12eb86052f7d4df01a4c7b0cddee4878b72868678c",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G3L6.csv",
+      "bytes": 26090,
+      "sha256": "453f1a2458a2c9c7049d9128ccc9d1945b5a61e469ab1c8112577b3ad7539fa5",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G6L7.csv",
+      "bytes": 25967,
+      "sha256": "429d542e2cda305d8d5c458592b57b4042c9f479ce4135e3ab3610951ae6b35d",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-G7L11.csv",
+      "bytes": 26639,
+      "sha256": "0b102760c5e4cc181d438d9c8618f8990d047ac8ecb9bd85bac63851742199d0",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSGSC-L2.csv",
+      "bytes": 24714,
+      "sha256": "7ab08e2b39534ca67f43006949a7504334d90b63034b9ed3cd5248e59c9126bf",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSMBS-TOT.csv",
+      "bytes": 25680,
+      "sha256": "2e493d17890870eff6eca247c62b9175fcf7564a70d87e63ee520561bb71efcb",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G11.csv",
+      "bytes": 25017,
+      "sha256": "810355b1cf4c93282dcc76fa6fdc41bbccc1ec7d3675024a2400e2c27c695d5d",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G2.csv",
+      "bytes": 24761,
+      "sha256": "8e54675071813501a240c1ea3a2ca4fda0f2e2aa88b1ea1bb2852fe6a9f6c894",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-G6L11.csv",
+      "bytes": 26797,
+      "sha256": "1e3ee3a336be321f47a3f7481591b15650607baa3fb46be7da99968ccbea7845",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    },
+    {
+      "path": "/Users/bingyouli/Research/\u8bba\u6587/\u91d1\u878d\u6570\u5b66\u8bba\u6587-v9-20261024/.scratch/v9/inputs/panel/PDPOSTIPS-L2.csv",
+      "bytes": 24883,
+      "sha256": "dc3dd1ef3f9a364c25789523a5b2f0d46860681808005620055db4a47c996995",
+      "verification": "Independent byte read after descriptive calculation; agrees with pre-parse pinned snapshot verification."
+    }
+  ]
+}

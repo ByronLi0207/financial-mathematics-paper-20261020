@@ -1,0 +1,69 @@
+{
+  "design_commit": "a112e458500b5dd34e0536074dff77091ab39ed1",
+  "design_sha256": "b9b3b3cc88f9a28e1827d54c761aae9e38b2fd5eaeb7a39c2fc8c5eb9014eb2d",
+  "design": {
+    "schema": "v10-cost-design-v1",
+    "created_utc": "2026-10-24T23:45:53.195815+00:00",
+    "mcs_index": "results/v10/mcs/input-index.json",
+    "mcs_index_sha256": "ff717e8075fed88d07427a450eb27bc91b84e1a4ae2a0e0862605c2b85990ac2",
+    "inventory": "notes/v10/loss-input-inventory.json",
+    "inventory_sha256": "2f10465195e774540d9a49079de37d4e6a56d0e22be634241b1d2a315b08abb2",
+    "comparison_count": 98,
+    "method_scope": "All complete methods in committed E3 registry; retain all60knownNA; no MCS membership filtering.",
+    "reference_id": "F",
+    "grid": {
+      "kappa": [
+        0.01,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1
+      ],
+      "beta": [
+        0,
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        1,
+        2,
+        5
+      ],
+      "c": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "primary_c": 1,
+    "formula": "kappa*mean(C-B)/mF + beta*mean(Y>C) + c*mean(max(Y-C,0))/mF",
+    "scale": "mF=mean(C_F-B), computed separately on each full comparison grid in source units; beta=b/mF, so actual fixed-breach amount is beta*mF. kappa and c are per-unit amounts.",
+    "unavailable_rule": "Absent/changed/unequal target, origins or provided floor; invalid C<B or Y<B; nonfinite data; absentF or meanFheadroom<=0=>wholecomparisonUNAVAILABLE, no epsilon, intersection or partial method deletion.",
+    "missing_floor": "Only QR4/Levy missing stored B identified by E0 floor_recovery metadata may recover it from exact matching frozenF trace; verify copied source bytes/SHA plus entire origin/target axes and all existing floor arrays equal. Do not create a current-floor estimate or modify E3 index.",
+    "primary_method_by_group": {
+      "FX original": "R6::R6_R1",
+      "FX early2015": "R6::R6_R1",
+      "Treasury bills": "R6::R6_R1",
+      "Other NYFed panels": "R6::R6_R1",
+      "Same-record dailyFX": "daily_FX::QR33",
+      "CFTC": "CFTC::QR33"
+    },
+    "primary_absence": "Leave plotcomparisonunavailable, do not substitute best or another model.",
+    "plot": "Six group facets (kappa,beta) at c=1, each shade is fraction of planned source/H/W comparisons in which fixed primary method is strictly cheaper thanF. Show full planned denominator and unknown bounds; all98per-cell regions in CSV. Related-cell fraction is descriptive; no pooled independence.",
+    "ties": "Exact floating equality; cheaper iff difference<0. No threshold/tolerance chosen from outcomes.",
+    "report": "All methods and all189parameterpoints percomparison in CSV with primitive amounts/strictbreaches, percell primary regions and source-summary figures. Keep original primary references distinct in method inventory; no new models or forecasts.",
+    "interpretation": "Per-issued-report cost, not sum over overlapping holding periods, optimized policy, observed coefficients or common-dollar cross-market portfolio. The illustrative/not-observed-real-cost sentence appears once in Limitations.",
+    "code_and_input_gate": "Commit implementation after artificialtests, seal all new costcode,protocol,index and exactprivateNPZ fingerprints before single actualcostrun. Exclusiveoutputs; no scientific retries or changes togrid.",
+    "run_limit_seconds": 600
+  },
+  "code_sha256": {
+    "run_v10_cost.py": "93b4c1712496d4596e7904b0d0aaf4af6cf789d120116e007e123712fe1787eb",
+    "v10_cost.py": "015b0fe5c546d9c7bc38b69948ec1862eef5ac3dbdafb838ac6bd20b38ee3843",
+    "v10_cost_inputs.py": "801cb0b8aa890036a7a1242c91537335f11d0e3a08e1561141098cf35b279f63"
+  },
+  "mcs_manifest_sha256": "f631be0dc9a654dd1e82f7dfc7848bde31e771b5d3510f6f14e78d7877ccaa3f",
+  "sealed_utc": "2026-10-24T23:52:36.243300+00:00"
+}

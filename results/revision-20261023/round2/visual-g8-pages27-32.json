@@ -1,0 +1,93 @@
+{
+  "artifact": "manuscript/revision-v3/paper.pdf",
+  "pdf_sha256": "2e5cfb595354186f29c70f7c34bf0928af623edb8f579ef1173d8ec534b9eee9",
+  "pdf_pages": 39,
+  "main_pages_including_references": 15,
+  "assigned_pages": [27, 28, 29, 30, 31, 32],
+  "inspection_method": "All six assigned g8 PNGs individually opened with functions.view_image(detail=original). No contact-sheet-only, extraction-only or prior-version reuse substituted for actual views.",
+  "render_nominal_dpi": 150,
+  "actual_png_dpi": [149.987, 149.987],
+  "png_pixels": [1241, 1754],
+  "overall": "PASS_WITH_NONBLOCKING_STATUS_WRAP_NOTES",
+  "blocking_defects": [],
+  "scope_limit": "Rendering, formula visibility and table/page continuity only; numerical values and scientific claims were not recomputed by this visual check.",
+  "pages": [
+    {
+      "page": 27,
+      "png": ".scratch/round2/pdf-final-g8/page-27.png",
+      "png_sha256": "a788d3c4b6aeb1f5746366955f5d990afcaa9fe5fdb12343714f74a4b9bcce1d",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix G heading and reproducibility paragraphs are complete and readable.",
+        "The long GitHub commit URL wraps inside the text margin and is not clipped.",
+        "Substantial trailing whitespace reflects the standalone short appendix page; footer and text remain clean."
+      ],
+      "defects": []
+    },
+    {
+      "page": 28,
+      "png": ".scratch/round2/pdf-final-g8/page-28.png",
+      "png_sha256": "7fa4a3031af76fafbe5572729c246c290a95d6035ac2721b0dc75dc868ccc8ce",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix H title, inference caveats and DQ expectation/subscript notation are visible without missing glyphs or collisions.",
+        "Table H1 caption, header and both primary rows fit inside the margins.",
+        "Table H2 is kept with its caption on the next page rather than leaving an isolated caption here."
+      ],
+      "defects": []
+    },
+    {
+      "page": 29,
+      "png": ".scratch/round2/pdf-final-g8/page-29.png",
+      "png_sha256": "0fb27cbf866b920a92b191330d86813ee89c3411fe4a9b496df5fa8d0d5c0cd4",
+      "actual_viewed": true,
+      "findings": [
+        "Full Table H2 caption stays immediately above its complete header and body.",
+        "FX source/H/W/method/reference identifiers and all statistic columns remain aligned and legible.",
+        "Multiline direction/status cells fit their row heights; the final displayed row is above the footer, with no split or lost row."
+      ],
+      "defects": []
+    },
+    {
+      "page": 30,
+      "png": ".scratch/round2/pdf-final-g8/page-30.png",
+      "png_sha256": "ef71f996e8825cb2ea0a5addbb0abdbef487815fd4677df1cf5828301bd8057f",
+      "actual_viewed": true,
+      "findings": [
+        "Table H2 repeats the full header and continues FX/Treasury rows without clipping or overlapping columns.",
+        "The Treasury H6/W52 KNN-minus-F identical-loss row retains its NA statistics and complete status token inside an expanded row.",
+        "No row is split at the page boundary."
+      ],
+      "defects": [
+        {"severity": "nonblocking", "location": "Treasury H6/W52 KNN-minus-F status cell", "finding": "IDENTICAL_LOSSES wraps over three lines; all characters are visible and there is no collision with adjacent rows."}
+      ]
+    },
+    {
+      "page": 31,
+      "png": ".scratch/round2/pdf-final-g8/page-31.png",
+      "png_sha256": "b7f43e452e00a3c736ab44ec105fbe18b29e3f50b196fd663d3f81750680ea5e",
+      "actual_viewed": true,
+      "findings": [
+        "Table H2 repeats the full header and completes the Treasury rows with a clear bottom rule.",
+        "The adverse Scaled KNN rows and small adjusted p-values remain visible and correctly aligned.",
+        "The identical-loss row is complete, and neither the table ending nor the footer clips content."
+      ],
+      "defects": [
+        {"severity": "nonblocking", "location": "Treasury H24/W52 KNN-minus-F status cell", "finding": "IDENTICAL_LOSSES wraps over three lines within its expanded row; complete token remains readable."}
+      ]
+    },
+    {
+      "page": 32,
+      "png": ".scratch/round2/pdf-final-g8/page-32.png",
+      "png_sha256": "1942c03c54664fb6be89d2f0e1807799b7b9bf2455e40d9f77e45bf246c677d1",
+      "actual_viewed": true,
+      "findings": [
+        "Appendix I title and selected-fit diagnostic prose fit without missing glyphs or clipping.",
+        "Table I1 norm notation, lambda header, all four coefficient/effect rows and caption are legible.",
+        "Table I2 rho C/rho G, Delta, Jaccard and breach/XOR columns remain aligned and readable for all eight rows.",
+        "The ordinary-versus-corrected rank paragraph displays ceiling symbols and mathematical quantities visibly below the table; substantial clearance remains above the footer."
+      ],
+      "defects": []
+    }
+  ]
+}

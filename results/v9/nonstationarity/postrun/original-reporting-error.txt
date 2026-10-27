@@ -1,0 +1,32 @@
+WARN `--no-project` was provided, but no project was found
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-v9-20261024/run_v9_nonstationarity.py", line 475, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-v9-20261024/run_v9_nonstationarity.py", line 471, in main
+    elif args.command in ('pilot','formal'):forecast_phase(args.command)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-v9-20261024/run_v9_nonstationarity.py", line 442, in forecast_phase
+    else:summarize()
+         ^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-v9-20261024/run_v9_nonstationarity.py", line 458, in summarize
+    save(PUBLIC/'summary.json',cells);save(PUBLIC/'predictions.json',predictions)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/Research/论文/金融数学论文-v9-20261024/run_v9_nonstationarity.py", line 33, in save
+    with path.open('x') as f:json.dump(value,f,indent=2,allow_nan=False);f.write('\n')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

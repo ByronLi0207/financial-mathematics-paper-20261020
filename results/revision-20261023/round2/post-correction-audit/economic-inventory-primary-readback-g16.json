@@ -1,0 +1,148 @@
+{
+  "status": "SELECTED_PRIMARY_BODY_READBACK_COMPLETE_NO_NEW_MANUSCRIPT_DEFECT",
+  "created_utc": "2026-10-23T13:18:08.826297+00:00",
+  "scope": "One directed primary-paper revisit for the economic interpretation of current Sections1/9. No restarted literature survey, financial experiment, simulator, pytest, implementation audit or new novelty determination.",
+  "existing_notes_read_first": [
+    {
+      "path": "notes/revision-20261022/policy-generated-inventory-and-validation-boundary.md",
+      "actual_read_lines": [
+        1,
+        40
+      ],
+      "historical_scope": "Its prior source was a selected prediction-market policy study. Reading that note today is not a new reading of its cited dissertation."
+    },
+    {
+      "path": "notes/revision-20261022/inventory-mechanism-neighbors-and-next-baseline.md",
+      "actual_read_lines": [
+        1,
+        51
+      ],
+      "historical_scope": "Its prior sources were selected NYFedSR299 and IMFbuyback passages and a future-covariate proposal. None of those original papers was reread in this task."
+    }
+  ],
+  "primary": {
+    "authors": [
+      "Marco Avellaneda",
+      "Sasha Stoikov"
+    ],
+    "title": "High-frequency trading in a limit order book",
+    "DOI": "10.1080/14697680701381228",
+    "journal": "Quantitative Finance8(3),217–224,April2008",
+    "actual_consulted_url": "https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf",
+    "access": "Ordinary DOI route returned403. The existing documented public NYUauthor-hosted URL returned the readable8pagejournal-layoutPDF. No access restriction was bypassed and no PDFwas saved in the repository.",
+    "cover_version_fields": {
+      "received": "24April2006",
+      "final_form": "3April2007",
+      "publication": "April2008"
+    },
+    "version_boundary": "This is the NYUhostedjournal-layoutcopy, not the October2006draft. Fresh publisher-byte equivalence and a new PDFSHA were not established; no old source hash is relabeled freshly verified.",
+    "actual_reading": [
+      {
+        "physical_pages": [
+          1,
+          2
+        ],
+        "printed_pages": [
+          217,
+          218
+        ],
+        "sections": "Title/version fields, introduction and Sections2.1–2.2; extracted model/objective prose and surrounding definitions."
+      },
+      {
+        "physical_pages": [
+          3,
+          3
+        ],
+        "printed_pages": [
+          219,
+          219
+        ],
+        "sections": "Continuation2.2,2.3 and2.4; reservation-price interpretation, infinite-horizon domain discussion, limit-order controls, executions, inventory/cash and objective."
+      },
+      {
+        "physical_pages": [
+          4,
+          4
+        ],
+        "printed_pages": [
+          220,
+          220
+        ],
+        "sections": "Sections2.5 and3.1; intensity assumptions, HJB/control interpretation and reservation-price relations. No independent reproof of the HJBsolution."
+      },
+      {
+        "physical_pages": [
+          5,
+          5
+        ],
+        "printed_pages": [
+          221,
+          221
+        ],
+        "sections": "Section3.2 asymptotic inventory expansion, symmetric exponential intensity assumption and the prose around equations20–30."
+      },
+      {
+        "physical_pages": [
+          6,
+          6
+        ],
+        "printed_pages": [
+          222,
+          222
+        ],
+        "sections": "Selected Section3.3 simulation-design and outcome narrative; table/plot cells were not independently validated or reproduced."
+      }
+    ],
+    "reading_modality": "Extracted original PDFbody text. Screenshot requests returned references without viewable page pixels in this session, so no actual visual-page reading is claimed. Some extracted mathematical glyphs are imperfect; this audit does not purport to independently certify every typeset equation.",
+    "not_read_or_not_claimed": "Not a full8pagepaperread, not all references/appendix derivations, not all figures/tables, not source-code/data replication, and no empirical claim imported into this manuscript.",
+    "concise_derived_summary": "Sections 2.1–2.4 define a single-stock model with Brownian midprice, exponential terminal-wealth utility, inventory in shares, and quote-dependent Poisson executions. Inventory shifts reservation prices; quotes alter received order flow and subsequent inventory. Section 3.2 derives an approximate strategy under symmetric exponential intensities: its reservation center depends on signed inventory while its spread is inventory-independent under those assumptions. Section 3.3 evaluates simulated terminal P&L and inventory, not a sampled absolute-position-peak quantile or funding contract.",
+    "claim_judgments": [
+      "Supports inventory-sensitive pricing as model context.",
+      "Supports distinguishing passive prediction from policy interventions.",
+      "Does not identify margin, funding, welfare, or observed costs.",
+      "Does not establish our source follows this model."
+    ],
+    "derived_summary_plus_judgments_english_words": 102,
+    "single_short_direct_quote": {
+      "text": "indirectly influences the flow of orders he receives",
+      "physical_page": 3,
+      "printed_page": 219,
+      "section": "2.4",
+      "words": 8
+    },
+    "direct_quote_scope": "Only the eight-word body excerpt is quoted; no source paragraph or third-party PDFis reproduced."
+  },
+  "current_manuscript_claims_checked": [
+    {
+      "canonical_pointer": "sections[0].blocks[0]",
+      "exact_current_text": "Dealers absorb customer order imbalances while managing inventory risk and scarce balance-sheet capacity. Inventory affects optimal dealer pricing (Ho and Stoll, 1981), FX dealing (Lyons, 1995), and observed inventory adjustment in dealership markets (Hansch, Naik and Viswanathan, 1998). Treasury intermediation likewise depends on dealer capacity (Duffie et al., 2023). A forecast of the maximum recorded position magnitude over a future horizon may support monitoring of the measured position: an endpoint can return toward its starting value after an intervening large position. Translating that monitoring signal into a particular margin or financing decision requires the corresponding contractual and balance-sheet inputs.",
+      "assessment": "本文仅作库存/报价背景动机，且同段要求额外契约与资产负债表输入才能落到保证金或融资决策；与本次原文核对一致。"
+    },
+    {
+      "canonical_pointer": "sections[8].blocks[7]",
+      "exact_current_text": "Stipulated shortfall/excess weights are not observed financing prices. Quotes, fills, hedges, book decomposition, collateral and cash flows would be required to map this passive envelope into an operational inventory, margin or funding policy. This study evaluates forecasts, not such interventions; Avellaneda and Stoikov (2008) provide a distinct active inventory-sensitive quoting framework.",
+      "assessment": "本文明确把被动预测与主动干预分开。已有评分结果不足以识别改变报价、对冲或限额后的反事实价值；这项限制仍应保留。"
+    }
+  ],
+  "reasoned_application_boundaries_not_new_source_results": [
+    "不能把源模型中的库存状态直接等同本稿的NetPosUsd或Treasury聚合市值；本稿没有建立相应单位、账簿、价格、成交和现金映射。",
+    "库存参与报价机制，不等于被动采样绝对峰值已经决定合约保证金、资金需要或真实成本。本稿19:1评分也不是被该模型估计出的融资价格。",
+    "预测同一记录过程与改变生成该过程的政策是两个问题；要比较政策价值，还需报告到行动的映射及可辩护的反事实/结构假设。",
+    "不要把库存影响报价扩张成库存必然加宽价差；当前正文没有作该更强主张。也不应否认原文另有库存上界/状态域讨论；它没有完成本稿所缺的经济映射。",
+    "该模型背景不把被动AR回放变成已识别的报价控制机制，不供应兼容独立dealer数据，也不证明本稿的新颖性。"
+  ],
+  "findings": [],
+  "decision": "Current relevant Sections1/9already state the supported boundary. No manuscript change, new experiment or reference-count inflation is warranted by this bounded revisit.",
+  "source_sha256": {
+    "notes/revision-20261022/policy-generated-inventory-and-validation-boundary.md": "688cdf337f8fc2a2c17d43f753aa58e2e80ce99e4332b5a108885586ad859bf6",
+    "notes/revision-20261022/inventory-mechanism-neighbors-and-next-baseline.md": "5bf9aefbb77f07229698376d7502bf5c24a6c8b2a8ebebd00405c74dbc2d57bd",
+    "notes/revision-20261021-public-literature-map.md": "7e280aa514831a714d28138160a76f9f8013da29097e9c39d99cf76f93921f38",
+    "manuscript/revision-v3/paper-content.json": "85d14613df8def23104fba35bc6de2369aae18f5dcf383e9ae7eb3f5fecdb86c",
+    "manuscript/revision-v3/paper.pdf": "0d09bbdf268c3af139b76378a31f508b065a6aad3c6c1599859d6c1529319edc"
+  },
+  "no_existing_file_modified": true,
+  "no_repository_PDF_download": true,
+  "financial_fits_run": false,
+  "pytest_run": false,
+  "Claude_used": false
+}

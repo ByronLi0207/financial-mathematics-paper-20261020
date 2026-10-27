@@ -1,0 +1,20 @@
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{rllrrrr}
+\caption{Complete full-prefix backcast comparisons; the two regressions use the original later-selected parameters. All planned comparisons are shown; raw normal-HAC p-values are descriptive. The window is already inspected and overlaps the earlier reported backcast.}\label{tab:v8-backcast-complete}\\
+\toprule
+Horizon & Regression & Reference & \shortstack{Mean loss\\Reg. / hist. (USD m)} & \shortstack{Change\\(\%)} & \shortstack{Breaches\\Reg. / hist.} & \shortstack{DM\\(raw $p$)}\\\midrule
+\endfirsthead
+\caption[]{Continued.}\\\toprule
+Horizon & Regression & Reference & \shortstack{Mean loss\\Reg. / hist. (USD m)} & \shortstack{Change\\(\%)} & \shortstack{Breaches\\Reg. / hist.} & \shortstack{DM\\(raw $p$)}\\\midrule
+\endhead
+\bottomrule\endfoot
+6 & 33-feature & Matched F2880 & 0.587 / 0.668 & -12.167 & 416 / 282 & -3.518 (<0.001)\\
+6 & 33-feature & Rolling F720 & 0.587 / 0.619 & -5.296 & 416 / 387 & -1.918 (0.055)\\
+6 & Four-feature & Matched F2880 & 0.617 / 0.668 & -7.620 & 290 / 282 & -2.498 (0.012)\\
+6 & Four-feature & Rolling F720 & 0.617 / 0.619 & -0.393 & 290 / 387 & -0.177 (0.859)\\
+24 & 33-feature & Matched F2880 & 1.470 / 1.783 & -17.538 & 470 / 275 & -1.997 (0.046)\\
+24 & 33-feature & Rolling F720 & 1.470 / 1.431 & 2.730 & 470 / 477 & 0.315 (0.752)\\
+24 & Four-feature & Matched F2880 & 1.408 / 1.783 & -21.027 & 355 / 275 & -2.778 (0.005)\\
+24 & Four-feature & Rolling F720 & 1.408 / 1.431 & -1.617 & 355 / 477 & -0.228 (0.820)\\
+\end{longtable}
+\endgroup

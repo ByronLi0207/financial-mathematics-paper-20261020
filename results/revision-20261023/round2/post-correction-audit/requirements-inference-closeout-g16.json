@@ -1,0 +1,1673 @@
+{
+  "schema": "requirements-inference-closeout-v1",
+  "created_utc": "2026-10-23 13:37:12 UTC",
+  "status": "B_AND_C_DELIVERABLES_PRESENT_WITH_DISCLOSED_ADAPTATIONS_AND_UNRESOLVED_CAUSAL_IDENTIFICATION",
+  "reviewer_role": "Bounded same-model requirements/evidence readback; QRF-core author, not independent whole-paper code-author review or external peer review.",
+  "scope": "Directly read both user-specified plans, current source/code/CSV artifacts and actual retained command receipts for B5/B1/B3/B2/B4/B6/C1/C2. Existing human COMPLETE labels were routing only, not proof.",
+  "plan_identities": [
+    {
+      "path": "/Users/bingyouli/.codex/plugin-data/claude-review-assistant/workspaces/01a16028-f1df-7f31-b3ba-87f7289e5fe0/batch-oh4_2klg/revision-plan-v3-20261023.md",
+      "bytes": 9807,
+      "sha256": "42dc17dcafbf6b14be35404f6e636f6c5e69dd91338f26473c76c50ab5531813"
+    },
+    {
+      "path": "/Users/bingyouli/.codex/plugin-data/claude-review-assistant/workspaces/01a16028-f1df-7f31-b3ba-87f7289e5fe0/batch-oh4_2klg/revision-plan-v3-round2.md",
+      "bytes": 8750,
+      "sha256": "95bcb082f7ea39eb035a052793200297284e945f65323c1d0147b0848722627d"
+    }
+  ],
+  "round2_direct_requirements": {
+    "E9": "**E9 C2 的 λ 在 Treasury 全部落在端点。** 简约 QR 在 4 个 Treasury 格子里都选了 λ=10，即扩展菜单的上端点。我怀疑斜率被压到了接近 0，模型退化成\"只有截距\"的历史分位数，也就是约等于 F、I。所以它追平 F，并不代表条件特征有用。请验算并贴出以下结果：\n- 每个 refit 选中 λ 时的斜率范数 ‖β‖，以及斜率对报告值的平均贡献；\n- 与 intercept-only 报告 I 和 frozen F 逐点比较：最大绝对差、相关系数、破线集合的重合度。\n\n然后在论文里如实写出结论。如果确实退化了，就写：\"在 Treasury 上，简约化带来的改进来自向历史 headroom 分位数收缩；条件特征没有可检测的增益，λ 再次落在菜单端点。\"",
+    "E10": "**E10 B 系列结论写进论文要准确。**\n- 两个 primary 的 Murphy 图都是 CROSSING，要写明\"在 0.95 分位的一致评分函数类内，两者都不占优\"。\n- FX H24 legacy 的 DM p=0.84，要写明\"1.83% 的改进不显著\"。\n- Holm 调整后哪些对比仍然显著，用表格列出，不要只挑显著的写。\n- 验算：贴出论文中这些句子的原文，以及对应 CSV 行的原样输出。"
+  },
+  "read_snapshot_canonical_sha256": "a7bd559e1cf80d47331388ad0bf9ac5bec0b5df22c7f2efbf3d1420a2163e2a9",
+  "files": [
+    {
+      "path": "manuscript/revision-v3/paper-content.json",
+      "bytes": 272270,
+      "sha256": "a7bd559e1cf80d47331388ad0bf9ac5bec0b5df22c7f2efbf3d1420a2163e2a9"
+    },
+    {
+      "path": "manuscript/revision-v3/main.tex",
+      "bytes": 152132,
+      "sha256": "3d2606d3c7d2581d4eb0fc5f69740a4b1b21d7723b6bd81798718a8685e8153a"
+    },
+    {
+      "path": "manuscript/revision-v3/paper.pdf",
+      "bytes": 525535,
+      "sha256": "e897bb052380f186964d5d253ece2d164cebff635f37e6c2717a9a28b833c3b1"
+    },
+    {
+      "path": "protocol/revision-20261022/study-spec.json",
+      "bytes": 5444,
+      "sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0"
+    },
+    {
+      "path": "protocol/revision-20261022/selection-freeze.json",
+      "bytes": 10040,
+      "sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7"
+    },
+    {
+      "path": "inference_tests.py",
+      "bytes": 7369,
+      "sha256": "2678afca3d0b01e80712c39d8a4a06f47107fc7576d1ee9d867f08c2212cd88c"
+    },
+    {
+      "path": "test_inference_tests.py",
+      "bytes": 3515,
+      "sha256": "1b4593c9c77e1a8dc5cd6ad5c79c14278db486188b9c234167c8691f60e08dbb"
+    },
+    {
+      "path": "run_v3_inference.py",
+      "bytes": 10276,
+      "sha256": "f54ff54dcbc8db5c7446f0fc885bce1d5408cb329d0545ba7021699f1301a527"
+    },
+    {
+      "path": "parsimonious_v3.py",
+      "bytes": 7595,
+      "sha256": "d330cf53c34b8cb8c9b6b182bf0c8ae21b40b92548e71644abfbf4ceb7e259e8"
+    },
+    {
+      "path": "test_parsimonious_v3.py",
+      "bytes": 1061,
+      "sha256": "3e3dae1e749552e7808a70b964ade22b9df63dc1549fc2e550cb1102afbc9258"
+    },
+    {
+      "path": "conditional_features.py",
+      "bytes": 6985,
+      "sha256": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5"
+    },
+    {
+      "path": "results/revision-20261023/inference-design.md",
+      "bytes": 2602,
+      "sha256": "31353e0470d744c9adccb7a5130935542cdce1ccc4f993fc09951a2a5e8d59cf"
+    },
+    {
+      "path": "results/revision-20261023/parsimonious-design.md",
+      "bytes": 1148,
+      "sha256": "741edc6f27264fc3095885732181033eba9a9df927c2ea607a006599b1051501"
+    },
+    {
+      "path": "results/revision-20261023/inference/dm.csv",
+      "bytes": 21877,
+      "sha256": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41"
+    },
+    {
+      "path": "results/revision-20261023/inference/coverage.csv",
+      "bytes": 22500,
+      "sha256": "58db76faaeb3250f66bbc90ab0be3f87f674e2022e3374961f73a27a935a2419"
+    },
+    {
+      "path": "results/revision-20261023/inference/holm.csv",
+      "bytes": 25492,
+      "sha256": "976affb08867b6e1c821f6ce5d9491a3b8087f427f0af9296763872863d2c8b3"
+    },
+    {
+      "path": "results/revision-20261023/inference/murphy-summary.csv",
+      "bytes": 613,
+      "sha256": "0ad8e0b96b4af14b2de460b9eab92fb9aa47a7d7f655aa64372dad93de7ccac1"
+    },
+    {
+      "path": "results/revision-20261023/inference/murphy-fx_hourly.pdf",
+      "bytes": 5063,
+      "sha256": "9d031f7aa849dc558bc0239f225a8fda84c0139c0324e2c597536e9a4a73a683"
+    },
+    {
+      "path": "results/revision-20261023/inference/murphy-nyfed_weekly.pdf",
+      "bytes": 4769,
+      "sha256": "f7482056366a3d22de3af07b48fb074a18a726fa59865c7cbe903adcc2d56bca"
+    },
+    {
+      "path": "results/revision-20261023/inference/murphy-fx_hourly-display.csv",
+      "bytes": 12481,
+      "sha256": "39135edee084bb0dc14ed503ab343678544fd92ee94d5ad8ef0005f42776d26a"
+    },
+    {
+      "path": "results/revision-20261023/inference/murphy-nyfed_weekly-display.csv",
+      "bytes": 11985,
+      "sha256": "27b481fec14dac803866d977a06beacd597324cca6a3c7c839ef3e023c721c57"
+    },
+    {
+      "path": "results/revision-20261023/parsimonious/summary.csv",
+      "bytes": 2115,
+      "sha256": "4cfcbfb837f67214c5193380afb2bce5fb52083cfbd426777105f1814f633c58"
+    },
+    {
+      "path": "results/revision-20261023/recovery/recovery.json",
+      "bytes": 711,
+      "sha256": "708ae294facc0193cede80495574efd320cf910f45554f379c968d94b9fdc34d"
+    },
+    {
+      "path": "results/revision-20261023/recovery/source-recovery.json",
+      "bytes": 508,
+      "sha256": "829d25c82e0ea4691c79786d02984ed108ca3fdccdd581e6bb3c9aa4114855ad"
+    },
+    {
+      "path": "results/revision-20261023/recovery/exact-reconciliation.json",
+      "bytes": 16030,
+      "sha256": "f778afa32461bb10d2a40ffc06c8db9958fee29cbe421c416b41f7becb670f5b"
+    },
+    {
+      "path": "results/revision-20261023/recovery/full-replication-with-id.stdout",
+      "bytes": 1392,
+      "sha256": "1dab67f3d1392888f7f65a03dec79a31923dc91536bc4d9e39c325f88bc367a2"
+    },
+    {
+      "path": "results/revision-20261023/recovery/full-replication-with-id.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/revision-20261023/treasury-feature-audit.json",
+      "bytes": 771,
+      "sha256": "07ab8ac703948e574dc4a4b8d9941568d8e0fa7b03038f0475b2073574ca5423"
+    }
+  ],
+  "original_archive_bindings": [
+    {
+      "path": "results/revision-20261022/evaluation-summary.csv",
+      "bytes": 17416,
+      "sha256": "2988f6239b02c0c5d4637df8ef0881de78a3d52a845c38b3c8e3726871d8be15",
+      "matches_recorded_replicated_export_sha256": true
+    },
+    {
+      "path": "results/revision-20261022/evaluation-annual.csv",
+      "bytes": 66777,
+      "sha256": "649619c41f4f92740bf3ebf9ee58f43781ad3439751be6faed101e1be65105cf",
+      "matches_recorded_replicated_export_sha256": true
+    },
+    {
+      "path": "results/revision-20261022/evaluation-nonoverlap.csv",
+      "bytes": 15512,
+      "sha256": "571485073b7136cbb66ca70799706a6ed50598d3a940933c0180a0bfe2938a8b",
+      "matches_recorded_replicated_export_sha256": true
+    },
+    {
+      "path": "results/revision-20261022/paired-comparisons.csv",
+      "bytes": 26918,
+      "sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9",
+      "matches_recorded_replicated_export_sha256": true
+    },
+    {
+      "path": "results/revision-20261022/paired-annual.csv",
+      "bytes": 102217,
+      "sha256": "5b0727af566cbfa935fba95c25cf2a7918dc073baa2daf8558d84984161bce40",
+      "matches_recorded_replicated_export_sha256": true
+    },
+    {
+      "path": "results/revision-20261022/paired-nonoverlap.csv",
+      "bytes": 25807,
+      "sha256": "b050007b8ddffc5ba5865ccad90960740d94f55d7dd7a814e88665aa3d55677d",
+      "matches_recorded_replicated_export_sha256": true
+    }
+  ],
+  "unchanged_primary_evidence": [
+    {
+      "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+      "source": "fx_hourly",
+      "native_unit": "USD",
+      "horizon": "6",
+      "left_window": "2880",
+      "left_method": "QR",
+      "right_window": "720",
+      "right_method": "rolling_F",
+      "contrast_category": "primary_contrast",
+      "declared_source_primary": "True",
+      "h24_legacy_contrast": "False",
+      "origin_count": "6625",
+      "first_source_index": "11927",
+      "last_source_index": "18551",
+      "mean_pinball_left": "385844.8854897607",
+      "mean_pinball_right": "441774.03703851684",
+      "mean_pinball_difference": "-55929.15154875609",
+      "relative_mean_loss_difference_percent": "-12.660126412969763",
+      "relative_difference_undefined_reason": "",
+      "mean_capacity_difference": "-910422.3763204545",
+      "mean_positive_overrun_difference": "-10408.03273273336",
+      "mean_unused_allowance_difference": "-920830.4090531879",
+      "strict_breach_count_left": "376",
+      "strict_breach_count_right": "332"
+    },
+    {
+      "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720",
+      "source": "fx_hourly",
+      "native_unit": "USD",
+      "horizon": "24",
+      "left_window": "2880",
+      "left_method": "QR",
+      "right_window": "720",
+      "right_method": "rolling_S",
+      "contrast_category": "h24_legacy_contrast",
+      "declared_source_primary": "False",
+      "h24_legacy_contrast": "True",
+      "origin_count": "6625",
+      "first_source_index": "11927",
+      "last_source_index": "18551",
+      "mean_pinball_left": "734695.0685732415",
+      "mean_pinball_right": "748383.5382581805",
+      "mean_pinball_difference": "-13688.46968493889",
+      "relative_mean_loss_difference_percent": "-1.8290714567022697",
+      "relative_difference_undefined_reason": "",
+      "mean_capacity_difference": "-3631054.026430672",
+      "mean_positive_overrun_difference": "167864.23163659475",
+      "mean_unused_allowance_difference": "-3463189.794794077",
+      "strict_breach_count_left": "531",
+      "strict_breach_count_right": "287"
+    },
+    {
+      "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260",
+      "source": "nyfed_weekly",
+      "native_unit": "USD millions",
+      "horizon": "6",
+      "left_window": "260",
+      "left_method": "QR",
+      "right_window": "260",
+      "right_method": "frozen_F",
+      "contrast_category": "common_history",
+      "declared_source_primary": "True",
+      "h24_legacy_contrast": "False",
+      "origin_count": "277",
+      "first_source_index": "405",
+      "last_source_index": "681",
+      "mean_pinball_left": "4159.673194735081",
+      "mean_pinball_right": "2758.665342960289",
+      "mean_pinball_difference": "1401.0078517747918",
+      "relative_mean_loss_difference_percent": "50.78571256749063",
+      "relative_difference_undefined_reason": "",
+      "mean_capacity_difference": "-6704.30083699316",
+      "mean_positive_overrun_difference": "1736.2228936244496",
+      "mean_unused_allowance_difference": "-4968.07794336871",
+      "strict_breach_count_left": "54",
+      "strict_breach_count_right": "28"
+    }
+  ],
+  "primary_interpretation": "The FX original primary remains H6 QR W2880 minus rolling F W720 (-12.660%); the matched-history comparison to frozen F W2880 (-14.767%) is separately labeled and not a replacement primary. Treasury remains H6 QR W260 minus frozen F W260 (+50.786%). FX H24 QR W2880 versus rolling S W720 remains legacy, not a new primary.",
+  "requirements": [
+    {
+      "code": "B5",
+      "requirement": "- **B5 先恢复逐点数据。** 逐点预测轨迹原本是私有文件，本地已经删除。\n  - 用仓库的 `reproduce_conditional.py replicate` 重新生成。\n  - FX 原始数据按仓库 README 第 82–94 行的说明从 Kaggle 重新下载，并校验 SHA-256 `b8e92c54a76b49990b028252d6a89195e92193990e72f10228f2280a11a967fa`。\n  - 重算得到的 summary 必须与归档 CSV 完全一致。不一致就**停下来报告**，不要继续往下做。\n  - Kaggle 下载失败时：先完成 Treasury 的 B1–B4，FX 部分标注 \"blocked: raw input unavailable\"，**不许编数**。",
+      "implementation_verdict": "SUPPORTED_BY_RETAINED_REPLICATION_AND_EXACT_EXPORT_RECEIPTS",
+      "evidence": [
+        "results/revision-20261023/recovery/recovery.json: full_replicate_returncode=0; initial_argument_parse_returncode=2; all_six_csvs_byte_identical=true.",
+        "results/revision-20261023/recovery/full-replication-with-id.stdout: REPLICATION_AUDITED, accuracy_recomputed=true, 24 validation and 32 evaluation/reference jobs, audit NUMERICAL_AUDIT_VERIFIED.",
+        "results/revision-20261023/recovery/exact-reconciliation.json: source identities and all six export tables; this pass also matched all six current archive CSV SHA256 values to recorded replicated exports."
+      ],
+      "scope_limit": "This pass did not reread raw FX monetary rows, redownload source data, recreate origin-level traces, rerun replication or independently reconstruct every scalar. The stored public controller stdout has no full launch argv; do not present a reconstructed command as an original captured launch command. The old source-recovery.json Treasury=PENDING field is an intermediate snapshot, superseded by the final reconciliation's Treasury identity and complete tables.",
+      "scientific_boundary": "An exact replay of an inspected record does not create new out-of-sample evidence; raw redistribution permission remains unresolved."
+    },
+    {
+      "code": "B1",
+      "requirement": "- **B1 预测精度检验。**\n  - 检验范围：两个 primary、FX H24 legacy、Table 3/4 中每个条件方法相对匹配 frozen F 的对比。\n  - 方法：Diebold–Mariano (1995)，方差用 Newey–West HAC（带宽 ≥ H，因为 H 步窗口重叠），同时报告 Harvey, Leybourne & Newbold (1997) 的小样本修正。\n  - 由于是固定窗口滚动估计，正文要说明 Giacomini & White (2006) 无条件 CPA 检验的适用理由。\n  - 表中报告 t 统计量和 p 值。",
+      "implementation_verdict": "REQUESTED_OUTPUTS_PRESENT_WITH_EXPLICIT_WORKING_REFERENCE_LIMITS",
+      "direct_checks": {
+        "rows": 74,
+        "unique": 74,
+        "common": 72,
+        "common_F": 24,
+        "bandwidth_ge_H": true,
+        "primary_legacy_rows": [
+          {
+            "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+            "source": "fx_hourly",
+            "horizon": "6",
+            "left_window": "2880",
+            "left_method": "QR",
+            "right_window": "720",
+            "right_method": "rolling_F",
+            "category": "primary_contrast",
+            "primary": "True",
+            "legacy": "False",
+            "n": "6625",
+            "bandwidth": "10",
+            "mean_difference": "-55929.15154875609",
+            "lrv": "771730783181.0083",
+            "dm_t": "-5.182010163255102",
+            "dm_p": "2.1950725127844084e-07",
+            "hln_t": "-5.177708102311265",
+            "hln_p": "2.312477658474048e-07",
+            "status": "OK",
+            "double_bandwidth": "20",
+            "double_dm_t": "-5.09569732612404",
+            "double_dm_p": "3.474598871721835e-07",
+            "double_hln_p": "3.651083142370898e-07"
+          },
+          {
+            "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720",
+            "source": "fx_hourly",
+            "horizon": "24",
+            "left_window": "2880",
+            "left_method": "QR",
+            "right_window": "720",
+            "right_method": "rolling_S",
+            "category": "h24_legacy_contrast",
+            "primary": "False",
+            "legacy": "True",
+            "n": "6625",
+            "bandwidth": "24",
+            "mean_difference": "-13688.46968493889",
+            "lrv": "29890503995759.02",
+            "dm_t": "-0.20378922646878483",
+            "dm_p": "0.8385182122097816",
+            "hln_t": "-0.20306635089432687",
+            "hln_p": "0.8390894089762104",
+            "status": "OK",
+            "double_bandwidth": "48",
+            "double_dm_t": "-0.18469752278655413",
+            "double_dm_p": "0.8534662892793793",
+            "double_hln_p": "0.853985850626567"
+          },
+          {
+            "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260",
+            "source": "nyfed_weekly",
+            "horizon": "6",
+            "left_window": "260",
+            "left_method": "QR",
+            "right_window": "260",
+            "right_method": "frozen_F",
+            "category": "common_history",
+            "primary": "True",
+            "legacy": "False",
+            "n": "277",
+            "bandwidth": "6",
+            "mean_difference": "1401.0078517747918",
+            "lrv": "76333614.47751872",
+            "dm_t": "2.668840012717596",
+            "dm_p": "0.007611369596467356",
+            "hln_t": "2.615844168606793",
+            "hln_p": "0.009390617005130322",
+            "status": "OK",
+            "double_bandwidth": "12",
+            "double_dm_t": "2.648267890747407",
+            "double_dm_p": "0.008090538533356043",
+            "double_hln_p": "0.009945618220347861"
+          }
+        ],
+        "status_counts": {
+          "OK": 72,
+          "IDENTICAL_LOSSES": 2
+        }
+      },
+      "evidence": [
+        "inference_tests.py:65–87: Bartlett HAC, L>=H, normal-reference DM, HLN multiplier and Student reference.",
+        "run_v3_inference.py:43–54: paired original traces, equal origins, exact archived mean-difference check, 74 distinct comparison rows.",
+        "Current Tables 3/4 have 12 conditional rows each with breach rate, same-history F percent difference and DM/HLN columns; Table 6 separately labels original FX primary, matched FX comparison, FX H24 legacy and Treasury primary."
+      ],
+      "current_prose": [
+        {
+          "section": "5. Evaluation design",
+          "block": 8,
+          "html": "After exact trace reproduction, we compare paired loss differences using Diebold–Mariano (1995) statistics with Bartlett Newey–West (1987) covariance. The fixed bandwidth is L=max{H,⌊4(n/100)<super>2/9</super>⌋}; doubled bandwidth supplies a sensitivity check. Harvey, Leybourne and Newbold (1997) supply the reported small-sample multiplier, here used as an approximation for pinball loss. Fixed finite estimation windows motivate the unconditional predictive-ability interpretation of Giacomini and White (2006), under mixing, adequate high-order moments and positive long-run variance. Shared training can extend dependence beyond the target horizon. These are working assumptions for this post-result analysis."
+        }
+      ],
+      "scope_limit": "No paired losses, HAC long-run variance or reference probabilities were recalculated here. Fixed-window unconditional CPA interpretation is explained, not its empirical assumptions proven; shared training can require dependence bandwidth beyond H. HLN applied to pinball is explicitly approximate."
+    },
+    {
+      "code": "B3",
+      "requirement": "- **B3 覆盖率回测。**\n  - 在已有的不重叠 H+1 网格上（样本数 947/265/40/12），做 Kupiec (1995) POF 检验和 Christoffersen (1998) 独立性/条件覆盖检验。\n  - 全样本另做 Engle & Manganelli (2004) 的 DQ 检验。\n  - 正文的覆盖率讨论用这些标准检验；Appendix D 的 e-value 降级为附录补充。",
+      "implementation_verdict": "SPARSE_POF_IND_CC_PRESENT; FULL_SAMPLE_DQ_IS_A_DISCLOSED_ADAPTATION",
+      "direct_checks": {
+        "rows": 90,
+        "grid_n": [
+          "12",
+          "265",
+          "40",
+          "947"
+        ],
+        "stride_matches_Hplus1": true,
+        "DQ_status": {
+          "OK": 90
+        },
+        "ind_status": {
+          "OK": 52,
+          "BOUNDARY_REFERENCE": 38
+        },
+        "selected_rows": [
+          {
+            "source": "fx_hourly",
+            "horizon": "6",
+            "window": "2880",
+            "method": "QR",
+            "grid_stride": "7",
+            "first_origin": "11927",
+            "n": "947",
+            "hits": "50",
+            "rate": "0.05279831045406547",
+            "pof_lr": "0.15343206852736557",
+            "pof_p": "0.6952768918173253",
+            "ind_lr": "0.7452445811094321",
+            "ind_p": "0.3879860137718663",
+            "cc_lr": "0.8986766496367977",
+            "cc_p": "0.638050193956863",
+            "ind_status": "OK",
+            "boundary": "False",
+            "n00": "851",
+            "n01": "46",
+            "n10": "45",
+            "n11": "4",
+            "dq_status": "OK",
+            "dq_n": "6615",
+            "dq_df": "6",
+            "dq_stat": "3.5586834574745327",
+            "dq_p": "0.7361464566292177",
+            "dq_bandwidth": "10"
+          },
+          {
+            "source": "fx_hourly",
+            "horizon": "24",
+            "window": "2880",
+            "method": "QR",
+            "grid_stride": "25",
+            "first_origin": "11927",
+            "n": "265",
+            "hits": "21",
+            "rate": "0.07924528301886792",
+            "pof_lr": "4.083111705160775",
+            "pof_p": "0.04331382313342323",
+            "ind_lr": "2.9362007213292998",
+            "ind_p": "0.08661423917492746",
+            "cc_lr": "7.019312426490075",
+            "cc_p": "0.02990719436707465",
+            "ind_status": "OK",
+            "boundary": "False",
+            "n00": "226",
+            "n01": "17",
+            "n10": "17",
+            "n11": "4",
+            "dq_status": "OK",
+            "dq_n": "6597",
+            "dq_df": "6",
+            "dq_stat": "10.629553953976362",
+            "dq_p": "0.10052276337793768",
+            "dq_bandwidth": "24"
+          },
+          {
+            "source": "nyfed_weekly",
+            "horizon": "6",
+            "window": "260",
+            "method": "QR",
+            "grid_stride": "7",
+            "first_origin": "405",
+            "n": "40",
+            "hits": "7",
+            "rate": "0.175",
+            "pof_lr": "8.227494073781386",
+            "pof_p": "0.004126046248434382",
+            "ind_lr": "0.08137590478903434",
+            "ind_p": "0.7754414145076511",
+            "cc_lr": "8.30886997857042",
+            "cc_p": "0.015694656273894155",
+            "ind_status": "OK",
+            "boundary": "False",
+            "n00": "26",
+            "n01": "6",
+            "n10": "6",
+            "n11": "1",
+            "dq_status": "OK",
+            "dq_n": "267",
+            "dq_df": "6",
+            "dq_stat": "17.104126478337893",
+            "dq_p": "0.008908086546044377",
+            "dq_bandwidth": "6"
+          },
+          {
+            "source": "fx_hourly",
+            "horizon": "6",
+            "window": "720",
+            "method": "rolling_F",
+            "grid_stride": "7",
+            "first_origin": "11927",
+            "n": "947",
+            "hits": "49",
+            "rate": "0.05174234424498416",
+            "pof_lr": "0.059868919491520955",
+            "pof_p": "0.8067032386212847",
+            "ind_lr": "0.13586111665682665",
+            "ind_p": "0.7124307933754886",
+            "cc_lr": "0.1957300361483476",
+            "cc_p": "0.9067712932289955",
+            "ind_status": "OK",
+            "boundary": "False",
+            "n00": "850",
+            "n01": "47",
+            "n10": "47",
+            "n11": "2",
+            "dq_status": "OK",
+            "dq_n": "6615",
+            "dq_df": "6",
+            "dq_stat": "17.38059624892091",
+            "dq_p": "0.007981716318991423",
+            "dq_bandwidth": "10"
+          },
+          {
+            "source": "fx_hourly",
+            "horizon": "24",
+            "window": "720",
+            "method": "rolling_S",
+            "grid_stride": "25",
+            "first_origin": "11927",
+            "n": "265",
+            "hits": "10",
+            "rate": "0.03773584905660377",
+            "pof_lr": "0.9135277267110666",
+            "pof_p": "0.33918013842732714",
+            "ind_lr": "4.0039411853769735",
+            "ind_p": "0.045394000613665185",
+            "cc_lr": "4.91746891208804",
+            "cc_p": "0.08554314109839081",
+            "ind_status": "OK",
+            "boundary": "False",
+            "n00": "246",
+            "n01": "8",
+            "n10": "8",
+            "n11": "2",
+            "dq_status": "OK",
+            "dq_n": "6597",
+            "dq_df": "6",
+            "dq_stat": "13.976381509889784",
+            "dq_p": "0.029901111117702456",
+            "dq_bandwidth": "24"
+          },
+          {
+            "source": "nyfed_weekly",
+            "horizon": "6",
+            "window": "260",
+            "method": "frozen_F",
+            "grid_stride": "7",
+            "first_origin": "405",
+            "n": "40",
+            "hits": "4",
+            "rate": "0.1",
+            "pof_lr": "1.652337513019706",
+            "pof_p": "0.1986410814587244",
+            "ind_lr": "0.9162864676735722",
+            "ind_p": "0.3384519174717687",
+            "cc_lr": "2.5686239806932782",
+            "cc_p": "0.2768409873964233",
+            "ind_status": "BOUNDARY_REFERENCE",
+            "boundary": "True",
+            "n00": "31",
+            "n01": "4",
+            "n10": "4",
+            "n11": "0",
+            "dq_status": "OK",
+            "dq_n": "267",
+            "dq_df": "6",
+            "dq_stat": "28.22438447494394",
+            "dq_p": "8.52462376410396e-05",
+            "dq_bandwidth": "6"
+          }
+        ]
+      },
+      "evidence": [
+        "inference_tests.py:93–108: strict binary hits, full-grid POF plus transition-independence LR, boundary/unidentified states retained.",
+        "inference_tests.py:110–122: six-instrument full-sample HAC DQ-type Wald, matured hit lags H+1 through H+4, issued capacity; rank/definiteness gates.",
+        "run_v3_inference.py B3 branch: original first-origin+j*(H+1) grids, no annual reset; coverage.csv contains all 90 report cells.",
+        "Current Table 7 displays both source primaries, original FX references, matched FX F and FX legacy; e-value material is retained in Appendix D."
+      ],
+      "current_prose": [
+        {
+          "section": "5. Evaluation design",
+          "block": 10,
+          "html": "Kupiec (1995) proportion-of-failures and Christoffersen (1998) independence/conditional-coverage diagnostics use the original first-origin-plus-j(H+1) grid. Conditional coverage here adds full-sample-grid POF to the transition-independence LR. A DQ-type full-sample HAC Wald adaptation of Engle and Manganelli (2004) uses the intercept, issue-known capacity and matured hit lags H+1 through H+4. Singular covariance or an unidentified transition row yields NA. The fixed 72-member common-history family receives Holm (1979) adjustment; exact identical losses use conservative p=1 solely for multiplicity bookkeeping. Appendix H and the output CSVs retain all statistics and statuses."
+        },
+        {
+          "section": "Appendix H. Complete post-result inference and specification outputs",
+          "block": 1,
+          "html": "The HAC covariance uses centered moment products with denominator n. DQ instruments are the intercept, four matured hit lags and standardized issue-known capacity; its chi-square reference has six degrees of freedom when full rank. The covariance must be finite, full rank and positive definite. The doubled bandwidth remains much shorter than the longest training history, so this limited check does not establish adequate long-run covariance calibration. Sparse grid tests remove overlapping target windows but retain shared training dependence. Treasury grid sizes of 40 or12 are particularly weak for asymptotic reference calibration. The equality-based POF, CC and DQ diagnostics require exact 5% moments; a quantile with atoms can validly be conservative, so rejection by low hit frequency differs from undercoverage. Missing transition-state rows render independence and CC unidentified. HLN was derived for mean-squared-error comparisons; pinball p values are approximate. Holm familywise control requires valid component p values: the adjustment does not validate the working DM references or remove post-inspection selection. All analyses are post-result and reuse inspected samples."
+        },
+        {
+          "section": "Appendix H. Complete post-result inference and specification outputs",
+          "block": 2,
+          "html": "The DQ-type null is E[Z<sub>t</sub>(I<sub>t</sub>−.05)]=0 for the six raw instruments: the intercept, four mature hit lags and issued capacity. The implementation centers/scales capacity across diagnostic rows for numerical conditioning. With the intercept and a finite positive capacity standard deviation, this common invertible column transformation leaves the Wald statistic unchanged in exact arithmetic. Its sample constants are not forecast inputs or claimed available at issue. Rejection concerns these moments; nonrejection leaves other conditional departures untested. The original out-of-sample CAViaR theorem assumes growing estimation and evaluation samples with their evaluation-to-estimation ratio tending to zero. The fixed-window, overlapping-target HAC calculation here is an adaptation, not a direct application of that theorem."
+        }
+      ],
+      "partial_or_not_literal": "The implemented DQ is not the original one-step CAViaR out-of-sample DQ statistic/theorem. It is an explicitly named HAC conditional-moment adaptation for overlapping targets and fixed estimation windows. This is a methodological adaptation rather than literal original-formula compliance.",
+      "scope_limit": "The sparse grids remove target overlap, not common-estimation dependence. POF/CC/DQ equality moments require exactly 5% strict hits; a valid quantile with a floor atom can be conservative. Small Treasury grids and boundary rows limit chi-square calibration. Nonrejection is not conditional calibration."
+    },
+    {
+      "code": "B2",
+      "requirement": "- **B2 多重比较。** 对 72 个匹配对比报告 Holm 调整后的 p 值；或者对每个 source/H/W 格子做 Hansen, Lunde & Nason (2011) 的 Model Confidence Set（90%）。",
+      "implementation_verdict": "HOLM_ALTERNATIVE_IMPLEMENTED_FOR_ALL_72_CONTRASTS; MCS_NOT_REQUIRED",
+      "direct_checks": {
+        "rows": 72,
+        "unique": 72,
+        "same_ids_as_common_dm": true,
+        "recorded_family_sizes": [
+          "72"
+        ],
+        "below05": 19,
+        "identical_rows": [
+          {
+            "contrast_id": "nyfed_weekly-h6-KNN52-minus-frozen_F52",
+            "source": "nyfed_weekly",
+            "horizon": "6",
+            "left_window": "52",
+            "left_method": "KNN",
+            "right_window": "52",
+            "right_method": "frozen_F",
+            "category": "common_history",
+            "primary": "False",
+            "legacy": "False",
+            "n": "277",
+            "bandwidth": "6",
+            "mean_difference": "0.0",
+            "lrv": "0.0",
+            "dm_t": "",
+            "dm_p": "",
+            "hln_t": "",
+            "hln_p": "",
+            "status": "IDENTICAL_LOSSES",
+            "double_bandwidth": "12",
+            "double_dm_t": "",
+            "double_dm_p": "",
+            "double_hln_p": "",
+            "holm_family_size": "72",
+            "holm_input_p": "1.0",
+            "holm_p": "1.0",
+            "holm_note": "conservative p1 for identical forecasts"
+          },
+          {
+            "contrast_id": "nyfed_weekly-h24-KNN52-minus-frozen_F52",
+            "source": "nyfed_weekly",
+            "horizon": "24",
+            "left_window": "52",
+            "left_method": "KNN",
+            "right_window": "52",
+            "right_method": "frozen_F",
+            "category": "common_history",
+            "primary": "False",
+            "legacy": "False",
+            "n": "277",
+            "bandwidth": "24",
+            "mean_difference": "0.0",
+            "lrv": "0.0",
+            "dm_t": "",
+            "dm_p": "",
+            "hln_t": "",
+            "hln_p": "",
+            "status": "IDENTICAL_LOSSES",
+            "double_bandwidth": "48",
+            "double_dm_t": "",
+            "double_dm_p": "",
+            "double_hln_p": "",
+            "holm_family_size": "72",
+            "holm_input_p": "1.0",
+            "holm_p": "1.0",
+            "holm_note": "conservative p1 for identical forecasts"
+          }
+        ]
+      },
+      "all_rows_manuscript_crosswalk": {
+        "rows": 72,
+        "all_source_display_fields_equal": true,
+        "mismatch_row_indices": [],
+        "scope": "Stored p/statistic fields formatted to declared .3g and compared to every existing Table H2 row; no statistical test or adjustment recalculated."
+      },
+      "evidence": [
+        "All 72 Holm CSV IDs equal the 72 common-history DM IDs, without original cross-window FX primary/legacy or a duplicated Treasury primary.",
+        "Every Table H2 stored statistic, rounded p value, direction and status equals its corresponding CSV field under the declared .3g display convention; no adjustment recalculated.",
+        "Two identical-loss contrasts retain NA test statistics and bookkeeping input p=1."
+      ],
+      "scope_limit": "Family adjustment requires valid component p values; it does not validate working DM assumptions or erase post-result investigator selection. Nineteen below-.05 rows include adverse comparisons and are not a claim of 19 improvements."
+    },
+    {
+      "code": "B4",
+      "requirement": "- **B4 Murphy 图。** 用 Ehm, Gneiting, Jordan & Krüger (2016, JRSS-B) 的 elementary quantile scores，给两个 primary 画 τ=0.95 的 Murphy diagram。这正好回答论文自己写的\"无法回答\"的问题：QR 是否在所有 0.95 分位一致评分函数下都占优。现有的 preference frontier 保留，但要写明它和 Murphy 图的区别（前者在固定报告下变动分位水平，后者固定 τ、变动阈值 θ）。表述框架引用 Gneiting, Balabdaoui & Raftery (2007) 的 \"sharpness subject to calibration\"。",
+      "implementation_verdict": "BOTH_ORIGINAL_PRIMARY_DIAGRAMS_AND_CROSSING_CONCLUSIONS_PRESENT",
+      "direct_checks": [
+        {
+          "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720",
+          "source": "fx_hourly",
+          "tau": "0.95",
+          "breakpoint_count": "16146",
+          "ranking": "CROSSING",
+          "arithmetic_tolerance": "1.4210854715202004e-14",
+          "min_elementary_difference": "-0.004430188679245408",
+          "max_elementary_difference": "0.0011622641509434171",
+          "integral_difference": "-55929.1515487646",
+          "archived_pinball_difference": "-55929.15154875609",
+          "absolute_integral_error": "8.512870408594608e-09",
+          "display_grid_points": "201"
+        },
+        {
+          "contrast_id": "nyfed_weekly-h6-QR260-minus-frozen_F260",
+          "source": "nyfed_weekly",
+          "tau": "0.95",
+          "breakpoint_count": "640",
+          "ranking": "CROSSING",
+          "arithmetic_tolerance": "1.4210854715202004e-14",
+          "min_elementary_difference": "-0.0184115523465704",
+          "max_elementary_difference": "0.04963898916967486",
+          "integral_difference": "1401.0078517747488",
+          "archived_pinball_difference": "1401.0078517747918",
+          "absolute_integral_error": "4.297362465877086e-11",
+          "display_grid_points": "201"
+        }
+      ],
+      "evidence": [
+        "inference/murphy-summary.csv retains the two original primary IDs, tau=.95, both CROSSING, sign-changing extrema, full-breakpoint counts and integral discrepancy.",
+        "inference_tests.py:131–150 evaluates all unique forecast/outcome breakpoints; 201-point CSVs are display grids, not the dominance test.",
+        "Current Figure 4a/4b and Table H1 retain both diagrams; Section 8 distinguishes fixed tau/varying theta from fixed-action varying-weight frontiers and cites calibration/sharpness."
+      ],
+      "scope_limit": "No full-breakpoint computation or image inspection repeated in this task. Crossing rules out empirical dominance over the stated score class in this finite record, not population dominance or optimality of another forecast."
+    },
+    {
+      "code": "B6",
+      "requirement": "- **B6 代码和输出位置。**\n  - 新脚本 `inference_tests.py`，配套 `test_inference_tests.py`：DM、Kupiec、Christoffersen 都要用已知答案的小例子测试。\n  - 输出放到 `results/revision-20261023/inference/`。",
+      "implementation_verdict": "NAMED_SCRIPTS_AND_ACTUAL_KNOWN_ANSWER_TEST_RECEIPTS_PRESENT",
+      "evidence": [
+        "inference_tests.py and test_inference_tests.py are present; tests include explicit numerical answers for DM/Bartlett/HLN, Kupiec and Christoffersen, plus degenerate cases.",
+        "The copied E10-010 execution record includes the actual uv temporary-environment argv, timestamps, returncode0 and complete stdout/stderr; all 11 named inference tests passed within that 116-test historical selected-suite run.",
+        "All requested B outputs are under results/revision-20261023/inference/."
+      ],
+      "scope_limit": "That record is a historical execution, not a newly run test or a claim to be the latest whole-repository suite. This closeout did not execute pytest, unittest or numerical inference helpers."
+    },
+    {
+      "code": "C1",
+      "requirement": "- **C1 在 Discussion 中正面分析最可能的机制。** Treasury 直接沿用了为小时级 FX 设计的 33 维特征，导致：\n  - 25 个滞后水平放在周数据上，等于用了 24 周的水平值；\n  - hour-of-day 的正余弦在周三收盘数据上是常数；\n  - W=52 时，34 个参数只配 52 个重叠样本，明显过参数化；\n  - Treasury 四个格子的 λ 全部落在菜单端点。",
+      "implementation_verdict": "FACTUAL_MECHANISMS_ADDRESSED; STRONG_CAUSAL_OR_OVERPARAMETERIZATION_CLAIM_NOT_ESTABLISHED",
+      "feature_receipt": {
+        "post_result": true,
+        "predictors": 33,
+        "coefficients_with_intercept": 34,
+        "lagged_level_coordinates": 25,
+        "max_lag_weeks": 24,
+        "constant_columns_zero_based": [
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "calendar_hour_unique": [
+          0
+        ],
+        "weekday_unique": [
+          2
+        ],
+        "weekly_gaps": [
+          7
+        ],
+        "small_window": 52,
+        "validation_origins": 52,
+        "qr_selections": [
+          {
+            "horizon": 6,
+            "window": 52,
+            "parameter": 0.1
+          },
+          {
+            "horizon": 6,
+            "window": 260,
+            "parameter": 0.001
+          },
+          {
+            "horizon": 24,
+            "window": 52,
+            "parameter": 0.001
+          },
+          {
+            "horizon": 24,
+            "window": 260,
+            "parameter": 0.1
+          }
+        ],
+        "original_penalty_menu": [
+          0.001,
+          0.01,
+          0.1
+        ]
+      },
+      "original_selected_parameters": [
+        {
+          "horizon": 6,
+          "window": 52,
+          "parameter": 0.1
+        },
+        {
+          "horizon": 6,
+          "window": 260,
+          "parameter": 0.001
+        },
+        {
+          "horizon": 24,
+          "window": 52,
+          "parameter": 0.001
+        },
+        {
+          "horizon": 24,
+          "window": 260,
+          "parameter": 0.1
+        }
+      ],
+      "current_prose": [
+        {
+          "section": "9. Discussion and limitations",
+          "block": 1,
+          "html": "The executed QR specifications perform poorly on the weekly Treasury task. Their 25 level coordinates span the current observation through 24 weeks of history. The two hour coordinates, two weekday coordinates and gap indicator are exactly constant on this weekly source. Training-only centering makes those five columns exactly zero, so they provide no predictive variation and are not a demonstrated mechanism of overfitting. The original nominal design has 33 predictors plus an intercept, or 34 coefficients, with at most 28 varying columns and 29 potentially predictive coefficients before other collinearity, against W=52 overlapping training labels in the shorter history. All four Treasury penalty selections are menu endpoints. Its 52 validation origins contain at most 3 disjoint H24 label paths, a path count rather than an effective-sample-size estimate. Correlated lag levels, overlapping labels, restricted tuning, target dynamics and reporting composition remain competing explanations. Neither the parsimonious sensitivity nor the aggregate panel separates those mechanisms."
+        }
+      ],
+      "evidence": [
+        "conditional_features.py:35–65 specifies 25 current/lagged levels and 33 total coordinates; 68–79 centers exact constant columns to zero.",
+        "treasury-feature-audit.json reports all five constant coordinates 28–32 and the weekly clock, 52 short-window labels and four original endpoint selections.",
+        "Current Discussion distinguishes nominal34 coefficients from at most29 potentially varying coefficients before other collinearity."
+      ],
+      "not_proven": "The plan's diagnosis that constant hourly coordinates cause overfitting and that the design is demonstrably overparameterized is not established by these facts. Constant centered columns cannot themselves add predictive variation. Feature/lag dependence, short validation, target dynamics, tuning bounds and reporting composition remain competing explanations.",
+      "disposition": "The current qualified discussion is more defensible than asserting the plan's causal conjecture as fact. No new fitting is needed or authorized by this audit to manufacture such a conclusion."
+    },
+    {
+      "code": "C2",
+      "requirement": "- **C2 简约 QR（探索性，明确标注 post-result）。**\n  - 特征只用 B_t、N_t、短期 RMS、长期 RMS 共 4 个；λ 网格扩展为 {0.001, 0.01, 0.1, 1, 10}。\n  - 验证/评估切分不变，报告 Treasury 4 格和 FX 4 格的结果。\n  - 不替换 primary，只用来判断失败到底是\"条件方法本身不行\"，还是\"特征设计不适配\"。",
+      "implementation_verdict": "ALL_EIGHT_PRESCRIBED_SPECIFICATION_CELLS_PRESENT; FEATURE_ONLY_CAUSAL_DIAGNOSIS_REMAINS_OPEN",
+      "stored_summary_rows": [
+        {
+          "source": "nyfed_weekly",
+          "horizon": "6",
+          "window": "52",
+          "status": "COMPLETE",
+          "selected_penalty": "10.0",
+          "origin_count": "277",
+          "mean_pinball": "2707.1081586888545",
+          "mean_capacity": "115484.96202823165",
+          "mean_extra_allowance": "59225.39163111974",
+          "strict_breach_count": "15",
+          "strict_breach_rate": "0.05415162454873646",
+          "mean_positive_overrun": "813.6976024036255",
+          "conditional_mean_overrun": "15026.282391053619",
+          "conditional_overrun_denominator": "15",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "38681.9087281082",
+          "percent_vs_QR": "-46.872772884966786",
+          "breaches_QR": "84",
+          "percent_vs_frozen_F": "-2.5888471945183076",
+          "breaches_frozen_F": "11"
+        },
+        {
+          "source": "nyfed_weekly",
+          "horizon": "6",
+          "window": "260",
+          "status": "COMPLETE",
+          "selected_penalty": "10.0",
+          "origin_count": "277",
+          "mean_pinball": "2818.4060957344795",
+          "mean_capacity": "103632.48980425218",
+          "mean_extra_allowance": "47372.91940714026",
+          "strict_breach_count": "32",
+          "strict_breach_rate": "0.11552346570397112",
+          "mean_positive_overrun": "1517.6191506482248",
+          "conditional_mean_overrun": "13136.890772798695",
+          "conditional_overrun_denominator": "32",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "27533.358052373325",
+          "percent_vs_QR": "-32.24453066885759",
+          "breaches_QR": "54",
+          "percent_vs_frozen_F": "2.165567234410668",
+          "breaches_frozen_F": "28"
+        },
+        {
+          "source": "nyfed_weekly",
+          "horizon": "24",
+          "window": "52",
+          "status": "COMPLETE",
+          "selected_penalty": "10.0",
+          "origin_count": "277",
+          "mean_pinball": "3936.958910196048",
+          "mean_capacity": "128625.09447517566",
+          "mean_extra_allowance": "72365.52407806375",
+          "strict_breach_count": "36",
+          "strict_breach_rate": "0.1299638989169675",
+          "mean_positive_overrun": "2248.959240588889",
+          "conditional_mean_overrun": "17304.491934531172",
+          "conditional_overrun_denominator": "36",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "36008.95263273207",
+          "percent_vs_QR": "-67.63852756432253",
+          "breaches_QR": "132",
+          "percent_vs_frozen_F": "5.95489888474829",
+          "breaches_frozen_F": "33"
+        },
+        {
+          "source": "nyfed_weekly",
+          "horizon": "24",
+          "window": "260",
+          "status": "COMPLETE",
+          "selected_penalty": "10.0",
+          "origin_count": "277",
+          "mean_pinball": "2483.02682755097",
+          "mean_capacity": "135637.54837556416",
+          "mean_extra_allowance": "79377.97797845225",
+          "strict_breach_count": "15",
+          "strict_breach_rate": "0.05415162454873646",
+          "mean_positive_overrun": "444.4044629243857",
+          "conditional_mean_overrun": "8206.669082003657",
+          "conditional_overrun_denominator": "15",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "41216.851755456075",
+          "percent_vs_QR": "-52.293150827459",
+          "breaches_QR": "84",
+          "percent_vs_frozen_F": "0.10968443058975556",
+          "breaches_frozen_F": "12"
+        },
+        {
+          "source": "fx_hourly",
+          "horizon": "6",
+          "window": "720",
+          "status": "COMPLETE",
+          "selected_penalty": "0.01",
+          "origin_count": "6625",
+          "mean_pinball": "449150.35448878305",
+          "mean_capacity": "22576454.15151639",
+          "mean_extra_allowance": "7344712.902240787",
+          "strict_breach_count": "414",
+          "strict_breach_rate": "0.06249056603773585",
+          "mean_positive_overrun": "177368.38370413182",
+          "conditional_mean_overrun": "2838322.565313704",
+          "conditional_overrun_denominator": "414",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "5613007.799397157",
+          "percent_vs_QR": "3.670901866144686",
+          "breaches_QR": "531",
+          "percent_vs_frozen_F": "1.4764717411070867",
+          "breaches_frozen_F": "332"
+        },
+        {
+          "source": "fx_hourly",
+          "horizon": "6",
+          "window": "2880",
+          "status": "COMPLETE",
+          "selected_penalty": "0.01",
+          "origin_count": "6625",
+          "mean_pinball": "433275.30347718514",
+          "mean_capacity": "22160678.653009325",
+          "mean_extra_allowance": "6928937.403733718",
+          "strict_breach_count": "399",
+          "strict_breach_rate": "0.060226415094339625",
+          "mean_positive_overrun": "182282.10761788732",
+          "conditional_mean_overrun": "3026613.942276951",
+          "conditional_overrun_denominator": "399",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "5202146.024803844",
+          "percent_vs_QR": "12.292612853276525",
+          "breaches_QR": "376",
+          "percent_vs_frozen_F": "-4.2893706508927965",
+          "breaches_frozen_F": "360"
+        },
+        {
+          "source": "fx_hourly",
+          "horizon": "24",
+          "window": "720",
+          "status": "COMPLETE",
+          "selected_penalty": "0.01",
+          "origin_count": "6625",
+          "mean_pinball": "917442.574577165",
+          "mean_capacity": "28677752.05600605",
+          "mean_extra_allowance": "13446010.806730445",
+          "strict_breach_count": "701",
+          "strict_breach_rate": "0.10581132075471698",
+          "mean_positive_overrun": "488869.75991416816",
+          "conditional_mean_overrun": "4620202.795194528",
+          "conditional_overrun_denominator": "701",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "9060326.053174106",
+          "percent_vs_QR": "-11.39953127759524",
+          "breaches_QR": "924",
+          "percent_vs_frozen_F": "16.513128710925677",
+          "breaches_frozen_F": "427"
+        },
+        {
+          "source": "fx_hourly",
+          "horizon": "24",
+          "window": "2880",
+          "status": "COMPLETE",
+          "selected_penalty": "0.01",
+          "origin_count": "6625",
+          "mean_pinball": "741291.4299639979",
+          "mean_capacity": "28674528.188956898",
+          "mean_extra_allowance": "13442786.939681295",
+          "strict_breach_count": "508",
+          "strict_breach_rate": "0.07667924528301887",
+          "mean_positive_overrun": "312879.8086534585",
+          "conditional_mean_overrun": "4080371.520332997",
+          "conditional_overrun_denominator": "508",
+          "conditional_overrun_undefined_reason": "",
+          "mean_unused_allowance": "8881112.234864244",
+          "percent_vs_QR": "0.8978366226911532",
+          "breaches_QR": "531",
+          "percent_vs_frozen_F": "-2.8936718065277542",
+          "breaches_frozen_F": "357"
+        }
+      ],
+      "receipt_readback": [
+        {
+          "path": "results/revision-20261023/parsimonious/fx_hourly-h24-w2880.json",
+          "sha256": "6e6d18e979e1fdc2b6ba6bc1fe78bb0821ee83701c0973b0b959fcb2ae6d34b9",
+          "source": "fx_hourly",
+          "horizon": 24,
+          "window": 2880,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 0.01,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 560440.760397114
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 552435.2813741701
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 595557.6071578915
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 675884.8129386286
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 688035.8437804198
+            }
+          ],
+          "fit_count": 277,
+          "first_fit": {
+            "refit_index": 11927,
+            "training_first": 9024,
+            "training_last": 11903,
+            "latest_label_end": 11927,
+            "iterations": 1226,
+            "gap": 8.825601924023992e-7,
+            "gap_tolerance": 0.000001125851822490872
+          },
+          "last_fit": {
+            "refit_index": 18551,
+            "training_first": 15648,
+            "training_last": 18527,
+            "latest_label_end": 18551,
+            "iterations": 734,
+            "gap": 0.0000010208930420672561,
+            "gap_tolerance": 0.0000011286540539391124
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:52:58.441697+00:00",
+            "checkpoint_utc": "2026-10-23T07:53:48Z",
+            "elapsed_seconds": 49.731799208093435,
+            "peak_rss_bytes": 56983552
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/fx_hourly-h24-w720.json",
+          "sha256": "89167b5172670d079830518cc2fb23eaaa7471af71769e3cb5c25c41c5a0b983",
+          "source": "fx_hourly",
+          "horizon": 24,
+          "window": 720,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 0.01,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 553779.2591791673
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 546989.0550737325
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 636556.5019583907
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 802414.7783785247
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 830311.4557084701
+            }
+          ],
+          "fit_count": 277,
+          "first_fit": {
+            "refit_index": 11927,
+            "training_first": 11184,
+            "training_last": 11903,
+            "latest_label_end": 11927,
+            "iterations": 676,
+            "gap": 2.232739409856892e-7,
+            "gap_tolerance": 0.0000010894001986177322
+          },
+          "last_fit": {
+            "refit_index": 18551,
+            "training_first": 17808,
+            "training_last": 18527,
+            "latest_label_end": 18551,
+            "iterations": 915,
+            "gap": 2.053607532869072e-7,
+            "gap_tolerance": 0.000001089312252072088
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:52:42.223211+00:00",
+            "checkpoint_utc": "2026-10-23T07:52:58Z",
+            "elapsed_seconds": 16.102649542037398,
+            "peak_rss_bytes": 58703872
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/fx_hourly-h6-w2880.json",
+          "sha256": "b32541cb18e3ee149e68932affbfb0c02026dd8fa79625066a198493bf567d87",
+          "source": "fx_hourly",
+          "horizon": 6,
+          "window": 2880,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 0.01,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 468680.5797109469
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 452990.1674561345
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 462603.1390718967
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 466893.774763252
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 467515.9010356981
+            }
+          ],
+          "fit_count": 277,
+          "first_fit": {
+            "refit_index": 11927,
+            "training_first": 9042,
+            "training_last": 11921,
+            "latest_label_end": 11927,
+            "iterations": 1312,
+            "gap": 7.765376692203027e-7,
+            "gap_tolerance": 0.0000012329780026143957
+          },
+          "last_fit": {
+            "refit_index": 18551,
+            "training_first": 15666,
+            "training_last": 18545,
+            "latest_label_end": 18551,
+            "iterations": 1726,
+            "gap": 0.000001173223159114289,
+            "gap_tolerance": 0.0000012125739731567968
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:48.061209+00:00",
+            "checkpoint_utc": "2026-10-23T07:52:42Z",
+            "elapsed_seconds": 54.004138165852055,
+            "peak_rss_bytes": 58523648
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/fx_hourly-h6-w720.json",
+          "sha256": "257e4c65efe1c8b629318ab843230acf07f99e1da23c03578858e38de7ea6365",
+          "source": "fx_hourly",
+          "horizon": 6,
+          "window": 720,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 0.01,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 453144.3889986512
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 450800.6212458348
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 485871.7961853974
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 499117.567637831
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 501016.0008905804
+            }
+          ],
+          "fit_count": 277,
+          "first_fit": {
+            "refit_index": 11927,
+            "training_first": 11202,
+            "training_last": 11921,
+            "latest_label_end": 11927,
+            "iterations": 1444,
+            "gap": 5.934095890322308e-7,
+            "gap_tolerance": 0.0000012123819033161139
+          },
+          "last_fit": {
+            "refit_index": 18551,
+            "training_first": 17826,
+            "training_last": 18545,
+            "latest_label_end": 18551,
+            "iterations": 1078,
+            "gap": 3.990735310996671e-7,
+            "gap_tolerance": 0.0000012195862292302418
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:27.831238+00:00",
+            "checkpoint_utc": "2026-10-23T07:51:47Z",
+            "elapsed_seconds": 20.093342375010252,
+            "peak_rss_bytes": 55394304
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/nyfed_weekly-h24-w260.json",
+          "sha256": "467e8a190488b4a4b47ceff726ae7b6fc393a8d72f2f2467972c5ac54f944175",
+          "source": "nyfed_weekly",
+          "horizon": 24,
+          "window": 260,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 10,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 31802.23218066136
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 31788.780977780876
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 30309.029336587333
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 23399.047017421064
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 21365.54077011592
+            }
+          ],
+          "fit_count": 22,
+          "first_fit": {
+            "refit_index": 405,
+            "training_first": 122,
+            "training_last": 381,
+            "latest_label_end": 405,
+            "iterations": 54,
+            "gap": 1.9169268457335714e-12,
+            "gap_tolerance": 0.0000011428132339748817
+          },
+          "last_fit": {
+            "refit_index": 678,
+            "training_first": 395,
+            "training_last": 654,
+            "latest_label_end": 678,
+            "iterations": 769,
+            "gap": 8.813249204159997e-7,
+            "gap_tolerance": 0.0000010635292224153184
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:27.218745+00:00",
+            "checkpoint_utc": "2026-10-23T07:51:27Z",
+            "elapsed_seconds": 0.4869701249990612,
+            "peak_rss_bytes": 40042496
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/nyfed_weekly-h24-w52.json",
+          "sha256": "30274e4f81622253aa0b6c08f2f9ddedf1e33a2f2bf367e1aa4c95788991cedf",
+          "source": "nyfed_weekly",
+          "horizon": 24,
+          "window": 52,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 10,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 30616.07774491408
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 30594.642523900762
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 27242.41996631457
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 20769.27269117223
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 16914.786837757772
+            }
+          ],
+          "fit_count": 22,
+          "first_fit": {
+            "refit_index": 405,
+            "training_first": 330,
+            "training_last": 381,
+            "latest_label_end": 405,
+            "iterations": 418,
+            "gap": 0.0000010268982117376999,
+            "gap_tolerance": 0.0000010545249986151846
+          },
+          "last_fit": {
+            "refit_index": 678,
+            "training_first": 603,
+            "training_last": 654,
+            "latest_label_end": 678,
+            "iterations": 595,
+            "gap": 6.269279014709263e-7,
+            "gap_tolerance": 0.0000010521221163953819
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:26.758649+00:00",
+            "checkpoint_utc": "2026-10-23T07:51:27Z",
+            "elapsed_seconds": 0.3451902081724256,
+            "peak_rss_bytes": 40124416
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/nyfed_weekly-h6-w260.json",
+          "sha256": "b7da190cc4bc2902b3f7d3ded3afea6b3e7bbb285e62aa73419b7500e27d756b",
+          "source": "nyfed_weekly",
+          "horizon": 6,
+          "window": 260,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 10,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 11093.830260776776
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 10930.483797404951
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 9223.00630392842
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 6716.889136895412
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 6334.038337097503
+            }
+          ],
+          "fit_count": 22,
+          "first_fit": {
+            "refit_index": 405,
+            "training_first": 140,
+            "training_last": 399,
+            "latest_label_end": 405,
+            "iterations": 54,
+            "gap": 1.3883052534410767e-12,
+            "gap_tolerance": 0.000001156512052412831
+          },
+          "last_fit": {
+            "refit_index": 678,
+            "training_first": 413,
+            "training_last": 672,
+            "latest_label_end": 678,
+            "iterations": 163,
+            "gap": 1.7202240266295337e-12,
+            "gap_tolerance": 0.0000011120693026377656
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:26.201955+00:00",
+            "checkpoint_utc": "2026-10-23T07:51:26Z",
+            "elapsed_seconds": 0.46252504107542336,
+            "peak_rss_bytes": 40206336
+          }
+        },
+        {
+          "path": "results/revision-20261023/parsimonious/nyfed_weekly-h6-w52.json",
+          "sha256": "613cca81c631dd123e6f428c54d3a058e863b951c274fb1813f3af4b951b56e8",
+          "source": "nyfed_weekly",
+          "horizon": 6,
+          "window": 52,
+          "post_result": true,
+          "status": "COMPLETE",
+          "selected_penalty": 10,
+          "candidates": [
+            {
+              "penalty": 0.001,
+              "status": "COMPLETE",
+              "mean_pinball": 10887.129246658227
+            },
+            {
+              "penalty": 0.01,
+              "status": "COMPLETE",
+              "mean_pinball": 10710.592285547698
+            },
+            {
+              "penalty": 0.1,
+              "status": "COMPLETE",
+              "mean_pinball": 10465.783612280622
+            },
+            {
+              "penalty": 1,
+              "status": "COMPLETE",
+              "mean_pinball": 5802.907251793153
+            },
+            {
+              "penalty": 10,
+              "status": "COMPLETE",
+              "mean_pinball": 5154.917231160484
+            }
+          ],
+          "fit_count": 22,
+          "first_fit": {
+            "refit_index": 405,
+            "training_first": 348,
+            "training_last": 399,
+            "latest_label_end": 405,
+            "iterations": 463,
+            "gap": 0.0000010265181735197509,
+            "gap_tolerance": 0.0000011559395007364834
+          },
+          "last_fit": {
+            "refit_index": 678,
+            "training_first": 621,
+            "training_last": 672,
+            "latest_label_end": 678,
+            "iterations": 419,
+            "gap": 7.459379317342402e-7,
+            "gap_tolerance": 0.0000011005809576610586
+          },
+          "resources": {
+            "started_utc": "2026-10-23T07:51:25.586058+00:00",
+            "checkpoint_utc": "2026-10-23T07:51:26Z",
+            "elapsed_seconds": 0.5122794169001281,
+            "peak_rss_bytes": 39976960
+          }
+        }
+      ],
+      "evidence": [
+        "parsimonious_v3.py:17–19 selects B,N,short-RMS,long-RMS; lines35–45 use completed labels, train-only standardization and original floor projection.",
+        "Lines49–79 use the original source specification, original validation/evaluation origins and refit step, all five penalties .001/.01/.1/1/10 and retained candidate failures.",
+        "summary.csv and current Table 8 retain all four Treasury/four FX outcomes relative to original QR and matched F; original source primaries remain separately declared."
+      ],
+      "current_prose": [
+        {
+          "section": "9. Discussion and limitations",
+          "block": 2,
+          "html": "The four-predictor sensitivity uses B, signed N and short/long increment RMS, with validation penalties {0.001,0.01,0.1,1,10}. It lowers loss against the original QR in 5 of 8 cells and against matched F in 3 cells. In the Treasury primary cell its loss change is -32.2% relative to the original QR and 2.17% relative to F. All adverse cells remain in Table 8. The exercise changes features and the penalty menu jointly, so it measures a parsimonious specification sensitivity rather than identifying a feature-only cause or rehabilitating the original primary."
+        },
+        {
+          "section": "9. Discussion and limitations",
+          "block": 9,
+          "html": "A post-result / exploratory selected-fit readback examines the Treasury C2 menu boundary directly (Appendix I). At λ=10, standardized response-normalized slope norms range from 0.001497 to 0.01937. Removing slopes while keeping each fitted intercept changes capacity by a mean absolute 136.8–832.3 source USD millions across the four cells. Relative to the lower empirical headroom-quantile report I, observed loss is 0.2432–2.192% lower; this descriptive difference has no dedicated selection-adjusted test. The fits have small normalized slopes and high headroom correlation with I, but are not identical to I or F. A boundary penalty and high capacity correlation do not by themselves demonstrate zero feature value. Three of the four C2 cells still have higher loss than F."
+        }
+      ],
+      "round2_E9_scope": "All four Treasury C2 selections reach lambda10. The current selected-fit readback reports small but nonzero slopes and differences from I/F; it does not equate C2 with those reports or infer zero feature value.",
+      "not_proven": "Features and penalty menu change jointly, using the same inspected samples. The exercise cannot distinguish in general 'conditional methods fail' from a particular feature-design cause. No selection-adjusted conditional-feature value test is supplied.",
+      "scope_limit": "Only retained receipts, candidate records, first/last maturity diagnostics, current source code and generated table fields were inspected; no refit, trace scoring or per-origin C2 reconstruction was repeated."
+    }
+  ],
+  "actual_recorded_verification_commands": [
+    {
+      "path": "results/revision-20261023/round2/evidence/E10-003.json",
+      "bytes": 30166,
+      "sha256": "e596cb843fa9bfdbab0fa4c8a12286e265fe7e5dd27a6895d13f765d572ac4d2",
+      "record": {
+        "step": "E10",
+        "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B round2_E10_readback.py",
+        "argv": [
+          "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "round2_E10_readback.py"
+        ],
+        "environment_delta": {},
+        "started_utc": "2026-10-23T09:51:36.111344+00:00",
+        "ended_utc": "2026-10-23T09:51:36.144609+00:00",
+        "returncode": 0,
+        "stdout": "Actual manuscript paragraphs:\n8. Robustness: The original FX H6 primary and matched-history comparison have negative DM statistics, while the Treasury primary has a positive statistic (Table 6). The FX H24 legacy has DM p=0.839 and HLN p=0.839, so its 1.83% descriptive improvement is not statistically significant at the 5% working-reference level. At the declared bandwidth, 19 of 72 Holm-adjusted working-reference p values fall below 5%, compared with 18 at doubled bandwidth. The declared-bandwidth count includes 15 favorable and 4 adverse mean differences for the conditional method. The matched FX H6 comparison has Holm p=2.86e-07; the Treasury primary has Holm p=0.32 and does not meet that family-adjusted threshold. Its descriptive loss deterioration remains an adverse finding. On the Treasury primary grid, 7/40 strict breaches yield POF p=0.00413 and CC p=0.0157. These coverage diagnostics assess different nulls from paired equal predictive loss.\n8. Robustness: Figure 4 fixes τ=0.95 and varies the elementary-score threshold θ (Ehm et al., 2016). Both primary diagrams cross: QR has favorable and unfavorable threshold regions. Consequently neither report empirically dominates the other over the entire class of consistent 0.95-quantile scores. The check evaluates every unique forecast/outcome breakpoint privately; the displayed 201-point grid is an aggregate visualization. This differs from the archived preference frontier, which holds reports fixed and changes shortfall/excess weights. The calibration-and-sharpness perspective of Gneiting, Balabdaoui and Raftery (2007) motivates separate assessment of forecast concentration and calibration; the scalar capacity report addresses its stated functional.\nPaper full Holm rows: 72 working-reference below.05: 19 all statuses: ['IDENTICAL_LOSSES', 'OK']\n\nExact CSV: results/revision-20261023/inference/murphy-summary.csv\ncontrast_id,source,tau,breakpoint_count,ranking,arithmetic_tolerance,min_elementary_difference,max_elementary_difference,integral_difference,archived_pinball_difference,absolute_integral_error,display_grid_points\nfx_hourly-h6-QR2880-minus-rolling_F720,fx_hourly,0.95,16146,CROSSING,1.4210854715202004e-14,-0.004430188679245408,0.0011622641509434171,-55929.1515487646,-55929.15154875609,8.512870408594608e-09,201\nnyfed_weekly-h6-QR260-minus-frozen_F260,nyfed_weekly,0.95,640,CROSSING,1.4210854715202004e-14,-0.0184115523465704,0.04963898916967486,1401.0078517747488,1401.0078517747918,4.297362465877086e-11,201\n\nExact CSV: results/revision-20261023/inference/dm.csv\ncontrast_id,source,horizon,left_window,left_method,right_window,right_method,category,primary,legacy,n,bandwidth,mean_difference,lrv,dm_t,dm_p,hln_t,hln_p,status,double_bandwidth,double_dm_t,double_dm_p,double_hln_p\nfx_hourly-h6-QR2880-minus-frozen_F2880,fx_hourly,6,2880,QR,2880,frozen_F,common_history,False,False,6625,10,-66848.09795808741,860453255491.856,-5.865679844214457,4.472961414014163e-09,-5.860810206492443,4.82747017649871e-09,OK,20,-5.866353259339216,4.454841587785831e-09,4.808046479941695e-09\nfx_hourly-h6-QR2880-minus-rolling_F720,fx_hourly,6,2880,QR,720,rolling_F,primary_contrast,True,False,6625,10,-55929.15154875609,771730783181.0083,-5.182010163255102,2.1950725127844084e-07,-5.177708102311265,2.312477658474048e-07,OK,20,-5.09569732612404,3.474598871721835e-07,3.651083142370898e-07\nfx_hourly-h24-QR2880-minus-rolling_S720,fx_hourly,24,2880,QR,720,rolling_S,h24_legacy_contrast,False,True,6625,24,-13688.46968493889,29890503995759.02,-0.20378922646878483,0.8385182122097816,-0.20306635089432687,0.8390894089762104,OK,48,-0.18469752278655413,0.8534662892793793,0.853985850626567\nnyfed_weekly-h6-QR260-minus-frozen_F260,nyfed_weekly,6,260,QR,260,frozen_F,common_history,True,False,277,6,1401.0078517747918,76333614.47751872,2.668840012717596,0.007611369596467356,2.615844168606793,0.009390617005130322,OK,12,2.648267890747407,0.008090538533356043,0.009945618220347861\n\nExact CSV: results/revision-20261023/inference/holm.csv\ncontrast_id,source,horizon,left_window,left_method,right_window,right_method,category,primary,legacy,n,bandwidth,mean_difference,lrv,dm_t,dm_p,hln_t,hln_p,status,double_bandwidth,double_dm_t,double_dm_p,double_hln_p,holm_family_size,holm_input_p,holm_p,holm_note\nfx_hourly-h6-QR720-minus-frozen_F720,fx_hourly,6,720,QR,720,frozen_F,common_history,False,False,6625,10,-9368.95748200563,1533054623946.7266,-0.6158931794865111,0.5379650233773263,-0.6153818701857628,0.5383237026862189,OK,20,-0.6043372351141246,0.545619455482008,0.5459736795953509,72,0.5379650233773263,1.0,normal-reference DM p\nfx_hourly-h6-QR720-minus-frozen_S720,fx_hourly,6,720,QR,720,frozen_S,common_history,False,False,6625,10,-17527.437781149172,1843373612295.9116,-1.0507628076264581,0.2933675414990107,-1.0498904732439478,0.2938067740513013,OK,20,-1.0143013060111048,0.3104390010585627,0.31087787119487753,72,0.2933675414990107,1.0,normal-reference DM p\nfx_hourly-h6-QR720-minus-frozen_K720,fx_hourly,6,720,QR,720,frozen_K,common_history,False,False,6625,10,-499186.79277406237,6250675870845.419,-16.251465799422924,2.1808715716766655e-59,-16.237973970172657,3.5711865895122576e-58,OK,20,-14.370223050858758,7.957455312330017e-47,4.620828540345956e-46,72,2.1808715716766655e-59,1.4611839530233658e-57,normal-reference DM p\nfx_hourly-h6-KNN720-minus-frozen_F720,fx_hourly,6,720,KNN,720,frozen_F,common_history,False,False,6625,10,-6170.572606379309,488231408293.12756,-0.7187958332393303,0.47226672538290526,-0.718199095027063,0.47265986557609607,OK,20,-0.6781368878611751,0.49768490400666177,0.498065561098578,72,0.47226672538290526,1.0,normal-reference DM p\nfx_hourly-h6-KNN720-minus-frozen_S720,fx_hourly,6,720,KNN,720,frozen_S,common_history,False,False,6625,10,-14329.05290552285,613308076729.6655,-1.4892619221126162,0.13641841054862408,-1.4880255494795223,0.1367917573135352,OK,20,-1.4319432521945916,0.1521600625665868,0.15254776879059773,72,0.13641841054862408,1.0,normal-reference DM p\nfx_hourly-h6-KNN720-minus-frozen_K720,fx_hourly,6,720,KNN,720,frozen_K,common_history,False,False,6625,10,-495988.40789843607,4861944432519.755,-18.308782784171736,7.042653111547744e-75,-18.293582987787026,5.697754764512437e-73,OK,20,-16.141757926827577,1.2979137749259377e-58,1.980312303555787e-57,72,7.042653111547744e-75,4.9298571780834213e-73,normal-reference DM p\nfx_hourly-h6-SCALED_KNN720-minus-frozen_F720,fx_hourly,6,720,SCALED_KNN,720,frozen_F,common_history,False,False,6625,10,23677.025965527882,2397957827741.9375,1.2445126666668773,0.21331094044020205,1.2434794827925304,0.21373520358775755,OK,20,1.22730656733571,0.21970738818429492,0.2201340306800974,72,0.21331094044020205,1.0,normal-reference DM p\nfx_hourly-h6-SCALED_KNN720-minus-frozen_S720,fx_hourly,6,720,SCALED_KNN,720,frozen_S,common_history,False,False,6625,10,15518.54566638434,2089270738322.8542,0.8738695346884874,0.3821893073652573,0.8731440556028134,0.3826162140158542,OK,20,0.83368282720598,0.404459737677679,0.40488000090386544,72,0.3821893073652573,1.0,normal-reference DM p\nfx_hourly-h6-SCALED_KNN720-minus-frozen_K720,fx_hourly,6,720,SCALED_KNN,720,frozen_K,common_history,False,False,6625,10,-466140.80932652886,5445552054223.895,-16.25882326471794,1.93417074247463e-59,-16.245325327362306,3.1824157703622795e-58,OK,20,-14.543809016092958,6.393388056013405e-48,4.026000831853354e-47,72,1.93417074247463e-59,1.3152361048827483e-57,normal-reference DM p\nfx_hourly-h6-QR2880-minus-frozen_F2880,fx_hourly,6,2880,QR,2880,frozen_F,common_history,False,False,6625,10,-66848.09795808741,860453255491.856,-5.865679844214457,4.472961414014163e-09,-5.860810206492443,4.82747017649871e-09,OK,20,-5.866353259339216,4.454841587785831e-09,4.808046479941695e-09,72,4.472961414014163e-09,2.8626953049690645e-07,normal-reference DM p\nfx_hourly-h6-QR2880-minus-frozen_S2880,fx_hourly,6,2880,QR,2880,frozen_S,common_history,False,False,6625,10,-64956.06092001134,736027683613.633,-6.162622241930797,7.155005652396151e-10,-6.15750608514542,7.822397537201427e-10,OK,20,-6.079480321302876,1.205726777464244e-09,1.313225923052685e-09,72,7.155005652396151e-10,4.7223037305814596e-08,normal-reference DM p\nfx_hourly-h6-QR2880-minus-frozen_K2880,fx_hourly,6,2880,QR,2880,frozen_K,common_history,False,False,6625,10,-586316.9227258634,5147243209092.385,-21.034782509282334,3.1521517848402934e-98,-21.017319611016145,5.4356754133947905e-95,OK,20,-18.372078744531038,2.198287900428603e-75,1.8847196425122613e-73,72,3.1521517848402934e-98,2.238027767236608e-96,normal-reference DM p\nfx_hourly-h6-KNN2880-minus-frozen_F2880,fx_hourly,6,2880,KNN,2880,frozen_F,common_history,False,False,6625,10,-42110.36460885131,898775145913.4155,-3.61540051807418,0.0002998836207990938,-3.612399043187963,0.00030562430914155806,OK,20,-3.5856440915485295,0.0003362472815553976,0.0003425458136414482,72,0.0002998836207990938,0.016193715523151065,normal-reference DM p\nfx_hourly-h6-KNN2880-minus-frozen_S2880,fx_hourly,6,2880,KNN,2880,frozen_S,common_history,False,False,6625,10,-40218.32757077523,641150184090.8077,-4.0882463971934655,4.3464635978494656e-05,-4.084852369663597,4.462494170688062e-05,OK,20,-4.16078352190581,3.1715760999109855e-05,3.260502271734133e-05,72,4.3464635978494656e-05,0.0025644135227311845,normal-reference DM p\nfx_hourly-h6-KNN2880-minus-frozen_K2880,fx_hourly,6,2880,KNN,2880,frozen_K,common_history,False,False,6625,10,-561579.1893766273,4393617912209.818,-21.80684335240265,1.99794497652336e-105,-21.78873949576417,1.0330020305830718e-101,OK,20,-18.81341349278385,5.863763607273936e-79,7.655406146836475e-77,72,1.99794497652336e-105,1.4385203830968193e-103,normal-reference DM p\nfx_hourly-h6-SCALED_KNN2880-minus-frozen_F2880,fx_hourly,6,2880,SCALED_KNN,2880,frozen_F,common_history,False,False,6625,10,-26234.562816427784,2893537496957.081,-1.2553135459886382,0.2093649596347819,-1.254271395315766,0.20978763522182764,OK,20,-1.253365458853761,0.2100727359876308,0.21049570318797894,72,0.2093649596347819,1.0,normal-reference DM p\nfx_hourly-h6-SCALED_KNN2880-minus-frozen_S2880,fx_hourly,6,2880,SCALED_KNN,2880,frozen_S,common_history,False,False,6625,10,-24342.525778351705,2343453760653.1997,-1.2942863933386026,0.1955665146481925,-1.2932118877379761,0.19598288319746116,OK,20,-1.2891958194210038,0.197330018058404,0.1977472604374817,72,0.1955665146481925,1.0,normal-reference DM p\nfx_hourly-h6-SCALED_KNN2880-minus-frozen_K2880,fx_hourly,6,2880,SCALED_KNN,2880,frozen_K,common_history,False,False,6625,10,-545703.3875842037,6056494290246.16,-18.048409454509276,8.119546324183069e-73,-18.03342581785739,5.205061246651983e-71,OK,20,-16.16604327865759,8.754326662247227e-59,1.3566084089734332e-57,72,8.119546324183069e-73,5.602486963686318e-71,normal-reference DM p\nfx_hourly-h24-QR720-minus-frozen_F720,fx_hourly,24,720,QR,720,frozen_F,common_history,False,False,6625,24,248067.13533020168,39252645028336.07,3.2227581052382384,0.0012696272270405155,3.2113264257670964,0.0013275508421535195,OK,48,2.8332387379083483,0.004607895774245358,0.0047690434412700124,72,0.0012696272270405155,0.06729024303314732,normal-reference DM p\nfx_hourly-h24-QR720-minus-frozen_S720,fx_hourly,24,720,QR,720,frozen_S,common_history,False,False,6625,24,280181.4569468128,56003314145431.91,3.0473719552383343,0.002308518557719768,3.0365624007250713,0.002402233105206704,OK,48,2.636981411431791,0.008364741517348407,0.00861808037588475,72,0.002308518557719768,0.11540923954922423,normal-reference DM p\nfx_hourly-h24-QR720-minus-frozen_K720,fx_hourly,24,720,QR,720,frozen_K,common_history,False,False,6625,24,-170325.22845774645,80663042788250.62,-1.5435994713849874,0.12268539317562813,-1.5381240575275166,0.12406604857852477,OK,48,-1.2839997407886041,0.19914204611749037,0.20078514848243,72,0.12268539317562813,1.0,normal-reference DM p\nfx_hourly-h24-KNN720-minus-frozen_F720,fx_hourly,24,720,KNN,720,frozen_F,common_history,False,False,6625,24,48794.29815353884,6764578010546.078,1.5270092299113693,0.126758716248183,1.5215926645050333,0.1281589090363846,OK,48,1.4286061731943833,0.15311745886260908,0.15462716178504154,72,0.126758716248183,1.0,normal-reference DM p\nfx_hourly-h24-KNN720-minus-frozen_S720,fx_hourly,24,720,KNN,720,frozen_S,common_history,False,False,6625,24,80908.61977014999,15174285447606.979,1.6905717563883182,0.09091862271096943,1.6845750064583174,0.09211770641131445,OK,48,1.5551154664709355,0.11991857206162324,0.12128551713345836,72,0.09091862271096943,1.0,normal-reference DM p\nfx_hourly-h24-KNN720-minus-frozen_K720,fx_hourly,24,720,KNN,720,frozen_K,common_history,False,False,6625,24,-369598.06563440926,39372404933195.55,-4.794316041711797,1.6323076991963957e-06,-4.777309774879942,1.814816482838895e-06,OK,48,-4.138351588768859,3.498100348170657e-05,3.774381178216153e-05,72,1.6323076991963957e-06,9.793846195178375e-05,normal-reference DM p\nfx_hourly-h24-SCALED_KNN720-minus-frozen_F720,fx_hourly,24,720,SCALED_KNN,720,frozen_F,common_history,False,False,6625,24,109337.07965967245,33337241201435.77,1.541329826505451,0.1232365332549371,1.5358624634702662,0.1246198767736928,OK,48,1.3657006336100752,0.17203294539374783,0.1736054162688434,72,0.1232365332549371,1.0,normal-reference DM p\nfx_hourly-h24-SCALED_KNN720-minus-frozen_S720,fx_hourly,24,720,SCALED_KNN,720,frozen_S,common_history,False,False,6625,24,141451.4012762836,29597327957125.7,2.1162839733296197,0.034320662976915904,2.1087771486586346,0.03500126337437653,OK,48,1.899714235519157,0.05747063115254712,0.05840466162571715,72,0.034320662976915904,1.0,normal-reference DM p\nfx_hourly-h24-SCALED_KNN720-minus-frozen_K720,fx_hourly,24,720,SCALED_KNN,720,frozen_K,common_history,False,False,6625,24,-309055.2841282757,42036393559001.4,-3.8798629939836453,0.00010451531849558219,-3.866100450010185,0.00011164743113924783,OK,48,-3.3356513687361935,0.0008509981108188086,0.0008927570009270491,72,0.00010451531849558219,0.005957373154248185,normal-reference DM p\nfx_hourly-h24-QR2880-minus-frozen_F2880,fx_hourly,24,2880,QR,2880,frozen_F,common_history,False,False,6625,24,-28686.10725195002,21454276709871.754,-0.5040894639524137,0.6141985104549805,-0.5023013715829252,0.6154722415137552,OK,48,-0.44400201802233397,0.6570411249016875,0.6581946418873112,72,0.6141985104549805,1.0,normal-reference DM p\nfx_hourly-h24-QR2880-minus-frozen_S2880,fx_hourly,24,2880,QR,2880,frozen_S,common_history,False,False,6625,24,-24676.36114368455,19634854612029.164,-0.4532733795640041,0.6503518991237447,-0.45166554062022646,0.6515247339988879,OK,48,-0.40519517854181114,0.6853340487782813,0.6864038049969241,72,0.6503518991237447,1.0,normal-reference DM p\nfx_hourly-h24-QR2880-minus-frozen_K2880,fx_hourly,24,2880,QR,2880,frozen_K,common_history,False,False,6625,24,-505344.3053647736,54712244302289.125,-5.560809947663265,2.685254947931551e-08,-5.541084794596921,3.121689980215792e-08,OK,48,-4.574754384442614,4.76778987436649e-06,5.243893548104294e-06,72,2.685254947931551e-08,1.6917106171968773e-06,normal-reference DM p\nfx_hourly-h24-KNN2880-minus-frozen_F2880,fx_hourly,24,2880,KNN,2880,frozen_F,common_history,False,False,6625,24,6386.811579946437,7926283951934.155,0.18464698985378253,0.8535059270308438,0.1839920150978774,0.8540253509560485,OK,48,0.16240568958175244,0.8709863906818538,0.8714449718168684,72,0.8535059270308438,1.0,normal-reference DM p\nfx_hourly-h24-KNN2880-minus-frozen_S2880,fx_hourly,24,2880,KNN,2880,frozen_S,common_history,False,False,6625,24,10396.557688211906,8609280910801.412,0.2884025325480139,0.7730386293596302,0.28737951896676006,0.7738307311086293,OK,48,0.2582395613193441,0.7962220275604633,0.7969370138405161,72,0.7730386293596302,1.0,normal-reference DM p\nfx_hourly-h24-KNN2880-minus-frozen_K2880,fx_hourly,24,2880,KNN,2880,frozen_K,common_history,False,False,6625,24,-470271.38653287716,39417566444839.87,-6.0967248049373115,1.0826366051845065e-09,-6.075098669336094,1.3078214285478504e-09,OK,48,-5.069107334932673,3.996857967717031e-07,4.509615220706646e-07,72,1.0826366051845065e-09,7.037137933699292e-08,normal-reference DM p\nfx_hourly-h24-SCALED_KNN2880-minus-frozen_F2880,fx_hourly,24,2880,SCALED_KNN,2880,frozen_F,common_history,False,False,6625,24,84623.02390279993,27029531383718.25,1.3248363131493588,0.1852254478122023,1.3201368899878636,0.18683493375051974,OK,48,1.2025168083568178,0.22916335786117503,0.2308620795473071,72,0.1852254478122023,1.0,normal-reference DM p\nfx_hourly-h24-SCALED_KNN2880-minus-frozen_S2880,fx_hourly,24,2880,SCALED_KNN,2880,frozen_S,common_history,False,False,6625,24,88632.77001106541,22845768517812.336,1.5093306024044524,0.1312143179601098,1.5039767461424423,0.1326350291873868,OK,48,1.387099169011363,0.16541152539156329,0.16696338437051672,72,0.1312143179601098,1.0,normal-reference DM p\nfx_hourly-h24-SCALED_KNN2880-minus-frozen_K2880,fx_hourly,24,2880,SCALED_KNN,2880,frozen_K,common_history,False,False,6625,24,-392035.1742100236,66460412950095.13,-3.9141409267079266,9.072663837815176e-05,-3.9002567929883414,9.70411805350163e-05,OK,48,-3.2866661810645588,0.0010138093578336079,0.001062019535177986,72,9.072663837815176e-05,0.005262145025932802,normal-reference DM p\nnyfed_weekly-h6-QR52-minus-frozen_F52,nyfed_weekly,6,52,QR,52,frozen_F,common_history,False,False,277,6,2316.465779276192,159075331.09478787,3.0567812125501272,0.0022372751075054346,2.996081920030085,0.0029832623009549463,OK,12,2.9426596429512797,0.0032540595939132702,0.004232994875240984,72,0.0022372751075054346,0.11410103048277717,normal-reference DM p\nnyfed_weekly-h6-QR52-minus-frozen_S52,nyfed_weekly,6,52,QR,52,frozen_S,common_history,False,False,277,6,2308.899533788827,159010763.07786193,3.0474154126995776,0.0023081847909844845,2.9869020992815,0.003071376640620589,OK,12,2.934971071864388,0.0033357878533872326,0.00433233565101627,72,0.0023081847909844845,0.11540923954922423,normal-reference DM p\nnyfed_weekly-h6-QR52-minus-frozen_K52,nyfed_weekly,6,52,QR,52,frozen_K,common_history,False,False,277,6,2521.4211944386466,175181350.07830447,3.170599224827396,0.0015212486757352755,3.107639818697357,0.002082710448320926,OK,12,2.935630227027681,0.003328708569240713,0.004323736432733734,72,0.0015212486757352755,0.07910493113823433,normal-reference DM p\nnyfed_weekly-h6-KNN52-minus-frozen_F52,nyfed_weekly,6,52,KNN,52,frozen_F,common_history,False,False,277,6,0.0,0.0,,,,,IDENTICAL_LOSSES,12,,,,72,1.0,1.0,conservative p1 for identical forecasts\nnyfed_weekly-h6-KNN52-minus-frozen_S52,nyfed_weekly,6,52,KNN,52,frozen_S,common_history,False,False,277,6,-7.566245487364622,14184.16575499909,-1.0573491331053313,0.29035227729481017,-1.0363530788039406,0.3009445794422847,OK,12,-1.0707088160626381,0.28430037750351117,0.2948902741466334,72,0.29035227729481017,1.0,normal-reference DM p\nnyfed_weekly-h6-KNN52-minus-frozen_K52,nyfed_weekly,6,52,KNN,52,frozen_K,common_history,False,False,277,6,204.95541516245495,85042179.11959958,0.36989809263538415,0.7114584226651404,0.3625529308569428,0.7172163451923711,OK,12,0.31924618000453203,0.7495398410060401,0.754587759443058,72,0.7114584226651404,1.0,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN52-minus-frozen_F52,nyfed_weekly,6,52,SCALED_KNN,52,frozen_F,common_history,False,False,277,6,1429.2394318595473,41735787.08233884,3.682057532234205,0.00023135918159384258,3.6089419666493674,0.00036496362683964453,OK,12,3.426806347245518,0.0006107244406928395,0.0008931806005467081,72,0.00023135918159384258,0.012956114169255184,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN52-minus-frozen_S52,nyfed_weekly,6,52,SCALED_KNN,52,frozen_S,common_history,False,False,277,6,1421.6731863721827,41837743.1659896,3.65809965263765,0.00025409225749096803,3.5854598248438654,0.0003978087166225,OK,12,3.402720772151586,0.0006671842824936701,0.0009693201376459944,72,0.00025409225749096803,0.013975074162003241,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN52-minus-frozen_K52,nyfed_weekly,6,52,SCALED_KNN,52,frozen_K,common_history,False,False,277,6,1634.1948470220023,91156151.6364117,2.8487263334445774,0.004389461944891605,2.7921584402916864,0.005601629432558682,OK,12,2.4694746828059433,0.013531159297655745,0.016147575640139224,72,0.004389461944891605,0.20191524946501382,normal-reference DM p\nnyfed_weekly-h6-QR260-minus-frozen_F260,nyfed_weekly,6,260,QR,260,frozen_F,common_history,True,False,277,6,1401.0078517747918,76333614.47751872,2.668840012717596,0.007611369596467356,2.615844168606793,0.009390617005130322,OK,12,2.648267890747407,0.008090538533356043,0.009945618220347861,72,0.007611369596467356,0.31967752305162894,normal-reference DM p\nnyfed_weekly-h6-QR260-minus-frozen_S260,nyfed_weekly,6,260,QR,260,frozen_S,common_history,False,False,277,6,1452.4296929300262,77690394.84186915,2.7425296978928295,0.006096793653263425,2.688070578707645,0.007623401594193507,OK,12,2.731118307585879,0.0063119808508824565,0.007875805760342575,72,0.006096793653263425,0.26216212709032727,normal-reference DM p\nnyfed_weekly-h6-QR260-minus-frozen_K260,nyfed_weekly,6,260,QR,260,frozen_K,common_history,False,False,277,6,1871.9150719913982,123985206.98868266,2.797957348580238,0.0051426903062074085,2.7423975882471163,0.006498133160956677,OK,12,2.841981095706506,0.004483414999055537,0.0057138976071359595,72,0.0051426903062074085,0.23142106377933339,normal-reference DM p\nnyfed_weekly-h6-KNN260-minus-frozen_F260,nyfed_weekly,6,260,KNN,260,frozen_F,common_history,False,False,277,6,-95.10397111913353,12809086.74925924,-0.442261823869817,0.6582997529600592,-0.4334797168262037,0.6650048988852402,OK,12,-0.46479938221207995,0.6420751302329913,0.6490576069021294,72,0.6582997529600592,1.0,normal-reference DM p\nnyfed_weekly-h6-KNN260-minus-frozen_S260,nyfed_weekly,6,260,KNN,260,frozen_S,common_history,False,False,277,6,-43.68212996389888,11447526.632643344,-0.21487597478769638,0.8298640167170113,-0.2106091271652306,0.8333476931801701,OK,12,-0.22754004655626034,0.8200038331121953,0.8236835638224025,72,0.8298640167170113,1.0,normal-reference DM p\nnyfed_weekly-h6-KNN260-minus-frozen_K260,nyfed_weekly,6,260,KNN,260,frozen_K,common_history,False,False,277,6,375.80324909747293,42327369.52771637,0.9613682503922981,0.33636704227496333,0.9422781132210607,0.3468743069784743,OK,12,0.9679920867481893,0.33304832176948573,0.3435673854857061,72,0.33636704227496333,1.0,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN260-minus-frozen_F260,nyfed_weekly,6,260,SCALED_KNN,260,frozen_F,common_history,False,False,277,6,368.50737661309194,42126242.84110827,0.9449519092599274,0.344683428398866,0.9261877556063888,0.3551575623716916,OK,12,0.9695822360434483,0.3322547709790459,0.3427765336210209,72,0.344683428398866,1.0,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN260-minus-frozen_S260,nyfed_weekly,6,260,SCALED_KNN,260,frozen_S,common_history,False,False,277,6,419.92921776832657,41198444.60293141,1.0888688340046664,0.27621173162203316,1.0672468848773136,0.2867929895712904,OK,12,1.118751453626518,0.2632461875458459,0.27380005013161324,72,0.27621173162203316,1.0,normal-reference DM p\nnyfed_weekly-h6-SCALED_KNN260-minus-frozen_K260,nyfed_weekly,6,260,SCALED_KNN,260,frozen_K,common_history,False,False,277,6,839.4145968296984,52463128.238007836,1.9288093832190634,0.05375453053792534,1.890508518084609,0.059737434754894354,OK,12,1.9364997770230172,0.052806519831890344,0.05873324138304986,72,0.05375453053792534,1.0,normal-reference DM p\nnyfed_weekly-h24-QR52-minus-frozen_F52,nyfed_weekly,24,52,QR,52,frozen_F,common_history,False,False,277,24,8449.880962860218,3947739841.794439,2.2382892715730263,0.025202197283404712,2.048394320035213,0.04146726868507379,OK,48,1.8211651564520617,0.06858175528148232,0.09671664790034429,72,0.025202197283404712,0.9828856940527838,normal-reference DM p\nnyfed_weekly-h24-QR52-minus-frozen_S52,nyfed_weekly,24,52,QR,52,frozen_S,common_history,False,False,277,24,8513.194861777183,3915260968.675679,2.264394551918311,0.023549858759728436,2.0722848460102705,0.03916732092722909,OK,48,1.8434712692964148,0.06526023278476918,0.09271924232991147,72,0.023549858759728436,0.9419943503891375,normal-reference DM p\nnyfed_weekly-h24-QR52-minus-frozen_K52,nyfed_weekly,24,52,QR,52,frozen_K,common_history,False,False,277,24,7147.833489936029,3027182427.189542,2.1621957765176556,0.030603088960576733,1.9787565457570446,0.04883734846544439,OK,48,1.9227741286836013,0.05450842253951644,0.07957547998043545,72,0.030603088960576733,1.0,normal-reference DM p\nnyfed_weekly-h24-KNN52-minus-frozen_F52,nyfed_weekly,24,52,KNN,52,frozen_F,common_history,False,False,277,24,0.0,0.0,,,,,IDENTICAL_LOSSES,48,,,,72,1.0,1.0,conservative p1 for identical forecasts\nnyfed_weekly-h24-KNN52-minus-frozen_S52,nyfed_weekly,24,52,KNN,52,frozen_S,common_history,False,False,277,24,63.313898916967496,1007169.6433471013,1.0499959630880935,0.2937199687836271,0.960915014053572,0.33743596378870944,OK,48,1.109278625890245,0.2673100028244916,0.3109147540219467,72,0.2937199687836271,1.0,normal-reference DM p\nnyfed_weekly-h24-KNN52-minus-frozen_K52,nyfed_weekly,24,52,KNN,52,frozen_K,common_history,False,False,277,24,-1302.0474729241876,932815132.018473,-0.7095269766471876,0.4779975169427509,-0.6493311866943996,0.5166643208151154,OK,48,-0.6282076690748362,0.5298679070209105,0.5658198590256268,72,0.4779975169427509,1.0,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN52-minus-frozen_F52,nyfed_weekly,24,52,SCALED_KNN,52,frozen_F,common_history,False,False,277,24,1909.973757927701,129168974.35200685,2.796972389759914,0.005158394124869631,2.5596791394407576,0.01101000968750446,OK,48,2.825326572883843,0.004723244908289805,0.010233147358681267,72,0.005158394124869631,0.23142106377933339,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN52-minus-frozen_S52,nyfed_weekly,24,52,SCALED_KNN,52,frozen_S,common_history,False,False,277,24,1973.2876568446684,119967351.27539526,2.998463376630539,0.0027134476634494815,2.74407576693923,0.006465899018985464,OK,48,3.057005511411992,0.0022356016538987856,0.005509880969391636,72,0.0027134476634494815,0.1302454878455751,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN52-minus-frozen_K52,nyfed_weekly,24,52,SCALED_KNN,52,frozen_K,common_history,False,False,277,24,607.9262850035135,852339006.210805,0.34656493885286666,0.7289181899647083,0.31716260328168305,0.7513600096391263,OK,48,0.3005432977964379,0.7637627750937468,0.783487136424253,72,0.7289181899647083,1.0,normal-reference DM p\nnyfed_weekly-h24-QR260-minus-frozen_F260,nyfed_weekly,24,260,QR,260,frozen_F,common_history,False,False,277,24,2724.45331456081,739829692.098638,1.667068234798537,0.09550083757987012,1.5256352905952089,0.1282457895043949,OK,48,1.34594668451942,0.1783197114895725,0.21908810949762125,72,0.09550083757987012,1.0,normal-reference DM p\nnyfed_weekly-h24-QR260-minus-frozen_S260,nyfed_weekly,24,260,QR,260,frozen_S,common_history,False,False,277,24,2725.888332611352,739561148.4403914,1.6682491076306143,0.09526628608426813,1.5267159789729945,0.127976783099925,OK,48,1.3469187917325536,0.17800638861087856,0.21875639005485303,72,0.09526628608426813,1.0,normal-reference DM p\nnyfed_weekly-h24-QR260-minus-frozen_K260,nyfed_weekly,24,260,QR,260,frozen_K,common_history,False,False,277,24,2903.284000481388,432854275.84509677,2.322515116410418,0.020205215425892823,2.1254745010271145,0.03443512780408992,OK,48,1.947557878814915,0.051467887912195365,0.07579490752671854,72,0.020205215425892823,0.8284138324616057,normal-reference DM p\nnyfed_weekly-h24-KNN260-minus-frozen_F260,nyfed_weekly,24,260,KNN,260,frozen_F,common_history,False,False,277,24,-222.34296028880868,3635380.954679162,-1.9408336095088943,0.052278462921638874,-1.776174595635483,0.07680577872269034,OK,48,-2.049681930987453,0.04039547939060533,0.061739811225930225,72,0.052278462921638874,1.0,normal-reference DM p\nnyfed_weekly-h24-KNN260-minus-frozen_S260,nyfed_weekly,24,260,KNN,260,frozen_S,common_history,False,False,277,24,-220.90794223826717,3662390.490118449,-1.9211836896338335,0.054708553680521466,-1.758191761704043,0.07982326115684392,OK,48,-2.0212401749048934,0.043254908752404383,0.06541711523061518,72,0.054708553680521466,1.0,normal-reference DM p\nnyfed_weekly-h24-KNN260-minus-frozen_K260,nyfed_weekly,24,260,KNN,260,frozen_K,common_history,False,False,277,24,-43.512274368230926,112683699.89725791,-0.06822147730823336,0.9456093303794743,-0.062433613205136206,0.9502627168752784,OK,48,-0.05812047935203506,0.9536526618013963,0.9576193380979919,72,0.9456093303794743,1.0,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN260-minus-frozen_F260,nyfed_weekly,24,260,SCALED_KNN,260,frozen_F,common_history,False,False,277,24,1656.958174154199,31381837.325292002,4.922800624105488,8.531436082070152e-07,4.5051535407649785,9.802252852677188e-06,OK,48,5.236087396469096,1.6401631076423473e-07,2.702472938814868e-06,72,8.531436082070152e-07,5.2894903708834943e-05,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN260-minus-frozen_S260,nyfed_weekly,24,260,SCALED_KNN,260,frozen_S,common_history,False,False,277,24,1658.3931922047404,31471982.211462595,4.920002713223247,8.654301268046208e-07,4.502593002754126,9.912921515213327e-06,OK,48,5.231766979571417,1.67897318051608e-07,2.7520741991042155e-06,72,8.654301268046208e-07,5.2894903708834943e-05,normal-reference DM p\nnyfed_weekly-h24-SCALED_KNN260-minus-frozen_K260,nyfed_weekly,24,260,SCALED_KNN,260,frozen_K,common_history,False,False,277,24,1835.7888600747767,107378933.56988385,2.9485131664732402,0.003193065377716993,2.6983632989082906,0.007397594907982925,OK,48,2.5505066496650177,0.010756647204017986,0.02030699810796467,72,0.003193065377716993,0.15007407275269866,normal-reference DM p\nPASS: both fixed-tau primary diagrams CROSSING; all72 Holm rows retained, including nonsignificant/NA bookkeeping; original primary identities unchanged.\n",
+        "stderr": ""
+      }
+    },
+    {
+      "path": "results/revision-20261023/round2/evidence/E10-010.json",
+      "bytes": 16907,
+      "sha256": "b7754a1bba72ce774c33e21800110f7afaa69dd990b60ab68d24ea605e031766",
+      "record": {
+        "step": "E10",
+        "command": "env UV_PYTHON_DOWNLOADS=never 'UV_CACHE_DIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache' PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 NUMBA_DISABLE_JIT=1 NUMBA_NUM_THREADS=1 'MPLCONFIGDIR=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/mpl-d1' MPLBACKEND=Agg 'JOBLIB_TEMP_FOLDER=/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/joblib-d1' VECLIB_MAXIMUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /usr/bin/time -l /Users/bingyouli/.local/bin/uv run --no-project --no-env-file --python /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 --with pytest --with arch --with scikit-learn python -B -m pytest -p no:cacheprovider -v test_inference_tests.py test_parsimonious_v3.py test_v3_math_format.py test_v3_inference_presentation.py test_v3_student_reference.py test_v3_write_policy.py test_round2_shrinkage.py test_round2_levy.py test_round2_panel.py test_v3_round2_consistency.py test_round2_qrf.py test_round2_filtered.py test_round2_baseline_worker.py test_round2_baseline_readback.py test_round2_levy_ar_correction.py",
+        "argv": [
+          "/usr/bin/time",
+          "-l",
+          "/Users/bingyouli/.local/bin/uv",
+          "run",
+          "--no-project",
+          "--no-env-file",
+          "--python",
+          "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "--with",
+          "pytest",
+          "--with",
+          "arch",
+          "--with",
+          "scikit-learn",
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "-v",
+          "test_inference_tests.py",
+          "test_parsimonious_v3.py",
+          "test_v3_math_format.py",
+          "test_v3_inference_presentation.py",
+          "test_v3_student_reference.py",
+          "test_v3_write_policy.py",
+          "test_round2_shrinkage.py",
+          "test_round2_levy.py",
+          "test_round2_panel.py",
+          "test_v3_round2_consistency.py",
+          "test_round2_qrf.py",
+          "test_round2_filtered.py",
+          "test_round2_baseline_worker.py",
+          "test_round2_baseline_readback.py",
+          "test_round2_levy_ar_correction.py"
+        ],
+        "environment_delta": {
+          "UV_PYTHON_DOWNLOADS": "never",
+          "UV_CACHE_DIR": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+          "PYTHONPATH": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages",
+          "OPENBLAS_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "NUMBA_DISABLE_JIT": "1",
+          "NUMBA_NUM_THREADS": "1",
+          "MPLCONFIGDIR": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/mpl-d1",
+          "MPLBACKEND": "Agg",
+          "JOBLIB_TEMP_FOLDER": "/Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/joblib-d1",
+          "VECLIB_MAXIMUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        },
+        "started_utc": "2026-10-23T12:32:02.727852+00:00",
+        "ended_utc": "2026-10-23T12:32:07.087422+00:00",
+        "returncode": 0,
+        "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023/.scratch/uv-d1-cache/builds-v0/.tmp4gcsco/bin/python\nrootdir: /Users/bingyouli/Research/论文/金融数学论文-修订v3-20261023\ncollecting ... collected 116 items\n\ntest_inference_tests.py::KnownAnswers::test_bad_inputs PASSED            [  0%]\ntest_inference_tests.py::KnownAnswers::test_chi_square_six_known PASSED  [  1%]\ntest_inference_tests.py::KnownAnswers::test_christoffersen_known PASSED  [  2%]\ntest_inference_tests.py::KnownAnswers::test_dm_horizon_two_known PASSED  [  3%]\ntest_inference_tests.py::KnownAnswers::test_dm_known_bartlett_and_hln PASSED [  4%]\ntest_inference_tests.py::KnownAnswers::test_dm_sign_and_degenerate PASSED [  5%]\ntest_inference_tests.py::KnownAnswers::test_dq_unidentified_hits PASSED  [  6%]\ntest_inference_tests.py::KnownAnswers::test_holm_known_and_order PASSED  [  6%]\ntest_inference_tests.py::KnownAnswers::test_kupiec_known PASSED          [  7%]\ntest_inference_tests.py::KnownAnswers::test_murphy_crossing_and_integral PASSED [  8%]\ntest_inference_tests.py::KnownAnswers::test_student_against_closed_forms PASSED [  9%]\ntest_parsimonious_v3.py::CausalFourFeatures::test_current_and_rms_known PASSED [ 10%]\ntest_parsimonious_v3.py::CausalFourFeatures::test_future_changes_do_not_change_issued_features PASSED [ 11%]\ntest_parsimonious_v3.py::CausalFourFeatures::test_training_transform_constant_and_causal PASSED [ 12%]\ntest_v3_math_format.py::MathematicalTypesetting::test_absolute_value_is_not_norm PASSED [ 12%]\ntest_v3_math_format.py::MathematicalTypesetting::test_canonical_positive_parts_and_equal_window_binding PASSED [ 13%]\ntest_v3_math_format.py::MathematicalTypesetting::test_catalog_does_not_bind_inside_larger_identifiers PASSED [ 14%]\ntest_v3_math_format.py::MathematicalTypesetting::test_current_source_preserves_input_and_idempotence PASSED [ 15%]\ntest_v3_math_format.py::MathematicalTypesetting::test_figure_caption_uses_whole_formula_binding PASSED [ 16%]\ntest_v3_math_format.py::MathematicalTypesetting::test_full_inline_formula_is_single_math_span PASSED [ 17%]\ntest_v3_math_format.py::MathematicalTypesetting::test_long_inline_formulas_and_caption_are_whole_math PASSED [ 18%]\ntest_v3_math_format.py::MathematicalTypesetting::test_membership_does_not_consume_english_phi PASSED [ 18%]\ntest_v3_math_format.py::MathematicalTypesetting::test_notation_cells_use_whole_tex_expressions PASSED [ 19%]\ntest_v3_math_format.py::MathematicalTypesetting::test_recovered_parameterization_has_real_symbols PASSED [ 20%]\ntest_v3_math_format.py::MathematicalTypesetting::test_simple_numeric_reports_are_full_math_spans PASSED [ 21%]\ntest_v3_inference_presentation.py::FamilyReadback::test_existing_and_doubled_reference_counts PASSED [ 22%]\ntest_v3_inference_presentation.py::FamilyReadback::test_identical_forecasts_are_conservative_bookkeeping PASSED [ 23%]\ntest_v3_inference_presentation.py::FamilyReadback::test_mismatched_archived_adjustment_fails PASSED [ 24%]\ntest_v3_inference_presentation.py::FamilyReadback::test_rejection_counts_preserve_adverse_directions PASSED [ 25%]\ntest_v3_student_reference.py::IndependentStudentReference::test_closed_cauchy_and_t2_answers PASSED [ 25%]\ntest_v3_student_reference.py::IndependentStudentReference::test_domain_is_bounded_to_audit_scope PASSED [ 26%]\ntest_v3_student_reference.py::IndependentStudentReference::test_scalar_rows_and_mismatch PASSED [ 27%]\ntest_v3_write_policy.py::WriteOwnership::test_backup_policy PASSED       [ 28%]\ntest_v3_write_policy.py::WriteOwnership::test_new_owned_file_rewrites_without_backup PASSED [ 29%]\ntest_round2_shrinkage.py::ShrinkageDiagnostics::test_overlap_counts_not_ordinary_accuracy PASSED [ 30%]\ntest_round2_shrinkage.py::ShrinkageDiagnostics::test_projection_is_not_unprojected_contribution PASSED [ 31%]\ntest_round2_shrinkage.py::ShrinkageDiagnostics::test_zero_slope_and_constant_correlation PASSED [ 31%]\ntest_round2_shrinkage.py::ManuscriptCells::test_round2_table_cells_are_formal_converter_strings PASSED [ 32%]\ntest_round2_levy.py::LevyBaseline::test_discrete_population_quantile_triangle_corollary PASSED [ 33%]\ntest_round2_levy.py::LevyBaseline::test_exact_independent_symmetric_maximal_inequality PASSED [ 34%]\ntest_round2_levy.py::LevyBaseline::test_exact_mature_endpoint_pool PASSED [ 35%]\ntest_round2_levy.py::LevyBaseline::test_future_perturbation_and_truncation PASSED [ 36%]\ntest_round2_levy.py::LevyBaseline::test_rank_and_gaussian_variance PASSED [ 37%]\ntest_round2_levy.py::IndependenceBoundary::test_symmetric_but_dependent_counterexample PASSED [ 37%]\ntest_round2_panel.py::PanelAlignment::test_duplicate_wrong_key_and_nonfinite_rejected PASSED [ 38%]\ntest_round2_panel.py::PanelAlignment::test_exact_grid_truncates_only_extra_dates PASSED [ 39%]\ntest_round2_panel.py::PanelAlignment::test_no_imputation_of_missing_date PASSED [ 40%]\ntest_round2_panel.py::PanelFitting::test_common_strict_menu_rejects_failure PASSED [ 41%]\ntest_round2_panel.py::PanelFitting::test_future_perturbation_preserves_both_issued_fits PASSED [ 42%]\ntest_v3_round2_consistency.py::Round2ContentAudit::test_D2_new_formulas_are_whole_TeX_math_spans PASSED [ 43%]\ntest_v3_round2_consistency.py::Round2ContentAudit::test_conclusion_count_includes_every_paragraph PASSED [ 43%]\ntest_v3_round2_consistency.py::Round2ContentAudit::test_original_primaries_and_all_holm_rows_retained PASSED [ 44%]\ntest_round2_qrf.py::test_all_original_leaf_weights_are_not_quantiles_of_tree_means PASSED [ 45%]\ntest_round2_qrf.py::test_leaf_distribution_does_not_replace_original_rows_by_bootstrap_counts PASSED [ 46%]\ntest_round2_qrf.py::test_duplicate_responses_and_zero_mass_use_cdf_left_inverse_without_interpolation PASSED [ 47%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values0-weights0-0.95] PASSED [ 48%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values1-weights1-0.95] PASSED [ 49%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values2-weights2-0.95] PASSED [ 50%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values3-weights3-0.95] PASSED [ 50%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values4-weights4-0.95] PASSED [ 51%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values5-weights5-0.95] PASSED [ 52%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values6-weights6-0.0] PASSED [ 53%]\ntest_round2_qrf.py::test_invalid_weighted_distribution_fails_without_inventing_a_quantile[values7-weights7-True] PASSED [ 54%]\ntest_round2_qrf.py::test_invalid_or_unoccupied_query_leaf_is_rejected PASSED [ 55%]\ntest_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[0.0] PASSED [ 56%]\ntest_round2_qrf.py::test_constant_headroom_returns_current_floor_and_retains_mature_fit_receipt[-12.5] PASSED [ 56%]\ntest_round2_qrf.py::test_known_linear_path_has_exact_nonnegative_headroom_six PASSED [ 57%]\ntest_round2_qrf.py::test_full_future_perturbation_cannot_change_reports_or_fit_fingerprints PASSED [ 58%]\ntest_round2_qrf.py::test_fixed_forest_seed_gives_identical_reports_and_fit_receipts PASSED [ 59%]\ntest_round2_qrf.py::test_checkpoint_failure_retains_only_issued_prefix_and_no_fallback PASSED [ 60%]\ntest_round2_qrf.py::test_noncontiguous_origins_and_unavailable_training_features_fail_with_context PASSED [ 61%]\ntest_round2_qrf.py::test_failed_forest_fit_retains_attempted_mature_pool_instead_of_a_fake_report PASSED [ 62%]\ntest_round2_filtered.py::test_manual_variance_recursion PASSED           [ 62%]\ntest_round2_filtered.py::test_simulated_peak_is_path_maximum_at_signed_anchor_and_includes_h0 PASSED [ 63%]\ntest_round2_filtered.py::test_corrected_quantile_rank_and_unavailable_rank PASSED [ 64%]\ntest_round2_filtered.py::test_strict_pot_threshold_ties_and_structural_small_window PASSED [ 65%]\ntest_round2_filtered.py::test_gpd_exponential_limit_and_support_gate PASSED [ 66%]\ntest_round2_filtered.py::test_one_pot_fit_retains_optimizer_and_finite_tail PASSED [ 67%]\ntest_round2_filtered.py::test_real_garch_future_perturbation_and_frozen_issue_state PASSED [ 68%]\ntest_round2_filtered.py::test_nonfinite_source_fails_and_w52_is_rejected_before_filter_fit PASSED [ 68%]\ntest_round2_filtered.py::test_peak_pot_full_future_perturbation PASSED   [ 69%]\ntest_round2_filtered.py::test_failed_garch_retains_training_bounds_without_shortening_cell PASSED [ 70%]\ntest_round2_filtered.py::test_future_change_inside_refit_block_preserves_earlier_issues[FHS] PASSED [ 71%]\ntest_round2_filtered.py::test_future_change_inside_refit_block_preserves_earlier_issues[PEAK_POT] PASSED [ 72%]\ntest_round2_filtered.py::test_unobserved_nan_nat_and_absent_outcomes_cannot_affect_reports[FHS] PASSED [ 73%]\ntest_round2_filtered.py::test_unobserved_nan_nat_and_absent_outcomes_cannot_affect_reports[PEAK_POT] PASSED [ 74%]\ntest_round2_filtered.py::test_interrupted_filter_preserves_attempted_mature_pool_without_retry[TimeoutError] PASSED [ 75%]\ntest_round2_filtered.py::test_interrupted_filter_preserves_attempted_mature_pool_without_retry[MemoryError] PASSED [ 75%]\ntest_round2_filtered.py::test_interrupted_arch_fit_keeps_actual_warning_and_original_exception_code[TimeoutError] PASSED [ 76%]\ntest_round2_filtered.py::test_interrupted_arch_fit_keeps_actual_warning_and_original_exception_code[MemoryError] PASSED [ 77%]\ntest_round2_baseline_worker.py::test_comparison_retains_dm_status_once_and_identical_losses_are_not_failed_cells PASSED [ 78%]\ntest_round2_baseline_worker.py::test_comparison_loss_direction_and_reference_hits_match_inputs PASSED [ 79%]\ntest_round2_baseline_worker.py::test_qrf_checkpoint_adapter_calls_strict_guard_without_diagnostic_keywords PASSED [ 80%]\ntest_round2_baseline_worker.py::test_successful_worker_saves_complete_cell_and_both_comparisons PASSED [ 81%]\ntest_round2_baseline_worker.py::test_resource_failure_keeps_visible_reason_and_no_scored_cell PASSED [ 81%]\ntest_round2_baseline_worker.py::test_setup_failure_yields_retained_NA_receipt_without_partial_average PASSED [ 82%]\ntest_round2_baseline_worker.py::test_nonfinite_failed_optimizer_diagnostics_are_explicit_nulls_not_numbers PASSED [ 83%]\ntest_round2_baseline_readback.py::test_scalar_bartlett_known_alternating_loss_difference PASSED [ 84%]\ntest_round2_baseline_readback.py::test_successful_optimizer_rejected_only_by_frozen_persistence_gate_is_not_nonconvergence PASSED [ 85%]\ntest_round2_baseline_readback.py::test_structural_POT_NA_and_complete_record_are_separate PASSED [ 86%]\ntest_round2_levy_ar_correction.py::test_level_difference_covariance_by_independent_matrix_construction PASSED [ 87%]\ntest_round2_levy_ar_correction.py::test_endpoint_variances_and_nonzero_conditional_mean PASSED [ 87%]\ntest_round2_levy_ar_correction.py::test_folded_normal_quantiles_and_degenerate_distribution PASSED [ 88%]\ntest_round2_levy_ar_correction.py::test_level_recursion_includes_initial_position_and_sign_mirror PASSED [ 89%]\ntest_round2_levy_ar_correction.py::test_negative_increment_ar_is_not_level_mean_reversion PASSED [ 90%]\ntest_round2_levy_ar_correction.py::test_strict_breach_endpoint_difference_and_h0_floor PASSED [ 91%]\ntest_round2_levy_ar_correction.py::test_fixed_seed_is_batch_invariant_for_random_levels_and_negative_increments PASSED [ 92%]\ntest_round2_levy_ar_correction.py::test_fixed_start_oracles_share_paths_and_have_distinct_information_labels PASSED [ 93%]\ntest_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args0] PASSED [ 93%]\ntest_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args1] PASSED [ 94%]\ntest_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args2] PASSED [ 95%]\ntest_round2_levy_ar_correction.py::test_invalid_level_parameters_fail[args3] PASSED [ 96%]\ntest_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.0-0.0-1.0] PASSED [ 97%]\ntest_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[1.0-0.0-1.0] PASSED [ 98%]\ntest_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.975-nan-1.0] PASSED [ 99%]\ntest_round2_levy_ar_correction.py::test_invalid_quantile_parameters_fail[0.975-0.0--1.0] PASSED [100%]\n\n============================= 116 passed in 3.48s ==============================\n",
+        "stderr": "WARN `--no-project` was provided, but no project was found\n        4.35 real         3.15 user         0.39 sys\n           225787904  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               46571  page reclaims\n                3273  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                  69  messages sent\n                  85  messages received\n                   1  signals received\n                2537  voluntary context switches\n                5062  involuntary context switches\n           799290146  instructions retired\n           364364315  cycles elapsed\n            62063360  peak memory footprint\n"
+      }
+    }
+  ],
+  "actual_command_record_boundary": "The two records above preserve the stored command, argv, environment delta, timestamps, returncode and stdout/stderr verbatim as parsed JSON values. E10-003 is an actual current-artifact/CSV verification printout; E10-010 is an actual historical temporary-environment test execution. They are not newly executed in this audit. Original B-stage launch argv is not inferred from later recommended commands.",
+  "partial_support_or_unresolved": [
+    "B3 uses a disclosed HAC DQ-type adaptation, not the literal original CAViaR DQ theorem/statistic.",
+    "C1 addresses design facts but does not prove constant columns caused overfitting or that the observed failure has one identified mechanism.",
+    "C2 implements the requested sensitivity but cannot isolate a feature-only causal effect or establish zero conditional-feature value.",
+    "Working-reference DM/HLN/POF/CC/DQ/Holm p values remain conditional on unverified dependence, moment and null/reference-law premises; the known floor can create an atom.",
+    "B5 final replay evidence supersedes stale intermediate recovery status fields, but this pass did not rerun the replay or verify raw monetary bytes anew."
+  ],
+  "no_new_manuscript_error_found_in_checked_scope": true,
+  "no_new_repair_requested": "Retain the current scientifically qualified claims and all adverse outcomes; this audit supplies no new financial experiment or wording-only repair request.",
+  "generation_note": "Parent reported a placement-only g17 move of the existing Figure3 block to Section7, with all nonfigure canonical content and five figure PDFs unchanged. This audit's B/C checks concern the recorded actual source snapshot; current file identities include g17 PDF e897bb052380f186964d5d253ece2d164cebff635f37e6c2717a9a28b833c3b1. No visual/PDF acceptance claim is made by this task.",
+  "operations": {
+    "sole_new_file": "results/revision-20261023/round2/post-correction-audit/requirements-inference-closeout-g16.json",
+    "existing_files_modified": false,
+    "financial_model_or_statistics_recomputed": false,
+    "tests_run": false,
+    "software_installed": false,
+    "claude_used": false,
+    "push": false,
+    "deletion": false
+  }
+}
+

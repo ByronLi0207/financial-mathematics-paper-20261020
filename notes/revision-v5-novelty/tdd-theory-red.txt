@@ -1,0 +1,119 @@
+WARN `--no-project` was provided, but no project was found
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_______________________ test_floor_projection_pointwise ________________________
+
+    def test_floor_projection_pointwise():
+>    m=api()
+       ^^^^^
+
+test_v5_theory.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+_______________ test_atom_quantile_has_strict_breach_below_alpha _______________
+
+    def test_atom_quantile_has_strict_breach_below_alpha():
+>    m=api();dist=[(0,F(97,100)),(1,F(3,100))]
+       ^^^^^
+
+test_v5_theory.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+__________ test_same_endpoints_and_marginals_different_peak_quantiles __________
+
+    def test_same_endpoints_and_marginals_different_peak_quantiles():
+>    m=api();co=[((0,0,0),F(97,100)),((0,1,1),F(3,100))]
+       ^^^^^
+
+test_v5_theory.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+______ test_one_sided_endpoint_quantile_cannot_replace_absolute_quantile _______
+
+    def test_one_sided_endpoint_quantile_cannot_replace_absolute_quantile():
+>    m=api();d=m.signed_endpoint_example();assert d['signed_endpoint_quantile']==2;assert d['absolute_endpoint_quantile']==4;assert d['peak_breach_at_signed_threshold']==F(2,25)>F(1,20)
+       ^^^^^
+
+test_v5_theory.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+________________ test_common_pool_same_rank_construction_bounds ________________
+
+    def test_common_pool_same_rank_construction_bounds():
+>    m=api()
+       ^^^^^
+
+test_v5_theory.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+______________ test_raise_only_monotonicization_can_increase_loss ______________
+
+    def test_raise_only_monotonicization_can_increase_loss():
+>    m=api();tau=F(19,20)
+       ^^^^^
+
+test_v5_theory.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>    assert importlib.util.find_spec('v5_theory') is not None, 'the exact theory verification API must exist'
+E    AssertionError: the exact theory verification API must exist
+E    assert None is not None
+E     +  where None = <function find_spec at 0x10380fba0>('v5_theory')
+E     +    where <function find_spec at 0x10380fba0> = <module 'importlib.util' (frozen)>.find_spec
+E     +      where <module 'importlib.util' (frozen)> = importlib.util
+
+test_v5_theory.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED test_v5_theory.py::test_floor_projection_pointwise - AssertionError: t...
+FAILED test_v5_theory.py::test_atom_quantile_has_strict_breach_below_alpha - ...
+FAILED test_v5_theory.py::test_same_endpoints_and_marginals_different_peak_quantiles
+FAILED test_v5_theory.py::test_one_sided_endpoint_quantile_cannot_replace_absolute_quantile
+FAILED test_v5_theory.py::test_common_pool_same_rank_construction_bounds - As...
+FAILED test_v5_theory.py::test_raise_only_monotonicization_can_increase_loss
+6 failed in 0.03s

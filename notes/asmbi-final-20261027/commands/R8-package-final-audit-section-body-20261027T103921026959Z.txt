@@ -1,0 +1,15 @@
+$ /Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B notes/asmbi-final-20261027/audit_R8_package.py
+[stdout]
+$ rg -n -i AI-use|AI use|artificial intelligence|generative|language model|AI disclosure|AI statement|AI使用声明|AI 使用声明|AI声明 submission-final submission-package README.md REPRODUCING.md CANONICAL.md -g !*.bak -g !**/failed-cuts/**
+submission-final/AUTHOR-TODO.md:5:1. AI 使用声明由作者投稿前自行添加（Wiley 要求披露）。
+
+[stderr]
+Traceback (most recent call last):
+  File "/Users/bingyouli/Research/论文/金融数学论文-v10-20261024/notes/asmbi-final-20261027/audit_R8_package.py", line 117, in <module>
+    assert diff.returncode == 0, diff.stdout + diff.stderr
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: submission-package/SHARED/author-qa.tex:83: trailing whitespace.
++科学依据（按当前投稿稿定位）： 主文 Data and code availability、§10；补充 S11；根 REPRODUCING.md 和 notes/v13/independent-reproduction.md。此处只是读取既有凭证，本次没有重跑金融实验或独立金融复现；软件测试与文档编译另有本轮回执。 
+
+
+[exit] 1

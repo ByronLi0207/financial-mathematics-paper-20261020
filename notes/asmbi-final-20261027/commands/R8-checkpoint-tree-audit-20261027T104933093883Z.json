@@ -1,0 +1,15 @@
+{
+  "step": "R8",
+  "label": "checkpoint-tree-audit",
+  "command": [
+    "python3",
+    "-c",
+    "import json,subprocess,pathlib; files=[x.decode() for x in subprocess.check_output([\"git\",\"diff-tree\",\"--no-commit-id\",\"--name-only\",\"-r\",\"-z\",\"HEAD\"]).split(b\"\\0\") if x]; bad=[p for p in files if p.startswith((\"data/\",\"results/\",\"protocol/\")) or pathlib.Path(p).name.startswith(\"test_\") or \".scratch\" in pathlib.Path(p).parts or \".bak\" in pathlib.Path(p).name]; assert not bad,bad; q=subprocess.run([\"git\",\"show\",\"--format=\",\"--check\",\"HEAD\"],capture_output=True,text=True); assert q.returncode==0,q.stdout+q.stderr; print(json.dumps({\"branch\":subprocess.check_output([\"git\",\"branch\",\"--show-current\"],text=True).strip(),\"local_checkpoint\":subprocess.check_output([\"git\",\"rev-parse\",\"HEAD\"],text=True).strip(),\"changed_paths\":len(files),\"forbidden_paths\":bad,\"commit_diff_check\":\"PASS\",\"meaning\":\"Local WIP checkpoint only; R8 remains BLOCKED and R9 has not started\"},indent=2))"
+  ],
+  "started_utc": "2026-10-27T10:49:33.093883+00:00",
+  "ended_utc": "2026-10-27T10:49:33.233100+00:00",
+  "seconds": 0.139217,
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py\", line 507, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py\", line 1134, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py\", line 2017, in _communicate\n    stdout = self._translate_newlines(stdout,\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py\", line 1011, in _translate_newlines\n    data = data.decode(encoding, errors)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 450064: invalid continuation byte\n"
+}

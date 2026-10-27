@@ -1,0 +1,35 @@
+$ python3 -B notes/asmbi-final-20261027/verify_R2.py
+[stdout]
+$ rg -n -i AI-use|AI use|artificial intelligence|generative|language model|AI disclosure|AI statement|AI使用声明|AI 使用声明|AI声明 submission-final submission-package README.md REPRODUCING.md CANONICAL.md -g !*.bak -g !**/failed-cuts/**
+[raw rg stdout]
+submission-final/AUTHOR-TODO.md:14:AI 使用声明由作者投稿前自行添加（Wiley 要求披露）
+[raw rg stderr]
+{
+  "step": "R2",
+  "status": "PASS",
+  "command": [
+    "rg",
+    "-n",
+    "-i",
+    "AI-use|AI use|artificial intelligence|generative|language model|AI disclosure|AI statement|AI使用声明|AI 使用声明|AI声明",
+    "submission-final",
+    "submission-package",
+    "README.md",
+    "REPRODUCING.md",
+    "CANONICAL.md",
+    "-g",
+    "!*.bak",
+    "-g",
+    "!**/failed-cuts/**"
+  ],
+  "raw_stdout": "submission-final/AUTHOR-TODO.md:14:AI 使用声明由作者投稿前自行添加（Wiley 要求披露）\n",
+  "raw_stderr": "",
+  "rg_exit": 0,
+  "disclosure_or_placeholder_matches": 0,
+  "author_todo_reminder_exceptions": 1,
+  "original_template_files_preserved": 133
+}
+
+[stderr]
+
+[exit] 0

@@ -1,0 +1,484 @@
+{
+  "schema": "v10-cftc-code-seal-v1",
+  "created_utc": "2026-10-24T23:08:55.705380+00:00",
+  "design_commit": "acd567c1f58fbe7fbb4194be70ff7bebbdfb2baf",
+  "design_provenance": {
+    "commit": "acd567c1f58fbe7fbb4194be70ff7bebbdfb2baf",
+    "commit_time": "2026-10-24T15:45:31-07:00",
+    "sha256": "a7aacd4180d27ab810284119b0e4d0cdef79e5d2b0d0c9e7ad2cef8037ab5d78",
+    "path": "protocol/v10/cftc-design.md"
+  },
+  "code_commit": "76057b1b4399c95d583c76e2cb1cfb09b3b60d73",
+  "code_sha256": {
+    "run_v10_cftc.py": "a9542cc594be97f4a30570e1a8f057441f8d94e22699a6ad8d3fe6d30a8a4891",
+    "v10_cftc_data.py": "49d8d5fd3adcdf5953aaa030e420175a3835a2f76fd0b97c95d23bdc448e854f",
+    "v10_cftc_forecast.py": "4638b0aa039d35fc0252267b902a1985cc8d01d83a87c0a8f1c48aeff2c8894e",
+    "v10_cftc_summary.py": "260737315ad8e88593f3ee9fb6736bfde90a0ba8177d4db94ca98b5d534abb34",
+    "v10_menu.py": "e91c942d6a24cb833ceaed48c282360a578325c0ebf3c5b370b42c4b14ca5014",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "empirical_headroom.py": "db5d73facae28432bb0617d173e5b4c933d95e52b43f9363543e21194919412e",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "v6_aci.py": "e81005a25ca7b94dec86540981b890c945c280478b861e7416f7fb852f67b15a",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "run_v9_nonstationarity.py": "48507b638a2a57a71ffb11e96e5a44bdf2279bfed596388e7d6ad9b8cb4e73fa",
+    "run_v10_menu.py": "6d0553f0bd63b786d2d5335c9156be0eda8750d9d20c97511922e8208193990b"
+  },
+  "design": {
+    "schema": "v10-cftc-design-v1",
+    "created_utc": "2026-10-24T22:43:45.635008+00:00",
+    "base_v9_commit": "0d2526cc69092c5158437a0509613bac5e86d47f",
+    "source_preflight": "notes/v10/cftc-source-verification.json",
+    "source_preflight_sha256": "940f0bacae5f1bbd391b078ec0e2f5ec21e84cac3f195ccbdb777d7f962b5553",
+    "report": "TFF Futures Only",
+    "target": "Dealer_Positions_Long_All minus Dealer_Positions_Short_All; raw contract counts, no division by OI",
+    "official_index": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm",
+    "downloads_in_fixed_order": [
+      {
+        "file": "fin_fut_txt_2006_2016.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fin_fut_txt_2006_2016.zip",
+        "first_position_year": 2010,
+        "last_position_year": 2016
+      },
+      {
+        "file": "fut_fin_txt_2017.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2017.zip",
+        "first_position_year": 2017,
+        "last_position_year": 2017
+      },
+      {
+        "file": "fut_fin_txt_2018.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2018.zip",
+        "first_position_year": 2018,
+        "last_position_year": 2018
+      },
+      {
+        "file": "fut_fin_txt_2019.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2019.zip",
+        "first_position_year": 2019,
+        "last_position_year": 2019
+      },
+      {
+        "file": "fut_fin_txt_2020.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2020.zip",
+        "first_position_year": 2020,
+        "last_position_year": 2020
+      },
+      {
+        "file": "fut_fin_txt_2021.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2021.zip",
+        "first_position_year": 2021,
+        "last_position_year": 2021
+      },
+      {
+        "file": "fut_fin_txt_2022.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2022.zip",
+        "first_position_year": 2022,
+        "last_position_year": 2022
+      },
+      {
+        "file": "fut_fin_txt_2023.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2023.zip",
+        "first_position_year": 2023,
+        "last_position_year": 2023
+      },
+      {
+        "file": "fut_fin_txt_2024.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2024.zip",
+        "first_position_year": 2024,
+        "last_position_year": 2024
+      },
+      {
+        "file": "fut_fin_txt_2025.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2025.zip",
+        "first_position_year": 2025,
+        "last_position_year": 2025
+      },
+      {
+        "file": "fut_fin_txt_2026.zip",
+        "url": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2026.zip",
+        "first_position_year": 2026,
+        "last_position_year": 2026
+      }
+    ],
+    "download_transport": "Normal official browser download from the verified HTML anchor, one attempt per archive, in listed order; no prior CLI dataset probe, mirror, API substitute, challenge bypass, retry or transport fallback after failure",
+    "download_failure": "Stop all remaining E2 acquisition/analysis on first failed, blocked, timeout, nonofficial or absent required file. Preserve response/download/error evidence with URL, attempt UTC, bytes, SHA256 and status. Continue E3 with CFTC UNAVAILABLE. Do not fabricate20 or a contract-performance figure.",
+    "download_per_file_timeout_seconds": 180,
+    "annual_ownership": "Filter each archive by its predeclared position-year bounds; retain/audit every excluded original row. No overlap deduplication. Within the owned period any duplicate code/report-week, even byte-identical or Monday+Tuesday, disqualifies that code.",
+    "new_data_hosts": [
+      "www.cftc.gov",
+      "cftc.gov"
+    ],
+    "financial_classification": "The official TFF financial-futures report universe; no commodity/Disaggregated/Legacy reports or external taxonomy",
+    "first_included_position_date": "2010-01-01",
+    "first_expected_week": "2010-01-04",
+    "week_anchor": "Monday00:00, map each actual economic position date to its containing Monday; require one row in every generated calendar week from2010-01-04 through the global latest owned valid FO position week",
+    "global_calendar": "Generate every seven-day Monday, NOT union of observed weeks; any full-calendar gap makes each affected code ineligible. Global latest is fixed by all valid owned FO rows before contract filtering/ranking.",
+    "position_date_rule": "Use As_of_Date_In_Form_YYMMDD parsed as2000+YY; cross-check full date column when present. Monday/Tuesday and other official within-week days map to the same week; never require date.diff==7 or Tuesday only. Actual dates retained separately.",
+    "date_header_aliases": [
+      "Report_Date_as_MM_DD_YYYY",
+      "Report_Date_as_YYYY-MM-DD"
+    ],
+    "required_columns": [
+      "Market_and_Exchange_Names",
+      "As_of_Date_In_Form_YYMMDD",
+      "CFTC_Contract_Market_Code",
+      "CFTC_Market_Code",
+      "Open_Interest_All",
+      "Dealer_Positions_Long_All",
+      "Dealer_Positions_Short_All",
+      "Contract_Units"
+    ],
+    "optional_audit_columns": [
+      "CFTC_Region_Code",
+      "CFTC_Commodity_Code",
+      "CFTC_Contract_Market_Code_Quotes",
+      "FutOnly_or_Combined"
+    ],
+    "text_encoding": "utf-8-sig; if decoding fails only, use cp1252 and record it; no schema/content repair",
+    "payload": "Exactly one .txt or .csv table payload per ZIP; inspect without filesystem extraction; missing/multiple tables or malformed required schema makes E2 data unavailable. No alternate file type.",
+    "date_error": "Missing/unparseable/inconsistent/future position date or missing code prevents a valid global calendar: entire dataset unavailable. Otherwise a named code with invalid count/identity/week records is ineligible with an explicit reason.",
+    "counts": "Parse nonnegative integers after trimming whitespace and removing thousands commas; no imputation. Dealer net may be signed. Require all owned in-period counts finite and nonnegative before netting.",
+    "code_rule": "Keep CFTC_Contract_Market_Code as stripped string including leadingzeros and plus signs; never splice, coalesce, infer or rename codes. Full-period weekly coverage under one unchanged literal code is mandatory. No code/name similarity matching.",
+    "stable_identity": {
+      "exchange_field": "CFTC_Market_Code",
+      "exchange_normalization": "strip and uppercase only; exactly one nonblank value",
+      "units_field": "Contract_Units",
+      "units_normalization": "uppercase, collapse whitespace, remove thousands commas; exactly one nonblank value",
+      "market_names": "Audit every distinct label and its date span; pure labels never splice histories or override code/exchange/unit criteria. No rename whitelist.",
+      "economic_scope_boundary": "Stable observed code/exchange/unit strings do not establish invariant economic coverage or participant membership."
+    },
+    "known_scope_change_excluded_code_prefixes": [
+      "13874",
+      "20974",
+      "12460"
+    ],
+    "scope_change_exclusion_reason": "Conservatively exclude the entire three official code families containing the S&P500/Nasdaq100/DJIA consolidated2023 e-micro integration, not just the plus-suffixed series; fixed before seeing values or outcomes. Record every excluded code and label.",
+    "eligibility_order": [
+      "owned financial FO rows and valid global calendar",
+      "unchanged literal code",
+      "one valid row every expected week, no duplicates or gaps",
+      "stable nonblank exchange and normalized units",
+      "exclude all three known scope-change code prefixes",
+      "enough complete history for declared validation/training/warmup",
+      "rank mean Open_Interest_All on the common full calendar, descending; exact tie code lexicographic ascending",
+      "first20 or all if fewer; zero means unavailable"
+    ],
+    "top_contracts": 20,
+    "rank": "Full-calendar arithmetic mean total market Open_Interest_All, not absolute dealer net or dollar risk. Whole-sample selection is disclosed as retrospective universe selection; no contemporaneous investable-universe claim.",
+    "model_clock": "Weekly Monday00:00 labels for build_features; retain actual economic position dates for provenance and displayed splits. Monday labels are feature/time indices, NOT public decision or availability times.",
+    "horizon": 6,
+    "windows": [
+      52,
+      260
+    ],
+    "refit_step": 13,
+    "feature_rms_short": 6,
+    "feature_rms_long": 26,
+    "nominal_gap_seconds": 604800,
+    "tau_numerator": 19,
+    "tau_denominator": 20,
+    "split_formulas": {
+      "N": "number of complete common weekly observations, indexed0..N-1",
+      "evaluation_first": "N-H-260",
+      "evaluation_last": "N-H-1",
+      "validation_last": "evaluation_first-H-1",
+      "validation_first": "validation_last-51",
+      "validation_n": 52,
+      "evaluation_n": 260,
+      "unissued_gap_n": 6,
+      "completion": "All validation labels end strictly before evaluation_first; all evaluation labels end<=N-1.",
+      "training": "At refit r use W completed origins r-H-W+1..r-H inclusive, latest label ends r; conditional valid_from26. Both segments start their own13-observation refit grid; all model transforms/response scaling use only that pool.",
+      "date_reporting": "After acquisition write exact indices, Monday-clock dates and actual economic first/last/label-completion dates from downloaded files into results/v10/cftc/splits.json before formal forecasting."
+    },
+    "methods": [
+      "F",
+      "I",
+      "QR4",
+      "QR33",
+      "ACI_F",
+      "ACI_QR33"
+    ],
+    "menus": {
+      "QR33": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        "inf"
+      ],
+      "QR4": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        "inf"
+      ]
+    },
+    "finite_forecast": "Unchanged v8_mechanism_mc.forecast_report through sealed v10_menu adapter; fixed solver defaults, feature transform, response scale and floor. No new model family.",
+    "historical": "Unchanged empirical_headroom.predict; F corrected ceil((W+1)*19/20), I ordinary ceil(W*19/20); both use matched W and13-record refits/current absolute-position floor.",
+    "conditional_selection": "v10_menu.select_candidate: QR33 allsix required, QR4 eligible completed candidates; exact equal validation mean pinball selects strongest penalty incl inf. Retain each failed candidate, never retry; write selection before evaluation. Selected evaluation failure makes the full method cell FAILED, no fallback or partial score.",
+    "ancillary": {
+      "methods": [
+        "ACI_F",
+        "ACI_QR33"
+      ],
+      "algorithm": "Existing v6_aci.aci_stream and select_gamma; finite delayed ACI-style calibration, no canonical coverage guarantee",
+      "gammas": [
+        0.001,
+        0.005,
+        0.01,
+        0.05
+      ],
+      "gamma_selection": "Attempt allfour exactlyonce; existing select_gamma chooses completed full-validation candidates by exact absolute coverage distance to1/20, then pinball, then smaller gamma; none eligible=>NA. All failures stay in inventory.",
+      "warmup": "Existing initialization_grid(validation_first,H,W,13,min_feature_index) with min0forF,26forQR33; all earlier legal warm issue origins through validation_first-1, refit13, at least19mature conformity scores. No extra tau fits. Selected QR33 lambda is frozen before its separate warmup segment. Reuse its saved candidate validation and selected evaluation bases, never refit a segment twice.",
+      "state": "Initial alpha1/20; exact Fraction updates/projection, finite corrected rank, latestW mature scores, H-record delayed feedback using actual earlier wrapped reports; concatenate validation and evaluation only after gamma freeze, verify validation prefix unchanged; no invented issues in the unissued gap.",
+      "failure": "Base QR33 ineligible/fails=>ACI_QR33 unavailable. Insufficient warmup, no complete gamma or selected evaluation failure=>whole ancillary cell unavailable/failed. Never retry, retune or replace it."
+    },
+    "scoring": "Existing score_predictions at tau19/20, full260points only; save origins, capacities, peak, floor, per-point pinball, strict_breach, overrun, unused for every complete method. Incomplete outputs kept as failed diagnostic bytes but never scored as a full method.",
+    "T1": {
+      "requirement": "At least60% of all selected-contract x two-window cells have min(F,I) mean loss strictly below QR33.",
+      "minimum_inclusive_fraction": 0.6,
+      "denominator": "2K, all selected contracts and bothW; any required operand missing=>UNASSESSABLE, no successful-subset denominator."
+    },
+    "T2": {
+      "requirement": "For each W, median across allK contracts of100*(QR33/F-1) falls in closed[-10,+10]percent; SUPPORT requires both windows.",
+      "lower_inclusive_pct": -10.0,
+      "upper_inclusive_pct": 10.0,
+      "failure": "Missing required contract/method or nonpositiveF mean=>that window UNASSESSABLE; never replace with a partial median."
+    },
+    "T3": {
+      "requirement": "Across allK contracts, QR4/F relative-loss median atW260 is strictly lower than atW52.",
+      "strict": true,
+      "failure": "Any required operand incomplete=>UNASSESSABLE."
+    },
+    "summary": "One row per selected contract with all methods and bothW; full detailed cells/candidates/failedslots retained. Across-contract medians/fractions descriptive only, no independent-series pooled significance or dollar aggregation.",
+    "worker_count": 4,
+    "worker_internal_seconds": 540,
+    "worker_hard_seconds": 600,
+    "formal_max_seconds": 3600,
+    "one_numerical_thread_per_worker": true,
+    "no_pilot_or_adaptive_grid": true,
+    "code_seal": "After synthetic tests, commit all v10 CFTC executable code and seal hashes, protocol commit and acquired bytes before the sole formal launch. Check archive/input hashes and code before/after use.",
+    "information_time": "Economic-position-date replay of downloaded vintage, same structural limitation as Treasury. Normally Tuesday positions publishedFriday15:30ET, with documented holiday/shutdown/ION delays; exact full historical first-release dates unavailable. Not a tradable first-release-vintage backtest.",
+    "interpretation": "Independent reporting system, category-aggregated dealer/intermediary futures positions; not individual dealers, independent contracts, complete balance-sheet inventory or causal frequency identification.",
+    "failure_outputs": "If official acquisition fails, provenance lists the attempt and every NOT_ATTEMPTED required URL, CFTC outcome/T1-T3 UNAVAILABLE, empty selected-contract inventory and explicit missing table/figure receipt. Do not run forecasts, do not synthesize contracts; E3/E4 retain CFTC unavailable scope.",
+    "inherited_or_E1_code_sha256": {
+      "v10_menu.py": "e91c942d6a24cb833ceaed48c282360a578325c0ebf3c5b370b42c4b14ca5014",
+      "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "empirical_headroom.py": "db5d73facae28432bb0617d173e5b4c933d95e52b43f9363543e21194919412e",
+      "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "v6_aci.py": "e81005a25ca7b94dec86540981b890c945c280478b861e7416f7fb852f67b15a",
+      "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f"
+    },
+    "full_date_formats": [
+      "%Y-%m-%d",
+      "%m/%d/%Y"
+    ],
+    "report_type_marker": "When FutOnly_or_Combined is present, normalize by removing nonalphanumerics and uppercasing; only FUTONLY or FUTURESONLY accepted. Missing optional marker is documented and file identity comes from the verified official FuturesOnly URL; any contradictory/unrecognized populated marker makes data unavailable.",
+    "required_year_payload": "Each requested annual file must contain at least one row in its declared position-year ownership; an empty required year is unavailable, never replaced by a partial earlier-vintage universe.",
+    "byte_provenance": "Archive response bytes retained unchanged; URL is the actual observed official href, attempt/start/end UTC from browser/writer, local byte count and SHA256. Record unobservable HTTP/redirect information as unobserved rather than inventing it. Any observed nonofficial destination is a stop.",
+    "ingestion_clarification": {
+      "schema": "v10-cftc-ingestion-clarification-v1",
+      "created_utc": "2026-10-24T22:58:31.222676+00:00",
+      "original_design_commit": "acd567c1f58fbe7fbb4194be70ff7bebbdfb2baf",
+      "original_design_sha256": "a7aacd4180d27ab810284119b0e4d0cdef79e5d2b0d0c9e7ad2cef8037ab5d78",
+      "initial_preparation_failure": "results/v10/cftc/preparation-failure.json",
+      "initial_failure_sha256": "5176ab47a6f829f6ef16c3c231405ea128c35172833b92799b3ffb80a528a032",
+      "observed_archive": "data/cftc-tff/raw/fin_fut_txt_2006_2016.zip",
+      "observed_archive_sha256": "c3a8d01765133a24ce9c082de88933816497d06f1b03eec8c53750bdd818f14b",
+      "observed_payload": "F_TFF_2006_2016.txt",
+      "observed_line": 2,
+      "observed_compact_date": "161227",
+      "observed_full_date_literal": "12/27/2016 12:00:00 AM",
+      "cause": "The additional official full-date field includes a literal midnight suffix, while the implementation accepted only the registered date-only spellings. Primary YYMMDD identifies the same economic date. No universe selection, net-position calculation or forecast/evaluation was reached.",
+      "accepted_literal_suffix": " 12:00:00 AM",
+      "normalization": "Only when this separately committed clarification is verified: remove exactly the literal terminal suffix above, then apply the original full-date formats and require exact equality to primary YYMMDD. Do not ignore the full-date field, infer ambiguous dates, accept arbitrary times/timezones or add a general date parser.",
+      "unchanged": [
+        "all eleven original ZIP bytes/URLs/ownership boundaries",
+        "required fields and original date-only formats",
+        "complete Monday calendar and every universe/code/unit/exchange/scope-change/ranking rule",
+        "all model families, menus, candidate policies, lambda/gamma selection, horizon/history/refit/validation/evaluation/maturity geometry",
+        "T1-T3 thresholds, complete-grid denominators, failure/no-retry rules, runtime budgets"
+      ],
+      "next_preparation_attempt": "results/v10/cftc/preparation-after-clarification",
+      "preservation": "Keep every initial failure/audit byte and original source ZIP unchanged; write subsequent preparation audit in the exclusive path above. No numerical cell has run, so no failed numerical cell is rerun. Any further unsupported date spellings remain unavailable; no search over parser alternatives.",
+      "interpretation": "Schema clarification after acquiring/seeing source formatting and before any screening/model/forecast outcomes. Disclose this timing rather than claiming all ingestion choices were fixed before data access."
+    },
+    "ingestion_clarification_provenance": {
+      "commit": "4d46550c23a54662112979acc891ba4f903dc39c",
+      "commit_time": "2026-10-24T15:58:31-07:00",
+      "sha256": "9b55e7573306dbd822b5f94614260aace5b5cbbdbfb88be0a34cc3712ea33687",
+      "path": "protocol/v10/cftc-ingestion-clarification.md"
+    },
+    "count_notation_clarification": {
+      "schema": "v10-cftc-count-notation-clarification-v1",
+      "created_utc": "2026-10-24T23:03:41.438664+00:00",
+      "original_design_commit": "acd567c1f58fbe7fbb4194be70ff7bebbdfb2baf",
+      "date_clarification_commit": "4d46550c23a54662112979acc891ba4f903dc39c",
+      "observed_archive": "data/cftc-tff/raw/fin_fut_txt_2006_2016.zip",
+      "observed_archive_sha256": "c3a8d01765133a24ce9c082de88933816497d06f1b03eec8c53750bdd818f14b",
+      "observed_payload": "F_TFF_2006_2016.txt",
+      "observed_line": 12198,
+      "observed_code": "020601",
+      "observed_position_date_compact": "161227",
+      "observed_literal_values": {
+        "Open_Interest_All": "594263.000000",
+        "Dealer_Positions_Long_All": "6981.000000",
+        "Dealer_Positions_Short_All": "36764.000000"
+      },
+      "cause": "The earlier lexical integer parser rejected mathematically integral official decimal-zero count notation. This incorrectly classified otherwise observed rows as INVALID_COUNTS. No model fitting, candidate validation, forecast score or T1-T3 outcome exists.",
+      "prior_universe_receipt": "results/v10/cftc/eligibility.json",
+      "prior_universe_sha256": "e3274cc66f417fbf23a49a81e302a078dab20893325125a812ee94bad94616a0",
+      "prior_unavailable_receipt": "results/v10/cftc/unavailable.json",
+      "prior_unavailable_sha256": "fde6a9336a4300c8aa51691a921b0d30246a1a7814f9cb608de86aaa8f23acb8",
+      "correction": "When this separate clarification is verified, accept the existing unsigned integer/thousands-group text grammar followed optionally by a decimal point and one or more zero digits. Convert by exact integer arithmetic after proving the fractional part is allzero. No float rounding, scientific notation, nonzero fraction, sign, blank, NA, imputation or row replacement.",
+      "accepted_zero_fraction": true,
+      "next_preparation_attempt": "results/v10/cftc/preparation-after-count-clarification",
+      "preservation": "Copy the prior zero-universe and unavailable receipts verbatim into their originating preparation-after-clarification directory and retain .bak copies before replacing untracked current metadata; commit the preserved attempt snapshots. Original raw ZIPs, failed-date receipt, original design and date clarification remain unchanged.",
+      "unchanged": "Every observation value, ownership/year/date rule, literal code, gap/duplicate/unit/exchange/scope exclusion, OI ranking/top20 rule, methods, lambda/gamma grid, splits, T1-T3 threshold and denominator, resource and numerical no-retry policy. This restores the already specified nonnegative-integer value semantics; it does not relax any required count to a noninteger.",
+      "timing_boundary": "The zero-universe metadata result and one concrete raw count-format example have been inspected. No forecast performance or model-selection outcome has been seen. Disclose both schema clarifications as post-acquisition and before all model outcomes; never call the entire ingestion workflow predata-blind."
+    },
+    "count_notation_clarification_provenance": {
+      "commit": "818b942b1bc7d9cbb29329c9c1d8884376242769",
+      "commit_time": "2026-10-24T16:03:41-07:00",
+      "sha256": "0c2152fd17084f105a3a277e4568c970ff46bac6f944408594980d8c8b827636",
+      "path": "protocol/v10/cftc-count-notation-clarification.md"
+    }
+  },
+  "sources": [
+    {
+      "source_index": 0,
+      "code": "044601",
+      "path": "results/v10/cftc/sources/s00.npz",
+      "bytes": 9573,
+      "sha256": "15301fe97329711d1a7bf93546c9252bd71a9787215a286a1e28297494b86e32"
+    },
+    {
+      "source_index": 1,
+      "code": "043602",
+      "path": "results/v10/cftc/sources/s01.npz",
+      "bytes": 9612,
+      "sha256": "70e0354eaa93982a21890dec5ce81cdd4887cc7c56898390140e2471211e479e"
+    },
+    {
+      "source_index": 2,
+      "code": "042601",
+      "path": "results/v10/cftc/sources/s02.npz",
+      "bytes": 9520,
+      "sha256": "aa865f0a0cbeb77d71c644d94ed49ea4549ec5f5f0d66dc3645f79f39559196b"
+    },
+    {
+      "source_index": 3,
+      "code": "045601",
+      "path": "results/v10/cftc/sources/s03.npz",
+      "bytes": 9599,
+      "sha256": "eb7d6bb259637b65aca2cdb4b31e18c237d9c486c0fbce2f8916a49a6b19eb8f"
+    },
+    {
+      "source_index": 4,
+      "code": "020601",
+      "path": "results/v10/cftc/sources/s04.npz",
+      "bytes": 9365,
+      "sha256": "f49b35626eda89da64ba05f6cad7e144b34b897b45b119c102d6a4f51bb2eb96"
+    },
+    {
+      "source_index": 5,
+      "code": "099741",
+      "path": "results/v10/cftc/sources/s05.npz",
+      "bytes": 9466,
+      "sha256": "96a6ded494961a95225bb967f92f791998077de459e84dac8cee6129bd6d5014"
+    },
+    {
+      "source_index": 6,
+      "code": "1170E1",
+      "path": "results/v10/cftc/sources/s06.npz",
+      "bytes": 9375,
+      "sha256": "e378513803e88b245daf7131ff01ed262b32a28cc5e40607a6275d6fd3c4577b"
+    },
+    {
+      "source_index": 7,
+      "code": "097741",
+      "path": "results/v10/cftc/sources/s07.npz",
+      "bytes": 9513,
+      "sha256": "cd37daf92427cb6f17fe3c0207b830ecd575592c00f05f2247e2a9433572ed56"
+    },
+    {
+      "source_index": 8,
+      "code": "096742",
+      "path": "results/v10/cftc/sources/s08.npz",
+      "bytes": 9491,
+      "sha256": "73ff25092f9270894000baea23b24343ec01d998306104c610f3ab97c9faaae9"
+    },
+    {
+      "source_index": 9,
+      "code": "095741",
+      "path": "results/v10/cftc/sources/s09.npz",
+      "bytes": 9387,
+      "sha256": "c1cf66bb346bc38abe8554ce4e5fd09b6e41a53d4f826ef71869ed1ae5304f15"
+    },
+    {
+      "source_index": 10,
+      "code": "090741",
+      "path": "results/v10/cftc/sources/s10.npz",
+      "bytes": 9465,
+      "sha256": "cf543927636b6d93e35e928cffe0ef7b254b4e8915a9071de073514bfad9d5f8"
+    },
+    {
+      "source_index": 11,
+      "code": "232741",
+      "path": "results/v10/cftc/sources/s11.npz",
+      "bytes": 9457,
+      "sha256": "0eeaf81d454f2f7d8bb842ffc52f9548f111a5dd945b7770dbdebd5fee3d6fd5"
+    },
+    {
+      "source_index": 12,
+      "code": "33874A",
+      "path": "results/v10/cftc/sources/s12.npz",
+      "bytes": 9138,
+      "sha256": "ce7484a6fa2167788e3ee1cf978e2a3b6059465ef49134b2887799c77859d2a1"
+    },
+    {
+      "source_index": 13,
+      "code": "240743",
+      "path": "results/v10/cftc/sources/s13.npz",
+      "bytes": 9113,
+      "sha256": "e09931c22d291f48feeaffe30d8e34bd93ba63d1fa0a76bfb50e0541c6827ef7"
+    },
+    {
+      "source_index": 14,
+      "code": "092741",
+      "path": "results/v10/cftc/sources/s14.npz",
+      "bytes": 9242,
+      "sha256": "791819f3b1605d62cf56337fbe316cdd1c47bc6eed4b54e3802fef8d56d7cea5"
+    },
+    {
+      "source_index": 15,
+      "code": "098662",
+      "path": "results/v10/cftc/sources/s15.npz",
+      "bytes": 8943,
+      "sha256": "604483e315fe10a251cdb36eb1b58fa2217acbcdd00099765df5238e7f3feb41"
+    },
+    {
+      "source_index": 16,
+      "code": "112741",
+      "path": "results/v10/cftc/sources/s16.npz",
+      "bytes": 9199,
+      "sha256": "7e497c720c7d7579410bc83404a44c978eb2c2e41f4ded8fbe9fe92e16fa2471"
+    }
+  ],
+  "acquisition_sha256": "7b21fac463156b94727a74d1b16db1c7e38a3ec7c3397864fba035c2b7986d37",
+  "prepared_sha256": {
+    "sources.json": "f15fae76ccccaec4c7831f259a19ac15c977a301d20ab95a16f1eac6a0bf0b87",
+    "splits.json": "0d2fd6175b049f49d06a5fa845dabaaa5ad4bda43760eb82529255e434b28198",
+    "eligibility.json": "0bacfb63a09a43f3f80832afafce403bdd824a6b48279bcf698d842d389943bf"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "MISMATCH-WP3-01",
+  "recorded_utc": "2026-10-24T09:35:23.924091+00:00",
+  "type": "scientific result contradicts predeclared restriction",
+  "design_commit": "039f6f1b49d46610697bed5300cab687b37951df",
+  "support_source": "results/revision-v8/wp3/support.json",
+  "broad_classification": "MISMATCH",
+  "procedures": {
+    "QR33": {
+      "method": "QR33",
+      "status": "MISMATCH",
+      "planned_cells": 72,
+      "reported_cells": 72,
+      "target_cell_count": 12,
+      "outside_cell_count": 60,
+      "minimum_target_clear_gains": 6,
+      "target_clear_gain_count": 2,
+      "outside_clear_gain_count": 6,
+      "target_clear_gain_cells": [
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.98,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.98,
+          "window": 2880,
+          "horizon": 6
+        }
+      ],
+      "outside_clear_gain_cells": [
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 24
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.9,
+          "window": 2880,
+          "horizon": 24
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.98,
+          "window": 2880,
+          "horizon": 24
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 24
+        }
+      ],
+      "missing_or_unevaluable_cells": [],
+      "all_cells_fully_evaluable": true,
+      "grid_complete": true,
+      "unevaluable_target_cells": 0,
+      "unevaluable_outside_cells": 0,
+      "criterion": "all32complete; relative_loss_percent+2*relative_loss_mcse<0; win_fraction>=0.75",
+      "target_region": "H=6,W>=720,p>=0.9",
+      "inferential_status": "descriptive predeclared screen; no FWE guarantee"
+    },
+    "QR4": {
+      "method": "QR4",
+      "status": "MISMATCH",
+      "planned_cells": 72,
+      "reported_cells": 72,
+      "target_cell_count": 12,
+      "outside_cell_count": 60,
+      "minimum_target_clear_gains": 6,
+      "target_clear_gain_count": 2,
+      "outside_clear_gain_count": 6,
+      "target_clear_gain_cells": [
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.9,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.98,
+          "window": 2880,
+          "horizon": 6
+        }
+      ],
+      "outside_clear_gain_cells": [
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 24
+        },
+        {
+          "phi": 0.7,
+          "variance_persistence": 0.98,
+          "window": 720,
+          "horizon": 24
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.0,
+          "window": 720,
+          "horizon": 6
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 6
+        },
+        {
+          "phi": 0.9,
+          "variance_persistence": 0.0,
+          "window": 2880,
+          "horizon": 24
+        }
+      ],
+      "missing_or_unevaluable_cells": [],
+      "all_cells_fully_evaluable": true,
+      "grid_complete": true,
+      "unevaluable_target_cells": 0,
+      "unevaluable_outside_cells": 0,
+      "criterion": "all32complete; relative_loss_percent+2*relative_loss_mcse<0; win_fraction>=0.75",
+      "target_region": "H=6,W>=720,p>=0.9",
+      "inferential_status": "descriptive predeclared screen; no FWE guarantee"
+    }
+  },
+  "required_narrative": "The predeclared region does not delimit conditional-model gains in this simulation. Existing empirical restrictions are not a universal mechanism boundary. Preserve the full grid; no outcome-driven retuning or redesigned support rule."
+}

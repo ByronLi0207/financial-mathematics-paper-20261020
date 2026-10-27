@@ -1,0 +1,43 @@
+WARN `--no-project` was provided, but no project was found
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_v6_root_regeneration_accepts_exact_claim_and_rejects_context_swapped_number _
+
+    def test_v6_root_regeneration_accepts_exact_claim_and_rejects_context_swapped_number():
+        expected={'type':'p','html':'A bound result is 15.00%.'}
+        b={**expected,'_generator':'v6:fixture','_bindings':[]}
+        with patch('v6_submission.generated',return_value=expected):
+>           assert numeric.validate_block(b)==[]
+E           assert [{'kind': 'mi...s 15.00%.'}"}] == []
+E             
+E             Left contains one more item: {'kind': 'missing provenance', 'text': "{'html': 'A bound result is 15.00%.'}"}
+E             Use -v to get more diff
+
+test_v6_numeric.py:11: AssertionError
+_ test_v6_supplement_dispatch_checks_regeneration_and_original_input_fingerprints _
+
+    def test_v6_supplement_dispatch_checks_regeneration_and_original_input_fingerprints():
+        expected={'type':'table','caption':'Table S38. Complete inventory.','headers':['Score'],'rows':[['2.50']]}
+        b={**deepcopy(expected),'_generator':'v6supp:fixture','_bindings':[]}
+        with patch.dict(sys.modules,{'v6_supplement':SimpleNamespace(generated=lambda _:expected)}):
+>           assert numeric.validate_block(b)==[]
+E           assert [{'kind': 'mi...nventory.'}"}] == []
+E             
+E             Left contains one more item: {'kind': 'missing provenance', 'text': "{'headers': ['Score'], 'rows': [['2.50']], 'caption': 'Table S38. Complete inventory.'}"}
+E             Use -v to get more diff
+
+test_v6_numeric.py:19: AssertionError
+_ test_new_reference_matches_verified_entry_and_existing_metadata_dispositions _
+
+    def test_new_reference_matches_verified_entry_and_existing_metadata_dispositions():
+>       assert hasattr(numeric,'expected_reference_html'),'reference extension missing'
+E       AssertionError: reference extension missing
+E       assert False
+E        +  where False = hasattr(numeric, 'expected_reference_html')
+
+test_v6_numeric.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_numeric.py::test_v6_root_regeneration_accepts_exact_claim_and_rejects_context_swapped_number
+FAILED test_v6_numeric.py::test_v6_supplement_dispatch_checks_regeneration_and_original_input_fingerprints
+FAILED test_v6_numeric.py::test_new_reference_matches_verified_entry_and_existing_metadata_dispositions
+3 failed in 0.05s

@@ -1,0 +1,1658 @@
+{
+  "schema": "loop037-preserved-initial-definition-audit-and-corrected-empirical-cell-trace-v1",
+  "loop": 37,
+  "initial_scope_gap": "The initial task allowed numerical/definition propositions. Its 47-proposition draw is a bounded definition audit and does not satisfy five actual empirical numeric result-to-output traces.",
+  "scope_correction_authority": "Root explicitly corrected the task at 2026-10-23 approximately22:35UTC: preserve the initial frame/seed/draw/timestamp/every record; freeze a separate current-Table3 empirical-cell fallback with seed2026102337 before owning lookup. This is a scope correction, not result-driven resampling.",
+  "initial_selection_original_bytes_sha256": "065375250b3ceb2464b12e5b5623b4d179cc706922ef6a400bad56ead8e27ca0",
+  "initial_definition_audit": {
+    "loop": 37,
+    "kind": "pre_owning_lookup_semantic_numerical_and_definition_selection",
+    "seed": 2026102337,
+    "selection_frozen_utc": "2026-10-23T22:33:21.035405+00:00",
+    "head": "4c0ea516b6c50199c4ce41a4affa22b62adc426e",
+    "source": "submission-jof/manuscript-content.json",
+    "source_sha256": "324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186",
+    "section_index": 3,
+    "section_title": "4. Target and forecasting methods",
+    "block_count": 35,
+    "source_snapshot": [
+      {
+        "block": 0,
+        "type": "p",
+        "html": "A forecast origin is the record at which the report is issued. Mature training outcomes are completed future-path labels available by the latest scheduled refit. Fixed-at-refit (frozen) F holds that label pool between refits; per-origin (rolling) F refreshes it at each forecast origin. Both update the observed current anchor. Historical peaks use their original recorded positions; translated increments shift historical signed paths to the current position. Headroom is the nonnegative excess above the observed floor, the absolute current position. These are forecasting definitions, not cash-resource allocations."
+      },
+      {
+        "block": 1,
+        "type": "table",
+        "caption": "Table 2. Method overview. Original QR/KNN parameter menus and fitted choices are retained in Supplement Table S2; the additional finite adaptations and combinations are defined in Supplement S16. All fitted methods use mature training outcomes; controls distinguish per-origin and fixed-at-refit updates.",
+        "headers": [
+          "Method",
+          "Forecast definition",
+          "Parameter/menu reference"
+        ],
+        "rows": [
+          [
+            "F / S / K",
+            "Historical headroom / translated paths / floored historical peaks",
+            "Common history and refit controls"
+          ],
+          [
+            "QR",
+            "Ridge quantile regression of normalized headroom",
+            "Validation penalty menu"
+          ],
+          [
+            "KNN / scaled KNN",
+            "Local headroom quantile / local volatility-scaled quantile",
+            "Validation neighbor menu"
+          ],
+          [
+            "I / AR†",
+            "Ordinary empirical rank / ordered-residual mean replay",
+            "Supplement S5 and S7"
+          ],
+          [
+            "L†",
+            "Classical-bound endpoint plug-in plus observed floor",
+            "Proposition 2; Supplement S11"
+          ],
+          [
+            "FHS / peak POT / QRF†",
+            "Filtered path simulation / scaled peak tail / leaf-distribution quantile",
+            "Supplement S13"
+          ],
+          [
+            "Finite delayed ACI-style",
+            "One-sided mature residual calibration around frozen F or QR",
+            "Supplement S16; finite projected adaptation, no inherited coverage guarantee"
+          ],
+          [
+            "Headroom SAV",
+            "Symmetric absolute-value (SAV) recursion driven by the latest mature headroom",
+            "Supplement S16; CAViaR-inspired adaptation, fixed multi-start menu and complete-cell failure rule"
+          ],
+          [
+            "Fixed combinations",
+            "Mean of F/QR; median of F/QR/plain KNN",
+            "Supplement S16; matched histories, no fitted weights or missing-constituent substitution"
+          ]
+        ]
+      },
+      {
+        "block": 2,
+        "type": "p",
+        "html": "Let N denote the signed source-reported net position. The issue magnitude B is observed when the report is issued. Define the sampled peak P and its nonnegative headroom G by",
+        "inline_math": []
+      },
+      {
+        "block": 3,
+        "type": "equation",
+        "html": "B<sub>t</sub>=|N<sub>t</sub>|; &nbsp; P<sub>t,H</sub>=max<sub>0≤h≤H</sub>|N<sub>t+h</sub>|; &nbsp; G<sub>t,H</sub>=P<sub>t,H</sub>−B<sub>t</sub>≥0.",
+        "latex": "B_t=|N_t|,\\qquad P_{t,H}=\\max_{0\\le h\\le H}|N_{t+h}|,\\qquad G_{t,H}=P_{t,H}-B_t\\ge0.",
+        "inline_math": []
+      },
+      {
+        "block": 4,
+        "type": "p",
+        "html": "At issue t, the most recent scheduled refit is κ(t). Every training label is complete by that refit, and the next refit updates the transform, scale, coefficients and historical pool together:",
+        "inline_math": []
+      },
+      {
+        "block": 5,
+        "type": "equation",
+        "html": "κ(t)=t<sub>0</sub>+d ⌊(t−t<sub>0</sub>)/d⌋; &nbsp; T<sub>κ,H,W</sub>={κ−H−W+1,...,κ−H}.",
+        "latex": "\\kappa(t)=t_0+d\\left\\lfloor\\frac{t-t_0}{d}\\right\\rfloor,\\qquad\\mathcal T_{\\kappa,H,W}=\\{\\kappa-H-W+1,\\ldots,\\kappa-H\\}.",
+        "inline_math": []
+      },
+      {
+        "block": 6,
+        "type": "p",
+        "html": "For a completed episode i, let u and l be its largest and smallest increments from its starting position, including the zero increment. Translating its ordered path to x=N<sub>t</sub> produces V<sub>i,t</sub>=max{x+u<sub>i</sub>,−x−l<sub>i</sub>}. On a common episode set A, Q selects the duplicate-preserving corrected empirical order statistic. The historical forecasts are",
+        "inline_math": [
+          {
+            "html": "V<sub>i,t</sub>=max{x+u<sub>i</sub>,−x−l<sub>i</sub>}",
+            "latex": "V_{i,t}=\\max\\{x+u_i,-x-l_i\\}"
+          },
+          {
+            "html": "x=N<sub>t</sub>",
+            "latex": "x=N_t"
+          }
+        ]
+      },
+      {
+        "block": 7,
+        "type": "equation",
+        "html": "C<sub>t</sub><super>F</super>=B<sub>t</sub>+Q{G<sub>i,H</sub>:i∈A}; &nbsp; C<sub>t</sub><super>S</super>=B<sub>t</sub>+Q{V<sub>i,t</sub>−B<sub>t</sub>:i∈A}; &nbsp; C<sub>t</sub><super>K</super>=max{B<sub>t</sub>,Q{P<sub>i,H</sub>:i∈A}}.",
+        "latex": "C^F_t=B_t+Q\\{G_{i,H}\\}_{i\\in\\mathcal A},\\qquad C^S_t=B_t+Q\\{V_{i,t}-B_t\\}_{i\\in\\mathcal A},\\qquad C^K_t=\\max\\{B_t,Q\\{P_{i,H}\\}_{i\\in\\mathcal A}\\}.",
+        "inline_math": []
+      },
+      {
+        "block": 8,
+        "type": "p",
+        "html": "Rolling controls update their completed-label set at each issue. Frozen controls use the same mature training-outcome pool and refit schedule as the fitted procedures, while their current issue anchor continues to update. Earlier one-state controls retrieve nearby signed starting positions; their complete earlier menus remain in Supplement S3.",
+        "inline_math": []
+      },
+      {
+        "block": 9,
+        "type": "p",
+        "html": "The 33 raw coordinates are N(t) through N(t−24), current magnitude, short/long past increment root-mean-square (RMS) summaries, sine/cosine of recorded hour, sine/cosine of weekday (Monday zero), and whether the just-observed adjacent gap exceeds its nominal interval. RMS spans are 24/168 FX records and 6/26 Treasury records; nominal gaps are 3600 and 604800 seconds. Calendar coordinates follow the stored source clock; constant training columns are centered exactly at their repeated value.",
+        "inline_math": [
+          {
+            "html": "N(t−24)",
+            "latex": "N_{t-24}"
+          },
+          {
+            "html": "N(t)",
+            "latex": "N_t"
+          }
+        ]
+      },
+      {
+        "block": 10,
+        "type": "equation",
+        "html": "v<sub>L</sub>(t)=[L<super>−1</super> ∑<sub>j=t−L+1</sub><super>t</super>(N<sub>j</sub>−N<sub>j−1</sub>)<super>2</super>]<super>1/2</super>; &nbsp; z<sub>i,κ,j</sub>=(x<sub>ij</sub>−μ<sub>κj</sub>)/s<sub>κj</sub>.",
+        "latex": "v_L(t)=\\left[\\frac1L\\sum_{j=t-L+1}^{t}(N_j-N_{j-1})^2\\right]^{1/2},\\qquad z_{i,\\kappa,j}=\\frac{x_{ij}-\\mu_{\\kappa j}}{s_{\\kappa j}}.",
+        "inline_math": []
+      },
+      {
+        "block": 11,
+        "type": "p",
+        "html": "Training-only centering and population standard deviations define z. An exactly constant coordinate receives unit scale after centering. Matching completed response origins retains the different past-only lookbacks required by the feature construction. The response scale a is computed from completed training headrooms and magnitudes:",
+        "inline_math": []
+      },
+      {
+        "block": 12,
+        "type": "equation",
+        "html": "a<sub>κ</sub>=max{mean<sub>i ∈ T</sub>(G<sub>i,H</sub>),10<super>−6</super> mean<sub>i ∈ T</sub>|N<sub>i</sub>|,10<super>−12</super>}.",
+        "latex": "a_\\kappa=\\max\\left\\{\\frac1W\\sum_{i\\in\\mathcal T}G_{i,H},\\;10^{-6}\\frac1W\\sum_{i\\in\\mathcal T}|N_i|,\\;10^{-12}\\right\\}.",
+        "inline_math": [
+          {
+            "html": "10<super>−6</super>",
+            "latex": "10^{-6}"
+          }
+        ]
+      },
+      {
+        "block": 13,
+        "type": "p",
+        "html": "QR minimizes the normalized headroom regression-quantile objective with an unpenalized intercept and a ridge penalty on slopes. The fixed menu is λ in {0.001,0.01,0.1}; τ=19/20. Training uses the unconstrained affine headroom prediction. Nonnegative projection is applied when issuing and validating a report, rather than inside the training objective; validation uses native units."
+      },
+      {
+        "block": 14,
+        "type": "equation",
+        "html": "min<sub>β<sub>0</sub>,β</sub> W<super>−1</super> ∑<sub>i ∈ T</sub> ρ<sub>τ</sub>(G<sub>i,H</sub>/a<sub>κ</sub>−β<sub>0</sub>−z<sub>i,κ</sub><super>T</super>β)+(λ/2)‖β‖<sub>2</sub><super>2</super>.",
+        "latex": "\\min_{\\beta_0,\\beta}\\frac1W\\sum_{i\\in\\mathcal T}\\rho_\\tau\\!\\left(\\frac{G_{i,H}}{a_\\kappa}-\\beta_0-z_{i,\\kappa}^{\\mathsf T}\\beta\\right)+\\frac\\lambda2\\|\\beta\\|_2^2.",
+        "inline_math": []
+      },
+      {
+        "block": 15,
+        "type": "equation",
+        "html": "C<sub>t</sub><super>QR</super>=B<sub>t</sub>+max{0,a<sub>κ</sub>(β̂<sub>0,κ</sub>+z<sub>t,κ</sub><super>T</super>β̂<sub>κ</sub>)}.",
+        "latex": "C_t^{QR}=B_t+\\max\\{0,a_\\kappa(\\widehat\\beta_{0,\\kappa}+z_{t,\\kappa}^{\\mathsf T}\\widehat\\beta_\\kappa)\\}.",
+        "inline_math": []
+      },
+      {
+        "block": 16,
+        "type": "p",
+        "html": "The intercept is unpenalized and slopes receive a ridge penalty. Adding B to a headroom quantile translates it into a peak quantile; projecting a report up to the known response floor weakly improves realized pinball loss. The equivalent peak parameterization and numerical conventions are retained in Supplement S4.",
+        "inline_math": []
+      },
+      {
+        "block": 17,
+        "type": "p",
+        "html": "KNN uses training-standardized features with the frozen group weights and recency tie-breaking rule specified in Supplement S4. It reports B plus a local headroom quantile. Scaled KNN divides each selected headroom by its past short RMS and multiplies the resulting quantile by the query RMS, using the same fixed stabilizer within each refit block.",
+        "inline_math": []
+      },
+      {
+        "block": 18,
+        "type": "equation",
+        "html": "s<sub>i|κ</sub>=max{v<sub>short</sub>(i),10<super>−6</super>a<sub>κ</sub>}; &nbsp; C<sub>t</sub><super>scaled</super>=B<sub>t</sub>+s<sub>t|κ</sub>Q<sub>k</sub>({G<sub>i,H</sub>/s<sub>i|κ</sub>:i∈N<sub>t,κ,k</sub>}).",
+        "latex": "s_{i\\mid \\kappa}=\\max\\{v_{\\rm short}(i),10^{-6}a_\\kappa\\},\\qquad C_t^{\\rm scaled}=B_t+s_{t\\mid \\kappa}Q_k\\{G_{i,H}/s_{i\\mid \\kappa}:i\\in\\mathcal N_{t,\\kappa,k}\\}.",
+        "inline_math": [
+          {
+            "html": "10<super>−6</super>",
+            "latex": "10^{-6}"
+          }
+        ]
+      },
+      {
+        "block": 19,
+        "type": "p",
+        "html": "The neighbor menus are {180,360,720} at both FX windows, {20,40,52} at Treasury W52, and {40,80,160} at W260. The implementation uses exact order statistics and fails on an unavailable rank. For k=52, ⌈(k+1).95⌉=51, while the ordinary .95 empirical pinball quantile has rank 50. At W720, W2880 and W260, however, W times .95 is integer: the lower ordinary rank and the adjacent corrected rank are both endpoints of the empirical pinball minimizer interval. The W52 distinction is specific to its noninteger probability-times-pool-size case. A later endpoint/rank ablation is retained in Supplement S5. Plain KNN at k=W equals frozen F exactly; membership is then the complete training pool. Scaled KNN still changes responses at k=W. Long-window menus restrict neighborhood sizes below the full pool. Supplement S4 records numerical acceptance and failures.",
+        "inline_math": [
+          {
+            "html": "⌈(k+1).95⌉=51",
+            "latex": "\\lceil(k+1)\\,0.95\\rceil=51"
+          },
+          {
+            "html": "k=W",
+            "latex": "k=W"
+          }
+        ]
+      },
+      {
+        "block": 20,
+        "type": "subheading",
+        "text": "Proposition 1. Known-floor projection and strict coverage"
+      },
+      {
+        "block": 21,
+        "type": "p",
+        "html": "Let the forecast-origin information include B, let Y≥B almost surely, and let 0&lt;τ&lt;1. Project any issued report c to max(B,c). Its pinball loss is no larger at every possible Y. A true conditional lower inverse quantile q at level τ=1−α has strict breach probability at most α. Equality is not automatic: an atom at the quantile can make the probability smaller. The lower bound alone need not create an outcome atom; fitted reports do not inherit the population statement."
+      },
+      {
+        "block": 22,
+        "type": "equation",
+        "html": "ρ<sub>τ</sub>(Y−c)−ρ<sub>τ</sub>(Y−max(B,c))=τ(B−c)<sub>+</sub>; &nbsp; Pr(Y&gt;q | ℱ<sub>t</sub>)≤α.",
+        "latex": "\\rho_\\tau(Y-c)-\\rho_\\tau(Y-\\max\\{B,c\\})=\\tau(B-c)_+,\\qquad \\Pr(Y>q\\mid\\mathcal F_t)\\le\\alpha."
+      },
+      {
+        "block": 23,
+        "type": "p",
+        "html": "Proof. Below B both errors are nonnegative, so their loss difference is the displayed nonnegative quantity; otherwise the report is unchanged. For the conditional inverse quantile, F(q)≥τ, hence the strict-tail probability is at most α. An atom is a possible reason for strict inequality, not a necessary premise. Accordingly, the retained equality-based coverage tests are diagnostics of their stated nulls, not automatic tests of every valid upper quantile."
+      },
+      {
+        "block": 24,
+        "type": "subheading",
+        "text": "Proposition 2. Classical endpoint-to-peak bound"
+      },
+      {
+        "block": 25,
+        "type": "p",
+        "html": "Let future real increments be independent and individually symmetric about zero. Write S<sub>h</sub> for their partial sums, S<sub>0</sub>=0, and fix an observed starting position x with B=|x|. No identical-distribution or finite-moment assumption is required. If q is the population (1−α/2) quantile of |S<sub>H</sub>|, the report B+q has strict peak-breach probability at most α. This is a direct scalar application of the classical Lévy maximal inequality (Sussman, 2023), not a new inequality."
+      },
+      {
+        "block": 26,
+        "type": "equation",
+        "html": "Pr(max<sub>0≤h≤H</sub>|x+S<sub>h</sub>|&gt;B+q)≤Pr(max<sub>h</sub>|S<sub>h</sub>|&gt;q)≤2Pr(|S<sub>H</sub>|&gt;q)≤α.",
+        "latex": "\\Pr\\!\\left(\\max_{0\\le h\\le H}|x+S_h|>B+q\\right)\\le\\Pr\\!\\left(\\max_h|S_h|>q\\right)\\le2\\Pr(|S_H|>q)\\le\\alpha."
+      },
+      {
+        "block": 27,
+        "type": "p",
+        "html": "Proof. The triangle inequality gives the first inclusion; Lévy’s maximal inequality and the inverse-quantile tail bound give the rest. For conditional coverage, independence and symmetry must hold conditional on origin information and q must be the corresponding conditional population quantile. The empirical plug-in L, overlapping historical labels and dependent mean-reverting data do not acquire that guarantee. A generic one-sided endpoint VaR is not the required absolute-displacement quantile. Supplement S15 gives an exact finite counterexample to that substitution; Supplement S11 retains the proof, original simulations and corrected sensitivities."
+      },
+      {
+        "block": 28,
+        "type": "subheading",
+        "text": "Proposition 3. Common-pool construction distances"
+      },
+      {
+        "block": 29,
+        "type": "p",
+        "html": "Use one nonempty historical pool, one available order-statistic rank k, and peaks that include their starting observation. Let F add historical peak headroom to the current B, S translate each historical signed path to x, and K floor the historical-peak order statistic at B. Their differences obey the following deterministic bounds. The common pool and same rank are essential; these are neither forecast-accuracy nor coverage guarantees."
+      },
+      {
+        "block": 30,
+        "type": "equation",
+        "html": "|F−K|≤r<sub>abs</sub>=max<sub>i</sub>||N<sub>i</sub>|−B|; &nbsp; |S−K|≤r<sub>signed</sub>=max<sub>i</sub>|N<sub>i</sub>−x|.",
+        "latex": "|F-K|\\le r_{\\rm abs}=\\max_i\\bigl||N_i|-B\\bigr|,\\qquad |S-K|\\le r_{\\rm signed}=\\max_i|N_i-x|."
+      },
+      {
+        "block": 31,
+        "type": "p",
+        "html": "Proof. For each historical row, compare the headroom construction and translated path maximum to max(B,P<sub>i</sub>). Projection and the reverse triangle inequality bound their differences by the two anchor distances. A fixed order statistic is nonexpansive for the maximum paired difference, and flooring commutes with that order statistic. Applying these facts yields the displayed bounds. Supplement S2 retains the rowwise derivation and examples where the same observed history permits opposite loss rankings."
+      },
+      {
+        "block": 32,
+        "type": "p",
+        "html": "The operational report L uses the same frozen completed-origin pool and refit times as F. Its endpoint sample is |N<sub>i+H</sub>−N<sub>i</sub>| and its one-based order rank is ⌈39(W+1)/40⌉. Add the resulting estimate to B<sub>t</sub>. This empirical plug-in is distinct from the known population quantile in Proposition 2. Overlapping endpoint samples and dependent, changing series do not inherit the proposition’s population coverage. Conditional coverage additionally requires the independence and symmetry premises and the correct endpoint quantile conditional on issue information. The bound supplies no pinball-loss ordering against F.",
+        "inline_math": [
+          {
+            "html": "|N<sub>i+H</sub>−N<sub>i</sub>|",
+            "latex": "|N_{i+H}-N_i|"
+          },
+          {
+            "html": "⌈39(W+1)/40⌉",
+            "latex": "\\lceil39(W+1)/40\\rceil"
+          },
+          {
+            "html": "B<sub>t</sub>",
+            "latex": "B_t"
+          }
+        ]
+      },
+      {
+        "block": 33,
+        "type": "p",
+        "html": "Observed targets satisfy P(H6)≤P(H24), and population conditional quantiles under the same origin information inherit that ordering. Independently estimated forecasts need not: FX QR W720 crosses on 640/6625 issues (Supplement Table S15). A raise-only repair of the longer-horizon report can increase pinball loss, as the exact counterexample in Supplement S15 shows. This does not rule out all monotone rearrangements: with equally weighted ordered outcomes and a common quantile level, sorting can weakly reduce total pinball loss without guaranteeing each horizon improves. Crossing is a coherence diagnostic, not sufficient proof of calibration failure."
+      },
+      {
+        "block": 34,
+        "type": "p",
+        "html": "The historical controls also use current information: the headroom and floored-peak rules incorporate the observed magnitude, and path translation uses the current signed anchor. Conditional estimation is therefore compared with already anchored historical forecasts, not with a rule that ignores the current observation."
+      }
+    ],
+    "unit_rule": "Ordered unique semantic numerical/definition propositions. One operational method contrast, complete formula, paired parameter menu or qualified mathematical property is one unit. Equivalent overview/prose/formula occurrences merge at their first occurrence and retain all block pointers. Precise separate settings, assumptions, ranks and identity conditions remain distinct. No individual digits or proof steps become separate lottery entries.",
+    "exclusions": [
+      {
+        "blocks": [
+          1,
+          20,
+          24,
+          28
+        ],
+        "text": "Table/section/Supplement/Proposition navigation and reference years",
+        "reason": "Navigation and bibliography identifiers, not numerical/definition evidence."
+      },
+      {
+        "blocks": [
+          9
+        ],
+        "text": "33 raw coordinates and N(t) through N(t−24)",
+        "reason": "Identifiable earlier selected same nominal predictor-count/lag-span propositions: loop021 selected nominal_dimension and lag_coordinate_span."
+      },
+      {
+        "blocks": [
+          33
+        ],
+        "text": "640/6625 FX QR W720 crossings",
+        "reason": "Same previously selected crossing count/denominator proposition in loop013."
+      },
+      {
+        "blocks": [
+          23,
+          27,
+          31
+        ],
+        "text": "Proof derivation steps",
+        "reason": "Do not sample repeated derivations as extra propositions or conduct a new proof; retained premises/property definitions are separately framed."
+      },
+      {
+        "blocks": [
+          2,
+          4,
+          8,
+          11,
+          16,
+          17,
+          21,
+          22,
+          26,
+          29,
+          30,
+          32,
+          34
+        ],
+        "text": "Repeated explanatory restatements",
+        "reason": "Merge with first complete semantic proposition and its later exact formula/premises; block34 repeats current-anchor information already framed."
+      }
+    ],
+    "prior_selection_metadata_read": [
+      {
+        "path": "notes/revision-v6/verification-loop-013-abstract-number-trace-selection.json",
+        "sha256": "eaa573e006c2de675a0ac884c3801b2cd56addb990896254488a1855147e609e"
+      },
+      {
+        "path": "notes/revision-v6/verification-loop-021-limitations-numbers-selection.json",
+        "sha256": "f84db855d51e8d064cb9dbcbd46c70abe52b5614869f0dcea6aecc304d4b6405"
+      },
+      {
+        "path": "notes/revision-v6/verification-loop-033-design-numbers-selection.json",
+        "sha256": "75a2567289ed71cd5aa55bb552985fdcb5dd5092d97398c207f9b9f29821e743"
+      }
+    ],
+    "prior_evidence_limit": "Only prior selected-claim identity metadata is used for duplicate routing. No prior verdict supplies evidence. Protocol/source contents known from earlier tasks are not revisited or used to shape this frozen frame before the current lookup.",
+    "frame": [
+      {
+        "index": 0,
+        "first_block": 0,
+        "blocks": [
+          0
+        ],
+        "id": "forecast_origin_definition",
+        "claim": "Forecast origin is the source record at which a report is issued."
+      },
+      {
+        "index": 1,
+        "first_block": 0,
+        "blocks": [
+          0,
+          4,
+          5
+        ],
+        "id": "mature_training_label_definition",
+        "claim": "Training outcomes are complete future-path labels available by the latest scheduled refit."
+      },
+      {
+        "index": 2,
+        "first_block": 0,
+        "blocks": [
+          0,
+          8
+        ],
+        "id": "frozen_rolling_pool_and_anchor",
+        "claim": "Frozen F holds the mature pool between refits; rolling F refreshes per issue; both update the observed current anchor."
+      },
+      {
+        "index": 3,
+        "first_block": 0,
+        "blocks": [
+          0,
+          6
+        ],
+        "id": "original_vs_translated_paths",
+        "claim": "Historical peaks retain original positions; translated ordered signed paths shift to x=N_t, with V_i,t=max{x+u_i,−x−l_i}, including zero increment."
+      },
+      {
+        "index": 4,
+        "first_block": 0,
+        "blocks": [
+          0,
+          2,
+          3
+        ],
+        "id": "peak_floor_headroom_target",
+        "claim": "B_t=|N_t|; P_t,H=max_(0≤h≤H)|N_t+h|; G=P−B≥0; these are forecast quantities, not cash allocation."
+      },
+      {
+        "index": 5,
+        "first_block": 1,
+        "blocks": [
+          1,
+          6,
+          7
+        ],
+        "id": "historical_F_S_K_constructions",
+        "claim": "On common A and duplicate-preserving Q: F=B+QG; S=B+Q(V−B); K=max(B,QP)."
+      },
+      {
+        "index": 6,
+        "first_block": 1,
+        "blocks": [
+          1,
+          13,
+          14,
+          15
+        ],
+        "id": "qr_operational_definition",
+        "claim": "QR regresses normalized headroom with an unpenalized intercept and ridge slopes, objective W^−1 sum rho_tau + (lambda/2)||beta||²; issued report adds B to nonnegative rescaled affine headroom."
+      },
+      {
+        "index": 7,
+        "first_block": 1,
+        "blocks": [
+          1,
+          17,
+          18
+        ],
+        "id": "knn_scaled_knn_definition",
+        "claim": "KNN gives B plus a local headroom quantile; scaled KNN divides selected headrooms by historical short RMS and multiplies by query RMS with one refit stabilizer."
+      },
+      {
+        "index": 8,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "ordinary_empirical_I_definition",
+        "claim": "I uses the ordinary empirical rank, distinct from the corrected historical rank."
+      },
+      {
+        "index": 9,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "AR_replay_definition",
+        "claim": "AR is an ordered-residual mean replay and is marked exploratory."
+      },
+      {
+        "index": 10,
+        "first_block": 1,
+        "blocks": [
+          1,
+          32
+        ],
+        "id": "L_endpoint_plugin_definition",
+        "claim": "L uses the same frozen completed-origin pool/refits as F, samples |N_i+H−N_i|, selects one-based ceil(39(W+1)/40), then adds B; it is not a known population quantile."
+      },
+      {
+        "index": 11,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "FHS_definition",
+        "claim": "FHS is filtered path simulation, retained as an exploratory added method."
+      },
+      {
+        "index": 12,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "peak_POT_definition",
+        "claim": "Peak POT is a scaled peak-tail adaptation, retained as an exploratory added method."
+      },
+      {
+        "index": 13,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "QRF_definition",
+        "claim": "QRF uses a leaf-distribution quantile, retained as an exploratory added method."
+      },
+      {
+        "index": 14,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "finite_ACI_definition",
+        "claim": "Finite delayed ACI-style uses one-sided mature residual calibration around frozen F or QR; projected finite adaptation imports no coverage guarantee."
+      },
+      {
+        "index": 15,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "headroom_SAV_definition",
+        "claim": "Headroom SAV is a CAViaR-inspired symmetric absolute-value recursion driven by latest mature headroom with fixed multi-start menu and complete-cell failure rule."
+      },
+      {
+        "index": 16,
+        "first_block": 1,
+        "blocks": [
+          1
+        ],
+        "id": "fixed_combination_definition",
+        "claim": "Fixed mean uses F/QR; median uses F/QR/plain KNN, matched histories, no fitted weights or missing-constituent substitution."
+      },
+      {
+        "index": 17,
+        "first_block": 4,
+        "blocks": [
+          4,
+          5
+        ],
+        "id": "scheduled_refit_grid",
+        "claim": "kappa(t)=t0+d floor((t−t0)/d), updating transform, scale, coefficients and historical pool together."
+      },
+      {
+        "index": 18,
+        "first_block": 5,
+        "blocks": [
+          5
+        ],
+        "id": "mature_pool_indices",
+        "claim": "T_kappa,H,W={kappa−H−W+1,...,kappa−H}."
+      },
+      {
+        "index": 19,
+        "first_block": 6,
+        "blocks": [
+          6,
+          7
+        ],
+        "id": "corrected_duplicate_preserving_Q",
+        "claim": "On the common nonempty episode set, Q is the duplicate-preserving corrected empirical order statistic."
+      },
+      {
+        "index": 20,
+        "first_block": 8,
+        "blocks": [
+          8
+        ],
+        "id": "one_state_control_definition",
+        "claim": "Earlier one-state controls retrieve nearby signed starting positions."
+      },
+      {
+        "index": 21,
+        "first_block": 9,
+        "blocks": [
+          9
+        ],
+        "id": "source_RMS_spans",
+        "claim": "Short/long RMS spans are 24/168 FX records and 6/26 Treasury records."
+      },
+      {
+        "index": 22,
+        "first_block": 9,
+        "blocks": [
+          9
+        ],
+        "id": "nominal_gap_seconds",
+        "claim": "Nominal adjacent intervals are 3600 seconds for FX and 604800 seconds for Treasury, following stored source clocks."
+      },
+      {
+        "index": 23,
+        "first_block": 9,
+        "blocks": [
+          9,
+          11
+        ],
+        "id": "constant_coordinate_transform",
+        "claim": "Training-only centering/population SD define z; an exactly constant coordinate is centered at its repeated value and receives unit scale."
+      },
+      {
+        "index": 24,
+        "first_block": 10,
+        "blocks": [
+          10
+        ],
+        "id": "past_increment_RMS_formula",
+        "claim": "v_L(t)=[L^−1 sum_(j=t−L+1)^t(N_j−N_j−1)^2]^(1/2)."
+      },
+      {
+        "index": 25,
+        "first_block": 10,
+        "blocks": [
+          10,
+          11
+        ],
+        "id": "standardized_feature_formula",
+        "claim": "z_i,kappa,j=(x_ij−mu_kappa,j)/s_kappa,j, with training-only centers/population scales."
+      },
+      {
+        "index": 26,
+        "first_block": 11,
+        "blocks": [
+          11,
+          12
+        ],
+        "id": "response_scale_formula",
+        "claim": "a_kappa=max{mean_train G,10^−6 mean_train |N|,10^−12}."
+      },
+      {
+        "index": 27,
+        "first_block": 13,
+        "blocks": [
+          13
+        ],
+        "id": "original_QR_penalty_menu",
+        "claim": "Original fixed lambda menu is {0.001,0.01,0.1}."
+      },
+      {
+        "index": 28,
+        "first_block": 13,
+        "blocks": [
+          13
+        ],
+        "id": "original_target_level",
+        "claim": "Original regression target level tau=19/20."
+      },
+      {
+        "index": 29,
+        "first_block": 13,
+        "blocks": [
+          13,
+          15
+        ],
+        "id": "training_vs_issued_projection",
+        "claim": "Training uses unconstrained affine headroom; validation/issuance applies nonnegative projection and validation uses native units."
+      },
+      {
+        "index": 30,
+        "first_block": 16,
+        "blocks": [
+          16,
+          21,
+          22
+        ],
+        "id": "known_floor_score_projection",
+        "claim": "For origin-known B and Y≥B with 0<tau<1, c→max(B,c) weakly improves pointwise pinball, with difference tau(B−c)+; adding B translates headroom to peak quantiles."
+      },
+      {
+        "index": 31,
+        "first_block": 17,
+        "blocks": [
+          17
+        ],
+        "id": "KNN_distance_tie_definition",
+        "claim": "KNN uses training-standardized features, frozen group weights and recency tie-breaking."
+      },
+      {
+        "index": 32,
+        "first_block": 18,
+        "blocks": [
+          18
+        ],
+        "id": "scaled_KNN_stabilizer",
+        "claim": "s_i|kappa=max{v_short(i),10^−6 a_kappa}, held to the same refit stabilizer for historical and query scales."
+      },
+      {
+        "index": 33,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "FX_neighbor_menu",
+        "claim": "FX neighbor menu {180,360,720} at both FX windows."
+      },
+      {
+        "index": 34,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "Treasury_W52_neighbor_menu",
+        "claim": "Treasury W52 neighbor menu {20,40,52}."
+      },
+      {
+        "index": 35,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "Treasury_W260_neighbor_menu",
+        "claim": "Treasury W260 neighbor menu {40,80,160}."
+      },
+      {
+        "index": 36,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "unavailable_rank_failure",
+        "claim": "Exact order statistics are used and an unavailable rank causes failure."
+      },
+      {
+        "index": 37,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "k52_corrected_vs_ordinary_rank",
+        "claim": "At k=52, ceil((k+1).95)=51 while the ordinary .95 empirical pinball quantile rank is 50."
+      },
+      {
+        "index": 38,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "integer_probability_times_pool_rank_endpoints",
+        "claim": "At W720/W2880/W260, W*.95 is integer; lower ordinary and adjacent corrected ranks are endpoints of the empirical pinball minimizer interval; W52 is the noninteger distinction."
+      },
+      {
+        "index": 39,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "full_pool_KNN_identity",
+        "claim": "Plain KNN at k=W equals frozen F because membership is the full pool; scaled KNN still changes responses."
+      },
+      {
+        "index": 40,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "long_menu_below_full_pool",
+        "claim": "Long-window neighbor menus restrict neighborhood size below the complete training pool."
+      },
+      {
+        "index": 41,
+        "first_block": 21,
+        "blocks": [
+          21,
+          22
+        ],
+        "id": "population_strict_quantile_breach",
+        "claim": "A true conditional lower inverse quantile at tau=1−alpha has strict-breach probability ≤alpha; atoms may make inequality strict and fitted reports do not inherit it."
+      },
+      {
+        "index": 42,
+        "first_block": 25,
+        "blocks": [
+          25,
+          26
+        ],
+        "id": "classical_endpoint_peak_bound",
+        "claim": "Independent increments individually symmetric about zero, no iid/finite-moment requirement: population (1−alpha/2) quantile of |S_H| gives B+q with peak-breach probability ≤alpha via factor 2."
+      },
+      {
+        "index": 43,
+        "first_block": 27,
+        "blocks": [
+          27,
+          32
+        ],
+        "id": "conditional_endpoint_bound_premises",
+        "claim": "Conditional coverage requires independence/symmetry given origin information and the corresponding conditional population absolute-displacement quantile; empirical overlap/dependence or generic one-sided endpoint VaR do not inherit it."
+      },
+      {
+        "index": 44,
+        "first_block": 29,
+        "blocks": [
+          29,
+          30
+        ],
+        "id": "common_pool_construction_distances",
+        "claim": "Same nonempty pool, same available rank, and peaks including start: |F−K|≤max_i||N_i|−B|; |S−K|≤max_i|N_i−x|; no accuracy/coverage guarantee."
+      },
+      {
+        "index": 45,
+        "first_block": 33,
+        "blocks": [
+          33
+        ],
+        "id": "cross_horizon_target_quantile_ordering",
+        "claim": "P(H6)≤P(H24); population conditional quantiles share this ordering only under the same origin information."
+      },
+      {
+        "index": 46,
+        "first_block": 33,
+        "blocks": [
+          33
+        ],
+        "id": "horizon_repair_loss_property",
+        "claim": "Raise-only long-horizon repair may increase pinball; sorting equally weighted ordered outcomes at a common quantile level may weakly reduce total loss without improving every horizon; crossing alone is not proof of calibration failure."
+      }
+    ],
+    "frame_count": 47,
+    "frame_sha256": "9351625e189c1b1fac5472fa2ecd7d61e652369f03cefdc4220e6bd0541b81a8",
+    "algorithm": "Python random.Random(2026102337).sample(range(47),5)",
+    "selected_indices_draw_order": [
+      29,
+      4,
+      39,
+      24,
+      35
+    ],
+    "selected_indices_document_order": [
+      4,
+      24,
+      29,
+      35,
+      39
+    ],
+    "selected": [
+      {
+        "index": 29,
+        "first_block": 13,
+        "blocks": [
+          13,
+          15
+        ],
+        "id": "training_vs_issued_projection",
+        "claim": "Training uses unconstrained affine headroom; validation/issuance applies nonnegative projection and validation uses native units."
+      },
+      {
+        "index": 4,
+        "first_block": 0,
+        "blocks": [
+          0,
+          2,
+          3
+        ],
+        "id": "peak_floor_headroom_target",
+        "claim": "B_t=|N_t|; P_t,H=max_(0≤h≤H)|N_t+h|; G=P−B≥0; these are forecast quantities, not cash allocation."
+      },
+      {
+        "index": 39,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "full_pool_KNN_identity",
+        "claim": "Plain KNN at k=W equals frozen F because membership is the full pool; scaled KNN still changes responses."
+      },
+      {
+        "index": 24,
+        "first_block": 10,
+        "blocks": [
+          10
+        ],
+        "id": "past_increment_RMS_formula",
+        "claim": "v_L(t)=[L^−1 sum_(j=t−L+1)^t(N_j−N_j−1)^2]^(1/2)."
+      },
+      {
+        "index": 35,
+        "first_block": 19,
+        "blocks": [
+          19
+        ],
+        "id": "Treasury_W260_neighbor_menu",
+        "claim": "Treasury W260 neighbor menu {40,80,160}."
+      }
+    ],
+    "sample_size": 5,
+    "requested_sample_size": 5,
+    "insufficient_frame_issue": null,
+    "output_lookup_started": false,
+    "forbidden": "No new proof/statistics/models/tests/raw/private vectors/network/UI/source edits/state/ledger/commit/nested agents; write only this JSON and loop037-method-numbers.md."
+  },
+  "initial_definition_readback": "The five initial sampled definitions were traced to frozen protocols and pre-existing static formulas/display text only. No independent proof or numeric-result trace is claimed. The post-freeze sources read before correction were study-spec.json, conditional-baseline-design.md, frozen/current/v3/working-paper manuscript definition/formula text and selected supplement definition/menu text; no new calculation was run.",
+  "fallback_numeric_selection": {
+    "scope": "Current main Table3 empirical result cells, row-major and column-major within row; exclude prior selected same cells/propositions and nonnumeric Outside-family statuses.",
+    "source": "submission-jof/manuscript-content.json",
+    "source_sha256": "324adad8bb9e71158614b36692f96de9b78228e3a3c7e6aa6eac7c73abf4c186",
+    "table_pointer": [
+      "sections",
+      5,
+      "blocks",
+      0
+    ],
+    "table_snapshot": {
+      "type": "table",
+      "caption": "Table 3†. Fixed paired comparisons. Loss change uses all forecast origins; breach-rate columns are left/reference percentages on those same origins. Kupiec p uses the fixed sparse grid instead, with its denominators reported in Table 5. The matched FX control is separate from the original primary. Outside family means no Holm value is assigned.",
+      "headers": [
+        "Comparison",
+        "Loss Δ%",
+        "DM p",
+        "HLN p",
+        "Holm p",
+        "Breach % L/R",
+        "Kupiec p L/R"
+      ],
+      "rows": [
+        [
+          "FX original primary",
+          "-12.66",
+          "2.2e-07",
+          "2.31e-07",
+          "Outside family",
+          "5.675 / 5.011",
+          "0.695 / 0.807"
+        ],
+        [
+          "FX matched control",
+          "-14.77",
+          "4.47e-09",
+          "4.83e-09",
+          "2.86e-07",
+          "5.675 / 5.434",
+          "0.695 / 0.807"
+        ],
+        [
+          "Treasury primary",
+          "+50.79",
+          "0.00761",
+          "0.00939",
+          "0.32",
+          "19.495 / 10.108",
+          "0.00413 / 0.199"
+        ],
+        [
+          "FX legacy sensitivity",
+          "-1.83",
+          "0.839",
+          "0.839",
+          "Outside family",
+          "8.015 / 4.332",
+          "0.0433 / 0.339"
+        ]
+      ]
+    },
+    "seed": 2026102337,
+    "selection_frozen_utc": "2026-10-23T22:36:07.749009+00:00",
+    "unit_rule": "One displayed empirical table cell is one claim. A displayed L/R rate or p-value pair remains one joint cell and is not split into token-level claims; source identity and full-versus-sparse denominator are retained. Each repeated value in a different test field keeps its distinct test identity.",
+    "excluded_cells": [
+      {
+        "row_index": 0,
+        "column_index": 1,
+        "row": "FX original primary",
+        "column": "Loss Δ%",
+        "display": "-12.66",
+        "cell_id": "table3:r0:c1",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          1
+        ],
+        "reason": "Same original FX primary percentage previously selected in loop005 and loop013 (different displayed precision does not create a new proposition)."
+      },
+      {
+        "row_index": 0,
+        "column_index": 3,
+        "row": "FX original primary",
+        "column": "HLN p",
+        "display": "2.31e-07",
+        "cell_id": "table3:r0:c3",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          3
+        ],
+        "reason": "Same FX original primary HLN p cell selected in loop001."
+      },
+      {
+        "row_index": 0,
+        "column_index": 4,
+        "row": "FX original primary",
+        "column": "Holm p",
+        "display": "Outside family",
+        "cell_id": "table3:r0:c4",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          4
+        ],
+        "reason": "Nonnumeric status, not a p-value."
+      },
+      {
+        "row_index": 0,
+        "column_index": 6,
+        "row": "FX original primary",
+        "column": "Kupiec p L/R",
+        "display": "0.695 / 0.807",
+        "cell_id": "table3:r0:c6",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          6
+        ],
+        "reason": "Compound cell includes FX QR H6 POF p selected in loop009; conservatively exclude the whole displayed pair."
+      },
+      {
+        "row_index": 1,
+        "column_index": 1,
+        "row": "FX matched control",
+        "column": "Loss Δ%",
+        "display": "-14.77",
+        "cell_id": "table3:r1:c1",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          1
+        ],
+        "reason": "Same FX matched-control loss percentage cell selected in loop001."
+      },
+      {
+        "row_index": 1,
+        "column_index": 4,
+        "row": "FX matched control",
+        "column": "Holm p",
+        "display": "2.86e-07",
+        "cell_id": "table3:r1:c4",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          4
+        ],
+        "reason": "Same FX matched-control Holm p cell selected in loop001."
+      },
+      {
+        "row_index": 1,
+        "column_index": 5,
+        "row": "FX matched control",
+        "column": "Breach % L/R",
+        "display": "5.675 / 5.434",
+        "cell_id": "table3:r1:c5",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          5
+        ],
+        "reason": "Same paired matched FX breach result as loop013 selected 360→376 counts; rates here are the same result on the common denominator."
+      },
+      {
+        "row_index": 1,
+        "column_index": 6,
+        "row": "FX matched control",
+        "column": "Kupiec p L/R",
+        "display": "0.695 / 0.807",
+        "cell_id": "table3:r1:c6",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          6
+        ],
+        "reason": "Compound cell includes FX QR H6 POF p selected in loop009; conservatively exclude the whole displayed pair."
+      },
+      {
+        "row_index": 2,
+        "column_index": 1,
+        "row": "Treasury primary",
+        "column": "Loss Δ%",
+        "display": "+50.79",
+        "cell_id": "table3:r2:c1",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          1
+        ],
+        "reason": "Same Treasury primary percentage selected in loop013."
+      },
+      {
+        "row_index": 2,
+        "column_index": 3,
+        "row": "Treasury primary",
+        "column": "HLN p",
+        "display": "0.00939",
+        "cell_id": "table3:r2:c3",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          3
+        ],
+        "reason": "Same Treasury primary HLN p cell selected in loop001."
+      },
+      {
+        "row_index": 2,
+        "column_index": 4,
+        "row": "Treasury primary",
+        "column": "Holm p",
+        "display": "0.32",
+        "cell_id": "table3:r2:c4",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          4
+        ],
+        "reason": "Same Treasury primary Holm p cell selected in loop001."
+      },
+      {
+        "row_index": 3,
+        "column_index": 4,
+        "row": "FX legacy sensitivity",
+        "column": "Holm p",
+        "display": "Outside family",
+        "cell_id": "table3:r3:c4",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          4
+        ],
+        "reason": "Nonnumeric status, not a p-value."
+      }
+    ],
+    "prior_selection_metadata": [
+      {
+        "path": "notes/revision-v6/verification-loop-001-numbers.json",
+        "sha256": "058982a44f00e60d783bbc2d54b5fc85cb7772f62bbdc4c7d4f99ec02621bbf2"
+      },
+      {
+        "path": "notes/revision-v6/verification-loop-005-numbers.json",
+        "sha256": "d6fb1a2948539ae3324c0914df683feb5bd634dfe26ef3f90a3fd5c05ac533c6"
+      },
+      {
+        "path": "notes/revision-v6/verification-loop-009-numbers.json",
+        "sha256": "e0375f8b078f075a598e8207b66730a89bd43026302e81f895f0a82f8618e038"
+      },
+      {
+        "path": "notes/revision-v6/verification-loop-013-abstract-number-trace-selection.json",
+        "sha256": "eaa573e006c2de675a0ac884c3801b2cd56addb990896254488a1855147e609e"
+      }
+    ],
+    "frame": [
+      {
+        "index": 0,
+        "row_index": 0,
+        "column_index": 2,
+        "row": "FX original primary",
+        "column": "DM p",
+        "display": "2.2e-07",
+        "cell_id": "table3:r0:c2",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          2
+        ]
+      },
+      {
+        "index": 1,
+        "row_index": 0,
+        "column_index": 5,
+        "row": "FX original primary",
+        "column": "Breach % L/R",
+        "display": "5.675 / 5.011",
+        "cell_id": "table3:r0:c5",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          5
+        ]
+      },
+      {
+        "index": 2,
+        "row_index": 1,
+        "column_index": 2,
+        "row": "FX matched control",
+        "column": "DM p",
+        "display": "4.47e-09",
+        "cell_id": "table3:r1:c2",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          2
+        ]
+      },
+      {
+        "index": 3,
+        "row_index": 1,
+        "column_index": 3,
+        "row": "FX matched control",
+        "column": "HLN p",
+        "display": "4.83e-09",
+        "cell_id": "table3:r1:c3",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          1,
+          3
+        ]
+      },
+      {
+        "index": 4,
+        "row_index": 2,
+        "column_index": 2,
+        "row": "Treasury primary",
+        "column": "DM p",
+        "display": "0.00761",
+        "cell_id": "table3:r2:c2",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          2
+        ]
+      },
+      {
+        "index": 5,
+        "row_index": 2,
+        "column_index": 5,
+        "row": "Treasury primary",
+        "column": "Breach % L/R",
+        "display": "19.495 / 10.108",
+        "cell_id": "table3:r2:c5",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          5
+        ]
+      },
+      {
+        "index": 6,
+        "row_index": 2,
+        "column_index": 6,
+        "row": "Treasury primary",
+        "column": "Kupiec p L/R",
+        "display": "0.00413 / 0.199",
+        "cell_id": "table3:r2:c6",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          6
+        ]
+      },
+      {
+        "index": 7,
+        "row_index": 3,
+        "column_index": 1,
+        "row": "FX legacy sensitivity",
+        "column": "Loss Δ%",
+        "display": "-1.83",
+        "cell_id": "table3:r3:c1",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          1
+        ]
+      },
+      {
+        "index": 8,
+        "row_index": 3,
+        "column_index": 2,
+        "row": "FX legacy sensitivity",
+        "column": "DM p",
+        "display": "0.839",
+        "cell_id": "table3:r3:c2",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          2
+        ]
+      },
+      {
+        "index": 9,
+        "row_index": 3,
+        "column_index": 3,
+        "row": "FX legacy sensitivity",
+        "column": "HLN p",
+        "display": "0.839",
+        "cell_id": "table3:r3:c3",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          3
+        ]
+      },
+      {
+        "index": 10,
+        "row_index": 3,
+        "column_index": 5,
+        "row": "FX legacy sensitivity",
+        "column": "Breach % L/R",
+        "display": "8.015 / 4.332",
+        "cell_id": "table3:r3:c5",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          5
+        ]
+      },
+      {
+        "index": 11,
+        "row_index": 3,
+        "column_index": 6,
+        "row": "FX legacy sensitivity",
+        "column": "Kupiec p L/R",
+        "display": "0.0433 / 0.339",
+        "cell_id": "table3:r3:c6",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          6
+        ]
+      }
+    ],
+    "frame_count": 12,
+    "frame_sha256": "4abc2cbc3d57cb16e613eb105742871a0f15f2f60a6d32ee341f1601f50662dc",
+    "algorithm": "Python random.Random(2026102337).sample(range(12),5)",
+    "selected_indices_draw_order": [
+      7,
+      1,
+      9,
+      6,
+      8
+    ],
+    "selected_indices_document_order": [
+      1,
+      6,
+      7,
+      8,
+      9
+    ],
+    "selected": [
+      {
+        "index": 7,
+        "row_index": 3,
+        "column_index": 1,
+        "row": "FX legacy sensitivity",
+        "column": "Loss Δ%",
+        "display": "-1.83",
+        "cell_id": "table3:r3:c1",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          1
+        ]
+      },
+      {
+        "index": 1,
+        "row_index": 0,
+        "column_index": 5,
+        "row": "FX original primary",
+        "column": "Breach % L/R",
+        "display": "5.675 / 5.011",
+        "cell_id": "table3:r0:c5",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          0,
+          5
+        ]
+      },
+      {
+        "index": 9,
+        "row_index": 3,
+        "column_index": 3,
+        "row": "FX legacy sensitivity",
+        "column": "HLN p",
+        "display": "0.839",
+        "cell_id": "table3:r3:c3",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          3
+        ]
+      },
+      {
+        "index": 6,
+        "row_index": 2,
+        "column_index": 6,
+        "row": "Treasury primary",
+        "column": "Kupiec p L/R",
+        "display": "0.00413 / 0.199",
+        "cell_id": "table3:r2:c6",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          2,
+          6
+        ]
+      },
+      {
+        "index": 8,
+        "row_index": 3,
+        "column_index": 2,
+        "row": "FX legacy sensitivity",
+        "column": "DM p",
+        "display": "0.839",
+        "cell_id": "table3:r3:c2",
+        "pointer": [
+          "sections",
+          5,
+          "blocks",
+          0,
+          "rows",
+          3,
+          2
+        ]
+      }
+    ],
+    "requested_sample_size": 5,
+    "sample_size": 5,
+    "insufficient_frame_issue": null,
+    "current_fallback_owning_output_lookup_started": false,
+    "prior_exposure_disclosure": "Current Table3 displayed values were seen in earlier tasks and again during this fallback framing. In loop033 the paired-comparisons.csv and dm.csv files were parsed for the original FX H6/H24 identities and bandwidth fields, not their result fields; static v5 formatter context was also read then. Earlier numeric-loop metadata exposes selected cell displays/source field names. Thus no claim is made that these files or displays are unseen. This fallback selection is frozen before the new owning result-field lookup in this corrected loop037.",
+    "forbidden": "No new financial statistic, models, tests, proofs, raw/private vectors, network/UI, source/result/state/ledger edits, commit or nesting. Saved result fields and display-only conversions only."
+  },
+  "fallback_trace_readback": {
+    "recorded_utc": "2026-10-23T22:37:10.241698+00:00",
+    "scope": "Five frozen empirical cells only; saved scalar fields and the existing display conversion, no new statistic estimation.",
+    "traces": [
+      {
+        "cell_id": "table3:r3:c1",
+        "source_file": "results/revision-20261022/paired-comparisons.csv",
+        "selector": {
+          "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720"
+        },
+        "fields": {
+          "relative_mean_loss_difference_percent": "-1.8290714567022697"
+        },
+        "display_format": "signed fixed2, exactly v4_submission.py line43",
+        "reformatted": "-1.83",
+        "expected_display": "-1.83",
+        "display_matches": true,
+        "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+      },
+      {
+        "cell_id": "table3:r0:c5",
+        "source_file": "results/revision-20261022/paired-comparisons.csv",
+        "selector": {
+          "contrast_id": "fx_hourly-h6-QR2880-minus-rolling_F720"
+        },
+        "fields": {
+          "strict_breach_count_left": "376",
+          "strict_breach_count_right": "332",
+          "origin_count": "6625"
+        },
+        "display_format": "existing table display conversion only: 100*saved_count/saved_origin_count, fixed3, L / R; exactly v4_submission.py line44",
+        "reformatted": "5.675 / 5.011",
+        "expected_display": "5.675 / 5.011",
+        "display_matches": true,
+        "source_sha256": "a19c804690db029a26c4343a5cfb0689c95d40f0216b8d3f8fd32ced26d079c9"
+      },
+      {
+        "cell_id": "table3:r3:c3",
+        "source_file": "results/revision-20261023/inference/dm.csv",
+        "selector": {
+          "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720"
+        },
+        "fields": {
+          "hln_p": "0.8390894089762104"
+        },
+        "display_format": "float .3g, v4_submission.py lines42–43",
+        "reformatted": "0.839",
+        "expected_display": "0.839",
+        "display_matches": true,
+        "source_sha256": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41"
+      },
+      {
+        "cell_id": "table3:r2:c6",
+        "source_file": "results/revision-20261023/inference/coverage.csv",
+        "selector_L": {
+          "source": "nyfed_weekly",
+          "horizon": "6",
+          "window": "260",
+          "method": "QR"
+        },
+        "selector_R": {
+          "source": "nyfed_weekly",
+          "horizon": "6",
+          "window": "260",
+          "method": "frozen_F"
+        },
+        "fields_L": {
+          "pof_p": "0.004126046248434382",
+          "n": "40",
+          "hits": "7",
+          "grid_stride": "7"
+        },
+        "fields_R": {
+          "pof_p": "0.1986410814587244",
+          "n": "40",
+          "hits": "4",
+          "grid_stride": "7"
+        },
+        "display_format": "float pof_p .3g, L / R, v4_submission.py lines40–44",
+        "reformatted": "0.00413 / 0.199",
+        "expected_display": "0.00413 / 0.199",
+        "display_matches": true,
+        "source_sha256": "58db76faaeb3250f66bbc90ab0be3f87f674e2022e3374961f73a27a935a2419"
+      },
+      {
+        "cell_id": "table3:r3:c2",
+        "source_file": "results/revision-20261023/inference/dm.csv",
+        "selector": {
+          "contrast_id": "fx_hourly-h24-QR2880-minus-rolling_S720"
+        },
+        "fields": {
+          "dm_p": "0.8385182122097816"
+        },
+        "display_format": "float .3g, v4_submission.py lines42–43",
+        "reformatted": "0.839",
+        "expected_display": "0.839",
+        "display_matches": true,
+        "source_sha256": "0e8aa499fab31a5928be0ccb9198d5f6ee2833a01410a17fc965985bb65f5e41"
+      }
+    ],
+    "all_displays_match": true,
+    "frozen_selection_fields_are_snapshots": "The output_lookup_started=false flags in preserved frozen records describe their freeze times; owning fields have now been read only after the fallback freeze."
+  }
+}

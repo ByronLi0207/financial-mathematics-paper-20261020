@@ -1,0 +1,142 @@
+{
+  "scope": "constructed toy arrays only; no financial source reads/fits/evaluations",
+  "protocol_commits": {
+    "F1": "9679e15824bf24bbcf06b645688ee5c030793c30",
+    "F2": "f8628dbf83ebeebf5fcd4e494985c11603f11eb5",
+    "F3": "185e1ae9a63046b56181a77bb031c6a7a24a0138"
+  },
+  "runs": [
+    {
+      "phase": "RED",
+      "utc": "2026-10-25T11:01:54.885165+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_forecast.py",
+        "--maxfail=1"
+      ],
+      "returncode": 1,
+      "stdout": "F\n=================================== FAILURES ===================================\n_ test_tau95_finite_forecasts_preserve_frozen_arrays_and_diagnostics[0.001-QR33] _\n\nmethod = 'QR33', penalty = 0.001\n\n    @pytest.mark.parametrize('method', ['QR33', 'QR4'])\n    @pytest.mark.parametrize('penalty', [.001, .01, .1, 1., 10.])\n    def test_tau95_finite_forecasts_preserve_frozen_arrays_and_diagnostics(method, penalty):\n>       m = api(); series, cell = toy(); ids = np.arange(160, 165)\n            ^^^^^\n\ntest_v12_forecast.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def api():\n>       assert importlib.util.find_spec('v12_forecast') is not None, 'v12 forecast adapter is missing'\nE       AssertionError: v12 forecast adapter is missing\nE       assert None is not None\nE        +  where None = <function find_spec at 0x1063f2b60>('v12_forecast')\nE        +    where <function find_spec at 0x1063f2b60> = <module 'importlib.util' (frozen)>.find_spec\nE        +      where <module 'importlib.util' (frozen)> = importlib.util\n\ntest_v12_forecast.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED test_v12_forecast.py::test_tau95_finite_forecasts_preserve_frozen_arrays_and_diagnostics[0.001-QR33]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed in 0.48s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\nInstalled 6 packages in 47ms\n",
+      "expected_failure": "AssertionError: v12 forecast adapter is missing"
+    },
+    {
+      "phase": "GREEN",
+      "utc": "2026-10-25T11:03:17.546574+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_forecast.py"
+      ],
+      "returncode": 0,
+      "stdout": "....................................................                     [100%]\n52 passed in 5.80s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "IMPLEMENTATION_CHECK_FAILED",
+      "utc": "2026-10-25T11:05:02.132661+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_forecast.py"
+      ],
+      "returncode": 1,
+      "stdout": ".......................FF..............................                  [100%]\n=================================== FAILURES ===================================\n_ test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles[QR33] _\n\nmethod = 'QR33'\n\n    @pytest.mark.parametrize('method', ['QR33', 'QR4'])\n    def test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles(method):\n        m = api(); series, cell = toy()\n        series['position'][:] = 10.\n        series['position'][155:161] = [11., 12., 13., 14., 15., 16.]\n        context = m.make_context(series, cell)\n        # All training predictors are constant at origins103..154. Their completed\n        # headrooms have46 zeros followed by1..6: unique .90 quantile1, .99 quantile6.\n        lower = m.predict_segment(context, [160], method, .1, tau=.90)\n        upper = m.predict_segment(context, [160], method, .1, tau=.99)\n>       assert lower['capacity'][0] == pytest.approx(17., abs=1e-5)\nE       assert np.float64(17.00003321819776) == 17.0 \u00b1 1.0e-05\nE         \nE         comparison failed\nE         Obtained: 17.00003321819776\nE         Expected: 17.0 \u00b1 1.0e-05\n\ntest_v12_forecast.py:104: AssertionError\n_ test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles[QR4] _\n\nmethod = 'QR4'\n\n    @pytest.mark.parametrize('method', ['QR33', 'QR4'])\n    def test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles(method):\n        m = api(); series, cell = toy()\n        series['position'][:] = 10.\n        series['position'][155:161] = [11., 12., 13., 14., 15., 16.]\n        context = m.make_context(series, cell)\n        # All training predictors are constant at origins103..154. Their completed\n        # headrooms have46 zeros followed by1..6: unique .90 quantile1, .99 quantile6.\n        lower = m.predict_segment(context, [160], method, .1, tau=.90)\n        upper = m.predict_segment(context, [160], method, .1, tau=.99)\n>       assert lower['capacity'][0] == pytest.approx(17., abs=1e-5)\nE       assert np.float64(17.000033218197757) == 17.0 \u00b1 1.0e-05\nE         \nE         comparison failed\nE         Obtained: 17.000033218197757\nE         Expected: 17.0 \u00b1 1.0e-05\n\ntest_v12_forecast.py:104: AssertionError\n=========================== short test summary info ============================\nFAILED test_v12_forecast.py::test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles[QR33]\nFAILED test_v12_forecast.py::test_generic_solver_uses_declared_level_on_hand_computed_intercept_quantiles[QR4]\n2 failed, 53 passed in 5.76s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "TOY_CERTIFICATE_DIAGNOSIS",
+      "utc": "2026-10-25T11:05:36.935832+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-c",
+        "import json\nfrom test_v12_forecast import api,toy\nm=api();s,c=toy();s['position'][:]=10.;s['position'][155:161]=[11.,12.,13.,14.,15.,16.];ctx=m.make_context(s,c)\nrows=[]\nfor method in ('QR33','QR4'):\n for tau in (.90,.99):\n  p=m.predict_segment(ctx,[160],method,.1,tau=tau);d=p['fit_diagnostics'][0]\n  rows.append(dict(method=method,tau=tau,capacity=float(p['capacity'][0]),response_scale=d['response_scale'],duality_gap=d['duality_gap'],gap_tolerance=d['gap_tolerance'],iterations=d['iterations']))\nprint(json.dumps(rows,indent=2))"
+      ],
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"method\": \"QR33\",\n    \"tau\": 0.9,\n    \"capacity\": 17.00003321819776,\n    \"response_scale\": 0.40384615384615385,\n    \"duality_gap\": 1.6068871635235421e-06,\n    \"gap_tolerance\": 1.86190507826855e-06,\n    \"iterations\": 531\n  },\n  {\n    \"method\": \"QR33\",\n    \"tau\": 0.99,\n    \"capacity\": 22.00004455618007,\n    \"response_scale\": 0.40384615384615385,\n    \"duality_gap\": 1.1033054658695017e-06,\n    \"gap_tolerance\": 1.138572531867316e-06,\n    \"iterations\": 664\n  },\n  {\n    \"method\": \"QR4\",\n    \"tau\": 0.9,\n    \"capacity\": 17.000033218197757,\n    \"response_scale\": 0.40384615384615385,\n    \"duality_gap\": 1.6068871635081693e-06,\n    \"gap_tolerance\": 1.86190507826855e-06,\n    \"iterations\": 531\n  },\n  {\n    \"method\": \"QR4\",\n    \"tau\": 0.99,\n    \"capacity\": 22.00004571887574,\n    \"response_scale\": 0.40384615384615385,\n    \"duality_gap\": 1.1320960252460474e-06,\n    \"gap_tolerance\": 1.1385725606578756e-06,\n    \"iterations\": 666\n  }\n]\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    },
+    {
+      "phase": "GREEN",
+      "utc": "2026-10-25T11:06:05.791997+00:00",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "numpy",
+        "--with",
+        "pytest",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "test_v12_forecast.py"
+      ],
+      "returncode": 0,
+      "stdout": ".......................................................                  [100%]\n55 passed in 5.83s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n"
+    }
+  ],
+  "code_sha256": {
+    "v12_forecast.py": "d893d3cd6ba5542fbd5dfd2be95c1c8f9d4060eefa53b25e0490a2f938b2b3ef",
+    "test_v12_forecast.py": "4062b247832b090f90f1256d68dab5f63e48e0cd76b18d994b9dea4cd4dc2549"
+  },
+  "inherited_code_unchanged": {
+    "v10_menu.py": true,
+    "v8_mechanism_mc.py": true,
+    "conditional_quantile.py": true,
+    "conditional_features.py": true,
+    "conditional_sources.py": true,
+    "conditional_study.py": true,
+    "empirical_headroom.py": true,
+    "study_core.py": true,
+    "round2_panel_sources.py": true,
+    "v6_inference.py": true
+  },
+  "integration_suite": "Reserved to parent orchestrator; only new forecast toy tests run in this worker.",
+  "diagnosis": "The hand quantile test originally demanded native forecast error<=1e-5, tighter than the frozen objective-gap tolerance implies. With constant training predictors the scalar pinball excess has slopes given by the known empirical CDF. Use native error bound s*gap_tolerance/min(left_slope,right_slope), retaining unchanged solver tolerances.",
+  "final_status": "PASS"
+}

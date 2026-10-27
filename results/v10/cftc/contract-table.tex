@@ -1,0 +1,36 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{CFTC dealer-category futures application: within-contract relative loss versus matched $F$ (\%). All 17 selected literal contract codes are retained.}
+\label{tab:v10-cftc-contracts}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Contract code & \multicolumn{5}{c}{$W=52$} & \multicolumn{5}{c}{$W=260$} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+ & $I$ & QR4 & QR33 & ACI-$F$ & ACI-QR33 & $I$ & QR4 & QR33 & ACI-$F$ & ACI-QR33 \\
+\midrule
+044601 & 5.26 & 128.00 & 41.38 & 15.01 & 18.80 & 0.51 & 7.82 & 43.88 & 13.87 & 42.41 \\
+043602 & 3.37 & 9.35 & 3.37 & 37.79 & 24.64 & 2.30 & 8.95 & 20.97 & -11.22 & -12.64 \\
+042601 & 4.64 & 9.48 & 35.65 & 26.69 & 41.21 & -0.15 & 74.23 & 16.63 & 1.46 & 9.39 \\
+045601 & -2.04 & 0.31 & -2.04 & 21.83 & 6.14 & 1.85 & 1.85 & 1.85 & 2.40 & 2.58 \\
+020601 & 4.77 & 79.72 & 111.12 & 25.66 & -5.34 & 0.92 & 43.38 & 29.70 & -15.12 & -12.32 \\
+099741 & 0.69 & 13.97 & 14.56 & 77.33 & -13.28 & 0.22 & 0.22 & 0.22 & 27.72 & 27.73 \\
+1170E1 & 6.42 & 6.82 & 46.30 & -0.22 & 12.77 & 0.92 & -28.44 & -16.22 & -1.12 & 1.00 \\
+097741 & -0.83 & 23.76 & 68.71 & 29.77 & 33.79 & 0.53 & -6.54 & 14.69 & -0.41 & -5.43 \\
+096742 & 2.93 & 3.41 & 6.13 & 49.54 & 30.46 & 5.30 & 4.82 & 62.68 & 37.12 & -0.49 \\
+095741 & 7.39 & 19.55 & 19.33 & 41.27 & 42.98 & -0.70 & 2.13 & 10.35 & 19.30 & 55.39 \\
+090741 & 4.03 & 10.28 & 4.03 & 15.58 & 13.13 & 3.28 & -5.35 & -3.60 & -2.02 & -5.66 \\
+232741 & 0.11 & 123.33 & 37.53 & 63.84 & 36.35 & 1.94 & -3.35 & 7.68 & -0.65 & -3.86 \\
+33874A & 6.95 & 88.57 & 38.30 & 30.15 & 44.07 & -2.38 & -3.21 & -4.78 & 6.98 & 9.52 \\
+240743 & -3.04 & -7.32 & 183.12 & 33.14 & 49.77 & -2.28 & -2.28 & -2.28 & 32.91 & 26.37 \\
+092741 & 0.54 & 0.54 & 0.54 & -1.74 & -0.68 & 0.17 & -6.98 & 26.22 & 5.58 & 13.94 \\
+098662 & -0.44 & -0.44 & 0.90 & 44.89 & 38.90 & 2.45 & -39.44 & 2.45 & 15.12 & 20.45 \\
+112741 & 11.06 & 38.76 & 10.05 & 33.72 & 24.10 & 2.24 & 2.82 & 80.98 & 8.36 & 16.37 \\
+\bottomrule
+\end{tabular}}
+\par\vspace{2pt}
+\begin{minipage}{0.98\linewidth}\footnotesize
+Each entry is $100(\overline L_m/\overline L_F-1)$ using the saved complete evaluation. NA retains failed/incomplete methods or an unavailable/nonpositive $F$ denominator. Positive values indicate higher loss. T1 uses every selected-contract/two-window cell (denominator 34), with the registered fraction at least 0.60; T2 requires the all-contract QR33 median at both windows inside [-10.00, 10.00]\%. T3 compares complete all-contract QR4 medians strictly. No successful-contract subset substitutes for any threshold. Displays are rounded; decisions use saved full-precision operands. F and every absolute score/breach/selection receipt remain in the detailed summary and exported cell CSV.
+\end{minipage}
+\end{table}

@@ -1,0 +1,1016 @@
+{
+  "schema": 1,
+  "audit": "WP2 original-provenance reconciliation appended after initial restricted audit",
+  "generated_utc": "2026-10-25T05:08:57.871114+00:00",
+  "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+  "overall_status": "PASS",
+  "import_allowed": true,
+  "gate_scope": "Static editorial reuse of already-computed pinned WP2 evidence only; no new experiment or numerical reproduction",
+  "previous_audit": {
+    "json_path": "notes/v11/wp2-import-audit.json",
+    "json_sha256": "509d8f8fc05c2cd538300a1ff53c918961a0ae3a4afa94dfc5b3f99332c365b4",
+    "markdown_path": "notes/v11/wp2-import-audit.md",
+    "markdown_sha256": "c11439d01692093d74fc960fb3c126573ed0c034c66317ffe05e8472fe6b4004",
+    "historical_status": "UNVERIFIED",
+    "preserved_unchanged": true,
+    "reconciliation_reason": "The first audit was restricted to the current repository, where original objects were unavailable. The parent task has now supplied captured read-only queries of those original Git objects and path/blob mappings. No original scientific result changed."
+  },
+  "evidence_files": [
+    {
+      "path": "notes/v11/original-commit-proofs.json",
+      "sha256": "eafbb501cc4870e19ef87bc6e108f794e64fd3ceaa3f3040b60f2ddc43ad6152",
+      "extraction_scope": "Only GIT_OPTIONAL_LOCKS=0 read-only Git object queries in original source repository; no status/checkout/fetch/index/config/worktree writes. Financial source bytes remain pinned to public60e03b8."
+    },
+    {
+      "path": "notes/v11/original-blob-proofs.json",
+      "sha256": "126ddc187c93beb656c5c93e8187ed24a98492a16491630dac8c5569c1fa1c33",
+      "extraction_scope": "Read-only cat-file/show/rev-parse/log/merge-base queries, optional locks disabled; no original worktree/index/ref writes."
+    }
+  ],
+  "evidence_boundary": {
+    "directly_accessed_by_this_subagent": [
+      "current repository fixed-source Git blobs",
+      "notes/v11/original-commit-proofs.json",
+      "notes/v11/original-blob-proofs.json",
+      "unchanged initial WP2 audit"
+    ],
+    "original_repository_accessed_by_this_subagent": false,
+    "original_git_object_queries_performed_by": "parent root task; captured read-only proof files",
+    "git_raw_commit_ID_validation": "this subagent independently rebuilt commit object headers and SHA1 from both captured raw commit strings",
+    "blob_validation": "this subagent independently rebuilt fixed-source blob OIDs/SHA256 and compared every WP2 mapping with captured original-object queries",
+    "external_source_head_unchanged_recorded": true,
+    "old_head": "689d4928f55bb73cac5b73e6cfc34aee1209e57a",
+    "scientific_source": "Only fixed source 60e03b8 provides imported protocol/result bytes; original repository supplies provenance evidence, not replacement data."
+  },
+  "original_commits": [
+    {
+      "oid": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "git_object_sha1_from_raw": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "raw_commit_sha256": "bf581e0ef1121fab3536b29890dd9ce53412a1f8e12c92aa8f5a03c6ad0a706c",
+      "git_object_id_matches": true,
+      "parent": "9784372d523e93a50f21212e9a10adb55485768c",
+      "changed_paths": [
+        "M\tREVISION_V9_CHANGELOG.md",
+        "A\tnotes/revision-v9/wp1-raw-log-whitespace-check.txt",
+        "A\tnotes/revision-v9/wp2-pre-result-design-check.json",
+        "A\tnotes/revision-v9/wp2-runtime-preflight.json",
+        "A\tprotocol/revision-v9/wp2-confirmatory.json",
+        "A\tprotocol/revision-v9/wp2-confirmatory.md"
+      ],
+      "author_utc": "2026-10-24T22:19:50+00:00",
+      "committer_utc": "2026-10-24T22:19:50+00:00"
+    },
+    {
+      "oid": "1a535efe289254ced5b163361fefee357d13d583",
+      "git_object_sha1_from_raw": "1a535efe289254ced5b163361fefee357d13d583",
+      "raw_commit_sha256": "409ee5639fe10f578d6ad5074da91deb722902884bd72286cb4a40e509047c2d",
+      "git_object_id_matches": true,
+      "parent": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "changed_paths": [
+        "M\tREVISION_V9_CHANGELOG.md",
+        "A\tnotes/revision-v9/audit_wp2.py",
+        "A\tnotes/revision-v9/package_wp2.py",
+        "A\tnotes/revision-v9/wp2-acceptance.json",
+        "A\tnotes/revision-v9/wp2-all-prediction-counterexamples.csv",
+        "A\tnotes/revision-v9/wp2-code-pre-run-binding.json",
+        "A\tnotes/revision-v9/wp2-formal-run-console.txt",
+        "A\tnotes/revision-v9/wp2-full-gate-pytest-output.txt",
+        "A\tnotes/revision-v9/wp2-full-gate-pytest-receipt.json",
+        "A\tnotes/revision-v9/wp2-green-output-1.txt",
+        "A\tnotes/revision-v9/wp2-green-output-2.txt",
+        "A\tnotes/revision-v9/wp2-green-output-3.txt",
+        "A\tnotes/revision-v9/wp2-green-output-4.txt",
+        "A\tnotes/revision-v9/wp2-independent-audit-console.txt",
+        "A\tnotes/revision-v9/wp2-independent-audit.json",
+        "A\tnotes/revision-v9/wp2-method-source-reading.md",
+        "A\tnotes/revision-v9/wp2-package-console.txt",
+        "A\tnotes/revision-v9/wp2-post-run-pytest-output-1.txt",
+        "A\tnotes/revision-v9/wp2-readout.md",
+        "A\tnotes/revision-v9/wp2-red-output-1.txt",
+        "A\tnotes/revision-v9/wp2-red-output-2.txt",
+        "A\tnotes/revision-v9/wp2-running-evidence-binding.json",
+        "A\tnotes/revision-v9/wp2-summary-console.txt",
+        "A\tresults/revision-v9/wp2/budget-decision.json",
+        "A\tresults/revision-v9/wp2/manifest.json",
+        "A\tresults/revision-v9/wp2/package-receipt.json",
+        "A\tresults/revision-v9/wp2/study-termination.json",
+        "A\tresults/revision-v9/wp2/summary.csv",
+        "A\tresults/revision-v9/wp2/summary.json",
+        "A\tresults/revision-v9/wp2/support.json",
+        "A\tresults/revision-v9/wp2/wp2-driver-output-members.csv",
+        "A\tresults/revision-v9/wp2/wp2-driver-output.tar.gz",
+        "A\trun_v9_confirmation.py",
+        "A\ttest_v9_confirmation.py",
+        "A\ttest_v9_confirmation_audit.py",
+        "A\ttest_v9_confirmation_package.py",
+        "A\tv9_confirmation.py"
+      ],
+      "author_utc": "2026-10-24T22:59:15+00:00",
+      "committer_utc": "2026-10-24T22:59:15+00:00"
+    }
+  ],
+  "timeline": {
+    "design_author_utc": "2026-10-24T22:19:50+00:00",
+    "design_committer_utc": "2026-10-24T22:19:50+00:00",
+    "formal_start": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/manifest.json",
+      "sha256": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2",
+      "json_pointer": "/started_utc",
+      "value": "2026-10-24T22:25:19.696709+00:00"
+    },
+    "formal_end": {
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "path": "results/revision-v9/wp2/study-termination.json",
+      "sha256": "6c81132d7af745ce7dbf90cce84a3c332862cf9f73528752b1683be9098bacc4",
+      "json_pointer": "/ended_utc",
+      "value": "2026-10-24T22:50:26.787681+00:00"
+    },
+    "completion_author_utc": "2026-10-24T22:59:15+00:00",
+    "completion_committer_utc": "2026-10-24T22:59:15+00:00",
+    "strict_order_design_before_start_before_end_before_completion": true,
+    "precision_note": "Git author/committer timestamps have one-second precision; saved run receipts have sub-second precision."
+  },
+  "design_stage_separation": {
+    "status": "PASS",
+    "changed_paths_count": 6,
+    "changed_paths": [
+      "REVISION_V9_CHANGELOG.md",
+      "notes/revision-v9/wp1-raw-log-whitespace-check.txt",
+      "notes/revision-v9/wp2-pre-result-design-check.json",
+      "notes/revision-v9/wp2-runtime-preflight.json",
+      "protocol/revision-v9/wp2-confirmatory.json",
+      "protocol/revision-v9/wp2-confirmatory.md"
+    ],
+    "contains_result_paths": false,
+    "interpretation": "A separate design-stage commit containing both protocols, preflight/design-check records, ancillary WP1 whitespace log and changelog. It is not a two-file-only commit."
+  },
+  "original_to_fixed_source_blob_checks": [
+    {
+      "original_commit": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "path": "protocol/revision-v9/wp2-confirmatory.json",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "f8efb043d2bffc2171a5fefd717ce4a0db22330b",
+      "source_sha256_recomputed": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "bytes": 7916,
+      "original_git_blob_oid_from_parent_readonly_query": "f8efb043d2bffc2171a5fefd717ce4a0db22330b",
+      "original_sha256_from_parent_readonly_query": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/0"
+    },
+    {
+      "original_commit": "f2ce438ccb2fcf671c849a83032ac700ac6007c6",
+      "path": "protocol/revision-v9/wp2-confirmatory.md",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "fde0d8c214b28ab89bfe2ccd476f5446a682f1fe",
+      "source_sha256_recomputed": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "bytes": 9512,
+      "original_git_blob_oid_from_parent_readonly_query": "fde0d8c214b28ab89bfe2ccd476f5446a682f1fe",
+      "original_sha256_from_parent_readonly_query": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/1"
+    },
+    {
+      "original_commit": "1a535efe289254ced5b163361fefee357d13d583",
+      "path": "protocol/revision-v9/wp2-confirmatory.json",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "f8efb043d2bffc2171a5fefd717ce4a0db22330b",
+      "source_sha256_recomputed": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "bytes": 7916,
+      "original_git_blob_oid_from_parent_readonly_query": "f8efb043d2bffc2171a5fefd717ce4a0db22330b",
+      "original_sha256_from_parent_readonly_query": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/2"
+    },
+    {
+      "original_commit": "1a535efe289254ced5b163361fefee357d13d583",
+      "path": "protocol/revision-v9/wp2-confirmatory.md",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "fde0d8c214b28ab89bfe2ccd476f5446a682f1fe",
+      "source_sha256_recomputed": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "bytes": 9512,
+      "original_git_blob_oid_from_parent_readonly_query": "fde0d8c214b28ab89bfe2ccd476f5446a682f1fe",
+      "original_sha256_from_parent_readonly_query": "b0efeec38100e62a245a8cc1d7a67365f51a526bd971bc11cbb59a922ab2fb6d",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/3"
+    },
+    {
+      "original_commit": "1a535efe289254ced5b163361fefee357d13d583",
+      "path": "results/revision-v9/wp2/manifest.json",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "87aac16ac8945084292042df384621691f694d4e",
+      "source_sha256_recomputed": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2",
+      "bytes": 11082,
+      "original_git_blob_oid_from_parent_readonly_query": "87aac16ac8945084292042df384621691f694d4e",
+      "original_sha256_from_parent_readonly_query": "9b749e73ed2757c6b3fb58e3ce0249a707fbc9f7d57eb5747e505c836b074ec2",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/4"
+    },
+    {
+      "original_commit": "1a535efe289254ced5b163361fefee357d13d583",
+      "path": "results/revision-v9/wp2/summary.json",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "9286ed24eb5a11d45981e5a89755f1ebc45487b1",
+      "source_sha256_recomputed": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+      "bytes": 137693,
+      "original_git_blob_oid_from_parent_readonly_query": "9286ed24eb5a11d45981e5a89755f1ebc45487b1",
+      "original_sha256_from_parent_readonly_query": "ab77dade64a67751f8e93b1bb18bc9a491c22a6efb2b5292840748e8a6b636bc",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/5"
+    },
+    {
+      "original_commit": "1a535efe289254ced5b163361fefee357d13d583",
+      "path": "results/revision-v9/wp2/support.json",
+      "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+      "source_git_blob_oid_recomputed": "8b9bf77431a77f968462459b966e04f8b039c91b",
+      "source_sha256_recomputed": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+      "bytes": 42221,
+      "original_git_blob_oid_from_parent_readonly_query": "8b9bf77431a77f968462459b966e04f8b039c91b",
+      "original_sha256_from_parent_readonly_query": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+      "matches_original_blob_and_sha256": true,
+      "evidence_json_pointer": "/blobs/6"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "original_design_commit_identity_and_UTC",
+      "status": "PASS"
+    },
+    {
+      "gate": "design_before_formal_start",
+      "status": "PASS"
+    },
+    {
+      "gate": "design_stage_separate_commit_without_result_paths",
+      "status": "PASS"
+    },
+    {
+      "gate": "original_completion_commit_identity_and_UTC",
+      "status": "PASS"
+    },
+    {
+      "gate": "completion_direct_parent_is_design",
+      "status": "PASS"
+    },
+    {
+      "gate": "protocol_bytes_match_original_design_and_original_completion",
+      "status": "PASS"
+    },
+    {
+      "gate": "manifest_summary_support_match_original_completion",
+      "status": "PASS"
+    },
+    {
+      "gate": "own_archive_index_summary_receipt_chain",
+      "status": "PASS",
+      "evidence": "Retained initial audit full 30,536-member byte verification; no archive contents or scientific files changed."
+    },
+    {
+      "gate": "public_upload_is_prerun_design_proof",
+      "status": "FAIL",
+      "effect": "No longer needed for local Git provenance gate. Public uploads remain later than the study; do not describe them as pre-run public preregistration."
+    },
+    {
+      "gate": "fresh_numeric_reproduction",
+      "status": "NOT_RUN",
+      "effect": "Task forbids experiment/summary/fit/score/bootstrap/driver runs. Prior numerical audit remains a cited historical assertion."
+    }
+  ],
+  "preserved_outcomes": {
+    "primary_status": "SUPPORT",
+    "P1": {
+      "successes": 47,
+      "denominator": 48,
+      "missing": 0,
+      "status": "SUPPORT"
+    },
+    "P2": {
+      "successes": 21,
+      "denominator": 24,
+      "missing": 0,
+      "status": "SUPPORT"
+    },
+    "P3": {
+      "successes": 42,
+      "denominator": 48,
+      "missing": 0,
+      "status": "NOT_SUPPORT"
+    },
+    "candidate_failures": 2,
+    "all_prediction_counterexamples": 10,
+    "full_source_numeric_bindings": "Unchanged initial audit /recommended_minimal_table and /all_prediction_counterexamples; table bindings are also copied below."
+  },
+  "recommended_minimal_table": {
+    "disposition": "PASS_FOR_STATIC_IMPORT_OF_ALREADY_COMPUTED_RESULTS",
+    "suggested_columns": [
+      "Prediction",
+      "Saved criterion",
+      "Satisfied / fixed denominator",
+      "Missing",
+      "Required fraction",
+      "Saved screen status"
+    ],
+    "rows": [
+      {
+        "prediction": "P1",
+        "import_allowed": true,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/successes",
+            "value": 47
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/denominator",
+            "value": 48
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/observed_fraction",
+            "value": 0.9791666666666666
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P1/status",
+            "value": "SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P1/minimum_fraction",
+            "value": 0.8
+          }
+        }
+      },
+      {
+        "prediction": "P2",
+        "import_allowed": true,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/successes",
+            "value": 21
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/denominator",
+            "value": 24
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/observed_fraction",
+            "value": 0.875
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P2/status",
+            "value": "SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P2/minimum_fraction",
+            "value": 0.6
+          }
+        }
+      },
+      {
+        "prediction": "P3",
+        "import_allowed": true,
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/successes",
+            "value": 42
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/denominator",
+            "value": 48
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/minimum_fraction",
+            "value": 1.0
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/observed_fraction",
+            "value": 0.875
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/P3/status",
+            "value": "NOT_SUPPORT"
+          },
+          "design_threshold": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "protocol/revision-v9/wp2-confirmatory.json",
+            "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+            "json_pointer": "/predictions/P3/required_fraction",
+            "value": 1.0
+          }
+        }
+      }
+    ],
+    "required_caption": "Finite-grid pooled synthetic screen under a locally committed pre-run design. The index excludes parameter count, penalty menus differ and no oracle identifies an estimation-cost channel. P3 universal simplification is NOT_SUPPORT. All failed candidates and criterion counterexamples remain retained.",
+    "subgroup_backing_without_selection": [
+      {
+        "group": "QR33",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/successes",
+            "value": 29
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/denominator",
+            "value": 30
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/observed_fraction",
+            "value": 0.9666666666666667
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR33",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/successes",
+            "value": 5
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/denominator",
+            "value": 6
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/observed_fraction",
+            "value": 0.8333333333333334
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR33/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR4",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/successes",
+            "value": 18
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/denominator",
+            "value": 18
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "QR4",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/denominator",
+            "value": 18
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/observed_fraction",
+            "value": 0.8888888888888888
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_method/QR4/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "student_t5",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/successes",
+            "value": 15
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/observed_fraction",
+            "value": 0.9375
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "student_t5",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/successes",
+            "value": 5
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/observed_fraction",
+            "value": 0.625
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/student_t5/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "regime_3to1",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "regime_3to1",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/successes",
+            "value": 8
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/regime_3to1/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "compound_poisson",
+        "prediction": "P1",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/successes",
+            "value": 16
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/denominator",
+            "value": 16
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/minimum_fraction",
+            "value": 0.8
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P1/status",
+            "value": "SUPPORT"
+          }
+        }
+      },
+      {
+        "group": "compound_poisson",
+        "prediction": "P2",
+        "columns": {
+          "successes": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/successes",
+            "value": 8
+          },
+          "denominator": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/denominator",
+            "value": 8
+          },
+          "missing": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/missing",
+            "value": 0
+          },
+          "minimum_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/minimum_fraction",
+            "value": 0.6
+          },
+          "observed_fraction": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/observed_fraction",
+            "value": 1.0
+          },
+          "status": {
+            "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+            "path": "results/revision-v9/wp2/support.json",
+            "sha256": "11d65f6b2c05f7c752ff544aad9d474450d3af4723994f247dbc42f0ddaa1cf5",
+            "json_pointer": "/by_DGP/compound_poisson/P2/status",
+            "value": "SUPPORT"
+          }
+        }
+      }
+    ],
+    "auxiliary_design_bindings": {
+      "repetitions": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/repetitions",
+        "value": 32
+      },
+      "QR33_rstar": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/thresholds/QR33/r_star",
+        "value": 106.49618468616566
+      },
+      "QR4_rstar": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/thresholds/QR4/r_star",
+        "value": 27.324522025270575
+      },
+      "P1_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P1_cells",
+        "value": 48
+      },
+      "P2_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P2_cells",
+        "value": 24
+      },
+      "P3_expected": {
+        "source_commit": "60e03b8ae7a950c96ace3987f0625b3e434e6887",
+        "path": "protocol/revision-v9/wp2-confirmatory.json",
+        "sha256": "11fc89b38b8691b91965abf5f3a284f1391576812650e1129ff31fc8e2342083",
+        "json_pointer": "/expected_P3_pairs",
+        "value": 48
+      }
+    }
+  },
+  "retention_requirements": [
+    "Retain P3 NOT_SUPPORT and every one of its six failed inequalities.",
+    "Retain the P1 counterexample and all three P2 counterexamples.",
+    "Retain both QR4 penalty 0.001 NONCONVERGENCE candidate records and original diagnostics.",
+    "Retain complete/missing denominators and all method/DGP backing rows.",
+    "Use local pre-run committed design wording; do not claim pre-run public registration, causal identification, a universal sample-size law, or oracle validation.",
+    "Do not import the PR5 title/abstract/narrative as part of this gate."
+  ]
+}

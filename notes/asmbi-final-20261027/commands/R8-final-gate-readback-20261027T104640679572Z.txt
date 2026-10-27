@@ -1,0 +1,56 @@
+$ cat notes/asmbi-final-20261027/R8-verification.json notes/asmbi-final-20261027/R8-pytest-console.txt notes/asmbi-final-20261027/R8-dependency-inventory-final.json
+[stdout]
+{
+  "step": "R8",
+  "status": "BLOCKED",
+  "checked_utc": "2026-10-27T10:46:40.642097+00:00",
+  "writing_build_provenance": "PASS",
+  "package_receipt": "notes/asmbi-final-20261027/R8-package-audit.json",
+  "package_receipt_sha256": "0971acf75c9715a110f06a9aebc9aa299cefd6c1a40108e403433f1102bd3e01",
+  "visual_pages": 101,
+  "visual_pdf_count": 12,
+  "numeric_mismatches": 0,
+  "frozen_files_unchanged": 2527,
+  "main_pages": 25,
+  "supplement_pages": 21,
+  "supplement_sections": 12,
+  "pytest": "BLOCKED_BEFORE_COLLECTION",
+  "pytest_receipt": "notes/asmbi-final-20261027/R8-pytest.json",
+  "pytest_returncode": 1,
+  "reason": "Existing pytest/arch/sklearn/cvxpy/clarabel runtime is absent; offline cache cannot resolve archived requirements. The task prohibits software installation. No tests have run in this round.",
+  "prior_test_receipt_not_substituted": true,
+  "new_experiments": 0,
+  "software_installations": 0,
+  "publication_permitted": false,
+  "cleanup_permitted": false
+}
+WARN `--no-project` was provided, but no project was found
+  × No solution found when resolving `--with` dependencies:
+  ╰─▶ Because arch was not found in the cache and you require arch==8.0.0, we
+      can conclude that your requirements are unsatisfiable.
+
+hint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache.{
+  "checked_utc": "2026-10-27T10:40:33.445313+00:00",
+  "existing_python_probes": [
+    {
+      "path": "/usr/bin/python3",
+      "returncode": 0,
+      "output": "{\"executable\": \"/Library/Developer/CommandLineTools/usr/bin/python3\", \"modules\": {\"pytest\": false, \"arch\": false, \"sklearn\": false, \"cvxpy\": false, \"clarabel\": false}}",
+      "stderr": ""
+    },
+    {
+      "path": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "returncode": 0,
+      "output": "{\"executable\": \"/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3\", \"modules\": {\"pytest\": false, \"arch\": false, \"sklearn\": false, \"cvxpy\": false, \"clarabel\": false}}",
+      "stderr": ""
+    }
+  ],
+  "pip_wheels_matching_required_packages": [],
+  "new_installations": 0,
+  "downloads": 0,
+  "boundary": "Read-only import-spec and existing wheel-name inventory; no package installation, unpacking or network request."
+}
+
+[stderr]
+
+[exit] 0

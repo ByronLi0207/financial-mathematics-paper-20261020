@@ -1,0 +1,17 @@
+% Author-side cache compatibility; the publisher class is unchanged.
+% The class loads enumerate.sty, which is neither in its distributed ZIP nor
+% in this machine's Tectonic cache. No extended enumerate syntax is used.
+% Standard LaTeX list environments remain available; reject extended syntax
+% in the Python builder rather than silently approximating it.
+% The 2014 class also replaces kernel document/enddocument with pre-2020
+% implementations. Preserve the installed kernel entry points while retaining
+% all publisher typography, headings, citations and layout definitions.
+\let\QFKernelDocument\document
+\let\QFKernelEndDocument\enddocument
+\makeatletter
+\let\QFKernelOutputPage\@outputpage
+\newcommand{\QFRestoreKernelDocument}{%
+  \let\document\QFKernelDocument\let\enddocument\QFKernelEndDocument
+  \let\@outputpage\QFKernelOutputPage}
+\@namedef{ver@enumerate.sty}{2026/10/27 unused optional interface skipped}
+\makeatother

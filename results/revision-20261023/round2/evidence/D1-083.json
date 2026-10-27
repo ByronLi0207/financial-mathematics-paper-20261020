@@ -1,0 +1,16 @@
+{
+  "step": "D1",
+  "command": "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -c 'import json,hashlib;from v3_revision import ROOT;s=json.loads((ROOT/'\"'\"'state/D2-AR-correction.json'\"'\"').read_text());old={f:h for f,h in s['\"'\"'prior_result_hashes'\"'\"'].items() if '\"'\"'/baselines/'\"'\"' in f};assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in old.items());b=json.loads((ROOT/'\"'\"'protocol/revision-20261023/round2-D1-execution-binding-v2.json'\"'\"').read_text());assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in b['\"'\"'sha256'\"'\"'].items());summary=json.loads((ROOT/'\"'\"'results/revision-20261023/round2/baselines/summary.json'\"'\"').read_text());assert (summary['\"'\"'planned_cells'\"'\"'],summary['\"'\"'complete_cells'\"'\"'],summary['\"'\"'NA_cells'\"'\"'])==(24,18,6);print(json.dumps(dict(stage='\"'\"'D1 readback after D3 readback'\"'\"',protected_baseline_files=len(old),all_hashes_unchanged=True,original_D1_bound_files=len(b['\"'\"'sha256'\"'\"']),all_original_D1_bindings_match=True,new_financial_fit=False,summary=summary),indent=2))'",
+  "argv": [
+    "/Users/bingyouli/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-c",
+    "import json,hashlib;from v3_revision import ROOT;s=json.loads((ROOT/'state/D2-AR-correction.json').read_text());old={f:h for f,h in s['prior_result_hashes'].items() if '/baselines/' in f};assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in old.items());b=json.loads((ROOT/'protocol/revision-20261023/round2-D1-execution-binding-v2.json').read_text());assert all(hashlib.sha256((ROOT/f).read_bytes()).hexdigest()==h for f,h in b['sha256'].items());summary=json.loads((ROOT/'results/revision-20261023/round2/baselines/summary.json').read_text());assert (summary['planned_cells'],summary['complete_cells'],summary['NA_cells'])==(24,18,6);print(json.dumps(dict(stage='D1 readback after D3 readback',protected_baseline_files=len(old),all_hashes_unchanged=True,original_D1_bound_files=len(b['sha256']),all_original_D1_bindings_match=True,new_financial_fit=False,summary=summary),indent=2))"
+  ],
+  "environment_delta": {},
+  "started_utc": "2026-10-23T11:56:48.285131+00:00",
+  "ended_utc": "2026-10-23T11:56:48.326959+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"stage\": \"D1 readback after D3 readback\",\n  \"protected_baseline_files\": 28,\n  \"all_hashes_unchanged\": true,\n  \"original_D1_bound_files\": 4,\n  \"all_original_D1_bindings_match\": true,\n  \"new_financial_fit\": false,\n  \"summary\": {\n    \"planned_cells\": 24,\n    \"complete_cells\": 18,\n    \"NA_cells\": 6,\n    \"method_counts\": {\n      \"FHS\": 6,\n      \"PEAK_POT\": 4,\n      \"QRF\": 8\n    },\n    \"separate_comparison_slots\": 48,\n    \"original_primaries_unchanged\": true,\n    \"maximum_rss_bytes\": 229376000,\n    \"maximum_elapsed_seconds\": 239.0302985419985,\n    \"maximum_os_threads\": 1\n  }\n}\n",
+  "stderr": ""
+}

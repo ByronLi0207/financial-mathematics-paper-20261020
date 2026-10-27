@@ -1,0 +1,18 @@
+WARN `--no-project` was provided, but no project was found
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ SupplementTests.test_matched_figure_captions_keep_the_source_specific_primary_identity _
+
+self = <test_v6_supplement.SupplementTests testMethod=test_matched_figure_captions_keep_the_source_specific_primary_identity>
+
+    def test_matched_figure_captions_keep_the_source_specific_primary_identity(self):
+        fx=self.api.generated('figure-wp3-fx_hourly')['caption']
+        treasury=self.api.generated('figure-wp3-nyfed_weekly')['caption']
+        self.assertIn('distinct from the original FX',fx)
+>       self.assertNotIn('original FX',treasury)
+E       AssertionError: 'original FX' unexpectedly found in 'Matched-constituent elementary-score comparisons for Treasury bill (USD m), H6, W260, τ=0.95. The 4 mean/median-minus-constituent comparisons have exact rankings CROSSING, CROSSING, CROSSING, CROSSING. Signs are determined at every unique breakpoint before drawing these display curves. This matched F context is distinct from the original FX QR W2880 versus rolling F W720 primary; crossing excludes sample dominance for the named pair and does not certify conditional coverage.'
+
+test_v6_supplement.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_supplement.py::SupplementTests::test_matched_figure_captions_keep_the_source_specific_primary_identity
+1 failed, 11 deselected in 0.10s

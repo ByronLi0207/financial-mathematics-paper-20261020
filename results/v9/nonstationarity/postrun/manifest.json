@@ -1,0 +1,225 @@
+{
+  "schema": "v9-study-seal-v1",
+  "started_utc": "2026-10-24T19:08:52.012080+00:00",
+  "started_monotonic": 2042032.675304583,
+  "deadline_monotonic": 2047432.675304583,
+  "design_commit": "5decccb0a13ef1969629cfec695dd3459c412c4e",
+  "protocol_sha256": "76df3a3d2c2c5b90d4c3f4b225cc4f879b384c6f3d288b6732f488bda15a3894",
+  "design": {
+    "schema": "v9-nonstationarity-design-v1",
+    "base_pr5_commit": "0f1f066843e0c49cf3e24bce7d72032dc189603d",
+    "created_utc": "2026-10-24T18:33:36.911319+00:00",
+    "input_metadata": "notes/v9/input-boundaries.json",
+    "input_metadata_sha256": "bdb43380b6efa22a2a5293ed3c0105b257efb4522fcb94938eb82ea50fbc5f46",
+    "forecast_source_sha256": {
+      "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+      "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+      "v8_daily_fx.py": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36",
+      "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+      "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+      "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+      "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+      "conditional_sources.py": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+      "round2_panel_sources.py": "e0b553d370a23f9dcc38caeb649e048bb880c6fcc9b93536d2e9a30402c4c17d"
+    },
+    "weekly_raw_stop_exclusive": 405,
+    "daily_raw_stop_exclusive": 405,
+    "hourly_raw_stop_exclusive": 8109,
+    "hourly_original_evaluation_start": 11927,
+    "fx_common_calendar_start": "2014-02-05T00:00:00",
+    "fx_common_calendar_stop_exclusive": "2015-05-24T00:00:00",
+    "diagnostic": "Hansen1992_OLS_joint_score",
+    "bootstrap_repetitions": 999,
+    "alpha": 0.05,
+    "weekly_family_size": 13,
+    "max_breaks": 2,
+    "minimum_segment_transitions": 104,
+    "minimum_segment_fraction": 0.2,
+    "bic_parameter_count_formula": "3+4*k",
+    "bic_tie_tolerance": 1e-10,
+    "phi_bound": 0.999,
+    "garch_persistence_bound": 0.999,
+    "garch_maxiter": 2000,
+    "garch_ftol": 1e-09,
+    "student_df_min": 2.05,
+    "student_df_max": 500.0,
+    "fourth_moment_margin": 1e-08,
+    "score_correlation_condition_max": 1000000000000.0,
+    "master_entropy": 2026102408,
+    "rng_namespace": 9,
+    "diagnostic_stream_tag": 0,
+    "pilot_stream_tag": 1,
+    "formal_stream_tag": 2,
+    "burn_in": 20000,
+    "retained_observations": 3264,
+    "initial_level": 0.0,
+    "initial_variance": 1.0,
+    "validation_first": 3072,
+    "validation_last": 3143,
+    "evaluation_first": 3168,
+    "evaluation_last": 3239,
+    "horizon": 6,
+    "windows": [
+      52,
+      260
+    ],
+    "tau_numerator": 19,
+    "tau_denominator": 20,
+    "refit_step": 24,
+    "feature_rms_short": 24,
+    "feature_rms_long": 168,
+    "feature_valid_from": 168,
+    "nominal_gap_seconds": 3600,
+    "menus": {
+      "QR33": [
+        0.001,
+        0.01,
+        0.1
+      ],
+      "QR4": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "methods": [
+      "F",
+      "QR33",
+      "QR4"
+    ],
+    "pilot_repetitions": 2,
+    "repetition_ladder": [
+      32,
+      16,
+      16
+    ],
+    "conditional_method_ladder": [
+      [
+        "QR33",
+        "QR4"
+      ],
+      [
+        "QR33",
+        "QR4"
+      ],
+      [
+        "QR33"
+      ]
+    ],
+    "worker_count": 4,
+    "worker_internal_seconds": 540,
+    "worker_hard_seconds": 600,
+    "worker_rss_public_cap_bytes": 2147483648,
+    "global_study_seconds": 5400,
+    "pilot_max_seconds": 1200,
+    "projection_safety_factor": 1.35,
+    "projection_reserve_seconds": 180,
+    "N1_min_rejections": 7,
+    "N2_median_percent_strict_min": 5.0,
+    "N3_median_percent_inclusive_bounds": [
+      -3.0,
+      3.0
+    ],
+    "phase_rule": "floor(rep * (raw_n-1) / formal_R); pilot uses its own R=2 and distinct seed tag",
+    "summary_estimand": "median over repetitions within each source, then equal-weight median of all13 source medians",
+    "nonregular_null_policy": "No qualified primary p; retain unknown status and all descriptive partitions/calibrations",
+    "segmentation_policy": "Descriptive Gaussian AR1 separate-variance quasi-likelihood DP/BIC over k0,1,2 for every valid source; no per-break significance claims",
+    "failure_policy": "No retry; any required rep/report failure makes that source/arm/W/conditional-method cell FAILED, with no partial median; all inventory rows retained",
+    "projection_formula": "1.35*(R/2)*max(sum(applicable_pilot_unit_seconds)/4,max(applicable_pilot_unit_seconds))+180"
+  },
+  "code_sha256": {
+    "run_v9_nonstationarity.py": "48507b638a2a57a71ffb11e96e5a44bdf2279bfed596388e7d6ad9b8cb4e73fa",
+    "v9_nonstationarity.py": "ae73f11b508c47b9a213c524ffe9596a7ccc06c882c092427864674d84e72ddb",
+    "v9_switching.py": "70309cfe6a055af8503fcb81e07d8a0240d115211f185740a68a1eec3d196731",
+    "v9_exposure.py": "735918d05ca1dd80fe0ce5641721b1e984da52cd4396d29c0ff8b0b839cbd5d8",
+    "run_study.py": "8d8c305357e888f7665beed67dcc8f8a3619070a33a30d935c9582512db18f1f",
+    "v8_mechanism_mc.py": "71134570e1b4d63f98dcd2bb4eb7c1bc596a516b3ca8243b77ad913670a7d7c4",
+    "run_v8_wp3.py": "1b5489fc9875137fc1217f2bfe412046f1a353287d234a201f9ac29da3e7352f",
+    "v8_daily_fx.py": "cb9e86602ed01a6aefc37772df1245c7e060d5d719a803239deee08b79010b36",
+    "conditional_features.py": "4ee667a84ca39c74457b3cd1b07dcb76d6832d3e51e6155353e00c298262d8f5",
+    "conditional_quantile.py": "2cfe7f00872b6c97ac2558d5d3d79756db5061dfe7d5072b3a92d4d4ba338ff7",
+    "conditional_study.py": "aec1803fcc8423760608882902db15642582cbb18a9c656870ac7c50092bd740",
+    "study_core.py": "1619293cf09f18e56538bca6fa57660bc16795460ae4b10f14eb7d99794d81cf",
+    "conditional_sources.py": "a56cb374cff93b5d18889d2b69a993ad1a3b871ee20bb8349fad04b2fc839709",
+    "round2_panel_sources.py": "e0b553d370a23f9dcc38caeb649e048bb880c6fcc9b93536d2e9a30402c4c17d"
+  },
+  "sources": [
+    {
+      "source_id": "PDPOSGS-B",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSMBS-TOT",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSCS-TOT",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSFGS-TOT",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSTIPS-L2",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSTIPS-G11",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSTIPS-G2",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSTIPS-G6L11",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSGSC-L2",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSGSC-G2L3",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSGSC-G3L6",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSGSC-G6L7",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "PDPOSGSC-G7L11",
+      "kind": "weekly",
+      "stop": 405
+    },
+    {
+      "source_id": "fx_daily",
+      "kind": "daily",
+      "stop": 405
+    },
+    {
+      "source_id": "fx_hourly",
+      "kind": "hourly",
+      "stop": 8109
+    }
+  ]
+}

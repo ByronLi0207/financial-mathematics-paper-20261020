@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{p{.25\linewidth}p{.27\linewidth}rrr}
+\toprule
+Earlier six-step structure & Historical reference & Origins & $\Delta$ (\%) & HAC $p$ \\
+\midrule
+Treasury QR, $W=52$ analogue & Frozen $F_{52}$, $d=13$ & 52 & +144.3 & --- \\
+FX QR, $W=2880$ & Frozen $F_{2880}$, $d=24$ & 1,440 & -16.6 & $2.94\times10^{-5}$ \\
+FX QR, $W=2880$ & Rolling $F_{720}$, $d=1$ & 1,440 & +3.2 & 0.574 \\
+\bottomrule
+\end{tabular}
+\caption{Earlier-period QR comparisons. $\Delta$ is mean pinball relative to the stated reference; positive is worse. Weekly cells each have \RWritingWeeklyN{} evaluation origins; the common FX block has \RWritingFXN{} origins (about \RWritingFXWeeks{} calendar weeks). The original three-penalty menu selects $\lambda=\RTreasuryPrimarySelected{}$ for Treasury and $\lambda=\RFXPrimarySelected{}$ for FX; both FX rows use the same QR reports, not R2. Two-sided normal HAC $p$ values are later descriptive readbacks, with $L=\RWritingHACL{}$ under the Section~5 rule, without multiplicity adjustment or control for the whole selection/inspection process. Treasury is a $W=52$ structural analogue, not exact replication of the original $W=260$ primary.}\label{tab:r6-primary}
+\end{table}

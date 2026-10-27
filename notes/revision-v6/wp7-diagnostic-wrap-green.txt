@@ -1,0 +1,20 @@
+WARN `--no-project` was provided, but no project was found
+F.........                                [100%]
+=================================== FAILURES ===================================
+_ SupplementTests.test_all_na_and_identity_slots_remain_visible_with_bookkeeping_separate _
+
+self = <test_v6_supplement.SupplementTests testMethod=test_all_na_and_identity_slots_remain_visible_with_bookkeeping_separate>
+
+    def test_all_na_and_identity_slots_remain_visible_with_bookkeeping_separate(self):
+        for key, na_count in [("wp2-dm", 5), ("wp3-dm", 98), ("wp5-dm", 3)]:
+            table = self.api.generated(key)
+            raw_index = table["headers"].index("DM raw p")
+            absent = [row for row in table["rows"] if row[raw_index] == "NA"]
+            self.assertEqual(len(absent), na_count)
+>           self.assertTrue(all("book=1" in row[-1] for row in absent))
+E           AssertionError: False is not true
+
+test_v6_supplement.py:58: AssertionError
+=========================== short test summary info ============================
+FAILED test_v6_supplement.py::SupplementTests::test_all_na_and_identity_slots_remain_visible_with_bookkeeping_separate
+1 failed, 9 passed, 31 subtests passed in 2.35s

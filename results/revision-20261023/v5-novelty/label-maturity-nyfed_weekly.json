@@ -1,0 +1,262 @@
+{
+  "status": "COMPLETE",
+  "analysis_status": "post-result / exploratory",
+  "scope": "Three preselected original clock blocks per source; deliberately invalid training labels; no tuning, no full-sample or primary claim.",
+  "identity": {
+    "source": "nyfed_weekly",
+    "raw_source_sha256": "9f9f942ea8775a15f2e839cfe489f2e5113659ac37b375282d93bd6379be7cdb",
+    "raw_source_bytes": 23315,
+    "spec_path": "protocol/revision-20261022/study-spec.json",
+    "spec_sha256": "d1ecd6d3805e2546da2897bd76956dbdc661821da8f58bf86caeac642176e1b0",
+    "selection_path": "protocol/revision-20261022/selection-freeze.json",
+    "selection_sha256": "531bdc287da634a4a09b9cb3311882c2f005baf2b89f2b62523aca4d955c76d7",
+    "code_sha256": "715895a987d8d09d424c560fa03c8c0328ac708f14ad024c9046621bac991962",
+    "design_sha256": "47227940c17d4c292eca7b666a90fb03b58c35fcbb534b3ea4ffa98a64da07ad"
+  },
+  "horizon": 6,
+  "window": 260,
+  "refit_step": 13,
+  "native_unit": "USD millions",
+  "origin_count": 39,
+  "block_ranges": [
+    {
+      "first": 405,
+      "last": 417,
+      "count": 13
+    },
+    {
+      "first": 535,
+      "last": 547,
+      "count": 13
+    },
+    {
+      "first": 665,
+      "last": 677,
+      "count": 13
+    }
+  ],
+  "origin_indices_sha256": "befcb9f85130cc5bcabaf51db4348334ca1f8d69cea5b3c773e6c786355fdf1a",
+  "per_refit_immature_label_count": 6,
+  "parameters": {
+    "QR": 0.001,
+    "KNN": 80
+  },
+  "rows": [
+    {
+      "method": "QR",
+      "parameter": 0.001,
+      "clean": {
+        "origin_count": 39,
+        "mean_pinball": 3128.6755152083897,
+        "mean_capacity": 120743.56589085858,
+        "mean_extra_allowance": 55804.15563444832,
+        "strict_breach_count": 5,
+        "strict_breach_rate": 0.1282051282051282,
+        "mean_positive_overrun": 1157.8228616911022,
+        "conditional_mean_overrun": 9031.018321190597,
+        "conditional_overrun_denominator": 5,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 40574.87593203685
+      },
+      "oracle_leakage": {
+        "origin_count": 39,
+        "mean_pinball": 2083.734630929817,
+        "mean_capacity": 106946.80956323231,
+        "mean_extra_allowance": 42007.39930682205,
+        "strict_breach_count": 6,
+        "strict_breach_rate": 0.15384615384615385,
+        "mean_positive_overrun": 802.7197937938428,
+        "conditional_mean_overrun": 5217.678659659978,
+        "conditional_overrun_denominator": 6,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 26423.016536513333
+      },
+      "illegal_minus_clean_mean_pinball": -1044.9408842785729,
+      "illegal_minus_clean_percent": -33.398825771453424,
+      "interpretation": "negative is optimistic apparent loss; positive is deterioration; neither is a deployable forecast"
+    },
+    {
+      "method": "KNN",
+      "parameter": 80,
+      "clean": {
+        "origin_count": 39,
+        "mean_pinball": 1759.6833333333336,
+        "mean_capacity": 116520.17948717948,
+        "mean_extra_allowance": 51580.769230769234,
+        "strict_breach_count": 0,
+        "strict_breach_rate": 0.0,
+        "mean_positive_overrun": 0.0,
+        "conditional_mean_overrun": null,
+        "conditional_overrun_denominator": 0,
+        "conditional_overrun_undefined_reason": "NO_STRICT_BREACHES",
+        "mean_unused_allowance": 35193.666666666664
+      },
+      "oracle_leakage": {
+        "origin_count": 39,
+        "mean_pinball": 1713.746153846154,
+        "mean_capacity": 115601.43589743589,
+        "mean_extra_allowance": 50662.02564102564,
+        "strict_breach_count": 0,
+        "strict_breach_rate": 0.0,
+        "mean_positive_overrun": 0.0,
+        "conditional_mean_overrun": null,
+        "conditional_overrun_denominator": 0,
+        "conditional_overrun_undefined_reason": "NO_STRICT_BREACHES",
+        "mean_unused_allowance": 34274.92307692308
+      },
+      "illegal_minus_clean_mean_pinball": -45.93717948717972,
+      "illegal_minus_clean_percent": -2.6105367151578247,
+      "interpretation": "negative is optimistic apparent loss; positive is deterioration; neither is a deployable forecast"
+    },
+    {
+      "method": "F",
+      "parameter": null,
+      "clean": {
+        "origin_count": 39,
+        "mean_pinball": 1615.698717948718,
+        "mean_capacity": 112870.7435897436,
+        "mean_extra_allowance": 47931.333333333336,
+        "strict_breach_count": 2,
+        "strict_breach_rate": 0.05128205128205128,
+        "mean_positive_overrun": 38.48717948717949,
+        "conditional_mean_overrun": 750.5,
+        "conditional_overrun_denominator": 2,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 31582.71794871795
+      },
+      "oracle_leakage": {
+        "origin_count": 39,
+        "mean_pinball": 1640.8320512820515,
+        "mean_capacity": 113373.41025641025,
+        "mean_extra_allowance": 48434.0,
+        "strict_breach_count": 2,
+        "strict_breach_rate": 0.05128205128205128,
+        "mean_positive_overrun": 38.48717948717949,
+        "conditional_mean_overrun": 750.5,
+        "conditional_overrun_denominator": 2,
+        "conditional_overrun_undefined_reason": null,
+        "mean_unused_allowance": 32085.384615384617
+      },
+      "illegal_minus_clean_mean_pinball": 25.13333333333344,
+      "illegal_minus_clean_percent": 1.5555705438228347,
+      "interpretation": "negative is optimistic apparent loss; positive is deterioration; neither is a deployable forecast"
+    }
+  ],
+  "fit_diagnostics": [
+    {
+      "mode": "clean",
+      "status": "COMPLETE",
+      "refit_origin": 405,
+      "first_training_origin": 140,
+      "last_training_origin": 399,
+      "training_count": 260,
+      "latest_label_end": 405,
+      "immature_label_count": 0,
+      "qr_iterations": 1830,
+      "qr_gap": 1.0889635636222505e-06,
+      "qr_gap_tolerance": 1.0974767142223081e-06,
+      "qr_primal_residual": 0.00014867118110938233,
+      "qr_primal_tolerance": 0.0005080044392062642,
+      "qr_dual_residual": 3.9427632603168085e-07,
+      "qr_dual_tolerance": 5.852228899290457e-06
+    },
+    {
+      "mode": "oracle_leakage",
+      "status": "COMPLETE",
+      "refit_origin": 405,
+      "first_training_origin": 146,
+      "last_training_origin": 405,
+      "training_count": 260,
+      "latest_label_end": 411,
+      "immature_label_count": 6,
+      "qr_iterations": 2889,
+      "qr_gap": 1.4767941049945344e-07,
+      "qr_gap_tolerance": 1.10112510540502e-06,
+      "qr_primal_residual": 1.6361875098582909e-06,
+      "qr_primal_tolerance": 0.00048436672828883204,
+      "qr_dual_residual": 5.853158822448704e-06,
+      "qr_dual_tolerance": 5.8540684382145836e-06
+    },
+    {
+      "mode": "clean",
+      "status": "COMPLETE",
+      "refit_origin": 535,
+      "first_training_origin": 270,
+      "last_training_origin": 529,
+      "training_count": 260,
+      "latest_label_end": 535,
+      "immature_label_count": 0,
+      "qr_iterations": 1152,
+      "qr_gap": 1.085578570640605e-06,
+      "qr_gap_tolerance": 1.1106645923752372e-06,
+      "qr_primal_residual": 0.00014050409723018314,
+      "qr_primal_tolerance": 0.0004901116146820319,
+      "qr_dual_residual": 2.3881805530883446e-06,
+      "qr_dual_tolerance": 5.84883542178455e-06
+    },
+    {
+      "mode": "oracle_leakage",
+      "status": "COMPLETE",
+      "refit_origin": 535,
+      "first_training_origin": 276,
+      "last_training_origin": 535,
+      "training_count": 260,
+      "latest_label_end": 541,
+      "immature_label_count": 6,
+      "qr_iterations": 1296,
+      "qr_gap": 1.096162853402116e-06,
+      "qr_gap_tolerance": 1.1056877235575384e-06,
+      "qr_primal_residual": 0.00014728840679084797,
+      "qr_primal_tolerance": 0.0004913023850822622,
+      "qr_dual_residual": 4.222442149926283e-06,
+      "qr_dual_tolerance": 5.845995427134027e-06
+    },
+    {
+      "mode": "clean",
+      "status": "COMPLETE",
+      "refit_origin": 665,
+      "first_training_origin": 400,
+      "last_training_origin": 659,
+      "training_count": 260,
+      "latest_label_end": 665,
+      "immature_label_count": 0,
+      "qr_iterations": 1846,
+      "qr_gap": 9.880746404511141e-07,
+      "qr_gap_tolerance": 1.0782954603621544e-06,
+      "qr_primal_residual": 0.00010854044425248591,
+      "qr_primal_tolerance": 0.0004475873841278886,
+      "qr_dual_residual": 5.756714042258848e-06,
+      "qr_dual_tolerance": 5.8410896055315675e-06
+    },
+    {
+      "mode": "oracle_leakage",
+      "status": "COMPLETE",
+      "refit_origin": 665,
+      "first_training_origin": 406,
+      "last_training_origin": 665,
+      "training_count": 260,
+      "latest_label_end": 671,
+      "immature_label_count": 6,
+      "qr_iterations": 1424,
+      "qr_gap": 1.0582078712301288e-06,
+      "qr_gap_tolerance": 1.0774300789531224e-06,
+      "qr_primal_residual": 0.00015644384190288967,
+      "qr_primal_tolerance": 0.00044516692044730067,
+      "qr_dual_residual": 3.572567606823839e-06,
+      "qr_dual_tolerance": 5.840273373063805e-06
+    }
+  ],
+  "failures": [],
+  "resources": {
+    "started_utc": "2026-10-23T17:38:10Z",
+    "ended_utc": "2026-10-23T17:38:10Z",
+    "elapsed_seconds": 0.26557275000959635,
+    "peak_rss_bytes": 41500672,
+    "maximum_observed_os_threads": 1,
+    "thread_snapshot_count": 1,
+    "requested_numerical_threads": 1,
+    "internal_wall_limit_seconds": 540,
+    "hard_wall_limit_seconds": 600,
+    "rss_limit_bytes": 2147483648
+  }
+}
