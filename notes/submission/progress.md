@@ -25,3 +25,5 @@ H2 checkpoint: official NJDv5 cannot compile unchanged in cache-only mode (fleqn
 H2 complete: all 156 current document pages covered by direct views or exact PNG identity to a direct view; 10 standalone figures exported at 1000 dpi. Four single-document source ZIPs independently compile, 138 pages of text exact. ASMBI 25/51/1/1; QF 22/40/1/1; shared 1/2/3/8. H3 starts. Stage elapsed time is non-overlapping wall time; earlier parallel research preparation is included in the overall clock, not added again.
 
 H3 complete: reviewer-facing README/reproduction routes, placeholder CITATION, rights-limited availability text and 488-member bounded release ZIP. Eight raw/archive/mixed-detail candidates explicitly excluded; CRC/member/hash readback PASS. No license/DOI/account chosen. H4 starts.
+
+H4 complete: S40/Table S54 with 36 rows/216 display cells, 172 exact saved-source bindings; 58 substantive claim groups mapped, 0 P1 unresolved, six wording/interpretation qualifications assigned to H5. G1 four-sentence explanation and limitation added. Cached supplement 43 pages, new pages 41–43 directly viewed; 63 old aux numbers unchanged. H5 starts.

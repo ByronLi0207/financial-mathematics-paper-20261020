@@ -41,7 +41,7 @@ for key in ['P1_QR4','P1_QR33','P2_QR4','P2_QR33','P3_QR4']:
     p,model=key.split('_');out.append(f'{p} & {names[model]} & {count} & {threshold} & {statuses[status]}'+r'\\')
 out += [r'\bottomrule\end{tabular}\end{table}',
         'Both low-history disadvantage screens pass. The longer-history advantage screen '
-        'and strict sequential-improvement screen fail. The full regression has no registered '
+        'and strict sequential-improvement screen fail. The full regression has no prewritten '
         'high-region cell. The retained overall judgment is partial support.',
         r'\paragraph{Complete counterexample inventory.} The following rows retain every saved counterexample. '
         'A market can appear under several screens. Loss changes are relative to the matched '

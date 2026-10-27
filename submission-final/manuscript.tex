@@ -243,7 +243,7 @@ The fixed-period, short-horizon learning curve shows that more history helps onl
 \FloatBarrier
 
 \paragraph{A fixed CFTC history-length extension.}\label{par:wp2-history}
-A precommitted extension examines whether the short-history pattern transports to the 17 CFTC aggregate dealer-position markets at a six-week horizon. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both registered low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\%) fall below the fixed 60\% rule; strict improvement over all three windows holds in only 6 of 17 markets. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.
+An archived extension, committed locally before calculation and uploaded publicly afterward, examines the short-history pattern across 17 CFTC aggregate dealer-position markets. Its fixed horizon is six weeks. The 52- and 260-week results were already known and are reused unchanged; only the 520-week forecasts were new. Both prewritten low-history screens pass: QR4 loses to its matched rolling reference in 15 of 17 cells and QR33 in 29 of 34. The high-history QR4 screen fails, because 10 of 17 wins (58.8\%) fall below the fixed 60\% rule; strict improvement over all three windows holds in only 6 of 17 markets. The primary verdict is therefore partial support. These dependent aggregate-market counts describe transport of a fixed prediction; they do not establish a generally sufficient financial history, a causal estimation-cost mechanism, or dealer-level replication. Supplement Section S39 gives all decision screens and counterexamples.
 
 \subsection{RQ2: daily, weekly and independently reported positions}
 
@@ -305,7 +305,7 @@ Longer validation selects the intercept-only limit more often in both reporting 
 
 \FloatBarrier
 
-Tail-level sensitivity remains incomplete (Table~\ref{tab:v12-tau}). At 99\%, one CFTC failure leaves the 29-win criterion unresolved despite 28 historical wins in 34 comparisons. Both FX periods fail, leaving joint improvement undetermined. After a solver repair designed after the failure, only 6 of 10 compatibility fits met the forecast-preservation criterion. The rejected repair leaves all three failed cells and original judgments unchanged.
+Tail-level sensitivity remains incomplete (Table~\ref{tab:v12-tau}). At 99\%, one CFTC failure leaves the 29-win criterion unresolved despite 28 historical wins in 34 comparisons. Required numerical fits fail in both FX periods, leaving joint improvement undetermined. After a solver repair designed after the failure, only 6 of 10 compatibility fits met the forecast-preservation criterion. The rejected repair leaves all three failed cells and original judgments unchanged.
 
 \begin{table}[htbp]\centering\small
 \caption{Full-regression relative excess loss (\%) at alternative quantile levels. Positive values favor matched historical headroom; NA retains any failed required comparison.}\label{tab:v12-tau}
@@ -350,7 +350,7 @@ These are illustrative costs, not observed operating costs; Supplement Section S
 
 \section{Implications for model validation}\label{sec:implications}
 
-\subsection{A benchmark-protected validation protocol}\label{sec:v13-rp}
+\subsection{A benchmark-default validation protocol}\label{sec:v13-rp}
 The protocol combines the six-point menu in Table~\ref{tab:methods}, longer validation and a corrected-rank historical default. It selects the lowest mean validation loss over 156 weekly observations or 5,760 FX records. The selected candidate replaces historical headroom only when its paired validation improvement strictly exceeds one HAC standard error \citep{nw1987}. Across 60 weekly comparisons, the protocol retains historical headroom in 32 and has 0.00\% median excess, compared with 14.63\% for ordinary regression. This zero median reflects the majority of decisions retaining historical headroom. However, 8 cases lose by over ten percent, exceeding the prewritten five-percent ceiling for such cases; the worst excess is 80.98\% (Figure~\ref{fig:v13-rp}). Both FX periods retain the ordinary regression gains, meeting the criterion for retaining gains. The rule was designed after earlier findings and uses inspected evaluation periods, so this check is retrospective.
 
 \begin{figure}[htbp]\centering
@@ -379,8 +379,9 @@ The protocol combines the six-point menu in Table~\ref{tab:methods}, longer vali
 \item The comparisons identify neither causal effects nor individual-feature effects, and fitted limits receive no coverage guarantee under this dependence.
 \item Costs illustrate fixed preferences; trading returns, funding gains and institutional intervention costs are not measured.
 \item The finite-penalty hindsight bound is diagnostic only; validation-length and quantile-sensitivity checks are post-result analyses with numerical failures retained.
+\item Only 6 of 10 high-quantile compatibility fits pass, so the rejected repair leaves both FX comparisons unavailable.
 \end{itemize}
-Supplement Section S36 retains the original technical qualifications on simulations, aggregation and forecast comparison.
+Supplement Section S36 retains the original technical qualifications on simulations, aggregation and forecast comparison. A consolidated register in Supplement Section S40 retains supported, unsupported and untestable prewritten screens.
 
 \FloatBarrier
 
