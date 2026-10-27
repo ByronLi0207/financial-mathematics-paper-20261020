@@ -1,0 +1,98 @@
+{
+  "schema": "submission-code-release-readback-v1",
+  "status": "PASS_CODE_PROTOCOL_AGGREGATE_ONLY",
+  "generated_utc": "2026-10-27T04:28:38.963687+00:00",
+  "command": [
+    "python3",
+    "-B",
+    "notes/submission/build_code_release.py",
+    "--build"
+  ],
+  "builder_sha256": "acb5c1ff0b64c9efc8104f75d4de67bc0ac85b5a591a1d9a3dac896449ecbd5d",
+  "archive_path": "submission-package/RELEASE/code-and-aggregate-results.zip",
+  "archive_sha256": "4490289deb47370dd30f0b3eeec1354afdffa0b6a9e72268413bdc766d4e0295",
+  "archive_bytes": 2126404,
+  "manifest_path": "submission-package/RELEASE/release-manifest.json",
+  "manifest_sha256": "dc4fc4c730b4bf9b3bd5992e38d8d818001460fff77a01e31ac68e21fbc4dd74",
+  "archive_members": 488,
+  "payload_files": 487,
+  "all_member_bytes_crc_and_paths_verified": true,
+  "all_structured_members_recursively_rechecked_after_zip_readback": true,
+  "csv_embedded_json_checked": true,
+  "per_point_array_or_trace_findings_in_selected_payload": [],
+  "excluded_candidate_count": 8,
+  "excluded_candidates": [
+    {
+      "path": "protocol/revision-v6/replay-metadata.zip",
+      "reason": "Binary/archive/template/raw-array format is excluded",
+      "source_sha256": "85cbfc25a45d9858641c4b47f78bd7d607f665ecfec8412d92dbceff925e20c9"
+    },
+    {
+      "path": "results/revision-v8/wp4/summary.csv",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "d5c73b9846e22aa117fc4bb0633b4846724616383c0f82e6f7cbd76cb8c92bdd"
+    },
+    {
+      "path": "results/revision-v8/wp4/summary.json",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "bac2c595a4d06419e4e38606360cf59989ccecb674c32797be61b58171884b12"
+    },
+    {
+      "path": "results/revision-v8/wp5/summary.csv",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "ce9fd997fd4eb96c08fb97a505475fdfd812d0777100d55413a8650bfeef1861"
+    },
+    {
+      "path": "results/revision-v8/wp5/summary.json",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "7b349dcd341f42b1b5f23b65f0f47673d56a90fcb50380ae4f8d5d012c544629"
+    },
+    {
+      "path": "results/supervisor-20261023/e5/inputs/panel/summary.csv",
+      "reason": "Raw/private/input/unit/trace/scratch subtree is excluded",
+      "source_sha256": "34134445a00354dcce3dc43de4c2adada7f2ea5403212558f90ef3480ee810f9"
+    },
+    {
+      "path": "results/v13/tau-repair/consistency.json",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "b74ac0487f2f3b1b60f9bbc3b38ba6c5749035f9cb3580e2400a1a631574c2c0"
+    },
+    {
+      "path": "results/v9/nonstationarity/audit/summary.json",
+      "reason": "Inspected mixed aggregate and unit/fit detail file; whole original omitted, no scientific fields changed.",
+      "source_sha256": "1d5b5053965cdcbc5fcc02237c942b674ce9032ed523cb8d0b64cfa0cea50398"
+    }
+  ],
+  "source_files_unchanged_during_build": true,
+  "wp2_original_bytes_verified": true,
+  "backup_files_created": [
+    "submission-package/RELEASE/code-and-aggregate-results.zip.bak.20261027T042838735757Z",
+    "submission-package/RELEASE/release-manifest.json.bak.20261027T042838735757Z"
+  ],
+  "limits": {
+    "purpose": "Existing scientific source, written protocols, aggregate inspection and saved judgments only.",
+    "standalone_full_financial_reproduction": false,
+    "standalone_full_historical_test_suite": false,
+    "additional_requirements": [
+      "Exact restricted FX observations and the original panel CSV, obtained separately under their source terms.",
+      "Other original financial inputs and preserved historical Git objects required by the relevant replay/provenance gates.",
+      "The omitted unit/fit traces and other historical fixtures required by some full-repository tests."
+    ],
+    "project_software_license": "NONE_SELECTED: no project LICENSE; no reuse permission or license is invented by this package.",
+    "new_zenodo_doi": "NONE_CREATED_OR_ASSIGNED",
+    "third_party_rights": "Source-data and publisher-template rights remain separate. Neither raw data nor publisher templates are included.",
+    "no_financial_recalculation": true,
+    "no_network_or_download": true,
+    "pointwise_array_scope": "Recursively inspect structured evidence, including JSON serialized inside CSV fields. Python source/test literals and written protocol grids are code/design metadata, not released observations or forecast vectors.",
+    "wp2": "Audited original summary, protocol and acceptance/verification metadata only. No unit files or 153 forecast traces are included. Trace-path/hash strings in the unchanged summary identify omitted provenance, not embedded trace payloads."
+  },
+  "operations_not_performed": [
+    "financial calculation",
+    "scientific field modification",
+    "network/download",
+    "test execution",
+    "license selection",
+    "DOI reservation/deposit",
+    "commit or publication"
+  ]
+}
