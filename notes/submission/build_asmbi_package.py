@@ -75,10 +75,38 @@ def expand(path: Path, seen: tuple[Path, ...] = ()) -> str:
     return re.sub(r'\\input\{([^}]+)\}', replace, text)
 
 
-def numeric_citations(text: str) -> str:
-    # AMA makes parenthetical and unparenthesized citation commands superscript.
-    # Textual citations stay textual through the official NJDnatbib interface.
-    return re.sub(r'\\cite(?:p|alp)\b', r'\\cite', text)
+def numeric_citations(text: str, authors: dict[str, str],
+                      audit: list[dict] | None = None) -> str:
+    """Format numeric citations without asking AMA BBLs for author labels.
+
+    The official AMA bibliography supplies numeric items only. Emit the
+    verified author text explicitly for the three authorized narrative keys,
+    then use the same superscript numeric citation as the rest of the paper.
+    """
+    numeric = re.sub(r'\\cite(?:p|alp)\b', r'\\cite', text)
+    edits = []
+
+    def textual(match: re.Match[str]) -> str:
+        key = match.group(1)
+        if key not in authors:
+            raise ValueError(f'No verified AMA narrative-author mapping: {key}')
+        before = match.group(0)
+        after = authors[key] + r'\cite{' + key + '}'
+        edits.append(dict(key=key, before=before, after=after))
+        return after
+
+    formatted = re.sub(r'\\citet\{([^}]+)\}', textual, numeric)
+    if re.search(r'\\citet\b', formatted):
+        raise ValueError('Unsupported textual citation syntax in AMA package')
+    restored = formatted
+    for edit in reversed(edits):
+        restored = restored.replace(edit['after'], edit['before'], 1)
+    if restored != numeric:
+        raise AssertionError('Narrative citation transform changed non-citation text')
+    if audit is not None:
+        audit.extend(dict(**edit, non_citation_text_preserved=True,
+                          reversible_to_canonical_citation=True) for edit in edits)
+    return formatted
 
 
 def bib_fields(entry: str) -> dict[str, dict]:
@@ -116,6 +144,43 @@ def set_bib_field(entry: str, field: str, value: str) -> str:
     if not ending.endswith(','):
         ending += ','
     return ending + '\n  ' + field + ' = {' + value + '}\n}'
+
+
+def verified_narrative_authors(bib: bytes, metadata: dict) -> tuple[dict[str, str], list[dict]]:
+    """Derive only the three authorized author labels from verified records."""
+    keys = ('LeeKim2024ASMBI', 'Pagnottoni2026ASMBI', 'MuddanaEtAl2025ASMBI')
+    records = {record['id']: record for record in metadata['records']}
+    bib_text = bib.decode('utf-8')
+    labels = {}
+    audit = []
+    normalize = lambda value: re.sub(r'\s+', ' ', re.sub(r'[{}]', '', value)).strip()
+    for key in keys:
+        record = records[key]
+        match = re.search(r'@[A-Za-z]+\s*\{\s*' + re.escape(key) + r'\s*,', bib_text)
+        if match is None:
+            raise ValueError(f'Canonical BibTeX lacks narrative key: {key}')
+        # bib_fields stops at the first entry-closing brace; no subsequent
+        # entry is read or changed by this factual-field check.
+        fields = bib_fields(bib_text[match.start():])
+        author = fields['author']['value']
+        if normalize(author) != normalize(record['bibtex_fields']['author']):
+            raise ValueError(f'Canonical/verified author mismatch: {key}')
+        if fields['doi']['value'].strip() != record['doi']:
+            raise ValueError(f'Canonical/verified DOI mismatch: {key}')
+        families = [person['family'] for person in record['authors']]
+        if not families or any(not name.strip() for name in families):
+            raise ValueError(f'Incomplete verified family names: {key}')
+        label = (families[0] if len(families) == 1 else
+                 ' and '.join(families) if len(families) == 2 else
+                 families[0] + ' et al.')
+        labels[key] = label
+        audit.append(dict(key=key, author_display=label,
+                          canonical_bib_author=author, verified_authors=record['authors'],
+                          doi=record['doi'], official_url=record['official_url'],
+                          metadata_source='notes/submission/asmbi-recent-literature.json',
+                          metadata_json_pointer='/records/' + str(metadata['records'].index(record)),
+                          author_facts_identical=True))
+    return labels, audit
 
 
 def ama_bibliography(data: bytes, canonical_source: str = '') -> tuple[str, list[dict]]:
@@ -471,7 +536,12 @@ def main() -> int:
         raise ValueError('Canonical has fewer than five keywords; author input needed')
     scientific_start = source.index('\\section{Introduction}')
     scientific_end = source.index('\\begin{thebibliography}')
-    body = numeric_citations(source[scientific_start:scientific_end])
+    verified_literature = json.loads(read_input(ROOT / 'notes/submission/asmbi-recent-literature.json'))
+    narrative_authors, narrative_author_audit = verified_narrative_authors(bib, verified_literature)
+    main_citation_edits: list[dict] = []
+    supplement_citation_edits: list[dict] = []
+    body = numeric_citations(source[scientific_start:scientific_end],
+                             narrative_authors, main_citation_edits)
     retained, tables = split_tables(body)
     keys = re.findall(r'@[A-Za-z]+\s*\{\s*([^,\s]+)', bib.decode('utf-8'))
     cited = [k.strip() for command in re.findall(r'\\cite\w*(?:\[[^]]*\])*\{([^}]+)\}', body) for k in command.split(',')]
@@ -510,7 +580,8 @@ def main() -> int:
     custom = supp_preamble[custom_start:custom_end]
     supp_title = 'Online Supplement to ' + title
     supp_tex = standard_preamble() + custom + '\n\\begin{document}\n'
-    supp_tex += metadata(supp_title) + '\\maketitle\n' + numeric_citations(supp_body)
+    supp_tex += metadata(supp_title) + '\\maketitle\n' + numeric_citations(
+        supp_body, narrative_authors, supplement_citation_edits)
     supp_tex += '\n\\FloatBarrier\n% Self-contained bibliography for supporting methods.\n\\nocite{*}\n\\bibliography{references}\n\\end{document}\n'
     write(audit / 'supplement-njd.tex', supp_tex)
     write(audit / 'supplement-njd-original.tex', supp_tex.replace('\\input{asmbi-template-compat.tex}\n', '', 1).replace('\\let\\LoadClass\\ASMBIoriginalLoadClass\n', '', 1))
@@ -525,15 +596,15 @@ def main() -> int:
     title_tex += word_count_scope + '\\par\\medskip\n'
     title_tex += '\\noindent\\textbf{Keywords:} ' + keywords + '.\\par\\medskip\n'
     title_tex += '\\noindent\\textbf{Data and code:} Source rights, excluded raw inputs and reproduction information are stated in the manuscript and the \\href{' + repository + '}{versioned repository}.\\par\\medskip\n'
-    title_tex += '\\noindent\\textbf{Data permissions and licence compliance:} [TO BE VERIFIED BY AUTHOR].\n\\end{document}\n'
+    title_tex += '\\noindent\\textbf{Data permissions and license compliance:} [TO BE VERIFIED BY AUTHOR].\n\\end{document}\n'
     write(out / 'title-page.tex', title_tex)
-    cover = free_format_preamble() + '\n\\begin{document}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0pt}\n\\setlength{\\parskip}{10pt}\n'
-    cover += '\\textbf{Submission to Applied Stochastic Models in Business and Industry}\\par\n\\textbf{' + title + '}\n\nDear Editors,\n\n'
-    cover += 'Historical rules are hard to beat: matched FX gains depend on the reference, longer validation reduces weekly median losses, and illustrative cost rankings depend on reserve and breach charges.\n\n'
-    cover += r'''The manuscript addresses your journal's scope of ``stochastic modelling, data analysis and their applications in business, finance'' through matched empirical comparisons of historical rules and conditional quantile forecasts for sampled peak dealer positions. It applies existing forecasting and evaluation methods and retains the retrospective design and adverse-result qualifications.
-
-'''
-    cover += 'A version of the manuscript, code and public aggregate results is openly available in the \\href{' + repository + '}{GitHub repository}. This public availability is disclosed for editorial consideration. The manuscript specifies source-rights conditions and excluded raw inputs; author information, declarations and data-permission details require author verification before submission.\n\nSincerely,\\par\n[TO BE COMPLETED BY AUTHOR]\n\\end{document}\n'
+    canonical_cover = read_input(canonical / 'cover-letter.tex').decode('utf-8')
+    cover_body = canonical_cover.split('\\begin{document}', 1)[1].rsplit('\\end{document}', 1)[0]
+    if '\\textbf{' + title + '}' not in cover_body:
+        raise ValueError('Canonical cover title does not match manuscript title')
+    # Keep the current H6 policy/public-version disclosure verbatim; only the
+    # Free Format font/layout preamble belongs to the ASMBI derivative.
+    cover = free_format_preamble() + '\n\\begin{document}' + cover_body + '\\end{document}\n'
     write(out / 'cover-letter.tex', cover)
     if re.search(r'\b(?:AI|LLM|ChatGPT)\b', '\n'.join((main_tex, supp_tex, title_tex, cover))):
         raise ValueError('Unexpected prohibited disclosure/placeholder in package text')
@@ -591,7 +662,11 @@ def main() -> int:
                   official_class_sha256=INPUTS[str((template / 'WileyNJDv5.cls').relative_to(ROOT))],
                   inputs_sha256=INPUTS, canonical_changed_during_build=changed_inputs,
                   transformations=dict(scientific_prose_reassembled_exactly=True, title_preserved=True,
-                      abstract_preserved=True, citation_format='AMA sequential superscript via official class/BST',
+                      abstract_preserved=True, citation_format='AMA sequential superscript via official BST; verified narrative authors emitted explicitly',
+                      narrative_author_metadata=narrative_author_audit,
+                      narrative_citation_edits=dict(main=main_citation_edits, supplement=supplement_citation_edits),
+                      narrative_citation_non_citation_text_preserved=True,
+                      cover_body_preserved_from_canonical=True,
                       keyword_count=5, keywords=keyword_list[:5], omitted_keyword_metadata=keyword_list[5:],
                       title_page_narrative_word_count=narrative_words,
                       title_page_word_count_scope=word_count_scope,

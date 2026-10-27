@@ -1,10 +1,18 @@
 {
   "schema": "submission-code-aggregate-release-v1",
-  "generated_utc": "2026-10-27T04:28:38.735757+00:00",
-  "repository_head": "e5b002302bf131d07e8c558546a59132a0af2b2b",
+  "generated_utc": "2026-10-27T05:21:17.342543+00:00",
+  "repository_head": "c07ed234ab2661b33496b3ff0abc90385684cb42",
+  "pipeline_stage": "H8_FINAL_RELEASE_REFRESH",
+  "final_source_snapshot_commit": "c07ed234ab2661b33496b3ff0abc90385684cb42",
+  "final_source_snapshot_validation": {
+    "commit": "c07ed234ab2661b33496b3ff0abc90385684cb42",
+    "source_files_checked": 492,
+    "all_selected_source_blobs_exact": true,
+    "generated_release_readme_and_manifest_are_packaging_metadata": true
+  },
   "archive": "code-and-aggregate-results.zip",
-  "payload_file_count": 487,
-  "archive_member_count_including_this_manifest": 488,
+  "payload_file_count": 493,
+  "archive_member_count_including_this_manifest": 494,
   "manifest_self_hash_excluded": true,
   "categories": {
     "aggregate": 36,
@@ -15,7 +23,9 @@
     "reproduction_notes": 22,
     "requirements": 2,
     "scientific_code_and_tests": 313,
-    "wp2": 8
+    "wp2": 8,
+    "wp2_aggregate": 1,
+    "wp2_scientific_code": 5
   },
   "limits": {
     "purpose": "Existing scientific source, written protocols, aggregate inspection and saved judgments only.",
@@ -32,7 +42,7 @@
     "no_financial_recalculation": true,
     "no_network_or_download": true,
     "pointwise_array_scope": "Recursively inspect structured evidence, including JSON serialized inside CSV fields. Python source/test literals and written protocol grids are code/design metadata, not released observations or forecast vectors.",
-    "wp2": "Audited original summary, protocol and acceptance/verification metadata only. No unit files or 153 forecast traces are included. Trace-path/hash strings in the unchanged summary identify omitted provenance, not embedded trace payloads."
+    "wp2": "Audited original five Python implementation/test files, finite-grid WP1 aggregate, protocol, summary and acceptance/verification metadata. No unit files or 153 forecast traces are included. Trace-path/hash strings identify omitted provenance, not embedded trace payloads. WP1 remains post-hoc descriptive evidence with its original limitations."
   },
   "source_files_unchanged": true,
   "files": {
@@ -47,8 +57,8 @@
       "role": "reproduction_and_register"
     },
     "RELEASE-README.md": {
-      "bytes": 1753,
-      "sha256": "a4f603ce0139848aa0acc317e3d6cf669c16e3efb8e978fecb04768f01f62acd",
+      "bytes": 2145,
+      "sha256": "f51ceef28347bb67fa3795eb39e457747c6007d84b09c428a351d2d1a975dfca",
       "role": "generated_release_scope"
     },
     "REPRODUCING.md": {
@@ -176,6 +186,16 @@
       "sha256": "db5d73facae28432bb0617d173e5b4c933d95e52b43f9363543e21194919412e",
       "role": "scientific_code_and_tests"
     },
+    "evidence/submission/final-jof/final_merge_wp2.py": {
+      "bytes": 5278,
+      "sha256": "d0ffae9b538239e00eb7083f37f9ff28e68c381f7713c52dfc86603f3dabad03",
+      "role": "wp2_scientific_code"
+    },
+    "evidence/submission/final-jof/notes/revision-v9/wp1-breakeven.json": {
+      "bytes": 8014,
+      "sha256": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
+      "role": "wp2_aggregate"
+    },
     "evidence/submission/final-jof/protocol/final-merge/wp2-cftc-mechanism.md": {
       "bytes": 10845,
       "sha256": "9036b0f599dd8dbef6ae9232a5f0389c5f61cde535e33f37188e1a65de59d9cb",
@@ -215,6 +235,26 @@
       "bytes": 869,
       "sha256": "05faddaf1bae64ef4e8b7942f4fb8707cc4d378cd906ae50e799594129f5fd67",
       "role": "wp2"
+    },
+    "evidence/submission/final-jof/run_final_merge_wp2.py": {
+      "bytes": 17246,
+      "sha256": "f6309a2a46c069f52743a3df7a7fd1ca647c449ac5f9e2fbbc89cb2b5aa83371",
+      "role": "wp2_scientific_code"
+    },
+    "evidence/submission/final-jof/test_final_merge_wp2.py": {
+      "bytes": 4002,
+      "sha256": "e99012615bb2f5ef14958355dc51265de1d040cdb3c7da0f71e3088a0da23621",
+      "role": "wp2_scientific_code"
+    },
+    "evidence/submission/final-jof/v9_learning_curve.py": {
+      "bytes": 4632,
+      "sha256": "f219d43e00859239eb21d05c5ea458fe5817984faada315a87265f811b9e4ec8",
+      "role": "wp2_scientific_code"
+    },
+    "evidence/submission/final-jof/verify_final_merge_wp2.py": {
+      "bytes": 11084,
+      "sha256": "4ec5455e93dc7715d6a5a93c8184ebd482fbba04ef96c07fae2b13a50e952b00",
+      "role": "wp2_scientific_code"
     },
     "finalize_v9_archive.py": {
       "bytes": 3940,
@@ -2473,6 +2513,7 @@
     }
   },
   "selected_aggregate_files": [
+    "evidence/submission/final-jof/notes/revision-v9/wp1-breakeven.json",
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/summary.json",
     "results/revision-20261021/summary.csv",
     "results/revision-20261022/rank-ablation/summary.csv",
@@ -2512,6 +2553,8 @@
     "results/v9/nonstationarity/summary.json"
   ],
   "selected_wp2_files": [
+    "evidence/submission/final-jof/final_merge_wp2.py",
+    "evidence/submission/final-jof/notes/revision-v9/wp1-breakeven.json",
     "evidence/submission/final-jof/protocol/final-merge/wp2-cftc-mechanism.md",
     "evidence/submission/final-jof/protocol/final-merge/wp2-input-seal.json",
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/acceptance.json",
@@ -2519,7 +2562,11 @@
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/independent-verification.json",
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/start.json",
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/summary.json",
-    "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/verification-roundoff-detail.json"
+    "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/verification-roundoff-detail.json",
+    "evidence/submission/final-jof/run_final_merge_wp2.py",
+    "evidence/submission/final-jof/test_final_merge_wp2.py",
+    "evidence/submission/final-jof/v9_learning_curve.py",
+    "evidence/submission/final-jof/verify_final_merge_wp2.py"
   ],
   "selected_judgment_files": [
     "results/supervisor-20261023/e5/prediction-assessment.json",
@@ -2761,6 +2808,49 @@
       "recursive_containers_checked": 0,
       "csv_rows": null,
       "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/final_merge_wp2.py": {
+      "status": "PASS",
+      "recursive_containers_checked": 0,
+      "csv_rows": null,
+      "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/notes/revision-v9/wp1-breakeven.json": {
+      "status": "PASS",
+      "recursive_containers_checked": 44,
+      "csv_rows": null,
+      "numeric_arrays": [
+        {
+          "pointer": "/methods/QR33/point/crossings",
+          "length": 1
+        },
+        {
+          "pointer": "/methods/QR33/point/x",
+          "length": 8
+        },
+        {
+          "pointer": "/methods/QR33/point/y",
+          "length": 8
+        },
+        {
+          "pointer": "/methods/QR4/point/crossings",
+          "length": 2
+        },
+        {
+          "pointer": "/methods/QR4/point/x",
+          "length": 8
+        },
+        {
+          "pointer": "/methods/QR4/point/y",
+          "length": 8
+        },
+        {
+          "pointer": "/interpretation_addendum/QR4_original_downward_crossings",
+          "length": 2
+        }
+      ],
       "problems": []
     },
     "evidence/submission/final-jof/protocol/final-merge/wp2-cftc-mechanism.md": {
@@ -3045,6 +3135,34 @@
     "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/verification-roundoff-detail.json": {
       "status": "PASS",
       "recursive_containers_checked": 3,
+      "csv_rows": null,
+      "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/run_final_merge_wp2.py": {
+      "status": "PASS",
+      "recursive_containers_checked": 0,
+      "csv_rows": null,
+      "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/test_final_merge_wp2.py": {
+      "status": "PASS",
+      "recursive_containers_checked": 0,
+      "csv_rows": null,
+      "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/v9_learning_curve.py": {
+      "status": "PASS",
+      "recursive_containers_checked": 0,
+      "csv_rows": null,
+      "numeric_arrays": [],
+      "problems": []
+    },
+    "evidence/submission/final-jof/verify_final_merge_wp2.py": {
+      "status": "PASS",
+      "recursive_containers_checked": 0,
       "csv_rows": null,
       "numeric_arrays": [],
       "problems": []
@@ -6561,6 +6679,12 @@
     "audit_sha256": "5ca8c0d0b9b3e5f443d0e27fbf1420e7e08d75570eadeeaf8d77943ca942c3bb",
     "source_commit": "6192ec370d131c60d05e9fb103150e0e9db6aa23",
     "original_bytes_verified": {
+      "evidence/submission/final-jof/final_merge_wp2.py": "d0ffae9b538239e00eb7083f37f9ff28e68c381f7713c52dfc86603f3dabad03",
+      "evidence/submission/final-jof/verify_final_merge_wp2.py": "4ec5455e93dc7715d6a5a93c8184ebd482fbba04ef96c07fae2b13a50e952b00",
+      "evidence/submission/final-jof/test_final_merge_wp2.py": "e99012615bb2f5ef14958355dc51265de1d040cdb3c7da0f71e3088a0da23621",
+      "evidence/submission/final-jof/v9_learning_curve.py": "f219d43e00859239eb21d05c5ea458fe5817984faada315a87265f811b9e4ec8",
+      "evidence/submission/final-jof/run_final_merge_wp2.py": "f6309a2a46c069f52743a3df7a7fd1ca647c449ac5f9e2fbbc89cb2b5aa83371",
+      "evidence/submission/final-jof/notes/revision-v9/wp1-breakeven.json": "84d983fffcc79b19d9a1618cf44a7d3c11a2b40f8d51eb23cb0068c13b069184",
       "evidence/submission/final-jof/protocol/final-merge/wp2-cftc-mechanism.md": "9036b0f599dd8dbef6ae9232a5f0389c5f61cde535e33f37188e1a65de59d9cb",
       "evidence/submission/final-jof/protocol/final-merge/wp2-input-seal.json": "94b03ca0c36767d08c4b12ddac79a8556c1cabb56d26cdfa70141959a72cfbe7",
       "evidence/submission/final-jof/results/final-merge/wp2-cftc-mechanism/summary.json": "fee6b8656345b97f72e121bc94303a35b9fd372ea5a5d78fc083e9acae16c166",

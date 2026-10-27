@@ -34,6 +34,8 @@ for journal,main,master in [('ASMBI','manuscript','ASMBI-source-and-pdf.zip'),('
 for stem,col in [('declarations','Declarations / statements'),('suggested-reviewers','Suggested reviewers, if requested'),('author-qa','Author preparation only'),('editable-tables','Tables / editable source if requested')]:
     for suffix in ['pdf','tex']:
         add(f'SHARED/{stem}.{suffix}',col,'Author-facing preparation; review and complete all personal fields')
+for name in ['code-and-aggregate-results.zip','README.md','release-manifest.json','release-check-receipt.json']:
+    add('RELEASE/'+name,'Code archive / author deposit preparation','Bounded code, protocol and aggregate release; no raw/private point vectors. Author license and DOI decisions remain open; not a manuscript upload')
 
 lines=['# Submission upload manifest','',
 'Primary target: **Applied Stochastic Models in Business and Industry (ASMBI)**. Alternative format: **Quantitative Finance (QF)**. These are alternative packages of the same study, not simultaneous submissions. Actual portal labels may differ; the official journal submission link governs.', '',
@@ -48,6 +50,7 @@ for number,stem in [('1','v9-endpoint-peak-example'),('2','v11-fx-history'),('3'
     lines.append(f'| {number} | `{stem}.tif` (upload) / `{stem}.pdf` (vector copy) |')
 lines += ['', 'Use the TIFF and vector PDF as alternatives if the portal asks for one format, rather than registering the same figure twice. Main tables 1–8 are editable TeX in both source ZIPs and in SHARED/editable-tables.tex; ASMBI places each after the references on a separate page. Supplement tables and equations remain editable in its source ZIP.', '',
 'The hashes, byte counts and page counts of all listed active files are in [MANIFEST.json](MANIFEST.json). Historical attempts, backups, `.scratch/` and unused template examples are not upload files. Final visual coverage and compilation are recorded separately under notes/submission; file existence alone is not visual approval.', '']
+lines += ['For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots.', '']
 save(OUT/'MANIFEST.json',json.dumps(dict(created_utc=datetime.now(timezone.utc).isoformat(),files=items),ensure_ascii=False,indent=2)+'\n')
 save(OUT/'MANIFEST.md','\n'.join(lines))
 print(json.dumps(dict(files=len(items),pdf_pages=sum(x['pages'] or 0 for x in items)),indent=2))

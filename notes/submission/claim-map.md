@@ -1,6 +1,6 @@
 # H5 刷新后的主文主张—证据映射
 
-UTC：2026-10-27T05:00:10.078723+00:00；当前主文 SHA-256：`6f9f196f4bc9637674e253b5194bc0717a0c8b4436ca61047a96dc8736519cc8`。
+UTC：2026-10-27T05:00:10.078723+00:00；当前主文 SHA-256：`b46b1ba919fe8d3f89306128aef0f610ad269ff3576d74412465834681b49fa3`。
 
 原H4的58组主张全部保留并按精确before→after记录刷新；新增三篇ASMBI文献语境，共61组。H4旧版保存在提交`b4c7eb1`。本轮不重验旧数值，不运行金融计算。
 
@@ -1531,3 +1531,8 @@ UTC：2026-10-27T05:00:10.078723+00:00；当前主文 SHA-256：`6f9f196f4bc9637
 - 新净头寸限制映射至C01/C10/C49：gross portfolios、hedging、economic capital未识别。
 - 不把写作修正当作新增外部验证、因果识别、首发时点重建、真实成本测量或数据授权。
 - H8若只格式转换，仍须单独证明格式产物与此主文内容一致并完成最终PDF验收。
+
+
+## H8 final copyedits
+
+Pagnottoni takes the singular verb “studies”; two participles describing GARCH innovations are explicitly joined by “and”. The current source hash above and occurrence hashes in JSON are refreshed; H5 historical source identity is retained in the JSON h5_exact_edit_log. No evidence value or judgment changes.

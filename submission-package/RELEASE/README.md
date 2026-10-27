@@ -16,8 +16,14 @@ original result ZIPs, backups, scratch files and publisher templates are omitted
 Some historical files named summary mix aggregate results with fit traces; these
 are omitted whole, without changing scientific fields. release-manifest.json lists
 the selected bytes, explicit exclusions and recursive structured-content checks.
-WP2 contains only its audited protocol, aggregate summary and necessary judgments;
-its trace-path/hash strings refer to omitted files, not embedded forecast vectors.
+WP2 also includes its five audited original Python implementation/test files and
+the original post-hoc WP1 finite-grid aggregate, beside its protocol, aggregate
+summary and necessary judgments. Its trace-path/hash strings refer to omitted
+files, not embedded forecast vectors. WP1's eight plotted ordinates per method
+are aggregate DGP-grid values; its post-hoc and non-universal limitations remain.
+
+This H8 release uses final source snapshot c07ed23. Every selected original source
+file is checked byte-for-byte against that Git snapshot before packaging.
 
 No project software LICENSE has been selected. This archive does not grant a new
 license or choose one for the author. No new Zenodo DOI has been assigned or

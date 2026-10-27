@@ -198,7 +198,7 @@ def render(main_aux: Path) -> tuple[str, dict]:
                 "original_design_bindings": row["design_bindings"],
                 "original_result_bindings": row["result_bindings"]})
     lines += [r"\end{longtable}", r"\endgroup",
-        "The display-bindings JSON retains raw fields, JSON Pointers and SHA256 values. Main Table numbers use the recorded H2 aux cut and require a final H8 check; supplement references are local.", ""]
+        "The display-bindings JSON retains raw fields, JSON Pointers and SHA256 values.", ""]
     result = "\n".join(lines)
     if len(re.findall(r"^% row_id:", result, re.M)) != 36:
         raise ValueError("Generated row loss")

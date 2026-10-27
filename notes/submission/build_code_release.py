@@ -23,9 +23,11 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'submission-package/RELEASE'
+FINAL_SOURCE_SNAPSHOT_REF = 'c07ed23'
 WP2_COMMIT = '6192ec370d131c60d05e9fb103150e0e9db6aa23'
 WP2_BASE = 'evidence/submission/final-jof/'
 WP2_RESULTS = WP2_BASE + 'results/final-merge/wp2-cftc-mechanism/'
+WP1_BREAKEVEN = WP2_BASE + 'notes/revision-v9/wp1-breakeven.json'
 SUMMARY_NAMES = {'summary.json', 'summary.csv', 'contract-summary.csv',
                  'short-weekly-summary.json'}
 # Inspected originals that mix aggregate rows with unit/fit details. Exclude
@@ -78,6 +80,12 @@ JUDGMENTS = (
     'results/v9/nonstationarity/postrun/predictions.json',
 )
 WP2_FILES = (
+    'final_merge_wp2.py',
+    'verify_final_merge_wp2.py',
+    'test_final_merge_wp2.py',
+    'v9_learning_curve.py',
+    'run_final_merge_wp2.py',
+    'notes/revision-v9/wp1-breakeven.json',
     'protocol/final-merge/wp2-cftc-mechanism.md',
     'protocol/final-merge/wp2-input-seal.json',
     'results/final-merge/wp2-cftc-mechanism/summary.json',
@@ -102,7 +110,7 @@ LIMITS = {
     'no_financial_recalculation': True,
     'no_network_or_download': True,
     'pointwise_array_scope': 'Recursively inspect structured evidence, including JSON serialized inside CSV fields. Python source/test literals and written protocol grids are code/design metadata, not released observations or forecast vectors.',
-    'wp2': 'Audited original summary, protocol and acceptance/verification metadata only. No unit files or 153 forecast traces are included. Trace-path/hash strings in the unchanged summary identify omitted provenance, not embedded trace payloads.',
+    'wp2': 'Audited original five Python implementation/test files, finite-grid WP1 aggregate, protocol, summary and acceptance/verification metadata. No unit files or 153 forecast traces are included. Trace-path/hash strings identify omitted provenance, not embedded trace payloads. WP1 remains post-hoc descriptive evidence with its original limitations.',
 }
 
 
@@ -136,7 +144,7 @@ def inspect_structured(name: str, raw: bytes, role: str) -> dict:
     text = raw.decode('utf-8')
     problems, numeric_arrays = [], []
     containers = 0
-    evidence = role in {'aggregate', 'judgment', 'wp2'} or name.endswith('prediction-register.json')
+    evidence = role in {'aggregate', 'judgment', 'wp2', 'wp2_aggregate'} or name.endswith('prediction-register.json')
 
     def visit(value, pointer=''):
         nonlocal containers
@@ -147,7 +155,15 @@ def inspect_structured(name: str, raw: bytes, role: str) -> dict:
                 lowered = str(key).lower()
                 if evidence and lowered in TRACE_KEYS and isinstance(item, (list, dict)) and item:
                     problems.append({'pointer': loc, 'reason': 'Mixed unit/fit/pointwise trace container'})
-                if evidence and lowered in POINT_ARRAY_KEYS and isinstance(item, list) and item:
+                # This one original-byte-verified WP1 file uses y for the eight
+                # aggregate DGP-grid curve ordinates, not issue-level forecasts.
+                # Permit only these two exact pointers and their fixed length.
+                aggregate_grid_y = (name == WP1_BREAKEVEN
+                    and loc in {'/methods/QR33/point/y', '/methods/QR4/point/y'}
+                    and isinstance(item, list) and len(item) == 8
+                    and all(isinstance(v, (int, float)) for v in item))
+                if (evidence and lowered in POINT_ARRAY_KEYS and isinstance(item, list)
+                        and item and not aggregate_grid_y):
                     problems.append({'pointer': loc, 'reason': 'Per-observation/forecast/loss array key'})
                 visit(item, loc)
         elif isinstance(value, list):
@@ -230,7 +246,9 @@ def select() -> tuple[dict, list, dict, dict]:
     wp2_checks = {}
     for original in WP2_FILES:
         name = WP2_BASE + original
-        add(name, 'wp2')
+        role = ('wp2_scientific_code' if original.endswith('.py') else
+                'wp2_aggregate' if name == WP1_BREAKEVEN else 'wp2')
+        add(name, role)
         raw = (ROOT / name).read_bytes()
         original_raw = git('show', WP2_COMMIT + ':' + original)
         if raw != original_raw:
@@ -287,11 +305,26 @@ def main():
     parser.add_argument('--build', action='store_true', help='Write release only after explicit root authorization')
     args = parser.parse_args()
     selected, excluded, checks, wp2 = select()
+    source_snapshot = git('rev-parse', FINAL_SOURCE_SNAPSHOT_REF + '^{commit}').decode().strip()
+    snapshot_tree = {}
+    for record in git('ls-tree', '-r', '-z', source_snapshot).split(b'\0'):
+        if record:
+            header, name = record.split(b'\t', 1)
+            snapshot_tree[name.decode()] = header.split()[2].decode()
+    for name, item in selected.items():
+        raw = item['raw']
+        oid = hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest()
+        if snapshot_tree.get(name) != oid:
+            raise ValueError(f'Selected source differs from final source snapshot {source_snapshot}: {name}')
+    snapshot_validation = {'commit': source_snapshot, 'source_files_checked': len(selected),
+        'all_selected_source_blobs_exact': True,
+        'generated_release_readme_and_manifest_are_packaging_metadata': True}
     groups = Counter(item['role'] for item in selected.values())
     report = {'mode': 'BUILD' if args.build else 'READ_ONLY_SELECTION',
               'selected_files': len(selected), 'source_bytes': sum(len(x['raw']) for x in selected.values()),
               'categories': dict(sorted(groups.items())), 'excluded_candidates': excluded,
-              'selected_paths': sorted(selected), 'limits': LIMITS}
+              'selected_paths': sorted(selected), 'limits': LIMITS,
+              'final_source_snapshot_validation': snapshot_validation}
     if not args.build:
         print(json.dumps(report, indent=2))
         return
@@ -316,8 +349,14 @@ original result ZIPs, backups, scratch files and publisher templates are omitted
 Some historical files named summary mix aggregate results with fit traces; these
 are omitted whole, without changing scientific fields. release-manifest.json lists
 the selected bytes, explicit exclusions and recursive structured-content checks.
-WP2 contains only its audited protocol, aggregate summary and necessary judgments;
-its trace-path/hash strings refer to omitted files, not embedded forecast vectors.
+WP2 also includes its five audited original Python implementation/test files and
+the original post-hoc WP1 finite-grid aggregate, beside its protocol, aggregate
+summary and necessary judgments. Its trace-path/hash strings refer to omitted
+files, not embedded forecast vectors. WP1's eight plotted ordinates per method
+are aggregate DGP-grid values; its post-hoc and non-universal limitations remain.
+
+This H8 release uses final source snapshot c07ed23. Every selected original source
+file is checked byte-for-byte against that Git snapshot before packaging.
 
 No project software LICENSE has been selected. This archive does not grant a new
 license or choose one for the author. No new Zenodo DOI has been assigned or
@@ -331,13 +370,16 @@ publication or proof of independent financial reproduction.
              for name, item in sorted(selected.items())}
     manifest = {'schema': 'submission-code-aggregate-release-v1',
         'generated_utc': created.isoformat(), 'repository_head': git('rev-parse', 'HEAD').decode().strip(),
+        'pipeline_stage': 'H8_FINAL_RELEASE_REFRESH',
+        'final_source_snapshot_commit': source_snapshot,
+        'final_source_snapshot_validation': snapshot_validation,
         'archive': 'code-and-aggregate-results.zip', 'payload_file_count': len(files),
         'archive_member_count_including_this_manifest': len(files) + 1,
         'manifest_self_hash_excluded': True, 'categories': dict(sorted(Counter(x['role'] for x in selected.values()).items())),
         'limits': LIMITS, 'source_files_unchanged': True, 'files': files,
         'selected_aggregate_files': [n for n, item in sorted(selected.items())
-                                     if item['role'] == 'aggregate' or n == WP2_RESULTS + 'summary.json'],
-        'selected_wp2_files': [n for n, item in sorted(selected.items()) if item['role'] == 'wp2'],
+                                     if item['role'] in {'aggregate', 'wp2_aggregate'} or n == WP2_RESULTS + 'summary.json'],
+        'selected_wp2_files': [n for n, item in sorted(selected.items()) if item['role'].startswith('wp2')],
         'selected_judgment_files': [n for n, item in sorted(selected.items())
                                     if item['role'] == 'judgment'],
         'excluded_candidates': excluded, 'content_checks': checks,
@@ -383,6 +425,9 @@ publication or proof of independent financial reproduction.
     receipt = {'schema': 'submission-code-release-readback-v1', 'status': 'PASS_CODE_PROTOCOL_AGGREGATE_ONLY',
         'generated_utc': datetime.now(timezone.utc).isoformat(), 'command': ['python3', '-B', 'notes/submission/build_code_release.py', '--build'],
         'builder_sha256': sha(Path(__file__).read_bytes()),
+        'pipeline_stage': 'H8_FINAL_RELEASE_REFRESH',
+        'final_source_snapshot_commit': source_snapshot,
+        'final_source_snapshot_validation': snapshot_validation,
         'archive_path': str((OUT / 'code-and-aggregate-results.zip').relative_to(ROOT)),
         'archive_sha256': sha(archive_raw), 'archive_bytes': len(archive_raw),
         'manifest_path': str((OUT / 'release-manifest.json').relative_to(ROOT)), 'manifest_sha256': sha(manifest_raw),

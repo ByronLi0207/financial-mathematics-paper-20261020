@@ -1,0 +1,117 @@
+{
+  "schema": "submission-final-number-audit-v1",
+  "status": "PASS_FINAL_SOURCE_LOCATORS_AND_ORIGINAL_NUMBERS_UNCHANGED",
+  "generated_utc": "2026-10-27T05:36:17.892763+00:00",
+  "scope": "Read-only locator, original-value and source-byte consistency only. This is not new financial reproduction.",
+  "checks": {
+    "frozen_science": {
+      "status": "PASS",
+      "paths": 2527,
+      "bytes": 290550410,
+      "mismatches": [],
+      "base": "8c4b2b1572eea9b8fa6aabf9074a1aa86c2008f6"
+    },
+    "H0_import_closure": {
+      "status": "PASS",
+      "paths": 747,
+      "source_commit": "6192ec370d131c60d05e9fb103150e0e9db6aa23",
+      "actual_original_git_blob_bytes_equal": true
+    },
+    "WP2_number_bindings": {
+      "status": "PASS",
+      "pointers": 118,
+      "actual_archived_original_values_equal": true
+    },
+    "main_literal_numbers": {
+      "status": "PASS",
+      "baseline": "b4c7eb1",
+      "main_sha256": "b46b1ba919fe8d3f89306128aef0f610ad269ff3576d74412465834681b49fa3",
+      "numeric_tokens": 243,
+      "regex": "(?<![A-Za-z0-9])[-+]?\\d+(?:[.,]\\d+)*(?![A-Za-z0-9])",
+      "bibliography_excluded": true,
+      "inputs_expanded": false,
+      "literal_multiset_exact": true
+    },
+    "new_reference_metadata": {
+      "status": "PASS_AGAINST_EXISTING_OFFICIAL_WILEY_RECORDS",
+      "keys": [
+        "LeeKim2024ASMBI",
+        "Pagnottoni2026ASMBI",
+        "MuddanaEtAl2025ASMBI"
+      ],
+      "fresh_web_or_full_text_review": false
+    },
+    "claim_map": {
+      "status": "PASS_CURRENT_LINE_TEXT_AND_HASH",
+      "groups": 61,
+      "occurrences": 215,
+      "current_main_sha256_equal": true,
+      "financial_claim_statistics_not_recomputed": true
+    },
+    "S54": {
+      "status": "PASS_EXACT_ORIGINAL_ROWS_CELLS_AND_RAW_VALUES",
+      "rows": 36,
+      "cells": 216,
+      "raw_pointer_values_checked": 288,
+      "complete_rows_sha256": "040ec63d211e06b1dd78f761b0abfb995c92660262d9b6dd2fe65088f0c8ec53",
+      "existing_actual_QA_numeric_tokens": 287,
+      "existing_numeric_definition": "(?<![A-Za-z0-9])[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?; excludes alphanumeric identifiers.",
+      "basis": "Entire binding rows hash equals actual H8 proof, plus all216 display cells and raw source values checked. No count-only inference or threshold/judgment recomputation.",
+      "current_generated_tex_sha256": "0e2f495ebc66d19980b7bf5b3384222c708cdac8071d68e25be817c8a209a951"
+    },
+    "existing_register_receipt": {
+      "status": "BOUND_TO_CURRENT_REGISTER_NO_RERUN",
+      "rows": 36,
+      "bindings": 172,
+      "not_rewritten": true
+    },
+    "three_styled_figures": {
+      "status": "PASS_CURRENT_BYTES_MATCH_EXISTING_ACTUAL_PROOFS",
+      "numeric_tokens": 166,
+      "figures": [
+        {
+          "path": "submission-final/figures/v10-cftc-contract-changes.pdf",
+          "sha256": "71e3acaa34c19a20b7a24f6e11dc1ea92d478d0a0af629ce16723af8e9c399d9",
+          "numeric_tokens": 29
+        },
+        {
+          "path": "submission-final/figures/v10-menu-isolation.pdf",
+          "sha256": "cc7fcd490cbd904d3c75f29c712b638a72eec530b51c9be170bf882936143b5d",
+          "numeric_tokens": 22
+        },
+        {
+          "path": "submission-final/figures/v10-cost-regions.pdf",
+          "sha256": "925396ec1781718f812aa9933b10a203ab60489d21a772a6bcd2dba84e58f263",
+          "numeric_tokens": 115
+        }
+      ],
+      "no_regeneration_or_array_recomputation": true
+    }
+  },
+  "bound_evidence_file_sha256": {
+    "notes/submission/frozen-science.json": "3ceb31854447a322a2716228360fbffa983f76079c3cd1191da14396f73a4b21",
+    "notes/submission/wp2-import-audit.json": "5ca8c0d0b9b3e5f443d0e27fbf1420e7e08d75570eadeeaf8d77943ca942c3bb",
+    "notes/submission/imported-number-bindings.json": "eb6374aa93349a980607c9dd7c70f7ea64ce2ca410f477c922d6ff66d7bd1746",
+    "notes/submission/claim-map.json": "f39bcc14bb443ff726738a8fbb9ea9726ea8151d7185d8500d936d3ce506a39d",
+    "notes/submission/prediction-register.json": "c4e51ec51c0b15653726cabaf02d45130e919295a0f0127aead359af4bda3987",
+    "notes/submission/prediction-display-bindings.json": "95f86d6aceb132ac01febdcde42578d940ef54a07692217447f3821db5321f0e",
+    "notes/submission/prediction-register-verification.json": "77f2ca6bd9de7972abfab26236d10c1d610a6e4c311da8c6f0c0ff4b6dd3277a",
+    "notes/submission/h8-visual-qf-final.json": "a53849905b15847b0bfc22efdfd18c732770c84bd6be8d10f1f214ad55059ac6",
+    "notes/submission/history-figure-style-check.json": "2dc56de93f72aba004380b5761aa6707577418e014c3d92ac385db476d08661e",
+    "notes/submission/cost-figure-style-check.json": "5413f7e0578113bce1f4ca12d1c04be47ec1cb28d9c4a479dd258e3e10bba0bf",
+    "notes/submission/asmbi-recent-literature.json": "dec23716ffe3b1c1fbd7d4b2e12114acfa6f9eff49a0cab7714b4a3fd9851d9d"
+  },
+  "no_financial_statistic_or_judgment_recomputed": true,
+  "no_existing_verifier_receipt_rewritten": true,
+  "no_source_or_package_modified": true,
+  "no_commit_or_subagent": true,
+  "writes_only": [
+    "notes/submission/final-number-audit.json",
+    "notes/submission/final-number-audit.md"
+  ],
+  "limitations": [
+    "Original-byte and source-value identity does not establish independent financial reproduction.",
+    "Three recent references are checked against existing official metadata evidence; no fresh full-text or browser review.",
+    "Current figure hashes bind existing actual artist-array equality proofs; no plot or array computation rerun."
+  ]
+}

@@ -8,9 +8,9 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 
 | File | Upload column / use | Actual pages | Instructions |
 |---|---|---:|---|
-| [ASMBI/manuscript.pdf](ASMBI/manuscript.pdf) | Main document | 25 | PDF for editor/system preview; fill personal placeholders before submission |
+| [ASMBI/manuscript.pdf](ASMBI/manuscript.pdf) | Main document | 26 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/manuscript.tex](ASMBI/manuscript.tex) | Main document source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
-| [ASMBI/supplement.pdf](ASMBI/supplement.pdf) | Supporting information | 51 | PDF for editor/system preview; fill personal placeholders before submission |
+| [ASMBI/supplement.pdf](ASMBI/supplement.pdf) | Supporting information | 54 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/supplement.tex](ASMBI/supplement.tex) | Supporting information source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
 | [ASMBI/title-page.pdf](ASMBI/title-page.pdf) | Title page | 1 | PDF for editor/system preview; fill personal placeholders before submission |
 | [ASMBI/title-page.tex](ASMBI/title-page.tex) | Title page source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
@@ -41,7 +41,7 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | [ASMBI/figures-upload/v9-endpoint-peak-example.tif](ASMBI/figures-upload/v9-endpoint-peak-example.tif) | Figure / Supporting figure | — | TIFF is 1000 dpi LZW; PDF is the same vector display. Match figure number in mapping below |
 | [QF/main.pdf](QF/main.pdf) | Main document | 22 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/main.tex](QF/main.tex) | Main document source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
-| [QF/supplement.pdf](QF/supplement.pdf) | Supporting information | 40 | PDF for editor/system preview; fill personal placeholders before submission |
+| [QF/supplement.pdf](QF/supplement.pdf) | Supporting information | 43 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/supplement.tex](QF/supplement.tex) | Supporting information source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
 | [QF/title-page.pdf](QF/title-page.pdf) | Title page | 1 | PDF for editor/system preview; fill personal placeholders before submission |
 | [QF/title-page.tex](QF/title-page.tex) | Title page source | — | Editable source; use the corresponding single-document ZIP for dependency closure |
@@ -78,6 +78,10 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 | [SHARED/author-qa.tex](SHARED/author-qa.tex) | Author preparation only | — | Author-facing preparation; review and complete all personal fields |
 | [SHARED/editable-tables.pdf](SHARED/editable-tables.pdf) | Tables / editable source if requested | 8 | Author-facing preparation; review and complete all personal fields |
 | [SHARED/editable-tables.tex](SHARED/editable-tables.tex) | Tables / editable source if requested | — | Author-facing preparation; review and complete all personal fields |
+| [RELEASE/code-and-aggregate-results.zip](RELEASE/code-and-aggregate-results.zip) | Code archive / author deposit preparation | — | Bounded code, protocol and aggregate release; no raw/private point vectors. Author license and DOI decisions remain open; not a manuscript upload |
+| [RELEASE/README.md](RELEASE/README.md) | Code archive / author deposit preparation | — | Bounded code, protocol and aggregate release; no raw/private point vectors. Author license and DOI decisions remain open; not a manuscript upload |
+| [RELEASE/release-manifest.json](RELEASE/release-manifest.json) | Code archive / author deposit preparation | — | Bounded code, protocol and aggregate release; no raw/private point vectors. Author license and DOI decisions remain open; not a manuscript upload |
+| [RELEASE/release-check-receipt.json](RELEASE/release-check-receipt.json) | Code archive / author deposit preparation | — | Bounded code, protocol and aggregate release; no raw/private point vectors. Author license and DOI decisions remain open; not a manuscript upload |
 
 ## Figure-number mapping
 
@@ -97,3 +101,5 @@ Authors, affiliations, ORCID, corresponding author, funding, competing interests
 Use the TIFF and vector PDF as alternatives if the portal asks for one format, rather than registering the same figure twice. Main tables 1–8 are editable TeX in both source ZIPs and in SHARED/editable-tables.tex; ASMBI places each after the references on a separate page. Supplement tables and equations remain editable in its source ZIP.
 
 The hashes, byte counts and page counts of all listed active files are in [MANIFEST.json](MANIFEST.json). Historical attempts, backups, `.scratch/` and unused template examples are not upload files. Final visual coverage and compilation are recorded separately under notes/submission; file existence alone is not visual approval.
+
+For the author-facing step-by-step upload instructions use [the Chinese checklist](../notes/submission/投稿操作清单.md). The official template ZIPs under templates/ are source archives for rebuilding, not manuscript uploads. The source ZIP manifests enumerate their required fonts and support files; they do not need separate scientific upload slots.
